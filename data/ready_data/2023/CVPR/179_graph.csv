@@ -1,0 +1,201 @@
+node_1,node_2,edge
+video frame interpolation,progress,Video frame interpolation has seen important progress in recent years
+optical flow methods,splatting strategies,Some works leverage better optical flow methods with improved splatting strategies
+optical flow methods,additional cues from depth,Some works leverage better optical flow methods with improved splatting strategies or additional cues from depth
+transformers,direct predictions,others have investigated alternative approaches through direct predictions or transformers
+transformer-based interpolation network architecture,video production,bridging the gap towards video production with a novel transformer-based interpolation network architecture capable of estimating the expected error together with the interpolated frame.
+transformer-based interpolation network architecture,error maps,"method estimates error maps for the interpolated frame, which are essential for real-life applications on longer video sequences."
+rendered content,intermediate frame,"partial rendering pass of the intermediate frame, guided by the predicted error, can be utilized during the interpolation to generate a new frame of superior quality."
+rendered content,quality,partial rendering pass of the intermediate frame can be utilized during the interpolation to generate a new frame of superior quality.
+video frame interpolation,vfi methods,Video frame interpolation (VFI) is a classical video processing problem where recent advances in VFI methods have been continuously improving the interpolation quality.
+video frame interpolation,transformer-based vfi architecture,A transformer-based VFI architecture is proposed for processing both source and target frames in a unified framework for improving interpolation quality.
+transformer-based vfi architecture,motion compensation,The proposed transformer-based VFI architecture compensates motion through a tightly integrated optical flow estimation and cross-backward warping.
+model,state-of-the-art,The model improves over the current state-of-the-art as supported by extensive quantitative experiments and a user study.
+model,interpolation uncertainty prediction,"The model predicts the interpolation uncertainty similar to approaches for artifact detection and adaptive sampling, which is important for usage in a production context."
+problematic frames,uncertainty estimation,Uncertainty estimation is used to identify problematic frames automatically in the production context.
+uncertainty estimation,computer graphics (cg) applications,Uncertainty estimation benefits Computer Graphics applications by determining frame patches without sufficient quality for rendering.
+frame patches,quality,Frame patches are determined to not have sufficient quality in the context of Computer Graphics applications.
+transformer-based model,rendered patches,The transformer-based model in the production context helps render patches from the middle frame more naturally.
+vfi framework,rendered patches,Rendered patches naturally fit in the same unified VFI framework in the context of the production environment.
+rendered patches,middle frame,Rendered patches from the middle frame achieve high quality levels at a fraction of the cost of rendering the full middle frame.
+paradigm,production renderers,The paradigm in the production context is more compatible with current production renderers compared to CG specialized VFI works.
+motion-based vfi method,transformer-based architecture,The motion-based VFI method in the context treats input and target frames similarly through a transformer-based architecture using masks.
+model,performance,The model achieves state-of-the-art performance in both quantitative experiments and a user study.
+output’s uncertainty estimation subtask,quality results,The output's uncertainty estimation subtask in the context can be beneficial for achieving better quality results in rendered content.
+frame interpolation,learning-based methods,Frame interpolation in the context has been surpassed by learning-based methods compared to classical approaches using optical flow and image warping.
+"direct, phase and kernel based prediction methods",frame interpolation,"Direct, phase, and kernel based prediction methods are reviewed in the context of frame interpolation."
+direct methods,convolutional architectures,Direct methods were proposed using purely convolutional architectures
+direct methods,channel attention,Direct methods were proposed using combining channel attention with a deep residual network
+phase-based method,phase-shifts,Meyer et al. show a phase-based method based on the idea that phase-shifts can be used to represent motion
+kernel-based methods,kernels,Kernel-based methods aim to predict kernels for all pixels that are applied in a convolutional layer
+kernel-based methods,offset prediction,"Offset prediction has been used to reduce the necessary kernel size to handle large motion, making those methods conceptually more similar to motion-based ones"
+motion-based methods,optical flow estimation methods,Most motion-based methods build on the work of optical flow estimation methods
+flow,intermediate frame,Flow from the intermediate frame to the reference frames allows for easy backward warping.
+flow,reference frames,Flow from the intermediate frame to the reference frames allows for easy backward warping.
+warping,estimation,Warping can be done by estimating the flows directly.
+warping,approaches,Warping can be done by combining both forward and backward warping approaches.
+methods,linear motion,Most methods assume linear motion between the keyframes.
+methods,non-linear motion,Others estimate non-linear motion by using more than two input frames.
+methods,input frames,Others estimate non-linear motion by using more than two input frames.
+methods,learned prior,Others estimate non-linear motion with a learned prior.
+approaches,improve estimation,Various other approaches have been proposed to improve estimation of large motion.
+approaches,motion magnitude,Various other approaches adapt the flow estimation to the motion magnitude.
+approaches,feature propagation,Various other approaches propose better strategies for feature propagation.
+error estimation,optical flow,Error estimation of the optical flow is used for specific treatment.
+error estimation,method,Error estimation method learns to predict perceptual and L2-based error maps for final interpolation result.
+transformer,adaptation,The introduction of the transformer and its adaptation to vision tasks lead to the proposal of transformer-based frame interpolation approaches.
+transformer-based frame interpolation approaches,proposed,Several transformer-based frame interpolation approaches have been proposed after adapting the transformer to vision tasks.
+liu et al.,transformer architecture,Liu et al. use a transformer architecture in their proposed approach.
+frame interpolation approaches,transformer architecture,Liu et al. proposed a frame interpolation approach that uses a transformer architecture with convolutions inside attention layers.
+vfiformer,cross-scalei0/m0i1/m1i2/m2...deep fea- feature extract,VFIformer uses cross-scale I0/M0I1/M1I2/M2...Deep Feature Extract for feature extraction.
+feature pyramid,latent representation,"After extracting a feature pyramid for each frame, a latent representation is passed along with a forward flow estimate through multiple levels of reconstruction."
+transformer fusion i,flow/context residual,Transformer Fusion I is followed by an update of the flow estimate and context vector from the new features in Flow/Context Residual.
+latent representation,feature merging,The latent representation is updated using the initial flow estimate in Transformer Fusion I after merging with the extracted features.
+flow estimate,upsampling,The flow estimate and features are upsampled for the next level.
+ttvfi,inconsistent region map,TTVFI uses an inconsistent region map inside a trajectory aware attention module.
+ttvfi,transformer fusion,TTVFI's flow estimation is tightly integrated with the transformer fusion and trained end-to-end.
+keyframes,intermediate frame,"The goal of the method is to interpolate two keyframes I0, I2 and find the intermediate frame ˆI1 along with an estimate of the error ˆE1."
+error map,frame,"Subsequently, the method analyzes the error map and checks if certain areas of the frame need to be rendered as expected."
+additional masked inputs,network,Those additional masked inputs I1 are passed to the network along with the keyframes to get a final interpolated frame.
+architecture,two-frame interpolation methods,"Opposed to common two-frame interpolation methods, the overall architecture of the network is inspired by transformer architectures."
+frame,binary mask,Each frame is equipped with a binary mask Mt indicating valid inputs to guide the interpolation.
+method,fig. 2,The method is overviewed in Fig. 2
+method,feature pyramid representation,Method first extracts a feature pyramid representation
+feature pyramid representation,"{f lt }l∈0,...,6",Feature pyramid representation F lt is extracted for each input
+feature pyramid representation,inputs,Feature pyramid representation is processed for each of the inputs
+inputs,coarse-to-fine manner,Inputs are processed in a coarse-to-fine manner
+update blocks,bottom 5 resolutions,Update blocks share weights for the bottom 5 resolutions
+levels,latent feature representations,"In each level, latent feature representations are merged"
+processing,topmost level,Processing of the topmost level is treated differently
+processing,two convolutional layers,Processing consists of two convolutional layers
+feature extraction,reda et al. [53],Feature extraction is inspired by Reda et al. [53]
+feature extraction,u-net architecture,Feature extraction uses a U-Net architecture
+image/mask l,downsampled factor of 2,Image/mask l is downsampled by a factor of 2
+image/mask,downsampled,The image/mask is downsampled by a factor of 2 to obtain the next level.
+downsampled,u-net,The downsampled image is passed through a U-Net for processing.
+u-net,features,The last three layers of the U-Net are kept as features for further processing.
+features,input feature pyramids,All input and feature tensors of the same spatial resolution are concatenated to build input feature pyramids.
+features,levels,Features from level two onward are semantically similar.
+levels,weight sharing,Weight sharing can be used for all following modules on those levels.
+u-net,deep feature extraction module,The U-Net is used in the deep feature extraction module for processing original inputs and all downsampled images/masks.
+deep feature extraction module,transformer fusion module,The deep feature extraction module consists of a transformer fusion module with MACE blocks applied to all triplets after cross backward warping.
+transformer fusion module,mace blocks,The transformer fusion module involves MACE blocks applied to all triplets after the cross backward warping step.
+mace blocks,multihead attention module,"Tokens processed by the multihead attention module include per-pixel query, key, and value tensors from MACE blocks."
+multihead attention module,head,"For each head in the multihead attention module, the per-pixel query, key, and value tensors are computed."
+levels,feature representations,Feature representations and optical flows are initialized on different levels for processing.
+feature representations,vector,The feature representations are converted to a learned vector in the given context.
+vector,spatially repeated,The learned vector is spatially repeated in the context.
+upsampled pixel-wise features,previous level features,The upsampled pixel-wise features from the previous level are merged with the initial values in the context.
+initial values,feature pyramid features,The initial values are merged with the respective feature pyramid features in the context.
+channels,features,The channels and features are merged together in the context.
+latent feature representation,frame,The latent feature representation of each frame is updated in the context.
+features,frames,The features of all frames are aligned by rescaling the current flow estimate in the context.
+current flow estimate,stage,The current flow estimate is rescaled at each stage in the context.
+coordinates,bilinear interpolation,The coordinates are used for bilinear interpolation in the context.
+transformer,convolutional residual layers,The standard transformer linear layers are replaced with convolutional residual layers to leverage the spatial structure of latent feature representations.
+convolutional layers,layer normalization,"Layer normalization is applied after both multihead attention and convolutional layers, following common practice in transformer architectures."
+mace modules,transformer fusion modules,"The MACE modules are employed within the transformer fusion modules to enhance the overall functionality, as illustrated in Fig. 4."
+transformer module,conovolutional module,"For updating the current flow estimate, a convolutional module is found to be more suitable than a transformer module, as indicated by initial tests."
+"pair (w l,s v→t)",series of convolutions,"Each pair (W l,s v→t) undergoes a series of convolutions after cross-backward warping the updated features to the reference frame, resulting in the output containing Weight αv, flow offset ∆F v, and context resid-v stacked in the channel dimension."
+abmefilm lsrifeifrnetvfiformerours ls,other methods,"Visual comparison is conducted between the listed methods using only keyframe inputs and no additional data, as depicted in Figure 5."
+softmax,weights,Softmax is applied on the weights to update the flows and context features as truth frame at time t.
+truth frame,error targets,"The error targets or ground truth are computed as F l,3 t = F l,2W l,3 (caption) Cl..Dl−1."
+update,"f l,3","The update of F l,3.tv−t ∆Fvt + Pv eαv 1 t Cl..Dl−1 = W l,2v+ Pv eαv ∆W Pv eαv needs to be rescaled to a forward flow for the Miscellaneous."
+upsampling,bilinear interpolation,"For the upsampling of the flows, parameter-free bilinear interpolation by a scaling factor of two (Denoted by · ↑2x) is used."
+resize convolution,checkerboard artifacts,"The feature maps are passed through a resize convolution same as [53] to avoid checkerboard artifacts, i.e. a nearest-neighbor upsampling followed by a convolutional layer with kernel size 2 and Dl output feature channels."
+output,latent representations,"For the final output, the latent representations are passed together with the extracted features F 0 through two convolutional layers with kernel sizes 3 and 1 respectively."
+target error maps,ground truth,"To train the error outputs ˆE of the network, the target error maps are computed as I GTtEct = kI GTt − ˆItk2 where k·k2 denotes the L2 norm along the channel dimension."
+perceptual error,lpips,The perceptual error Ep t follows the computation of LPIPS [65] without the spatial averaging.
+lpips,error map,The perceptual error computation of LPIPS follows the computation of error map without spatial averaging.
+error estimates,regions of target frame with insufficient quality,Using error estimates to find regions of the target frame with insufficient quality in order to render those areas and pass them to the network for improvement.
+renderers,rectangular tiles,Most common renderers should be able to operate on a subset of rectangular tiles without a significant overhead.
+tiles with highest expected error,second interpolation pass,Selecting tiles with the highest expected error and using them in the second interpolation pass.
+network,triplets from training set of vimeo-90k,Training the network on triplets from the training set of Vimeo-90K.
+l1 variant,iterations,The L1 variant is trained for 2.1M iterations with batch size 4 using the Adam optimizer.
+l1 variant,adam optimizer,The L1 variant is trained using the Adam optimizer.
+l1 loss,color output,L1 loss is used for the color output with a weight of 1.0.
+l1 loss,error estimates,L1 loss is also used for both error estimates with a weight of 0.01 each.
+learning rate,iterations,The learning rate starts at 5 x 10^-5 and is reduced every 0.75M iterations by a factor of 0.464.
+perceptual variant,ls,The perceptual variant (LS) follows a similar training schedule with additional VGG and Style loss added after 1.9M iterations.
+vgg loss,style loss,VGG loss and style loss are added at the same point with weights of 0.25 and 40 respectively.
+outputs,center frame,All losses are computed only for the center frame outputs.
+evaluation metrics,psnr,"Results are measured using evaluation metrics such as PSNR, SSIM, and LPIPS."
+evaluation metrics,ssim,"Results are measured using evaluation metrics such as PSNR, SSIM, and LPIPS."
+evaluation metrics,lpips,"Results are measured using evaluation metrics such as PSNR, SSIM, and LPIPS."
+user study,evaluation,A user study is performed for a qualitative evaluation.
+comparison,abme,"The method is compared against ABME, AdaCoF, CAIN, FILM, IFRNet, RIFE, VFIformer, and XVFI."
+rife,vfiformer,RIFE and VFIformer are both algorithms for frame interpolation.
+rife,xvfi,RIFE and XVFI are related algorithms for frame interpolation.
+vimeo90k,davis,Vimeo90K and DAVIS are datasets used for evaluation.
+big buck bunny,cosmos laundromat,Big Buck Bunny and Cosmos Laundromat are animated short films used for evaluation.
+elephants dream,sintel,Elephants Dream and Sintel are animated short films used for evaluation.
+rife,vfiformer,RIFE and VFIformer are algorithms used for frame interpolation.
+embalms,rife,EMBALMS is related to RIFE in the context.
+embalms,vfiformer,EMBALMS is related to VFIformer in the context.
+if rn etfilv fifor m er rif e,big buck bunny,There is a relationship between IF RN etFILV FIformer RIFE and Big Buck Bunny in the context.
+if rn etfilv fifor m er rif e,cosmos laundromat,There is a relationship between IF RN etFILV FIformer RIFE and Cosmos Laundromat in the context.
+if rn etfilv fifor m er rif e,elephants dream,There is a relationship between IF RN etFILV FIformer RIFE and Elephants Dream in the context.
+if rn etfilv fifor m er rif e,sintel,There is a relationship between IF RN etFILV FIformer RIFE and Sintel in the context.
+cosmos laundromat,preference ours,There is a user study preference for Cosmos Laundromat towards a certain method.
+cosmos laundromat,preference theirs,There is a user study preference for Cosmos Laundromat towards another method.
+method,votes,Users had a normal/strong preference for the method for 48/34% of all votes.
+short films,samples,"For each of the short films, a representative subset of 30 samples was used."
+ab comparisons,participants,A total of 3158 AB comparisons were collected from 69 participants.
+input,ep1,"Input I0, Input I2, and Ep1 were mentioned together."
+closing of the eyes,perceptual error,"The closing of the eyes proves difficult to interpolate, but the expected perceptual error closely matches the true error."
+middle frame,network,Passing part of the middle frame indicated by the white box to the network results in significantly improved interpolation.
+big buck bunny,cosmos laundromat,Comparison between Big Buck Bunny and Cosmos Laundromat.
+elephants dream,sintel,Comparison between Elephants Dream and Sintel.
+tiles,ground truth error,"Replacement of tiles based on random sampling, highest ground truth error."
+color error estimation,psnr,Our color error estimation is mentioned along with PSNR in the context.
+method,vimeo,Comparison between Method and Vimeo.
+psnr,ssim,Relationship between PSNR and SSIM.
+film l1 ’22,vfiformer ’22,Both concepts refer to different versions or models of a film. They are related through their naming conventions.
+’21,film ls ’22,Both concepts are related to different versions or models of film production. The first concept seems to refer to a specific year while the second concept refers to a specific model.
+film ls ’22,cain,"Both concepts are associated with film production, potentially indicating that CAIN is a specific part or aspect of FILM LS ’22."
+film ls ’22,table 1. live action vfi results. we list perceptually trained methods separately below the other methods. all metrics were obtained by,"Both concepts are related to live action VFI results, potentially suggesting that FILM LS ’22 and the table content refer to the same or similar experimental data."
+big buck bunny,psnr ssim lpips,"Big Buck Bunny is related to the metrics PSNR, SSIM, and LPIPS which represent the visual quality of the animated short films"
+big buck bunny,cosmos laundromat,"Big Buck Bunny and Cosmos Laundromat are both animated short films being compared or evaluated using the metrics PSNR, SSIM, and LPIPS"
+elephants dream,psnr ssim lpips,"Elephants Dream is also related to the metrics PSNR, SSIM, and LPIPS showcasing visual quality comparison"
+vfi,psnr ssim lpips,"The results of the perceptually trained methods, including VFI, are compared using the metrics PSNR, SSIM, and LPIPS in the animated short films"
+sintel,rank #,The film Sintel has been ranked and compared with other animated short films based on certain criteria represented by Rank #
+visual quality,extensive user study,The visual quality is evaluated through an extensive user study.
+user study,approach [42],The user study follows the approach of [42].
+user study,comparison methods,Users are asked to compare methods side by side in the user study.
+user study,preference option,"In the user study, users have the option to express a strong preference."
+sample film,fig. 5,One sample of each film is shown in Figure 5.
+results,fig. 6,The results are presented in Figure 6.
+uncertainty guided interpolation,two experiments,The advantages of uncertainty guidance are demonstrated in two experiments.
+error prediction,patches in interpolated image,Error prediction is used to select appropriate patches in the interpolated image.
+psnr improvement,error estimation,PSNR improvement is demonstrated when using error estimation to replace tiles in the interpolated output.
+psnr improvement,random replacement,Comparison of PSNR improvement between error estimation and random replacement.
+additional inputs,network output,The effect of additional inputs on the network output is studied.
+error prediction,selected tiles,Error prediction is used to select tiles based on true error.
+tiles,interpolated output,Tiles are replaced in the interpolated output for comparison.
+perceptual quality,improved,Results plot shows that the perceptual quality is improved beyond the baseline approach.
+uncertainty guidance approach,interpolation,Visual example of uncertainty guidance approach shows how correct region with high error is identified and interpolation is improved.
+additional inputs,interpolation,Interpolation is improved by passing additional inputs.
+baseline approach,replacing worst patches,Baseline approach involves replacing worst patches of interpolation based on color error.
+film ls,perceptual performance,FILM LS and IFRNet are follow up methods in terms of perceptual performance.
+network,error estimation,Different versions of the network are trained to show the effect of error estimation.
+color based loss,variants,Variants without error estimation use the same training procedure and color-based loss.
+training procedure,color based loss,Both training procedure and color based loss are used for all variants in the same way as described in Sec. 3.3.
+variants,error estimation,Variants without error estimation differ only in the last convolutional layer and do not use error losses.
+deep feature representation,feature representation,The deep feature representation is replaced by the feature representation proposed by Reda et al.
+deep feature extraction,shared frame processing,The results highlight the advantages of deep feature extraction and shared frame processing for interpolation quality.
+motion,visual changes,Very large motion or drastic visual changes can be missed by the error prediction.
+network design,shared frame processing,The shared frame processing boosts the performance significantly in the ablation study of the network design.
+network design,deep feature extraction,The deep feature extraction adds a moderate improvement from the baseline in the ablation study of the network design.
+feature extraction,deep feature extraction,"Deep feature extraction adds a moderate improvement from the baseline, but is essential when interpolating animated content with the error estimation."
+animated content,error estimation,"Interpolating animated content with the error estimation yields only a minor improvement, but its advantages demonstrated in Sec. 4.2 are significant."
+training dataset,current network,The current training dataset lacks sufficient examples to learn behavior that the current network is relatively slow and big.
+vfiformer,vimeo90k,VFIformer is on average 44.2% faster on Vimeo90k and needs about 27.6% fewer parameters.
+architecture,training,"Even though the architecture supports training with more than two input frames challenging, the process needs improvements for better results."
+vfi method,optical flow motion compensation,"The proposed VFI method incorporates optical flow motion compensation, deep feature extraction, error estimation, and shared frame processing in a transformer-based architecture."
+animated content production,rendering cost,The novel uncertainty-guided approach for animated content production greatly reduces the cost of rendering while maintaining a high visual quality as shown in experiments.
+visual quality,experiments,"The visual quality is maintained at a high level, as demonstrated in our experiments."
+method,results,Our method achieves state-of-the-art results for traditional frame interpolation.
+method,quality,Our method achieves a superior visual quality as confirmed by an extensive user study.
+training procedure,masked inputs,Our training procedure uses masked inputs similar to those of masked language models.
+direction,future work,A study of the properties of the training procedure remains an interesting direction for future work.
+markus plack,matthias b. hullin,Markus Plack and Matthias B. Hullin are supported by the European Research Council under ERC Starting Grant 'ECHO' (802192).

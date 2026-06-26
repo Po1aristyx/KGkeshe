@@ -1,0 +1,235 @@
+node_1,node_2,edge
+machine learning-based predictive inference,individual treatment effects,Machine learning-based predictive inference aims to predict individual treatment effects.
+ml-based meta-learners,conditional average treatment effect (cate),ML-based meta-learners provide estimates of the CATE through model-agnostic approaches.
+conformal meta-learners,predictive intervals for ites,Conformal meta-learners issue predictive intervals for individual treatment effects using the CP procedure.
+two-stage pseudo-outcome regression,stochastic ordering framework,The two-stage pseudo-outcome regression is studied using a stochastic ordering framework to determine its validity.
+computer based conformal meta-learners,oracle conformity scores,Computer based conformal meta-learners should have conformity scores that dominate oracle conformity scores for valid inference.
+previous work,development of ml-based meta-learners,Previous work has primarily focused on developing ML-based meta-learners for predictive inference.
+conformal meta-learners,ite,Conformal meta-learners provide valid intervals with competitive efficiency while retaining the favorable point estimation properties of CATE meta-learners.
+heterogeneity,interventions,Identifying heterogeneity in the effects of interventions across individuals is a central problem in various fields.
+machine learning models,heterogeneous treatment effects,Developing machine learning models to estimate heterogeneous treatment effects using observational or experimental data.
+conditional average treatment effect (cate),point estimates,Most of these models only provide point estimates of the conditional average treatment effect (CATE).
+errors in the model,variation of individual treatment effects (ites),Uncertainty in these estimates arises from both errors in the model and the variation of individual treatment effects (ITEs) for individuals with the same covariates.
+predictive inference approach,quantifying uncertainty,"We adopt a predictive inference approach to this problem, with the goal of devising valid procedures to issue predictive intervals that cover ITEs on unseen data with a predetermined probability."
+bayesian methods,predictive inference on ites,"Traditionally, predictive inference on ITEs has been conducted through Bayesian methods."
+ites,predictive inference,ITEs are the focus of predictive inference methods like BART and Gaussian processes.
+ites,interval-valued predictions,Methods like BART and Gaussian processes can provide interval-valued predictions of ITEs through their posterior distributions.
+bayesian methods,predictive inference,Bayesian methods have traditionally been used for predictive inference on ITEs.
+bayesian methods,bart,Bayesian methods like BART have been used for predictive inference on ITEs.
+bayesian methods,gaussian processes,Bayesian methods like Gaussian processes have been used for predictive inference on ITEs.
+bayesian methods,model-specific,Bayesian methods tend to be model-specific and not easily generalized to modern ML models.
+bayesian methods,coverage,Bayesian methods do not provide guarantees on the frequentist coverage of their credible intervals.
+conformal prediction,cp-based inference,Conformal prediction is a frequentist alternative that can be used for model-agnostic predictive inference like CP-based procedures for ITEs.
+cp-based inference,ites,CP-based procedures can be used for inference of ITEs in a model-agnostic and distribution-free manner.
+fundamental problem of causal inference,counter-factual outcomes,The fundamental problem of causal inference is related to never observing counter-factual outcomes in the context of ITEs.
+ite,potential outcomes,The ITE is a difference between potential outcomes for an individual subject in a causal inference context.
+outcomes,individual subject,"Outcomes for an individual subject are the focus of the context, determining the effects of treatments on individuals."
+outcomes,factual outcomes,"The observed outcomes in the context are always factual, emphasizing the need to distinguish between treated and untreated outcomes."
+individual subject,treatments,"The treatments are assigned to individual subjects, affecting the distributions of covariates in treated and untreated groups."
+covariate shift,distributions of covariates,"Covariate shift leads to differences in the distributions of covariates between treated and untreated groups, impacting the training data and target population distributions."
+supervised learning,single function,"Unlike supervised learning that fits a single function using examples, models of treatment effects involve estimating nuisance parameters and indirect treatment effects."
+ml-based cate estimation,covariate shift,"ML-based CATE estimation addresses covariate shift, which can affect the generalization performance of ML models."
+ml-based cate estimation,inductive biases,ML-based CATE estimation focuses on incorporating inductive biases to improve the accuracy of treatment effect estimates.
+inductive biases,model-agnostic approaches,Inductive biases play a significant role in model-agnostic approaches for incorporating prior knowledge and assumptions into the predictive inference process.
+meta-learner,cate estimation rates,"The choice of the meta-learner has an influence on the estimation rates of CATE, as shown in references [5, 20]."
+cate estimators,generalization performance,The impact of CATE estimators on the generalization performance has been extensively studied to understand their effectiveness in different scenarios.
+predictive inference methods,cate estimators,The validity and efficiency of predictive inference methods for ITE can be affected by the choice and performance of CATE estimators.
+cp procedure,predictive inference of ites,The proposed CP procedure aims to improve the predictive inference of ITEs by jointly addressing various factors and considerations in a systematic manner.
+meta-learners,pseudo-outcome regression,Meta-learners based on pseudo-outcome regression estimate transformed targets to provide insights into the relationship between observable variables and outcomes.
+conformal meta-learners,covariates,"Conformal meta-learners focus on the distribution of covariates associated with pseudo-outcomes, ensuring consistency between training and testing data for reliable predictive inference."
+calibration step,model architecture,Decoupling the calibration step from the model architecture enables flexible choices of inductive priors and repurposing of existing techniques for improved predictive inference.
+architecture,inductive priors,The architecture enables flexible choice of inductive priors for better performance.
+architecture,re-purposing,The architecture allows for re-purposing existing meta-learners and architectures for accurate estimates of CATE.
+meta-learners,cate,Meta-learners provide accurate estimates of CATE.
+conformal meta-learners,guarantees of cp,"Conformal meta-learners inherit the guarantees of CP, ensuring high probability coverage of pseudo-outcomes on test data."
+cp guarantees,coverage of ites,Original CP guarantees do not necessarily guarantee coverage of ITEs.
+unified stochastic ordering framework,validity of conformal meta-learners,The framework is used to study the validity of conformal meta-learners in inference on ITEs.
+conformity scores,oracle conformity scores,Conformity scores must satisfy stochastic ordering conditions with respect to oracle conformity scores for inference validity.
+meta-learners,doubly-robust learner [20],"Some commonly used meta-learners, like the doubly-robust learner, satisfy a weaker dominance condition for validity."
+pseudo-outcome transformation,coverage properties of cp,Careful choice of pseudo-outcome transformation ensures that conformal meta-learners inherit the coverage properties of CP.
+cate meta-learners,coverage properties of cp,CATE meta-learners provide both coverage properties of CP and the efficiency and accuracy of point estimation.
+individual treatment effects (ites),potential outcomes (po) framework,Predictive inference of ITEs is based on the standard PO framework with binary treatment.
+treatment indicator,covariates,The treatment indicator (W) is related to the covariates (X) as variables in the data generation process.
+treatment indicator,outcome,The treatment indicator (W) is related to the outcome (Y) as it determines the factual outcome Yi.
+covariates,outcome,The covariates (X) are related to the outcome (Y) as part of the data generation process.
+outcome,potential outcomes,"The outcome (Y) is related to the potential outcomes (Yi(0), Yi(1)) as they are used to define the factual and counterfactual outcomes."
+factual outcome,counterfactual outcome,The factual outcome (Yi) is related to the counterfactual outcome (Yi(1 - Wi)) as they represent observed and unobserved outcomes based on the treatment.
+data generation process,assumptions,The data generation process is related to the assumptions as the assumptions guide how the data is generated and used for causal inference.
+individual treatment effect,potential outcomes,"The individual treatment effect (ITE) is related to the potential outcomes (Yi(1), Yi(0)) as it is defined based on the difference between these two outcomes."
+individual treatment effect,causal effects,The individual treatment effect (ITE) is related to the causal effects as it represents the effect of treatment on an individual.
+individual treatment effect,conditional average treatment effect,The individual treatment effect (ITE) is related to the conditional average treatment effect (CATE) as the focus shifts from deterministic CATE to random ITE.
+covariate,individual treatment effect,The covariate (X) is related to the individual treatment effect (ITE) as the ITE is inferred based on covariates and observed data.
+covariate,xj,The covariate Xj is given in relation to the covariate distribution PX
+covariate,px,"The covariate distribution PX is indexed by the distribution of the observed variable Z = (X, W, Y )"
+covariate,π(x),The covariate covariate is further associated with the nuisance function π(x)
+propensity score,π(x),The propensity score π(x) captures the treatment mechanism underlying the data generation process
+ite,"sample {zi = (xi, wi, yi)}n","The ITE is inferred from the sample {Zi = (Xi, Wi, Yi)}n"
+ite,coverage band (cid:98)c(x),The ITE band (cid:98)C(x) covers the true ITE for new test points with high probability
+ite,predictive intervals,Predictive intervals are constructed to have a predetermined target coverage of 1−α
+predictive intervals,coverage condition (3),The coverage condition in (3) must be satisfied for the predictive intervals to be marginally valid
+conformal prediction,predictive inference,Conformal prediction is a model- and distribution-free framework for predictive inference
+conformal prediction,cp,Refers to the model- and distribution-free framework for predictive inference that provides marginal coverage guarantees.
+variant of cp,split cp,Refers to a specific variant of CP known as split (or inductive) CP for the standard regression setup.
+training dataset,cp procedure,The CP procedure starts by splitting the training dataset into two disjoint subsets: proper training set and conformity score evaluation set.
+conformity score,prediction,Measures how unusual the prediction looks relative to previous examples.
+conformity score,ml model,Evaluation of conformity score for samples in calibration set and fitting an ML model.
+conformity score,absolute residual,Common choice for the conformity score is the absolute residual.
+predictive interval,new point,Describes the predictive interval at a new point with guaranteed marginal coverage.
+exchangeability,calibration and test data,The assumption needed for the condition to hold for marginal coverage is the exchangeability between calibration and test data.
+predictive interval,marginal coverage,"The interval is guaranteed to satisfy marginal coverage, meaning P(Yn+1 ∈ (cid:98)C(Xn+1)) ≥ 1−α."
+predictive interval,fixed length,The interval has a fixed length of 2QV (1−α) that is independent of x.
+adaptive intervals,variant of cp procedure,Proposed a variant of the CP procedure where the base model is a quantile regression with interval-valued predictions for adaptive intervals.
+quantile regression,interval-valued predictions,Quantile regression is a statistical technique used to estimate the quantiles of a probability distribution. Interval-valued predictions are predictions that provide ranges of possible values rather than point estimates.
+conformity score,signed distance,"The conformity score is defined as the signed distance between two values, calculated as the maximum of the difference or vice versa."
+conformal prediction,ites,Conformal prediction can be adapted for predictive inference of Individual Treatment Effects (ITEs) by applying it to a dataset of covariates and ITE tuples.
+oracle conformal prediction,cp framework,The oracle conformal prediction procedure adapts the CP framework for predictive inference of ITEs by using counterfactual outcomes in a dataset.
+ites,predictive inference,The challenges of predictive inference on ITEs involve constructing valid predictive intervals using conformity scores and considering the distinct characteristics of CATE estimation.
+ites,conformity scores,The validity of predictive intervals for ITEs is related to the conformity scores used in the procedure.
+ites,cate estimation,Inductive biases associated with different joint models of µ0 and µ1 can impact CATE estimation and regularization of the CATE function.
+cate estimation,distinct characteristics,Interactions between distinct characteristics of CATE estimation and the CP procedure are essential for constructing valid predictive intervals for ITEs.
+inductive biases,regularization,Different inductive biases imposed by joint models of µ0 and µ1 lead to varied forms of regularization on the CATE function.
+covariates,conformity scores,"The distributions of covariates influence the conformity scores in the procedure, affecting the induced distributions PV(0) and PV(1)."
+covariate shift,exchangeability assumption,Covariate shift breaks the exchangeability assumption necessary for the validity of CP.
+cp procedure,model architecture,"These method tie the CP procedure to model architecture, requiring inference on nuisance parameters, and hence lose the desirable post-hoc nature of CP."
+pos,ites,The resulting intervals for POs are then combined to produce intervals for ITEs.
+conformal meta-learners,inductive priors,"In [5], a taxonomy of “meta-learners” was introduced to categorize different inductive priors that can be incorporated into CATE estimators."
+t-learner,s-learner,"For example, the T-learner estimates µ0 and µ1 independently using D0 and D1, while the S-learner models the treatment variable W as an additional covariate in a joint regression model µ(X, W) and estimates CATE as τ(x) = µ(x, 1) - µ(x, 0)."
+cate meta-learners,cp,"In this Section, we propose an end-to-end solution to (1) and (2) by applying CP on top of CATE meta-learners in a post-hoc fashion, thereby decoupling the."
+cp procedure,cate model,"The CP procedure is derived from the CATE model, allowing direct inference on ITEs."
+cp procedure,pseudo-outcome regression,The CP procedure involves pseudo-outcome regression for CATE estimation.
+cate model,pseudo-outcome regression,Pseudo-outcome regression is used in the CATE model for estimation.
+pseudo-outcome regression,cate meta-learners,CATE meta-learners are based on pseudo-outcome regression for estimation.
+pseudo-outcome regression,two-stage pseudo-outcome regression,Two-stage pseudo-outcome regression is a subclass of CATE meta-learners.
+cate meta-learners,pseudo-outcome regression,Pseudo-outcome regression is used by CATE meta-learners for estimation.
+pseudo-outcome regression,pseudo-intervals,Pseudo-outcome regression is used to create pseudo-intervals in the framework.
+pseudo-outcome regression,conformal meta-learner,Pseudo-outcome regression is a step in the Conformal Meta-learner algorithm.
+nuisance estimates,pseudo-outcomes,The nuisance estimates obtained in Stage 1 are used to create pseudo-outcomes that depend on observable variables. The CATE estimate is then obtained by regressing the pseudo-outcome on the covariate X.
+pseudo-outcomes,covariate x,The CATE estimate is obtained by regressing the pseudo-outcome on the covariate X.
+x-learner,pseudo-outcomes,"X-learner pseudo-outcomes are calculated based on certain formulas involving variables W, Y, and the corresponding means."
+ipw-learner,pseudo-outcomes,IPW-learner pseudo-outcomes are calculated by reweighting factual outcomes using propensity scores to match the CATE.
+dr-learner,pseudo-outcomes,DR-learner pseudo-outcomes are calculated using propensity scores and means of different variables.
+propensity scores,cate,Propensity scores are used to match the Conditional Average Treatment Effect (CATE) through the equation E[(cid:101)Yφ
+x-learner,regression,"X-learner utilizes regression coupled with specific architectures for joint modeling of(cid:98)µ0 and(cid:98)µ1, showing competitive performance for CATE estimation."
+dr-learner,x-learner,DR-learner combines the approaches of X-learner and regression to enhance the accuracy of estimating treatment effects.
+meta-learners,pseudo-outcome regression,"Existing meta-learners are described as instantiations of pseudo-outcome regression, which is fundamental for accurate treatment effect estimation."
+conformal meta-learner framework,cp procedure,"The conformal meta-learner framework decouples the CP procedure from the inductive priors encoded by meta-learners, leading to improved CATE estimation and enabling efficient inference on Individual Treatment Effects (ITEs)."
+pseudo-outcome regression,predictive inference,Pseudo-outcome regression serves as the basis for predictive inference where meta-learners are calibrated via pseudo-outcomes to generate accurate pseudo-intervals for ITEs.
+dataset d,nuisance parameters φ,"The dataset D is used to estimate the nuisance parameters φ, which are then employed to transform the dataset into covariate/pseudo-outcome pairs for further analysis."
+cate model,covariate/pseudo-outcome pairs,A CATE model is trained using covariate/pseudo-outcome pairs as input data
+conformity scores,pseudo-outcomes,Conformity scores are computed for the CATE model on pseudo-outcomes
+predictive interval,new point xn+1,A predictive interval is constructed for a new point Xn+1 based on a target coverage of 1-α
+vφ,pseudo-interval,Vφ is used to construct a pseudo-interval
+conformal meta-learner,adjusted models τ0 and τ1,The conformal meta-learner uses adjusted models τ0 and τ1 trained separately on treated and control datasets
+x-learner,weighted sum of two regression models,"The X-learner involves a weighted sum of two regression models, as illustrated in a special case"
+conditional on φ,pseudo-outcomes in calibration data,Pseudo-outcomes in calibration data are drawn from the target covariate distribution conditional on φ
+conformity scores vφ,transformed outcomes v∗,"Conformity scores Vφ and transformed outcomes V∗ are not exchangeable, even though they are drawn from the same covariate distribution"
+vφ,v ∗,"Vφ and V ∗ are not exchangeable, even though they are drawn from the outcomes. This indicates a relationship of non-exchangeability between the two concepts."
+coverage guarantees,true ite y (1) − y (0),Coverage guarantees do not immediately translate to the true Individual Treatment Effect (ITE) Y (1) − Y (0). This indicates a relationship of translation of guarantees to the actual treatment effect.
+pseudo-outcomes,pseudo-intervals,Certain choices of pseudo-outcomes can lead to the creation of valid pseudo-intervals for ITE inference without needing exchangeability of Vφ and V ∗. This shows a relationship of dependence between pseudo-outcomes and pseudo-intervals.
+conformal meta-learners,stochastic ordering framework,The validity of conformal meta-learners is analyzed within a Stochastic Ordering Framework. This indicates a relationship of analysis and validation within a specific framework.
+pseudo-intervals,conformal meta-learners,Pseudo-intervals are used in the analysis of the validity of conformal meta-learners. This highlights a relationship where pseudo-intervals contribute to the assessment of meta-learners' validity.
+conformal meta-learners,stochastic orders of vφ and v ∗,The analysis of conformal meta-learners involves the examination of stochastic orders of Vφ and V ∗. This suggests a relationship where meta-learners' analysis includes comparisons based on stochastic orders.
+pseudo-intervals,oracle intervals,Pseudo-intervals are compared to oracle intervals to assess their coverage. This implies a relationship where pseudo-intervals are evaluated based on oracle intervals.
+stochastic orders,cumulative distribution functions (cdfs) f and g,Stochastic orders involve the comparison of cumulative distribution functions F and G. This demonstrates a relationship where orders are assessed based on CDFs.
+distribution functions,cdfs,"The terms 'distribution functions' and 'CDFs' are related as CDFs are a type of distribution function, representing the probability distribution of a continuous random variable."
+f,g,"The terms 'F' and 'G' are related in the context of stochastic dominance, where F has dominance over G based on certain conditions."
+stochastic dominance,fosd,The terms 'Stochastic dominance' and 'FOSD' are related as FOSD is a form of stochastic dominance where one distribution dominates another.
+f,g,"The terms 'F' and 'G' are related in the context of monotone convex dominance, where F has dominance over G."
+stochastic ordering,decision theory,The terms 'Stochastic ordering' and 'decision theory' are related as stochastic ordering is a useful tool in decision theory to analyze decisions based on varying risk attitudes.
+distribution f,g,The terms 'distribution F' and 'G' are related as FOSD and SOSD are used to compare the favorability of one distribution over another based on the utility functions of decision-makers.
+f,g,"The terms 'F' and 'G' are related in the context of MCX, where F is favored by decision-makers with non-decreasing convex utility functions."
+cdfs,crossing point,The terms 'CDFs' and 'crossing points' are related as crossing points represent the point of intersection between two CDFs in certain scenarios.
+f,meta-learners,The terms 'F' and 'meta-learners' are related as certain conditions provided in the context determine the validity of conformal meta-learners.
+theorem,conformal meta-learners,Theorem provides sufficient conditions for the validity of conformal meta-learners.
+conformal meta-learners,stochastic orders,Conformal meta-learners validity is based on the stochastic orders of their conformity scores.
+theorem 1,exchangeable,"If (Xi, Wi, Yi(0), Yi(1)), i = 1, . . . , n + 1 are exchangeable, Theorem 1 provides conditions for the validity of conformal meta-learners."
+vφ,v∗,"If Vφ ⪰(1) V ∗ or Vφ ⪯(2) V ∗ or Vφ ⪰mcx V ∗, certain conditions are satisfied."
+vφ,meta-learner,The conformity score Vφ of the meta-learner is compared to other scores for validity.
+figure 3,high-probability coverage,Conformal meta-learner validity is related to achieving high-probability coverage as shown in Figure 3.
+vφ,v ∗,Vφ is greater than or equal to V ∗ in a distribution-free stochastic order. This relationship satisfies the condition for the DR-learners.
+stochastic orders,conformity scores,Stochastic orders are related to conformity scores in determining the meta-learners' predictive intervals' conservatism.
+oracle intervals,predictive intervals,The predictive intervals of conformal meta-learners are naturally more conservative than the oracle intervals.
+theorem 1,conditions (i)-(iii),The meta-learner's fulfillment of conditions (i)-(iii) from Theorem 1 depends on how the pseudo-outcome is constructed.
+vφ,v ∗,The IPW- and DR-learners satisfy Vφ being greater than or equal to V ∗ by design.
+outcome,cate,The outcome is equal to the Conditional Average Treatment Effect (CATE) in expectation.
+cate,τ (x),The CATE has a construction that enables the IPW-data distribution and the ML model for nuisance estimates.
+(cid:98)µ0,(cid:98)µ1,The ML model uses nuisance estimates (cid:98)µ0 and (cid:98)µ1.
+ipw-theorem 2,vφ,IPW-Theorem 2 states that the stochastic ordering of Vφ and V* depends on the specific choice of the conformal and DR-learners.
+dr-learners,average treatment effects (ate),DR-learners provide unbiased estimates of ATE independent of the data distribution and ML model used.
+dr-learners,conformity scores,DR-learners guarantee stochastic (convex) dominance of their conformity scores regardless of the data distribution and ML model choice.
+x-learner,pseudo-outcomes,"X-learner does not use the knowledge of pi to construct its pseudo-outcomes, which affects the (distribution-free) stochastic order."
+x-learner,nuisance estimates (cid:98)µ0,The achieved coverage of X-learner depends on the nuisance estimates (cid:98)µ0 and (cid:98)µ1.
+conformal meta-learners,valid end-to-end predictive inference of ites,Conformal meta-learners enable valid end-to-end predictive inference of Individual Treatment Effects (ITEs).
+conformal meta-learners,propensity score pi,"To guarantee model and distribution-free stochastic ordering of conformity scores, the propensity score pi must be known."
+model,distribution,To guarantee model- and distribution-free stochastic ordering of conformity scores
+limitation,method,The limitation is not unique to our method and is also encountered in methods based on weighted CP.
+characterization,α∗,Exact characterization of α∗ is difficult and depends on the data distribution.
+procedures,inferring α∗,Devising procedures for inferring α∗ based on observable variables or deriving theoretical upper bounds on α∗ are interesting directions for future work.
+evaluation,α∗,Focus on empirical evaluation of α∗ in semi-synthetic experiments.
+method,previous work,Detailed comparison between our method and previous work is provided in Appendix B.5 Experiments
+ites,datasets,True ITEs are never observed in real-world datasets so conducting numerical experiments using synthetic and semi-synthetic datasets is common practice.
+synthetic datasets,data-generation process,Consider a variant of the data-generation process in Section 3.6 in [1] for creating synthetic datasets.
+µ1,ζ,"The function µ1(x) is modeled as ζ(x1) · ζ(x2), where ζ is defined as 1/(1 + exp(−12(x − 0.5)))"
+µ0,ζ,"The function µ0(x) is modeled as γζ(x1) · ζ(x2), where γ ∈ [0, 1] is a parameter controlling the treatment effect, and ζ is defined as 1/(1 + exp(−12(x − 0.5)))"
+ζ,γ,The parameter γ in the model controls the treatment effect where ζ is a function given by 1/(1 + exp(−12(x − 0.5)))
+wcp,cm,"In the context, WCP stands for weighted CP and CM stands for conformal meta-learners"
+pos,y,The POs are sampled from the distribution Y (w)
+setup a,ζ = 1,Setup A refers to a situation where the treatment has no effect denoted by ζ = 1
+setup b,ζ = 0,Setup B refers to a scenario where the treatment effects are heterogeneous denoted by ζ = 0
+nlsm,ihdp,The National Study of Learning Mindsets (NLSM) dataset and the IHDP benchmark dataset are well-known semi-synthetic datasets involving real covariates and simulated outcomes
+baseline models,predictive intervals,Baseline models are considered that provide valid predictive intervals for Individual Treatment Effects (ITEs)
+state-of-the-art methods,weighted conformal prediction (wcp),State-of-the-art methods are based on weighted conformal prediction (WCP) proposed in [1].
+wcp variants,naïve wcp,Three variants of WCP in [1]: (1) Naïve WCP which combines the PO intervals using Bonferroni correction.
+wcp variants,exact nested wcp,Three variants of WCP in [1]: (2) Exact Nested WCP which applies WCP to plug-in estimates of ITEs in treatment and control groups followed by a secondary CP procedure.
+wcp variants,inexact nested wcp,Three variants of WCP in [1]: (3) Inexact Nested WCP follows the same steps of the exact version but replaces the secondary CP with conditional quantile regression.
+baseline models,gradient boosting,The same model (Gradient Boosting) is used for nuisance and pseudo-outcome modeling for all baselines.
+baseline models,conformal quantile regression method,The conformal quantile regression method in [25] is used to construct predictive intervals for all baselines.
+ipw- and dr-learners,fosd,IPW- and DR-learners demonstrate a robust Fraction of Strongly Discardables (FOSD) in the majority of experiments.
+dr-learner,point estimation accuracy and interval efficiency,DR-learner exhibits superior point estimation accuracy and interval efficiency in most experiments compared to all other baselines.
+conformal meta-learners,discrepancy between the cdfs,The effectiveness of conformal meta-learners depends on the discrepancy between the Cumulative Distribution Functions (CDFs).
+conformal meta-learners,effectiveness,The effectiveness of conformal meta-learners is dependent on the discrepancy between the CDFs of conformity scores and oracle scores.
+effectiveness,cdfs,The effectiveness of conformal meta-learners is related to the CDFs of conformity scores and oracle scores.
+effectiveness,discrepancy,The effectiveness of conformal meta-learners depends on the discrepancy between the CDFs of conformity scores and oracle scores.
+pseudo-outcome transformations,thicker tails,Pseudo-outcome transformations that induce thicker tails in conformity scores can cause conformal meta-learners to under-perform.
+figure 4(a),empirical cdf,Figure 4(a) depicts the empirical CDF of the conformity scores Vφ and oracle scores V ∗ for the three meta-learners under study.
+meta-learners,cdfs,The CDFs are averaged over 100 runs of Setups A and B of the synthetic generation process.
+meta-learners,runs,The CDFs are averaged over 100 runs of Setups A and B of the synthetic generation process.
+meta-learners,synthetic generation process,The CDFs are averaged over 100 runs of Setups A and B of the synthetic generation process.
+coverage,naïve,"Coverage is represented as 0.89 (0.02), 0.99 (0.00), 0.61 (0.04) for Naïve."
+coverage,inexactx,Coverage is represented as 0.65 (0.04) for InexactX.
+coverage,ipw,Coverage is represented as 0.99 (0.00) for IPW.
+coverage,dr,Coverage is represented as 0.96 (0.01) for DR.
+ihdpavg. len.,baselines,IHDPAvg. len. corresponds to the performance of all baselines in semi-synthetic datasets.
+rmse,baselines,RMSE values correspond to the performance of all baselines in semi-synthetic datasets.
+nlsmavg. len.,baselines,NLSMAvg. len. corresponds to the performance of all baselines in semi-synthetic datasets.
+figure 5,stochastic orders,Figure 5 depicts stochastic orders in IHDP/NLSM evaluated across all runs.
+fosd,oracle scores,"FOSD (Vφ ⪰(1) V ∗) implies the weaker conditions of Vφ ⪯(2) V ∗ and Vφ ⪰mcx V ∗, demonstrating the stochastic dominance condition achieved in practice is stronger than the theoretical guarantee provided by oracle scores."
+fosd,x-learner,"The conformity scores of the X-learner are dominated by oracle scores in the FOSD sense, as indicated by Theorem 2."
+x-learner,stochastic order,Theorem 2 indicates that X-learners do not guarantee a distribution-free stochastic order.
+ipw-learners,ite,"Empirical stochastic orders predict that IPW- and DR-learners will cover ITEs, while the X-learner will not achieve coverage."
+ipw-learners,dr-learners,"IPW- and DR-learners satisfy a stronger FOSD condition, indicating their range of validity spans all levels of coverage."
+ipw-learners,theorem 2,A stronger version of Theorem 2 outlining the conditions under which IPW- and DR-learners achieve FOSD could be possible.
+predictive inference procedure,"coverage, efficiency, point estimation accuracy","The performance of a predictive inference procedure can be characterized in terms of three metrics: achieved coverage for true ITEs, expected efficiency, and point estimation accuracy."
+procedure,metrics,"Procedure can be characterized in terms of three metrics: achieved coverage for true ITEs, expected length of predictive intervals, and root-mean-square error (RMSE) in CATE estimates."
+metrics,achieved coverage,Metrics include achieved coverage for true ITEs.
+metrics,expected length,Metrics include expected length of predictive intervals.
+metrics,rmse,Metrics include root-mean-square error (RMSE) in CATE estimates.
+dr-learner,metrics,"In most experiments, we find that the DR-learner strikes a balance between the three metrics."
+dr-learner,valid wcp procedures,"In Figure 4(b), the DR-learner outperforms the valid WCP procedures in terms of RMSE and interval length."
+dr-learner,x-learner,The DR-learner outperforms the X-learner in terms of RMSE and interval efficiency based on experiments.
+inexact wcp baseline,performance trends,"The inexact WCP baseline's performance trends show competitive efficiency and calibration, but lack consistency in RMSE performance under different inductive biases."
+meta-learners,poor performance,The semi-synthetic experiments on IHDP and NLSM datasets shed light on when meta-learners may perform poorly.
+dr-learner,ihdp dataset,"The DR-learner outperforms all baselines on the IHDP dataset in terms of RMSE, interval efficiency, and achieves the desired coverage of 90%."
+performance,conformity scores,Empirical performance depends on how closely the CDF of conformity scores matches the oracle CDF.
+learner performance,conformity scores,learner performance deteriorates when conformity scores have 'very strong' dominance over oracle scores
+conformity scores,oracle scores,"conformity scores have a closer lower bound on the oracle CDF, the DR-learner performance is competitive"
+pseudo-outcome transformation,regression targets,"significant variability in regression targets induced by pseudo-outcome transformation will result in a lower CDF, poorer accuracy of pseudo-outcome regression, and longer predictive intervals"
+dr-learner,ipw-learner,DR-learner consistently outperforms the IPW-learner as it provides a closer approximation of the oracle CDF
+pseudo-outcome transformation,oracle score cdfs,future work could focus on analyzing the gap between pseudo-outcome and oracle score CDFs and designing pseudo-outcome transformations that optimize efficiency while preserving stochastic orders
+treatment effects,causal effects,estimation and inference of treatment effects is challenging because causal effects are not directly observable
+conformal meta-learners,machine learning model,"developed a general framework for inference of treatment effects, dubbed conformal meta-learners, that is compatible with any machine learning model"
+conformal prediction,model-agnostic meta-learners,framework inherits the model- and distribution-free validity of conformal prediction as well as the estimation accuracy of model-agnostic meta-learners of treatment effects
+theoretical framework,method,introduce a new theoretical framework based on stochastic ordering to assess the validity of our method
+framework,stochastic ordering,The framework is based on stochastic ordering to assess the validity of our method.
+framework,method,The framework guides the development of new models optimized for both accurate estimation and valid inference.
+stochastic ordering,method,Stochastic ordering is used in the method to assess its validity.

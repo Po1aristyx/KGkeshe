@@ -1,0 +1,161 @@
+node_1,node_2,edge
+language model,tokens,"Language models are trained using tokens, and different tokens have distinct loss patterns during training."
+rho-1,language model,RHO-1 is a new type of language model that employs Selective Language Modeling (SLM) compared to traditional LMs.
+rho-1,tokens,RHO-1 selectively trains on useful tokens that align with the desired distribution by scoring tokens using a reference model.
+rho-1,pretraining,Continual pretraining on various corpus sizes enables RHO-1 to achieve significant improvements in accuracy and performance.
+rho-1,deepseekmath,"RHO-1 achieves state-of-the-art results on the MATH dataset, matching DeepSeekMath with only 3% of the pretraining tokens."
+continual pretraining,lms,Figure 1 shows the continual pretraining of 1B and 7B LMs with OpenWebMath tokens to train RHO-1.
+selective language modeling (slm),baselines,SLM improves average few-shot accuracy on GSM8k and MATH by over 16% compared to baselines trained using causal language modeling.
+slm,baseline performance,SLM achieves the baseline performance 5-10x faster.
+causal language modeling (clm),tokens,"CLM trains on all tokens, compared to SLM which selectively applies loss on useful and clean tokens."
+model parameters,dataset size,Scaling up model parameters and dataset size has consistently elevated the next-token prediction accuracy in large language models.
+data filtering,heuristics and classifiers,"Data filtering has become crucial, using various heuristics and classifiers to select training documents."
+data filtering,high-quality datasets,"Despite thorough document-level filtering, high-quality datasets still contain many noisy elements."
+high-quality datasets,noisy tokens,High-quality datasets still contain many noisy tokens that can negatively affect training
+removing tokens,meaning alteration,Removing tokens might alter the text's meaning
+overly strict filtering,exclude useful data,Overly strict filtering could exclude useful data
+research,web data distribution,Research indicates that the distribution of web data does not inherently align with the ideal distribution for downstream applications
+common corpus,undesirable content,Common corpus at the token level may include undesirable content like hallucinations or highly ambiguous tokens
+same loss application,inefficient computation,Applying the same loss to all tokens can lead to inefficient computation on non-essential tokens
+research,language models learning,"To explore how language models learn at the token level, we initially examined training dynamics"
+easy tokens,hard tokens,The context mentions 'easy tokens' and 'hard tokens' which exhibit variable losses and resist convergence
+rho-1 models,selective language modeling (slm),RHO-1 models are introduced and trained with a novel Selective Language Modeling (SLM) objective
+slm,reference language model,SLM trains a reference language model on high-quality corpora to score tokens according to the desired distribution
+slm,tokens,SLM uses the reference model to score each token in a corpus using its loss and trains the language model only on those tokens that exhibit a high excess loss
+slm,token efficiency,SLM significantly enhances token efficiency during training and improves performance on downstream tasks
+slm,perplexity scores,"SLM effectively identifies tokens relevant to the target distribution, resulting in improved perplexity scores"
+rho,tokens,Rho denotes selective modeling of tokens with higher information density
+tokens,categories of tokens,The context mentions four categories of tokens and their loss during pretraining
+pretraining,tokens,"Pretraining involves the process of training models with selected tokens, as described in the context"
+slm,math continual pretraining,Selective Language Modeling (SLM) demonstrates its effectiveness on math continual pretraining according to the context
+rho-1-7b,deepseekmath-7b,"RHO-1-7B outperforms DeepSeekMath-7B with fewer tokens, as mentioned in the context"
+lm,accuracy,"LMs like RHO-1-1B and 7B achieve high accuracy percentages in math tasks, as stated in the context"
+slm,tinyllama-1b,"SLM is utilized to improve Tinyllama-1B model performance across various benchmarks, as mentioned in the context"
+tinyllama-1b,openwebmath,Tinyllama-1B is pre-trained with 15B tokens from OpenWebMath
+tinyllama-1b,token-level loss,Evaluation of token-level loss at intervals while pre-training
+loss trajectory,categories,Tokens fall into four categories based on their loss trajectory
+categories,loss reduction,26% of tokens show notable loss reduction while 51% remain in L→L category
+categories,challenging tokens,11% of tokens persistently challenging (H→H)
+loss increase,training,12% of tokens experience unexpected loss increase during training
+token losses,fluctuations,A significant number of token losses exhibit persistent fluctuations
+loss,training dynamic,There is a complex training dynamic among different tokens in terms of loss
+selective language modeling (slm),reference model,SLM is inspired by the practice of the reference model in document-level filtering. The pipeline of SLM involves training a reference model on a curated dataset and then assessing the loss of each token to selectively train the language model.
+selective language modeling (slm),token-level data selection,"SLM involves a token-level data selection process, where tokens with high excess loss are focused on during training to enhance the model's efficiency."
+reference model,training,The reference model is trained on a high-quality dataset and then used to score each token's loss in a corpus to guide the training of the language model.
+reference model,tokens,"The reference model is used to assess the loss of each token within the pretraining corpus, allowing for selective training of the language model based on token scores."
+token-level data selection,excess loss,"The token-level data selection process involves focusing on tokens with high excess loss between the training and reference model, as they are considered more learnable and aligned with the desired distribution."
+excess loss,learnable tokens,"Tokens with high excess loss are deemed more learnable, indicating they are better aligned with the desired distribution, and are therefore selectively trained during the language model training process."
+loss,learnable,The concept of 'loss' is related to 'learnable' as the text mentions that losses are more learnable in a certain context.
+loss,better aligned,The concept of 'loss' is related to 'better aligned' as the text highlights that losses are better aligned with the desired distribution.
+loss,tokens,The concept of 'loss' is related to 'tokens' as the text discusses excluding irrelevant or low-quality tokens in the context of losses being learnable and aligned with the desired distribution.
+distribution,data,The concept of 'distribution' is related to 'data' as the text mentions curating a dataset reflecting the desired data distribution.
+model,reference,The concept of 'model' is related to 'reference' as the text describes training a reference model (RM) using standard cross-entropy loss.
+reference,loss,The concept of 'reference' is related to 'loss' as the text explains computing the reference loss (LRM) of a token based on the probability assigned by the reference model.
+token,loss,The concept of 'token' is related to 'loss' as the text discusses calculating the reference loss of a token within a larger pretraining corpus.
+pretraining,token,The concept of 'pretraining' is related to 'token' as the text mentions assessing token loss within a pretraining corpus.
+reference,pretraining,The concept of 'reference' is related to 'pretraining' as the text describes the use of reference model to assess token loss within a pretraining corpus.
+token,reference,The concept of 'token' is related to 'reference' as the text discusses establishing reference loss for selective pretraining based on the probability assigned by the reference model.
+cross-entropy loss,rm,The concept of 'cross-entropy loss' is related to 'RM' as the text mentions training the reference model using standard cross-entropy loss.
+token,lrm,The concept of 'token' is related to 'LRM' as the text explains computing the reference loss of a token.
+loss,selective pretraining,The concept of 'loss' is related to 'selective pretraining' as the text discusses using reference loss for selective pretraining to focus on influential tokens.
+conditional language modeling,cross-entropy loss,The concept of 'conditional language modeling' is related to 'cross-entropy loss' as the text mentions employing cross-entropy loss in CLM.
+known,θ,The concept of 'known' is related to 'θ' as the text describes the loss function parameterized by model θ in CLM.
+known,sequence,The concept of 'known' is related to 'sequence' as the text mentions the length of the sequence in CLM.
+token,excess loss,The concept of 'token' is related to 'excess loss' as the text discusses training the language model with a focus on tokens exhibiting a high excess loss in SLM.
+token,slm,The concept of 'token' is related to 'SLM' as the text describes training the language model with a focus on certain tokens in Selective Language Modeling.
+excess loss,token,The concept of 'excess loss' is related to 'token' as the text explains the concept of excess loss for a token.
+excess loss,reference model,The excess loss (L∆) for a token xi is defined as the difference between the current training model loss (Lθ) and the reference loss:L∆(xi) = Lθ(xi) − LRM(xi)
+token,excess loss,"We introduce a token selection ratio k%, which determines the proportion of tokens to be included based on their excess loss."
+tokens,excess loss,N ∗ k% defines the number of tokens that fall within the top k% of excess loss.
+indicator function,token,"The indicator function Ik%(xi) is defined as:N∑i=1Ik%(xi)=∑i=1^N10if xi ranks in the top k% by S(xi), otherwise."
+model,few-shot prompting,All models are tested with few-shot prompting.
+math-related tokens,evaluation,"We use OpenAI’s MATH subset [Lightman et al., 2023] for evaluation."
+deepseekllm,owm,"DeepSeekLLM is related to OWM in the context of model sizes mentioned in billions (1.3B, 14B, 150B)"
+deepseekmath,owm,DeepSeekMath is related to OWM in the context of model sizes mentioned in billions (1.3B)
+deepseekmath,intern-math,DeepSeekMath is related to Intern-Math in the context of model sizes mentioned in billions (1.3B)
+intern-math,owm,"Intern-Math is related to OWM in the context of model sizes mentioned in billions (7B, 14B)"
+tinyllama-ct,owm,"Tinyllama-CT is related to OWM in the context of model sizes mentioned in billions (1.1B, 14B, 15B)"
+tinyllama-ct,mistral-ct,Tinyllama-CT is related to Mistral-CT in the context of continual pretraining mentioned on both models
+rho-1-math,owm,"RHO-1-Math is related to OWM in the context of model sizes mentioned in billions (1.1B, 14B, 30B)"
+mistral-ct,owm,"Mistral-CT is related to OWM in the context of model sizes mentioned in billions (7B, 14B, 15B)"
+mistral-ct,continual pretraining,Mistral-CT is related to Continual Pretraining in the context of the approach used for training models
+base models,llama-2,Base Models are related to LLaMA-2 in the context of model sizes mentioned in billions (7B)
+reference model,corpus,The reference model was compiled using a corpus of 1.9B tokens from open-source datasets.
+corpus,open-source datasets,"The corpus used for the reference model includes tokens from open-source datasets, such as Tulu-v2 and OpenHermes-2.5."
+reference model,training,The reference model was trained for 3 epochs.
+training,learning rate,The maximum learning rate for training was set at 5e-5 for 1B models and 1e-5 for 7B models.
+training,sequence lengths,The maximum sequence lengths were set to 2048 for 1B models and 4096 for 7B models during training.
+training,model initialization,"In all main experiments, the continual pretraining model and the reference model were initialized with the same base model."
+model initialization,base model,The continual pretraining model and the reference model were initialized with the same base model in all main experiments.
+mathematical reasoning,openwebmath dataset,"For mathematical reasoning, the OpenWebMath (OWM) dataset was utilized, comprising approximately 14B tokens sourced from math-related web pages in the Common Crawl."
+math pretraining,pretraining corpus,"For math pretraining, the OpenWebMath (OWM) dataset and other datasets were combined, training on a total of 80 billion tokens with a mix ratio of 6:3:1."
+math pretraining,continual pretraining model,"For math pretraining, the process involves continuing pretraining on the Tinyllama-1.1B model."
+mistral-7b model,learning rates,The Mistral-7B model was trained with learning rates of 8e-5.
+mistral-7b model,batch size,The batch size for the Mistral-7B model was uniformly set to 1M tokens.
+tinyllama-1.1b model,token selection ratio,The token selection ratio for the Tinyllama-1.1B model was set to 60%.
+mistral-ct,baseline setting,Mistral-CT was used as a baseline setting for the models.
+mammoth,tora,Previous best models MAmmoTH and ToRA are compared for fine-tuning results
+mammoth,tora,Previous best models MAmmoTH and ToRA are compared for fine-tuning results
+mammoth,tora,Previous best models MAmmoTH and ToRA are compared for fine-tuning results
+mammoth,tora,Previous best models MAmmoTH and ToRA are compared for fine-tuning results
+mammoth,tora,Previous best models MAmmoTH and ToRA are compared for fine-tuning results
+lm-eval-harness4,math evaluation suite5,lm-eval-harness4 used for general tasks and math evaluation suite5 used for math tasks
+vllm(v0.3.2),inference,vllm(v0.3.2) is used to speed up inference
+few-shot,pretrained models,few-shot capabilities and fine-tuning performance compared for pretrained models
+few-shot,pretrained models,few-shot capabilities and fine-tuning performance compared for pretrained models
+pretraining,rho-1-math,RHO-1-Math has achieved the average few-shot accuracy improvement in comparison to direct pretraining
+rho-1-math,deepseekmath-7b,RHO-1-Math compared to DeepSeekMath-7B in terms of few-shot accuracy improvement
+pretrained models,tokens,Comparison between RHO-1-7B pretrained on 15 billion tokens and DeepSeekMath-7B pretrained on 500 billion tokens
+rho-1-7b,results,RHO-1-7B achieved comparable results despite being pretrained on fewer tokens
+pretrained,tokens,pretrained models achieved comparable results by selecting 10.5 billion tokens for training
+rho-1,baseline models,fine-tuned RHO-1 and baseline models on 69k ToRA corpus for tool-integrated reasoning
+rho-1-1b,rho-1-7b,RHO-1-1B achieved a state-of-the-art 40.6% and RHO-1-7B achieved 51.8% on the MATH dataset
+rho-1,tasks,"RHO-1 demonstrated a certain degree of generalizability on some unseen tasks, with an average few-shot accuracy improvement"
+tinyllama-1b,tokens,continual pretraining of Tinyllama-1B on 80G general tokens for general pretraining
+tinyllama-ct,rho-1,Tinyllama-CT is trained with CLM while RHO-1 is trained with the proposed SLM
+slm,general pretraining,the efficacy of SLM in general pretraining is confirmed by continual training Tinyllama-1.1B on 80 billion tokens
+slm,model pre-training,SLM can enhance the effectiveness of model pre-training using only pre-training corpora
+reference model,openwebmath (owm) corpus,reference model was initially trained on the OpenWebMath (OWM) corpus
+reference model,proof-pile-2 (ppile),reference model was initially trained on a subset of Proof-Pile-2 (PPile)
+scoring functions,reference model loss (lrm),"employed two different scoring functions based on the reference model loss, LRM"
+scoring functions,information entropy of the next token (hrm),"employed two different scoring functions based on the information entropy of the next token, HRM"
+hrmowm,14b,HRMOWM is related to the value 14B
+hrmowm,15b,HRMOWM is related to the value 15B
+hrmowm,10.5b,HRMOWM is related to the value 10.5B
+lrm,hrm,LRM has an intersection with HRM
+lrm,ppile,LRM has an intersection with PPile
+ppile,55b,PPile is related to the value 55B
+ppile,52b,PPile is related to the value 52B
+toks gsm8k math svamp asdiv mawps mqa avg,8.4,Toks GSM8K MATH SVAMP ASDiv MAWPS MQA AVG is related to the value 8.4
+metamath,2024,MetaMath is related to the year 2024
+slm,clm,SLM and CLM are two different methods mentioned
+slm,ppile,SLM is related to training on PPile
+slm,reference model,SLM is used to train the reference model
+information entropy,score function,information entropy is used as the score function
+model,tokens,The model filters tokens and assesses their impact on validation and downstream losses after training.
+model,pretraining,The model was pretrained on 4B tokens and tracked loss variations across methods and validation sets.
+pretraining,tokens,Pretraining showed greater loss reduction on selected tokens compared to regular pretraining.
+pretraining,loss,Pretraining substantially lowers downstream loss of selected tokens.
+pretraining,performance,The loss of selected tokens correlates with downstream task performance.
+tokens,slm method,The tokens selected by the SLM method positively impact performance.
+slm method,training,The token selection process during the training of RHO-1 uses the SLM method.
+rho-1,openwebmath,RHO-1 was trained using the OpenWebMath during the training process.
+tokens,pretraining,Tokens were retained during actual pretraining.
+tokens,slm,Tokens selected by the SLM method are closely related to mathematics.
+slm,mathematics,SLM method is related to effectively training the model on mathematical content.
+tokens,checkpoints,Token filtering varies across different checkpoints during the training process.
+tokens,perplexity,There is a difference in the perplexity of tokens on different checkpoints.
+checkpoints,perplexity,Tokens selected by later checkpoints tend to have higher perplexity in later stages and lower perplexity in earlier stages.
+model,learning efficiency,"The model optimizes tokens with a larger learnable space first, thereby increasing learning efficiency."
+tokens,learnable space,"The model first optimizes tokens with a larger learnable space, thereby increasing learning efficiency."
+tokens,double descent,"Moreover, we noticed a sample-wise “double descent” on the loss of selected tokens, where the select token’s perplexity initially increases before decreases."
+selecting ratio,heuristic rules,"Generally, the selecting ratio is defined by heuristic rules, similar to the approach previously employed in the training of Masked Language Models (MLMs)."
+selecting tokens,original tokens,"As shown in Figure 9, the selected tokens are suitable for accounting for about 60% of the original tokens."
+selective language modeling(slm),rho-1,"In this paper, we propose using Selective Language Modeling(SLM) to train RHO-1, which selects more suitable tokens for the current pretraining stage."
+selective language modeling(slm),token level,"Our experiments and analysis in the fields of mathematics and general have demonstrated the effectiveness of the SLM method, emphasizing the importance of token level in the LLM pretraining process."
+future,improve pretraining of llms,The future research should focus on how to improve the pretraining of LLMs
+improve pretraining of llms,token level,"To enhance the pretraining of LLMs, research on the token level is crucial"
+zhenghao lin,chen lin,Both Zhenghao Lin and Chen Lin were supported by the National Key R&D Program of China
+natural science foundation of china,zhibin gou,Zhibin Gou received support from the Natural Science Foundation of China
+yujiu yang,shenzhen science and technology program,Yujiu Yang was supported by the Shenzhen Science and Technology Program
+graph neural network project,ping an technology,The 'Graph Neural Network Project' of Ping An Technology supported by Zhibin Gou and Yujiu Yang

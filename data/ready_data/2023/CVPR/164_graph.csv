@@ -1,0 +1,241 @@
+node_1,node_2,edge
+humans,bilateral memory consolidation (bimeco) framework,"both mentioned in context as entities, BiMeCo is proposed by inspired by the way our brains constantly rewrite and consolidate past recollections."
+bimeco,model parameters,"BiMeCo explicitly decouples model parameters into short-term memory module and long-term memory module, showing a relationship between the framework and model parameters."
+memory modules,knowledge distillation and momentum-based updating,memory modules interact dynamically by knowledge distillation and momentum-based updating for forming generic knowledge to prevent forgetting.
+bimeco,existing methods,"BiMeCo can be integrated into existing methods seamlessly, showing a relationship between the framework and existing methods."
+bimeco,continual learning (cl),"BiMeCo significantly improves the performance of existing continual learning methods, showing a relationship between the framework and CL."
+continual learning (cl),network,CL is introduced to foster the network to learn a sequence of tasks incrementally.
+continual learning (cl),training data,"In CL, the training data of different classes comes in a phase-by-phase manner."
+continual learning (cl),exemplars,"During training, a small number of exemplars of old classes are allowed to be saved in the memory buffer."
+exemplars,model,Exemplars of old classes are saved in the memory buffer to mitigate forgetting of previously learned tasks.
+model,new and old classes,"There is extreme data imbalance between new and old classes, making the model biased towards recently learned tasks."
+learning algorithms,exemplars,Learning algorithms have been proposed to approximate exemplars per class for model inference.
+learning algorithms,network predictions,Learning algorithms have been proposed to rectify the network predictions to alleviate the task bias.
+exemplars,class,Exemplars per class are used for model inference
+network predictions,task bias,Network predictions are rectified to alleviate the task bias
+model,old classes,The original model on old classes provides soft labels for resisting activating drifting
+literature achievements,methods,The literature achievements show that methods struggle to prevent forgetting with long task sequences
+cl methods,cifar-100,An empirical evaluation of CL methods is provided on CIFAR-100
+exemplars,replay,"Exemplars, compared with fine-tuning with Replay, boost accuracy on the 6-task sequence"
+resnet-type networks,cwd,ResNet-type networks show different accuracy gains with CwD on different task sequences
+memory buffer sizes,model parameters,Increasing memory buffer sizes or model parameters can alleviate forgetting for long task sequences
+strategies,continual learning system,Increasing memory buffer sizes or model parameters may not be optimal for a desirable continual learning system that can scale to a wide variety of incremental scenarios without extra overheads
+bilateral memory consolidation (bimeco),continual learning,BiMeCo is presented as a framework for continual learning in this work
+bilateral memory consolidation (bimeco),short-term memory module,BiMeCo disentangles model parameters into short-term memory module with focus on representation ability and rapid adaptation
+bilateral memory consolidation (bimeco),long-term memory module,BiMeCo disentangles model parameters into long-term memory module to prevent forgetting and consolidate working memory
+short-term memory module,long-term memory module,Short-term memory module interacts with long-term memory module to prevent forgetting and consolidate working memory
+long-term memory module,task-balance samples,Long-term memory module learns task-balance samples online to consolidate working memory
+short-term memory module,momentum-based updating,Short-term memory module inherits expressiveness from long-term memory module with momentum-based updating
+bimeco,memory samples,BiMeCo mines memory samples to form structured knowledge for all learned tasks
+bimeco,dynamic interactions,BiMeCo encourages dynamic interactions between different memories to produce rich feature representations
+dynamic interactions,previous knowledge,Dynamic interactions between different memories enable evoking previous knowledge while learning from changing data streams
+bimeco,parameter-efficient manner,BiMeCo can be integrated with existing models in a parameter-efficient manner through simple module replacement
+bimeco,lucir,"BiMeCo is integrated with LUCIR, bringing in a gain of at least +2.58% average incremental accuracy while significantly reducing parameters over other methods on the 6-task sequence under ResNet-18."
+bimeco,cwd,"BiMeCo achieves a superior result compared with CwD, bringing +5.52% accuracy gains with the reduction of parameters by 41.9% on the 26-task sequence under ResNet-101."
+bimeco,existing methods,BiMeCo is flexible and can be compatible with existing methods seamlessly with further performance gains.
+bimeco,model parameters,"The proposed BiMeCo decouples model parameters into two complementary memories, encouraging dynamic interactions between different degrees of memories to prevent forgetting for continual learning."
+bimeco,experiments,Extensive experiments as well as comprehensive ablation studies demonstrate the effectiveness of BiMeCo on three challenging benchmarks under a wide variety of incremental settings.
+cl methods,rehearsal,"CL methods can be grouped into four categories: rehearsal, regularization, task-recency bias."
+cl methods,rehearsal-based methods,"CL methods can be grouped into four categories, one of which is rehearsal-based methods"
+rehearsal-based methods,exemplars,rehearsal-based methods keep a small set of exemplars in a raw format or generate pseudo-samples for preventing forgetting
+exemplars,pseudo-samples,exemplars can be used to generate pseudo-samples for preventing forgetting
+rehearsal-based methods,approximate class means,rehearsal-based methods select the best approximate class means in the learned feature space
+approximate class means,exemplar samples,Subsequent work explores new update rules using exemplar samples
+exemplar samples,new update rules,new update rules can be based on exemplar samples
+exemplar samples,new sampling strategies,new sampling strategies can be explored using exemplar samples
+exemplar samples,generative models,generative models can be used to construct pseudo-examples based on exemplar samples
+regularization-based methods,regularization terms,Regularization-based methods use regularization terms in the loss function to mitigate forgetting
+regularization terms,weights,Some studies regularize the weights and perform the importance metric estimation for each parameter
+weights,importance metric estimation,weights are regularized and importance metric estimation is performed for each parameter
+regularization-based methods,importance of remembering feature representations,Some studies focus on the importance of remembering feature representations in Regularization-based methods
+cl,bias-correction methods,"Another line of CL is bias-correction methods, which aim to alleviate the tendency of the network to be biased toward the recently learned tasks"
+bias-correction methods,bic,BiC learns a bias correction layer for correcting task bias of the network with two-stage training
+cl,expansion-based methods,"Recently, expansion-based methods are proposed to dedicate different model parameters to each task for mitigating forgetting"
+expansion-based methods,previously learned parameters,expansion-based methods either freeze previously learned parameters to mitigate forgetting
+ent model parameters,task,ent model parameters are allocated to each task for mitigating forgetting
+model copy,task,a model copy is allocated to each task for mitigating forgetting
+method,expansion-based category,the proposed method falls into the expansion-based category
+method,studies,the proposed method differs from previous studies
+model parameters,tasks,dynamic interactions between model parameters of generality over all learned tasks and scalability over learning new tasks
+method,preventing forgetting,our method can effectively prevent forgetting with great parameter efficiency
+knowledge distillation,bilateral memory consolidation framework,Knowledge Distillation is proposed as a bilateral memory consolidation framework
+framework,parameter-efficient,the proposed framework is parameter-efficient
+framework,existing cl methods,the framework can be seamlessly integrated into existing CL methods
+knowledge distillation,student network,knowledge distillation is originally proposed to learn a more compact student network from a larger teacher network
+lwf,knowledge distillation technique,LwF employs knowledge distillation technique to keep the representations of previous data
+exemplars,memory buffer,a tiny number of samples can be stored in a memory buffer as exemplars
+t-th task,exemplars m1:t−1,"at the t-th task, exemplars M1:t−1, are comprised of old classes"
+pipeline,existing cl methods,the popular pipeline of existing CL methods is to directly load the union of new class data and a few exemplars
+existing cl methods,pipeline,The popular pipeline of existing CL methods involves directly loading the union of new class data Dt and a few exemplars M1:t−1 to train the model f (·; θ).
+exemplars,performance,"Due to memory constraint, the performance of the pipeline is typically dependent on selecting representative exemplars."
+new data,exemplars,Naive uniting a large amount of new data and a few exemplars causes high bias to recently learned tasks and quick forgetting of old tasks.
+techniques,exemplar sampling strategies,Issues like high bias and quick forgetting can be alleviated by techniques like exemplar sampling strategies.
+techniques,increasing model capacity,Techniques like increasing the model capacity for learning new tasks can also help in mitigating the limitations.
+continual learning system,tasks,A desirable continual learning system should scale to a large number of tasks without excessive human prior and increasing parameter overheads.
+bilateral memory consolidation,limitations,Bilateral Memory Consolidation (BiMeCo) is developed to mitigate the limitations of existing CL methods.
+bimeco,memory mechanism,BiMeCo explicitly decouples the memory mechanism into short-term phase and long-term phase for consolidating the structured knowledge.
+memory samples,structured knowledge,Mining structured knowledge from memory samples is key in consolidating the knowledge across all learned tasks.
+short-term phase,expressiveness,The short-term phase focuses on expressiveness with a large amount of training samples and rapid adaptation to recent tasks to form working memory.
+short-term phase,working memory,The short-term phase aims to form working memory by rapid adaptation to recent tasks.
+long-term phase,task-balance samples,The long-term phase learns a few task-balance samples online to consolidate working memory for guiding the short-term phase.
+short-term phase,forgetting,The long-term phase consolidates working memory to prevent forgetting in the short-term phase.
+long-term phase,expressiveness,The long-term phase inherits strong expressiveness from the short-term phase.
+bimeco,different degrees of memories,BiMeCo encourages dynamic interactions between different degrees of memories to produce rich representations.
+dynamic interactions,rich representations,Dynamic interactions between different degrees of memories produce rich representations in BiMeCo.
+scalability,learning new tasks,Rich representations from dynamic interactions preserve scalability over learning new tasks.
+generality,learned tasks,Rich representations from dynamic interactions preserve generality over the learned tasks.
+model parameters,short-term memory module,The model parameters are disentangled as short-term memory module in the model.
+model parameters,long-term memory module,The model parameters are disentangled as long-term memory module in the model.
+short-term memory module,representational capacity,Short-term memory module is responsible for representational capacity in learning the task sequence.
+long-term memory module,memorization,Long-term memory module is responsible for memorization in learning the task sequence.
+resnet,stacked residual blocks,ResNet comprises of stacked residual blocks
+m,exemplars m1:t−1,M is used as a shorthand for exemplars M1:t−1
+knowledge distillation,mitigating forgetting of previous tasks,Knowledge distillation is applied to mitigate forgetting of previous tasks
+model of previous tasks,teacher network,The model of previous tasks is used as the teacher network
+model of previous tasks,feature drift,The model of previous tasks is regularized to constrain their feature drift
+teacher network,online balance class distribution,The teacher network is trained on online balance class distribution of old and new tasks
+teacher network,generic input-conditional activation,The teacher network provides a generic input-conditional activation trained on class-balanced data
+our work,dino,Our work is analogous to DINO in self-supervised learning
+dino,self-supervised learning,DINO is analogous to self-supervised learning in terms of having the student and teacher with the same architecture and using distillation during training.
+dino,bilateral memory consolidation framework,The proposed bilateral memory consolidation framework for continual learning (CL) can be integrated with existing CL methods.
+bilateral memory consolidation framework,continual learning,The bilateral memory consolidation framework is designed for continual learning and can be readily integrated with existing CL methods.
+cl,tasks,"In continual learning (CL), a model is trained on a sequence of tasks with a distribution shift."
+tasks,training data pairs,Each task contains a set of training data pairs representing the input images and ground truth labels for the task.
+tasks,new classes,Each task in continual learning contains a set of new classes for training.
+tasks,distribution shift,Tasks in continual learning involve a distribution shift.
+bt,bm1,Uniting new samples Bt and limited exemplers BM1 to obtain Bt ∪ BM1 for training θs;
+bt,bm2,Randomly sampling ct/(ct + c1:t−1) ·
+zs,zl,"zs, zl ← f (Bt ∪ BM1; θs), f (Bt // zs, zl denote the concatenated outputs of L modules over the channel axis of θs, θl.;"
+bt ∪ bm1,θs,"Update model parameters [θs, θl, ϕ] on {Bt ∪ BM1,Btb from Dt to form class-balanced b ∪ BM2 ; θl)b ∪ BM2, zs, zl} by Eq. 6;2"
+θs,θl,θl ← mθl + (1 − m)θs;
+mt,m1:t−1,Replace M1:t−1 with M1:t−1 ∪ Mt in the memory.
+output embedding,bimeco,"In our BiMeCo, this output embedding is computed at each module, for both long-term memory and short-term memory."
+short-term memory,long-term memory,"Interestingly, consistent with self-supervised methods [10, 68], we observe that applying a stop-gradient (sg) operator on the long-term memory (teacher) to propagate gradients only through the short-term memory (student) can further boost the performance (Sec. 4.3)."
+momentum encoder,long-term memory,"We draw inspiration from the momentum encoder [25] and develop a momentum-based update rule – after each task, the long-term memory weights are updated by the following form θl ← mθl + (1 − m)θs,(3)"
+momentum-based update rule,long-term memory weights,The momentum-based update rule updates the long-term memory weights according to a specific formula after each task.
+momentum-based update rule,momentum coefficient,The momentum-based update rule involves a momentum coefficient that controls the extent of updating the memory weights.
+momentum encoder,parameters θs,The momentum encoder updates only the parameters θs through back-propagation.
+two types of memory,θs and θl,"The update process supports the synchronous gradient update of two types of memory, namely θs and θl, to enhance memory consolidation."
+memory consolidation,classification on the learned task sequence,"The goal of memory consolidation and classification on task sequence is the same, enabling knowledge transfer between memories."
+shared classification head,category-consistency constraint,The shared classification head acts as a unified interface and imposes a category-consistency constraint for information interaction and final classification improvement.
+model comprised of l modules,resnet with l stacked residual blocks,"The model consists of L modules like ResNet with stacked residual blocks, providing an example to illustrate the process."
+short-term memory,training batch bt,The short-term memory receives the training batch Bt and exemplars M1:t−1 as input during each task.
+long-term memory,small portion of samples bt,The long-term memory samples a small portion of samples Bt from the data stream to complement its memory updates.
+bt,dt,The samples Bt are drawn from Dt in line 5
+bt,bm1,The samples Bt are part of the union Bt ∪ BM1
+bt,xl,Bt is used to construct the class-balanced xl
+bm1,bm2,A random batch BM2 is united with samples from BM1
+bm1,m1:t−1,BM2 is sampled from M1:t−1 to construct the class-balanced xl
+xl,h,xl is used as input to the shared fully-connected layer h for network predictions
+h,network predictions,The shared fully-connected layer h is used to output the network predictions
+long-term memory,short-term memory,A distillation loss is used to transfer knowledge from long-term memory to short-term memory to prevent forgetting
+xs,fℓ(xs; θl),The output embeddings of xs are used for computing constraints by minimizing L2 distance
+fℓ(xs; θl),fℓ(xs; θs),Output embeddings from different modules are compared for knowledge interactions
+z,ψ,The embedding tensor z is used to compute an extracted embedding Ψ through horizontal and vertical pooling
+embedding,horizontal pooling,The extracted embedding is defined through horizontal pooling
+embedding,vertical pooling,The extracted embedding is defined through vertical pooling
+horizontal pooling,vertical pooling,Horizontal pooling and vertical pooling are related in the definition of the extracted embedding
+embedding,mini-batch dimension,The extracted embedding's notation omits the mini-batch dimension
+bilateral memory consolidation,incremental accuracy,"Bilateral Memory Consolidation (BiMeCo) is compared with the incremental accuracy (%) achieved with or without it. The study shows that implementing BiMeCo results in improved accuracy, as shown in Table 1."
+bilateral memory consolidation,long-term memory,"Bilateral Memory Consolidation (BiMeCo) interacts with long-term memory, providing guidance for preventing forgetting across learned tasks. The generalization ability of long-term memory is considered crucial for the effectiveness of BiMeCo."
+bilateral memory consolidation,short-term memory,The comparison between updating two memory branches synchronously by back-propagation in BiMeCo and updating only the short-term memory indicates that synchronously updating both branches works better. This highlights the importance of long-term memory in the context of BiMeCo.
+bilateral memory consolidation,pseudo siamese network,"BiMeCo is implemented with a Pseudo Siamese network, utilizing two branches with different weights and a shared head. This architectural choice is crucial for the functioning of BiMeCo in the context of continual learning."
+f,θs,The term f has a relationship with the term θs as they are both used in the context to describe a function with different weights and shared head.
+f,θl,The term f has a relationship with the term θl as they are both used in the context to describe a function with different weights and shared head.
+f,h,The term f has a relationship with the term h as they are both used in the context to describe a function with shared head.
+siamese network,mobilenet series,"The Siamese network is inspired by the MobileNet series for its module replacement strategies, as mentioned in the context."
+k × k convolution,sequential convolutional layer,"The k × k convolution is replaced with a sequential convolutional layer in the network, as detailed in the context."
+k × k convolution,depthwise convolution,"The k × k convolution is replaced with a depthwise convolution in the network, as mentioned in the context."
+pseudo siamese network,siamese network,The network is extended into a Pseudo Siamese network as detailed in the context.
+bimeco,training process,The overall training process of the proposed BiMeCo in a specific task setup is summarized in Alg. 1.
+bimeco,continual learning setups,"The proposed BiMeCo focuses on two typical continual learning setups: Class Incremental Learning and Tasks Incremental Learning, as mentioned in the context."
+til,cil,"TIL has access to task identity of test samples at inference time, while CIL is not allowed"
+cifar-100,imagenet,Both CIFAR-100 and ImageNet are datasets used in the experiments
+cifar-100,imagenet-100,Both CIFAR-100 and ImageNet-100 are datasets used in the experiments
+imagenet,imagenet-100,Both ImageNet and ImageNet-100 are datasets used in the experiments
+bimeco,state-of-the-art methods,BiMeCo is integrated into some state-of-the-art methods on challenging benchmarks to evaluate its effectiveness
+bimeco,bic,BiMeCo is combined with BiC as part of the advanced baselines
+bimeco,lucir,BiMeCo is combined with LUCIR as part of the advanced baselines
+bic,lucir,BiC and LUCIR are both advanced baselines mentioned in the context.
+bic,cwd,BiC and CwD are both advanced baselines mentioned in the context.
+cwd,aanet,CwD and AANet are both compared with BiMeCo and mentioned as strong expansion-based methods.
+bic,replay,BiC and Replay are both baselines mentioned for comparison.
+bimeco,lwf,BiMeCo is compared with LWF in the context.
+bimeco,icarl,BiMeCo is compared with iCaRL in the context.
+cwd,aanet,CwD and AANet are both compared with BiMeCo and mentioned as strong expansion-based methods.
+aanet,dualnet,AANet and DualNet are both strong expansion-based methods mentioned for comparison.
+cwd,lucir,CwD is mentioned as adopting the default settings in the original paper based on LUCIR for fair comparison.
+bimeco,resnet-18,BiMeCo is implemented using ResNet-18 architecture.
+bimeco,performance gains,"BiMeCo can bring significant performance gains, showcasing improvements over other methods such as CwD and BiC in terms of validation accuracy gains and performance with longer incremental learning sequences"
+bimeco,incremental learning sequences,our method does better work with longer incremental learning sequences
+bimeco,imagenet,BiMeCo shows powerful performance for scenarios with a large number of classes such as ImageNet
+bimeco,replay,surpasses the baseline method fine-tuning with exemplars (Replay) by a large margin
+bimeco,lucir,illustrate the comparisons of the accuracy curve with LUCIR on CIFAR-100
+bimeco,cwd,illustrate the comparisons of the accuracy curve with CwD on CIFAR-100
+bimeco,model size,the limited model size of our BiMeCo leads to a slight drop in the first task
+bimeco,memory consolidation mechanism,"benefiting from the bilateral memory consolidation mechanism, our model can sufficiently learn long-term and short-term memory representations in a complementary fashion"
+bimeco,lucir,BiMeCo is based on LUCIR [29]
+bimeco,resnet-18,Experiments are conducted on ResNet-18 using BiMeCo
+bimeco,cifar-100,Experiments are conducted on CIFAR-100 using BiMeCo
+bimeco,long-term memory,Different strategies are analyzed for guidance from long-term memory to short-term memory in the context of BiMeCo
+short-term memory,long-term memory,Different strategies are analyzed for guidance from long-term memory to short-term memory
+bimeco,+none,Comparison between BiMeCo and the baseline '+None' is conducted
+bimeco,+l2,Comparison between BiMeCo and the baseline '+L2' is conducted
+short-term memory,+l2,Short-term memory is trained with an L2 regularization constraint with long-term memory
+bimeco,+wei.,Comparison between BiMeCo and the baseline '+Wei.' is conducted
+short-term memory,+wei.,Short-term memory is trained by estimating important parameters with long-term memory
+bimeco,+out.,Comparison between BiMeCo and the baseline '+Out.' is conducted
+short-term memory,+out.,Short-term memory is trained by minimizing output probabilities with long-term memory
+distillation manners,bimeco,Relationship: Work better together in the proposed framework
+weight regularization,+l2,Relationship: Weight regularization includes L2 regularization
+weight regularization,+wei.,Relationship: Weight regularization includes Wei. regularization
+momentum-based update rule,eq. (3),Relationship: Investigating the effectiveness of momentum-based update rule in Eq. (3)
+moco series,momentum update,Relationship: Momentum update is proposed and fueled by MoCo series
+relaxed momentum update,bimeco,Relationship: Relaxed momentum update is particularly well-suited for BiMeCo
+proposed bimeco,regularization techniques,Relationship: Further analysis includes comparisons of different regularization techniques
+proposed bimeco,number of tasks,Relationship: Further analysis includes impact of the number of tasks
+proposed bimeco,exemplar sampling strategies,Relationship: Further analysis includes influence of exemplar sampling strategies
+proposed bimeco,number of exemplars,Relationship: Further analysis includes influence of the number of exemplars
+proposed bimeco,number of classes,Relationship: Further analysis includes impact of the number of classes
+proposed bimeco,model parameters,Relationship: Further analysis includes ablation on the model parameters of BiMeCo
+training accuracy,gaussian noise,Relationship: Impact of varying Gaussian noise added to the weights of each layer on training accuracy
+bimeco,bilateral memory consolidation,BiMeCo is a method that focuses on bilateral memory consolidation for inheriting the representation ability from short-term memory to long-term memory.
+long-term memory,short-term memory,"The analysis in the context involves comparing the average incremental accuracy and forgetting of long-term memory and short-term memory, indicating a focus on memory consolidation."
+lucir,lucir†,"The context describes the comparison of LUCIR with its variant LUCIR†, with the latter exhibiting slightly inferior performance due to limited model capacity."
+bimeco,bimecol,"The context mentions the comparison of BiMeCo with its variant BiMeCoL, which focuses on BiMeCo without short-term memory."
+bimeco,bimecos,"The context discusses the comparison of BiMeCo with its variant BiMeCoS, which focuses on BiMeCo without long-term memory, showing decent accuracy."
+bimecos,bimecol,"BiMeCoS achieves decent accuracy but performs poorly in denying forgetting, while BiMeCoL can prevent forgetting well"
+bimecol,long-term memory,long-term memory can obtain strong generalization ability across all learned tasks through training on online class-balanced data by back-propagating
+bimeco,bimeco∗,BiMeCo is superior to its variant BiMeCo∗
+bimeco,samples,only the samples of old tasks are used to train long-term memory
+teacher network,dynamic updating,the effectiveness of the dynamically updated teacher network
+number of tasks,lucir and cwd,we vary the number of tasks and implement LUCIR and CwD
+network,sec. 2.2,network is stated in section 2.2
+number of tasks,lucir,number of tasks impact on the implementation of LUCIR
+number of tasks,cwd,number of tasks impact on the implementation of CwD
+bimeco,lucir,implementation comparison between BiMeCo and LUCIR
+bimeco,cwd,implementation comparison between BiMeCo and CwD
+bimeco,exemplar sampling strategies,Influence of exemplar sampling strategies on the proposed BiMeCo
+our method,baselines,our method outperforms the baselines comprehensively
+bimeco,lucir,"BiMeCo brings significant validation accuracy gains compared to LUCIR under different sampling strategies, showing the capability of BiMeCo"
+bimeco,baselines,"BiMeCo outperforms the baselines in terms of performance, especially when the number of reserved samples is small"
+bimeco,number of exemplars,"BiMeCo improves performance under different number of exemplars, demonstrating its effectiveness"
+bimeco,classes in the initial task,BiMeCo consistently outperforms other methods in relation to the number of classes in the initial task
+bimeco,methods,BiMeCo consistently outperforms other methods with validation accuracy gains of +0.89%∼5.98%
+model parameters,model size,investigate the effect of model size on performance by varying the number of intermediate channels
+bimeco,increased parameters,BiMeCo achieves better performance with increased parameters and significant advantages in accuracy
+bimeco,channels dimension,BiMeCo with reducing channels dimension by 0.5x still achieves a superior result over LUCIR
+perturbation,model generalization,The model generalization was explored by adding Gaussian noise to the weights of each layer
+bimeco,"replay, lucir, and cwd","BiMeCo is less sensitive to perturbations compared to Replay, LUCIR, and CwD"
+baselines,"model distillation, pooling, and sg","accuracy of three baselines - Model Distillation, Pooling, and SG"
+momentum update,mom.,The term 'Mom.' denotes using momentum update in the method.
+sg,stop gradient operation,The term 'SG' denotes the stop gradient operation.
+bimeco,results,Our BiMeCo method shows only a slight drop in performance compared to devastating damages (-55.2%∼-64.6%).
+momentum update,accuracy gain,Momentum update improves accuracy gain by +1.05% in model A.
+distillation-based guidance,short-term memory to long-term memory,"Distillation-based guidance from short-term memory to long-term memory is a key component in the method, bringing a gain of +3.84% accuracy."
+bimeco,continual learning (cl),BiMeCo is a framework for continual learning (CL) designed to preserve scalability over learning new tasks and generality over all learned tasks.
+bimeco,image classification,BiMeCo focuses on image classification and works well on it.
+bimeco,object detection,How to extend BiMeCo to other tasks such as object detection remains an open question.
+bimeco,parameter overheads,Our work provides a feasible solution to prevent forgetting while reducing parameter overheads.
+reliance on exemplars,unexplored issues,"There are still unexplored issues, such as entirely removing the reliance on exemplars."
+bimeco,object detection,How to extend BiMeCo to other tasks such as object detection remains an open question.

@@ -1,0 +1,129 @@
+node_1,node_2,edge
+3d point cloud localization,natural linguistic descriptions,The problem being addressed involves using natural language to localize 3D point clouds.
+text2loc,3d point cloud localization,Text2Loc is a novel neural network designed for this task
+text2loc,global place recognition,Text2Loc follows a coarse-to-fine pipeline
+hierarchical transformer with max-pooling (htm),global place recognition,HTM is employed within Text2Loc to process and understand the relationships within textual hints.
+text-submap contrastive learning,global place recognition,This technique maintains a balance between positive and negative pairs during the recognition process.
+fine localization,3d point cloud localization,After global recognition
+matching-free fine localization,fine localization,This method is more accurate
+kitti360pose dataset,3d point cloud localization,Extensive experiments are conducted on the KITTI360Pose dataset to demonstrate the improvement in localization accuracy over existing state-of-the-art methods.
+autonomous agents,3d localization,Autonomous agents require accurate 3D localization for tasks like goods delivery and vehicle pickup.
+last mile problem,goods delivery,The last mile problem refers to the challenge courier services face when delivering items to their final destination.
+text2pose,coarse stage,Text2Pose is a method used in the coarse stage
+text2pose,global descriptors,Text2Pose uses PointNet++ for 3D point cloud global descriptors and a bidirectional LSTM cell for text global descriptors.
+ret,relation-enhanced transformer networks,RET addresses the shortcoming of Text2Pose by considering instance relationships within submaps
+text2pose,pairwise ranking loss,Both Text2Pose and RET use pairwise ranking loss
+our approach,hierarchical transformer,Our approach adopts a hierarchical transformer
+hierarchical transformer,large language model t5,The hierarchical transformer uses a frozen pre-trained T5 for better analysis of relationships.
+frozen pre-trained large language model t5,hierarchical transformer with max-pooling (htm),HTM acts as an intra- and inter-text encoder
+instance encoder in text2pose,number encoder,Enhanced by adding a number encoder and using contrastive learning for maintaining balance between positive and negative pairs.
+text-instance matching module,matching-free fine localization network,Previous methods' text-instance matcher is reduced due to noisy matching and inaccurate offset predictions.
+prototype-based map cloning (pmc) module,cascaded cross-attention transformer (ccat),PMC increases submap diversity
+point cloud localization from textual descriptions,main contributions of this work,The paper focuses on this understudied problem and proposes a novel approach.
+point cloud localization,textual descriptions,The context discusses the problem of determining the location of a point cloud using textual information
+attention-based method,hierarchical representation,The proposed approach is a hierarchical method that incorporates attention to capture contextual details within and across sentence descriptions.
+positive-negative pairs balance,contrastive learning,The study highlights the significance of maintaining a balanced ratio of positive and negative examples for improved performance through contrastive learning.
+text-instance matcher,final localization stage,The Text2Loc method is unique in eliminating the use of a text-instance matcher during the localization process.
+prototype-based map cloning (pmc),cascaded cross-attention transformer (ccat),PMC and CCAT are components of the proposed solution that contribute to achieving state-of-the-art performance with a lighter and faster model.
+natural language based 3d localization,large-scale outdoor scene,The task is focused on locating objects in 3D using natural language descriptions
+2d visual localization,application areas,Visual localization in 2D images has applications in robotics and augmented reality
+3d point cloud based localization,related task,The proposed work is connected to the broader area of localizing point clouds using 3D data.
+3d understanding with language,broader context,This research contributes to the field of understanding and interacting with 3D spaces through the lens of natural language.
+kitti360pose benchmark,experimental platform,Extensive experiments are conducted on the KITTI360Pose dataset to evaluate the effectiveness of the Text2Loc method.
+scale-invariant feature transform (sift),2d localization,SIFT is proposed for using distinctive invariant features to match objects across different viewpoints
+oriented fast and rotated brief (orb),2d localization,ORB is pivotal in achieving robustness against scale
+learning-based methods,coarse-to-fine pipeline,Recent learning-based methods commonly adopt a coarse-to-fine approach
+image-based methods,degradation under drastic variations,Image-based methods' performance degrades due to weather and seasonal changes in appearance.
+cross-model localization,text and 3d point clouds,This work focuses on localization between text and 3D point clouds as an alternative to image-based methods.
+3d point cloud based localization,two-step pipeline,Common in 3D localization
+pointnetvlad,3d localization,PointNetVlad is a pioneering deep learning approach for 3D localization.
+3d localization,place recognition,place recognition is a step in 3D localization
+place recognition,pose estimation,After place recognition
+pointnetvlad,3d place recognition,PointNetVlad is a pioneering network for 3D place recognition using end-to-end learning.
+soe-net,pointoe module,SOE-Net introduces the PointOE module
+text2loc architecture,global place recognition,Text2Loc has a module for global place recognition
+text2loc architecture,fine localization,Fine localization is the second module of Text2Loc
+pointnet,point-wise local descriptors,PointNet generates descriptors for individual points in the 3D space.
+transformer networks,long-range contextual features,Various methods integrate transformer networks to learn context across large spatial areas.
+minkloc3d,compact global descriptor,Minkloc3D uses a voxel-based method with FPN and GeM pooling to create a concise descriptor.
+voxelization methods,lost points,Voxelization techniques can result in loss of data due to the aggregation of points.
+euclidean distance,dataset,The context explains that D (the dataset) refers to the collection of data being used
+dataset,neural network (ϕ),In the context
+neural network (ϕ),text embedding (t),The neural network ϕ is designed to output fine-grained coordinates from a text embedding T
+text embedding (t),submap,The text embedding T is used in conjunction with a submap to refine the location.
+text2loc architecture,frozen pre-trained t5 language model,The Text2Loc architecture employs a frozen pre-trained T5 model for initial global place recognition and coarse localization.
+frozen pre-trained t5 language model,intra- and inter-text encoder,These two encoders work together with the T5 model for the contrastive learning part of the global place recognition process.
+global place recognition,3d point cloud-based place recognition,Global place recognition is a broader concept that encompasses 3D point cloud-based recognition
+query lidar scan,database of reference scans,In the 3D retrieval task
+t5 model,global place recognition,The T5 model is employed for extracting global descriptors in the context of coarse localization.
+global descriptors,3d submaps,The main challenge is to find robust and distinctive global descriptors for representing 3D submaps S.
+textual queries,shared embedding space,A dual branch encodes both textual queries T and 3D submaps into a shared embedding space.
+frozen pre-trained t5 model,nuanced features,The T5 model
+hierarchical transformer,contextual details,The hierarchical transformer captures contextual details within sentences and across them.
+pointnet++,semantic features,PointNet++ is used to extract semantic features from the point cloud representing each 3D submap instance.
+rgb coordinates,color embedding,RGB coordinates are encoded to generate a color embedding for each submap instance.
+semantic features,point cloud features,The proposed architecture has two parallel branches: one extracts features from query text descriptions
+color embedding,positional embedding,Both color and positional embeddings are encoded using separate encoders
+number encoder,class-specific prior information,The number encoder provides explicit encoding of point numbers
+cross-attention transformers (ccat),text embedding,CCATs facilitate fusion of semantic information from point clouds into the text embedding.
+query text descriptions,target position,The fused information from the text branch is used to estimate the target position directly.
+semantic point embedding dimension,output dimensions of mlps,All encoders (color
+final instance embedding fpi,projections from concatenated embeddings,The final instance embedding is produced by merging and processing the concatenated semantic
+projection layer,3-layer mlp,The projection layer is a component of the 3-layer MLP
+final instance embedding (fpi),projection layer,The projection layer generates the final instance embedding as its output.
+instance descriptors (fpi)np,global submap descriptor (f_s),These descriptors are aggregated using an attention layer and max pooling after the projection layer.
+text-submap contrastive learning,cross-modal contrastive learning objective,Text-submap contrastive learning addresses the limitations of pairwise ranking loss by bringing together feature centroids of 3D submaps and text prompts.
+text encoder,point cloud encoder,Both encoders work together to embed text-submap pairs into respective feature spaces.
+clip [22],feature distance calculation,Inspired by CLIP
+fine localization,text-submap matching strategy,Fine localization aims to refine location prediction within retrieved submaps
+inherent ambiguity in text descriptions,accurate offset predictions,The ambiguity in text descriptions poses a challenge for precise offset predictions for individual object instances.
+cascaded ccats,hcat,Cascaded CCATs differ from HCAT in their structure
+prototype-based map cloning (pmc),map cloning module,The PMC is a novel module within the proposed method
+submap si,submap sj,Two neighboring submaps are defined based on distance thresholds α and β
+submaps gi,ground-truth target position,Gi contains map variants around the current submap Si
+pair {ti,si},textual description ti
+loss function,pairwise ranking loss,The proposed method uses a different loss function compared to previous works
+minimum threshold nm,instance mismatch,Nm ensures that selected submaps have a sufficient number of object instances matching their textual descriptions
+ranking loss,previous methods,ranking loss is widely used in
+cross-model contrastive learning objective,proposed method,the proposed method uses this objective for text-submap retrieval
+input batch of 3d submap descriptors,matching text descriptors,computed for a pair of descriptors
+temperature coefficient,clip,similar to CLIP
+text-submap alignment objective,training mini-batch,computed for each item in the mini-batch
+fine localization network,previous method,differs from previous methods without a text-instance matching module
+predicted location,ground truth,goal is to minimize the distance between predicted and actual
+mean squared error loss,translation regressor,used to train the regressor for location prediction
+text2loc,kitti360pose benchmark,trained and evaluated on this dataset
+kitti360pose benchmark,9 districts,consists of point clouds from 9 different areas
+kitti360pose benchmark,43,381 position-query pairs
+text2loc,ret,Text2Loc outperforms RET by a wide margin
+text2loc,localization accuracy,Text2Loc aims to improve localization accuracy compared to previous methods like RET.
+fine localization,accuracy,Fine localization is introduced to enhance accuracy
+text2loc,state-of-the-art,Text2Loc surpasses the previous state-of-the-art method (RET) in terms of recall rates and localization precision.
+error threshold ϵ < 5m,text2loc performance,Text2Loc consistently performs better even with relaxed error constraints
+text2loc,cross-model local information,The method's strength lies in capturing cross-model local information for enhanced global descriptors.
+section 6.2.5.3.2,qualitative results,More qualitative results are provided in this section
+text2loc,global place recognition,Text2Loc includes a text-submap global place recognition component for accurate interpretation and understanding of text descriptions.
+large language model (llm) t5,retrieval accuracy,The frozen pre-trained LLM T5 contributes to an approximate 8% increase in retrieval accuracy on the test set.
+hierarchical transformer with max-pooling (htm) module,performance on validation set,The HTM enhances performance on the validation set
+number encoder,recall metric at top 1,Integrating the number encoder leads to a significant 6% improvement in recall on the validation set.
+proposed text-submap contrastive learning,superiority over pairwise ranking loss,The contrastive learning approach outperforms the model trained with pairwise ranking loss by 52% and 40% in recall on validation and test sets
+fine localization,effectiveness analysis,The passage analyzes the fine localization component to study its impact on the overall Text2Loc performance.
+cascaded cross-attention transformer (ccat),prototype-based map cloning (pmc),relation: component
+text2loc ccat,text2loc pmc,comparison: performance comparison
+text2pos [12],text2pos*,improvement: Text2Pos* improves upon the original Text2Pos
+global place recognition,text2pos [12],relation: application
+t5 model,lstm in [12],replacement: T5 model is replaced by LSTM in an ablation study (w/o T5).
+fine localization,coarse localization,Our fine localization relies on the coarse localization stage
+low diversity of outdoor scenes,need for highly discriminative representations,The challenge posed by the low diversity highlights the requirement for better representation to distinguish between submaps.
+text2pose [12],our global place recognition,The fine localization network from Text2Pose is used with submaps retrieved through our global place recognition method.
+text2loc ccat,text2loc pmc,An ablation study compares Text2Loc CCAT (with PMC removed) and Text2Loc PMC (with CCAT replaced)
+pmc (place memory component),ccat (contextual context attention),Text2Loc variants differentiate between Text2Loc PMC
+kitti360pose benchmark,ablation study,The KITTI360Pose benchmark is used for evaluating the ablation study of the fine localization network.
+text2loc,3d point cloud localization,Text2Loc is a method for 3D point cloud localization based on natural language descriptions.
+text2pos [12],baseline method,Text2Pos is a baseline method compared to Text2Loc
+t-sne [31],embedding space analysis tool,T-SNE is employed to visualize the learned embedding space
+global place recognition,fine localization task,Text2Loc focuses on both global place recognition and fine localization
+proposed network,matching-free fine localization network,The proposed network introduces a matching-free approach
+state-of-the-art,performance benchmark,Text2Loc outperforms the state-of-the-art by a large margin in localization accuracy.
+erc,funding source,This work was supported by the European Research Council.
+real robots,future exploration,Future work will involve trajectory planning for real robots.

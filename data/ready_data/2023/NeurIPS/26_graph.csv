@@ -1,0 +1,235 @@
+node_1,node_2,edge
+mp-gnns,message-passing graph neural networks,MP-GNNs are also known as message-passing graph neural networks.
+mp-gnns,rephine,RePHINE is proposed for learning topological features on graphs by integrating it with MP-GNNs.
+topological features,persistent homology,Persistent homology is used to augment graph models with topological features.
+persistent homology,color-separating sets,Color-separating sets are introduced to resolve the problem of identifying the class of attributed graphs that persistent homology can recognize.
+color-separating sets,graphs,Color-separating sets provide necessary and sufficient conditions for distinguishing graphs based on the persistence of their connected components.
+persistent homology,rephine,"RePHINE efficiently combines vertex- and edge-level persistent homology, proving to be more powerful than both individually."
+rephine,mp-gnns,Integrating RePHINE into MP-GNNs boosts their expressive power.
+topological data analysis,algebraic topology,Topological data analysis provides tools from algebraic topology for extracting features efficiently.
+persistent homology,topological invariants,Persistent homology characterizes topological invariants like connectivity.
+persistent homology,topological invariants,Persistent homology seeks to characterize topological invariants such as connected components and loops of an underlying manifold based on data samples.
+persistent homology,scientific domains,"PH has been successfully applied in scientific domains such as computer vision, drug design, fluid dynamics, and material science."
+persistent homology,graph-level prediction tasks,PH has been used for providing global topological signatures for graph-level prediction tasks.
+persistent homology,graph neural networks,PH is used as local message modulators in GNNs for node-level tasks.
+persistent homology,neural networks,PH has been integrated into neural networks as a building block in the end-to-end learning process.
+persistent homology,graph models,Topological features exploited by PH can boost the predictive capabilities of graph models.
+persistent homology,graph properties,"Theoretical properties of PH on graphs, including which graph properties it can capture, remain much less explored."
+persistent homology,expressivity,"Theoretical properties of PH on graphs, including the expressivity and improving expressivity, remain open questions."
+ph,weisfeiler-leman hierarchy,Rieck discusses the expressivity of PH on graphs in terms of the Weisfeiler-Leman hierarchy in a recent work.
+wl hierarchy,k-wl colorings,"The paper shows that, given different k-WL colorings, there exists a filtration such that the corresponding persistence diagrams differ."
+vertex-level filtrations,injective vertex filtrations,Inconsistency issues due to injective vertex filtrations
+real holes,component-wise colors,Real holes (d = ∞) ∼= Component-wise colors
+almost holes,disconnecting sets,Almost holes ∼= Disconnecting sets
+vertex-color filtrations,birth time of persistence tuples,Birth time of persistence tuples ∼= Vertex color
+edge-level filtrations,reconstruction of disconnecting sets,Reconstruction of disconnecting sets
+edge-level filtrations,almost holes,Almost holes ∼= Disconnecting sets
+vertex-level vs. edge-level filtrations,vertex-level persistence,"Vertex-level persistence ̸≻ edge-level persistence, and vice-versa"
+new method (rephine),"vertex-, edge-, and vertex- ∪ edge-level diagrams","RePHINE ≻ vertex-, edge-, and vertex- ∪ edge-level diagrams"
+graph filtration,functions,Graph filtrations induced by functions on colors are the focus of the analysis mentioned in the context.
+class,graph filtrations,The class of graph filtrations induced by functions on colors is discussed as a general class reflecting popular methods like topological GNNs.
+connected components,vertex colors,The analysis starts with examining the persistence of connected components obtained from vertex colors.
+graphs,edge colors,The analysis is extended to graphs with edge colors to obtain upper bounds on the expressive power of color-based Persistent Homology.
+separating/disconnecting sets,color-based persistent homology,Upper bounds on the expressive power of color-based PH are obtained by leveraging the notion of separating/disconnecting sets.
+conditions,distinguishability,The necessary and sufficient conditions for the distinguishability of two graphs from 0-dim persistence diagrams are established.
+vertex-color ph,edge-color ph,It is proven that neither the category of vertex-color Persistent Homology subsumes the category of edge-color Persistent Homology.
+method,rephine,RePHINE is presented as a method that refines Persistent Homology by incorporating node-color into edge-based filtration.
+information,expressivity,RePHINE exploits a subtle interplay between vertex- and edge-level persistence information to improve the expressivity of color-based Persistent Homology.
+rephine,gnn layers,RePHINE can be easily integrated into Graph Neural Network (GNN) layers without incurring any computational burden.
+experiments,theoretical analysis,Experiments support the theoretical analysis and demonstrate the effectiveness of RePHINE on synthetic and real datasets.
+rephine,perslay,"RePHINE outperforms PersLay, a popular topological neural network, as shown in the context."
+perslay,topological neural net,PersLay is outperformed by topological neural net in different architectures.
+expressivity,0-dim and 1-dim persistence diagrams,RePHINE has improved expressivity compared to standard 0-dim and 1-dim persistence diagrams.
+graph classification problems,real-world gains,Improved expressivity of the approach leads to gains in real-world graph classification problems.
+graphs g and g′,isomorphism,Graphs G and G′ are isomorphic if there is a bijection between the vertices and an edge-coloring function relationship.
+filtration,finite nested sequence of subgraphs,"A filtration of a graph is a nested sequence of subgraphs, where each subgraph is contained within the next."
+filtrations,design,The design of filtrations can be flexible.
+filtrations,vertex filter,A typical choice consists of leveraging a vertex filter.
+filtration induced by f,indexed set,A filtration induced by f is an indexed set.
+persistent homology,topological features,Persistent homology keeps track of the topological features.
+topological features,subgraph,Persistent homology keeps track of the topological features of each subgraph in a filtration.
+topological features,betti numbers,"These features are either the number of connected components or independent cycles (i.e., 0- and 1-dim topological features, denoted respectively by the Betti numbers β0 G)."
+persistence,feature,We encode the persistence of a topological feature as a pair.
+persistence,multiset,The collection of all pairs forms a multiset.
+persistence diagram,d0 and d1,We use D0 and D1 to refer to the persistence diagrams for 0- and 1-dim topological features respectively.
+injective vertex filter functions,importance,Recent works have highlighted the importance of adopting injective vertex filter functions.
+injective vertex filter functions,parameterized functions,"Injectivity of parameterized functions is a condition for obtaining well-defined gradients with respect to the parameters, enabling end-to-end filtration learning."
+injective vertex filter functions,vertex-based filtrations,Filtrations induced by injective functions on vertices may result in inconsistent persistence diagrams for isomorphic graphs.
+vertex-based filtrations,persistence diagrams,Injective vertex-based filtrations can generate inconsistent persistence diagrams for isomorphic graphs.
+injective vertex filter functions,permutation equivariant filter functions,"To avoid inconsistent diagrams, permutation equivariant filter functions such as vertex degree, eigenvalues of the graph Laplacian, GNN layers, or graph filtrations based on vertex/edge colors can be employed."
+vertex/edge colors,bijection,"If G ∼= G′ with associated bijection g, then vertex/edge colors are equivariant by design."
+bijection,associated,The bijection is associated with G ∼= G′.
+filtrations,color-based,Color-based filtrations generalize the GNN-layers case.
+filtrations,vertex-color,We define the vertex-color filtration induced by f.
+filtrations,edge-color,"Similarly, we can define the edge-color filtration induced by f."
+filtrations,filtration,"In the following, we use the notation {{·}} to denote multisets in a filtration."
+persistent homology,color,We analyze the representational power of persistent homology when adopting color in this section.
+persistent homology,color-based filtrations,Persistent homology is analyzed in the context of color-based filtrations to understand its representational power.
+real holes,0-dim persistence diagrams,"Real holes in 0-dim persistence diagrams are associated with connected components, showcasing their topological features."
+real holes,connected components,Real holes are directly associated with connected components as topological features that persist until the entire graph is filtered.
+filtrations,real holes,Lemma 2 establishes the necessary and sufficient conditions for the existence of a filtration that produces persistence diagrams with distinct real holes.
+filtrations,component-wise colors,The relationship between filtrations and real holes is established through the notion of component-wise colors that influence the persistence diagrams.
+condition,notion of component-wise colors,The distinct real holes condition is associated with the notion of component-wise colors.
+graph,connected components,"G and G′ are two graphs with connected components C1, . . . , Ck and C′ 1, . . . , C′ respectively."
+colors,component-wise colors,Xi = {c(v)
+graphs,component-wise colors,Lemma 2 talks about the equivalence between component-wise colors and real holes in two graphs G and G′.
+almost holes,separating sets,Lemma 3 reveals the relationship between almost holes and separating sets.
+almost hole,vertex-color filtration,"For an almost hole from a vertex-color filtration, the set S = {w ∈V"
+separating set,connected component,"If S is a separating set of G splitting a connected component C into k components C1, C2, . . . , Ck, then there exists a filtration that produces k − 1 almost holes."
+almost holes,separating sets,"The relationship between almost holes and separating sets is elucidated in Lemma 3, which raises the question of whether separating sets can be used to compare almost holes across different graphs. The answer is no, as even if the diagrams of two graphs only differ in their multi-sets of almost holes, the graphs might not have separating sets that split them into different numbers of components."
+colors,vertices,Separating sets (obtained from colors) can be used to compare almost holes across different graphs by examining the removal of associated vertices and the resulting numbers of components.
+graphs,almost holes,"The graphs in Figure 2, G and G', only differ in almost holes. However, we cannot use color-based separating sets to compare almost holes across graphs even though these filtrations produce different almost holes and there is no way to remove colors to result in different numbers of components."
+almost holes,colors,"Although the graphs in Figure 2 only differ in almost holes, we cannot pick colors whose removal of associated vertices would result in different numbers of components."
+almost holes,color-separating sets,"The notion of color-separating sets (Definition 1) is introduced to distinguish graphs based on almost holes. Lemma 4 leverages this definition to characterize graphs that can be distinguished based on almost holes, establishing that whenever the diagrams of two graphs differ in their multiset of almost holes, a color-separating set can be built."
+birth times,vertex colors,"Lemma 5 establishes a bijection between birth times and vertex colors, showing that sets of birth times correspond to vertex colors."
+vertex colors,persistence diagrams,"If multisets of vertex colors differ for graphs G and G′, then the corresponding persistence diagrams are also different in all filtrations."
+multiset of birth times,multiset of vertex colors,"There is a bijection between the multiset of birth times and the multiset of vertex colors in any vertex-color filtration, as stated in Lemma 5."
+multiset of colors,persistence diagram,"From Lemma 5, we can recover the multiset of colors from the persistence diagram, highlighting the importance of death times to achieve expressivity beyond identifying vertex colors."
+vertex colors,persistent homology,"Persistent homology uses vertex colors as input, emphasizing the significance of death times for expressivity in identifying vertex colors."
+persistence diagrams,graphs,"Comparing persistence diagrams helps distinguish graphs with different multisets of vertex colors, as mentioned in the context."
+color-separating sets,component-wise vertex colors,The importance of color-separating sets and component-wise vertex colors is discussed in Lemmas 4 and 2 respectively.
+filtration,expressivity,"The choice of filtration greatly impacts the expressivity, as noted in the context."
+pairs of graphs,distinguished,"Theorem 1 characterizes which pairs of graphs can be distinguished by comparing their persistence diagrams, based on the limits of expressivity with suitable filtration."
+graph,multiset of colors,Both the terms are related as the theorem talks about graphs G and G′ with identical multisets of colors
+graph,edge-color filtrations,The concept of edge-color filtrations is considered for expressivity of 0-dim persistent homology obtained from graphs
+graph,real holes,The graphs G0 does not contain trivial holes but have real holes and almost holes
+graph,edgeless,The persistence diagrams do not contain trivial holes since G0 does not have edges
+graph,color-separating set,The concept of color-separating set is related to the graphs G and G′
+filtrations,persistence diagrams,Filtrations lead to the construction of persistence diagrams
+graphs,multiset of colors,"Graphs G and G′ differ in their multisets of colors, but no edge-color filtration can distinguish them"
+disconnecting sets,edge-based almost holes,Lemma 6 characterizes edge-based almost holes as disconnecting sets in an analogous manner
+holes,disconnecting sets,"holes are mentioned as disconnecting sets in the context, indicating a relation between them"
+edges,number of components,"removal of edges affecting the number of components, suggesting a relationship between edges and components"
+edge,almost hole,edge-based almost holes are discussed as disconnecting sets in relation to edges
+set,edges,a set of edges creating a disconnecting set in the graph
+disconnecting set,almost hole,Lemma 6 explains how a disconnecting set can be constructed from an almost hole
+disconnecting set,edge-color filtration,relationship between constructing a disconnecting set and obtaining it from an almost hole in edge-color filtration
+s,almost hole,S can be obtained from an almost hole in a filtration based on the colors of edges
+disconnecting set,graph,Reconstructing a disconnecting set (S) in a graph with a specific condition on edge colors
+filtration,persistent homology,bounds on the expressivity of edge-color persistent homology in the context
+d0,number of vertices,relation between the set D0 and the number of vertices in the context
+real holes,expressivity,the expressivity achieved when real holes are present in the context
+edges,color,mention of different colors of edges in the context
+persistence diagrams,different numbers of vertices or connected components,Persistence diagrams of two graphs can be distinguished based on whether they have different numbers of vertices or connected components.
+vertex-color filtrations,colors as birth times,"Vertex-color filtrations encode colors as birth times, as seen in Lemma 5."
+edge-color filtrations,trivially equal to zero,Birth times from edge-color filtrations are always trivially equal to zero.
+graphs,different multisets of edge colors,Graphs with different multisets of edge colors can have the same persistence diagrams for any filtration.
+graphs,lower limits,Lower limits for graphs with multiple edge colors can be considered.
+disconnecting sets,obtained from colors,Different disconnecting sets obtained from colors may not affect the induction of the same persistence diagrams in filtrations.
+graphs,deletion of blue edges,"The deletion of blue edges can disconnect one graph but not the other, as shown in Figure 3(b)."
+edge-color filtration,separates these graphs,"An edge-color filtration can separate graphs based on their edge colors, as demonstrated by the different disconnecting sets."
+graphs,different sets of edge colors,"Even if two graphs have different sets of edge colors, they might induce identical diagrams due to certain properties of edge-color filtrations."
+vertex-color filtrations,trivial holes,"In contrast to vertex-color filtrations, where trivial holes ensure all vertices are represented in the diagrams."
+vertex-color filtrations,trivial holes,"In vertex-color filtrations, trivial holes ensure that all vertices are represented in diagrams."
+vertex-color filtrations,vertex-based almost holes,Vertex-based almost holes are somewhat analogous to separating sets in the context of vertex-color filtrations.
+vertex-based almost holes,separating sets,There is an analogy between vertex-based almost holes and separating sets in the context of vertex-color filtrations.
+edge-color filtrations,no trivial holes,Edge-color filtrations do not have any trivial holes according to the provided context.
+edge-color filtrations,persistence diagrams,Persistence diagrams from edge-color filtrations do not consider edges that do not cause the disappearance of connected components.
+edge-based almost holes,disconnecting sets,Edge-based almost holes can be characterized as disconnecting sets according to Lemma 6 and Lemma 7.
+color-disconnecting sets,"pair of graphs (g, g')",A color-disconnecting set for a pair of graphs is a set of colors such that removing these colors from the graphs results in subgraphs with different numbers of connected components.
+the expressive power of edge-color filtrations,pair of graphs g and g',Theorem 2 states that there exists an edge-color filtration such that D0 G′ if and only if there is a color-disconnecting set for G and G'.
+g and g′,color-disconnecting set,The relationship between G and G′ is determined by the existence of a color-disconnecting set for both graphs.
+graph g,vertex-coloring function c(·),The edge-coloring function l(·) is derived from the vertex-coloring function c(·) for a given graph G.
+graph g,edge-coloring function l,"The edge-coloring function l : E → X 2 is defined for a graph G as l(v, w) = {c(v), c(w)}."
+graphs in figure 4,vertex-color filtrations,The comparison of graphs in Figure 4 shows that they cannot be distinguished based on vertex-color filtrations.
+graphs in figure 4,edge-color filtrations,The comparison of graphs in Figure 4 shows that they cannot be distinguished based on edge-color filtrations.
+graphs in figure 4,vertex- and edge-color filtrations,The comparison of graphs in Figure 4 shows that they cannot be distinguished based on both vertex- and edge-color filtrations.
+vertex-color filtrations,multisets of colors,"Vertex-color filtrations can encode multisets of colors, leading to different birth times in the persistence diagrams."
+vertex-color filtrations,real holes with different birth times,Only vertex-color filtrations can have real holes with different birth times in graphs.
+"graphs (g, g′)",vertex-color filtrations,"Some pairs of graphs (G, G′) can be distinguished based on vertex-color filtrations."
+"graphs (g, g′)",edge-color filtrations,"Some pairs of graphs (G, G′) cannot be distinguished based on edge-color filtrations."
+edge colors,distinguishing graphs,Edge colors can help in distinguishing graphs that cannot be distinguished by vertex-color filtrations.
+edge-color,vertex-color,"The document discusses the comparison between edge-color and vertex-color in graphs, highlighting how both have distinct features in distinguishing graphs based on color filtrations."
+graphs,color-separating set,"The statement mentions that there is no color-separating set for certain graphs G and G', as per Theorem 1."
+filtrations,persistent homology,The context explores how theoretical results in Section 3 can enhance the representation of persistent homology through modifying edge-color persistence diagrams.
+rephine,refining ph by incorporating node-color into edge-based filtration,"The text introduces a new approach called RePHINE, which refines persistent homology by including node-color in edge-based filtration, aiming to capture structural information not originally present in diagrams."
+rephine,node-color,"RePHINE is a concept that incorporates node-color into edge-based filtration, enhancing expressiveness in comparison to standard color-based diagrams."
+rephine,1-dimensional topological features,"RePHINE diagrams make 1-dimensional topological features redundant, showcasing a high level of expressiveness."
+rephine,gnn layers,"RePHINE can be integrated into arbitrary GNN layers for graph-level prediction tasks, enhancing the capabilities of such layers."
+edge-color diagrams,missing holes,"A drawback of edge-color filtrations is the loss of information about multisets of edge colors, necessitating the introduction of missing holes to reconstruct disconnecting sets."
+missing holes,connected components,Missing holes correspond to edges that are not associated with the disappearance of any connected component in a given filtration.
+missing holes,1-dim persistence diagrams,"Missing holes correspond to cycles obtained from 1-dimensional persistence diagrams, providing a way to represent these structures."
+orange edge,orange-green ones,"The orange edge and one of the orange-green ones are part of the edge-color filtration, as shown in Figure 5."
+orange edge,0-dim hole,"The orange edge and one of the orange-green edges do not ‘kill’ any 0-dim hole. This results in the missing holes (1, 3) and (1, 4)."
+orange-green edge,0-dim hole,"The orange edge and one of the orange-green edges do not ‘kill’ any 0-dim hole. This results in the missing holes (1, 3) and (1, 4)."
+missing holes,expressivity,"Clearly, missing holes bring in additional expressivity as it would be possible to distinguish graphs that only differ in the orange edge."
+edge-color diagrams,vertex-color ones,Edge-color diagrams with missing holes are not more expressive than vertex-color ones. They cannot separate the two graphs.
+persistent homology,vertex-color information,"To improve the expressivity of persistent homology, a simple approach is to merge tuples obtained from independent vertex- and edge-color filtrations."
+vertex-color information,expressivity,Augmenting edge-color diagrams with vertex-color information can improve the expressivity of the graphs.
+independent vertex- and edge-color filtrations,computational cost,Merging tuples obtained from independent vertex- and edge-color filtrations would double the computational cost.
+edge-color diagrams,expressivity,Adding two new elements to the edge-color diagrams with missing holes can improve the expressivity.
+edge-color filtration,connected components,"In any edge-color filtration, G0 has"
+color filtration,g0,G0 has
+color filtration,real holes,Real or almost holes of edge-color diagrams are associated with vertices in the color filtration.
+real holes,edge-color diagrams,Real or almost holes of edge-color diagrams are associated with vertices in the color filtration.
+g1,rephine diagrams,"At G1, one component dies and creates the almost hole (0, 1, 2, 1) in the RePHINE diagrams."
+g1,almost hole,"At G1, one component dies and creates the almost hole (0, 1, 2, 1)."
+g1,missing hole,"At G1, one component dies and creates the almost hole (0, 1, 2, 1)."
+step 2,two holes,"At step 2, two other holes are killed, resulting in two tuples (0, 2, 1, 2)."
+g3,missing hole,"At G3, we obtain the missing hole (1, 3, 0, 0)."
+g4,almost hole,"Finally, G4 creates one almost hole and one missing hole."
+g4,missing hole,"Finally, G4 creates one almost hole and one missing hole."
+rephine diagram,filtration on graph,The RePHINE diagram of a filtration on a graph G is a multiset of cardinality
+fv,c,fv(c(wT1)) = fv(c(wT2))
+w,arg minw′,"w = arg minw′∈{wT1 ,wT2} γ(w′)"
+vertices,holes,The vertices that are associated with real holes are vertices that have not died after the last filtration step
+case b = 1,missing holes,"Here, the entry d is the filtration value of an edge e that did not kill a hole but produces a cycle that appears at the filtration step associated with adding the edge e"
+entries α and γ,uninformative values,"The entries α and γ take uninformative values (e.g., 0)"
+rephine diagrams,example,Figure 5 provides an example of RePHINE diagrams
+"g, g′",isomorphic graphs,"Theorem 4 (RePHINE is isomorphism invariant). Let G, G′ be isomorphic graphs. Then, any edge-color and vertex-color filtrations produce identical RePHINE diagrams for G and G′"
+rephine diagrams,strictly more expressive,"Theorem 5 shows that RePHINE diagrams are strictly more expressive than those from both vertex- and edge-color filtrations, including 0- and 1-dim topological features"
+rephine diagrams,color-based filtration,"Figure 4(c) provides an example of graphs that cannot be recognized by any color-based filtration, but for which we can obtain distinct RePHINE diagrams"
+persistence diagrams,edge or vertex-color filtration,Persistence diagrams are associated with any edge or vertex-color filtration of two graphs.
+d,d′,"If D is not equal to D′, then there is a filtration that produces different RePHINE diagrams."
+two graphs,rephine diagrams,"If D is not equal to D′, then there is a filtration that produces different RePHINE diagrams."
+rephine,non-isomorphic graphs,"Despite its power, there are simple non-isomorphic graphs RePHINE cannot distinguish."
+star and path graphs,rephine diagrams,Star and path graphs with 4 vertices of the same color produce identical RePHINE diagrams.
+non-missing hole,node features,One can follow the scheme in [15] to combine non-missing hole information with node features.
+missing holes,graph-level attributes,One can follow the scheme in [15] to leverage missing holes as graph-level attributes.
+rephine tuples,deepsets,Here we adopt a simple scheme that processes RePHINE tuples using DeepSets.
+topological embeddings,pooling layer,These topological embeddings are then grouped using a pooling layer.
+graph-level gnn embedding,class predictions,The resulting representation is fed to a feedforward network to obtain class predictions.
+rephine,ph,RePHINE can learn representations in cases where PH and GNNs struggle to capture structural information.
+rephine,gnns,RePHINE can learn representations in cases where PH and GNNs struggle to capture structural information.
+rephine,gcn,"Average learning curves for RePHINE, PH, and GCN on connected cubic graphs."
+gnns,rephine,RePHINE shows better expressivity and fitting capability on Cub10-2 and Cub12-3.
+rephine,f(ℓ),R(ℓ) = REPHINE(f(ℓ))
+f(ℓ),ϕ(ℓ),"r(ℓ) = ϕ(ℓ)(v, f(ℓ))"
+f(ℓ),ψ(ℓ),"r(ℓ) = ϕ(ℓ)(v, f(ℓ))"
+f(ℓ),agg(ℓ),u = AGG(ℓ)({{h(ℓ−1)
+agg(ℓ),update(ℓ),h(ℓ)u = UPDATE(ℓ)(cid:16)(cid:17) ∀u ∈ V
+rephine,gnn,graph-level representation as [POOL1({r(ℓ)}ℓ) ∥ POOL2({h(L)}
+rephine,mp-gnns,expected to impose challenges to persistent homology and MP-GNNs.
+rephine,persistent homology,expected to impose challenges to persistent homology and MP-GNNs.
+gnns,rephine,The second experiment aims to assess the predictive performance of RePHINE in combination with GNNs on popular benchmarks for graph classification.
+pytorch,code,"All methods were implemented in PyTorch, and our code is available at https://github.com/Aalto-QuML/RePHINE."
+cubic graphs,3-regular graphs,"We consider three datasets of cubic graphs (or 3-regular graphs): cub08, cub10, and cub12."
+vertices,colors,"These graphs cannot be distinguished by 1-WL and color-based PH as all vertices share the same color. Thus, we modify the datasets by changing the colors of 1, 2, or 3 vertices in each graph sample."
+datasets,binary classification task,"Also, we randomly partition each dataset and create a balanced binary classification task."
+0-dim persistence diagrams,vertex-color filtrations,"We compare standard 0-dim persistence diagrams from vertex-color filtrations to 0-dim RePHINE (i.e., no missing holes)."
+deepsets,optimization procedure,Both approaches are processed using DeepSets with exactly the same structure and optimization procedure.
+colors,gnn embeddings,"Also, they operate on the original colors, not on GNN embeddings."
+graph convolutional network (gcn),mlp,"For completeness, we report results for a 2-layer graph convolutional network (GCN) followed by an MLP."
+persistence modules,observed graphs,We are interested in assessing if the persistence modules can overfit the observed graphs.
+graphs,overfit,"Graphs can be overfitted when the observed data is fitted too closely, potentially leading to poor generalization."
+methods,unique graph embeddings,The uniqueness of graph embeddings is measured to determine if different methods provide distinct representations for each graph.
+methods,expressivity,The expressivity of methods is evaluated based on the proportion of unique graph embeddings over training.
+results,graph classification performance,"The results of graph classification performance are compared, with the bold values indicating the best-performing method."
+datasets,rephine,RePHINE is identified as the best-performing method for most datasets.
+datasets,gnn and ph,"GNN and PH are also compared in terms of expressivity, with RePHINE showing higher expressivity compared to them."
+cub10-2,"rephine, ph, and gnn",RePHINE demonstrates better fit to the observed data compared to PH and GNN on cub10-2 dataset.
+rephine,ph,"RePHINE consistently outperforms PH, being the best-performing method in 10 out of 12 experiments."
+rephine,gin,Our results suggest that RePHINE should be the default choice for persistence descriptors on graphs as GIN-based approaches achieve slightly better results.
+perslay,rephine,Accuracy results on graph classification show that RePHINE performs better than PersLay
+rephine+linear,perslay,"RePHINE+Linear method is compared against PersLay method in terms of leveraging GNNs. Their initial designs are adapted for fair comparison by computing RePHINE diagrams with learned filtration functions and applying a linear classifier to provide class predictions. Additionally, vectorial representations of the RePHINE diagrams are concatenated with the graph-level features obtained using PersLay."
+rephine+linear,rephine,RePHINE+Linear method is a variant that incorporates RePHINE diagrams with learned filtration functions. It achieves higher accuracy compared to other methods based on the results obtained from 5 runs on 4 datasets.
+rephine,persistent homology methods,RePHINE introduces a novel topological descriptor based on persistent homology methods for graph representation learning. It is computationally efficient and capable of distinguishing attributed graphs with general node- and edge-color filtrations.
+persistent homology methods,general node- and edge-color filtrations,Persistent homology methods are used to establish a complete characterization of attributed graphs distinguishable with general node- and edge-color filtrations in graph representation learning.
+wl test,graph neural networks (gnns),"Similar to how WL test has advanced GNNs, the framework of color-separating sets introduced in the context enables the design of more powerful topological descriptors like RePHINE."
+rephine,gnns,"RePHINE can be readily integrated into GNNs, yielding empirical gains on several real benchmarks."
+filtrations,spectral decomposition,"We have not analyzed here other types of filtrations, e.g., those based on the spectral decomposition of graph Laplacians."
+future work,"stability, generalization capabilities, and local versions of rephine","Future work should also analyze the stability, generalization capabilities, and local versions of RePHINE."
+work,principled methods,"Overall, we expect this work to spur principled methods that can leverage both topological and geometric information."
+methods,topological and geometric information,"Overall, we expect this work to spur principled methods that can leverage both topological and geometric information."
+molecules,drug discovery and material design,to obtain richer representations for molecules in applications such as drug discovery and material design.
+acknowledgments,"academy of finland, aalto university, aalto science-it project, anonymous area chair, reviewers, johanna immonen, tuan anh pham, jannis halbey, negar soltan mohammadi, yunseon lee, bruce nguyen, nahal mirzaie","This work was supported by Academy of Finland, Aalto University, Aalto Science-IT Project, anonymous area chair, reviewers. Johanna Immonen thanks Tuan Anh Pham, Jannis Halbey, Negar Soltan Mohammadi, Yunseon Lee, Bruce Nguyen, and Nahal Mirzaie for their support and for all the fun during her research internship at Aalto University in the summer of 2022."

@@ -1,0 +1,79 @@
+node_1,node_2,edge
+rework,production process,Rework is an optional step within a production process.
+rework,quality standards,Rework aims to eliminate errors and remedy products that do not meet the desired quality standards.
+production lot,rework,Reworking a production lot involves repeating a previous stage to ensure the final product meets specifications.
+yield,rework,Rework can increase yield by improving product quality but also incurs additional costs.
+costs,rework,Rework incurs extra costs due to the need for adjustments and potential part damage.
+double/debiased machine learning (dml),estimating treatment effect,DML is used to estimate the conditional treatment effect of the rework step on final product yield.
+causal inference,dml,Causal inference is a key aspect of DML in understanding the impact of rework on product yield.
+machine learning,heterogeneous treatment effects,Machine learning techniques
+double machine learning,policy learning,DoubleML is used for policy learning in determining optimal rework strategies for components.
+coating of monochromatic leds,conversion layers,The paper focuses on the application to the coating process for LEDs with conversion layers.
+manufacturing companies,transformed products,manufacturing companies strive to transform products that do not meet quality targets
+transformed products,sellable units,into sellable units by reworking
+quality targets,reworking,products not fulfilling preset target specifications are reworked for ecological reasons
+ecological reasons,reworking,reworking is preferable to discarding for environmental reasons
+polychromatic light-emitting diodes (leds),traditional white light sources,LEDs extended applications where white light sources were predominant
+leds,lcd displays,specific application example - LCD displays
+conversion step,white-emitting leds,crucial for producing LEDs with desired color properties
+coating of a monochromatic blue led,phosphor conversion layer,most successful approach for white LEDs - coating with phosphor
+converted mean color point c1,mean color point c0,color shifting process from C0 to C1
+rework workflow,leds with target color specifications,ensures high yield by matching customer requirements
+unconverted monochromatic emission (c0),fully converted one (c2),The relation is that C0 refers to an initial state before conversion
+conversion curve,position on the conversion curve,The position is controlled by the amount of applied conversion material; the curve is approximately linear.
+principal component analysis (pca),transformed color coordinates pca(c1),PCA is used to transform color coordinates into Cm (main) and Cs (secondary) components.
+main color point measure (cm),secondary color point measure (cs),Cm represents the primary decision criteria
+directed acyclic graph (dag),causal structure,The DAG illustrates the assumed cause-and-effect relationships in the production process.
+yield of a production lot,target color location,Yield depends on how close the chips are to the desired color location in quality control.
+luminous properties of the opto-electronic chips,yield,Luminosity affects both the yield and the rework decision.
+luminous properties of the opto-electronic chips,rework decision,Fluctuations in luminosity impact the need for reworking individual product lots.
+gaussian approximations,confidence intervals,Gaussian approximations are used to construct pointwise and jointly valid confidence intervals.
+first principal component of the production lot properties x,color target approximation,The first principal component is used to approximate being close to the color target.
+first principal component of the covariates x,heterogeneity,The first principal component helps in accessing the heterogeneity associated with the treatment effect.
+b-spline basis for b(˜x),flexible conditional treatment effect,A b-spline basis is employed to create a flexible model for the treatment effect conditioned on ˜x.
+threshold ˆθ(˜x) ≥ γ,policy selection,The policy is determined by whether the treatment effect on yield exceeds the threshold γ
+second principal component,treatment effect heterogeneity,Considering the second principal component provides additional information about treatment effect variability.
+tensor product of b-splines,basis vector b(˜x),Used to construct a flexible model for the treatment effect based on the first two principal components.
+figure 6,effect estimates and confidence intervals,The figure displays the estimated treatment effects along with their confidence intervals.
+figure 5,principal components of chip properties,Figure 5 shows the principal components before treatment and the treatment decision.
+product type ‘p1’,outcome in the data,The context discusses the observed outcome specifically related to the product type 'P1'.
+first color point measurement,estimation of the cate,In Figure 6
+horizontal dashed lines,policy thresholds γ,These lines represent different policy thresholds that define the decision points for intervention.
+principal component,main heterogeneity in treatment effect,The first principal component captures the primary variation in treatment effects.
+figure 7,cat e with respect to color point measurements,This figure displays the CATE based on both color point measurements.
+lower bound of the confidence interval,more conservative policies,Using the lower bound accounts for estimation uncertainty and results in less aggressive policies.
+percentage of reworked panels,incorporating capacity constraints,When deciding on policy thresholds
+section 4,comparison of policies,The text mentions a comparison of the policies will take place in Section 4.
+athey and wager (2021),policy learning approach,They propose a method for direct policy estimation based on Equation 5 in their work.
+equation 5,treatment assignment rule,The estimated treatment assignment rule is derived from this equation.
+regret r(π),maximizing performance under a policy class,Regret measures the difference between the optimal policy and the chosen policy within a given class.
+regret bound,policy class π,The regret bound is derived for a given policy class
+weighted classification problem,policy estimation,The learning problem in Equation 6 is reformulated as a weighted classification task
+depth-m decision trees,possible policies π,The space of possible policies is defined as decision trees with a maximum depth of m
+radial basis function (rbf) kernel,linear decision boundaries,Results also consider linear decision boundaries obtained using the rbf kernel
+doubleml package,policy estimation,The DoubleML package is used for implementing the estimation of policies
+principal component transformation,doubleml model,The DoubleML model is based on the original data without undergoing principal component transformation
+irm (individual treatment effects),doubleml package,The DoubleML package facilitates estimation of both Individualized Treatment Effects (IRM) and CATEs
+policytree,sverdrup et al. (2020),The context refers to 'policytree' as a method introduced by Sverdrup et al. in 2020.
+exact tree search,policytree,Exact tree search is a component of the policytree approach used for estimating the policy.
+γ (threshold),policy,Different values of γ (0.01
+one-dimensional cate policy,flexibility,The one-dimensional CATE policy lacks flexibility to display splits along secondary color measurements.
+depth-1 tree,flexibility,Similar to the one-dimensional CATE policy
+two-dimensional cate,flexibility,The two-dimensional CATE offers more flexibility by splitting along both color measurements.
+depth-2 tree,flexibility,The depth-2 tree further splits the area
+estimated policies,decision rules,All methodologies produce similar decision rules despite varying levels of flexibility.
+reworked panels,policy estimate,The table shows the share of reworked panels under each policy estimate
+treated observations,policy estimate,The share of treated observations highlights the potential increase in workload when considering stricter policies.
+capacity restrictions,improvements in overall yield,Employing policies accounting for capacity restrictions could lead to better yield even with increased workload.
+overfitting,statistical uncertainty,overfitting leads to large confidence intervals
+causal inference,domain expert knowledge,combining causal inference with domain expert input is crucial for making value from data
+possible cut-offs,feasible reworks,careful consideration of cut-offs and production capacities affects implementation and decision-makers' compliance
+clear cut-off,main measurement,a clear cut-off simplifies implementation and promotes higher compliance among decision-makers
+regression discontinuity,real effect measurement,used to measure the true effect at the cut-off point after initial decision-making
+policy learning,greedy decision trees,policy estimation in policy learning uses DecisionTreeClassifier from scikit-learn
+policy learning,weighted classification with rbf kernel,additional method for policy estimation
+bayesian joint research program (bayvfp),digitization,funding source for the work
+bavarian joint research program (bayvfp),dik0294/01,specific funding reference for the project
+ams osram,economic ai,research partners contributing to the study
+vdi/vde-it munich,free state of bavaria,financial support providers for the project
+vdi/vde-it munich,organization,credit for organizing the collaboration

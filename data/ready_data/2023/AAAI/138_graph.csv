@@ -1,0 +1,139 @@
+node_1,node_2,edge
+vision-and-language navigation on websites (webvln),ai agent,The task involves an AI agent navigating through a website.
+ai agent,website's front page,The agent starts its journey from the front page.
+question q,auxiliary description d,The agent receives a question and an auxiliary description as input.
+agent,webpage,The agent processes the current webpage and navigates using its content.
+webpage,navigable viewpoints,In contrast to traditional VLN
+webvln,physical environments,WebVLN differs from discrete VLN tasks where navigation is limited to adjacent viewpoints in physical spaces.
+webvln,target webpage,The ultimate goal is for the agent to reach a target webpage with the information needed to answer the question.
+target webpage,accurate response r,The agent produces an accurate response to the question after reaching the target webpage.
+vision-and-language navigation (vln),embodied ai,VLN is a task in Embodied AI
+webvln-net,vision-and-language navigation (vln),WebVLN-Net is a new method specifically designed for the Web environment
+webvln-net,visual input,WebVLN-Net considers visual input (screenshots) in its decision-making process.
+webvln-net,linguistic instruction,It also utilizes linguistic instructions for navigation.
+webvln-net,web-specific content,The method incorporates HTML of webpages to enhance decision-making precision.
+navigation,vision-and-language navigation (vln),VLN task involves navigation based on visual and linguistic cues.
+action prediction,vision-and-language navigation (vln),VLN requires predicting sequential actions in response to instructions.
+sub-goal planning,vision-and-language navigation (vln),Some VLN work focuses on breaking down instructions into sub-goals for better planning.
+object information,vision-and-language navigation (vln),Identifying landmarks using object information is another aspect of VLN research.
+temporal information,vision-and-language navigation (vln),VLN tasks sometimes incorporate temporal dependencies for long-range navigation planning.
+external knowledge,vision-and-language navigation (vln),Some methods in VLN utilize external knowledge to support navigation.
+past observations and actions,navigation,past observations and actions are crucial for navigation
+external knowledge,incorporation during navigation,methods incorporate external knowledge for navigation
+llms (large language models),commonsense knowledge,methods leverage LLMs for acquiring commonsense knowledge
+zero-shot vln (visual language navigation),leveraging llms,VLN tasks involve zero-shot approaches using LLMs
+spatial awareness,vln requirement,VLN tasks demand spatial understanding of agents
+photo-realistic environment,vln focus,VLN primarily focuses on realistic environments
+web-specific information,not considered in vln,direct application of VLN to websites ignores web-specific details
+web navigation,question-answering,related task involving web navigation and information gathering
+automated agents,web site interaction,agents navigate and interact with websites
+miniwob++,dataset,MiniWoB++ is a web navigation dataset
+russ,dataset,RUSS is another web navigation dataset
+flin,dataset,FLIN covers diverse web navigation tasks
+dom (document object model),dependence,previous works often relied on DOM structure
+flexibility,hampered by dom,DOM-based methods limit flexibility
+web qa,human behavior simulation,web QA emulates asking questions and aggregating information
+webvln simulator,shopping websites (sa,hb
+webvln simulator,products (e.g.,socks
+agent,actions,The agent executes a sequence of actions A
+states,current page w(i),Each state st contains information from the current page and the agent's performed action.
+states,end of action ([eoa]),The special [EOA] token indicates the end of an action
+rgb image observation i(i),agent's viewpoint,During each webpage
+rgb image observation i(i),screenshot,The entire screenshot of the webpage is provided
+webvln simulator,actions (buttons interaction),The agent navigates by interacting with buttons on the websites.
+simulator,action space,The primary difficulty in simulator implementation lies in defining the action space
+agent,simulator,The agent interacts with the simulator by selecting a new button bt+1 from the subset Bt+1 generated for each step.
+website,directed graph,The simulator constructs a directed graph G = ⟨B
+g (directed graph),edges (e),An edge in the graph indicates a navigable transition between two webpages accessible by the agent.
+path,webpage,A path is generated from the homepage to a randomly sampled target webpage using the graph G.
+path,human perspective,Paths are manually checked for reasonability from a human point of view.
+eoa,button,b[EOA] is a specific button representing the 'stop' action.
+r2r,reference,Path generation method follows the approach in R2R (Anderson et al. 2018).
+human perspective,dataset quality and diversity,The context discusses discarding unreasonable paths from a human's point of view to maintain dataset quality and diversity.
+webpage transitions,8,990 paths
+large language models (llms),workload on humans,LLMs are used to alleviate the workload on humans by generating QA pairs.
+multimodal content,llm-assisted question-answer generation,The process involves generating QA pairs using LLMs based on the multimodal content from webpages.
+blip-2,image captioning,BLIP-2 is employed for transforming website images into captions to provide visual information to the LLMs.
+website images,visual information,The image data handling step ensures that LLMs can capture the visual information present on the webpages.
+html cleaning,messy code,irrelevant information
+rule-based filtering,logic and readability,A rule-based approach enhances the logic and readability of the processed texts by eliminating irrelevant details.
+rules for generating qa pairs,initial rules,The process involves designing a series of initial rules to guide the LLM in generating QA pairs.
+rules for the llm,online shopping website,The rules are designed to guide the LLM's behavior when generating QA pairs
+questions,answers,The initial rules specify providing three questions: one about price
+price,available sizes,The second and third questions are specifically about these two aspects.
+price,material,If no precise answers can be found
+disturbing information,products,The rules ensure questions and answers exclude irrelevant disturbing information
+chatgpt,gpt-3.5-turbo model,The dataset is used with the ChatGPT model
+webvln-v1 dataset,related datasets,WebVLN-v1 is compared to other datasets covering mobile apps
+webvln-v1,environment,It has a Temporal setting and is suitable for Localise Remote Object tasks in various environments.
+tasks,navigation + qa,WebVLN-v1 includes Navigation and Question-Answer tasks
+webvln-v1,webqa,It differentiates itself from WebQA in terms of the scope and complexity of the tasks.
+weighting adjustment,component,It is necessary to adjust the weighting of each component
+caption,rich information,The caption
+quality checks,generated question-answer pairs,Quality checks are performed on every LLM-generated QA pair to ensure correctness.
+quality checks,criteria,Criteria include relevance to product
+iterations,manual quality assessment,Multiple iterations were done with manual assessment to refine the dataset.
+webvln-v1 dataset,embodied ai,WebVLN-v1 is compared to R2R
+webvln-v1 dataset,mobile app,Comparison is made with respect to mobile app-related datasets.
+webvln-v1 dataset,website,WebVLN-v1 focuses on navigating websites
+r2r,vision-and-language navigation (vln),R2R is a widely-used VLN dataset
+reverie,vision-and-language navigation (vln),REVERIE is another VLN dataset
+eqa,vision-and-language navigation (vln),EQA is a relevant VLN dataset
+vision-and-language navigation (vln) datasets,embodied question answering dataset,EQA is a widely used embodied question answering dataset compared to VLN datasets.
+pixel-help,motif,Pixel-Help and MoTIF are App-based datasets compared for comprehensive evaluation.
+pixel-help,meta-gui,Pixel-Help
+miniwob++,russ,MiniWoB++
+miniwob++,webqa,WebVLN-v1 differentiates from MiniWoB++ and WebQA as it covers more information and tasks.
+webvln-v1,questions,WebVLN-v1 has a diverse set of questions and auxiliary descriptions.
+webvln-v1,auxiliary descriptions,WebVLN-v1 includes both questions and auxiliary descriptions for instructions.
+webvln-v1,answers,WebVLN-v1 provides answers to the questions and supports navigation and question-answering tasks.
+webvln-v1,temporal sequence,WebVLN-v1 covers rich information
+webvln-v1,image,WebVLN-v1 contains images from the environment.
+webvln-v1,text,WebVLN-v1 includes text data.
+webvln-v1,html,WebVLN-v1 incorporates HTML content.
+question,answering component,The question is processed by the answering component which generates the final answer.
+classification token ([cls]),language tokens (v),The classification token ([CLS]) aggregates vision-language cues from the input sequence
+initial state representation (s0),language tokens (v),question (q)
+state token (st-1),language tokens (v),screenshot tokens (it)
+screenshot tokens (it),image patches,The screenshot is converted into tokens by patchifying and converting it into a token set.
+button tokens (bt),navigation and concurrent selection,Button tokens are incorporated to enable the model to learn navigation and make button selections simultaneously.
+vln⟳bert model (hong et al.,2021),navigation and question answering
+transformer-based image encoder,image patches,The transformer-based image encoder processes the image patches extracted from the screenshot.
+image patches,tokens it,These image patches are converted to tokens (denoted as It) using the image encoder.
+button encoder,image encoder,The button encoder contains an image encoder to handle the visual part of each button.
+button encoder,text encoder,The button encoder also includes a text encoder for processing the button's description (alt text).
+concatenated token,bt,After concatenating tokens associated with the same button
+state token st,screenshot tokens it,In navigation steps
+state token st,button tokens bt,The state token interacts with button tokens in the Transformer
+language tokens v,question and auxiliary description (q&d),Language tokens represent the initial Q&D and are used as keys and values in the Transformer.
+answering head,final answer,The Answering Head generates the final answer after processing the state
+eoa token,target webpage,The [EOA] token indicates the end of an action and signals when the agent has reached the target webpage.
+answering head,m-layer transformer decoder,The Answering Head is a component of the M-layer Transformer decoder
+open-ended question answering,answering process,In the open-ended question answering setting
+webvln-v1 dataset,questions,The WebVLN-v1 dataset contains a word cloud of questions
+webvln-v1 dataset,descriptions,The dataset also features a word cloud of descriptions (Figure 2(b))
+webvln-v1 dataset,answers,Answers on the WebVLN-v1 dataset have a broader range of lengths
+webvln-net,model proposed,A new model called WebVLN-Net is introduced specifically for the WebVLN task.
+training data,validation data,The dataset is split into 60% training
+training data,testing data,The training
+teacher forcing,autoregressive approach,The training of the Answering Head uses Teacher Forcing
+answering head,prediction,During training
+training loss,nav loss (lnav),The final loss function consists of two components
+training loss,qa loss (lans),The final loss function combines Nav Loss (Lnav) and QA Loss (Lans)
+episode,success rate (sr),Performance is evaluated based on success rate
+episode,oracle success rate (osr),OSR is a variant of success rate
+evaluation metrics,path length (spl),Navigation performance is measured by SPL
+evaluation metrics,trajectory length (tl),TL represents the overall trajectory length
+question-answering,free-form natural language generation,In QA
+wu-palmer similarity (wups),semantic differences,WUPS is a measure that quantifies the semantic differences between predicted and ground-truth answers
+wups,thresholds (0.9 and 0.0),WUPS scores are compared against thresholds with a scaling factor of 0.1
+vln (!recurbert),traditional vln baseline,VLN(!RecurBERT) (randomly initialized and using LXMERT) is used as a benchmark for evaluating navigation performance.
+vln(!recurbert),adaptation for qa task,VLN(!RecurBERT) is adapted to the QA task with minimal changes
+web-related navigation,sota (state-of-the-art),A web-related navigation SoTA is considered for comparison
+vision-and-language navigation on websites (webvln),conventional vln,WebVLN is an extension of conventional VLN
+webvln-v1 dataset,webvln task,The WebVLN-v1 dataset supports research in the proposed WebVLN task.
+webvln task,intelligent agents,Current state-of-the-art (SoTA) LLMs
+agentbench,llms-as-agent pipeline,AgentBench is a pipeline used for zero-shot evaluation of large language models
+navgpt,llms-as-agent pipeline,NavGPT is another LLMs-as-agent pipeline
+gpt-3.5-turbo,gpt-4,Both gpt-3.5-turbo and gpt-4 are large language models involved in the zero-shot evaluation for web navigation tasks.
+human-level performance,webvln task,The performance of LLMs in WebVLN is not yet at human-level

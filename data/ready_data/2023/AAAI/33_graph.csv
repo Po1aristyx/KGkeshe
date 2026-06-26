@@ -1,0 +1,104 @@
+node_1,node_2,edge
+camera's field of view,pedestrians,Pedestrians can suddenly appear in the camera's field of view
+high speed of vehicles,exacerbates the issue,The high speed of vehicles increases the difficulty for cameras to process pedestrian trajectories.
+absence of prior visual data,trajectory prediction capabilities,The lack of out-of-sight observations limits the accuracy of trajectory predictions.
+pedestrian trajectory prediction,autonomous system safety,Inaccurate pedestrian trajectory prediction poses a serious safety risk for autonomous driving technology.
+vision-positioning denoising,mitigating challenges,Our research enhances trajectory prediction through vision-positioning denoising to address these safety concerns.
+incomplete observations,hindrance to accurate predictions,Incomplete observational data significantly hinders accurate trajectory predictions.
+existing research,presumes complete data,Most existing research assumes the availability of complete observational data.
+xu et al. [27],imputing missing views,Xu et al. address the challenge of missing views in trajectory prediction.
+fujii et al. [6],predicting from partial trajectory data,Fujii et al. focus on directly predicting from incomplete trajectory information.
+noisy sensor trajectory,sensor measurement noise,The noisy sensor trajectory Sts:te is significantly influenced by sensor measurement noise.
+noisy sensor trajectory,visual trajectories,These trajectories are compared for the Camera Parameters Estimator Module to analyze the relationship between camera and world coordinates.
+visual trajectories,in-view agents,In-view agents like Pi
+mobile denoising encoder,noisy mobile trajectories,This module refines the noisy mobile trajectories of out-of-sight pedestrians to produce a denoised signal embedding.
+camera matrix embedding,dual-modality trajectories,Generated from in-view pedestrians' trajectories to relate camera and world coordinates.
+visual positioning projection module,denoised signal embedding,Combines the denoised mobile trajectories with the matrix embedding for mapping data into camera coordinates.
+out-of-sight prediction decoder,denoised visual signals,Uses the denoised visual signals to predict trajectories of pedestrians not captured by the camera.
+camera parameters estimator module,camera and world coordinates,Estimates the relationship between these coordinates using in-view pedestrians' trajectories.
+mobile denoising encoder (mde),noisy sensor trajectories,MDE's primary function is to denoise these noisy sensor trajectories
+mobile denoising encoder (mde),transformer model,The MDE consists of a Transformer model
+transformer model,fully connected layers,Surrounding the Transformer layers are two fully connected layers
+noise-free real sensor trajectories,noisy sensor trajectories,The MDE's output
+mde,accuracy,The MDE is designed to operate under ideal conditions with accurate supervision
+out-of-sight agents,pout,Pout refers to the set of out-of-sight agents whose sensor trajectories the MDE aims to denoise.
+edenoise,mde,Edenoise is the function within the MDE responsible for the denoising process.
+pout,po,Po represents an individual out-of-sight agent sampled from the set Pout.
+mobile denoising encoder (mde),sensor modality,MDE is a response to the challenges posed by the noisy sensor modality
+visual information,object tracking algorithms,Visual information benefits from advancements in object tracking algorithms
+visual image processing,rasterization process,During visual image processing
+denoised sensor trajectories,out-of-sight object trajectories,A challenge arises when dealing with out-of-sight trajectories that lack visual data
+visual positioning projection module,translation process,This module is a part of the process to map denoised sensor data into the visual domain.
+camera parameters estimator,translation process,Another component in the process
+denoising loss,translation process,The Denoising Loss contributes to the overall method by describing the loss function for the translation from sensor to visual space.
+sensor data,visual domain,The VPP is crucial for accurately mapping sensor data into the visual domain
+visual positioning projection module (vpp),noisy sensor trajectories,The VPP transforms noisy sensor data into a visual format
+world-to-camera transformation,3d point p (world coordinates),This transformation computes a 2D point p in the camera frame based on a corresponding 3D point.
+world-to-camera transformation,2d point p (camera frame),It converts 3D coordinates to 2D by adjusting for intrinsic camera parameters (K)
+camera intrinsic matrix (k),parameters (focal length,optical center)
+extrinsic rotation and translation matrix (rt),camera position and orientation,Rt describes the camera's position in the 3D world and its orientation.
+world-to-camera transformation,intrinsic matrix k,The transformation process combines the intrinsic matrix K with the extrinsic matrix Rt and the scale factor w to form the simplified matrix M.
+extrinsic rotation and translation matrix (rt),camera's position and orientation,Rt defines the camera's position and orientation relative to the 3D world.
+matrix m,intrinsic matrix k,M is formulated by combining K
+matrix m,extrinsic matrix rt,M consolidates K
+world coordinates,camera coordinates,The transformation converts points from world coordinates to camera coordinates using M.
+visual trajectory,surveillance camera,For stationary cameras
+visual trajectory,moving camera (on mobile device),For mobile devices
+camera matrix embedding (m ts:te),timestamps ts to te,M ts:te is the sequence of M for a specific time range
+extrinsic rotation & translation matrix (rts:te),camera matrix embedding (m ts:te),Rts:te is part of M ts:te
+noise-free real sensor trajectory ˆsts:te,timestamps ts to te,ˆSts:te corresponds to the trajectory without noise
+sensor trajectory,visual trajectory,The Visual Positioning Projection function maps the noise-free sensor trajectory (ˆSts:te) into the visual trajectory (Po)
+camera matrix,visual and sensor trajectories,The camera matrix (M ts:te) is related to the relationship between in-sight visual and sensor trajectories
+camera parameters estimator (cpe),camera matrix,The proposed CPE predicts camera matrix embeddings (M ts:te) based on the relationships observed between in-view agents' visual and sensor trajectories.
+camera matrix,autonomous driving,mobile robots
+camera parameter estimator,transformer,The Camera Parameter Estimator consists of a transformer with a fully connected layer.
+transformer,fully connected layer,The Camera Parameter Estimator has a transformer followed by a fully connected layer.
+out-of-sight prediction decoder,l2 loss,The prediction loss LPred is the L2 loss between the predicted and actual future visual trajectory.
+visual trajectory,sensor trajectories,V ts:te is the predicted future visual trajectory
+in-sight agents,out-of-sight agents,Pin is the set of in-sight agents
+ground truth,visual trajectory (for denoising),The denoising loss is applied to obtain the visual trajectory of the out-of-sight agent without ground truth.
+denoising loss,l2 loss,Denoising Loss uses the L2 Loss as a function for comparing the predicted visual trajectories (V ts:tePo) with the ground truth (V ts:te).
+mobile denoising encoder,camera parameters estimator,These components work together in the denoising process
+out-of-sight prediction decoder (opd),transformer model,The OPD employs a transformer model to predict future visual trajectories from the denoised predictions (V ts:tePo) instead of noisy sensor trajectories.
+training samples of out-of-sight agents,pedestrians in a scenario,During training
+visible agents,in-sight agents,All other completed agents in the scene
+visible agents,in-sight agents,Visible agents are considered in-sight agents for estimating camera parameters.
+camera parameters estimator,estimating method,The camera parameters estimator is a method used to determine these parameters.
+wireless data,sensor localization signals,Wireless data refers to signals like noisy GPS or odometers used for sensor localization.
+gps,noisy gps,GPS is mentioned as a source of noisy data collected by mobile phones.
+mobile phones,collection devices,Mobile phones are the devices used to collect noisy GPS and other sensor data.
+vehicle,rgb-d camera,A vehicle has both a camera and a wireless receiver for capturing visual and sensor data.
+rgb-d camera,surveillance system,An RGB-D camera is part of a surveillance system deployed on walls or bicycles.
+pedestrian bounding boxes,visual data,Pedestrian bounding boxes are recorded by the surveillance system for visual data.
+wireless receiver,data acquisition device,A wireless receiver is used to capture wireless data from the smartphone.
+vi-fi multimodal dataset,multimodal dataset,Vi-Fi is a comprehensive dataset for vision-wireless systems
+pedestrian identities,linked data,Vi-Fi links pedestrian identities across visual and wireless modalities.
+ftm,imu,Both FTM and IMU are technologies included in the wireless data of the Vi-Fi dataset.
+indoor data,outdoor data,The dataset consists of both indoor and outdoor scenarios.
+legitimate users,participants,Five legitimate users were involved in collecting indoor data.
+passersby,excluded participants,Outdoor data was collected without passersby.
+lstm [23],vanilla rnn [20],Both LSTM and Vanilla RNN are mentioned as baselines
+vanilla rnn [20],vanilla gru [25],Vanilla RNN is compared alongside Vanilla GRU
+vanilla rnn [20],vanilla transformer [7],All three (RNN
+vitag [13],our method,ViTag is described as the state-of-the-art method and is modified for the task
+vitag [13],our model,ViTag's underperformance in the task highlights the advantage of the proposed model.
+sensor data denoising,out-of-sight visual trajectory prediction,Denoising sensor data is linked to improved prediction accuracy
+jrdb dataset,vi-fi dataset,Performance differences are noted between these two datasets
+vanilla rnn,jrdb dataset,Vanilla RNN excels in the Vi-Fi dataset but not JRDB
+vision-positioning denoising model,proposed method,The model is tailored specifically for vision-positioning denoising
+vpd,vi-fi dataset,VPD is used in the Experiment on the Vi-Fi Dataset
+vpd,jrdb dataset,VPD is also used in the Experiment on the JRDB Dataset
+vpd,full model,VPD is a component of the Full Model
+camera parameter estimator (cpe),performance drop,Absence of CPE leads to a significant performance decrease
+mobile denoising encoder (mde),performance decline,Removal of MDE causes a more pronounced drop in performance due to denoising challenges
+visual positioning,camera matrix estimation,VPD establishes visual-positioning relationship through camera matrix estimation
+visual positioning,two-stage encoder-decoder architecture,Without CPE
+camera matrix sequences,vision-positioning mapping,The method involves estimating camera matrix sequences and establishing a vision-positioning mapping for effective denoising of sensor trajectories.
+sensor trajectories,supervision,Sensor trajectories are denoised without direct supervision
+visual positioning projection,denoising process,Visual positioning is incorporated into the denoising process
+trajectory predictions,accuracy,The proposed pipeline significantly outperforms existing methods in predicting trajectories
+out-of-sight trajectories,noisy sensor data,The study predicts trajectories of agents not visible
+sensor data,noise,Sensor data are noisy and challenging to denoise
+proposed pipeline,trajectory prediction field,The work contributes to the trajectory prediction field
+real-world scenarios,complete visibility of agents,In these scenarios
+toyota motor north america,acknowledgement,The research is sponsored by Toyota Motor North America.

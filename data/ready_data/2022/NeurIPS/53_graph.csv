@@ -1,0 +1,218 @@
+node_1,node_2,edge
+directed graphs,differentiable representations,Modeling directed graphs with differentiable representations is fundamental for performing machine learning on graph-structured data.
+geometric embedding models,"hyperbolic, cone, and box embeddings","Geometric embedding models excel at modeling directed graphs with hyperbolic, cone, and box embeddings."
+box embeddings,transitivity,Box embeddings have a natural inductive bias towards modeling transitivity.
+transitivity,cycles,Modeling directed graphs containing both cycles and transitivity is challenging.
+box embeddings,modeling cycles,Box embeddings can model transitivity but cannot model cycles.
+binary code box embeddings,graphs intersection,Binary code box embeddings select a subset of graphs for intersection.
+global binary codes,intersection,Global binary codes amount to a union over intersections.
+per-vertex binary codes,flexibility,Per-vertex binary codes allow greater flexibility in selecting graphs for intersection.
+proposed models,transitivity,Theoretical and empirical results show that proposed models preserve an inductive bias of transitivity.
+proposed models,graph cycles,"Proposed models have sufficient capacity to model arbitrary graphs, including those with cycles."
+real-world networks,directed graphs,Many real-world networks are naturally represented as directed graphs.
+real-world networks,"social media interactions, paper citations, web links, ontologies","Common properties of real-world networks include social media interactions, paper citations, web links, and ontologies."
+directed graph,transitivity,"Directed graphs have the property of transitivity. Transitivity in a directed graph means that if there exists a directed path from one vertex to another, then the edge between them also exists."
+directed graph,cyclicity,"Directed graphs can exhibit cyclicity. In a directed graph, a cycle is a directed path that starts from a vertex and loops back to itself."
+organic matter,food cycle,"Organic matter is a part of the food cycle. For example, in a food cycle, 'organic matter' plays a role."
+cat,mammal,"If 'cat is mammal' and 'mammal is animal' are true, then 'cat is animal' is also true. This demonstrates the concept of transitivity in directed graphs."
+graph embedding methods,deepwalk,DeepWalk is a graph embedding method that maps each vertex to a vector in Euclidean space. This method is designed to capture important information from a graph using a differentiable parameterization.
+graph embedding methods,node2vec,Node2vec is another graph embedding method that maps vertices to vectors in Euclidean space. It is used to model undirected graphs and capture salient information from them.
+undirected graphs,edge asymmetry in directed graphs,"Some methods for undirected graphs can be extended to capture edge asymmetry in directed graphs. This can be achieved by using separate representations for the source and target, which may or may not be related through a function."
+source and target vectors,graph encoding,"Separate source and target vectors can encode any graph, including those with cycles. By using a dot product or distance-based energy function, these vectors can represent complex graph structures."
+edge,directed paths,Relationship between an edge and directed paths where the encoding of relationships resulting from directed paths is harder when source and target representations live in separate spaces.
+vector model,transitivity,"The vector model can learn to make relationships among vectors, but encoding transitivity, such as edge (i, k), is harder when source and target spaces are disconnected."
+gbc-box,directed graph,Demonstration of using GBC-BOX to represent a directed graph where interval embeddings and binary code vectors combine into box embeddings to represent a directed acyclic graph (DAG).
+interval embeddings,binary code vectors,"Relation between interval embeddings and binary code vectors, where binary code vectors select a subset of interval embeddings to combine into box embeddings."
+box embeddings,dags,Box embeddings in each subspace can represent a DAG (Directed Acyclic Graph) as shown in the diagram.
+source vectors,target vectors,Relation between source vectors and target vectors used in the context of learning relationships in a vector model.
+transitivity,high-order proximity signals,Some work attempts to capture transitivity by factorizing high-order proximity signals instead of the graph Laplacian.
+high-order proximity signals,hope,HOPE attempts to capture transitivity by factorizing high-order proximity signals.
+high-order proximity signals,app,APP attempts to capture transitivity by factorizing high-order proximity signals.
+atp,cycles,"ATP resolves cycles in the graph by breaking them, accepting a loss of graph information."
+embedding space,geometric structure,An alternative approach is to represent nodes in an embedding space with additional geometric structure.
+hyperbolic embeddings,negative curvature of hyperbolic space,Hyperbolic embeddings leverage the negative curvature of hyperbolic space to model trees with less distortion.
+region-based embeddings,box embeddings,Region-based embeddings like box embeddings have a natural bias toward modeling transitivity.
+region-based embeddings,hyperbolic entailment cones,Region-based embeddings like hyperbolic entailment cones have a natural bias toward modeling transitivity.
+box embeddings,directed acyclic graph (dag),Previous work proved that box embeddings can model any directed acyclic graph.
+box embeddings,graphs with cycles,Box embeddings cannot capture graphs with cycles.
+box embeddings,graphs with cycles,Box embeddings capture graphs with cycles
+box embeddings,binary code box embeddings,Binary code box embeddings are a generalization of box embeddings to represent arbitrary directed graphs
+directed graph,union of multiple sub-graphs,A directed graph can be regarded as a union of multiple sub-graphs where each sub-graph is acyclic and therefore can be represented using boxes
+binary code,sub-graphs,Binary code selects sub-graphs of a graph
+global (gbc-box) and per-vertex (vbc-box) binary code box models,arbitrary directed graphs,Binary code box models (GBC-BOX and VBC-BOX) are a generalization of box embeddings capable of representing arbitrary directed graphs
+existing box embedding models,limitations when representing cycles,Existing box embedding models have limitations when representing cycles
+binary code box models,model any directed graph,"Given sufficient dimensions, binary code box models can model any directed graph"
+graph reconstruction and link prediction tasks,proposed methods perform the best,"Proposed methods perform the best in almost all scenarios, especially when a graph has strong cyclicity and transitivity"
+simple directed graph g,vertices and edges,A simple directed graph G with vertices and edges
+energy function,box volumes,The energy function is based on box volumes.
+energy function,box embedding models,The energy function is defined for box embedding models under a common framework.
+box embedding models,node,The box embedding model represents each node using a box.
+box embedding models,graph,Box embedding models can be interpreted as representing a graph as an intersection of interval graphs.
+graph,dimension,"The graph represented by box embedding models is an intersection of interval graphs, one for each dimension."
+boxes,training,Boxes that are disjoint or contained in one another can present problems for training.
+dasgupta et al.,modeling endpoints,Dasgupta et al. addressed modeling endpoints of intervals using Gumbel random variables.
+per-dimension score,written as,The per-dimension score can be written as FG-BOX formula.
+temperatures,tuned separately,"In practice, the temperatures ⌧ and ⌫ are tuned separately as global hyperparameters."
+boratko et al.,using a mapping,"Boratko et al. takes a step further, using a mapping which learns 4 parameters per dimension."
+representational capacity,model's representational capacity,We would like to know each model’s representational capacity and how this may change depending on hyperparameter settings.
+t-box,box,"T-BOX is equivalent to BOX when temperature hyperparameters are set to zero, i.e. ⌧ = ⌫ = 0."
+g-box,box,"G-BOX is capable of modeling any DAG because it is equivalent to BOX when temperature hyperparameters are set to zero, ⌧ = ⌫ = 0. However, the temperatures in G-BOX are not trainable like in T-BOX."
+g-box,box,"For any temperature hyperparameters, G-BOX can represent any graph representable by BOX."
+box,dag,BOX can model any DAG and any DAG can be modeled by BOX.
+g-box,dag,G-BOX can model any DAG for any setting of temperature hyperparameters.
+dag,dag,Any graph containing a chordless cycle with more than 2 nodes cannot be modeled by G-BOX.
+e,chordless cycle,"If E(u, v) cannot model any graph containing a chordless cycle with more than 2 nodes."
+cycle,energy,The concept of a 'cycle' is related to 'energy' in the context of using energy E in the cycle.
+cycle,threshold,The concept of a 'cycle' is related to the 'threshold' T as it is mentioned together in the context.
+energy,threshold,"The concept of 'energy' and 'threshold' are related as E(u, v) is compared to T in the context."
+"g(u, v) < t",g(v),"The relation between g(u,v) < T and g(v) is discussed in the context where E(u, v) < T and E(v, u) lead to g(v) = E(u, v)."
+g(v),"e(u, v)","The concept of 'g(v)' is related to the energy E(u, v) in the context."
+"e(v, u) < 0",g(u) < g(v),"The relationship between E(v, u) < 0 and g(u) < g(v) is mentioned, implying a comparison between the energy and function g."
+g(u),g(v),"The terms 'g(u)' and 'g(v)' are compared, stating that g(u) < g(v) for each in the context."
+n,1,"Comparing the values g(N) and g(1) where it is mentioned that g(N) < g(1), leading to a contradiction."
+g(1),g(2),"Sequential comparison is made between g(1) and g(2), stating that g(1) < g(2) in the context."
+g-box,graph,"The concept of 'G-BOX' is related to the representation of a 'graph' in the context, specifically mentioning that G-BOX cannot model any graph containing a chordless cycle on more than 2 nodes."
+g-box,eg-box,"In the context, it is mentioned that Theorem 3 applies to EG-BOX with specific parameters for g(u), involving log and more elements."
+g-box,one reverse edge,"The relationship between 'G-BOX' and the presence of 'one reverse edge' is discussed, wherein the introduction of a single reverse edge can avoid contradictions."
+g-box,g,"Concepts 'G-BOX' and 'G' are related, stating that G is the union of a chordless cycle and one reverse edge, which G-BOX can model in 2 dimensions as per Proposition 1."
+graph,chordless cycle,"In the context, it is mentioned that G is a graph which includes a chordless cycle and one reverse edge, and G-BOX is able to model this configuration in 2 dimensions."
+graph,g-box,The concept of a 'graph' is related to 'G-BOX' as G-BOX can model specific graph configurations as discussed.
+binary code box embedding,family of models,The term 'binary code box embedding' is related to a 'family of models' that includes GBC-BOX and VBC-BOX in the context of introducing the concept.
+vbc-box,gbc-box,"In the context, it is mentioned that VBC-BOX and GBC-BOX are two specific models under the binary code box embedding concept that use different types of binary code vectors."
+gbc-box,arbitrary directed graphs,"The concept of 'GBC-BOX' is related to the modeling of 'arbitrary directed graphs' in the context, showcasing the representational capacity."
+gbc-box,learning objectives,"In the context, it is mentioned that GBC-BOX includes specific learning objectives and regularization techniques in its modeling approach."
+vbc-box,per-vertex binary code vectors,"The term 'VBC-BOX' is related to the concept of using 'per-vertex binary code vectors' in the context, distinguishing it from other models."
+capacity,model arbitrary directed graphs,The capacity mentioned in the context refers to the ability to model arbitrary directed graphs.
+learning objectives,regularization,The learning objectives are related to regularization in the context of models.
+models' inductive biases,strengths,The inductive biases of models are related to their strengths.
+models' limitations,alternative variants,The limitations of models are related to alternative variants.
+binary code boxes,flexibility,The concept of binary code boxes is related to the idea of flexibility in representation.
+boxicity,interval graphs,"Boxicity is related to interval graphs in the context, specifically in the context of taking an intersection over them."
+union over intersections,subsets of s,Increasing flexibility by allowing a union over intersections is related to specifying subsets of S.
+vertex,subset of graphs to intersect,Each vertex selecting a subset of graphs to intersect is discussed as a way to increase flexibility in representation.
+undirected graph,size of representation,Increasing flexibility in representing undirected graphs may lead to smaller dimension representation.
+undirected graph,intersection of interval graphs,Undirected graphs can be represented as intersections of interval graphs.
+directed graphs,representation as interval graphs,"Unlike undirected graphs, directed graphs cannot always be represented as an intersection of interval graphs."
+binary vector,selection of dimensions,"The binary vector corresponds to a selection of which dimensions to include, indicating whether the scores for edges in each dimension should be ignored or included."
+binary code,per-dimension score function,"The binary code indicates whether a dimension should be taken into account when calculating the probability of edge existence, influencing the per-dimension score function."
+product,exponent,The product in the exponent is used as a relaxation of the intersection
+product,intersection,The product of binary codes in the exponent is used to learn to ignore certain dimensions
+exponent,binary codes,Binary codes in the exponent are used to learn to ignore certain dimensions
+binary codes,dimensions,"By making certain binary codes equal to 0, certain dimensions are ignored"
+gbc-box,vbc-box,Both GBC-BOX and VBC-BOX are a generalization of G-BOX
+gbc-box,energy function,The energy function is equivalent for GBC-BOX when all binary codes are 1
+vbc-box,energy function,The energy function is equivalent for VBC-BOX when all binary codes are 1
+"bi,j",vbc-box,"If Bi,j = 1, then it is similar for VBC-BOX"
+"bi,j",gbc-box,"If Bi,j = 1, then it is similar for GBC-BOX"
+"bi,j",project,"Bi,j determines the dimensions in which the box will be projected in"
+gbc-box,project,GBC-BOX determines the dimensions in which the box will be projected in
+vbc-box,project,VBC-BOX determines the dimensions in which the box will be projected in
+gbc-box,theorem 3,The energy function for GBC-BOX was constructed such that Theorem 3 would not apply
+vbc-box,theorem 3,The energy function for VBC-BOX was constructed such that Theorem 3 would not apply
+gbc-box,graphs with cycles,GBC-BOX may be capable of representing some graphs with cycles
+vbc-box,graphs with cycles,VBC-BOX may be capable of representing some graphs with cycles
+gbc-box,directed graph,GBC-BOX can model any directed graph
+vbc-box,directed graph,VBC-BOX can model any directed graph
+directed graph,theorem 5,"Theorem 5 establishes that given a directed graph G with certain parameters, there exists a threshold and binary codes where a specific function holds true."
+theorem 5,directed acyclic graphs,"The proof of Theorem 5 involves defining subgraphs D1 and D2 as directed acyclic graphs, leading to a result based on thresholds and dimensions."
+directed acyclic graphs,corollary,"The existence of directed acyclic graphs D1 and D2 proves a related corollary regarding thresholds, dimensions, and a specific function."
+corollary,theorem 6,The corollary mentioned in the proof of Theorem 5 contributes to the foundation for Theorem 6 concerning thresholds and binary codes in a directed graph.
+directed graph,parameters,Theorems 5 and 6 involve directed graphs with specific parameters leading to the establishment of thresholds and codes based on the given context.
+vbc-box model,d,"The VBC-BOX model is constructed in dimension d, which is used when evaluating edges (u, v) or (v, u)."
+graph g,vbc-box model,A graph G can be embedded using boxes in 1-dimension with the VBC-BOX model as proven.
+theorem 5,theorem 6,Theorem 5 and Theorem 6 help establish the capabilities of GBC-BOX and VBC-BOX models in modeling any directed graph.
+dimensionality bounds,models,The dimensionality bounds of the models like GBC-BOX and VBC-BOX are discussed in terms of their optimality in requiring fewer dimensions.
+geometric embeddings,binary cross entropy objective,Geometric embeddings are fitted by optimizing a binary cross entropy objective which involves defining a loss function.
+"positive edge (u, v)",negative samples,"For each positive edge (u, v), there is a set of negative samples used for training within one batch."
+binary code box embeddings,transitivity and flexibility,One limitation of Binary Code Box Embeddings is that the asymmetric transitivity might be weakened to model cycles with separate sub-spaces.
+binary code box embeddings,inefﬁciency of parameterization,"Another limitation of Binary Code Box Embeddings is the inefficiency of parameterization compared to a G-BOX model, leading to an increase in the number of parameters."
+binary code box embeddings,regularization,"To address the limitations, a regularization method is introduced to penalize dimension drop-off using the lasso with a regularization weight wr."
+binary code box embeddings,restricted binary code size,"Furthermore, another approach is to constrain the number of trainable binary codes to mitigate issues, leading to the introduction of Restricted Binary Code Size."
+regularization,restricted binary code size,Both regularization method and Restricted Binary Code Size approach can provide a handle on mitigating issues mentioned above.
+graph reconstruction,binary code box embeddings,"GBC-BOX and VBC-BOX can model any directed graph, showcasing the capabilities of Binary Code Box Embeddings in graph reconstruction."
+reverse edge,cycle,The effect of adding one reverse edge to the cycle is analyzed in the context.
+cycle,conventional box embedding models,Conventional box embedding models can represent the cycle.
+vbc-box,reconstruction performance,VBC-BOX shows the best reconstruction performance.
+vbc-box,vector* baseline,VBC-BOX even outperforms the Vector* baseline when = 212.
+g-box,cycle containing a reverse edge,G-BOX can model a cycle containing a reverse edge when is small.
+t-box,certain cycles,T-BOX can model certain cycles when is small.
+box models,inductive bias,Box models have an inductive bias which makes them more suited to capturing asymmetric transitivity.
+hyperbolic space,undirected trees,Hyperbolic space is particularly suitable for undirected trees.
+binary code models,inductive bias,Binary code models maintain the inductive bias.
+binary code models,inductive bias of box embeddings,Binary code models are evaluated to see if they maintain the inductive bias of box embeddings in this experiment.
+balanced trees,g-box,"G-BOX performs the best on transitively closed trees, while the Lorentzian model performs well on balanced trees."
+gbc-box,g-box,GBC-BOX performs equally well as G-BOX on transitively closed trees.
+gbc-box,g-box,Performance of VBC-BOX is slightly lower than G-BOX on transitively closed trees.
+gbc-box,vbc-box,"More transitive bias is preserved in GBC-BOX, while per vertex binary codes provide more representational flexibility."
+binary code models,t-box,Binary code models and T-BOX outperform the Lorentzian model on balanced trees when dimension size is increased.
+geometric-based embeddings,dimension size,Performance of other geometric-based embeddings are not capable of overfitting even as dimension increases.
+scale-free networks,real-world graphs,"Experiments are conducted on scale-free networks, a simulation to real-world graphs, where the edge distribution follows preferential attachment."
+simulation,real-world graphs,Simulation is related to real-world graphs in the context of analyzing models' performance.
+edge distribution,preferential attachment,Edge distribution follows preferential attachment in the context of analyzing cyclic graphs.
+cyclicity of graphs,model's performance,Analyzing how the cyclicity of graphs affects each model's performance is a key aspect.
+parameters,node,"Parameters per node for G-BOX, T-BOX, and VBC-BOX are important for analysis."
+balanced trees,branching factors,Analyzing average reconstruction performance on balanced trees with different branching factors is crucial.
+graph generation,measure cyclicity,Generating graphs and measuring cyclicity to analyze models' effectiveness are key steps.
+models' effectiveness,modeling cycles,Analyzing models' effectiveness in modeling cycles instead of the density of graphs reveals insights.
+vbc-box,g-box,"VBC-BOX outperforms standard G-BOX in various scenarios, particularly when cyclicity is high."
+vbc-box,gbc-box,VBC-BOX provides more representational capacity overall compared to GBC-BOX in modeling cyclic graphs.
+cyclic graphs,modeling,Cyclic graphs are modeled in the context mentioned.
+scale-free networks,reconstruction performance,The reconstruction performance on Scale-free networks is discussed.
+"g-box, gbc-box, vbc-box",parameters per vertex,"Different models (G-BOX, GBC-BOX, VBC-BOX) are evaluated with varying numbers of parameters per vertex."
+link prediction,binary code box models,Binary code box models are applied on link prediction tasks for evaluating generalization ability.
+real world graphs,"google hyperlink network, epinions trust network, cora citation network, twitter network, dream5 gene regulatory networks","Various real world graphs are used for evaluation, including Google hyperlink network, Epinions trust network, CORA citation network, Twitter network, and DREAM5 gene regulatory networks."
+hyperparameters,10% cross-validation,Hyperparameters are tuned using 10% cross-validation during training.
+test set results,averaged over 10 models of different random seeds,Test set results are averaged over 10 models of different random seeds for evaluation.
+sparsity regularization,bc-box models,The weight of sparsity regularization is tuned for all BC-Box models.
+table 3,[30],"In Table 3, comparisons are made with baseline models including [30]."
+vector-based baselines,"deepwalk, line, node2vec, hope, app, dggan","Vector-based baselines such as DeepWalk, LINE, node2vec, HOPE, APP, DGGAN are compared in the context."
+vertex,128 parameters,All models use 128 parameters per vertex for evaluation.
+binary code box models,out-perform other baselines,Results show that binary code box models out-perform other baselines in the evaluation.
+binary code box models,baselines,Binary code box models out-perform other baselines in most cases.
+vbc-box,graphs,VBC-BOX performs the best when graphs are highly cyclic.
+vbc-box,binary code dimensions,VBC-BOX performs better with fewer binary code dimensions.
+gbc-box model,graphs,GBC-BOX model performs better when graphs are less cyclic.
+g-box,graphs,G-BOX performs equally well when a graph is mostly acyclic.
+box geometry,vector-based models,Box geometry is superior to vector-based models in all scenarios.
+box geometry,modeling directed graphs,Box geometry shows strength in modeling directed graphs even when graphs are less transitive or have many cycles.
+box embedding models,baselines,Box embedding models out-perform their baselines significantly in most cases.
+dream5 datasets,box embedding models,Box embedding models out-perform their baselines significantly over DREAM5 datasets.
+model,average precision,The model has an average precision of 68.8%.
+auc,evaluation metric,AUC is used as an evaluation metric.
+vector-based methods,box embedding variants,Comparison between Vector-based methods and box embedding variants.
+source node,target node,randomly corrupting source or target node in each positive edge in the test set
+unit,parameter,All methods use 128 parameters per vertex
+model,method,"Bold numbers perform the best, and underscored numbers perform the best in all non-box models"
+method,cyclicity,Model Cyclicity = 0.40
+method,transitivity,Model Transitivity = 0.22
+method,google,== 0.01
+method,epinions,== 0.22
+method,twitter,== 0.01
+method,deepwalk,[30]
+method,line-1,[30]
+method,node2vec,[30]
+embedding,vector,Vector(Ours) *G-BOX
+embedding,vbc-box,"VBC-BOX (0 < dbin < d), VBC-BOX (dbin = d)"
+embedding,correlation,"unif.corr.83.6, 85.76"
+conclusion,paper,"In this paper, we introduced binary code box embeddings"
+model,graph,Model directed graphs
+model,graph,Modeling directed graphs
+model,transitivity,Bias of transitivity
+model,graph,Also modeling graphs with cycles
+acknowledgement,work,This work was supported
+acknowledgement,center,"Center for Data Science, Center for Intelligent Information Retrieval"
+acknowledgement,foundation,National Science Foundation under Grants No. 2106391 and No. 1763618
+acknowledgement,network,AI Horizons Network
+acknowledgement,initiative,Chan Zuckerberg Initiative under the project 'Scientific Knowledge Base Construction'
+acknowledgement,research,IBM Research AI
+acknowledgement,office,Office of Naval Research (ONR) via Contract No. N660011924032 under Subaward No. 123875727 from the University of Southern California
+government,reprint,U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon
+reprint,purpose,for Governmental purposes
+reprints,governmental purposes,The reprints are used for Governmental purposes.
+reprints,copyright notation,The reprints may have a copyright notation on them.
+work,high performance computing equipment,The work reported here was performed using high performance computing equipment.
+work,grant,The work reported here was performed using equipment obtained under a grant.
+equipment,collaborative r&d fund,The equipment was obtained under a grant from the Collaborative R&D Fund.
+grant,massachusetts technology collaborative,The grant was managed by the Massachusetts Technology Collaborative.
+opinions,authors,The opinions expressed in this material are those of the authors.
+opinions,sponsor,The opinions expressed in this material do not necessarily reflect those of the sponsor.

@@ -1,0 +1,222 @@
+node_1,node_2,edge
+machine learning models,transformer architectures,"Machine learning models are scaled in both sequence length and model dimension, while existing architectures like Transformers scale quadratically along both axes."
+machine learning models,monarch matrices,"Introduces a new architecture, MONARCH MIXER (M2), that uses Monarch matrices to scale sub-quadratically along both sequence length and model dimension."
+non-causal bert-style modeling,m2,M2 matches BERT-base and BERT-large in quality with fewer parameters and higher throughput at sequence length 4K in the domain of non-causal BERT-style modeling.
+imagenet,m2,M2 outperforms ViT-b by 1% in accuracy on ImageNet with only half the parameters.
+causal gpt-style models,monarch matrices,"Enforcing causality via masking introduces a quadratic bottleneck in causal GPT-style models, which is alleviated by developing a novel theoretical view of Monarch matrices based on multivariate polynomial evaluation and interpolation."
+m2,gpt-style transformers,"M2 matches GPT-style Transformers at 360M parameters in pretraining perplexity on The PILE, showing the potential to match Transformer quality without attention or MLPs."
+machine learning models,natural language processing and computer vision,Machine learning models in natural language processing and computer vision are being stretched to longer sequences and higher-dimensional representations to enable longer context and higher quality.
+existing architectures,time and space complexities,Existing architectures exhibit time and space complexities that grow quadratically in sequence length and/or model dimension.
+attention and mlp in transformers,scale quadratically,Attention and MLP in Transformers scale quadratically in sequence length and model dimension.
+monarch matrices,sub-quadratic structured matrices,"Monarch matrices are a simple, expressive, and hardware-efficient class of sub-quadratic structured matrices."
+sequence dimension,model dimension,sequence dimension and model dimension are key terms mentioned in the context that play a significant role in the discussion of machine learning models.
+mlp-mixer,convmixer,MLP-mixer and ConvMixer are machine learning models that operate by mixing information along the sequence and model dimension axes. They use a single operator for both axes.
+mlp-mixer,convolutions,MLP-mixer uses MLPs while convolutions are used in ConvMixer. Both models are expressive but scale quadratically in their input dimension.
+sub-quadratic sequence mixing,long convolutions,Sub-quadratic sequence mixing and long convolutions are approaches proposed for mixing information in sequences. Both methods aim to reduce the computational complexity compared to quadratic scaling.
+dense mlp layers,monarch matrices,Dense MLP layers and Monarch matrices are types of matrices used in machine learning models. Monarch matrices are proposed as sub-quadratic structured matrices to enhance the performance of the model.
+monarch mixer (m2),monarch matrices,MONARCH MIXER (M2) uses Monarch matrices to mix information along the sequence and model dimension axes.
+monarch matrices,fast fourier transform (fft),Monarch matrices generalize the fast Fourier transform (FFT).
+monarch matrices,hadamard transforms,Monarch matrices have been shown to capture a wide class of linear transforms including Hadamard transforms.
+monarch matrices,toeplitz matrices,Monarch matrices have been shown to capture Toeplitz matrices.
+monarch matrices,afdf matrices,Monarch matrices have been shown to capture AFDF matrices.
+monarch matrices,convolutions,Monarch matrices have been shown to capture convolutions.
+monarch matrices,monarch factors,"Monarch matrices are parameterized as the products of block-diagonal matrices, called monarch factors."
+monarch factors,permutation,Monarch factors are interleaved with permutation.
+monarch factors,matrix multiplication,Monarch factors can be computed efficiently on modern hardware using matrix multiplication.
+monarch factors,gemms (generalized matrix multiply algorithms),Monarch factors can be computed efficiently on modern hardware using GEMMs.
+m2,sequence,M2 uses Monarch matrices to mix information along the sequence.
+m2,model dimension axes,M2 uses Monarch matrices to mix information along the model dimension axes.
+m2,pytorch,"Our proof-of-concept implementation of an M2 layer, written in less than 40 lines of pure PyTorch, achieves 25.6% FLOP utilization for inputs of size 64K on an A100 GPU."
+pytorch,matrix multiplication,M2 layer implementation in PyTorch relies only on matrix multiplication.
+pytorch,transpose,M2 layer implementation in PyTorch relies only on transpose.
+pytorch,reshape,M2 layer implementation in PyTorch relies only on reshape.
+pytorch,elementwise products,M2 layer implementation in PyTorch relies only on elementwise products.
+a100 gpu,rtx 4090,"On an A100 GPU, our proof-of-concept implementation of an M2 layer achieves 25.6% FLOP utilization, whereas a simple CUDA implementation on RTX 4090 achieves 41.4% FLOP utilization at the same size."
+a100 gpu,size 64k,"On an A100 GPU, our proof-of-concept implementation of an M2 layer achieves 25.6% FLOP utilization for inputs of size 64K."
+rtx 4090,size 64k,"On RTX 4090, a simple CUDA implementation achieves 41.4% FLOP utilization at the same size."
+m2,trans,First proof of concept of M2 evaluates how it compares to Trans.
+m2,transformers,M2 is compared to Transformers in terms of speed and quality in non-causal settings such as BERT-style masked language modeling and ImageNet classification
+m2,monarch matrices,M2-BERT replaces the attention blocks in BERT with bidirectional gated convolutions implemented using Monarch matrices and replaces the dense matrices in the MLP with Monarch matrices
+m2,bert-base and bert-large,"M2-BERT maintains quality, matching BERT-base and BERT-large in downstream GLUE quality with fewer parameters"
+m2,huggingface bert,M2-BERT has higher throughput at longer sequences compared to HuggingFace BERT
+m2,hyenavit-b,"For image classification, M2 is adapted in HyenaViT-b, an attention-free vision transformer based on gated convolutions"
+monarch matrices,flashattention,"Monarch matrices were originally parameterized with p = 2, but the general p case is a natural extension. Monarch matrices have higher throughput at longer sequences compared to BERT optimized with FlashAttention"
+monarch matrices,vit-b,"Monarch matrices are used to replace the convolution operation in ViT-b, reducing the parameter count"
+monarch matrices,mlp layers,MLP layers in image classification are replaced with an M2 block using Monarch matrices
+m2,vit-b,M2 slightly outperforms ViT-b and HyenaViT-b baselines
+m2,monarch matrices,"To alleviate this quadratic bottleneck with Monarch matrices, we develop new theory to characterize which parameterizations of Monarch matrices maintain causality"
+monarch matrices,m2 convolution,We show that the M2 convolution can be viewed as manipulation of modular polynomial multiplication
+monarch matrices,gpt-style language models,We can use this causal parameterization to outperform GPT-style language models on causal language modeling by 0.2 PPL points
+m2,gpt-style language models,We can use this causal parameterization to outperform GPT-style language models on causal language modeling by 0.2 PPL points
+gpu,deep learning operations,GPU is a key component behind the cost of deep learning operations on GPUs.
+gpu,runtime performance,GPU has a relevant factor affecting the runtime performance of deep learning operations.
+computation,memory accesses,Operations can be classified as compute-bound or memory-bound based on the balance between computation and memory accesses.
+matrix multiply,inner dimension,Compute-bound operations such as matrix multiply with large inner dimension have a relatively small time accessing GPU memory compared to arithmetic operations.
+tensor cores,flop/s,The speed of operations utilizing tensor cores is determined by the FLOP/s available on compute units.
+tensor cores,matrix multiply operations,Tensor cores can achieve 312 TFLOP/s in half-precision matrix multiply operations on the A100 GPU.
+tensor cores,non-matrix multiply operations,Tensor cores are limited to 19 TFLOP/s in non-matrix multiply operations on the A100 GPU.
+tensor cores,v100 chips,"The trend of using tensor cores started with V100 chips [58], and is now moving towards the next-generation H100 chips [60]."
+memory-bound operations,time taken by the operation,"In memory-bound operations, the time taken by the operation is determined by the number of memory accesses."
+memory-bound operations,computation time,"In memory-bound operations, the time spent in computation is much smaller compared to the time taken by memory accesses."
+gpu memory,memory bandwidth,"The runtime of memory-bound operations is determined by the memory bandwidth of different layers of the memory hierarchy, where GPU memory provides large storage but relatively slow bandwidth."
+caches,memory hierarchy,Higher levels of the memory hierarchy such as caches are much smaller in size (20 MB) but significantly faster in bandwidth (19 TB/s).
+mix information in machine learning models,common operations,"To help contextualize the work, scaling and hardware utilization characteristics are provided for common operations used to mix information in machine learning models as summarized in Table 1."
+transformers,attention,Transformers use attention mechanisms to mix information across the sequence dimension.
+transformers,mlp blocks,Transformers use MLP blocks to mix information across the model dimension.
+mlp layers,flop utilization,"MLP layers are compute-bound, leading to high FLOP utilization out of the box."
+attention blocks,quadratic scaling in input length,Attention blocks and MLP blocks in transformers scale quadratically in input length.
+mlp layers,flop utilization,"MLP layers are compute-bound, which results in high FLOP utilization out of the box."
+attention blocks,flop utilization,"Attention blocks are memory-bound, leading to lower FLOP utilization even in optimized implementations like FLASHATTENTION."
+recent work,attention-free models,Recent work focuses on creating attention-free models by replacing attention layers with long convolution layers and elementwise gating.
+attention-free models,fft scales,Attention-free models are computed using FFT operations due to their scalability in O(N log N) but their memory-bound nature leads to low FLOP utilization.
+fft convolutions,flop utilization,"FFT convolutions scale well but are memory-bound, resulting in low FLOP utilization."
+monarch mixer,m2 convolution,"In this section, Monarch matrices are used in the MONARCH MIXER to mix along the sequence and model dimensions, benchmarking a M2 convolution in terms of hardware utilization."
+monarch matrices,structured matrices,"Monarch matrices are a sub-quadratic class of structured matrices that are hardware-efficient and expressive, representing various linear transforms efficiently."
+monarch decompositions,matrix multiplications,Monarch decompositions can be computed by interleaving matrix multiplications
+monarch matrix,order p,A Monarch matrix M ∈ RN×N of order p is deﬁned by the following
+pi,base p n,each Pi is related to the ‘base p N achieves sub-quadratic compute cost
+monarch matrices,compute cost,"For block-diagonal matrix with block size b. Setting b = p, Monarch matrices require O(N 3/2) compute in sequence length N"
+monarch matrices,sequence length n,"In this paper, we use Monarch matrices to construct architectures that are sub-quadratic in both sequence length N and model dimension d"
+order-2 monarch matrices,m = plprp,we will often parameterize order-2 Monarch matrices written as M = PLPRP where L and R are block-diagonal matrices
+monarch matrices,elementwise operations,We describe how MONARCH MIXER uses Monarch matrices and elementwise operations to construct sub-quadratic architectures
+sequence,model dimension,"We take a mixer view of model architectures, where each layer is a sequence of mixing operations across the sequence and the model dimension axes"
+layer,mixing operations,"Each layer takes as input a sequence of embeddings X ∈ RN×d, and outputs a sequence Y ∈ RN×d"
+input,sequence,"Both terms are described in relation to the embeddings X ∈ RN×d, where N is the sequence length."
+order-2,monarch matrices,"M1, M2 ∈ RN×N and M3, M4 ∈ Rd×d are described as order-2 Monarch matrices."
+convolutional block,mlp,A convolutional block with a sparse MLP can be expressed using Monarch matrices.
+dft,inverse dft,"When M1 is set to the DFT and M2 is set to the inverse DFT, Equation 2 corresponds to a convolution with kernel K1 parameterized in frequency space."
+dense matrices,monarch matrices,"Equation 3 corresponds to an MLP with the dense matrices replaced by Monarch matrices, leading to more expressive layers."
+mlp,monarch matrices,MLP with the dense matrices replaced by Monarch matrices
+equation 2,v (cid:12) m2(k1 (cid:12) m1(q (cid:12) k)),Replacing Equation 2 with V (cid:12) M2(K1 (cid:12) M1(Q (cid:12) K)) reproduces a gated convolution block
+q,k,"Q, K, V are linear projections of X"
+equation 2,m(k(cid:12) mx),Benchmarking the efficiency of the M(K(cid:12) MX) convolution operator (Equation 2) implemented in a simple CUDA kernel
+equation 3,dimension d,Equation 3 scales similarly as dimension d increases
+table 2,flop cost and utilization of a m2 operator,Table 2 shows the FLOP cost and utilization of a M2 operator as a function of the input size on an A100 as well as on an RTX 4090
+rtx 4090,a100,RTX 4090 has a larger and faster L2 cache than A100
+rtx 4090,l2 cache,RTX 4090 has a larger and faster L2 cache
+a100,l2 cache,A100 has a smaller and slower L2 cache compared to RTX 4090
+m2,polynomial multiplication,Theory developed to make M2 layer causal involves interpreting Monarch matrix multiplication as polynomial multiplication
+output yi,xi,Output Yi of M2 should only depend on Xi
+m2,convolution,M2 convolution is equivalent to modular polynomial manipulation in a univariate basis
+m2,monarch multiplication,"M2 layer is required to be causal in the input X, interpreted as polynomial evaluation and interpolation"
+monarch multiplication,polynomial evaluation,Monarch multiplication is interpreted as polynomial evaluation and interpolation
+monarch matrices,m2,Sufficient conditions derived on the polynomial formulation of Monarch matrices for M2 to be causal
+monarch matrix,bivariate polynomial evaluation,Monarch matrix can be interpreted as bivariate polynomial evaluation
+monarch matrix,evaluation points,Monarch matrices can be interpreted based on evaluation points
+basis polynomials,evaluation points,Basis polynomials are evaluated on evaluation points to determine entries of matrices L and R
+matrix-vector multiplication,polynomial evaluation,Matrix-vector multiplication is equivalent to polynomial evaluation of basis functions
+monarch inverse multiplication,polynomial interpolation,Monarch inverse multiplication is equivalent to polynomial interpolation in the basis polynomials of Monarch matrices
+monarch matrices,operation roots of unity,"Monarch matrices M0, M1, M2 and root of unity A are related in the context of representing polynomial equations in terms of basis polynomials and polynomial interpolation."
+monarch matrices,monarch matrix-vector multiplication,Monarch matrices and matrix-vector multiplication are related through the equivalence of polynomial interpolation in a given basis.
+monarch matrices,polynomial interpolation,Monarch matrices and polynomial interpolation are related by the fact that Monarch matrix-vector multiplication with an inverse Monarch matrix is equivalent to polynomial interpolation.
+monarch matrices,causal map,Monarch matrices are related to building a causal map in the context by giving a class of Monarch matrices from which a causal map can be constructed.
+polynomial,degree,The minimum degree polynomial is defined as a polynomial with minimum degree j. The maximum degree is N - 1.
+bivariate polynomial basis,univariate basis,The bivariate polynomial basis is converted into a univariate basis to ensure causality in polynomial multiplication.
+monarch matrices,causal map,"Monarch matrices form a causal map as per Theorem 3, providing a relationship between the two concepts."
+monarch matrices,monarch matrices,"Monarch matrices are used entirely in computing the causal map according to Theorem 3, indicating a self-referential relationship."
+monarch matrices,causality,"Monarch matrices enforce causality with sub-quadratic scaling, establishing a relationship between the matrices and the concept of causality."
+product qj(z)qj(cid:48)(z),linear combination of qa(z),"The product qj(Z)qj(cid:48)(Z) can be expressed as a linear combination of qa(Z), which is a pivotal step in the computation process."
+term kj(cid:48)ujqj(z)qj(cid:48)(z),basis polynomials qa(z),"The term kj(cid:48)ujqj(Z)qj(cid:48)(Z) influences the coefficients of higher order basis polynomials qa(Z), necessary for maintaining causality."
+restricted polynomials,causal map,"Restricted polynomials are shown to generate a causal map in the context, demonstrating their role in the overall process."
+restricted polynomials,causal map,Restricted polynomials are used to generate a causal map.
+monarch mixer,transformers,"MONARCH MIXER is compared to Transformers on tasks such as BERT-style non-causal masked language modeling, ViT-style image classification, and GPT-style causal language modeling."
+monarch mixer,quality,MONARCH MIXER can match Transformers in quality without using attention or MLPs.
+monarch mixer,bert,MONARCH MIXER shows wall-clock speedups compared to strong Transformer baselines in the BERT setting.
+m2-bert,monarch matrices,M2-BERT uses Monarch matrices for creating a bidirectional gated long convolution in the sequence mixer.
+m2-bert,bert-style language models,"M2-BERT is introduced as a drop-in replacement for BERT-style language models, commonly associated with the Transformer architecture."
+m2-bert,transformer backbone,M2-BERT starts with a Transformer backbone and replaces attention and MLPs with M2 layers.
+m2-bert,masked language modeling,M2-BERT is trained using masked language modeling over C4 with the bert-base-uncased tokenizer.
+m2-bert,bidirectional gated convolutions,"In the sequence mixer, M2-BERT replaces attention with bidirectional gated convolutions."
+attention,bidirectional gated convolutions,The sequence mixer replaces attention with bidirectional gated convolutions with a residual convolution.
+dense matrices,learned block-diagonal matrices,"In the dimension mixer, we replace the two dense matrices in MLPs with learned block-diagonal matrices."
+monarch matrices,dft and inverse dft matrices,"To recover convolutions, DFT and inverse DFT matrices are set as Monarch matrices."
+m2-bert-base models,bert-base models,"Pretraining is done on two M2-BERT-base models, equivalent to BERT-base."
+m2-bert-large models,bert-large models,"Pretraining is also done on two M2-BERT-large models, equivalent to BERT-large."
+m2-bert models,bert models,Downstream evaluation of M2-BERT models is done in comparison to BERT models.
+m2-bert-large,bert-large,"M2-BERT-large matches BERT-large with 24% fewer parameters, and outperforms by 0.7 points when parameter matched."
+m2-bert-base,bert-base,"M2-BERT-base achieves higher throughput than even highly-optimized BERT models, and up to 9.1× faster throughput than a standard HuggingFace implementation at sequence length 4K."
+m2-bert-base,bert-base,"Starting at sequences 1K and longer, M2-BERT-base starts to have speedup over BERT-base, up to 6.5× at sequence length 8K."
+base,bert-base,base starts to have speedup over BERT-base
+base,bert-base,up to 6.5× at sequence length 8K
+m2,vit-style models,M2 evaluated on image classification compared to ViT-style models
+m2,hyenavit-b,M2 builds off HyenaViT-b
+m2,m2 operator,M2 replaces the long convolutions with the M2 operator in Equation 2
+m2,swign-family of architectures,M2 is compared to the Swin-family of architectures in Appendix B
+monarch mixer,vit-b,Performance of MONARCH MIXER against ViT-b shown in Table 7
+monarch mixer,hyenavit-b,Performance of MONARCH MIXER compared to HyenaViT-b
+monarch mixer,resnet-152,MONARCH MIXER outperforms ResNet-152 with fewer parameters
+m2,gpt-style,M2-GPT introduced for causal language modeling
+m2-gpt,m2-based architecture,M2-GPT is introduced as a M2-based architecture for causal language modeling
+m2-gpt,sequence mixer,M2-GPT combines the convolutional ﬁlter from Hyena for the sequence mixer
+m2-gpt,pile,"M2-GPT is pretrained on the PILE, a standard dataset for causal language modeling"
+m2-gpt,transformers,"Even though M2-GPT is attention- and MLP-free, it outperforms both Transformers and Hyena in perplexity on pretraining"
+sequence mixer,convolutional filter,The convolutional filter from Hyena is combined with the sequence mixer in M2-GPT
+h3,multiple heads,Parameter sharing across multiple heads from H3 is used in M2-GPT
+fft,causal parameterization,The causal parameterization of Equation 2 is used to replace the FFT in these architectures
+transformers,hyena,Both Transformers and Hyena are compared with the model mentioned in the context in terms of perplexity on pretraining.
+transformers,mlp,"The model mentioned in the context, which is attention- and MLP-free, outperforms Transformers in perplexity on pretraining."
+transformers,radically different architectures,The results suggest that radically different architectures than Transformers may be performant on causal language modeling.
+long convolution layers,transformer attention layers,Recent work proposes to use long convolution layers as a replacement for the Transformer attention layers in sequence modeling.
+fft convolution theorem,fft operations,Many models rely on the FFT convolution theorem to compute the long convolutions and our M2 architectures replace the FFT operations with Monarch matrices.
+fft operations,monarch matrices,Many models rely on FFT operations which are replaced by Monarch matrices in the construction of M2 architectures.
+convolutions in other bases,chebyshev bases,"The context mentions the use of convolutions in other bases, such as Chebyshev bases, which have analogues in the discussed multivariate analysis."
+convolutions in other bases,orthogonal polynomial bases,"The context mentions the use of convolutions in other bases, such as orthogonal polynomial bases, which have some similarities with the discussed techniques."
+monarch mixer,basis polynomials,The context suggests replacing the basis polynomials of the Monarch matrices in MONARCH MIXER to approximate some operations related to orthogonal polynomial bases.
+deep learning primitives,performance optimization,"The context discusses the optimization of deep learning primitives for accelerating performance, which can yield substantial savings in compute and cost for large models."
+data movement,operations,Data movement is mentioned in the context as a bottleneck in operations.
+checkpointing,data movement,Checkpointing is an approach to reducing data movement by storing fewer intermediate results and recomputing others on-the-fly.
+kernel fusion,algorithms,Kernel fusion is described as fusing algorithms in ways that improve their properties.
+dot-product,multiply-9table,It is generally faster to implement a dot-product through a multiply-9Table.
+resnet-152,imagenet-1k,ResNet-152 is provided as a reference model for the ImageNet-1k dataset.
+vit-b,monarch,ViT-b + Monarch is described as an approach in the context.
+resnet-152,"convnet, mlp",ResNet-152 is described with ConvNet and MLP as models.
+transformer,pile,Transformer is mentioned in relation to the PILE dataset.
+hyena,m2-gpt,Hyena and M2-GPT are mentioned in terms of models.
+transformer,"attention-free, mlp",Transformer is associated with Attention-Free and MLP.
+kernel fusion,handwritten kernels,"The best performance usually arises from handwritten kernels, even though some algorithms have added kernel fusion capabilities."
+memory locality,small blocks of memory,"To better exploit memory locality, it is often fastest to load small blocks of memory, do intensive computation on them, and then write the results a tile at a time."
+algorithms,hand-optimizations,Many algorithms have hand-optimizations that can remove unnecessary computation or memory accesses.
+algorithms,efficient techniques,Efficient algorithms usually make use of a combination of techniques to improve performance.
+flashattention,latency and memory consumption,FlashAttention uses various techniques to decrease both the latency and memory consumption of multi-head attention.
+monarch mixer,optimization techniques,MONARCH MIXER could be further optimized using various optimization techniques.
+multi-layer perceptron (mlp),structured sparse factorizations,Structured sparse factorizations can be used to optimize the multi-layer perceptron (MLP) in terms of efficiency.
+attention,sub-quadratic approximations,Various sub-quadratic approximations of attention have emerged to reduce the quadratic complexity associated with attention.
+attention,sparsity,Some optimization methods for attention rely on sparsification due to the extreme sparsity of the attention matrix.
+attention matrix,sparse,The attention matrix is described as extremely sparse at long sequence lengths.
+others,low-rank approximations,Some researchers use low-rank approximations of the attention matrix.
+others,kernel methods,Some researchers use kernel methods as an alternative to low-rank approximations of the attention matrix.
+subset,techniques,A subset of researchers use a combination of techniques including low-rank approximations and kernel methods.
+category,methods,"A third category of methods aim to replace attention entirely, relying on state-space models."
+monarch mixer (m2),architecture,MONARCH MIXER (M2) is described as a new architecture that is sub-quadratic in both sequence length and model dimension.
+monarch mixer (m2),hardware-efﬁcient,MONARCH MIXER (M2) is hardware-efﬁcient on modern accelerators.
+m2 layer,optimization,The M2 layer can likely be further optimized with systems optimization techniques such as kernel fusion.
+models,state space models,Models like Transformers and state space models have not been optimized for inference like more well-established models.
+models,m2 layers,It remains to be seen whether M2 layers can have as widespread applicability as more established models like Transformers.
+nih,u54eb020405,NIH is under No. U54EB020405
+nsf,ccf1763315,NSF is under No. CCF1763315
+nsf,ccf1563078,NSF is under Nos. CCF1563078
+nsf,1937301,NSF is under 1937301
+onr,n000141712266,ONR is under No. N000141712266
+moore foundation,nxp,Moore Foundation and NXP are mentioned together
+xilinx,leti-cea,Xilinx and LETI-CEA are mentioned together
+intel,ibm,Intel and IBM are mentioned together
+microsoft,nec,Microsoft and NEC are mentioned together
+toshiba,tsmc,Toshiba and TSMC are mentioned together
+arm,hitachi,ARM and Hitachi are mentioned together
+basf,accenture,BASF and Accenture are mentioned together
+ericsson,qualcomm,Ericsson and Qualcomm are mentioned together
+analog devices,okawa foundation,Analog Devices and Okawa Foundation are mentioned together
+american family insurance,google cloud,American Family Insurance and Google Cloud are mentioned together
+microsoft azure,swiss re,Microsoft Azure and Swiss Re are mentioned together
+brown institute for media innovation,department of defense (dod),Brown Institute for Media Innovation and Department of Defense (DoD) are mentioned together
+national defense science and engineering graduate fellowship (ndseg) program,fannie and john hertz foundation,NDSEG Program and Fannie and John Hertz Foundation are mentioned together
+national science foundation graduate research fellowship program,texas instruments stanford graduate fellowship in science and engineering,NSF Graduate Research Fellowship Program and Texas Instruments Stanford Graduate Fellowship in Science and Engineering are mentioned together
+stanford dawn project,teradata,Stanford DAWN project and Teradata are mentioned together
+facebook,google,Facebook and Google are mentioned together
+ant financial,nec,Ant Financial and NEC are mentioned together
+vmware,infosys,VMWare and Infosys are mentioned together
+u.s. government,darpa,"U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views, policies, or endorsements, either expressed or implied, of DARPA, NIH, ONR, or the U.S. Government"
+u.s. government,nih,"U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views, policies, or endorsements, either expressed or implied, of DARPA, NIH, ONR, or the U.S. Government"
+u.s. government,onr,"U.S. Government is authorized to reproduce and distribute reprints for Governmental purposes notwithstanding any copyright notation thereon. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views, policies, or endorsements, either expressed or implied, of DARPA, NIH, ONR, or the U.S. Government"
+jg,ar,JG and AR's work is supported by NSF grant# CCF-2247014
+ij,nsf graduate fellowship,IJ's work is supported by an NSF Graduate Fellowship

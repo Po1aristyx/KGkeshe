@@ -1,0 +1,218 @@
+node_1,node_2,edge
+referring image segmentation,sequential polygon generation,referring image segmentation is formulated as sequential polygon generation in this work
+sequential polygon generation,polygon transformer,"sequential polygon generation is enabled by a new sequence-to-sequence framework, Polygon Transformer (PolyFormer)"
+polygon transformer,image patches,Polygon Transformer takes a sequence of image patches as input
+polygon transformer,text query tokens,Polygon Transformer takes text query tokens as input
+image patches,sequence of polygon vertices,image patches are used as input to generate a sequence of polygon vertices
+polygon vertices,geometric localization,sequence of polygon vertices is used for geometric localization
+geometric localization,regression-based decoder,a regression-based decoder is proposed for more accurate geometric localization
+regression-based decoder,floating-point coordinates,regression-based decoder predicts precise floating-point coordinates
+refcoco+ dataset,polyformer,PolyFormer outperforms the prior art by 5.40% and 4.52% absolute improvements on the challenging ReFCOCO+ dataset
+refcocog dataset,polyformer,PolyFormer outperforms the prior art by 5.40% and 4.52% absolute improvements on the challenging RefCOCOg dataset
+referring video segmentation task,polyformer,PolyFormer shows strong generalization ability in the referring video segmentation task
+referring video segmentation task,re-davis17 dataset,PolyFormer achieves competitive 61.5% J & F on the Ref-DAVIS17 dataset without fine-tuning
+referring image segmentation,vision-language understanding,referring image segmentation combines vision-language understanding
+referring image segmentation,instance segmentation,referring image segmentation combines instance segmentation
+instance segmentation,object segmentation,instance segmentation aims to localize the segmentation mask of an object given a natural language query
+object segmentation,predefined categories,Object segmentation generalizes from a fixed number of predefined categories to any concept described by free-form language.
+image,text inputs,Features are extracted from the image and text inputs in the conventional pipeline.
+multi-modal features,mask,Multi-modal features are fused together to predict the mask.
+segmentation mask,spatial layout of an object,A segmentation mask encodes the spatial layout of an object.
+instance segmentation models,dense binary classification network,Instance segmentation models rely on a dense binary classification network to determine whether each pixel belongs to the object.
+pixel-to-pixel prediction,convolutional operation,Pixel-to-pixel prediction is preferred by a convolutional operation.
+segmentation mask,structured polygon vertices,A segmentation mask can also be represented by a sparse set of structured polygon vertices delineating the contour of the object.
+structured sparse representation,dense mask representation,The structured sparse representation is cheaper than a dense mask representation and is the preferred annotation format for most instance segmentation datasets.
+structured polygons,structured outputs,"It is tempting to predict structured polygons directly, but effectively predicting this type of structured outputs is challenging."
+structured polygons,convolutional neural networks (cnns),"Effectively predicting structured outputs is challenging, especially for convolutional neural networks."
+cnns,outputs,CNNs is a challenging aspect for outputs.
+seq2seq framework,polygon transformer,Polygon transFormer is proposed within the seq2seq framework.
+image patches,text query tokens,Image patches and text query tokens serve as input for the model.
+sequence of polygon vertices,vertex prediction,The sequence of polygon vertices conditionally predicts vertex predictions.
+visual and language features,long sequence,Visual and language features are concatenated together to form a long sequence.
+bounding box,two corner points,A bounding box is represented by two corner points.
+polyformer,image segmentation (polygon),PolyFormer is used for image segmentation in the form of polygons.
+polyformer,referring expression comprehension (bounding box),PolyFormer can also output bounding boxes in addition to polygon vertices.
+image segmentation,referring expression comprehension,Both are unified in the PolyFormer framework for localization.
+image segmentation,bounding box,Localization is important for both polygon and bounding box.
+referring expression comprehension,bounding box,Both are part of the PolyFormer pipeline for referring image segmentation and comprehension.
+bounding box,mask,Polygons are converted to segmentation masks in the end.
+seq2seq models,visual domain,The seq2seq models are designed for the visual domain to accommodate all tasks.
+classification task,localization task,Quantized coordinates in classification task are suboptimal for localization.
+regression task,object detection,"Localization is formulated as a regression task, with success seen in object detection."
+floating-point coordinates,quantization error,Floating-point coordinates in object detection are directly predicted without quantization error.
+floating-point coordinates,bilinear interpolation,Coordinate feature embedding in PolyFormer is obtained by bilinear interpolation of its neighboring indexed embeddings.
+polyformer,indexed embeddings,"PolyFormer is mentioned as a framework that enables accurate polygon and bounding box predictions, which contrasts with the approach of indexed embeddings."
+polyformer,refcoco,"PolyFormer is evaluated on the validation sets of RefCOCO, achieving mIoU results that outperform the state of the art."
+polyformer,refcoco+,"PolyFormer is evaluated on the validation sets of RefCOCO+, achieving mIoU results that outperform the state of the art by a significant margin."
+polyformer,refcocog,"PolyFormer is evaluated on the validation sets of RefCOCOg, achieving mIoU results that outperform the state of the art by a significant margin."
+polyformer,ref-davis17 dataset,"PolyFormer is applied to the Ref-DAVIS17 dataset for referring video segmentation, achieving a J &F percentage comparable to a specifically designed method."
+polyformer,ris and rec,"PolyFormer introduces a novel framework for RIS and REC, formulating them as a sequence-to-sequence prediction problem, enabling the fusion of multi-modal features for precise coordinate prediction."
+polyformer,geometric,"PolyFormer utilizes a regression-based decoder for accurate coordinate prediction, outputting continuous 2D coordinates without quantization error, which is a significant contribution in formulating geometric properties."
+geometric localization,regression task,Geometric localization is formulated as a regression task in seq2seq framework instead of classification.
+polygon-based method,mask-based method,Polygon-based method surpasses mask-based ones in referring image segmentation benchmarks.
+polygon-based method,generalization,"Polygon-based method can generalize well to unseen scenarios, including video and synthetic data."
+referring image segmentation (ris),pixel-level localization,RIS aims to provide pixel-level localization of a target object in an image described by a referring expression.
+vision and language feature extraction,multi-modal feature fusion,Previous works in RIS mainly focus on vision and language feature extraction and multi-modal feature fusion.
+cnns,transformer models,Feature extraction methods in RIS include the use of CNNs and transformer models.
+attention mechanisms,multi-modal transformers,Feature fusion methods in RIS include attention mechanisms and multi-modal transformers.
+seqtr,polygon vertices generation,SeqTR adopts a transformer model for generating polygon vertices sequentially.
+seqtr,coarse segmentation masks,SeqTR can only produce a single polygon of 18 vertices with coarse segmentation masks.
+seqtr,object outlines,SeqTR fails to outline objects with complex shapes and occlusion.
+referring expression comprehension (rec),prediction,REC predicts the referring expressions.
+segmentation masks,objects with complex shapes and occlusion,Segmentation masks are used for outlining objects with complex shapes and occlusion.
+referring expression comprehension (rec),bounding box,REC predicts a bounding box that encompasses the target object in an image corresponding to a referring expression.
+two-staged methods,one-stage methods,There are two types of methods for predicting bounding boxes: two-staged methods based on region proposal ranking and one-stage methods that predict the target bounding box directly.
+multi-task learning of rec and ris,mcn and reftr,"Several papers explore multi-task learning of REC and RIS, with MCN and RefTR requiring task-specific heads."
+seqtr,multi-task supervision,"SeqTR casts the tasks as a point prediction problem, showing that multi-task supervision can degrade performance compared to single-task variant."
+polyformer,multi-task learning of ris and rec,PolyFormer achieves improved performance through multi-task learning of RIS and REC.
+sequence-to-sequence (seq2seq) modeling,natural language processing (nlp),Seq2seq modeling has been successful in NLP tasks according to various research works.
+sutskever et al.,lstm,Sutskever et al. proposed a seq2seq model based on LSTM for machine translation.
+raffel et al.,t5 model,"Raffel et al. developed the T5 model to unify various tasks including translation, question answering, and classification."
+t5 model,"translation, question answering and classification","The T5 model developed by Raffel et al. unifies various tasks including translation, question answering, and classification in a text-to-text framework."
+language models,few-shot performance,Scaling up language models significantly improves few-shot performance as shown by research.
+geometric localization tasks,classification problem,Recent endeavors in computer vision and vision-language cast geometric localization tasks as a classification problem by quantizing coordinates into discrete bins and predicting the coordinates as one of the bins.
+geometric localization tasks,more suitable regression task,"In PolyFormer, geometric localization is formulated as a more suitable regression task that predicts continuous coordinates without quantization."
+contour-based instance segmentation,segment instances by predicting the contour,Contour-based Instance Segmentation aims to segment instances by predicting the contour.
+polar-mask,instance masks in polar coordinates,"Polar-Mask models instance masks in polar coordinates, converting instance segmentation to instance center classification and dense distance regression tasks."
+deep snake,classic snake algorithm,Deep Snake extends the classic snake algorithm and uses a neural network to iteratively deform an initial contour to match the object boundary.
+polytransform,segmentation network,PolyTransform exploits a segmentation network to first generate instance masks to initialize.
+polytransform,segmentation network,PolyTransform exploits a segmentation network to generate instance masks
+polytransform,deformation network,PolyTransform feeds polygons into a deformation network to better fit the object boundary
+boundaryformer,point-based transformer,BoundaryFormer introduces a point-based transformer with mask supervision
+polyformer,corner points,PolyFormer produces corner points of the bounding box and vertices of polygons
+polyformer,image features,PolyFormer extracts image features using a visual encoder
+polyformer,text features,PolyFormer extracts text features using a text encoder
+polyformer,shared embedding space,PolyFormer projects image and text features into a shared embedding space
+polyformer,multi-modal transformer encoder,PolyFormer feeds concatenated image and text features into a multi-modal transformer encoder
+polyformer,transformer decoder,PolyFormer uses a regression-based transformer decoder to output bounding box corner points and polygon vertices
+polyformer,segmentation mask,PolyFormer generates segmentation mask from the polygons
+segmentation mask,polygons,The segmentation mask is the region encompassed by the polygons
+polygon,object,Polygons outline the referred object.
+polygon,sequence,A polygon is parameterized as a sequence of 2D vertices.
+polygon,vertex,Polygons contain vertices that are sorted in clockwise order.
+vertex,sequence,Vertices can be part of the sequence of polygons.
+vertex,polygon,Vertices are part of the polygons.
+vertex,<sep>,A separator token is introduced for multiple polygons.
+<sep>,polygon,Separator token is used to separate polygons.
+polygon,object,Polygons represent objects.
+vertex,coordinate,Vertices have coordinates.
+polygon,image,Polygons are related to images.
+polygon,mask,Segementation mask is generated by the polygons.
+<bos>,<eos>,Special tokens indicate beginning and end of the sequence.
+bounding box,corner points,Bounding box is represented by two corner points.
+bounding box,sequence,Bounding box can be concatenated with multiple polygons into a single sequence.
+bounding box,polygon,The coordinates of the bounding box and multiple polygons can be concatenated together into a single long sequence.
+polygon,coordinate tokens,The bounding box corner points and polygon vertices are regarded as the coordinate tokens.
+image,referring expression,The input of the framework consists of an image I and a referring expression T.
+swin transformer,feature extraction,A Swin transformer is used to extract the feature from the 4-th stage as visual representation Fv.
+bert language embedding model,word feature extraction,The language embedding model from BERT is used to extract the word feature Fl.
+visual features,textual features,"To fuse the image and textual features, visual features are flattened into a sequence and text features are projected into the same embedding space."
+multi-modal encoder,transformer layers,The multi-modal encoder is composed of N transformer layers
+transformer layers,multi-head self-attention layer,Each layer consists of a multi-head self-attention layer
+transformer layers,feed-forward network,Each layer consists of a feed-forward network
+multi-modal encoder,feature fm,It takes the concatenated feature FM and generates the multi-modal feature F NM progressively
+absolute positional encodings,image and text features,Absolute positional encodings are added to the image and text features to preserve position information
+1d relative position bias,image features,1D relative position bias is added to image features
+2d relative position bias,text features,2D relative position bias is added to text features
+regression-based transformer decoder,architecture,The architecture of the regression-based transformer decoder
+2d coordinate embedding,bilinear interpolation,The 2D coordinate embedding is obtained by bilinear interpolation from the nearby grid points
+continuous coordinate x,discrete bin [x],"Coordinate localization quantizes a continuous coordinate x into a discrete bin [x], introducing an inevitable quantization error"
+regression-based transformer decoder,quantization,The regression-based decoder does not use quantization
+continuous coordinate values,x,"The regression-based decoder predicts the continuous coordinate values directly (i.e., it uses x instead of [x])"
+2d space,embedding dimension,"The coordinate codebook is in 1D space, D ∈ RB×Ce, where B is the number of bins and Ce is the embedding dimension"
+number of bins,embedding dimension,The number of bins (B) is related to the embedding dimension (Ce) as mentioned in the context.
+embedding,x,The embedding of x is obtained using the codebook as shown in the context.
+x,y,The relationship between x and y is mentioned to better capture the geometric relationship in the context.
+2d coordinate codebook,height and width dimensions,The 2D coordinate codebook is defined based on the numbers of bins along height and width dimensions in the context.
+coordinate embedding,floating-point coordinate,"The precise coordinate embedding is obtained for any floating-point coordinate (x, y) as mentioned in the context."
+floor and ceiling operations,discrete bins,"The floor and ceiling operations are applied on (x, y) to generate four discrete bins in the context."
+2d codebook,embeddings,The embeddings are indexed from the 2D codebook to obtain the accurate coordinate embedding as discussed in the context.
+bilinear interpolation,accurate coordinate embedding,Bilinear interpolation is used to calculate the accurate coordinate embedding as shown in the context.
+multi-modal feature fnm,"2d coordinate embedding (e(x,y))",The relations between multi-modal feature FNM and 2D coordinate embeddings are captured using Transformer Decoder Layers in the context.
+transformer decoder layers,multi-modal feature fnm and 2d coordinate embedding,N transformer decoder layers are introduced to capture the relations between multi-modal feature FNM and 2D coordinate embedding as mentioned in the context.
+final predictions,last decoder layer output qn,Two lightweight heads are built on top of the last decoder layer output QN to generate final predictions in the context.
+class head,token types,"The class head is a linear layer that outputs the token types for the current output, indicating whether it is a coordinate or not in the context."
+coordinate token,separator token,"The class head outputs token types, indicating whether the current output is a coordinate token (<COO>), separator token (<SEP>) or an end-of-sequence token (<EOS>)"
+coordinate token,3-layer feed-forward network,The coordinate head is a 3-layer feed-forward network with ReLU activation except for the last layer.
+referred object bounding box corner points,polygon vertices,The 3-layer feed-forward network predicts the 2D coordinates of the referred object bounding box corner points and polygon vertices.
+dense contour,sparse polygons,"Given a dense contour, the generation of sparse polygons is usually not unique to create diverse polygons."
+image,referring expression,"Given an image and a referring expression, the model is trained to predict the next token and its type."
+lt,λt,Lt and λt are related as they both represent different loss functions used in the context of token prediction.
+lt,lcoo,Lt and Lcoo are related as Lt is defined using the Lcoo regression loss function.
+lcoo,"xt, yt","Lcoo is related to coordinate tokens xt, yt as it involves processing of coordinate information."
+λcls,pt,λcls and pt are related as λcls is a function applied to the class head pt.
+lt,i,Lt and I are related as Lt is calculated based on the indicator function I.
+pt,ˆpt,pt and ˆpt are related as they are variables used in the context of loss calculation.
+lcls,pt,Lcls and pt are related as Lcls is a loss function involving the class head pt.
+λbox,λpoly,λbox and λpoly are related as they represent token weights used in the process.
+lt,token,Lt is related to tokens as it is computed for all tokens in a sequence.
+token,<bos>,Tokens are related to the <BOS> token as generation starts with inputting the <BOS> token.
+<eos>,polygon vertices,<EOS> and polygon vertices are related as the sequential prediction stops when <EOS> is output and the vertices represent the polygon structure.
+bounding box coordinates,polygon vertices,Bounding box coordinates and polygon vertices are related as the generated sequence includes both in the context of segmentation mask creation.
+datasets,metrics,Datasets and Metrics are key concepts mentioned in the context referring to the data used for experiments and the evaluation metrics used.
+refcoco,refcoco+,RefCOCO and RefCOCO+ are related datasets for referring expressions with varying numbers of annotated expressions and objects.
+refcoco,refcocog,RefCOCO and RefCOCOg are datasets for referring expressions with different numbers of annotated expressions and objects.
+refcoco+,refcocog,RefCOCO+ and RefCOCOg are datasets for referring expressions with varying numbers of annotated expressions and objects.
+refcocog,referit,RefCOCOg and ReferIt are datasets for referring expressions with distinct characteristics and numbers of expressions and objects.
+ris,rec,RIS and REC tasks are evaluated using different evaluation metrics including mean Intersection-over-Union (mIoU) and Precision@0.5.
+polyformer,rec,PolyFormer is evaluated on the REC task as it is a unified framework for both RIS and REC tasks.
+intersection-over-union (iou),ground-truth box,"In the context, a prediction is considered correct if its Intersection-over-Union (IoU) with the ground-truth box is higher than 4.2"
+polyformer-b,swin-b,"Model Settings mention that in PolyFormer-B, Swin-B is used as the visual encoder"
+polyformer-b,bert-base,"Model Settings mention that in PolyFormer-B, BERT-base is used as the text encoder"
+polyformer-l,swin-l,"Model Settings mention that in PolyFormer-L, Swin-L is used as the visual backbone"
+polyformer-l,bi-lstm,Model Settings mention that PolyFormer-L adopts Bi-LSTM as part of the model
+rn101,resnet-101,Table 1 compares the state-of-the-art methods including RN101 (ResNet-101)
+wrn101,wide resnet-101,Table 1 compares the state-of-the-art methods including WRN101 (Wide ResNet-101)
+dn53,darknet-53,Table 1 compares the state-of-the-art methods including DN53 (Darknet-53)
+roberta-base,embedding layer,MethodVisual Backbone EncoderText mentions the use of embedding layer along with RoBERTa-base
+robert-base,embedding layer,MethodVisual Backbone EncoderText mentions the use of embedding layer along with RoBERT-base
+enb3,efficientnet-b3,Table 2 compares state-of-the-art methods including ENB3 (EfficientNet-B3)
+efficientnet-b3,training details,EfficientNet-B3 is used as a pre-training model in the training details mentioned in the context
+polyformer,rec task,"PolyFormer is first pre-trained on the REC task using various datasets such as Visual Genome, RefCOCO, RefCOCO+, RefCOCOg, and Flickr30k-entities"
+adamw optimizer,"(β1, β2) = (0.9, 0.999) and ϵ = 1× 10−8",AdamW optimizer is used with specific parameters for optimization in the training process
+image size,512x512,Images are resized to 512x512 during the training process
+2d coordinate embedding codebook,64x64 bins,A 2D coordinate embedding codebook is constructed with 64x64 bins for specific purposes
+polyformer-b,lavt,PolyFormer-B achieves better results compared to LAVT on the RefCOCO dataset.
+polyformer-b,referformer,PolyFormer-B significantly outperforms ReferFormer on the RefCOCO+ dataset.
+polyformer-b,reftr,PolyFormer-B outperforms the previous state-of-the-art RefTr by significant margins on the RefCOCO+ dataset.
+polyformer-b,polyformer-l,PolyFormer-L achieves consistent performance gains over PolyFormer-B across all datasets.
+polyformer-b,swin-l,PolyFormer-B achieves notable performance improvements using the Swin-L backbone.
+polyformer-b,reftr,PolyFormer-B achieves notable performance improvements compared to RefTr on the RefCOCOg dataset.
+polyformer-l,polyformer-b,PolyFormer-L achieves consistent performance gains over PolyFormer-B across all datasets.
+mask-based methods,referring expression comprehension,Referring Expression Comprehension is evaluated using mask-based methods.
+polyformer,rec datasets,PolyFormer is evaluated on the REC datasets.
+polyformer,ofa,PolyFormer is compared with OFA in terms of performance.
+polyformer,ofal,PolyFormer-L performs better than OFA-L on RefCOCO and comparably on other datasets.
+polyformer,seqtr,PolyFormer-B outperforms SeqTR on multiple validation sets for multi-task learning.
+polyformer,referring video object segmentation dataset ref-davis17,PolyFormer is evaluated on the referring video object segmentation dataset Ref-DAVIS17 in a zero-shot manner.
+polyformer-l,j & f,PolyFormer-L achieves 61.5% J & F in zero-shot transfer to Referring Video Object Segmentation.
+rregression,classification,"RRegression is compared with Classification in terms of performance on different datasets, with regression-based model consistently outperforming the classification-based model, indicating that regression is a better choice for geometric localization tasks."
+rregression,ablation study,An ablation study is performed on regression-based decoder to analyze its performance.
+ablation study,refcoco,Ablation experiments are performed on RefCOCO dataset to study the effects of core components of PolyFormer.
+ablation study,refcoco+,Ablation experiments are performed on RefCOCO+ dataset to study the effects of core components of PolyFormer.
+ablation study,refcocog,Ablation experiments are performed on RefCOCOg dataset to study the effects of core components of PolyFormer.
+coordinate classification,regression,"A classification-based model for coordinate prediction is compared with a regression-based model, with the regression-based model consistently outperforming the classification-based model on all datasets."
+component analysis of target sequence construction,target sequence,The effects of several components in constructing the target sequence are analyzed.
+polygon ordering,target sequence,The effects of polygon ordering are studied in constructing the target sequence.
+polygon ordering,data augmentation,The effects of polygon ordering are studied along with data augmentation in constructing the target sequence.
+polygon ordering,multi-task learning of ris and rec,The effects of polygon ordering are studied along with multi-task learning of RIS and REC in constructing the target sequence.
+polygon ordering,separator token,The effects of polygon ordering are studied along with the use of a separator token in constructing the target sequence.
+data augmentation,target sequence,Data augmentation is used to generate polygons at different levels of granularity on-the-fly during training for constructing the target sequence.
+multi-task learning of ris and rec,target sequence,Multi-task learning of RIS and REC is employed in constructing the target sequence.
+separator token,target sequence,Separator token <SEP> is added to handle multi-polygon cases in constructing the target sequence.
+data augmentation,polygon ordering,Data augmentation is generated at different levels of granularity in conjunction with polygon ordering.
+data augmentation,multi-task learning of ris and rec,Data augmentation is beneficial along with multi-task learning of RIS and REC.
+data augmentation,separator token,Data augmentation is used in conjunction with a separator token for handling multi-polygon cases.
+multi-task learning of ris and rec,separator token,Multi-task learning of RIS and REC incorporates a separator token for handling multi-polygon cases.
+otter,19th century portrait,"The otter and the 19th century portrait are both mentioned together in the context, implying a relation between them."
+pikachu,eiffel tower,The pikachu fine-dining with a view to the Eiffel Tower indicates a relation between Pikachu and the Eiffel Tower.
+pig robot,delicious meal,The pig robot preparing a delicious meal shows a relation between the pig robot and the food being prepared.
+lavt,seqtr,"LAVT and SeqTR are both mentioned in the context as results of a specific task, showcasing a relation between the two."
+polyformer,refcocog test set,"PolyFormer is mentioned in the context as showing results on the RefCOCOg test set, indicating a relation between PolyFormer and the test set."
+polyformer,image segmentation,"PolyFormer is a framework for referring image segmentation, demonstrating good generalization abilities."
+polyformer,referring expression comprehension,"PolyFormer is a framework for referring expression comprehension, achieving competitive results and good generalization."
+polyformer,multi-modal features,PolyFormer can naturally fuse multi-modal features as input sequences.
+polyformer,multi-task predictions,PolyFormer can naturally fuse multi-task predictions as output sequences.
+polyformer,regression-based decoder,PolyFormer utilizes a novel regression-based decoder to generate continuous 2D coordinates without quantization errors.
+lavt,state-of-the-art,"LAVT is mentioned as state-of-the-art, but fails to generate satisfactory results compared to PolyFormer."
+seqtr,state-of-the-art,"SeqTR is mentioned as state-of-the-art, but fails to generate satisfactory results compared to PolyFormer."

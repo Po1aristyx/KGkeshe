@@ -1,0 +1,229 @@
+node_1,node_2,edge
+video processing,neural network,AbstractEncoding videos as neural networks is a recently proposed approach that allows new forms of video processing.
+neural video representation (nvr) methods,traditional techniques,traditional techniques still outperform such neural video representation (NVR) methods for the task of video compression.
+nvr methods,architectures,NVR methods use architectures that do not efficiently obtain a compact representation of temporal and spatial information.
+nvr methods,rate and distortion disjointly,NVR methods minimize rate and distortion disjointly (first overfitting a network on a video and then using heuristic techniques such as post-training quantization or weight pruning to compress the model).
+convolutional architecture,video representation,We propose a novel convolutional architecture for video representation that better represents spatio-temporal information.
+training strategy,rate and distortion,a training strategy capable of jointly optimizing rate and distortion.
+network and quantization parameters,jointly learned end-to-end,"All network and quantization parameters are jointly learned end-to-end, and the post-training operations used in previous works are unnecessary."
+method,uvg dataset,"We evaluate our method on the UVG dataset, achieving new state-of-the-art results for video compression with NVRs."
+nvr-based video compression method,hevc benchmark,"deliver the first NVR-based video compression method that improves over the typically adopted HEVC benchmark (x265, disabled b-frames, “medium” preset)."
+approach,previous state-of-the-art method,"Compared to the previous state-of-the-art method, our approach produces sharper frames at lower bpp."
+approach,frames,The approach produces sharper frames at lower bpp.
+images,psnr,Images are labeled with PSNR @ bpp.
+video,encoder,"Given a video, the encoder’s task is to minimize the number of bits required."
+r,d,"R (Rate) while also minimizing any distortion brought about by the compression, D (Distortion)."
+video,encoder,"the encoder’s task is to minimize the number of bits required to represent it, R (Rate), while also minimizing any distortion brought about by the compression, D (Distortion)."
+λ,r,"λ controls the trade-off between both and defines a Pareto frontier, where improvements in the distortion term come atan increased cost in the rate term."
+heuristic-based engineered video codecs,video,traditionally heuristic-based engineered video codecs are used to encode videos in efficient representations.
+video codecs,h.264,heuristic-based engineered video codecs have gradually developed into complex pipelines and have been established as powerful standards such as H.264 [26] and HEVC [30].
+deep learning,video compression,"Inspired by the success of deep learning in many image processing tasks, over the past few years, video compression using neural networks has been the target of much research [8, 18]."
+encoder-decoder neural network pairs,groups of frames,"Most of the proposed methods are based on Encoder-Decoder neural network pairs, capable of transforming Groups of Frames (GoF) into latent representations and subsequently recovering them."
+latent representations,quantized,"These representations are quantized, entropy coded, and then stored/transmitted."
+loss function,information theory,the loss function optimized by these methods is theoretically grounded in information theory and structured as an R-D problem.
+d,original frames,D is some measure of the difference between the original and decoded frames.
+r,given,R is given by an.
+implicit neural representations (inrs),dense grids,INRs have emerged as alternatives to dense grids for representing continuous signals.
+implicit neural representations (inrs),video representation,INRs have been used for video representation.
+video,"function f(x, y, t) = (r, g, b)","A video is interpreted as a function f(x, y, t) = (R, G, B)."
+neural network,video compression,Video compression can be framed as a neural network compression problem.
+neural network,video,The video is effectively stored in the neural network's parameters.
+neural network,compression problem,Video compression can be framed as a neural network compression problem.
+compression problem,inrs,Previous efforts in using INRs for video compression have mostly treated the problems of representing the input signal with high fidelity and compressing it as mostly disjoint tasks.
+network,distortion loss,A network is first trained to minimize a distortion loss.
+parameter efficiency,current architectures,"Current architectures are not designed with parameter efficiency as a priority, suffering from an inefficient allocation of parameters."
+parameter efficiency,video compression,Inefficient allocation of parameters in current architectures can be prohibitive for the task of video compression.
+convolutional architecture,video representation,Compact convolutional architecture proposed for video representation provides better R-D performance than previous works.
+information theory,r-d formulation,"Drawing on information theory, a theoretically motivated R-D formulation is proposed for video compression with INRs that minimizes rate and distortion."
+entropy,neural network weights,Modeling the entropy of the neural network weights allows minimization jointly with the distortion in video compression.
+weights,compressed video representation,Applying entropy coding methods to the final weights produces a compressed video representation.
+compact convolutional architecture,nerv,Novel compact convolutional architecture proposed for neural video representation has better representation capacity than NeRV.
+signal compression,inrs,Signal compression with INRs is formally defined as an R-D problem by modeling the entropy of the weights and using quantization-aware training.
+quantization-aware training,end-to-end training,"The use of quantization-aware training enables end-to-end training, eliminating the need for post-training techniques such as pruning."
+entropy modeling,improvement,Entropy modeling can lead to improvements in methods such as NeRV.
+method evaluation,uvg dataset,"The method is evaluated on the UVG dataset, showing state-of-the-art results for video compression with improved outcomes over DVC."
+neural image compression,video compression,State-of-the-art approaches to video compression can be linked to the concept of Neural Image Compression.
+balle et al.,non-linear transform coding,Balle et al. use non-linear transform coding for image compression to represent an image as a vector of pixel intensities x.
+quantized latent representation,shannon-style encoder,A quantized latent representation is passed through a Shannon-style encoder for lossless compression.
+generative adversarial networks (gans),low-bitrate compression,"GANs have been proposed for low-bitrate compression, where they hallucinate details during inference."
+neural video compression,neural image compression,Neural Video Compression extends the ideas of Neural Image Compression to sequences of frames.
+encoder-decoder pair of models,large dataset of videos,"In Neural Video Compression, an Encoder-Decoder pair of models is learned over a large dataset of videos."
+encoder-decoder pair,models,Encoder-Decoder pair of models are learned over a large dataset of videos.
+encoder,latent representations,The encoder produces latent representations of the sequence of frames.
+latent representations,quantized and entropy coded,Latent representations are quantized and entropy coded.
+decoder,reconstruct,The decoder is able to approximately reconstruct the original sequence.
+temporal consistency priors,model,Temporal consistency priors are embedded into the model.
+key-frame,group of frames (gop),A key-frame is elected within a group of frames (GoP).
+sequence,frames,The encoder produces latent representations of the sequence of frames that are quantized and entropy coded.
+information,reconstructing the remaining frames,"The information for reconstructing the remaining frames in the GoP, e.g., optical flow and residuals, is encoded into separate vectors."
+dvc,neural video compression,DVC is an end-to-end approach to neural video compression.
+traditional video codecs,neural networks,"The pipeline of traditional video codecs is leveraged, but with learned neural networks instead of hand-crafted algorithms."
+rate-distortion problem,information theory,The definition of the loss to be optimized is grounded in concepts from information theory in a Rate-Distortion problem.
+entropy,problem,Accurately modeling the entropy in this problem may even preclude the need for the injection of biases and priors through complex encoding and decoding pipelines.
+implicit neural representations,parametrized functions,"Implicit Neural Representations are learned, parametrized functions that can be used as continuous representations of signals."
+functions,signals,Functions can be used as continuous representations of signals.
+networks,signals,Networks can be trained on samples from the signal to be fit.
+networks,functions,Networks can be trained to fit the signal based on parametrized functions.
+bias problem,networks,One issue with networks is the spectral bias problem.
+siren,activation functions,SIREN uses periodic activation functions to combat the spectral bias problem.
+mildenhall et al.,spectral bias,Mildenhall et al. use a strategy to overcome the spectral bias problem.
+input coordinates,network,"Before passing the input coordinates to the network, positional encoding is applied."
+positional encoding,coordinates,Positional encoding maps the coordinates to a higher dimensional space.
+inrs,compression,INRs are used for compression.
+dupont et al.,inrs,Dupont et al. suggest using INRs for image compression.
+network,image,A network can be fitted on the image for compression.
+jpeg,results,INRs show superior results compared to JPEG in low compression.
+inrs,jpeg,"INRs show superior results compared to JPEG in low bit-rate regimes, encouraging more investigation into INRs as an alternative to traditional neural image compression."
+inrs,explicit quantization methods,Further approaches introduce explicit quantization methods and meta-learning in the context of INRs.
+inrs,meta-learning,Further approaches introduce explicit quantization methods and meta-learning in the context of INRs.
+inrs,l1 regularization,"INRs achieve state-of-the-art results for image compression by quantizing modulations, fine-tuning them, and introducing the use of L1 regularization."
+nerv,inrs,"NeRV proposes to represent video by learning an INR for all pixel values jointly, departing from traditional INRs by using convolutional layers."
+continuity,spatial domain,Continuity is lost in the spatial domain.
+network,convolutional layers,The network leverages convolutional layers.
+network,fully connected layers,Convolutional layers are more commonly used than fully connected layers in image processing applications.
+results,image-based neural video representations,Image-based neural video representations provide superior performance.
+continuous pixel-based representations,image-based neural video representations,Image-based neural video representations perform better than continuous pixel-based representations for video compression.
+training,inference,Training and inference are significantly faster.
+li et al.,e-nerv,Li et al. propose E-NeRV as an optimization to the NeRV architecture.
+nerv,e-nerv,NeRV and E-NeRV require training of networks with different architectures for different R-D tradeoffs.
+nerv,fully connected layers,NeRV requires large fully connected layers.
+nerv,efficient allocation of network parameters,Disentangling spatial and temporal components of input allows NeRV to have a more efficient allocation of network parameters.
+network,architecture,The proposed architecture is streamlined.
+e-nerv,representation capacity,E-NeRV focuses on the representation capacity of the network.
+end-to-end training method,entropy minimization,An end-to-end training method based on entropy minimization is proposed for lossy video compression.
+post-training quantization,pruning,These are techniques used in model compression for neural networks after the training phase.
+entropy minimization,model compression,Entropy minimization techniques are adapted for neural network compression to achieve model compression.
+chen et al.,pixel-based representations,Chen et al. introduced frame-based INRs which have advantages over pixel-based representations in terms of computational efficiency and R-D performance.
+inrs,video compression,"Entropy minimization techniques are adapted for INRs in video compression, improving neural representations for video compression."
+nerv architecture,parameters,The NeRV architecture suffers from inefficient use of parameters due to its reliance on fully connected layers.
+nerv architecture,fully connected layers,The NeRV architecture relies on fully connected layers to produce a tensor of spatio-temporal features.
+nerv architecture,spatio-temporal features,Fully connected layers in NeRV architecture produce a tensor of spatio-temporal features.
+inr,sequence of frames,INR is used to fit a sequence of frames in the proposed method.
+inr,distortion metric,"During the training process, distortion metric is minimized along with the entropy of the weights using INR."
+entropy coding method,compressed representation,"After the training process, any entropy coding method can be used to obtain a compressed representation of the video sequence."
+input,frame number,"The single input to the network is the frame number normalized to be in the range [0, 1)."
+matrix t,coordinate grid m,A matrix T is built to produce a tensor concatenated with a fixed coordinate grid M.
+h,w,"For a target video with a resolution of W x H, H is used to represent height and W is used to represent width."
+positional encoding,resulting tensor,Positional encoding is applied to each element of the resulting tensor after building the matrix T and coordinate grid M.
+tensor of spatio-temporal features,upscaling portion,A tensor of spatio-temporal features is passed to the upscaling portion of the network.
+upscale,network,"In the context, the upscaling portion of the network is mentioned, indicating a clear relationship between the terms 'upscale' and 'network'."
+nerv,upscale,"The mention of NeRV and upscaling indicates a direct relationship between the terms, suggesting that NeRV involves upscaling in some way."
+nerv,modular blocks,"The text describes NeRV as made up of a series of upscaling blocks, indicating a clear relationship between NeRV and modular blocks."
+li et al.,adain module,"Li et al. are mentioned to introduce an AdaIN module, showing a relationship between Li et al. and the AdaIN module."
+nerv,distortion metric,"The distortion metric used in NeRV is mentioned, suggesting a relationship between NeRV and the distortion metric."
+signal,compression,"The context discusses compressing a signal, indicating a relationship between the terms 'signal' and 'compression'."
+signal,ri,Signal s is a function operating from input coordinates I to output dimension O
+signal,ro,Signal s is a function operating to output dimension O
+signal,inr,Signal s is approximated using an Incremental Neural Network Regressor (INR)
+signal,samples,"Signal S is represented by a set of selected samples (x, y) where x is from input coordinates I and y is from output dimension O"
+signal,fθ,Signal s is approximated using a parametrized function fθ operating from input coordinates I to output dimension O
+signal,parameters,Signal s is effectively stored in the parameters θ
+signal,rate-distortion problem,Signal s is framed within the context of a Rate-Distortion problem
+parameters,d,The distortion D between fθ and s is minimized when finding the parameters θ
+parameters,r,The cost of storing the parameters θ is represented by R
+d,λ,The trade-off between distortion D and storing cost R is established by the parameter λ
+parameters,dataset s,The optimization over parameters θ is performed over the dataset S using gradient descent
+λ,compactness,A larger λ places more weight on storing cost R resulting in a more compact signal representation
+λ,distortion,A smaller λ may lead to added distortion in signal representation
+inr,neural representations,An Incremental Neural Network Regressor (INR) is trained for signal compression
+signal,oktay et al.,The work of Oktay et al. is referenced in the context of training an INR for signal compression
+r,information,R is defined as the amount of information encoded in the parameters θ
+r,shannon’s source coding theorem,"R is defined as the amount of information encoded in the parameters θ, and is given by Shannon’s source coding theorem [27] as − log2 p(θ)"
+r,θ,R is defined as the amount of information encoded in the parameters θ
+p,set of all weights,p being the probability over the set of all weights
+final weights,entropy coding,"Once the final weights are obtained, any form of entropy coding can be used to encode them"
+final weights,compact representation,"Once the final weights are obtained, any form of entropy coding can be used to encode them, achieving a compact representation"
+entropy coding,compact representation,"Any form of entropy coding can be used to encode the final weights, achieving a compact representation"
+frame index,matrix,The frame index is taken as input and expanded into a matrix
+frame index,coordinate grid,The frame index is appended to a fixed coordinate grid
+coordinate grid,network,The fixed coordinate grid is fed into our network after a positional encoding step
+quantization function qγ,continuous weights,"To fit this paradigm, a quantization function Qγ is defined, mapping continuous weights to discrete symbols"
+dequantization function q−1,quantization function qγ,"Q−1 is evidently not an exact inverse of Qγ, and thus the operation Q−1 γ (Qγ(x)) incurs an error in recovering x unless the value of x is precisely one of the discrete symbols"
+q−1γ,qγ,"Q−1γ is the inverse operation of Qγ, and incurring an error unless x is precisely one of the centers of the quantization bins."
+θ,ˆθ,ˆθ is the symbol obtained by applying Qγ to θ for calculations.
+x,ˆθ,x is used to recover approximate signals through calculations with ˆθ.
+θ,qγ,Optimization is done over θ using Qγ symbols for rate and weights calculations.
+ˆθ,q−1γ,Quantization error is computed using Q−1γ(ˆθ) for the forward pass with the network.
+λ,ˆp,λ is involved in the loss function with log2 ˆp(ˆθi).
+ˆθ,ˆp,The probability mass function ˆp(ˆθ) is used in optimizing the loss function.
+θ,γ,Parameters θ and γ are learned to represent signals and minimize quantization error.
+θ,qγ,Parameters θ are used along with symbols from Qγ in the optimization process.
+qγ,entropy,The distribution of Qγ(θ) needs to have a small entropy to minimize the rate.
+s,fθ,"Error is introduced in approximating signal s with fθ, which can be minimized by improving the model architecture and increasing the number of parameters."
+qγ,quantization error,Quantization error introduced by Qγ can be minimized by adjusting centers of quantization bins or using more bins with smaller widths.
+quantization bins,centers of quantization bins,The centers of quantization bins can be minimized by shifting them appropriately or by using more bins of smaller widths
+quantization bins,more bins of smaller widths,Using more bins of smaller widths comes at an increased cost in the entropy of the distribution
+qγ,scalar quantization,"Qγ is defined as an affine transform with scale and shift parameters α and β, following the concept of scalar quantization"
+qγ,q−1γ,Qγ and Q−1γ are mathematically related as one is defined naturally in terms of the other
+neural network layer,parameters α and β,"Each layer of the neural network has its own parameters α and β, allowing for granularity in varying the quantization of different parameters"
+rounding operation,non-differentiability,"One issue with the rounding operation is its non-differentiability, leading to challenges in certain processes"
+rounding operation,uniform noise,One approach to address non-differentiability is replacing the rounding operation with uniform noise of the same scale as the quantization bins
+rounding operation,straight through estimator (ste),Another approach to handle non-differentiability is using the Straight Through Estimator (STE) when computing the gradient for the rounding operation
+qste,distortion metric,Qste is used for calculating the distortion metric to avoid the introduction of random noise.
+qnoise,entropy term,Qnoise is used for calculating the entropy term.
+weights,network,The bit length to encode weights in the network can be calculated based on the weights.
+differentiable operator,network,"To train a network with gradient descent, a differentiable approximation to the discrete distribution of the weights is needed."
+pϕ,parameters,The parameters of the approximation pϕ can be jointly fitted with the parameters of the INR using the same loss function.
+pϕ,uniform noise,The approximation pϕ is related to the probabilistic function of the parameters perturbed by uniform noise.
+pϕ,inr,The parameters of the approximation pϕ can be jointly fitted with the parameters of the INR using the same loss function.
+approximation pϕ,standard uniform density,The approximation pϕ is convolved with the standard uniform density for a better approximation of the underlying distribution.
+pϕ,complete loss,pϕ is used to calculate the complete loss in the given context
+layers,distortion metric,distortion metric is computed over the dataset using quantized weights from each layer
+quantized weights,distortion metric,quantized weights are used to compute the distortion metric
+rate term,total number of pixels,rate term is divided by the total number of pixels in the context
+weights,neural network,weights of the neural network are modeled and analyzed in the context
+distribution of weights,layer,a small neural network is fitted to the distribution of weights in each layer
+cabac,entropy coding,CABAC is used for entropy coding in the given context
+neural network,weights,The weights are a key component of the neural network architecture.
+e-nerv,nerv,E-NeRV and NeRV are compared in terms of representational capacity in Table 1.
+e-nerv,parameters,Parameters related to E-NeRV are mentioned in the comparison with other architectures.
+nerv,table 1,Table 1 showcases the representational capacity results of NeRV.
+e-nerv,table 1,The results of E-NeRV relative to NeRV are shown in Table 1.
+models,dimensions,Models with specific dimensions are trained using the provided parameters.
+video compression,video codec,The approach is compared with traditional video codec HEVC in the context of video compression.
+nerv,video compression,NeRV is mentioned in the evaluation of video compression results.
+dvc,scale-space,DVC and Scale-Space are compared as neural video compression methods.
+neural video compression method,results close to the state-of-the-art,The neural video compression method is achieving results close to the state-of-the-art.
+neural video compression method,metrics for perceptual similarity,The neural video compression method employs PSNR and MS-SSIM as metrics for perceptual similarity.
+neural video compression method,entropy minimization as fine-tuning,The neural video compression method leverages entropy minimization as a fine-tuning process to reduce training time.
+neural video compression method,pre-trained inr for the video to be compressed,The neural video compression method treats entropy minimization as a fine-tuning process given a pre-trained INR for the video to be compressed.
+neural video compression method,desired number of total epochs,The neural video compression method trains the INR for a desired number of total epochs with specific strategies.
+neural video compression method,lambda,The neural video compression method trains the INR for a certain number of epochs with different values of lambda.
+neural video compression method,learning rate of 5e-4 with the adam optimizer,The neural video compression method uses a learning rate of 5e-4 with the Adam optimizer for training the model.
+rates,λ,"Rates are related to the variable λ, specifically mentioning that changing only λ affects the size of the network"
+network,size,"The size of the network is influenced by changing the rate, as discussed in the context"
+architectures,bit-rate,"Different architectures are used for different bit-rates, with a compromise between a unique architecture for all rates and individual architectures for each rate"
+r-d performance,uvg dataset,"Performance in terms of Rate-Distortion is evaluated on the UVG dataset, showing the superiority of the method compared to previous state-of-the-art using INRs"
+models,baseline methods,"Models are compared to baseline methods in terms of R-D curves, showing the superiority of the proposed method for the UVG dataset"
+nerv,method,"The method outperforms NeRV on evaluated metrics, showcasing the advancements in architecture and training procedure"
+hevc benchmark,x265,"The proposed method surpasses the typically employed HEVC benchmark (x265, “medium” preset), setting new state-of-the-art results for INR-based video compression"
+video compression method,hevc benchmark,"HEVC benchmark (x265, “medium” preset, disabled b-frames) is typically employed as a benchmark for video compression methods."
+video compression method,autoencoder-based neural video compression methods,The extracted video compression method outperforms modern autoencoder-based neural video compression methods for both SSIM and PSNR metrics.
+hevc benchmark,r-d performance,The video compression method surpasses the HEVC benchmark in R-D performance for the UVG dataset.
+hevc benchmark,nerv,Results for NeRV were compared with HEVC benchmark for video compression.
+hevc benchmark,scale-space flow,Models like HEVC and Scale-Space Flow face challenges when compressing videos like ShakeNDry.
+video compression method,nerv,Our method produces visually sharper videos than NeRV for equal or smaller bitrates in video compression applications.
+video compression method,inr-based methods,INR-based methods outperform motion-based descriptors in video compression to avoid visible artifacts at high compression rates.
+inr-based methods,problem,INR-based methods avoid the problem
+yachtride,motion-based descriptors,YachtRide uses motion-based descriptors for compressing scenes effectively
+method,nerv,The method outperforms NeRV in a specific scene
+method,hevc,method shows better performance than HEVC in a specific scene
+ssf,artifacts,SSF introduces visible artifacts in the scene
+training,inference time,Tables 2 and 3 show the training and inference time for the method
+training,compression levels,Training time can be amortized over different compression levels
+videos,internet,Most videos transmitted over the internet are encoded once and transmitted many times
+video hosting platforms,video compression,Videos for hosting platforms are compressed only once
+high-performance computing machines,server,Videos are stored in a server after compression using high-performance computing machines
+gpu ram,training time,Training time can be reduced significantly with sufficient GPU RAM
+chen,inr-based video compression methods,INR-based video compression methods have advantages in decoding time according to Chen et al.
+decoding process,models,Decoding process is faster for INR-based methods compared to other models
+training,videos,The training time for videos with 600 frames is mentioned in Table 2.
+videos,results,It is important to note that only slightly inferior results can be obtained with drastically fewer training epochs.
+videos,decoding performance,Decoding performance for videos using Scale-Space is mentioned in Table 3.
+videos,compression,We couple video representation with a neural network compression method for video compression.
+compression,video,We demonstrate the effectiveness of our method by achieving state-of-the-art results in video compression.
+compression,inrs,Our method produces state-of-the-art results in video compression with INRs.
+compression,encoders,The adoption of neural representations for video compression as viable encoders requires future research into less cost-prohibitive methods.
+encoders,neural representations,The adoption of neural representations for video compression as viable encoders is still a topic for future research.
+encoders,future research,Future research is needed for less cost-prohibitive entropy-modeling methods and further architecture improvements in video compression.
+neural network,compression,A neural network compression method is used for video compression.

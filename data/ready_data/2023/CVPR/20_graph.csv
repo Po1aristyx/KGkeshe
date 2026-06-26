@@ -1,0 +1,231 @@
+node_1,node_2,edge
+image-to-image translation,language-driven image-to-image translation model (lanit),LANIT is presented as a solution to improve image-to-image translation by leveraging language-driven attributes for domain labeling.
+lanit,candidate attributes,LANIT uses candidate attributes provided in texts to indicate per-sample domain labels.
+images,attributes,The similarity between images and attributes is used to assign per-sample domain labels.
+attributes,domain,"Attributes are used to specify the target domain in language, enabling multi-hot labels."
+prompt learning,inaccurate prompts,Prompt learning is presented to account for inaccurate initial prompts in the translation process.
+translated images,corresponding domain,Domain regularization loss enforces that translated images are mapped to the correct corresponding domain.
+lanit,existing models,Experiments show that LANIT achieves comparable or superior performance to existing image-to-image translation models.
+image,domain,Images are transferred from one domain to another in the context of computer vision applications.
+image,label,Images are trained on many images with their respective domain labels to create a model.
+image,manipulation,Image manipulation is one of the computer vision applications studied in the context.
+image,translation,Images undergo multi-modal translation and instance-aware translation in computer vision applications.
+methods,supervision,Conventional methods require per-sample domain supervision for image translation model training.
+methods,assumption,Conventional methods are based on the assumption of one-hot domain labels for image description.
+methods,annotation,Annotating domain labels for each image is part of the conventional methods.
+methods,cluster,Recent methods involve joint learning of domain clustering and translation within a unified model.
+methods,translation,Recent methods focus on unsupervised learning of image-to-image translation.
+one-hot domain labels,image translation model,The limitation of using one-hot domain labels to train the image translation model is mentioned.
+unsupervised learning methods,domain clusters,"Truly-unsupervised learning methods only learn domain clusters dominant in the dataset, sometimes not reflecting semantic meanings."
+semantic meanings,domain clusters,"Semantic meanings do not always reflect the learned domain clusters, causing confusion in understanding."
+methodology proposal,dataset-level annotation,"To overcome per-sample-level and unsupervised learning limitations, dataset-level annotation is proposed in this paper."
+textual domain descriptions,images in the dataset,Textual domain descriptions are used to describe images in the dataset for specifying the target domain.
+source image,target domain,A generator translates a source image to the target domain specified by textual attributes.
+similarity,multi-hot label,"Similarities naturally lead to a multi-hot label, representing the style codes of multiple domains."
+initial prompts,methodology adaptation,The methodology adaptation accounts for the initial prompts to improve the translation process.
+sample-level domain supervision,unsupervised learning methods,"Sample-level domain supervision is often hard to collect, while unsupervised learning methods learn image translation models without any supervision. However, unsupervised methods show limited performance and lack semantic understanding."
+unsupervised learning methods,novel framework,"Unsupervised learning methods lack semantic understanding, while the novel framework presented requires a dataset with textual domain descriptions for better performance."
+novel framework,dataset-level annotation,"The novel framework presented requires a dataset with possible textual domain descriptions (i.e., dataset-level annotation) which achieves performance comparable to previous methods."
+unsupervised learning methods,cyclegan,"Unsupervised learning methods are utilized by CycleGAN, with many variants proposed, formulating uni-modal and multi-modal models."
+per-sample domain annotation,model limitation,"Some methods require per-sample domain annotation, which is labor-intensive or impossible, limiting the model's applicability."
+few-shot setting,annotations,Few-shot settings proposed by FUNIT and CoCo-FUNIT still require a few annotations for training.
+few-shot setting,pseudo labeling technique,SEMIT utilizes a pseudo labeling technique in the few-shot setting for training.
+clustering methods,classifier,"Clustering methods and classifiers are adopted by S3GAN, Self-conditioned GAN, and other methods for training."
+truly-unsupervised frameworks,cluster methods,TUNIT and Kim et al. have proposed truly-unsupervised frameworks utilizing cluster methods for training.
+tunit,kim et al.,Both TUNIT and Kim et al. have proposed truly-unsupervised frameworks with clustering approach or prototype-based learning.
+tunit,cluster,TUNIT has proposed a truly-unsupervised framework with clustering approach.
+cluster,prototype-based learning,The truly-unsupervised framework proposed involves clustering approach or prototype-based learning.
+cluster,domain supervision,The clustering approach does not require any per-sample domain supervision.
+framework,performance,The performance of the framework was limited due to challenges in understanding the semantic meaning of each pseudo domain.
+semantic meaning,pseudo domain,Understanding the semantic meaning of each pseudo domain is challenging.
+framework,applicability,The limited performance of the framework restricts its applicability.
+performance,one-hot domain labeling assumption,The performance is limited by inheriting the problem of the one-hot domain labeling assumption.
+clip,image synthesis,CLIP has been employed in image synthesis and manipulation using GANs.
+clip,gans,CLIP has been used in image manipulation with GANs.
+stylegan,latent space,StyleGAN manipulates the latent space of Style-CLIP and HairCLIP.
+stylegan,clip,StyleGAN manipulates the latent space with the guidance of CLIP.
+stylegan,pre-trained,The manipulation of latent space in StyleGAN relies heavily on pre-trained models like Style-CLIP and HairCLIP.
+clip2stylegan,unsupervised manner,CLIP2StyleGAN extends an approach in an unsupervised manner to eliminate the need for target style descriptions.
+works,diffusion model,Recent works combine a diffusion model with CLIP for text-driven image manipulation.
+works,high fidelity,These works aim for text-driven image manipulation with high fidelity.
+works,realistic translation,The works have limited performance in realistically translating in the real image domain.
+works,pre-trained,The works rely on pre-trained models like CLIP and diffusion model.
+diffusion model,clip,Diffusion model is combined with CLIP for text-driven image manipulation.
+diffusion model,pre-trained,The diffusion model relies on pre-trained models for text-driven image manipulation.
+method,clusters,The method mentioned in the context allows users to translate one of several clusters.
+clusters,semantic meaning,The learned clusters lack semantic meaning according to the context.
+clusters,attributes,"Sometimes, some attributes do not appear in any clusters."
+framework,domains,The framework can select and train domains that have explicit semantic meaning.
+framework,images,The framework proposes prompt learning and encourages the translated images to have corresponding labels.
+framework,domain regularization loss,The framework also proposes domain regularization loss for the translated images.
+framework,domain descriptions,The framework requires textual domain descriptions for defining domains.
+annotations,semantic meaning,Annotation process with the proposed dataset-level annotation can explicitly define the semantic meaning of the target domain with textual descriptions.
+model,methods,"The proposed model, trained only with dataset-level supervision, outperforms the latest methods according to experimental results."
+methods,stargan2,The proposed model trained with dataset-level supervision even outperforms StarGAN2 trained with per-sample supervision.
+ablation studies,user study results,Intensive ablation studies and user study results are provided.
+methods,image-to-image translation,Early methods for image-to-image translation considered a paired setting.
+image-to-image translation,unpaired set,Recent state-of-the-arts focus on an unpaired set for image-to-image translation.
+image-to-image translation,paired setting,The concept of image-to-image translation is considered in the context of a paired setting.
+state-of-the-arts,unpaired setting,The most recent state-of-the-arts focus on an unpaired setting according to the context.
+model,content,"The model consists of content encoders, style encoders, vision-language encoders, and a generator."
+model,style,The model utilizes content and style vectors to generate ˆy with content vector cx and aggregated style vector ay through the generator.
+lanit,pre-trained stylegan,LANIT is not dependent on pre-trained StyleGAN in the context.
+lanit,style manifold,LANIT also learns the style manifold from the given image dataset and a few numbers of prompts in the context.
+language models,gpt-3,The success of pretrained large-scale language models like GPT-3 in NLP is mentioned in the context.
+methods,prompt optimization,Various methods for optimizing the prompt in a text format have been proposed in the context.
+works,clip,Some works using CLIP have attempted to optimize the input prompt in the context.
+cocoop,learned continuous prompt,CoCoOp showed that using the learned continuous prompt could surpass the manually-designed discrete prompt-based method on zero-shot image classification according to the context.
+zero-shot image classification,prompt-based method,zero-shot image classification is achieved through the utilization of a prompt-based method
+unsupervised prompt tuning,"several works [20,53,63]",several works propose unsupervised prompt tuning
+image translation,prompt learning,image translation is combined with prompt learning in an unsupervised way
+dataset-level domain descriptions,unlabeled images in clip [49] embedding space,dataset-level domain descriptions are used to measure a pseudo domain label of style image based on their similarity with unlabeled images in CLIP [49] embedding space
+pseudo domain label,similarity between image and text features,pseudo domain label is obtained by calculating similarity between image and text features
+similarity between image and text features,inaccurate labeling and noisy translation,calculating similarity between image and text features can lead to inaccurate labeling and noisy translation
+adaptive thresholding,base prompt,adaptive thresholding is used with the base prompt for selecting confident pseudo labels
+prompt learning technique,domain regularization loss,prompt learning technique includes domain regularization loss for boosting confidence in calculating similarity
+content encoder ec,style encoder es,model consists of content encoder EC and style encoder ES
+style encoder es,mapping encoder em,style encoder ES is used along with mapping encoder EM in the model
+mapping encoder em,generator g,mapping encoder EM is part of the model along with generator G
+coder,es,"coder is a term mentioned in the context related to ES, which stands for encoder similar to mapping encoder EM."
+coding,mapping,"mapping is related to coding as mapping encoder EM is similar to encoder ES, both are used for image-to-image translation."
+coder,generator,"coder, mentioned in the context, is related to generator G as both are part of the process of learning image-to-image translation."
+image-to-image translation,stargan2,"StarGAN2, referred to in the context, is a method for image-to-image translation similar to coder ES, mapping EM, and generator G."
+content image,style image,content image x and style image y are two key terms for image-to-image translation mentioned in the context.
+content vector,style vector,content vector and style vector are extracted from content image x and style image y to generate a translated image.
+stargan2,vector,StarGAN2 selects a single vector from {sy N domains according to ground-truth one-hot domain label for image translation.
+pseudo domain label,vision-language model,pseudo multi-hot domain label dy is obtained for an image y using a pretrained vision-language model discussed in this section.
+vision-language model,tunit,"TUNIT [3] clusters images using visual features only, whereas vision-language model utilizes textual description as prompt to cluster images based on similarity between visual and language features."
+images,visual features,Images are clustered based on visual features in TUNIT [3].
+images,language features,Images are clustered based on language features in the vision-language model.
+prompt,textual description,Textual description is used as prompt in the vision-language model.
+prompt,candidate domains,Prompt consists of candidate domains in the vision-language model.
+prompt,template,Prompt includes a template shared with candidate domains in the vision-language model.
+template,word vector,Template is a vector for a word with the same dimension as candidate domains in the vision-language model.
+similarity,visual features,Similarity is measured between visual features and language features to cluster images in the vision-language model.
+domain descriptions,keywords,Domain descriptions or keywords are utilized to initialize prompts in the vision-language model.
+vision-language model,clip,"Pre-trained vision-language model, CLIP [49], is used to extract vision and language features in the framework."
+similarity,multi-hot pseudo domain label,Measured similarity helps in obtaining the multi-hot pseudo domain label in the vision-language model.
+similarity,multi-hot pseudo domain label dy,The measured similarity f y is utilized to obtain the multi-hot pseudo domain label dy
+pseudo domain label dy,top-k operation,"The pseudo domain label dy can be obtained with a simple candidate selecting method, such as top-K operation"
+pseudo domain label dy,thresholding,Simple thresholding with a predefined hyperparameter can limit the performance of the pseudo domain label dy
+specified text descriptions,images,More specified text descriptions make higher similarity with corresponding images compared to base prompt descriptions
+base prompt,template,The base prompt is set as the template for domain labeling
+prompt,language-driven domain labeling,The method for language-driven domain labeling involves prompt learning
+prompt,image translation,The method for image translation involves prompt learning for language-driven domain labeling
+templates,images,"The pre-defined templates may not accurately describe all the images in the dataset, leading to noisy and limited performance."
+prompt learning technique,templates,"The prompt learning technique allows the templates to be updated, leading to more optimal prompts that boost translation performance."
+input domain descriptions,framework,"The input domain descriptions should be given in the framework, enhancing the selection of highly relevant texts based on the similarity between an image and candidate texts."
+template,learnable parameters,"The templates are set as the learnable parameters in the prompt learning technique, enabling more optimal prompts to be optimized."
+images,translated images,An adversarial loss is adopted to guide the translated images to arrive at the training distribution of the target domain.
+outputs of multi-domain discriminators,weighted multi-hot domain label,The outputs of multi-domain discriminators are weighted by a multi-hot domain label in the adversarial loss function.
+dy,ground-truth,dy is set as a one-hot domain label by ground-truth
+dy,adversarial loss,dy is used in the adversarial loss function
+dy,domain regularization loss,dy is used in the domain regularization loss
+dy,domain label,dy is a domain label
+dy,valid label,dy is a valid label except for the n-th label
+dy,dyinv,dy and dyinv are domain label pairs
+dy,novel loss function,dy is used in a novel loss function
+dy,dot product,dot product is calculated between dy and fˆy
+dy,networks,dy encourages networks to generate an image following the domain label
+dy,cycle-consistency loss,dy is used to make the translated image similar to its original image in the cycle-consistency loss
+dy,content,dy is part of the content from the translated image
+generator,input image,encouraging the generator G to reconstruct the input image x with estimated style vector ax
+generator,synthesized results,generator is able to synthesize realistic images but results are not guaranteed to be style-consistent
+image,style vector,compute l-1 loss between the style vector from the translated image and style image
+generator,diverse images,"learn the generator to produce diverse images using diversity sensitive loss defined as:Lds = Ex,y[∥G(x,EM (z1)) − G(x,EM (z2))∥1]"
+latent vectors,domain label,utilize the domain label dy from the style image y as a pseudo-label for the latent vector
+baseline architecture,content,Content is a key component in the baseline architecture
+baseline architecture,style,Style plays a crucial role in the baseline architecture
+baseline architecture,mapping encoders,Mapping encoders are an integral part of the baseline architecture
+baseline architecture,generator,The generator is a key element in the baseline architecture
+baseline architecture,discriminator,The discriminator plays a vital role in the baseline architecture
+style,generator,The style and generator have a significant impact on the architecture
+style,discriminator,The style interacts with the discriminator in the architecture
+generator,discriminator,The generator and discriminator work together in the architecture
+templates,candidate domains,Templates are established based on candidate domains for smooth execution
+candidate domains,datasets,Candidate domains are sampled from datasets to form a basis for experiments
+datasets,evaluation metrics,Datasets are used to evaluate the performance of the model based on specific metrics
+mean of class-wise fr´enchet inception distance (mfid),translated image,mFID is used to evaluate how the translated image reflects the input style
+mean of class-wise fr´enchet inception distance (mfid),mfid value,"The lower the mFID value, the better quality of the image"
+density and coverage (d&c),translated images,D&C measure the fidelity and diversity of the translated images
+fidelity,diversity,"As fidelity and diversity get better, the D&C scores are higher or closer to 1"
+density and coverage (d&c),fidelity,D&C measures fidelity
+density and coverage (d&c),diversity,D&C measures diversity
+acc.,classification accuracy,Acc. measures classification accuracy
+domain labels,ground-truth domain labels,Acc. measures the classification accuracy between the domain labels with the highest probability and ground-truth domain labels
+starganv2,celeba-hq,Comparison between StarGANv2 and CelebA-HQ
+starganv2,animalfaces-10,Comparison between StarGANv2 and AnimalFaces-10
+starganv2,lanitfood-10,Comparison between StarGANv2 and LANITFood-10
+smoothing,celeba-hq,Comparison between Smoothing and CelebA-HQ
+smoothing,animalfaces-10,Comparison between Smoothing and AnimalFaces-10
+smoothing,lanitfood-10,Comparison between Smoothing and LANITFood-10
+tunit,celeba-hq,Comparison between TUNIT and CelebA-HQ
+tunit,animalfaces-10,Comparison between TUNIT and AnimalFaces-10
+tunit,lanitfood-10,Comparison between TUNIT and LANITFood-10
+kim et al.,celeba-hq,Comparison between Kim et al. and CelebA-HQ
+kim et al.,animalfaces-10,Comparison between Kim et al. and AnimalFaces-10
+kim et al.,lanitfood-10,Comparison between Kim et al. and LANITFood-10
+model,stargan2,"Our model is compared with StarGAN2 in terms of quantitative metrics on CelebA-HQ, AnimalFaces-10, and Food-10 datasets."
+model,smoothing,"Our model is compared with Smoothing in terms of quantitative metrics on CelebA-HQ, AnimalFaces-10, and Food-10 datasets."
+model,tunit,"Our model is compared with TUNIT in terms of visual results, showing significant differences in quality."
+model,kim et al.,"Our model is compared with Kim et al. in terms of visual results, showing significant differences in quality."
+model,lanit,"Our model LANIT outperforms the state-of-the-art methods in terms of image quality, fidelity, and diversity, and the best mFID and D&C scores are shown by LANIT."
+lanit,tunit,LANIT shows significant quality differences compared to TUNIT in visual results.
+lanit,kim et al.,LANIT shows significant quality differences compared to Kim et al. in visual results.
+style representation,semantic consistency,Our method yields stable performance in terms of style representation and semantic consistency.
+model,smiling,Our model is highly capable of capturing subtle attributes like 'smiling'.
+model,straight hair,Our model is highly capable of capturing subtle attributes like 'straight hair'.
+lanit,stargan2,LANIT shows competitive results compared to StarGAN2.
+lanit,smoothing,LANIT shows competitive results compared to Smoothing.
+lanit,tunit,Quantitative comparison of LANIT with TUNIT.
+lanit,diffusionclip,Additional qualitative results by LANIT compared to DiffusionCLIP.
+lanit,styleclip,Additional qualitative results by LANIT compared to StyleCLIP.
+lanit,lhq,Latent-guided diverse image synthesis results by LANIT on LHQ.
+lanit,lhq,LANIT results in diverse image synthesis on LHQ dataset
+lanit,prompt learning,Prompt learning helps LANIT produce style vectors reflecting target multiple styles
+lanit,clip-based methods,Comparison of LANIT with CLIP-based text-guided manipulation models DiffusionCLIP and StyleCLIP
+diffusionclip,styleclip,DiffusionCLIP and StyleCLIP show limited capacity compared to LANIT in synthesizing realistic results with multiple attributes
+lanit,k,LANIT works on a flexible number of K during inference time
+number of domain descriptions n,effects,An ablation study validates the effects of the number of candidate domains N
+number of domain descriptions,tunit,"The effects of the number of candidate domains N compared to TUNIT show minor changes in the model, justifying the robustness of the framework."
+lanit,animal faces-10,LANIT shows the best performance when there exist 10 candidate domains in animal faces-10.
+celeba-hq,n,There is little difference in the FID score in CelebA-HQ when N is over 10.
+predefined dictionary,specific domain descriptions,"Predefined dictionary is used instead of exploiting specific domain descriptions, leading to quantitative evaluation results."
+lanit,whole class names,LANIT shows a slight drop in both mFID and F1 scores when using whole class names as a dictionary.
+adaptive thresholding with base prompt,simple top-k method,"The effectiveness of the adaptive thresholding technique using base prompt is compared to the simple top-K method, showing a large improvement in performance."
+proposed technique,performance,The proposed technique brings a large improvement in performance.
+proposed technique,model,The proposed technique enables the model to mitigate the influence of ambiguous or noisy.
+model,influence,The proposed technique enables the model to mitigate the influence of ambiguous or noisy.
+lanit,top-1,A LANIT (Top-1) method is used.
+lanit,top-3,A LANIT (Top-3) method is used.
+dl loss,model,The DL Loss improves the model performance.
+prompt learning,celeba-hq,Prompt Learning is applied to CelebA-HQ dataset.
+celeba-hq,mfid,CelebA-HQ dataset shows improvement in mFID.
+celeba-hq,f1,CelebA-HQ dataset shows improvement in F1 score.
+image,keywords,An image can be described more precisely when given with multiple keywords or text descriptions.
+prior works,tunit,Most prior works including TUNIT assume to assign a single label for each image.
+prior works,kim et al.,Most prior works including Kim et al. assume to assign a single label for each image.
+prior works,stargan2,Most prior works including StarGAN2 assume to assign a single label for each image.
+lanit,diverse attributes,Our LANIT captures more diverse attributes rather than Top-1 and Top-3 models.
+baseline,dl loss,Our proposed model improves performance Domain Regularization(DL) loss compared to the baseline.
+d&c metrics,domain regularization loss,D&C metrics are significantly increased by adding our proposed domain regularization loss.
+image,reference image,The generated image has the style of the reference image more faithfully.
+domain regularization loss,reference image,The generated image has the style of reference image more faithfully by using domain regularization loss.
+prompt learning,estimated pseudo-domain labels,"To evaluate the effectiveness of prompt learning, we compare the estimated pseudo-domain labels with and without the proposed prompt learning."
+prompt learning,offline clustering,The latter can be regarded as an offline clustering when comparing the estimated pseudo-domain labels with and without the proposed prompt learning.
+prompt learning,probability of an image/text prompt pair,"With prompt learning, the probability of an image/text prompt pair is more accurately estimated."
+prompt learning,label noise reduction,Prompt learning helps reduce label noise by refining the prompt.
+prompt learning,clustering performance,"The result without prompt learning shows limited clustering performance, which is verified in Table 4."
+prompt learning,generative model,"Stage-wise learning, where we start prompt learning after convergence of the generative model, shows better performance than end-to-end learning with prompt learning."
+prompt learning,image corresponding to a given prompt,The well-generated image corresponding to a given prompt has a critical role in prompt learning.
+base prompt,prompt learning,The base prompt is also updated with prompt learning simultaneously.
+textual domain descriptions,language-driven image-to-image translation framework for unlabeled data (lanit),"By using textual domain descriptions as dataset-level supervision, the proposed LANIT framework leverages dataset-level supervision."
+model,multi-hot domain,The model not only mitigates the heavy dependency on per-sample supervision but also considers multi-hot domain labels.
+model,per-sample supervision,The model discussed in the context reduces the heavy dependency on per-sample supervision.
+model,multi-hot domain labels,The model takes into account multi-hot domain labels for an image.
+labeling method,semantic meaning,The proposed labeling method allows users to define the semantic meaning of the target domain explicitly.
+adoption,pre-trained vision-language model,Naive adoption of a pre-trained vision-language model has limited controllability and can drop the model's performance.
+lanit,truly-unsupervised methods,Experiments show that LANIT performs better than truly-unsupervised methods in controllability on the application.
+framework,image-to-image translation models,Quantitative results of the framework show competitive or better values than existing image-to-image translation models that require per-sample supervision.
+research,"msit, korea","The research was supported by the MSIT, Korea, through the IITP program and ICT Creative Consilience program."
+research,national research foundation of korea,The research was supported by the National Research Foundation of Korea for a Neural-Symbolic Model for Knowledge Acquisition and Inference Techniques.

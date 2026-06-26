@@ -1,0 +1,146 @@
+node_1,node_2,edge
+infinite width limit,generalization and optimization aspects,The infinite width limit contributes to understanding the generalization properties and optimization mechanisms of deep learning.
+deep learning,kernel methods,Deep learning is connected to kernel methods
+kernel methods,limited utility,Kernel methods were previously limited in large-scale learning due to high computational and memory requirements.
+relu activation,prior focus,Most prior works on neural kernels concentrated on ReLU activation because of its popularity and computational challenges.
+general activations,difficulty in computing kernels,Computing kernels for general activation functions was challenging
+exact dual activation expressions,method for computing neural kernels,The work provides methods for exact or approximate computation of neural kernels based on exact dual activation expressions.
+multi-layered neural network gaussian process (nngp) kernel,fast sketching method,A fast sketching method is introduced to approximate NNGP and NTK matrices for various activation functions.
+truncated hermite expansion,approximation technique,The method relies on the truncated Hermite expansion to handle different activation functions.
+unit sphere limitation,previous works,Prior works required data points on the unit sphere
+neural tangent kernel (ntk),proposed approximation,The method applies to a wide range of activation functions
+data points in r^d,applicability,The proposed methods are applicable to datasets with arbitrary point distributions in Euclidean space.
+infinite width limit,general activation function,The importance of expanding the tool set to general activation functions is highlighted as a significant step forward.
+exact neural kernel computation,computing resources,It requires a large amount of computing resources
+order of few 100 to 1,000 gpu hours,depth 10 convolutional neural networks
+monte carlo estimation of the ntk,random sampling,Novak et al. [40] improved estimation but random sampling remains impractical due to high computation and inference costs.
+ntk approximation via sketching algorithms,zandieh et al. [41],Their work proposes an efficient method to approximate NTKs
+sketching algorithms,other activations,The paper aims to address the lack of extension of sketching algorithms to handle non-ReLU activations.
+series expansion,neural kernel for arbitrary smooth activation,The authors show that arbitrary smooth activation functions can be expressed in a series expansion form.
+single hidden layer,kernel function,The focus initially is on expressing the kernel function for networks with a single hidden layer under the infinite width limit.
+dual kernel,polynomial activation,The dual kernel serves as a building block for infinite-width neural kernel computations
+non-polynomial activation,truncated hermite expansion,For non-polynomial activations
+table 1,known dual kernels,Table 1 compiles and expands existing dual kernels for point-wise activations
+ntk computation,coefficients of taylor series,Taylor series coefficients are required for NTK computation
+analytic computation,ntk transformations,This work provides a comprehensive coverage of NNGP and NTK transformations for various activations
+ntk computation,derivative of the activation,The proposed method allows automatic computation of the dual kernel for the derivative without explicit knowledge of the activation
+kernel approximation,pointwise error bound,The analysis focuses on a pointwise error bound for approximating the dual kernel.
+truncated hermite expansion,activation,The context discusses the use of truncated Hermite expansion as a method for approximating activation functions in the Neural Tangent Kernel (NTK).
+estimation error,degree,The error can decay polynomially faster with respect to the finite degree used in the expansion.
+kernel formulation,sketching techniques,The kernel is accelerated by employing sketching techniques
+convolutional ntk,sketching method,A novel sketching method is proposed specifically for the Convolutional NTK with homogeneous activations.
+ntk approximation,quadratic scaling,The exact CNTK computation has a runtime scaling that is quadratic in the number of pixels
+neural tangents library,open-sourced implementation,The authors open-source the NNGP and NTK computations
+ntk (neural tangent kernel),nngp (neural network gaussian process),Both NTK and NNGP are discussed as kernel-based methods in the context of neural networks.
+recursive formula,ntk computation,Computing NTK and NNGP can be done using a recursive formula
+static kernel function,non-linear activation,The static kernel function is defined as the expectation of a function of non-linear activation.
+static kernel function,standard normal distribution,The kernel function is computed over the standard normal distribution.
+dual kernel,erf(t),Williams [43] studied the dual kernel of erf(t)
+dual kernel,rectified monomial,Cho and Saul [44] derived dual kernels for rectified monomials
+relu activation,arc-cosine kernel,ReLU's dual kernel corresponds to the arc-cosine kernel when q=1.
+sinusoidal activations,gaussian rbf kernel,Rahimi and Recht [45] showed that sinusoidal activations lead to the Gaussian RBF kernel via the Fourier transform.
+hermite polynomials,dual kernel,Daniely et al. [46] proposed a method to obtain a dual kernel for activations expandable by Hermite polynomials.
+inputs,unit sphere,Some dual kernels' inputs are restricted to be on the unit sphere.
+gelu,dual kernel,Tsuchida et al. [48] studied the dual kernel of GeLU and ELU.
+elu,dual kernel,Tsuchida et al. [48] also studied the dual kernel of ELU.
+ntk,fully-connected neural network,Simon et al. [49] discovered the Neural Tangent Kernel (NTK) of fully-connected networks.
+coefficient cj,space of square-integrable functions,cj is computed as a coefficient for a set of orthogonal basis functions in the L2 space.
+hermite expansion,l2 space of functions l2(r,(0
+fully-connected l-layered neural network,relu activation function,The network uses ReLU activation function σ.
+neural tangent kernel (ntk),infinite-width neural network,NTK is the kernel obtained from the static behavior of an infinitely wide network during training.
+infinitely wide network,gaussian process,At initialization
+gaussian process,neural network gaussian process (nngp),The Gaussian process with mean zero and covariance Σ(L) is referred to as the Neural Network Gaussian Process
+mean zero,gaussian process,The Gaussian process starts with a mean of zero.
+covariance σ(l),gaussian process,Covariance is a measure of how the values of the process are correlated
+neural network gaussian process kernel (nngp kernel),kernel function,The NNGP kernel is a specific type of kernel function used in neural networks.
+recursive expression,nngp and ntk,Both NNGP and NTK have recursive procedures for computation.
+neural tangent kernel (ntk),nngp,The NTK is closely related to the NNGP
+depth-l nngp kernel,recursive procedure,The depth-L NNGP kernel is calculated through a recursive process across layers.
+depth-l ntk,depth-l nngp kernel,The NTK is derived from the NNGP kernel and also has a recursive structure.
+2-dimensional gaussian distribution,expectation term,The computation of NTK involves an expectation term based on a 2D Gaussian distribution.
+symmetric covariance matrices,2-dimensional gaussian distribution,The extension to general covariance matrices allows for a broader range of distributions in the NTK computation.
+dual kernel,bivariate gaussian random variables,Equation (5) defines the dual kernel using a bivariate Gaussian distribution.
+dual kernel,activation function,The dual kernel is related to the activation function in the sense that it is the expected value of the product of the activations under a specific Gaussian distribution.
+dual activation,function,The dual activation of σ with respect to Λa
+ntk (neural tangent kernel),dual kernel,The NTK is connected to the dual kernel because Kσ(x
+ntk,smooth activation functions,This section focuses on NNGP and NTK for a wide range of smooth activation functions
+cnn-gp (convolutional neural network gaussian process),kernel,The discussion also extends to kernels related to convolutional neural networks
+cntk (computationally tractable kernel),kernel,CNTK is another type of kernel mentioned in the context
+series expansion for the dual kernel,activation function,The dual kernel's series expansion is derived from that of the activation function
+hermite dual kernel,kσ(x,y)
+non-homogeneous activation function,polynomial activation,We specifically focus on polynomial activations
+relu,rectified polynomial,Examples of non-homogeneous activations include leaky ReLU and rectified polynomials.
+input radial part,input angular part,To apply the result
+hermite polynomial basis,monomials,Monomials are expressed in the Hermite polynomial basis
+ntk (neural tangent kernel),derivative of the activation function,The Neural Tangent Kernel can be computed by taking the expectation of the activation function's derivative with respect to inputs.
+polynomial activation,dual kernel,The theorem provides the dual kernel for a polynomial activation function
+dual kernel (keσ),theorem 1,Theorem 1 computes the dual kernel explicitly for polynomial activation functions.
+hermite expansion,non-polynomial activations,For non-polynomial activations
+taylor expansion,approximating σ,One can use Taylor expansion to approximate activation functions for deriving the dual kernel.
+theorem 2,k-th order differentiable activation functions,Theorem 2 applies to activation functions with specific differentiability properties.
+hermite coefficients,σ(i)(νt),The Hermite expansion coefficients are related to the derivatives of the activation function.
+ν,absolute continuity,ν is a parameter involved in the analysis
+gaussian kernel,dual kernel,Gaussian kernel is mentioned as the dual kernel in the context
+nngp (neural network gaussian process),relu ntk (rectified linear unit neural tangent kernel),NNGP with the Gaussian kernel is said to perform better than ReLU NTK
+activation function,hermite series expansion,The activation function must be 1-homogeneous
+dual kernel of derivative of activation,ntk (neural tangent kernel),The theorem provides a way to derive the dual kernel of the derivative
+equation (13),equation (14),These equations are part of the theoretical development
+hermite polynomial,coefficients,The coefficients of the Hermite series expansion are mentioned as being generally unknown.
+relu activation,ntk assumption,[49] assumes a specific condition on the Hermite expansion and equality of norms for ReLU activation.
+ntk function,normalized gaussian kernel,In the previous work [54]
+normalized gaussian kernel,ªnngpº,The paper discusses the performance of the kernel specifically in terms of NNGP.
+dual activation,nngp,With Theorem 3
+gelu,nngp,Tsuchida et al. [48] knew the dual activation (and thus NNGP) of GeLU
+dual activation,ntk,Theorem 3 enables computing kσ' without needing the multivariate Gaussian distribution or manual differentiation; it's used to calculate NTK.
+gauss-hermite quadrature,evaluation of dual activation,This method uses numerical integration to find the dual activation for functions without a closed-form expression.
+2d gaussian distribution,gauss-hermite quadrature,Gauss-Hermite quadrature approximates the expectation under the 2d Gaussian distribution.
+hermite polynomial,gauss-hermite quadrature,The roots and weights of Hermite polynomials (hi(x)
+quadrature formula,hermite polynomial,The quadrature formula is derived from the Hermite polynomials
+approximate (non-sketched) kernels,general activation functions,Our method computes approximate kernels for general activation functions
+ntk (neural tangent kernel),cntk (computationally expensive),Computing all NTK entries has high runtime (Ω(n^2(d+Lq^2))) and memory requirements (Ω(n^2)) for CNTK
+feature maps,randomized sketching,To avoid quadratic complexities
+relu activation,previous approach,The previous approach was specific to ReLU activation
+ntk and nngp (neural network gaussian process),σ (x,y) and ϕ(l)(x)
+relu activation,hermite expansion,The context discusses using the ReLU activation function
+abs activation,hermite expansion,Similar to ReLU
+sin activation,hermite expansion,The sine function is another activation approximated in the experiment via Hermite expansion.
+gaussian activation,hermite expansion,A Gaussian activation is among those tested
+erf activation,hermite expansion,The error function (erf) is another non-linear activation whose dual kernel is estimated using Hermite expansion.
+gelu activation,hermite expansion,Gated Linear Unit (GeLU) is an activation function
+ntk kernel matrix,normalized gaussian dual kernel,The context mentions the NTK kernel matrix being associated with the normalized Gaussian dual kernel.
+algorithm 1,subspace embedding,Algorithm 1 is used to obtain a subspace embedding for the NTK kernel matrix.
+runtime,optimal up to poly(log n) factors,The runtime of the algorithm is optimal for a fixed number of layers
+target dimension,poly(log n),The target dimension for the subspace embedding is stated to be a polynomial in log n.
+proposed neural kernels,dual kernel approximation,Experiments focus on approximating dual kernels for the proposed neural kernels.
+monte carlo estimation,comparison,The approach is compared to Monte Carlo estimation of the dual kernel.
+inputs,randomly generated,Inputs used in the experiments are randomly generated 256-dimensional vectors.
+standard gaussian vectors,i.i.d.,The comparison involves i.i.d. standard Gaussian vectors for kernel estimation.
+kernel approximation,frobenius norm,The context discusses the relative errors of the Frobenius norm of kernel approximations in terms of wall-clock times and polynomial degree.
+hermite expansion,monte carlo method,Hermite expansion is compared to the Monte Carlo method
+sin activation,gaussian activation,Both sin and Gaussian activations are mentioned as being well-approximated due to their smoothness and bounded derivative norms.
+cifar-10 classification,ridge regression problem,The context involves benchmarking a CNTK algorithm for CIFAR-10 classification by solving a ridge regression problem.
+myrtle5,cntk features,Myrtle5
+degree q = 8,feature dimension m,The sketching algorithm uses a fixed degree q and explores different feature dimensions m.
+relu activation,abrelu activation,These are among the dual activation functions explored in the experiment.
+deep normalized gaussian kernels,2 scaling factors,The experiment involves Gaussian kernels with adjustable scaling factors for better performance.
+test accuracy,best ridge parameters,The test accuracy is reported after experimenting with 20 choices of ridge parameters.
+zca preprocessing,image classes,Image classes are converted to one-hot vectors and pre-processed using regularized ZCA.
+normalized gaussian,relu,The normalized Gaussian is compared to ReLU
+scaled normalized gaussian,relu cntk features,The scaled normalized Gaussian outperforms ReLU CNTK features with 78.13% accuracy compared to 75.56%.
+relu cntk features,myrtle-5,ReLU CNTK features in Myrtle-5 achieve 86-87% test accuracy but require 151 GPU hours
+cntk features for the normalized gaussian kernel,exact cntk of myrtle-5,Our CNTK features for the normalized Gaussian kernel have a smaller runtime (1.4 GPU hours vs 151 GPU hours) and slightly lower accuracy (77% vs 86-87%).
+approximation,accuracy,Our approximation results in a faster runtime without significant loss of accuracy.
+methods,acceleration,Our methods offer acceleration
+efficient computation,neural kernels,We introduced methods to efficiently compute neural kernels
+speedup,acceleration,The methods lead to faster computation without loss of accuracy
+training data,20,000×××6
+methods,principled exploration of activations,Our work empowers researchers to explore activation functions in a more systematic manner.
+sketching method,compute efficiency,Sketching method provides orders of magnitude improvement in compute efficiency.
+compute efficiency,dataset distillation,Efficient compute opens up opportunities for dataset distillation and other applications.
+compute efficiency,uncertainty critical problems,It enables applications in fields like autonomous driving
+amir zandieh,swiss nsf grant,Amir Zandieh received funding from the Swiss National Science Foundation.
+insu han,amin karbasi,Both Insu Han and Amin Karbasi had direct support for this work.
+nsf (iis-1845032),funding source,Insu Han and Amin Karbasi acknowledge funding from the National Science Foundation.
+onr (n00014-19-1-2406),funding source,They also acknowledge funding from the Office of Naval Research.
+ai institute for learning-enabled optimization at scale (tilos),funding source,Support from the AI Institute for Learning-Enabled Optimization at Scale is acknowledged.
+timothy nguyen,jeffrey pennington,Both Timothy and Jeffrey provided discussions and feedback on the project.

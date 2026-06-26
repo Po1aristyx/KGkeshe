@@ -1,0 +1,132 @@
+node_1,node_2,edge
+few-shot learning,meta-learning,Recent studies in few-shot learning have employed meta-learning methods to improve performance.
+few-shot learning,transfer learning,Simple transfer learning methods have also contributed to promising results in few-shot learning.
+feature extractor,upstream dataset,The feature extractor is pre-trained using an upstream dataset
+human learning,few-shot tasks,Our method
+global view,local view,Humans use both global and local views for a comprehensive understanding of detailed features.
+featwalk,few-shot learning method,FeatWalk addresses the issue of insufficient local information extraction from pre-trained feature extractors.
+featwalk,enhancing few-shot learning performance,FeatWalk can be easily combined with existing methods to boost performance.
+convolutional neural networks (cnns),computer vision tasks,CNNs have demonstrated exceptional performance in various computer vision tasks.
+training samples,performance of cnns,The success of CNNs heavily depends on having adequate training samples.
+source code,featwalk,The source code for FeatWalk is available at https://github.com/exceefind/FeatWalk.
+adequate training samples,model parameters,The success of optimizing relies on having enough training samples to effectively tune a large number of model parameters.
+limited training samples,overfitting,Deep neural networks face overfitting when there are insufficient training samples
+few-shot learning (fsl),research interest,FSL attracts strong research interest because it aims to achieve high model performance with minimal training data.
+meta-learning,fsl approach,Meta-learning is one strategy proposed to address the challenges of few-shot learning
+good-embed (tian et al. 2020),visual attentions,Good-Embed demonstrates its ability to learn effective visual attentions
+limited training data,target downstream task,The context discusses the need to enhance a model's ability to learn from limited training data and then fine-tune it for quick adaptation to various target tasks.
+meta-learning,episodic training,Meta-learning often requires extensive episodic training to perform few-shot learning tasks.
+transfer learning,pre-trained models,Transfer learning is more desirable because it allows simple pre-trained models to be directly applied to a wide range of target tasks.
+self-distillation,enhanced embeddings,Recent studies have improved transfer learning by incorporating self-distillation and enhanced embeddings to boost performance in few-shot learning.
+discriminative features,neglected features,Models in meta-learning or transfer learning might overlook important features that are crucial for downstream tasks.
+upstream tasks,downstream tasks,The context highlights the potential challenge of transferring learned features from upstream tasks to downstream tasks where different features might be more important.
+figure 1 (middle column),visual illustration,This refers to an image or diagram demonstrating the issue with prioritizing certain features in the context of few-shot learning.
+feature extractor,whole image (global view),The feature extractor extracts features from the whole image
+feature extractor,local image regions (local view),Inspired by human learning
+proposed method,featwalk module,FeatWalk module is designed to adaptively fuse features from multiple local views and the global view for each class.
+limited training samples,downstream few-shot learning (fsl) task,The method aims to learn from very limited training data in the FSL task.
+miniimagenet,tieredimagenet,Both miniImageNet and tieredImageNet are standard FSL benchmark datasets where the method achieves new state-of-the-art performance.
+meta-learning fsl methods,pre-training fsl methods,The proposed method can be flexibly combined with existing meta-learning and pre-training approaches without altering their original stages.
+human learning process,few-shot tasks,The method draws inspiration from the way humans learn in few-shot scenarios
+standard fls benchmark datasets,miniimagenet,miniImageNet is a specific dataset within the standard FLS benchmark.
+miniimagenet,tieredimagenet,Both miniImageNet and tieredImageNet are mentioned as part of the standard FLS benchmark datasets
+miniimagenet,cub,CUB (Caltech-UCSD Birds) is another dataset mentioned alongside miniImageNet
+main contributions,simple yet effective fsl method,The main contributions center around a proposed method that is both simple and effective for few-shot learning.
+simple yet effective fsl method,featwalk module,The FeatWalk module is a component of the proposed FSL method
+featwalk module,existing fsl methods,FeatWalk module is designed to be flexible and can be seamlessly integrated with existing few-shot learning methods.
+few-shot classification,meta-learning,Few-shot classification is a subfield of meta-learning
+meta-learning,episodic training,Meta-learning employs episodic training to prepare models for few-shot tasks by simulating real-world scenarios.
+n-way m-shot setting,feature extractor,This setting involves training the feature extractor to quickly adapt to new classes with only a few examples (n-way
+meta-learning methods,n-way m-shot setting,Most meta-learning methods are developed and evaluated under the standardized n-way m-shot setup.
+feature extractors,representation capabilities,Feature extractors have exceptional representation capabilities
+few-shot learning tasks,scarcity of samples,The lack of samples in few-shot learning hinders the model from fully grasping task-relevant information.
+humans,cognitive process,Humans use a cognitive process where they shift attention to local details after initial global observation
+feature extractor,global view of images,The feature extractor focuses on the global view
+local perspectives,class prototypes,Our method leverages local perspectives and class prototypes to extract task-relevant information and exclude irrelevant details.
+limited training samples,potentially useful information,By revealing useful information within the limited samples
+model,overfitting,Without additional samples
+global view,local views,The global view is fused with weighted multiple local views
+fused representation zk,global representation zg,Fusion process (Equation 4) involves combining zg with ωj
+fused representation zk,local representations,FeatWalk is the fusion process where fused feature vectors zn are generated for each local representation zl_j.
+n-way-m-shot learning task,sample x,For this task
+local views,prototype of the k-th class,If x is not from the k-th class
+featwalk module,fused feature vectors (z1,z2
+fused feature vectors (z1,z2,...
+classifier head,learnable weight vector (wk),wk represents the learnable weights specific to each class in the classifier.
+classifier head,bias parameter (bk),bk is the bias associated with each class in the classifier's computation of logits.
+logits (u1,u2,...
+prototype representation (ck),global representations of training samples,ck is initially obtained from the global representations of all class samples.
+prototype representation (ck),fused representations (zk),ck is iteratively updated using the fused representations during training.
+training samples,collection of samples (dk),Dk contains m training samples for each class
+training,iterative updating of prototypes and classifier head,During training
+prototypes,model inference,Prototypes are fixed during inference for testing images.
+test image,featwalk,FeatWalk is applied to test images with the fixed prototypes.
+featwalk,final output,After FeatWalk
+miniimagenet,ilsvrc-12 dataset,MiniImageNet is a subset of the ILSVRC-12 dataset
+tieredimagenet,ilsvrc-12 dataset,TieredImageNet is a larger dataset based on the ILSVRC-12 dataset.
+cub,fine-grained few-shot benchmark,CUB is a specific type of fine-grained few-shot benchmark.
+cub,birds,CUB includes 200 classes of birds
+resnet-12,deep network structure,ResNet-12 is a backbone used for evaluations
+resnet-18,deep network structure,ResNet-18 is another backbone used for evaluations
+resnet-12,input resolution,For ResNet-12
+miniimagenet dataset,tieredimagenet dataset,These are two datasets being compared in the context of evaluating few-shot learning methods.
+method,feat (ye et al. 2020b),FEAT is mentioned as one of the recently proposed methods in the comparison.
+method,protonet (snell,swersky
+method,deepemd v2 (zhang et al. 2022),DeepEMD v2 is another recent method included in the performance evaluation.
+method,fgm (cheng et al. 2023),FGM is listed as a competing method
+method,renet-ventral (dong,zhai
+baseline++ (dhillon et al. 2020),methods compared,Baseline++ serves as a reference point for the performance of other methods.
+adm (li et al. 2020),methods compared,ADM is another competing method in the context of few-shot learning.
+covnet (wertheimer and hariharan 2019),methods compared,CovNet is a method that contributes to the benchmark for few-shot learning.
+frn (wertheimer,tang,and hariharan 2021)
+good-embed (tian et al. 2020),methods compared,Good-Embed is one of the methods under consideration in the study.
+deepbdc (xie et al. 2022),pre-training method,DeepBDC is used for pre-training the feature extractor in the described approach.
+training set,base set for meta-learning,The training set serves as the foundation for meta-learning or pre-training the backbone models.
+classifier head,adaptation learning,During FSL evaluation
+training of the classifier head,adamw optimizer,uses
+learning rate,1e-3,has learning rate
+local views,20% sized patch of the image,consists of
+temperature parameter,τ,is set to
+α,0.5,is set to
+fsl test set,novel set of meta-testing,referred to as
+5-way 1-shot classification task,5-way 5-shot classification task,comparison with
+miniimagenet,tieredimagenet,compared on
+our method,renet-ventral,outperforms
+our method,fgm,surpasses
+5-way 1-shot setting,fgm,Our method surpasses FGM by 1.37% under the 5-way 1-shot setting.
+5-way 5-shot setting,state-of-the-art performance,On tieredImageNet
+fine-grained categorization,cub dataset,The evaluation was done on the fine-grained categorization task based on the CUB dataset.
+previous studies,afrasiyabi,lalonde
+featwalk,transfer learning strategy,FeatWalk is proposed as a simple transfer learning strategy to enhance few-shot learning performance.
+cross-domain evaluation,miniimagenet,A cross-domain experiment was conducted on miniImageNet to confirm the superior transfer learning ability.
+cross-domain evaluation,cub,Another cross-domain experiment was on CUB
+baseline++bml,frn,Performance comparison shows combinations with our method (Baseline++BML vs FRN).
+deepbdc,ours,Our method uses the DeepBDC-pretrained feature extractor.
+resnet-12,backbone,ResNet-12 serves as the backbone for some methods.
+5-way 1-shot and 5-shot settings,accuracy improvement,Performance is measured under these settings
+featwalk,similarity metrics,FeatWalk compares and evaluates different similarity metrics used for comparing local and global representations.
+final classifier head,stability,The stability of the method is analyzed with respect to the final classifier head.
+number of local view samples,stability,The stability is examined in relation to the number of local view samples.
+fusion coefficient (α),stability,Fusion coefficient α influences the balance between global and local representations in the method.
+local views,effect,Ablation study on local views explores the impact of varying their size.
+featwalk module,ablation study,The performance of FeatWalk is compared without the module in an ablation study (Table 4).
+classifier head,performance,Different classifier heads and similarity measurements affect the overall performance (Tables 4 and 5).
+featwalk operation,feature visualization,Features are visualized before and after applying the FeatWalk operation on miniImageNet and CUB (Figure 7).
+baseline method,featwalk,The baseline method excludes the FeatWalk module
+ablation study,featwalk module,The context discusses an ablation study examining the impact of excluding FeatWalk from the overall method
+baseline method,fully connected layer (fc),The baseline uses a fully connected layer as the classifier head
+random local sampling,data augmentation,Random local sampling is compared to data augmentation
+featwalk module,local views,FeatWalk involves estimating the importance of different local views in relation to the global view.
+weights (ωj,k),reducing irrelevant information
+featwalk module with equal importance,proposed method,The proposed method outperforms FeatWalk when all local views have equal importance
+cosine similarity,importance of local representations,Cosine similarity is used to assess the relevance of local representations within the FeatWalk module.
+linear transformation,classifier head (traditional fc layers),A linear transformation
+euclidean distance,logistic regression (lr) classifier head,Alternative similarity measure compared to FC-based classifier head
+fc-based classifier head,lr classifier head,Performance comparison in 5-way 1-shot and 5-shot settings on miniImageNet and CUB
+lr classifier head,fc-based head,Similar performance with slight difference in effectiveness
+5-way 1-shot task,5-shot task,Examination of sensitivity in both settings on miniImageNet
+number of local view samples,few-shot learning performance,Stability of performance when increasing sample number
+featwalk module,local view utilization,Ability to improve performance with sufficient local views
+hyperparameter α,model performance,Sensitivity analysis showing optimal range for fusion coefficient
+global representation,local representation,Fusion in FeatWalk module (α represents the fusion coefficient)
+baseline method,proposed method,Consistent improvement over the baseline

@@ -1,0 +1,98 @@
+node_1,node_2,edge
+fixed kernel,infinite width limit,The phenomenon of achieving infinite width limit is realized by using a fixed kernel
+convolutional neural tangent kernel (cntk),ntk for convolutional neural networks,CNTK is the Neural Tangent Kernel specifically for convolutional networks
+cntk,alexnet,CNTK has been shown to achieve accuracy comparable to AlexNet (Krizhevsky et al.
+kernel machines,alternative for dnns,Kernel machines have gained interest as a potential alternative to deep neural networks due to their theoretical understanding
+kernel machines,dnns,On small datasets
+kernel models,large datasets,For kernel machines to be viable alternatives to DNNs
+model capacity,performance improvement,Once a model reaches its capacity
+model capacity,performance improvements,Adding more data leads to marginal performance improvements once the model reaches its capacity.
+model saturation point,number of samples,Each model does not achieve saturation until the number of samples significantly exceeds the model size.
+dataset size,model size,The need for algorithms that can independently scale dataset size and model size for optimal performance.
+eigenpro,large kernel models,EigenPro is a package that addresses the coupling between the model and the training set
+eigenpro,one million training data points,EigenPro can handle just above one million training data points with modern hardware.
+nystrom approximation,kernel machines at scale,Nystrom methods
+nytro (camoriano et al.,2016),falkon (rudi et al.
+memory limitations,model size,Methods like NYTRO and FALKON are limited by memory constraints
+largest models (meanti et al.,2020),memory limitations
+memory limitations,model size,memory limitations are a constraint on the maximum model size that can be used
+largest models,100,000 centers
+expanse cluster,340gb ram,The Expanse cluster has 340GB of RAM available for running FALKON with a maximum model size of 256
+512,000 model size,over 1tb ram
+sparse gaussian process,inducing points,Sparse Gaussian Processes use inducing points to control complexity
+inducing points,quadratic memory,Methods like GPYTORCH and GPFlow have quadratic memory requirements due to the number of inducing points.
+kernel herding,selecting good model centers,Kernel herding focuses on finding optimal centers for the model
+random fourier features (rffs),kernel approximation,RFFs are a method for approximating kernel machines using random features
+nyström methods,rffs (random fourier features),Nyström methods are generally considered superior to Random Fourier Features for kernel machine approximation.
+kernel machines,schölkopf et al.,Kernel machines
+nyström methods,rff (random fourier features),Nyström methods are mentioned to outperform RFF
+kernel machines,schölkopf et al. (2002),This reference is cited to explain kernel machines as non-parametric predictive models
+kernel machines,predictive models,Kernel machines are a type of predictive models
+eigenpro 3.0,large model sizes,EigenPro 3.0 is designed to handle large model sizes
+eigenpro 3.0,existing methods,It outperforms existing methods in handling large datasets
+computational complexity,o(n3),The kernel matrix inversion problem's complexity is mentioned as O(n3)
+iterative algorithms,approximations,Methods to tackle the scalability issue involve using iterative algorithms and approximations.
+top-q eigensystem,λq,Λq is a part of the top-q eigensystem
+top-q eigensystem,eq,Eq is another component of the top-q eigensystem
+h,reproducing kernel hilbert space (rkhs),H is the RKHS corresponding to the kernel K.
+linear system,k(x,x) + λin
+solution,α = (α1,. . .
+kernel machines,na model (nyström approximation),Kernel machines can be approximated by NA models
+general kernel models,classical rbf networks,General kernel models include classical RBF networks
+model capacity,p,p controls the model capacity in general kernel models
+model,centers (z),Z represents the set of centers in the model
+kernel interpolation,problem,The context discusses kernel interpolation as a solution to a specific problem.
+richardson iteration,preconditioned version,The iteration in equation (14) is a preconditioned version of the Richardson iteration.
+rank-q symmetric matrix,q,Q is a matrix obtained from the top-q eigensystem of K(X
+preconditioner,in,The preconditioner In acts on K(X
+largest stable learning rate,q,A larger q allows for a larger stable learning rate by flattening the spectrum of K.
+eigenpro 2.0,stochastic approximation,EigenPro 2.0 uses a stochastic approximation based on the Nyström extension.
+eigenpro 3.0,general kernel model,EigenPro 3.0 aims to learn a general kernel model for minimizing square loss.
+optimization problem,convex constrained,The work involves solving an infinite-dimensional convex constrained optimization problem.
+projection onto z,equation (16),The projection step in equation (16) can be simplified as described.
+equation (16),preconditioned fréchet derivative,We only need to evaluate the preconditioned Fréchet derivative at the model centers.
+model centers,evaluation of f l(f_t),The update requires the evaluation of f L(f_t) at the model centers.
+preconditioner,hessian of the objective,The largest stable learning rate depends on the largest eigenvalue of the Hessian.
+hessian,equation (10),Equation (10) gives the largest eigenvalue of the Hessian.
+equation (23),pp (preconditioner),Preconditioner PP is chosen as in equation (23)
+eigenpro 2.0,z,h
+xs,λ,e
+λ,eigenvalues of k(xs,xs)
+ψi,eigenfunctions of k(xs,xs)
+c,k(z,xs)e(λ^(-1))
+subsample xs,step 2 in eigenpro 2.0,A subset Xs is fetched for computations.
+stopping criterion,algorithm loop,The algorithm continues until the stopping criterion is met.
+minibatch (xm,ym),step 9
+sgd,problem,SGD is used to solve the problem.
+hyper-parameters,adjustment,The algorithm does not require hyper-parameter adjustment.
+s,q,You need to choose s and q; more details in Appendix D.4.6.
+model centers,random sub-sampling,Selected by random sub-sampling from the training data set.
+baselines,eigenpro 2.0,Baselines obtained from EigenPro 2.0 over centers and labels.
+eigenpro 3.0,performance,Performance shown after 50 epochs
+number of training samples,scaling,Scaling factor for model performance.
+model size,scaling model size,Performance evaluated for different numbers of model centers.
+decoupling,data preconditioner,Data preconditioner and model preconditioner maintain model independence from data.
+data preconditioner,stochastic gradient,Data preconditioner affects stochastic gradient computation.
+model preconditioner,inexact projection,Model preconditioner relates to inexact projection step.
+algorithm 2,algorithm 1,Complexity comparison with FALKON solver in Table 1.
+eigenpro 3.0,cifar10,Real data experiments conducted on CIFAR10 dataset.
+eigenpro 3.0,cifar10*,Real data experiments also on CIFAR10* (modified version).
+performance,real data experiments,Demonstrating effectiveness in scaling and improved performance on real datasets.
+kernel machine,centers,The centers refer to the horizontal lines in the context
+centers,data,Centers were randomly selected from the data
+feature extraction,resnet-18,Feature extraction is performed using ResNet-18
+augmentation,data,Data augmentation refers to the generation of new examples for training
+augmentation,cifar10,Augmentation methods like MixUp and Crop+Flip were applied specifically to the CIFAR10 dataset.
+augmentation,mnist,For MNIST and FashionMNIST
+data augmentation,accuracy,The use of data augmentation led to significant improvements in model accuracy.
+deep learning,remarkable success,The context highlights the remarkable success of Deep Learning as a contrast to the newly implemented data augmentation for kernel models.
+allocation tg-cis220009,national center for supercomputing applications,TG-CIS220009 is an allocation at the National Center for Supercomputing Applications.
+delta system,national center for supercomputing applications,The Delta system is located at the National Center for Supercomputing Applications.
+bbjr-delta-gpu,advanced cyber-infrastructure coordination ecosystem: services & support (access),bbjr-delta-gpu is an allocation from the ACCESS program.
+access program,national science foundation,The ACCESS program is supported by the National Science Foundation.
+nsf grants #2138259,#2138286,#2138307
+xsede,nsf grant number aci-1548562,XSEDE is supported by an NSF grant.
+xsede,expanse cpu/gpu compute nodes,XSEDE provided Expanse nodes for computation.
+tg-cis210104,xsede,TG-CIS210104 was an XSEDE allocation.
+tg-cis220009,xsede,TG-CIS220009 was also an XSEDE allocation.
+09/01/2022,xsede support end date,XSEDE's support ended on 09/01/2022.

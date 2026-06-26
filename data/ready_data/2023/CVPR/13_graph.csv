@@ -1,0 +1,266 @@
+node_1,node_2,edge
+vision transformers (vits),state-of-the-art performance,ViTs have demonstrated the state-of-the-art performance in various vision-related tasks.
+vits,backdoor attacks,Adversaries are motivated to perform backdoor attacks on ViTs due to their success.
+cnns,backdoor attacks,Vulnerability of traditional CNNs to backdoor attacks is well-known.
+cnns,vits,"ViTs are compared to CNNs, with CNNs capturing pixel-wise local features by convolutions."
+cnns,vits,ViTs extract global context information through patches and attentions unlike CNNs.
+cnn-specific backdoor attacks,vits,Naively transplanting CNN-specific backdoor attacks to ViTs yields only a low clean data accuracy and a low attack success rate.
+trojvit,vit-specific backdoor attack,"In this paper, a stealth and practical ViT-specific backdoor attack called TrojViT is proposed."
+cnn-specific backdoor attacks,trojvit,TrojViT generates a patch-wise trigger unlike area-wise trigger used by CNN-specific backdoor attacks.
+trojvit,vit model,"Once the attacker inserts the Trojan into the ViT model, it can still produce normal inference accuracy with benign inputs."
+vit model,predefined target class,"When the attacker embeds a trigger into an input, the ViT model is forced to classify the input to a predefined target class."
+trojvit,vit model,Flipping only few vulnerable bits identified by TrojViT on a ViT model can be used to exploit the model.
+trojvit,vit model,TrojViT identified vulnerable bits on a ViT model and transformed it into a backdoored one
+trojvit,imagenet,TrojViT can classify 99.64% of test images to a target class by flipping 345 bits on a ViT for ImageNet
+vision transformers (vits),cnns,ViTs have demonstrated higher accuracy than conventional CNNs in vision-related tasks
+backdoor,neural network model,"In a backdoor attack, a backdoor is injected into a neural network model to induce predefined behavior"
+backdoor attacks,cnns,It is well-known that CNNs are vulnerable to backdoor attacks
+backdoor attacks,vits,Backdoor attacks on ViTs are not well-studied compared to CNNs
+dbia,vits,DBIA proposed to abuse ViTs using an area-wise trigger designed for CNN backdoor attacks
+bavt,vits,BAVT and DBAVT proposed to abuse ViTs using an area-wise trigger designed for CNN backdoor attacks
+dbavt,vits,BAVT and DBAVT proposed to abuse ViTs using an area-wise trigger designed for CNN backdoor attacks
+vits,cnn,ViTs are compared to CNN in terms of capturing pixel-wise local information
+vits,image,ViTs spatially divides an image into small patches and extracts patch-wise information by attention
+bavt,dbavt,BAVT and DBAVT are mentioned together as backdoor attack techniques
+bavt,training data,BAVT assumes training data is available for attackers
+dbavt,training data,DBAVT assumes training data is available for attackers
+trojvit,vits,TrojViT is a novel backdoor attack designed to breach the security of ViTs
+trojvit,backdoor attack,"TrojViT is described as creating a novel, stealthy, and practical ViT-specific backdoor attack"
+clean vit model,backdoored vit model,A clean ViT model without a backdoor is compared to a backdoored ViT model with a predefined target class
+input image,backdoored vit model,A backdoored ViT model classifies an input image into a predefined target class with high confidence
+input image,trigger,A specially designed trigger embedded in the input causes the backdoored ViT model to classify the image into a predefined target class
+backdoored vit model,clean counterpart,The backdoored ViT model performs almost as accurately as its clean counterpart when the trigger is removed
+vit model,trojan,A ViT model can be backdoored and inserted with a Trojan using the RowHam technique
+vit model,trojan,The ViT model can be backdoored and inserted with a Trojan using the well-known RowHammer method [18].
+vit model,backdoor attack,"Unlike prior ViT-specific backdoor attacks [6, 17, 22] directly using an area-wise trigger, we propose a patch-wise trigger for TrojViT."
+trojan,patch-wise trigger,We propose a patch-wise trigger for TrojViT to effectively highlight the patch-wise information that the attacker wants the backdoored ViT model to pay more attention to.
+patch-wise trigger,trojvit,"During the generation of a patch-wise trigger, we present an Attention-Target loss for TrojViT to consider both attention scores and the predefined target class."
+modified bit number,vit parameters,We create a tuned parameter distillation technique to reduce the modified bit number of the ViT parameters during the Trojan insertion.
+trojvit,backdoor attack,Our TrojViT backdoor attack is more practical as we perform extensive experiments on various ViT architectures with multiple datasets.
+vision transformervit,traditional cnns,ViT has demonstrated better performance than traditional CNNs in various computer vision tasks.
+vit,input image,A ViT breaks down an input image as a series of patches which can be viewed as words in a normal transformer.
+vit,query,ViT associates a query and a set of key-value pairs with an output based on the attention mechanism
+vit,key,ViT associates a query and a set of key-value pairs with an output based on the attention mechanism
+vit,value,ViT associates a query and a set of key-value pairs with an output based on the attention mechanism
+swin transformer,attention calculation,Swin transformer uses the same attention calculation in each shifted window
+rowhammer,hardware-based bit-flip technique,RowHammer is a well-established hardware-based bit-flip technique to modify the data stored in DRAM memory
+rowhammer,dram,An attacker can cause a bit-flip in DRAM by frequently reading its neighboring data in a specific pattern
+rowhammer,bit-flip,An attacker can cause a bit-flip (1 → 0 or 0 → 1) in DRAM by frequently reading its neighboring data in a specific pattern
+rowhammer,error correction techniques,The state-of-the-art error correction techniques in main memories cannot eliminate RowHammer attacks
+threat model,attackers,The attackers aim to inject Trojan into a ViT model such that the poisoned ViT makes
+threat model,trojan,The attackers aim to inject Trojan into a ViT model such that the poisoned ViT makes
+trojvit,trojan,TrojViT model can successfully modify the weights of a neural network
+vit model,poisoned vit,The poisoned ViT is created by injecting poison into a ViT model to manipulate its behavior.
+attackers,goals,"The attackers have goals of utility, effectiveness, and efficiency in manipulating the behavior of the poisoned model."
+vit weights,dram,Attackers can modify the ViT weights stored in DRAM using RowHammer during inferences.
+trojan,attacker,"Based on the Trojan, the attacker can modify the ViT weights stored in DRAM by RowHammer during inferences."
+trojan,vit weights,Trojan can modify the ViT weights stored in DRAM by RowHammer during inferences.
+trojan,vit weights,"The attacker needs to modify only few bits of the ViT weights, and thus can easily generate a trigger and a Trojan for TrojViT on one GPU."
+trojan,trojvit,"After the Trojan of TrojViT is inserted, the ViT model behaves normally for benign inputs but produces the target prediction for inputs with a trigger."
+trojan,trojvit,The comparison of the prior area-wise trigger and patch-wise trigger in TrojViT. Patch-wise triggers achieve higher attack efficacy with even fewer trigger areas.
+threat model,cnn-specific backdoor attack works,Our threat model delineated in many prior CNN-specific backdoor attack works.
+trojvit,tbt,"Comparison between TrojViT and prior work, i.e., TBT in Table 2. Schemes like TBT and TrojViT target on ViT aware & target patch, with TrojViT being trigger modified."
+trojvit,proflip,"For other CNN-specific backdoors, Proflip requires meaningful test datasets."
+trojvit,bavt,"Although ViT-specific backdoors like BAVT and DBAVT may not need to access the model parameters, they have to access and poison original training datasets."
+model parameters,training datasets,"Model parameters may not need to access, but attackers have to access and poison original training datasets."
+attackers,training datasets,Attackers have to access and poison original training datasets.
+dataset scanning techniques,poisoned images,"Dataset scanning techniques may detect and remove the poisoned images, preventing the model from Trojan insertion."
+trojvit,backdoor attacks,TrojViT performs backdoor attacks by randomly sampling test data.
+backdoor attacks,cnns,Backdoor attacks focusing on CNNs adopt an area-wise trigger.
+vit,backdoor attacks,ViT-specific backdoor attacks using an area-wise trigger result in a low attack success rate and a low clean data accuracy.
+cnns,pixel-wise local information,CNNs capture pixel-wise local information via convolutions.
+vit,small patches,"A ViT spatially divides an image into small patches, and extracts patch-wise information by attention."
+cnn,backdoor attacks,"CNNs extract local information, so the backdoor attacks on CNNs are not sensitive to the position of triggers."
+triggers,cnn-specific backdoor attack,"In a CNN-specific backdoor attack, trig.1 and trig.2 should obtain very similar ASR. However, they produce a huge ASR difference in the backdoor attack on a ViT."
+triggers,vit,"Prior area-wise trigger generation algorithms do not consider trigger position, and thus cannot distinguish trig.1 and trig.2. In contrast, if we can embed a small piece of the trigger into each critical patch of the input image by a patch-wise trigger, this patch-wise trigger can receive more attention from the victim ViT."
+patch-wise trigger,area-wise trigger,"Potentially, a patch-wise trigger requires a smaller area than an area-wise trigger to achieve the same ASR, thereby greatly improving the stealthiness of a ViT-specific backdoor attack."
+trojvit,prior neural backdoor attacks,"TrojViT is designed to attack ViTs, while TBT and Proflip use area-wise triggers and are dedicated to attacking CNNs."
+dbia,bavt,"Recent ViT-specific backdoor attacks such as DBIA, BAVT, and DBAVT still depend on an area-wise trigger that cannot absorb more attention to critical patches."
+dbia,victim vit model,Although DBIA forces the victim ViT model to only put more attention to its area-wise trigger.
+dbia,vit model,DBIA forces the victim ViT model to put more attention to its trigger during trigger generation.
+vit model,asr,ViT model aims to improve ASR for a predefined target class.
+trojvit,vit model,TrojViT tries to absorb more attention of the victim ViT model to its patch-wise trigger and maximize ASR for a predefined target class.
+trojvit,stealthiness,"TrojViT has smaller trigger size in an input image than other works, providing better stealthiness."
+dbia,trojvit,DBIA is a prior ViT-specific backdoor attack that needs to modify many bits on the victim ViT model to insert Trojans.
+dbavt,trojvit,DBAVT is a prior ViT-specific backdoor attack that needs to modify many bits on the victim ViT model to insert Trojans.
+bavt,trojvit,BAVT is a prior ViT-specific backdoor attack that needs to modify many bits on the victim ViT model to insert Trojans.
+parameter distillation technique,trojvit,A tuned parameter distillation technique is proposed for TrojViT to greatly reduce the modified bit number on the victim ViT model during Trojan insertion.
+trojvit,backdoor attack,TrojViT is a stealthy and practical backdoor attack inducing a predefined target misbehavior of a ViT model by corrupting inputs and weights.
+trojvit,trigger generation,TrojViT's trigger generation phase involves patch-wise trigger construction.
+trojvit,trojan insertion,TrojViT's Trojan insertion phase involves efficient and accurate insertion of Trojans using parameter distillation.
+trojvit,trigger generation,TrojViT consists of two phases: trigger generation and Trojan insertion.
+trojvit,trojan insertion,TrojViT consists of two phases: trigger generation and Trojan insertion.
+patch-wise trigger,trigger generation,Our patch-wise trigger generation determines the position of each piece of the trigger in input images.
+patch-wise trigger,trojan insertion,We propose a tuned parameter distillation technique to insert a Trojan with a minimal bit-flip number into the victim ViT model.
+patch-wise trigger,patch salience values,Our patch-wise trigger generation determines the position of each piece of the trigger in input images by ranking patch salience values of the victim ViT.
+selected important patches,trigger,The selected important patches in input images are attached with a trigger.
+attention-target loss function,patch-wise trigger generation,We build an Attention-Target loss function to train the patch-wise trigger generation with two objectives.
+patch-wise trigger,attention-target loss function,We build an Attention-Target loss function to train the patch-wise trigger generation with two objectives.
+patch-wise trigger,asr,The second objective is to improve the ASR of a predefined target class.
+patch-wise trigger,paramater distillation technique,"Finally, we propose a tuned parameter distillation technique to insert a Trojan with a minimal bit-flip number into the victim ViT model."
+patch salience ranking,trojvit,We present patch-wise trigger generation for TrojViT to identify critical patches of the victim ViT model by patch salience ranking.
+input x,trigger,"For an input X, we define its counterpart embedded with a trigger as ˆX = X + P ⊙ M."
+vit model,input,The ViT model divides an input embedded with a trigger ˆX
+input,embedded,The input is embedded with a trigger ˆX
+input,trigger ˆx,The input is embedded with a trigger ˆX
+vit model,n patches,The ViT model divides input into n patches
+n patches,d pixels,Each patch of ˆX has d pixels
+patch,ˆxi,Each patch of ˆX is denoted by ˆXi
+pixel,"ˆxi,j","A pixel of ˆXi is represented by ˆXi,j"
+pixel salience score,pixel importance,"The pixel salience score G ˆXi,j indicates the importance of the pixel ˆXi,j"
+"g ˆxi,j",pixel perturbation impact,"A larger G ˆXi,j means the perturbation has a larger impact on the predefined target class yk"
+"g ˆxi,j",computed by absolute gradient,"G ˆXi,j can be computed by the absolute gradient of loss function LCE(X, yk) over each pixel ˆXi,j"
+salience score,sum of all pixels,The salience score G ˆXi of a patch ˆXi is defined as the sum of salience scores of all its pixels
+g ˆxi,computed as sum,G ˆXi is computed as the sum of salience scores of all its pixels
+binary mask matrix m,patch selection,The patch-wise binary mask matrix M indicates which patches are used to attack yk
+element,m,One patch is represented by an element in M
+element t,mt,"If an element t of M (Mt) is 1, its corresponding patch will be selected in the trigger, otherwise, its corresponding patch will be ignored"
+mt computation,g ˆxt,The computation of Mt is based on whether G ˆXt is set as 1 or 0
+"top(s, n ) function",top-n elements in the set s,"The top(S, N ) function returns the top-N elements in the set S"
+mask matrix m,generate trigger p ⊙ m,"With a mask matrix M, the trigger P ⊙ M is produced to generate the perturbation P"
+perturbation p,initialized to 0,Although P is initialized to 0
+trojvit,trigger p,TrojViT involves generating the perturbation P in the process of trigger generation.
+trojvit,attention-target loss,TrojViT introduces Attention-Target Loss to achieve two objectives related to trigger generation.
+patches,perturbation p,"The patches with the perturbation P in the trigger should gain more attention, indicating a relationship between patches and perturbation P."
+patches,trigger,There is a distinction between patches with the perturbation P in the trigger and patches having no trigger.
+patches,input,The patches with the perturbation P are compared to other patches in the input.
+at t n,vit,AT T N involves computations related to the ViT model.
+at t n,selected patches,AT T N relates to the attention distribution over selected patches.
+vit,layer,ViT consists of multiple layers denoted by 'l'.
+vit,head,ViT has different heads represented by 'h' in the model architecture.
+vit,target class,The ViT model outputs a predefined target class.
+perturbation p,target class yk,The perturbation P influences the probability of the ViT model outputting the target class yk.
+target class yk,cross-entropy loss function,The output of the ViT model and the predefined target class yk relate to the cross-entropy loss function.
+attention-target loss,trojan insertion,Trojan Insertion of TrojViT algorithm involves creating trojan weights with minimized parameters based on the target weight and index ID. This relates to the concept of Attention-Target Loss as a component of the optimization process.
+attention-target loss,attention loss,The Attention-Target Loss mentioned in the context considers both attention loss and target cross-entropy loss to optimize P. This shows a direct relationship between Attention-Target Loss and attention loss as components in the example.
+attention-target loss,target cross-entropy loss,The combination of attention and target losses in the Attention-Target Loss exceeds the performance of previous methods. This establishes a clear connection between the Attention-Target Loss and the target cross-entropy loss within the context.
+attention-target loss,attention weights,"The Attention-Target Loss aims to optimize P by considering attention weights. In the example provided, attention weights are calculated by performing softmax on the dot product of one query and all keys, emphasizing the relationship between Attention-Target Loss and attention weights."
+attention,patch,Attention of patch i to patch j can be indicated using the attention loss function LlAT T N. This relationship is crucial in minimizing attention loss and optimizing to attack the target class.
+attention-target loss,patch,Attention-Target Loss makes ˆX3 gain more attention and enlarges Sj by minimizing the attention loss function LlAT T N. This relationship is essential for optimizing the attack to the target class yk.
+attention-target loss,gradient surgery,Attention-Target Loss adopts gradient surgery to avoid gradient conflicts between objectives. This relationship is key in maintaining consistency during training.
+trojvit,trojan,TrojViT inserts a Trojan into the victim ViT model by modifying its parameters W. This relationship highlights the methodology used in inserting the malicious code.
+trojvit,important parameters,TrojViT modifies only the important parameters of the ViT model using a few test images with patchwise triggers. This relationship emphasizes the selective modification of crucial parameters for the attack.
+trojvit,test images,"TrojViT uses test images, even randomly sampled, for inserting the Trojan into the victim ViT model. This relationship showcases the approach of using test images without the need for training data."
+threat model,practical,The threat model is described as practical in the context.
+threat model,training data,The threat model is compared to the difficulty of accessing real-world training data of victim ViT models.
+real-world training data,victim vit models,Real-world training data of victim ViT models is mentioned as being challenging to access.
+cnn backdoor attacks,less modified bits,"It is stated that less modified bits on the victim ViT model improve the stealthiness and efficiency of backdoor attacks, based on the experience from CNN backdoor attacks."
+parameter distillation,modified bit number,Parameter distillation is proposed to reduce the modified bit number on the victim ViT model during Trojan insertion.
+parameter distillation,algorithm 1,The proposed tuned parameter distillation technique is described in Algorithm 1.
+tuned parameter distillation,trojan insertion,The tuned parameter distillation technique aims to reduce the modified bit number on the victim ViT model during Trojan insertion.
+tuned parameter distillation,w parameters,The tuned parameter distillation technique involves W as the parameters of the victim ViT model.
+tuned parameter distillation,test images,The tuned parameter distillation technique involves a batch of test images represented by X.
+tuned parameter distillation,patch-wise trigger,The tuned parameter distillation technique uses a patch-wise trigger represented by M ⊙ P.
+tuned parameter distillation,predefined threshold,The tuned parameter distillation technique uses a predefined threshold e for parameter tuning.
+trojan weights,minimized parameter number,The Trojan weights WT are returned with a minimized parameter number of np.
+trojan insertion,important weights,The Trojan insertion involves selecting important weights for WT and fixing the other parameters during model fine-tuning on test inputs with a trigger.
+trojan weights,fine-tuning epochs,The Trojan weights are involved in the fine-tuning epochs.
+tuned parameter distillation,objective function,The tuned parameter distillation uses an objective function to maximize the CDA and the ASR simultaneously.
+objective function,cda,The objective function aims to maximize the Common Defense Area (CDA).
+objective function,asr,The objective function aims to maximize the Attack Success Rate (ASR).
+cda,classification output,The objective function uses the classification output to maximize the Common Defense Area (CDA).
+asr,losses,"The objective function utilizes losses L(f(x), y) and L(f(X + M ⊙ P), yk) to maximize the Attack Success Rate (ASR)."
+losses,cda,losses of CDA
+losses,asr,losses of ASR
+parameter distillation,trojan weights wt,parameter distillation updates the Trojan weights WT
+trojan weights wt,objective function,updates the Trojan weights WT under the guidance of the objective function
+trojan weights wt,parameter number np,updates the Trojan weights WT by removing the weights whose absolute updating value between two iterations is smaller than e
+gradients,loss function,gradients of the loss function on CDA and ASR
+gradients,cda,gradients on CDA
+gradients,asr,gradients on ASR
+conflicts,gradients,conflicts between two gradients
+minimum-tuned parameter updating,gradient surgery,minimum-tuned parameter updating uses the gradient surgery to resolve the conflicts between two gradients
+experimental methodology,trojvit,details of our experimental methodology of TrojViT
+trojvit attacks,pretrained vit models,"TrojViT attacks on pretrained ViT models including Deit, ViT-base, and Swin-base"
+vit model,image recognition,ViT models designed for image recognition
+vit model,deit,ViT attacks on a smaller ViT model Deit for data-efficient applications
+vit model,vit-base model,ViT attacks on a large ViT model ViT-base model with a huge number of parameters
+datasets,benchmark datasets,"models trained by two benchmark datasets, CIFAR-10 and ImageNet"
+cifar-10,imagenet,CIFAR-10 fine-tuned based on the model trained on ImageNet
+imagenet,cifar-10,ImageNet is the dataset on which the models are trained. CIFAR-10 consists of training and test images.
+imagenet,trojvit,ImageNet is mentioned as a comparison to the trojViT model in terms of backdoor attacks.
+cifar-10,trojvit,CIFAR-10 is mentioned along with trojViT as part of a model evaluation.
+evaluation metrics,cda,Clean Data Accuracy (CDA) is defined as a metric to study the stealthiness of trojViT.
+evaluation metrics,asr,Attack Success Rate (ASR) is defined as a metric to study the efficiency of trojViT in backdoor attacks.
+evaluation metrics,tpn,Tuned Parameter Number (TPN) is defined as a metric to study the effectiveness of trojViT in backdoor attacks.
+evaluation metrics,tbn,Tuned Bit Number (TBN) is defined as a metric to study the stealthiness of trojViT in backdoor attacks.
+evaluation metrics,tar,Trigger Attention Rate (TAR) is defined as a metric to study the stealthiness of trojViT in backdoor attacks.
+trojvit,prior backdoor attacks,TrojViT is compared with prior backdoor attacks on Deit-small using ImageNet.
+deit-small,imagenet,Deit-small is a model with ImageNet dataset
+modelclean,modelbackdoored,ModelClean and ModelBackdoored are two types of models
+cda,asr,CDA and ASR have a relationship in terms of percentage
+cda,tpn,CDA and TPN are related in terms of percentage
+asr,tpn,ASR and TPN have a connection in terms of percentage
+nvidia geforce rtx-3090 gpu,24gb memory,Nvidia GeForce RTX-3090 GPU has 24GB memory
+proflip,tbt,Proflip and TBT share the same quantization method
+patch size,8-bit quantization level,Patch size is reduced using 8-bit quantization level
+swin transformer,base architecture,Swin transformer follows the default settings in base architecture
+window size,7,Window size is set to 7
+patch size,4 x 4,Patch size is set to 4 x 4
+test data,384 images,384 images are used as test data
+trigger generation,trojan insertion,Trigger generation and Trojan insertion are performed
+neural backdoor attacks,deit-small,Neural backdoor attacks abuse the Deit-small model
+deit-small,tar,Trigger generation and abuse of Deit-small model are related with TAR percentage
+tbt,proflip,TBT and Proflip are designed to attack CNNs
+tar,tbt,TAR (Targeted Attack Rate) is associated with TBT (Trigger-Based Trigger) in the context of CNN attacks.
+tar,proflip,TAR (Targeted Attack Rate) is linked to Proflip in the discussion about attacking CNNs.
+tbt,proflip,TBT (Trigger-Based Trigger) and Proflip are both methods designed to attack CNNs.
+cda,asr,CDA (Clean Data Accuracy) has a relationship with ASR (Attack Success Rate) as they are both evaluation metrics.
+cda,dbia,CDA (Clean Data Accuracy) is compared to the backdoor attack method DBIA in terms of model performance loss.
+asr,dbia,ASR (Attack Success Rate) is also compared to DBIA (Direct Backdoor Injection Attack) in the context of model performance.
+trojvit,cda,TrojViT achieves a certain CDA (Clean Data Accuracy) percentage in the context of model evaluation.
+trojvit,asr,TrojViT demonstrates a specific ASR (Attack Success Rate) value in the context of model evaluation.
+trojvit,dbia,TrojViT is compared to DBIA in terms of model parameter modification and performance impact.
+swin-b,swin transformer-base,Both models are mentioned in the context in relation to TrojViT attacks on ViT models. Swin-b is attacked with TrojViT achieving 99.66% ASR and 95.84% CDA. The Swin Transformer-base model is also referenced in the same context.
+deit-t,deit-s,TrojViT attacks Deit-t with a 4-patch trigger to achieve 99.94% ASR and 71.21% CDA. Deit-s is attacked with a 9-patch trigger to obtain an ASR of 99.96% and a CDA of 79.23%. Both models are mentioned in the context in relation to TrojViT attacks on ViT models.
+vit-base,deit-b,"TrojViT attacks larger models, ViT-base, and Deit-b, with embedded triggers consisting of 9 patches. ViT-base is attacked with TrojViT achieving an ASR of 99% and experiencing only a trivial CDA degradation. Deit-b is also attacked in the context."
+trojvit,deit-s,TrojViT attacks Deit-s using a 9-patch trigger to obtain an ASR of 99.96% and a CDA of 79.23%
+trojvit,vit model,"TrojViT attacks a large ViT model including ViT-b, Deit-b, and Swin-b, achieving different ASR percentages"
+trojvit,ablation study,TrojViT explores the design space and impact on its attacking effects in an ablation study using only the Deit-s model and ImageNet dataset
+trojvit,attention-target loss,TrojViT achieves a CDA of 79.23% and an ASR of 99.98% using the Attention-Target Loss compared to traditional cross-entropy loss optimization
+trojvit,tuned parameter distillation,The Tuned Parameter Distillation of TrojViT reduces the modified bit number of the Trojan by 46.67% during Trojan insertion for better stealthiness
+tuned parameter distillation,trojan insertion,The Tuned Parameter Distillation of TrojViT reduces the modified bit number of the Trojan by 46.67% during Trojan insertion
+tuned parameter distillation,cda loss,The Tuned Parameter Distillation introduces a CDA loss of 0.04%
+minimum tuned parameter updating,cda loss,Minimum Tuned Parameter updating introduces a CDA loss of 0.04%
+trojan insertion,minimum tuned parameter updating,"Trojan insertion is affected by Minimum Tuned Parameter updating, leading to a CDA loss of 0.04% while maintaining an ASR of 99.9%."
+trigger area,trojvit,The trigger area is a key factor for the stealthiness of TrojViT. A small trigger area makes TrojViT more stealthy.
+trojvit,attack results,The attacking results of TrojViT with different trigger areas are shown in Table 7.
+trojvit,asr,TrojViT achieves an ASR of 99% even with a single-patch trigger.
+trojvit,cda,TrojViT has to use multiple patches to maintain a reasonably high CDA.
+trojvit,vit model,TrojViT attacks the backdoored ViT model using multiple patches.
+layer l,equation 5,Layer l is discussed in Equation 5.
+layers selection,ablation study,"Summing 12 layers in the experiments achieves a higher ASR and a higher CDA, as shown in Table 8."
+turned parameter thresholds,results,The results of various turned parameter thresholds are shown in Table 10.
+defense against trojvit,performance,The performance of defense against TrojViT is discussed in Table 11.
+attention-target loss,λ,"During trigger generation, λ is the weight of attention loss in Attention-Target Loss."
+trojvit,vit model,TrojViT is a modified version of the ViT model optimized for attacking a predefined target class. TrojViT generates triggers that make the ViT model pay more attention to specific patches in the image.
+cda,asr,CDA (Classification Degradation Accuracy) is affected by attention loss and cross-entropy target loss in TrojViT. ASR (Attack Success Rate) is also influenced by these losses.
+trojan insertion,tuned parameter thresholds,Different tuned parameter thresholds (e) are set during Trojan insertion in the ViT model to skip non-critical model parameters. The choice of e impacts the ASR and the number of modified bits in the model.
+potential defense,dbavt,"DBAVT is a defense method designed for defending attacks on ViTs, but it may not work well for TrojViT as it detects Trojans based on patch processing sensitivity, which may not be effective for TrojViT."
+trojvit,trojans,"TrojViT inserts a Trojan during inference, and thus is immune to such a defense."
+trojvit,bavt,Naively applying the defense technique of BAVT to TrojViT attacks greatly degrades the CDA by > 5% on various ViT models with ImageNet.
+bavt,trojvit,Naively applying the defense technique of BAVT to TrojViT attacks greatly degrades the CDA by > 5% on various ViT models with ImageNet.
+bavt,black patch,BAVT reduces the negative impact of an area-wise trigger by attaching a black patch to the position with the highest heat-map score.
+black patch,area-wise trigger,BAVT reduces the negative impact of an area-wise trigger by attaching a black patch to the position with the highest heat-map score.
+trojvit,attention-target loss,"TrojViT creates a trigger composed of multiple pieces, each of which is embedded to one patch, through our Attention-Target Loss."
+trojvit,patch-wise trigger,"Therefore, replacing the patch with the highest attention score cannot prevent a patch-wise trigger of TrojViT."
+wt,trojvit,Trojan insertion of TrojViT in Algorithm 1 heavily depends on the initialization of critical target Trojan parameters WT.
+wt,weights,WT can be initialized as the weights of the last classification head layer.
+wt,critical parameter matrix,The goal of our defense is to prevent an attacker from modifying the critical parameter matrix.
+original critical parameter matrix,decomposed critical parameter matrix,"Instead of the original critical parameter matrix, we store the decomposed critical parameter matrix."
+matrices,dram,"The decomposed matrices are stored in DRAM, which increases the attacker's effort to modify parameters while achieving a lower ASR."
+matrices,decomposition methods,The overhead of the defense method can be adjusted by different decomposition methods and the number of decomposed matrices.
+last classification head layer,decomposition technique,The critical parameter matrix of the last classification head layer is decomposed with the decomposition technique proposed in [33].
+trojvit,imagenet dataset,The TrojViT performance is compared with and without the defense technique on the ImageNet dataset in Table 11.
+trojvit,asr,The defense technique significantly reduces the ASR by over 21%.
+trojvit,attack overhead tpn,The defense technique increases the attack overhead TPN by 2×.
+trigger,cnn-specific backdoor attacks,"Instead of an area-wise trigger for CNN-specific backdoor attacks, TrojViT generates a patch-wise trigger."
+trojvit,vit model,TrojViT attacks a ViT model using patch salience ranking and attention-target loss.
+trojvit,parameter distillation,TrojViT uses tuned parameter distillation to minimize the modified bit number of the Trojan.
+vit models,datasets,Extensive experiments are performed on various ViT models and multiple datasets to show that TrojViT achieves the attack's objective.
+trojvits,attack,"TrojVits achieves the attack's objective of utility, effectiveness, and efficiency."
+trojvits,test images,TrojViT can classify 99.64% of test images to a target class by flipping 345 bits on a ViT inferring ImageNet.
+trojvits,asr,We also show a potential technique to reduce the ASR of our TrojViT and increase the attack overhead.
+nsf awards ccf-1908992,nsf awards ccf-1909509,"This work was supported in part by NSF awards CCF-1908992, CCF-1909509."
+nsf awards ccf-1908992,nsf awards ccf-2105972,"This work was supported in part by NSF awards CCF-1908992, CCF-1909509, and CCF-2105972."
+nsf awards ccf-1909509,nsf awards ccf-2105972,"This work was supported in part by NSF awards CCF-1908992, CCF-1909509, and CCF-2105972."

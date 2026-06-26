@@ -1,0 +1,227 @@
+node_1,node_2,edge
+semi-supervised object detection (ssod),one-stage detectors,SSOD is associated with one-stage detectors and the limitations faced by them in comparison to two-stage detectors
+selection ambiguity,pseudo labels,Selection ambiguity arises due to less accurate pseudo labels as classiﬁcation scores cannot properly represent the localization quality
+assignment ambiguity,samples,"Assignment ambiguity occurs when samples are matched with improper labels in pseudo-label assignment, influenced by missed objects and inaccurate pseudo boxes"
+ambiguity-resistant semi-supervised learning (arsl),one-stage detectors,ARSL is proposed to tackle the problems of selection and assignment ambiguity in one-stage detectors
+joint-conﬁdence estimation (jce),pseudo labels,"JCE is introduced to quantify the classification and localization quality of pseudo labels simultaneously, aiming to alleviate selection ambiguity"
+task-separation assignment (tsa),pixel-level predictions,"TSA assigns labels based on pixel-level predictions instead of unreliable pseudo boxes, addressing assignment ambiguity"
+positives,classiﬁcation and localization task,Positives are separately exploited for the classification and localization task in a 'divide-and-conquer' strategy to handle assignment ambiguity
+comprehensive experiments,arsl,Experiments demonstrate that ARSL effectively mitigates ambiguities and achieves state-of-the-art SSOD performance on MS COCO and PASCAL VOC
+ssod,performance,SSOD achieves state-of-the-art performance
+ssod,method,SSOD methods follow the Mean-Teacher paradigm
+ssod,self-training technique,SSOD methods mainly apply the self-training technique
+two-stage detectors,one-stage methods,two-stage detectors are less harmonious with one-stage methods
+performance,faster rcnn,Faster RCNN has a comparable supervised performance
+method,semi-supervised learning,self-training technique is used to perform semi-supervised learning
+ssod,pseudo-label selection,"SSOD includes core components like pseudo-label selection, which plays a crucial role in semi-supervised learning."
+pseudo-label selection,assignment,"The process of pseudo-label selection and assignment is crucial in semi-supervised learning, as mentioned in the context."
+selection ambiguity,assignment ambiguities,"The existence of selection and assignment ambiguities hinders the semi-supervised learning process of one-stage detectors, as observed in the analysis."
+faster rcnn,fcos,"There is a comparison between Faster RCNN and FCOS in terms of correlation coefficient, indicating differences in performance."
+ppm,tsa,"PPM, standing for potential positive mining, is part of the assignment and target generation process under TSA, as described in the context."
+fcos,rpn,"One-stage detectors like FCOS lack RPN and RoI Pooling/Align, which are important for accurate object information extraction."
+fcos,predicted centerness,The predicted centerness of FCOS is mentioned as not properly representing the localization quality
+samples on unlabeled images,improper labels,The assignment ambiguity indicates that samples on unlabeled images are assigned with improper labels
+positives,negative labels,"73.5% of positives are wrongly matched with negative labels, and there also exist many false positives"
+bounding boxes,pixel-level labels,The assignment strategy converts bounding boxes into pixel-level labels
+pseudo boxes,inaccurate,Many pseudo boxes are inaccurate and many objects are missed due to the threshold filtering
+assignment ambiguity,misguides the detector,The assignment ambiguity causes misguidance to the detector
+one-stage detectors,pixel-level labels,"One-stage detectors require pixel-level labels, making them more sensitive to assignment ambiguity compared to two-stage detectors"
+ambiguity-resistant semi-supervised learning (arsl),one-stage detectors,ARSL is proposed for one-stage detectors to mitigate the selection ambiguity
+joint-conﬁdence estimation (jce),high-quality pseudo labels,JCE is proposed to select high-quality pseudo labels based on the joint quality of classification and localization
+two branches,united supervision,"In training, the two branches are trained together in united supervision to avoid the sub-optimal state"
+jce,task-consistent or iou-estimation methods,"JCE is explicitly mentioned as different from other task-consistent or IoU-estimation methods, suggesting a relationship based on comparison"
+jce,classiﬁcation and localization quality,"JCE integrates the classification and localization quality explicitly, indicating a direct relationship between the two concepts"
+jce,pseudo labels,"JCE is capable of picking high-quality pseudo labels, indicating a relationship where JCE utilizes pseudo labels"
+jce,better ssod performance,"JCE achieves a better SSOD performance, suggesting a relationship where JCE is associated with improved performance"
+tsa,assignment ambiguity,"TSA is proposed to address assignment ambiguity, indicating a relationship where TSA is devised to handle ambiguity in assignments"
+tsa,pixel-level predictions,"TSA assigns labels based on pixel-level predictions, demonstrating a direct relationship between TSA and pixel-level predictions"
+tsa,'divide-and-conquer' strategy,"TSA employs a 'divide-and-conquer' strategy for ambiguous candidates, suggesting a relationship where TSA applies a specific strategy"
+tsa,positive samples,"TSA partitions samples into negatives, positives, and ambiguous candidates based on joint confidence, indicating a relationship where TSA categorizes samples into positive samples"
+arsl,semi-supervised learning,"ARSL is associated with the semi-supervised learning of one-stage detectors, showcasing a relationship between ARSL and the learning approach"
+semi-supervised learning,one-stage detectors,"The context explores the semi-supervised learning of one-stage detectors, highlighting the limitations related to pseudo labels."
+jce,selection ambiguity,JCE is proposed to mitigate the selection ambiguity by jointly quantifying the classification and localization quality.
+jce,assignment ambiguity,JCE is proposed to mitigate the assignment ambiguity by quantifying the classification and localization quality.
+tsa,assignment ambiguity,TSA separately exploits positives for classification and localization based on pixel-level predictions to alleviate the assignment ambiguity.
+arsl,basic ssod baseline,ARSL exhibits remarkable improvement over the basic SSOD baseline for one-stage detectors.
+arsl,state-of-the-art performance,"ARSL achieves state-of-the-art performance on MS COCO and PASCAL VOC, showing remarkable improvement over the baseline."
+semi-supervised classification,consistency regularization,The related works discuss two dominant approaches in semi-supervised classification: consistency regularization and self-training.
+semi-supervised classification,self-training,"The related works highlight self-training as an approach in semi-supervised classification, also known as pseudo-labeling."
+self-training,pseudo labels,"In self-training, a pre-trained model predicts pseudo labels for unlabeled data, which are used to optimize the model."
+noisystudent,student models,NoisyStudent bolsters the robustness of student models by introducing proper noise into unlabeled data with pseudo labels.
+fixmatch,self-training framework,FixMatch simplifies the self-training framework by producing one-hot pseudo labels in weakly-augmented images to guide predictions.
+one-hot pseudo labels,weakly-augmented images,One-hot pseudo labels are produced in weakly-augmented images
+one-hot pseudo labels,guide predictions on strongly-augmented views,One-hot pseudo labels guide predictions on strongly-augmented views
+effective technologies in image classification,semi-supervised detection,Effective technologies in image classification establish excellent foundations for semi-supervised detection
+ssod,self-training,"In SSOD, the self-training and consistency based methods are inherited from semi-supervised image classification"
+ssod,consistency based methods,"In SSOD, the self-training and consistency based methods are inherited from semi-supervised image classification"
+noisystudent,stac,"Following NoisyStudent, STAC proposes a basic multi-stage pipeline"
+student,end-to-end scheme,"To simplify the multi-stage process and produce high-quality labels, an end-to-end scheme is proposed"
+teacher,student,The teacher gradually updates via the EMA of the student and predicts pseudo labels online
+unbiased teacher,pseudo-labeling bias,Unbiased Teacher tackles the pseudo-labeling bias via Focal Loss
+instant-teaching,student,"In Instant-Teaching, the student and teacher mutually rectify false predictions"
+humble teacher,soft pseudo-labels,Humble Teacher uses soft pseudo-labels for semi-supervised learning
+soft teacher,score-weighted classification loss,Soft Teacher proposes the score-weighted classification loss and box jittering approach
+reliable pseudo labels,selection ambiguity,reliable pseudo labels focus on ameliorating the selection ambiguity in the semi-supervised learning of one-stage detectors.
+selection ambiguity,inconsistency between the classification scores and localization quality,Selection ambiguity is caused by the inconsistency between the classification scores and localization quality.
+existing methods,ssod,Several existing methods in SSOD attempt to estimate the localization quality of pseudo labels via the uncertainty of bounding boxes.
+rethinking pseudo labels,box prediction as a classification task and localization quality as the mean confidence of four boundaries,"In Rethinking Pseudo Labels, box prediction is formulated as a classification task and localization quality is represented as the mean confidence of four boundaries."
+soft teacher,proposal boxes for several times and calculates the boundary variance as localization reliability,Soft Teacher jitters the proposal boxes for several times and calculates the boundary variance as localization reliability.
+unbiased teacher v2,log-likelihood loss for regression task and guides the additional branches to predict the uncertainty of each boundary,Unbiased Teacher V2 constructs a log-likelihood loss for regression task and guides the additional branches to predict the uncertainty of each boundary.
+jce,uniting representation of classification and localization,"JCE formulates a united representation of classification and localization, avoiding the suboptimal state caused by separate training."
+jce,"compatibility with other prime tricks for localization, e.g., iou-based losses","JCE maintains simplicity and flexibility, and is compatible with other prime tricks for localization, e.g., IoU-based losses."
+unbiased teacher v2,our proposed jce,"compared with the aforementioned methods, our proposed JCE manifests two differences."
+assignment ambiguity,unlabeled data,Assignment Ambiguity is concerned with inaccurate assignment for unlabeled data.
+assignment ambiguity,inaccurate pseudo boxes,Inaccurate pseudo boxes contribute to assignment ambiguity for unlabeled data.
+assignment ambiguity,undetected objects,Undetected objects also contribute to assignment ambiguity for unlabeled data.
+pseco,top-n performance samples,PseCo selects top-N performance samples as positives for each pseudo label.
+labelmatch,reliable pseudo labels,LabelMatch selects reliable pseudo labels based on matching degrees with adjacent results in NMS.
+undetected objects,teacher,"For undetected objects, dense predictions of the teacher are used as pixel-level targets for consistency learning."
+tsa,integration of advantages,"TSA integrates the advantages of previous works and further exploits potential positives for the classification and localization task, making it more robust to assignment ambiguity."
+fcos,semi-supervised learning,The classic FCOS is used as an example to study the semi-supervised learning of one-stage detectors.
+jce,joint-conﬁdence estimation,The proposed Joint-Conﬁdence Estimation (JCE) is described as a method to mitigate the selection and assignment ambiguities of pseudo labels.
+tsa,task-separation assignment,Task-Separation Assignment (TSA) is detailed as a method to mitigate the ambiguities in the assignment process.
+joint-conﬁdence estimation,jce,"JCE, the proposed Joint-Conﬁdence Estimation is described in Sec. 3.3."
+task-separation assignment,tsa,Task-Separation Assignment (TSA) is detailed in Sec. 3.4.
+ssod pipeline,pseudo-labeling framework,The advanced SSOD pipeline which follows the pseudo-labeling framework can be directly integrated into FCOS.
+fcos,pseudo-labeling framework,The advanced SSOD pipeline which follows the pseudo-labeling framework can be directly integrated into FCOS.
+pseudo-labeling framework,burn-in stage,It consists of two stages: the burn-in stage and the self-training stage.
+pseudo-labeling framework,self-training stage,It consists of two stages: the burn-in stage and the self-training stage.
+fcos,pseudo labels,Comparison on pseudo labels predicted by Faster RCNN and FCOS.
+faster rcnn,fcos,Comparison on pseudo labels predicted by Faster RCNN and FCOS.
+faster rcnn,vanilla fcos,"Faster RCNN is compared with vanilla FCOS in terms of detection performance, showing an improvement gap of approximately 2% AP as verified in Fig. 1."
+faster rcnn,fcos,Faster RCNN and FCOS are mentioned in the context as detectors that are trained on a standard 10% split of COCO train2017 with a ResNet-50 backbone.
+fcos w/o centerness,faster rcnn,Comparison between Faster RCNN and FCOS without Centerness is made in terms of the quality of pseudo labels and detection results.
+rcnn,fcos,"Faster RCNN and FCOS have different mean IoU values, indicating differences in localization ability. FCOS also shows weaker ability to select high-quality pseudo labels compared to Faster RCNN."
+fcos,faster rcnn,"FCOS has a lower PCC than Faster RCNN, indicating a weaker correlation between classification scores and localization quality in FCOS."
+fcos,auxiliary centerness,"The auxiliary centerness has limited improvement on top-5 IoU and PCC in FCOS, still lagging behind Faster RCNN."
+fcos,high-quality pseudo labels,"FCOS shows a mismatch between classification and localization, affecting the selection of high-quality pseudo labels."
+fcos,assignment ambiguity,"Low filtering thresholds in FCOS retain more pseudo boxes, while high thresholds avoid assignment ambiguities."
+filtering threshold,pseudo boxes,"A low filtering threshold retains more pseudo boxes and covers more true-positive samples, while a high threshold avoids more false positives."
+filtering threshold,true-positive samples,"Setting the threshold to 0.5 achieves a relatively proper trade-off between true and false positives, obtaining the best semi-supervised performance."
+pseudo boxes,false positives,"Many pseudo boxes are inaccurate and plenty of objects are missed due to the threshold filtering, causing false positives."
+assignment results,bounding boxes,The quality of assignment results depends on reliable bounding boxes.
+assignment results,pseudo boxes,"Many pseudo boxes are inaccurate and plenty of objects are missed, affecting the assignment results."
+assignment results,false positives,"There also exist a large amount of false positives, which confuse the detector and impact the assignment results."
+classiﬁcation,localization,The inconsistency between classification and localization causes the selection ambiguity of pseudo labels.
+classiﬁcation,pseudo labels,JCE is proposed to resist the selection ambiguity between classification and pseudo labels.
+localization,pseudo labels,JCE formats a joint confidence of the classification and localization for pseudo-label selection.
+localization quality,joint confidence,The joint confidence ˆS is obtained by combining the classification scores ˆScls and the predicted IoU ˆSiou.
+joint confidence,classification scores,The joint confidence ˆS is obtained by combining the classification scores ˆScls.
+joint confidence,predicted iou,The joint confidence ˆS is obtained by combining the predicted IoU ˆSiou.
+two branches of jce,joint confidence estimation,Two branches of JCE are trained together to generate IoU-based soft label.
+two tasks,united supervision,The two tasks are merged to format the united supervision to avoid the sub-optimal state caused by separate training.
+unlabeled images,learning targets s,"For unlabeled images, the learning targets S are set according to the teacher’s predictions."
+learning targets s,iou,The learning targets S are set according to the teacher’s predictions and extended to include IoU.
+iou,predicted boxes,IoU represents the intersection over union between predicted boxes and corresponding GT boxes.
+iou,liou,An additional IoU loss Liou is added to make the auxiliary branch focus on IoU estimation.
+liou,bce,The IoU loss Liou is formulated using binary cross entropy loss BCE.
+proposed joint confidence,semi-supervised performance,The proposed joint confidence effectively mitigates the selection ambiguity and bolsters the semi-supervised performance.
+jce,fcos baseline,JCE can be directly applied to the FCOS baseline without changing the network structure.
+task-separation assignment,pseudo boxes,"Conducting label assignment based on pseudo boxes provokes the assignment ambiguity, which Task-Separation Assignment aims to tackle."
+task-separation assignment,proposed joint confidence,TSA is proposed to ease the assignment ambiguity by assigning labels based on the proposed joint confidence.
+task-separation assignment (tsa),assignment ambiguity,TSA is proposed to ease the assignment ambiguity
+task-separation assignment (tsa),classiﬁcation,TSA separately exploits potential positives from ambiguous samples for the classiﬁcation
+"negative and positive thresholds {τneg, τpos}",samples,"TSA uses negative and positive thresholds to divide samples into negatives, ambiguous candidates, and positives"
+"negative and positive thresholds {τneg, τpos}",ambiguity,"TSA uses negative and positive thresholds to divide samples into negatives, ambiguous candidates, and positives since the tasks have different sensitivity to the ambiguity"
+"negative, max(ˆsi) < τnegcandidate","positive, max(ˆsi) > τposxi =τneg ≤ max(ˆsi) ≤ τpos","Samples are divided into negatives, ambiguous candidates, and positives based on the values of Max(ˆSi) in relation to τneg and τpos"
+tsa,teacher,The joint conﬁdence predicted by the teacher of i-th sample is used in the TSA process
+conﬁdent positives,classiﬁcation and localization tasks,Conﬁdent positives are trained on both classiﬁcation and localization tasks since they are accurate and reliable
+conﬁdent positives,ambiguous samples,"TSA further exploits potential positives from ambiguous samples for the two tasks, respectively"
+classiﬁcation mining,candidate samples,Candidate samples are composed of low-conﬁdence positives and hard negatives in Classiﬁcation Mining
+background regions,classiﬁcation task,Background regions in candidate samples for the classiﬁcation task are not easy background as veriﬁed in Sec. 4.3
+background regions,partial foreground information,Background regions in candidate samples also contain partial foreground information worth learning
+faster rcnn,fcos,"Two-stage detectors employ Faster RCNN as the baseline, while FCOS is used"
+one-stage detectors,faster rcnn,one-stage detectors is a method mentioned in the context which includes Faster RCNN as a technique for object detection.
+one-stage detectors,fcos,one-stage detectors is a method mentioned in the context which includes FCOS as a technique for object detection.
+faster rcnn,fcos,Faster RCNN and FCOS are both supervised methods mentioned in the context for object detection.
+unbiased teacher,active teacher,Unbiased Teacher and Active Teacher are both methods mentioned in the context related to teaching or supervision.
+unbiased teacher,unbiased teacher v2,Unbiased Teacher and Unbiased Teacher V2 are both versions of a teaching method mentioned in the context.
+unbiased teacher,dense teacher,Unbiased Teacher is related to Dense Teacher as they are both teaching methods mentioned in the context.
+arsl,arsl†,ARSL and ARSL† are both associated with the FCOS method mentioned in the context.
+arsl,arsl† (retinanet),ARSL is related to ARSL† (RetinaNet) as they are both variations of the ARSL method mentioned in the context.
+localization mining,localization task,Localization Mining is a term mentioned in the context related to the rigorous localization task.
+localization mining,consistency learning,"Localization Mining involves consistency learning to mimic the classification responses of the teacher, as described in the context."
+samples,locator,Samples are crucial for the optimization of the locator in the context.
+positives,similarities,"Positives are selected based on their similarities with other positives, which include classification, localization, and position similarities."
+candidate samples,positive boxes,Candidate samples should have a higher IoU with positive boxes to be considered as potential positives.
+candidate samples,positive samples,Candidate samples that successfully match positive samples are selected as potential positives.
+positive sample,localization target,A positive sample is used to calculate the localization target B based on the weighted average of matched positives.
+loss function,unsupervised loss,"The overall unsupervised loss is composed of three parts: classification loss, localization loss, and GIoU loss."
+lcls,liou,Lcls and Liou are defined in Eq. (3) and Eq. (5)
+lloc,giou loss,Lloc denotes the GIoU loss [24]
+ms coco,pascal voc,Experiments are conducted on the MS COCO benchmark and PASCAL VOC datasets
+ms coco,voc2007,Experiments are conducted on the MS COCO benchmark and VOC2007 dataset
+voc2007,voc2012,VOC2007 and VOC2012 are employed as labeled and unlabeled data respectively
+fcos,resnet-50,FCOS is adopted as the baseline and ResNet-50 pretrained on ImageNet as the backbone
+agenet,models,ageNet is mentioned as the backbone for all the models mentioned in the context.
+models,trained,All the models are trained using 8 GPUs with specific settings.
+sgd,optimized,The models are optimized with SGD optimizer.
+weight decay,0.0001,Weight decay is set to 0.0001
+momentum,0.9,Momentum is set to 0.9
+stac,6×,STAC method is mentioned with a multiplier of 6×
+unbiased teacher,3×,Unbiased Teacher method is mentioned with a multiplier of 3×
+faster rcnn,(supervised),Faster RCNN method is mentioned with a note that it is supervised
+unbiased teacher,instant teaching,Unbiased Teacher and Instant Teaching methods are mentioned
+weight decay,0.02,The base learning rate weight decay scheme is set to 0.02 in the experiments.
+model,semi-supervised learning,The model is initialized before semi-supervised learning.
+unsupervised loss,weight,The weight of unsupervised loss is set to 2.
+teacher model,ema,The teacher model is updated through Exponential Moving Average (EMA) with a momentum of 4.2.
+arsl,sota methods,ARSL is compared with existing State-of-the-Art methods under all three protocols.
+arsl,fcos baseline,ARSL achieves impressive improvements over the FCOS baseline under all splits.
+arsl,two-stage and one-stage methods,"ARSL outperforms all two-stage and one-stage methods, demonstrating its effectiveness."
+arsl,augmentation,ARSL establishes the new state-of-the-art performance when adopting large-scale jittering for augmentation.
+"jce, tsa","joint-conﬁdence estimation, task-separation assignment",JCE and TSA indicate the proposed Joint-Conﬁdence Estimation and Task-Separation Assignment methods.
+fcos (semi-supervised),tsa (w/o mining),Comparative analysis is done on the impact of TSA with and without mining on FCOS under Semi-Supervised setting.
+fcos (semi-supervised),tsa (w/ mining),Comparative analysis is done on the impact of TSA with mining on FCOS under Semi-Supervised setting.
+jce,iou prediction,Different strategies of Joint-Conﬁdence Learning are discussed including IoU prediction.
+jce,united supervision,Joint-Conﬁdence Learning involves United supervision which indicates the joint training of IoU-prediction and classification task.
+jce,speciﬁc targets for unlabeled data,Joint-Conﬁdence Learning includes the setting of specific targets for unlabeled data as max responses of the teacher.
+iou prediction,united supervision,"IoU prediction and United supervision are two key concepts mentioned together in the given context, indicating a relationship between prediction of Intersection over Union and United supervision"
+iou prediction,ssod,"IoU prediction is related to SSOD performance, specifically mentioned in the context with 34.7% AP"
+united supervision,arsl,United supervision leads to the proposed ARSL achieving a remarkable improvement
+ssod,retinanet,"SSOD performance is demonstrated on RetinaNet, verifying the generality of the performance"
+arsl,coco-full,"ARSL achieves remarkable improvement in SSOD performance on the COCO-full setting, showing its effectiveness"
+baseline,learning schedules,"Baseline reported in previous works and learning schedules are related terms mentioned in the context, showing the comparison in performance"
+arsl,voc,"ARSL improves the supervised baseline in VOC results, achieving competitive performance with existing works"
+arsl,ablation studies,ARSL is further analyzed in Ablation Studies to provide a better understanding of the proposed method
+ablation studies,detection performance,"Ablation Studies assess the influence of each component on detection performance, indicating a direct relationship"
+jce,original centerness scheme,"JCE demonstrates superiority compared with the original centerness scheme, indicating a significant improvement"
+jce,original centerness scheme,JCE demonstrates superiority compared to the original centerness scheme.
+tsa,ambiguous candidates,TSA increases performance by 0.9% AP by ignoring ambiguous candidates.
+dense predictions,pseudo boxes,Assigning labels based on dense predictions is more rational than pseudo boxes.
+positives,candidates,Mining positives from candidates increases performance.
+mean iou,samples,Mean IoU represents the average IoU between samples and corresponding GTs.
+t-head,tood,T-Head denotes the task-aligned head in TOOD.
+qfl,gfl,QFL is the quality focal loss in GFL.
+fcos w/ t-head,fcos w/ qfl,Comparison between FCOS w/ T-head and FCOS w/ QFL.
+ssod baseline,proposed method,The proposed method achieves an overall improvement of 6.2% AP compared to the SSOD baseline.
+jce,strategies,Ablation studies on different strategies of JCE lead to performance improvement.
+centerness estimate,performance,Replacing centerness estimate increases performance from 30.7% AP to 32.0% AP.
+jce,performance,Replacing the centerness estimation of FCOS with IoU prediction in JCE increased the performance from 30.7% AP to 32.0% AP.
+performance,united supervision,"The united supervision, which avoids the sub-optimal state caused by separate training, improves the performance to 34.2% AP."
+united supervision,performance,The improved performance of 34.2% AP demonstrates the effectiveness of the united training.
+jce,targets,Setting specific targets for unlabeled data further ameliorates the performance of JCE to 34.7% AP.
+tsa,quality analysis,Tab. 7 analyzes the quality of potential positives exploited by TSA.
+tsa,iou,"For the localization task in TSA, 33.9% of candidates are selected as potential positives with a mean IoU of 0.504."
+matching strategy,samples,"Our matching strategy does select high-quality samples from candidates, as indicated by a mean IoU of 0.633 for learning targets."
+ambiguity mitigation,jce,The influence of the proposed JCE on ambiguity mitigation is verified in Tab. 8.
+ambiguity mitigation,selection ambiguity,"Compared with the FCOS baseline, JCE improved the Top-5 IoU from 0.614 to 0.656 and increased PCC by 0.096, substantiating its effectiveness in mitigating the selection ambiguity."
+jce,selection ambiguity,JCE effectively mitigates the selection ambiguity
+jce,existing effective methods,JCE is compared with existing effective methods
+jce,supervised learning,JCE eases the prediction inconsistency in supervised learning
+jce,t-head and gfl,JCE achieves higher PCC and larger improvement in semi-supervised learning compared to T-head and GFL
+tsa,assignment ambiguity,TSA is analyzed for its effectiveness on assignment ambiguity
+tsa,threshold,TSA under the box-based assignment examines the impact of threshold on true positives and false positives
+tsa,potential positive mining,TSA without potential positive mining significantly boosts true positives and depresses false positives
+tsa,true positives,TSA exploits many true positives from ambiguous candidates
+false positives,ambiguous candidates,false positives are caused by regarding all ambiguous candidates as positives in the classification task
+false positives,proposed tsa,observations reveal that the proposed TSA can mitigate the assignment ambiguity to a large extent
+proposed tsa,assignment ambiguity,proposed TSA can mitigate the assignment ambiguity
+assignment ambiguity,selection and assignment ambiguity,investigate the selection and assignment ambiguity in the semi-supervised learning of one-stage detectors
+selection and assignment ambiguity,semi-supervised learning,investigate the selection and assignment ambiguity in the semi-supervised learning of one-stage detectors
+proposed arsl,joint-conﬁdence estimation,proposed ARSL consists of Joint-Conﬁdence Estimation and Task-Separation Assignment
+proposed arsl,task-separation assignment,proposed ARSL consists of Joint-Conﬁdence Estimation and Task-Separation Assignment
+arsl,baseline,ARSL obtains a remarkable improvement compared with the baseline
+arsl,state-of-the-art performance,ARSL achieves state-of-the-art performance on MS COCO and PASCAL VOC
+na-tional natural science foundation of china,grant numbers,This work was supported by the National Natural Science Foundation of China [grant numbers 61991415 and 62225308]
+national key r&d program of china,grant numbers,This work was supported by the National Key R&D Program of China [grant numbers 2020YFC1521703]

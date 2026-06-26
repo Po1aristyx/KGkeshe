@@ -1,0 +1,263 @@
+node_1,node_2,edge
+neural radiance fields (nerfs),scade,"SCADE is a novel technique that improves NeRF reconstruction quality on sparse, unconstrained input views for in-the-wild indoor scenes."
+scade,monocular depth estimation models,SCADE leverages geometric priors in the form of per-view depth estimates produced with state-of-the-art monocular depth estimation models.
+monocular depth estimation models,cimle,"A new method is proposed that learns to predict a continuous, multimodal distribution of depth estimates using conditional Implicit Maximum Likelihood Estimation (cIMLE)."
+multiple views,space carving loss,"Exploiting multiple views, an original space carving loss is introduced that guides the NeRF representation to fuse multiple hypothesized depth maps from each view."
+space carving loss,nerf representation,The space carving loss guides the NeRF representation to fuse multiple hypothesized depth maps from each view and distill from them a common geometry that is consistent with all views.
+scade,view synthesis,Experiments show that SCADE enables higher fidelity novel view synthesis from sparse views.
+neural radiance fields (nerf),novel view synthesis,Neural radiance fields (NeRF) have enabled high fidelity novel view synthesis from dozens of input views.
+neural radiance fields (nerf),number of views,"Such number of views are difficult to obtain in practice, however. When given only a small number of sparse views, vanilla NeRF tends to struggle with reconstructing shape accurately, due to inadequate constraints enforced by the volume rendering loss alone."
+neural radiance fields (nerf),shape priors,Shape priors can help remedy the problem of vanilla NeRF struggling with reconstructing shape accurately.
+shape priors,object category-level priors,"Various forms of shape priors have been proposed for NeRFs, such as object category-level priors."
+shape priors,handcrafted data-independent priors,"Various forms of shape priors have been proposed for NeRFs, such as handcrafted data-independent priors."
+shape priors,per-view monocular depth estimates,"A form of prior that is both scene-dependent and category-agnostic is per-view monocular depth estimates, which have been explored in prior work."
+monocular depth estimates,inaccurate,"Unfortunately, monocular depth estimates are often inaccurate, due to estimation errors and inherent ambiguities."
+monocular depth estimates,incorrect shape,The incorrect or inconsistent priors imposed by monocular depth estimates may mislead the NeRF into reconstructing incorrect shape and produce artifacts in the generated views.
+monocular depth estimates,ambiguities,"Unfortunately, monocular depth estimates are often inaccurate, due to estimation errors and inherent ambiguities, such as albedo vs. shading, concavity vs. convexity, distance vs. scale, etc."
+depth estimation,uncertainty,"Uncertainty and ambiguities are present in monocular depth estimates, which are resolved once information from multiple views is fused together."
+depth estimation,probability distribution,A probability distribution is modelled over depth estimates to embrace uncertainty and ambiguities present in monocular depth estimates.
+probability distribution,depth estimates,A probability distribution is used to model the depth estimates and resolve ambiguities retained during monocular depth estimation.
+space carving with ambiguity-aware depth estimates (scade),space carving,"SCADE is introduced as a method that embraces uncertainty and ambiguities in depth estimates, similar to a probabilistic analogue of classical depth-based space carving."
+space carving with ambiguity-aware depth estimates (scade),depth supervision,SCADE compares to prior approaches by supervising the modes of NeRF's depth distribution instead of just the moments.
+supervisory signal,our method,"supervisory signal provided by the former is 2D, whereas the supervisory signal provided by our method is 3D"
+supervisory signal,ray,supervisory signal provided by the former integrates over a ray
+our method,depth estimates,our method provides a 3D supervisory signal for depth estimates
+depth estimates,probability distributions,modelling probability distributions over depth estimates is an important technical challenge
+probability distributions,classical approaches,classical approaches use simple distributions like Gaussian or Laplace distributions for probability distributions
+classical approaches,gaussian distributions,classical approaches use Gaussian distributions
+classical approaches,laplace distributions,classical approaches use Laplace distributions
+probability distributions,interpretation,simple unimodal distributions cannot capture the complex ambiguities in depth estimates
+images,depth estimates,some images are more ambiguous than others for depth estimates
+mixture of gaussians,images,mixture of Gaussians is not ideal as the number of modes needed may differ for depth estimates of different images
+mixture of gaussians,learning,"learning such a mixture requires backpropagating through E-M, which is nontrivial"
+probability density,partition function,modifying the probability density to handle a variable number of modes can run into an intractable partition function
+maximum likelihood,probability density,Maximum likelihood requires the ability to evaluate the probability density.
+probability density,partition function,The probability density is a function of the partition function.
+probability distribution,samples,We propose representing the probability distribution with a set of samples generated from a neural network.
+probability distribution,conditional gan,"The distribution can be learned with a conditional GAN, which suffers from mode collapse."
+conditional gan,mode collapse,GANs suffer from mode collapse and cannot model multiple modes.
+conditional implicit maximum likelihood estimation (cimle),distribution,"We propose using cIMLE to learn the distribution, which is designed to avoid mode collapse."
+ambiguities,image,Figure 2 shows ambiguities from a single image.
+chair,context,"Without context of the scene, it is unclear that the image is of a chair."
+cardboard,bad lighting conditions,An image of a cardboard under bad lighting conditions captures the albedo vs shading ambiguity.
+domain depth priors,nerfs,We use domain depth priors to train NeRFs on real-world indoor scenes with sparse views.
+depth priors,different dataset,"The depth priors used are trained on a different dataset (e.g., Taskonomy)."
+depth priors,nerfs,"The depth priors used are trained on a different dataset from the scenes NeRFs are trained on, showing a domain gap in the setting."
+depth priors,taskonomy,The depth priors are trained on the Taskonomy dataset.
+nerfs,scannet,NeRFs are trained on the ScanNet dataset.
+method,nerfs,The method presented allows the creation of NeRFs in indoor settings from a modest number of views.
+method,ambiguity-aware monocular depth estimation,The method involves exploiting ambiguity-aware monocular depth estimation.
+method,nerf formulation,The method introduces a new space-carving loss in the NeRF formulation for optimizing 3D density.
+ambiguity-aware monocular depth estimation,image depth estimates,The method samples distributions over image depth estimates based on conditional Implicit Maximum Likelihood Estimation.
+nerf formulation,mode-seeking 3d density,The NeRF formulation optimizes for a mode-seeking 3D density to select consistent depth modes across views.
+novel view synthesis,3d reconstruction,"Reconstructing the structure of a scene from a few views is a problem in computer vision addressed by Novel View Synthesis and 3D Reconstruction, with NeRF being a key method in this field."
+neural radiance fields,nerf,Neural Radiance Fields (NeRF) has revolutionized the field of scene reconstruction.
+neural radiance fields,nerf,Neural Radiance Fields or NeRF revolutionized the field of computer vision by showing how to use weights of an MLP to represent a scene that is rendered using volume rendering.
+nerf,mlp,NeRF showed how to use weights of an MLP to represent a scene.
+nerf,positional encoding,A key innovation of NeRF was the use of positional encoding to increase the effective capacity of the MLPs.
+nerf,viewing direction,NeRF models emitted radiance and density as a function of position and viewing direction.
+neural radiance fields,extensions,"Extensions of NeRF include works on unconstrained photo collections, dynamic scenes, deformable scenes, and reflective materials."
+nerf,input views,A critical shortcoming of NeRF is its reliance on having many input views of a scene.
+nerf,approaches,Several approaches have been proposed to address the shortcoming of NeRF.
+ds-nerf,structure-from-motion,DS-NeRF uses the sparse point reconstructions recovered during Structure-from-Motion to supervise the depth of sparse points in the recovered NeRF.
+ddp,depth completion network,"DDP uses a depth completion network that takes as input sparse point cloud projected to one an input view, and produces a depth estimate."
+ddp,nerf,DDP only supervises with moments of NeRF’s depth distribution.
+multimodal depth estimates,depth estimation,The work focuses on representing multimodal depth estimates and handling the inherit ambiguities of depth estimation.
+multimodal depth estimates,modes,The work seeks varying modes for each depth estimate to ensure a consistent prediction of the scene structure.
+mvs-nerf,rc-mvsnet,MVS-NeRF and RC-MVSNet incorporate the use of cost volumes in their methods.
+mvs-nerf,nerf,MVS-NeRF can be associated with NeRF in terms of their approach to construct cost volumes.
+rc-mvsnet,nerf,RC-MVSNet is compared to NeRF in terms of incorporating the use of cost volumes.
+cost volumes,feature correspondences,"The construction of cost volumes involves looking for agreement between features to find correspondences, which is challenging in cases of large variations in appearance or viewpoint."
+space carving loss,feature correspondences,The approach introduces a novel space carving loss that does not rely on feature correspondences to define the loss directly in 3D.
+geometry reconstruction,volumetric rendering scheme,Various works focus on geometry reconstruction by utilizing the volumetric rendering scheme to learn a neural SDF representation.
+nerfs,appearance,"NeRFs primarily focus on modeling appearance for novel view synthesis, unlike works focusing on geometry reconstruction."
+depth estimation from single view,depth estimation,"The complexity of depth estimation from a single image is discussed, highlighting the challenges related to scene scale and shading/albedo ambiguities."
+mrfs,superpixels,Early efforts used MRFs to compute predictions on superpixels for depth estimation.
+kinect,3d datasets,"Consumer depth cameras like Kinect enabled the acquisition of larger indoor 3D datasets, influencing methods that predict depth using deep neural networks from a single color image."
+3d datasets,methods,3D datasets and methods are related as methods are used on 3D datasets for prediction.
+methods,deep neural networks,methods involve the use of deep neural networks for depth prediction.
+methods,depth,methods are used for predicting depth.
+datasets,depth estimation,datasets are used for scaling depth estimation.
+depth estimation,deep3d,Deep3D enabled the creation of stereo views by training on a large dataset for depth estimation.
+depth estimation,stereo views,methods use depth estimation for creating stereo views.
+stereo views,deep3d,Deep3D enabled stereo views creation by training on a dataset of stereo movies.
+self-supervision,depth,self-supervision used for learning depth from stereo views.
+depth,stereo views,depth is learned from stereo views.
+videos,egomotion,egomotion is estimated in videos.
+egomotion,self-supervision,self-supervision happens across time with estimated egomotion.
+megadepth,depth,MegaDepth uses depth from SfM reconstructions and semantic segmentation for depth estimation.
+megadepth,semantic segmentation,MegaDepth uses semantic segmentation for depth estimation.
+megadepth,ordinal depth supervision cues,MegaDepth conveys ordinal depth supervision cues through semantic segmentation.
+surface normal estimation,depth estimation,surface normal estimation is sometimes preferred over direct depth estimation due to fewer ambiguities.
+geonet,depth,GeoNet jointly estimates depth and surface normals for refinement.
+depth,surface normals,it uses the geometric relation between depth and surface normals for refining estimates.
+depth estimation approach,leres,depth estimation approach is derived from LeRes.
+depth estimation approach,focal length,focal length estimate is refined in the depth estimation approach.
+kendall and gal,work,Kendall and Gal's work is relevant in the context.
+length,sfm,Length is already estimated during SfM for NeRF scenes.
+kendall and gal,depth estimation,Kendall and Gal work on depth estimation in a Bayesian setting.
+depth estimation,bayesian setting,Depth estimation is done in a Bayesian setting in Kendall and Gal's work.
+cimle,depth estimation technique,Multimodal depth estimation technique built on cIMLE makes the prior robust to ambiguities in depth prediction.
+neural radiance fields,nerf,Neural Radiance Fields (NeRF) represent a field in 3D space.
+nerf,field,NeRF represents a field in 3D space.
+nerf,infinitesimal particle,Each point in NeRF represents an infinitesimal particle.
+opacity,volume density,Opacity at a point in NeRF is represented as a volume density.
+emitted light,colour,Amount of emitted light is represented as a color in NeRF.
+nerf,parameterized functions,"NeRF is represented as two parameterized functions, volume density and color functions."
+render,nerf,"To render a NeRF from a view, rays are shot from each pixel on the camera sensor and integrated over the product of color, volume density, and visibility."
+visibility,transmittance,Visibility at a point in NeRF is represented with transmittance.
+transmittance,exponentiated negative volume density,Transmittance accumulates the exponentiated negative volume density multiplicatively up to the point
+transmittance,camera,"The higher transmittance at a point, the more visible the point is from the camera"
+camera,ray direction,"Mathematically, if the camera ray is r(t) = o + td, where o is the camera centre and d is the ray direction"
+pixel value,"tθ,o,d(t)σθ(o + td)cψ(o + td, d) dt","The pixel value ˆIθ,ψ(o, d) is calculated as tfˆIθ,ψ(o, d) :=Tθ,o,d(t)σθ(o + td)cψ(o + td, d) dt"
+ray intersection points,near plane and far plane,tn and tf denote the points the ray intersects with the near plane and far plane respectively
+inverse rendering,nerf,"Given a set of real-world images, inverse rendering aims to find the scene whose rendered images match the real-world images and NeRF is used in this context"
+pixel value,optimization problem,The optimization problem involves casting the pixel value problem as an optimization problem
+nerf,neural networks,"To enable gradient-based optimization, the volume density function and the colour function are chosen to be neural networks in the context of NeRF"
+nerf,novel view synthesis,"NeRF is trained for novel view synthesis, enabling the generation of new views from the trained NeRF model."
+nerf,monocular depth estimates,Priors in the form of monocular depth estimates are considered in the paper to provide constraints when reconstructing scenes using NeRF.
+nerf,ray termination distance,"Depth priors are used to constrain the ray termination distance in NeRF, leading to a distribution of ray termination distances to represent non-opaque surfaces."
+depth priors,ray termination distance,"Depth priors are used to constrain the ray termination distance in NeRF, influencing the termination of rays before reaching a given point."
+nerf,supervising,NeRF is supervised by providing ground truth depth information
+nerf,ground truth depth,NeRF's distribution of ray termination distances should be close to a delta distribution centered at the ground truth depth
+ground truth depth,monocular depth estimates,"When ground truth depth is not known, monocular depth estimates are used for supervision"
+monocular depth estimates,stereo-consistent,Monocular depth estimates may not be stereo-consistent due to estimation error and ambiguity
+depth estimates,uncertainty,Uncertainty and ambiguity in depth estimates need to be modeled by distributions for scene reconstruction
+uncertain depth estimates,multimodal,Depth estimates with ambiguities are typically multimodal with disjoint peaks representing different interpretations of scene structure
+uncertain depth estimates,probability distribution,Uncertainty can be represented through probability distributions for depth estimates
+albedo,shading ambiguity,"Albedo vs shading ambiguity are mentioned in the context, and the ambiguity can result in multiple interpretations"
+albedo,distribution,Albedo is related to distribution as the distribution of ground truth depths can be multimodal
+shading ambiguity,distribution,Shading ambiguity is related to distribution as the distribution of ground truth depths can be multimodal
+nerf,ray termination distances,The distribution of ray termination distances induced by NeRF should be multimodal
+moments,depth estimates,Prior methods compute moments of the distribution of depth estimates induced by NeRF
+ds-nerf,depth estimates,DS-NeRF predicts the mean depth estimate and uses reprojection error as a proxy for the variance
+ds-nerf,ray termination distances,DS-NeRF minimizes the KL divergence from the distribution of ray termination distances induced by NeRF
+ddp,ray termination distances,DDP fits a Gaussian to the distribution of ray termination distances and maximizes the likelihood of the depth estimate under the Gaussian
+distributions,moments,Distilling complex distributions to moments has the drawback of ignoring their possible multimodality
+scade,space carving,SCADE is a novel method Space Carving with Ambiguity-aware Depth Estimates
+ambiguity-aware depth estimates,scade,SCADE addresses the existing problems and drawbacks by accounting for the multimodality of both the distributions of monocular depth estimates and ray termination distances through the space carving loss that resolves ambiguities.
+scade,multimodality,SCADE addresses the multimodality of depth estimates and ray termination distances by fusing information from multiple views through a space carving loss.
+scade,ambiguities,"SCADE resolves ambiguities by fusing information from multiple views through a space carving loss, achieving supervision in 3D rather than 2D."
+scade,information fusion,"SCADE resolves ambiguities by fusing information from multiple views through a space carving loss, leading to supervision in 3D rather than 2D."
+ambiguities,monocular depth distributions,Ambiguities are handled by the ambiguity-aware depth estimation module to address uncertainties in monocular depth estimation by representing the distribution as a set of samples generated by a neural network.
+monocular depth distributions,scade,"Monocular depth distributions are addressed by SCADE through the ambiguity-aware depth estimation module, using conditional Implicit Maximum Likelihood estimation to learn a multimodal distribution."
+cimle,conditional gans,cIMLE is chosen over conditional GANs to avoid mode collapse
+cimle,multimodal distribution,cIMLE is used for learning a multimodal distribution
+cimle,depth estimates,cIMLE is used to learn a multimodal distribution of depth estimates
+multimodal distribution,depth estimates,The multimodal distribution is used for depth estimates
+cimle,network architecture,cIMLE is combined with LeReS in the network architecture
+leres,monocular depth estimation network,LeReS is a state-of-the-art monocular depth estimation network
+ambiguity-aware depth estimation module,image,The ambiguity-aware depth estimation module takes an input image
+ambiguity-aware depth estimation module,latent code,The ambiguity-aware depth estimation module takes a latent code as input
+network,randomness,Randomness is injected into the network
+adain layers,network,AdaIn layers are incorporated into the network backbone
+nerf,ray termination distance,An agreement is sought between the distributions from the ambiguity-aware prior and the ray termination distance from NeRF
+nerf,sparse view set-up,NeRF optimization is constrained under the sparse view set-up using the learned prior
+sample-based loss,distributions,A sample-based loss is used for the optimization problem involving distributions
+depth prior,cimle,cIMLE is leveraged to sample from the ambiguity-aware depth
+cimle,depth prior,cIMLE is leveraged to sample from the ambiguity-aware depth prior
+"z1, ..., zm",depth map samples,"z1, ..., zM are sampled from N (0, I) to get depth map samples for input image I"
+"g(i, z1), ..., g(i, zm )",input image i,depth map samples are generated for input image I
+"y1, y2, ..., ym",distribution for ray r,"corresponding samples estimate and represent the distribution for ray r as y1, y2, ..., yM"
+nerf,ray termination distances,NeRF models ray termination distances to sample from its probability density function
+"fθ,o,d(ti)",probability mass function for ray r,"fθ,o,d(ti) defines the probability mass function for ray r"
+ti,ray termination distribution at samples,inverse transform sampling is used to compute the cumulative distribution function (CDF) of the ray termination distribution at samples ti
+"x1, x2, ..., xn",ray termination distances from nerf,ray termination distances from NeRF are obtained through inverse transform sampling
+"fθ,o,d(ti)",xi,"Fθ,o,d(ti) =(cid:80)xi = F −1θ,o,d(ui) represents the relationship between Fθ,o,d(ti) and xi"
+ui,"u(0, 1)","ui is sampled from U(0, 1) to obtain xi"
+space carving loss,multimodal distributions,space carving loss utilizes samples from both multimodal distributions to constrain
+space carving loss,multimodal distributions,The novel space carving loss utilizes samples from both multimodal distributions to constrain the NeRF optimization.
+space carving loss,nerf optimization,The goal of the space carving loss is to find a subset of modes captured in the monocular depth distributions from each view that are globally consistent and to fuse together information from different views.
+space carving loss,modes of the distribution,The loss desired should have mode seeking behavior where the modes of the distribution being trained should be a subset of the modes of the distribution that provides supervision.
+space carving loss,reverse cross entropy,"One such loss is the reverse cross entropy, which is the cross entropy from the NeRF ray termination distance distribution to the distribution of ambiguity-aware depth estimates."
+space carving loss,l2 norm,The space carving loss penalizes the minimum of the L2 norm between the samples from two distributions.
+space carving loss,supervision targets,"Because the space carving loss operates on distributions rather than moments of distributions, different supervision targets can be set for different points along the ray."
+moment,ray,"Moments are integrals along the ray, which results in the same supervision target for all points along the ray."
+3d supervision,2d supervision,"The method allows for 3D supervision, unlike prior methods that only supervise in 2D."
+supervision,loss,"The loss allows for supervision in 3D, which is different from prior methods that use losses on moments for 2D supervision."
+dust,space,3D supervision allows for clearing out dust in space by moving samples from the ray termination distance distribution and adjusting the probability density of points in front of it.
+nerf model,total loss,The total loss to optimize and train the NeRF model is given by a combination of photometric loss and space carving loss.
+experimental evaluation,scade,"In the Results section, the advantages of SCADE are presented through experimental evaluation."
+datasets,evaluation metrics,"The method is evaluated on ScanNet and an in-the-wild dataset with sparse-view ScanNet data and iPhoneX-collected scenes, each containing train and test images."
+sparse-view scannet data,ddp,"The method uses sparse-view ScanNet data in evaluations, similar to the approach used by DDP."
+scenes,basement,The scene 'basement' is one of the three different scenes mentioned in the context.
+scenes,kitchen,The scene 'kitchen' is one of the three different scenes mentioned in the context.
+scenes,lounge,The scene 'lounge' is one of the three different scenes mentioned in the context.
+scene,images,Each scene contains a specific number of train and test images.
+sfm,images,SfM was run on all images to obtain camera poses for NeRF training.
+data preprocessing steps,ddp,Similar data preprocessing steps were followed as in DDP.
+nerf,camera poses,Camera poses for NeRF training were obtained using SfM.
+quantitative comparison,nerf paper,"Quantitative comparison was done using PSNR, SSIM, and LPIPS based on the original NeRF paper."
+weights,leres,Weights were initialized with the pretrained LeReS model.
+experiments,scannet,Experiments were conducted on ScanNet following the evaluation from DDP.
+original nerf,state-of-the-art nerf,Comparison was made between the original NeRF and the state-of-the-art NeRF with depth prior-based supervision.
+simulating real-world conditions,domain gap,The setting requires the use of out-of-domain priors to simulate real-world conditions with a domain gap.
+ddp,depth completion,"Since DDP uses an in-domain prior, it was retrained for depth completion."
+tanks and temples dataset,results,Results on the Tanks and Temples dataset can be found in the supplement.
+vanilla nerf,scade,"Comparative analysis shows SCADE outperforming Vanilla NeRF in terms of PSNR, SSIM, and LPIPS."
+nerfingmvs,ibrnet,"NeRFingMVS [47]IBRNet [41] are two concepts mentioned in the context, indicating a relationship or comparison between them."
+ibrnet,ds-nerf,IBRNet [41]DS-NeRF [6] are related concepts in the context suggesting a progression or comparison between them.
+ds-nerf,ddp,DS-NeRF [6]DDP [32] indicates a relationship or comparison between these two terms mentioned in the context.
+ddp,scade (ours),"DDP [32]SCADE (Ours) are concepts related to each other, possibly indicating a comparison or evaluation in the context."
+camera,iphonex,iPhoneX is the specific type of camera mentioned in the context.
+scade,taskonomy,SCADE outperforms baselines when trained on Taskonomy.
+scade,baselines,SCADE outperforms baselines on in-the-wild data.
+scade,out-of-domain prior,SCADE performs well with the same out-of-domain prior.
+room,glass,SCADE is able to recover the room behind the glass better than baselines.
+objects,glass,SCADE can recover objects like the monitor and chair behind the glass.
+non-opaque surfaces,challenging,Non-opaque surfaces are the most challenging for SCADE.
+nerf,ray termination distances,The ground truth distribution of ray termination distances induced by NeRF is important for estimating depths.
+nerf,estimated depths,NeRF is used to estimate depths based on ray termination distances.
+scade,scannet,SCADE produces better results on ScanNet.
+scade,baselines,SCADE avoids producing clouds of dust that baselines have in their results on ScanNet.
+objects,scene,"SCADE can snap and recover objects in the scene, like the details on the blinds, chair back, and piano stool legs."
+model,multimodal distributions,The model is able to capture multimodal distributions.
+objects,shapes,Objects like the thin table leg have crisp shapes.
+objects,shapes,"Objects like the thin table leg and the white chair are related to shapes in the context, emphasizing crisp shapes of objects."
+dust,microwave,"The context mentions clearing up dust near the microwave, indicating a spatial relationship between dust and the microwave."
+dust,printer,"Dust is mentioned to be cleared up near the printer, implying a spatial relationship between dust and the printer."
+loss,space carving,"The importance of using the space carving loss is validated in the context through an ablation study, showing their relationship in the context of ray termination distance supervision."
+moments,full distribution,"The context compares supervising moments along the ray with supervising the full distribution of ray termination distance, highlighting the difference between 2D and 3D supervision."
+2d supervision,monosdf,"The adaption of the method to use 2D supervision from the recent MonoSDF is mentioned in the context, showing a connection between 2D supervision and the MonoSDF model."
+depth distribution,multimodal,"The context discusses how the prior models do not constrain the depth distribution to a particular form and allow it to be multimodal, contrasting with the unimodal assumption of DDP's depth completion prior."
+prior models,ddp,"A comparison is drawn between the prior models mentioned in the context, highlighting differences in assumptions and constraints between the models."
+scade,psnr,"Table 3 in the context validates the effectiveness of the space carving loss, showing improved PSNR and SSIM scores and reduced LPIPS compared to other methods like DDP and SCADE."
+monosdf supervision,monosdf loss,MonoSDF supervision refers to supervising with MonoSDF loss.
+monosdf supervision,expected ray termination distance,MonoSDF supervision refers to supervising on expected ray termination distance.
+delayed bilateral filter,point cloud,delayed bilateral filter applied to a point cloud.
+table of key results,ablation study,Ablation Study results presented in the table of key results.
+gaussian distribution,sampling,sampling from the Gaussian distribution.
+training with space carving loss,single sample,training with space carving loss using a single sample.
+training with space carving loss,m samples,training with space carving loss using M samples.
+multiple vs single sample,space carving loss,Comparison between multiple vs single samples for space carving loss.
+single sample,depth estimates,Supervising using the sample mean of depth estimates.
+sparsity,number of views,Further results shown under varying number of views for sparsity.
+average number of views,measure of sparsity,average number of views seen as another measure of sparsity.
+sparsity,theoretical lower limit,"The setting is at the edge of the theoretical lower limit of 2 for general-purpose reconstruction, which shows view sparsity."
+view sparsity,room behind the glass,"We are able to recover the room behind the glass better than the baselines, whose results are more blurry."
+room behind the glass,baselines,"We are able to recover the room behind the glass better than the baselines, whose results are more blurry."
+scade,objects,SCADE is able to recover crisp shapes of objects such as the thin table leg and the white chair.
+thin table leg,white chair,SCADE is able to recover crisp shapes of objects such as the thin table leg and the white chair.
+baseline,dust near the microwave,We are also able to clear up dust near the microwave and printer compared to the baselines.
+baseline,printer,We are also able to clear up dust near the microwave and printer compared to the baselines.
+ddp,scade,PSNR for DDP/SCADE on scene 781 of Scannet is mentioned.
+train images,taskonomy,Train images from Taskonomy and their labels are discussed in Figure 8.
+prior,reflective surfaces,Output of our prior on reflective surfaces is mentioned.
+ambiguity-aware prior,reflective surfaces,Discussion on our Ambiguity-Aware Prior and its performance on reflective surfaces is provided.
+depth modes,inconsistently labeled training data,We achieve variable depth modes by exploiting inconsistently labeled training data.
+taskonomy,training images,Taskonomy is related to different training images as they are mentioned together in the context.
+different training images,non-opaque surfaces,Different training images are related to non-opaque surfaces as they label depth differently based on the surface properties.
+non-opaque surfaces,depth labels,Non-opaque surfaces are related to depth labels as the depth is labeled differently for different surfaces.
+depth labels,ground truth label,Depth labels are related to ground truth labels as each image has only one ground truth label for the depth.
+training,cimle,Training is related to cIMLE as it allows modeling multiple possible outputs through sampling.
+depth labels,multiple possible outputs,Depth labels are related to multiple possible outputs as cIMLE allows modeling of these ambiguous outputs.
+our prior,ambiguity-aware depth estimates,Our prior is related to ambiguity-aware depth estimates as it utilizes them for capturing variable modes on reflective surfaces.
+reflective surfaces,depth modes,Reflective surfaces are related to depth modes as the depth modes describe the intersections of rays with non-opaque surfaces and terminating points on opaque surfaces.
+nerf reconstruction,depth estimates,NeRF reconstruction is related to depth estimates as the optimization is regularized with additional depth estimates for each view.
+nerf optimization,multimodality in depth estimates,NeRF optimization is related to multimodality in depth estimates as it helps capture inherent ambiguities in depth estimation.
+depth estimates,non-opaque surfaces,Depth estimates are related to non-opaque surfaces as they account for possible presence of non-opaque surfaces.
+monocular depth estimation,non-opaque surfaces,Both terms are mentioned in the context as factors affecting the resolution of ambiguities in depth estimation. Non-opaque surfaces contribute to the complexity of the depth estimation process alongside monocular depth estimation.
+space carving loss,multimodal depth estimates,"The space carving loss is used to fuse the multimodal depth estimates from different views, indicating a relationship between these two terms in the context of 3D reconstruction."
+monocular depth priors,domain gap,"The performance of the method is constrained by the quality of monocular depth priors. The performance of the method degrades if the domain gap is too great, indicating a relationship between these two terms in terms of method performance limitations."
+monocular depth priors,depth supervision,"Future work involves dynamically adjusting the strength of depth supervision based on the quality and generalizability of monocular depth priors, suggesting a relationship between these two terms in the context of future method improvements."
+teleportation and cci team,insightful discussions,"The Teleportation and CCI team in Google are acknowledged for their insightful discussions during the summer, highlighting a relationship between these two terms in the context of collaborative work."

@@ -1,0 +1,272 @@
+node_1,node_2,edge
+reinforcement learning (rl),linearly-realizable optimal value function,The paper studies sample-efficient RL in settings where only the optimal value function is assumed to be linearly-realizable.
+reinforcement learning (rl),generative model,Access to a generative model can lead to prohibitively large worst-case sample complexities.
+reinforcement learning (rl),interactive demonstrations,Investigates the setting where the learner has access to interactive demonstrations from an expert policy.
+reinforcement learning (rl),exploration with expert queries,Presents an algorithm for blending exploration with expert queries known as DELPHI.
+delphi,expert queries,DELPHI requires expert queries and exploratory samples to recover an epsilon-suboptimal policy efficiently.
+delphi,sample complexity,The algorithm DELPHI demonstrates an exponential improvement in sample complexity compared to pure RL approaches.
+imitation learning (il),expert demonstrations,Our required number of expert demonstrations is independent of certain factors compared to prior IL approaches.
+exploration budget,oracle calls,Any learner with a polynomially-bounded exploration budget will require oracle calls to recover a policy competing with the expert's value function.
+oracle,policy,The oracle calls to recover a policy competing with the expert's value function.
+policy,expert,The policy is competing with the expert's value function.
+expert,value function,The expert's value function is mentioned in the context.
+policy,value function,The policy competes with the expert's value function.
+expert,policy,The expert's policy is mentioned in the context.
+expert,linear,The expert's policy is assumed to be linear in the weaker assumption.
+policy,linear,The expert's policy is assumed to be linear in the context.
+value function,linear,The value function is assumed to be linear under the weaker assumption.
+lower bound,d,"Under the weaker assumption, the lower bound increases to Ω(d)."
+minimum sample complexity,exponential complexity,There exist cases where the statistical complexity of any algorithm will be exponentially large.
+linear value approximation,stronger assumptions,The concept of linear value approximation is discussed under the context of stronger assumptions which can recover polynomial statistical complexities.
+linear value approximation,generative model,Linear value approximation is mentioned in the context of a learner being equipped with a generative model (or simulator) to sample transitions from any state-action pair of the MDP.
+generative model,learner,The generative model is discussed as a tool that allows the learner to sample transitions from any state-action pair of the MDP.
+learner,additional side information,"The learner is assisted with additional side information about the problem, specifically assuming the existence of a deterministic expert policy that the learner can query at any state."
+expert policy,learner,The learner can query a deterministic expert policy at any state to be informed of the expert’s action at that state.
+expert policy,problem,The existence of a deterministic expert policy is assumed to assist the learner with additional information about the problem.
+interactive imitation learning,expert demonstrations,"In the context of IL, expert demonstrations are leveraged for learning."
+interactive imitation learning,expert queries,IL approach requires expert queries for learning.
+expert demonstrations,il approach,Expert demonstrations are studied in the context of IL approach.
+expert queries,il approach,Expert queries are required by IL approach.
+learner,expert,Learner explores mostly on their own and queries the expert in a judicious manner.
+delphi algorithm,interactive expert,DELPHI algorithm utilizes an interactive expert for exploring.
+delphi algorithm,expert's value function,DELPHI algorithm assumes linearity of expert's value function.
+delphi algorithm,agent,DELPHI algorithm assumes the agent has access to a RESET function.
+policy,delphi algorithm,DELPHI algorithm recovers a policy that is ε-optimal with a low number of expert queries.
+rl,expert,RL without expert requires more samples compared to RL with expert.
+rl,expert advice,"RL benefits from expert advice, enabling exponential improvement in sample complexity compared to RL without expert advice."
+number of oracle calls,horizon of the problem,The number of oracle calls is completely independent of the horizon of the problem and is logarithmic in 1/ε.
+horizon of the problem,problem,The number of oracle calls is completely independent of the horizon of the problem.
+prior work in il,expert advice,Prior work in IL leveraging expert advice requires linear factors in addition to scaling with d.
+delphi,computational efficiency,DELPHI is computationally efficient.
+delphi,robustness,DELPHI is robust to optimization and misspecification errors.
+delphi,extension,It can be extended to the case where the action-value function of the expert is linear when the MDP dynamics are deterministic.
+algorithm,expert-augmented learners,"Expert-augmented learners have fixed exploration budgets, aiming to establish the optimality of the algorithm."
+exploration budgets,expert queries,We study the minimal number of expert queries required by any algorithm constrained to a polynomially-bounded exploration budget.
+polynomially-bounded learner,oracle calls,Any polynomially-bounded learner will require at least ˜Ω(d) oracle calls to recover a policy competing with the expert’s value function.
+expert’s policy,lower bound,"In the weaker setting where only the expert’s policy is linear, the lower bound increases to Ω(d), matching the upper bound up to logarithmic factors."
+paper,structure,"The rest of the paper is structured into specific sections such as reviewing background, problem setting, algorithm description, guarantee, proof sketch, and discussions."
+algorithm,guarantee,The algorithm is described along with its guarantee.
+algorithm,proof,A sketch of the proof is provided for the algorithm.
+algorithm,extensions,Some extensions of the algorithm are discussed.
+lower bound,expert queries,Section 4 gives the lower bound on the number of expert queries needed.
+related work,discussion,An overview of related work and some discussion in Sections 5 and 6 is provided.
+notation,dists(x),We write Dists(X) for the set of probability measures on some set X.
+[n ],"{1, . . . , n }","We write [N ] := {1, . . . , N }."
+direct product,concatenating,The direct product ⊕ corresponds to “concatenating” two vectors.
+vectors,tensor product,The tensor (or outer) product of two vectors is defined by u ⊗ v = uv⊤.
+mdps,policies,The typical environment in RL is modelled as an MDP. Policies are considered in this context.
+mdps,value functions,Value Functions are discussed in the context of MDPs.
+action space,state space,"action space is finite, although the state space may be infinite"
+policy,action-value function,"A (non-stationary) policy π prescribes a sequence of actions πh and its value function is defined by qπ(s, a)"
+value function,recursive relationship,Value functions satisfy the recursive relationship vπ(s) = T πvπ(s)
+bellman operator,fixed point,The Bellman operator has vπ as its unique fixed point
+optimal policy,value function,"The optimal policy is written as π⋆, and its value function is denoted as v⋆"
+rl setting,mdp,"In the RL setting, the MDP is unknown and must be explored"
+sample complexities,number of states,We seek sample complexities independent of the number of states
+oracle,expert policy,"We assume that the agent has further access to an oracle, which returns the action of an expert policy"
+expert policy,optimal policy,"The expert policy need not be the optimal policy. For example, satisfied when the expert policy is equal to the optimal policy or when the expert policy is the greedy policy of some value function."
+oracle,current state,"There is an oracle which can be queried at the current state, providing the action. The oracle is queried via the ORACLE(s) function and can only be queried at the state the learner is currently visiting."
+learner,expert policy,"The objective of the learner is to recover a policy which competes with the expert policy, aiming for an ε-optimal policy with a probability ≥ 1 - δ."
+policy,linear value approximation,"Concerns the interplay of the expert policy with linear value approximation, assuming the expert policy has a linear value function in a set of known features."
+expert policy,value function,"The expert policy has a value function which is linear in a set of known features, denoted as v◦(s) = ⟨φ(s), θ◦⟩, for some unknown θ◦ ∈ Rd."
+agent,state,"The agent has the ability to reset to the state most recently seen, indicating a specific capability in the learning process."
+agent,state,The agent has the ability to reset to the state most recently seen.
+transition,agent,"After experiencing a transition (s, a, r, s′) in the MDP, the agent can return to the state s."
+transition,mdp,"After experiencing a transition (s, a, r, s′) in the MDP, the agent can return to the state s."
+assumptions,assumptions,Existing exponential lower bounds entail that Assumptions 2.2 and 2.3 together are not enough to enable sample-efficient learning.
+efficient learner,expert,"Any efficient learner which is provided with the above assumptions (2.1, 2.2, and 2.3) must necessarily make use of the expert."
+delphi algorithm,policy,The DELPHI algorithm will recover a policy ˆπ such that v ˆπ(s0) ≥ v◦(s0) − ε with probability ≥ 1 − δ.
+delphi algorithm,oracle,"The DELPHI algorithm will recover a policy ˆπ such that v ˆπ(s0) ≥ v◦(s0) − ε with probability ≥ 1 − δ, using O(d ln(B/ε)) oracle calls."
+delphi algorithm,mdp,DELPHI will solve for a parameter ˆθ such that an induced policy.
+delphi,measure expectations,DELPHI is a sub-routine designed to measure expectations as it solves for a parameter ˆθ in order to compete with the expert’s value function.
+delphi,reset functionality,The policy πˆθ from DELPHI requires the RESET functionality to estimate expectations from a small number of samples at each state encountered.
+policy πθ,nrollout rollouts,"For any θ, the policy πθ is tested for global consistency by playing nrollout rollouts of length H with a policy derived from the parameter."
+delphi,tensorplan,"DELPHI is inspired by TensorPlan, a recent algorithm, and proceeds with a 'guess and check' procedure similar to TensorPlan."
+parameter,policy,The policy πθ is derived from the parameter θ.
+"ˆr(s, a)",vθ(s′),"The estimated reward ˆr(s, a) and the estimated value vθ(s′) are used in the formula."
+vθ(s),πθ(s),The value vθ(s) is multiplied by the policy πθ(s) in the optimization process.
+state,action,The state and action interact in determining the policy's behavior.
+oracle,expert action,The oracle is used for obtaining expert actions in specific cases.
+parameter set,transition,The parameter set is updated based on transitions corresponding to expert actions.
+value,true value,The derived virtual value vθ approaches the true value vπθ under the policy πθ.
+iterations,number of times,The number of iterations determines how many times new parameters can be found.
+inconsistencies,bellman equation,Inconsistencies are related to the Bellman equation in the optimization process.
+temporal difference (td) vector,state,"The vector ∆s,a is referred to as the temporal difference (TD) vector for (s, a), indicating a relationship between the state and the TD vector."
+orthogonality constraint,dimensions,"Equation (5) represents an orthogonality constraint in d + 1 dimensions, indicating a relationship between the constraint and the dimensions."
+state,expert action,"When there is a state with no consistent action, the TD vector corresponding to the expert action at that state should not be in the span of previous expert TD vectors, implying a relationship between the state and the expert action."
+iteration complexity,linearly independent vectors,"The iteration complexity is at most d + 1 due to there being at most d + 1 linearly independent vectors in Rd+1, indicating a relationship between iteration complexity and linearly independent vectors."
+eluder dimension,argument generalization,"The Eluder dimension is used to generalize the argument to cases where expectations are estimated, indicating a relationship between Eluder dimension and argument generalization."
+θ0,ball,Θ0 is initialized with the L2 norm of vector Ball
+ed,neval,Ed and neval are initialized using specific equations
+neval,nrollout,neval is used to determine the number of rollouts nrollout
+neval,εtol,neval is initialized with a specific value εtol
+st,m,St and m are components utilized for measurement
+m,h,m and h are components utilized for measurement
+st,a,St and a are used for measurement
+st,φ,St and φ are used together for measurement
+st,s0,St has an initial value of s0
+a,h,a is an action performed for each value in H
+st,h,St is measured for each value in H
+s0,θ,Initial value s0 is used with parameter θ
+θ,φ,θ and φ are used in conjunction
+st,θ,St is associated with the parameter θ
+θt,θt−1,Θt is adjusted based on the previous value Θt−1
+st,m,St and m are utilized in measurement
+st,h,St and h are utilized in measurement
+a,θt−1,Action a influences the optimistic choice over Θt−1
+θt,εtol,Θt is adjusted taking into account the value of εtol
+st,a◦,St is measured with action a◦
+⊕,θt,Operation ⊕ is performed with parameter θt
+st,h,St is associated with the value of h
+st,a◦,St is measured with action a◦
+st,φ,St is used with feature φ
+st,rt,St is associated with the value of Rt
+rt,st,Rt is associated with the state transition in St
+π,st,Policy π is queried for state St
+θ,εtol,Parameter θ is adjusted within the tolerance εtol
+θ,ed,Parameter θ is adjusted based on Ed
+st,a,St is associated with action a
+st,rt,St is associated with the value of Rt
+rt,rl,Value Rt is received as part of the sample Rl
+s',φ,State S' is represented using feature φ
+s,a,Action a is played at state s
+εtol,n,Tolerance value εtol influences the number of rollouts n
+lemma 3.2,concentration bounds,"Lemma 3.2 establishes the concentration of estimated TD vectors ˆ∆s,a to the true TD vector"
+lemma 3.3,concentration bounds,Lemma 3.3 also establishes concentration bounds for the refined data
+lemma 3.4,parameter θ◦,Lemma 3.4 establishes that the true optimal parameter θ◦ is not eliminated from Θt for any encountered parameter set
+lemma 3.5,optimism,Lemma 3.5 follows optimism and states that vθt(s0) ≥ v◦(s0) with high probability
+lemma 3.6,iteration bound,"Lemma 3.6 establishes an iteration bound, stating that the algorithm will terminate after at most t = Ed iterations of the outermost loop"
+lemma 3.7,virtual value,"Lemma 3.7 establishes that if nrollout number of rollouts occur without observing a consistency break, then the virtual value (vθ(s0)) must be roughly equal to the true value under the executed policy (vπθ (s0))"
+theorem 3.1,proof,Theorem 3.1 combines all the ingredients to conclude the proof
+ˆ∆,˜∆,"ˆ∆ and ˜∆ are vectors related to the true TD vector. In Lemma 3.2, it is mentioned that the concentration of ˆ∆s,a is observed with neval samples in Line 11. Lemma 3.3 further explains that ˜∆s,a concentrates even more by calling the oracle."
+ˆ∆,"∆s,a","In Lemma 3.2, it is stated that ˆ∆s,a is compared to ∆s,a to determine the concentration with a certain probability."
+˜∆,"∆s,a","In Lemma 3.3, the comparison between ˜∆s,a and ∆s,a is discussed in relation to the oracle with probability 1−δ."
+θ,ˆ∆,"The true optimal parameter, θ, is mentioned in Part 2 under the event of Lemma 3.4. It is discussed in terms of not being eliminated from the version space, thus having an upper bound."
+vt,v◦,"In Lemma 3.5, it is mentioned that under the event of Lemma 3.4, the predicted value vt upper bounds the true optimal value v◦."
+eluder dimension,linear functions,The Eluder dimension is related to the concept of linear functions as discussed in the context. The Eluder dimension of linear functions is provided as O(d ln(B/ε)) according to the mentioned sources.
+eluder dimension,linear functions,Eluder dimension of linear functions is O(d ln(B/ε))
+algorithm,eluder dimension,iteration complexity of the algorithm is at most the Eluder dimension at scale εeval
+rollouts,consistency,consistent at all states for several rollouts then the virtual value vθ will be close
+rollouts,accurate prediction,If m rollouts have occurred without any inconsistencies then vπθ (s0) > vθ(s0) - 5H εeval - εroll
+consistency,accurate prediction,Consistency implies accurate prediction
+events,probability,events introduced happen with probability ≥ 1 - 3δ
+sample complexity,algorithm,total sample complexity of our algorithm is Ed = ˜O(d) oracle calls
+algorithm,oracle,The total sample complexity of the algorithm is expressed in terms of oracle calls.
+algorithm,exploration cost,The algorithm's exploration cost in terms of complexity is discussed.
+optimization problem,optimistic choice,The optimization problem corresponds to the optimistic choice over the parameter set.
+convex program,linear target function,The optimization problem is identified as a convex program due to the linearity of the target function.
+optimistic program,accuracy,"If the optimistic program can only be solved with a certain accuracy, it impacts the algorithm's performance."
+delphi,optimization errors,DELPHI can be extended to work with optimization errors.
+delphi,stochastic starting distributions,DELPHI's functionality with stochastic starting distributions is explained.
+delphi,misspecification,DELPHI can be extended to work with misspecification.
+delphi,linear dynamics,DELPHI's extension to work with linear dynamics is mentioned.
+optimistic program,lemma 3.5,Lemma 3.5 becomes vt(s0) ≥ v◦(s0)−εopt and this only appears in Eq. (6)
+optimistic program,εopt,The optimistic program can only be solved upto accuracy εopt ≤ cεtarget at each iteration
+εopt,c,"εopt ≤ cεtarget (for c ∈ [0, 1))"
+εopt,εtarget,εopt ≤ cεtarget
+vt(s0),v◦(s0),vt(s0) ≥ v◦(s0)−εopt
+5h ¯εeval+εroll,(1−c)εtarget,we need 5H ¯εeval+εroll ≤ (1−c)εtarget
+nrollout,neval,This is achieved by increasing nrollout and neval by a factor of 1/(1−c)2.
+nrollout,neval,This increases the final exploration cost by 1/(1−c)4.
+stochastic starting states,vθ(µ0),"For stochastic starting states, we work with vθ(µ0) = Es0∼µ0[vθ(s0)] wherever vθ(s0) previously appeared."
+es0∼µ0 [φ(s0)],samples,“starting feature” Es0∼µ0 [φ(s0)] must be estimated from samples.
+φ(s0),expectation,φ(s0) replaced by this expectation in the optimistic program in Line 5.
+misspecified value functions,innacurate simulators,DELPHI inherits some robustness properties from TensorPlan regarding misspecified value functions and inaccurate simulators.
+delphi,increase in exploration cost,DELPHI continues to work under errors in the modelling assumptions with a constant increase in exploration cost.
+expert value function,linear,The first case is where the expert value function is not linear but rather is approximately linear up to some uniform error.
+mdp,expert policy,MDP is η-misspecified for the expert policy π◦ and the feature map φ if there exists θ◦ such that sups
+simulator,flawed,The second case is where the simulator is λ-innacurate.
+"transition (r, s')","(s, a)","a transition (r, s') from any state-action pair (s, a)"
+simulator,λ-innacurate,A simulator is considered λ-innacurate if transitions are observed differently from the original state-action pair in the MDP.
+simulator,misspecification,DELPHI can tolerate misspecification in simulators according to Theorem 3.8.
+simulator,simulator inaccuracies,DELPHI can tolerate simulator inaccuracies in simulators at most ¯εeval.
+simulator,mdps,"For all MDPs that are at most ¯εeval-innaccurate, Theorem 3.1 conclusions hold when running DELPHI with new hyperparameters."
+bellman equation,"qθ(s, a)","Rather than working with the Bellman equation vθ(s) = qθ(s, a), the focus is on qθ(s, a) = T π◦qθ(s, a) for linearity."
+bellman equation,linearized,"The Bellman equation vθ(s) = qθ(s, a) can be linearized similarly to Eq. (5)."
+bellman equation,consistency,"To speak of consistency at (s, a) with respect to a next action a', deterministic dynamics are assumed in the Bellman equation."
+algorithm,action,"The algorithm proceeds as before, except rather than checking all actions at a given state (Line 13), we check all proceeding actions a′ against the current (s, a), and play the one with the smallest TD error."
+algorithm,exploration cost,"In fact, replacing Θ0 with an ℓ∞ constraint will only incur a d2 factor to the exploration cost and log factors√to the oracle cost, but Line 5 will then be a fully linear program."
+algorithm,oracle calls,"How many oracle calls are necessary? Is DELPHI optimal in terms of its number of oracle calls? To answer this question, we must argue that no algorithm can find an ε−optimal solution with less than Ω(d) expert queries."
+algorithm,expert queries,"To answer this question, we must argue that no algorithm can find an ε−optimal solution with less than Ω(d) expert queries."
+exploration budget,algorithm,"Under Assumptions 2.1, 2.2, and 2.3, what is the minimal amount of expert queries needed for any algorithm with a poly(d, H, A, 1 ε ) exploration budget to find an ε−optimal solution?"
+expert queries,algorithm,"Under Assumptions 2.1, 2.2, and 2.3, what is the minimal amount of expert queries needed for any algorithm with a poly(d, H, A, 1 ε ) exploration budget to find an ε−optimal solution?"
+mdps,v⋆-linearity,"MDPs satisfying v⋆-linearity for which no algorithm can return a sound solution with poly(d, H, A, 1 ε ) queries"
+learners,delphi,learners which have the same exploration requirements as DELPHI
+algorithms,exploration budgets,studying algorithms with arbitrary polynomial exploration budgets
+solution,exponential sample complexity,any solution to this question must have an exponential sample complexity for pure RL
+constructions,linearly-realizable rl,most constructions which exhibit exponential lower bounds for linearly-realizable RL can be solved with a single query from the oracle
+action set,correct action,constructions rely on having an exponentially large action set with a single correct action that effectively solves the MDP
+lower bound,exponential lower bound,"main lower bound comes from extending the recent lower bound of [WSG21], which is also the only known construction for an exponential lower bound which has a polynomial action set"
+family,mdps,"There exists a family of MDPs satisfying 2.1, 2.2, and 2.3, such that any algorithm with poly(d, H, A) exploration budget will need at least ˜Ω( d) oracle calls to recover a policy"
+policy,exploration budget,"The algorithm with poly(d, H, A) exploration budget will need at least ˜Ω(d) oracle calls to recover a policy."
+policy,expert policy,The policy π◦ of the expert is linear with known features.
+policy,greedy policy,The greedy policy derived from q◦ is linear.
+policy,policy π⋆,"When π◦ = π⋆, it is easy to see that this assumption is implied by the assumption that q⋆ is linearly-realizable."
+policy,theorem,"Theorem 4.3 states that any algorithm with poly(d, H, A) exploration budget will need at least Ω(d) oracle calls to recover a policy such that v ˆπ(s0) ≥ v◦(s0) − 0.01."
+assumption,expert policy,Assumption 4.2 states that the expert policy is linear with known features.
+mdp construction,hidden hypercube vector,The learner has to find a hidden hypercube vector s⋆ ∈ {±1}p in the MDP construction.
+action space,a,The action space A = [p] and each action corresponds to flipping one of the bits of the current vector.
+mdp,phases,The MDP has K “phases” which each correspond to p bit flips (thus H ≈ Kp).
+linear reward,neighborhood of s⋆,"A linear reward is given only if a sufficiently small neighborhood of s⋆ is reached, and the reward will decay geometrically in each subsequent phase that the neighborhood is not reached."
+oracle,secret parameter,"The oracle needs to be used multiple times, as each oracle call only reveals one action, and thus one bit of the optimal vector s⋆. The value function is augmented to be quadratic in p to prevent betraying the location of the secret parameter."
+value function,scale transition,The value function will experience a scale transition when going from states where s⋆ is reachable given the remaining steps in the current phase to states where s⋆ is no longer reachable.
+quadratic,p,The relationship between being quadratic in p requires that p ≈ d in order to observe linearity.
+lower bound,π◦-linearity,"The lower bound for π◦-linearity can remain linear in d, since the definition is scale-insensitive."
+upper bound,lower bound,Closing the gap between the upper bound of ˜O(d) and the lower bound of ˜Ω(d) remains a challenging but interesting question.
+finite horizons,generative model,"In finite horizons, with access to a generative model, the only mechanism for creating a hard MDP is by geometrically decaying the maximum possible value for each stage."
+phase,geometric decaying,"If the geometric decaying happens in 'phases', then this implies that Ω(1) of the value is located in the first 'phase'."
+construction,geometric decaying,The tension is to have such a construction while hiding a large value and forcing the learner to rely on several oracle calls to find it.
+needle in a haystack,phases,Extending the 'needle in a haystack' to occur over multiple decisions leads to increased oracle requirements.
+scale transition phenomenon,geometric value reduction,The question is whether geometric value reduction is necessary for exponential lower bounds in the setting of scale transition phenomenon.
+online rl setting,[wwk21] construction,The construction of [WWK21] extends to the online setting.
+online rl setting,[was21],[WWK21] extends [WAS21] to the online setting.
+online rl setting,probability of death at every transition,"In the online RL setting, there is an Ω(1) probability of death at every transition."
+agent resets,delphi,It is unknown whether DELPHI can be extended to the online setting where the agent has resets.
+interactive il,expert oracle,"In interactive IL, the learner has access to an expert oracle that is queried adaptively."
+interactive il,reward information,Interactive IL traditionally does not observe reward information.
+interactive il,value function approximation,"In interactive IL, value function approximation is considered rather than general policy classes."
+interactive il,reset function,Interactive IL assumes access to a RESET function.
+interactive il,simulated domains,Demonstrations of interactive IL occur in simulated domains.
+interactive il,methods,Many IL methods are not directly applicable.
+policy π◦,linear,"The policy π◦ itself does not need to be linear, so it is unclear which policy class to use for those algorithms."
+linear policies,il methods,"Assuming linear policies can be used, IL methods would still obtain worse oracle rates."
+behaviour cloning,worst-case errors,Using results from Behaviour Cloning or AAggreVaTe (for the interactive case) have worst-case errors.
+discounted mdps,oracle complexity,"For discounted MDPs, the oracle complexity is O(dH 4/ε2)."
+exploration,value-function approximation,Exploration with the help of value-function approximation demonstrates improvement.
+monte carlo estimation,state-action pairs,Performing regression by doing a Monte Carlo estimation for the value of v◦(s) for each s requires finding a set of state-action pairs.
+temporal difference errors,vectors,The Temporal difference errors (represented as vectors) are considered in the algorithm.
+temporal difference (td) errors,vectors,TD errors are represented as vectors in the set of state-action pairs
+local fitting,approach,local fitting approach is novel in the IL literature
+temporal difference (td) errors,orthogonal directions,TD errors span orthogonal directions in the set of state-action pairs
+exponentially small gap,backwards induction-type methods,An exponentially small gap is necessary for backwards induction-type methods
+q⋆,linearly-realizable,q⋆ is linearly-realizable in backward induction-type methods
+linear structure in il,known transition function,Works assume a known transition function in linear structure in IL
+linear structure in il,unknown linear rewards,Works assume unknown linear rewards in linear structure in IL
+recent work of [rhyljr21],reward-free case,Recent work assumes a reward-free case in the expert policy
+expert policy,sample complexity,Expert policy affects the sample complexity
+delphi algorithm,tensorplan,DELPHI algorithm is inspired by TensorPlan
+tensorplan,pure rl,TensorPlan works for pure RL under certain assumptions
+complexity scaling,"poly((cid:0) dh, b)","The complexity scaling is related to the poly((cid:0) dH, B) in terms of computational intractability"
+tensorplan,expert demonstrations,"TensorPlan incorporates expert demonstrations with low oracle requirements, addressing exponential sample complexity, and computational efficiency"
+bellman equation,value functions,Value functions in the Bellman equation satisfy specific conditions for error minimization
+reward functions,value functions,Reward functions and value functions are modified in the lower bound construction
+feature mappings,reward functions,Feature mappings and reward functions are part of the modifications in the lower bound construction
+expert policy,optimal policy,The expert policy introduced differs from the optimal policy in the construction
+learner,information source,The learner having adaptive access to an information source is discussed regarding information-theoretic arguments
+delphi algorithm,interactive expert,The DELPHI algorithm is presented for RL with an interactive expert for sample complexity improvements
+exponential improvements,sample complexity,Exponential improvements in sample complexity are possible for RL with linearly-realizable optimal value functions.
+sample complexity,rl,Exponential improvements in sample complexity are possible for RL with linearly-realizable optimal value functions.
+sample complexity,linearly-realizable optimal value functions,Exponential improvements in sample complexity are possible for RL with linearly-realizable optimal value functions.
+delphi,interactive expert,"Compared to prior works on learning with an interactive expert, we also saw that DELPHI ’s oracle requirements were smaller."
+delphi,oracle requirements,"Compared to prior works on learning with an interactive expert, we also saw that DELPHI ’s oracle requirements were smaller."
+oracle requirements,mdp,"DELPHI ’s oracle requirements were smaller, and in fact are independent of the horizon of the MDP."
+oracle requirements,delphi,"DELPHI ’s oracle requirements were smaller, and in fact are independent of the horizon of the MDP."
+oracle requirements,horizon of the mdp,"DELPHI ’s oracle requirements were smaller, and in fact are independent of the horizon of the MDP."
+oracle complexity,delphi,It would be interesting and fruitful to resolve the gap between the oracle complexity required by DELPHI and the one obtained from our lower bound.
+oracle complexity,lower bound,It would be interesting and fruitful to resolve the gap between the oracle complexity required by DELPHI and the one obtained from our lower bound.
+delphi,authors,Either answer would be surprising to the authors.
+authors,surprising,Either answer would be surprising to the authors.
+linearly-realizable action-value functions,stochastic mdps,It would also be fruitful to study the case of linearly-realizable action-value functions in stochastic MDPs.
+method,online setting,Linearly-realizable action-value functions in stochastic MDPs may potentially enable the method to be extended to the online setting.
+pa,natural sciences and engineering research council of canada (nserc),PA gratefully acknowledges funding from the Natural Sciences and Engineering Research Council of Canada (NSERC).
+pa,amazon,Work done in part while PA was an intern at Amazon.

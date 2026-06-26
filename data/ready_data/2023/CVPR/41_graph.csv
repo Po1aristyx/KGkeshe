@@ -1,0 +1,234 @@
+node_1,node_2,edge
+video moment retrieval,highlight detection,Video moment retrieval and highlight detection (MR/HD) are being spotlighted as the demand for video understanding is drastically increased.
+video moment retrieval,localize the moment,"The key objective of MR/HD is to localize the moment and estimate clip-wise accordance level, i.e., saliency score, to the given text query."
+video moment retrieval,text query,The relevance between text query and video contents is sometimes neglected when predicting the moment and its saliency.
+query-dependent detr,detection transformer,"To tackle this issue, we introduce Query-Dependent DETR (QD-DETR), a detection transformer tailored for MR/HD."
+text query,video representation,Our encoding module starts with cross-attention layers to explicitly inject the context of text query into video representation.
+video-query pairs,irrelevant pairs,"To enhance the model's capability of exploiting the query information, we manipulate the video-query pairs to produce irrelevant pairs."
+negative video-query pairs,low saliency scores,"Such negative (irrelevant) video-query pairs are trained to yield low saliency scores, which in turn, encourages the model to estimate precise accordance between query-video pairs."
+input-adaptive saliency predictor,video-query pairs,"Lastly, we present an input-adaptive saliency predictor which adaptively defines the criterion of saliency scores for the given video-query pairs."
+query-dependent representation,mr/hd,Our extensive studies verify the importance of building the query-dependent representation for MR/HD.
+qd-detr,mr/hd,"QD-DETR outperforms state-of-the-art methods on QVHighlights, TVSum, and Charades-STA datasets, verifying the importance of building the query-dependent representation for MR/HD."
+qd-detr,state-of-the-art methods,"QD-DETR outperforms state-of-the-art methods on QVHighlights, TVSum, and Charades-STA datasets."
+qd-detr,qvhighlights,"QD-DETR outperforms state-of-the-art methods on QVHighlights, TVSum, and Charades-STA datasets."
+qd-detr,tvsum,"QD-DETR outperforms state-of-the-art methods on QVHighlights, TVSum, and Charades-STA datasets."
+qd-detr,charades-sta,"QD-DETR outperforms state-of-the-art methods on QVHighlights, TVSum, and Charades-STA datasets."
+codes,github.com/wjun0830/qd-detr,Codes for QD-DETR are available at github.com/wjun0830/QD-DETR.
+qd-detr,saliency scores,QD-DETR results in corresponding saliency scores
+videos,desired moments,Inspecting the videos is time-consuming and it is hard to capture the desired moments
+user-requested moments,videos,Efforts were put into searching for and summarizing requested moments in videos
+videos,highlight moments,Efforts were made to highlight requested moments in videos
+moment-detr,qvhighlights dataset,Moment-DETR proposed a dataset to retrieve moments with their highlight-ness simultaneously
+moment,natural language sentence,A favored type of query for describing moments is a natural language sentence
+convolution networks,transformer architecture,Recent approaches show that using transformer architecture is more effective than convolution networks for fusing text query into video representation
+moment-detr,transformer architecture,Moment-DETR introduced a transformer architecture to process text and video tokens as input
+umt,transformer architectures,UMT proposed transformer architectures for multimodal sources like video and audio
+transformer decoder,text queries,The transformer decoder processes text queries to generate output. The relationship is essential for understanding Transformers.
+moment-detr,text query,Moment-DETR is investigated in terms of the impact of the text query in MR/HD. The text query plays a crucial role in the performance of Moment-DETR.
+video clips,positive query and negative query,"Video clips are associated with both positive and negative queries, which influence the relevance scores assigned to them by the baseline model."
+qd-detr,query-dependent video representation,QD-DETR focuses on producing video representations that are highly dependent on the query provided. This ensures better prediction results.
+transformer encoder,cross-attention layers,The transformer encoder is equipped with cross-attention layers in the first layers to utilize contextual information from the query effectively.
+video,text,The encoder uses videos as queries and text as keys and values in cross-attention layers to extract video representation with the engagement of the text query.
+text query,video feature,Text query contributes to injecting textual information into the video feature and ensures its full exploitation in the model's prediction process.
+negative video-query pairs,original pairs,Negative video-query pairs are used to train the model to suppress the relevance scores of irrelevant pairs. This enhances the contribution of the text query.
+text query,prediction,The text query contributes to the prediction since the videos are required to yield high or low saliency scores based on the relevance of the text query.
+saliency token,video,The saliency token represents the entire video and is used as an input-adaptive saliency criterion.
+qd-detr,query-dependent video representation,The QD-DETR model produces query-dependent video representation by integrating source and query modalities.
+moment retrieval (mr),highlight detection (hd),"MR involves localizing the moment relevant to the text description, while HD aims to measure the clip-wise importance level of the given video."
+hd,supervised hd,"Supervised HD utilizes fine-grained highlight scores, which are very expensive to collect and annotate."
+hd,weakly supervised hd,Weakly supervised HD learns to detect segments as highlights with video event labels.
+hd,unsupervised hd,Unsupervised HD does not require any annotations.
+hd,mr/hd,MR/HD share a common objective to localize or discover the desired part of the given video.
+mr/hd,moment-detr,"Moment-DETR proposed the QVHighlights dataset, which contains a human-written text query and its corresponding moment with clip-level saliency labels."
+moment-detr,umt,UMT focused on processing multi-modal data by utilizing both video.
+umt,multi-modal data,UMT focused on processing multi-modal data by utilizing both video and audio features.
+umt,query-dependent representation,UMT concentrates on producing a query-dependent representation with the transformer.
+detr,end-to-end object detector,DETR is an end-to-end object detector based on vision transformers.
+detr,vision transformers,DETR is based on vision transformers.
+detr,computer vision,DETR utilizes the transformer architectures for computer vision.
+detr,slow convergence,DETR suffered from slow convergence.
+detr,anchor generation,DETR simplifies the prediction process by eliminating the need for anchor generation.
+detr,non-maximum suppression,DETR simplifies the prediction process by eliminating the need for non-maximum suppression.
+detr,detr-like architectures,DETR-like architectures have been popular in downstream tasks in both the image and video domains.
+detr,multi-modal data,"There are trials to extend the application of DETR on multi-modal data, especially dealing with the query from different modalities."
+detr,text,There are trials to extend the application of DETR on multi-modal data by dealing with the text query for detection or retrieval.
+detr,transformer,DETR handles the multi-modal data by forwarding them together to the transformer.
+multi-modal data,query-dependent representation,Handling multi-modal data based on DETR-like architecture involves producing a query-dependent representation.
+detr-like architecture,multi-modal data,The focus is on handling multi-modal data based on the DETR-like architecture
+query-dependency,prediction results,The technique concentrates on the query-dependency of the prediction results
+query-dependency,qd-detr architecture,The proposed QD-DETR architecture focuses on query-dependency
+query-dependency,video tokens,"Through negative pair learning, query-dependent video representation is built, ensuring the contribution of text queries to the video tokens"
+saliency token,video tokens,Video tokens are given to the transformer encoder accompanied by the saliency token
+video features,text features,Video and text features are extracted from frozen backbones before being forwarded into the cross-attention transformer
+saliency token,video tokens,saliency token is transformed into the adaptive saliency prediction criteria which are then given to the transformer encoder along with video tokens
+saliency token,adaptive saliency prediction criteria,saliency token is transformed into adaptive saliency prediction criteria
+video tokens,transformer encoder,video tokens are given to the transformer encoder
+encoder's output tokens,saliency scores,encoder's output tokens are directly projected to saliency scores for optimization
+encoder's output tokens,learnable moment queries,encoder's output tokens are provided to the transformer decoder with learnable moment queries
+predicted moments,gt moments,losses for MR are computed by the discrepancy between predicted and their corresponding GT moments
+video,text query,utilize multi-modal information by considering video and text query
+multi-modal information,video and text query,"The relationship between multi-modal information and video and text query is that the former includes various forms of data such as video and text query, which are essential for processing and analyzing information."
+video and text query,moment query,"The video and text query are transformed or inserted to form the moment query in processing and analyzing data, highlighting the importance of considering the relationship between different query types."
+video clip,text queries,"Every video clip must be assessed conditionally with text queries, indicating the interdependency between video clips and text queries in the process of assessing data."
+video representation,query representation,"Video and query representations extracted from fixed backbones are transformed to be query-dependent using cross-attention layers, suggesting a direct relationship between the two representations for enhancing query-awareness in video processing."
+irrelevant video-query pairs,low saliency,Incorporating irrelevant video-query pairs with low saliency helps enhance the learning objective in processing data by including less relevant pairs for a more holistic understanding of the information.
+saliency token,adaptive saliency predictor,"The saliency token in the transformer encoder-decoder architecture can turn into an adaptive saliency predictor when attended by a specific video instance, showcasing the dynamic nature of processing data and predicting relevant information."
+query,"key, value","The query representations involve key and value aspects in the cross-attention layers, emphasizing the importance of these elements in generating a comprehensive understanding of queries for data processing."
+encoder,clip-wise representations,"The encoder function aims to produce clip-wise representations with information on query-relevance, underscoring the significance of these representations in retrieving query-matched moments and predicting outcomes in data processing."
+moment-detr,video,"Moment-DETR naively concatenated the video with the query for input to the self-attention layers, potentially resulting in an insignificant role of the query if the high similarities among the video clips overwhelm the contribution of the text query."
+umt,text query,"UMT utilizes the text query only for the synthesis of a moment query in the transformer decoder, resulting in video representations not associated with the text query."
+video representations,text query,Video representations are not associated with the text query.
+cross-attention layers,source and query modalities,"Cross-attention layers are deployed between the source and the query modalities at the very first layers of the encoder to ensure the consistent contribution of the query, thereby extracting query-dependent video representation."
+video clips,"qv = [ pq(v1), ..., pq(vl) ]","The query for cross-attention layers is prepared by projecting the video clips as Qv = [ pq(v1), ..., pq(vL) ]."
+woman,red couch,Woman is sitting still by a red couch.
+woman,sits,Woman is sitting still by a red couch.
+red couch,sits,Woman is sitting still by a red couch.
+hl loss,negative pair loss,Illustration of negative pair learning shows the difference between HL loss and negative pair loss in query-relevance.
+video,query,Query text features are used to compute the key and value for the video.
+cross-attention layers,video,Cross-attention layers fuse video and query features for intermediate video clip representations.
+cross-attention layers,query,Cross-attention layers engage query information in an architectural way.
+video,consecutive clips,Consecutive clips in a single video often share similar appearances.
+consecutive clips,query,Similarity to a specific query may not be highly distinguishable.
+video,positive pairs,Positive pairs are trained to yield segmented saliency scores according to query relevance.
+negative pairs,video-query pairs,Negative pairs are constructed by mixing video and query from different pairs.
+video clips,positive pairs,Video clips in positive pairs are trained for query-relevance.
+negative video-query pairs,saliency scores,Irrelevant negative pairs are enforced to have the lowest saliency scores.
+saliency score predictor,training scheme,The training scheme utilizes the saliency score predictor to prevent the model from solely predicting moments and highlights based on the inter-relationship among video clips without considering query-relevance.
+model,inter-relationship among video clips,The model should not predict moments and highlights solely based on the inter-relationship among video clips without consideration of the query-relevance.
+saliency predictor,video-query pair,Naive implementation of the saliency predictor provides identical criteria for the saliency prediction of every video-query pair.
+video-query pair,general head,The general head provides identical criteria for the saliency prediction of every video-query pair.
+saliency predictor,query-dependent video representation,The diverse nature of video and natural language query pairs is neglected when a general head is used for the saliency prediction.
+saliency token,input-adaptive predictor,The saliency token becomes an input-adaptive predictor when added to the sequence of encoded video tokens and projected through the transformer encoder.
+saliency token,query-dependent video tokens,"The saliency token is first concatenated with the query-dependent video tokens, and then processed through the transformer encoder to re-organize with input-dependent contexts."
+saliency token,video tokens,The saliency token and video tokens are projected by a corresponding single fully-connected layer after being processed through the transformer encoder.
+saliency,video tokens,"Saliency and video tokens are projected by a corresponding single fully-connected layer with weights, ws and wv, where their scaled-dot product becomes the saliency scores."
+saliency,channel dimension,The saliency score is computed based on the channel dimension of projected tokens.
+decoder,objectives,The transformer decoder plays a crucial role in understanding the objectives of the detection transformer.
+query,detection transformer,Designing the query with positional information helps in acceleration of training and enhancing accuracy of the detection transformer.
+multi-modal data,position,"Tasks handling multi-modal data like MR/HD have different definitions of position, such as time in the video and word order in the text."
+architectural design,text query,The architectural design eliminates the need to feed the text query to the decoder by integrating query information into video representations.
+dynamic anchor boxes,video moments,The 2D dynamic anchor boxes are modified to represent 1D moments in the video for designing queries.
+center coordinate,moment duration,The center coordinate and duration of moments are utilized to design queries in the video.
+coordinate,modulate,Coordinate and modulate are related in the context of centering and adjusting the cross-attention map with the moment duration.
+coordinate,duration,Coordinate and duration are related in the context of centering the cross-attention map with the moment duration.
+duration,modulate,Duration and modulate are related in the context of adjusting the cross-attention map with the moment duration.
+coordinates,durations,Coordinates and durations are related in the context of revising them layer-wise.
+coordinates,revised,Coordinates and revised are related in the context of revising them layer-wise.
+durations,revised,Durations and revised are related in the context of revising them layer-wise.
+training objectives,loss functions,Training objectives and loss functions are related as the former include the latter for QD-DETR.
+loss functions,mr/hd,Loss functions are related to MR/HD in the context of training objectives for QD-DETR.
+mr/hd,respective,MR/HD and respective are related in the context of loss functions for QD-DETR.
+respective,objective functions,Respective and objective functions are related in the context of loss functions for QD-DETR.
+objective functions,locating,Objective functions and locating are related as the key focus of the former is to locate the desired moments.
+locating,moments,Locating and moments are related in the context of the key focus of objective functions to locate the desired moments.
+moments,adopted,Moments and adopted are related as objective functions for MR are adopted from the baseline.
+locating,gt moment,Locating and GT moment are related in the context of measuring the discrepancy between the GT moment and the predicted counterpart.
+gt moment,predicted counterpart,GT moment and predicted counterpart are related in the context of measuring the discrepancy between them.
+gt moment,predicted moments,GT moment and predicted moments are related as the cross-entropy loss is used to classify the predicted moments.
+gt moment,foreground,GT moment and foreground are related by classifying the predicted moments either to foreground or background.
+gt moment,background,GT moment and background are related by classifying the predicted moments either to foreground or background.
+gt moment,loss,GT moment and loss are related as moment retrieval loss measures the discrepancy between them.
+prediction,containing,Prediction and containing are related in the context of ground-truth moment and its corresponding prediction.
+center coordinate,duration,Center coordinate and duration are related in the context of localizing temporal moments.
+loss functions,hd,Loss functions and HD are related in the context of estimating the saliency score.
+hd,saliency score,HD and saliency score are related in the context of estimating the saliency score.
+saliency score,margin ranking loss,Saliency score and margin ranking loss are related in the context of estimating the saliency score using margin ranking loss.
+margin ranking loss,operate,Margin ranking loss and operate are related as the former operates with two pairs of high-rank and low-rank clips.
+high-rank clips,saliency scores,High-rank clips and saliency scores are related in the context of retaining higher saliency scores for the former.
+low-rank clips,gt moment,Low-rank clips and GT moment are related as the former should have lower saliency scores than the GT moment.
+low-rank clips,negative clips,Low-rank clips and negative clips are related as the former should have lower saliency scores than the negative clips.
+lmargin,δ,Lmargin is defined as the maximum of 0 and the difference between S(xlow) and S(xhigh) plus Δ.
+lmargin,s(xlow),Lmargin is dependent on the saliency score of the low-rank clip xlow.
+lmargin,s(xhigh),Lmargin is dependent on the saliency score of the high-rank clip xhigh.
+lcont,r,The rank-aware contrastive loss Lcont is related to the maximum rank value R used in the iteration process.
+xposr,xneg,"The positive set Xposr focuses on samples with higher saliency scores than the iteration index, while the negative set Xneg includes samples with lower ranks than the iteration index."
+lhl,λmargin,The loss function Lhl is a combination of margin loss with a weight lambda margin.
+lhl,λcont,The loss function Lhl is also a combination of rank-aware contrastive loss with a weight lambda cont.
+ltotal,lhl,The total loss function Ltotal includes the high-level loss Lhl as a component.
+ltotal,lmr,The total loss function Ltotal also includes Lmr as a component.
+ltotal,λneg,The total loss function Ltotal includes a term Lneg with a weight lambda neg.
+qvhighlights,moment retrieval,QVHighlights is a dataset that provides annotations for both moment retrieval and highlight detection.
+qvhighlights,highlight detection,QVHighlights is a dataset that provides annotations for both moment retrieval and highlight detection.
+charades-sta,moment retrieval,Charades-STA is a dataset for moment retrieval.
+tvsum,video summarization,TVSum is a dataset for video summarization.
+qd-detr,baselines,QD-DETR is compared against baselines in MR and HD.
+qd-detr,baselines,QD-DETR is compared against baselines in MR and HD in experimental results
+qd-detr,mr,QD-DETR outperforms state-of-the-art approaches for the task of jointly learning and predicting MR
+qd-detr,hd,QD-DETR outperforms state-of-the-art approaches for the task of jointly learning and predicting HD
+qd-detr,video with audio,QD-DETR shows a dramatic increase in performance when utilizing video with audio for experiments
+qd-detr,modalities,The modalities V and A represent video and audio respectively for QD-DETR
+qd-detr,tvsum dataset,QD-DETR shows high performance in highlight detection on the TVsum dataset
+qd-detr,sl-module,QD-DETR (Ours) is related to SL-Module as it mentions a joint evaluation metric of 87.6VU in the context.
+qd-detr,audio,QD-DETR (Ours) is related to audio as it mentions boosting 11.84% on average of the metrics for MR with video and audio sources.
+qd-detr,source,QD-DETR (Ours) is related to source as it emphasizes the importance of descriptive contexts in the text queries.
+qd-detr,video,QD-DETR (Ours) is related to video as it boosts results compared to the SOTA method employing the multi-modal source data and validates the use of video-only or video+audio descriptive contexts.
+qd-detr,joint-va,QD-DETR (Ours) is related to joint-VA as it mentions a value of 87.6VU in the context.
+qd-detr,mini-net,QD-DETR (Ours) is related to MINI-Net as both are mentioned in the context.
+qd-detr,charades dataset,"QD-DETR with video and audio sources is related to Charades dataset as it compares MR performances against the models using VGG, C3D, and Slowfast (SF) and CLIP features on the dataset."
+joint-va,v+a,Joint-VA is related to V+A as it mentions a value of 87.6VU for the joint evaluation metric in the context.
+v+a,qd-detr,V+A is related to QD-DETR as it mentions a joint evaluation metric of 87.6VU in the context.
+v+a,sl-module,V+A is related to SL-Module as both are mentioned in the context.
+mini-net,qd-detr,MINI-Net is related to QD-DETR (Ours) as both are mentioned in the context.
+sm-rl,vgg,SM-RL is related to VGG as it mentions an R1@0.5 value of 24.36 in the context.
+debug,c3d,DEBUG is related to C3D as it mentions an R1@0.5 value of 37.39 in the context.
+2d-tan,vgg,2D-TAN is related to VGG as it mentions an R1@0.5 value of 40.94 in the context.
+fvmr,vgg,FVMR is related to VGG as it mentions an R1@0.5 value of 42.36 in the context.
+vslnet,c3d,VSLNet is related to C3D as it mentions an R1@0.5 value of 47.31 in the context.
+umt†,vgg,UMT† is related to VGG as it mentions an R1@0.5 value of 48.31 in the context.
+vgg,ours†,VGG is related to Ours† as it mentions an R1@0.5 value of 55.51 in the context.
+umt†,vgg,UMT† is related to VGG as it mentions an R1@0.5 value of 48.31 in the context.
+m-detr,sf+c,M-DETR is related to SF+C as it mentions an R1@0.5 value of 53.63 in the context.
+ours†,vgg,Ours† is related to VGG as it mentions an R1@0.7 value of 57.31 in the context.
+qd-detr,video,QD-DETR is related to video as it boosts 11.84% on average of the metrics for MR compared to the SOTA method employing the multi-modal source data.
+qd-detr,source,QD-DETR is related to source as it emphasizes the importance of emphasizing the source descriptive contexts in the text queries.
+qd-detr,video+audio,QD-DETR is related to video+audio as it boosts results compared to the SOTA method employing the multi-modal source data and validates the use of video-only or video+audio descriptive contexts.
+protocols,previous work,Protocols mentioned in the previous work are being referred to in the context.
+model,map scores,The model is trained for each category and the mAP scores are averaged.
+qd-detr,baselines,QD-DETR outperforms baselines on 9 out of 10 categories when only video source is available.
+qd-detr,sota model,QD-DETR establishes new SOTA performances by improving by 4.2% on average compared to the previous SOTA model.
+cate,dam,CATE and DAM denote cross-attentive transformer encoder and dynamic anchor moments respectively.
+cate,dam,Ablation study compares the effectiveness of CATE and DAM components.
+cate,dam,CATE and DAM are used in the context for analyzing and evaluating the model components.
+transformer encoder,self-attention layers,Comparison is made between the transformer encoder with self-attention layers (SATE) and the deepened transformer encoder with CATE for performance validation.
+transformer encoder,self-attention layers,Both transformer encoder and self-attention layers are components used in building the model.
+query features,encoder,Query features are used as a condition in the encoder.
+video representations,decoder,Video representations are processed by the decoder.
+moment-detr,t2vmoment-detr,"T2VMoment-DETR is a specialized version of Moment-DETR, denoted by (SATE 2)."
+moment-detr,cate 4,Moment-DETR has variations such as CATE 4.
+qd-detr,cate 4,"QD-DETR includes a variant called CATE 4, represented by (CATE 4)."
+r1@0.5,map,There is a relationship between R1@0.5 and the mean average precision (mAP) scores.
+positive scores,gt moments,Positive scores are calculated within ground truth (GT) moments.
+positive scores,negative text queries,Positive scores are affected by negative text queries in the study.
+positive histogram,negative histogram,Ablation study includes histograms of positive and negative values of saliency scores.
+transformer decoder,performances,Transformer decoder affects the performances.
+mr/hd tasks,query-dependent video representations,MR/HD tasks are focused on query-dependent video representations.
+(b),mr/hd tasks,(b) is especially beneficial for MR/HD tasks.
+(c),text query,(c) fully exploits the contexts of the text query.
+(d),input-adaptive saliency predictor,(d) provides input-adaptive saliency predictor instead of MLP.
+dam,cate,DAM's effectiveness is especially dependent on the usage of CATE.
+input tokens,cate,"Without CATE, input tokens are a mixture of multi-modal tokens, thereby providing confusing position information."
+positive saliency scores,negative saliency scores,There is a difference between positive and negative saliency scores.
+text query,baseline,The role of text query is trivial in the baseline.
+cate,negative pair learning,"As we add CATE and negative pair learning, we observe a decrease in overlapped prediction."
+mom,son,Mom helps son climb a stone wall.
+positive saliency,negative saliency,"Positive Saliency scores are consistently higher than the others, while the scores for semi-positive are higher than the ones for the negative."
+cate+neg.pair,saliency prediction,The widely-distributed histogram of saliency scores for the ’CATE+Neg.pair’ is due to using an identical criterion for saliency prediction for diverse video-query representations.
+cate,sate,CATE is much more beneficial than SATE even with the same number of layers.
+cate,sate,"CATE is mentioned to be much more beneficial than SATE even with the same number of layers, indicating a comparison between the two."
+qd-detr,architecture,"Comparisons are shown within the QD-DETR architecture, suggesting that they are related in terms of the architecture's components or design."
+video representation,query-dependent,"The discussion is on how the query-dependent video representation reacts to the context of the text query, implying a direct relationship between the two."
+query,video clips,"The saliency scores of video clips vary based on their relevance to the query, connecting the concepts of query and video clips."
+qd-detr,moment prediction,"QD-DETR sometimes provides a more precise moment prediction than a given ground-truth moment, showing a relationship between QD-DETR and moment prediction."
+saliency scores,non-relevant clips,"There is a mention of higher saliency scores at non-relevant clips for a positive query, suggesting a connection between saliency scores and non-relevant clips."
+text query,relevant moments,"The paper aims to highlight the role of the text query in retrieving relevant moments, highlighting the relationship between text query and relevant moments."
+text query,retrieving relevant moments,The text query plays a critical role in retrieving relevant moments by estimating their accordance level with the given text query.
+text query,estimating accordance level,The text query is essential in estimating the accordance level with the given text query.
+proposed components,meaningful context,The proposed components expect a given query to maintain a meaningful context for effectiveness.
+transformer architecture,mr/hd,The transformer architecture has been powerful for MR/HD applications.
+text query,cross-attentive transformer encoder,The text query is focused on in the study of the role of the cross-attentive transformer encoder.
+transformer architecture,lacking investigation of text query role,The transformer architecture lacks investigation of the role of the text query in some architectures.
+textual information,expressing video representations,The textual information is not fully exploited in expressing the video representations.
+cross-attentive transformer encoder,query's contributions,The cross-attentive transformer encoder ensures the query's contributions while extracting video representations.
+negative-pair training,learning relationship between query and video,The negative-pair training enforces the model to learn the relationship between query and video.
+diversity of query-dependent video representation,saliency token,"To preserve the diversity of query-dependent video representation, a saliency token as an input-adaptive saliency predictor is defined."
+qd-detr,superior performances,Extensive experiments validated the strength of QD-DETR with superior performances.

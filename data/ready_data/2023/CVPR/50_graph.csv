@@ -1,0 +1,238 @@
+node_1,node_2,edge
+denoising diffusion generative models,data,Denoising diffusion generative models have achieved significant accomplishments in generating realistic and diverse data.
+denoising diffusion generative models,generation process,The generation process of current denoising diffusion models is slow due to iterative noise estimations.
+denoising diffusion generative models,neural networks,The generation process relies on cumbersome neural networks.
+generation process,diffusion models,Slow generation process prevents diffusion models from being widely deployed.
+diffusion models,edge devices,Slow generation prevents diffusion models from being deployed on edge devices.
+accelerate generation,diffusion model,Previous works accelerate the generation process of diffusion model via finding shorter yet effective sampling trajectories.
+accelerate generation,noise estimation network,Accelerate generation by compressing the noise estimation network.
+noise estimation network,compression,Accelerate generation by compressing the noise estimation network.
+post-training quantization,diffusion model acceleration,Introduce post-training quantization for diffusion model acceleration.
+noise estimation networks,output distributions,Output distributions of noise estimation networks change with time-step.
+ptq methods,dms,Previous PTQ methods fail in DMs designed for single-time step scenarios.
+dm-specific ptq method,dms,Devise a DM-specific PTQ method to address unique multi-time-step structure of DMs.
+method,dms,The method targets the unique multi-time-step structure of DMs.
+method,8-bit models,The method can directly quantize full-precision DMs into 8-bit models while maintaining or even improving their performance in a training-free manner.
+method,plug-and-play module,"The method can serve as a plug-and-play module on other fast-sampling methods, e.g., DDIM."
+method,ddim,"The method can serve as a plug-and-play module on other fast-sampling methods, e.g., DDIM."
+method,code,The code for the method is available at https://https://github.com/42Shawn/PTQ4DM.
+diffusion process,gaussian noise,"A diffusion process transforms real data gradually into Gaussian noise, and then the process is reversed to generate real data from Gaussian noise (denoising process)."
+denoising process,noise estimation,The denoising process requires iterating the noise estimation (also known as a score function).
+denoising process,noise estimation,The denoising process requires iterating the noise estimation over thousands of time-steps.
+denoising process,neural network,Iterating the noise estimation via a cumbersome neural network over thousands of time-steps.
+denoising process,generating samples,Its long iterative process and high inference cost for generating samples make it undesirable.
+generation process,diffusion models,"To accelerate diffusion models, researchers propose several approaches."
+generation process,sample trajectory learning,"Researchers propose several approaches for accelerating diffusion models, mainly focusing on sample trajectory learning for faster sampling strategies."
+generation process,acceleration methods,Our study suggests that two factors slow down the denoising process: lengthy iterations for sampling images and a cumbersome network for estimating noise. Previously DM acceleration methods only focus on the former.
+network compression,network quantization,"From the perspective of network compression, many popular network quantization and pruning methods follow a simple pipeline."
+network compression,pruning methods,"From the perspective of network compression, many popular network quantization and pruning methods follow a simple pipeline."
+compression pipeline,training dataset,The compression pipeline requires a full training dataset to perform end-to-end back-1tions.
+ptq calibration,normally distributed time-step calibration (ndtc),"The PTQ calibration cannot be used in the case of NDTC, which samples time-steps from a skew normal distribution."
+time-step calibration,set of time-steps,The time-step calibration method samples a set of time-steps and generates calibration samples based on them using the denoising process.
+time-step calibration,calibration set,The time-step calibration method enhances the time-step discrepancy in the calibration set to improve the performance of PTQ4DM.
+dm acceleration method,post-training for diffusion models (ptq4dm),The DM acceleration method PTQ4DM incorporates all the explorations for acceleration of diffusion models.
+ptq,dm acceleration,PTQ is introduced into DM acceleration for noise estimation networks quantization in a post-training manner.
+ptq,diffusion model acceleration,PTQ investigation is done for diffusion model acceleration in the context of training-free network compression.
+ptq,dms,PTQ affects the performance of DMs through output distribution differences in various time-steps.
+ptq,ptq4dm,PTQ is explored from different aspects leading to the proposal of PTQ4DM.
+ptq4dm,pre-trained diffusion models,PTQ4DM quantizes the pre-trained diffusion models to 8-bit without significant performance loss.
+ptq4dm,dm acceleration methods,PTQ4DM can serve as a plug-and-play module for other SoTA DM acceleration methods.
+diffusion models,iterative process,Diffusion models are hindered by the long iterative process and high denoising cost.
+diffusion models,previous works,Previous works aim to accelerate diffusion probabilistic models by finding shorter sampling trajectories while maintaining performance.
+reverse process,sampling,The reverse process is much faster to sample from.
+dms,continuous timesteps,DMs with continuous timesteps are mentioned in the context.
+song et al.,ode,Song et al. formulate the DM in form of an ODE.
+ode,sampling efficiency,ODE is used to improve sampling efficiency.
+jolicoeur-martineau et al.,sde solver,Jolicoeur-Martineau et al. introduce an advanced SDE solver.
+bao et al.,variance,Bao et al. estimate the variance for DMs.
+propagation,dms,Propagation is important for DMs.
+training data,privacy concerns,Training data may not be ready-to-use due to privacy concerns.
+training data,commercial concerns,Training data may not be ready-to-use due to commercial concerns.
+training process,expensive,The training process is extremely expensive.
+training data,industry-developed models,Access to training data for industry-developed models is limited.
+dall·e2,text-to-image models,Dall·E2 is an example of text-to-image models.
+imagen,text-to-image models,Imagen is an example of text-to-image models.
+ptq,dm acceleration,Post-training quantization can be introduced into DM acceleration.
+post-training quantization (ptq),dm acceleration,PTQ is introduced into DM acceleration to speed up computation and reduce resource storage for the diffusion model weight
+ptq,computation of the denoising process,PTQ can speed up the computation of the denoising process
+ptq,resources to store the diffusion model weight,PTQ can reduce the resources needed to store the diffusion model weight
+ptq,implementation in dms,The implementation of PTQ in DMs is challenging due to differences in structures
+previous ptq methods,dms,"Previous PTQ methods fail in DMs because they are designed for single-time-step scenarios, which is different in DMs"
+core ingredients of the ptq for the dms process,final performance of the quantized diffusion models,The design of core ingredients of PTQ affects the final performance of quantized diffusion models
+previous ptq methods,dms,Generalizing previous PTQ methods to DMs results in performance drops due to output distribution discrepancies with time-step
+noise estimation networks,time-step in the denoising process,Noise estimation networks rely on time-step which affects their output distribution
+noise estimation networks,output distribution discrepancies w.r.t. time-step in the denoising process,Output distribution discrepancies with time-step in the denoising process affect noise estimation networks
+pretrained score-based model,analytic forms,"The pretrained score-based model with derived analytic forms, which are simplified from the score-function."
+pretrained score-based model,training-free methods,Introduction of training-free methods compared to pretrained score-based model.
+pretrained dm,additional training,Implementation of additional training required after obtaining a pretrained DM.
+dm acceleration methods,effective sampling trajectories,Categorization of DM acceleration methods into finding effective sampling trajectories.
+diffusion models,network compression,Acceleration of diffusion models through network compression for each noise estimation iteration.
+ptq4dm,fast sampling methods,The method PTQ4DM is an orthogonal path with the above-mentioned fast sampling methods.
+diffusion models,quantizing,First study on quantizing diffusion models in a post-training manner.
+neural network,quantization,Quantization as one of the most effective ways to compress a neural network.
+quantization-aware training (qat),post-training quantization (ptq),Difference between quantization-aware training and post-training quantization methods.
+ptq,network,PTQ quantizes the network after training.
+ptq,training,PTQ quantizes the network after training.
+ptq,resource,PTQ consumes much less time and computation resources.
+ptq,network deployment,"PTQ consumes much less time and computation resources, it is widely used in network deployment."
+ptq,weights,Most of the work of PTQ is to set the quantization parameters for weights and activations in each layer.
+ptq,activations,Most of the work of PTQ is to set the quantization parameters for weights and activations in each layer.
+ptq,calibration samples,"In order to calculate the activations in the network, a small number of calibration samples should be used as input in PTQ."
+ptq,calibration parameters,The selected quantization parameters are dependent with the selection of the calibration samples.
+weights,activations,"In order to set quantization parameters for the weight tensor and the activation tensor in a layer, a simple but effective way is to select the quantization parameters that minimize the MSE of the tensors before and after quantization."
+weights,mse,Select quantization parameters that minimize the MSE of the tensors before and after quantization.
+activations,mse,Select quantization parameters that minimize the MSE of the tensors before and after quantization.
+weights,l1 distance,"Other metrics, such as L1 distance, cosine distance, and KL divergence, can also be used to evaluate the distance of the tensors before and after quantization."
+activations,l1 distance,"Other metrics, such as L1 distance, cosine distance, and KL divergence, can also be used to evaluate the distance of the tensors before and after quantization."
+weights,cosine distance,"Other metrics, such as L1 distance, cosine distance, and KL divergence, can also be used to evaluate the distance of the tensors before and after quantization."
+activations,cosine distance,"Other metrics, such as L1 distance, cosine distance, and KL divergence, can also be used to evaluate the distance of the tensors before and after quantization."
+weights,kl divergence,"Other metrics, such as L1 distance, cosine distance, and KL divergence, can also be used to evaluate the distance of the tensors before and after quantization."
+activations,kl divergence,"Other metrics, such as L1 distance, cosine distance, and KL divergence, can also be used to evaluate the distance of the tensors before and after quantization."
+zero-shot quantization (zsq),ptq,Zero-shot quantization (ZSQ) is a special case of PTQ.
+zsq,calibration dataset,ZSQ generates the calibration dataset according to information recorded in the network.
+batch normalization layer,mean and var,The batch normalization layer relies on the mean and variance to normalize the input data.
+gradient descent method,input sample,The input sample is generated using the gradient descent method.
+network inference,image generation process from noise,The image generation process from noise relies on the network inference.
+diffusion probabilistic model (dpm),variational bound lvlb,The diffusion probabilistic model is trained by optimizing the variational bound LVLB.
+diffusion model,diffusion and denoising process,The diffusion model involves a lengthy diffusion and denoising process.
+diffusion process,isotropic gaussian noise,The diffusion process gradually adds isotropic Gaussian noise to produce a sequence of latent data.
+diffusion process,isotropic gaussian distribution,The diffusion process is equivalent to an isotropic Gaussian distribution when T is sufficiently large and a well-behaved schedule of βt is maintained.
+diffusion process,sample xt,The diffusion process allows us to sample xt at an arbitrary timestep t by directly conditioning on the input x0.
+neural network,approximate data distribution,We need to parameterize a neural network to approximate the intractable data distribution q(x0).
+variational lower bound,optimize negative log-likelihood,Utilizing the variational lower bound helps to optimize the negative log-likelihood for the diffusion model.
+lvlb,eq,LVLB is an equation that represents the Loss Variational Lower Bound
+lt−1,kl-divergence,Lt−1 is a KL-divergence used to compare pθ(xt−1
+lt,θ,"LT does not depend on θ, it is close to zero if q(xT"
+lt−1,αt,Lt−1 is related to αt in the context of the diffusion model training process
+θ,t,LT does not depend on θ according to the context
+diffusion model,inference,The inference of the diffusion model is mentioned as being expensive
+post-training quantization,network,Post-training Quantization involves selecting quantization parameters for the weight network
+diffusion model,expensive,The diffusion model is mentioned as being expensive.
+post-training quantization,well-trained network,Post-training Quantization involves selecting quantization parameters for a well-trained network.
+activation tensor,weight tensor,Quantization parameters are selected for the weight tensor and activation tensor in each layer.
+quantization parameters,scaling factor s,The quantization parameters include a scaling factor s.
+quantization parameters,zero point z,The quantization parameters also include a zero point z for transforming a tensor.
+full-precision activation tensor,unlabeled input samples,"In order to collect the full-precision activation tensor, unlabeled input samples (calibration dataset) are used."
+unlabeled input samples,calibration dataset,"A calibration dataset, consisting of unlabeled input samples, is used to collect the full-precision activation tensor."
+ptq,network,PTQ quantizes a network in three steps.
+operations,quantized,Some operations in the network should be quantized while leaving others in full-precision.
+operations,softmax,Special functions like softmax and GeLU often take full-precision.
+calibration samples,distribution,The distribution of calibration samples should be close to that of real data to avoid over-fitting of quantization parameters.
+method,quantization parameters,Use the proper method to select quantization parameters for weight tensors and activation tensors.
+diffusion model,ptq,"In the next sections, we will explore how to apply PTQ to the diffusion model step by step."
+diffusion model,image generation process,"For the diffusion model, we will analyze the image generation process to determine which operations should be performed."
+weight tensors,activation tensors,Select quantization parameters for weight tensors and activation tensors.
+layer,timestep,Studies on the activation distribution with respect to time-step show the distribution of activations by various layers on different time-steps.
+activations,time-steps,"The histograms show activations on different time-steps by various layers, indicating a relationship between activations and time-steps in the context of diffusion models."
+diffusion model,xt−1,"The diffusion model iteratively generates xt−1 from xt at each timestep, showing a direct relationship between the diffusion model and the generated output xt−1."
+network,diffusion model,"The network in the diffusion model often uses UNet-like CNN architecture, highlighting the connection between network architecture and the diffusion model."
+convolution layers,fully-connected layers,"The computation-intensive convolution layers and fully-connected layers in the network are typically quantized together, suggesting a close relationship between the two types of layers."
+batch normalization,convolution layer,"Batch normalization can be folded into the convolution layer, indicating how batch normalization is integrated with convolution layers in the context of diffusion models."
+special functions,full-precision,"Special functions such as SiLU and softmax are kept in full-precision, implying a connection between special functions and the need for full precision in the context of the diffusion model."
+outputs,quantized,"The question arises whether the network's outputs µ and Σ can be quantized, suggesting a relationship between the network outputs and the quantization process."
+sampled image,quantized,"The question also arises whether the sampled image xt−1 can be quantized, highlighting the consideration of quantizing the sampled image in the context of the diffusion model."
+calibration samples,training dataset,"The calibration samples for quantizing diffusion models can be collected from the training dataset, indicating a relationship between calibration samples and the dataset used for training."
+diffusion models,calibration samples,"Calibration samples can be collected from the training dataset for quantizing other networks, indicating a direct relationship between diffusion models and calibration samples."
+diffusion models,training dataset,"The training dataset is mentioned in relation to quantizing other networks, indicating a direct relationship between diffusion models and the training dataset."
+calibration samples,training dataset,"Calibration samples can be collected from the training dataset, showing a direct relationship between calibration samples and the training dataset."
+diffusion model,unconditional imagenet 64x64 image generation,"The diffusion model is for generating unconditional ImageNet 64x64 images with a cosine noise schedule, indicating a direct relationship between the diffusion model and the generation of ImageNet 64x64 images."
+ddim,10k images,"DDIM is used to generate 10K images, showing a direct relationship between DDIM and the generation of 10K images."
+is,inception score,"IS is the inception score, indicating that IS and the inception score are directly related."
+generated samples,diffusion process,"Should we use the generated samples in the diffusion process, implying a direct relationship between generated samples and the diffusion process."
+generated samples,denoising process,"Should we use the generated samples in the denoising process, suggesting a direct relationship between generated samples and the denoising process."
+generated samples,calibration dataset,"At what time-step t, should the generated samples be collected to create a good calibration dataset, showing a direct relationship between generated samples and calibration dataset."
+ptq baselines,four meaningful observations,"By investigating several intuitive PTQ baselines, four meaningful observations are obtained, implying a direct relationship between PTQ baselines and the observations."
+four meaningful observations,method design,"Four meaningful observations guide the design of the method, indicating a direct relationship between the observations and method design."
+method,experimental results,"Experimental results demonstrate the efficiency and effectiveness of the method, showing a direct relationship between the method and experimental results."
+method,ptq4dm calibration,"Through devised PTQ4DM calibration, the 8-bit post-training quantized diffusion model can perform at the same performance level as its full-precision counterpart, indicating a direct relationship between the method and PTQ4DM calibration."
+8-bit post-training quantized diffusion model,full-precision diffusion model,"The 8-bit post-training quantized diffusion model can perform at the same performance level as its full-precision counterpart, showing a direct relationship between the 8-bit post-training quantized diffusion model and the full-precision diffusion model."
+calibration samples,real data,Calibration samples should be as close as possible to the distribution of the real data.
+calibration set,quantization,The calibration set can supervise the quantization by minimizing the quantization error.
+works,single-time-step scenarios,Previous works are implemented on single-time-step scenarios.
+samples,training dataset,Samples can be directly collected from the real training dataset for quantizing networks.
+calibration dataset,collection,"Due to the small size of the calibration dataset, its collection is extremely sensitive."
+collected dataset,overfitting,"If the distribution of the collected dataset is not representative of the real dataset, it can easily lead to overfitting for the calibration task."
+inputs,to-be-quantized network,"The inputs of the to-be-quantized network are the generated samples xt (t = 0, 1,··· , T )."
+time-step,diffusion process,T is a large number to maintain the diffusion process converging to isotropic Normal distribution.
+diffusion model,design,"To quantize the diffusion model, we are required to design a novel and effective calibration dataset collection method."
+calibration,multi-time-step scenario,We are required to design a novel and effective calibration dataset collection method in this particular multi-time-step scenario.
+ptq calibration,dms,We start by investigating both PTQ calibration and DMs.
+distributions,activations,Distributions of activations changes along with time-step changing.
+output distribution,diffusion models,"To understand the output distribution change of diffusion models, we investigate the activation distribution with respect to time-step."
+activation distribution,time-step,The investigation is focused on analyzing the activation distribution with respect to different time-steps.
+output distribution,time-step,"The goal is to analyze the output activation distribution at different time-steps, such as t1 = 0.1T and t2 = 0.9T, for specific activation distributions."
+activation distribution,calibration methods,Changes in the distribution w.r.t. time-step may pose difficulties in implementing previous PTQ calibration methods designed for temporally-invariant calibration.
+noise estimation network,boxplot,"The overall activation distributions of the noise estimation network are analyzed using a boxplot, similar to the approach taken in a previous study."
+activation distributions,time-steps,"Observations reveal significant discrepancies in the corresponding activation distributions at different time-steps, rendering previous PTQ calibration methods unsuitable for multi-time-step models."
+generated samples,calibration,Generated samples in the denoising process are considered more constructive for calibration purposes.
+raw images,diffusion process,Two directions for generating samples in PTQ calibration in the context of diffusion: using raw images as input for the diffusion process.
+noise,denoising process,The other direction for generating samples for PTQ calibration involves using noise as input for the denoising process.
+noise,samples,"Noise is used as the input for the denoising process, while Samples are generated by mimicking the diffusion model training."
+samples,image,"Samples serve as ground truth and represent the training set's distribution, while Images are used as input for the diffusion process."
+samples,input noises,Input noises for the diffusion process are more constructive for calibrating quantized DMs.
+image,gaussian noise,Calibration samples are collected in an 'Image + Gaussian Noise' manner for calibration.
+image,calibration samples,"Calibration samples are collected in an 'Image + Gaussian Noise' manner for calibration, and the results are listed in Tab. 2."
+noise,calibration sets,Two calibration sets with raw images for the diffusion process and Gaussian noise for denoising process are separately collected for calibration.
+calibration samples,real image,Sample xt close to real image x0 is more beneficial for calibration.
+samples,time-step t,"Quantized diffusion models are calibrated with samples at time-step t, i.e., a set of xt."
+samples,time-step t,The samples are taken at time-step t.
+samples,set of xt,The samples at time-step t form a set of xt.
+samples,naive ptq-for-dm baseline,The samples are used in the naive PTQ-for-DM baseline approach.
+samples,calibration set,The samples are used to generate a calibration set.
+"noise xt ∼ n (0, i)",diffusion model,The Gaussian noise xT follows a diffusion model.
+"noise xt ∼ n (0, i)",noise estimation network,The Gaussian noise xT is used in the noise estimation network.
+diffusion model,full-precision noise estimation network,The diffusion model uses the full-precision noise estimation network.
+calibration set,quantized noise estimation network,The calibration set is used to calibrate the quantized noise estimation network.
+quantized parameters,noise estimation network,The noise estimation network uses quantized parameters.
+experiments,calibration baseline,A series of experiments are conducted using the calibration baseline.
+experiments,calibration baseline,The experiments involve a calibration baseline.
+quantitative results,intuitive baselines,The quantitative results are compared with the intuitive baselines.
+quantitative results,ndtc calibration method,The quantitative results are presented for the NDTC calibration method.
+ptq for dm performance,full-precision dm performance,The performance of PTQ for DM is compared with full-precision DM performance.
+8-bit model,naive baseline,The 8-bit model calibrated by the naive baseline cannot synthesize satisfying images.
+intuitive explanation,observation,There is an intuitive explanation for the observation made.
+observation,denoising process,The observation is related to the denoising process.
+calibration samples,time-steps,Calibration samples should be generated with varying time-steps to reflect the discrepancy of sample w.r.t. time-step.
+calibration dataset,diffusion models,The calibration dataset for diffusion models should contain samples with various time-steps to test the hypothesis and generate a calibration set.
+calibration set,time-steps,Calibration set should cover a wide range of time steps utilizing a diffusion model with full-precision noise estimation network.
+calibration samples,effectiveness of collection method,The effectiveness of the collection method for calibration samples is tested and validated to support the hypothesis.
+calibration samples,time-step discrepancy,The result validates the hypothesis that calibration samples should reflect the time-step discrepancy.
+calibration samples,denoising process,Calibration samples should be generated by the denoising process with the full-precision diffusion model.
+calibration samples,time-steps,Calibration samples should be covered by various time-steps.
+calibration samples,time-step calibration,"Desiring the calibration samples to be relatively close to x0, far away from xT."
+calibration samples,denosing time-step calibration collection algorithm,The process of Normally Distributed Time-step Calibration Collection (DNTC) Algorithm involves generating a calibration set {xti}N.
+calibration set,conditions,Trade-off conditions (2) and (3) cannot be satisfied simultaneously.
+calibration set,dm-specific calibration set collection method,"Considering all the conditions, a DM-specific calibration set collection method is proposed."
+normally distributed time-step calibration (ndtc),dm-specific calibration set collection method,NDTC is proposed as a specific calibration set collection method in the given context.
+time-step,skew normal distribution,Time-steps are sampled from a skew Normal distribution for balancing conditions 2 & 3.
+time-step,normal distribution,"Time-steps follow a normal distribution with mean µ ≤ T, where T is the number of time-steps."
+µ,median of time-step,"µ is less than or equal to the median of time-step, satisfying a condition in the context."
+gaussian noise,diffusion model,"Gaussian noise xT is used in the diffusion model to generate xti, satisfying a specific condition."
+calibration set,time-steps,"The calibration set C is obtained by sampling time-steps, as per the context."
+ndtc,ptq baselines and full-precision dms,The effectiveness of NDTC is evaluated by comparing it to PTQ baselines and full-precision DMs.
+ptq baselines,full-precision dms,The mentioned PTQ baselines and full-precision DMs are presented in Table 3 and Fig. 6.
+calibration samples,quantization parameters,The third step involves selecting quantization parameters for tensors in the diffusion model when calibration samples are collected.
+quantization parameters,tensors,The third step involves selecting quantization parameters for tensors in the diffusion model when calibration samples are collected.
+mse,l1 distance,"MSE is better than the L1 distance, cosine distance, and KL divergence as shown in Table 4."
+mse,cosine distance,"MSE is better than the L1 distance, cosine distance, and KL divergence as shown in Table 4."
+mse,kl divergence,"MSE is better than the L1 distance, cosine distance, and KL divergence as shown in Table 4."
+diffusion models,ci-far10,The diffusion models generating CI-FAR10 images are selected for experiments.
+diffusion models,imagenet,The diffusion models generating ImageNet down-sampled images are selected for experiments.
+ddpm,ddim,Experiments are conducted on both DDPM and DDIM to generate images.
+proposed method,1024 calibration samples,The proposed method from Section 3.3 is used to generate 1024 calibration samples.
+network,8-bit,The network is quantized to 8-bit for evaluation.
+8-bit ddpm,full-precision ddpm,The 8-bit DDPM quantized by the method outperforms the full-precision DDPM in experiments.
+model redundancy,dm acceleration methods,The successes of previous DM acceleration methods validate the existence of model redundancy.
+dm acceleration methods,model redundancy,DM acceleration methods validate the existence of model redundancy from the perspective of iteration length.
+dm acceleration methods,redundancy,DM acceleration methods uncover the redundancy from a previously unknown perspective.
+noise estimation network,redundancy,Noise estimation network is also redundant.
+dm acceleration methods,noise estimation network,Noise estimation network is considered redundant by DM acceleration methods.
+lengthy iterations,noise,Lengthy iterations slow down the denoising process for sampling images from noise.
+iterations,noise,A cumbersome network is required for estimating noise in each iteration.
+dm acceleration works,lengthy iterations,Different from mainstream DM acceleration works focusing on lengthy iterations.
+dm acceleration works,network for estimating noise,Different from mainstream DM acceleration works focusing on a network for estimating noise in each iteration.
+dm acceleration works,post-training quantization for diffusion models (ptq4dm),This paper proposes Post-Training Quantization for Diffusion Models (PTQ4DM).
+model quantized by our method,ptq4dm,"An 8-bit model is quantized by our method, which can output an 8-bit diffusion with the pre-trained 32-bit diffusion model as input in a training-free manner."
+fusion model,8 bits,The fusion model can be directly quantized into 8 bits without experiencing a significant degradation in performance.
+our method,fast-sampling methods,"Our method can be added to other fast-sampling methods, such as DDIM [24]."
+research,cisco,This research was supported by the gift donation from Cisco.

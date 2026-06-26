@@ -1,0 +1,157 @@
+node_1,node_2,edge
+abstractgraph neural networks (gnns),scene graph generation (sgg),GNNs are used for scene graph generation
+scene graph generation (sgg),low-pass filter,GNNs can be seen as a low-pass filter that smooths node representations.
+low-pass filter,spatial domain,The smoothing occurs in the spatial domain
+spatial gnns,heterophilic sgg,Spatial GNNs struggle with heterophilic SGG where fine-grained predicates face challenges.
+heterophily,fine-grained predicates,Heterophily affects the accuracy of predicting fine-grained predicates due to loss of discriminative information.
+kumaraswamy wavelet graph neural network (kwgnn),spectral domain,KWGNN addresses heterophily by designing tailored filters based on spectral energy distribution.
+kumaraswamy wavelet graph neural network (kwgnn),multi-group kumaraswamy wavelets,KWGNN employs wavelets from different frequency bands for adaptability.
+kwgnn,band-pass filters,KWGNN generates band-pass filters to handle varying levels of smoothness in the graph.
+visual genome dataset,open images dataset,Experiments are conducted on both Visual Genome and Open Images datasets to showcase the state-of-the-art performance.
+scene graph generation (sgg),visual question answering (vqa),SGG plays a significant role in supporting VQA
+scene graph generation (sgg),image captioning,SGG also contributes to image captioning by aiding in scene understanding and generating descriptions.
+graph neural networks (gnns),spatial domain,GNNs are primarily used in the spatial domain for SGG
+homophily-based strategies,heterophily-based strategies,GNNs in SGG can be classified into homophily- and heterophily-focused
+resampling-based strategies,attention mechanism-driven strategies,These two categories include resampling methods for homophily (e.g.
+over smoothing issue,heterophilic scene graphs,Spatial GNNs face the problem of over smoothing when dealing with graphs where predicate nodes have diverse neighboring classes.
+over smoothing,gnns,Over smoothing is a problem in GNNs where node features in the same connected component become consistent.
+low-pass filter,gnns,GNNs use a low-pass filter mechanism to aggregate neighbor information
+homogeneous graphs,gnns,This low-pass filter works well in homogeneous graphs where similar nodes connect
+heterophilic scene graphs,over smoothing,In heterophilic scene graphs
+fine-grained predicates,coarse-grained predicates,Over smoothing causes fine-grained predicates like 'standing on'
+hl-net (lin et al. 2022),misclassification ratio of fine-grained predicates,Figure 2(a) shows the misclassification rate of fine-grained predicates in HL-Net
+fine-grained predicates,prediction error rates,The prediction error rates of fine-grained predicates are up to about 10%.
+fine-grained predicates,over-smoothing issue,The analysis shows that an over-smoothing issue exists
+scene graph features,spectral features,Scene graph features are decomposed into spectral features to investigate the relationship with heterophily.
+spectral energy,high-frequency part,As heterophily increases
+frequency,heterophily,Frequency is positively associated with heterophily
+features of different frequency bands,prediction accuracy,Different frequency bands contribute differently to prediction accuracy based on the heterophily ratio.
+handling fine-grained predicates,heterophilic scenarios,Appropriate handling of fine-grained predicates is crucial in scenes with varying levels of homophily and heterophily.
+kgnn (k-wavelet graph neural network),fine-grained predicate prediction,KWGNN
+homophily,heterophily,Comparison is made between homophily and heterophily
+heterophilic scenarios,fine-grained predicate recognition,In the context
+standing on/walking on/parked on/part of,predicates,These are examples of specific predicates that the paper discusses in the context of heterophily.
+homophily,heterophily,Homophily and heterophily are opposing concepts
+traditional filters,kumaraswamy wavelet graph neural network (kwgnn),Traditional filters are compared to KWGNN
+kumaraswamy distribution,graph kernel function,The Kumaraswamy distribution is used as a key component in KWGNN
+spatial domain,spectral domain,The paper proves the equivalence of Kumaraswamy wavelets in both domains
+gnns (xu et al. 2017),layer-by-layer message passing mechanism,KWGNN differs from GNNs in its approach
+multi-group wavelet kernels,aggregating multi-band features,KWGNN combines complementary wavelet kernels to gather information from different frequency bands.
+updated graph features,predicate recognition,The final step involves using updated graph features to improve the accuracy of fine-grained predicate recognition.
+graph wavelet transform (gwt),scatter-brain transforms (gama,ribeiro
+graph wavelet transform (gwt),low-pass filters,HL-Net (Lin et al. 2022) shows that traditional GNNs are inherently low-pass filters in SGG context.
+heterophilic sgg,heterogeneous learning branch,He et al. (2022) proposed a heterogeneous learning branch to enhance independent representation of predicate features in heterophilic SGG.
+heterophilic sgg,unbiased heterogeneous sgg framework,Yoon et al. (2022) introduced an unbiased framework that captures relation-aware context using message passing neural networks.
+heterophily learning network,homophily and heterophily between objects/predicates,Lin et al. (2022) propose a network to explore these relationships comprehensively.
+our work,spectral graph features,Our work investigates the contributions of distinct spectral graph features
+identity matrix,diagonal degree matrix,Identity matrix (I) and diagonal degree matrix (D) are components used in matrix representation 'L'
+l (positive semi-definite matrix),eigendecomposition,L has an eigendecomposition L = UΛUT
+hl-net (lin et al. 2022),fine-grained predicate prediction,HL-Net performs poorly in predicting fine-grained predicates
+zellers et al. (2018) method,structured scene representation,Zellers et al. generated structured scene representations from images by learning prior motifs.
+tang et al. (2019) method,dynamic tree structure,Tang et al. constructed a richer dynamic tree structure based on Zellers et al.'s method and used TreeLSTM for encoding visual contexts.
+attention mechanisms,correlating different neighbors,Attention mechanisms
+lin et al. (2020) module,direction-aware message passing,Lin et al. designed a module to enhance node features with multi-scale contextual information
+aware message passing module,multi-scale contextual information,The aware message passing module enhances node features with multi-scale contextual information.
+zareian et al. (2020),scene and commonsense graphs,Zareian et al. connected corresponding nodes in scene and commonsense graphs to propagate messages.
+tripathi et al. (2023),visio-lingual message passing method,Tripathi et al. designed a method to transfer semantic knowledge into scene graphs.
+wang et al. (2023),visio-lingual message passing method,Similar to Tripathi et al.
+spectral gnns,graph laplacian eigendecomposition,Spectral GNNs use the graph Laplacian eigendecomposition for signal filtering.
+balcilar et al. (2021),limitations of current gnns,Balcilar et al. highlighted that GNNs have limitations in capturing a wide frequency range.
+bo et al.,graph wavelet transform,Bo et al. proposed a method involving graph wavelet transform for feature extraction at different frequencies.
+kwgnn,scene graph fourier transform,KWGNN applies Fourier transform to convert scene graph features to the spectral domain.
+kwgnn,inverse fourier transform,The architecture includes an inverse Fourier transform to generate the final scene graph representation.
+spectral gnn based sgg,identification of scene graph structure,The objective of spectral GNN-based SGG is to identify the structure of a scene graph.
+spectral graph fourier transform,signal x,The objective is to find a response function g(·) that scales eigenvalues Λ to generate node representations Z = Ug(Λ)UT X
+response function g(·),eigenvalues λ,g(Λ) scales the eigenvalues to create the node representations Z.
+graph signal x,graph fourier transform results α,The graph Fourier transform of signal X produces α = {α1
+spectral density,graph signal x,Spectral density characterizes the power distribution of a graph signal X in the spectral domain
+laplacian matrix,spectral density,Spectral density is defined using the Laplacian matrix L.
+heterophily,scene graph g,Heterophily refers to nodes having neighbors with different classes
+strong homophily,strong heterophily,Heterophily ranges from 0 to 1
+laplacian l,proposition 1,Proposition 1 relates Laplacian L to the context of SGG
+scene graph signal x,laplacian l,The edge represents the relationship between scene graph signal X and Laplacian L
+heterophily degree of the scene graph,e[sk(x,l)]
+low-pass filter,strong homophily scene graph,A low-pass filter is typically used for scene graphs with strong homophily
+high-pass filter,strong heterophily scene graph,In contrast
+kumaraswamy wavelet transform,kwgnn (kumaraswamy wavelet graph neural network),KWGNN is constructed based on the proposed Kumaraswamy Wavelet Transform
+kumaraswamy distribution,filter g(λ),The filter g(Λ) is chosen as the Kumaraswamy distribution
+graph wavelet transform,kumaraswamy wavelet transform,These transforms are related as the former is a general concept
+spatial domain,spectral domain,The consistency of the Kumaraswamy wavelet transform is proven in both the spatial and spectral domains
+graph wavelet transform,eigenvalues,The graph wavelet transform aims to control eigenvalues through a set of functions F
+kernel function,requirements,Kernel function must be real-valued
+kernel function,properties,It is a combination of basic wavelet functions scaled and shifted by scaling coefficient a and translation coefficient b
+basic wavelet function,scaling and translation,The kernel function is formed by scaling (a) and translating (b) the basic wavelet function.
+parseval theorem,integral property,The theorem states that the squared magnitude of the Fourier transform is equal to a constant times the original function
+eigen-decomposition,avoidance,Kernel function must be a polynomial to bypass the computationally expensive eigen-decomposition of the graph Laplacian matrix.
+kumaraswamy wavelet transform,graph wavelet transform,The Kumaraswamy distribution is chosen as the kernel function for the wavelet transform
+kumaraswamy distribution,hydrological phenomena,Originally proposed as a model for hydrological phenomena
+kernel function,band-pass filters,The kernel function serves as a set of band-pass filters through different scaling functions.
+scaling functions,frequency bands,Different scaling functions {g1(λ)
+standard form,kumaraswamy density function,Given by Kp
+shape parameters,polynomial requirement,To ensure the wavelet function is a polynomial
+normalized graph laplacian,spectral range,The wavelet function aims to cover the full spectral range of the normalized graph Laplacian L.
+u,v,In the expression for Kumaraswamy wavelet transform F
+kumaraswamy wavelet transform,group of c kumaraswamy wavelets,The transform is constructed by a group consisting of C wavelets
+kumaraswamy wavelet transform,kernel function kp,q
+control factors,p,q
+kumaraswamy wavelet transform,gwt (generalized wavelet transform),The proposed transform satisfies the requirements of GWT
+kumaraswamy wavelet graph neural network (kwgnn),gnns (graph neural networks),KWGNN is different from GNNs in its use of multi-group wavelet kernels instead of layer-by-layer message passing.
+kwgnn,node feature update process,In KWGNN
+input x,output features z,A skip-connection exists between the input and output features in the KWGNN architecture.
+kwgnn,label prediction,The output features H are used to predict the label for unclassified scene graphs.
+sgg (scene graph generation),existing work,Existing SGG methods are compared to KWGNN
+cross-entropy,loss function for sgg,SGG models
+open images (oi) v6,test set,The context mentions that the Open Images V6 is the dataset being referred to
+sgdet-mr@100 metric,evaluating effectiveness,This metric is used to assess the performance of the head
+vg,dataset,The VG dataset is the primary focus for experiments
+large-scale vg dataset,krishna et al. (2017),The dataset is attributed to Krishna et al.
+5k images,validation subset,5K images are used as a part of the validation set within the VG training data.
+30% images,testing set,The remaining 30% of the images make up the testing set.
+scene graph detection (sgdet),evaluation mode,One of the three standard ways to evaluate model performance on VG.
+scene graph classification (sgcls),evaluation mode,Another evaluation mode for assessing the model's ability to classify scene graphs.
+predicate classification (predcls),evaluation mode,A third evaluation mode that focuses on predicate classification.
+image-wise recall (r),evaluation metric,Measures the fraction of ground truth visual predicates in the top results.
+expmodulekwgnngnn,method,A proposed method in the paper
+gat,method,A competing method
+gpr-gnn,method,Another competitor method
+graph-rcnn,method,A previous method in the field
+vctree,method,Yet another method
+relmn,method,A recent method
+kwgnn,proposed method,The main contribution of the paper
+c=5,hyperparameter,An abbreviation for 'filter number C' in the KWGNN model
+weight decay,hyperparameter,A regularization term in the training process
+epochs,training parameter,The model is trained for approximately 19-20 hours over a certain number of epochs.
+node representations,model component,Nodes in the KWGNN have a dimension of 1024 for their representations.
+α,hyperparameter,Empirically set to 0.1
+γ,hyperparameter,Set to 2
+gpr-gnn,lin et al. (2022),GPR-GNN is a method introduced by Lin et al. in the referenced publication.
+graph-rcnn,yang et al. (2018),Yang et al. developed Graph-rcnn
+vctree,tang et al. (2019),Tang et al. proposed VCTREE
+relmn,zhou et al. (2022),Zhou et al. introduced RelMN
+c=5sgdetr@20 r@50 r@100,evaluation metrics,These are evaluation metrics used to assess model performance
+mean recall (mr),chen et al. (2019); tang et al. (2019),mR is utilized as an evaluation metric by Chen et al. and Tang et al.
+sgdet,reltr (cong,yang
+kwgnn,state-of-the-art methods,KWGNN performs the best with mR of 31.1 and outperforms others in mR@100 and mR@50.
+hetsgg,yoon et al. (2022),HetSGG is a competing method for heterophilic scene graph generation
+hl-net,lin et al. (2022),HL-Net is another method by Lin et al.
+motifs,zellers et al. (2018),Motifs is a baseline method for scene graph generation
+vtranse,zhang et al. (2017),VtransE is another method used for evaluating heterophilic performance.
+heterophily (g),degree of heterophily,The degree of heterophily is divided into intervals based on G to analyze model performance.
+scene graphs,heterophily,Frequency is strongly associated with heterophily in scene graphs
+kumaraswamy wavelet graph neural network (kwgnn),spectral perspective,KWGNN proposes a novel approach to address heterophily in scene graphs
+kumaraswamy wavelets,band-pass filters,KWGNN generates tailored filters from Kumaraswamy wavelets to better capture heterophily in the data.
+vg dataset,experimental results,The superiority and scalability of KWGNN are demonstrated through experiments on the VG dataset.
+improvement in sgg,qualitative examples,Figure 5 showcases qualitative improvements in scene graph generation
+complex scenes,various objects and predicates,The model demonstrates its ability to recognize diverse objects and actions in challenging environments.
+cow-lying on-street,man-riding-car,Examples of complex scenes include specific instances like these where multiple objects and actions are present.
+tire-part of-car,motorcycle-near-car,The model's improved predictions include relationships like these that were not originally annotated.
+man-wearing-helmet,helmet,Recognition of detailed elements like a helmet highlights the model's ability to handle fine-grained information.
+receptive field,filters,The context discusses the receptive field in relation to filters
+multi-group filters,complementarity,Multi-group filters are said to potentially complement each other
+exp 8-12,table 4,These experiments (Exp 8-12) are listed in Table 4
+natural science foundation of chongqing,funding support,The work has been partially funded by this foundation
+national natural science foundation of china,funding support,Multiple grants from this Chinese foundation indicate further financial backing for the project.
+shanghai sailing program,funding support,This research also received funding from this city-level program.
+shanghai science and technology commission,funding support,Another municipal funding body supporting the project.
+state key lab of cad&cg,open project program,The lab's open research fund is involved in supporting the project.
+ccf-tencent rhino-bird open research fund,funding support,This collaboration fund from CCF and Tencent is contributing to the research.

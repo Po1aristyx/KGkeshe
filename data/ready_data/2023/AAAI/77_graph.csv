@@ -1,0 +1,108 @@
+node_1,node_2,edge
+facial expression recognition (fer),basic classes,FER models are trained on datasets with a fixed number of seven basic classes.
+recent research works (cowen et al. 2021; bryant et al. 2022; kollias 2023),compound expressions,These works point out that there are far more expressions than the basic ones
+open-set fer task,existing open-set recognition methods,We propose the open-set FER task
+open-set fer,small inter-class distance,The challenge in open-set FER is the very small distance between classes
+pseudo labels,open-set samples,We propose to view the sparsely distributed pseudo labels of open-set samples as symmetric noisy labels.
+attention map consistency,cycle training,Our method incorporates attention map consistency and cycle training to detect open-set samples.
+proposed method,state-of-the-art open-set fer methods,Experiments show that our method outperforms existing approaches on various FER datasets.
+human facial expression recognition (fer),existing fer models,relation: Task or application - FER models are used in understanding human feelings.
+state-of-the-art open-set recognition methods,close-set fer models,comparison: Comparison - Close-set models are unreliable for unknown expressions compared to open-set methods.
+basic classes (in fer),new unknown expressions,contrast: Limitation - Close-set models struggle with classifying unseen expressions not in the basic set.
+dias (sota open-set recognition method),performance degradation,effect: Performance drop - DIAS' performance on FER drops from 0.850 to 0.714 due to similarity between open-set and close-set samples.
+clip (extracted features),cifar-10,raf-db
+real-world deployments,open-set recognition,context: Importance - Open-set recognition is crucial for real-world applications where new expressions may arise.
+open-set recognition method,dias,The context mentions that our method outperforms DIAS by a large margin
+open-set fer,closed-set fer,These terms are contrasted
+open-set fer,overconfidence problem,Open-set FER is mentioned as a challenge due to the overconfidence issue in deep learning models.
+deep learning models,small inter-class distances,The small inter-class distances in FER data are stated as a factor that degrades the performance of existing open-set recognition methods.
+existing open-set recognition methods,proposed method,Our method is introduced as a novel approach to address the challenges faced by existing methods in open-set FER.
+noisy labels,open-set recognition,The context discusses the difficulty in detecting noisy labels in open-set recognition
+cifar-10,open-set fer task,CIFAR-10 is mentioned as an example of a dataset where open-set face expression recognition (FER) is challenging due to noisy labels.
+open-set fer,noisy label detection,The author converts open-set FER into a noisy label detection problem
+softmax scores,overconfidence,Softmax scores are used to detect open-set samples
+pseudo labels,close-set trained fer model,A close-set FER model generates pseudo labels for test samples
+cycle training,cyclically set learning rate,Inspired by Huang et al. (2019)
+attention map consistency,preventing memorization of wrong labels,Attention map consistency is employed to mitigate the model from relying on incorrect pseudo labels for open-set samples.
+loss values,bimodal distribution,After training
+open-set samples,close-set samples,These two types of samples are contrasted; open-set samples have smaller (larger) loss values compared to close-set samples.
+our proposed method,state-of-the-art open-set recognition methods,Our method is compared to existing methods on open-set FER datasets
+open-set fer,cifar-10 dataset,The motivation is illustrated by comparing the close-set model's prediction behavior on CIFAR-10
+open-set fer,fer (facial expression recognition) dataset,In FER
+symmetric noisy label,easy label noise,This term is mentioned in the context of the close-set FER model's prediction
+pseudo labels,learned features,Experiments include providing visualization of pseudo labels and learned features to better understand the method.
+online prediction ability,re-training,The method showcases its capability to make predictions for new samples without needing to retrain.
+facial expression recognition,open-set recognition,The context discusses that existing open-set recognition methods are not effective for facial expression recognition (FER)
+open-set fer,noisy label detection,The text mentions that the task of open-set FER is transformed into noisy label detection for the first time
+facial expression recognition (fer),human-computer interaction,FER is crucial for enhancing human-computer interaction
+crowd-sourcing,simulating human expression recognition,Li et al. (2017) used crowd-sourcing as a technique to improve FER performance
+center loss variant,maximizing intra-class similarity,Farzaneh and Qi (2021) proposed a method that enhances intra-class similarity and inter-class separation.
+expression-relevant information decomposition,acquiring expression features,Ruan et al. (2021) acquired expression-related information during feature decomposition for improved FER.
+relative comparison training,training fer models,Zhang et al. (2021) employed a training approach based on relative comparisons for FER models.
+sota open-set recognition methods,outperformed by our method,Experiments show that the proposed method significantly outperforms state-of-the-art (SOTA) open-set recognition methods on various datasets.
+wang,and deng 2021 method,fer models
+close-set datasets,fer methods,These FER methods are evaluated on close-set datasets
+open-set data,fer methods,The context highlights the methods' inability to handle open-set data
+figure 3 pipeline,cyclic training,The figure illustrates the process of cyclically training two FER models with pseudo labels and attention map consistency loss.
+close-set model,pseudo labels,The trained close-set model generates pseudo labels for both close-set and open-set samples.
+pseudo labels,cyclic training,Models are trained from scratch using these noisy pseudo labels
+attention map consistency loss,model memorization prevention,This loss helps prevent the model from simply memorizing the noisy close-set labels.
+cyclical learning rate,ensemble of models,Cyclical learning rates are used to improve separation between close-set and open-set samples in the ensemble.
+classification loss,open-set samples,Open-set samples have large classification loss
+discriminative models,open-set recognition methods,Discriminative models
+k+1 way classifier,open-set recognition,These classifiers aim to distinguish between close-set and open-set data.
+bendale and boult (2016),soft replacement approach,Bendale et al.'s work involves a soft replacement technique for open-set recognition.
+symmetric noisy labels,asymmetric noisy labels,Symmetric noisy labels are compared to asymmetric ones
+symmetric noisy labels,pseudo labels in cifar-10,Symmetric noisy labels are likened to pseudo labels in CIFAR-10
+open-set fer,noisy label detection,The context discusses transforming open-set FER into noisy label detection problem.
+pre-trained close-set fer model (fclose),close-set pseudo labels,fclose is used to generate pseudo labels for the input test set containing both close-set and open-set samples.
+f1 and f2 (fer models),close-set pseudo labels,Models f1 and f2 are trained from scratch using the generated close-set pseudo labels.
+random erasing,attention map consistency,Both techniques are employed in the training process to prevent memorization of wrong pseudo labels.
+attention map,cam (class activation mapping),Attention maps are computed using weights from the FC layer and features from the last convolution layer
+training,models,Models are trained using clean samples.
+open-set samples,classification loss values,Open-set samples have large classification loss values compared to close-set samples.
+novelty and contribution,new fer task,The main novelty is introducing a new facial expression recognition (FER) task.
+new fer task,previous works,The task is based on recent works by Cowen et al.
+existing sota methods,performance under open-set fer,Existing methods do not perform well specifically for open-set FER.
+pseudo labels,symmetric noisy labels,Pseudo labels of open-set FER samples are discovered to be similar to symmetric noisy labels.
+new pipeline,attention map consistency,A new pipeline is designed
+cycle training,open-set recognition,Cycle training is used to address open-set recognition from a noisy label detection perspective.
+approach,sota open-set recognition methods,The proposed approach significantly outperforms state-of-the-art (SOTA) open-set recognition methods.
+experiments,datasets,Experiments are conducted using datasets like RAF-DB.
+raf-db,li,deng
+raf-db,li,deng
+ferplus,barsoum et al. (2016),FERPlus is an extension of FER2013
+fer2013,goodfellow et al. (2013),FER2013 is the source of FERPlus
+affectnet,mollahosseini,hasani
+open-set recognition setting,geng,huang
+close-set samples,open-set samples,Close-set and open-set samples are distinguished in the experiment
+resnet-18,backbone,ResNet-18 is utilized as the backbone for the model.
+learning rate,η,Learning rate is set to 0.0002 for training.
+adam optimizer,kingma and ba (2014),Adam optimizer with weight decay of 0.0001 is used.
+tmax,max training epoch,The maximum training epoch is set to 40.
+baseline,raf-db dataset,The context mentions that the baseline's performance on the RAF-DB dataset is 0.497.
+auroc,random guess,AUROC is mentioned to be similar to a random guess
+open-set auroc,fpr@tpr95,Both are used as evaluation metrics
+state-of-the-art open-set recognition methods,open-set fer,The context compares the performance of these methods on open-set FER tasks.
+pros,ours,PROS is an abbreviation for 'PROSER' and our method significantly outperforms it.
+one-class open-set fer,evaluation metrics (auroc,fpr@tpr95)
+expression classes,open-set classes (e.g.,surprise
+raf-db,ferplus,Both are datasets used for evaluating open-set FER methods
+dias (generative),proser (discriminative),DIAS and PROSER are compared as open-set recognition methods in the context
+dias (generative),baseline,DIAS is mentioned to perform better than the baseline in open-set recognition.
+our method,open-set fer,Our method is specifically designed for open-set facial expression recognition
+our method,close-set and open-set samples,Our method effectively separates close-set and open-set samples
+attention map consistency (attention),overconfidence problem,Attention map consistency helps mitigate the overconfidence issue by preventing the FER model from memorizing incorrect pseudo labels.
+cycle learning rate (lr),ensemble to detect wrong pseudo labels,Cycle learning rate improves performance by cycling the learning rate to help identify and correct false pseudo labels.
+cycle training,better performance,Cycle training involves two FER models teaching each other
+weight of consistency loss,hyperparameter,The consistency loss weight is a key hyperparameter in our method.
+training epoch number,hyperparameter,The number of training epochs is another important hyperparameter for our approach.
+raf-db,ablation study,RAF-DB is used for the ablation study to evaluate the effectiveness of individual modules in the method.
+surprise,open-set class,Surprise is designated as the open-set class for the ablation study.
+good performance,method,The context describes the good performance of 'our method'
+hyperparameters,weight of consistency loss,The method has two main hyperparameters
+hyperparameters,training epoch number,The other hyperparameter is the training epoch number
+auroc,sensitivity,The method is not very sensitive to the hyperparameters
+confidence scores,open-set fer,Confidence scores are used to separate open-set and close-set FER data.
+online version,re-training,The online version does not require re-training when encountering new open-set data
+mean auroc,state-of-the-art open-set recognition,The online version's AUROC of 0.883 outperforms other methods

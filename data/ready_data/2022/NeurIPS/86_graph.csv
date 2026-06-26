@@ -1,0 +1,252 @@
+node_1,node_2,edge
+abstractdecision-focused learning (dfl),stochastic optimization,DFL is a method proposed for stochastic optimization problems
+dfl,predictive modeling,DFL involves integrating predictive modeling
+dfl,optimization layer,DFL integrates predictive modeling with an implicitly differentiable optimization layer
+dfl,two-stage predict-then-optimize pipeline,DFL has shown superior performance compared to the standard two-stage predict-then-optimize pipeline
+standard two-stage predict-then-optimize pipeline,dfl methods,DFL methods are more efficient than the standard two-stage predict-then-optimize pipeline
+dfl methods,convex problems,most existing DFL methods are only applicable to convex problems
+dfl methods,non-convex problems,most existing DFL methods are not applicable to non-convex problems
+dfl methods,inefficient training,most existing DFL methods can be inefficient in training due to the requirement of solving and differentiating through the optimization problem in every training iteration
+so-ebm,dfl method,SO-EBM is proposed as a general and efficient DFL method for stochastic optimization
+so-ebm,energy-based models,SO-EBM for stochastic optimization uses energy-based models
+kkt conditions,implicit optimization layer,KKT conditions are relied upon to induce an implicit optimization layer
+so-ebm,original optimization problem,SO-EBM explicitly parameterizes the original optimization problem using a differentiable optimization layer based on energy functions
+so-ebm,optimization landscape,SO-EBM aims to better approximate the optimization landscape
+training objective,so-ebm,a coupled training objective is proposed for SO-EBM
+optimization landscape,optimum location and overall energy landscape,the optimization landscape is approximated using a maximum likelihood loss for optimum location and a distribution-based regularizer for the overall energy landscape
+so-ebm,efficient training procedure,an efficient training procedure is proposed for SO-EBM with a self-normalized importance sampler based on a Gaussian mixture proposal
+so-ebm,applications,"SO-EBM is evaluated in three applications: power scheduling, COVID-19 resource allocation, and non-convex adversarial security"
+scheduling,covid-19 resource allocation,"Both terms relate to decision making tasks in the context of optimizing resources and minimizing costs, with scheduling referring to the allocation of time slots and COVID-19 resource allocation specifically focusing on allocating resources for the pandemic."
+covid-19 resource allocation,non-convex adversarial security game,"The non-convex adversarial security game is related to COVID-19 resource allocation in terms of demonstrating the effectiveness and efficiency of SO-EBM, showcasing the importance of security measures in resource allocation processes related to COVID-19."
+covid-19 resource allocation,so-ebm,"The effectiveness and efficiency of SO-EBM in the context of COVID-19 resource allocation is highlighted, suggesting that SO-EBM is a key component in optimizing resource allocation strategies during the pandemic."
+stochastic optimization problems,covid-19 resource allocation,"Both terms are mentioned in the introduction as examples of decision making tasks that involve minimizing costs and making predictions based on stochastic parameters, with COVID-19 resource allocation specifically referred to in the context of allocating clinical resources during the pandemic."
+covid-19 resource allocation,clinical resources,"The allocation of clinical resources is a key aspect of COVID-19 resource allocation mentioned in the context, emphasizing the importance of effectively distributing resources to address the healthcare needs during the pandemic."
+covid-19,future cases,"Future cases of COVID-19 in different regions are mentioned in the context as an example of unknown stochastic parameters that need to be predicted for effective resource allocation, highlighting the challenge of anticipating healthcare needs in various locations due to the unpredictable nature of the virus."
+stochastic optimization problems,deep learning predictors,"Both terms are related in the context of solving stochastic optimization problems using deep learning predictors, indicating the use of advanced techniques such as deep learning algorithms to address complex decision making tasks involving stochastic parameters."
+deep learning predictors,prediction loss,"The prediction loss is mentioned in the context as a key component of learning predictive models for unknown parameters using deep learning predictors, highlighting the importance of assessing the accuracy of predictions in the optimization process."
+prediction loss,optimization stage,Prediction loss is used in the optimization stage to parameterize the stochastic optimization problem.
+parameters,predicted distributions,Predicted distributions of the parameters are used to parameterize the stochastic optimization problem.
+parameters,stochastic optimization problem,Parameters are used to parameterize the stochastic optimization problem.
+prediction loss,decision regret,Smaller predictive loss does not necessarily lead to smaller decision regret.
+decision-focused learning (dfl),prediction and optimization layers,DFL integrates prediction and optimization layers into a unified model to learn them end-to-end.
+dfl methods,two-stage pipeline,DFL methods implement the optimization procedure as an implicitly differentiable layer compared to the two-stage pipeline.
+prediction layer,optimization problem,Prediction layer learned in DFL is tailored for the optimization problem.
+prediction layer,decisions,Prediction layer can yield decisions with smaller regrets.
+policy network,input,Policy network is trained to directly map from the input.
+policy network,supervised or reinforcement learning,Policy network is trained to directly map from the input to the solution of the optimization problem using supervised or reinforcement learning.
+performance,dfl,Performance of approaches using supervised or reinforcement learning are often inferior to DFL as they ignore the algorithmic structure of the problem.
+existing dfl methods,drawbacks,Existing DFL methods suffer from two drawbacks: generality and scalability.
+kkt condition,convex optimization objectives,"To leverage the KKT condition, existing DFL methods are mostly applicable to only convex optimization objectives."
+nonconvex objectives,quadratic functions,Few works approximate nonconvex objectives by quadratic functions to expand the applicability of DFL methods.
+poor gradient estimates,relaxation,DFL methods can suffer from poor gradient estimates caused by the relaxation when approximating nonconvex objectives by quadratic functions.
+kkt condition,derivatives,Existing DFL methods rely on using the KKT condition to compute derivatives.
+optimization program,back-propagating,DFL methods require repeatedly solving the optimization program and back-propagating through it during training.
+so-ebm,end-to-end stochastic optimization method,Proposed SO-EBM is a new end-to-end stochastic optimization method using an energy-based model.
+dfl,so-ebm,SO-EBM models the algorithmic predict-and-optimize structure similar to DFL but with some differences.
+differentiable optimization layer,neural predictor,A differentiable optimization layer is stacked on top of a neural predictor.
+differentiable optimization layer,so-ebm,SO-EBM eliminates the need for using KKT conditions to induce an implicit differentiable optimization layer.
+differentiable optimization layer,ebms,An explicit energy-based differentiable layer is parameterized as a surrogate to the original optimization problem by leveraging expressive EBMs.
+so-ebm,conditional probability,SO-EBM directly models the conditional probability of the decisions using an explicit energy-based differentiable layer as a surrogate.
+so-ebm,optimization landscape,SO-EBM is designed with two complementary learning objectives to better approximate the optimization landscape with the EBM surrogate.
+so-ebm,convex objectives,SO-EBM is not constrained to convex objectives and can be applied to a wide class of stochastic optimization problems.
+so-ebm,computational efficiency,"SO-EBM's computational efficiency comes from the parameterization by an energy-based model, which eliminates the need of solving and differentiating through the optimization procedure at each training iteration."
+so-ebm,self-normalized importance sampler,SO-EBM estimates the derivatives of the energy-based surrogate model using a self-normalized importance sampler.
+self-normalized importance sampler,gaussian-mixture proposal distribution,A Gaussian-mixture proposal distribution is designed for the self-normalized importance sampler.
+importance sampler,gaussian-mixture proposal distribution,The importance sampler design involves a Gaussian-mixture proposal distribution to reduce sampling variance and speed up training.
+importance sampler,contrastive divergence for mcmc methods,The idea of contrastive divergence for MCMC methods is borrowed to speed up the training of the importance sampler.
+energy-based model,stochastic optimization method,"A new end-to-end stochastic optimization method based on energy-based model is proposed, avoiding the need to solve and differentiate through optimization problems during training."
+coupled training objective,energy-based surrogate,A coupled training objective is proposed to encourage the energy-based surrogate to approximate the optimization landscape well.
+energy-based surrogate,optimization landscape,The energy-based surrogate aims to approximate the optimization landscape effectively.
+importance sampler,mixture-of-gaussian proposal,An efficient self-normalized importance sampler is based on a mixture-of-Gaussian proposal for effective sampling.
+dfl methods,method,Experiments show that the proposed method can achieve better or comparable performance than existing DFL methods while being more efficient.
+optimization problem,task loss,The optimization problem has a direct effect on the task loss as decision-focused learning directly optimizes the task loss.
+optimization problem,parameters,The optimization problem involves parameters denoted by y in this context.
+parameters,features,The parameters y need to be inferred from some correlated features x.
+parameters,stochastic,The parameters y are described as unknown and stochastic in this context.
+features,problem parameters,The features x are drawn from the joint distribution of the features and problem parameters.
+decision-making model,features,The decision-making model takes the features x as input.
+decision-making model,optimal decisions,The decision-making model outputs the optimal decisions a∗(x; θ) in this context.
+optimal decisions,decision cost,"The output optimal decisions aim to minimize the expected decision cost under the joint distribution of (x, y)."
+supply chain optimization,regional customer demands,"In supply chain optimization, regional customer demands are involved as part of the problem."
+supply chain optimization,pre-ordered products,"In supply chain optimization, pre-ordered products for each region are part of the problem."
+supply chain optimization,cost,The problem in supply chain optimization is to decide the best pre-ordered products to minimize the cost f.
+actual customer demands,features,Actual customer demands y must be predicted from features x such as customer purchase history and regional economy indices.
+two-stage learning,decision focused learning (dfl),A common practice is to compare two-stage learning with Decision Focused Learning (DFL).
+two-stage learning,decision focused learning (dfl),"Two-stage learning and Decision Focused Learning (DFL) are two different approaches to solving stochastic optimization problems. Two-stage learning involves a predict-then-optimize framework, while DFL integrates prediction and optimization into an end-to-end model."
+two-stage learning,misalignment of the prediction loss and the optimization loss,"Two-stage learning may suffer from suboptimal performance due to the misalignment of the prediction loss and the optimization loss, which can affect the overall efficiency of the process."
+decision focused learning (dfl),end-to-end model,"Decision Focused Learning (DFL) integrates prediction and optimization into an end-to-end model, tailoring the predictive model for the optimization task, thus optimizing the overall efficiency of the process."
+optnet,jacobian,OptNet addresses the challenge of computing the Jacobian needed for gradient descent methods. It assumes quadratic optimization objectives and differentiates through the KKT conditions using the implicit function theorem to obtain the Jacobian.
+optnet,jacobian,OptNet can obtain the Jacobian by solving the optimization problem along with a set of linear equations in each training iteration.
+optnet,convex optimization,OptNet extends to more general cases of convex optimization using disciplined parametrized programming (DPP) grammar.
+dfl approaches,two-stage learning,DFL approaches can achieve better decisions compared to two-stage learning.
+dfl approaches,kkt conditions,DFL approaches rely on the KKT conditions to compute derivatives.
+dfl approaches,convex objectives,DFL approaches are often constrained to convex optimization objectives.
+decision-making model mθ,optimal decision a∗(x; θ),The task is to learn an optimal decision-making model Mθ to minimize the expected optimization cost by outputting optimal decision a∗(x; θ) for input x.
+energy-based parameterization,probability distribution over decisions conditioned on features x; θ,The core idea of the method is to model Mθ’s probability distribution over decisions conditioned on features x; θ using energy-based parameterization.
+deep neural network,"feature-decision pair (x, a)","Instead of directly using a deep neural network, the proposal is to explicitly model the problem structure using the expected task loss as the energy function considering feature-decision pair (x, a)."
+expected task loss,"energy function e(x, a; θ)","The expected task loss is used as the energy function E(x, a; θ) which is created as an explicit energy-based differentiable layer for the optimization problem."
+decision variable a,end-to-end architectures,"The decision variable a is compared with end-to-end architectures, highlighting the tailored nature of the former to downstream tasks."
+task-based surrogate energy function,algorithmic structure of the optimization problem,"The task-based surrogate energy function leverages the algorithmic structure of the optimization problem explicitly, leading to significant learning savings."
+energy-based surrogate function,intuitive interpretation,"The energy-based surrogate function is connected to an intuitive interpretation, where the energy level correlates with the probability based on task loss."
+feature-decision pairs,optimization solvers,Feature-decision pairs are formed using optimization solvers to obtain optimal actions based on training data in the context of parameter y.
+learning a neural network,end-to-end stochastic programming problem,"The process of learning a neural network is equated to solving the end-to-end stochastic programming problem, emphasizing the optimization of energy levels for optimal actions."
+perspective,need,The new perspective avoids the need of solving and differentiating through the optimization problem at every training iteration.
+perspective,tailors,The new perspective tailors the model for the downstream decision making task.
+i=1,environment states,i=1 can be interpreted as environment states
+energy-based formulation,inverse reinforcement learning model,Our energy-based formulation can be interpreted as a non-sequential maximum entropy inverse reinforcement learning (MaxEN-IRL) model.
+feature-decision pairs,expert,The feature-decision pairs can be interpreted as expert
+demonstrations,task loss,The negative expected task loss is equivalent to maximizing the likelihood of the expert demonstrations (optimal decisions) to recover the hidden reward function.
+limitation,learning,One limitation of learning with EBM-based likelihood for the optimization problem is that we model only one data point a∗ for each conditional distribution q(a; θ).
+limitation,overfitting,"Minimizing the NLL for a single data point ignores the overall matchness between the landscape of original optimization problem and that of the EBM-based probability density, which can easily cause overfitting."
+distribution-based regularizer,energy-based objective,"To learn the shape of the energy function better, we propose a distribution-based regularizer which augments the energy-based objective from a global training perspective."
+distribution-based regularizer,distance,The distribution-based regularizer is based on minimizing the distance between the model distribution.
+posterior distribution,ground-truth label,The posterior distribution of a is given by p(a) when we define the task loss as the negative log-likelihood
+posterior distribution,model distribution,We let the model distribution q(a
+kl-divergence,ground-truth label,KL-divergence loss and the NLL loss complement each other. The KL-divergence loss learns the energy function from a global level
+nll,ground-truth label,NLL loss is a local training strategy while the KL-divergence loss learns the energy function from a global level
+nll,model distribution,NLL loss helps the model capture the location of the optimal decision better but ignores the overall energy shape
+distribution-based regularizer,optimal decisions,Distribution-based regularizer essentially adds more anchor points besides the optimal decisions and helps fit the overall energy shape
+energy-based optimization,training objectives,"The context discusses different training objectives for energy-based optimization, including MLE training, KL-divergence training, and MLE+KL-divergence training."
+energy-based optimization,location of the optimum,"Different training objectives capture different aspects of the energy-based optimization process, with MLE training capturing the location of the optimum."
+energy-based optimization,overall energy shape,"The context highlights the importance of considering the overall energy shape in energy-based optimization, with KL-divergence training focusing on learning this aspect."
+training objectives,optimization process,"Training objectives play a crucial role in the optimization process, helping to guide the learning algorithms towards specific goals."
+location of the optimum,overall energy shape,"Different training methods have different strengths and weaknesses, with some focusing on capturing the location of the optimum while others prioritize learning the overall energy shape."
+mle training,kl-divergence training,"The context contrasts MLE training with KL-divergence training, highlighting the differences in how they handle optimization objectives."
+kl-divergence training,optimum location,KL-divergence training is noted for capturing the overall energy shape but may result in a blurry optimum location.
+mle+kl-divergence training,best of both worlds,"Our MLE+KL-divergence training approach aims to combine the strengths of MLE training and KL-divergence training, offering a comprehensive solution that captures both the location of the optimum and the overall energy shape."
+training with contrastive divergence,self-normalized importance sampling,"The context introduces the use of Contrastive Divergence and Self-normalized Importance Sampling for training, illustrating alternative approaches to optimize Eq. 5 efficiently."
+eq. 5,partition function,"Optimizing Eq. 5 involves evaluating the partition function, which can be computationally challenging due to intractable integrals."
+partition function,kl-divergence,"Evaluating the partition function requires computing the KL-divergence between continuous distributions, adding complexity to the optimization process."
+gradient estimation,model parameters,The context discusses the efficient estimation of gradients with respect to model parameters using a self-normalized importance sampler based on a mixture of Gaussians.
+gradient estimation,training loss,Efficient gradient estimation is essential for minimizing the training loss and enhancing the model's performance.
+model distribution,oracle distribution,"Sampling from the model distribution q(a can be challenging due to the unnormalized constant, prompting the exploration of alternative methods like the oracle distribution."
+mcmc methods,gradient estimator,"Existing methods often rely on MCMC methods, such as Langevin dynamics, to estimate gradients, despite the iterative nature and potential time-consuming aspects of these approaches."
+gradient estimator,mcmc,MCMC is mentioned as an iterative process in the context which relates to the concept of gradient estimation.
+gradient estimator,importance sampler,The importance sampler is proposed as a method to improve training efficiency in the context of gradient estimation.
+gradient estimator,gaussian mixture proposal,A Gaussian mixture proposal is suggested to estimate the gradient in the context of gradient estimation.
+importance sampler,self-normalized importance sampler,A self-normalized importance sampler is proposed as a method to improve training efficiency.
+gaussian mixture proposal,k gaussians,The Gaussian mixture proposal involves a mixture of K Gaussians to improve the gradient estimation.
+gaussian mixture proposal,optimal decision,The proposal distribution is centered at the optimal decision in the context of gradient estimation.
+gradient estimator,energy-based model,Illustration of stochastic optimization with an energy-based model is given in the context of gradient estimation.
+energy-based model,dfl,The training time is significantly reduced compared with DFL using an energy-based model as mentioned in the context.
+proposal distribution,optimal decisions,The proposal distribution is located at the optimal decisions to mimic contrastive divergence method in the context.
+mcmc,training data,MCMC chain starts from the training data as mentioned in the context.
+mcmc chain,training data,"The MCMC chain starts from the training data, indicating a close relationship between the two terms."
+proposal distribution,model distribution,"The proposal distribution is close to the model distribution, leading to better sample efficiency."
+sampling procedure,oracle distribution p(a y),"The sampling procedure from the oracle distribution p(a y) is similar, indicating a relationship between the two terms."
+expected task loss,analytical expression,"When the expected task loss has no analytical expression, multiple samples are needed for estimation, establishing a relation between the two terms."
+model,gradient-based method,"The model can be efficiently trained via a gradient-based method, such as Adam, showing a connection between the model and the method."
+model inference,optimal model parameter θopt,"With the optimal model parameter θopt, samples are drawn from q(a xtest; θopt) for an unseen test instance xtest, linking the model inference with the optimal model parameter."
+black-box optimization solver,cvxpy,"The most optimal decision can be obtained by using any existing black-box optimization solver, such as CVXPY, showcasing a connection between the two terms."
+black-box optimization solver,pyomo,"The most optimal decision can also be obtained using any existing black-box optimization solver, like Pyomo, indicating a relationship between the solver and Pyomo."
+experiments,three applications,"Experiments are conducted in three applications: Load forecasting and generator scheduling, Resource allocation for COVID-19, and Adversarial behavior learning in network security, demonstrating a connection between experiments and the applications."
+adversarial behavior learning,network security,Adversarial behavior learning is a concept in the field of network security.
+non-convex optimization objective,network security,The non-convex optimization objective is a key aspect of adversarial behavior learning in network security.
+load forecasting,generator scheduling,Load forecasting and generator scheduling are related tasks in the power system operation.
+generator scheduling,electricity demands,Generator scheduling involves deciding the amount of electricity to generate to meet actual demands.
+generation schedules,actual demands,Generation schedules aim to closely match actual demands in power generation.
+ramping constraint,generation schedules,The ramping constraint restricts the change in generation between timepoints to comply with generation schedules.
+generation,timepoints,generation is related to timepoints as it changes between consecutive timepoints reflecting physical limitations associated with quick changes in electricity output levels
+electricity demands,neural network,electricity demands are forecasted using a 2-hidden layer neural network
+expectation,optimization objective,expectation in the optimization objective can be computed analytically
+features,electrical load,input features include a 150-dimensional vector with the past day's electrical load
+features,temperature,input features include a 150-dimensional vector with the past day's temperature and the next day's temperature forecast
+functions,temperatures,non-linear functions of the temperatures are included in the input features
+indicators,weekends,binary indicators of weekends are included as input features
+indicators,holidays,binary indicators of holidays are included as input features
+baseline models,prediction task,baseline models are compared on the task including a two-stage predict-then-optimize model trained with negative likelihood loss for the prediction task
+model,qpth solver,Decision-focused learning model uses the QPTH solver which uses sequential quadratic programming (SQP)
+model,convex objective,Decision-focused learning model iterates until convergence to approximate the resultant convex objective as a quadratic objective
+dpp grammar,dfl-cvx,DFL-CVX uses disciplined parameterized programming (DPP) grammar
+expectation,dpp,analytical expectation of Eq. 7 cannot be written in DPP
+expectation,monte,Monte is used since the analytical expectation of Eq. 7 cannot be written in DPP
+dpp,monte carlo sampling,"DPP cannot be written analytically, hence Monte Carlo sampling is used to estimate the expectation."
+policy-net,input features,Policy-net directly maps from the input features to the decision variables using supervised learning.
+sqp,dfl-qpth,DFL-QPTH needs to use SQP to iteratively obtain solutions for non-quadratic optimization problems.
+dfl-qpth,so-ebm,SO-EBM outperforms DFL-QPTH in task loss by 7.3%.
+sqp,existing works,Existing works differentiate through just the last step of SQP to obtain approximate gradients.
+original implicit optimization layer,explicit differentiable energy-based function,The explicit differentiable energy-based function serves as an effective surrogate for the original implicit optimization layer.
+so-ebm,dfl-qpth,SO-EBM is more than 136 times faster than DFL-QPTH in training.
+simple mixture of gaussians,model parameters,Drawing samples from a simple mixture of Gaussians is used to estimate the model parameters.
+gaussians,model parameters,Gaussians are used to estimate the model parameters in the optimization process.
+dfl-cvx,dfl-qpth,DFL-CVX is slower than DFL-QPTH due to the need for sample average estimation.
+policy-net,hyper-parameters,Hyper-parameters of Policy-Net have been tuned extensively but still do not achieve good performance.
+dfl,so-ebm,"DFL and SO-EBM model the predict-and-optimize structure in the model design, which saves learning and are more data-efficient."
+so-ebm,energy function,SO-EBM can effectively recover the landscape of the original optimization objective related to the energy function.
+label,distribution,The distribution of the label is forecasted first.
+label,task loss,The predictive distribution is used to compute the expected task loss.
+label,energy function,The expected task loss is computed as the energy function.
+covid-19,pandemic,Resource Allocation is discussed in the context of the COVID-19 pandemic.
+infected patients,medical resources,Increasing number of infected patients leads to increasing demand for medical resources.
+policymakers,epidemiologists,Challenging for policymakers and epidemiologists to plan ahead due to increasing demand for medical resources.
+epidemiological models,odes,Mechanistic epidemiological models are often based on Ordinary Differential Equations (ODEs).
+forecast,resource allocation,Forecasts are typically used for guidance to plan for future resource allocation.
+hospital bed preparation,covid-19,Hospital bed preparation is a common and important task epidemiologists focus on during the COVID-19 pandemic.
+optimization problem,hospital bed preparation,The optimization problem of hospital bed preparation for COVID-19 is studied.
+number of beds,forecasted number of hospitalized patients,The decision on how many beds to prepare is based on the forecasted number of hospitalized patients.
+optimization objective,linear and quadratic costs,The optimization objective is a combination of linear and quadratic costs.
+ode model,covid-19 pandemic dynamics,SEIR+HD ODE model is used to capture the dynamics of the COVID-19 pandemic.
+covid-19 pandemic,policy studies,The COVID-19 pandemic has been used in policy studies for interventions.
+transmission rate β,probability of disease transmission,The transmission rate β reflects the probability of disease transmission.
+forecasting model,two-layer gated recurrent unit (gru),The forecasting model is a two-layer gated recurrent unit (GRU).
+seir+hd model,transmission rate β,The SEIR+HD model takes the transmission rate β as input features.
+seir-hd,non-linear ode system,SEIR-HD is a complex non-linear ODE system.
+forecasted distribution of β,number of hospitalized patients y,Sampling from the forecasted distribution of β helps obtain the empirical distribution of the number of hospitalized patients y.
+so-ebm,dfl,Both SO-EBM and DFL significantly outperforms the two-stage model in terms of the task loss.
+dfl-qpth,sqp,DFL-QPTH needs to use SQP to iteratively approximate the objective.
+so-ebm,training time,The training time of SO-EBM is 4.3 times faster than DFL.
+methods,complex,All the methods need to compute the complex.
+so-ebm,dfl,SO-EBM is argued to be a better option than DFL on the energy scheduling task in practice.
+network security game,stochastic optimization,The task of network security games involves studying stochastic optimization.
+network security game,v,"In a network security game, V represents the network nodes."
+network security game,"g = (v, e)","A network security game is defined as G = (V, E), where E represents the edges in the graph."
+network security game,source node s v,"In a network security game, s represents the source node in the network."
+network security game,target nodes t,"In a network security game, T represents the set of target nodes."
+network security game,defender,"In a network security game, the defender places checkpoints to prevent the attacker from reaching target nodes."
+network security game,attacker,"In a network security game, the attacker tries to reach the target nodes while avoiding checkpoints placed by the defender."
+graph,path,Nodes 'graph' and 'path' are related as the generation of a path is a fundamental concept in graph theory.
+graph,edges,Nodes 'graph' and 'edges' are related as the concept of covered edges (T) is mentioned in the context related to graphs.
+defender,strategy,The relationship between 'defender' and 'strategy' is that the defender's strategy plays a crucial role in determining the transition between nodes in the context.
+defender,resources,The relationship between 'defender' and 'resources' is that the defender's objective is constrained by the availability of resources represented by 'k = 3' in the context.
+strategy,attacker,The relationship between 'strategy' and 'attacker' is that the defender's strategy (a) affects the attacker's path and preferences.
+attacker,target,The relationship between 'attacker' and 'target' is that the attacker strives to reach the target by following a path in the context.
+decision variables,original dfl approach,relatively small numbers of decision variables mentioned in comparison to the original DFL approach
+so-ebm,surrogate,SO-EBM achieves competitive task loss with Surrogate
+so-ebm,dfl-block,SO-EBM outperforms DFL-block
+training time,defender’s utility,The increase in training time is due to the evaluation of the defender’s utility requiring a matrix inverse
+defender’s utility,samples drawn from the proposal distribution,"Defender’s utility needs to be evaluated for all samples drawn from the proposal distribution, resulting in a larger matrix to inverse"
+dfl-block,two-stage model,DFL-Block is worse than the two-stage model
+advanced matrix inverse algorithm,"[9, 32]","The issue of larger matrices to inverse can be mitigate by using advanced matrix inverse algorithm as suggested in references [9, 32]"
+dfl-block,randomly sampled variables,DFL-Block back-propagates through randomly sampled variables resulting in inaccurate gradient estimation
+so-ebm,mle and kld training objectives,Both MLE and KLD training objectives work and outperform the two-stage model in the case of SO-EBM
+energy-based surrogate function,optimization landscape,The effectiveness of using the energy-based surrogate function to approximate the optimization landscape is verified
+energy-based surrogate function,optimization landscape,The effectiveness of using the energy-based surrogate function to approximate the optimization landscape is verified. Dropping either the MLE or KLD term leads to a performance degradation in the method.
+mle term,task loss,"Without the MLE term, the task loss increases by 13%."
+kld term,task loss,"Without the KLD term, the task loss increases by 2%. It is observed that accurately recovering the entire optimization landscape is too difficult and it needs the MLE term to help capture the location of the optimal decision."
+so-ebm,contrastive divergence based langevin dynamics (cd-ld),"Training SO-EBM with CD-LD achieves similar performance but incurs longer training time. Importance sampling works well due to the low-dimensional optimization problem, resulting in better efficiency. Even with CD-LD, SO-EBM is still much faster than DFL-QPTH."
+training data size,task losses and training time,The impact of training data size on task losses and training time is investigated. The method outperforms baselines constantly except for certain ratios of training data where all methods struggle to work properly.
+baselines,methods,"baselines outperforms methods constantly except for the ratio of 0.05. When the ratio is below 0.05, all the methods cannot work properly due to the extremely low resource"
+methods,our method,"the superior performance of our method is because we design the energy function as the expected task loss, which leverages the algorithmic structure inherent in the optimization problem. Hence, our method is not very data demanding"
+our method,dfl-qpth,our method reduces the training time significantly compared with DFL-QPTH across different amounts of training data
+dfl,combinatorial optimization,There are also studies that extend DFL for combinatorial optimization
+log barrier regularizer,dfl,[37] proposes a log barrier regularizer and differentiates through the homogeneous self-dual embedding
+dfl,quadratic regularization term,[51] relaxes the discrete decision into its continuous counterpart and adds a quadratic regularization term to avoid vanishing gradients
+noise contrastive objective,optimal solution,[39] proposes a noise contrastive objective by maximizing the distance between the optimal solution and noisy samples
+framework,combinatorial problems,Our framework may be also extended for combinatorial problems by using discrete energy-based model [11]
+spo+ loss,prediction errors,"The SPO+ loss [16] has been proposed to measure the prediction errors against optimization objectives, but it is only applicable to linear programming"
+projectnet,linear programming,ProjectNet [8]
+linear programming,projectnet,ProjectNet approximately solves the linear programming problems using a differentiable projection architecture.
+learning to optimize,policy network,learning to optimize learns a policy network that solves optimization problems using supervised or reinforcement learning.
+pure approaches,rediscover the structure of the optimization problem,pure approaches need to rediscover the structure of the optimization problem and thus data-inefficient.
+decision-focused learning (dfl),stochastic optimization,addressing the scalability and generality of existing decision-focused learning (DFL) for end-to-end stochastic optimization.
+deficiencies,reliance on implicitly differentiable optimization layers based on kkt conditions,deficiencies stem from the reliance of implicitly differentiable optimization layers based on KKT conditions.
+implicit optimization layer,newly parameterized energy-based surrogate function,replacing the implicit optimization layer with a newly parameterized energy-based surrogate function.
+training objective,energy-based surrogate,we proposed a coupled training objective to encourage the energy-based surrogate well approximate the optimization landscape.
+energy-based model,stochastic optimization problems,energy-based model is effective in a wide range of stochastic optimization problems with either convex or nonconvex objectives.
+energy-based model,state-of-the-art dfl methods,energy-based model can achieve better or comparable performance than state-of-the-art DFL methods.
+dfl methods,state-of-the-art dfl methods,Comparison of performance between DFL methods and state-of-the-art DFL methods
+constraints,feasible space,Handling constraints implicitly and explicitly through preprocessing and inference steps
+ebms,constrained ebm,Training EBMs in constrained space through projecting samples into feasibility space or adding soft constraints to energy function
+training techniques,ebm training algorithms,Plugging various training techniques into EBM framework to improve task performance
+anonymous reviewers,authors,Acknowledgment of anonymous reviewers for providing helpful comments
+nsf,faculty research award from facebook,"Work support received from NSF, Facebook, and Georgia Tech"

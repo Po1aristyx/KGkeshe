@@ -1,0 +1,148 @@
+node_1,node_2,edge
+diffusion,other baselines,outperforms - Comparison of performance
+diffusion,commercial restoration products,outperforms - Superiority over commercial solutions
+commercial restoration products,restoration,type of service - Restoration is a category these products provide
+scanned images,degradation,caused by - Degradation occurs during scanning and preservation
+digitized copies,scanning process,obtained from - Images are digitized via scanning
+original digital copy,scanned copy,relation - Scanned copy's restoration target
+describing,inverse problem,defined as - The paper defines a new inverse problem
+describing,image restoration,specifically refers to - The problem of restoring images
+printing,papers,action - Information is physically printed on papers
+scanning or during preservation,information corruption,causes - Corruption of information in the scanned copies
+color-related degradation (cd),non-color-related degradation (ncd),The context differentiates these two types of degradation
+real-world image restoration methods,various degradation mixtures,Due to the lack of scanned image datasets with mixed degradations
+descan-18k,scanned versions of original images,DESCAN-18K consists of pairs of original images and their corresponding scanned versions
+descan-18k,six representative complex degradations,This dataset provides detailed examples of six common complex degradations found in scanned images
+descan-18k,natural scenes,The dataset includes diverse natural scenes
+descan-18k,texts,It also contains various texts
+existing restoration datasets,single (or few) degradation type,In contrast to DESCAN-18K
+our dataset,existing restoration datasets,comparison
+descan-18k,single (or few) degradation type,relation
+descan-18k,training data pairs,synthesis
+diffusion models,low-level vision tasks,application
+diffusion models,image restoration with multiple degradations,unexplored area
+descandiffusion model,color encoder,component
+descandiffusion model,conditional denoising diffusion probabilistic model (ddpm),component
+main contributions,novel image restoration problem (descanning),first point
+main contributions,descan-18k dataset,second point
+statistical analysis,descan-18k,action
+super-resolution (sr),deblurring,These models are related as they are both image restoration techniques mentioned in the context
+super-resolution (sr),ncds (noisy complex degradations),Super-resolution is mentioned as potentially handling single-type degradation
+deblurring,ncds (noisy complex degradations),Both are mentioned as types of challenges that existing models struggle with when dealing with multiple degradations simultaneously.
+descanning problem,scanned images,The descanning problem specifically relates to the restoration of images that have gone through digital processing stages like scanning and printing.
+proposed image restoration model,cds (color distortions) and ncds,The model is designed to handle both color distortions and noisy complex degradations
+real-world photo restoration,various degradations,This field encompasses studies that restore real-world photos with issues such as scratches
+(wan et al. 2020),translation networks,Wan et al.'s work employs translation networks for image and latent space restoration in real-world scenarios.
+(ho and zhou 2022),smartphone-scanned photos,Ho and Zhou's method addresses degradations specifically in smartphone-scanned images in a semi-supervised manner.
+(yu et al. 2022),esdnet,ESDNet is a proposed solution by Yu et al. for demoiré removal
+esdnet,demoir´eing task,ESDNet is proposed for demoir´eing
+descanning,color transitions and patterns removal,Both tasks aim to remove visually awkward color transitions and patterns.
+real-world scanned images,complex special ncds,Real-world scanned images cannot be appropriately restored due to halftone pattern and bleed-through effect.
+classic image processing-based methods,restoration of scanned documents,They focus on eliminating dark borders and scanning shading for document-related degradations.
+geometric misalignment,book degradations,Degradations arise from curled pages and book spines
+descanning problem,holistic addressing,We build a huge dataset and propose a model tailored to scanned images to holistically address the problem.
+diffusion models,image restoration,Diffusion models have been actively applied to image restoration due to their impressive generation performance.
+text-to-image generation,natural language processing,Examples of diffusion models' applications
+text-to-image generation,natural language processing,These two concepts are mentioned together in the context
+text-to-image generation,vision applications,Both are mentioned as domains where diffusion models
+diffusion models,image restoration,Diffusion models
+kawar et al. (2022),image restoration,Kawar et al.'s work introduces a diffusion model specifically for image restoration tasks.
+saharia et al. (2022c),sr (super-resolution),Saharia et al. adapt DDPM conditionally and achieve strong performance in super-resolution with iterative refinement.
+descandiffusion,ddpm (diffusion probabilistic model),DescanDiffusion utilizes DDPM for descanning
+vanilla ddpms,color distribution,Naive application of DDPMs can lead to incorrect color distribution in descanned images.
+color encoder,color-corrected image,The color encoder predicts and corrects the color distribution to improve the starting point for DDPM.
+color distribution,condition for diffusion model,The estimated color distribution serves as a guiding factor for the diffusion process.
+descan-18k,scanned images,DESCAN-18K is a dataset containing pairs of scanned and original images for descanning research.
+descan-18k,original images,This large-scale dataset consists of 18
+1024 × 1024 resolution,image size,The images in DESCAN-18K are of 1024 × 1024 pixels in RGB format.
+scanned images,original pdf copies,The context describes the process of converting scanned images to an RGB TIFF format
+scanned and original images,misalignment,These images are misaligned due to margin settings and crumpled pages.
+image registration,akaze (alcantarilla and solutions 2011),AKAZE is used for registering the misaligned pages.
+page pairs,manual inspection,Pages are manually inspected to filter out unmatched images.
+scanned images,cropping,Images are cropped into 1024x1024 sizes for further processing.
+training set,validation set,17
+training set,testing set,360 images are kept for testing
+scanners,generalization ability,The dataset is evaluated for generalization to unseen scanner types.
+degradations in scanned images,six types,The degradations are classified into six categories
+color transition,chromatic distortion,Color transition is a type of chromatic distortion that affects images globally during scanning while preserving certain aspects.
+color fading,saturation,Both color fading and saturation are examples of degradations that can occur during scanning.
+descan-18k,supplementary material,Detailed statistical analysis of DESCAN-18K is available in the accompanying supplementary material.
+dataset analysis,synthetic data generation,Based on the analysis
+color transition simulation,hsv color space modification,For color transition
+bleed-through effect,alpha-blending,The bleed-through effect is simulated by alpha-blending two original images.
+halftone pattern,texture distortion,Halftone pattern and texture distortion are generated by applying Gaussian noise.
+external noise,dots synthesis,External noise is simulated as dots
+internal noise,linear laser patterns,Internal noise is synthesized as linear laser patterns.
+descandiffusion,global color correction,DescanDiffusion includes a global color correction module that adjusts image color.
+descandiffusion,local generative refinement,DescanDiffusion also has a local generative refinement module for further image restoration.
+descandiffusion,generalization performance,The purpose of the synthetic data is to enhance DescanDiffusion's ability to handle new scanner inputs.
+computational efficiency,large receptive field,The context describes a comparison between the two concepts
+input (is),color distribution of the original image (vo),The input to the model is used to predict the color vector vc
+φ (the model),vc (predicted color vector),Φ takes Is as input and generates the predicted color statistics vc using the learnable parameters Θ.
+color statistics (µk,σk),optimization (l2 loss)
+ic (re-normalized image),color statistics (µkc),After estimating color statistics
+image-to-image translation methods,histogram matching,Other approaches for restoration use histogram matching
+local generative refinement with ddpm (lgrdm),removing ncds (non-color-diverse regions),LGRDM is designed to address non-color-diverse areas in the color-corrected image
+lgrdm,shifts (allowing),LGRDM allows for shifts in the image
+ding,timestep embedding,Ding is added to the timestep embedding for conditioning.
+nichol and dhariwal (2021),lgrdm training,This process
+xt,ϵθ,xt is the input
+algorithm 1,training process,Algorithm 1 describes the training process of LGRDM.
+algorithm 2,inference process,Algorithm 2 outlines the inference process of LGRDM.
+to,optimal number of sampling steps,To is determined empirically and influences the inference in Algorithm 2.
+microsoft lens,descandiffusion,Comparison of descanning performance is made between these two methods.
+descandiffusion+psnr,quantitative comparison,Performance is measured using PSNR
+table 1,original descan-18k testing set,Results are shown for the original DESCAN-18K dataset.
+table 2,descan-18k testing set with global color correction,Performance is also compared after applying global color correction.
+resnet,global color correction,ResNet is trained separately for global color alignment.
+joint training,full framework,The full framework is not initially trained jointly; instead
+restoration model,ddrm (kawar et al. 2022),DDRM is a specific restoration model mentioned in the context
+re-training,compared methods,The passage states that all compared methods are re-trained using the DESCAN-18K training set.
+descan-18k training set,opr,dps
+ddrm,256 × 256 resolution,DDRM works only at a specific resolution of 256 × 256 for performance comparisons.
+descandiffusion,ddrm,DescanDiffusion is compared to DDRM for descanning performance.
+descandiffusion,descandiffusion+,Both DescanDiffusion and DescanDiffusion+ are the proposed methods that outperform others.
+evaluation metrics,psnr,ssim
+quantitative results,table. 1,The table presents the quantitative comparison of descanning performance.
+optimization,damaged real-world photos,Models are expected to be optimized for restoring damaged photos.
+candiffusion+ model,image-to-image translation model,canDiffusion+ model outperforms this model in handling degradations.
+candiffusion+ model,real-world photo restoration model,canDiffusion+ model is compared to this model
+candiffusion+ model,recent image restoration model,canDiffusion+ surpasses this type of model
+descandiffusion,descandiffusion+,DescanDiffusion+ provides slightly better performance than DescanDiffusion in PSNR and SSIM.
+descandiffusion,ddrм (kawar et al. 2022),DescanDiffusion outperforms DDRM in image restoration.
+proposed color encoder,color-conditioned ddpm,The color encoder and color-conditioned DDPM contribute to the high des-scanning performance.
+commercial product,deep-learning-based methods,Visual results show that DescanDiffusion resolves NCD and CD problems better than commercial products.
+descandiffusion,commercial products,DescanDiffusion is compared to other commercial products
+nafnet,esdnet,NAFNet and ESDNet are mentioned as alternatives to DescanDiffusion
+commercial product,real-world photo restoration models,Both commercial products and real-world photo restoration models are mentioned together
+color-corrected image condition for ddpm (cic),vanilla ddpm,The CIC improves performance compared to the vanilla DDPM
+color-correction vector condition for ddpm (cvc),cic,CVC provides further improvement when combined with CIC
+synthetic data generation scheme (sdg),proposed method,SDG is a component of the proposed method
+color-correction vector,ddpm,The color-correction vector guides DDPM to maintain color consistency.
+synthetic data,descandiffusion,Synthetic data enhances DescanDiffusion's generalization ability.
+our model with sdg,vanilla ddpm,Our model with SDG outperforms vanilla DDPM.
+our final model,cic,cvc
+global color correction,performance,Global color correction is important for maintaining performance.
+inference time,representative competitor models,Inference time is compared for representative competitor models.
+our method,cnns or transformers,Our method has slower inference time due to being diffusion-based.
+training process,scanned image,Sampling starts from the scanned image in our training process.
+inference time,10 reverse steps,Inference time can be reduced by 92% with just 10 reverse steps.
+method's inference time,10 reverse steps,reduction in inference time achieved by using 10 reverse steps
+algorithm 2,supplementary material,detailed explanation for reducing inference time is provided in Algorithm 2 and additional resources
+proposed method,additional datasets,evaluating performance on diverse image degradations with DPS and OPR datasets
+dps (ho and zhou 2022),opr (wan et al. 2020),comparison of performance on smartphone-scanned images (DPS) and old photos (OPR)
+quantitative results,table 6,displayed in the table for comparison models
+descandiffusion,generalization,generalizes well to smartphone-scanned images and old photos
+descandiffusion,specialization,removing complex NCDs and CDs specific to scanner-generated images
+descan-18k,evaluating descanning performance,most suitable for assessing descanning methods due to its characteristics
+scanned images,digital world,crucial for preserving and enhancing image quality in the digital realm
+restoration,scanned images,aim of the research is to restore clarity in scanned photographs
+descan-18k dataset,scanned images,DESCAN-18K is a large-scale dataset introduced for addressing the descanning problem
+descanning problem,restoration of scanned images,The descanning problem refers to the task of restoring scanned images
+degradation types,cd and ncd categories,DESCAN-18K classifies degradation types into two categories: CD (clear degradation) and NCD (non-clear degradation).
+descandiffusion model,image restoration,DescanDiffusion is a proposed model designed to address the descanning problem
+global color correction,descandiffusion,DescanDiffusion uses a color encoder for global color correction as part of its architecture.
+local generative refinement,descandiffusion,Conditional DDPM is employed in DescanDiffusion for local generative refinement.
+downstream tasks,optical character recognition (ocr),Applying the proposed model to enhance downstream tasks like OCR is suggested as a future direction.
+proposed dataset,new real-world image restoration models,The dataset can be extended to evaluate new real-world image restoration models.
+institute of information and communications technology planning and evaluation,acknowledgments,Support for the work was provided in part by this research institute.

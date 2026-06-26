@@ -1,0 +1,100 @@
+node_1,node_2,edge
+artistic image synthesis,enhancement,The efficacy of artistic image synthesis leads to its enhancement.
+personalized module,increased capacity,The personalization module's improved capacity contributes to the enhancement.
+denoising diffusion steps,different contributions,Denoising diffusion steps have varying effects on image synthesis
+context-aware prompt augmentation,decouples style and context,This method separates style and context information from the reference image for better personalization.
+style features,textual embeddings,The personalization module embeds style features specifically in the textual embeddings.
+style and context guidance,classifier-free guidance,Inspired by Ho and Salimans' work
+dreamstyler,effectiveness,DreamStyler's effectiveness is demonstrated through various experiments.
+text-to-image diffusion models,application,DreamStyler pushes the boundaries of text-to-image diffusion models for artistic image synthesis and style transfer.
+latent-based text conditional generation,earlier exploration,This refers to the earlier studies in text-based image generation
+saharia et al. (2022),related work,Saharia et al.'s work is part of the broader context of personalized text-to-image synthesis.
+denoising network (ϵθ),latent code (zt),The denoising network reconstructs the noised latent code at each timestep
+textual inversion (ti),pre-trained text-to-image model,Gal et al. (2022) proposed TI to personalize a pre-trained model by optimizing a novel concept embedding.
+word token s∗,conditioning vector (c(y)),S∗ is initialized as a word token
+clip text encoder,textual conditioning space (p),The CLIP text encoder generates the output space where the conditioning vectors for personalization are situated.
+multi-stage textual inversion,capacity limitations,TI sometimes fails to fully represent a concept due to the inherent capacity constraints of the underlying model.
+training prompt,image generation,The quality of generated images depends on the construction of training prompts
+style image,training prompts,Contextual descriptions in the training prompts help guide the model to generate images with specific styles.
+multi-stage ti,representational capacity,The multi-stage TI enhances the representational capacity but faces problems due to style and context entanglement.
+style and context,entanglement,During optimization
+contextual information,model's performance,Injecting contextual descriptions improves the model's ability to separate style from context
+training prompt,contextual descriptor,We construct prompts with a contextual descriptor to address the issue
+vanilla prompt,proposed strategy,The proposed strategy modifies the vanilla prompt by adding a contextual descriptor in the middle.
+opening text (co),style token set (s*),In the vanilla prompt
+objects,composition,and background
+context-aware prompt,blip-2,BLIP-2 is used to aid in automatic prompt generation for non-style attributes
+human-in-the-loop strategy,context-aware prompt refinement,This strategy involves refining captions based on human feedback to enhance the model's disentanglement capability.
+style elements,contextual elements,Context-aware prompts help models distinguish style elements from contextual ones during training.
+classifier-free guidance,conditional image synthesis,Classifier-free guidance improves conditional synthesis
+styledrop,personalization approach in text-to-image diffusion model,StyleDrop is another motivation for augmenting training prompts
+style-guided text-to-image synthesis,qualitative comparison,Qualitative comparisons showcase the effectiveness of the methods in generating stylized images.
+style transfer task,qualitative comparison,The same qualitative comparison is also applied to the style transfer task.
+flexible design,individual preferences,The flexible design allows users to generate stylistic output tailored to their individual preferences.
+style transfer,dreamstyler,DreamStyler is a style transfer method that transmits styles by inverting a content image and denoising it.
+content preservation,suboptimality,With the original approach
+dreamstyler,additional conditions from content image,DreamStyler improves content preservation by injecting extra conditions from the content image.
+powerful prior knowledge,text-to-image models,DreamStyler leverages powerful prior knowledge from text-to-image models for better style quality.
+multi-stage ti,human feedback-based context prompts,For implementation
+style-guided image synthesis,uniform guidance,In this process
+artistic paintings,natural photos,relation: comparison
+diversity in artistic styles,nuanced control mechanism,cause-effect
+style guidance,context guidance,separation
+λs (style guidance scale),λc (context guidance scale),coexistence
+users' flexibility,control over style and context,affordance
+eq. (3) decomposition,style and context embeddings (vs,vc)
+textual inversion,dreamstyler's performance,comparison
+xti (voynov et al. 2023),inst (zhang et al. 2023),Comparison baseline in the text-to-image synthesis task
+dreamstyler (ours),diffusion-based personalized methods,Compared against in text-to-image synthesis
+dreamstyler (ours),textual inversion,Part of the diffusion-based personalized methods for comparison
+dreamstyler (ours),model-optimization approaches,Also part of the diffusion-based personalized methods for comparison
+dreamstyler (ours),state-of-the-art style transfer frameworks,Compared to for style transfer task
+style score,style consistency,Measures the consistency between generated image and style image
+clip,text and image scores,Used for evaluating alignment with text prompt and style image
+table 1,quantitative results,Contains the evaluation results of text-to-image synthesis
+figure 6,qualitative results,Illustrative of the performance in text-to-image synthesis
+trade-off line,text vs. style scores,Balancing point in the evaluation
+style transfer,dreamstyler,DreamStyler is an extended application of Style Transfer
+dreamstyler,previous style transfer studies,DreamStyler is compared with previous studies
+dreamstyler,clip-based image score,DreamStyler's performance is evaluated using a CLIP-based metric for fair comparison.
+dreamstyler,polygon shapes,subtle brushwork
+stylize my own object in my own style,dreamstyler (via inversion-based approach),DreamStyler allows users to stylize their own objects using an additional object embedding.
+baseline (gal et al. 2022),multi-stage ti,context-aware prompt
+model ablation study,baseline (gal et al. 2022),proposed components
+model ablation study,proposed components,The study evaluates the effectiveness of the method by attaching the proposed components to the Textual Inversion baseline.
+multi-stage ti,t (number of stages),Varying T from 1 to 12
+t = 1,t = 6,As T increases
+dreamstyler,free merging of style and object tokens,DreamStyler excels in accurately reflecting both style and object in image generation.
+ablation study,multi-stage ti,context-aware prompt
+multi-stage ti,style and context guidance,Style and context guidance significantly impact scores
+context-aware prompt,quantitative metrics,While providing a modest quantitative improvement
+s&c guidance,generated outputs,S&C guidance sustains the quality and coherence of the generated artistic stylization products.
+quality,coherence,The context discusses the relationship between 'quality' and 'coherence' of generated outputs
+number of stages (t),performance,As the number of stages increases from T = 1 to 4
+t = 1,t = 2,T = 2 improves over T = 1
+t = 2,t = 6,T = 6 is chosen for the final model because it better balances text alignment and style replication compared to T = 2.
+t = 6,artistic features,T = 6 is proficient at mimicking the style image
+input prompt,text alignment,The model aims to improve the text alignment of the synthesized images based on the input prompt.
+contextual description,style and context disentanglement,The contextual prompt helps to some extent in separating style and context from the style image.
+human feedback,issue elimination,Human feedback is used to thoroughly address issues in the generated outputs.
+context-aware prompt,style image,The context-aware prompt helps the model distinguish style from context within the style image.
+contextual prompt,style reference,A contextual prompt improves the model's ability to separate stylistic elements from the content of the style reference.
+blip-based captions,contextual description,Automatic prompt construction using BLIP-based captions sometimes fails to capture all the details of the style image.
+human feedback,most effective solution,Leveraging human feedback leads to a more robust separation of style and context in generated outputs.
+style guidance,image aesthetics,Increasing the style guidance strength manages the image's aesthetics
+style guidance strength (λs),style management,Adjusting the scale parameter for style guidance directly impacts the model's adherence to the style image.
+model,generated outputs,The model generates outputs that reflect the input style and context to varying degrees.
+style guidance,context,The relation is that style guidance can compromise the context
+aesthetics,style,Style influences the aesthetics of the image
+synthesized image,inference prompt,The synthesized image corresponds to the given inference prompt
+style mixing,various style references,Style mixing allows for customization by combining multiple style references at different stages.
+structure of the image,style token (closer to t = t),Style tokens closer to the end of the process influence the structure.
+local and detailed attributes,style token (closer to t = 0),Style tokens closer to the beginning have a stronger impact on these aspects.
+baseline,using 'a painting in sat style' at all stages,The baseline approach employs all style tokens
+dreamstyler,image generation method,DreamStyler is a novel instance of the broader concept
+content and style guidance,adaptability,Content and style guidance contributes to the adaptability of DreamStyler
+text-to-image synthesis,style transfer,DreamStyler excels in both text-to-image synthesis and style transfer
+multi-stage transfer learning (ti),creative and flexible nature,The multi-stage TI underlies DreamStyler's creative capabilities
+artistic expression,limitations,DreamStyler has limitations within the context of artistic expression
+radford et al. (2021),transferable visual models,Radford's work contributes to the development of transferable visual models
+ramesh et al. (2022),hierarchical text-conditional image generation,Ramesh's work focuses on hierarchical text-conditional image generation

@@ -1,0 +1,245 @@
+node_1,node_2,edge
+jpeg image restoration,bit errors,JPEG image restoration problem with bit errors presents unpredictable color casts and block shifts on decoded image contents.
+bit errors,corrupted jpeg bitstream,The bit errors lead to corrupted JPEG bitstream which requires error-resilient decoding.
+jpeg decoder,corrupted jpeg bitstream,Robust JPEG decoder is used to decode the corrupted JPEG bitstream.
+two-stage compensation and alignment framework,jpeg images,Two-stage compensation and alignment framework is used to restore bitstream-corrupted JPEG images.
+sca stage,block-wise image color compensation and alignment,SCA stage performs block-wise image color compensation and alignment based on estimated color and block offsets.
+gca stage,low-resolution thumbnail,GCA stage leverages the extracted low-resolution thumbnail to guide full-resolution image restoration.
+full-resolution pixel-wise image restoration,coarse-to-fine manner,Full-resolution pixel-wise image restoration is conducted in a coarse-to-fine manner.
+code,released,The code for the proposed method will be released.
+image restoration,computer vision,"Image restoration is a key problem in the field of computer vision, and it has been extensively studied."
+image restoration,image deblur,Existing works in image restoration include image deblur as one of the methods for restoring high-quality images.
+image restoration,dehazing,Dehazing is another method used in image restoration to restore high-quality images from hazy images.
+image restoration,inpainting,Inpainting is a technique used in image restoration to fill in missing parts of an image.
+image restoration,superresolution (sr),Superresolution is a method in image restoration used to enhance the resolution of an image.
+two-stage compensation and alignment framework,jpeg image restoration with bit errors on the encrypted bitstream,The proposed framework aims to address the problem of restoring high-quality JPEG images with bit errors on the encrypted bitstream.
+robust jpeg decoder,corrupted jpeg bitstream,The robust JPEG decoder is able to decode the corrupted JPEG bitstream.
+two-stage framework,decoded color-casted and misaligned images,The two-stage framework is designed to gradually restore high-quality images from the decoded color-casted and misaligned images.
+bitstream,jpeg decoding failures,Bitstream corruption leads to JPEG decoding failures.
+jpeg decoding failures,decoding process,JPEG decoding failures cause the decoding process to stop at bit errors.
+bit errors,following bits,Bit errors in JPEG bitstream prevent decoding of following bits.
+bit errors,rber of nand flash memory,The occurrence of bit errors affects the Raw Bit Error Rate (RBER) of NAND flash memory.
+eprom cycle,rber of nand flash memory,"The Raw Bit Error Rate (RBER) of NAND flash memory increases with EPROM cycle, temperature, and retention years."
+bit errors,ecc,Bit errors that exceed ECC's error correction capability may cause unrecoverable errors.
+ecc,error correction capability,ECC ensures data storage integrity by correcting errors.
+storage device,standard data reading,"If the storage device is severely damaged or the ECC controller malfunctions, standard data reading may not be possible."
+ecc controller,standard data reading,Malfunctioning of the ECC controller may prevent standard data reading.
+memory forensic technique,jpeg file carving,"File carving is a memory forensic technique used to recover files from unreliable NAND flash memory, including JPEG files."
+jpeg file carving,filesystem metadata,JPEG file carving methods focus on carving files in the absence of filesystem metadata.
+jpeg file carving,jpeg file corruption,Some methods do not consider the situation when the JPEG file itself is corrupted.
+jpeg file corruption,bit errors in jpeg bitstream,Bit errors in the JPEG bitstream can deteriorate the decoded image quality due to error propagation.
+android full-disk encryption (fde),user data encryption,"Once an Android device is encrypted, all user-created data is automatically encrypted before committing it to disk."
+android full-disk encryption (fde),bit errors in nand flash memory,"For encrypted files stored in an Android device, bit errors from NAND flash memory directly affect the encrypted data."
+image restoration,deep learning methods,Deep learning methods have shown power in solving image restoration problems due to their feature representation ability.
+image restoration,decoded image quality issues,Existing image restoration methods may face issues with color casts and block shifts caused by bit errors.
+end-to-end training,existing image restoration methods,end-to-end training is related to existing image restoration methods as decoders fail to generate visually consistent images that may not be directly used for training of image restoration methods
+jpeg bitstream,corrupted,"given a corrupted JPEG bitstream, is it possible to restore the image contents"
+fde,smartphones,consideration of FDE employed in smartphones for privacy
+jpeg image y,pixel domain,damaged JPEG image y in the pixel domain
+jpeg image x,encrypted jpeg bitstream,initial JPEG image x being encrypted into corresponding encrypted JPEG bitstream by secret key K
+decoder,jpeg decoding,robust decoder can decode corrupted JPEG bitstream completely compared to standard decoder
+color cast,block shift problem,to further resolve the color cast and block shift problem in decoded images
+robust jpeg decoder,two-stage compensation and alignment framework,robust JPEG decoder followed by a two-stage compensation and alignment framework
+sca stage,gca stage,two-stage compensation and alignment framework consisting of self-compensation and alignment (SCA) stage and guided-compensation and alignment (GCA) stage
+sca,gca,SCA and GCA are two stages of the compensation and alignment scheme proposed in the context for restoring images with bit errors on the encrypted bitstream.
+sca,problem,SCA casts the problem as a segment detection problem in the first stage of the scheme.
+sca,segment,SCA adaptively estimates suitable color and block offsets for each segment.
+gca,low-resolution thumbnail,GCA leverages the extracted low-resolution thumbnail to guide full-resolution pixel-wise image restoration.
+gca,neural networks,"GCA is achieved by coarse-to-fine neural networks, including a coarse-guided pix2pix network and a refine-guided bi-directional Laplacian pyramid fusion network."
+neural networks,pixel-wise image restoration,The neural networks are used for pixel-wise image restoration in the context.
+pixel domain,bitstream domain,"The discussed problem in the bitstream domain causes unpredictable color casts and block shifts on decoded images, unlike existing works based on pre-defined degradation models in the pixel domain."
+sca,image content similarity,SCA is based on image content similarity in the context.
+sca,image content similarity,SCA is based on image content similarity without training data
+sca,gca,SCA and GCA are combined into an end-to-end architecture
+gca,coarse-guided pix2pix network,GCA employs the coarse-guided pix2pix network
+gca,refine-guided bi-directional laplacian pyramid fusion network,GCA employs the refine-guided bi-directional Laplacian pyramid fusion network
+method,proposed method,Extensive experiments and ablation studies have been conducted to demonstrate the superiority of the proposed method
+method,2k-resolution images,"Even for 2k-resolution images, the proposed method can restore high-fidelity images"
+method,psnr,Achieving PSNR up to 38.92 dB with 5.52 dB significant improvement compared to the baseline EPDN method
+jpeg,jpeg encoding,"In a standard JPEG encoding, an image undergoes multiple processing steps including DCT, quantization, coding, and Huffman coding"
+error propagation,bit error propagation,Recent work points out two kinds of error propagations: bit error propagation and DC error propagation
+error propagation,dc error propagation,Recent work points out two kinds of error propagations: bit error propagation and DC error propagation
+method,robust decoder,Overall structure of the method includes a robust decoder
+method,two-stage alignment and compensation framework,Overall structure of the method includes a two-stage alignment and compensation framework
+method,input,The input is the JPEG
+corrupted encrypted bitstream,decrypt,The encrypted bitstream is first decrypted to obtain the decoded information.
+corrupted encrypted bitstream,jpeg robust decoder,Decrypted bitstream is sent to the JPEG robust decoder for full decoding and thumbnail extraction.
+jpeg robust decoder,thumbnail,The JPEG robust decoder is used to extract the thumbnail from the decrypted bitstream.
+sca,image color compensation,SCA adaptively performs block-wise image color compensation based on estimated color and block offsets.
+gca,low-resolution thumbnail,GCA leverages the extracted low-resolution thumbnail to guide image restoration in a coarse-to-fine manner.
+encryption,data privacy,Full-disk encryption is used to protect users' data privacy by encrypting each sector independently.
+full-disk encryption,fde,Full-disk encryption (FDE) is a widely used cryptography method for data protection.
+fde,sector,FDE allows each sector of a disk volume to be encrypted independently for enhanced security.
+cipher block chaining,encryption modes,CBC is one of the widely used encryption modes in FDE for data protection.
+plaintext,encryption,Plaintext is divided into blocks and XORed with the previous encrypted cipher block for encryption.
+xor,encrypted salt-sector initialization vector (essiv),The initialization vector (ESSIV) is XORed with the encrypted salt to determine the unique sector number.
+aes,ci,The output obtained from the AES encryption algorithm is represented by Ci.
+error,cipher block,A bit error in a cipher block directly affects adjacent plain blocks.
+sector,error,Bit errors in a sector will not cause errors in other sectors due to sector-independent encryption and decryption.
+sector,image restoration,Sector-independent encryption and decryption are demonstrated through examples of sector-related image restoration techniques.
+image restoration,image degradation models,Image restoration techniques are part of various image degradation models.
+cnns,image processing,Convolutional Neural Networks (CNNs) have been successful in image processing applications.
+srcnn,image-to-image translations,The SRCNN network is designed for image-to-image translation tasks.
+srcnn,non-linear map,SRCNN is a network used to directly learn a non-linear mapping from low-resolution images to high-resolution images.
+network architectures,super-resolution,Various network architectures have been proposed for super-resolution.
+cai et al.,dehazenat,Cai et al. proposed an end-to-end CNN-based network for image dehazing called DehazeNat.
+cgan,gan-based pix2pixhd,"Motivated by the success of cGAN, Yanyun et al. proposed a GAN-based pix2pixhd model."
+enhance blocks,mapped from hazed images to dehazed images,Enhance blocks were used to learn a mapping from hazed images to dehazed images.
+image restoration,pre-defined image degradation models,Works mainly consider image restoration based on pre-defined image degradation models.
+our model,jpeg decoder,The overall structure of our model consists of a robust JPEG decoder.
+jpeg decoder,compressed image data,The JPEG decoder is used to make the compressed image data fully decoded.
+gca,bicubic upsampled thumbnail,GCA leverages the bicubic upsampled thumbnail to coarsely guide the self-compensated image for pixel-wise restoration through a pix2pix network.
+gca,laplacian pyramid fusion network,GCA gradually fuses the low-resolution thumbnail with multi-scale bicubic downsampled images from the pix2pix network using the Laplacian pyramid fusion network.
+huffman coding,jpeg,Huffman coding is a variable-length encoding method widely used in JPEG to compress data.
+eob,ac coefficients,EOB is a special codeword used in JPEG to indicate that the rest of the decoded AC coefficients of a block are all zeros.
+jpeg files,self-synchronization property,"JPEG files seem to possess a self-synchronization property, which allows the decoder to eventually get the same decoding sequence as the original even if bit errors occur in the bitstream."
+jpeg decoders,error-resilient techniques,"Standard JPEG decoders lack error-resilient techniques, which prevent them from utilizing the self-synchronization property observed in JPEG files."
+jpeg decoders,error-resilient techniques,"JPEG decoders lack error-resilient techniques, prompting the need for an error-resilient mechanism."
+decoding failure,exception,A decoding failure results in an exception being reported to abort the remaining blocks’ decoding.
+error-resilient mechanism,robust decoder,The error-resilient mechanism is proposed in the robust decoder shown in Fig. 4.
+decoder,huffman decoding,The decoder encounters invalid codewords during Huffman decoding in an MCU block.
+huffman tables,jpeg header,Invalid codewords encountered by the decoder cannot be found in the Huffman tables of the JPEG header.
+decoded coefficients,8×8 block,"If the number of decoded coefficients in an 8×8 block exceeds 64, it leads to coefficients overflow."
+decoding failure,error-resilient mechanism,"Once a decoding failure is detected, the error-resilient mechanism discards bits to continue processing."
+proposed decoder,mcui block,"The proposed decoder starts decoding at bit address k to read Y, Cb, Cr blocks of an MCU block."
+decoded mcui,jpeg bitstream,The decoder saves the fully decoded MCUi and restarts decoding the JPEG bitstream if errors are encountered.
+mcui,decoder,The decoder decodes the MCUi in the JPEG files
+jpeg,files,The proposed error-resilient mechanism can make JPEG files be decoded completely
+jpeg,images,"JPEG files construct 2D images by stacking blocks one by one from top to bottom, left to right"
+block,dc coefficient,The DC coefficient of a block represents the average intensity in JPEG images
+dc coefficient,block,The DC coefficient of a block represents the average intensity of the 8x8 pixels
+dc coefficient,dc coefficient variation,A small DC coefficient variation can shift all 64 pixels of a block by L * ∆DC
+dc coefficient,dc error propagation,Observing that the DC error propagation results in the same pixel shift for the following consecutively and correctly decoded blocks before the next self-synchronization
+dc coefficient,image segment detection problem,The problem is intuitively cast as an image segment detection problem
+block,segment,"Blocks inside a segment share the same DC shift and hence have smooth image contents after decoding, and blocks between two consecutive segments have a big difference in image contents after decoding"
+segment,segment point,A segment point is deemed to be detected when image contents have an abrupt change
+segment point,2d image,"Each segmented point is determined by a horizontal and a vertical coordinate as s = (h, v) in a 2D image, where h, v mod 8 = 0"
+2d image,image content similarity,We propose a segment detection method based on the 2D image content similarity
+image content similarity,segment detection method,"Taking advantage of this feature, we propose a segment detection method based on the 2D image content similarity"
+image content similarity,ed value,"Since lower ED values mean higher pixel similarity, when v < 8jk shown in Fig. 6(b), compared to v = 8jk, the EDh+8,v decreases because adjacent row blocks are more similar and the EDh,v is almost no changed because adjacent row blocks still belong"
+adjacent row blocks,more similar,The adjacent row blocks are more similar to each other which results in the overall CED decreasing.
+"edh,v",almost no changed,"The EDh,v remains almost unchanged because adjacent row blocks still belong to the same segment."
+segmented point,vertical coordinate,The vertical coordinate of the segmented point is determined when CED reaches the maximum at v = 8jk.
+pixel normalization,segment,Pixel normalization is performed on each segment by centering all pixels to compensate for the abnormal DC shift of each segment.
+isolated pixel values,real pixel range,"Isolated pixel values stretch the real pixel range and need to be eliminated to ensure overall pixel values in [-150, 150]."
+clip function,overall pixel values,"The Clip function is used to ensure the overall pixel values are within [-150, 150] before applying min-max normalization."
+min-max normalization,whole image,"Min-max normalization is applied to the whole image to re-scale the pixel range back to [0, 255] for image display."
+block alignment,block shift problem,Block alignment is used to ease the block shift problem caused by self-synchronization in misaligned images.
+alignment operation,row,The alignment operation shifts each row a block left or right until the EDh reaches the minimum
+thumbnail,jpeg photos,The thumbnail is auto-created and embedded into the JPEG header as a separate entity
+thumbnail,compressed data,The thumbnail is very small compared to the actual compressed image data and is more likely to escape random bit errors
+thumbnail,pix2pix network,The thumbnail is introduced as network additional input to guide the image reconstruction in the pix2pix network
+thumbnail,image reconstruction,The thumbnail is introduced to guide the image reconstruction process
+pix2pix network,thumbnails,The pix2pix network concatenates thumbnails and self-compensated images from the SCA to guide the resulting images
+pix2pix network,image reconstruction,The pix2pix network helps in guiding the image reconstruction with consistent color and alignment
+sca,compensated images,SCA provides compensated images to guide resulting images with consistent color and aligned textures
+sup-figure 6,network,The details of the network can be seen in Sup-Figure 6
+vertical coordinate detection,segmented point,The vertical coordinate of the segmented point is detected by calculating the coherence of the ED (CED)
+horizontal coordinate detection,segmented point,The horizontal coordinate of the segmented point is determined by checking pixel similarity across the horizontal boundary of consecutive row blocks
+sum of differences (sod),euclidean distance (ed),"SoD and ED are two commonly used similarity metrics, with lower values indicating higher pixel similarity"
+ed,pixel similarity,ED is used as a similarity metric to measure pixel similarity across the horizontal boundary of consecutive row blocks
+pixel similarity,horizontal boundary,Pixel similarity is measured across the horizontal boundary of consecutive row blocks
+pixel similarity,vertical boundary,Pixel similarity is checked across the vertical boundary of consecutive blocks at a specific horizontal coordinate
+rgb values,pixel,"ph,i represents the RGB values of the pixels of the image at position (h, i)"
+vertical boundary,consecutive blocks,The pixel similarity is checked across the vertical boundary of consecutive blocks.
+vertical boundary,8 pixels difference,"The vertical boundary only considers 8 pixels difference, which can be misleading."
+ced,vertical detection method,The new vertical detection method is based on the coherence of CED.
+ced,adjacent eds,CED is defined as the difference between adjacent EDs of row pixel blocks.
+ed,pixel similarity,ED calculation influences the pixel similarity at a given segmented point.
+ed,two parts addition,"EDh,v is calculated by two parts addition according to the vertical coordinate."
+segmented point,ceds,"To detect the vertical coordinate, CEDs are calculated for all points around the segmented point."
+segmented point,horizontal coordinate,Two segments are divided by the segmented point with known horizontal coordinate.
+laplacian fusion network,bi-directional laplacian fusion network,The structure of the bi-directional Laplacian fusion network includes deconvolutional layers for upsampling and downsampling.
+laplacian fusion network,laplacian pyramid fusion network,The Laplacian fusion network can be refined using the Laplacian pyramid fusion network.
+epdn,pix2pix network,A pooling-enhanced module in EPDN integrates the pix2pix network.
+pix2pix network,pooling-enhanced module,The pooling-enhanced module is used in EPDN to integrate the pix2pix network input
+thumbnail,self-compensated image,"The thumbnail and self-compensated image are both mentioned as inputs, with the thumbnail being blurred and the self-compensated image not fully aligned."
+thumbnail,pooling-enhanced module,The thumbnail is mentioned as not a good choice for the pooling-enhanced module due to being blurred.
+self-compensated image,pooling-enhanced module,The self-compensated image is mentioned as not a good choice for the pooling-enhanced module due to not being fully aligned.
+thumbnail,network results,The upsampled thumbnail is mentioned as making the network results blur.
+bi-directional laplacian pyramid fusion network,thumbnail,The proposed bi-directional Laplacian pyramid fusion network aims to refine the thumbnail gradually.
+coarse image,bi-directional laplacian pyramid fusion network,The bi-directional Laplacian pyramid fusion network aims to refine the thumbnail under the guidance of the coarse image.
+coarse image,fine details,"The coarse image is downsampled to generate images in different scales, which are then convolved to generate pyramid high-frequency features that represent gradually finer details."
+thumbnail,fine details,The thumbnail as low-frequency residual is gradually added to the pyramid high-frequency details to get the final output.
+element-wise added feature,upsampled feature,"At each step, the element-wise added feature is upsampled by a trainable de-convolution layer."
+loss functions,epdn,"The paper follows the same loss functions from EPDN, including the adversarial loss."
+de-convolution layer,trainable,"The de-convolution layer is trainable, implying that it can be adjusted or optimized during the training process."
+loss functions,epdn,"The loss functions used in this paper are based on EPDN, specifically including adversarial loss, feature matching loss, and perceptual loss."
+charbonnier loss function,laplacian structure,"The Charbonnier loss function is implemented in consideration of the employed Laplacian structure, replacing the ℓ2 fidelity loss."
+edge loss,block alignment information learning,The edge loss is added to make the network focus on learning block alignment information.
+sobel operator,network output,The Sobel Operator is applied on the estimated network output to obtain edge information for comparison with the ground truth.
+loss function,hyper-parameters,"The overall loss function in this paper includes user-defined hyper-parameters λ1, λ2, λ3 for weight balancing."
+alternative iteration training scheme,gan module,The alternative iteration training scheme involves optimizing the GAN module (generator and discriminator) with specific loss components in each step.
+datasets,"afhq, celeba-hq","The experiment section includes comparisons and ablation studies conducted on the AFHQ, CelebA-HQ datasets."
+afhq,celeba-hq,AFHQ and CelebA-HQ are datasets on which extensive comparisons and ablation studies are conducted.
+afhq,cityscapes,AFHQ and Cityscapes are datasets on which extensive comparisons and ablation studies are conducted.
+celeba-hq,cityscapes,CelebA-HQ and Cityscapes are datasets on which extensive comparisons and ablation studies are conducted.
+jpeg,fde,JPEG files are encrypted by the full-disk encryption (FDE) method.
+ber,jpeg,Bit error rates (BER) setting of 10^-5 is applied on the encrypted bitstream of JPEG files.
+fde,datasets,Datasets are constructed by decrypting the encrypted data using the same full-disk encryption (FDE) method.
+thumbnail,bicubic downsampling,The thumbnail setting assumes that the thumbnail comes from the bicubic downsampling.
+thumbnail,160,The maximum side of the thumbnail is fixed at 160.
+adam optimizer,pytorch,The model is implemented with the PyTorch framework using Adam optimizer.
+adam optimizer,nvidia gpu geforce rtx 3090,The model is implemented on an NVIDIA GPU GeForce RTX 3090 using Adam optimizer.
+psnr,ssim,Peak signal-to-noise ratio (PSNR) and structural similarity index (SSIM) are used to measure the quality of restored images.
+jpeg,image restoration,JPEG images are restored using the proposed method.
+cityscapes,resolutions,Experiments are conducted on Cityscapes dataset with different resolutions for JPEG image restoration.
+bicubic downsampling methods,cityscapes datasets,The bicubic downsampling methods are used to obtain additional Cityscapes datasets with different resolutions.
+bicubic downsampling methods,sca,The bicubic downsampling methods are compared to SCA in terms of improving PSNR and SSIM.
+cityscapes datasets,scenic cityscapes,The Cityscapes datasets are compared to the scenic Cityscapes for visual comparison.
+sca,gca,The results obtained using SCA are compared to the results obtained with GCA in terms of image reconstruction.
+gca,epdn,Our GCA network outperforms EPDN in terms of PSNR improvement in image reconstruction.
+gca,baseline image-to-image translation network,Our GCA network is compared to the baseline image-to-image translation network EPDN for performance evaluation.
+baseline image-to-image translation network,pix2pix network,The baseline image-to-image translation network EPDN adopts the same pix2pix network as our GCA network.
+cityscapes datasets,super-resolution methods,The super-resolution methods are compared to the Cityscapes datasets for performance evaluation.
+cityscapes datasets,different scales,Different methods are quantitatively compared on Cityscapes datasets at different scales in terms of PSNR/SSIM.
+robust decoder,sca + gca,The robust decoder method (ours) is compared to the combined SCA + GCA method in terms of PSNR/SSIM results on Cityscapes datasets.
+method,scale factors,The method is applied at different scale factors to demonstrate its effectiveness.
+method,decoder,The method is compared with the standard decoder in terms of performance.
+method,sca,The method incorporates SCA to compensate for color and block offsets.
+method,gca,The method uses GCA for refining thumbnail gradually to improve visual image contents.
+epdn,method,EPDN refining method is compared with the proposed method to highlight the improvements.
+sca,color,SCA adaptively compensates for color offsets.
+sca,block offsets,SCA also compensates for block offsets.
+gca,coarse guiding,GCA benefits from coarse guiding for refining image contents.
+gca,refined guiding,GCA further benefits from refined guiding for better visual results.
+proposed components,cityscape dataset,Several proposed components are ablated in the Cityscape dataset to analyze their impact.
+laplacian fusion,gca,Laplacian pyramid fusion network is removed in GCA and EPDN’s pooling-enhanced module is used instead.
+edge & charbonnier loss,ℓ2 fidelity,The original ℓ2 fidelity is used instead of loss LC and LE for Edge & Charbonnier loss.
+sca,laplacian fusion,SCA and Laplacian fusion play the most important role in the final restored image's quality in the ablation studies.
+thumbnail-guided image restoration,sota super-resolution (sr) methods,The thumbnail-guided method is compared with state-of-the-art super-resolution methods in bicubic degradation on the Cityscape dataset.
+low-resolution thumbnails,integer scale factors,"Super-resolution methods only support integer scale factors, therefore, low-resolution thumbnails are kept at 170×85 size."
+usrnet,srmd,"The method outperforms USRNet and SRMD in PSNR and SSIM, especially in the scale factor x6 with around PSNR/SSIM improvement."
+thumbnails,degradation,Generalization capability is tested by varying degradation levels of thumbnails.
+psnr,ssim,PSNR and SSIM are metrics used to measure the quality of an image. An improvement of 8 dB in PSNR and 0.1 in SSIM were observed.
+thumbnails,degradation,The generalization capability of the method is tested on handling varying degradation of thumbnails.
+gaussian kernels,gca,"Isotropic Gaussian kernels with different kernel widths are used for creating degraded thumbnails, and the method GCA is applied for performance evaluation."
+thumbnails,gca,"The training of GCA is done on bicubic degraded thumbnails, and testing is done on unseen degraded thumbnails, demonstrating the generalizability of the method."
+thumbnails,results,"Qualitative comparisons of the results between bicubic degraded thumbnails and unseen degraded thumbnails are shown, highlighting the impressive performance of the method."
+images,method,"The method is evaluated on degraded images with varying BERs, demonstrating its capability to handle complex datasets."
+method,datasets,The method is tested on AFHQ and CelebA-HQ datasets to evaluate its generalization in handling varying degrees of BERs in JPEG files without retraining.
+method,results,"Experimental results show that the two-stage method achieves outstanding results (>32dB) in handling various BERs, showcasing its effectiveness."
+method,results,"The method mentioned in the context is evaluated based on the results obtained in Tab. 4, showing outstanding results in terms of performance."
+method,sca,"The proposed SCA method is compared to the standard decoder, showing great ability in resolving the problem of bitstream-corrupted JPEG images."
+sca,gca,The SCA method is further compared to SCA+GCA in terms of performance under varying BERs.
+sca,afhq,Quantitative comparison is provided for SCA method with AFHQ dataset in terms of PSNR/SSIM under BER= 10^-6.
+sca,celeba-hq,Quantitative comparison is provided for SCA method with CelebA-HQ dataset in terms of PSNR/SSIM under BER= 10^-6.
+decoder,jpeg images,The robust JPEG decoder is mentioned in the context for restoring bitstream-corrupted JPEG images.
+decoder,bit errors,The robust JPEG decoder is proposed to address the issue of bit errors in the encrypted bitstream of JPEG images.
+alignment,work,The alignment work is part of the two-stage compensation process to restore bitstream-corrupted JPEG images.
+images,bitstream,"The images mentioned in the context are affected by the bitstream errors, leading to the need for restoration."
+generalization,ability,The results obtained demonstrate the generalization ability of the proposed method in handling varying levels of errors.
+stage compensation,alignment work,These two concepts work together to restore bitstream-corrupted JPEG images.
+stage compensation,robust jpeg decoder,The stage compensation is part of the process that the robust JPEG decoder adopts to decode the corrupted JPEG bitstream.
+alignment work,robust jpeg decoder,The alignment work is part of the process that the robust JPEG decoder adopts to decode the corrupted JPEG bitstream.
+robust jpeg decoder,error-resilient mechanism,The robust JPEG decoder uses an error-resilient mechanism to decode the corrupted JPEG bitstream.
+stage compensation,self-compensation and alignment (sca) stage,"The stage compensation includes the self-compensation and alignment (SCA) stage, which aims to resolve color cast and block shift problems."
+self-compensation and alignment (sca) stage,image content similarity,The self-compensation and alignment (SCA) stage is based on image content similarity free from training data.
+guided compensation and alignment (gca) stage,coarse and refined-guided networks,The guided compensation and alignment (GCA) stage employs coarse and refined-guided networks to restore full-resolution images gradually.
+guided compensation and alignment (gca) stage,stage compensation,The guided compensation and alignment (GCA) stage is a part of the two-stage framework with the stage compensation.
+stage compensation,two-stage framework,"The stage compensation is a part of the two-stage framework, along with the guided compensation and alignment (GCA) stage."
+guided compensation and alignment (gca) stage,decoded images,The guided compensation and alignment (GCA) stage aims to resolve color cast and block shift problems on the decoded images.
+proposed method,experimental results and ablation studies,The experimental results and ablation studies show the effectiveness of the proposed method.
+research/project,"national research foundation, singapore","The research/project is supported by the National Research Foundation, Singapore for cyber security purposes."
+research/project,cyber security agency of singapore,The research/project is supported by the Cyber Security Agency of Singapore for cyber security purposes.
+research/project,national cybersecurity r&d programme (nrf2018ncr-ncr009-0001),The research/project is supported by the National Cybersecurity R&D Programme (NRF2018NCR-NCR009-0001) for cyber security purposes.

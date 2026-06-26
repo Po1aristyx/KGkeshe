@@ -1,0 +1,236 @@
+node_1,node_2,edge
+human-object interaction,supervised data,"The conflict in human-object interaction is due to the limited availability of supervised data, which hinders the prediction of a vast number of possible interaction combinations in real life."
+human-object interaction,interaction combinations,The conflict in human-object interaction arises from the challenge of predicting a vast number of possible interaction combinations in real life with limited supervised data.
+human-object interaction,hoi prediction,"Current methods trained from closed-set data predict human-object interactions as fixed-dimension logits, limiting their scalability to open-set categories."
+hoi prediction,sequence generation,"OpenCat reformulates HOI prediction as sequence generation, enabling the prediction of novel interaction classes utilizing the open-set vocabulary of the language modeling framework."
+vision-language pre-training,weakly-supervised data,"Inspired by the success of vision-language pre-training, a large amount of weakly-supervised data related to human-object interaction is collected from image-caption pairs."
+model,pre-training,"Several auxiliary proxy tasks, including soft relational matching and human-object relation prediction, are devised to pre-train the model using weakly-supervised data related to human-object interaction."
+opencat,hoi performance,"OpenCat significantly boosts human-object interaction performance, especially on a broad range of rare and unseen categories."
+hoi,open-category,HOI methods have struggled to achieve open-category capability due to deficiencies in prediction manner and supervised data. OpenCat reformulates HOI learning as a sequence generation task to achieve open-category prediction on a large number of tail and unseen HOI classes.
+hoi,classifier,Approach involving projecting the input image into fixed-dimension logits through a classifier restricts the ability to identify new HOI triplets.
+language models,visual outputs,"Language models are more suited to predict free-form texts, while other works explore to generate visual outputs using a single language modeling objective."
+hoi,language sequence generation problem,HOI learning is reformulated as a language sequence generation problem to leverage an open-set vocabulary.
+hoi triplets,open-set vocabulary,HOI triplets generation problem leveraging open-set vocabulary for high degree of freedom
+hoi learning,abundant labels,HOI learning requires abundant labels for exhaustive HOI categories
+hoi categories,grounded hois,Natural long-tailed distribution of HOI categories makes it unrealistic to ensure sufficient instances in each category
+benchmarks,relation classes,Popular benchmarks like HICO-DET and V-COCO cover just a small portion of HOI categories with limited relation classes
+models,closed-set data,"Models trained on closed-set data fail to handle the large number of possible combinations of human, relation, and object"
+supervised vision-language pre-training,data scarcity,Weakly supervised or self-supervised VL pre-training to address data scarcity leads to great success
+works,pre-training idea,"Inspired by works, leveraging pre-training to overcome insufficient labeled HOI data is an intuitive idea"
+unsupervised data,hoi pre-training,"Leveraging weakly-supervised or unsupervised data for HOI pre-training is not trivial, due to the requirement of accurately localizing interaction regions and recognizing fine-grained differences among human activities"
+human activities,massive human activities,"The term 'massive human activities' is a subset of 'human activities', indicating a scale or quantity difference."
+weak supervision,image-caption pairs,"The term 'weak supervision' is related to 'image-caption pairs', as weak supervision often involves using pairs of images and corresponding captions for learning tasks."
+pre-training framework,opencat,"The term 'OpenCat' is a specific pre-training framework mentioned in the context, indicating a relationship between the general concept of pre-training frameworks and the specific implementation of OpenCat."
+pre-training framework,proxy tasks,"The term 'pre-training framework' is associated with 'proxy tasks', which are additional tasks designed to enhance the pre-training process."
+proxy tasks,pre-training framework,The term 'proxy tasks' complements the 'pre-training framework' by providing additional tasks to improve learning during pre-training.
+human-object interaction tasks,supervised data,"The term 'human-object interaction tasks' is in need of 'supervised data' for training purposes, highlighting the importance of data in these tasks."
+opencat,serialization scheme,"The term 'OpenCat' utilizes a 'serialization scheme' to convert HOI triplets into tokens, indicating a method used within the OpenCat framework."
+opencat,proxy tasks,"The term 'OpenCat' is associated with 'proxy tasks' such as MLP, HRP, and HPJ, indicating that these tasks are part of the OpenCat framework."
+proxy tasks,visual representation,"The 'proxy tasks' such as MLP, HRP, and HPJ enhance 'visual representation' within the model, showing a relationship between the tasks and improving representations."
+human-object interaction,proxy task,"The 'proxy task' named SRM focuses on learning interaction alignment between 'human and object', indicating a specialized task related to human-object interaction."
+srm,pseudo alignment labels,"The 'SRM' task uses 'pseudo alignment labels' created from a pre-training model to improve interaction alignment, highlighting the importance of alignment in the task."
+vl pre-training model,srm task,"The 'SRM' task borrows knowledge from a 'VL pre-training model' to create alignment labels, showing a relationship between the task and a pre-training model."
+opencat,language modeling frame-work,OpenCat is a language modeling framework introduced to effectively model open-category HOIs
+opencat,hois,OpenCat is used to model open-category HOIs
+hois,interactions,HOIs are related to interactions in the context of human-object interaction learning
+interactions,recognizing,Recognizing interactions is a part of human-object interaction learning
+interactions,main challenge,The main challenge of recognizing interactions is the co-occurrence of multiple human-object pairs in an image without location information
+interactions,task,Recognizing interactions is a task in human-object interaction learning
+task,co-occurrence,The task of recognizing interactions involves the co-occurrence of multiple human-object pairs in an image
+task,location,The task of recognizing interactions does not involve location information
+task,existing works,Existing works address the task of recognizing interactions
+existing works,object,Existing works rely on object detection or human pose detection to address the task of recognizing interactions
+existing works,human pose detection,Existing works rely on human pose detection to address the task of recognizing interactions
+existing works,annotations,Existing works rely on bodypart-level annotations to address the task of recognizing interactions
+instance-level hoi detection,aims,instance-level HOI detection aims to accurately localize interactive regions for each human-object pair and predict their interaction class simultaneously
+existing methods,two-stage models,Existing methods in instance-level HOI detection can be broadly categorized into two-stage models
+two-stage models,object detector,Two-stage models first use an off-the-shelf object detector to ground objects regions offline
+two-stage models,hoi prediction,Two-stage models perform HOI prediction
+two-stage models,focus,Two-stage models primarily focus on improving human and object embeddings using graph neural networks or external information like keypoints
+two-stage models,approach,Two-stage models approach HOI detection by first grounding object regions and then performing HOI prediction
+human,object,There is a relationship between humans and objects in the context of improving embeddings using graph neural networks or external information like keypoints.
+two-stage methods,hoi instance,"Two-stage methods do not consider the possibility of combining human and object to form a valid HOI instance, leading to overwhelming negative HOI proposals."
+one-stage methods,object detection,One-stage methods perform object detection and HOI prediction in parallel to generate HOI proposals with high quality.
+liao et al.,point-based network,Liao et al. propose a point-based network to heuristically define the position of HOI triplets.
+tamura et al.,end-to-end hoi detection,Tamura et al. go a further step to achieve end-to-end HOI detection based on a DETR-style transformer.
+zhang et al.,cascade disentangling decoder,Zhang et al. adopt a cascade disentangling decoder to combine the advantages of two-stage and one-stage methods.
+vision-language pre-training,vlp models,"Vision-language pre-training models generally follow two steps: first, using well-designed proxy tasks to train models on vast amounts of data, and then fine-tuning parameters on downstream tasks."
+vlp works,task-specific heads,Previous VLP works have used task-specific heads with separate parameters for downstream tasks.
+recent studies,unified framework,Recent studies propose a unified framework to perform different downstream task predictions with the same input-output format.
+unitab,text and box outputs,UniTAB learns to represent both text and box outputs as a discrete token sequence.
+unitab,input-output format,UniTAB is a model inspired by input-output format
+unitab,language-modeling objective,UniTAB learns to represent text and box outputs as discrete token sequence based on language-modeling objective
+unitab,hoi learning,UniTAB is suitable for open-category HOI learning by leveraging rich semantic knowledge of text supervision
+hoi model,language modeling framework,HOI model is reformulated into a language modeling framework that accepts structured inputs and outputs HOI triplets
+opencat model,hoi triplets,OpenCat model auto-regressively generates HOI triplets as a token sequence
+opencat model,visual-language encoder-decoder framework,OpenCat model architecture follows a visual-language encoder-decoder framework
+model,text input,The model utilizes RoBERTa to encode text input
+model,image input,The model utilizes RoBERTa to encode image input
+model,object regions,The model uses an off-the-shelf object detector to localize object regions
+object regions,region embeddings,Region embeddings are cropped and pooled from the object regions
+model,hoi triplets,The model auto-regressively outputs HOI triplets
+model,semantic knowledge,The model utilizes semantic knowledge of VL pre-training methods to generate relation phrases
+hoi,relation phrases,The model generates relation phrases between humans and objects as part of the HOI learning
+model,sequence generation task,The model treats HOI learning as a sequence generation task
+objects,inferring,Relationship: objects are inferred based on the action of inferring
+model,predict,Relationship: the model can predict new HOI categories
+new hoi categories,free format,Relationship: new HOI categories can be predicted with a free format
+model,opencat,Relationship: the model is proposed as OpenCat
+model,model,Relationship: the model can be pre-trained with various proxy tasks
+hoi learning,hoi triplets,Relationship: HOI learning involves predicting all HOI triplets
+categories of human,categories of object,"Relationship: a category label may contain human, relation, and object categories"
+hoi learning,hoi recognition,Relationship: HOI learning comprises image-level and instance-level tasks
+instance-level hoi detection,image-level hoi recognition,Relationship: instance-level HOI detection is more challenging than image-level recognition
+opencat,hoi learning tasks,Relationship: OpenCat reformulates all HOI learning tasks
+model,hoi categories,The model recognizes all HOI categories in an image as part of the target sequence.
+target sequence,"(r, o) pair","The target sequence format includes pairs of (r, o) representing HOI categories."
+model,sequence generation,The model reduces the difficulty of sequence generation by using special tokens like [SEP] and [EOS].
+"(r, o) pair",sequence length,"The sequence length of (r, o) pairs may vary, which affects the sequence generation process."
+training,hoi triplets,"During training, the HOI triplets of an image are shuffled in the target sequence at each step."
+model,predicts triplets,"During inference, the model predicts all HOI triplets directly without shuffling."
+model,predicts categories,The model is able to predict free-form HOI categories instead of classifying into fixed-dimension logits.
+instance-level hoi detection,task,The task is to detect bounding boxes for each HOI instance in the image and predict their categories.
+balance,human-object detection,It is challenging to strike a good balance between human-object detection and interaction prediction in multi-task training.
+balance,interaction prediction,It is challenging to strike a good balance between human-object detection and interaction prediction in multi-task training.
+decoupling,two tasks,The decoupling of human-object detection and interaction prediction tasks from a unified framework is done through offline object detection.
+decoupling,advantage,Decoupling provides an additional advantage by leveraging newly proposed detectors to obtain more accurate results.
+decoupling,provides,Decoupling provides an additional advantage
+decoupling,leverage,Decoupling provides leverage to obtain more accurate object locations
+detectors,object locations,Detectors help obtain more accurate object locations
+detectors,visual representations,Detectors help obtain better visual representations
+hoi instances,serialized tokens,HOI instances are detected as serialized tokens
+instance,represented,Each instance is represented as discrete tokens
+instance,"[ph, po, r, o]","Each instance is represented as [ph, po, r, o]"
+tokens,"[ph, po, r, o]","Tokens represent [ph, po, r, o]"
+"[ph, po]",pointer tokens,"[ph, po] are two pointer tokens indicating indices of human and object bounding boxes"
+target sequence,hoi detection,Target sequence is used for HOI detection
+model,interference,Model avoids interference by setting a maximum target sequence length
+hoi proposals,region features,Traditional two-stage HOI methods suffer from an overwhelming number of negative HOI proposals based only on local region features
+model,proposal number,Model limits the proposal number by setting a maximum target sequence length
+framework,generate,Open-category prediction framework may generate triplets
+triplets,synonymous,Triplets may be synonymous with groundtruth HOIs
+prediction,groundtruth,Prediction matched with groundtruth using WordNet
+net,groundtruth,Net is used to match the possible synonymous triplets with groundtruth.
+hoi,sequence generation tasks,"HOI learning tasks are unified as sequence generation tasks, allowing for prediction of new HOI categories."
+hoi,weakly-supervised data,Sequence generation tasks facilitate more effective utilization of weakly-supervised data for HOI learning.
+proxy tasks,hoi pre-training,Auxiliary proxy tasks are designed to assist weakly-supervised pre-training in HOI learning.
+masked language prediction (mlp),hoi triplets,MLP task involves predicting masked text spans related to HOI using HOI triplets.
+masked language prediction (mlp),visual-textual contexts,MLP task aims to predict masked text spans related to HOI based on visual-textual contexts available.
+human-object relation prediction (hrp),image,HRP task involves generating all possible HOI categories in an image using an auto-regressive manner.
+human-object relation prediction (hrp),textual prompt,HRP task requires generating all possible HOI categories in an image using a textual prompt.
+hoi categories,predicted sequence,HOI categories are used to predict the sequence in an auto-regressive manner.
+hpj task,jigsaw puzzle solving task,HPJ task is inspired by the jigsaw puzzle solving task to help the model recognize key parts of an object.
+hpj task,image-caption pair,HPJ task involves slicing the image into patches and selecting a human-object pair from detected object regions.
+hpj task,relative relationships,HPJ task enables the model to explore relative relationships between local information within the human-object pair.
+srm,humans and objects,SRM aims to learn the alignment between humans and objects in a weakly-supervised manner for HOI detection.
+srm,soft relational matching,SRM involves soft relational matching to learn the alignment between humans and objects.
+hoi detection,soft relational matching task,"The soft relational matching task is proposed for HOI detection in a weakly-supervised manner, where the model outputs a token sequence for each image."
+token sequence,model,The model outputs a token sequence for each image in the soft relational matching task.
+input image,instance-level hoi detection paradigm,The token sequence for each image is similar to the instance-level HOI detection paradigm.
+box indices,pointer tokens,"Discrete box indices for pointer tokens ph, po are not available."
+soft pseudo labels,knowledge distillation,Soft pseudo labels are created by distilling knowledge from an image-text teacher encoder pre-trained on billions of image-caption pairs.
+image teacher encoder,object region embeddings,An image teacher encoder is used to extract object region embeddings offline.
+text embeddings,hoi triplets,"Text embeddings for HOI triplets are obtained for each ϕi = (hi, ri, oi) in ϕ."
+soft matching label,object regions,The soft matching label between ϕi and object regions B is computed as the cosine similarity.
+cross entropy loss,softmax activation,Softmax activation is applied to compute the cross entropy loss.
+pre-training data,fully-supervised hoi datasets,Comparison between pre-training data and fully-supervised HOI datasets shows the difference in provided object boxes.
+lce,τ,LCE function in equation (2) is calculated based on the scaling temperature τ.
+model θ,l1 loss,The model Θ is considered as the student model and L1 loss is applied to minimize the distance between student and teacher output embeddings.
+smr,llm,"The final objective for SMR, denoted as Lsrm, is calculated as the sum of LLM, Lφ with weight γ1, and L1 with weight γ2."
+smr,hoi models,Experiments are conducted to demonstrate the open-category and generalization capabilities of HOI models using SMR as the basis.
+pre-training data,vision-language datasets,"Multiple vision-language datasets, including Flickr-30K, MS-COCO, Visual Genome, Open-Image, and ConceptCaption, are utilized to construct the pre-training data."
+son,subject synset,"son and subject synset are mentioned together in the context, indicating a relation"
+triplets,hoi,"The context mentions HOI triplets, which encompass over 2.5K unique relations"
+triplets,object categories,HOI triplets encompass over 2.5K unique relations and 9.7K object categories
+faster-rcnn,object detector,Faster-RCNN is used as the object detector to provide object region candidates for each pre-training image
+data,scale,weakly-supervised pre-training data outperforms existing fully-supervised HOI datasets in terms of scale
+model,language knowledge,the model transfers language knowledge from diverse text concepts for open-set classes
+model,semantic knowledge,the model provides prior semantic knowledge for open-set classes
+model,compositions,the model can learn new compositions to predict novel HOI triplets
+verbs,objects,novel HOI triplets can be predicted based on seen verbs and objects
+model,datasets,"the model is validated on four datasets: HICO, MPII, HICO-DET, and V-COCO"
+det,hico,DET is an extension of HICO
+det,hico-det,DET is related to HICO-DET in instance-level HOI detection experiments
+hico,mpii,HICO and MPII are used for image-level HOI recognition experiments
+hico-det,v-coco,HICO-DET and V-COCO are used for instance-level HOI detection experiments
+detr,scale and crop augmentation,DETR uses the same scale and crop augmentation in DETR for pre-training
+object regions,hoi recognition,N=100 object regions are detected offline for each image in HOI recognition
+map,hoi recognition,Mean average precision (mAP) is the evaluation metric for HOI recognition
+hico,pairwise,HICO detection on Pairwise compared
+methods,mallya et al.,Mallya et al. is one of the methods discussed in the context.
+methods,pairwise,Pairwise is another method mentioned in the context for comparison.
+methods,table 3,Table 3 is a reference for comparing the HOI detection.
+hoi detection,hico-det,Comparison of HOI detection on HICO-DET is discussed.
+hoi recognition,hico,Comparison of many-shot HOI recognition on HICO is provided.
+hoi recognition,mpii,Comparison of few-shot HOI recognition on HICO and MPII is presented.
+scenario 1,scenario 2,Scenario 1 and Scenario 2 are denoted as ªS1º and ªS2º respectively.
+few@1,few@5,Comparison of Few@1 and Few@5 in the context of HOI recognition is provided.
+few@5,few@10,Comparison of Few@5 and Few@10 in the context of HOI recognition is discussed.
+pairwise,opencat,OpenCat is compared with Pairwise in the context for performance evaluation.
+opencat,hake†,OpenCat model outperforms HAKE† model on HICO.
+opencat,pre-training data,OpenCat achieves better results despite using only low-cost pre-training data.
+model,few-shot setting,The model's effectiveness under the few-shot setting is being validated.
+model,improvement,"The model achieves significant improvement with +12.12% mAP on 1-shot, +9.97% mAP on 5-shot and +10.46% mAP on 10-shot compared to HAKE."
+model,distribution problem,Our model can effectively handle the long-tailed distribution problem in HOI recognition.
+model,interaction classes,Our model can well adapt to rare interaction classes.
+hoi detection,evaluation protocol,"For HOI detection, we adopt the same evaluation protocol in [5] and use mAP as the evaluation metric."
+hoi detection,datasets,We carry out experiments on two datasets: HICO-DET and V-COCO.
+hico-det,hoi categories,"HICO-DET is divided into three HOI category subsets: Full set, Non-rare subset, and Rare subset."
+v-coco,comparison,"Comparison of zero-shot HOI detection on HICO-DET including different methods like VCL, OpenCatVCL, OpenCatFG, ConsNet, and OpenCatConsNet."
+hoi pairs,occlusion,"The first scenario is required to detect HOI pairs even if there is occlusion between them, while the second scenario does not require the detection of occluded HOI pairs."
+hoi detection results,hico-det,"Table 3 presents the comparison of HOI detection results on HICO-DET and V-COCO, showing consistent improvement when compared to previous works on the HICO-DET Full set and achieving competitive performance on V-COCO compared with state-of-the-art CDN. Our model achieves 28.42 mAP on the HICO-DET Rare set, demonstrating its capacity to adapt to rare classes."
+zero-shot interactions,detecting,"The concept of detecting zero-shot interactions, where there is no corresponding image available during training, is discussed."
+weakly-supervised hoi detection,hico-det,Comparison of weakly-supervised HOI detection on HICO-DET and V-COCO is presented.
+proxy tasks,hico,Ablation of different proxy tasks on HICO is shown in Table 6.
+hico-det,shen et al.,HICO-DET is introduced by Shen et al. [56]
+hico-det,zero-shot scenarios,Experiments are conducted on four zero-shot scenarios on HICO-DET [5]
+hico-det,hoi triplets,120 HOI triplets are selected in HICO-DET as unseen testing set
+hoi triplets,unseen combination (uc),120 HOI triplets in HICO-DET are used for the Unseen Combination (UC) scenario
+hoi triplets,unseen object (uo),100 HOI triplets are identified as unseen HOIs for the Unseen Object (UO) scenario
+hoi triplets,unseen relation (ur),22 relations are selected as unseen for the Unseen Relation (UR) scenario
+hoi triplets,unseen all (ua),No supervision is provided for the Unseen All (UA) scenario
+model,hois,The pre-trained model is used to detect HOIs without any fine-tuning on the downstream dataset
+model,previous methods,"Our model significantly outperforms previous methods by a large margin in UC, UO, and UR scenarios"
+model,pre-training procedure,our model first generates a sequence of HOI categories similar to the pre-training procedure of SMR
+model,predicted hois,the model matches these predicted HOIs with nearest object regions detected offline based on their embedding similarity
+model,results,"our model still achieves impressive results, reaching 15.82 mAP on HICO-DET"
+model,previous works,We present the comparison results with previous works in Table 5. Our model outperforms Align-Former [28]
+model,srm,Ablation of different teacher encoders of SRM on HICO
+model,weakly-supervised hoi detection,"To further evaluate the robustness of our model, we turn to weakly-supervised HOI detection"
+model,alignment labels,which aims to identify HOI triplets without the aid of alignment labels between the human and object in the image
+model,matching mechanism,our model uses a nearest matching mechanism to ground object regions of HOI
+model,evaluation setting,The evaluation setting is the same as that for full-set HOI detection
+our model,align-former,Our model outperforms Align-Former with +4.97% improvement on the HICO-DET Full set.
+our model,rare classes,"Our model achieves +6.12% improvement on the Rare set, demonstrating robustness to rare classes with limited samples."
+our model,v-coco,"Our model achieves larger gains on V-COCO, with +18.6% in Scenario 1 and +19.8% in Scenario 2."
+our model,hoi alignment labels,"Our model has an advantage as weak supervision is much less costly than HOI alignment labels, enabling scaling training to a larger number of relations and objects."
+proxy tasks,hrp task,"The HRP task brings the largest gain of +6.4% for HOI recognition, attributed to the similar target sequence format to the downstream recognition task."
+proxy tasks,srm task,"The SRM task makes the largest contribution, with +6.56%, +4.58%, and +7.06% mAP improvement on HICO-DET Full, Rare, and Non-Rare sets, guiding the model to reason about the alignment between human and objects."
+proxy tasks,other proxy tasks,Other proxy tasks result in stable improvements across different benchmarks.
+proxy tasks,stable improvements,proxy tasks result in stable improvements across different benchmarks
+quality of knowledge,teacher encoder,quality of knowledge in SRM task largely depends on the teacher encoder chosen
+different teacher encoders,impact comparison,"Table 7 compares the impact of different teacher encoders including CLIP, ResNet50, and ViT-B/16"
+different teacher encoders,performance,"More powerful backbone teachers like BLIP achieve better performance, especially in HICO-DET Full set"
+blip,in-domain data,"BLIP, which uses more in-domain data like MS-COCO and ConceptCaption, has a smaller gap with HOI pre-training data"
+sequence length,performance impact,Different sequence lengths show impact on performance as shown in Figure 4
+sequence length,hoi recognition,Sequence length of 96 is found sufficient for HOI recognition on HICO
+sequence length,hoi detection,Best performance for HOI detection is achieved with a sequence length of 160 on HICO
+downstream tasks,datasets,Optimal maximum sequence length varies depending on downstream tasks and datasets
+mpii,image,"MPII dataset contains images with one interaction class each, leading to the need for shorter sequence lengths for processing."
+hoi detection,sequence lengths,"HOI detection involves multiple HOI instances in an image, requiring longer sequence lengths to capture all relevant information."
+sequence design,separation token [sep],"Table 8 analysis reveals the effectiveness of separation token [SEP] in reducing the complexity of sequence generation, showing its necessity in model design."
+sequence design,pointer token [ptr],"Table 8 analysis highlights the effectiveness of pointer token [PTR] in reducing the difficulty of sequence generation, indicating its importance in model design."
+verbs,rare hoi categories,Qualitative examples in Figure 5 demonstrate OpenCat's ability to predict rare HOI categories effectively compared to the baseline.
+opencat,long-tailed distribution problem,OpenCat successfully addresses the long-tailed distribution problem in HOI datasets by predicting challenging HOI cases like 'milk cow' and 'wash dog'.
+opencat,pre-training model,"In the conclusion, OpenCat is described as an open-category pre-training model for human-object interactions, leveraging weakly-supervised data for learning novel HOI categories."
+closed-set prediction,novel hoi categories,"The context mentions the constraints of closed-set prediction specifically for novel HOI categories, indicating a direct relationship between these two concepts."
+weakly-supervised data,proxy tasks,"The context suggests that weakly-supervised data is leveraged to propose several proxy tasks for HOI pre-training, indicating a relationship between these two concepts."
+model,state-of-the-art performance,"The model achieves state-of-the-art performance on HOI tasks, implying a direct relationship between the model and the state-of-the-art performance."
+model,improvements,"The model achieves significant improvements on rare and novel categories, suggesting a relationship between the model and the improvements."
+hoi triplets,inference efficiency,"Auto-regressively generating HOI triplets may lead to a decrease in inference efficiency, indicating a relationship between HOI triplets and inference efficiency."
+sequence length,challenges,"Limitations on sequence length present challenges when attempting to merge object detection and HOI prediction, suggesting a direct relationship between sequence length and these challenges."
+object detection,hoi prediction,"The context mentions challenges in merging object detection and HOI prediction, indicating a relationship between object detection and HOI prediction."
+qualitative examples,rare category prediction,"Figure 5 provides qualitative examples specifically related to rare category prediction, indicating a direct relationship between qualitative examples and rare category prediction."
+ican,baseline,"The context mentions using iCAN as the baseline for qualitative examples, suggesting a relationship between iCAN and being a baseline."
+national natural science foundation of china,support,"The context states that this work was partially supported by the National Natural Science Foundation of China, indicating a direct relationship between the foundation and providing support."
+national key r&d program of china,support,"This work was partially supported by the National Key R&D Program of China, indicating a relationship between the program and providing support."

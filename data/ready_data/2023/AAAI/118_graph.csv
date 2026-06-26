@@ -1,0 +1,143 @@
+node_1,node_2,edge
+abstractlane detection,lane detection,The context introduces 'AbstractLane detection' as a specific type of lane detection
+precise location and shape,lane characteristics,These terms describe the objective of lane detection
+complexity of real-world scenarios,challenge,Real-world challenges pose a difficulty for lane detection.
+proposal-based methods,top-down approach,Proposal-based methods detect lanes using a top-down
+keypoint-based methods,local descriptors,Keypoint-based methods create lanes flexibly from these descriptors
+sketch-and-refine paradigm,methodology,This paper presents a new approach combining the strengths of proposal- and keypoint-based methods.
+local directions of lanes,simple and clear semantics,The 'Sketch' stage relies on estimating these directions for efficient proposal creation.
+lane segment association module (lsam),refinement module,LSAM optimizes proposals by enabling adaptive lane segment adjustments.
+multi-level feature integration,feature enrichment,This technique enhances lane feature representations for better detection.
+srlane,proposed detector,SRLane is the fast and effective lane detector that implements the 'Sketch-and-Refine' paradigm.
+experiments,validation,The paper supports its claims with experimental results demonstrating the effectiveness of SRLane.
+srlane,lane detector,SRLane is a type of lane detector proposed in the 'and-Refine' paradigm.
+lane detection,autonomous driving system,Lane detection is a core component of an autonomous driving system.
+convolutional neural networks (cnn),lane detection,The advancement of CNNs has contributed to the progress in lane detection.
+keypoint-based methods,lane detection,Keypoint-based methods are one approach to lane detection
+proposal-based methods,lane detection,Proposal-based methods are another approach to lane detection
+local descriptors,integration in keypoint-based methods,Local descriptors
+srlane,f1 score,SRLane achieves an F1 score of 78.9% which demonstrates its effectiveness.
+srlane,speed,SRLane runs at a fast speed of 278 FPS.
+srlane,source code,The source code for SRLane is available on GitHub.
+authors (e.g.,pan et al. 2018; li et al. 2019),related work
+qu et al. 2021,keypoint-based method,Qu et al. present a keypoint-based approach.
+wang et al. 2022,keypoint-based method,Wang et al. also contribute to the keypoint-based lane detection methods.
+feng et al. 2022,proposal-based method,Feng et al. work on proposal-based lane detection techniques.
+tabelini et al. 2021a,proposal-based method,Tabelini et al. are another contributor to proposal-based methods.
+figure 1(a),example of keypoint-based methods,Figure 1(a) illustrates the concept of keypoint-based lane detection.
+cent keypoints (qu et al. 2021),integration procedure,The context mentions that cent keypoints are flexible but highlights the drawback of the integration procedure - it complicates the pipeline and adds errors.
+integration procedure,additive errors,The integration procedure is responsible for causing additive errors in the lane prediction process.
+proposal-based methods,global geometry modeling,Proposal-based methods directly model the global geometry of lanes using proposals as input.
+proposal-based methods,efficiency vs adaptability dilemma,These methods struggle to balance efficiency (sparse proposals) with fitting ability (dense proposals).
+sparse proposals,computational efficiency,Sparse proposals are computationally efficient but have limited fitting capacity.
+dense proposals,better fitting ability,Dense proposals provide better fitting accuracy but are more computationally expensive.
+anchor-based methods,high redundancy and complexity,Anchor-based methods have a large number of preset anchors
+anchor-based methods,trade-off between performance and inference,They aim to strike a balance between achieving good performance and maintaining efficient inference.
+resource-constrained hardware,performance,Trade-off is made between these two
+methods (qin,wang,and li 2020)
+local lane markers,global lanes,Local markers are easier to predict than global lanes due to their limited geometric variations and spatial coverage.
+local regions,geometric consistency,Lanes exhibit consistency in lane slope within local regions
+culane test set,keypoints of a lane,Keypoints of lanes are found to be consistent in the CULane dataset
+initially,lane detection research,Research started with detecting hand-crafted low-level features before moving to deep learning methods.
+hand-crafted low-level features,spline fitting,These traditional methods involved using low-level features to fit splines for lane localization.
+deep learning methods,complex scenes,Deep learning methods generally outperform traditional ones in challenging environments.
+prevailing attempts of deep learning,two categories,Deep learning in lane detection is divided into keypoint-based and proposal-based approaches.
+keypoint-based methods,proposal-based methods,These two categories in the context refer to different approaches in lane detection using deep learning
+pinet (ko et al. 2021),keypoint-based method,PINet is an example of a keypoint-based lane detection method that uses a confidence branch
+fololane (qu et al. 2021),keypoint-based method,FOLOLane employs a confidence head and regression head to estimate horizontal offsets between pixels and form lane instances by correlating adjacent keypoints.
+ganet (wang et al. 2022),keypoint-based method,GANet predicts all possible keypoints and finds corresponding lanes by adding offsets to lane line start points
+rclane (xu et al. 2022),keypoint-based method,RCLane creates a transfer map and recovers lane instances in a sequential chain manner
+srlane (proposed method),proposal-based method,SRLane is a proposal-based lane detection method that avoids the complicated post-clustering process
+anchor-free methods,proposal-based methods,Proposal-based methods are divided into anchor-free and anchor-based subgroups
+anchor-based methods,proposal-based methods,Another subgroup within proposal-based methods
+anchor-free methods,anchor-based methods,These two subgroups are categories within ods
+polylanenet,anchor-free methods,PolyLaneNet is an example of an anchor-free method
+bézierlane,anchor-free methods,BézierLane is another anchor-free method that uses a sparse set of proposals from column-wise Pooling to predict Bézier curves.
+line-cnn,anchor-based methods,Line-CNN is the first anchor-based method that classifies and regresses lanes using line anchors.
+sgnet,anchor-based methods,SGNet generates anchors around the vanishing point to reduce redundancy.
+laneatt,anchor-based methods,LaneATT employs anchor-based pooling for local feature sampling and attention for global information fusion
+clrnet,anchor-based methods,CLRNet improves lane prior understanding by refining them hierarchically starting from line anchors.
+coordinates of lanes,regression task,Anchor-based methods like CLRNet avoid direct regression of lane coordinates
+local keypoints,lanes,Local keypoints are grouped based on their offsets to reconstruct the whole lane.
+pre-defined line anchors,lane detection methods,Anchor-based methods use pre-defined line anchors to match and predict lanes.
+proposed paradigm,local direction map,The proposed paradigm predicts a local direction map
+local direction map,lane proposals,Each point's proposal is built along its predicted direction.
+srlane,lane shapes,SRLane sketches lanes quickly using local geometry descriptors and refines them for higher accuracy.
+sketched lanes,higher accuracy,The sketched lanes provide a fast and relatively accurate initial location.
+segment association module,lane segments,The module refines lane segments for better fitting the ground truth.
+ordinal classification,performance,The performance of ordinal classification methods is negatively affected by the anchor setting.
+anchor setting,performance of above methods,The methods' detection qualities degrade due to the reliance on the anchor setting
+proposals,efficiency,Our method aims to improve efficiency by reducing the number of proposals while maintaining satisfactory detection.
+srlane,lane detection process,SRLane divides the lane detection process into two stages: lane sketch and lane refinement.
+lane detection process,srlane,SRLane's methodology involves a pipeline consisting of the lane sketch and refinement stages.
+lane sketch,local direction map,At the lane sketch stage
+refinement stage,roi head,The refinement stage is treated as an RoI head in a two-stage detector framework
+refinement stage,classification and regression branches,Refined features are used by these branches to produce final detection results.
+lane sketch,proposal initialization,The context discusses the first stage as providing good proposal initialization for Lane Sketch.
+first stage,three possible schemes,There are three approaches considered within the first stage: (a) predefined line anchors
+line anchors,inflexible,Option (a) mentions line anchors as inflexible for fitting lines with different curvatures.
+intermediate lane proposal network,network complexity,Option (b) highlights the need for considerable network complexity to capture lanes' diverse shapes and distribution.
+local descriptors,simplification,Using local descriptors simplifies the detection pipeline by eliminating post-clustering and focusing on local lane continuity.
+local direction estimation,image i,Local direction estimation is performed on an input image I.
+feature map,derived from image i,A feature map is obtained from the input image I.
+qu et al. (2021),local descriptors,Qu et al.'s work is mentioned as a reference for using local descriptors in lane proposal construction.
+image i,feature map fs,Feature map Fs is derived from the backbone of the image I.
+feature map fs,direction map θ,Fs is further encoded to create a direction map Θ
+direction map θ,local angle,Each point in Θ has a value representing the local angle of the closest lane.
+training phase,direction supervision,During training
+annotated lane line,ground-truth value,Lane lines are split into segments
+point p (in direction map),proposal,Using local geometry descriptors
+lowest resolution feature map,inference,During inference
+direction map θ,lane points,A lane is represented by a series of lane points
+y-th row and x-th column of direction map θ,line point,Given a fixed yi
+line point,proposals,We get (H × W)/(s × s) lane proposals by inferring the xi for each line point.
+number of proposals,hundreds of thousands,In other works
+our method,small number of proposals,Our method generates proposals adaptively
+refinement head,lane proposals,The refinement head adjusts lane proposals to accommodate complex shapes.
+refinement head,multi-level lane features,The refinement head integrates multi-level features dynamically for adaptive adjustments.
+classification branch,regression branch,The classification branch predicts the probability of a proposal being foreground
+location of a lane,x-coordinates of lane points,The location is described by a series of x-coordinates with equal vertical intervals.
+location of a lane,y-coordinates,y-coordinate corresponds to xi as yi = i· H
+regression branch,maximum y-coordinate,Predicts the maximum y-coordinate to determine the lane's endpoints.
+regression branch,minimum y-coordinate,Predicts the minimum y-coordinate to determine the lane's endpoints.
+lane segment association module,feed forward network (ffn),FFN is used in the method
+methods,state-of-the-art,Comparison with other methods like LaneAF-DLA34
+tusimple,test set,Experiments on the Tusimple dataset
+culane,dataset,Experiments also conducted on the CULane dataset
+curvelanes,dataset,Experiments include the Curvelanes dataset
+accuracy,evaluation metric,Performance is measured using accuracy
+cross entropy loss,attention weights,These two concepts are related in the context of 'cross entropy loss for attention weights'
+focal loss,lane classification,Focal loss is mentioned as a technique for lane classification
+iou loss,lane regression,IoU loss is used for lane regression
+adamw optimizer,cosine learning rate scheduler,AdamW is paired with a cosine learning rate scheduler during training
+learning rate,10^(-3),The initial learning rate is specified as 10^(-3)
+batch size,40,The batch size used during training is mentioned as 40.
+data augmentation,random flipping,affine transformation
+training,inference latency,Inference latency is a measure evaluated during training
+keypoint-based methods,proposal-based methods,The main results section compares two categories of methods: those based on keypoints and those based on proposals.
+cutting-edge methods,comparison,The paper focuses on a comparison of the latest methods in the field.
+performance comparison,different number of proposals,The figure shows a comparison of inference latency with varying numbers of proposals.
+srlane,culane dataset,In Table 1
+srlane,laneatt,SRLane has a 3.8% F1 gain over LaneATT on the CULane dataset.
+srlane,bezierlane,SRLane has a 5.1% F1 gain over BezierLane on the CULane dataset.
+srlane,ganet,SRLane achieves a competitive 74.7% F1 score
+srlane,tusimple dataset,Experiments are also conducted on the Tusimple dataset
+srlane,clrnet,SRLane is 2.2 times faster than CLRNet on the Tusimple dataset.
+srlane,fololane,SRLane is 11.1 times faster than FOLOLane on the Tusimple dataset.
+qualitative results,detection results,Figure 6 provides a visualization of the detection results
+direction-based initialization method,sparse proposals,The proposed method outperforms the anchor-based approach
+proposed feature sampling strategy,multi-level information,The adaptive feature sampling strategy benefits from integrating information from multiple levels
+feature pyramid network (fpn),proposed feature sampling strategy (baseline),For a fair comparison
+lane segment association module (lsam),f1 score,LSAM improves the F1 score by up to 0.9%
+attention map,refinement of segment features,LSAM learns to assign higher attention to the relevant lane segments
+local geometry descriptors,2d lane detection,The method presented in the paper uses local geometry descriptors to condition the rough lane sketching.
+srlane,2d lane detection task,SRLane is a novel method designed for the task of accurately and efficiently locating lanes.
+outstanding speed,srlane's performance,SRLane demonstrates exceptional speed in various scenarios.
+accuracy,srlane's performance,SRLane exhibits high accuracy in lane detection.
+robustness,srlane's performance,SRLane is robust against diverse scenarios.
+3d lane detection,transferable design,The design of SRLane is believed to be applicable to 3D lane detection.
+proposal-based detectors,comparison,SRLane outperforms proposal-based detectors in curve scenarios.
+keypoint-based detectors,comparison,SRLane falls behind keypoint-based detectors
+national key r&d program of china,funding,The work is supported by a national research program.
+national natural science foundation of china,funding,Additional funding comes from the national science foundation.
+fundamental research funds for the central universities,funding,Support also includes university research grants.

@@ -1,0 +1,221 @@
+node_1,node_2,edge
+large-scale unsupervised language models,world knowledge,Large-scale unsupervised language models learn broad world knowledge.
+large-scale unsupervised language models,reasoning skills,Large-scale unsupervised language models learn some reasoning skills.
+lms,precise control,Achieving precise control of LMs' behavior is difficult due to the unsupervised nature of their training.
+unsupervised lm,human labels,Existing methods collect human labels to gain control over the unsupervised LM's behavior.
+unsupervised lm,model generations,Unsupervised LMs are fine-tuned to align with the quality preferences of model generations.
+rlhf,reward model fitting,RLHF involves fitting a reward model reflecting human preferences.
+unstable procedure,rlhf,RLHF is described as a complex and unstable procedure.
+lm,reinforcement learning,Reinforcement learning is used to fine-tune the large unsupervised LM based on human feedback.
+reward functions,optimal policies,There is a mapping between reward functions and optimal policies shown in the paper.
+reward maximization problem,policy training,The constrained reward maximization problem is optimized through a single stage of policy training.
+human preference data,classification problem,A classification problem is solved on human preference data to optimize reward maximization.
+direct preference optimization,stable,The resulting algorithm DPO is stable.
+direct preference optimization,performant,The resulting algorithm DPO is performant.
+direct preference optimization,computationally lightweight,The resulting algorithm DPO is computationally lightweight.
+lms,human preferences,DPO can fine-tune LMs to align with human preferences as well as or better than existing methods.
+dpo,rlhf,DPO exceeds RLHF’s ability to control sentiment of generations
+dpo,rlhf,DPO improves response quality in summarization and single-turn dialogue
+dpo,ai coding assistant,DPO is used to bias the model towards high-quality coding ability
+language model,common programming mistakes,Language model should understand common programming mistakes
+coding ability,coding,Coding ability is related to coding
+language model,common misconception,Language model should be aware of common misconceptions
+common misconception,people,Common misconception is believed by 50% of people
+ai systems,desired responses and behavior,Selecting desired responses and behavior is crucial for building AI systems
+ai systems,building,"AI systems are crucial for building safe, performant, and controllable systems."
+ai systems,performant,AI systems need to be performant for efficiency.
+ai systems,controllable,AI systems should also be controllable for effective management.
+lms,human preferences,Language models (LMs) are steered to match human preferences using reinforcement learning (RL).
+dpo,rl,DPO optimizes for human preferences without using reinforcement learning (RL).
+methods,rl-based objective,Existing methods use RL-based objective for optimizing.
+methods,binary cross-entropy objective,RL-based objective used by existing methods can be optimized with a simple binary cross-entropy objective.
+methods,preference learning,Methods instill desired behaviors using curated human preferences and preference learning.
+preference learning,supervised fine-tuning,Preference learning involves supervised fine-tuning on human demonstrations.
+reinforcement learning from human (or ai) feedback (rlhf/rlaif,reward model,RLHF methods fit a reward model to dataset of human preferences and then use RL to optimize a language model policy to produce responses assigned high reward.
+reinforcement learning from human (or ai) feedback (rlhf/rlaif,supervised learning,RLHF pipeline is considerably more complex than supervised learning.
+reward model,language model policy,Use RL to optimize a language model policy based on the reward model.
+direct preference optimization (dpo),reinforcement learning from human (or ai) feedback (rlhf/rlaif,DPO implicitly optimizes the same objective as RLHF algorithms.
+direct preference optimization (dpo),reward maximization with a kl-divergence constraint,DPO optimizes reward maximization with a KL-divergence constraint.
+direct preference optimization (dpo),bradley-terry model,DPO relies on a theoretical preference model like the Bradley-Terry model.
+dpo,theoretical preference model,DPO relies on a theoretical preference model (such as the Bradley-Terry model) to measure how well a given reward function aligns with empirical preference data.
+dpo,change of variables,DPO uses a change of variables to define the preference loss as a function of the policy directly.
+dpo,human preferences,"Given a dataset of human preferences over model responses, DPO can optimize a policy using a simple binary cross entropy objective."
+dpo,direct preference optimization (dpo),"Our main contribution is Direct Preference Optimization (DPO), a simple RL-free algorithm for training language models from preferences."
+dpo,existing methods,"Our experiments show that DPO is at least as effective as existing methods, including PPO-based RLHF, for learning from preferences in tasks such as sentiment modulation, summarization, and dialogue."
+self-supervised language models,instruction-tuning procedure,Their performance on downstream tasks and alignment with user intent can be significantly improved by fine-tuning on datasets of instructions and human-written completions through the 'instruction-tuning' procedure.
+llms,instructions,LLMs are tuned to generalize to instructions and increase usability.
+instruction tuning,response quality judgments,Instruction tuning success is often judged based on response quality.
+llms,datasets,LLMs are fine-tuned with datasets of human preferences for various tasks.
+neural network reward function,datasets of preferences,The reward function is optimized to be compatible with the dataset of preferences.
+language model,reward,Language models are fine-tuned to maximize the given reward.
+llms,human feedback,LLMs are fine-tuned for instruction following with human feedback.
+synthetic preference data,attributes,Synthetic preference data is generated for targeted attributes like safety or harmlessness.
+two bodies of work,llm training,There is a convergence of two bodies of work: one on training LLMs with RL and another on general methods for learning from human input.
+human preferences,fine-tuning large language models with reinforcement learning,"The work provides a theoretically-justified approach to optimizing relative preferences without RL, indicating the challenge of using reinforcement learning with large language models"
+learning policies from preferences,bandit and reinforcement learning settings,Learning policies from preferences has been studied in both bandit and reinforcement learning settings
+contextual bandit learning,contextual dueling bandit (cdb),"Contextual bandit learning using preferences or rankings of actions, rather than rewards, is known as a contextual dueling bandit (CDB)"
+cdb setting,preference labels given online,"In the CDB setting, preference labels are given online for learning"
+learning from human preferences,fixed batch of offline preference-annotated action pairs,"In learning from human preferences, we typically learn from a fixed batch of offline preference-annotated action pairs"
+preference-based rl (pbrl),binary preferences generated by an unknown ‘scoring’ function,Preference-based RL learns from binary preferences generated by an unknown ‘scoring’ function rather than rewards
+pbrl,various algorithms,"Various algorithms for PbRL exist, including methods that can reuse off-policy preference data"
+latent scoring function,reward model,The latent scoring function is explicitly estimated as the reward model in the context.
+reward model,optimizing policy,The reward model is subsequently optimized to satisfy preferences by directly optimizing a policy.
+sft,rlhf pipeline,Supervised fine-tuning is a phase in the RLHF pipeline where a pre-trained LM is fine-tuned for downstream tasks.
+rl optimization,preference sampling and reward learning,RL optimization is one of the phases in the RLHF pipeline along with preference sampling and reward learning.
+reward model,sft model,The SFT model in the reward modelling phase is prompted with prompts to produce pairs of answers.
+latent reward model,modeling preferences,The latent reward model generates preferences for answers in the context.
+bt model,modeling preferences,The Bradley-Terry model is one of the approaches used to model preferences in the context.
+constraint,model,Constraints are important as they prevent the model from deviating too far from the distribution on which the reward model is accurate.
+constraint,generation diversity,Constraints maintain generation diversity and prevent mode-collapse to single high-reward answers.
+constraint,preventing mode-collapse,Constraints prevent mode-collapse to single high-reward answers.
+language generation,objective,"Due to the discrete nature of language generation, the objective is not differentiable and is typically optimized with reinforcement learning."
+policy optimization,preferences,Our goal is to derive a simple approach for policy optimization using preferences directly.
+language models,fine-tuning,Applying reinforcement learning algorithms on large-scale problems such as fine-tuning language models presents challenges.
+policy optimization,reward modeling,"Unlike prior RLHF methods, our approach bypasses the reward modeling step and directly optimizes a language model using preference data."
+reward functions,optimal policies,Analytical mapping from reward functions to optimal policies enables transforming a loss function over reward functions into a loss function over policies.
+reward functions,policies,Change-of-variables approach allows skipping the explicit reward modeling step while still optimizing under existing models of human preferences.
+policy network,human preferences,The policy network represents both the policy and human preferences.
+bradley-terry model,policy network,"The policy network represents both the language model and the reward, while the Bradley-Terry model depends only on the difference of rewards between two completions."
+dpo objective,rl objective,Deriving the DPO objective starts with the same RL objective as prior work.
+optimal solution,kl-constrained reward maximization objective,It is straightforward to show that the optimal solution to the KL-constrained reward maximization objective takes a specific form.
+reward function,partition function,"The reward function can be expressed in terms of its corresponding optimal policy, reference policy, and the partition function."
+reward function,optimal policy,"The reward function can be expressed in terms of its corresponding optimal policy, reference policy, and the partition function."
+prompt x,human preferences,Prompt x is labeled with human preferences to construct the offline dataset of preferences.
+offline dataset of preferences,d,"The offline dataset of preferences, denoted as D, includes pairs of x(i) and y(i) where i equals 1 and 2."
+language model,ldpo,The language model is optimized to minimize LDPO (Language-Dependent Preference Operator) for the given reference distribution and the dataset D.
+preference datasets,publicly available,Preference datasets can be reused publicly available datasets rather than generating new samples and gathering human preferences.
+preference datasets,sampled using sft,The preference datasets are sampled using SFT (Structured Feedback Transfer).
+reference distribution,sft,"When SFT is available, the reference distribution is initialized as SFT."
+reference distribution,maximizing likelihood of preferred completions,"If SFT is not available, the reference distribution is initialized by maximizing the likelihood of preferred completions."
+dpo method,reward model,DPO method bypasses explicit reward estimation and RL by using a single maximum likelihood objective which is equivalent to a Bradley-Terry model with a reward function.
+dpo method,actor critic algorithms,Advantages of DPO over actor critic algorithms like PPO are related to issues with RLHF (Reinforcement Learning with Human Feedback).
+optimization objective,bradley-terry model,The optimization objective of DPO is equivalent to a Bradley-Terry model with a specific reward function.
+reward function,optimal policy,All reward functions from the same class yield the same optimal policy.
+reward function,reparameterization,Any reward function from the equivalence class can be represented using the specified reparameterization.
+reparameterization,projection,The projection function normalizes the reward function with the logarithm of the partition function of the optimal model.
+reward function,projection,The projection function produces a member of the equivalence class of the reward function with the desired form.
+reward function,reparameterization,The DPO reparameterization selects exactly which reward function within each equivalence class.
+reward function,optimal policy,The partition function of the optimal policy induced by the reward function is derived.
+plackett-luce family,reward models,The DPO algorithm imposes constraints on the under-constrained Plackett-Luce family of preference models to preserve the class of representable reward models.
+actor-critic algorithms,instabilities,The framework can be used to diagnose instabilities with standard actor-critic algorithms such as PPO.
+rlhf,pipeline,The RLHF pipeline focuses on the RL fine-tuning step outlined in Section 3.
+control as inference framework,constrained rl problem,Connections can be drawn to the control as inference framework for the constrained RL problem outlined.
+parameterized model,minimize,A parameterized model is used to minimize certain aspects in the context.
+constrained rl problem,parameterized model,The constrained RL problem outlined in the context assumes a parameterized model to be utilized in the optimization process.
+optimal policy,reward function,"The optimal policy is induced by the reward function r(y, x) mentioned in Eq. 7."
+normalization term,soft value function,"The normalization term in f(r, ⇡ref, ) can be interpreted as the soft value function of the reference policy ⇡ref."
+reward normalization,dpo reparameterization,"The DPO reparameterization yields a reward function that does not require any baselines for reward normalization, unlike prior works."
+rates,human-written summaries,"Rates and human-written summaries are compared in terms of their evaluation, with GPT-4 being used as an evaluator."
+rates,gpt-4,GPT-4 is mentioned as the evaluator used in the comparison between rates and human-written summaries.
+rates,dpo,DPO's ability in text summarization is evaluated in terms of rates.
+dpo,ppo,DPO's best-case performance on summarization is compared to PPO's performance.
+dpo,summarization,DPO's performance on summarization is assessed in terms of being more robust to changes in sampling temperature.
+dpo,preferences,DPO's ability to train policies directly from preferences is empirically evaluated.
+dpo,common preference learning algorithms,DPO is compared to common preference learning algorithms such as PPO in terms of maximizing reward and minimizing KL-divergence with the reference policy.
+ppo,rlhf,PPO and RLHF are mentioned as baselines in evaluating DPO's performance.
+ppo,n sampled trajectories,PPO is mentioned in comparison to returning the best of N sampled trajectories under a learned reward function.
+"x(i), y(i)",preferences,The dataset of preferences includes pairs of x(i) and y(i) for algorithm learning in various text generation tasks.
+sentiment generation,movie review,"In controlled sentiment generation, a preﬁx of a movie review dataset is used for generating positive sentiment."
+sentiment classiﬁer,preference pairs,sentiment classifier generates preference pairs over generations
+preference pairs,x,preference pairs are generated using a pre-trained sentiment classifier where x is involved
+prefernce pairs,y,preference pairs are generated using a pre-trained sentiment classifier where y is generated with positive sentiment
+policy,summary y,policy must generate a summary y of the main points in the post
+policy,engaging and helpful response y,policy must produce an engaging and helpful response y to a user’s query
+off-the-shelf language model,sft model,The off-the-shelf language model is fine-tuned to form the SFT model.
+ground-truth reward function,sentiment classiﬁer,The sentiment generation setting uses the ground-truth reward function as a sentiment classifier for evaluation.
+win rate,baseline policy,Algorithms are evaluated based on their win rate against a baseline policy using GPT-4 for human evaluation.
+summarization,reference summaries,Reference summaries in the test set are used as a baseline for evaluating algorithms in the summarization setting.
+single-turn dialogue,preferred response,The preferred response is used as a baseline for evaluating algorithms in the single-turn dialogue setting.
+dpo,chosen summaries,DPO is the only method that improves over chosen summaries in the Anthropic-HH test set.
+temperatures,training,Different sampling temperatures are used over the course of training to evaluate win rates.
+dpo,dataset labels,DPO's improvement over the dataset labels is fairly stable over the course of training
+lms,automated evaluators,Existing studies suggest that LMs can be better automated evaluators than existing metrics
+gpt-4,humans,"We find GPT-4 judgments correlate strongly with humans, with human agreement with GPT-4 typically similar or higher than inter-human annotator agreement"
+dpo,training language models,"In addition to DPO, we evaluate several existing approaches to training language models to adhere to human preferences"
+zero-shot prompting,gpt-j,"Most simply, we explore zero-shot prompting with GPT-J in the summarization task"
+2-shot prompted,pythia-2.8b,We explore 2-shot prompting with Pythia-2.8B in the dialogue task
+sft model,preferred-ft,"In addition, we evaluate the SFT model as well as Preferred-FT, which is a model fine-tuned with supervised learning on the chosen completion"
+unlikelihood,policy optimization,Unlikelihood simply optimizes the policy to maximize the probability assigned and minimize the probability assigned
+ppo,ppo-gt,"We consider PPO using a reward function learned from the preference data and PPO-GT, which is an oracle that learns from the ground truth reward function available"
+ppo-gt,oracle,PPO-GT is described as an oracle that learns from the ground truth reward function available in the controlled sentiment setting.
+ppo-gt,ground truth reward function,PPO-GT learns from the ground truth reward function available in the controlled sentiment setting.
+ppo-gt,sentiment experiments,"In the sentiment experiments, two implementations of PPO-GT are used."
+modified version,rewards,A modified version of PPO-GT normalizes rewards and further tunes hyperparameters to improve performance.
+ppo,rewards,The modified version of PPO uses these modifications when running 'normal' PPO with learned rewards.
+best of n baseline,sft model,The Best of N baseline samples N responses from the SFT model and returns the highest-scoring response according to a reward function learned from the preference dataset.
+dpo,rlhf objective,The question is raised about how well DPO can optimize the RLHF objective.
+kl-constrained reward maximization objective,typical rlhf algorithms,The KL-constrained reward maximization objective used in typical RLHF algorithms balances exploitation of reward while restricting the policy from deviating far from the reference policy.
+training runs,algorithm,training runs are conducted for each algorithm to test their performance with different hyperparameters.
+algorithm,hyperparameter,different hyperparameters are used for each algorithm to adjust the policy conservativeness.
+target kl,ppo,target KL values are specified for PPO algorithm as part of the training runs.
+target kl,unlikelihood,target KL values are specified for unlikelihood algorithm as part of the training runs.
+random seeds,preferred-ft,random seeds are used for preferred-FT algorithm in the training runs.
+training steps,convergence,evaluation of policies is done after each 100 training steps until convergence.
+policy,test prompts,each policy is evaluated on a set of test prompts to assess its performance.
+reward,true reward function,average reward under the true reward function is computed for evaluation.
+sequence-level kl,reference policy kl,average sequence-level KL is computed with respect to the reference policy KL for evaluation.
+dpo,ppo,DPO produces a more efficient frontier compared to PPO while optimizing the same objective.
+dpo,reward/kl tradeoff,DPO achieves a better tradeoff between reward and KL compared to PPO.
+ppo-gt,ground truth rewards,PPO-GT refers to PPO accessing ground truth rewards for evaluation.
+dpo,real preference datasets,evaluation is done to assess if DPO can scale to real preference datasets.
+dpo,summarization,fine-tuning performance of DPO is evaluated for summarization tasks.
+rouge,human preferences,ROUGE metrics may not be well correlated with human preferences for summarization tasks.
+ppo,human preferences,prior work has used PPO for fine-tuning LMs based on human preferences.
+methods,completions,Methods are evaluated by sampling completions on the test split of TL;DR summarization dataset.
+methods,win rate,The win rates of different methods are computed against reference completions in the test set.
+gpt-j sft model4,dpo,"DPO, PPO, and Preferred-FT all fine-tune the same GPT-J SFT model. DPO has a win rate of approximately 61% at a temperature of 0.0, exceeding PPO's performance."
+dpo,ppo,DPO achieves higher maximum win rate compared to PPO. DPO is more robust to sampling temperature than PPO.
+preferred-ft,sft model,Preferred-FT does not significantly improve over the SFT model.
+dpo,ppo,DPO and PPO are compared head-to-head in human evaluations.
+dpo,sampling temperature,DPO's performance is affected by the sampling temperature. DPO samples at temperature 0.25 were preferred over PPO samples in human evaluations.
+methods,test split,Methods are evaluated on the test split of the Anthropic HH dataset with human-assistant interaction.
+preferred completions,test,preferred completions are used as the reference to compute the win rate for different methods
+preferred completions,pythia-2.8b,preferred completions are used to start with a pre-trained Pythia-2.8B model
+preferred completions,dpo,preferred completions are used to train using DPO
+pythia-2.8b,dpo,DPO performs as well or better compared to Pythia-2.8B for the best-performing temperatures for each method
+best of 128,preferred-ft,comparison is made against the best of 128 Preferred-FT completions
+rlhf model,ppo,RLHF model is trained with PPO on the Anthropic HH dataset
+best of 128,ppo,Best of 128 is considered a rough proxy for PPO-level performance
+dpo,anthropic hh dataset,DPO is the only computationally efficient method that improves over the preferred completions in the Anthropic HH dataset
+ppo,dpo,"PPO and DPO are compared in terms of performance under distribution shifts, with DPO outperforming PPO by a significant margin on news articles from the CNN/DailyMail dataset."
+gpt-4,ground-truth summaries,"GPT-4 win rates are computed against ground-truth summaries in datasets, showing the comparison of the results."
+tl;dr,gpt-4,TL;DR summarization experiment uses GPT-4 to evaluate policies and results.
+gpt-4,human judgments,"A human study is conducted to verify the reliability of GPT-4's judgments, using different prompts."
+gpt-4 (c),concise,GPT-4 (C) prompt asks for more concise summary
+gpt-4 (c),summarizes,GPT-4 (C) prompt asks for which summary better-summarizes the important information
+gpt-4,humans,GPT-4 tends to agree with humans about as often as humans agree with each other
+gpt-4 (c),main results,GPT-4 (C) prompt provides win rates more representative of humans; used for main results in Section 6.2
+gpt-4 (c),human study,GPT-4 (C) prompt generally provides win rates more representative of humans
+human study,web interface,"Details about the human study, including the web interface presented to raters"
+human study,human volunteers,"Details about the human study, including the list of human volunteers"
+human study,appendix d.3,"For additional details about the human study, see Appendix D.3"
+gpt-4,win rates,GPT-4 (C) prompt generally provides win rates more representative of humans
+gpt-4,tl;dr summarization samples,Comparing human and GPT-4 win rates and per-judgment agreement on TL;DR summarization samples
+humans,summary,Each experiment compares a summary from the stated method
+gpt-4,humans,GPT-4 and Humans agree with each other as much as they agree among themselves.
+summary,ppo,Comparison of summaries from stated method with summaries from PPO with temperature 0.
+human win %,gpt-4 (s)-h agree,Comparison of Human wins percentage with agreement between GPT-4 (S) and Humans.
+gpt-4 (c),human win %,Comparison of GPT-4 (C) wins percentage with Human wins percentage.
+gpt-4 (s)-h agree,h-h agree,Agreement between GPT-4 (S) and Humans compared to Human-Human agreement.
+dpo,language models,DPO introduced as a training paradigm for training language models from preferences without reinforcement learning.
+dpo,existing rlhf algorithms,"DPO performs similarly or better than existing RLHF algorithms, including those based on PPO."
+dpo,hyperparameters,Virtually no tuning of hyperparameters required for DPO to perform similarly or better than existing RLHF algorithms.
+dpo,barrier,DPO meaningfully reduces the barrier to training more language models from human preferences.
+results,future work,Results raise several important questions for future work.
+dpo policy,distribution,"How does the DPO policy generalize out of distribution, compared with learning from an explicit reward function?"
+dpo policies,ppo-based models,DPO policies can generalize similarly to PPO-based models.
+dpo policy,ppo-based models,DPO policies can generalize similarly to PPO-based models
+training,self-labeling,training with self-labeling from the DPO policy
+reward over-optimization,direct preference optimization setting,how does reward over-optimization manifest in the direct preference optimization setting
+figure 3-right,performance,is the slight decrease in performance in Figure 3-right an instance of reward over-optimization
+models,6b parameters,we evaluate models up to 6B parameters
+dpo,state-of-the-art models,exploration of scaling DPO to state-of-the-art models orders of magnitude larger
+win rates,gpt-4,the win rates computed by GPT-4 are impacted by the prompt
+models,training,"possible applications of DPO exist beyond training language models from human preferences, including training generative models in other modalities"
+em,knight-hennessy graduate fellowship,EM gratefully acknowledges funding from a Knight-Hennessy Graduate Fellowship
+cf,cifar fellows,CF and CM are CIFAR Fellows
+work,stanford accelerator for learning (sal),This work was supported in part by the Stanford Accelerator for Learning (SAL)
+work,stanford institute for human-centered artificial intelligence (hai) generative ai for the future of learning seed grant program,This work was supported in part by the Stanford Institute for Human-Centered Artificial Intelligence (HAI) Generative AI for the Future of Learning seed grant program
+work,stanford center for research on foundation models (crfm),The Stanford Center for Research on Foundation Models (CRFM) provided part of the compute resources used for the experiments in this work
+crfm,compute resources,CRFM provided part of the compute resources used for the experiments in this work.
+work,onr grant n00014-20-1-2675.10,This work was supported in part by ONR grant N00014-20-1-2675.10.

@@ -1,0 +1,164 @@
+node_1,node_2,edge
+message passing neural networks (mpnns),graph neural networks (gnns),MPNNs are a dominant flavor of GNNs
+1-dimensional weisfeiler-leman (1-wl) test,graph isomorphism testing framework,MPNNs are limited to the power of the 1-WL test
+k-wl hierarchy,more expressive gnns,Researchers draw inspiration from k-WL to create more expressive models
+current k-wl-equivalent gnns,practicality for small k values,These GNNs are not practical due to combinatorial complexity increasing with k.
+empirical success,graph learning tasks,Some works find success without highly expressive models
+fine-grained ruler of expressiveness,expressiveness-complexity tradeoff,Desire for a model that gradually increases expressiveness
+(k,c)-setwl hierarchy,k-wl
+(k,c)-setgnn,(k
+progressively-expressive model,proposed model,The model introduced in the paper aims to strike a balance between expressiveness and practicality.
+higher-order gnns,k-wl hierarchy,These models are inspired by the k-WL hierarchy
+higher-order models,1-wl,The key limitation of higher-order models beyond 1-WL is their poor scalability due to the combinatorial growth in complexity.
+higher-order models,small graphs,These models can only be applied to small graphs because of practical constraints with large k values.
+open question,practical graph learning tasks,There is an open question about the necessity of highly expressive GNNs for real-world tasks.
+1-wl,n nodes,Babai et al. showed that almost all graphs with n nodes can be distinguished by 1-WL
+ga-mlp models,mpnns,GA-MLPs have shown superior generalization performance despite being less expressive than MPNNs.
+model complexity,overfitting and generalization,Increased model complexity can lead to negative effects on generalization
+k-wl hierarchy,ruler of expressiveness,The current 'ruler' of expressiveness (k) is considered impractical beyond k>3
+fine-grained hierarchy,more expressive models,The fine-grained hierarchy aims to enable the gradual construction of more expressive models
+proposed hierarchy,(k,c)-setgnn
+k-wl,k-multisets,The design of (k
+k-multisets,k(c)-sets,Further simplification occurs when transitioning from k-multisets to k(c)-sets
+input graph sparsity,c connected components,Considering the sparsity of the input graph reduces the scope to only k connected nodes with c components
+super-graph architecture,sequence of k(c)-sets,The model uses a bidirectional message-passing architecture where the super-graph is composed of a sequence of k(c)-sets.
+super-graph architecture,k,-sets
+bidirectional message passing,k,-sets
+final graph embedding,k,-sets' embeddings
+k,-setgnn,existing state-of-the-art gnns
+simulated expressiveness,zinc-12k,k
+expressiveness,k and c,Increasing expressiveness is observed with larger values of k and c.
+scalability,practical running time and memory requirements,Proposed designs allow for practical training with larger values like k=10 and c=3.
+mpnns (message passing neural networks),1-wl upper-bound,MPNNs are limited by the 1-WL test in expressiveness.
+mpnns limitations,counting induced connected substructures,Chen et al. showed that MPNNs can't count subgraphs with 3 or more nodes.
+mpnns limitations,star-shaped patterns,Arvind et al. and Loukas showed that MPNNs can only count star patterns.
+loukas's work,decision problems on graphs,Loukas's research explores MPNNs' inability to solve graph decision problems.
+mpnns,problems,MPNNs cannot solve these problems unless strict conditions of depth and width are met.
+mpnns,longest/shortest cycles,diameters
+loukas's work,universality of mpnns,Loukas [38] showed that MPNNs can be universal approximators when nodes are sufficiently distinguishable.
+sato et al.'s work,minimum dominating set,maximum matching
+you et al.'s work,cycle counts,You et al. [63] motivate injecting cycle counts as node features due to MPNNs' inability to count cycles.
+positional features,distinguishing nodes,Earlier work by You et al. [62] adds positional features to address this limitation.
+subgraph isomorphism counting,empowering mpnns with substructure information,Others proposed using subgraph isomorphism for more expressive power.
+zhang et al.'s work,subgraph variants of wl test,Zhang et al. [65] propose subgraph WL test variants
+zhao et al.'s work,subgraph wl test,Zhao et al. [68] also contribute to subgraph-based WL tests.
+bevilacqua et al.'s work,subgraph wl test,Bevilacqua et al. [8] propose subgraph WL test variants with similar strength.
+1-wl rooted subgraph extension,bounded by 3-wl,[21] shows this extension is bounded by 3-WL.
+community exploration,ongoing research,The community is still actively exploring various approaches to enhance MPNNs.
+1-wl,3-wl,The context mentions that the based extension is bounded by 3-WL
+relational pooling mechanism,1-wl,Murphy et al. propose a mechanism to achieve above-1-WL expressiveness
+spectral mpnns,1-wl,Balcilar et al. show that spectral MPNNs are more powerful than 1-WL
+k-wl,practical graphs,k-WL does not scale well to practical graphs
+k-igns,k-wl expressivity,Maron et al.'s k-IGNs have exact k-WL expressivity but are not scalable.
+k-lwl,k-wl,k-LWL is a variant of k-WL that considers only k-sets
+k-gnn,k-wl,Similar to k-LWL
+-k-wl-gnn,k-wl,-k-WL-GNN is a variation of k-WL that aims to make it more practical.
+k-sets,additional designs,k-sets are used in conjunction with additional designs to maintain expressivity and practicality
+k-wl-gnn,locality,k-WL-GNN considers sparsity by focusing on local connections among k-tuples
+k-tuple,subgraph network,Qian et al. extend k-tuple to subgraph network
+qian et al.'s extension,speqnet,Both propose to reduce tuple complexity by limiting connected components
+morris et al.'s variants,k > 3,Morris et al.'s methods are not scalable beyond k=3
+graph transformer,k-ign,Graph transformer is linked to k-IGN
+(k,c)-setwl,practical progressively-expressive isomorphism test
+k-wl,notation and background,Section 3.1 provides notation and background for k-WL
+node ordering,removal for practicality,Section 3.2 discusses removing node ordering to enhance practicality without compromising expressivity
+node repetitions,elimination,Section 3.3 addresses removing node repetitions for improved practicality
+graph sparsity,leveraging,Section 3.4 highlights using graph sparsity to enhance practicality
+complexity analysis,sec. 3.5,Section 3.5 delves into the complexity analysis of the method
+k-weisfeiler-leman (k-wl) graph isomorphism test,1-dimensional weisfeiler-leman (1-wl) test,The 1-WL test is a precursor or a simpler version of k-WL
+preliminaries,k-weisfeiler-leman (k-wl),The section introduces k-WL as a main topic within the preliminary discussion.
+graph (g = v(g),e(g),lg)
+undirected graph,directed graph,The context specifically mentions undirected graphs
+isomorphism between graphs,graph g ⇠= g0,Two graphs are isomorphic if there exists a bijection preserving node structure and labels.
+induced subgraph (g[!v],g[˜v],g[ˆv])
+multiset (!v),set (˜v),Both multisets and sets are used to represent node selections
+k-multisetwl,k-wl,k-MULTISETWL is upper bounded by k-WL in distinguishing graphs and node groups.
+k-multisetwl,(k-1)-wl,k-MULTISETWL is no less powerful than (k-1)-WL in distinguishing graphs
+k-multisetwl,cfi graphs,A variant of CFI graphs serves as a counterexample to prove Theorem 2
+super-graph,sk-mwl(g),The super-graph is defined by k-MULTISETWL
+multiset,g,˜v
+iteration,t,The theorems refer to the t-th iteration of k-MULTISETWL.
+graph level encoding,gmwl(t),gmwl(t) represents the encoding of the graph at the t-th level.
+p(˜v),˜v,p(˜v) is possibly a projection or transformation of ˜v
+k-multisetwl,doubly bijective k-pebble game,The theorem implies that k-MULTISETWL is equivalent to the doubly bijective k-pebble game
+k-multisetwl,theorem 2,The proof of Theorem 2 relies on the doubly bijective k-pebble game characterization of k-MULTISETWL.
+k-multisetwl,theorem 3,k-MULTISETWL has the same expressivity as the doubly bijective k-pebble game
+k-multisetwl,k-setwl,k-MULTISETWL is transformed into k-SETWL by removing repetition inside k-multisets.
+k-multiset ˜v,m-set ˆv,A k-multiset ˜v is transformed into an m-set ˆv by removing repetition
+k-multiset ˜v,f (s(˜v),r(˜v))
+m1-set ˆv,m2-set ˆu,A m1-set ˆv is connected to a m2-set ˆu based on a specific relationship
+k-multisetwl,expressivity,k-MULTISETWL is extended to define the expressivity of m-sets by comparing their ability to separate node sets and graphs.
+k-multisetwl,k-setwl,k-MULTISETWL is at least as expressive as k-SETWL in terms of separating node sets and graphs.
+k-multisetwl,computational cost,k-MULTISETWL reduces computational cost by using m-sets instead of k-sets.
+k-multisetwl,(k,c)-setwl
+sparse graphs,accounting,The proposed method addresses the sparsity of a graph to improve representation.
+color refinement algorithm,super-graph,The complexity of color refinement algorithms is linear to the number of supernodes and edges in the super-graph at each iteration.
+k-wl,sk-wl(g),For k-WL
+m-sets,sk-wl(g),In k-WL
+number of supernodes,complexity analysis,The analysis compares the exact number of supernodes for different algorithms
+graph family,scalability measurement,Directly analyzing savings by restricting the number of components is challenging without assuming a specific graph family.
+(k,c)-setgnn,scalability
+k-fwl,k-wl,k-FWL is a stronger algorithm than k-WL
+k-fwl,setfwl,k-FWL is extended to k-SETFWL
+k-setfwl,k-wl,k-SETFWL is an extension of k-WL
+k-setfwl,setwl,k-SETFWL is a variant of SETWL
+(k,c)-setgnn,sparse graphs
+(k,c)-setgnn,(k
+k-tuple,color assignment,Colors are assigned to k-tuples during the k-FWL algorithm.
+m-set,color assignment,Colors are assigned to m-sets during the k-SETFWL algorithm.
+hash function,gnn model,In (k
+graph neural network (gnn),deepset,GNN is transformed into GNN by replacing the HASH function with a combination of MLP and DeepSet
+supernode (ˆv),sk,c-swl (super-graph)
+k,c)(-) setwl,k
+m-sets,(mk,c(g
+h(t)(ˆv) (vector representation),supernode representation at t-th iteration,h(t)(ˆv) denotes the vector representation of a supernode in the (k
+progressively-expressive,expressivity,Increasing k and c leads to higher progressive expressivity of -SETGNN.
+bidirectional sequential message passing,bidirectional blockwise sequential message passing,Proposed alternative to traditional sequential message passing in -SETGNN
+(k,c)-setgnn斯特,(k
+memory usage,limited-size gpus,-SETGNN斯特 has lower memory usage due to its efficient loading of graphs for GPUs with limited capacity.
+expressivity,efficiency,-SETGNN斯特 is more expressive and efficient compared to its parallel counterpart.
+(k,c)-setgnn,parallel message passing
+setgnn,theorem 7,Theorem 7 states that SETGNN is more expressive than the t-layer SETGNN for large 't' as N approaches infinity.
+t-layer (k,c),setgnn
+supernode initialization,eq. (9),Supernode initialization is improved to reduce computational and memory overhead for c > 1
+graph with c components,connected components c1,...
+theorem 8,graph isomorphism,Theorem 8 explains that two graphs G and G0 with c connected components are isomorphic under specific conditions.
+algorithm for building connections,single components ˆu1,...
+simulation data performances,method exp,acc
+expressive gnns,sota (state-of-the-art),Question 1 compares the performance of SETGNN⇤ against SOTA expressive GNNs.
+k,c,In Question 2
+(k,c),computational requirements
+exp dataset,1-wl and 2-wl failed graphs,The EXP dataset consists of 600 pairs of graphs that fail 1-WL and 2-WL tests
+sr25 dataset,strongly regular graphs,SR25 contains 15 3-WL failed graphs with 25 nodes each
+substructure counting tasks,triangle,tailed triangle
+graph property regression tasks,connectedness,diameter
+zinc-12k,real-world graph learning task,ZINC-12K is a dataset used to evaluate performance on a chemical compound graph learning problem.
+qm9,real-world graph learning task,QM9 is another real-world dataset for molecular graph analysis
+zinc-12k,real world graph learning tasks,ZINC-12K is one of the two real-world graph learning tasks mentioned in the context
+qm9,real world graph learning tasks,QM9 is another real-world graph learning task compared alongside ZINC-12K.
+cfi(k),graph,CFI(k) graphs are a specific type of graph discussed in the context
+gcn,baselines,GCN is a baseline method used for comparison in the context
+gin,baselines,GIN is another baseline method
+pna⇤,baselines,PNA⇤ is a baseline that performs better on EXP but not as well as (k
+ppgn,baselines,PPGN
+(k,c)-setgnn⇤,baselines
+cin,reference,CIN is directly referenced for comparison on ZINC-12K
+gnn-ak,baselines,GNN-AK is among the baselines whose results are sourced from [68].
+gine,comparison,GINE is a competing model on QM9
+exp,tasks,EXP is a specific task within the simulation datasets where models' performances are compared.
+sr25,tasks,SR25 is another task in the simulation datasets
+setgnn⇤,baselines,outperforms on substructure counting tasks and graph property prediction tasks
+substructure counting tasks,graph property prediction tasks,evaluated for individual values of k and c
+k,c,effect on performance
+triangle tasks,4-cycle task,large magnitude drop in test error observed for k=4
+k=2 to 3,improvement in test error,orders of magnitude improvement for triangle tasks
+zinc-12k,state-of-the-art performance,new best MAE of 0.0750 achieved with SETGNN⇤
+k,c,effect on ZINC-12K performance
+qm9,gine performances,comparison for different layer configurations (4 and 6 layers)
+computational requirements,memory consumption,The context discusses how computational requirements increase
+runtime,seconds per epoch,The passage also mentions an increase in runtime as a result of changes in k and c.
+k,c,k and c are parameters that affect both memory consumption and runtime in the (k
+model's expressivity,practical realization,Suitable choices for k and c balance expressivity
+commodity hardware,practical implementation,The model can be executed on standard hardware with appropriate parameter values.
+message passing,sets of k nodes,With c=1
+runtime (seconds per epoch),expressive models,Increased runtime is observed as the model becomes more expressive.

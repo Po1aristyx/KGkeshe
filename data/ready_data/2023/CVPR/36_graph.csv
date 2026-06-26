@@ -1,0 +1,223 @@
+node_1,node_2,edge
+semantic segmentation,model,Semantic segmentation models aim to segment images into different classes or categories using a specific model architecture.
+semantic segmentation,domain generalization,"The study focuses on semantic segmentation under the domain generalization setting, which aims to improve model robustness against domain differences."
+vision transformers,cnns,Existing works show that Vision Transformers are more robust than CNNs in semantic segmentation tasks.
+vision transformers,self-attention,Vision Transformers show better performance due to their visual grouping property of self-attention.
+hierarchical grouping transformer (hgformer),pixels,HGFormer explicitly groups pixels to form part-level masks and whole-level masks for semantic segmentation tasks.
+hierarchical grouping transformer (hgformer),mask classification,HGFormer combines mask classification results at different scales for improved class label prediction.
+semantic segmentation datasets,hgformer,HGFormer is evaluated using seven public semantic segmentation datasets to show its robustness and outperformance over previous methods.
+image,classification units,Images are segmented into classification units for the purpose of classification.
+mask classification,per-pixel classification,Mask classification is considered more robust than per-pixel classification because masks allow aggregation of features over large image regions.
+part-level masks,whole-level masks,"Pixels are grouped into part-level masks first, then part-level masks are grouped into whole-level masks for reliable segmentation."
+part-level masks,whole-level masks,Part-level and whole-level mask classification are combined for robust semantic segmentation as they capture complementary information.
+deep neural network,semantic image segmentation,Deep neural networks have significantly improved research in semantic image segmentation.
+distribution shift,gaussian noise,"Distribution shift, such as Gaussian Noise, is a challenge when grouping pixels into masks."
+domain generalization,source domains,"In domain generalization setting, models are trained on source domains and tested on target domains."
+domain adaptation,target data,"Target data is not accessible/needed during training in domain adaptation, making the task challenging but practically useful."
+vision transformers,traditional cnns,Vision Transformers have been shown to be significantly more robust than traditional CNNs in out-of-distribution generalization.
+self-attention,visual grouping,Some works interpret self-attention as a kind of visual grouping and believe that it is related to robustness.
+fan,segformer,FAN and Segformer have been evaluated on segmentation but do not explicitly introduce visual grouping in their networks.
+deep learning based segmentation models,per-pixel classification,Most deep learning based segmentation models directly conduct per-pixel classification without the process of grouping.
+segmentation models,flat grouping,"Some recent segmentation models introduced flat grouping in the segmentation decoder, where pixels are grouped into a set of binary masks directly."
+detr,mask prediction,"DETR uses a one-to-one matching similar to DETR, where the loss between predicted masks and ground truth masks is computed."
+detr,one-to-one matching,DETR and one-to-one matching are similar concepts in the context of loss computation between predicted masks and ground truth masks.
+predicted masks,ground truth masks,predicted masks and ground truth masks are the entities used to compute loss in the context.
+whole-level masks,mask classification,"whole-level masks directly predict mask classification, leading to more robust results due to information aggregation."
+flat grouping,whole-level masks,"flat grouping is susceptible to errors when generating whole-level masks, especially under cross-domain settings."
+hierarchical grouping,segmentation decoder,"hierarchical grouping is proposed in the segmentation decoder, where pixels are grouped into part-level masks first, and then into whole-level masks."
+part-level masks,whole-level masks,"part-level masks are grouped first, followed by grouping into whole-level masks, showing a hierarchical segmentation approach."
+image segmentation,hierarchical grouping,hierarchical grouping in the context is inspired by pioneer works in image segmentation and psychological evidence related to scene parsing.
+part-level masks,whole-level masks,part-level masks and whole-level masks complement each other by segmenting images at different scales and improving overall robustness.
+scales,robustness,Scales improve the overall robustness
+hierarchical grouping idea,hgformer,HGFormer is proposed to instantiate hierarchical grouping idea
+diagram,fig. 2,The diagram is shown in Fig. 2
+feature maps,part-level grouping module,Feature maps are sent to the part-level grouping module
+cluster centers,feature maps,Cluster centers initialization is down sampled from feature maps
+pixel-center similarities,pixels,Pixel-center similarities are computed and assign pixels to cluster centers according to the similarities
+part-level masks,pixel feature,Part-level masks are derived by computing the similarities between each pixel feature and its nearby center features
+information of the part-level masks,whole-level masks,Information of part-level masks is aggregated to generate whole-level masks using cross-attention
+methods,semantic segmentation datasets,Methods are evaluated using seven challenging semantic segmentation datasets
+model,per-pixel classification based,The model is significantly better than previous per-pixel classification based segmentation models
+model,whole-level mask based segmentation models,The model is significantly better than previous whole-level mask based segmentation models
+contributions,hierarchical grouping paradigm,The contributions are presented as a hierarchical grouping paradigm for robust semantic segmentation
+robust semantic segmentation,hierarchical grouping paradigm,robust semantic segmentation is achieved through the hierarchical grouping paradigm
+hierarchical grouping paradigm,hgformer,HGFormer is proposed based on the hierarchical grouping paradigm
+hgformer,pixels,pixels are grouped into part-level masks in the HGFormer model
+part-level masks,whole-level masks,part-level masks are grouped into whole-level masks in the HGFormer model
+whole-level masks,semantic segmentation results,semantic segmentation results are obtained by making classifications on all masks
+hgformer,semantic segmentation models,HGFormer outperforms previous semantic segmentation models
+semantic segmentation models,domain generalized semantic segmentation,HGFormer outperforms previous semantic segmentation models on domain generalized semantic segmentation
+grouping-based methods,robustness,grouping-based methods are analyzed for their robustness under distribution shift
+semantic segmentation,computer vision,semantic segmentation is a classic problem in computer vision
+semantic segmentation,pixel-level classification,semantic segmentation is formulated as a pixel-level classification problem in the deep learning era
+whole-level mask classification,semantic segmentation problem,whole-level mask classification is used to formulate the semantic segmentation problem
+learning part-level masks,deep learning era,very few works exist on learning part-level masks for semantic segmentation in deep learning era
+part-level mask classification,semantic segmentation,part-level mask classification is used for semantic segmentation in deep learning era
+semantic segmentation,deep learning,Semantic segmentation is a technique used in deep learning.
+ssn,super pixel fcn,SSN and super pixel FCN mainly focus on part-level mask learning for semantic segmentation.
+bi,part-level masks,BI is not an end-to-end model and needs extra part-level masks as input.
+regproxy,convolutions,RegProxy uses convolutions to learn part-level masks.
+regproxy,i.i.d. condition,RegProxy is only evaluated on the i.i.d. condition.
+regproxy,our work,RegProxy is compared to our work in terms of part-level mask classification for semantic segmentation.
+regproxy,plain vit,RegProxy is customized with plain ViT.
+domain generalization,part-level grouping,Domain generalization and Part-level grouping are related concepts.
+domain generalization,ensemble methods,Ensemble methods are used in domain generalization.
+ensemble-based methods,runtime,"Ensemble-based methods like those mentioned in references [29, 64] are criticized for significantly increasing the runtime."
+ensemble methods,model weights,"Certain ensemble methods, such as those focusing on averaging model weights, are noted for not increasing the runtime but extending the training time."
+method,flops,The method mentioned does not introduce extra Floating-point Operations Per Second (FLOPS) due to its efficient hierarchical grouping design.
+method,training time,"The mentioned method does not introduce extra training time, contrasting with the increased training time associated with certain ensemble-based methods."
+classiﬁcation,domain generalization,Classiﬁcation in the domain generalization context has been widely studied in previous works.
+method,semantic segmentation,"Some previous methods focused on domain generalization (DG) in semantic segmentation, including Randomization and Normalization."
+vision transformers,robustness,"Vision Transformers have demonstrated robustness in the out-of-distribution setting, according to literature [70]."
+vision transformer,grouping property of self-attention,The robustness of Vision Transformer has been attributed to the grouping property of self-attention.
+segmentation decoder,semantic segmentation,There are no works studying the effect of explicit grouping in the segmentation decoder for semantic segmentation in domain generalization (DG).
+levels,mask classification,The study involves exploring different levels of grouping and mask classification for semantic segmentation in the context of domain generalization (DG).
+semantic segmentation,region mapping,"Semantic segmentation involves mapping each region to a class, thereby defining the segmentation of the image into regions."
+region mapping,class,"Region mapping assigns each region to a specific class, forming a set of classes."
+pixel partition,per-pixel classification,The pixel partition is used in per-pixel classification methods to classify each pixel individually.
+pixel partition,whole-level masks partition,"The pixel partition is distinct from the whole-level masks partition, which represents entire masks of a class."
+whole-level masks partition,recent approaches,Recent approaches use the whole-level masks partition to generate masks for different classes directly from pixels.
+part-level mask partition,whole-level masks partition,The part-level mask partition works alongside the whole-level masks partition to enhance robustness in segmentation by focusing on covering class parts.
+mask classification,per-pixel classification,Mask classification is considered more robust than per-pixel classification as it allows for aggregating features over large image regions of the same class.
+whole-level masks generation,pixel partition,"Generating whole-level masks directly from pixels is a challenging task, despite leading methods being able to produce reasonable results."
+sota methods,whole-level masks,SOTA methods can generate whole-level masks directly from pixels.
+ﬂat grouping methods,domain changes,"flat grouping methods are not robust to domain changes, resulting in poor quality generated masks."
+generated masks,low semantic segmentation performance,Poor quality generated masks lead to low semantic segmentation performance.
+hierarchical grouping,segmentation transformer architecture,Hierarchical grouping is proposed in the segmentation transformer architecture to group pixels to part-level masks first and then group part-level masks to whole-level masks.
+grouping task,mask classification,The grouping task becomes less challenging and mask classification can be performed at both scales.
+mask classification,label prediction,Mask classification at both scales can be combined for more robust label prediction.
+masks at two scales,complementary information,Masks at two scales capture complementary information.
+global self-attention,long-range context information,Global self-attention is used to aggregate long-range context information directly at both part-level and whole-level.
+model,semantic segmentation,The model can predict semantic segmentation at different scales by adopting a hierarchical grouping process.
+hierarchical grouping process,two stages,The hierarchical grouping process consists of two stages: grouping pixels into part-level masks and grouping part-level masks into whole-level masks.
+partitions at different scales,classification,Classification is done on partitions at different scales in the model framework.
+part-level grouping,partition,"Part-level grouping is the process of computing a partition Sm = {R1, ..., RNp} to assign pixels to different masks"
+hard assignment matrix,soft assignment matrix,"Hard assignment matrix ˜A is represented by 0s and 1s, while soft assignment matrix A is represented by probabilities in the range [0, 1]"
+iterative grouping algorithm,soft assignment matrix,Soft assignment matrix A is computed using an iterative grouping algorithm to assign pixels to masks based on probabilities
+image,backbone network,Images are passed to a backbone network to obtain feature maps at different resolutions
+feature maps,part-level grouping,Feature maps are used in the part-level grouping process for segmentation and feature extraction
+grouping process,iteration,"The grouping process is repeated L iterations, with Np part-level masks at the end of each iteration"
+part-level classiﬁcations,part-level masks,Part-level classiﬁcations and masks are combined to generate semantic segmentation results O1
+level classiﬁcations,part-level masks,Level classifications are associated with part-level masks as part-level tokens from the last iteration of part-level grouping are aggregated to whole-level masks by whole-level grouping.
+part-level masks,whole-level masks,"Part-level masks are aggregated to whole-level masks by whole-level grouping, which involves cross-attention layers."
+whole-level masks,semantic segmentation results o2,Semantic segmentation results O2 can be obtained by combining whole-level masks and their classiﬁcations.
+semantic segmentation results o1,semantic segmentation results o,The final results O are the sum of semantic segmentation results O1 and O2.
+pixel-center pairs,d,Cosine similarities are computed between pixel-center pairs to obtain D.
+center,d',The result of centers is D' in the context of R9x(HW).
+center,d,"Even though we get D', for convenience, the term D is still used in the text."
+center,cluster,Each cluster center can aggregate nearby pixels to obtain part-level masks.
+center,center feature,"The i-th center feature's similarity with the j-th pixel feature is represented as Di,j."
+center,assignment matrix,The soft assignment matrix can be computed from center features and pixel features.
+assignment matrix,updated center features,The new assignment matrix is created using updated center features.
+assignment matrix,qnew,The assignment matrix is used with Qnew to extract part-level mask tokens.
+assignment matrix,feature map k,The assignment matrix is also used with feature map K in the process.
+assignment matrix,part-level tokens,The assignment matrix is used to extract part-level tokens from another feature map V.
+part-level mask tokens,another feature map v,Part-level mask tokens are extracted from feature map V using the assignment matrix.
+part-level mask tokens,z,The assignment matrix is used to extract part-level tokens from feature map V by calculating Z = A × V.
+z,self-attention layer,Z is passed to a self-attention layer to strengthen the part-level mask features.
+z,ffn layer,Z is also passed to a feed forward network (FFN) layer to strengthen the part-level mask features.
+z,z',Z is processed to get Z' after passing through the self-attention and FFN layers.
+z',linear classifier layer,Z' is further processed using a linear classifier layer for part-level class predictions.
+z',softmax activation layer,Z' is then used with a softmax activation layer to map to part-level class predictions.
+transformer decoders,whole-level masks,Transformer decoders are used to group part-level masks into whole-level masks.
+transformer decoders,multi-head cross-attention,Each transformer decoder layer consists of a multi-head cross-attention mechanism.
+transformer decoders,self-attention,Each transformer decoder layer also includes a self-attention mechanism.
+transformer decoders,ffn layer,Each transformer decoder layer includes an FFN layer for processing.
+multi-head mechanism,cross-attention layer,The cross-attention layer follows the multi-head mechanism in the formulation of the mechanism.
+eout,rn × d,The first MLP layer maps the out features Eout to mask embedding ε.
+feature map before k,kt0,The feature map before K is denoted as KT0 in the formulation.
+class logits,softmask activation,"The second MLP layer maps the out features to class logits, which are then subjected to a softmax activation to get the probability predictions."
+hierarchical grouping design,computation complexity,Our hierarchical grouping design reduces the computation complexity due to the smaller number of part-level masks compared to pixels.
+semantic segmentation,part-level mask classification,The semantic segmentation involves classification at two levels: part-level mask classification and whole-level mask classification.
+semantic segmentation,mask classification,The semantic segmentation results from the part-level mask classification can be computed as O1 = PTm × A. The semantic segmentation results form the whole-level mask classification can be computed as O2 = PTh × M.
+semantic segmentation,ensemble result,The final semantic segmentation result is an ensemble of two results by a simple addition.
+part-level mask learning,ground truth,The challenge in part-level mask learning is that we do not have the ground truth for the part-level partition.
+pixel-cluster contrastive loss,cross-entropy loss,"Given that the cross-entropy loss is also affected by classification accuracy, we also add a pixel-cluster contrastive loss."
+contrastive loss,feature vectors,"The contrastive loss for each pixel in K is computed as: contrast = -log Σexp(f(Ki, Tj))/ΣΣexp(f(Ki, Tj)), where f(x, y) is a function to measure the similarity between two feature vectors."
+feature vectors,losses,"In the context, there is a relationship between feature vectors and losses. The losses such as dice loss, mask loss, and mask classification loss are computed based on the feature vectors."
+predictions,ground truths,Predictions and ground truths have a one-to-one matching relationship as mentioned in the context.
+weights,losses,"Weights for different losses such as Lpart,cls, Lcontrast, Ldice, Lmask, and Lmask,cls are set to particular values as mentioned in the context."
+temperature,contrastive loss,"In the context, the temperature τ is specified for the contrastive loss as 0.1."
+down sample rate,contrastive loss,A down sample rate r is set at 4 for the contrastive loss as mentioned in the context.
+number of reﬁning stages,part-level and whole-level grouping,The context specifies that the number of reﬁning stages L is set to 6 for both part-level and whole-level grouping.
+features,feature maps,Features are strengthened before projection to feature maps using deformable attention Transformer (MSDeformAttn) layers as mentioned in the context.
+image size,datasets,Datasets like Cityscapes and BDD are defined in terms of their image size as mentioned in the context.
+cityscapes,urban scene images,Cityscapes dataset contains urban scene images collected from 50 cities primarily in Germany as mentioned in the context.
+bdd,images,BDD dataset contains images collected from the US as mentioned in the context.
+images,training,"Images are used for training purposes in various datasets mentioned, such as BDD, Mapillary, ACDC, GTAV, SYNTHIA"
+images,testing,"Images are also used for testing in datasets like BDD, Mapillary, ACDC, GTAV"
+bdd,us,Images of BDD dataset are mainly collected from the United States
+bdd,image size,"The image size of BDD dataset is 1,280 × 720"
+mapillary,world,Mapillary dataset contains images captured from all over the world
+mapillary,diverse,Mapillary dataset is diverse as it includes images from various conditions regarding weather and season
+acdc,adverse conditions,"ACDC dataset collects images under adverse conditions such as night, fog, rain, and snow"
+acdc,resolution,"The images in ACDC dataset have a resolution of 1,920 × 1,080"
+gtav,game,GTAV dataset is collected from the GTAV game
+gtav,size of images,"GTAV dataset contains images with a resolution of 1,914 × 1,052 for training, validation, and testing"
+synthia,photo-realistic,"SYNTHIA dataset consists of 9,400 photo-realistic images"
+cityscapes,corruption dataset,Cityscapes dataset is expanded with 16 types of generated corruptions as per previous works
+corruption,categories,"The corruptions in the dataset are divided into 4 categories: noise, blur, weather, and digital"
+corruption,severity levels,There are 5 severity levels for each kind of corruption in the dataset
+models,generalization settings,"Models are evaluated on 4 kinds of generalization settings, one of which involves training on Cityscapes dataset"
+models,cityscapes,Models are trained on Cityscapes images at normal conditions
+models,acdc,Models are tested on ACDC images at 4 kinds of adverse conditions
+transformer-based methods,cnn methods,Transformer-based methods shown to be more robust than traditional CNN methods
+hgformer,transformer-based segmentation methods,HGFormer is compared with two representative transformer-based segmentation methods
+cnn-based methods,per-pixel classification,All CNN-based methods and Segformer are based on per-pixel classification
+mask2former,whole-level classification,Mask2former is based on whole-level classification
+hgformer,cnn-based methods,HGFormer outperforms the previous CNN-based methods by a large margin
+hgformer,transformer-based segmentation models,HGFormer significantly outperforms competitive transformer-based segmentation models
+models,cityscapes,"Models are trained on Cityscapes and tested on BDD, Mapillary, GTAV, and Synthia"
+mask2former,resnet-50 backbone,Mask2Former compared with all methods with a ResNet-50 backbone in Tab. 2
+hgformer,mask2former,HGFormer outperforms Mask2Former by 1.5 points
+hgformer,hierarchical grouping-based model,HGFormer hierarchical grouping-based model is better than flat grouping-based model for domain generalization
+hierarchical grouping-based model,ﬂat grouping-based model,"Our model showed superiority over the flat grouping-based model by 1.5 points, indicating the effectiveness of the hierarchical grouping approach."
+mapillary,bdd,Models trained on Mapillary were tested on BDD to assess their performance.
+mask2former,cityscapes,The results of Mask2former on Cityscapes were implemented by us for evaluation purposes.
+segformer,cityscapes,The performance of Segformer was assessed on Cityscapes dataset.
+cityscapes,acdc,Models trained on Cityscapes were evaluated on ACDC dataset to assess generalization capabilities.
+mask2former,synthia,Mask2former results were obtained on the Synthia dataset.
+hgformer,swin-t,HGFormer model was evaluated in comparison with Swin-T model for semantic segmentation task.
+hgformer,mask2former,HGFormer is consistently better than Mask2former with all backbones
+hgformer,mask2former,HGFormer outperforms Mask2former under adverse conditions
+hgformer,swin-lb,HGFormer performs better with Swin-LB backbone
+hgformer,swin-l,HGFormer with Swin-L backbone achieves a higher score
+hgformer,swin-t,HGFormer with Swin-T achieves a score of 55.6 in part-level mask classification
+hgformer,cityscapes,HGFormer trained on Cityscapes outperforms Mask2former on images with adverse conditions
+mask2former,swin-t,Mask2former trained with Swin-T achieves a score of 41.6 in Cityscapes-to-Cityscapes-C generalization
+mask2former,swin-l,Mask2former trained with Swin-L achieves a score of 59.4 in Cityscapes-to-Cityscapes-C generalization
+hg-former,mask2former,Comparison showing that HG-Former is significantly better than Mask2former when generalizing to extremely corrupted images
+hg-former,part-level mask classification,Comparison of results of different iterations of HG-Former showing performance differences at different stages and iterations
+part-level mask classification,whole-level grouping,Explanation that performance differences may be influenced by gradients from whole-level grouping affecting part-level tokens
+part-level mask classification,whole-level mask classification,Comparison showing that part-level classification is significantly better than whole-level classification in HG-Former
+ensemble of part-level and whole-level classification,performance,Explanation that combining part-level and whole-level classification can further improve performance
+part-level classification,whole-level classification,Part-level and whole-level mask classification are complementary to each other.
+mask2former,hg-former,Visualization comparisons demonstrate the performance of models for real-world adverse conditions and for synthetic corruptions.
+masks at different levels of corruption,part-level masks,Part-level masks are more stable and can achieve high recall for the boundaries between classes.
+whole-level masks,severity levels,"Whole-level masks are not stable with the increasing of severity levels, totally failing at level 5."
+part-level masks,model weights,"Part-level masks are visualized with model weights from random initialization, ImageNet pre-trained weights, and Cityscapes trained weights."
+weights,results,"The weights produce results, as shown in Fig. 7."
+weights,model,The weights are used by the model to produce part-level masks.
+model,part-level masks,The model produces part-level masks.
+model,unsupervised segmentation,The model has the potential for unsupervised segmentation.
+model,weakly-supervised segmentation,The model has the potential for weakly-supervised segmentation.
+part-level grouping structure,prior,The part-level grouping structure provides a good prior for generalization.
+model,cityscapes trained model weights,The Cityscapes trained model weights are used by the model.
+part-level classification,whole-level classification,Comparison of part-level classification and whole-level classification is shown in Table 6.
+hgformer,swin-t,HGFormer is trained with Swin-T on Cityscapes.
+models,cityscapes,The models are trained on Cityscapes for visualization of results on corruptions in Fig. 5.
+part-level masks,whole-level masks,Visualization of part-level and whole-level masks are shown in Fig. 6.
+part-level masks,gaussian noise,The part-level masks are visualized at different levels of Gaussian noise.
+part-level masks,whole-level masks,"part-level masks are more robust than whole-level masks in Mask2Former, especially with increasing severity level of Gaussian noise"
+part-level masks,categories,part-level masks with different weights are shown to be more accurate than randomly initialized and ImageNet pre-trained weights for different categories
+imagenet pre-trained weights,categories,ImageNet pre-trained weights are less accurate compared to randomly initialized weights for different categories
+part-level masks,part-level classiﬁcation,part-level masks and part-level classification work together to transform feasible part-level partitioning into correct semantic segmentation results
+semantic segmentation result,ensemble,the final semantic segmentation result is an ensemble of two results
+model,multi-task learning,"the model can be considered a kind of multi-task learning, where the balance of loss weights for classification at different scales can be studied in the future"
+model,fusion methods,more complicated fusion methods of classification at different scales can be explored in the future
+mentation model,image partitions,mentation model can efficiently generate image partitions in a hierarchical structure
+mentation model,part-level mask classification,mentation model performs part-level mask classification
+mentation model,whole-level mask classification,mentation model performs whole-level mask classification
+national nature science foundation of china,grants u22b2011 and 62101390,supported by the National Nature Science Foundation of China under grants U22B2011 and 62101390
+jian ding,china scholarship council,Jian Ding was supported by the China Scholarship Council
+ahmed abbas,insightful discussions,thank Ahmed Abbas for the insightful discussions

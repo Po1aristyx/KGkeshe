@@ -1,0 +1,119 @@
+node_1,node_2,edge
+supervised learning,deep models,Supervised learning with deep models is the focus
+materials science,graph neural networks,Graph neural networks have been recently employed in materials science
+graph neural networks,molecules,These networks draw direct inspiration from models designed for molecules
+materials,crystalline symmetry groups,Materials possess crystalline structure
+equivariant models,crystalline symmetry groups,The proposed models are equivariant to crystalline symmetry groups
+message passing operations,permutation groups,The models generalize message passing operations for compatibility with broader permutation groups.
+crystal graph,convolution operation,The models define an expressive convolution operation specifically for crystal graphs.
+property prediction tasks,state-of-the-art,These equivariant models achieve competitive results compared to existing state-of-the-art approaches.
+computational chemistry,molecular property prediction,Molecular property prediction is a well-established application of computational chemistry
+neural network architectures,larger assemblies of atoms (materials),The challenge addressed is designing neural networks for materials
+deep learning,ab initio simulation methods (dft),Deep learning can complement computationally intensive methods like density functional theory (DFT) in material science.
+crystals,materials,Crystalline materials are a type of materials characterized by the ordered arrangement of atoms in lattices
+crystals,unit cell,A crystal is described by the regular repetition of a set of atoms
+crystals,symmetry,Crystals are characterized by a high degree of symmetry
+crystals,graph neural networks (gnns),GNNs have been proposed for supervised prediction tasks on crystals
+gnns,structural information,The author suggests that GNNs lose structural information when mapping crystal structures to graphs because they are equivariant to atom permutations
+equivariant layers,supervised learning,Equivariant layers are introduced in the paper for the purpose of supervised learning specifically tailored for handling the symmetries in materials
+product of groups g⇤,equivariant models,The proposed approach uses models that are equivariant to a product of groups G⇤
+translational symmetry,crystal,The term 'translational symmetry' refers to the property of a crystal
+lattice,unit cell,A lattice defines subsets of Rn called unit cells
+unit cell,atomic positions,In a material
+atomic positions,s,S represents the set of atomic positions in a material's unit cell
+sublattice,lattice,A sublattice is a lattice subset with its own basis
+sublattice,supercell,The supercell is the unit cell associated with a sublattice
+centring vectors,sublattice,Centring vectors are coset representatives used to define a sublattice within the full lattice
+supercell,coset decomposition,The supercell is related to the coset decomposition of the lattice
+lattice points,supercell cp,The centering vectors are the lattice points contained within the supercell.
+basis vectors a1,lattice ⇤,a1 is a lattice constant that defines the underlying lattice.
+graphene,two-dimensional crystal,Carbon atoms form a two-dimensional crystal structure with a honeycomb pattern.
+carbon atoms,honeycomb structure,The arrangement of carbon atoms creates a honeycomb structure.
+unit cell,s = 0,a1
+sublattice ⇤p,basis vectors b1,b2
+supercell up,centring vectors,Centring vectors correspond to lattice points within the supercell UP.
+space group g,euclidean group e(n),Space groups are subgroups of the Euclidean group
+space group element,(w,t)
+point group p,space group g,The point group is a subset of the space group and represents the symmetries around a central point.
+space group,point group,The point group P is obtained from linear part operations in the space group G
+translation subgroup,space group,The translation subgroup T is a normal subgroup derived from elements in G with the linear part being the identity.
+translation subgroup,point group,The factor group G/T is isomorphic to the point group P
+crystallographic restriction theorem,finite groups,This theorem restricts the allowed finite groups to be valid point groups
+space groups,same type,Two space groups G and G0 are of the same type if they can be transformed into each other by a change of coordinate system.
+2 dimensions,17 space group types,There are 17 distinct space group types in two-dimensional crystals.
+3 dimensions,230 space group types,In three-dimensional crystals
+bravais group,lattice,The Bravais group of a lattice is the set of linear isometries that map the lattice to itself
+bravais type,lattices,Lattices are classified based on their Bravais type
+5 bravais types (2d),14 bravais types (3d),There are five Bravais types in 2D and 14 in 3D
+full symmetry group,translation group,The full symmetry group G⇤ is the semidirect product of the translation group T⇤ and the Bravais group P⇤.
+bravais lattice,translation group,The semidirect product of the translation group with the Bravais lattice defines the group G⇤.
+translation group,space group g,The translation subgroup of G is the translation group T⇤
+crystal structure,unit cell u,A crystal structure is defined by a lattice and a unit cell
+lattice,point group p⇤,The Bravais group associated with the lattice is P⇤
+point group p,point group p⇤,The point group of the crystal structure G is not always P⇤
+square bravais lattice,wallpaper pattern,The wallpaper pattern is described by a square Bravais lattice and a unit cell with reduced symmetry.
+gnns (graph neural networks),limitations,This section discusses the limitations of GNNs when applied to crystalline data
+distance between atoms,edge features,Typical GNN models use edge features that encode distances between atoms within the unit cell
+unit cell,feature vector,The feature vector hi is assigned to atoms within the unit cell.
+graph,sparse tensor h,The graph is represented as a sparse tensor H
+gnn (graph neural network),function approximator,A GNN is a type of function approximator that processes the sparse tensor H through successive layers.
+layer,permutation equivariant,GNN layers are permutation equivariant
+kronecker product,permutation matrix p(g),The use of Kronecker product relates to the permutation matrix P(g)
+crystal structure,forgotten (in gnns),In GNNs
+permutation equivariance,crystal space groups,The author suggests using models equivariant to the crystal space groups
+atom,feature vector,A feature vector is built for each atom
+unit cell,atom,Each atom's encoding includes a one-hot identification of the unit cell it belongs to
+supercell,graph,A graph is constructed from atoms in the supercell
+distance between atoms,edge feature,Edge features are computed using the distance between atoms
+sparse representation,graph representation learning,Sparsity is used as an inductive bias in graph learning
+atomic bonds,ambiguity,Using only distance features avoids explicit position vectors
+computational complexity,crystals,The context discusses the beneﬁcial reduction of computational complexity in the context of defining atomic bonds in crystals.
+atomic bonds,crystals,Atomic bonds are not unambiguously defined in crystals
+approach in [32],graph building strategy,The chosen approach follows [32] and involves drawing edges between atoms sharing Voronoi faces with a certain distance criteria.
+voronoi face,atoms,Atoms are connected if they share a Voronoi face.
+distance criterion,cordero radii,The distance between atoms must be less than the sum of atomic Cordero radii plus a cutoff.
+graph-building strategy,sparse graphs,The resulting graphs are described as relatively sparse.
+translational invariance,atoms at the boundary,Edges are initially drawn outside the supercell to preserve translational invariance.
+supercell,sublattice vectors,The sublattice vectors are bi = 2ai
+voronoi tessellation,edges between atoms,Edges are drawn based on Voronoi cells to connect atoms.
+periodization of the graph,edges pointing outside,Edges are mapped back inside the supercell to maintain consistency.
+crystal structure,space group g,The crystal structure is characterized by a specific space group G.
+equivariant crystal networks,crystal structures,The text introduces equivariant crystal networks as a concept related to these crystal structures.
+bravais lattices,primitive triclinic type,The first option deals with all lattices by considering the least symmetric Bravais lattice of primitive triclinic type.
+bravais lattices,symmetric group p¯1 = t⇤ o c2,The first option uses the symmetry group P¯1
+symmetric group p¯1,symmetric group s⇤,The second option considers the symmetric group S⇤
+lattice symmetry groups,sn (symmetric group over all atoms),SN is the largest group in the hierarchy
+equivariant crystal network (ecn),message passing framework,ECN generalizes the message passing framework
+message passing framework,parameter-sharing patterns,The framework uses parameter-sharing patterns to maintain equivariance while having multiple versions of functions.
+parameter-sharing patterns,[51] (reference),The definition of parameter-sharing patterns follows the approach described in reference [51].
+supercell,pooling operation,The context discusses the importance of selecting a pooling operation that respects invariance
+extensive quantities,sum pooling,Sum pooling is preferred for predicting extensive quantities within the given context.
+atomic features,encoding variants,The text mentions various ways to encode atomic features
+atomic number,first encoding strategy,One strategy for encoding atomic features is to use only the atomic number
+group and period numbers,second encoding strategy,The second strategy uses one-hot encoded group and period numbers to capture similarity among atoms within the same group or period.
+hubbard-u extension of dft,atomic feature vector,About 24% of the Materials Project dataset includes Hubbard-U computed structures
+materials project dataset,used for experiments,Experiments are conducted using the Materials Project dataset
+pytorch,implementation tool,The model is implemented using Pytorch
+equivariant message-passing,implementation,The model employs a sparse implementation of equivariant message-passing based on the Pytorch Scatter package.
+adamw optimizer,optimization method,The model uses the AdamW optimizer with weight decay regularization.
+materials project dataset,training,validation
+properties,formation energy e,fermi energy ef
+formation energy e,fermi energy ef,Both are energetic properties
+formation energy e,band gap eg,E and Eg are related to the electronic structure
+formation energy e,magnetic moment per atom m,Magnetic moment is an additional property predicted
+regression,mean squared error (mse) loss function,Regression tasks use MSE as the loss function for optimizing model predictions.
+classification,cross-entropy loss function,Classification tasks employ cross-entropy as the loss function for predicting discrete classes.
+schneto,ecn-s⇤,Both are models being compared
+baselines,[54,70
+s⇤ version,our own versions of baselines,We retrained two baselines using our splits and procedure to ensure fair comparison.
+crystal symmetry,neural networks,The context explains how crystal symmetry is leveraged to build more expressive and physically motivated neural networks.
+materials project dataset,s⇤ version,The S⇤ version offers better performance than the P ¯1 model
+materials project dataset,increased expressivity,In the Materials Project dataset
+perov-5 dataset,proposed model,Experiments on the Perov-5 dataset show significantly more improvement for the proposed model compared to baselines.
+perov-5 dataset,heat of formation,The task on the Perov-5 dataset involves the regression of heat of formation using DFT.
+perovskite crystal structure,model specialization,All materials sharing the same Perovskite structure allows the model to specialize more efficiently.
+generalization capability,cost,The cost in generalization capability is outweighed by the benefit of increased expressivity in a larger data regime.
+physical motivation,neural networks,The networks are designed to be more physically motivated
+physically motivated neural networks,materials science,These networks are relevant to materials science applications.
+conclusion,method,The conclusion summarizes the method and its application to improve materials properties.
+conclusion,property,The study focuses on heat and other material properties.

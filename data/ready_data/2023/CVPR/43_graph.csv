@@ -1,0 +1,218 @@
+node_1,node_2,edge
+abstraction,novel,"The paper proposes a novel, abstraction-based, certified training method for robust image classifiers."
+abstraction,perturbed images,"Via abstraction, all perturbed images are mapped into intervals before feeding into neural networks for training."
+perturbed images,neural networks,"Via abstraction, all perturbed images are mapped into intervals before feeding into neural networks for training."
+perturbed images,intervals,"By training on intervals, all the perturbed images that are mapped to the same interval are classified as the same label."
+intervals,training sets,"By training on intervals, all the perturbed images that are mapped to the same interval are classified as the same label, rendering the variance of training sets to be small."
+intervals,loss landscape,"By training on intervals, all the perturbed images that are mapped to the same interval are classified as the same label, rendering the loss landscape of the models to be smooth."
+training method,black-box verification approach,"Our training method enables a sound and complete black-box verification approach, which is orthogonal and scalable to arbitrary types of neural networks regardless of their sizes and architectures."
+method,experimental results,We evaluate our method on a wide range of benchmarks in different scales. The experimental results show that our method outperforms state of the art.
+abstraction,trained models,"Consequently, our approach significantly improves the robustness of trained models."
+trained models,verified errors,The experimental results show that our method outperforms state of the art by reducing the verified errors of trained models up to 95.64%.
+trained models,total speedup,The experimental results show that our method outperforms state of the art by totally achieving up to 602.50x speedup.
+trained models,trainable parameters,The experimental results show that our method outperforms state of the art by scaling up to larger models with up to 138 million trainable parameters.
+image classifications,neural networks,Image classifications based on neural networks are discussed in the introduction.
+neural networks,robustness,Robustness of neural networks against adversarial perturbations is mentioned.
+adversarial perturbations,neural networks,Training robust neural networks against adversarial perturbations is highlighted.
+defending approaches,adversarial examples,Conventional defending approaches involve augmenting the training set with adversarial examples.
+neural networks,certifiably robust models,Recent approaches aim to train certifiably robust models with guarantees.
+robustness verification results,neural networks,Existing verification approaches rely on robustness verification results of neural networks in the training process.
+symbolic interval propagation,neural networks,Verification approaches are based on symbolic interval propagation for neural networks.
+verification phase,time-consuming,Verification phase is time-consuming due to the complexity of the verification problem.
+verification phase,complexity of the verification problem,The verification phase is time-consuming due to the high complexity of the verification problem.
+relu-based fully connected feedforward neural networks,np-complete,Verification problem for the simplest ReLU-based fully connected feedforward neural networks is NP-complete.
+abstraction-based approach,training verified robust image classifications,The proposed abstraction-based approach is for training verified robust image classifications.
+image,interval,Each pixel of an image is abstracted into an interval before inputting it into the neural network.
+interval,neural network,The interval is input to the neural network by assigning its lower and upper bounds to two input neurons.
+perturbations,pixel,Perturbations to the pixel in the interval do not alter the classification results.
+forward propagation,back propagation,Forward propagation and back propagation are used to train the network without extra time overhead.
+neural networks,black boxes,Neural networks are treated as black boxes since only the input layer is dealt with and other layers are not changed.
+approach,neural networks,"The proposed approach is agnostic to the actual neural network architectures, allowing it to scale up to large neural networks."
+hyper-parameter,abstraction granu,A crucial hyper-parameter identified is abstraction granularity.
+neural networks,abstraction granularity,"Abstraction granularity is a crucial hyper-parameter for training neural networks, where it corresponds to the size of intervals used for training the networks."
+neural networks,gradient descent-based algorithm,A gradient descent-based algorithm is proposed to refine the abstraction granularity for training robust neural networks.
+algorithm,abstraction granularity,The gradient descent-based algorithm is used to refine the abstraction granularity for training robust neural networks.
+method,abscert,The method is implemented in a tool called ABSCERT.
+method,verified errors,The method reduces the verified errors of trained neural networks by up to 95.64%.
+method,speedup,The method achieves up to 602.50x speedup.
+black-box verification method,robust neural networks,A companion black-box verification method is introduced for certifying the robustness of trained neural networks.
+huber,robust deep neural networks,Huber introduces the concept of robustness in deep neural networks where the efficiency of the model should be reasonably good and small disturbances applied to the input should have slight impact on the result.
+robustness verification,neural network,"Robustness verification aims to guarantee that a neural network outputs consistent classification results for all inputs in a set, which is usually represented as an lp norm ball around the clean image x"
+robustness verification,interval bound propagation,Many approaches rely on symbolic interval bound propagation to simplify the problem at the price of sacrificing completeness
+interval bound propagation,neural network,"When we know the domain of each input, we can estimate the output range by propagating the inputs symbolically throughout the neural network to prove/disprove the robustness"
+non-linear activation functions,linear constraints,"To accelerate the propagation, the non-linear activation functions need to over-approximate using linear constraints, therefore rendering the output range overestimated"
+hidden layers,network,More hidden layers in a network imply a larger overestimation because the overestimation is accumulated layer by layer
+overestimation,verification failure,overestimation easily causes failure to verification
+over-approximation,efforts,many efforts are being made to tighten the over-approximation
+over-approximation,theoretical barrier,it has been proved there is a theoretical barrier
+abstraction-based method,training problem,abstraction-based method for training neural networks is defined in the training problem
+abstraction procedure,training procedure,abstraction procedure and the training procedure are explained in Section 3.2 and Section 3.3
+network inputs,loss function,varying network inputs can affect the loss function
+image classifier,perturbation distance,our goal is to train an image classifier that is provably robust on perturbation distance
+function ϕ,image classifier f′,"Function ϕ is used to transform the input (B(x, ϵ)) to interval vectors (I1, I2, . . . In) which are then fed into the image classifier f′."
+image classifier f′,image classifier f,"Image classifier f is composed of f′ and ϕ, implying that it incorporates the classification results obtained from f′."
+neural network,training intervals,"Training intervals are fed into the neural network by doubling the number of neurons in the input layer, with each neuron corresponding to the upper and lower bounds of a training interval."
+perturbation interval,training interval,Perturbation intervals are abstracted to training intervals using the function ϕ introduced in the abstraction process.
+abstraction granularity,training interval vectors,Abstraction granularity is represented by a constant d used to define the size of training interval vectors in the abstraction process.
+training interval vectors,neural networks,"Training on numerical intervals is done to train neural networks, where n denotes the size of interval vectors."
+numerical intervals,norm ball,"Norm ball B(x, ϵ) represents essentially an interval vector in In, and perturbation interval vectors are elements of In."
+complete input space,sub-intervals,"Complete input space range [-1, 1] is divided evenly into sub-intervals of size di to create the set of all sub-intervals Ii."
+training,interval vectors,"Training interval vectors are abstracted and mapped onto a finite number, which helps in robustness verification by restricting the perturbation space."
+abstraction,robustness verification,The purpose of abstraction is to ease the follow-up robustness verification by restricting the infinite perturbation space to finite training space.
+perturbation interval,training interval,"The perturbation interval can only be mapped to a unique training interval, following certain constraints on the mapping process."
+abstraction granularity,perturbation size,The abstraction granularity d is greater than or equal to twice the perturbation size to guarantee at most two training intervals intersect with a perturbation interval.
+perturbation interval,mapping,"The perturbation interval is mapped to the training interval based on different cases like containment, unequal intersection, or equal intersection."
+perturbation interval,training interval,The perturbation interval is mapped to the training interval if it contains it. It may intersect with two training intervals at the same time.
+perturbation interval,numerically larger training interval,"If the size of the intersection of the perturbation interval and the numerically larger training interval is greater than or equal to the size of the intersection with the numerically smaller training interval, then the perturbation interval will be mapped to the numerically larger training interval."
+perturbation interval,numerically smaller training interval,"If the size of the intersection of the perturbation interval and the numerically larger training interval is smaller than the size of the intersection with the numerically smaller training interval, then the perturbation interval will be mapped to the numerically smaller training interval."
+abstraction process,smaller variance of training intervals,"The abstraction process results in a smaller variance of training intervals, demonstrating the effect of abstraction on input."
+training method,"value of each pixel normalized to [-1, 1]","In the training method, the value of each pixel is normalized to the range of [-1, 1], which is a key aspect of the method."
+input values,"evenly distributed in [-1, 1]","Assuming the arbitrariness of the input value distribution, the values are evenly distributed in the range of [-1, 1], influencing the method significantly."
+input values,variance,"Input values are assumed to be evenly distributed in the range [-1, 1], and the variance is calculated based on these input values."
+variance,maximum likelihood estimation,The variance of the input values provides the maximum likelihood estimation of the actual value in certain cases.
+input values,abstraction granularity,The variance of the input values is calculated with abstraction granularity represented by d.
+abstraction granularity,training intervals,The abstraction granularity and training intervals (I) are related in determining the variance of the input values.
+abstraction granularity,positive number,"The abstraction granularity is a positive number, influencing the variance calculations in the context."
+variance,abstraction process,The variance of an input image after the abstraction process is determined based on variance calculations.
+training interval,variance,"The variance of training intervals is computed based on upper and lower bounds, impacting the abstraction-based trained neural network."
+abstraction granularity,variance,"A large abstraction granularity implies a small n, leading to a small variance of the training intervals compared to concrete pixel values."
+intervals,variance,Intervals discussed in the context have a smaller variance than concrete pixel values.
+training intervals,hyperparameter settings,"Training intervals are defined with specific hyperparameter settings such as the number of layers, neurons, and loss function."
+training intervals,neural network,The training intervals are used to train a neural network based on specific adjustments and cross-entropy loss calculations.
+neural network,perturbation intervals,Neural network training involves mapping perturbation intervals to training intervals for cross-entropy loss calculation.
+loss landscape,variance,The small variance of inputs results in a smooth loss landscape representation during training.
+loss landscape,loss functions,Loss landscape is the characterization of loss functions.
+loss landscape,smoothness,Investigating the smoothness of the loss landscape
+loss functions,smooth,"Smooth loss landscape shows convex contours, while sharp loss landscape is chaotic."
+loss functions,cross-entropy loss,"For a classification problem, the loss function is usually cross-entropy loss."
+cross-entropy loss,ground-truth label,Loss function is related to the ground-truth label in a classification problem.
+cross-entropy loss,neural network,Loss function is related to the prediction of the neural network.
+loss function,relationship,Exploring the relationship between the loss function and I.
+loss functions,classification problem,The loss function is associated with a classification problem.
+loss landscape,parameter space,Smooth loss landscape is related to the parameter space.
+parameter space,trainable parameters,Smooth loss landscape means loss increases slowly as trainable parameters deviate from optimal value.
+trainable parameters,partial derivatives,The value of trainable parameters affects the partial derivatives.
+partial derivatives,values,"The two partial derivatives, ∂L(y, ˆy)∂A and ∂L(y, ˆy)∂b, are related to the values in the equations that follow."
+equation 3,training intervals,"Equation 3's value is discussed for different training intervals, showing the relationship between the equation and the intervals."
+a,b,"When b = 0, A becomes constant, indicating a relationship between the values of A and b."
+i,variance,"The variance of I is related to the method used, showing how the variance affects the value of I."
+equation 4,ground-truth label,"Equation 4's value is influenced by max(A · I + b), which corresponds to the ground-truth label."
+figure 3,loss landscape,"Figure 3 visually represents the loss landscape of two neural networks trained with different values of d, showing the correlation between the figure and the landscape."
+trained neural networks,numercial intervals,"Training on numerical intervals ensures that perturbed intervals with the same mapping will yield the same classification result, illustrating the relationship between trained neural networks and numerical intervals."
+perturbation,abstraction,"The perturbation is dissolved by the abstraction, improving the neural network's robustness."
+perturbation,pixel,Original pixels are first perturbed to a perturbed interval in the process of abstraction.
+perturbation,training interval,Perturbed intervals are mapped to a training interval for classification during the abstraction process.
+abstraction,numerical interval,"Disturbed values are mapped to the same numerical interval due to abstraction, leading to unchanged classification results."
+training interval,classification,"Training intervals are used for classification of perturbed images, ensuring a constant loss."
+loss landscape,optimization,Smooth loss landscape helps in optimization during the training phase to find a global optimum.
+loss,constant,The loss is a constant due to all the perturbed images of an image being mapped to a fixed set of training intervals.
+abstraction-based training method,neural networks,Neural networks trained by our abstraction-based training method are more robust as the loss landscape is smooth in both parameter space and input space.
+model,global optimum,The model tends to find a global optimum in a reasonably efficient manner in parameter space.
+model,insensitive,The model is insensitive to the input perturbations in input space.
+training data,test data,Input data: X: training data; Xtest: test data; Y: ground-truth labels of training data; Ytest: ground-truth labels of test data.
+training data,ground-truth labels,Training data has ground-truth labels associated with it.
+perturbation radius,step size,Perturbation radius is related to the step size of abstraction granularity in Algorithm 3: Training with Granularity Tuning.
+method,tuning,Verification-based method for tuning the abstraction granularity to train robust models is introduced in Formal Verification and Granularity Tuning section.
+verification-based method,abstraction granularity,The verification-based method introduced in the section deals with tuning the abstraction granularity to train robust models.
+verification-based method,neural networks,The verification-based method proposes a black-box verification method for neural networks trained by the approach discussed.
+abstraction granularity,tuning,The abstraction granularity is tuned based on the verification results to obtain finer training intervals.
+verification method,neural networks,The verification method VERIFY(·) is designed for neural networks trained using the approach mentioned.
+verification method,black-box method,The verification method treats the neural network as a black box in the verification procedure.
+verification method,soundness,The verification method is both sound and complete due to the finiteness of I in the process.
+verification method,completeness,The verification method is both sound and complete due to the finiteness of I in the process.
+neural networks,black-box method,The black-box method proposed in the verification procedure treats the neural network as a black box.
+neural networks,scalability,"The verification method is scalable to arbitrary models, making it applicable to different neural network setups."
+neural networks,tuning,The abstraction granularity in neural networks is tuned based on the verification results obtained.
+abstraction granularity,verified error,The verified error of a trained neural network leads to tuning the abstraction granularity accordingly.
+error,neural network,The verified error of a trained neural network can be reduced by tuning the abstraction granularity and re-training the model on refined training set of interval vectors.
+abstraction granularity,model,The algorithm explores the best abstraction granularity 'd' in the abstraction space to reduce the verified error of the model.
+training intervals,neural network,The neural network and training loss towards training intervals with a specific abstraction granularity are obtained through the Abstraction-based Training function.
+algorithm,abstraction granularity,The algorithm initializes and updates the abstraction granularity 'd' during the tuning and re-training process until a certain condition is met.
+training intervals,neural network,"The upper and lower bounds' gradient of the training intervals are obtained, affecting the termination or updating of the abstraction granularity in the algorithm."
+abscert,neural networks,ABSCERT is a tool used to train neural networks with lower verified errors.
+abscert,existing approaches,ABSCERT is evaluated against existing approaches with respect to verified error and training time.
+abscert,state-of-the-art provably robust training methods,ABSCERT is compared with state-of-the-art provably robust training methods to demonstrate its capabilities.
+abscert,linear approximation,ABSCERT and existing approaches rely on linear approximation to train certifiably robust neural networks.
+certifiably robust neural networks,worst-case loss against l∞ perturbations,Training methods aim to minimize the upper bound on worst-case loss against l∞ perturbations.
+mnist,cifar-10,Experiments are conducted on MNIST and CIFAR-10 datasets.
+mnist,imagenet,Experiments are also conducted on ImageNet dataset.
+cnns,convolutional neural networks,Different types of CNNs are trained and verified on MNIST and CIFAR-10 datasets.
+fnns,fully connected neural networks,Two types of fully connected neural networks with different layers are trained and verified.
+neural networks,fnns,FNNs is a type of neural network
+neural networks,three layers,The neural networks mentioned have three layers
+neural networks,five layers,The neural networks mentioned have five layers
+neural networks,cross-entropy loss function,Cross-entropy loss function is used for updating the parameters of neural networks
+neural networks,adam optimizer,Adam optimizer is used to update the parameters of neural networks
+neural networks,learning rate,The learning rate of neural networks decreases following the values of the cosine function
+neural networks,warmup period,The learning rate increases linearly between 0 and 1 during the warmup period
+imagenet,alexnet,AlexNet is used in the context of ImageNet
+imagenet,vgg11,VGG11 is used in the context of ImageNet
+imagenet,inception v1,Inception V1 is used in the context of ImageNet
+imagenet,resnet18,ResNet18 is used in the context of ImageNet
+imagenet,image classification competition ilsvrc1,ImageNet is related to the image classification competition ILSVRC1
+imagenet,super-parameters,The same super-parameters are used in the context of ImageNet
+metrics,verified error,Verified error is one of the metrics used in comparisons
+metrics,time,Time is one of the metrics used in comparisons
+verified error,abscert,The verified errors of neural networks trained by ABSCERT are compared with a competitor
+time,abscert,The execution time of ABSCERT is compared with a competitor
+time,perturbations ϵ,The time for different perturbations ϵ is reported as the average time
+experimental setup,mnist,Experiments on MNIST were conducted in the experimental setup
+experimental setup,cifar-10,Experiments on CIFAR-10 were conducted in the experimental setup
+experimental setup,alexnet,Experiments on AlexNet were conducted in the experimental setup
+experimental setup,workstation,Experiments were conducted on a workstation specified in the experimental setup
+experimental setup,nvidia geforce rtx 3090 ti gpu,Experiments were conducted on a workstation running with a NVIDIA GeForce RTX 3090 Ti GPU
+experiments,vgg11,Experiments were conducted with VGG11 architecture
+experiments,inception,Experiments were conducted with Inception architecture
+ubuntu 18.04,nvidia geforce rtx 3090 ti gpu,Both Ubuntu 18.04 and NVIDIA GeForce RTX 3090 Ti GPU are components of the workstation setup described in the context
+vgg11,inception v1,Both VGG11 and Inception V1 are neural network models on which experiments were conducted in the context
+vgg11,resnet18,VGG11 and ResNet18 are two other neural network models on which experiments were conducted in the context
+windows11,nvidia geforce rtx 3090 ti gpu,Windows11 and NVIDIA GeForce RTX 3090 Ti GPU are components of another workstation setup described in the context
+abscert,"dm-small, dm-medium, and dm-large","ABSCERT achieves lower verified errors than DM-small, DM-medium, and DM-large in the comparison results for experimental effectiveness"
+abscert,"llm, lbp, and advibp","ABSCERT achieves improvements over LLM, LBP, and AdvIBP on three neural network models in the context"
+abscert,cifar-10,ABSCERT achieves improvement to LLM on CIFAR-10 dataset in the context
+abscert,three competitors,Models trained by ABSCERT are more robust than those trained by the three competitors as observed in the context
+abscert,accuracy,Our method achieves higher accuracy than the competitors for all datasets and models as shown in Table 2 in the context
+method,accuracy,The method achieves higher accuracy than the competitors for all datasets and models under the same perturbations.
+method,competitors,The method achieves higher accuracy than the competitors for all datasets and models under the same perturbations.
+method,datasets,The method achieves higher accuracy than the competitors for all datasets and models under the same perturbations.
+method,models,The method achieves higher accuracy than the competitors for all datasets and models under the same perturbations.
+method,perturbations,The method achieves higher accuracy than the competitors for all datasets and models under the same perturbations.
+speed,decrease,"Moreover, the decrease speed is much less than"
+decrease speed,much,"Moreover, the decrease speed is much less than"
+abscert,perturbations,ABSCERT can better resist perturbations
+abscert,robustness guarantees,the models trained by ABSCERT have stronger robustness guarantees
+abscert,training time,ABSCERT consumes less training time than the competitors for all datasets and models
+abscert,verification time,ABSCERT consumes less verification time than the competitors for all datasets and models
+abscert,verification overhead,ABSCERT achieves up to 602.5x speedup in verification overhead
+abscert,black boxes,our verification approach treats the networks as black boxes thanks to the abstraction-based training method
+abscert,memory overhead,ABSCERT indicates less time (and memory) overhead
+cifar-10,mnist,Both CIFAR-10 and MNIST are datasets used to train neural networks in the context. The verified errors of neural networks trained on these datasets are compared in the experiment.
+cnns,fnns,The approach is shown to be applicable to both Convolutional Neural Networks (CNNs) and Fully Connected Neural Networks (FNNs) with various activation functions in the experiment.
+alexnet,"vgg11, inception v1, resnet18","Different neural network architectures such as AlexNet, VGG11, Inception V1, and ResNet18 are trained on ImageNet to demonstrate scalability. The number of trainable parameters varies from 11 million to 138 million."
+verification methods,abscert,"Existing verification methods are compared to ABSCERT, which is highlighted for its capability to verify fairly large networks due to its black-box feature."
+interval neural networks (inns),neural network,"INNs are neural networks which have interval-valued inputs, outputs, or weight sets."
+yang and wu,smoothing inns,Yang and Wu proposed a gradient-based method for smoothing Interval Neural Networks.
+yang and wu,avoiding oscillation of training,Yang and Wu's method for smoothing INNs aims to avoid the oscillation of training.
+losslandscapematters (llm),lbp&ramp (lbp),Comparison of training time and verification time between LLM and LBP&Ramp models.
+advibp (aibp),abscert (ac),Comparison of training time and verification time between AdvIBP and ABSCERT models.
+aibp,lbp,Comparison of training time and verification time between AIBP and LBP models.
+datasetmodeldm-smallac,mnist,Comparison of errors (%) for different models trained on MNIST dataset.
+abscert,fnns,ABSCERT trained FNNs with 3 and 5 hidden layers
+dm-s,dm-medium,DM-small and DM-medium are referred as DM-s and DM-m respectively
+abscert,imagenet,ABSCERT trained large models on ImageNet
+inns,image reconstruction,Oala et al. proposed to train INNs for image reconstruction
+inns,robustness verification,Prabhakar and Afzal proposed to transform regular neural networks to INNs for robustness verification
+neural networks,robustness guarantees,Many approaches on training neural networks with robustness guarantees have been proposed
+linear relaxation,bound propagation,"Linear relaxation-based methods use linear relaxation to obtain a convex outer approximation within a norm-bounded perturbation. In contrast, bound propagation methods are more effective."
+ibp,neural networks,Gowal et al. proposed IBP to train provably robust neural networks on a relatively large scale.
+ibp,crown,"Zhang et al. improved IBP by combining the fast IBP bounds in a forward propagation and a tight linear relaxation-based bound, CROWN, in a backward propagation."
+linear approximation,smoothness of loss function,Lee et al. proposed a training method based on linear approximation but considered another important factor - the smoothness of the loss function.
+advibp,fgsm,AdvIBP computes the adversarial loss using FGSM and random initialization.
+advibp,robust loss,"AdvIBP computes the adversarial loss using FGSM and random initialization and computes the robust loss using IBP. However, the verified errors obtained by AdvIBP are relatively higher."
+networks trained by our method,provably robust image classifiers,"Thanks to the abstraction, networks trained by our method are more robust."
+approach,robust image classifiers,The experimental results showed that our approach out-performed the state-of-the-art robust training approaches.
+approach,state-of-the-art robust training approaches,The experimental results showed that our approach out-performed the state-of-the-art robust training approaches.
+approach,verified errors,Our approach out-performed the state-of-the-art robust training approaches with up to 95.64% improvement in reducing verified errors.
+verification algorithm,black-box feature,"Thanks to its black-box feature, our verification algorithm is more amenable and scalable to large neural networks."
+verification algorithm,large neural networks,Our verification algorithm is more amenable and scalable to large neural networks with up to 138 million trainable parameters.
+verification algorithm,neural networks,Our verification algorithm is applicable to a wide range of neural networks.

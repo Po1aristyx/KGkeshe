@@ -1,0 +1,239 @@
+node_1,node_2,edge
+outlier rejection,robust 3d registration,outlier rejection is essential for robust 3D registration to remove outliers and classify inliers/outliers
+outlier rejection,inlier/outlier classification problem,outlier rejection formulation involves classifying inliers/outliers
+outlier rejection,inlier/outlier feature representations,key aspect of outlier rejection success is learning discriminative inlier/outlier feature representations
+non-local network-based outlier rejection framework,robust alignment,novel variational non-local network-based framework developed for robust alignment
+non-local feature learning,bayesian inference,non-local feature learning reformulated with variational Bayesian inference
+bayesian-driven long-range dependencies,discriminative geometric context information,long-range dependencies driven by Bayesian inference aggregate discriminative geometric context information
+query/key/value component,prior/posterior feature distribution,each query/key/value component predicts a prior feature distribution and a posterior one
+posterior feature distribution,inlier/outlier label,posterior feature distribution is label-dependent and discriminative
+posterior feature distribution,prior feature distribution,pushing the prior to be close to the discriminative posterior enables modeling high-quality long-range dependencies
+probabilistic graphical model,non-local model,specific probabilistic graphical model designed over non-local model for effective posterior feature guidance
+voting-based inlier searching strategy,cluster,voting-based strategy proposed for clustering inliers
+point cloud registration,3d computer vision task,"Point cloud registration is described as a fundamental and challenging task in 3D computer vision, involving aligning partially overlapping point clouds through estimating their relative rigid transformation."
+point cloud registration,alignment of point clouds,"Point cloud registration aims to align two partially overlapping point clouds by estimating their relative rigid transformation, which includes 3D rotation and 3D translation."
+point cloud registration,lidar slam,"Point cloud registration has potential applications such as Lidar SLAM, which involves aligning two partially overlapping point clouds by estimating their relative rigid transformation."
+point cloud registration,3d scene reconstruction,"Point cloud registration is important for tasks such as 3D scene reconstruction, which involves aligning two partially overlapping point clouds by estimating their relative rigid transformation."
+point cloud registration,object pose estimation,"Point cloud registration is essential for tasks such as object pose estimation, which involves aligning two partially overlapping point clouds by estimating their relative rigid transformation."
+point cloud registration,point descriptors,Point cloud registration involves extracting point descriptors and establishing correspondences between two point clouds to obtain the transformation geometrically.
+point descriptors,correspondences,Establishing correspondences between point descriptors is crucial in point cloud registration as it helps in obtaining the transformation between two point clouds.
+traditional descriptors,deep learning-based descriptors,Efforts have been made to design both traditional and deep learning-based descriptors for point cloud registration.
+traditional and deep learning-based descriptors,outliers,"The traditional and deep learning-based descriptors have been designed to deal with outliers in the resulting correspondences, but they still suffer from outliers, particularly in challenging cases."
+outlier filtering strategies,registration process,"Outlier filtering strategies have been developed to robustify the registration process, which includes traditional rejection methods, point-wise descriptor similarity, and group-wise spatial consistency."
+outlier filtering strategies,pointdsc,"Outlier filtering strategies have been developed, including the current state-of-the-art method PointDSC, which relies on a spatial consistency-driven non-local network to capture long-range context in its learned correspondence features."
+pointdsc,registration robustness,"PointDSC method relies on a spatial consistency-driven non-local network to capture long-range context in its learned correspondence features, but it still yields limited registration robustness, particularly for scenes with a high outlier ratio."
+high outlier ratios,ambiguities,"High outlier ratios lead to ambiguities in the learned correspondence features, particularly for scenes with a high outlier ratio, where the spatial consistency constraints may become ambiguous, degrading the correspondence features’ quality."
+ambiguities,probabilistic feature learning framework,"Ambiguities arising from high outlier ratios can be explicitly accounted for by developing a probabilistic feature learning framework, which aims to address the ambiguities by considering the probabilistic nature of the features."
+probabilistic feature learning framework,variational non-local network,The variational non-local network is based on an attention mechanism to learn discriminative feature representations for robust outlier rejection within the probabilistic feature learning framework.
+long-range contextual dependencies,ambiguous nature,"A random feature is injected in each query, key, and value component in the non-local network to capture the ambiguous nature of long-range contextual dependencies."
+prior/posterior distributions of random features,prior/posterior encoders,The prior/posterior distributions of random features are predicted by prior/posterior encoders to make the feature distribution label-dependent.
+prior distribution,posterior distribution,"During training, the prior distribution is pushed close to the label-dependent posterior distribution, enabling the prior encoder to learn discriminative features."
+variational inference,probabilistic graphical model,A probabilistic graphical model is customized over the variational non-local network to achieve effective variational inference.
+conditional dependencies of random features,variational lower bound,"The probabilistic graphical model characterizes the conditional dependencies of random features, leading to the derivation of a variational lower bound as the optimization objective for network training."
+voting-based deterministic inlier searching mechanism,transformation estimation,A voting-based deterministic inlier searching mechanism is proposed for transformation estimation using correspondence features learned from all non-local iterations.
+transformation estimation,searching mechanism,The searching mechanism is used for transformation estimation by learning correspondence features and voting for high-confidence hypothetical inliers.
+correspondence features,non-local iterations,Correspondence features learned from all non-local iterations jointly vote for high-confidence hypothetical inliers in transformation estimation.
+robustness,inlier searching strategy,"The deterministic inlier searching strategy is analyzed for robustness compared to RANSAC, leading to the design of a conservative seed selection mechanism to improve robustness in sparse point clouds."
+outlier rejection,variational non-local network,A novel variational non-local network is proposed for outlier rejection by learning discriminative correspondence features with Bayesian-driven long-range contextual dependencies.
+graphical model,variational non-local network,A probabilistic graphical model is customized over the variational non-local network to derive the variational low bound for effective model optimization.
+voting mechanism,hypothetical inliers,A Wilson score-based voting mechanism is introduced to search high-quality hypothetical inliers and is theoretically proven to be superior to RANSAC.
+framework,state-of-the-art registration methods,The experimental results demonstrate that the framework outperforms the state-of-the-art registration methods on extensive benchmark datasets.
+deep learning,3d vision field,"With the advances of deep learning in the 3D vision field, the learning-based end-to-end registration model has achieved increasing research attention."
+dcp,pseudo correspondences,DCP [42] uses the feature similarity to establish pseudo correspondences for SVD-based transformation estimation.
+rpm-net,sinkhornlayer and annealing,RPM-Net [47] exploits the Sinkhornlayer and annealing for discriminative matching map generation.
+rienet,structure difference,RIENet [40] uses the structure difference between the source neighborhood and the pseudo-target one for inlier confidence evaluation.
+regtr,transformer,"With the powerful feature representation of Transformer, RegTR [48] effectively aligns large-scale indoor scenes in an end-to-end manner."
+match-normalization layer,robust registration,[13] propose a match-normalization layer for robust registration in the real-world 6D object pose estimation task.
+3dmatch,siamese 3d cnn,The pioneering 3DMatch [50] exploits the Siamese 3D CNN to learn the local geometric feature via contrastive loss.
+fcgf,fully convolutional network,FCGF [11] exploits a fully convolutional network for dense feature extraction in a one-shot fashion.
+d3feat,dense feature descriptor,"Furthermore, D3feat [3] jointly learns the dense feature descriptor and the detection score for each point."
+d3feat,overlap-attention module,The overlap-attention module is integrated into D3feat to largely improve the registration reliability in low-overlapping point clouds.
+d3feat,detection score,D3feat jointly learns the dense feature descriptor and the detection score for each point.
+yoho,group equivariant feature learning,YOHO utilizes group equivariant feature learning to achieve rotation invariance and robustness to point density and noise interference.
+yoho,rotation invariance,YOHO uses group equivariant feature learning to achieve rotation invariance.
+yoho,point density,YOHO shows great robustness to point density and noise interference.
+yoho,noise interference,YOHO shows great robustness to point density and noise interference.
+geometric transformer,robust super-point matching,Geometric transformer is developed to learn the geometric context for robust super-point matching.
+lepard,relative 3d positional encoding,"In Lepard, relative 3D positional encoding is embedded into the transformer for discriminative descriptor learning."
+outlier rejection methods,ransac,"Traditional outlier filtering methods, such as RANSAC, use repeated sampling and verification for outlier rejection."
+outlier rejection methods,fgr,"Instead of traditional methods like RANSAC, FGR integrates a robust loss function into the optimization objective to weaken interference from outliers."
+outlier rejection methods,teaser,TEASER integrates a robust loss function into the optimization objective to weaken interference from outliers.
+outlier rejection methods,deep 3d vision,"With the rise of deep 3D vision, most learnable outlier rejection models formulate outlier rejection as a binary classification."
+outlier rejection,binary classification task,Outlier rejection models formulate outlier rejection as a binary classification task.
+outlier rejection,correspondences,Outlier rejection models reject correspondences with low confidence.
+inlier evaluation,context normalization-embedded deep network,Yi et al. proposed a context normalization-embedded deep network for inlier evaluation.
+classical ransac,neural-guided prior confidence,Brachmann et al. enhanced classical RANSAC with neural-guided prior confidence.
+pointdsc,spatial consistency-guided non-local inlier classifier,PointDSC proposes exploiting a spatial consistency-guided non-local inlier classifier for inlier evaluation.
+pointdsc,neural spectral matching,PointDSC proposes neural spectral matching for robust registration.
+spatial consistency,non-local feature aggregation,"Under high outlier ratios, spatial consistency can be ambiguous, misleading non-local feature aggregation."
+bayesian-driven long-range dependencies,discriminative non-local feature learning,It is proposed to exploit Bayesian-driven long-range dependencies for discriminative non-local feature learning.
+point cloud,source point cloud,"In the pairwise 3D registration task, we are given a source point cloud."
+point cloud,target point cloud,"In the pairwise 3D registration task, we are given a target point cloud."
+optimal rigid transformation,rotation matrix and translation vector,The optimal rigid transformation consists of a rotation matrix and a translation vector.
+descriptor-based pipeline,large-scale scene registration,The work focuses on the descriptor-based pipeline for large-scale scene registration.
+inlier,correspondences,The inlier corresponds to the scale scene registration.
+descriptor-based pipeline,large-scale scene registration,descriptor-based pipeline is focused on large-scale scene registration
+inlier,correspondence,an inlier is defined as a correspondence satisfying a certain threshold
+feature-level near-est neighbor,putative correspondences,putative correspondences are constructed based on feature-level near-est neighbor
+correspondence set c,scnonlocal network,correspondence set C is used by SCNonlocal network for feature embedding
+putative correspondence set c,spatial consistency-guided non-local network,putative correspondence set C is used by spatial consistency-guided non-local network for feature embedding
+geometric compatibility matrix,long-range dependencies,geometric compatibility matrix effectively regularizes long-range dependencies for feature learning
+inliers,dij,"The geometric distance di,j of inliers ci and cj tend to be minor, Eq. 2 will assign a high compatibility value on the inlier pair, thereby promoting the non-local network to effectively cluster the inlier features for discriminative inlier/outlier feature learning."
+scnonlocal,ambigious long-range dependencies,"SCNonlocal still suffers from ambiguous long-range dependencies, especially in some challenging scenes, leading to the development of a variational non-local network"
+inlier-outlier pairs,geometric compatibility,"Almost 30% and 17% of inlier-outlier pairs from 3DLoMatch dataset with Predator and FCGF descriptors, respectively, own positive compatibility values, potentially leading to wrong feature clustering."
+inlier/outlier prediction,uncertainty,"In symmetric or repetitive scenes, the inlier/outlier prediction contains significant uncertainty, highlighting the need for robust feature representation."
+variational non-local network,probabilistic feature learning framework,"The variational non-local network is introduced as a probabilistic feature learning framework for discriminative correspondence embedding, aiming to capture uncertainty."
+discriminative correspondence embedding,random features,"Random features are injected into the model to capture the ambiguous nature of long-range dependencies, leading to discriminative feature aggregation."
+random features,variational bayesian inference,Variational Bayesian inference is leveraged to model Bayesian-driven long-range dependencies for discriminative feature aggregation.
+random features,feature variables,Random feature variables are introduced into the key components of the non-local module to capture their uncertainty in long-range dependency modeling.
+non-local module,random feature variables,Random feature variables are incorporated into the key components of the non-local module to capture uncertainty in long-range dependency modeling.
+prior/posterior encoders,feature distribution,"The prior/posterior encoders are used to predict the prior and posterior feature distributions, respectively."
+posterior feature distribution,inlier/outlier label,"The posterior feature distribution is label-dependent and discriminative, based on inlier/outlier labels."
+prior,discriminative posterior,"The training phase pushes the prior close to the discriminative posterior, resulting in high-quality long-range dependency modeling."
+prior,test time,"The prior, trained to be close to the discriminative posterior, samples discriminative query, key, and value features at test time."
+probabilistic graphical model,variational bayesian inference,The probabilistic graphical model is customized over the non-local network to clarify the dependencies of random features for effective variational Bayesian inference.
+conditional dependencies,random features,Characterizing the conditional dependencies of random features is essential for deriving the variational lower bound as the optimization objective for model training.
+probabilistic graphical model,non-local network,The probabilistic graphical model is created over the non-local network to clarify the dependencies of random features.
+circles,label prediction process,"The circles are denoted as random features, and the solid line represents the label prediction process in the probabilistic graphical model."
+label-dependent posterior encoder,label prediction process,The dashed line represents the label-dependent posterior encoder which is part of the label prediction process in the probabilistic graphical model.
+hidden query/key/value features,feature updating,The deterministic hidden query/key/value features are introduced to summarize historical information for better feature updating in each iteration.
+inlier,outlier,Inlier/outlier prediction process refers to the process of predicting whether the correspondence labels are inliers or outliers.
+conditional dependencies,prediction process,"Based on the defined conditional dependencies in Fig. 2, the prediction process of correspondence labels is formulated."
+conditional dependencies,prediction process,"Based on the defined conditional dependencies in Fig. 2, the prediction process of correspondence labels is formulated."
+gated recurrent unit,hidden query/key/value features,A Gated Recurrent Unit (GRU) is used to predict the hidden query/key/value features in the prediction process.
+learned correspondence features,iteration,The learned correspondence features of ci in iteration l − 1.
+input,predicted hidden features,With as input the predicted hidden features.
+prior encoder,pθ(·),The prior encoder pθ(·) is utilized to predict the prior feature distribution.
+prior feature distribution,query/key/value,The prior feature distribution for query/key/value.
+sampled features,predicted prior query/key/value distribution,Sample features zl from the predicted prior query/key/value distribution.
+hidden features,predicted prior query/key/value distribution,Combine hidden features with the predicted prior query/key/value distribution.
+neural network,"f q,k,v","Through a neural network f q,k,v."
+correspondence feature,prior feature distribution,Predict the correspondence feature where the prior feature distribution is the Gaussian distribution.
+feature iterations,label prediction model,"After L feature iterations, we feed the correspondence feature into a label prediction model."
+posterior distribution,query/key/value features,Derive the precise posterior distribution for random query/key/value features.
+posterior distribution,random features,The precise posterior distribution is derived for random query/key/value features using Bayes' theorem.
+variational bayesian inference,posterior encoder,The label-dependent posterior encoder is constructed inspired by Variational Bayesian inference.
+graphical model,variational non-local network,The probabilistic graphical model is demonstrated for the variational non-local network in Figure 2.
+random features,deterministic hidden features,The white circles represent random features and white squares denote deterministic hidden features in the graphical model.
+posterior encoder,gaussian distribution,The output of each posterior encoder is a diagonal Gaussian distribution with parameterized mean and standard deviation.
+optimization objective,variational lower bound,The variational lower bound of log-likelihood correspondence labels is derived to train the variational non-local network.
+elbo,θ,The Evidence Lower Bound (ELBO) is a function of parameter θ in the context
+elbo,ϕ,The Evidence Lower Bound (ELBO) is a function of parameter ϕ in the context
+kl divergence,two distributions,The KL divergence represents the difference between two distributions
+feature posterior,prior,The feature posterior constrains the prior by reducing their KL divergence
+cseed,c,The set of high-confidence seeds Cseed is selected from the entire putative correspondences set C
+cseed,inlier confidence,The selection of high-confidence seeds Cseed is based on their inlier confidence
+cseed,non-maximum suppression,The high-confidence seeds Cseed are selected using Non-Maximum Suppression technique
+cseed,v,The number of seeds in Cseed is determined by a fixed seed ratio v
+cseed,seed,Cseed is calculated as ⌊
+seed,correspondences,"The seed represents an inlier, and its compatible correspondences are also inliers. Thus, the desired inlier subset can be successfully clustered."
+correspondences,inliers,"The most compatible correspondences form the hypothetical inliers, which are clustered to obtain the inlier subset."
+inliers,subset,The inliers are clustered to form the desired inlier subset successfully.
+inliers,high-confidence hypothetical inliers,"To cluster high-confidence hypothetical inliers, a coarse-to-fine clustering strategy is employed."
+high-confidence hypothetical inliers,coarse-to-fine clustering strategy,The coarse-to-fine clustering strategy includes the voting-based coarse clustering and the Wilson score-based fine clustering.
+correspondence features,voters,"The correspondence features are viewed as voters in the system, where each voter clusters compatible correspondences to form hypothetical inliers."
+voters,seed,Each voter clusters compatible correspondences for each seed to form hypothetical inliers.
+seed,hypothetical inliers,"For each seed, hypothetical inliers are formed by clustering its most compatible correspondences."
+compatibility matrix,voter,"The compatibility matrix is computed for each voter to handle feature and geometric compatibility, promoting robust inlier clustering."
+ambiguity problem,fig. 2,The ambiguity problem in Fig. 2 can be effectively handled by the approach mentioned.
+promote robust inlier clustering,voting process,The voting process promotes robust inlier clustering by determining candidate hypothetical inliers.
+seed ci,l candidate hypothetical ci,Each seed ci can achieve L candidate hypothetical ci by the process described.
+seed ci,slci,Seed ci is related to Slci to indicate the inclusion of candidate hypothetical inliers.
+slci,cj,Slci includes cj to represent the set of hypothetical inliers.
+ml,wilson score-based fine clustering,Ml is used in Wilson score-based Fine Clustering for determining hypothetical inliers.
+voted hypothetical inliers,wilson score,The voted hypothetical inliers are fused with Wilson score to form high-quality hypothetical inliers.
+final wilson score,cj,The largest Wilson score is chosen for cj to be included in the final hypothetical inliers set.
+final hypothetical inliers set,ci,The final hypothetical inliers set of ci is determined based on the Wilson scores calculated.
+theoretical analysis,conservative seed selection,Theoretical Analysis is conducted for Conservative Seed Selection in the approach.
+deterministic inlier searching mechanism,ransac,Comparison between deterministic inlier searching mechanism and RANSAC is discussed
+conservative seed selection strategy,3d registration,Efficient conservative seed selection strategy is proposed for more robust 3D registration
+inlier subset,outlier subset,Relationship between inlier and outlier subsets is explained in the context
+inlier ratio,poisson distribution,The inlier ratio follows a Poisson distribution according to the context
+upper bound u,inlier ratio pin,The probability of upper bound U is discussed in relation to inlier ratio pin
+method achieving inlier subset,ransac,Comparison between the method achieving inlier subset and RANSAC is presented
+inlier ratio pin degrades,method being more robust to outliers,"As inlier ratio pin degrades, the method tends to be more robust to outliers as compared to RANSAC"
+number of inliers in cseed,method effectiveness,"The more inliers in Cseed, the better for the method effectiveness as mentioned in the context"
+inliers,cseed,"The more inliers in Cseed, the better for the method, implying that selecting all correspondences in C as seeds theoretically seems the best choice."
+seeds,inlier,"Performing inlier selection is necessary to accelerate the registration speed, as fewer seeds may not contain any inlier, leading to registration failure."
+point clouds,correspondences,"In sparse point clouds, performing the original inlier selection may result in fewer seeds even containing no inlier, causing registration failure."
+seed selection strategy,seed number,The conservative seed selection strategy changes the seed number to effectively avoid selecting too few inliers in sparse cases while maintaining the original selection strategy in dense cases.
+hypothetical inliers,cseed,Estimating the optimal transformation parameter is based on the Procrustes method using the voted hypothetical inliers from Cseed.
+transformation parameter,inlier group,The optimal transformation parameter is estimated to minimize least-squares errors for each hypothetical inlier group.
+transformation estimation,overlapped correspondences,Selecting the transformation parameter that maximizes the number of overlapped correspondences results in the final optimal transformation estimation.
+transformation estimation,inliers,inliers are used to refine the transformation estimation in a least-squares optimization
+variational non-local module,iteractions,number of iterations L is 12 for the variational non-local module
+variational non-local module,correspondence feature,dimensions of the correspondence feature is set to 128 for the variational non-local module
+variational non-local module,random feature,dimensions of the random feature is set to 128 for the variational non-local module
+variational non-local module,hidden feature,dimensions of the hidden feature is set to 256 for the variational non-local module
+voting-based inlier sampling module,hypothetical inliers,size of hypothetical inliers κ is set to 40 for the voting-based inlier sampling module
+seed selection,seed ratio,seed ratio v is 0.1 for seed selection
+seed selection,seed number,lower bar of seed number n is 1000 for seed selection
+model training,adam optimizer,model is trained with Adam optimizer with learning rate 10^-4 and weight decay 10^-6
+implementation framework,pytorch,PyTorch is utilized to implement the project
+implementation environment,intel i5 2.2 ghz cpu,experiments are performed on a server equipped with an Intel i5 2.2 GHz CPU
+implementation environment,tesla v100 gpu,experiments are performed on a server equipped with one Tesla V100 GPU
+registration framework,vbreg,Variational Bayesian-based Registration framework is named as VBReg
+evaluation metric,registration recall (rr),Registration Recall (RR) is used as a metric to evaluate the method
+evaluation metric,rotation error (re),average Rotation Error (RE) is used as a metric to evaluate the method
+evaluation metric,translation error (te),average Translation Error (TE) is used as a metric to evaluate the method
+translation error (te),rotation error (re),TE is defined by the formula: TE(ˆt) = (ˆt - t∗) / 2. RE is computed using arccos function. Both TE and RE are based on predicted and ground truth rotation matrix and vector.
+rotation error (re),average rotation error (re),Average RE is computed only on successful aligned point cloud pairs. It is an evaluation metric used in registration process.
+average rotation error (re),3dmatch,"Evaluation on 3DMatch benchmark involves computing average RE on training, validation, and test scenes. It is used for comparison with existing methods."
+3dmatch,3dlomatch,Comparison of our method's performance with existing methods is done on 3DMatch benchmark. Registration visualization is also shown on 3DLoMatch.
+our method,fcgf,Our method leverages FCGF descriptors for point cloud processing. It achieves the best performance in RR and RE criteria compared to other methods.
+our method,pointdsc,Our method achieves the same TE as PointDSC in FCGF setting during registration process.
+registration errors,successful registration,"The higher registration requirement may lead to more challenging but successful registration cases, potentially increasing errors."
+higher rr,more challenging registration cases,"Higher RR may include more challenging registration cases, potentially increasing errors."
+our method,fcgf setting,Our method achieves the best RR score among all deep methods in the FPFH setting.
+our method,sc2 pcr,Our method performs slightly worse than SC2 PCR.
+precision gain,rr,"Precision gain on RR is impressive (5.24%↑), benefiting from the effectiveness of our variational non-local feature learning and voting-based inlier searching."
+3dlomatch benchmark,3dmatch,"Compared to 3DMatch sharing more than 30% overlap, 3DLoMatch presents much more challenges as the overlaps of point cloud pairs lie in 10% ∼ 30%."
+our method,3dlomatch benchmark,"Our method is further tested on 3DLoMatch benchmark, achieving the best performance on all settings."
+fcgf or predator descriptor,our method,"Regardless of FCGF or Predator descriptor, our method almost achieves the best performance on all settings."
+our method,pointdsc,"In more challenging cases, our method shows a performance advantage over PointDSC."
+fcgf,pointdsc,The performance advantage of FCGF over PointDSC is further expanded in challenging cases with 250 and 500 points by 9.5% and 7.8% respectively. This demonstrates the outstanding robustness of FCGF in extremely low-overlapping cases with high outlier ratios.
+fcgf,3dmatch,FCGF is mentioned as a descriptor in the context of 3DMatch.
+fpfh,3dmatch,FPFH is mentioned as a descriptor in the context of 3DMatch.
+kitti,3dmatch,KITTI is mentioned as a dataset in the context of 3DMatch.
+kitti,fpfh,KITTI is mentioned as a dataset in the context of FPFH.
+ransac,teaser++,RANSAC is compared with TEASER++ in the context.
+teaser++,sc2 pcr,TEASER++ is compared with SC2 PCR in the context.
+pointdsc,vbreg,PointDSC is mentioned in comparison to VBReg in the context.
+ransac,teaser++,RANSAC and TEASER++ are both algorithms commonly used in point cloud processing for registration.
+ransac,sc2 pcr,RANSAC and SC2 PCR are algorithms used in point cloud processing for registration.
+teaser++,sc2 pcr,TEASER++ and SC2 PCR are algorithms used in point cloud processing for registration.
+sc2 pcr,pointdsc,SC2 PCR is compared with PointDSC as part of the variational non-local network analysis.
+pointdsc,fcgf,PointDSC exploits FCGF descriptors for correspondence construction.
+pointdsc,fpfh,PointDSC exploits FPFH descriptors for correspondence construction.
+fcgf,fpfh,FCGF and FPFH are used as descriptors for correspondence construction in point cloud processing.
+pointdsc,variational non-local network,PointDSC is used as the baseline for comparing the proposed variational Bayesian non-local network.
+variational non-local network,spatial consistency-based non-local network,Variational Non-local Network is compared with Spatial Consistency-based Non-local Network to highlight the effectiveness of the proposed method.
+vbnonlocal,3dmatch,"VBNonlocal consistently achieves significant performance gains on 3DMatch with FPFH descriptor, bringing 2.77% RR improvement"
+vbnonlocalfeat,3dlomatch,"VBNonlocalfeat brings significant RR improvements on 3DLoMatch with 500, 1000, and 2500 points"
+scnonlocalfeat,vbnonlocal,SCNonlocalfeat and VBNonlocal use concatenated coordinate and descriptor of correspondence as input respectively
+pointdsc,scnonlocalxyz,PointDSC model with SCNonlocalxyz network input
+pointdsc,vbnonlocalxyz,PointDSC model with VBNonlocalxyz network input
+pointdsc,vbnonlocalfeat,PointDSC model with VBNonlocalfeat network input
+pointdsc,scnonlocalfeat,PointDSC model with SCNonlocalfeat network input
+pointdsc,vbnonlocalfeat+vote,PointDSC model with VBNonlocalfeat+Vote network input
+pointdsc,vbnonlocalfeat+vote+cs,PointDSC model with VBNonlocalfeat+Vote+CS network input
+3dmatch,fcgf,3DMatch dataset with FCGF descriptor
+3dlomatch,fcgf,3DLoMatch dataset with FCGF descriptor
+3dlomatch,predator,3DLoMatch dataset with Predator descriptor
+scnonlocal,3dmatch,SCNonlocal network is spatial consistency-guided non-local network for 3DMatch dataset
+vbnonlocal,scnonlocal,VBNonlocal is compared to SCNonlocal to determine if it can learn more discriminative features. The distribution of feature similarity of inliers on 3DMatch and 3DLoMatch datasets is visualized to show that VBNonlocal produces features with much higher similarities than SCNonlocal.
+scnonlocal,classification loss,"Classification loss is added to features produced by each iteration in SCNonlocal to guide their learning. This is denoted as SCNonlocalcls. However, the addition of classification loss only achieves very limited performance gain and sometimes degrades the score, indicating the limitations of loss-based label-propagation for feature learning."
+scnonlocal,label-dependent posterior guidance,"SCNonlocal demonstrates the superiority of label-dependent posterior guidance for feature learning. This guidance leads to significantly faster convergence speed compared to SCNonlocal, as shown in the training curves."
+bayesian-inspired non-local network,discriminative correspondence-feature learning,The proposed Bayesian-inspired non-local network promotes more discriminative correspondence-feature learning with much higher similarities compared to SC-Nonlocal on both datasets.
+model,robustness under different numbers of non-local iterations,"The model shows robustness under different numbers of non-local iterations as verified by the second block in Table 3, indicating that it is robust to the iteration time and consistently achieves outstanding RR score."
+method,stability to different dimensions of random features,"The method exhibits stability to different dimensions of random features, as shown by the bottom block in Table 3, highlighting the model's stability to different dimensions of random features."
+proposed voting-based inlier searching strategy,performance improvement,"The proposed voting-based inlier searching strategy consistently achieves performance improvement, as seen in the sixth row of Table 3, benefiting from the high-quality hypothetical inliers sampled by the voting policy."
+conservative seed selection strategy,performance gain,"The proposed conservative seed selection strategy achieves consistent performance gain in each setting, as observed in the seventh row of Table 3, with much more significant improvement in cases of fewer points like in the FCGF setting with 250 and 500 points."
+fcgf setting,improvement,The FCGF setting with 250 and 500 points shows a much more significant improvement of +3.4% and +2.5%.
+original inlier selection strategy,[2],The original inlier selection strategy like in [2] is aggressive and prone to miss too many inlier seeds.
+original inlier selection strategy,conservative selection strategy,The original inlier selection strategy is aggressive while the conservative selection strategy is effective in mitigating the aggressiveness and maintaining registration efficiency.
+bayesian-guided long-term dependencies,variational bayesian inference,The non-local network was enhanced by adapting variational Bayesian inference to develop effective Bayesian-guided long-term dependencies for discriminative correspondence-feature learning.
+variational bayesian inference,probabilistic graphical model,Variational inference was achieved effectively by customizing a probabilistic graphical model over the non-local network.
+wilson score-based voting mechanism,ransac,The Wilson score-based voting mechanism for inlier sampling was theoretically confirmed to be superior to RANSAC.
+extensive experiments,indoor/outdoor datasets,Extensive experiments conducted on indoor/outdoor datasets demonstrated the promising performance of the proposed methods.
+national science fund of china,"grant nos. u1713208, u62276144",This work was supported by the National Science Fund of China with Grant Nos. U1713208 and U62276144.

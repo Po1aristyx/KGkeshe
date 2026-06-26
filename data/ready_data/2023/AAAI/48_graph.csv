@@ -1,0 +1,150 @@
+node_1,node_2,edge
+stable prediction,traditional gnns,Stable prediction aims to address the instability of predictions in traditional GNNs due to distribution shifts between training and testing.
+graph neural networks (gnns),stability,The focus is on achieving high average performance and low performance variance (stability) in GNNs to handle non-IID testing graphs.
+neighbor nodes (properties),stable properties,The key to stable prediction lies in identifying properties that remain consistently important despite distribution shifts.
+model-agnostic stable learning framework,gnns,A proposed solution to improve stability in GNNs through a framework that performs biased selection and trains multiple predictors for different distribution shifts.
+performance variance,low performance variance (stability),The goal is to minimize performance variance
+globally stable regularizer,training importance predictors,Introduced to reduce the variance of training losses when creating importance predictors for consistent property identification.
+iid assumption,real-world applications,The IID assumption is often not met in real-world scenarios.
+training graph data,testing graph data,The training and testing data are assumed to be independent and identically distributed (IID).
+papers (e.g.,ogbn-arxiv),distribution shifts
+traditional gnns,stability across non-iid testing datasets,Traditional GNNs can become unstable when making predictions on non-IID datasets.
+lstm paper,subject prediction instability,GNNs trained on past citations can lead to false subject predictions for papers citing LSTM.
+stable gnns,distribution shift resilience,Learning stable GNNs is crucial for handling distribution shifts in real-world applications.
+stable learning techniques,traditional methods,These techniques
+bickel et al. (2009),dudík et al. (2005),Cited as examples of traditional stable learning techniques.
+agnostic distribution shifts,graph domains,These terms are related as the context highlights that agnostic distribution shifts are commonly encountered in the context of working with graphs
+stable prediction,gnns (graph neural networks),The focus of the paper is on learning GNNs that can provide stable predictions despite agnostic distribution shifts.
+gnns (graph neural networks),high average performance,The first quantitative goal for stable prediction on graphs involves achieving high average performance across multiple non-IID testing graphs.
+gnns (graph neural networks),low performance variance,Another quantitative goal is to minimize performance variance
+stable properties,example: paper citation network,Stable properties are exemplified by the stability of correlations in a paper citation network
+paper citation network,graph subject,In the citation network
+open graph benchmark (hu et al.,2020a),stable property of target paper
+globally stable regularizer,variance of training losses,The globally stable regularizer is designed to specifically reduce the variance in training losses associated with non-IID graphs.
+loss,model performance,Loss is used as a measurement of the model's performance.
+importance weights,properties across non-iid subsets,Importance weights are assigned based on the consistency of properties in making predictions across different subsets of the graph.
+locally stable regularizer,down-weight properties,The locally stable regularizer adjusts the weight of properties that are not consistently important for prediction.
+data distribution shift,user-item graph,The data distribution on the user-item graph changes due to sale promotion strategies during specific events.
+stable learning,protocols,The paper employs stable learning protocols from the literature
+gnns,stable predictions,The main focus is on developing GNNs that make stable predictions on graphs.
+framework,learning gnns,The paper presents a framework that combines the locally and globally stable regularizers for GNN training.
+desensitized dataset,further investigations,The authors plan to release a desensitized dataset to encourage researchers to explore the problem further.
+distribution shift problem on graphs,stable neighbor nodes (properties),The study addresses the issue of capturing stability in neighboring nodes and their properties.
+non-iid training graph datasets,public graph benchmarks,We conduct experiments on these datasets to demonstrate the rationality of the proposed framework.
+public graph benchmarks,noisy industrial recommendation dataset,Experiments are also conducted on this industrial dataset to showcase the framework's performance.
+graph neural networks (gnns),recent advances,These advancements have shown high capability in capturing structural and relational patterns within graphs.
+message-passing schema,representation learning,GNNs transform and aggregate information from neighboring nodes for this purpose.
+neighborhood aggregation variants,state-of-the-art performances,Various neighborhood aggregation methods aim to achieve top-tier results in different tasks.
+gat,attention mechanism,GAT incorporates the attention mechanism into the information aggregation process.
+sgc,linear propagation,SGC simplifies GCN by directly passing information without non-linear transformations.
+appnp,adjustable neighborhood,APPNP extends the utilized neighborhood for improved node representation.
+graph convolutional network (gcn),weights among graph layers,Original GCN involves collapsing weights across layers.
+gnm (zhou et al.,2019),non-ignorable non-response
+real-world problem,distribution shifts,The problem refers to inconsistencies between training and testing data due to selection bias in real-world applications.
+distribution shifts,caused by node labels,GNM focuses on shifts specifically related to node labels
+distribution shifts,related to node attributes,Our proposed framework addresses shifts caused by both node labels and attributes.
+feng et al.,2020,graph data augmentation
+our proposed framework,bias node selection,We differ from Feng et al. by selecting nodes with bias rather than random dropping.
+our proposed framework,stable predictions,The framework aims to obtain stable predictions across various graph benchmarks and real-world recommendation datasets.
+stable learning tools,graph domain,The context contrasts the use of generic off-the-shelf stable learning tools
+neighborhood aggregation of gnns,stable prediction,The proposed method aims to capture stable properties in GNNs for achieving consistent and reliable predictions.
+invariance learning methods,broader field,Existing invariance learning methods
+irm (arjovsky et al.,2019),estimating invariant correlations
+zin (arjovsky et al.,2019),learning invariant features
+hrm (liu et al.,2021),learning invariant relationships
+our work,invariance learning in gnns,Our contribution is distinct from existing methods
+learning invariant representations,graph neural networks,The context discusses techniques specifically for learning invariant representations within the context of graph neural networks
+graph-structured data,graph environment,Graph environments are defined as the joint distribution of observed features
+problem formulation,space of observed features (x),The problem formulation involves the space X
+problem formulation,space of adjacency matrix (a),The adjacency matrix (A) is another component in the problem formulation
+response variable (y),outcome space,Y refers to the response variable
+stable prediction,non-iid testing environments (e te),The goal is to achieve stable prediction across environments that are non-independent and identically distributed (non-IID)
+locally stable learning,representation learning of each target node,The proposed framework includes locally stable learning
+globally stable prediction,framework components,The overall framework aims for globally stable prediction
+node label,stable properties,The key to stable prediction lies in capturing stable properties for the node label.
+stable properties,direct causes,These stable properties are considered to be direct causes of the node label.
+gnns,predictions,GNNs make predictions based on the aggregated information from neighboring nodes
+gnns,trainable parameters,The trainable parameters in GNNs
+non-iid testing environments,spurious correlations,Some correlations in GNNs may be spurious and don't generalize well to non-IID testing environments.
+papers citing lstm,paper subject,In the paper citation network
+ogb-arxiv,testing graph,OGB-Arxiv is an example of a graph where distribution shifts occur
+hypothesis 1,stable prediction,This hypothesis suggests that focusing on stable properties leads to more robust predictions across different environments.
+stable properties,label,The essence of the hypothesis lies in the invariance of the correlation between stable properties and the label
+stable properties,node labels,The goal is to capture stable properties for achieving stable prediction using GNNs
+stable properties,interventions,Properties that are consistently important under interventions are considered stable
+do-interventions,distribution shifts,Do-interventions
+pearl et al. (2016),causality,The invariance discussed in the reference is closely linked to causality and has been shown effective in the literature.
+peters et al. (2016),stable property identification,Peters et al. propose a criterion for identifying stable properties
+gnn backbone,parameters θ,The parameters θ are frozen in constructed environments and trained in the observed environment e0.
+weight predictor φek,θ (gnn backbone),Each φek is trained with the objective Lek
+algorithm 1: stable learning on graphs,training procedure,This algorithm outlines the process for optimizing φek
+observed graph environment ge0,output (parameters of gnn backbone θ and weight predictor φe0),The algorithm takes Ge0 as input and produces the desired parameters as output.
+testing datasets,non-iid,Testing datasets are constructed with biased selection to analyze prediction stability under distribution shifts.
+label shifts,covariate shifts,The evaluation considers two types of distribution shifts: node labels changing (label shifts) and attribute variations (covariate shifts).
+previous gnns,evaluation methods,The performance of the model is assessed using evaluation methodologies adopted by prior GNN research.
+stable learning framework,public graph benchmarks,The context discusses the framework in the context of evaluating its performance on publicly available benchmark datasets in Section 5.4.
+label shifts,evaluation,Label shifts are used for evaluating the framework's ability to handle distribution changes in Section 5.4.
+hyper-parameter analysis,understanding of designs,Hyper-parameter analysis is conducted to gain insight into the design choices of the framework in Section 5.4.
+real-world industrial recommendation dataset,section 5.5,This dataset is introduced in Section 5.5 for further evaluation.
+sample selection biases,recommender systems,Recommender systems often exhibit sample selection biases
+covariate shifts,evaluation on the recommendation dataset,Covariate shifts are considered for evaluating the framework's robustness in the recommendation dataset context.
+ogb-arxiv dataset,open graph benchmark team,The OGB-Arxiv dataset is obtained from the Open Graph Benchmark team (Hu et al.
+ogb-arxiv,real-world (non-iid) training/testing splits,The dataset is designed for stability evaluation with non-independent and identically distributed (non-IID) splits.
+biased selection,training set,Biased selection is performed on the training set to create label shift scenarios.
+training set,labels (label shift),The context describes constructing an observational environment using the first half of the training set based on the given labels.
+training set,non-iid testing environments,The remaining half of the training set is used to create non-independent and identically distributed (non-IID) testing environments.
+selection probability,bias ratio (τ),The bias ratio
+τ tr,τ te,τ tr and τ te denote the training and testing bias ratios
+citeseer dataset,deep graph library (dgl),The Citeseer dataset is obtained from the Deep Graph Library
+citeseer dataset,original validation set,To address the small training set issue
+non-iid training,validation set,The remaining samples from the original validation set are used for validation after creating non-IID training environments.
+recommendation dataset,mobile taobao,The industrial recommendation dataset is collected from Mobile Taobao during a major product promotion event.
+product promotion festival,annual,The dataset is collected during an annual product promotion festival
+normalized discounted cumulative gain (ndcg),recall,NDCG is a metric that considers both the number of groundtruth items recommended in the Top-K list and their positions
+training bias ratio (τtr),testing bias ratio,The context discusses how the testing results vary with different values of τtr (0.9
+ogb-arxiv dataset,graph neural networks (gnns),Experiments are conducted on the OGB-Arxiv dataset to compare the stability of state-of-the-art GNN models.
+average score (avg sco),stability error (st b err),Subfigures 2d-2f show the stability of prediction by plotting AVG Sco and ST B Err.
+discounted cumulative gain (dcg),ideal discounted cumulative gain (idcg),DCG and IDCG are components of NDCG calculation
+user (u),recommended items (ˆiu,k)
+items in user's interest set (iu),indicators (1),The indicator function
+ndcg@200.1839,recall@20,NDCG@200.1839 is a metric
+age bias,gender bias,Age and gender biases are mentioned as two kinds of shifts between training and testing distributions in the context
+training bias rate (τtr),testing bias rate (τte),τtr and τte are parameters representing the level of bias in the training and testing datasets
+holistic dataset,training data,The holistic dataset is a collection of interactions used for training
+training data,testing data,The 80% training data is contrasted with the 20% testing data to evaluate the model's performance under distributional changes.
+avg sco,stb err,AVG Sco and STB Err are performance metrics used to measure the stability and error of the model across different testing environments.
+proposed method,graph-based recommendation models,The proposed method is compared to state-of-the-art graph-based recommendation models
+interactions between users and items,noisy,Recommender system interactions are described as noisy due to external distractions
+o'mahony et al. (2006),external distractions,This reference is cited to support the idea that noise in recommender system interactions is a common issue.
+testing environments,distribution shifts,The context suggests that testing environments are related to distribution shifts
+proposed method,prediction stability,The proposed method is associated with high prediction stability
+proposed method,stable service quality,Stable service quality is a desired attribute of the proposed method
+performance change,degree of distribution shifts,The performance change is influenced by the degree of distribution shifts
+proposed method,lightgcn,The proposed method outperforms LightGCN in terms of gender bias
+ministry of science and technology,key r&d projects,The Ministry of Science and Technology is responsible for overseeing these key research and development projects.
+2020yfc0832500,young elite scientists sponsorship program,This project is part of the Young Elite Scientists Sponsorship Program by CAST.
+cast,young elite scientists sponsorship program,CAST sponsors the Young Elite Scientists Sponsorship Program.
+zhejiang province natural science foundation,project by shanghai ai laboratory,Both organizations fund research projects
+shanghai ai laboratory,program of zhejiang province science and technology,Shanghai AI Laboratory is involved in programs funded by the Zhejiang Province Science and Technology.
+2022c01044,starrynight science fund,This is another funding opportunity
+zhejiang university shanghai institute for advanced study,starrynight science fund,They manage and provide funding through the StarryNight Science Fund.
+ogb-arxiv citeseer,dataset,OGB-Arxiv Citeseer refers to a dataset used in the experimental section of the study.
+hardware configuration,experiment details,These details describe the hardware setup used for conducting the experiments.
+software configuration,experiment details,The software environment
+gcn,baselines,GCN is among the state-of-the-art GNNs used as a comparison method.
+gat,baselines,GAT is another GNN that serves as a comparison in the study.
+sgc,baselines,Simple Graph Convolution (SGC) is also included in the list of baseline methods.
+gcn (kipf and welling,2017),gat (velickovic et al.
+gcn (kipf and welling,2017),sgc (wu et al.
+gcn (kipf and welling,2017),appnp (bojchevski et al.
+sota gnns,gat dvd (zhou et al.,2019)
+sota gnns,gnm (fan et al.,2022)
+dgl team (wang et al.,2019b),source code implementations
+user embedding,item embedding,Both are transformed matrices in the neural graph collaborative filtering model
+user u,set of interacted items nu,Nu represents the set of items user u has interacted with.
+item i,set of interacted users ni,Ni represents the set of users who have interacted with item i.
+leakyrelu activation function (σ),ngcf (neural graph collaborative filtering),σ
+global ui,weights per layer,Global ui is maintained across layers for efficiency
+deep candidate generation models,model efficiency,Deep models need to be efficient
+lightgcn,improved efficiency,One of LightGCN's contributions is to enhance efficiency by removing the nonlinearity σ.
+stable graph recommender,section 4.3.5,The stable graph recommender is trained as described in Section 4.3.5 of the text.

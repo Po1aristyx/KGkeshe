@@ -1,0 +1,113 @@
+node_1,node_2,edge
+audio signal processing task,fundamental task,The task is considered fundamental in the context of audio signal processing.
+audio captioning,related recognition scenario,Audio captioning is an example of a recognition scenario that relies on sound event detection.
+acoustic scene understanding,related recognition scenario,Acoustic scene understanding is another application that uses sound event detection as a key component.
+sed methods,two categories,Existing SED methods are divided into frame-level and event-level approaches.
+frame-level approaches,event-level approaches,Frame-level and event-level approaches contrast in their approach to classifying and modeling sound events.
+discriminative detr-based sound event detector transformer (sedt),clean queries,Conventional SEDT uses a single decoding step with unmodified queries.
+diffusion-infused generative detr-based sound event detector (diffsed),noised queries,DiffSED employs a multi-step decoding process using noisy queries to account for correlation between frames.
+temporal boundaries of sound events,key consideration in event-level approaches,Event-level approaches explicitly model event boundaries without relying on manual design.
+sound event detection,object detection,Sound event detection is mentioned to have a 'comparison' with object detection
+sound event detection (sed),frame-level models,Frame-level models are mentioned as a 'comparison' for SED
+diffusion-based models,sound event detection,Diffusion-based models are proposed as a 'potential fit' for SED
+denoising diffusion,existing sound event detection models,Integrating denoising diffusion into existing SED models is 'non-trivial'
+diffusion models,continuous input data,Diffusion models are typically used with continuous data
+denoising diffusion,speech emotion detection (sed),Both denoising diffusion and SED methods are discussed
+speech emotion detection (sed),efficiency issue,Both SED and denoising diffusion suffer from low efficiency
+denoising diffusion,reverse denoising process,In the proposed method
+detr,conditioned denoiser,DETR is mentioned as a conditioned denoiser
+noisy latents,continuous input bypassed,The model operates in a latent space
+noise-to-queries strategy,proposed method's advantage,This strategy enhances the model's ability to generate event proposals by evolving queries in an iterative manner during inference.
+input audio stream,condition for event proposals,During inference
+sound event detection (sed),generative denoising process,The work reformulates SED as a generative denoising task in a transformer decoder framework.
+diffusion model,sound event detection (sed),This is the first study
+noise-to-queries strategy,generative adaptation,The proposed method uses a noise-to-queries strategy with evolutionary enhancement of queries.
+evolutionary enhancement of queries,faster convergence,This strategy offers faster convergence as a key advantage.
+frame-level approaches,sound event detection (sed),The existing SED literature divides into frame-level and event-level approaches
+event-level approaches,sound event detection (sed),Event-level approaches classify sound events without segmenting the input audio.
+urban-sed dataset,sound event detection (sed),Experiments are conducted on the URBAN-SED dataset to validate the proposed method's performance.
+epic-sounds dataset,sound event detection (sed),Additional experiments are performed on the EPIC-Sounds dataset for comparison.
+turpault et al. (2019),frame-level approaches,Cited as an example of frame-level approach in the SED literature.
+miyazaki et al. (2020a),frame-level approaches,Another frame-level approach in the SED literature.
+split-and-classify strategy,event-level approaches,Event-level approaches are a more principled and scalable alternative to the split-and-classify strategy.
+event-level approaches,diffsed,DiffSED belongs to the event-level approach category
+deep learning techniques,sed (sound event detection),Deep learning
+convolutional neural networks (cnns),audio event classification,CNNs are popular due to their ability to analyze local patterns in acoustic waveforms for event classification.
+recurrent neural networks (rnns),audio event classification,RNNs have also been employed for their sequential processing capability in sound event classification.
+model designs in object detection,event-level approaches,Event-level approaches draw inspiration from model designs in object detection for end-to-end learning.
+music,complex events,Event-level approaches are more suitable for longer and complex events like those found in music.
+human speech,complex events,Similarly
+urban soundscapes,short and frequently occurring events,Event-level approaches excel at short and frequent events
+environmental monitoring,short and frequently occurring events,They are also useful for event detection in environmental monitoring contexts.
+generative learning,diffusion models,The context discusses generative learning in a unique perspective
+sound event detection (sed),classification and temporal localization,In the SED task
+audio sequence,mel-spectrogram representation,The audio sequence is typically represented as a mel-spectrogram
+diffusion models,denoising schedule,Diffusion models learn a denoising process
+leng et al. (2022),audio generation,Leng et al.'s work showcases the application of diffusion models in audio generation.
+huang et al. (2022),audio enhancement,Huang et al. demonstrate the use of diffusion models for improving the quality of audio signals.
+lemercier et al. (2022),audio separation,Their work focuses on separating different audio sources using diffusion models.
+set of labeled audio sequences (dtrain),training data,Dtrain consists of labeled audio samples used for training the model
+temporal annotation,ψi,Temporal annotation ψi details the onset
+data samples,event query embeddings,Data samples consist of N event query embeddings
+event query embeddings,noisy proposals (zt),The neural network fθ is trained to predict the original event query embeddings (z0) from noisy proposals
+noisy proposals (zt),audio category ˆy,After refining through the detection decoder
+diffusion model,iterative process,The diffusion model generates data samples iteratively
+audio,audio encoder,The audio encoder processes raw audio to extract high-level features
+raw audio,mel-spectograms,The raw audio is transformed into mel-spectograms before being fed into the audio encoder.
+audio encoder,feature representation (af),The audio encoder outputs a feature representation of the input audio
+detection decoder,refinement of noisy proposals (zt),The detection decoder receives the feature representation and refines the noisy proposals in a progressive manner.
+cnn based encoder backbone,audio feature (af),This specific audio encoder uses a ResNet-50 backbone to generate the audio feature.
+cnn based encoder backbone (resnet-50),audio feature af,The encoder backbone generates the audio feature
+audio feature af,rt (time dimension),Audio feature is of size RT
+multi-layered temporal transformer,global feature ca',The transformer performs global attention to produce the global feature from the audio feature.
+query,key,and value
+positional encoding,audio feature af,Positional encoding is added to the audio feature before being fed into the transformer.
+transformer decoder (fθ),noisy event queries q,The decoder
+latent queries,gaussian noise,Noisy event queries are created by injecting Gaussian noise into randomly initialized latent queries.
+event queries,rombach et al. (2022),The use of event queries resembles the concept introduced in Rombach et al.
+event classification head,event localization head,The detection decoder has two parallel heads for classifying events and localizing them.
+diffsed,multistep decoding,DiffSED is discussed in the context of its multistep decoding experiments
+detr-style detection models,slow convergence,These models generally experience slow convergence due to inconsistent matching of event queries to event proposals.
+diffsed,faster convergence,DiffSED shows faster convergence compared to SEDT because of its query denoising task
+query denoising,optimization objective,The main goal of query denoising in DiffSED is to obtain the ground truth event proposal
+urban-sed,epic-sounds,Results are presented on two datasets - URBAN-SED and EPIC-Sounds
+urban-sed,sound event detection (sed),URBAN-SED is a public dataset for sound event detection
+epic-sounds,human-generated annotations,EPIC-Sounds features human-generated annotations alongside its data
+epic-sounds dataset,audio recordings,The EPIC-Sounds dataset consists of more than 36
+audio recordings,various lengths,The recordings were made in a variety of indoor and outdoor environments
+audio recordings,500 hours,Totaling over 500 hours of audio.
+environments,indoor,Recordings were made in a variety of indoor environments.
+environments,outdoor,Recordings were made in a variety of outdoor environments.
+sound classes,human speech,They cover a wide range of sound classes
+sound classes,animal sounds,They cover a wide range of sound classes
+sound classes,environmental sounds,They cover a wide range of sound classes
+sound classes,music,They cover a wide range of sound classes
+urban-sed dataset,f1-score,Performance is evaluated using F1-score
+urban-sed dataset,event-level,Evaluation at event-level and segment-level.
+urban-sed dataset,segment-level,Evaluation at event-level and segment-level.
+epic-sounds dataset,top-1 accuracy,Performance reported as top-1 and top-5 accuracy on the validation split.
+epic-sounds dataset,mean average precision (map),Also report mAP
+diffusion-infused transformer decoder,robust representation of grounded event boundaries,The diffusion-based decoder in DiffSED provides a more robust representation
+diffsed,previous end-to-end approaches,DiffSED outperforms other end-to-end methods by a significant margin (6.62% absolute improvement for event-level and 4.03% for segment-level metrics).
+event-level metrics,segment-level metrics,DiffSED has a higher performance for both event-level and segment-level evaluation
+proposed model,audio-tagging results,The model improves audio-tagging results by 3.5% absolute
+sed problem,generative learning,The model exploits the SED problem as generative learning within the denoising diffusion framework.
+epic-sounds,publicly available pre-trained backbones,Comparison is made using ASF and SSAST
+asf (kazakos et al. 2021),ssast (gong et al. 2022),These are the backbone models used as competitors in the EPIC-Sounds experiment.
+pre-trained backbones,asf (kazakos et al. 2021),ASF is a competing model among pre-trained backbones.
+pre-trained backbones,ssast (gong et al. 2022),SSAST is another competing model among pre-trained backbones.
+diffsed,asf (kazakos et al. 2021),DiffSED outperforms ASF with a significant improvement in Top-1 and Top-5 accuracies.
+diffsed,ssast (gong et al. 2022),DiffSED also outperforms SSAST
+diffsed,resnet-50 backbone,All experiments use pre-trained ResNet-50 features for training and inference.
+denoising strategies,diffsed (continuous space corruption),DiffSED's denoising strategy involves corrupting event latents in the continuous space.
+denoising strategies,diffsed-bb (discrete proposal corruption),DiffSED-BB uses discrete event proposals corrupted and projected as queries.
+diffsed,diffsed-bb,DiffSED-BB shows lesser performance compared to DiffSED
+event proposals,audio-tagging performance,Both denoising variants perform best with 30 event proposals for audio tagging.
+event-level metrics,segment-level metrics,DiffSED-BB has lower scores in both event-level and segment-level metrics compared to DiffSED.
+sound event detection (sed),diffusion-based transformer framework,The work reformulates the SED problem from the generative learning perspective using the diffusion-based transformer framework.
+diffusion adaptation method,noisy event latents denoising,This method involves adapting diffusion models with a focus on denoising noisy event latents for modeling global dependencies.
+global dependencies of sound events,computational efficiency,The design allows for efficient modeling while maintaining the ability to capture global relationships in sound events.
+diffsed,diffsed-bb,Both variants are evaluated for stability
+random event queries,robustness of models,The study measures the distribution of performance when evaluating each model instance with different random seeds to assess robustness.
+experiments,standard benchmarks,Experiments demonstrate the effectiveness of the method compared to existing art on commonly used benchmark datasets.
+our method,existing art alternatives,The conclusion states that our method is superior to these alternatives.

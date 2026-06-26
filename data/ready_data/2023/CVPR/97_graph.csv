@@ -1,0 +1,233 @@
+node_1,node_2,edge
+central-concept spatial prior,transformer detector,The dominant DETR-based approaches apply central-concept spatial prior to accelerating Transformer detector convergency.
+central-concept spatial prior,reference points,These methods gradually refine the reference points to the center of target objects and imbue object queries with the updated central reference information for spatially conditional attention.
+reference points,center of target objects,These methods gradually refine the reference points to the center of target objects and imbue object queries with the updated central reference information for spatially conditional attention.
+reference points,object queries,These methods gradually refine the reference points to the center of target objects and imbue object queries with the updated central reference information for spatially conditional attention.
+salient queries,transformer detectors,"To bridge the gap between the reference points of salient queries and Transformer detectors, we propose SAlient Point-based DETR (SAP-DETR) by treating object detection as a transformation from salient points to instance objects."
+salient point-based detr (sap-detr),object detection,"To bridge the gap between the reference points of salient queries and Transformer detectors, we propose SAlient Point-based DETR (SAP-DETR) by treating object detection as a transformation from salient points to instance objects."
+salient point-based detr (sap-detr),salient points,"By rapidly attending to query-specific reference regions and the conditional box edges, SAP-DETR can effectively bridge the gap between the salient point and the query-based Transformer detector with a significant convergency speed."
+salient points,query-based transformer detector,"By rapidly attending to query-specific reference regions and the conditional box edges, SAP-DETR can effectively bridge the gap between the salient point and the query-based Transformer detector with a significant convergency speed."
+resnet-dc-101,sap-detr,"ResNet-DC-101 is the basis for SAP-DETR, which achieves 46.9 AP in object detection."
+sap-detr,https://github.com/liuyang-ict/sap-detr,SAP-DETR's code will be released at the specified GitHub link.
+sap-detr,object detection,"SAP-DETR is used for object detection, which is a fundamental task in computer vision."
+dab-detr,3-layer decoder model,Comparison of SAP-DETR and DAB-DETR under 3-layer decoder model is shown in the Figure 1.
+detr,transformer,"DETR is a paradigm for object detection based on the Transformer, treating object detection as a problem of set prediction."
+object detection,set prediction,Object detection is treated as a problem of set prediction in the context
+detr,learnable positional encodings,"DETR uses a set of learnable positional encodings, known as object queries, to aggregate instance features in Transformer Decoder"
+detr,bipartite matching,Predictions of queries in DETR are assigned to the ground truth via bipartite matching for end-to-end detection
+detr,training time,DETR has longer training time compared to conventional CNNs which limits its application
+variant,query paradigm,Variants of DETR focus on query paradigm to address the longer training time issue
+spatial priors,model convergency and efficacy,Spatial priors are introduced in variants for model convergency and efficacy improvement
+implicit methods,implicit relationship,Implicit methods aim to attend efficiently to image context features by decoupling a reference point from the object query
+explicit methods,explicit relationship,"Explicit methods suggest instantiating a position with spatial prior for each query, enabling focused regions easily"
+sotas,explicit methods domination,Current state-of-the-arts are dominated by explicit methods which use spatial priors for better results
+anchor detr,anchor concept,Anchor DETR introduces an anchor concept involving center point and different box size patterns for query formulation and bounding box regression
+query position,central offsets,The query position is formulated based on the central offsets of the bounding boxes.
+dab-detr,"4d anchor box concept [cx, cy, w, h]",DAB-DETR extends the center point to a 4D anchor box concept to refine proposal bonding boxes in a cascaded manner.
+query location,target center,Instantiating the query location as a target center may degrade the classification accuracy and convergency speed.
+plausible queries,high-quality classification scores,There exist many plausible queries with high-quality classification scores that only bring a slight improvement on precision rate.
+plausible predictions,negative classification loss,"Plausible predictions are considered in negative classification loss, which decelerates the model convergency."
+reference point,positive query,The predefined reference point of the positive query may not be the nearest one to the center of the ground truth bounding box.
+reference points,centralized or marginalized,"Reference points tend to be centralized or marginalized, losing the spatial specificity."
+one-to-one label assignment,training process,Insight into the one-to-one label assignment during the training process shows a disparity with the query closest to the center point.
+query,center point,"The reference point closest to the center point is mentioned. There is a disparity with the positive query in classification confidence, indicating a relationship between query and center point."
+centralized spatial prior,degeneration of target consistency,"The centralized spatial prior is argued to cause degeneration of target consistency in classification and localization tasks, indicating a cause-effect relationship between the two concepts."
+central point-based variants,detecting occluded objects,"Central point-based variants have difficulties in detecting occluded objects, indicating a limitation in their functionality."
+dab-detr,sap-detr,"A specific example is provided where DAB-DETR detects an object twice, while the query point in SAP-DETR is not necessarily the center point, showcasing a comparison between the two models."
+predefine different receptive fields,position of each query,"One solution for the center-based method is to predefine different receptive fields for each query position, indicating a strategy to address the issue."
+salient point-based detr,object detection as a transformation from salient points,"SAlient Point-based DETR treats object detection as a transformation from salient points to instance objects, suggesting a unique approach in the framework."
+salient points,instance objects,Transformation from salient points to instance objects is described in the context
+reference point,target center,The process involves regressing the reference point to the target center
+reference point,positive query,The reference point belonging to one positive query is defined in the context
+salient point,query-specific reference point,Salient point is considered as the query-specific reference point
+bounding box,distance,Distance from each side of the bounding box is predicted
+mesh-grid referenced points,query-specific reference point,Mesh-grid referenced points are initialized with the center/corner as the query-specific reference point
+reference sparsity,training process,"To disentangle reference sparsity and stabilize the training process, a movable strategy with scaling amplitude is applied"
+reference point adjustment,scaling amplitude,A movable strategy with scaling amplitude is applied for reference point adjustment
+queries,reference grid,Queries are prompted to consider their reference grid as the salient region for image context attention
+bounding box layer,over-smooth/inadequacy problem,Localizing each side of the bounding box layer by layer enables compensation for the over-smooth/inadequacy problem
+detection,model convergency speed,Query-specific spatial prior vastly promotes model convergency speed during center-based detection
+gaussian spatial prior,conditional cross-attention mechanism,Both Gaussian spatial prior and conditional cross-attention mechanism are taken advantage of in the context
+salient point,cross-attention mechanism,Salient point enhanced cross-attention mechanism is developed to distinguish salient region and other conditional extreme regions from context image features
+salient points,query-based transformer detector,The gap between salient points and query-based Transformer detector is bridged by attending speedily to the query
+salient points,query-based transformer detector,Salient points play a crucial role in improving the performance of the query-based Transformer detector by providing query-specific reference points to object queries.
+salient points,regression,"Salient points are introduced into end-to-end query-based Transformer detectors, enhancing regression techniques for more accurate predictions."
+regression,end-to-end query-based transformer detectors,The introduction of salient points is a novel approach to improving regression within end-to-end query-based Transformer detectors.
+salient points,object queries,"Salient points are utilized to assign query-specific reference points to object queries, enhancing the accuracy of the detection process."
+salient points,center-based methods,"Unlike center-based methods, salient points restrict the reference location and define the point of the positive query as the salient one, reducing redundant predictions."
+object queries,reference location,"The reference location for object queries is restricted by the salient point concept, improving the efficiency of detection."
+center-based methods,redundant predictions,"Center-based methods often result in redundant predictions, which the salient point concept seeks to reduce by defining specific reference points for queries."
+salient point,convergency speed,"The efficacy of the query-specific prior, implemented through salient points, greatly accelerates the convergency speed of SAP-DETR."
+salient point,reducing training epochs,"Thanks to the query-specific prior through salient points, SAP-DETR achieves competitive performance with 30% fewer training epochs, showcasing improved efficiency."
+proposed movable strategy,sap-detr,"The proposed movable strategy further enhances SAP-DETR, leading to a new state-of-the-art performance in query-based Transformer detectors."
+point-enhanced cross-attention mechanism,query,"The point-enhanced cross-attention mechanism imbues the query with spatial prior based on both reference points and box sides for final specific region attention, improving query comprehension."
+spatial prior,specific region attention,"The spatial prior, formed through reference points and box sides, enhances the specific region attention for improved detection accuracy."
+evaluation,coco dataset,"Evaluation over the COCO dataset has demonstrated the superior convergency speed and detection performance of SAP-DETR, showcasing its effectiveness."
+sap-detr,convergency speed,SAP-DETR achieves superior convergency speed
+sap-detr,detection accuracy,SAP-DETR achieves superior detection accuracy
+sap-detr,sota approaches,"Under the same training settings, SAP-DETR outperforms the SoTA approaches with a large margin"
+anchor-free object detectors,center-based approaches,Classical anchor-free object detectors can be grouped into center-based and keypoint-based approaches.
+center-based approaches,localize the target objects,The center-based approaches aim to localize the target objects based on the central locations or predefined ROI.
+center-based approaches,fcos,"For example, FCOS treated all points within the bounding box as positive ones to predict their distances from each side ([ℓ, t, r, b]), and a centerness score was then considered to prohibit the low-quality prediction whose point is located near the border."
+keypoint-based approaches,localize the specific object locations,The target of keypoint-based approaches is to localize the specific object locations and assign them to the predefined keypoints of the object for box localized training.
+diagonal corner points,cornernet,"For instance, diagonal corner points were considered in CornerNet."
+center point,centernet,Center point was further grouped into CenterNet.
+extreme points,extremenet,ExtremeNet added some conjectural extreme points for object localization.
+keypoint-based approaches,sap-detr,Our SAP-DETR takes the advantage of salient point regression to focus on the distinct regions.
+sap-detr,salient point regression,SAP-DETR takes advantage of salient point regression for focusing on distinct regions
+det,transformer detector,DET pioneered a new paradigm of Transformer detector for end-to-end object detection
+det,object query,"In DET, object query aggregates instance features and yields a detection result for each instance object"
+transformer decoder,transformer detector,Slow convergency of DETR is attributed to Transformer decoder
+smca,gaussian-like attention map,SMCA applied a Gaussian-like attention map to augment query-concerned features spatially
+reference points,conditional detr,Conditional DETR rebuilt positional queries based on reference points for extreme region discrimination
+anchor point,spatial prior,"Anchor DETR utilized a predefined 2D anchor point [cx, cy] to explicitly capitalize on the spatial prior during cross-attention and box regression."
+anchor point,reference point,Each object query in SAP-DETR is assigned to a specific grid region and initialized by the corner/center of the grid as its reference point. A learnable 4D coordinate represents the distance from the four sides of the box to the reference point.
+anchor point,box sides,Both reference points and box sides are served as positional encodings added/concatenated to content embeddings.
+anchor point,4d anchor box,"DAB-DETR extended such a 2D concept to a 4D anchor box [cx, cy, w, h] and refined it layer-by-layer."
+model convergency,bipartite matching,"DN-DETR demonstrates the slow model convergency is mainly caused by the instability of bipartite matching, thus providing a denoising training to eliminate this issue."
+model convergency,denoising training,"DN-DETR demonstrates the slow model convergency is mainly caused by the instability of bipartite matching, thus providing a denoising training to eliminate this issue."
+model convergency,negative queries,DINO inherits this advance and further introduces negative queries to perform contrastive denoising.
+positive object queries,group-wise one-to-many label assignment,Group-DETR proposes a group-wise one-to-many label assignment to match multiple positive object queries with more
+detr,point-detr,"Point-DETR is one of the relevant approaches to DETR, which applied a point encoder for annotated point label infusion in the teacher model."
+detr,sam-detr,"SAM-DETR is another relevant approach to DETR, which directly updated content embeddings by extracting salient points from image features for query-image semantic alignment."
+point-detr,sam-detr,"Point-DETR and SAM-DETR are both relevant approaches to DETR, focusing on different aspects like point encoder and salient point extraction."
+detr,sap-detr,"SAP-DETR is proposed as a method to bridge the gap between salient points and query-based detectors, following the principles of DETR."
+sap-detr,transformer encoder,The extracted image features are fed into Transformer encoder in SAP-DETR after adding positional encodings.
+sap-detr,transformer decoder,Object queries re-aggregated by Transformer decoder in SAP-DETR to enhance the model.
+salient point,cross-attention mechanism,The proposal box sides propose a salient point enhanced cross-attention mechanism to imbue query with spatial prior.
+salient point,object detection,"Salient Points-Based Object Detection is discussed, where a fixed mesh-grid region is utilized to initialize reference points for object queries."
+salient point,spatial prior,The proposal box sides propose a salient point enhanced cross-attention mechanism to imbue query with spatial prior.
+cross-attention mechanism,object detection,The proposal box sides propose a salient point enhanced cross-attention mechanism to imbue query with spatial prior.
+object detection,center-based anchor point/box,"Previous methods decompose the object query into content and position embeddings, forming a center-based anchor point/box prior."
+object detection,bounding box,Object query consists of content embedding and positional information with 4D offset distances from the reference point to the sides of the proposal bounding box for each object query.
+decoder layer,boxhead,"The prediction for each decoder layer can be calculated by∆sl = BoxHeadl(sl−1, el−1, rl−1) where BoxHeadl is the prediction head following the layer-l decoder."
+query,bounding box,"During the training process, each query is only allowed to predict the bounding boxes that overlap its reference region."
+matching process,inner matching cost,We adapt this rule into the one-to-one bipartite matching process via an inner matching cost Linner.
+query-box pair,step function,"The Linner(gi, qj) of each query-box pair is a step function to penalize the reference point rj of qj with value of k when rj is outside the bounding box of gi."
+one-to-one label assignment,formulated,The concept of one-to-one label assignment is formulated in the context.
+one-to-one label assignment,"linner(gi, qj)","one-to-one label assignment is related to the concept of Linner(gi, qj) through the one-to-one label assignment formulation."
+"linner(gi, qj)",krj,"The concept of Linner(gi, qj) is determined by krj in the context."
+"linner(gi, qj)",gi,"The concept of Linner(gi, qj) involves the condition where gi is not an element of the Lmatch + Linner."
+"linner(gi, qj)",lmatch,"Linner(gi, qj) is part of the original pair-wise matching cost Lmatch which consists of both classification and localization costs."
+lmatch,original pair-wise matching cost,Lmatch represents the original pair-wise matching cost which includes classification and localization costs.
+movable reference point,sparseness,The concept of Movable Reference Point is influenced by the sparseness of the fixed reference point.
+movable reference point,small and slender objects,Movable Reference Point relates to small and slender objects in the context.
+small and slender objects,reference point,The presence of a reference point affects the distinguishability of small and slender objects.
+bipartite matching,assignment,The concept of bipartite matching forces each object to be assigned to one object query.
+positive query,reference point outside the assigned bounding box,The positive query depends on the reference point being outside the assigned bounding box for accurate regression of the distance.
+location adjustment,object detection,Adjusting the locations of reference points inside the ground truth bounding boxes improves the detection of each object.
+box refinement,movable reference point design,Box refinement involves the concept of movable reference point design for updating reference points.
+full-image point regression,search space expansion,Full-image point regression expands the search space due to vast variable determinations.
+offset amplitude,grid regions,Adjusting the offset amplitude of points within specific grid regions limits the range of the points.
+offset,amplitude,offset and amplitude are related as they are both used to describe the points within specific grid regions
+offset,searching space,the operation of limiting the range of offset values prevents a large searching space
+offset,sigmoid activation,the update process of reference points involves applying the sigmoid activation to the predicted offsets
+offset,scale factor,a scale factor is multiplied with the predicted offsets to update the reference points
+sigmoid activation,scale factor,applying the sigmoid activation is part of the process of updating reference points along with multiplying by a scale factor
+reference points,update process,the update process of reference points involves calculating the deltas and applying the sigmoid activation to the offsets
+update process,predicted offsets,the update process of reference points uses the predicted offsets to calculate the deltas
+center-based methods,attention on both center and sides,existing center-based methods focus on attention towards both the center and sides of the ground truth bounding box
+queries,specific regions,"queries are expected to focus on their specific regions based on the reference points, four box sides, and other conditional regions"
+reference points,specific regions,queries are expected to focus on specific regions based on the reference points
+reference points,four box sides,queries are expected to focus on the four box sides based on the reference points
+reference points,other conditional regions,queries are expected to focus on other conditional regions based on the reference points
+offset scale,attention scale,predicting offset scale and attention scale based on content embedding is part of the process
+h,index,"The variable H is used to iterate through the indices of the dataset, and the index is selected based on the direction guided by the sign of offset scale"
+offset scale,"{a, b}",The offset scale is used to determine the index values for variables a and b
+ci,oi,"The variable ci is predicted based on the operation between oi, scale values, and r"
+sap-detr,denoising strategy,"SAP-DETR is further developed with denoising strategies to explore its capabilities, resulting in variants like SAP-DN-DETR and SAP-DINO-DETR"
+denoising strategy,auxiliary loss,The denoising strategy adds an auxiliary loss to the training process in SAP-DETR models
+denoising strategy,denoised sap-detr,The denoising strategy modifies the original SAP-DETR by using box jittering and random sampling for noise reduction
+denoising strategy,dn-detr,Comparison is made between DN-DETR and denoised SAP-DETR in terms of noise design
+denoising strategy,dino,Another variant DINO is compared with denoised SAP-DETR based on noise design
+denoising strategy,auxiliary training loss,The denoising strategy serves as an auxiliary training loss to increase the training cost
+models,gflops,The denoising models have the same computational cost as SAP-DETR models in terms of Params and GFLOPs
+object detection dataset,images,"The experiments are conducted on the COCO 2017 object detection dataset, consisting of training and validation images"
+models,backbone,The backbone of the models consists of an ImageNet-pretrained ResNet used for feature extraction
+class label,bounding box prediction,Class label and bounding box prediction are related in the context of heads for their prediction.
+imagenet-pretrained resnet,backbone,ResNet is mentioned as the backbone for the models used for prediction.
+dab-detr,sharing box and label head,"DAB-DETR shares box and label head for each layer, differentiating its approach from the discussed model."
+queries,mesh-grid initialization,The number of queries N is considered as a perfect square for uniform distribution in the mesh-grid initialization.
+3-layer encoder-decoder stack,transformer structures,"Two different Transformer structures are adopted for experiments, one of which is a 3-layer encoder-decoder stack."
+reference points,center/corner points of the mesh-grid,The reference points for SAP-DETR are initialized by the center/corner points of the mesh-grid.
+inner loss,green dashed box,The inner loss is related to the green dashed box prediction in the context.
+gaussian,enhance query specificity,An improved Gaussian is mentioned to enhance query specificity in the context.
+conditional attention,spatially extreme region discrimination,Conditional attention is used to enhance spatially extreme region discrimination.
+final attention map across,sum of two attentions,The final attention map 'Across' is described as the sum of two attentions in the context.
+attention map,attentions,The final attention map Across is the sum of the two attentions Across = G + Apeca.
+attentions,gaussian,"Similar to the movable strategy, we enforce the predicted Gaussian attention to be inside the proposal bounding box to reduce the searching space."
+offset scales,mlp,"Given a reference point r, the offset scales o ∈ [−1, 1]2 for H heads are produced by a simple MLP with a tanh activation."
+offset scales,proposal bounding box,"Then multiply to the two sides of the proposal bounding box for head-specific point offset generation, where the direction is guided by the sign of the offset scales."
+point offset generation,head-specific points,"Then multiply to the two sides of the proposal bounding box for head-specific point offset generation, where the direction is guided by the sign of the offset scales."
+head-specific points,algorithm 1,The head-specific points are generated by Algorithm 1.
+gaussian-like spatial weight map,pixel,"For each head, the Gaussian-like spatial weight map Gi effecting on each pixel (x, y) of context features is then formulated as − (x − cw,i)^2 − (y − ch,i)^2Gi(x, y) = expv2 h,i.(4)"
+semantic class,query,"As aforementioned, the semantic class for the query is closely related to its referenced location in our SAP-DETR."
+query,location,"To enhance the correlation between queries and their references, we concatenate the locations to the content queries after the sinusoidal positional encoding (PE)."
+conditional attention,positional embedding,"Take a close look at the conditional attention [16], we find that the linear positional embedding mostly focuses on one box side in each attention head."
+attention mechanism,side coordinates,"So we introduce a more straightforward attention mechanism, where the four side coordinates are concatenated and assigned to the corresponding head for side attention."
+peca,tpe,"PECA is formulated as k + TPE(rq)PE(rk)⊤, where TPE is involved in the formulation."
+t,scaling transformation matrix,T is a scaling transformation matrix used in the process of PECA.
+cnn detectors,transformer detectors,"Compared with traditional CNN detectors, Transformer detectors are subject to different convergency challenges."
+resnet,resnet-dc,ResNet and ResNet-DC have different batch sizes used in training.
+sap-detr,detr-like detectors,SAP-DETR is compared with other DETR-like detectors in terms of performance on a specific dataset.
+faster rcnn,detr-like models,"Faster RCNN achieves good performance under the same 12-epoch training scheme, while DETR-like models may suffer from inadequate training and perform poorly without auxiliary losses."
+sap-detr,dab-detr,"SAP-DETR can accelerate model convergency significantly, boosting DAB-DETR by 3.9 AP and 2.7 AP on 3-layer and 6-layer encoder-decoder structures, respectively."
+sam-detr,sap-detr,"SAP-DETR outperforms SAM-DETR by approximately 1.3 AP, with a reduction of approximately 17% parameters and 10% GFLOPs."
+sap-detr,sota,"SAP-DETR also outperforms current SoTA methods, with a margin in classification loss benefiting from the query-specific reference point."
+sap-detr,sota methods,"There is a large margin in classification loss between SAP-DETR and SoTA methods, benefiting from the query-specific reference point, boosting model performance in early epochs."
+sap-detr,classification and box regression losses,SAP-DETR conducts with rapid descent curves in both classification and box regression losses.
+sap-detr,model efficacy,"To analyze model efficacy, SAP-DETR achieves superior performance among all single-scale Transformer detectors, especially on middle and large targets."
+sap-detr,dab-detr,SAP-DETR boosts DAB-DETR by 2.0 APM in the 36-epoch training scheme.
+sap-detr,dab-detr,"SAP-DETR boosts DAB-DETR by 2.0 APM and 4.1 APL with 3-layer models, 1.0 APM and 1.9 APL with 6-layer models."
+sap-detr,sam-detr,"A deficient upper-bound of SAM-DETR is exposed, with obviously lower 0.5 AP promotion compared to our 1.0 AP improvement."
+sap-detr,sotas,SAP-DETR outperforms the current SoTAs with comparable costs based on all backbones.
+sap-detr,object detection accuracy,"With low-resolution features (×1/32), SAP-DETR significantly boosts both middle and large object detection accuracy."
+sap-detr,fast convergency methods,"We compare our SAP-DETR variants with the current fast convergency methods [4, 9, 28]. With a subtle modification, SAP-DETR results in a significant performance improvement compared with the original methods."
+dn-detr,sap-detr,"Under the 12-epoch training scheme, there exist 0.5-1.9 AP improvements on DN-DETR when compared to SAP-DETR."
+group-detr,sap-detr,"Under the 12-epoch training scheme, there exist 0.7-1.6 AP improvements on Group-DETR when compared to SAP-DETR."
+dn-detr,group-detr,DN-DETR shows 0.7-1.6 AP improvements on Group-DETR.
+dn-detr,dino,The promotions of DN-DETR are slightly reduced when implemented on DINO.
+negative query of contrastive denoising,query-salient reference point,There exists a possible effect between the negative query of contrastive denoising and the query-salient reference point.
+large object detection,resnet-dc5 family backbones,"The performance improvements may originate predominantly from the large object detection, especially based on ResNet-DC5 family backbones."
+low-resolution features (×1/32),high-resolution features (×1/16),DETR may prefer the high-resolution features (×1/16) over the low-resolution ones (×1/32).
+transformer,resnet-50,The 3-Layer Encoder-Decoder Transformer Neck with ResNet-50 Backbone is a method used in the context for image detection tasks.
+detr-r50,transformer,DETR-R50 is a model utilizing the Transformer architecture for object detection.
+detr-r50,resnet-50,DETR-R50 model mentioned in the context is based on the ResNet-50 backbone.
+smca-detr-r50,transformer,SMCA-DETR-R50 is a variant of DETR-R50 model that incorporates the Sparse MCA (SMCA) modules to improve performance.
+conditional detr-r50,transformer,Conditional DETR-R50 is another variant that introduces conditional mechanisms into the Transformer architecture for detection tasks.
+anchor detr-r50,transformer,Anchor DETR-R50 is a specific variation of DETR-R50 model employing anchor mechanisms in the Transformer network.
+sap-detr-r50,transformer,SAP-DETR-R50 is a custom implementation discussed in the context using the Transformer architecture for object detection with ResNet-50 backbone.
+anchor detr,queries,"Anchor DETR uses 200 queries while other models use 400 queries, except for a comparison with 300 queries mentioned elsewhere."
+anchor detr,pattern embeddings,"Anchor DETR uses 2 pattern embeddings, indicating a specific data processing approach."
+anchor detr,infer. time(s/img),"Inference time is mentioned in the context, and Anchor DETR's specific inference time is notated."
+anchor detr,ap,"AP values are compared with the baseline DAB-DETR, with Anchor DETR having specific metrics mentioned."
+query-specific spatial prior,queries,"The query-specific spatial prior enables queries to attend to their expected region, improving detection performance."
+false detection rate,occluded objects,"Reduces the false detection rate on occluded objects, enhancing detection performance."
+false detection rate,partial objects,"Reduces the false detection rate on partial objects, enhancing detection performance."
+movable strategy,constraint,"The movable strategy is applied to alleviate the constraint, improving the final model."
+inner loss,performance,The inner loss greatly improves the performance on high-quality AP75 and large objects APL detection.
+inside reference points,object localization,The outside reference points are unable to localize objects accurately.
+detr,group,DETR is related to Group as they both are mentioned together in the context. They might be referring to a specific algorithm or a research group.
+detr,ap,"DETR has a relationship with AP as they are both evaluation metrics used in the context, possibly for object detection performance."
+sap-detr,peca,"SAP-DETR is related to PECA as they are mentioned in a comparison with denoised methods on COCO dataset, indicating that PECA might be a component or method used in SAP-DETR."
+sap-detr,sdg,"SAP-DETR is connected to SDG as they are included in the comparison with denoised methods, suggesting that SDG could be another component or technique used in SAP-DETR."
+sap-detr,inner loss,"SAP-DETR is related to Inner Loss as they are compared as components in the context, indicating that Inner Loss might be utilized in SAP-DETR."
+dab-detr,salient point concept,"DAB-DETR is linked to Salient Point Concept as they are involved in an ablation study, suggesting that Salient Point Concept could be a term or method considered in the comparison."
+inner cost,ap,"Inner Cost has a relationship with AP as they are both components mentioned in the ablation study, possibly indicating that Inner Cost affects the AP evaluation metric in some way."
+inner cost,aps,"Inner Cost is related to APS as they are components discussed in the ablation study, suggesting that Inner Cost might have an impact on the APS metric."
+inner cost,apm,"Inner Cost has a connection with APM as they are components examined in the ablation study, indicating that Inner Cost could influence the APM metric."
+inner cost,apl,"Inner Cost is related to APL as they are components considered in the ablation study, suggesting that Inner Cost might play a role in affecting the APL metric."
+peca model,gaussian-like map,PECA model might be easily overlapped with Gaussian-like map of SDG on small objects
+inner loss,global search strategy,"There exists a conflict between the inner loss and the global search strategy, resulting in a sharp drop when only reserving the inner loss"
+detector,small objects,Searching within the grid enables the detector to more attend to small objects and avoid a drastic deterioration in normal object detection
+sdg,peca,Side-directed scaling factor of SDG may limit the detector on small object detection but significantly promote the performance on other objects based on PECA
+reference points,proposal boxes,"Predicted reference points may be outside of the proposal boxes, or even the region of the image"
+sap-detr,object detection,SAP-DETR is proposed for promoting model convergency by treating object detection as a transformation from the salient points to the instance objects
+model convergency,object detection,The concept of model convergency is achieved through treating object detection as a transformation from salient points to instance objects.
+model convergency,sap-detr,"The SAP-DETR explicitly initializes a query-specific reference point for each object query, gradually aggregates them into an instance object, and predicts the distance from each side of the bounding box, contributing to the model convergency."
+object detection,sap-detr,The SAP-DETR model plays a significant role in the process by treating object detection and initializing query-specific reference points for each object query.
+sap-detr,query-specific region,"SAP-DETR speedily attends to the query-specific region and other extreme regions from contextual image features, bridging the gap between salient points and the query-based Transformer detector."
+sap-detr,model convergency speed,"Extensive experiments have shown that SAP-DETR achieves superior model convergency speed compared to other approaches, indicating its effectiveness."
+sap-detr,deformable attention,"Future work for SAP-DETR involves addressing issues related to training with deformable attention, multi-scale features, and negative query design to enhance its performance further."
+sap-detr,point-based design,"The point-based design of SAP-DETR brings up remaining issues that need to be resolved, especially in training with deformable attention and multi-scale features, suggesting the need for improvements in this area."
+lenovo research ai master platform,gpu supports,Acknowledgement is given to the Lenovo Research AI Master platform for providing computing GPU supports that are essential for the work conducted.

@@ -1,0 +1,235 @@
+node_1,node_2,edge
+post-training quantization (ptq),neural network compression technique,PTQ is a technique used for compressing neural networks by converting full-precision models into quantized models using lower-precision data types.
+ptq,size and computational cost reduction,PTQ helps reduce the size and computational cost of deep neural networks.
+ptq,quantization noise and reduced prediction accuracy,"However, PTQ can introduce quantization noise and reduce prediction accuracy, especially in extremely low-bit settings."
+quantization parameters,scaling factors and rounding of weights,The main problem is determining the appropriate quantization parameters like scaling factors and rounding of weights.
+methods,distance between features,Existing methods determine quantization parameters by minimizing the distance between features before and after quantization.
+pd-quant,global information consideration,PD-Quant addresses the limitation of only considering local information by incorporating global information in determining quantization parameters.
+pd-quant,differences between network prediction,PD-Quant determines quantization parameters by utilizing the differences between network prediction before and after quantization.
+pd-quant,overfitting problem alleviation and distribution adjustment,"PD-Quant addresses the overfitting problem in PTQ by adjusting the distribution of activations, improving quantization parameters and prediction accuracy in low-bit settings."
+pd-quant,resnet-18 and regnetx-600mf accuracy improvement,Experiments show that PD-Quant improves the prediction accuracy of models like ResNet-18 and RegNetX-600MF significantly in low-bit settings.
+pd-quant,resnet-18,PD-Quant pushes the accuracy of ResNet-18 up to 53.14%
+pd-quant,regnetx-600mf,PD-Quant pushes the accuracy of RegNetX-600MF up to 40.67%
+quantization,post-training quantization (ptq),There are two types of quantization: post-training quantization (PTQ)
+quantization,quantization-aware training (qat),There are two types of quantization: quantization-aware training (QAT)
+post-training quantization (ptq),quantization-aware training (qat),"QAT requires retraining a model on the labeled training dataset, while PTQ only requires a small number of unlabeled calibration samples to quantize the pre-trained models without retraining"
+post-training quantization (ptq),existing ptq methods,Existing PTQ methods can achieve good prediction accuracy with 8-bit or 4-bit quantization
+existing ptq methods,8-bit or 4-bit quantization,Existing PTQ methods can achieve good prediction accuracy with 8-bit or 4-bit quantization
+local metrics,mse,Local metrics (such as MSE) of the activation before and after quantization in layers
+local metrics,cosine distance,Local metrics (such as cosine distance) of the activation before and after quantization in layers
+local metrics,mse,MSE is a local metric commonly used to search for quantization scaling factors.
+local metrics,cosine distance,Cosine distance is another local metric commonly used to search for quantization scaling factors.
+local metrics,activation before and after quantization,The activation before and after quantization in layers are evaluated using local metrics.
+activation before and after quantization,layers,The activation before and after quantization in layers are evaluated using local metrics.
+scaling factors,calibration samples,Scaling factors are chosen layer by layer by minimizing the local metric with a small number of calibration samples.
+scaling factors,optimal scaling factors,There is a gap between the selected scaling factors and the optimal scaling factors.
+quantized model,prediction accuracy,The prediction accuracy of the quantized model significantly decreases at 2-bit.
+quantization parameters,weight rounding value,"Some methods have added a new class of quantization parameters, weight rounding value, to adjust the rounding of weights."
+quantization scaling factors,rounding values,They optimize both quantization scaling factors and rounding values by reconstructing features layer-wisely or block-wisely.
+quantized model,overfitting,The quantized model by PTQ reconstruction is more likely to be overfitting to the calibration samples.
+weights,rounding,Adjusting the rounding of weights will significantly increase the PTQ’s degree of freedom.
+ptq method,pd-quant,"We propose an effective PTQ method, PD-Quant, to address the above-mentioned issues."
+ptq,calibration samples,The quantized model by PTQ reconstruction is more likely to be overfitting to the calibration samples.
+ptq,performance improvement,"In this paper, we focus on improving the performance of PTQ on extremely low bit-width."
+optimal quantization scaling factors,task loss,We define the optimal quantization scaling factors as the factors that make the quantized model have the lowest task loss (cross-entropy loss).
+quantized model,task loss,"The quantized model is optimized to have the lowest task loss on the validation set, calculated by real label."
+prediction difference,quantized model,Global information from the prediction difference between the quantized model and the full-precision (FP) model helps optimize quantization parameters.
+pd-quant,activations,PD-Quant adjusts the activations for calibration in PTQ to mitigate the overfitting problem.
+pd-quant,quantization parameters,"PD-Quant leads to better quantization parameters and improves the prediction accuracy of quantized models, especially in low-bit settings."
+pd-quant,state-of-the-art performance,"Our PD-Quant achieves state-of-the-art performance in PTQ, leading to improved accuracy in multiple models."
+weight 2-bit activation 2-bit resnet-18,accuracy,PD-Quant pushes the accuracy of weight 2-bit activation 2-bit ResNet-18 up to 53.14%.
+regnetx-600mf,accuracy,PD-Quant pushes the accuracy of RegNetX-600MF up to 40.67%.
+distribution correction (dc),activation distribution,DC is proposed to adjust the activation distribution to approximate the mean and variance stored in the batch normalization layer.
+activation distribution,mean and variance,"Activation distribution is used to approximate the mean and variance stored in the batch normalization layer, which helps to mitigate the overfitting problem."
+neural networks' enormous memory footprint and inference latency,"knowledge distillation, model pruning, model quantization","Excellent works have been proposed to resolve the issues related to neural networks' memory footprint and inference latency, including knowledge distillation, model pruning, and model quantization."
+model quantization,compressing neural networks,Model quantization is an effective technique for compressing neural networks by keeping their weights and activations in low-bit data types to reduce memory and computation requirements.
+real-valued tensor x (weights or activations),integer grid,A real-valued tensor x (weights or activations) can be mapped to the integer grid through a specific equation involving quantization and scaling factors.
+quantized models,low-bit data types,Quantized models keep their weights and activations in low-bit data types to reduce memory and computation requirements.
+last layer,processed output,"The prediction is the processed output of the last layer, such as probability after softmax in the classification model."
+ric quantization,qmin,qmin is defined as equal to 0 in the context of ric quantization
+ric quantization,qmax,qmax is defined as equal to 2b-1 in the context of ric quantization
+ric quantization,b,b is the bit-width determining the number of integer grids for ric quantization
+nonuniform quantization,hardware,Nonuniform quantization is challenging to deploy on hardware
+quantization-aware training (qat),post-training quantization (ptq),Comparison between two types of quantization methods - QAT and PTQ
+qat,ste,STE solves the problem of producing zero gradients during backpropagation in QAT
+qat,lsq,LSQ introduces trainable clipping threshold parameters in QAT
+qat,activation ranges,Activation ranges are smoothed by exponential moving averages during QAT
+post-training quantization (ptq),mse distance,PTQ algorithms use MSE distance as a metric for determining quantization scaling factors
+post-training quantization (ptq),cosine distance,PTQ algorithms use cosine distance as a metric for determining quantization scaling factors
+mse distance,cosine distance,MSE distance and cosine distance are different distance measures used in quantization techniques.
+fp,quantized feature map,The optimal clipping ranges are determined by minimizing the difference between FP and quantized feature map.
+ptq methods,qat,PTQ methods optimize rounding values while QAT adjusts model's weights using the whole labeled training dataset.
+adaround,rounding mechanism,AdaRound suggests a new rounding mechanism that assigns a continuous variable to each weight value for rounding.
+brecq,activation scaling factors,BRECQ optimizes activation scaling factors and reconstructs quantization parameters block by block.
+qdrop,activation error,QDrop imports the activation error into the reconstruction process and introduces drop operation.
+activation,reconstruction process,Activation is reconstructed by calculating the MSE distance between quantized and FP activations.
+aquant,activation quantization strategy,AQuant improves activation quantization strategy and quantization performance with additional inference overhead.
+nwq,method,"NWQ and the mentioned method were published at the same time, so they are not compared directly."
+gdfq,gener,GDFQ adopts a gener approach for quantizing models without using real data.
+method,mod,"The method can quantize models without using real data, and mod [3,6,14,46,50,52] seems to be related to this process."
+method,gdfq,"GDFQ [46] adopts a generator to synthesize calibration data, which is related to the method mentioned."
+method,zeroq,ZeroQ [3] uses statistics from batch normalization layers to synthesize calibration data and is compared to the method mentioned.
+method,pd loss,The method involves using PD loss for determining activation scaling factors.
+method,dc,"Inspired by ZeroQ, the method proposed DC in PD-Quant as a solution for overfitting problem."
+method,metrics,The method conducts a comprehensive analysis of the impacts of various metrics in the search for activation quantization scaling factors.
+method,pd-quant,"The method develops a high-accuracy post-training quantization method, PD-Quant, which applies Prediction Difference (PD) loss to optimize the quantization parameters."
+pd-quant,pd loss,PD-Quant applies Prediction Difference (PD) loss to optimize the quantization parameters.
+pd-quant,dc,PD-Quant introduces regularization and proposes Distribution Correction (DC) to solve the overfitting problem.
+pd loss,metrics,"Previous PTQ works [7, 45] search quantization scaling factors by local metrics, such as MSE or Cosine distance of each layer’s activation before and after quantization."
+local metrics,mse,Local metrics such as MSE are used to determine the activation scaling factors before and after quantization.
+local metrics,cosine distance,Local metrics such as Cosine distance are used to determine the activation scaling factors before and after quantization.
+local metrics,task loss,The influence of local metrics like MSE and Cosine distance on activation scaling factors is compared with that of task loss.
+task loss,cross-entropy loss,Task loss refers to the cross-entropy loss determined by the real label in this context.
+scaling factors,local metric losses,The scaling factors determined by local metric losses are compared with the optimal scaling factor minimized by task loss.
+scaling factors,task loss,The local metric determined scaling factors are inconsistent with the optimal scaling factor determined by task loss.
+scaling factors,ns (normalized scaling factor),"The green line of task loss indicates the optimal scaling factor as around 0.35 × Ns, while local metrics consider 0.15 × Ns as their scaling factor."
+task loss,resnet18,Task loss metrics are plotted under various scaling factors on ResNet18 with the ImageNet dataset.
+task loss,resnet50,Task loss metrics are plotted under various scaling factors on ResNet50 with the ImageNet dataset.
+ns (normalized scaling factor),xmax−xmin,The normalized scaling factor Ns represents the proportion of xmax−xmin in this context.
+normalized loss,ns (normalized scaling factor),The normalized loss is indicated with the normalized scaling factor Ns.
+imagenet dataset,normalized scaling factor (ns),"The ImageNet dataset is mentioned in relation to the normalized scaling factor (Ns), which indicates the proportion of xmax−xmin."
+normalized scaling factor (ns),normalized loss,"The normalized scaling factor (Ns) is related to the normalized loss, which indicates that the minimum value of all losses is normalized to 1.0."
+ptq,pd loss,"To achieve more accurate performance for PTQ, the PD loss is proposed to determine the activation scaling factors."
+fp,quantized models,PD loss compares the prediction difference between the FP and the quantized models rather than the difference in each layer's activation before and after quantization.
+quantized activation,subsequent fp layers,The quantized activation is fed into the subsequent FP layers to obtain the output prediction.
+prediction,quantized models,The output prediction is compared with the FP output prediction to calculate PD loss.
+activation scaling factors,pd loss,"When searching for the optimal activation scaling factors, PD loss is taken as the metric."
+model,bits,The Model and Bits are related in the context of activation scaling factors.
+resnet-50-11.09,metadata,ResNet-50-11.09 is listed in the table as a specific metric test for activation scaling factors.
+quantizing layer lq,fp output,Layer Lq quantizes the input to map it to the FP output
+quantization,previous layers of ˜al−1,The assumption is made that quantization has been done for all previous layers of ˜Al−1
+scaling factor optimized by the red line of pd loss (pd),scaling factor expected by task loss,The scaling factor optimized by PD loss is closer to the expected scaling factor by the task loss
+resnet-18 activation,optimal scaling factor chosen by pd loss,"The optimal scaling factor chosen by PD loss for ResNet-18 activation is around 0.35× Ns, almost the same as CE"
+activation quantization,scaling factors of weight quantization,"Only the scaling factors of activation quantization are considered, while scaling factors of weight quantization will be discussed later"
+pd loss,activation scaling factors determination,Investigating how PD loss affects activation scaling factors determination
+local metrics,pd loss,"Evaluation of local metrics and PD loss on ResNet-18, ResNet-50, and RegNetX-600MF to investigate their impact on quantization performance"
+min-max quantization strategy (i.e.eq. (1)),quantization accuracy,The Min-Max quantization strategy loses all quantization accuracy in the extremely low-bit scenarios
+local metric,quantization parameters optimization strategy with pd loss,"Comparison between local metrics (Min-Max, MSE, Cosine) and PD loss optimization strategy for quantization performance"
+pd loss,quantization performance,PD loss significantly improves quantization performance in the extremely low-bit of the activation scaling factors
+activation scaling factors,local metric,"The performance at low-bit indicates that the local metric could be better, suggesting a relationship between activation scaling factors and local metric."
+activation scaling factors,optimizing scaling factor,"Optimizing only the scaling factor does not yield usable results, leading to the importance of considering other factors."
+pd loss,optimization of activation scaling factors and rounding values,Implementing PD loss along with optimization of activation scaling factors and rounding values leads to usable accuracy at extremely low-bit.
+pd loss,prediction differences,"The use of PD loss, particularly in analyzing prediction differences, is beneficial for determining activation scaling factors at low-bit."
+pd loss,optimization of scaling factors and rounding values,Exploring the influence of PD loss in optimizing both scaling factors and rounding values is a focus for achieving improvements in the process.
+pd loss,imagenet dataset,Preliminary experiments with PD loss on the ImageNet dataset are conducted to assess its potential impact on the optimization process.
+pd loss,imagenet dataset,PD loss is calculated based on the difference between the prediction of the FP model and the prediction of the quantized model on the ImageNet dataset.
+pd loss,performance,The performance of PD-only degrades severely in all settings as shown in Tab. 2.
+pd loss,overfitting problem,The PD loss model suffers from a severe overfitting problem due to the limited amount of data available for calibration.
+explicit regularization,optimization problem,Explicit regularization is introduced by adding a constraint to the optimization problem to address the overfitting issue.
+explicit regularization,fp model,The explicit regularization approach constrains the difference between the FP and quantized activation of the internal block.
+explicit regularization,perturbation,"Regularization is beneficial to minimize the perturbation caused by quantization, which is verified to be effective."
+pd loss,quantization parameter optimization,PD-Quant adopts PD loss to guide the quantization parameter optimization.
+pd-quant,pd loss,PD-Quant adopts PD loss to guide the quantization parameter optimization.
+pd-quant,regularization,PD-Quant introduces regularization to alleviate overfitting.
+block,neural networks,Block is regarded as the smallest unit to quantize neural networks from shallow to deep.
+pd-quant,fp32/32,PD-Quant method uses FP32/32 for optimization.
+ptq methods,adaround,PTQ methods like AdaRound have achieved remarkable progress in low-bit quantization.
+ptq methods,brecq,PTQ methods like BRECQ have achieved remarkable progress in low-bit quantization.
+ptq methods,qdrop,PTQ methods like QDrop have achieved remarkable progress in low-bit quantization.
+variable,weight value,Rounding values are continuous variables optimized for each weight value that will be quantized.
+ptq methods,scaling factors,PTQ methods involve quantization parameters with scaling factors.
+ptq methods,rounding values,PTQ methods involve quantization parameters with rounding values.
+ptq,imagenet,PTQ accuracy is measured on ImageNet dataset.
+fp network,fp layer,FP output is the prediction of the whole FP network.
+pd-quant,block,"During quantizing the lth block, PD-Quant methodology is optimized."
+fp network,quantization,The optimization objective of the FP network involves quantization of the blocks to minimize a certain loss function. Quantizing the blocks is a key process in the FP network.
+fp network,regularization,Regularization is introduced in the FP network to control overfitting issues. It plays a crucial role in improving the performance of the quantized model.
+quantization,regularization,Regularization is used in conjunction with quantization to enhance the performance of the model by mitigating overfitting. Both processes work synergistically to achieve better results.
+drop,regularization,Random drop and activation drop are mentioned as regularization methods to alleviate overfitting. These methods are supplementary to each other in improving the performance of the model.
+quantized model,performance,Performance improvement is the goal for the quantized model
+introduction,drop,Introduction of drop method does not conflict with the overall method
+quantized model,generalizability,Novel method introduced to improve the generalizability of the quantized model
+unlabeled images,quantization parameters,Quantization parameters determined only by activating unlabeled images
+feature distribution,small data,Feature distribution of small data is difficult to reflect the overall feature distribution
+activation correction,post-conv activation,Novel method introduced for Distribution Correction for post-conv activation
+distribution correction,activation distribution,Activation distribution is rectified by Distribution Correction method
+quantized block activation,fp block activation,Regularization loss computes the distance between quantized block activation and FP block activation
+fp block,batch normalization layer,FP block's activation distribution corrected using statistics from pre-trained FP model's Batch Normalization layer
+bn layer,fp block,The activation distribution of each FP block's input is corrected by achieving an approximate mean and variance with the BN statistics. This correction leads to better generalizability of the quantized model by DC.
+bn layer,training set,"The BN statistics come from the whole training set, and by correcting the distribution of activations, it becomes closer to the distribution of the entire training set."
+block af p,adc,"The input of the block AF P is modified to minimize the difference between the computed mean and variance {ˆµ(i,l), ˆσ(i,l)"
+adc,af p,"The modified ADC is fine-tuned to make the computed mean and variance {ˆµ(i,l), ˆσ(i,l)} closer to the original mean and variance µ(i,l) and σ(i,l) recorded in BN layers. The optimization process also includes minimizing the difference between ADC and AF P."
+pd-quant,post-training quantization algorithms,Comparison on PD-Quant with various post-training quantization algorithms
+pd-quant,our implementation,Our implementation using open-source codes
+pd-quant,[44],Results listed are all from reference [44]
+pd-quant,calibration sets,Results obtained by gaining the results of 10 runs using randomly sampled calibration sets
+pd-quant,mean and standard deviation,Results in the table include the mean and standard deviation
+af p,adcl−1,Inference with ADCl−1 to get Al and calculate Lreg.l−1
+fig. 3,our proposed dc,Effect of our proposed DC visualized in Fig. 3
+oad,adc,Original activation distribution rectified by DC
+fig. 4a,histogram of oad and adc,Fig. 4a displays histogram of OAD and ADC
+fig. 4b,kernel density estimate (kde) curve,KDE curve for 1024 calibration samples shown in Fig. 4b
+fig. 4c,kde curve,KDE curve for 5120 calibration samples from ImageNet training set in Fig. 4c
+fig. 4d,kde curve,KDE curve for 51200 calibration samples from ImageNet training set in Fig. 4d
+calibration samples,kde curve,"Calibration samples are compared with KDE curve, as the number of calibration samples increases, the KDE curve of calibration samples is closer to the ADC."
+adc,dc,"ADC produced by DC from OAD reflects the distribution of more samples in the training set, improving the generalizability of the quantized model."
+cnn architectures,experimental method,"Various CNN architectures including ResNet, MobileNetV2, RegNet, and MNasNet are quantized to evaluate the proposed method."
+pre-trained models,imagenet dataset,FP pre-trained models from [24] are evaluated on ImageNet dataset with a batch size of 32.
+calibration set,imagenet training dataset,1024 images are randomly sampled from the ImageNet training dataset as the calibration set.
+quantization settings,hyper-parameters,"The same quantization settings and hyper-parameters are kept in the implementation, resembling QDrop [44]."
+activation quantization scaling factor,learning rate,Learning rate for activation quantization scaling factor is 4e-5.
+weight quantization rounding,learning rate,Learning rate for weight quantization rounding is 3e-3.
+dc,learning rate,DC has a learning rate of 1e-3.
+hyper-parameters,sec. 4.4,The choice of hyper-parameter λr and λc in Eq. (5) and Eq. (6) will be discussed later in Sec. 4.4.
+quantization parameters,fine-tuning,Quantization parameters are fine-tuned with 20000 iterations.
+pytorch,experiments,Code is based on Pytorch and all experiments are evaluated on a single Nvidia RTX A6000.
+pytorch,code,Pytorch is the framework based on which the code is developed
+experiments,nvidia rtx a6000,All experiments are evaluated on a single Nvidia RTX A6000
+pd-quant,ptq algorithms,PD-Quant is compared with multiple PTQ algorithms in different bit-settings
+activation scaling factors,rounding values,Experiments optimize both activation scaling factors and rounding values to achieve usable results in low bits
+qdrop,baseline,QDrop is chosen as the baseline method for comparison
+pd-quant,w4a4 quantization,PD-Quant slightly improves QDrop at W4A4 bit setting
+pd-quant,w2a4 quantization,PD-Quant outperforms the baseline at W2A4 bit setting
+pd-quant,mobilenetv2,PD-Quant improves the accuracy of MobileNetV2 by 2.8% at W4A2 quantization
+pd-quant,regnet-600mf,PD-Quant improves the accuracy of RegNet-600MF by 1.4% at W4A2 quantization
+pd-quant,w2a2 quantization,PD-Quant surpasses QDrop in performance at W2A2 quantization
+pd-quant,qdrop,PD-Quant surpasses QDrop in all networks in more challenging cases. The optimization strategy with PD-Quant plays a critical role in extremely low-bit.
+pd-quant,quantization parameters,"Once PD-Quant finishes optimizing the quantization parameters, no additional computation is required for inference."
+pd-quant,optimization strategy,The optimization strategy with PD-Quant plays a critical role in extremely low-bit.
+pd-quant,8-bit setting,"The results in Tab. 3 are all done with the 8-bit setting, some work adds an extra first layer’s output 8-bit, which will perform better than the 8-bit setting of PD-Quant."
+pd-quant,post-training quantization algorithms,Comparison on PD-Quant with different post-training quantization algorithms in another 8-bit setting is shown in Tab. 4.
+pd-quant,ablation study,Tab. 5 shows the ablation study of our proposed method compared with the baseline (QDrop).
+qdrop,quantization parameters,Results indicate that the optimization strategy with PD-Quant plays a critical role in extremely low-bit compared to QDrop with the same quantization setting.
+qdrop,baseline,Tab. 5 shows the ablation study of our proposed method compared with the baseline (QDrop).
+quantization parameters,inference,"Once quantization parameters are optimized, no additional computation is required for inference."
+post-training quantization algorithms,8-bit setting,Comparison on PD-Quant with different post-training quantization algorithms in another 8-bit setting is shown in Tab. 4.
+methods,8-bit settings,We use the same 8-bit settings as these methods for experiments as mentioned in Tab. 4.
+pd,dc,"PD and DC are the key components mentioned in the context that have a direct impact on the overall method. PD is often optimized with regularization to compensate for performance loss and alleviate overfitting, while DC is applied to improve the quantization parameters and alleviate overfitting problems in the baseline method."
+pd-only,regularization,"PD-only optimized the quantization parameters by PD loss, but due to overfitting, Regularization is introduced to compensate for the performance loss and achieve higher accuracy than the baseline."
+qdrop,dc,QDrop optimizes quantization parameters by computing the difference between quantized block activation and FP block activation. Our proposed DC can be applied to alleviate overfitting problems and improve performance.
+qdrop,qdrop+dc,"QDrop can be enhanced by adding DC, resulting in an improvement of 0.9% at W2A2 compared to the baseline."
+pd-quant,dc,The introduction of DC in PD-Quant further improves performance by around 0.7% in MobileNetV2 at the W2A2 setting.
+pd,reg,PD loss with regularization can significantly improve the accuracy of ResNet-18 by 1.68% and MobileNetV2 by 3.21% compared to the baseline at the W2A2 setting.
+qdrop,baseline method,QDrop is the baseline method in the ablation study.
+qdrop,dc,QDrop+DC means to introduce DC in QDrop in the ablation study.
+pd-only,quantization parameters,PD-only means optimizing quantization parameters by only PD in the ablation study.
+pd-quant,pd,"PD-Quant is our proposed method, including PD for optimizing both activation scaling factors and rounding values."
+pd-quant,reg,"PD-Quant is our proposed method, including Reg for optimizing both activation scaling factors and rounding values."
+pd-quant,dc,"PD-Quant is our proposed method, including DC for optimizing both activation scaling factors and rounding values."
+hyper-parameter λr,regularization constraint,λr limits the strength of the regularization constraint in the optimization objective.
+model,resnet-18,Results show that the proposed method can achieve a steady accuracy without tedious hyperparameter tuning for ResNet-18.
+model,mobilenetv2,Results show that the proposed method can achieve a steady accuracy without tedious hyperparameter tuning for MobileNetV2.
+λc,distribution correction,λc controls the degree of correction in Distribution Correction.
+λc,dc,"The relation between λc and DC is that when λc = 0, there is no DC. However, there is some effect when λc changes, but the DC method can still achieve a stable level of accuracy without hand-crafted hyper-parameter adjusting."
+pd loss,weight quantization scaling factors,"In Sec. 3.1, PD loss was not used to find weight quantization scaling factors (Sw) because weight quantization is different from activation quantization. The weight scaling factors were found to be not sensitive to the introduction of PD information based on experiments."
+kl,prediction difference,KL was chosen to calculate the prediction difference. The reasons for this choice will be explained in the discussion section.
+pd-quant,limitations,The limitations of PD-Quant will be analyzed in the discussion section.
+resnet-18,activation scaling factors and weight scaling factors,The influence of PD loss on activation scaling factors and weight scaling factors was evaluated for ResNet-18. The experiments focused on optimizing only scaling factors to avoid the influence of other quantization parameters.
+scaling factors,experiments,The optimization of scaling factors was done in the experiments to understand their impact on weight quantization.
+existing methods,pd loss,"All the existing methods, including PD loss, fail when weights are quantized with low bits."
+first layer,weight quantization,An experiment was conducted on the 'First Layer' to study the impact of weight quantization where per-tensor weight quantization was set.
+activation quantization,weight quantization,"The method was effective in searching for optimal scaling factor during activation quantization, but not for weight quantization."
+parameter space of weights,parameter space of activations,"The parameter space of weights is deterministic, while the parameter space of activations varies with different input images."
+searching the activation quantization scaling factors,global metrics,"Different global metrics like MSEg, Cosineg, and KLg were compared for searching the activation quantization scaling factors in the experiments."
+quantization process,knowledge distillation,The quantization process is compared to knowledge distillation where the quantized model acts as the student and the FP model as the teacher.
+quantized model,fp model,"The quantized model is represented as the student while the FP model is represented as the teacher, implying a teacher-student relationship in the context of model comparison."
+quantized model,pd-qunat,"PD-Qunat requires additional computation and fine-tuning compared to the baseline method QDROP, resulting in increased time cost, indicating a comparison between the two methods."
+pd-qunat,qdrop,"PD-Qunat is compared to the baseline method QDROP in terms of computation, fine-tuning, and time cost involved, showing a contrast between the two quantization techniques."
+pd-quant,qat methods,"The method PD-Quant is compared to quantization-aware training (QAT) methods, indicating the efficiency and time-cost advantage of PD-Quant over traditional training methods like LSQ."
+activation scaling factors,low-bit,"Activiation scaling factors are optimized at low-bit, showing the relationship between scaling factors and the bit allocation for quantization."
+over-fitting,performance degradation,"Over-fitting is identified as a factor leading to performance degradation, suggesting a negative impact of over-fitting on the model's performance."
+over-fitting,performance degradation,Over-fitting is identified as a factor that leads to performance degradation.
+over-fitting,method,"To respond to the problem of over-fitting, a method is proposed to correct the calibration set distribution."
+method,calibration set distribution,The proposed method aims to correct the calibration set distribution to improve model generalizability.
+model generalizability,pd-quant,"The experimental results show that PD-Quant is very effective at low bits, improving model generalizability."
+acknowledgements,national natural science foundation of china,This work was supported by National Natural Science Foundation of China (NSFC No. 61733007).

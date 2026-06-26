@@ -1,0 +1,153 @@
+node_1,node_2,edge
+computer vision,single-modal object tracking,Single-modal object tracking is a focus due to advancements in computer vision.
+rgb images,single-modal object tracking,RGB images are used for single-modal tracking
+multi-modal images (rgb,infrared),all-weather object tracking
+sufficient multi-modal tracking data,open environment,Acquiring enough data is challenging when modalities change in open environments.
+dominant modality,open environment,The dominant modality shifts in response to the changing environment.
+multi-modal visual prompt tracking model,universal bi-directional adapter,The proposed model uses a universal adapter to handle multi-modal information dynamically.
+universal bi-directional adapter,modality-specific transformer encoder branches,Adapter and encoder branches work together for feature extraction and cross-modal transfer.
+frozen,pretrained foundation model,feature extraction
+light feature adapter,modality-specific information transfer,The adapter facilitates adaptive fusion of information across modalities.
+trainable parameters,model performance,Adding fewer trainable parameters improves tracking performance compared to full fine-tuning.
+our model,prompt learning-based methods,Our model outperforms prompt learning-based methods despite having fewer parameters.
+object tracking,visual task,Object tracking is a foundation visual task within the broader context of computer vision.
+computer vision,field of study,Computer vision is the field where object tracking is an essential component.
+past decades,time frame,Significant progress in object tracking has been made over the past decades.
+zhang et al. (2021b),excellent approach,Zhang et al.'s work is among the many excellent approaches in object tracking.
+yang et al. (2022),excellent approach,Yang et al.'s approach is also part of the promising performance in object tracking.
+rgb-based object tracking,methodology,RGB cameras are commonly used for object tracking
+thermal infrared (tir) imaging,alternative modality,TIR imaging
+illumination variation,challenge,Illumination variation is a challenge for RGB-based tracking
+rgb images,imaging mechanism,RGB cameras rely on reflected light
+tir images,imaging mechanism,TIR cameras capture heat
+dominant modality,scenario characteristic,The green box in Figure 1 represents the dominant modality in a specific situation.
+auxiliary modality,scenario characteristic,The red box in Figure 1 denotes the auxiliary modality that supports the dominant one.
+dark condition,tir images,TIR images are used for providing contrast for heat objects in a dark condition.
+tir images,low resolution,TIR images have low resolution.
+tir images,poor texture,TIR images exhibit poor texture.
+multi-modal object tracking,rgb and thermal images,Multi-modal tracking uses both RGB and thermal images for robust all-weather tracking.
+multi-modal object tracking,data labeling cost,High data labeling cost is a challenge for multi-modal tracking datasets.
+multi-modal datasets,scale-limitation,Most multi-modal datasets are scale-limited due to the high labeling cost.
+rgb sequences,easier to acquire,RGB sequences are more easily available than RGB-T sequence pairs.
+mfdimp (zhang et al. 2019),pre-trained dimp,mfDiMP starts with pre-trained DiMP and fine-tunes it for multi-modal scenarios.
+attribute-based multi-modal fusion model,reduction of reliance on large-scale data,These models aim to reduce dependence on extensive training data.
+universal bi-directional adapter,foundation model,The universal bi-directional adapter is proposed for the foundation model
+universal bi-directional adapter,multi-modal tracking,The adapter effectively cross-prompts multi-modal tracking with a simple and efficient structure.
+0.32m learnable parameters,robust multi-modal tracking,Adding only 0.32M parameters enables the model to cope with robust multi-modal tracking in open scenarios.
+universal adapter,different depths of layers,In-depth analysis is conducted to study the adapter's effects on various depths within the model.
+efficient adapter architecture,experiments,The experiments explore more efficient adapter designs to validate the model's superiority.
+rgbt tracking-related datasets,state-of-the-art,The model is compared with state-of-the-art methods on multiple RGBT tracking datasets to showcase its performance.
+fanet,multi-modal tracking,FANet is cited as an example of a multi-modal tracking approach that utilizes complementary information across modalities.
+multi-modal tracking,challenging scenarios,Multi-modal tracking enhances performance in scenarios where single-modal images struggle
+single-modal images,multi-modal features,are difficult to handle - suggests that single-modal images lack the information compared to multi-modal ones.
+fanet (zhu et al. 2020),feature aggregation module,designed - FANet includes a module specifically for fusing multi-modal features within each modality.
+fanet (zhu et al. 2020),adaptive aggregation module,uses - FANet also employs an adaptive module to fuse multi-modal features across different modalities.
+hmft (zhang et al. 2022),hierarchical fusion framework,designs - HMFT presents a framework for integrating multi-modal features in a hierarchical manner.
+apfnet (xiao et al. 2022),attribute-based fusion framework,uses - APFNet employs an attribute-focused approach to aggregate fusion features.
+apfnet (xiao et al. 2022),transformer structure,employs - The transformer structure aids in enhancing multi-modal features within APFNet.
+full fine-tuning,parameter-inefficient,characteristic - Full fine-tuning consumes a lot of parameters and requires substantial data.
+prefix-tuning,parameter-efficient tuning,alternative - Prefix-tuning is a more efficient method introduced in NLP
+vpt (jia et al. 2022),prompt-tuning,introduces - VPT incorporates prompt-tuning into vision tasks
+protrack (yang et al. 2022),new perspective,offers - Protrack presents a fresh approach to handling tasks
+transformer backbone,prediction head,The transformer backbone (F) is used to extract features
+multi-modal tracking (mmt),rgb modality,MMT extends the single modality setting to multiple videos
+multi-modal tracking (mmt),thermal infrared modality,Similar to RGB
+bat (dual-stream encoder),rgb modality,BAT has a dedicated encoder for RGB
+bat (dual-stream encoder),thermal infrared modality,BAT also has a separate encoder for the thermal infrared modality
+universal bi-directional adapter,transformer encoder,The adapter is embedded in the transformer encoders
+feature prompts,each encoder,Each encoder learns modality-specific features while also extracting complementary information from the other modality.
+bi-directional adapter,cross-modal feature prompt,The bi-directional adapter is designed specifically as a cross-modal feature prompt for handling dynamically changing modalities.
+fully convolutional networks (fcn),token sequence,FCN is used to convert the token sequence into a 2D spatial feature map.
+classification score map,target location,The classification score map indicates the target location in the feature map.
+classification score map,offset,The map also outputs an offset for more precise localization.
+classification score map,normalized bounding box,It computes a normalized bounding box for object detection.
+overall loss function (ltotal),lcls,Lcls is the weighted focal loss for classification
+ltotal,liou,Liou represents the generalized IoU loss for bounding box regression
+ltotal,l1,L1 is the L1 loss for bounding box regression
+rgbt234,lasher,Experiments are conducted on two datasets: RGBT234 and LasHeR
+rgbt234,li et al. (2019),RGBT234 is provided by Li et al. and contains RGB and infrared video sequences.
+lasher,li et al. (2021),LasHeR is another dataset from Li et al.
+rgbt234,attributes (e.g.,li
+rgbt234,234k frames,The dataset consists of approximately 234
+rgbt234,8k frames/sequence,Some sequences can have up to 8
+lasher,ground-truth labels,Both RGB and TIR modalities have ground truth labels for evaluation.
+8k frames per sequence,ground-truth label,The context mentions that the dataset provides the ground-truth label for sequences with a minimum of 8K frames.
+rgb and tir modalities,multi-modal performance evaluations,Trackers can evaluate their performance using both RGB and TIR modalities on this dataset.
+parallel optical axis visible light-infrared imaging system,no pre-processing or post-processing,The RGBT234 dataset requires no additional steps like stereo matching or color correction due to its precise cross-modal alignment.
+mpr and msr,evaluation metrics,To ensure fairness
+lasher dataset,rgbt tracking dataset,LasHeR is a specialized dataset for RGBT tracking
+19 video attributes,new attributes,LasHeR includes 19 attributes
+bi-directional adapter,detailed architecture,The architecture of the bi-directional adapter consists of three linear projection layers for handling features from different modalities.
+token's num,linear projection layers,The adapter processes tokens by reducing their dimension
+feature prompts,modality transfer,The figure depicts a method designed for transferring feature prompts from one modality to another.
+bi-directional adapter block,down projection layer,The input token of the bi-directional adapter block is first reduced to lower dimensions using a down projection layer.
+lasher dataset,rgbt tracking tasks,LasHeR dataset is more challenging for RGBT tracking tasks due to its variation and precise alignment on the target object.
+radial distortion images,alignment issue,The dataset addresses the alignment problem specifically for radial distortion images in different RGBT modalities.
+rgb image,thermal infrared image,Each frame's RGB image is transformed into the same coordinate system as the thermal infrared image for consistent ground truth.
+rgbt234 dataset,pr and sr,PR (precision) and SR (success rate) are used as evaluation metrics
+bat (our proposed method),pytorch implementation,BAT is implemented using Pytorch and trained on 4 NVIDIA RTX A6000 GPUs.
+foundation model,pre-trained weights,The modal-specific branch of BAT initializes fixed parameters with pre-trained foundation model weights.
+fine-tuning,lasher training set,Our BAT is fine-tuned on the LasHeR training set for 60 epochs
+fine-tuning,bat,Our BAT is fine-tuned on the LasHeR training set
+bat,60 epochs,The fine-tuning process lasts for 60 epochs
+bat,lasher training set,The fine-tuning occurs specifically on the LasHeR training data.
+dmcnet,runner-up,DMCNet (Lu et al. 2022) is the runner-up method with an MPR score of 83.9%.
+vipt,sota efficient-tuning,ViPT (Zhu et al. 2023) is a state-of-the-art efficient-tuning method.
+vipt,dmcnet,ViPT has a slightly higher MSR score but a lower MPR score than DMCNet.
+efficient-tuning methods,rgb and tir modalities,Efficient-tuning methods struggle to dynamically extract compatible information across modalities.
+bat,mpr,BAT outperforms competitors with an MPR score of 86.8%
+bat,msr,BAT also outperforms with an MSR score of 64.1%
+lasher dataset,more challenging,LasHeR dataset is more challenging due to extreme attributes.
+previous advanced methods,dmcnet,Methods like DMCNet perform poorly on LasHeR compared to RGB234.
+performance gap,existing methods,The performance gap refers to the significant difference in performance between the most existing methods.
+dmcnet,apfnet,Both DMCNet and APFNet are mentioned as previous advanced methods that perform unsatisfactorily on a specific dataset.
+os-track,rgb modality tracker,OS-Track is a tracker based solely on RGB modality and performs better than many RGBT trackers
+rgbt234 dataset,multi-modal trackers,In the RGBT234 dataset
+efficient-tuning methods,traditional methods,Methods like ProTrack and ViPT are more efficient and significantly superior to traditional trackers
+vipt,protrack,ViPT and ProTrack are both efficient-tuning methods
+vipt,bat (ours),ViPT serves as a baseline for comparison
+rgbt234,lasher dataset,Performance is compared on both the RGBT234 and LasHeR datasets.
+dual-stream encoder,bat,The dual-stream encoder is a key component of our proposed method
+qualitative evaluation,universal bi-directional adapter,The dual-stream encoder's universal bi-directional adapter is evaluated qualitatively for its adaptability in complex scenarios.
+dual-stream encoder,single-stream prompt-learning approaches,outperforms in complex scenarios where RGB images are distorted or unavailable
+rgb images,tir images,initial tracking depends on TIR
+vipt,rgb modality,uses RGB as dominant modality
+our method,rgb,effectively tracks even when RGB unavailable
+our method,tir,effectively tracks with both modalities providing complementary information
+rgb modality,transparent object tracking,interference for feature extraction
+our method,other methods,outperforms in tracking accuracy
+foundation model (baseline),baseline-dual,The dual-stream Baseline-Dual is slightly better than the foundation model
+baseline-dual,adapter variants,The table shows quantitative comparison between different variants of adapter
+baseline,foundation model,The foundation model is compared to the baseline
+single-directional adapters,rgb and tir modalities,Single adapters
+multi-modal data,single modality,Multi-modal data provides more complementary information than using only a single modality.
+bat-rgb,bat-tir,The difference between BAT-RGB and BAT-TIR is small
+universal bi-directional adapter,dual-adapter (bat-dual),BAT-Dual has similar performance to the universal adapter but requires double parameters
+universal bi-directional adapter,bat,The universal adapter is part of the BAT model
+performance,universal version,Our method maintains similar performance as the universal version.
+bat,foundation model,BAT adopts the same foundation model for two modality-specific branches.
+feature distribution,compatibility,The feature distribution needs to be compatible with both modalities.
+bi-directional adapter,multiple modalities,The bi-directional adapter learns compatibility among multiple modalities.
+bi-directional adapter,half learnable parameters,Our adapter saves half learnable parameters while achieving comparable performance.
+adapter architecture,efficiency,We explore a more efficient adapter architecture with different layer positions.
+bat-1,limited performance,BAT-1 has limited performance due to less multi-modal information exchange.
+bat-4,bat-12,BAT-4 performs comparably to BAT-12 with fewer learnable parameters.
+lasher dataset,additional attributes,The LasHeR dataset provides 19 extra attributes.
+bi-directional adapter,universal feature prompt-learning paradigm,The bi-directional adapter is introduced within the proposed method (BAT) as part of a new paradigm for learning universal features in a prompt-based approach.
+bat (proposed method),lasher dataset,The experiment is conducted on the LasHeR dataset to evaluate the effectiveness of the bi-directional adapter.
+lasher dataset,additional attributes,The LasHeR dataset provides 19 extra attributes beyond point annotations for evaluation.
+bat,advanced competing methods,BAT outperforms competing methods on various attributes
+pr and sr scores,extreme attributes,Performance is analyzed under five extreme attributes like 'NO'
+pr and sr scores,vipt,Our model's PR score surpasses ViPT by over 10% in specific attributes
+universal feature prompt-learning paradigm,multi-modal tracking,The core idea of BAT is to introduce a paradigm for learning in multi-modal tracking.
+bat (dynamic multi-modal tracking),changing dominant-auxiliary relevance,BAT dynamically extracts relevance among modalities in complex scenarios.
+pre-trained foundation model,complementary information extraction,BAT extracts complementary information from the foundation model.
+rgbt tracking datasets,superiority of bat,Extensive experiments demonstrate the method's advantage over competitors.
+adapter structure of bat,parameter-efficient tuning potential,The adapter structure suggests broader application potential in vision-language tasks.
+rgb and tir tracking task,future exploration,Current validation is in RGB and TIR
+national key r&d program of china,funding source,This work is partially funded by the National Key R&D Program.
+national natural science foundation of china,funding source,Additional funding comes from the National Natural Science Foundation.
+caai-cann open fund,funding source,Funded by the CAAI-CANN Open Fund.
+haihe lab of itai,funding source,Supported by the Haihe Lab of ITAI.
+tianjin natural science foundation,funding source,Financed by the Tianjin Natural Science Foundation.
+key laboratory of big data intelligent computing,funding source,Supported by the Key Laboratory of Big Data Intelligent Computing.

@@ -1,0 +1,193 @@
+node_1,node_2,edge
+ood detection,in-distribution,OOD detection is based on learning the ID representation that is distinguishable from OOD samples
+recognition-based methods,id features,Recognition-based methods were used to learn the ID features but they tend to learn shortcuts instead of comprehensive representations
+reconstruction-based methods,performance of ood detection,Simply using reconstruction-based methods could boost the performance of OOD detection significantly
+pretext tasks,provide a generally applicable and efficacious prior,Reconstruction-based pretext tasks have the potential to provide a generally applicable and efficacious prior for OOD detection
+mood,sota of one-class ood detection,MOOD outperforms previous SOTA of one-class OOD detection by 5.7%
+mood,multi-class ood detection,MOOD outperforms multi-class OOD detection by 3.0%
+mood,10-shot-per-class outlier exposure ood detection,MOOD even defeats the 10-shot-per-class outlier exposure OOD detection
+mood,ood samples,MOOD achieves OOD detection without including any OOD samples in the detection process
+distribution,ood samples,OOD samples are distributed and then either rejected or transferred for human intervention for safe handling.
+ood samples,human intervention,OOD samples are transferred to human intervention for safe handling.
+ood detectors,downstream networks,OOD detectors are used before inputting data into downstream networks for identifying outliers.
+ood detection,novelty detection,"OOD detection is the task of identifying whether a test sample is an outlier or not, also known as novelty detection."
+ood detection,anomaly detection,OOD detection is the task of identifying whether a test sample is an anomaly or not.
+ood detection,safety-critical applications,"OOD detection is crucial for various safety-critical applications like medical diagnosis, fraud detection, and autonomous driving."
+ood detection,medical diagnosis,OOD detection is important for medical diagnosis.
+ood detection,fraud detection,OOD detection is essential for fraud detection.
+ood detection,autonomous driving,OOD detection is necessary for autonomous driving.
+mood,sota,MOOD performance is compared with the State-Of-The-Art (SOTA) on different OOD detection tasks.
+previous ood detection approaches,outlier exposure,Previous OOD detection approaches rely on outlier exposure to enhance performance.
+ood detection,binary classification problem,OOD detection can be transformed into a binary classification problem by using outlier exposure.
+ood detection,id representation,The core of OOD detection lies in learning the effective in-distribution representation to identify outlier samples.
+reconstruction-based methods,ood detection tasks,Using reconstruction-based methods can significantly enhance performance on various OOD detection tasks.
+few-shot outlier exposure ood detection,pioneer work,The pioneer work using reconstruction-based methods outperforms the few-shot outlier exposure OOD detection.
+few-shot outlier exposure,ood detection,Our pioneer work along this line even outperforms previous few-shot outlier exposure OOD detection
+existing methods,contrastive learning,Existing methods perform constrastive learning
+existing methods,pretrain classification,Existing methods perform pretrain classification on a large dataset
+contrastive learning,pretrain classification,Contrastive learning or pretrain classification on a large dataset to detect OOD samples
+former methods,classification,The former methods classify images according to the pseudo labels
+latter,classification,The latter classifies images based on ground truth
+research,backdoor attack,"Research on backdoor attack shows that when learning is represented by classifying data, networks tend to take a shortcut to classify images"
+backdoor attack,secret triggers,"In a typical backdoor attack scene, the attacker adds secret triggers on original training images with the visibly correct label"
+victim model,images,"During the course of testing, the victim model classifies images with secret triggers into the wrong category"
+research,networks,Research in this area demonstrates that networks only learn specific distinguishable patterns of different categories
+ood detection,id images,Learning representations by classifying ID data for OOD detection may not be satisfying since the network does not understand the intrinsic data distribution of the ID images
+patterns,id categories,"For example, when the patterns similar to some ID categories appear in OOD samples, the network could easily interpret these OOD samples as the ID"
+id categories,ood samples,"ID categories appear in OOD samples, leading to misclassification in the wrong ID categories."
+ood samples,id data,"The network interprets OOD samples as ID data, resulting in misclassification."
+network,reconstruction-based pretext task,The reconstruction-based pretext task is introduced to address the misinterpretation of OOD samples. The network is forced to reconstruct images to learn pixel-level data distribution.
+network,contrastive learning,"Different from contrastive learning, the reconstruction-based pretext task focuses on image reconstruction to learn data distribution."
+network,supervised pretext task,The network is supervised during training by using tokens from discrete VAE to guide image restoration in the masked image modeling task.
+masked image modeling (mim),self-supervised pretext task,"MIM is adopted as a self-supervised pretext task, splitting images into patches and masking some before feeding them to the vision transformer."
+discrete vae,network,The tokens from discrete VAE are used as labels to supervise the network during training in the masked image modeling task.
+masked image modeling for ood detection (mood),sota,MOOD outperforms the current SOTA in OOD detection tasks.
+masked image modeling for ood detection (mood),out-of-distribution (ood),MOOD is a method for out-of-distribution (OOD) detection.
+masked image modeling for ood detection (mood),one-class ood detection,MOOD performs well in one-class OOD detection tasks.
+masked image modeling for ood detection (mood),multi-class ood detection,MOOD outperforms SOTA in multi-class OOD detection.
+masked image modeling for ood detection (mood),near-distribution ood detection,MOOD achieves higher AUROC in near-distribution OOD detection compared to current SOTA.
+masked image modeling for ood detection (mood),few-shot outlier exposure ood detection,MOOD surpasses current SOTA in few-shot outlier exposure OOD detection without using any OOD samples.
+masked image modeling for ood detection (mood),image reconstruction,MOOD focuses on distance-based methods while also including image reconstruction-based methods for OOD detection.
+ood samples,center of the in-distribution data,Distance-based approaches suggest that OOD samples are far from the center of the in-distribution data in the feature space.
+ood samples,pretext task,Our work includes reconstruction-based methods as a pretext task to focus on distance-based methods for OOD detection.
+ood detection methods,previous ood detection research,We will explain the difference between our work and previous OOD detection methods later in this paper.
+transformer,vit,Existing OOD detection research performs vision transformer (ViT) with classification pre-train on ImageNet-21k.
+pretext tasks,ood detection,Various pretext tasks are explored for OOD detection in our work to achieve comparable or superior results without including OOD samples.
+ood detection,pretext task,OOD detection focuses on exploring an appropriate pretext task without including any OOD samples.
+vision networks,self-supervised manners,vision networks are pre-trained using various self-supervised manners.
+vision networks,generative learning,vision networks are pre-trained using generative learning among other self-supervised manners.
+generative learning,contrastive learning,generative learning and contrastive learning are used as self-supervised manners for pre-training vision networks.
+contrastive learning,adversarial learning,contrastive learning and adversarial learning are used as self-supervised manners for pre-training vision networks.
+self-supervised pretext task,framework,the self-supervised pretext task in the framework is Masked Image Modeling (MIM).
+masked image modeling (mim),auto-encoding generative approaches,MIM belongs to auto-encoding generative approaches for the self-supervised pretext task.
+mim,language modeling task,MIM involves a language modeling task that randomly masks tokens and recovers them.
+language modeling task,computer vision,the language modeling task of MIM is transferred from natural language processing to computer vision.
+image patches,masking,different proportions of the image patches are masked in the pretext task.
+natural language processing,computer vision,"both are fields related to artificial intelligence and data processing, with applications in various domains"
+image patches,results,image patches are used to recover results in the context of the mentioned method
+methods,self-supervised tasks,methods take advantage of self-supervised tasks for guiding learning
+latest work,contrastive learning models,latest work presents contrastive learning models as feature extractors
+existing approaches,classifying transformed images,existing approaches classify transformed images based on contrastive learning
+model,specific patterns of categories,the model tends to learn specific patterns of categories which help in classification but not in understanding intrinsic data distributions
+research,problem,research also mentions the problem related to model learning specific patterns
+transformers,pretext task,transformers may remain in the loop due to the classification nature of the pretext task
+masked image modeling task,ood detection,masked image modeling task is performed for OOD detection to address the issue
+ood detection,detector,OOD detection aims to model a detector for identifying in-distribution and out-of-distribution images
+score function,ood detection,score function is used in existing methods for OOD detection
+ood detection,ood score function,"OOD detection methods define an OOD score function s(x), where the abnormal high or low value of s(x) indicates whether x is from out-of-distribution."
+pretext task,ood detection,Choosing a pretext task provides the intrinsic prior to suit the OOD detection task.
+ood methods,id representation,"Previous OOD methods learn the ID representation through classification or contrastive learning on ID samples, using either ground truth or pseudo labels to supervise the classification networks."
+classification networks,data distribution,"Classification networks only learn different patterns among training categories, but do not understand the intrinsic data distribution of the ID images."
+pretext task,data distribution,"Reconstruction-based pretext task forces the network to learn the real data distribution of the ID images during training, instead of patterns for classification."
+mim,contrastive learning pretext task mocov3,"The performance of Masked Image Modeling (MIM) is compared with contrastive learning pretext task MoCov3 in Table 1, showing that MIM performs better."
+mim,contrastive learning pretext task mocov3,MIM is mentioned in relation to contrastive learning pretext task MoCov3 as a method used in the pretext task.
+mim,vit,"MIM is mentioned in comparison with ViT, showing an improvement in performance."
+vit,r50 + vit (sota),"The current SOTA model uses a combination of R50 and ViT, showing an increase in performance compared to individual ViT."
+cifar-100,cifar-10,CIFAR-100 and CIFAR-10 are mentioned as ID-OOD pair with close distributions due to similar semantics and construction.
+one-class dataset,mim-ptfine-tune,"Different fine-tuning processes for OOD detection are discussed for one-class datasets, including MIM-ptfine-tune."
+pretext,representation,The efficient pretext itself is sufficient for producing a distinguishable representation.
+model,imagenet-21k,The MIM model is pre-trained and fine-tuned on ImageNet-21k for one-class OOD detection.
+model,label smoothing,Label smoothing is utilized to help the model learn during one-class fine-tune task.
+model,parameters,The model actually learns information from the one-class fine-tuning operation and updates parameters accordingly.
+model,parameters,The model updates parameters for accuracy improvement.
+multi-class ood detection,mim model,The MIM model is pre-trained for multi-class OOD detection.
+mim model,fine-tuning,Fine-tuning is applied intermediately on ImageNet-21k and again on the ID dataset.
+mim model,pretext task,OOD detection is performed with MIM pretext task.
+mahalanobis distance,performance,Mahalanobis distance is identified as a better metric for MOOD.
+mood,vit,Finely tuned MOOD on ViT with Mahalanobis distances achieves the best result.
+algorithm,mood,"The final algorithm of MOOD explores contributors including pretext tasks, architectures, fine-tuning processes, and OOD detection metrics."
+pretext task,representation,An efficient pretext task itself is sufficient for producing distinguishable representation.
+few-shot outlier exposure,ood detection approaches,Few-shot outlier exposure utilized in multiple existing OOD detection approaches is shown to be unnecessary.
+ood detection approaches,mood,"MOOD is a part of the OOD detection approaches, as it is compared with them in the experiments section."
+mood,appendix,"The algorithm of MOOD is shown in the Appendix, indicating a clear relationship between the two terms."
+masked image modeling vit,imagenet-21k,Pre-training the Masked Image Modeling ViT on ImageNet-21k is a part of the MOOD algorithm.
+intermediate fine-tuning vit,imagenet-21k,Intermediate fine-tuning ViT on ImageNet-21k is a step in the MOOD algorithm.
+fine-tuning,id dataset,Fine-tuning of pre-trained ViT on the ID dataset is part of the MOOD algorithm.
+features,mahalanobis distance metric,Features are extracted from the trained ViT and the Mahalanobis distance metric is calculated for OOD detection.
+mood,sota approaches,MOOD is compared with current SOTA approaches in various OOD detection tasks.
+mood,previous approaches,MOOD outperforms all previous approaches in OOD detection tasks.
+auroc,receiver operating characteristic curve,Area Under the Receiver Operating Characteristic Curve (AUROC) is used as an evaluation metric for OOD detection.
+fine-tuning processes,"multi-class cifar-10, cifar-100, imagenet-30","Different fine-tuning processes are used for OOD detection on multi-class CIFAR-10, CIFAR-100, and ImageNet-30."
+entropy,energy,"Entropy and Energy are both concepts related to the field of thermodynamics and statistical mechanics, with Entropy representing a measure of disorder or randomness in a system and Energy representing the capacity to do work."
+entropy,gradnorm,"Entropy and GradNorm are related in the context of optimization and gradient normalization techniques, where Entropy may be used as a measure of uncertainty in a system while GradNorm is used to stabilize training by rescaling gradients."
+energy,gradnorm,"Energy and GradNorm are linked in the context of optimization algorithms and neural network training, where energy functions may be optimized using techniques like gradient normalization provided by GradNorm."
+distance,softmax,"Distance and Softmax could be related in the context of classification algorithms, where Distance may refer to a metric used to measure dissimilarity between data points while Softmax is a function often used for multi-class classification."
+distance,svhn,"Distance and SVHN may be linked in the context of image recognition tasks, where Distance could be a measure of similarity between images and SVHN could refer to the Street View House Numbers dataset used for digit recognition."
+cifar-10,cifar-100,CIFAR-10 and CIFAR-100 are related as they represent different versions of the CIFAR dataset with CIFAR-10 having 10 classes and CIFAR-100 having 100 classes.
+cifar-100,cifar-1081.1,"CIFAR-100 and CIFAR-1081.1 are connected in terms of performance metrics, with CIFAR-100 having an AUROC of 81.1% in OOD detection."
+imagenet-30,cifar-10,"ImageNet-30 and CIFAR-10 could be related in terms of dataset comparison, with ImageNet-30 containing 30 image classes and CIFAR-10 containing 10 classes."
+cifar-100,cifar-1081.1,"CIFAR-100 and CIFAR-1081.1 are associated with OOD detection on the CIFAR-100 dataset, showing an AUROC of 81.1%."
+caltech256,cifar-10,"Caltech256 and CIFAR-10 could be related in terms of dataset comparisons, with Caltech256 containing 256 object categories and CIFAR-10 containing 10 image classes."
+imagenet-30,imagenet-1k,"ImageNet-30 and ImageNet-1k are linked in terms of dataset size and class distribution, with ImageNet-1k having around 1k image classes compared to the 30 classes in ImageNet-30."
+cifar-10,cifar-100,"CIFAR-10 and CIFAR-100 are related in terms of the number of classes they contain, with CIFAR-10 having 10 classes and CIFAR-100 having 100 classes."
+cifar-100,imagenet-30,"CIFAR-100 and ImageNet-30 are connected in terms of dataset comparison, with CIFAR-100 having 100 classes and ImageNet-30 having 30 classes."
+cifar-10,cifar-100,"CIFAR-10 and CIFAR-100 are related in the context of dataset comparison, with CIFAR-10 having 10 image classes and CIFAR-100 having 100 classes."
+cifar-100,imagenet-30,"CIFAR-100 and ImageNet-30 are linked in terms of dataset comparison, with CIFAR-100 containing 100 image classes and ImageNet-30 containing 30 classes."
+cifar-10,cifar-100,"CIFAR-10 and CIFAR-100 are associated in the context of dataset comparison, with CIFAR-10 containing 10 classes and CIFAR-100 containing 100 image classes."
+cifar-100,cifar-1081.1,"CIFAR-100 and CIFAR-1081.1 are related in terms of OOD detection evaluation, with CIFAR-100 having an AUROC of 81.1%."
+cifar-100,cifar-10,"CIFAR-100 and CIFAR-10 are associated in terms of dataset comparison, with CIFAR-100 having 100 image classes and CIFAR-10 having 10 classes."
+imagenet-30,imagenet-1k,"ImageNet-30 and ImageNet-1k are linked in terms of dataset size, with ImageNet-30 having only 30 classes compared to the 1k classes in ImageNet-1k."
+cifar-10,cifar-100,"CIFAR-10 and CIFAR-100 are related in terms of the number of classes they contain, with CIFAR-10 having 10 classes and CIFAR-100 having 100 classes."
+csi,ours(improve),CSI outperforms ours(improve) on all tested cases significantly with an improvement ranging from 5.7% to 94.9% on average.
+imagenet-30,intermediate fine-tuning,The improvement is comparatively smaller on ImageNet-30 because intermediate fine-tuning of the model is not applied.
+mood,cifar-10,MOOD is performed on CIFAR-10 for multi-class OOD Detection.
+mood,cifar-100,MOOD is performed on CIFAR-100 for multi-class OOD Detection.
+mood,imagenet-30,MOOD is performed on ImageNet-30 for multi-class OOD Detection.
+cifar-10,cifar-100,CIFAR-10 is considered as an OOD dataset for CIFAR-100.
+cifar-10,svhn,CIFAR-10 is considered as an OOD dataset for SVHN.
+cifar-10,lsun,CIFAR-10 is considered as an OOD dataset for LSUN.
+cifar-100,cifar-10,CIFAR-100 is considered as an OOD dataset for CIFAR-10.
+cifar-100,svhn,CIFAR-100 is considered as an OOD dataset for SVHN.
+cifar-100,lsun,CIFAR-100 is considered as an OOD dataset for LSUN.
+imagenet-30,car,OOD samples for ImageNet-30 include Car.
+imagenet-30,truck,OOD samples for ImageNet-30 include Truck.
+imagenet-30,frog,OOD samples for ImageNet-30 include Frog.
+imagenet-30,dear,OOD samples for ImageNet-30 include Dear.
+a concept from extracted ontology,a related concept from extracted ontology,"relationship between the two concepts, node_1 and node_2 in one or two sentences"
+mood,ssd+,MOOD boosts performance of current SOTA of SSD+ by 3.0% to 97.6% on ImageNet-1k
+mood,gradnorm,MOOD boosts performance of current SOTA of GradNorm by 2.8% to 89.1% on ImageNet-1k
+ood detection,baseline ood detection,"In Fig. 2, we illustrate the probability distribution of the test samples according to metrics of three OOD detection approaches: baseline OOD detection, SSD+, and MOOD. The baseline OOD detection performs softmax as its OOD detection metric, where ID samples tend to have greater value than OOD samples"
+softmax,ood detection metric,The form of softmax is used as the OOD detection metric.
+id samples,ood samples,ID samples tend to have greater value than OOD samples.
+mood,mahalanobis distance,MOOD performs the Mahalanobis distance as its metric.
+training data,id samples,The majority of testing ID samples have distances close to zero to the training data.
+ood samples,training data,The distances from most OOD samples to the training data are much larger.
+id,ood samples,MOOD can separate ID and OOD samples more clearly.
+existing approaches,near-distribution ood detection,Existing approaches on normal OOD detection tasks show worse results compared to near-distribution OOD detection.
+sota,near-ood detection,Improving the state of the art for near-OOD detection is essential for real-world data applications.
+mood,sota,MOOD outperforms the current state of the art on near-distribution CIFAR10-CIFAR100 pairs.
+pair,r50+vit,Pair and R50+ViT have a relation as models for image recognition in computer vision.
+pair,mood,Pair and MOOD are compared in terms of performance improvement in OOD detection.
+oob detection,hard-detected pairs,OOB detection involves the identification of hard-detected pairs with similar semantics.
+oob detection,semantics,OOB detection is related to the identification of semantic similarities among hard-detected pairs.
+oob detection,in-distribution,OOB detection involves distinguishing outliers from the In-Distribution.
+oob detection,out-of-distribution,OOB detection focuses on detecting Out-of-Distribution data points.
+contrastive loss,csi,Contrastive loss and CSI are methods used in OOB detection and have a relation in performance evaluation.
+csi,sota,CSI is a state-of-the-art (SOTA) method in OOB detection.
+svhn,dogs,SVHN and Dogs are datasets in image recognition.
+cifar-10,cifar-100,CIFAR-10 and CIFAR-100 are related datasets in image recognition.
+cifar-10,lsun,CIFAR-10 and LSUN are datasets used in performance evaluation.
+imagenet-30,caltech256,ImageNet-30 and Caltech256 are datasets used for image classification.
+in-distribution,out-of-distribution,In-Distribution and Out-of-Distribution are concepts in OOB detection.
+energy,mahalanobis,Energy and Mahalanobis are methods used in OOB detection.
+one-class ood detection,csi,"CSI is a part of the one-class OOD detection matrix, indicating a relationship between the two concepts"
+one-class ood detection,semantics,The semantics of ID-OOD pairs have a significant impact on the performance of one-class OOD detection
+semantics,id-ood pairs,The semantics play a role in the similarity of ID-OOD pairs
+id-ood pairs,ood detection performance,The similarity of ID-OOD pairs affects the OOD detection performance negatively
+mood,auroc,MOOD significantly boosts the AUROC of one-class OOD detection
+multi-class ood detection,ood-id confusion matrix,The OOD-ID confusion matrix is used in multi-class OOD detection to analyze wrongly classified values
+true-positive rate (tpr),tiger images,TPR affects the classification of tiger images in multi-class OOD detection
+multi-class ood detection sota method,ssd+,SSD+ is a method used in multi-class OOD detection to classify testing images
+mood,mistakenly-classified ood samples,MOOD reduces the number of mistakenly-classified OOD samples significantly
+ood detection,outlier exposure,Outlier Exposure is utilized in some OOD detection methods to improve performance
+mood,sota,MOOD is compared with the current SOTA in OOD detection
+ood detection,mood,MOOD is compared with current SOTA for near-distribution OOD detection in Tab. 9 and found to work surprisingly well. MOOD uses Mahalanobis distance as its metric.
+mood,baseline ood detection,"Baseline OOD detection takes maximum softmax probabilities as its OOD detection metric, while MOOD uses Mahalanobis distance as its metric."
+mood,ssd+,SSD+ (current SOTA) and MOOD both use the Mahalanobis distance as their metrics for OOD detection.
+mood,pretext task,The outstanding performance of MOOD demonstrates that an effective pretext task is sufficient for producing a distinguishable representation required for OOD detection.
+ood samples,id samples,OOD samples are mistakenly classified as ID samples by the current state of the art SSD+ in multi-class detection on CIFAR-10
+r50+vit,sota,"The current state of the art SOTA utilizes up to 10 known OOD samples per class for detection, while R50+ViT does not include any OOD samples"
+r50+vit,mood,"R50+ViT is compared to MOOD for near-distribution OOD detection, with MOOD achieving new state of the art results without including any OOD samples"
+mood,ood samples,MOOD achieves new state of the art results in OOD detection without including any OOD samples for detection
+mood,id dataset,"Pretext tasks, specifically the Masked Image Modeling, provide effective priors for OOD detection to learn the real data distribution of the ID dataset in the MOOD framework"
+pretext tasks,ood detection,"Pretext tasks, such as the Masked Image Modeling, have the potential to provide effective priors for OOD detection"

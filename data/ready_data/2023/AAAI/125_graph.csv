@@ -1,0 +1,110 @@
+node_1,node_2,edge
+group re-identification (g-reid),cross-camera sample labeling,Supervised approaches face challenges due to the high cost of labeling samples captured by different cameras.
+unsupervised methods,clustering,Unsupervised methods aim to avoid sample labeling but struggle with member variations
+adaptive clustering-driven progressive learning (acpl),group adaptive clustering (gac),ACPL is composed of GAC and GDPU modules to address the limitations of existing methods.
+gac (group adaptive clustering),quasi-distance between groups,GAC utilizes individual-level and holistic information within groups by designing a distance metric to minimize noise.
+gac,non-discriminative features,In cases of great uncertainty
+global dynamic prototype update (gdpu),dynamic weight update,GDPU dynamically adjusts prototypes to mine hard samples with complex member variations
+acpl,state-of-the-art performance,ACPL demonstrates superior performance on unsupervised G-ReID compared to existing methods.
+acpl,comparison with supervised approaches,ACPL performs competitively even without full supervision
+popular g-reid datasets,performance benchmark,Experiments conducted on four well-known datasets validate the method's effectiveness.
+group members,clustering,Group members are explored efficiently for better classification of hard samples. Clustering is designed based on Hausdorff Distance.
+hausdorff distance,quasi-distance vector,Inspired by Hausdorff Distance
+quasi-distance vector,group,The quasi-distance vector is used to compare and update group relationships.
+global dynamic prototype update (gdpu),training iteration process,GDPU is employed throughout the training process to adaptively update prototypes based on pseudo-labels.
+hard samples,gdpu,GDPU helps in learning from hard samples by dynamically revising prototypes and enhancing model robustness.
+unsupervised g-reid,adaptive clustering-driven progressive learning,The method presents a novel approach for unsupervised G-ReID that addresses member variations with adaptive clustering.
+member variations,gac (group adaptive clustering),GAC is proposed to handle non-discriminative member features
+state-of-the-art (sota) performance,unsupervised g-reid method,Experiments show that the method achieves SOTA results on four datasets for unsupervised G-ReID.
+group layout,membership changes,These terms are related as they describe challenges being addressed in the context of managing people's grouping and belonging within a scene.
+fully supervised methods,fine-grained labeling,Fully supervised methods require detailed labeling for both group identification and member assignment.
+coarse-grained labeling,methods,Proposed to alleviate the need for precise pedestrian labeling
+coarse-grained labeling,xiao et al. 2018,This is an example of a method that falls under this category.
+coarse-grained labeling,zhu et al. 2020,Another example of a study in this area.
+coarse-grained labeling,huang et al. 2019a,Yet another contribution within the same line of research.
+domain adaptation,representation transfer,Some methods leverage existing labeled ReID datasets to adapt to the G-ReID domain without identity labels.
+huang et al. 2019b,2020,yu et al. 2023
+unsupervised person reid,unsupervised domain adaptation (uda),UDA methods aim to transfer knowledge from labeled data to unlabeled target data.
+unsupervised person reid,pure unsupervised learning (usl),These are two categories within unsupervised ReID
+mmfa (lin et al. 2018),uda,An example of an unsupervised domain adaptation method.
+tjaidl (wang et al. 2018),uda,Another unsupervised domain adaptation technique.
+invariance matters (zhong et al. 2019),uda,A method focusing on invariant representations.
+dmg-net (bai et al. 2021),uda,A recent UDA method for person ReID.
+cluster contrast (dai et al. 2022),strong baseline,An iterative clustering-based deep learning method that serves as a competitive starting point.
+generating pseudo-labels,deep neural networks,Key components of unsupervised ReID pipelines
+cluster contrast,baseline,Cluster Contrast is a strong baseline proposed by Dai et al. (2022) for deep learning methods.
+cluster contrast,pplr,PPLR (Cho et al. 2022)
+momentum updates,methods like pplr,ise
+global prototypes,proposed method,Our method utilizes information from global prototypes to improve learning from hard samples.
+group adaptive clustering (gac),unsupervised g-reid,GAC is designed to handle member variation in unsupervised G-ReID by generating accurate pseudo-labels for groups.
+gac,pedestrian features,Each group (Gi) consists of pedestrian features extracted from a single image.
+universal group set (u),training set,The universal group set contains all N groups from the training data.
+global dynamic prototype update (gdpu),proposed method,GDPU is part of our approach
+hausdorff distance,person-to-group distance,The Hausdorff Distance is a measure of similarity used
+pedestrian feature (pm),group (gi),The distance d(pm; Gi) is calculated using the pedestrian feature of the group other than Gi
+euclidean norm (k),distance calculation,The symbol k (cid:1) k denotes the Euclidean norm used to compute the distance between vectors in the context.
+quasi-distance vector (~d(gi; gk)),group comparison,For a group Gi
+group average feature (giave,gkave),quasi-distance vector
+sorted quasi-distance vectors,cluster formation,The vectors associated with each group are sorted in ascending order to separate them into clusters
+query instance features set qp,query instance features set qg,relation: Both Qp and Qg are sets of query features used for cluster-wise contrastive loss in one iteration.
+cluster-wise contrastive loss,temperature,relation: The loss is computed using a temperature parameter for adjusting similarity between positive cluster representations.
+positive cluster representations,query features qp (qp) and qg (qg),relation: qp and qg serve as inputs for computing positive cluster representations.
+dynamic weights (cid:24)p,query features qp,relation: Dynamic weights for qp are calculated using its similarity with prototype information.
+dynamic weights (cid:24)g,query features qg,relation: Similar calculation for qg
+pseudo-labels kp and kg,query features qp and qg,relation: Pseudo-labels are assigned to qp and qg for updating cluster representations.
+cluster representations (cid:30)p,cluster representations (cid:30)g,relation: Both (cid:30)p and (cid:30)g are updated using dynamic weights based on their respective pseudo-labels.
+person-level cluster,group-level cluster,The context describes a clustering approach where p(kp) and g(kg) are updated using equations
+g-reid datasets,csg,The proposed method is evaluated on the CSG dataset
+g-reid datasets,roadgroup,Evaluation also includes the RoadGroup dataset with 324 monitor images and 162 group classes
+g-reid datasets,i-lids mcts,i-LIDS MCTS dataset is another evaluation set with 274 monitor images and 64 group classes.
+g-reid datasets,sysu-group,The last dataset is SYSU-Group
+method,hard sample adaptation,The method adaptively updates weights for hard samples to improve learning.
+evaluation,datasets,The proposed method is tested on multiple datasets to demonstrate its effectiveness.
+zhang et al. (2022b),dataset division,References are made to the work by Zhang et al. for the division of datasets in the experiments.
+fully supervised methods,coarse-grained labeling methods,The table is divided into two sections
+fully supervised methods,unsupervised methods,The upper section consists of methods that require labels
+supervised methods under coarse-grained labeling,unsupervised methods,Our method
+earlier pure unsupervised methods,c-bro,covariance
+global features,problems such as member changes,Global features are insufficient to handle situations where group members change.
+methods like dotgnn and dotscn,additional person reid datasets,Some methods leverage extra datasets to create new groups for improved performance.
+performance,methods,comparison
+gac,spectral clustering,relation as competitors
+gac,k-means clustering,relation as competitors
+spectral clustering,k-means clustering,comparison
+gac,dbscan,comparison
+gac,dbscan+,comparison
+dbscan,dbscan+,relation
+gac,g-reid task,application
+gac,i-lids mcts dataset,context
+gac,groups with member variations,effect
+gac,dbscan (visual analysis),comparison
+dbscan,gac,GAC is mentioned as a contrasting method to DBSCAN
+g-reid,person reid task (p),G-ReID is a more specific task within the broader context of person ReID
+gdpu,momentum update method (mu),GDPU and MU are compared for their effect on clustering quality in the first 25 epochs
+gac,dbscan,GAC's performance is contrasted with DBSCAN's
+quasi-distance vector,label optimization,The quasi-distance vector is a component of GAC that contributes to refining data distribution and reducing noise in pseudo-labels.
+noise,pseudo-labels from groups with high uncertainty,GAC addresses noise in labels by optimizing them
+ablation studies,effect of quasi-distance vector,An ablation study focuses on examining the impact of the quasi-distance vector in GAC.
+noise reduction,pseudo-labels,The context discusses reducing noise in pseudo-labels
+quasi-distance vector,feature distance,The text compares different methods for measuring distance
+overall feature (of),reliable fine-grained information,OF is found to be the least effective because it considers only global features
+individual features (if),person reid task,Using only individual features can cause the model to focus too much on person-specific details
+group-level features,association and member changes,The context highlights that capturing group-level dynamics
+g-reid,gac (proposed method),GAC refers to the method that combines individual and holistic features for improved performance in the G-ReID task.
+top five retrieval results,visualization,The visualization is used to demonstrate the effectiveness of the proposed method by showing retrieval results.
+g-reid task,performance,The context discusses the improvement in handling the G-ReID task
+gac (if+of),best performance,GAC
+visual retrieval example,quasi-distance,The example illustrates different dimensions of the quasi-distance used in visual retrieval.
+of,group member changes,OF has difficulty addressing the issue of changes in group members
+if,similarity between groups,IF solely relies on the most similar pedestrian
+gdpu (our method),prototype update method,GDPU is compared to MU (momentum update method)
+gdpu,mu (momentum update method),GDPU consistently outperforms MU during both the first and last 25 epochs.
+person reid,dbscan (clustering method),For fairness
+cluster contrast,person reid,Cluster-Contrast applies its clustering method to person ReID experiments.
+group prototypes,dynamic adjusting,The model's GDPU strategy involves dynamically adjusting the update parameters of group prototypes to improve learning.
+gdpu (group dynamic prototype update),unsupervised g-learning,GDPU is part of the proposed ACPL (Adaptive Clustering-driven Progressive Learning) approach for unsupervised G-learning.
+acpl (adaptive clustering-driven progressive learning),model robustness,ACPL enhances model robustness by adapting to diverse groups and understanding a wider range of data distributions.
+hard samples,pseudo-label prototype,GDPU improves the model's ability to learn discriminative features from complex groups by updating the pseudo-label prototype with hard samples.
+memory bank,hardest sample in a mini-batch (mu-h),GDPU compares favorably with MU-H
+final performance,person-level and group-level,Experimental results demonstrate GDPU's better final performance at both person and group levels compared to MU.
+person-level performance,group-level performance,GDPU consistently outperforms MU in both person-level and group-level evaluations.

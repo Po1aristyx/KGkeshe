@@ -1,0 +1,232 @@
+node_1,node_2,edge
+3d point cloud,2d floorplan,3D Point Cloud is the input data for 2D Floorplan reconstruction in this context.
+existing approaches,heuristically designed multi-stage pipelines,Existing approaches typically employ heuristically designed multi-stage pipelines for floorplan reconstruction.
+single-stage structured prediction task,variable-size set of polygons,"In this context, floorplan reconstruction is formulated as a single-stage structured prediction task to find a variable-size set of polygons."
+novel transformer architecture,polygons of multiple rooms,The novel Transformer architecture generates polygons of multiple rooms in parallel for floorplan reconstruction.
+model features two-level queries,polygons and corners,The model features two-level queries for polygons and corners to aid in the reconstruction process.
+floorplan reconstruction model,structure3d dataset,The floorplan reconstruction model achieves a new state-of-the-art for the Structure3D dataset.
+fast inference,previous methods,The method achieves significantly faster inference than previous methods for floorplan reconstruction.
+semantic room types and architectural elements,predict additional information,The method can be extended to predict additional information such as semantic room types and architectural elements like doors and windows.
+code and models,https://github.com/ywyue/roomformer,The code and models for the method are available at the mentioned URL.
+floorplan reconstruction,3d point cloud,The goal of floorplan reconstruction is to abstract a 3D point cloud into a 2D vector map.
+floorplans,representation,"Floorplans are an essential representation that enables a wide range of applications in robotics, AR/VR, interior design, etc."
+raw 3d point data,density map,Several works have shown the effectiveness of projecting the raw 3D point data along the gravity axis to obtain a 2D density map that highlights the building's structural elements.
+density map,floorplan reconstruction,"The resulting density maps are compact and computationally efficient, but inherit the noise and data gaps of the underlying point clouds, hence floorplan reconstruction remains a challenging task."
+roomformer,room polygons,"RoomFormer jointly recovers multiple room polygons along with their associated room types, as well as architectural elements such as doors and windows."
+top-down methods,room masks,"Top-down methods first extract room masks from the density map using neural networks, then employ optimization/search techniques."
+mask r-cnn,optimization/search techniques,"Mask R-CNN is an example of neural networks used in the context, while optimization/search techniques like integer programming and Monte-Carlo Tree-Search are employed to extract a polygonal floorplan."
+optimization/search techniques,polygonal floor-plan,The optimization/search techniques are used to extract a polygonal floorplan in the context.
+bottom-up methods,corners,Bottom-up methods first detect corners as mentioned in the context.
+corners,wall segments,Edges are looked for between corners which represent wall segments according to the context.
+room polygons,roomformer,RoomFormer is designed to directly map a density image to a set of room polygons as specified in the context.
+transformers,sequence prediction capabilities,"RoomFormer leverages the sequence prediction capabilities of Transformers to output a variable-length, ordered sequence of vertices per room."
+cnn backbone,birds-eye view density map,A standard CNN backbone is employed to extract features from the birds-eye view density map as mentioned in the context.
+transformer architecture,cnn backbone,The Transformer architecture employs a standard CNN backbone to extract features from the birds-eye view density map.
+transformer architecture,transformer encoder-decoder setup,The Transformer architecture utilizes a Transformer encoder-decoder setup to process the image features and outputs multiple ordered corner sequences in parallel.
+cnn backbone,image features,"The CNN backbone extracts features from the birds-eye view density map, which are then consumed by the Transformer encoder-decoder setup along with positional encodings to output multiple ordered corner sequences in parallel."
+image features,corners,"The image features are used to predict ordered corners, which are then connected to recover the floorplan."
+corners,predicted order,The predicted ordered corners are used to recover the floorplan by connecting them in the predicted order.
+corners,room polygons,"The corners are part of the room polygons, which need to be connected to form the floorplan."
+room polygons,queries at different levels,The room polygons are associated with two-level queries where one level is for the room polygons and the other level is for their corners to address the challenge of varying numbers of rooms and corners.
+queries,image features,The queries are refined iteratively through self-attention among them and cross-attention between queries and image features in the decoder.
+polygon matching strategy,predictions and targets,The polygon matching strategy establishes the correspondence between predictions and targets at both room and corner levels to enable end-to-end training.
+predictions,evidence in the density map,The predictions from the model aim to best explain the evidence in the density map by predicting a set of polygons.
+floorplan reconstruction,raw sensor data,"Floorplan reconstruction turns raw sensor data (e.g., point clouds, density maps, RGB images) into vectorized geometries."
+roomformer model,transformer-type architecture,"The RoomFormer model is an end-to-end trainable, Transformer-type architecture that implements the proposed formulation via two-level queries."
+roomformer model,polygons,The RoomFormer model predicts a set of polygons each consisting of a sequence of vertex coordinates.
+model variants,"semantic room type labels, doors, windows","Model variants are able to additionally predict semantic room type labels, doors, and windows."
+floorplan reconstruction,structured3d dataset,Improved floorplan reconstruction scores on the Structured3D dataset.
+floorplan reconstruction,scenecad dataset,Improved floorplan reconstruction scores on the SceneCAD dataset.
+roomformer model,state of the art,RoomFormer outperforms the state of the art.
+roomformer model,existing methods,RoomFormer is significantly faster than existing methods.
+clouds,density maps,Both clouds and density maps are mentioned in the context as inputs that are processed to vectorized geometries.
+rgb images,vectorized geometries,RGB images are mentioned as inputs that are transformed into vectorized geometries.
+rgb images,clouds,RGB images are mentioned as inputs along with clouds in the context.
+rgb images,density maps,RGB images are mentioned as inputs along with density maps in the context.
+rgb images,hough transform,RGB images are associated with the Hough transform as an early method for processing.
+rgb images,plane fitting,RGB images are associated with plane fitting as an early method for processing.
+hough transform,plane fitting,The Hough transform and plane fitting are mentioned together as early methods relying on basic image processing techniques.
+graph-based methods,floorplan reconstruction,Graph-based methods are mentioned as a technique for casting floorplan reconstruction as an energy minimization problem.
+deep learning methods,hand-crafted components,Deep learning methods are mentioned to replace some hand-crafted components with neural networks.
+top-down methods,floor-sp,Top-down methods like Floor-SP rely on Mask R-CNN for room segments detection and polygon reconstruction.
+mask r-cnn,room segments,Mask R-CNN is mentioned to detect room segments in the context.
+mask r-cnn,reconstruct polygons,Mask R-CNN is mentioned to be used for reconstructing polygons of individual room segments.
+montefloor,room proposals,MonteFloor is mentioned to rely on Monte-Carlo Tree Search to select room proposals.
+floornet,room corners,FloorNet is mentioned to detect room corners in the context.
+floornet,wall segments,FloorNet generates wall segments using an integer programming formulation.
+heat,end-to-end model,HEAT is mentioned to propose an end-to-end model following a bottom-up pipeline.
+transformers,structured reconstruction,Transformers are mentioned for structured reconstruction in the context.
+transformers,structured reconstruction,"Transformers are utilized for structured reconstruction in various vision tasks such as object detection, image/video segmentation, and tracking."
+detr,object detection,DETR reformulates object detection as a direct set prediction problem using Transformers.
+letr,detr,LETR extends DETR by adopting Transformers to predict a set of line segments.
+planetr,plane detection,PlaneTR uses Transformers for plane detection and reconstruction.
+let,transformers,LET extends Transformers by adopting them to predict a set of line segments.
+transformers,structured polygon generation,"The work explores the use of Transformers for structured polygon generation beyond prior applications in object detection, line segments, and plane detection."
+polygon vertices,floorplans,"The recent works assume a fixed number of polygon vertices, which is not suitable for floorplans leading to over-redundant vertices for simple shapes and insufficient representation."
+vertices,polygons,vertices are mentioned as starting point for generating polygons with the correct number of vertices
+bounding box detection,instance initialization,bounding box detection is mentioned as a method for instance initialization
+bounding box detection,single-stage method,both bounding box detection and single-stage method are mentioned as methods for object detection
+multi-scale features,positional encodings,multi-scale features are enhanced with positional encodings before passing to the Transformer encoder
+room polygons,room corners,room polygons and room corners are mentioned as components of the RoomFormer model
+cnn backbone,pixel-level features,CNN backbone is responsible for extracting pixel-level feature information
+feature maps,backbone,feature maps are the input to the backbone of the model
+feature maps,il,each feature map is denoted by Il in the context
+feature maps,multi-scale input,the feature maps serve as multi-scale input to the Transformer encoder
+feature maps,deformable attention,multi-scale deformable attention is applied across feature maps to enable encoding richer context
+backbone,il,Il is from each layer of the convolutional backbone
+backbone,feature sequence,Il is flattened to a feature sequence in the context
+backbone,transformer encoder,the backbone serves as input to the Transformer encoder
+il,feature sequence,Il is flattened to a feature sequence
+il,positional encodings,positional encodings are added to each pixel location of Il
+il,concatenated,Il is concatenated with other flattened feature maps
+il,multi-scale input,Il serves as multi-scale input to the Transformer encoder
+deformable attention,multi-scale feature maps,deformable attention is applied across multi-scale feature maps
+deformable attention,multi-scale deformable attention,deformable attention and multi-scale deformable attention are related concepts in context
+deformable attention,transformer encoder,deformable attention is used in the encoder and decoder of the Transformer
+multi-scale input,transformer encoder,multi-scale input is taken as input by the Transformer encoder
+multi-scale input,position-encoded feature maps,multi-scale input are position-encoded before given as input to Transformer encoder
+position-encoded feature maps,enhanced feature maps,position-encoded feature maps are transformed to enhanced feature maps
+enhanced feature maps,transformer encoder,enhanced feature maps are output by the Transformer encoder
+encoder layer,multi-scale deformable self-attention module,each encoder layer consists of a multi-scale deformable self-attention module
+encoder layer,feed forward network,each encoder layer also consists of a feed forward network
+multi-scale deformable self-attention module,pixel features,both query and key elements in the module are pixel features
+multi-scale deformable self-attention module,reference point,the reference point in the module is the coordinate of each query pixel
+feed forward network,encoder layer,the feed forward network is part of each encoder layer
+feed forward network,query and key elements,the feed forward network processes both query and key elements
+feature maps,query pixel,The reference point for the multi-scale feature maps is the coordinate of each query pixel.
+feature representation,learnable scale-level embedding,A learnable scale-level embedding is added to the feature representation for identifying the feature level of each query pixel.
+transformer decoder,multi-scale feature maps,The transformer decoder utilizes multi-scale feature maps as input for processing.
+transformer decoder,encoder,Each decoder layer takes enhanced image features from the encoder for processing.
+set of polygon queries,decoder layer,Each decoder layer takes a set of polygon queries from the previous layer as input.
+floorplan representation,floorplan reconstruction system,A suitable floorplan representation is crucial for an efficient floorplan reconstruction system.
+reconstruction problem,geometric primitives detection,Floorplan reconstruction can be decomposed into intermediate geometric primitives detection problems.
+polygon prediction,set prediction problem of polygons,The core idea is to treat floorplan reconstruction as a direct set prediction problem for polygons.
+set of sequences,arbitrary length,The goal is to predict a set of sequences of arbitrary length
+vertices,2d coordinates,We model each vertex using 2D coordinates
+polygon,vertices,Each polygon has an arbitrary number of vertices
+feature backbone,image features,Feature backbone extracts image features
+cnn features,transformer encoder,Transformer encoder refines the CNN features
+transformer encoder,transformer decoder,"Transformer encoder refines CNN features, Transformer decoder uses two-level queries for polygon prediction"
+polygon matching module,optimal assignments,"During training, polygon matching module yields optimal assignments between predicted and groundtruth polygons"
+polygon queries,regions,"In the MS-DCA, the polygon queries attend to different regions of the density map"
+decoder output,shared ffn,Output of the decoder is passed to a shared FFN
+polygon queries,room polygons,"Polygon queries are represented as Q ∈ RM×N×2, where M is the maximum number of polygons (i.e., room level) and N is the maximum number of vertices per polygon. Room polygons are mentioned as one level of the two-level polygon queries."
+polygon queries,vertices,Polygon queries consist of information about vertices with the representation Q ∈ RM×N×2. Vertices are mentioned as part of the two-level polygon queries for representing room structures.
+queries,decoder layer,"Queries in the decoder consist of content queries (decoder embeddings) and positional queries generated from polygon queries. The decoder layer structure is illustrated in Fig. 3a, showing the relationship between queries and decoder layer."
+content queries,decoder embeddings,Content queries in the decoder are represented as embeddings that contribute to the overall query structure. They are part of the decoder query formulation.
+positional queries,generated from polygon queries,Positiional queries in the decoder are generated from polygon queries and play a crucial role in determining the spatial relationships within the room structures. They are key components of the decoder query.
+corner-level queries,room corners,"The decoder performs self-attention on all corner-level queries, enabling interaction between corners of a single room. This design allows for reasoning within individual rooms based on corner coordinates."
+adjacent walls,influencing each other,Corners on the adjacent walls of two rooms can influence each other. This shows the interplay between different room structures and how corners interact across room boundaries.
+multi-scale deformable attention module,polygon,"In the multi-scale deformable attention module, polygon information is directly used to enhance attentive mechanisms. This module utilizes polygon queries for global reasoning within the network."
+polygon,query,The multi-scale deformable attention module uses polygon queries as reference points for pooling features from multi-scale feature maps around polygon vertices.
+query,corner,The polygon matching strategy encourages the queries at corner level to follow a specific order while queries at room level can be unordered.
+room,polygon,The room polygons can be obtained by connecting valid vertices in a specific order without needing an explicit edge detector.
+vertex,polygon,The vertices in each polygon are refined layer-by-layer in the decoder.
+prediction head (mlp),polygon,"The prediction head (MLP) predicts relative offsets (∆x, ∆y) from decoder embeddings and updates polygon queries for the next layer."
+decoder embeddings,polygon queries,Both decoder embeddings and polygon queries are initialized from a normal distribution and learned as part of the model parameters. They are updated layer-by-layer during inference.
+decoder embeddings,final predicted labels,The learned decoder embeddings are used in predicting the final labels after each layer.
+polygon queries,final predicted labels,"The polygon queries help in selecting valid queries and visualizing their position after each layer, contributing to the final predicted labels."
+prediction head,m polygons with n vertices,"The prediction head of the Transformer decoder outputs M polygons with N vertices, which is a key aspect of the network's prediction process."
+groundtruth,matching predictions,Matching the fixed-number predictions with the arbitrary-numbered groundtruth is essential for making the network end-to-end trainable. This matching is done at set and sequence levels.
+predicted polygon instances,valid vertices,"Each predicted polygon instance consists of valid vertices, represented as 2D coordinates in normalized space [0, 1]."
+vertices,polygons,Vertices are part of polygons and contribute to the shape and structure of the polygons.
+sequence,polygon,A polygon can be viewed as a sequence of vertices arranged in a specific order to form a closed shape.
+matching cost,sequence level,Matching cost is calculated at the sequence level to find the similarity or dissimilarity between groundtruth polygon and predicted polygon.
+equivalent parametrizations,starting vertex,The existence of multiple equivalent parametrizations depends on the starting vertex.
+equivalent parametrizations,orientation,The existence of multiple equivalent parametrizations depends on the orientation.
+groundtruth pm,counter-clockwise orientation,The ground truth Pm always follows a counter-clockwise orientation.
+distance,permutations of pm,The distance between ˆPσ(m) and all possible permutations of Pm is calculated to find the minimum.
+optimal permutation ˆσ,hungarian algorithm,The optimal permutation ˆσ is found using the Hungarian algorithm.
+loss function,vertex label classification loss,"The loss function consists of three parts, including a vertex label classification loss."
+loss function,vertex coordinates regression loss,"The loss function consists of three parts, including a vertex coordinates regression loss."
+loss function,polygon rasterization loss,"The loss function consists of three parts, including a polygon rasterization loss."
+dice loss,rasterized polygons,The Dice loss is computed between rasterized polygons as an auxiliary loss.
+dice loss,rasterized mask,The Dice loss is computed using a differentiable rasterizer on the rasterized mask of a given polygon.
+floorplans,room types,Floorplans can be classified into different room types using two-level polygon queries in our method.
+room types,pipeline,The pipeline is flexible and can be extended to identify room types.
+pipeline,dlast,The output embedding Dlast is obtained from the last layer of the Transformer decoder in the pipeline.
+dlast,aggregate room-level features,An aggregated embedding is obtained from Dlast to predict aggregate room-level features.
+room-level features,linear projection layer,Room-level features are predicted using a linear projection layer.
+polygon instance,room type,"The type for polygon instance Vm is denoted as tm, representing the room type."
+doors and windows,2d floorplan,"Doors and windows are treated as lines in a 2D floorplan, viewed as special polygons with 2 vertices."
+pipeline,doors and windows prediction,The pipeline can be adapted to predict doors and windows without architecture modification by increasing the room-level queries.
+room-level queries,polygons,The room-level queries are related to polygons as more polygons need to be predicted.
+line decoder,doors and windows,The line decoder can be used to predict doors and windows.
+line,fixed number of 2 vertices,A line can be parameterized by a fixed number of 2 vertices.
+two-level queries,corner-level queries,Two-level queries can be represented as either two-level queries with a fixed number of corner-level queries.
+two-level queries,polygon decoder,The two-level queries variant is simply an adaptation of the polygon decoder.
+single-level queries,letr,The single-level queries variant follows LETR that directly predicts the two endpoints from the query.
+montefloor,roomformer,MonteFloor and RoomFormer are mentioned in the context as methods for floorplan reconstruction.
+structured3d,photo-realistic dataset,Structured3D is a large-scale photo-realistic dataset containing 3500 houses with diverse floor plans.
+doors and windows,semantically-rich annotations,Structured3D dataset contains semantically-rich annotations including doors and windows.
+training samples,validation samples,Both training samples and validation samples are subsets of the dataset being split for training and validation purposes
+training samples,test samples,Training samples and test samples are subsets of the dataset for training and testing purposes
+rgb-d panoramas,point clouds,RGB-D panoramas are converted to point clouds for processing and analysis
+point clouds,density images,Point clouds are projected into density images for further visualization and interpretation
+3d room layout annotations,rgb-d scans,"3D room layout annotations are annotations on RGB-D scans, providing spatial information for further analysis"
+scannet,layout annotations,"ScanNet contains RGB-D scans with layout annotations, facilitating 2D floorplan polygon generation"
+training split,layout annotations,"Layout annotations are available for the training split of ScanNet, used for training models and evaluating on validation split"
+rgb-d scans,density maps,RGB-D scans are projected into density maps for analysis and visualization
+groundtruth room,reconstructed room,Groundtruth room is compared with reconstructed room to find the best-matching one in terms of IoU
+room type prediction,semantic label,Room type prediction is evaluated against the semantic label groundtruth to ensure accuracy
+window or door,groundtruth element,The correctness of a window or door is determined based on its L2 distance to the groundtruth element being less than 10 pixels
+window,door,A window or door is considered correct if its L2 distance to the groundtruth element is <10 pixels.
+window,door,Groundtruth element mentioned in the context
+resnet-50,heat,Model settings mention the same ResNet-50 backbone as HEAT [9]
+resnet-50,feature maps,Multi-scale feature maps are generated from the ResNet-50 backbone mentioned
+transformer,encoder and decoder layers,The Transformer consists of 6 encoder and 6 decoder layers with 256 channels
+adam optimizer,weight decay,Training uses the Adam optimizer with a weight decay factor of 1e-4
+matcher and losses,coefficients,"Coefficients λcls = 2, λcoord = 5, λras = 1 are set for the matcher and losses"
+titan rtx gpu,memory,A single TITAN RTX GPU with 24GB memory is used for training
+scenecad,tab. 2,"SceneCAD is referenced in Table 2, indicating a relationship between the two."
+scenecad,cross-data generalization,"SceneCAD is mentioned in the context of cross-data generalization, implying a connection between them."
+floor-sp,montefloor,"Floor-SP and MonteFloor are categorized under two broad categories, suggesting a relationship in terms of segmentation techniques."
+hawp,letr,"HAWP and LETR are mentioned as originally generic methods adapted for floorplan reconstruction, indicating a shared characteristic."
+heat,roomformer,"HEAT is compared to RoomFormer in terms of performance metrics, showcasing a competitive relationship."
+montefloor,douglas-peucker algorithm,"MonteFloor utilizes the Douglas-Peucker algorithm for post-processing, suggesting a technique relationship between them."
+roomformer,structured3d,"RoomFormer's performance on Structured3D dataset is highlighted, indicating a relationship between the method and the dataset."
+angleroom,door/windowroom,The terms AngleRoom and Door/WindowRoom are related as different types of rooms in the context of floorplan reconstruction.
+door/windowroom,cornermethod,The terms Door/WindowRoom and CornerMethod are related in the context of methods used in floorplan reconstruction.
+room∗,room,The terms Room∗ and Room are related as metrics in semantically-rich floorplan reconstruction.
+roomformer,floor-sp,"The terms RoomFormer and Floor-SP are compared as representative methods in floorplan reconstruction, with RoomFormer achieving notable improvement over Floor-SP."
+roomformer,heat,"The terms RoomFormer and HEAT are compared in terms of performance in floorplan reconstruction, with RoomFormer outperforming HEAT significantly."
+heat,generalization,The terms HEAT and generalization are related as the ability of the model to generalize across datasets.
+global reasoning capacity,corner detection,The terms global reasoning capacity and corner detection are compared in terms of their impact on the generalization ability of the model.
+floorplan,two-stage pipelines,The terms floorplan and two-stage pipelines are related as the quality of floorplan generated by the pipelines is strongly affected by errors in the first stage.
+montefloor,missing rooms,MonteFloor is strongly affected by missing rooms in the first stage.
+montefloor,missing corners/edges,MonteFloor shows missing corners/edges in the 3rd and 4th row.
+heat,missing corners/edges,HEAT suffers from missing corners/edges in the 5th and 6th row.
+heat,sparse input point cloud,HEAT faces missing corners/edges issue when the input point cloud is sparse.
+roomformer,missing corners/edges,RoomFormer handles missing corners/edges cases more robustly.
+floor-sp,redundant corners,Floor-SP generates redundant corners due to its containment constraint.
+roomformer,plausible results,RoomFormer produces more plausible results without imposing hard constraints.
+room,door/window decoding,Separating room and door/window decoding can improve room density.
+montefloor,density map,MonteFloor is associated with Density Map in the context of 3D scans.
+heat,ground truth,HEAT is related to Ground Truth in the context of 3D scans.
+floor-sp,ground truth,Floor-SP's constraint results in redundant corners compared to Ground Truth.
+redundant corners,containment constraint,The tendency to produce redundant corners is attributed to the containment constraint.
+method,robustness,The method mentioned is described as more robust in handling cases with redundant corners due to the containment constraint.
+type classification,room and door/window,The need for type classification arises because room and door/window may have significantly different geometry and semantic properties.
+method,performance,"The second-best performing method is SD-TQ, which involves using the original model with more polygon queries for modeling doors and windows."
+shape representation,parameters,Single-level queries are deemed sufficient for shapes represented by a fixed number of parameters like lines.
+multi-scale features and polygon refinement,model analysis,The impact of multi-scale features and polygon refinement on the model is analyzed in Table 6.
+various losses,loss analysis,"The impact of various losses on the model is analyzed in Table 7, specifying that Lcls is always required for determining valid corners."
+refinement process,reference points,The refinement process and the reference points in intermediate layers are discussed in relation to removing the refinement process and keeping the reference points static in intermediate layers.
+roomformer,2d floorplan reconstruction,RoomFormer is introduced as a model for 2D floorplan reconstruction in the context
+vertex label classification loss,loss functions,The vertex label classification loss is one of the loss components used to supervise the network
+sequence coordinates regression loss,rasterization loss,It is concluded that the sequence coordinates regression loss is essential while the rasterization loss serves as an auxiliary loss
+semantically-rich floorplans,polygonal reconstruction tasks,The approach aims to inspire more applications in polygonal reconstruction tasks by focusing on semantically-rich floorplans.
+heat,monte-floor,"Authors of HEAT and Monte-Floor provided results on Structured3D for comparison, mentioned in acknowledgments."
+theodora kontogianni,francis engelmann,"Theodora Kontogianni and Francis Engelmann are postdoctoral research fellows at the ETH AI Center, mentioned in acknowledgments."
+results of semantic-rich floorplans,doors,Arcs represent doors in the results of semantic-rich floorplans with dashed lines representing windows.
+single decoder variant (sd-tq),room,"The single decoder variant incorrectly identifies a room as 'bathroom' instead of 'misc', following house design principles."
+house,bathroom,"Each house usually has a bathroom, which is better reflected in the groundtruth according to house design principles."
+two-level queries,single-level queries,Comparison between two-level and single-level queries shows that two-level queries greatly improve all metrics in modeling floorplans.
+two-level design,single vertex,"Two-level design relaxes the role of each query to model a single vertex, enhancing interactions between vertices."
+vertex,sequence,"Vertices and sequences are mentioned as key concepts in the context, indicating a relationship between them in terms of modeling and interaction."
+room,vertices,"The context mentions explicit interactions between vertices of the same room, suggesting a relationship between room and vertices."
+room,adjacent rooms,"The context talks about interactions between vertices across adjacent rooms, indicating a relationship between rooms and adjacent rooms."
+feature maps,local and global contexts,"The context discusses the use of multi-scale feature maps to aggregate both local and global contexts, implying a relationship between feature maps and contexts."
+feature maps,vertex positioning and order capturing,"The context mentions that multi-scale feature maps are used for joint vertex positioning and order capturing, suggesting a relationship between feature maps and vertex positioning."
+queries,vertex sequence coordinates,"The context proposes learning vertex sequence coordinates as queries, indicating a relationship between queries and vertex sequence coordinates."
+coordinates,sequence,"The context talks about learning vertex sequence coordinates and using them for iterative polygon refinement, suggesting a relationship between coordinates and sequences."

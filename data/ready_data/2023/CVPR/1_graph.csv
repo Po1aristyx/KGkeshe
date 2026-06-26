@@ -1,0 +1,265 @@
+node_1,node_2,edge
+gfpose,3d human pose prior,GFPose is a framework that models 3D human poses and incorporates pose priors implicitly during the denoising process.
+gfpose,time-dependent score network,GFPose at its core involves a time-dependent score network that estimates the gradient on each body joint.
+gfpose,multi-hypothesis pose estimator,GFPose outperforms existing SOTAs by 20% on Human3.6M dataset as a multi-hypothesis pose estimator.
+gfpose,single-hypothesis pose estimator,"GFPose achieves comparable results to deterministic SOTAs, even with a vanilla backbone, as a single-hypothesis pose estimator."
+gfpose,"pose denoising, completion, and generation tasks","GFPose is able to produce diverse and realistic samples in pose denoising, completion, and generation tasks."
+3d human pose prior,time-dependent score network,The 3D human pose prior is modeled by GFPose which includes a time-dependent score network.
+3d human pose prior,pose prior distribution,Learning a good prior distribution over the valid human poses is important in modeling 3D human pose.
+prior distribution,valid human poses,prior distribution helps to discriminate infeasible poses and enables sampling of diverse human poses.
+prior distribution,3d human pose,"prior has use cases for recovering 3D human pose under different conditions like monocular images with depth ambiguities and occlusions, inertial measurement unit signals with noises, and partial sensor inputs."
+3d human pose,pose priors,"Previous works explore different ways to model human pose priors including modeling with GMM, VAE, GAN, or neural implicit functions."
+pose priors,biomechanics,Some pioneers attempt to build joint-angle limits based on biomechanics for human pose priors.
+pose priors,machine learning,"Recent works seek to learn human pose priors from data using methods like GMM, VAE, GAN, or neural implicit functions."
+independent probabilistic model,energy function,These methods learn an independent probabilistic model or energy function to characterize the data distribution pdata(x)
+pose priors,downstream tasks,Some methods jointly learn the pose priors and downstream tasks via adversarial training or explicit task conditions pdata(x
+task-specific condition,3d human pose estimation,"e.g., for 3D human pose estimation, c could be 2D images or detected 2D poses"
+human pose prior,task specification,we can jointly encode the human pose prior and the task specification into the score
+task conditions,randomly masked,"To further enhance the flexibility and versatility, we introduce a condition masking strategy, where task conditions are randomly masked to vary"
+condition,masking strategy,Condition masking strategy introduces randomly masked task conditions to handle various pose-related tasks in a unified learning-based framework.
+task conditions,masking,Task conditions are randomly masked with varying degrees during training by sampling masks from a hierarchy of candidate masks.
+gfpose,pose-related tasks,"GFPose is a general framework designed for pose-related tasks, learning a time-dependent score network to approximate pose data on a large scale 3D human pose dataset using Denoising Score Matching."
+human pose,euclidean space,Human pose x in Euclidean space is represented as a point in RJx3.
+noisy pose,pose perturbation,The noisy pose is obtained by perturbing the valid human pose x with a time-dependent noise sampled from a prior distribution.
+score network,valid pose,"The score network sθ(x, t"
+hierarchical condition masking strategy,task training,"Hierarchical condition masking strategy involves randomly masking out the task condition c by sampling masks from different levels of randomness, enabling the model to build spatial relations between body joints and parts."
+body parts,joint level,"The candidate masks cover different levels of randomness including human level, body part level, and joint level to build spatial relations between different body joints and parts."
+gfpose,3d pose,GFPose is a novel score-based generative framework to model plausible 3D human poses
+gfpose,pose generation,GFPose can produce diverse and realistic samples for pose generation
+gfpose,3d human poses,GFPose outperforms SOTA in 3D human pose estimation tasks
+gfpose,condition masking strategy,GFPose uses hierarchical condition masking strategy to enhance versatility and applicability to various downstream tasks
+3d human pose priors,task-independent pose priors,The first line of works focuses on learning task-independent pose priors which involve learning the unconditional distribution of plausible poses.
+task-independent pose priors,pdata(x),Task-independent pose priors involve learning the unconditional distribution pdata(x) of plausible poses.
+akhter,pose-dependent joint-angle limits,Akheter learns pose-dependent joint-angle limits directly.
+smplify,mixture of gaussians,SMPLify fits a mixture of Gaussians to motion capture (mocap) data.
+vae-based methods,3d poses,VAE-based methods like VPoser map the 3D poses to a compact representation space.
+gan-based methods,adversarial priors,GAN-based methods learn adversarial priors by discriminating the generated poses from the real poses.
+pose-ndf,plausible pose manifolds,Pose-NDF proposes to model the plausible pose manifolds with a neural implicit function.
+task-aware priors,conditional priors,The second line of works focuses on learning task-aware priors which involve learning the conditional priors pdata(x
+mvae,autoregressive conditional vae,MVAE employs autoregressive conditional VAE to learn plausible pose trajectories given the historical state.
+actor,action-conditioned variational prior,ACTOR learns an action-conditioned variational prior using Transformer VAE.
+hmr,adversarial prior loss,HMR jointly trains the model with the adversarial prior loss and pose reconstruction loss.
+construction loss,novel score-based framework,The construction loss is examined in this paper where a novel score-based framework is proposed to model plausible human poses.
+novel score-based framework,model plausible human poses,The novel score-based framework is used to model plausible human poses in the paper.
+model plausible human poses,native and directly applicable to multiple downstream tasks,The method for modeling plausible human poses is native and directly applicable to multiple downstream tasks.
+3d human pose estimation,monocular rgb image,The fundamental problem of estimating the 3D human pose from a monocular RGB image is discussed in the paper.
+2d pose,off-the-shelf estimator,The common practice involves estimating the 2D pose with an off-the-shelf estimator before lifting it to 3D for model generalization.
+2d-to-3d mapping,ill-posed problem,The process of learning the 2D-to-3D mapping is described as an ill-posed problem due to the infinite possible solutions without extra constraints.
+gfpose,inference pipeline,The inference pipeline of GFPose involves generating terminal states x(0) from initial noise states x(T) via a reverse-time Stochastic Differential Equation for a downstream task specified by a condition c.
+predictor-corrector sampler,time-dependent score network,The Predictor-Corrector sampler is used in conjunction with the time-dependent score network to output gradients at each time step.
+predictor-corrector sampler,time-dependent score network,Predictor-Corrector sampler is simulated by time-dependent score network
+pose,task condition,pose is influenced by the task condition
+pose,pose estimation,pose plays a key role in pose estimation
+pose estimation,ambiguity,pose estimation struggles with ambiguity
+pose estimation,precision,pose estimation suffers from degraded precision
+li et al.,multimodal mixture density network,Li et al. proposed a multimodal mixture density network
+jahangiri et al.,compositional generative model,Jahangiri et al. designed a compositional generative model
+sharma et al.,conditional variational autoencoder,Sharma et al. used a conditional variational autoencoder
+sharma et al.,ordinal relations,Sharma et al. used ordinal relations in the filtering and fusion process
+li et al.,transformer,Li et al. utilized a transformer in spatial-temporal representation learning
+gfpose,multi-hypothesis 3d human pose estimation,GFPose is a suitable solution for multi-hypothesis 3D human pose estimation
+gfpose,occlusions,GFPose can handle severe occlusions by producing plausible hypotheses
+score-based generative model,log-likelihood,score-based generative model aims at estimating the gradient of log-likelihood
+score-based generative model,sliced score-matching objective,The score-based generative model introduces a sliced score-matching objective that projects the scores onto random vectors before comparing them.
+annealed training,denoising score matching,Song et al. introduce annealed training for denoising score matching.
+annealed score matching,continuous diffusion process,They further extend the discrete levels of annealed score matching to a continuous diffusion process and show promising results on image generation.
+score-based generative model,wide application,These recent advances promote the wide application of the score-based generative model in different fields.
+object rearrangement,score-based generative model,These recent advances promote the wide application of the score-based generative model in object rearrangement.
+medical imaging,score-based generative model,These recent advances promote the wide application of the score-based generative model in medical imaging.
+point cloud generation,score-based generative model,These recent advances promote the wide application of the score-based generative model in point cloud generation.
+molecular conformation generation,score-based generative model,These recent advances promote the wide application of the score-based generative model in molecular conformation generation.
+scene graph generation,score-based generative model,These recent advances promote the wide application of the score-based generative model in scene graph generation.
+point cloud denoising,score-based generative model,These recent advances promote the wide application of the score-based generative model in point cloud denoising.
+offline reinforcement learning,score-based generative model,These recent advances promote the wide application of the score-based generative model in offline reinforcement learning.
+depth completion,score-based generative model,These recent advances promote the wide application of the score-based generative model in depth completion.
+3d human poses,score-based generative model,"Inspired by these promising results, we seek to develop a score-based framework to model plausible 3D human poses."
+3d human pose priors,score-based generative model,"To the best of our knowledge, our method is the first to explore score-based generative models for learning 3D human pose priors."
+unknown data distribution,score-based generative model,"Given samples from an unknown data distribution, the score-based generative model aims at learning a score function to approximate the distribution."
+markov chain monte carlo (mcmc),langevin dynamics (ld),"MCMC sampling generates a new sample, such as LD"
+langevin dynamics (ld),step size ϵ,LD can be written as 2∇x log pdata(˜xt−1) +˜xt = ˜xt−1 when given a step size ϵ
+"gaussian noise zt ∼ n (0, i)",langevin dynamics (ld),"LD involves Gaussian noise zt ∼ N (0, I)"
+denosing score-matching (dsm),denoising score-matching (dsm),DSM proposes a tractable objective by pre-specifying a noise distribution and training a score network
+score network,optimial score network holds,DSM guarantees the optimal score network holds s∗
+optimal score network,score θ(x) = ∇x log pdata(x),The optimal score network holds the score θ(x) = ∇x log pdata(x)
+3d poses,3d pose completion,3D poses (c ∈ RJ×3) for 3D pose completion
+3d poses,pose generation,Ø for pose generation
+3d poses,denoising,Ø for pose generation and denoising
+pose generation,denoising,Ø for pose generation and denoising
+condition masking strategy,task conditions,introduce a condition masking strategy to unify different task conditions
+condition masking strategy,model,empower the model to handle occlusions
+c,observation,"c can be any form of observation, e.g., image features or human silhouettes for recovering 3D poses from the image domain"
+x,3d representation,"x could also be different forms of 3D representation, e.g., joint rotation in SMPL [37]"
+prior model,downstream tasks,"With a learned prior model, different downstream tasks can be formulated as a unified generative problem"
+prior model,generate new samples,"i.e., generate new samples from pdata(x"
+pose prior,gradient fields,Learning Pose Prior with Gradient Fields
+pose prior,denoising score matching (dsm),We adopt an extension [59] of Denoising Score Matching (DSM) [62] to learn the score ∇x log pdata(x
+pose prior,reverse sampling process,sample plausible poses from the data distribution pdata(x
+forward diffusion process,reverse sampling process,The whole framework consists of a forward diffusion process and a reverse sampling process
+forward diffusion process,perturb poses via sde,"Following [59], we construct a time-dependent diffusion process indexed by a continuous time variable"
+diffusion process,time-dependent,"The diffusion process described in the context is time-dependent, with x(t) representing the process at time t."
+x(0),p0,x(0) follows the data distribution p0 in the context.
+x(t),pt,x(T) follows the diffused prior distribution pT in the context.
+stochastic process,continuous-time,The perturbation procedure in the context traces a continuous-time stochastic process.
+itˆo sde,solution,"The perturbation procedure can be modeled by the solution to an Itˆo SDE as described in references [19, 20]."
+drift coefficient,diffusion coefficient,"The drift coefficient (f(·, t)) and the diffusion coefficient (g(t)) are elements involved in the perturbation process."
+brownian motion,white noise,Brownian motion and white noise (represented by w and dw) play a role in the perturbation process.
+sdes,perturb the pose,"Various designs of Stochastic Differential Equations (SDEs) are used to perturb the pose x, with different choices of f(·, t) and g(t)."
+subvp sde 2,pose,The subVP SDE 2 proposed in [59] is used to perturb human poses x(0) to a Gaussian distribution pT.
+pose sample,gaussian noise,"By reversing the perturbation process, a pose sample x(0) is obtained from a Gaussian noise distribution x(T)."
+reverse-time sde (rsde),diffusion process,The reverse is another diffusion process described by the reverse-time SDE (RSDE) as detailed in the context.
+brownian motion,reverse time,Brownian motion at reverse time is denoted by ¯w
+eq. 5,simulation,"In order to simulate Eq. 5, we need to know ∇x log pt(x"
+neural network,score network,"A neural network is trained to estimate the score network sθ(x, t"
+condition space,time-dependent score network,"The time-dependent score network sθ(x, t"
+objective,eq. 6,"The objective can be written as: Et∼U (0,T ){λ(t)Ex(0)∼p0(x"
+well-trained score network,poses,"Given a well-trained score network sθ(x, t"
+simulated reverse-time sde,predictor-corrector (pc) sampler,"To improve the sample quality, the reverse-time SDE is simulated via a Predictor-Corrector (PC) sampler [59]2.4.3"
+masked condition,hierarchical masking strategy,"To handle different applications and enhance the versatility, a hierarchical masking strategy is designed to randomly mask the task condition c while training sθ(x, t"
+mask,task condition,The mask is applied to the task condition while training to control the information flow and features learned by the model.
+mask,hierarchy,"A 3-level mask hierarchy is designed to handle human-pose-related tasks, consisting of Mhuman, Mpart, and Mjoint."
+mhuman,condition,"Mhuman determines if a condition is fully masked out with a certain probability, impacting the pose prior pdata(x"
+mpart,human body part,"Mpart decides whether each human body part should be masked out with a specific probability, aiding in pose completion by handling occlusions."
+mjoint,human joint,"Mjoint determines if each human joint should be masked out independently with a certain probability, assisting in pose completion by addressing occluded joints."
+model,task condition,The model is augmented with the mask hierarchy during training to improve performance in human-pose-related tasks.
+dataset,evaluation metrics,Summaries of datasets and evaluation metrics are provided in this section to assess the model's performance in different scenarios.
+model,gfpose,"The effectiveness and generalizability of GFPose are demonstrated under various problem settings, such as pose estimation, denoising, completion, and generation."
+gfpose,design factors,The design factors of GFPose are analyzed in the context of 3D human pose estimation to understand their impact on performance.
+dataset,human3.6m (h3.6m),"Human3.6M (H3.6M) is a large-scale dataset used for 3D human pose estimation, containing millions of poses and corresponding images from various actors."
+dataset,3d human pose estimation,"The dataset mentioned is used for 3D human pose estimation, indicating a relationship between the two concepts."
+dataset,poses,"The dataset consists of 3.6 million poses, suggesting a direct relation between the dataset and poses."
+dataset,images,"The dataset also contains corresponding images, pointing to an association between the dataset and images."
+actors,activities,"The 11 actors are performing 15 daily activities, indicating a link between the actors and activities."
+models,subjects,"The models are trained on specific subjects (1, 5, 6, 7, 8) for evaluation, showing a relationship between models and subjects."
+mpjpe,protocols,"Performance evaluation is done using Mean Per Joint Position Error (MPJPE) following two protocols, establishing a relationship between MPJPE and protocols."
+gt,3d joint coordinates,"Protocol #1 computes MPJPE between the ground-truth (GT) and the estimated 3D joint coordinates, linking GT to 3D joint coordinates."
+gt,prediction,"Protocol #2 computes MPJPE after aligning GT and prediction, identifying a connection between GT and prediction."
+model,3d hypothesis,"The model generates 3D hypothesis that is evaluated against the ground truth, creating a relationship between the model and 3D hypothesis."
+3dhp,indoor scenes,"MPI-INF-3DHP (3DHP) features complex cases including indoor scenes, linking 3DHP to indoor scenes."
+model,h3.6m dataset,"The model trained on H3.6M dataset is directly applied to 3DHP without extra finetuning, indicating a connection between the model and the dataset."
+sh,mpii dataset,"Stacked Hourglass network (SH) is pretrained on the MPII dataset, establishing a link between SH and MPII dataset."
+2d pose conditions,3d human pose estimation,2D pose conditions are related to 3D human pose estimation as they are examples of pose conditions.
+sh,mpii dataset,"SH is pretrained on the MPII dataset, indicating a relationship between the two."
+sh,h3.6m dataset,"SH is finetuned on the H3.6M dataset, highlighting a relationship between SH and the H3.6M dataset."
+subvp sde,time range,"The time range of subVP SDE is set to be between 0 and 1.0, establishing a relationship between subVP SDE and the time range."
+backbone,score network,"The vanilla fully connected network is chosen as the backbone of the score network, indicating a relationship between the backbone and the score network."
+gfpose,gnns,"GFPose can exhibit competitive results with a simple backbone, contrasting recent works that use well-designed GNNs as their backbone."
+gfpose,transformers,"GFPose can exhibit competitive results with a simple backbone, contrasting recent works that use Transformers as their backbone."
+residual blocks,hidden dimension,"We use 2 residual blocks and set the hidden dimension of our score network to 1024, indicating a relationship between the two."
+exponential moving average,training process,"We adopt an exponential moving average with a ratio of 0.9999 and a quick warm start to stabilize the training process, showing a relationship between the moving average and the training process."
+additional data augmentation techniques,previous works,"We do not use additional data augmentation techniques commonly used in previous works, highlighting a contrast in approach."
+gfpose,batch size,"We train GFpose with a batch size of 1000, indicating a relationship between GFpose and the batch size."
+gfpose,learning rate,"We train GFpose with a learning rate of 2e − 4, showing a relationship between GFpose and the learning rate."
+gfpose,adam optimizer,"We train GFpose with an Adam optimizer, illustrating a relationship between GFpose and the optimizer."
+unified model,downstream applications,"We can train a unified model for all downstream applications, suggesting a relationship between the unified model and downstream applications."
+2d poses,last dimension,"When training with 3D pose conditions, zeros are added to the last dimension of the 2D poses for a unified condition representation, establishing a relationship between 2D poses and the last dimension."
+independent conditions,separate models,"It is noted that separate models can be trained for each task with independent conditions and masking strategies, indicating a relationship between independent conditions and separate models."
+models,conditions,Models are trained under different conditions and masking strategies
+hpj-xxx,masking strategy,HPJ-xxx denotes the masking strategy used during training
+t,probability,T is used to denote the probability 1.0
+multi-hypothesis,3d pose estimation,The concept of multi-hypothesis is applied in 3D pose estimation
+gfpose,3d poses,GFPose is used to generate multiple 3D poses conditioned on a 2D observation
+2d pose,3d pose estimates,S 3D pose estimates are produced for each detected 2D pose
+samples,performance,The performance is compared when different numbers of samples are drawn
+gfpose,datasets,GFPose is evaluated on different datasets to assess cross-dataset generalization
+3dhp,method,3DHP is the key term in the context related to the method mentioned in the paragraph
+method,performance,The method achieves consistent performance as mentioned in the context
+method,previous methods,The method outperforms previous methods mentioned in the context
+gfpose,previous methods,GFPose surpasses previous methods as mentioned in the context
+gfpose,transfer learning,GFPose is designed for transfer learning as mentioned in the context
+gfpose,single-hypothesis,GFPose is evaluated under a single-hypothesis setting as mentioned in the context
+gfpose,sota probabilistic approaches,GFPose outperforms the state-of-the-art probabilistic approaches in the context
+gfpose,likelihood estimation,GFPose can better estimate the likelihood as mentioned in the context
+gfpose,plain fully-connected network,GFPose can achieve comparable results to the state-of-the-art deterministic methods even with a plain fully-connected network as mentioned in the context
+sota deterministic methods,specifically designed architecture,SOTA deterministic methods use specifically designed architecture as mentioned in the context
+oikarinen et al.,sharma et al.,Authors of different papers in the context
+sharma et al.,wehrbein et al.,Authors of different papers in the context
+wehrbein et al.,ours,Authors of different papers in the context
+ours,method,Relationship between the term 'Ours' and the term 'Method' in the table content
+li et al.,wehrbein et al.,Authors of different papers in the context
+li et al.,wehrbein et al.,Authors of different papers in the context
+wehrbein et al.,li et al.,Reverse relation of authors of different papers in the context
+li et al.,li et al.,Authors of the same paper in the context
+3dhp dataset,green screen,Dataset and scene mentioned in the text
+gfpose,graph networks,Techniques mentioned in the context
+gfpose,cpn,Techniques mentioned in the context
+gfpose,mpjpe measurements,Performance metric mentioned in the text
+gfpose,deterministic counterpart,"GFPose consistently outperforms its deterministic counterpart on both same- and cross-distribution tests, demonstrating higher accuracy and robustness."
+learning score,learning deterministic mapping,Learning score is argued to be a better alternative to learning deterministic mapping for 3D pose estimation.
+2d pose estimation algorithms,mocap systems,2D pose estimation algorithms and MoCap systems often suffer from occlusions resulting in incomplete 2D TypeProbabilisticDeterministicMethod.
+li et al.,wehrbein et al.,Li et al. and Wehrbein et al. are mentioned as authors in the context.
+martinez et al.,ci et al.,Martinez et al. and Ci et al. are mentioned as authors in the context.
+mpjpe(mm),80.9,MPJPE(mm) value of 80.9 is reported in the context.
+mpjpe(mm),49.9,MPJPE(mm) value of 49.9 is reported in the context.
+probabilistic method,deterministic methods,The context demonstrates that the probabilistic method can achieve competitive results under the single-hypothesis setting for the first time.
+probalistically trained score model,deterministically trained counterpart,Side-by-side comparison between the probabilistically trained score model and the deterministically trained counterpart is shown in Table 4.
+2d poses,hourglass,Hourglass detected 2D poses (DT) and tested with different 2D pose distributions.
+n,gaussian noise,N indicates Gaussian noise.
+posing distributions,hourglass,Hourglass detected 2D poses (DT) and tested with different 2D pose distributions.
+mpjpe,protocol #1,We report MPJPE(mm) under Protocol#1.
+minmpjpe,protocol #1,We report minMPJPE(mm) with 200 samples under Protocol #1.
+hpj-001,hpj-020,"We train two separate models with masking strategy HPJ-001 and HPJ-020 for random missing joints and body parts, respectively."
+hpj-001,[30],Our HPJ-001 model significantly outperforms [30] even though they train 2 models to deal with different numbers of missing joints while we only use one model to handle varying numbers of missing joints.
+masking strategy,gfpose,"As a general pose prior model, GFPose can also help to recover an intact 3D human pose from incomplete 2D/3D observations. Due to the condition masking strategy, fine-grained completion can be done at either the joint level or body part level."
+gfpose,incomplete 2d pose estimates,We first evaluate GFPose given incomplete 2D pose estimates. This is a very common scenario in 2D human pose estimation.
+body parts,camera view,Body parts are often out of the camera view and body joints are often occluded by objects in the scene.
+body parts,camera view,Body parts are often out of the camera view.
+body parts,body joints,Body joints are often occluded by objects in the scene.
+models,2d incomplete poses,Two separate models conditioning on 2D incomplete poses.
+models,hpj-001,One of the models is HPJ-001.
+models,hpj-020,The other model is HPJ-020.
+models,random missing joints,Models are trained to recover from random missing joints.
+table 5,minmpjpe,Reported minMPJPE in Table 5.
+method,[30],The method outperforms [30] by a large margin.
+method,missing joints,Method shows a smaller performance drop when the number of missing joints increases.
+occluded body parts,numerical results,More numerical results on recovering from occluded body parts are provided.
+joints,contextual information,Less contextual information can be explored to infer joint locations due to occlusion.
+gfpose,[30],GFPose outperforms [30] in most cases.
+occluded joints,gfpose,GFPose recovers from 6 occluded joints while [30] recovers from only 1 occluded joint.
+gfpose,pose prior,GFPose learns a strong pose prior.
+lower body,upper body,The lower body is completed by GFPose given only the upper body.
+3d pose,partial 3d observation,3D pose is recovered from partial 3D observation.
+missing legs,vr applications,Completing the missing legs for characters has potential applications in VR applications.
+metaverse,gfpose,GFPose can be used to recover missing 3D body parts in metaverse.
+vr applications (metaverse),gfpose,GFPose can be directly used to recover missing 3D body parts in VR applications and is trained with 3D poses as conditions.
+gfpose,3d poses,GFPose is trained with 3D poses as conditions to recover missing 3D body parts.
+gfpose,hpj-020,The masking strategy HPJ-020 is adopted for training GFPose.
+gfpose,minutes mpjpe,"Table 6 shows the minMPJPE, indicating GFPose performs well in completing partial 3D poses."
+arms,legs,"Legs are more difficult to recover than arms, possibly due to the greater freedom of arms."
+arms,plausible solution space,"Compared to legs, the plausible solution space of arms is not well constrained given the positions of the rest of the body."
+upper body,lower body,Figure 3 shows qualitative results of completing the lower body given the upper body.
+score-based models,gfpose,"Due to the denoising nature of score-based models, GFPose can be used to denoise MoCap data."
+gfpose,noisy mocap dataset,GFPose is evaluated for denoising effect on a noisy MoCap dataset with uniform noise and Gaussian noise.
+gfpose,hpj-t00,The masking strategy HPJ-T00 is used to train GFPose for denoising MoCap data.
+gfpose,masking strategy hpj-t00,GFPose is conditioned on Ø and the initial state x(T) is replaced with noisy pose using a masking strategy HPJ-T00.
+noise,gfpose,GFPose can improve the pose quality by a certain percentage under different types and intensities of noise.
+clean dataset,gfpose,"GFPose introduces moderate extra noise on the clean dataset, indicating a denoising process."
+mpjpe (mm),gaussian noise,MPJPE (mm) is reported under Protocol #2 before and after denoising for both small and large variance Gaussian noise.
+previous works,smpl,"Previous works focus on learning pose priors in the SMPL parameter space, while the current method learns pose priors on joint locations."
+smpl,parameter space,SMPL is in the parameter space
+method,pose priors,The method learns pose priors on the joint locations
+method,denoising effect,It is hard to directly compare the denoising effect between the method and previous works
+pose-ndf,denoising performance,Pose-NDF shows the denoising performance as a reference with average noise intensity of 93.0mm and per-vertex error of 79.6mm
+pose-ndf,temporal information,Pose-NDF leverages additional temporal information to enforce smoothness
+gfpose,pose generator,GFPose can be used as a pose generator to produce diverse and realistic 3D poses
+gfpose,masking strategy hpj-t00,GFPose is trained with a masking strategy HPJ-T00
+gfpose,random poses,GFPose is conditioned on Ø to generate random poses from pdata(x)
+pose estimator,determined pose,A deterministic pose estimator is trained on the generated data and evaluates it on the test set of H3.6M
+pose estimator,satisfactory performance,The pose estimator gets satisfactory performance only when the generated data are both diverse and realistic
+gfpose,"177,200 poses","177,200 poses are sampled from GFPose to compose the synthetic dataset"
+h3.6m training set,"1,559,752 poses","The original H3.6M training set consists of 1,559,752 poses"
+pose estimator,moderate performance,The pose estimator can achieve moderate performance when trained only with the synthetic data
+estimator,performance,The estimator can achieve moderate performance when trained only with the synthetic data.
+estimator,training,The generated data can also serve as an augmentation to the existing H3.6M training set and further benefit the training of a deterministic pose estimator.
+data,augmentation,The generated data can also serve as an augmentation to the existing H3.6M training set.
+data,synthetic data,Experiment with different scales of real data and synthetic data to simulate two typical scenarios where Mocap data are scarce or abundant.
+mocap data,mocap data,Table 8 mentions augmenting training data with sampled poses from GFPose.
+synthetic data,performance improvement,Increasing the size of synthetic data will continuously improve performance when the size of Mocap data is small.
+mocap data,performance improvement,Complementing Mocap data with a small proportion of synthetic data can boost performance when the size of Mocap data is large.
+gfpose,pose generator,The value of GFPose as a pose generator is further demonstrated.
+training data,sampled poses,Training data can be augmented with sampled poses from GFPose.
+model,minmpjpe,Comparisons are made between different models based on minMPJPE under Protocol #1 in the Ablation Study.
+ablation study,model,"The ablation study focuses on different factors that affect the performance of the model on the 3D pose estimation task, including the number of sampling steps, depth, and width of the network."
+ablation study,sampling steps,The ablation study shows that more sampling steps do not necessarily improve the reconstruction accuracy but greatly reduce the inference speed.
+gfpose,3d human pose prior,GFPose is introduced as a versatile framework to model the 3D human pose prior via denoising score matching.
+gfpose,condition masking strategy,A condition masking strategy is proposed to enhance the versatility of GFPose by incorporating pose prior and task-specific conditions into gradient fields for various applications.
+acknowledgment,siyuan huang,The acknowledgment section expresses gratitude towards Siyuan Huang for valuable suggestions provided during the early stage of the work.

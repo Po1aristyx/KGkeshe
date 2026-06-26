@@ -1,0 +1,220 @@
+node_1,node_2,edge
+model-based deep learning,data availability,Model-based deep learning has achieved successes due to the availability of large-scale real-world data.
+model-based deep learning,large-scale real-world data,Model-based deep learning has achieved successes due to the availability of large-scale real-world data.
+dataset distillation,large real-world datasets,Dataset distillation involves distilling information from large real-world datasets into tiny and compact synthetic datasets.
+dataset distillation,synthetic datasets,Dataset distillation involves distilling information from large real-world datasets into tiny and compact synthetic datasets.
+gradient-matching methods,synthetic dataset,State-of-the-art methods primarily rely on learning the synthetic dataset by matching the gradients obtained during training between the real and synthetic data.
+accumulated trajectory error,discrepancy between distillation and evaluation,Gradient-matching methods suffer from the accumulated trajectory error caused by the discrepancy between the distillation and subsequent evaluation.
+weights trained on synthetic data,accumulated errors perturbations,The weights trained on synthetic data are robust against the accumulated errors perturbations with the regularization towards the flat trajectory.
+flat trajectory distillation (ftd),gradient-matching methods,FTD is shown to boost the performance of gradient-matching methods by up to 4.7% on a subset of images of the ImageNet dataset with higher resolution images.
+imagenet dataset,higher resolution images,"The ImageNet dataset mentioned is associated with higher resolution images, indicating that the dataset contains images with increased image quality."
+method,datasets of different resolutions,"The method is validated with datasets of different resolutions, showcasing its effectiveness and generalizability on various types of datasets."
+method,neural architecture search,"The method's applicability extends to neural architecture search, demonstrating its versatility in different applications within the field."
+deep learning,successes,"Modern deep learning has achieved astounding successes in various fields, showcasing its progress and impact."
+deep neural networks (dnn),large-scale real-world data,Deep Neural Networks (DNN) have been successful in exploiting large-scale real-world data for better performance in various fields.
+mtt,deep neural networks (dnn),"MTT is mentioned in the context as a field and the Deep Neural Networks (DNN) are mentioned in relation to large-scale real-world data, implying a relationship between the two concepts."
+deep neural networks (dnn),model distillation,"Deep Neural Networks (DNN) are used in model distillation studies to condense the scale of models by distilling knowledge from a teacher model into a compact student one, indicating a relationship between DNN and model distillation."
+model distillation,dataset distillation,"Model distillation studies have led to the consideration of dataset distillation, which aims to condense the size of real-world datasets, suggesting a relationship between model distillation and dataset distillation."
+dataset distillation,wang et al.,"The authors Wang et al. were the first to formally study dataset distillation, proposing a method that models a regular optimizer and uses an additional optimizer to update the synthetic dataset pixel-by-pixel, linking dataset distillation to the work by Wang et al."
+dataset,optimizer,An additional optimizer is used to update the synthetic dataset pixel-by-pixel.
+dd,condensing datasets,"Performance of DD degrades significantly compared to training on the real dataset, but a promising solution for condensing datasets has been revealed."
+dataset,pixel-by-pixel,An additional optimizer is used to update the synthetic dataset pixel-by-pixel.
+evaluation standard,synthetic datasets,An evaluation standard for synthetic datasets has been introduced in contrast to conventional methods.
+distilled set,neural networks,"Learned distilled set is used to train randomly initialized neural networks, and authors evaluate their performance on the real test set."
+generative model,synthetic dataset,Such et al. employed a generative model to generate the synthetic dataset.
+inner regular optimization,kernel-ridge regression problem,Nguyen et al. reformulated the inner regular optimization of DD into a kernel-ridge regression problem.
+synthetic dataset,bi-level optimization,DC optimizes the synthetic dataset explicitly instead of learning it through a bi-level optimization like DD does.
+dc,gradient-matching approach,Zhao and Bilen pioneered a gradient-matching approach DC for learning the synthetic dataset by minimizing the distance between gradients calculated from the real dataset and the synthetic dataset.
+real dataset,synthetic dataset,DC learns the synthetic dataset by minimizing the distance between gradients calculated from the real dataset and the synthetic dataset.
+dc,follow-up studies,"Follow-up studies on gradient-matching have been proposed to enhance DC from various perspectives like data augmentation, feature alignment, and long-range trajectory matching."
+alignment,long-range trajectory matching,Both alignment and long-range trajectory matching are methods studied in the context. These methods are compared in terms of their strengths and weaknesses.
+training phase,testing phase,The training and testing phases are mentioned and contrasted in the context. The discrepancy between these two phases is highlighted as a weakness in the system.
+weights,trajectory,"The trajectory of weights is mentioned, which is optimized to reproduce the trajectory. The discrepancy in the starting weights between training and testing phases leads to errors in the converged weights."
+starting weight,converged weight,The discrepancy in the starting weights leads to errors in the final converged weights. This discrepancy is identified as a source of error in the system.
+loss difference,accumulated trajectory error,"The concept of loss difference is linked to the concept of accumulated trajectory error, which grows as the optimization algorithm progresses."
+synthetic dataset,gradient-matching methods,The synthetic dataset optimized by gradient-matching methods is mentioned in the context. The dataset is described as generalizing to various starting weights but not robust enough to mitigate the perturbation caused by accumulated trajectory error.
+robust learning,perturbations,Robust learning is suggested as an approach to minimize error in the system by intentionally adding perturbations to the starting weights. This approach aims to make the system more resilient to errors.
+robust learning,perturbations,Robust learning adds perturbations to the starting weights intentionally during training to make the system robust to errors.
+robust learning,real dataset,Robust learning increases the amount of information of the real dataset to be distilled.
+real dataset,distillation,Distillation from the increased information results in convergence issues and degrades the final performance.
+synthetic dataset,accumulated trajectory error,The synthetic dataset enhances its robustness to the accumulated trajectory error at no cost.
+perturbation of the weights,flat trajectory,Regularizing the training on the real dataset to a flat trajectory that is robust to the perturbation of the weights helps in minimizing the accumulated trajectory error.
+perturbation of the weights,inaccuracies,"The synthetic dataset, by enhancing its robustness to the perturbation of the starting weights, is able to ameliorate the accumulation of inaccuracies during the testing phase."
+gradient-matching methods,proposed method,Our proposed method is compatible with the gradient-matching methods and boosts their performances.
+proposed method,accumulated error,Extensive experiments demonstrate that our solution minimizes the accumulated error and outperforms the vanilla trajectory matching method on various scenarios.
+solution,accumulated error,The solution mentioned in the context aims to minimize the accumulated error.
+solution,vanilla trajectory matching method,The solution outperforms the vanilla trajectory matching method on various datasets.
+solution,cifar-10,The solution's performance was evaluated on datasets including CIFAR-10.
+solution,cifar-100,The solution's performance was evaluated on datasets including CIFAR-100.
+solution,tinyimagenet,The solution's performance was evaluated on subsets of the TinyImageNet dataset.
+solution,imagenet,The solution's performance was evaluated on the ImageNet dataset.
+solution,performance accuracies,The solution achieved specific performance accuracies on CIFAR-100.
+solution,images per class,The solution achieved certain performance results with different numbers of images per class.
+solution,state-of-the-art work,The solution's performance was compared to the previous state-of-the-art work by referencing [1].
+solution,subset of imagenet dataset,The solution significantly improved the performance on a subset of the ImageNet dataset.
+problem statement,dataset distillation,The context elaborates on the problem statement of Dataset Distillation.
+real dataset t,synthetic dataset s,Dataset Distillation involves synthesizing a new dataset (S) much smaller than the original real dataset (T).
+model f trained on s,model f trained on t,The goal of Dataset Distillation is to train a model on the synthetic dataset (S) to achieve comparable performance to the model trained on the original dataset (T).
+class,s,Each class of S contains ipc (images per class) examples.
+thetas,s,"We denote the optimized weight parameters obtained by minimizing an empirical loss term over the synthetic training set S as θS = arg minθ(ci)(si,yi)∈Sℓ(fθ, si, yi)."
+s,dataset distillation,"Dataset Distillation aims at synthesizing a synthetic dataset S to be an approximate solution of the optimization problem SDD = arg minS⊂Rd×Y,"
+wang et al.,dataset distillation,"Wang et al. [45] proposed DD to solve S by optimizing Equation 1 after replacing TTest with T, i.e., minimizing LT (fθS ) directly because TTest is inaccessible."
+dd,performance,"Unfortunately, DD's performance is poor because optimizing Equation 1 only provides limited information for distilling the real dataset T into the synthetic dataset S."
+zhao et al.,gradient-matching method dc,This motivated Zhao et al. [50] to propose a so-called gradient-matching method DC to match the informative gradients calculated by T and S at each iteration to enhance the overall performance.
+l(s),dc,"Namely, they considered solving, where L(S) = D∇θm LS (fθm ),∇θmLT (fθm)SDC = arg min"
+theta0,thetas,"In the definition of L(S), θm contains the weights updated from the initialization θ0 with T at iteration m."
+initialization,weights,The initial set of weights θ0 is randomly sampled from an initialization distribution Pθ
+update,total number,M in Equation 2 is the total number of update steps
+dc,l(s),"At each distillation (training) iteration, DC [50] minimizes the L(S) as defined in Equation 3"
+gradient-matching methods,dataset distillation,Methodology: The gradient-matching methods as discussed in section 2 constitute a reliable and state-of-the-art approach for dataset distillation
+gradients,weights,The gradients calculated in the evaluation (testing) phase match a short range of gradients with respect to a sets of the weights trained with the real dataset
+teacher trajectory,student trajectory,Illustration of trajectory matching: The synthetic dataset S is optimized to match the segments of the student trajectory with the teacher
+student trajectory,teacher trajectory,The segments of the student trajectory are matched with the teacher trajectory in the distillation phase.
+entire student trajectory,accumulated trajectory error,The entire student trajectory and the accumulated trajectory error ϵt in the evaluation phase is shown. The aim is to minimize this accumulated trajectory error.
+discrepancy,accumulated trajectory error,The discrepancy between the distillation (training) and evaluation (testing) phases results in a so-called accumulated trajectory error.
+momentum tuned training (mtt),gradient-matching method,MTT is an instance of a gradient-matching method to explain the existence of an error.
+mtt,accumulated trajectory error,MTT solves for S to mitigate the accumulated trajectory error.
+mtt,dc,"In contrast to DC, MTT matches the accumulated gradients over several steps to further improve performance."
+gradient,accumulated change of weights,"The gradient ∇θLS (fθ0) is the input for the function A, which calculates the accumulated change of weights after n iterations"
+mtt,synthetic dataset s,MTT learns an informative synthetic dataset S to provide reliable information to the optimizer A
+a,weights,A utilizes information from dataset S to map the weights sampled from distribution Pθ0 into an approximately-optimal parameter space W
+teacher trajectories,buffer phase,Teacher trajectories are prerecorded in the buffer phase to train until convergence on the real dataset T
+ground truth trajectories,teacher trajectories,Ground truth trajectories are also known as teacher trajectories and are prerecorded in the buffer phase
+teacher trajectories,real dataset t,Teacher trajectories are trained until convergence on the real dataset T with a random initialization
+distillation phase,student trajectory,"In the distillation phase, a student trajectory is randomly sampled and used to initialize the trajectory"
+student trajectory,teacher trajectory,The student trajectory is initialized from the teacher trajectory and is used to update weights in the distillation phase.
+synthetic dataset s,l(s),The synthetic dataset S is obtained by minimizing the loss function L(S) to provide guidance for weight updates.
+distillation phase,matching error,"The matching error, defined as δt, can be minimized in the distillation phase to improve the optimization procedure."
+student trajectory,accumulated trajectory error,"In the evaluation phase, the student trajectory's optimization procedure leads to accumulated trajectory error due to discrepancies in weight initialization."
+accumulated trajectory error,difference between the weights from the teacher and student trajectory,"The discrepancy results in an accumulated trajectory error, which is the difference between the weights from the teacher and student trajectory in the segment"
+accumulated trajectory error,initialization discrepancy between the distillation phase and the evaluation phase,"The initialization discrepancy between the distillation phase and the evaluation phase will incur an initialization error, representing the difference in accumulated gradients"
+accumulated trajectory error,accumulation of errors in subsequent segments,"The accumulated trajectory error continues to accumulate the initialization error, the matching error, and the error in the previous segment. It impacts the accumulation of errors in subsequent segments and degrades the final performance"
+accumulated trajectory error,flat trajectory,"From Equation 8, minimizing the accumulated trajectory error helps reduce the accumulated trajectory error"
+flat trajectory,reduce the accumulated trajectory error,Flat Trajectory is mentioned as a method that helps reduce the accumulated trajectory error.
+equation 8,minimize ∆ϵt+1 = ϵt+1 − ϵt = it + δt+1,Equation 8 is mentioned as part of the process to minimize the error term ∆ϵt+1.
+distillation phase,evaluation phase,The existence of the initialization error It is explained by the gap between the distillation and evaluation phases.
+synthetic dataset s,robust to the perturbation ϵ in the distillation phase,Designing a synthetic dataset S that is robust to perturbation ϵ in the distillation phase involves adding random noise to initialize the weights.
+solution to equation 9,degradation of the final performance when the number of images per class of s is not large,Solving Equation 9 results in degradation of final performance when the number of images per class of S is small.
+distribution,parameter space w,"The distribution is spread out into the parameter space W, which is defined as {θ"
+ipc,class,"The information per class (ipc) is mentioned in relation to the class, where having larger ipc values from S is necessary for ensuring convergence."
+ftd,teacher trajectory,"The FTD approach proposes to regularize the teacher trajectory to a flat trajectory for distillation, aiming to distill a synthetic dataset with a flat standard training trajectory that is robust to weight perturbations."
+buffer phase,teacher trajectory,"FTD improves the buffer phase to make the teacher trajectory robust to weight perturbation, guiding the distillation gradient update to synthesize a dataset with a flat trajectory characteristic in a standard optimization procedure."
+it,trajectory error,"The goal is to minimize It to ameliorate the adverse effect caused by ϵt. The trajectory error, represented as It, can be rewritten using a first-order Taylor series approximation to find θ∗ that minimizes ℓ2 norm of ϵt."
+θ∗,trajectory error,"The accumulated trajectory error Equation 8 is rewritten to find θ∗ that approximately minimizes the ℓ2 norm of ϵt, in an effort to ameliorate the adverse effect caused by ϵt."
+a,θ,"A is the first-order optimizer sans momentum and has been modeled as a function in Equation 4. Also, because θ = θ∗t + ϵ, we have ∂θ/∂ϵ = 1."
+a,η,A uses a learning rate denoted by η.
+θ,ϵ,"θ = θ∗t + ϵ, so ∂θ/∂ϵ = 1."
+θ,fθ∗,θ appears in the equation ∂∇θLS (fθ∗)tθt· ∂∇θLS (fθ∗)∂θ· ∂θ.
+fθ∗,t,fθ∗ is related to t in the equations ∂∇θLS (fθ∗)tθt· ∂∇θLS (fθ∗)∂θ· ∂θ.
+θ,t,θ and t appear together in the equations ∂∇θLS (fθ∗)tθt· ∂∇θLS (fθ∗)∂θ· ∂θ.
+θ,i,"θ appears in the equation for minimizing the term ∥I(θ∗t , ϵt)∥2."
+t,i,"t appears in the equation for minimizing the term ∥I(θ∗t , ϵt)∥2."
+a,ls,A is related to LS as it is part of the optimization process.
+ls,θ,LS involves θ in the optimization process.
+θ,∥∇2,θ is related to ∥∇2 through the minimization process.
+∥∇2,fθ∗,∥∇2 is related to fθ∗ through the optimization process.
+gsam,θ,GSAM is used to help solve Equation 11 involving θ.
+gsam,equation 11,GSAM is employed to help solve Equation 11.
+gsam,teacher trajectory,GSAM is used to find a teacher trajectory in the optimization process.
+sharpness,θ,The sharpness of the loss landscape is represented by S(θ).
+s,ψ,The sharpness S(θ) can be quantified by the maximum where Ψ = {ϵ : ∥ϵ∥2 ≤ ρ}.
+θ∗,minimax problem,θ∗ is obtained in the buffer phase by solving a minimax problem
+α,θ∗,α is the coefficient that balances the robustness of θ∗ to the perturbation
+teacher trajectory,trajectory error,a different teacher trajectory is proposed to reduce the accumulated trajectory error
+ftd,state-of-the-art baseline methods,FTD is compared to state-of-the-art baseline methods evaluated on datasets
+ftd,synthetic datasets,FTD emphasizes the cross-architecture performance and generalization capabilities of synthetic datasets
+synthetic dataset,neural architecture search,synthetic dataset is applied to neural architecture search and demonstrates reliability
+dataset distillation,experimental setup,"The experimental setup involves two phases - distillation and evaluation, as per the conventional procedure used in literature."
+experimental setup,synthetic set,The setup involves synthesizing a small synthetic set from a large real training set in the distillation phase.
+experimental setup,evaluation phase,"After the distillation phase, the evaluation phase utilizes the learnt synthetic set to train neural networks and test their performance on real test data."
+neural networks,synthetic set,Synthetic sets are used to train randomly initialized neural networks in the evaluation phase.
+datasets,experimental setup,"The experimental setup evaluates the method on various resolution datasets, including CIFAR10 and CIFAR100 datasets."
+datasets,comparison,"The evaluation on different datasets leads to a comparison of the performances trained with ConvNet to other distillation methods, as shown in Table 1."
+performance comparison,convnet,The comparison of performances is made between the results achieved with ConvNet and other distillation methods on CIFAR and Tiny ImageNet datasets.
+performance comparison,mtt,The reproduced results of MTT are cited in the comparison of performances on the Tiny ImageNet dataset.
+cifar-10,cifar-100,CIFAR-10 and CIFAR-100 are real datasets used for training and testing machine learning models.
+cafe+dsa,pp,"CAFE+DSA and PP are different methods or approaches in machine learning, each with its own performance metrics."
+mtt+robust learning,ftd,"MTT+Robust Learning and FTD are different techniques or methods used for training machine learning models, with performance comparison results provided in Table 2."
+ipc,real dataset,IPC and Real dataset are terms related to datasets used for training and evaluation in machine learning.
+mtt,ftd,"MTT and FTD are distillation methods used in machine learning, with MTT being the first method to apply high-resolution distillation on ImageNet subsets."
+imagenet,ftd,"FTD is a technique evaluated on ImageNet subsets with different resolutions, such as 128 × 128, showing its applicability to large-scale image datasets."
+tiny imagenet,ftd,"FTD is also evaluated on Tiny ImageNet dataset, showcasing its performance on smaller-scale image datasets."
+ftd,imagenet subsets,FTD is proposed for ImageNet subsets with a resolution of 128x128
+imagenet subsets,10 categories,The subsets are selected with 10 categories from the ImageNet dataset
+baselines,models,"Method is compared to baselines including DC, DSA, DM, CAFE, PP, and MTT"
+cifar-10,cifar-100,Evaluation of synthetic set corresponding to CIFAR-10 and CIFAR-100 using ConvNet-3
+convnet-3,"convnet (3-layer), resnet, vgg, alexnet","Evaluation of cross-architecture classification performance on ConvNet (3-layer), ResNet, VGG, AlexNet"
+"ρ = 0.01, α = 1",ftd,"Default values of ρ = 0.01, α = 1 are used while implementing FTD"
+hyperparameters,buffer phase,The details of the hyperparameters used in buffer phase are reported
+hyperparameters,distillation phase,The details of the hyperparameters used in distillation phase are reported
+distillation phase,real epochs per iteration,Distillation phase involves setting real epochs per iteration
+distillation phase,synthetic updates per iteration,Distillation phase involves setting synthetic updates per iteration
+distillation phase,image learning rate,Distillation phase involves setting image learning rate
+experiments,rtx3090 gpus,Experiments were run on two RTX3090 GPUs
+experiments,tesla v100 gpus,Experiments were run on four Tesla V100 GPUs
+ftd,baselines,FTD surpasses all baselines among the CIFAR-10/100 and Tiny ImageNet dataset
+mtt,ipc = 50,Our method improves MTT by 2.2% on the CIFAR-10 dataset with ipc = 50
+mtt,ipc = 10,Our method achieves 3.5% improvement on the CIFAR-100 dataset with ipc = 10
+mtt+robust learning,objective function,MTT+Robust learning boosts the performance of MTT by 1.1% and 0.2% with ipc = 50 on the CIFAR-10/100 datasets by using Equation 9 as the objective function of MTT
+mtt+robust learning,ipc = 1,MTT+Robust learning will incur a performance degradation with ipc = 1
+synthetic sets,"ipc = 1, 10","Part of the synthetic sets for ipc = 1, 10 of the CIFAR-100 and Tiny ImageNet datasets are visualized"
+images,semantic features,"Our images look easily identifiable and highly realistic, which are akin to combinations of semantic features"
+imagenet subsets,significance,ImageNet subsets are significant
+imagenet subsets,cifar-10/100 and tiny imagenet datasets,"ImageNet subsets are stated to be significantly more challenging than CIFAR-10/100 and Tiny ImageNet datasets due to higher resolutions, making distillation procedure difficult to converge."
+imagenet subsets,distillation methods,Existing dataset distillation methods may face out-of-memory issue when distilling high-resolution data from ImageNet subsets.
+imagenet subsets,categories,"ImageNet subsets contain 10 categories selected from ImageNet-1k following the MTT setting, capable of distilling higher-resolution images."
+imagenette subset,"imagewoof, imagefruits, imagemeow subsets","ImageNette subset, along with other subsets, is compared in Table 2, highlighting the superior performance of FTD over MTT in all subsets"
+cross-architecture generalization,dataset distillation methods,"Generalizing well across different architectures of synthetic datasets is crucial, while existing dataset distillation methods show performance degradation when trained by networks with different architectures."
+synthetic dataset,network,The synthetic dataset is trained by the network with a different architecture than the one used in distillation.
+ftd,cross-architecture performance,FTD is studied for cross-architecture performance and compared with three baselines.
+ftd,cifar-10,FTD is evaluated on CIFAR-10.
+synthetic images,convolutional networks,Synthetic images learned with FTD perform well on different convolutional networks.
+distillation method,essential features,"The distillation method should identify essential features for learning, other than merely the matching of parameters."
+ftd,flat trajectory,FTD encourages dataset distillation to seek a flat trajectory which contributes to performance gain.
+dnns,flat minima,DNNs with flat minima can generalize better than ones with sharp minima.
+flat trajectory,flat minimum,A flat trajectory contributes to the performance gain by seeking a flat minimum.
+imagenet subsets,results,The results of ImageNet subsets are cited exactly from [1].
+cifar-10,mtt,"CIFAR-10 is mentioned with ipc = 50, and MTT is reproduced. Results of DC and CAFE are cited"
+cifar-10,convnet,CIFAR-10 is used as a dataset for ConvNet method
+cifar-10,resnet18,CIFAR-10 data is used for evaluating the ResNet18 model
+cifar-10,vgg11,CIFAR-10 data is used for evaluating the VGG11 model
+cifar-10,alexnet,CIFAR-10 data is used for evaluating the AlexNet model
+mtt,dc,MTT is related to DC as results of DC are cited alongside MTT
+mtt,cafe,MTT is related to CAFE as results of CAFE are cited alongside MTT
+ftd,sharpness-aware minimization (sam),FTD implementation involves using SAM for bias training
+ftd,mtt + flat minimum,Comparison between FTD and MTT + Flat Minimum is done to demonstrate the accuracy improvement
+ftd,exponential moving average (ema),EMA with β = 0.999 is implemented in distillation phase of FTD
+exponential moving average (ema),ftd,EMA contributes to improvement in FTD's convergence
+ftd,table 4,Results of FTD with and without EMA are presented in Table 4
+ema,table 4,Results of EMA's impact on evaluation accuracies are presented in Table 4
+proposed approach,ema,The proposed approach involves using EMA for enhanced convergence
+proposed approach,ftd,The proposed approach utilizes FTD along with EMA
+proposed approach,regularization,Regulation in buffer phase for a flatter teacher trajectory contributes to the proposed approach
+proposed regularization,flatter teacher trajectory,The proposed regularization in the buffer phase for a flatter teacher trajectory contributes significantly to the performance improvement.
+proposed regularization,performance improvement,The proposed regularization in the buffer phase contributes most significantly to the performance improvement.
+proposed regularization,coeffi-cient ρ,A parameter study on the coefficient ρ showed that ρ = 0.01 is the optimal value for each dataset considered.
+proposed regularization,coeffi-cient ρ,The regularization in the buffer phase for a teacher trajectory contributes most significantly to the performance improvement.
+proposed regularization,dataset distillation,Our proposed method FTD is evaluated in neural architecture search (NAS) to demonstrate its substantial practical benefits. NAS is considered a downstream task of dataset distillation.
+nas,network architecture,NAS aims to find the best network architecture for a given dataset among a variety of architecture candidates.
+nas,dataset distillation,NAS is an important downstream task of dataset distillation.
+dataset distillation,synthetic images,Visualization example of synthetic images distilled from CIFAR-100 and Tiny ImageNet for dataset distillation.
+nas,convnets,NAS is implemented on CIFAR-10 with a search over 720 ConvNets.
+spearman’s rank correlation,top architectures,The Spearman's rank correlation shows the correlation between the rankings of top architectures searched by synthetic and real datasets.
+spearman’s rank correlation,search time,The Time column records the entire time to search for each dataset using Spearman's rank correlation.
+sam,synthetic dataset,SAM with different values of ρ is applied on the synthetic dataset obtained from MTT.
+sam,networks,SAM is used to train the networks with different values of ρ.
+mtt,ftd,MTT and FTD are standard results on CIFAR-100 with ipc=10
+ftd,cifar-100,FTD can synthesize a better and practical proxy dataset with a stronger correlation with the real dataset
+nas,cifar-10 dataset,NAS is implemented on CIFAR-10 dataset with a search space of 720 ConvNets
+nas,architecture models,NAS searches for optimal architecture using different architecture models
+synthetic dataset,real cifar-10 dataset,"Different architecture models are trained on the MTT synthetic dataset, synthetic dataset, and real CIFAR-10 dataset for 200 epochs"
+ftd,mtt,FTD achieves much higher rank correlation than MTT in every top-k ranking
+ftd,mtt,"FTD achieves a higher rank correlation than MTT in every top-k ranking, with FTD achieving a correlation of 0.87 in the top-5 ranking compared to MTT's correlation of 0.41."
+ftd,nas,"FTD is able to obtain a reliable synthetic dataset that generalizes well for NAS, as confirmed by cross-architecture and NAS experiments."
+ftd,teacher trajectories,"The optimization of teacher trajectories in existing gradient-matching methods is simplified to improve convergence of distillation. The accumulation of trajectory error may be a reason to limit the total number of training epochs of teacher trajectories, calling for further research."
+"singapore government’s research, innovation and enterprise 2020 plan",grant a18a1b0045,"The Singapore Government’s Research, Innovation and Enterprise 2020 Plan is supported under Grant A18A1b0045."
+national natural science foundation of china,grant no. 62271432,The National Natural Science Foundation of China is supported by Grant No. 62271432.
+"guangdong provincial key laboratory of big data computing, the chinese university of hong kong, shenzhen",grant no. b10120210117-kp02,The Guangdong Provincial Key Laboratory of Big Data Computing is supported by Grant No. B10120210117-KP02.
+human-robot collaborative ai for advanced manufacturing and engineering,grant no. a18a2b0046,"The Human-Robot Collaborative AI for Advanced Manufacturing and Engineering is supported by Grant No. A18A2b0046 from the Agency of Science, Technology and Research (A*STAR), Singapore."
+"advanced research and technology innovation centre (artic), the national university of singapore",project number: a-0005947-21-00,The Advanced Research and Technology Innovation Centre at the National University of Singapore is working on project number A-0005947-21-00.
+singapore ministry of education,tier 2 grant: a-8000423-00-00,The Singapore Ministry of Education is supported by Tier 2 grant: A-8000423-00-00.

@@ -1,0 +1,227 @@
+node_1,node_2,edge
+sensitive user data,gradient updates,"Sensitive user data can be reconstructed from gradient updates, breaking the key privacy promise of federated learning."
+recent work,sensitive user data,Recent work shows that sensitive user data can be reconstructed from gradient updates.
+gradient updates,federated learning,"Sensitive user data can be reconstructed from gradient updates, breaking the key privacy promise of federated learning."
+image data,text,"While success was demonstrated primarily on image data, these methods do not directly transfer to other domains such as text."
+lamp,novel attack,"In this work, we propose LAMP, a novel attack tailored to textual data, that successfully reconstructs original text from gradients."
+lamp,textual data,"In this work, we propose LAMP, a novel attack tailored to textual data, that successfully reconstructs original text from gradients."
+text,prior text probability,"Our attack is based on two key insights: modeling prior text probability with an auxiliary language model, guiding the search towards more natural text."
+prior text probability,auxiliary language model,"Our attack is based on two key insights: modeling prior text probability with an auxiliary language model, guiding the search towards more natural text."
+continuous optimization,discrete optimization,"Our attack is based on two key insights: alternating continuous and discrete optimization, which minimizes reconstruction loss on embeddings, while avoiding local minima by applying discrete text transformations."
+data privacy,client machines,Data privacy is ensured by leaving the raw data on client machines
+server,client data,Server can recover client data through a reconstruction attack on gradient updates
+reconstruction attack,gradient updates,Attacks involve modifying gradient updates to match the original updates sent by the client
+reconstruction attacks,computer vision,Most works focus on reconstruction attacks in computer vision domain
+text domain,prominent applications of fl,Comparatively less work in text domain despite applications like next-word prediction on mobile phones
+image priors,total variation,Image priors like total variation guide the reconstruction towards natural images
+image priors,text reconstruction attacks,"Use of image priors in text reconstruction attacks is missing, limiting their ability to reconstruct real client data"
+reconstruction attack,language model priors,LAMP is a new reconstruction attack leveraging language model priors to extract private text from gradients
+attacker,transformer network,Attacker has access to a snapshot of the transformer network for the attack
+network,federated learning,"The network is being trained in a federated manner, which is exemplified by the use of BERT for training."
+network,gradient,"The gradient ∇θL(x∗, y∗) computed by the client on the snapshot of the network is mentioned."
+bert,federated learning,BERT is provided as an example of a federated learning method used in training the network.
+reconstruction,gaussian distribution,The reconstruction process involves sampling from a Gaussian distribution to initialize the reconstruction.
+reconstruction,continuous optimization,The reconstruction process alternates between continuous and discrete optimization to improve the reconstruction.
+reconstruction,discrete optimization,The reconstruction process alternates between continuous and discrete optimization to improve the reconstruction.
+continuous optimization,reconstruction loss,Continuous optimization minimizes the reconstruction loss to make the current reconstruction closer to the observed client gradients.
+continuous optimization,embedding regularization term,Continuous optimization includes an embedding regularization term to improve the reconstruction.
+discrete optimization,reconstruction loss,Discrete optimization aims to choose the best candidate reconstruction based on a combination of reconstruction loss and perplexity.
+discrete optimization,transformations,Discrete optimization forms candidates by applying transformations to the reconstruction.
+discrete optimization,reconstruction,Discrete optimization aims to choose the best candidate reconstruction based on a combination of reconstruction loss and perplexity.
+gradient descent,local optimum,"The gradient descent algorithm can get stuck in a local optimum, highlighting the need for improvements in optimization."
+candidate sentences,transformations,Candidate sentences are generated using several transformations on the sequence of tokens.
+candidate,combined reconstruction loss,A candidate sentence is selected that minimizes the combined reconstruction loss and perplexity.
+gpt-2,auxiliary language model,GPT-2 is used as an auxiliary language model to measure the perplexity of each candidate.
+reconstruction attack,language model prior,The reconstruction attack utilizes a language model prior combined with a search.
+lamp,novel attack,LAMP is a novel attack for recovering input text from gradients.
+natural text,search procedure,The search procedure guides the search towards natural text.
+language model,natural text,A language model is used to guide the search towards natural text.
+language model,search procedure,A search procedure is used in conjunction with a language model for optimization.
+implementation of lamp,extensive experimental evaluation,The implementation of LAMP is evaluated extensively to demonstrate its effectiveness in reconstructing private text.
+text attacks,complex settings,Thorough experimental evaluation of text attacks in complex settings is conducted.
+federated learning,deep learning models,Federated learning is used to train deep learning models in a decentralized manner.
+individual user data,centralized server,"Individual user data is kept private and not shared during training, instead, it is used to calculate local gradient updates that are sent to a centralized server."
+user data,gradient updates,User data is used to calculate gradient updates in federated learning.
+gradients,information leakage,"Recent works have shown that gradients can leak information, contradicting the assumption of privacy in federated learning."
+image reconstruction,gradients,Recent work has demonstrated near-perfect image reconstruction from gradients.
+auxiliary model,reconstruction quality,An auxiliary model can significantly improve the quality of image reconstruction.
+prior information,reconstruction quality,Prior information can significantly improve the quality of image reconstruction.
+huang et al.,gradient leakage,Huang et al. observed gradient leakage in reconstructions.
+gradient leakage attacks,strong assumptions,"Gradient leakage attacks often make strong assumptions, namely that batch normalization statistics and ground truth labels are known."
+gradient leakage attacks,batch normalization statistics,"Gradient leakage attacks often make strong assumptions, namely that batch normalization statistics and ground truth labels are known."
+gradient leakage attacks,ground truth labels,"Gradient leakage attacks often make strong assumptions, namely that batch normalization statistics and ground truth labels are known."
+image reconstruction,attacks in other domains,"Despite substantial progress on image reconstruction, attacks in other domains remain challenging, as the techniques used for images rely extensively on domain specific knowledge."
+text,federated learning,"In the domain of text, in particular, where federated learning is often applied."
+dlg,transformer,DLG was first to attempt reconstruction from gradients coming from a transformer.
+tag,dlg,TAG extended DLG by adding an L1 term to the reconstruction loss.
+tag,optimization-based techniques,Unlike TAG and DLG which are optimization-based techniques.
+april,transformer networks,APRIL recently demonstrated an exact gradient leakage technique applicable to transformer networks.
+april,batch size,"APRIL assumes batch size of 1 and learnable positional embeddings, which makes it simple to defend against."
+attack on nlp,server,"Another attack on NLP is given in Fowl et al., but they use stronger assumption that the server can send malicious updates to the clients."
+concurrent work,reconstructing text from transformers,"Furthermore, there is a concurrent work on reconstructing text from transformers."
+concurrent work,reconstructing text from transformers,The concurrent work mentioned in [11] focuses on reconstructing text from transformers.
+gradient leakage attacks,private data,Gradient leakage attacks are attempts to obtain the private data of a client using the gradient.
+works based on heuristics,privacy guarantees,Works based on heuristics lack privacy guarantees.
+differential privacy,train models,"Differential privacy techniques train models with formal guarantees, however, it can hurt the accuracy of the trained models due to the added noise to gradients."
+concurrent work,gradient leakage attacks,The concurrent work also touches upon the topic of gradient leakage attacks.
+client,private data,The client's private data is being attempted to obtain
+client,gradient updates,Gradient updates for the client are being sent to the server
+client,optimization problem,The private data of the client is obtained by solving the optimization problem
+gradient leakage attacks,honest-but-curious servers,Gradient leakage attacks assume honest-but-curious servers
+optimization problem,distance measure,The optimization problem involves a distance measure
+gradient descent,true data,Gradient descent is used to optimize dummy data to have similar gradients to true data
+true label,gradient descent approaches,The problem simplifies with known true label when using gradient descent approaches
+tokens,embedding vectors,Tokens are converted to embedding vectors by multiplying with an embedding matrix
+embedding vectors,embedding matrix,Embedding vectors are obtained by multiplying tokens with the embedding matrix
+embedding size,chosen,embedding size is chosen by multiplying by a trained embedding matrix Wembed
+wembed,v,"Wembed is a trained embedding matrix where rows represent the embeddings of the tokens denoted as e1, e2, ..., eV ∈ Rd"
+wpos,p,Wpos is a positional embedding matrix where P is the longest allowed token sequence
+positional embeddings,"p1, p2, ..., pn","positiona embeddings denoted as p = p1, p2, ..., pn are used in addition to tokens"
+embeddings,"x1, x2, ..., xn","embeddings x = x1, x2, ..., xV are used as input to a sequence of self-attention layers"
+self-attention layers,final classification output,self-attention layers are used to calculate the final classification output given by the first output of the last self-attention layer
+larg pretrained language models,gpt-2,large pretrained language models such as GPT-2 are relied upon to assess the quality of the text produced by the continuous part of the optimization
+language models,token probability calculation,"language models such as GPT-2 are used to calculate the probability of inserting a token tn from the vocabulary of tokens to the end of the sequence of tokens t1, t2, ..., tn-1"
+likelihood,sequence,"The likelihood is calculated for a sequence of tokens t1, t2, ..., tn, where probability decreases with length."
+likelihood,negative log-likelihood,The negative log-likelihood is closely related to likelihood and is used as a measure of the quality of a produced sequence.
+sequence,perplexity,Perplexity measure is used to assess the quality of reconstructed sequences based on likelihood.
+optimization,gradient descent,"Gradient descent is used in continuous optimization, as described in Section 4.2."
+optimization,language models,"Language models are used in discrete optimization to guide the search towards more natural text reconstruction, as presented in Section 4.3."
+token,embedding,"Token and its embeddings are denoted as i in t∗ and ti in t, respectively."
+neural network,parameters,Neural network f and its parameters θ are denoted in the context.
+matrices,embeddings,"Matrices x, x∗, and e are used to represent individual embeddings xi, x∗ in the context"
+tokens,vocabulary,The number of tokens in t∗ (n) is related to the size of the vocabulary (V)
+loss,gradient,The reconstruction loss is a key component of the attack in measuring the similarity between the reconstructed gradient and the true gradient
+parameters,network architecture,The parameters of the network architecture are denoted as θi in the context
+geiping et al.,image domain,Geiping et al. discussed concepts related to the image domain.
+image domain,lamp,The image domain discussed in the context can also be instantiated using LAMP.
+lamp,loss,"LAMP can be instantiated using any loss, and there is no universally better loss."
+lamp,embedding,LAMP can also be related to embedding in the context.
+loss,l1 loss,L1 loss is less sensitive to outliers according to the context.
+loss,cosine loss,Cosine loss is independent of the gradient norm and works well for small gradients.
+embedding,regularization,"In the optimization process, embedding regularization is discussed to control the length of embedding vectors."
+embedding,self-attention,Embedding vectors grow in length due to self-attention layers in transformer networks.
+regularization,gradient error,Regularization term helps to minimize the reconstruction error in the context.
+gradient reconstruction error,regularization weighting factor,The final gradient reconstruction error optimized in LAMP is given by where αreg is a regularization weighting factor.
+token sequence,dummy token embeddings,"To reconstruct the token sequence t∗, we first randomly initialize a sequence of dummy token embeddings."
+gradient descent,reconstruction loss,We apply gradient descent on x to minimize the reconstruction loss Lrec(x).
+second-order derivative,network gradient,"A second-order derivative needs to be computed, as Lrec(x) depends on the network gradient at x."
+continuous optimization,recovery of token embeddings,Continuous optimization can often successfully recover token embeddings close to the original.
+discrete optimization,sequence transformations,"To address the issue of wrong order of token embeddings, we perform several discrete sequence transformations."
+discrete sequence transformations,reconstruction loss,The performance of discrete sequence transformations is evaluated based on both a low reconstruction loss and a low perplexity under the auxiliary language model.
+discrete sequence transformations,perplexity,The performance of discrete sequence transformations is evaluated based on both a low reconstruction loss and a low perplexity under the auxiliary language model.
+reconstruction,candidate sequence,Candidates for the new reconstruction are generated from the current reconstruction.
+swap,positions,Swap transformation selects two positions i and j uniformly at random in the sequence to swap tokens xi and xj.
+movetoken,positions,MoveToken transformation selects two positions i and j uniformly at random in the sequence to move the token xi after position j.
+movesubseq,positions,"MoveSubseq transformation selects three positions i, j, and p uniformly at random in the sequence to move the subsequence of tokens between i and j after position p."
+movepreﬁx,position,MovePreﬁx transformation selects a position i uniformly at random in the sequence to move the preﬁx of the sequence ending at position i to the end of the sequence.
+language model,generated candidates,A language model is used to check if generated candidates improve over the current sequence.
+reconstruction loss,perplexity,"The reconstruction loss, denoted as Lrec, is introduced in Section 4.2. Perplexity, denoted as Llm, is a measure by an auxiliary language model like GPT-2."
+reconstruction loss,reconstruction loss,Reconstruction loss is used in the Complete Reconstruction Attack algorithm to iteratively update the input x.
+reconstruction loss,perplexity,"In the Complete Reconstruction Attack, the Lbest is calculated as the sum of reconstruction loss and αlm multiplied by perplexity."
+perplexity,reconstruction loss,The parameter αlm determines the trade-off between the reconstruction loss and perplexity. It can influence the behavior of the attack towards reconstructing or focusing on perplexity.
+reconstruction loss,x,"In the Complete Reconstruction Attack algorithm, x is iteratively updated by subtracting the gradient of the reconstruction loss."
+x,reconstruction loss,"In the LAMP text extraction algorithm, the input x is optimized to minimize the reconstruction loss."
+projecttovocab,transform,The function PROJECTTOVOCAB is defined as transforming the input x to get the output x(cid:48)
+x,algorithm 1,The end-to-end attack is presented in Algorithm 1
+reconstruction,gaussian distribution,The reconstruction x is initialized by sampling from a Gaussian distribution
+continuous optimization,discrete optimization,"At each step, there is alternation between continuous and discrete optimization"
+continuous embeddings,nearest tokens,The continuous embeddings x are projected to respective nearest tokens based on cosine similarity
+lamp,prior work,Experimental results demonstrate the effectiveness of LAMP compared to prior work in various settings
+text length,reconstruction success,Text length is considered a key factor for the success of reconstruction from gradients
+datasets,cola,CoLA is one of the datasets considered in the experiments
+datasets,sst-2,SST-2 is one of the datasets considered in the experiments
+datasets,rottentomatoes,RottenTomatoes is one of the datasets considered in the experiments
+cola,english sentences,CoLA dataset contains English sentences annotated with binary labels
+sst-2,movie reviews,SST-2 dataset contains movie reviews annotated with a binary sentiment
+models,bert,Experiments are performed on different target models based on the BERT architecture
+bert,bertbase,Main model considered is BERTBASE with specific architecture details
+bert,bertlarge,Another model considered is BERTLARGE with specific architecture details
+bert,tinybert,Smaller model considered is TinyBERT with specific architecture details
+tinybert6,jiao et al.,TinyBERT6 is a model described by Jiao et al.
+tinybert6,bertbase,TinyBERT6 was distilled from BERTBASE
+bertbase,bertlarge,BERTBASE and BERTLARGE were pretrained on Wikipedia and BookCorpus datasets
+gpt-2,bert models,The pretrained GPT-2 model was trained on the same tokenizer used to pretrain the target BERT models
+method,dlg,The method is compared with the baseline DLG
+method,tag,The method is compared with the baseline TAG
+tag,code,TAG does not have public code
+attack,lampcos,"LAMPCos is one of the variants of the attack mentioned in Deng et al. [3], using Lcos gradient matching losses for continuous optimization."
+attack,lampl2+l1,"LAMPL2+L1 is another variant of the attack mentioned in Deng et al. [3], using Ltag gradient matching losses for continuous optimization."
+attack,bertbase,The attack was run on BERTBASE model with specific parameters.
+attack,tinybert6,The attack was also run on TinyBERT6 model with specific parameters.
+attack,bertlarge,The attack was run on BERTLARGE model with its own set of parameters due to the optimization difficulty.
+optimization,adam,Adam was used for continuous optimization with a learning rate decay factor γ applied every 50 steps for all methods and experiments.
+optimization,adamw,"For BERTLARGE models, AdamW was used with a linear learning rate decay schedule applied every step."
+hyperparameters,tag,The hyperparameters for TAG were picked separately on CoLA and RottenTomatoes using grid search on BERTBASE and applied to all networks.
+hyperparameters,lampcos,The hyperparameters for LAMPCos were picked separately on CoLA and RottenTomatoes using grid search on BERTBASE and applied to all networks.
+hyperparameters,lampl2+l1,The hyperparameters for LAMPL2+L1 were picked separately on CoLA and RottenTomatoes using grid search on BERTBASE and applied to all networks.
+bertlarge,hyperparameters,BERTLARGE experiments were conducted separately while keeping the other hyperparameters fixed.
+embedding vectors,standard gaussian distribution,The embedding vectors were first initialized with 500 random samples from a standard Gaussian distribution.
+embedding vectors,lgrad(x),The best initialization of the embedding vectors was chosen based on Lgrad(x).
+permutations,initialization,500 permutations were computed on the best initialization and the best one was chosen in the same way.
+lamp,dlg,LAMP was evaluated against DLG in the main experiments.
+lamp,tag,LAMP was evaluated against TAG in the main experiments.
+lamp,bertbase,LAMP was evaluated with BERTBASE in the main experiments.
+attacks,bertbase,Attacks were evaluated after BERTBASE had been fine-tuned for 2 epochs on each task.
+networks,vision domain,It is significantly more difficult to attack already trained networks in the vision domain.
+sequences,lengths,"For both baselines and attacks, the lengths of sequences are assumed to be known."
+architectures,batch size,The setting with batch size equal to 1 is mentioned in the context where architectures are discussed.
+ft,ﬁne-tuned model,FT is an abbreviation for a ﬁne-tuned model.
+rouge-1,rouge-2,ROUGE-1 and ROUGE-2 are metrics denoted as R-1 and R-2 respectively.
+rouge-1,rouge-l,"ROUGE-1 is related to ROUGE-L scores, denoted as R-L."
+bertbase,tinybert6,BERTBASE and TinyBERT6 are models compared in the context.
+lamp,dlg,LAMP and DLG are models mentioned in the context.
+gpt-2,sequences,The search is guided with GPT-2 to reconstruct sequences matching the original sequences closely.
+dlg,tag,DLG is compared to TAG in terms of metrics.
+rottentomatoes,sequences,RottenTomatoes poses challenges to good reconstruction with significantly longer sequences.
+tinybert6,client information,TinyBERT6 leaks a significant amount of client information as discussed.
+bertbase,client information,BERTBASE is mentioned along with the leakage of client information.
+bertbase-ft,client information,BERTBASE-FT is shown to leak a significant amount of client information.
+tinybert6,bertbase,TinyBERT6 is shown to be more vulnerable than BERTBASE.
+bertbase-ft,bertbase,BERTBASE-FT is shown to be only slightly worse in reconstruction compared to BERTBASE.
+bertbase,smaller models,"Smaller models cannot resolve the privacy issue, despite previous suggestions."
+bertlarge,deng et al. [3],BERTLARGE experiments reaffirm the observation in Deng et al. [3] that the model is highly vulnerable to all attacks.
+lampcos,bertbase,The variability of LAMPCos method is examined with respect to random initialization by running the BERTBASE experiment on CoLA with 10 random seeds.
+"r-1, r-2, r-l",bertbase,"Results of the BERTBASE experiment with 10 random seeds show R-1, R-2, and R-L of specific values, suggesting consistency in the results."
+batch sizes,prior work,"Unlike prior work, different attacks are evaluated on updates computed on batch sizes greater than 1 on the BERTBASE model."
+bertbase,rouge metrics,"Experiments show better results than the baselines on all ROUGE metrics in all experiments, except on RottenTomatoes with batch size 2, where TAG obtains slightly better ROUGE-1."
+experiments,text,Experiments show that larger batch sizes can reconstruct significant portions of text.
+gradient leakage,security threat,Gradient leakage can be a realistic security threat in practice.
+lampcos,ltag,LAMPCos is better than Ltag in most metrics on batch size 1.
+reconstructions,lamp,Sample sequence reconstructions show that LAMP is more coherent.
+baseline,reconstruction,Baseline reconstruction is outperformed by our reconstructions.
+convergence rate,baselines,Our method converges faster compared to the baselines.
+batch sizes,text reconstruction,Text reconstruction results vary for different batch sizes.
+rouge-1,rouge-2,"ROUGE-1, ROUGE-2, and ROUGE-L scores are denoted as R-1, R-2, and R-L respectively."
+tag,better baseline,TAG is compared with the better baseline in the context of text reconstruction.
+lampcos,superior,LAMPCos is superior to TAG in some cases of text reconstruction.
+mary,kissed,Mary has never kissed a man who is taller than John.
+resident evil,not,The statement mentions that Resident Evil is not something.
+friendship,mysteries,A well-made depiction of the mysteries of friendship is mentioned in the context.
+lamp,cosine loss,"In the ablation studies, different variants of LAMP are compared, including one with cosine loss."
+lamp,l1 + l2 loss,"In the ablation studies, different variants of LAMP are compared, including one with L1 + L2 loss."
+lamp,l2 loss,"In the ablation studies, different variants of LAMP are compared, including one with L2 loss."
+optimizations,nd steps,The optimization process involves utilizing a specific number of steps denoted by 'nd' in this context.
+optimizations,discrete transformations,"The optimization process can be conducted without discrete transformations, where 'nd' would be equal to 0."
+cola dataset,bertbase,The experiment involves using the CoLA dataset and the BERTBASE model with a batch size of 1.
+lamp,rouge-1 and rouge-2,"LAMP shows good results with both losses, particularly with cosine for batch size 1, and the absence of proposed features significantly impacts ROUGE-1 and ROUGE-2 scores."
+transformations,language model,Utilizing transformations without the language model (LAMPαlm=0) leads to worse results than having no transformations at all.
+continuous optimization steps,discrete optimization steps,"Alternating between continuous and discrete optimization steps is crucial for improving reconstructions, with conducting discrete optimization at the end resulting in only marginal improvements."
+networks,defended against data leakage,The experiments have been conducted under the assumption that clients have not implemented defenses against data leakage.
+vision attacks,adding gaussian noise to gradients,"Building on previous work of vision attacks, the defense strategy involves adding Gaussian noise to gradients, which is similar to DP-SGD with additional clipping."
+gaussian noise,gradients,"The process of adding Gaussian noise to gradients is mentioned, indicating a direct relationship between the two concepts as a method for privacy protection."
+gaussian noise,privacy,"Adding Gaussian noise is stated as a method for better privacy, implying a direct relationship between the two concepts in the context."
+gaussian noise,accuracy,"The trade-off between privacy and accuracy is discussed, with the statement that adding more noise can lead to worse accuracy, showing an inverse relationship between Gaussian noise and accuracy in the given scenario."
+noise,privacy,"The concept of adding noise for privacy enhancement is highlighted, indicating a direct relationship between the use of noise and privacy protection in the context."
+noise,accuracy,"A trade-off between noise addition, privacy, and accuracy is mentioned, suggesting an inverse relationship between noise level and accuracy."
+trade-off,privacy,"It is mentioned that there is a trade-off between privacy and accuracy, indicating a direct relationship between the concept of trade-off and privacy in the context."
+trade-off,accuracy,"The trade-off between privacy and accuracy is explained, highlighting an inverse relationship between the trade-off and accuracy in the given scenario."
+method,privacy,"The method of adding noise for better privacy is described, establishing a direct relationship between the method and privacy in the context."
+method,accuracy,"The impact of the method of adding noise on accuracy is discussed, pointing towards an inverse relationship between the method and accuracy."
+lamp,method,LAMP is presented as a new method for reconstructing private text data from gradients.
+lamp,language model priors,LAMP leverages language model priors for reconstructing private text data from gradients.
+lamp,alternating discrete and continuous optimization,LAMP uses alternating discrete and continuous optimization for reconstructing private text data from gradients.
+lamp,evaluation,Experimental evaluation showed that LAMP consistently outperforms prior work on datasets of varying complexity and models of different sizes.
+lamp,settings,"LAMP is able to reconstruct private data in challenging settings, including bigger batch sizes and noise."
+private data,reconstruct,"Private data can be reconstructed in challenging settings such as with bigger batch sizes, noise-defended gradients, and fine-tuned models."
+private data,federated learning algorithms,Private text data is highlighted as not sufficiently protected by federated learning algorithms.
+federated learning algorithms,more work,More work is needed to alleviate the issue of private text data not being sufficiently protected by federated learning algorithms.

@@ -1,0 +1,224 @@
+node_1,node_2,edge
+vision transformers (vits),resolution scalability issue,"The abstract mentions that ViTs have achieved success but suffer from vulnerable resolution scalability, where the performance drops drastically with unseen input resolutions during training."
+resformer framework,multi-resolution training idea,ResFormer is introduced as a framework built upon the idea of multi-resolution training for improved performance on a wide spectrum of testing resolutions.
+resformer framework,scale consistency loss,ResFormer operates on replicated images of different resolutions and enforces a scale consistency loss to engage interactive information across different scales.
+resformer framework,global-local positional embedding strategy,"A global-local positional embedding strategy is proposed to alternate among varying resolutions effectively, especially novel ones in testing, ensuring smooth changes conditioned on input sizes."
+resformer framework,image classification on imagenet,"Extensive experiments are conducted for image classification on ImageNet, showing promising scaling abilities of ResFormer towards a wide range of resolutions."
+resformer framework,top-1 accuracy on low and high resolutions,"ResFormer-B-MR achieves a Top-1 accuracy of 75.86% and 81.72% on relatively low and high resolutions respectively, which are better than DeiT-B by 48% and 7.49%."
+resformer framework,"extension to semantic segmentation, object detection, video action recognition","ResFormer is shown to be flexible and extendable to semantic segmentation, object detection, and video action recognition, besides image classification."
+transformers,natural language processing,Transformers have shown a strong track record in Natural Language Processing tasks
+vision transformers,multi-head self-attention mechanisms,Vision Transformers utilize multi-head self-attention mechanisms for feature learning
+vision transformers,patches,Vision Transformers partition input images into patches for dependency modeling
+vits,image classification,ViTs achieve prominent results in image classification tasks
+vits,object detection,ViTs are effective in object detection tasks
+vits,vision-language modeling,ViTs demonstrate strong results in vision-language modeling
+vits,video recognition,ViTs show promising results in video recognition tasks
+image classification,training resolution of 224,Image classification commonly adopts a training resolution of 224
+vits,computational cost,Efforts have been made to reduce the computational cost of ViTs
+vits,spatial dimension of inputs,Reducing the spatial dimension of inputs is a strategy to reduce the computational cost of ViTs
+inputs,spatial dimension,"Inputs can have a spatial dimension that can be resized or varied, as mentioned in the context"
+fine-tuning,higher resolutions,Fine-tuning is commonly associated with using higher resolutions to improve results in various tasks
+dense prediction tasks,semantic segmentation,Tasks like semantic segmentation require relatively high resolution inputs for accurate predictions
+dense prediction tasks,object detection,Tasks like object detection also demand high resolution inputs for better performance
+vits,different input resolutions,"Efforts have been limited in equipping ViTs to handle varying input resolutions, impacting their performance"
+patch size,bicubic interpolation,A common practice involves keeping patch size fixed and applying bicubic interpolation to handle different resolutions
+multi-resolution training,varying resolutions,Training with randomly resized images to different resolutions is a promising approach to accommodate various resolutions at test time
+cnns,segmentation,"CNNs widely use multi-resolution training for tasks like segmentation, which can be challenging to generalize to ViTs"
+cnns,detection,CNNs apply multi-resolution training for tasks like detection to enhance performance
+cnns,action recognition,"Multi-resolution training is utilized by CNNs for action recognition tasks, showcasing its versatility"
+action recognition,vits,Generalizing the idea of action recognition to ViTs is challenging and less explored.
+vits,cnns,Comparing the design of ViTs and CNNs in terms of parameter sharing for multi-resolution training.
+cnns,stacked convolution design,The stacked convolution design in CNNs allows all input images to share the same set of parameters in multi-resolution training.
+vits,positional embeddings,Bicubic interpolations of positional embeddings are needed in ViTs when iterating over images of different sizes.
+positional embeddings,scale-friendly,"Positional embeddings in ViTs are not scale-friendly, requiring bicubic interpolations."
+images,objects,Images at different scales contain objects of different sizes.
+resformer,multi-resolution images,ResFormer takes in multi-resolution images during training to explore multi-scale clues for better results.
+testing resolutions,resformer,ResFormer is expected to generalize to a large span of testing resolutions.
+image,scales,ResFormer resizes images to different scales during training and uses all scales in the same feed-forward process.
+resformer,scale consistency loss,scale consistency loss is introduced to encourage information interaction among different resolutions in ResFormer
+resformer,global-local positional embedding strategy,global-local positional embedding strategy is proposed to facilitate multi-resolution training in ResFormer
+resformer,parameter sharing,parameter sharing is enforced through the global-local positional embedding strategy in ResFormer
+resformer,convolutions,convolutions help in changing smoothly the positional embedding strategy across different resolutions in ResFormer
+resformer,testing resolution,ResFormer dynamically generates new set of positional embeddings and performs inference based on the testing resolution
+resformer,imagenet-1k,comprehensive experiments are conducted on ImageNet-1K to validate the efficacy of ResFormer
+resformer,vits,"ResFormer outperforms vanilla ViTs on various resolutions, as shown in experiments"
+resformer,deit,ResFormer surpasses DeiT by a large margin on various unseen resolutions
+resformer,dense prediction tasks,ResFormer's scalability is validated on dense prediction tasks like ADE20K and APbox
+resformer-b-mr,dense prediction tasks,ResFormer-B-MR is used for dense prediction tasks
+resformer-b-mr,48.30 miou,ResFormer-B-MR achieves 48.30 mIoU on ADE20K
+resformer-b-mr,47.6 apbox,ResFormer-B-MR achieves 47.6 APbox on COCO
+resformer,video action recognition,ResFormer can be adapted for video action recognition with different input sizes via building upon TimeSFormer
+timesformer,resformer,TimeSFormer is used to adapt ResFormer for video action recognition
+efficientnet,"model width, depth, input resolution","EfficientNet studies how model width, depth, and input resolution affect convolutional neural networks"
+regnet,manual designing space for cnns,RegNet designs manual designing space for CNNs
+resnet-rs,"scaling strategies on depth, input resolution",ResNet-RS presents how different scaling strategies on depth and input resolution can affect the model capacity
+v-moe,large model sizes with sparse mixture-of-experts,V-Moe scales vision transformers to large model sizes with sparse mixture-of-experts
+liu et al.,"larger resolutions, lower resolutions",Liu et al. attempt to scale up to larger resolutions while neglecting lower resolutions
+vits,various resolutions,"ViTs are scaled to various resolutions, both lower and higher"
+vits,resolutions,ViTs are scaled to various resolutions to meet the practical needs of different visual tasks.
+positional embedding,self-attention architecture,Positional embedding is utilized to help the self-attention architecture understand spatial relationships among patches.
+positional embedding,transformers,Various positional embedding strategies are proposed to help Transformers understand the sequence order of input tokens.
+transfomers,absolute positional embeddings (ape),APE infuses global information into Transformers and is used in NLP tasks and the vanilla Vision Transformer.
+transfomers,relative position embeddings (rpb),RPB has been widely validated in language and vision tasks for improving performance.
+irpe,ape,iRPE replaces APE in some strategies to improve classification and detection performance.
+convit,gated relative positional embeddings,ConViT suggests adding gated relative positional embeddings to self-attention blocks for bringing soft convolutional inductive biases.
+dynamic positional embeddings,twins,Twins adopt conditional positional embeddings (CPE) through convolutions to model local information from input tokens.
+vits,input scales,ViTs behavior towards input scales varied from the training process
+vits,test samples,Pre-trained ViTs are fed with testing samples of varying sizes
+vits,deit-s,ViT models are instantiated with DeiT-S and initialized with weights pre-trained on ImageNet-1K
+vits,position embeddings,Position embeddings are resized with bicubic interpolation on different testing resolutions for ViTs
+models,resolutions,Derived models are tested on a broad spectrum of resolutions
+models,performance drop,All models undergo severe performance drop when directly adapted to small-scale inputs
+models,accuracy,Increasing testing resolutions results in improved accuracy for models
+models,gap enlargement,Models yield unsatisfactory performance when gap between training and testing resolutions enlarges
+128,resolution,128 stops growing in accuracy when the testing resolution reaches 256.
+top-1 accuracy,75.26%,It achieves a Top-1 accuracy of 75.26% with testing resolution set to 224.
+vits,resolution discrepancies,ViTs are vulnerable to resolution discrepancies between training and testing.
+object size,scales,"Since the size of objects varies in different scales, we also introduce a scale consistency loss."
+embedding interpolation,results,directly interpolating positional embeddings to unseen resolutions during inference produces unsatisfactory results.
+former,global-local positional embeddings,Former builds upon carefully designed global-local positional embeddings.
+global-local positional embeddings,input resolutions,which are generated conditioned on input resolutions.
+global-local positional embeddings,resformer,in ResFormer from both from global and local perspectives.
+deit-s,resolutions,Top-1 accuracy of DeiT-S trained with 5 different resolutions and tested on resolutions varying from 80 to 576.
+resformer,multi-scale training,Multi-scale training.
+resformer,cnns,Most approaches in multi-scale training rely on CNNs.
+multi-scale training,data augmentations,multi-scale data augmentations are employed for image classification by randomly sampling training images from a certain range of scales.
+multi-scale training,dense prediction tasks,"Later in dense prediction tasks, multi-scale training and testing become a widely-adopted paradigm."
+multi-scale training,action recognition,The idea has also been explored in action recognition.
+multi-scale training,cnns,Most approaches in multi-scale training rely on CNNs.
+cnns,convolutions,convolutions can be readily applied to varying sizes of.
+vanilla vits,multi-scale spatial dimension of features,other related attempts lay emphasis on multi-scale spatial dimension of features instead of.
+vits,multi-resolution supervised training,"ViTs have limited effort in exploring multi-resolution supervised training, which is the focus of this paper"
+cnns,distribution shifts,CNNs suffer from distribution shifts between training and testing due to different preprocessing methods
+cnns,random resizing and cropping,CNNs use 'random resizing and cropping' strategy for training which causes distribution shifts between training and testing
+cnns,center cropping,CNNs use 'center cropping' strategy for testing which causes distribution shifts between training and testing
+vits,discrepancy,ViTs theoretically have a discrepancy in cropped regions in images due to different preprocessing methods
+resformer,vit,ResFormer builds upon the vanilla ViT framework
+input image x,global class,The input image X is split into patches and each patch is projected into a D-dimension feature denoted as a 'token' in the global class
+image tokens,transformer blocks,Image tokens are concatenated with Transformer blocks before being fed into them.
+vits,single-scale images,"Unlike standard ViTs, ResFormer operates on different resolutions of images during training."
+training image,number of resolutions,"The training image is replicated for a number of resolutions, denoted by 'r'."
+training sample,spatial size,Each data replica undergoes resizing and cropping operations to obtain a training sample of spatial size 3xHixWi.
+mini-batch,multi-resolution inputs,A mini-batch is composed of groups of multi-resolution inputs sharing identical labels.
+input sample,global class token output,The global class token output of the last transformer block is fed into the classification head based on the input sample.
+classification losses,ground-truth label,The classification losses are computed based on the ground-truth label using cross-entropy loss function.
+auto-augment,randaug-ment,Both Auto-Augment and RandAug-ment are techniques used in random pre-processing.
+auto-augment,random erasing,Both Auto-Augment and random erasing are techniques used in random pre-processing.
+auto-augment,mixup,Auto-Augment is related to MixUp as they are both techniques used in random pre-processing.
+auto-augment,cutmix,Auto-Augment is related to CutMix as they are both techniques used in random pre-processing.
+d,θ,"D represents the training set, while Θ represents the parameters of the network."
+large inputs,better recognition results,Large inputs generally produce better recognition results compared to smaller inputs.
+knowledge distillation,feature whitening,Knowledge distillation is achieved through enforcing consistencies among different resolutions using feature whitening.
+lkd,class token,"LKD is a smooth l1 loss with feature whitening, denoted to transfer knowledge from the class token of a higher resolution to that of a lower resolution."
+teacher class tokens,gradient computational graph,Teacher class tokens are detached from the gradient computational graph.
+r,training stability,The loss is divided by r to ensure stability of training.
+positional embeddings,size of input samples,Positional embeddings highly depend on the size of input samples.
+conditional positional embeddings,global and local usage,Conditional positional embeddings are proposed for global and local usage in adjusting positional embeddings.
+conditional positional embeddings,global positional embedding,The proposal suggests using conditional positional embeddings globally and locally to address performance drops and bridge the resolution gap among a broad range of resolutions. This includes introducing global positional embedding as a key concept.
+global positional embedding,location information,"Global positional embedding is used to incorporate location information in patch embeddings, typically through the addition of absolute position embedding."
+patch embeddings,absolute positional embedding,"To incorporate location information, absolute position embedding is added to patch embeddings."
+dynamic positional embeddings,attention heads,"Dynamic positional embeddings are generated conditioned on the number of attention heads, separate for each head."
+learned parameters,sinusoidal mapping,"Two common tactics for implementing positional embeddings are with learned parameters or sinusoidal mapping, depending on the context and application."
+sine,cosine,"sine and cosine are used in the sine-cosine APE to generate positional embeddings dependent on NH, NW, and D"
+sine-cosine ape,learned ape,"sine-cosine APE is compared with learned APE, showing that the former changes more weakly between different input scales"
+sine-cosine ape,position,the method is built upon sine-cosine APE with the assumption that smoother positional embedding would contribute to better resolution scalability
+sine-cosine positional embedding,conditional computation,the sine-cosine positional embedding is improved with conditional computation tailored to the model during training
+sine-cosine positional embedding,depth-wise convolution,depth-wise convolution is applied to generate the final positional embedding conditioned on sinusoidal encoding
+position,embedding,position is used to generate embedding in a way that introduces smooth spatial information into the ViT model
+vit,global positional embedding (gpe),"the strategy introduced aims at injecting smooth spatial information of global context into ViT, denoted as global positional embedding (GPE)"
+local positional embedding,positional embeddings,"local positional embedding shares the same design philosophy with positional embeddings introduced in previous works, dynamically generated by input tokens and carrying spatial information of local neighbourhood"
+positional embeddings,translation invariance,strategies involving positional embeddings can effectively introduce translation invariance into ViTs and facilitate generalizing to various resolutions
+vits,translation invariance,ViTs introduce translation invariance which helps in generalizing to various resolutions.
+positional embedding,local input feature,position embedding is conditioned on local input features to model spatial information.
+lpe,gpe,Local positional embedding (LPE) and global positional embedding (GPE) are orthogonal in modeling spatial information.
+lpe,gpe,Combining LPE and GPE may result in better resolution scalability.
+local positional embeddings,attention blocks,Local positional embeddings are incorporated into attention blocks to enhance spatial information modeling.
+query q,key k,Query Q and key K are used to obtain the value V through linear projection in deriving the output z.
+value v,local spatial information,Local spatial information of V is utilized in the process.
+lpe,convolutions,LPE can be dynamically generated through convolutions regardless of input scales.
+global positional embeddings,local positional embeddings,Global and local positional embeddings are combined in ResFormer for better generalization to novel resolutions.
+resformer,deit,ResFormer is instantiated with DeiT for simplicity in the implementation details.
+input image,resformer,Input images are resized to various scales for multi-resolution training and then used as inputs to ResFormer.
+image classification,optimizer adamw,"For image classification, AdamW is used as the optimizer with a cosine decay learning rate schedule."
+adamw,optimizer,AdamW is used as the optimizer for image classification.
+optimizer,cosine decay learning rate scheduler,The optimizer is applied with a cosine decay learning rate scheduler.
+optimizer,learning rate,"The optimizer is used with a learning rate of 5e−4 for small and tiny models, and 8e−4 for the base model."
+augmentation and regularization settings,fair comparisons,All augmentation and regularization settings are kept consistent for fair comparisons.
+resformer,single scale during testing,ResFormer only uses a single scale during testing.
+resformer,image classification,ResFormer is evaluated for its effectiveness in image classification.
+variants of resformer,model size,"Different variants of ResFormer are denoted by the model size (T, S, B for tiny, small, and base models respectively)."
+variants of resformer,training resolution,The variants of ResFormer are distinguished based on the resolution used for training.
+resformer-s-mr,accuracy,ResFormer-S-MR offers an accuracy of 82.16% when evaluated with a testing resolution of 224.
+resformer-b-mr,accuracy,ResFormer-B-MR offers an accuracy of 82.72% when evaluated with a testing resolution of 224.
+resformer trained with multi-resolution images,models trained with single scale inputs,ResFormer trained with multi-resolution images outperforms models trained with single scale inputs.
+resformer,multi-resolution images,ResFormer trained with multi-resolution images and outperforms models trained with single scale inputs
+resformer,resformer-s-mr,"ResFormer-S-MR outperforms ResFormer-S-128, ResFormer-S-160, ResFormer-S-224 by 2.77%, 2.33%, and 1.33% respectively"
+resformer,resformer-table 1,ResFormer delivers top-1 Accuracy on ImageNet-1K
+resformer,resformer-s-224,"ResFormer adopts training resolutions of 128, 160, and 224 for multi-resolution training"
+resformer,resformer-s-mr,ResFormer-S-MR demonstrates clear scaling capabilities
+resformer,unseen resolutions,ResFormer demonstrates clear scaling capabilities for unseen resolutions
+resformer-s-224,test resolution of 384,"ResFormer-S-224 achieves a Top-1 accuracy of 80.65% with a test resolution of 384, which is 2.55% higher"
+resformer-s-224,deit-s,"ResFormer-S-224 achieves a Top-1 accuracy of 80.65%, which is 2.55% higher than its DeiT-S counterpart (78.10%). This suggests a performance comparison between the two models."
+resformer-s-mr,resformer-s-224,"ResFormer-S-MR further boosts the accuracy to 82.72%, demonstrating the benefit of multi-resolution training compared to ResFormer-S-224."
+resformer-s-mr,resformer-b-mr,"ResFormer-S-MR and ResFormer-B-MR increase by 56.24% and 48.00% when evaluated on a resolution of 80, highlighting the effectiveness of multi-resolution strategy in improving performance."
+resformer-s-224,deit-s,ResFormer-S-224 improves DeiT-S by 2.51 measured by mIoU.
+resformer-s-mr,resformer-b-mr,"ResFormer-S-MR and ResFormer-B-MR, achieve better results and comparisons on semantic segmentation tasks."
+resformer-s-mr,resformer-b-mr,ResFormer-S-MR reaches up to 47.45 and ResFormer-B-MR hits the peak of 49.28 mIoU. This suggests that ResFormer effectively models multi-scale and high-resolution features for pixel-level dense predictions.
+resformer-s-mr,resformer-b-mr,ResFormer-B-MR and ResFormer-S-MR are directly used as pre-trained backbones and we do not perform multi-resolution fine-tuning on ADE20K.
+resformer-s-mr,resformer-b-mr,Results in Tab. 2 demonstrate the great potential of transferring models that are pre-trained with multiple resolutions for dense prediction tasks.
+vitdet,resformer,"We further explore performance of ResFormer on COCO2017 for object detection and instance segmentation, following the designs of ViTDet by appending simple feature pyramids on the feature maps of last-layer outputs and using both non-shifted window attention and global self-attention blocks."
+resformer,non-shifted window attention,ResFormer uses both non-shifted window attention and global self-attention blocks
+resformer,global self-attention blocks,ResFormer uses both non-shifted window attention and global self-attention blocks
+resformer,global positional embedding,ResFormer adopts global positional embedding
+resformer,local positional embeddings,ResFormer injects local positional embeddings into all attention blocks
+resformer,object detection,The improved resolution scalability of ResFormer contributes to better performance on object detection
+resformer,video action recognition,ResFormer is evaluated for video action recognition on Kinetics400
+resformer,kinetics400,ResFormer is evaluated for video action recognition on Kinetics400
+resformer,timesformer,ResFormer is compared to TimeSFormer in terms of performance
+global self-attention blocks,non-shifted window attention,Both global self-attention blocks and non-shifted window attention are used by ResFormer
+global positional embedding,local positional embeddings,Global positional embedding and local positional embeddings are adopted by ResFormer
+resformer-b,timesformer,ResFormer-B fine-tuned with single resolution outweighs vanilla TimeSFormer by 0.78% on a testing resolution of 224
+resformer,multi-resolution training,"By implementing multi-resolution training on video samples, ResFormer improves performance on each training resolution by a large margin"
+"(128, 160, 224)","(160, 224, 288)","Experiment with 3 different settings using a small model, i.e., (128, 160, 224), (160, 224, 288) and (128, 224, 384) reflecting on performance rise in high-resolution inputs and incurring a drop on low resolution"
+"(160, 224, 288)","(128, 224, 384)","Regarding differences between setting of (b) and (c), the spectrum of training resolutions expands in both directions"
+"(128, 160, 224)","(128, 224, 384)","Despite the wide range between 128 and 384, we witness an all-around improvement of (c) over (b), highlighting that ResFormer is able to deal with significant resolution variations"
+resformer,positional embedding,We evaluate the performance of ResFormer with different positional embedding strategies
+resformer,positional embedding strategies,ResFormer is evaluated with different positional embedding strategies.
+resformer,imagenet-1k,ResFormer's Top-1 Accuracy is compared with different training resolutions on ImageNet-1K.
+ape,deit,APE stands for vanilla absolute positional embedding in DeiT.
+ape,ape*,Comparison between APE and APE* in terms of positional embedding strategies.
+rpb,highest resolution,RPB of highest resolution is used for interpolation during inference.
+cpb,vits,CPB is a resolution-agnostic strategy for ViTs to accept images of arbitrary scales directly.
+gpe,sine-cosine absolute positional embedding,"GPE is a global positional embedding, while GPE† represents the plain sine-cosine absolute positional embedding without convolutional enhancement."
+lpe,local positional embedding,LPE is a local positional embedding for dealing with positions in proximity.
+glpe,gpe,GLPE is a combination of global positional embedding (GPE) and local positional embedding (LPE).
+apes,vits,APEs (Areal Positon Embeddings) and ViTs (Vision Transformers) are related in the context of training models to deal with different scales of inputs with shared spatial information.
+positional embeddings,multi-resolution training,"Positonal embeddings are coupled with multi-resolution training, and together they demonstrate better results compared to models trained with single resolutions."
+positional embeddings,testing resolution,"Positional embeddings show steady gains when models are tested on different resolutions such as 128, 160, and 224."
+resformer-s-mr,positional embeddings,"ResFormer-S-MR results are influenced by different positional embedding strategies, with performance gains compared to single-resolution training."
+resformer-s-mr,training strategies,"ResFormer-S-MR's performance is affected by different training strategies on ImageNet-1k, showing performance gains/drops compared to single-resolution training."
+peape,glpetesting resolution,"The table shows the performance gains achieved with different positional embeddings and resolutions, indicating improvements in accuracy."
+distillation,testing resolution,"Different distillation strategies impact the testing resolution performance, showing gains over results of training without distillation."
+distillation,clssmooth l1,"Distillation with CLSsmooth L1 method shows consistent performance at different resolutions, indicating stability in results."
+smooth l1 loss,l2 loss,Comparison between smooth L1 loss and L2 loss is made with slightly better results observed on high resolutions
+logits,distilling with class tokens,Efficacy of distilling with class tokens compared to logits is observed
+class tokens,logits,Comparison between distilling with class tokens and logits is made with better performance observed with class tokens
+resolution training strategy,without cross-scale consistency loss,"The resolution training strategy is implemented without considering cross-scale consistency loss, indicating a focus on training methodology."
+resolution training strategy,iteratively,"The resolution training strategy involves an iterative process of feeding samples of different scales, such as 128, 160, and 224, indicating a dynamic approach to training."
+resolution training strategy,multi-resolution training,"The resolution training strategy is compared to multi-resolution training approaches, highlighting its effectiveness across different resolutions."
+iteratively,samples of different scales,"The process involves iterating through samples of different scales, illustrating a variation in input data during training."
+multi-resolution training,worse results compared to single resolution training,"Both iteration-based and epoch-based multi-resolution training show worse results compared to single resolution training, indicating a potential limitation in training efficacy."
+multi-resolution training,clear margins,"Multi-resolution training demonstrates better results with clear margins, showcasing its advantages over single resolution training methods."
+scale-consistency loss,enforcing consistencies of all resolutions in a mini-batch,"Highlighting the importance of scale-consistency loss, enforcing consistencies of all resolutions in a mini-batch is essential for maintaining training integrity."
+visualizations,"positional embeddings on resolutions of 128, 160, 224, and 384","Qualitative visualizations showcase positional embeddings on various resolutions, providing insights into the effectiveness of different resolution levels."
+visualizations,apes shifted by interpolation,"Comparing visualizations, APEs shifted by interpolation show different characteristics from GPEs generated with convolutions, highlighting the impact of different methods in generating visual representations."
+visualizations,gpe generalizes better,"Visualizations suggest that GPE generalizes better to varying input scales, indicating its adaptability and effectiveness in a broader context."
+fig. 5,gpe,Fig. 5 suggests that GPE generalizes better to higher resolutions unseen in training.
+absolute positional embeddings (ape),global positional embeddings (gpe),Absolute Positional Embeddings (APE) and Global Positional Embeddings (GPE) are two types of embeddings discussed in the context.
+global positional embeddings (gpe),resformer,Global Positional Embeddings (GPE) is mentioned alongside ResFormer framework in the conclusion section.
+resformer,scale-consistency loss,ResFormer framework was motivated by training on a sample of different scales and aided by a scale-consistency loss.
+resformer,positional embedding strategy,ResFormer introduced a global-local positional embedding strategy to facilitate better generalization on unseen resolutions.
+resformer,scalabilities,Extensive experiments demonstrated promising scalabilities of ResFormer in a broad range of resolutions.
+resformer,downstream tasks,"ResFormer can be readily adapted to downstream tasks such as semantic segmentation, object detection, and video action recognition."
+nsfc,grant no. 62102092,This project was supported by NSFC under Grant No. 62102092.
+nsfc,grant no. 62032006,This project was supported by NSFC under Grant No. 62032006.

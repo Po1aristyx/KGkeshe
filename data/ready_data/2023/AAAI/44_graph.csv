@@ -1,0 +1,105 @@
+node_1,node_2,edge
+tn cores,tn topology,TN cores are regarded as nodes and operations as edges
+tn topology,tn rank,The vector of edge weights in the topology is defined as the TN rank.
+tn structure search (tn-ss),challenging np-hard problem,TN-SS aims to find a suitable structure for a given tensor
+tn-ss,sampling-evaluation framework,Most existing methods
+tnga,computational cost,TNGA requires thousands of evaluations
+tnale,computational cost,TNALE also incurs high computational cost due to hundreds of evaluations
+tensor network (tn) structure,computational issue,The context discusses optimizing the TN structure to address the computationally consuming issue
+optimization of tn structure,sampling-evaluation framework,The paper aims to escape the sampling-evaluation framework by optimizing the TN structure during core computation.
+regularized modeling perspective,tn-ss problem,This perspective is introduced to solve the TN-Subspace Search (TN-SS) problem
+svd-inspired tn decomposition (svdinstn),fully-connected topology,SVDinsTN is proposed for a 'fully-connected' topology
+diagonal factors,compact tn structure,Inserted diagonal factors contribute to revealing a more compact structure
+tn cores,reconstruction error bound,The performance of SVDinsTN is compared based on reconstruction error bounds
+tn cores,diagonal factors,Merged with the diagonal factors to represent a given tensor.
+svdinstn,regularized model,Establishes a regularized model that updates TN cores and diagonal factors iteratively.
+svdinstn,sparse operator,Imposes a sparse operator to induce sparsity in the diagonal factors.
+proposed method,convergence guarantee,In theory
+proposed method,upper bound for tn rank,Establishes an upper bound for the TN rank involved in SVDinsTN.
+upper bound,efficient initialization scheme,Serves as a guide for designing an efficient initialization scheme.
+svdinstn,computational cost reduction,Reduces the computational cost by optimizing the TN structure during computation.
+proposed method,customized tn structure,Capable of capturing a customized TN structure.
+svdinstn,compact representation,Provides a compact representation for a given tensor.
+proposed method,state-of-the-art tn-ss methods,Achieves 100 ∼ 1000 times acceleration compared to competitors.
+tensor network (tn) representation,state-of-the-art tn-ss methods,The context compares the given method to state-of-the-art TN-SS methods in terms of acceleration and representation ability.
+tensor train (tt) decomposition,fixed tn topology,These works focus on TN representation with a predefined 'chain' topology.
+tensor ring (tr) decomposition,fixed tn topology,Another example of TN representation with a 'ring' topology.
+fully-connected tensor network (fctn) decomposition,fixed tn topology,A TN decomposition with a 'fully-connected' topology
+svd in tn,compact tn structure,SVDinsTN can reveal a more compact structure compared to fixed topology methods.
+tn structure search (tn-ss),suitable or optimal tn structure,TN-SS aims to find an optimal structure
+tn-ss methods,heuristic search algorithms,Existing TN-SS methods often rely on heuristics like greedy algorithm
+greedy algorithm,tn-ss methods,Used as a heuristic search algorithm in TN-SS to sample candidate structures.
+genetic algorithm,tn-ss methods,Another heuristic used in TN-SS for structure optimization.
+alternating local enumeration algorithm,tn-ss methods,A specific algorithm employed in TN-SS for structure search.
+tensor network,tn cores,A tensor network consists of small-sized tensors called TN cores
+tensor network,tn topology,The TN topology is defined as a graph formed by TN cores and the operations between their modes
+tn cores,edges (mode contraction),TN cores interact via mode contraction
+tensor network,tn rank,Each edge in the TN topology has a non-negative integer weight indicating the size of the corresponding mode
+fctn,tensor network,FCTN is a specific type of tensor network used to represent an Nth-order tensor
+fctn decomposition,n-th order tensor,The FCTN decomposition represents an Nth-order tensor by N small-sized cores
+tn cores,modes of x,Each TN core corresponds to one mode of the tensor X.
+rank-r1,2,...
+tensor contraction,expression of the tn,Removing rank-one edges in a TN topology does not change its expression.
+one-to-one correspondence,tn structure and fctn rank,There is a direct relationship between the TN structure and the FCTN rank
+compact tn structure,optimizing fctn rank,Searching for a compact TN structure can be achieved by minimizing the FCTN rank.
+proposed method,efficient tn-ss solution,The proposed method aims to solve the TN-SS problem from a regularized modeling perspective
+svd-inspired tn decomposition (svdinstn),n-th order tensor,SVDinsTN is a decomposition method for N-th order tensors
+tn cores,svdinstn,TN cores
+diagonal matrices (st,l),svdinstn
+compact tn structure,svdinstn,SVDinsTN utilizes the compactness of diagonal factors to expose a more efficient TN structure.
+tn cores (merged with diagonal factors),tensor representation,In SVDinsTN
+remark 1 (svdinstn & svd),svd,SVDinsTN extends the traditional SVD (Single Value Decomposition) concept to higher-order tensors.
+svdinstn,second-order cases,SVDinsTN degrades into SVD in second-order cases when TN cores satisfy orthogonality.
+svdinstn,fctn decomposition,SVDinsTN builds upon FCTN [41] by inserting diagonal factors and revealing FCTN rank.
+svdinstn,tn cores,Diagonal factors are inserted between TN cores in FCTN decomposition
+tn cores,tensor contraction operation,SVDinsTN can transform into a TN decomposition by merging diagonal factors into TN cores using tensor contraction.
+svdinstn-based regularized method,sparsity,The method promotes sparsity in diagonal factors using an ℓ1-norm-based operator.
+svdinstn-based regularized method,tikhonov regularization,Tikhonov regularization is applied to TN cores to constrain their feasible range
+diagonal factors,sparsity,The method imposes sparsity on diagonal factors to reveal a compact TN structure.
+algorithm 1,critical point,The sequence generated by Algorithm 1 converges to a critical point of the optimization problem.
+initialization scheme,high computational cost,SVDinsTN encounters high computational cost initially due to a 'fully-connected' topology.
+svdinstn,tn rank,The TN rank is initialized to reduce the computational cost in the first few iterations.
+theorem 2,upper bound for tn rank,Theorem 2 provides an upper bound for the TN rank
+min(rank(x(t)),rank(x(l))),initial value of tn rank
+mode-(t,l) slices,truncated svd
+step 1,mean of mode-(t,l) slices
+step 1,svd on mode-(t,l) slices
+svdinstn,customized tn structure,SVDinsTN can reveal a structure that aligns with the unique structure of a given tensor (Claim A).
+svdinstn,time costs,SVDinsTN can greatly reduce time costs while maintaining a comparable representation ability (Claim B).
+svdinstn,representation ability,SVDinsTN has a better representation ability than state-of-the-art TN-SS methods and predefined topology methods (Claim B).
+svdinstn,tensor completion task,SVDinsTN outperforms existing tensor decomposition methods in the tensor completion task
+tensor decomposition methods,predefined topologies,SVDinsTN surpasses these methods with predefined topologies in terms of representation ability.
+success rates,test cases,The context states that the success rates consistently yield high values over 95% in these test cases.
+claim b,experiments,Experiments are conducted to validate Claim B
+real-world data,synthetic data,Both types of data are considered in the experiments
+light field data,bunny,knights
+tn-ss methods,tngreedy,tnga
+compression ratio (cr),reconstruction error (re),CR is calculated based on the number of elements used
+parameter γ,interval [10^(-7),10^(-3)]
+table 2,cr and run time,This table presents the results of CR and run times for the various methods.
+svdinstn,initialization scheme,SVDinsTN has a lower CR (compression ratio) compared to random initialization
+initialization scheme,shrink operation,The impact of the shrink operation is analyzed
+light field data,svdinstn,The comparison of run times is presented for SVDinsTN on light field data.
+run time,svdinstn,Runtime is measured in seconds
+cr (compression ratio),svdinstn,CR is a measure of the effectiveness of the algorithm
+re bound,cr,The comparison is done at different RE bounds (a threshold).
+trals [38],fctnals [41],Both methods are part of the comparison
+tngreedy [12],tnga [15],TNGreedy and TNGA are also compared in terms of CR and run time
+random initialization,our method,Our method achieves significant acceleration even with random initialization compared to other TN-SS methods.
+initialization scheme,shrink operation,The shrink operation is included in the initialization scheme
+higher-order cases,6th-order tensors,Experiments involve randomly generated 6th-order tensors to test SVDinsTN's performance on higher orders.
+higher-order cases,8th-order tensors,Similarly
+higher-order cases,10th-order tensors,10th-order tensors are also used to demonstrate SVDinsTN's capability for orders up to 10.
+truncated svd,computational and storage efficiency,Truncated SVD in initialization contributes to improved efficiency by restricting the rank of edges to a smaller range.
+iterations,sparsity regularization,As iterations progress
+claim c,experiments,Experiments are conducted to validate Claim C
+svdinstn,tensor completion (tc),SVDinsTN is employed for a fundamental application
+proposed tc method,algorithm 1,The proposed TC method updates G and S using Algorithm 1.
+tensor completion (tc),fbcp [37],Comparison is made with six methods
+tensor completion (tc),tmac [29],Methods like TMac
+tensor completion (tc),trlrf [33],TRLRF is among the comparison methods for tensor completion.
+tensor completion (tc),tw [28],TW is another competing method in the tensor completion experiment.
+tensor completion (tc),tnls6 [17],TNLS6 is included in the comparison for evaluating tensor completion performance.
+missing ratio (mr),90%,The experiments use a missing ratio of 90% for the incomplete tensor data.
+reconstructed quality,mean peak signal-to-noise ratio (mpsnr),Reconstructed quality is evaluated using MPSNR
+parameter γ,0.0003,The parameter γ is set to 0.0003 for the experiments.

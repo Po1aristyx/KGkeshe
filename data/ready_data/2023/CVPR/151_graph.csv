@@ -1,0 +1,224 @@
+node_1,node_2,edge
+universal image segmentation,concept,Universal Image Segmentation is the main concept discussed in the context.
+universal image segmentation,scene parsing,Scene parsing is mentioned as one of the attempts to unify image segmentation.
+universal image segmentation,panoptic segmentation,Panoptic segmentation is mentioned as one of the attempts to unify image segmentation.
+universal image segmentation,panoptic architectures,"Panoptic architectures are discussed in the context, but they do not truly unify image segmentation."
+panoptic architectures,image segmentation,"Panoptic architectures need to be trained individually on semantic, instance, or panoptic segmentation to achieve the best performance."
+oneformer,universal image segmentation framework,OneFormer is proposed as a universal image segmentation framework that unifies segmentation with a multi-task train-once design.
+oneformer,oneformer model,"OneFormer model outperforms specialized Mask2Former models across all three segmentation tasks on ADE20k, Cityscapes, and COCO."
+oneformer,mask2former models,"OneFormer model outperforms specialized Mask2Former models across all three segmentation tasks on ADE20k, Cityscapes, and COCO."
+oneformer,image segmentation,OneFormer is a significant step towards making image segmentation more universal and accessible
+segmentation,grouping pixels,Image Segmentation is the task of grouping pixels into multiple segments
+segmentation,semantic-based grouping,Earlier segmentation approaches tackled semantic-based segmentation tasks individually
+segmentation,instance-based grouping,Earlier segmentation approaches tackled instance-based segmentation tasks individually
+panoptic segmentation,pixels grouped into segments,Panoptic segmentation groups pixels into anamorphous segments for background regions and distinct segments for objects with well-defined shape
+panoptic segmentation,unifying semantic and instance segmentation,Efforts towards panoptic segmentation aimed to unify semantic and instance segmentation tasks
+panoptic segmentation,new specialized architectures,Efforts towards panoptic segmentation led to new specialized architectures instead of unifying previous tasks
+k-net,image segmentation,K-Net is a panoptic architecture for unifying image segmentation tasks
+maskformer,image segmentation,MaskFormer is a panoptic architecture for unifying image segmentation tasks
+mask2former,image segmentation,Mask2Former is a panoptic architecture for unifying image segmentation tasks
+task,best performance,The task is mentioned to achieve the best performance. Training policies require extra time for each task to produce different sets of model weights.
+training policy,extra training time,Individual training policies require extra time for training.
+training policy,model weights,Different sets of model weights are produced for each task by individual training policies.
+mask2former,ade20k,"Mask2Former is trained for 160K iterations on ADE20K for each of the semantic, instance, and panoptic segmentation tasks to achieve the best performance."
+ade20k,segmentation tasks,"ADE20K is used for training on semantic, instance, and panoptic segmentation tasks."
+oneformer,image segmentation,The proposed multi-task universal image segmentation framework OneFormer outperforms existing state-of-the-arts on all three image segmentation tasks.
+existing panoptic architectures,single training process,Existing panoptic architectures are not successful with a single training process to tackle all three tasks.
+task input token,task guidance,Task input token in the form of text is introduced to provide task guidance in the architecture for training.
+task,model,"The model is conditioned on the task in focus, making the architecture task-guided for training and task-dynamic for inference."
+task,panoptic,"Tasks are uniformly sampled from panoptic, instance, and semantic, along with the corresponding ground truth during joint training, to ensure the model is unbiased in terms of tasks."
+task,instance,"Tasks are uniformly sampled from panoptic, instance, and semantic, along with the corresponding ground truth during joint training, to ensure the model is unbiased in terms of tasks."
+panoptic,semantic,The ability of panoptic data to capture both semantic and instance information motivated the derivation of semantic and instance labels from the corresponding panoptic annotations during training.
+panoptic,instance,The ability of panoptic data to capture both semantic and instance information motivated the derivation of semantic and instance labels from the corresponding panoptic annotations during training.
+model,parameters,"The joint training time, model parameters, and FLOPs are comparable to existing methods, decreasing training time and storage requirements up to 3×."
+model,training,"The joint training time, model parameters, and FLOPs are comparable to existing methods, decreasing training time and storage requirements up to 3×, making image segmentation less resource-intensive and more accessible."
+multi-task model,inter-task differences,The multi-task model is designed to better learn inter-task differences during the single joint training process.
+multi-task model,inter-class differences,The multi-task model is designed to better learn inter-class differences during the single joint training process.
+transformer frameworks,computer vision,"Following the recent success of transformer frameworks in computer vision, the framework is formulated as a transformer-based approach."
+framework,task-specific context,"To add task-specific context to the model, queries are initialized as repetitions of the task token and a query-text contrastive loss is computed with the text derived from the corresponding ground-truth label."
+query-text contrastive loss,ground-truth label,A contrastive loss on the queries helps guide the model to be task-sensitive and reduce category mispredictions. The model is evaluated based on ground-truth labels for the sampled task.
+oneformer,segmentation datasets,"OneFormer is evaluated on major segmentation datasets including ADE20K, Cityscapes, and COCO to set new state-of-the-art performance for all three tasks."
+oneformer,transformer-based multi-task universal image segmentation framework,"OneFormer is the first transformer-based multi-task universal image segmentation framework that outperforms existing frameworks across semantic, instance, and panoptic segmentation tasks."
+oneformer,joint training strategy,OneFormer utilizes a task-conditioned joint training strategy to uniformly sample different ground truth domains and achieve the original unification goal of panoptic segmentation.
+oneformer,extensive experiments,"OneFormer is validated through extensive experiments on major benchmarks like ADE20K, Cityscapes, and COCO to demonstrate new state-of-the-art performance across all segmentation tasks."
+ade20k,cityscapes,Both ADE20K and Cityscapes are major benchmarks in the context
+cityscapes,coco,Cityscapes is mentioned along with COCO as major benchmarks
+image segmentation,semantic segmentation,"Semantic segmentation is a type of image segmentation, discussed in the context"
+cnns,pixel classification,CNNs are used for pixel classification in semantic segmentation
+transformer-based methods,language and vision,Transformer-based methods have shown success in semantic segmentation following their success in language and vision tasks
+maskformer,semantic segmentation,MaskFormer is mentioned as a method for semantic segmentation
+object queries,transformer decoder,Object queries are used with a transformer decoder in semantic segmentation
+oneformer,semantic segmentation,OneFormer is mentioned in relation to semantic segmentation tasks
+backbone,pixel decoder,Backbone is followed by a pixel decoder in the OneFormer framework architecture
+task token,transformer,Task token and transformer are used in the process of formulating object queries in the OneFormer framework architecture
+transformer,qtask,Qtask is concatenated with the N-1 queries from the transformer.
+qtask,n-1 queries,Qtask is concatenated with the N-1 queries from the transformer.
+task,text queries,The text queries (Qtext) are generated using a text mapper during training to learn inter-task distinctions.
+text mapper,query-text contrastive loss,A query-text contrastive loss is calculated to learn the inter-task distinctions.
+transformer,multi-stage l-layer transformer decoder,A multi-stage L-layer transformer decoder is used to obtain task-dynamic class and mask predictions.
+instance segmentation,mask classifiers,Traditional instance segmentation methods are formulated as mask classifiers.
+instance segmentation,mask classification problem,Instance segmentation is also formulated as a mask classification problem.
+panoptic segmentation,instance segmentation,"Panoptic Segmentation unifies instance and semantic segmentation, where instance segmentation predicts binary masks and a class label for each mask."
+panoptic segmentation,semantic segmentation,"Panoptic Segmentation unifies instance and semantic segmentation, prevalent architectures introduce separate instance and semantic task branches."
+panoptic segmentation,one-former,"One-Former is designed to be trained with panoptic annotations only, motivated by the lag in performance compared to individual instance and semantic segmentation models."
+one-former,universal image segmentation,"One-Former is designed to be trained with panoptic annotations only, and it is the first framework to beat state of the art on all three image segmentation tasks with a single universal model."
+universal image segmentation,architecture,"Promising architectures designed specifically for panoptic segmentation have emerged, which also perform well on semantic and instance segmentation tasks."
+k-net,cnn,K-Net is a CNN that uses dynamic learnable instance and semantic kernels with bipartite matching.
+maskformer,transformer-based architecture,"MaskFormer used transformer-based architecture as a mask classifier, inspired by DETR's reformulation of object detection with proposals based on queries."
+mask2former,maskformer,"Mask2Former improved upon MaskFormer with learnable queries, deformable multi-scale attention in the decoder, and a masked cross-attention."
+mask2former,state of the art,Mask2Former set the new state of the art on all three tasks related to image segmentation.
+one-former,state of the art,One-Former is the first framework to beat state of the art on all three image segmentation tasks with a single universal model.
+transformer-based architectures,object detection,Architectures based on the transformer encoder-decoder structure have proved effective in object detection.
+"structure [2,25,28,51]",detr [2],"The structure [2,25,28,51] has proved effective in object detection since the introduction of DETR [2]."
+"structure [2,25,28,51]",object detection,"The structure [2,25,28,51] has proved effective in object detection."
+"mask2former [10,11]",image segmentation,"Mask2Former [10,11] demonstrated the effectiveness of such architectures for image segmentation with a mask classification formulation."
+"mask2former [10,11]",framework,"Inspired by this success, we also formulate our framework as a query-based mask classification task."
+framework,query-based mask classification task,We formulate our framework as a query-based mask classification task.
+"query-text contrastive loss [33, 43]",model outputs,"We claim that calculating a query-text contrastive loss [33, 43] on the task-guided queries can help the model learn inter-task differences and reduce the category mispredictions in the model outputs."
+lmseg [50],query-text contrastive loss,"Concurrent to our work, LMSeg [50] uses text derived from multiple datasets' taxonomy to calculate a query-text contrastive loss and tackle the multi-dataset segmentation training challenge."
+lmseg [50],multi-dataset segmentation training challenge,"Unlike LMSeg [50], our work focuses on multiple tasks and uses the classes in the training sample's GT label to calculate the contrastive loss."
+oneformer,universal image segmentation framework,"In this section, we introduce OneFormer, a universal image segmentation framework jointly trained on the panoptic, semantic, and instance segmentation and outperforms individually trained models."
+gt label,class,GT label is associated with different classes mentioned in the image for object detection
+text descriptions,object mask,Text descriptions are formed for each mask using the corresponding class name
+text list,constant length,Text list is padded to a constant length of Ntext using specific entries representing no-object detections
+task,"{panoptic, instance, semantic}","Entries 'a/an {task} photo' are used to represent no-object detections, where task can be from the set {panoptic, instance, semantic}"
+input image,multi-scale features,Multi-scale features are extracted from the input image using a backbone and a pixel decoder
+task input,1-d task token,Task input is tokenized to obtain a 1-D task token used to condition the object queries and the model
+text list,number of binary masks,Text list represents the number of binary masks for each class present in the GT label
+task,text list,Text list depends on the input image and the {task}
+model's task-dynamic predictions,ground-truths,Ground-truths for the model's task-dynamic predictions are derived from panoptic annotations
+object queries,text queries,Query-text contrastive loss is calculated between object and text queries to ensure task distinction
+transformer decoder,final predictions,Transformer decoder processes object queries and multi-scale features to produce final predictions
+category,binary masks,Binary masks are extracted for each category in the image
+binary masks,category,"Binary masks are extracted for each category present in the image, distinguishing between semantic task, instance task, and panoptic task."
+semantic task,amorphous binary mask,Semantic task guarantees only one amorphous binary mask for each class present in the image.
+instance task,non-overlapping binary masks,"Instance task signifies non-overlapping binary masks for only thing classes, ignoring the stuff regions."
+panoptic task,amorphous mask,Panoptic task denotes a single amorphous mask for stuff classes and non-overlapping masks for thing classes.
+masks,text (tlist),"A list of text (Tlist) is created based on the set of masks, with a template mentioning the corresponding binary mask class."
+padded list (tpad),no-object masks,"Tpad is created by padding entries of Tlist with 'a/an {task} photo' to ensure a constant length Ntext, representing no-object masks."
+architecture,task input (itask),The architecture is conditioned on the task using a task input (Itask) with a specific template.
+task,task-token (qtask),The task is tokenized and mapped to a task-token (Qtask) for conditioning the architecture.
+multi-task challenge,segmentation tasks,"Existing architectures face a drop in performance when jointly trained on all three segmentation tasks, highlighting the challenge of multitasking."
+multi-task challenge,task-conditioning,The failure to tackle the multi-task challenge is attributed to the absence of task-conditioning in the architecture.
+multi-task train-once challenge,image segmentation,The multi-task train-once challenge for image segmentation is tackled using a task-conditioned joint training strategy.
+task,"{panoptic, semantic, instance}","The task is uniformly sampled from {panoptic, semantic, instance} for the ground truth label."
+panoptic annotations,task-specific labels,The unification potential of panoptic annotations is realized by deriving the task-specific labels from them.
+query representations,training,"Two sets of queries, text queries (Qtext) and object queries (Q), are used in the architecture during training."
+qtext,text-based representation,Qtext is the text-based representation for the segments in the image.
+q,image-based representation,Q is the image-based representation used in the architecture.
+qtext,text entries,"To obtain Qtext, text entries are tokenized and passed through a text-encoder."
+ntext text embeddings,binary masks and their corresponding classes,The encoded Ntext text embeddings represent the number of binary masks and their corresponding classes in the input image.
+nctx learnable text context embeddings,encoded text embeddings,A set of Nctx learnable text context embeddings is concatenated to the encoded text embeddings to obtain the final text queries (Qtext).
+queries,training,The model size can be reduced during inference by dropping the text mapper module since it is not needed for queries during training.
+queries,q,"The object queries (Q′) are initialized as repetitions of the task-token (Qtask) and updated with guidance from features inside a transformer to obtain a task-conditioned representation of N queries, Q."
+queries,qtask,"The updated Q′ from the transformer is concatenated with Qtask to obtain a task-conditioned representation of N queries, Q."
+queries,model,The task-guided initialization of the queries and the concatenation with Qtask are critical for the model to learn multiple segmentation tasks.
+queries,classes,"The meaning of the object queries, Q, is task-dependent and should focus on thing classes for instance segmentation or predict one amorphous object for each class for semantic segmentation or a mix of both for panoptic segmentation."
+model,tasks,Developing a single model for all three segmentation tasks is challenging due to the inherent differences among the tasks.
+queries,architecture,Existing query-based architectures do not take into account the differences among segmentation tasks and fail to effectively train a single model on all three tasks.
+q,qtext,A query-text contrastive loss is calculated using Q and Qtext to improve the model performance.
+q,tpad,Tpad is used to obtain the text in the calculation of the query-text contrastive loss.
+trastive loss,q,Trastive loss is used with Q for learning inter-task distinctions
+trastive loss,qtext,Trastive loss is used with Qtext for learning inter-task distinctions in query representations
+tpad,text queries representation,Tpad is used to obtain the text queries representation
+qtext,object queries,Text queries align with object queries representing objects/segments in an image
+contrastive loss,text and object queries,Contrastive loss is used between ground truth-derived text and object queries for learning inter-task distinctions
+contrastive learning,queries,Contrastive learning on queries enables to attend to inter-class differences and reduce category misclassifications
+b object-text query pairs,qob j and qtxti,Batch of B object-text query pairs consists of qob j and qtxti
+i-th pair,queries,i-th pair consists of object and text queries respectively
+similarity between the queries,queries,Similarity between the queries is measured to calculate the similarity
+query,similarity,The similarity between the queries is measured by calculating a dot product.
+contrastive loss,object-to-text,The total contrastive loss is composed of an object-to-text contrastive loss (LQ→Qtext).
+contrastive loss,text-to-object,The total contrastive loss is composed of a text-to-object contrastive loss (LQtext→Q).
+contrastive loss,temperature parameter,The total contrastive loss is scaled by a learnable temperature parameter (τ) to adjust the contrastive logits.
+architecture components,backbone,The Backbone and Pixel Decoder components use ImageNet pre-trained backbones to extract multi-scale feature representations from the input image.
+pixel decoder,multi-scale deformable transformer,The pixel decoder component uses the same Multi-Scale Deformable Transformer based architecture for feature modeling.
+transformer decoder,multi-scale strategy,The Transformer Decoder uses a multi-scale strategy to utilize higher resolution maps inside the transformer decoder.
+transformer decoder,masked cross-attention operation,"Inside the transformer decoder, the features with varying resolutions are updated using a masked cross-attention operation."
+transformer decoder,self-attention operation,"Inside the transformer decoder, the features with varying resolutions are updated using a self-attention operation."
+transformer decoder,feed-forward network operation,"Inside the transformer decoder, the features with varying resolutions are updated using a feed-forward network operation."
+transformer decoder,query outputs,The final query outputs from the transformer decoder are mapped to a K + 1 dimensional space for class predictions.
+k,number of classes,K denotes the number of classes
+extra +1,no-object predictions,an extra +1 for the no-object predictions
+q,f1/4,decode F1/4 with the help of an einsum operation between Q and F1/4
+predictions,scores,"keep predictions with scores above a threshold of 0.5, 0.8, and 0.8"
+ade20k,cityscapes,panoptic post-processing on the ADE20K [13] and Cityscapes [12] datasets
+cityscapes,coco,panoptic post-processing on Cityscapes [12] and COCO [27] datasets
+sota,comparison,SOTA Comparison on the ADE20K val set
+oneformer,mask2former,OneFormer outperforms the individually trained Mask2Former [10]
+flops,crop size,FLOPs are computed using the corresponding crop size.
+contrastive loss,ce-loss,"In addition to the contrastive loss on the queries, standard classification CE-loss (Lcls) is also calculated."
+ce-loss,lbce,CE-loss is calculated in combination with binary cross-entropy (Lbce) over the mask predictions.
+ce-loss,ldice,CE-loss is calculated in combination with dice loss (Ldice) over the mask predictions.
+mask2former,oneformer,OneFormer outperforms Mask2Former.
+oneformer,state-of-the-art pseudo-universal and specialized architectures,OneFormer is compared with the existing state-of-the-art pseudo-universal and specialized architectures.
+ade20k,oneformer,OneFormer is compared with the existing state-of-the-art pseudo-universal and specialized architectures on the ADE20K dataset.
+oneformer,mask2former,OneFormer outperforms Mask2Former's individually trained models on all three image segmentation tasks and sets a new state-of-the-art performance when compared with other methods using the same backbone
+oneformer,mask2former,"OneFormer outperforms Mask2Former with a +0.6% and +1.9% improvement on the PQ and AP metrics, respectively"
+oneformer,mask2former,OneFormer performs on-par with individually trained Mask2Former with a +0.1% improvement in the PQ score
+oneformer,swin-l† backbone,"With Swin-L† backbone, OneFormer outperforms Mask2Former with a +0.6% and +1.9% improvement on the PQ and AP metrics, respectively"
+oneformer,convnext-l† and convnext-xl† backbone,"With ConvNeXt-L† and ConvNeXt-XL† backbone, OneFormer sets a new state-of-the-art of 68.5% PQ and 46.7% AP, respectively"
+oneformer,coco,"We compare OneFormer with the existing state-of-the-art pseudo-universal and specialized architectures on the COCO val2017 dataset in Tab. 3. With Swin-L† backbone, OneFormer performs on-par with individually trained Mask2Former with a +0.1% improvement in the PQ score"
+oneformer,image segmentation tasks,OneFormer generalizes well to all three image segmentation tasks on three widely used datasets.
+oneformer,joint-training strategy,The significance of OneFormer's components is demonstrated through extensive ablations.
+oneformer,datasets,"Datasets Cityscapes, ADE20K, and COCO are used for experiments with OneFormer."
+image segmentation tasks,cityscapes,"Cityscapes dataset consists of 19 classes and is used for semantic, instance, and panoptic segmentation tasks."
+image segmentation tasks,ade20k,"ADE20K dataset has 150 classes and is used for semantic, instance, and panoptic segmentation tasks."
+image segmentation tasks,coco,"COCO dataset has 133 classes and is used for semantic, instance, and panoptic segmentation tasks."
+ade20k,coco,"ADE20K and COCO are benchmark datasets used for semantic, instance, and panoptic segmentation tasks."
+oneformer,implementation details,Implementation details of OneFormer are provided in the appendix due to space constraints.
+swin-l,convnext-l,Swin-L and ConvNeXt-L are backbones pretrained on ImageNet-22K
+mask2former,oneformer,OneFormer outperforms the individually trained Mask2Former models
+mask2former,oneformer,OneFormer competes with the individually trained Mask2Former
+mask2former,oneformer,We evaluate the AP score on instance ground truths derived from the panoptic annotations
+mask2former,150 queries,Mask2Former's performance degrades with 150 queries
+flops,100 validation coco images,FLOPs are computed using 100 validation COCO images
+apinstance,evaluation on the original instance annotations,APinstance represents evaluation on the original instance annotations
+miou,semantic ground truths derived from panoptic annotations,mIoU is evaluated on semantic ground truths derived from panoptic annotations
+oneformer,ablation studies,OneFormer's components are analyzed through a series of ablation studies
+swin-l† oneformer,cityscapes,Swin-L† OneFormer is ablated on the Cityscapes dataset
+task-conditioned architecture,task token (qtask),The importance of task token (Qtask) in Task-Conditioned Architecture is validated
+qctx,learnable text context,Using a learnable text context (Qctx) leads to an improvement in the PQ score
+task-token,ap score,"Without the task token, there is a significant drop in the AP score"
+qctx,significance,Qctx proves its significance in the text context
+task token (task-guided query init.),all-zeros initialization,Task token (task-guided query init.) leads to improvement compared to all-zeros initialization
+contrastive query loss,results,Results are reported without the Contrastive Query Loss
+contrastive query loss,query-text contrastive loss (lq↔qtext),Contrastive loss significantly benefits PQ and AP scores compared to query-text contrastive loss (LQ↔Qtext)
+contrastive query loss,classification loss (lcls),Contrastive loss is more effective than classification loss (Lcls) in capturing inter-task differences
+contrastive query loss,input text template,Contrastive Query Loss is related to the importance of the template choice for the entries in the text list (Tlist)
+input text template,a photo with a {cls} {type},Experimenting with the template 'a photo with a {CLS} {TYPE}' for text entries in Tlist
+contrastive-loss,ap scores,The contrastive-loss significantly improves the AP scores
+contrastive-loss,pq score,The contrastive-loss significantly improves the PQ score
+query classification-loss,pq,The query classification-loss improves the PQ score
+oneformer,baseline’s scores,OneFormer significantly beats the baseline’s scores
+oneformer,task token value,Our OneFormer is sensitive to the input task token value
+input text templates,performance,The template for the input text list entries is a critical factor for good performance
+amorphous masks,thing,"Amorphous masks and 'thing' are both mentioned as distinct object masks in the context, indicating a relationship between the two terms."
+identity template,{cls},"The identity template 'identity template' is associated with the placeholder '{CLS}', showing a relationship between the two concepts."
+baseline,performance,"The baseline performance of the model with the identity template 'a photo with a {CLS}' is highlighted, suggesting a relationship between the baseline and performance."
+exploration,text template space,"There is a mention of exploring the text template space for improving performance, indicating a relationship between exploration and the text template space."
+model,training strategy,"The Swin-L† Mask2Former-Joint model is trained with a joint training strategy on the ADE20K dataset, suggesting a relationship between the model and the training strategy."
+baseline,oneformer,"A comparison is made between the Mask2Former-Joint baseline and the Swin-L† OneFormer model, indicating a relationship between the baseline and OneFormer models."
+models,performance metrics,"The performance metrics of PQ, AP, and mIoU are used to evaluate the models, suggesting a relationship between the models and performance metrics."
+task token input,task,"The framework's sensitivity to the task token input is highlighted by setting values such as panoptic, instance, or semantic for the {task} variable, indicating a relationship between the task token input and the task."
+task,instance,"The task and instance are mentioned together, indicating a relationship between them."
+pq,pqth,"There is a mention of a sizable drop in the PQ, PQTh metrics, suggesting a relationship between them."
+pq,ap,"A sizable drop in the PQ and AP metrics is mentioned, implying a relationship between the two terms."
+semantic task,pqst,"The semantic task and PQSt are mentioned together, showing a relationship between them in the context."
+framework,oneformer,"The framework mentions the OneFormer, indicating a relationship between them as part of the architecture."
+oneformer,segmentation tasks,"The OneFormer is described as a universal image segmentation framework, indicating its relationship to segmentation tasks."
+oneformer,mask2former,"A comparison between OneFormer and Mask2Former is made, showing a relationship between the two models."
+oneformer,predictions,"OneFormer is mentioned to produce more accurate predictions compared to Mask2Former, indicating a relationship between the model and its predictions."
+universal architecture,single model,The terms 'universal architecture' and 'single model' are closely related as they are both components of the training approach described in the context.
+universal architecture,training,The 'universal architecture' plays a key role in the training process as mentioned in the context.
+single model,training,The 'single model' is utilized in the training process as highlighted in the context.
+jointly trained single oneformer model,specialized mask2former models,"The 'jointly trained single OneFormer model' is compared to the 'specialized Mask2Former models' in terms of performance, indicating a relation between them."
+oneformer,specialized mask2former models,"The 'OneFormer' model outperforms the 'specialized Mask2Former models' according to the context, establishing a relationship between them."
+oneformer,single-architecture state of the art,"The 'OneFormer' model surpasses the 'single-architecture state of the art' in terms of performance across segmentation tasks, implying a connection between them."
+oneformer,image segmentation,"The 'OneFormer' model is believed to be a significant advancement towards making image segmentation more universal and accessible, indicating a relation between them."
+training time,weight storage,There is a relationship between 'training time' and 'weight storage' as the deployment of the 'OneFormer' model results in a reduction of both as stated in the context.
+weight storage,inference hosting requirements,"'Weight storage' and 'inference hosting requirements' are related as the adoption of 'OneFormer' leads to decreased storage needs and inference hosting, thus connecting them."
+oneformer,image segmentation more universal and accessible,'OneFormer' is considered a significant step towards making 'image segmentation more universal and accessible' expressing a strong relationship between them.
+uiuc,picsart ai research,"The institutions 'UIUC' and 'Picsart AI Research' are acknowledged for their support in the context, implying a relationship between them."
+u of oregon,uiuc,"The 'U of Oregon' and 'UIUC' are recognized for their contribution to the work according to the acknowledgment section, suggesting a relation between them."
+picsart ai research,iarpa,"'Picsart AI Research' and 'IARPA' are acknowledged for supporting the work with contract number 21102100004, indicating a connection between them."

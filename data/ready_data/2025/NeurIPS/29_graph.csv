@@ -1,0 +1,261 @@
+node_1,node_2,edge
+large scenes,rigid objects,"Large scenes with many rigid objects are crucial for applications like robotics, engineering, film, and video games."
+rigid interactions,modeling,Rigid interactions are difficult to model due to small changes in initial state or simulation parameters leading to large changes in the final state.
+simulators,graph networks (gnns),Recently developed learned simulators based on GNNs provide an alternative to hand-designed simulators like MuJoCo and PyBullet.
+simulators,objects,Learned simulators accurately capture dynamics of real objects directly from real-world observations.
+learned simulators,meshes,Current learned simulators operate on meshes and scale poorly to scenes with many objects or detailed shapes.
+sdf-sim,rigid-body simulator,"SDF-Sim is the first learned rigid-body simulator designed for scale, leveraging SDFs to represent object shapes and improve distance computation speed."
+simulator,collision detection,The simulator is designed to avoid the bottleneck of collision detection faced by previous simulators.
+gnn-based simulators,objects,GNN-based simulators can be scaled to scenes with hundreds of objects and up to 1.1 million nodes.
+sdf-sim,real world scenes,SDF-Sim can be applied to real world scenes by extracting SDFs from multi-view images.
+traditional physics simulators,challenges,"Traditional physics simulators face a significant challenge when dealing with tables, plates, and glasses due to the need for precise 3D shape, location, and physical parameters of each object."
+simulators,physical properties,"Learned simulators based on graph networks are able to learn physical properties directly from real data, leading to a powerful alternative to traditional hand-designed simulators like MuJoCo and PyBullet."
+graph networks,physical dynamics,Graph networks have the capability to capture a range of complex physical dynamics and generalize to new scenes.
+gnn-based methods,scale,"Current GNN-based methods do not scale well to large scenes, similar to traditional simulators, due to the reliance on 3D meshes to describe object shapes."
+collision detection,performance,"In scenes with a large number of objects or detailed meshes, collision detection between objects becomes extremely costly, impacting runtime and memory performance."
+input graphs,performance,"Large meshes in input graphs can result in hundreds of thousands of nodes and edges, affecting runtime and memory performance in terms of graph networks."
+collision detection,solution,"To address the issue with expensive collision detection, a common approach in classic simulation literature is to use signed-distance functions or fields (SDFs) to represent objects implicitly."
+sdfs,object,SDFs implicitly represent the object shape and the distance field.
+sdfs,mlps,SDFs parameterized by MLPs are learned for each object to implicitly represent the object shape and the distance field.
+simulator,sdfs,A GNN-based simulator uses learned SDFs to predict object dynamics for the next simulation step.
+distance queries,compute cost,distance queries are a main driver of the compute cost in traditional rigid body simulation.
+sdfs,runtime efficiency,SDFs can significantly speed up distance queries in traditional rigid body simulation.
+sdfs,memory cost,SDFs stored as a 3D grid trade off runtime efficiency for increased memory cost.
+sdfs,large real scenes,SDFs have limited usefulness for large real scenes due to pre-computation from a mesh and storage as a 3D grid.
+images,3d shape,SDFs learned from a set of images can reconstruct the 3D shape from vision.
+sdfs,mlp weights,learned SDFs store the shape implicitly in the MLP weights and are fast to train and query.
+sdfs,3d grids,"learned SDFs are less memory-hungry compared to 3D grids, making them a perfect candidate for simulation."
+learned sdfs,dynamics scenes,learned SDFs were applied for dynamics scenes only in a limited context.
+sdfs,dynamics scenes,SDFs were applied for dynamics scenes only
+sdfs,object shapes,SDFs to represent object shapes
+sdfs,simulator,"SDF-Sim, a learned graph-network-based simulator for rigid interactions that uses learned SDFs"
+simulator,object shapes,"Using a special design of the input graph, SDF-Sim allows us to substantially reduce the runtime and memory requirements compared to mesh-based learned simulators"
+simulator,scenes,demonstration of a learned simulator generalizable to extremely large scenes up to 1.1 million nodes
+simulator,sdfs,"SDF-Sim can directly work with SDFs obtained from multi-view RGB images, supporting rich 3D simulation of objects extracted from real scenes"
+simulation,system states,A simulation can be represented as a time series of system states
+mesh-based simulation,graph networks,"Simulators based on graph networks (GNNs) encode the system state into a graph G = (V,E) with nodes V and edges E"
+mesh-based simulation,rigid body simulation,"For rigid body simulation, this graph can be constructed from the triangle mesh of the individual objects"
+object,mesh,"mesh vertices become the graph nodes, and mesh edges act as graph edges."
+object,motion,The object motion is computed by message passing across the nodes and edges in the graph.
+motion,message passing,The object motion is computed by message passing across the nodes and edges in the graph.
+position,object,"Within individual objects, the position, rotation and velocity of the object can be computed by message passing through the nodes and edges of that object."
+rotation,object,"Within individual objects, the position, rotation and velocity of the object can be computed by message passing through the nodes and edges of that object."
+velocity,object,"Within individual objects, the position, rotation and velocity of the object can be computed by message passing through the nodes and edges of that object."
+simulators,mujoco,Analytical simulators like MuJoCo are most commonly used for modelling rigid bodies.
+simulators,pybullet,Analytical simulators like PyBullet are most commonly used for modelling rigid bodies.
+simulators,drake,Analytical simulators like Drake are most commonly used for modelling rigid bodies.
+simulators,learned simulators,Learned simulators have unique advantages that analytical simulators don’t provide.
+learned simulators,real-world observations,Learned simulators can be trained directly on real-world observations.
+sim-to-real gap,learned simulators,"Learned simulators can track the real object trajectory better than analytical simulators, solving a well-known sim-to-real gap."
+initial states,analytical simulators,"Another common issue is precisely estimating the initial states, which analytical simulators rely on – learned simulators can compensate for these inaccuracies."
+learned simulators,differentiable,"Finally, learned simulators are differentiable and can be used for optimization and design."
+optimization,design,Both optimization and design are key concepts mentioned in the context in relation to simulators.
+simulators,learned simulators,"Learned simulators are mentioned as not optimized for runtime and memory, in comparison to analytical simulators."
+learned simulators,runtime,Learned simulators are not optimized for runtime and memory.
+learned simulators,memory,Learned simulators are slower and more memory-constrained than analytical simulators.
+learned simulators,optimization,This work addresses the limitation of memory constraint in learned simulators.
+learned simulators,runtime,This work aims to unlock the ability to run learned simulators on larger scenes.
+scenes,simulators,The work focuses on allowing learned simulators to run on larger scenes.
+assets,vision,Simulating assets extracted from vision is mentioned in the context.
+shoe object,sdf-sim,"Simulation of a virtual shoe object using SDF-Sim is described, highlighting its ability to predict realistic dynamics."
+real-world scene,sdf,Extracting SDF from images of a real-world scene is discussed.
+collision impulses,gnn simulators,The computation of collision impulses between objects is noted as a challenging component of the simulation in GNN simulators.
+gnn-based simulators,edges,The amount of edges is the main bottleneck of GNN-based simulators due to the quadratic growth of potential collision edges with the number of simulated nodes.
+gnn-based simulators,compute and memory costs,The number of potential collision edges in GNN-based simulators leads to prohibitive compute and memory costs.
+triangles/nodes,collision edges,Identifying pairs of triangles/nodes to connect with collision edges involves computing the distance to the closest point on a mesh.
+tree search methods,deep learning pipelines,Tree search methods like BVH are difficult to integrate into deep learning pipelines for identifying pairs of triangles/nodes to connect with collision edges.
+sdfs,"computer graphics, game engines, and robotics","Signed distance functions (SDFs) are widely used in computer graphics, game engines, and robotics for fast collision detection and computation of distances to an object."
+sdfs,object surface,SDFs define a field representing the signed distance from an arbitrary point to the closest point on the surface of the object.
+sdfs,object mesh,"SDFs permit constant-time queries of the distance to an object surface, irrespective of the number of nodes/faces in the object mesh."
+object surface,collision detection,Object surface is an essential component of collision detection.
+object surface,graph edges,Graph edges are constructed in SDF-Sim using the object surface.
+sdf,high-resolution 3d grid,SDF is often pre-computed as a high-resolution 3D grid containing signed distances from the points on the grid to the object surface.
+grid sdf,memory,Grid SDF allows to speed up distance queries by trading off memory.
+grid sdf,object,Grid SDF contains signed distances from the points on the grid to the object surface.
+learned sdfs,reconstruction of water-tight 3d shapes,Learned SDFs gain popularity for the reconstruction of water-tight 3D shapes from images.
+mlp,continuous distance field,MLP parameterized by θ approximates the continuous distance field f(y; θ).
+learned sdfs,physical simulations,Learned SDFs have not been explored enough to speed up physical simulations.
+learned sdfs,classic physics solvers,Limited available works combine learned SDFs with classic physics solvers.
+sdfs,memory,Learned SDFs take ∼32x less memory than traditional 3D-voxel-grid SDFs.
+sdf,3d space,SDF allows us to easily compute the closest point in 3D space on the object surface.
+closest point,object surface,"The closest point y∗ on the object surface is represented by the equation y∗ = y − fθ(y)∇fθ(y), where fθ(y) is the distance between y and y∗ and ∇fθ(y) points in the opposite direction of the shortest path from y to the surface of the object."
+distance,object surface,The distance fθ(y) is the distance between y and the closest point y∗ on the object surface.
+gradient,distance,"The gradient ∇fθ(y) points in the opposite direction of the shortest path from y to the surface of the object, and is unit-norm."
+network,simulation,This calculation of the closest points for collision resolution in the simulation requires only one forward and one backward pass of the network.
+sdf,object shapes,SDF-Sim is a graph-network-based simulator that uses learned SDFs to represent object shapes and perform fast and memory-efficient distance computation between the objects.
+sdf,object,SDF fθ(y) is an MLP that takes in a 3D point y ∈ R3 and outputs a scalar SDF value for the object.
+sdf functions,object,Training SDF functions per object involves representing SDF fθ(y) as an MLP that takes in a 3D point y ∈ R3 and outputs a scalar SDF value.
+graph network,input graph,"By leveraging SDF properties, a new way is proposed to construct the input graph for the graph network, allowing for the use of a smaller graph size and achieving an order-of-magnitude reduction in runtime and memory on large simulations."
+meshes,sdf-sim,SDF-Sim is applied on benchmarks where meshes are available
+sdf-sim,learned sdf fθ(y),learned SDF fθ(y) is trained from a mesh by applying SDF-Sim
+sdf,points in 3d space,ground-truth signed distances from points in 3D space to mesh surfaces are computed for training SDF
+points in 3d space,mesh surfaces,ground-truth signed distances are computed from points in 3D space to mesh surfaces
+ground-truth signed distances,mlp fθ(y),MLP fθ(y) is trained to fit ground-truth signed distances with supervision
+object shape,8 mlp layers with 128 units each,each object shape is represented by 8 MLP layers with 128 units each
+object shape,volsdf,VolSDF is used to distill an SDF from a set of images representing a 360-degree view of the outdoor garden scene
+set of images,360-degree view of outdoor garden scene,set of images represents a 360-degree view of the outdoor garden scene
+images,camera poses estimated via colmap,camera poses estimated via COLMAP are used to represent images
+object oi,learned sdf function fθi,shape of object Oi in the reference pose is represented by learned SDF function fθi
+simulation step t,rigid transformation t t,rigid transformation T t transforms the object at simulation step t
+object center of mass,translation,translation corresponds to the object's center of mass
+learned simulator,next-step transformation t t+1,learned simulator predicts the next-step transformation T t+1 for each object
+object nodes,surface nodes,"Surface nodes {nik} are associated with their corresponding object nodes oi, with the connection represented by edges E intra = {eoi↔nik"
+surface nodes,object motion,"Surface nodes {nik} carry information about object motion, such as impulses from collision events, and this information is propagated to the object node oi. Additionally, the surface edges between the nodes {nik} can be omitted without loss of accuracy as shown by [19]."
+nodes,feature vectors,"In graph networks, nodes and edges are associated with feature vectors that hold information about the motion and relation between the nodes. These feature vectors are necessary for simulation purposes."
+surface nodes,node features,Node features for surface nodes nik are computed as finite-difference velocity estimates in the simulation. These features are essential for constructing the necessary node features for simulation.
+surface nodes,finite-difference velocity estimates,surface nodes are used to compute the finite-difference velocity estimates in the simulation space
+surface nodes,displacement vector,displacement vector between the surface node position and the object center is used as the edge feature for intra-object edges
+object nodes,positions,node features for object nodes are set using their positions
+object nodes,sdf representations,collision edges between objects are constructed by leveraging their SDF representations
+node nik,sdf fθj,"for a node nik on Oi, SDF fθj of object Oj is queried to get the distance djik from nik to the closest point on Oj"
+distance threshold d,surface node,"if distance djik is within a predefined distance threshold D, the surface node nik is connected directly to the opposing object node oj"
+distance,object node,The distance dj nik directly to the opposing object node oj and refer to this edge as eoj↔nik.
+object node,edge,We construct the features for collision edges eoj↔nik.
+inter-object edges,mesh-based simulators,"This approach is different set of inter-object edges as E coll from mesh-based simulators [4, 19, 29]."
+collision edges,object,We construct the features for collision edges eoj↔nik such that they contain information about potential points of collision.
+closest point,object,"First, we compute the closest point cj of object Oj."
+closest point,surface,The closest point on the surface of Oj is then computed similarly.
+closest point,sdf function,"To do so, we transform the position of nik into the reference space of Oj using SDF function."
+contact,two objects,"SDFs allow us to test contact between two objects at higher fidelity, without relying on the density of the surface nodes."
+features,collision edges,"Finally, we construct the features for the collision edges as follows."
+features,relative position,These features provide information about the relative position of objects.
+ik,oj,The relative position of the closest point within the object Oj and its relative location to the node nik on the opposing object provides information about potential collisions.
+nik,cjik,The information about the relative location of cjik to the node nik on the opposing object is essential for resolving collisions.
+nik,oj,"The object node oj can collect information from all nodes within a collision radius relative to object Oj, including the node nik."
+oj,velocity,"The model has access to the velocity history for object oj through its node features, aiding in understanding changes in position."
+nik,velocity,"The model has access to the velocity history for node nik through its node features, helping to infer changes in position relative to object Oj."
+sdf-sim,mesh-based methods,SDF-Sim requires significantly fewer edges than mesh-based methods due to a single collision edge testing a node against an entire object surface.
+sdf-sim,i · k,"SDF-Sim has O(I · K) edges in the worst case, a much smaller number than O(K^2) for mesh-based simulators, allowing for scalability to large scenes."
+graph network simulator,mlps,The input graph is encoded using MLPs for each node and edge type in the graph network simulator.
+graph network simulator,message passing steps,"The graph network simulator processes the graph using 10 message passing steps as described in the reference [4, 29]."
+graph,message passing,Graph is processed using 10 message passing steps
+surface node,acceleration estimate,Surface node features are decoded into an acceleration estimate for each surface node
+surface node,per-node position update,Per-node position updates are computed for each surface node using Euler integration
+rigid transformations,shape matching,Next-step rigid transformations are computed using shape matching
+simulator,training,Simulator is trained on a single-step prediction task
+scenes,objects,Models are demonstrated on scenes with an increasing number of objects
+sdf-sim,simulation benchmarks,Accuracy and efficiency of SDF-Sim is evaluated on small-scale simulation benchmarks
+website,simulation videos,Simulation videos can be found on the website
+movi-c,last frames of rollouts,Comparison of the last frames of rollouts predicted on Movi-C
+kubric datasets,sdf-sim evaluation,SDF-Sim is evaluated on the benchmark Kubric datasets
+sdf-sim,kubric datasets,"SDF-Sim is evaluated on the benchmark Kubric datasets, shared with Apache 2.0 license."
+sdf-sim,fignet*,SDF-Sim is compared to FIGNet* as an existing state-of-the-art learned simulator for rigid-body interactions.
+kubric datasets,movi-b,"Kubric datasets include the Movi-B difficulty tier with synthetic shapes like cube, torus, and cow."
+movi-c,fignet*,Movi-C is compared to FIGNet* since other baselines run out of memory during training on large collision edges.
+fignet,fignet*,Both FIGNet and FIGNet* are graph network-based methods used for rigid-body interactions.
+fignet,object meshes,FIGNet operates directly over object meshes with a special type of graph edges between mesh triangles.
+object meshes,simulation,"Object meshes are used in the simulation process, where their number and size affect the runtime and memory costs."
+fignet,fignet*,FIGNet* is a memory-efficient version of FIGNet that omits edges between the surface nodes of each object.
+fignet,fignet*,"FIGNet was demonstrated to scale up to 10 objects with thousands of nodes each, while FIGNet* was tested with a larger table scene with 40k triangles and one moving object."
+fignet,fignet*,"In complex simulations, FIGNet and FIGNet* generate collision edges that can quickly exceed GPU memory."
+sdf-sim,movi-b/c benchmarks,"Accuracy, memory, and runtime comparisons are made between the SDF-Sim model and mesh-based baselines on the Movi-B/C benchmarks."
+sdf-sim,simulation,"SDF-Sim is used for large-scale simulation of Spheres-in-Bowl, simulated for 200 timesteps."
+collision edges,gpu memory,"In complex simulations, collision edges generated by FIGNet and FIGNet* quickly exceed GPU memory capacity."
+orange lines,blue lines,"Both orange and blue lines are mentioned as elements in a scene, representing visual aspects of a simulation."
+collision edges,objects,"Collision edges are associated with objects in the context, showing a relationship between physical entities in the simulation."
+movi-b,movi-c,"Both Movi-B and Movi-C are datasets used for evaluation in the context, suggesting a comparison between different sets of data."
+dpi,mgn,"DPI and MGN are mentioned as different models representing objects, likely indicating variations in the representation of entities in simulations."
+sdf-sim,fignet*,"SDF-Sim is compared to FIGNet* in terms of graph representation, illustrating differences in the approach to modeling scenes in simulations."
+graph network,edge updates,The graph network performs edge updates for/over fewer edges even though the number of nodes in the graph remains the same.
+sdf-sim,fignet*,Figure S2(a) shows that the runtime of SDF-Sim is consistently lower than that of FIGNet* for varying sizes of the input graph.
+sdf-sim,dpi,"SDF-Sim has substantially lower errors than previous baselines DPI, MGN and MGN-Large-Radius on Movi-B."
+sdf-sim,fignet,"In comparison to SOTA models FIGNet and FIGNet*, SDF-Sim has a slightly higher error."
+sdf-sim,4.9% deviation,"Note that the errors of SDF-Sim are already very low: the translation error of SDF-Sim is 0.24 meters, which is only 4.9% of the average object travel distance of 4.92 meters in Movi-C dataset."
+sdf-sim,fignet*,On large scenes SDF-Sim is actually more accurate in comparison to FIGNet*.
+spheres-in-bowl simulation,figure 7,The Spheres-in-Bowl simulation is shown in Figure 7.
+penetration metrics,rollout rmse,Both metrics are averaged over simulation runs.
+up to 140 spheres,maximum for which all baselines could be run,"Both metrics are averaged over simulation runs with up to 140 spheres, the maximum for which all baselines could be run."
+simulations with a variable number of spheres,ranging from 1 to 512,"A set of simulations with a variable number of spheres, ranging from 1 to 512, are created to study the scaling properties of the model."
+spheres-in-bowl,ground-truth,The ground-truth for these scenes is created using PyBullet simulator.
+sdf-sim,fignet* and fignet,SDF-Sim has an order-of-magnitude fewer collision edges compared to FIGNet* and FIGNet.
+fignet and fignet*,memory,FIGNet and FIGNet* run out of memory for simulations with >140 and >160 objects respectively.
+sdf-sim,nvidia v100 gpu,SDF-Sim can simulate the entire set of 512 interacting objects using the same Nvidia V100 GPU.
+sdf-sim,fignet*,SDF-Sim is up to 5 times faster than FIGNet* in terms of total runtime.
+learned simulator,scaling to scenes with hundreds of objects and thousands of collisions,This is the first demonstration of a learned simulator successfully scaling to scenes with hundreds of objects and thousands of collisions.
+simulator,scaling to scenes with hundreds of objects and thousands of collisions,"The simulator has successfully scaled to scenes with a large number of objects and collisions, demonstrating its ability to handle complex simulations."
+simulator,accuracy of these simulations,The accuracy of the simulations generated by the simulator is being evaluated in the next step to determine its precision and reliability.
+sdf-sim,penetration distance,"SDF-Sim has the lowest penetration distance throughout the simulation, as depicted in Figure 8(a), indicating its ability to accurately represent object interactions."
+sdf-sim,rollout errors,"Figure 8(b) illustrates the rollout errors at different steps of the simulation, with SDF-Sim showing better generalization to larger scenes and lower error rates compared to FIGNet*."
+fignet*,lower error on datasets with smaller scenes,"FIGNet* exhibits lower error rates on datasets featuring smaller scenes attributed to its training on Movi-B, which includes a sphere object missing in Movi-C dataset."
+sdf-sim,good generalization over geometry,"Despite not being trained on a sphere object, SDF-Sim performs exceptionally well on both penetration and rollout metrics, showcasing its ability to generalize effectively over different geometries."
+sdf-sim,scaling to extra-large scenes with up to 1.1 million nodes,"The conclusion highlights SDF-Sim's capability to scale up to extra-large scenes with a significant number of objects, demonstrating its potential for handling large-scale simulations effectively."
+analytical simulators,computer graphics,analytical simulators and computer graphics are classic test examples challenging even for them
+simulations,shoes,simulations consist of 300 shoes with 851k nodes
+simulations,knots,simulations consist of 270 knots with 384k nodes
+simulations,movi-c objects,simulations consist of 380 various Movi-C objects with 1.1M nodes
+scenes,movi-c dataset,scenes are orders of magnitude larger than those in Movi-C dataset used for SDF-Sim training
+sdf-sim,scenes,SDF-Sim can scale to massive scenes without running out of memory and produce qualitatively realistic rollouts of 200 steps
+learned baseline,collision edges,"due to the large number of potential contacts, learned baseline models produce a vast number of collision edges and exceed the GPU memory on scenes"
+real-world scenes,virtual reality applications,simulating real-world scenes from vision is crucial for virtual reality applications
+sdf-sim,real scenes,"SDF-Sim can successfully handle real scenes, despite being trained only on small simulated assets"
+rgb images,3d sdf representation,RGB images are used to represent Garden scene and distill a 3D SDF representation of the table and the vase
+3d representation,simulation,The 3D representation is transformed into a simulation where it interacts with another object.
+shoe object,movi-c,A shoe object from Movi-C is added to the scene.
+sdf-sim model,shoe,Figure 3 shows a rollout from the SDF-Sim model of a shoe.
+layer sizes,object,"Ablation on learned SDF model sizes: 8 layer MLPs with layer sizes of 32, 64, or 128 hidden units."
+sdf-sim,movi-b,Translation and rotation error for SDF-Sim trained on Movi-B with different SDF sizes.
+sdf estimates,surface,Mean squared error of the predicted SDF estimates near the surface.
+sdf field,cow shape,A cross-section of the learned SDF field for the Movi-B cow shape.
+sdf extracted,volsdf,SDF extracted by VolSDF exceeds the limits of FIGNet baseline that runs out of memory.
+objects,sdf-sim,SDF-Sim can capture the nuanced interactions between the objects.
+scenes,sdf-sim,"SDF-Sim can generalize to new scenes, despite being trained on synthetic data of small scenes."
+sdf quality,simulator performance,Investigation of the quality of the estimated SDF values and their impact on simulator performance.
+sdf models,shape,The learned SDF models of all three layer sizes can reproduce the shape.
+model,layer sizes,The models of all three layer sizes can reproduce the shape
+32-unit model,reconstruction,Reconstruction from a smallest 32-unit model is more coarse
+sdf-sim accuracy,sdf mlp sizes,SDF-Sim accuracy is similar across different SDF MLP sizes
+simulator,noise,The learned simulator can learn to compensate for noise in the estimated SDFs
+metrics,sdf accuracy,Additional metrics on SDF accuracy are provided
+metrics,sdf gradients,Additional metrics on SDF gradients are provided
+metrics,sdf projected closest points,Additional metrics on SDF projected closest points are provided
+memory footprint,sdf,Comparison of memory footprint of SDF versus storing meshes is provided
+dynamics,learned sdfs,"Overall, using implicit shapes like learned SDFs for simulation has been explored only in limited settings"
+diffsdfsim,object shapes,DiffSDFSim uses learned object shapes (SDFs and NeRFs respectively) in combination with an analytic contact model
+dano,object shapes,DANO uses learned object shapes (SDFs and NeRFs respectively) in combination with an analytic contact model
+argila et al.,learned sdf,Argila et al. model the interaction of a learned SDF with a cloth via an analytic simulator
+qiao et al.,learned sdf,Qiao et al. model the interaction of a learned SDF with a cloth via an analytic simulator
+fignet*,gnn-based model,FIGNet* uses a GNN-based model on a 3D scene reconstructed via NeRF and converted into a mesh
+driess et al.,latent dynamics,Driess et al. learn latent dynamics over NeRFs
+whitney et al.,particles,Whitney et al. convert a NeRF 3D scene into a set of particles and use them in a GNN simulator
+sdf-sim,simulation,SDF-Sim avoids the costly simulation of large meshes or sets of particles and operates directly over the SDFs
+mani et al.,learned,Mani et al. use learned
+large meshes,sets of particles,"Large meshes and sets of particles are mentioned together in the context, indicating a relationship between them in terms of their use in the context."
+large meshes,sdfs,"Large meshes are mentioned in the context in relation to SDFs, implying that SDFs are directly used over large meshes in the context."
+particles,sdfs,"Particles and SDFs are mentioned in the same context, indicating that particles are used in relation to SDFs in the context."
+sake of efficiency,sdf values,"The SDF values are used for the sake of efficiency, as mentioned in the context, indicating a relationship between them in terms of their purpose."
+objects,gnn simulator,"The GNN simulator operates directly over the SDFs of objects, as suggested in the context, showing the relationship between objects and the GNN simulator."
+learned sdfs,rigid scenes,"Learned SDFs are used to represent large rigid scenes efficiently in the context, indicating a relationship between learned SDFs and rigid scenes."
+sdfs,rigid objects,"SDFs are mentioned in the context in relation to rigid objects, suggesting a relationship between them in terms of their representation."
+sdfs,3d surfaces,"SDFs are used to represent 3D surfaces in the context, indicating a relationship between SDFs and 3D surfaces."
+nerfs,sdfs,"NeRFs and SDFs are mentioned in the context, comparing their ability to represent surfaces, showing a relationship in terms of their respective representation capabilities."
+mlp,sdf,"MLP is trained to represent an SDF of a single object in the context, indicating a relationship between MLP and SDF in terms of training and representation."
+generative model,sdf shapes,"A generative model is trained for many SDF shapes in the context, showing a relationship between a generative model and SDF shapes in terms of their training and generation."
+deformable objects,sdfs,"SDFs are used for deformable objects in the context, indicating a relationship between deformable objects and SDFs in terms of their representation."
+articulated objects,sdfs,"SDFs are used for articulated objects in the context, suggesting a relationship between articulated objects and SDFs in terms of their representation."
+sdfs,shape completion,"SDFs can perform shape completion from partial inputs in the context, showing a relationship between SDFs and shape completion."
+modalities,sdfs,"SDFs can be reconstructed from other modalities, as indicated in the context, suggesting a relationship between modalities and SDFs in terms of reconstruction."
+rgb-d video,sdf,"An RGB-D video can be used to reconstruct a new unseen object as an SDF in the context, indicating a relationship between an RGB-D video and SDF in terms of reconstruction."
+camera,sdfs,"SDFs can be recovered in real time as the camera moves through space, as suggested in the context, showing a relationship between the camera and SDFs in terms of real-time recovery."
+point clouds,sdfs,"SDFs can be recovered from noisy point clouds in the context, indicating a relationship between point clouds and SDFs in terms of recovery."
+lidar,sdfs,"SDFs can be recovered from Lidar in the context, showing a relationship between Lidar and SDFs in terms of recovery."
+sdfs,object shapes,"SDFs are used to represent the object shapes in the rigid-body simulator, SDF-Sim."
+sdfs,graph network,SDFs are employed in the graph network to learn dynamics over the objects.
+sdfs,simulations,SDF quality impacts the simulation results in the context of SDF-Sim.
+sdfs,sdf mlp,Training an SDF MLP is required for every new shape in SDF-Sim.
+object shapes,rigid-body simulator,"Object shapes are represented in the rigid-body simulator, SDF-Sim."
+object shapes,graph network,Graph network is involved in learning dynamics over the object shapes.
+rigid-body simulator,input graph,Construction of the input graph is redesigned for the simulator to utilize SDFs.
+sdfs,inter-object edges,Usage of SDFs reduces the number of inter-object edges in the simulator from quadratic to linear.
+sdfs,sdf-sim,SDF-Sim is mentioned in relation to SDFs as a method that amortises the cost of training SDFs.
+sdf-sim,fignet*,SDF-Sim is compared to FIGNet* in terms of error rates on different dataset scales.
+sdf-sim,ground-truth,SDF-Sim is compared to the ground-truth in terms of performance on large scenes.
+sdf-sim,applications,"SDF-Sim is stated to be best suited for applications favoring scaling over physical accuracy, such as animation and film."
+sdf-sim,sdfs,"SDF-Sim can be extended to incorporate deformable or articulated objects, fluids, meshes, and particles, which are all related to SDFs."
+sdf-sim,physical reasoning,"SDF-Sim is mentioned as an important step towards enabling physical reasoning over complex, large-scale physical scenes."
+simulation,applications,Simulation is mentioned as a tool for making applications requiring simulation more accessible to consumers.
+simulation,commodity hardware,Simulation allows the simulation of large scenes using commodity hardware with a single GPU.
+simulation,3d assets,Simulation allows the direct use of 3D assets filmed on a mobile phone.
+simulation,physical reasoning,"Simulation enables physical reasoning over complex, large-scale physical scenes."
+physical scenes,acknowledgements,Acknowledgements mention Ladislav Rampášek for help on proof-reading and revising notation.
+physical scenes,ladislav rampášek,Ladislav Rampášek provided immense help on proof-reading and revising notation for the final paper submission.
+acknowledgements,ladislav rampášek,Acknowledgements thank Ladislav Rampášek for immense help on proof-reading and revising notation.

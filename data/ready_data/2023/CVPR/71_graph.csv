@@ -1,0 +1,246 @@
+node_1,node_2,edge
+federated semi-supervised learning,methodologies for dealing with challenges in fssl,Existing methods address the challenges in FSSL caused by Non-IID data setting
+sub-consensus models,standard pseudo labeling or consistency regularization,Sub-consensus models typically adopt standard pseudo labeling or consistency regularization on unlabeled clients
+class balanced adaptive pseudo labeling (cbafed),fundamental solution to fssl problems,CBAFed is presented as a fundamental solution to the challenges in FSSL by studying from the perspective of pseudo labeling
+fixed pseudo labeling strategy,catastrophic forgetting problem,A fixed pseudo labeling strategy in CBAFed is introduced to handle the catastrophic forgetting problem
+class balanced adaptive thresholds,balanced training process,CBAFed designs class balanced adaptive thresholds to encourage a balanced training process
+residual weight connection,local supervised training and global model aggregation,A residual weight connection is proposed in CBAFed for better optimization in local supervised training and global model aggregation
+residual weight connection,local supervised training,residual weight connection is implemented in local supervised training
+local supervised training,global model aggregation,local supervised training is used for global model aggregation
+extensive experiments,cbafed,extensive experiments demonstrate the superiority of CBAFed
+cbafed,code,code for CBAFed will be available at https://github.com/minglllli/CBAFed
+federated learning,machine learning models,Federated learning aims to train machine learning models on a decentralized manner
+federated learning,privacy protection,Federated learning has received attention for privacy protection reasons
+fl works,supervised learning,FL works have focused on supervised learning with fully labeled data
+large-scale training data,labeling process,labeling process of large-scale training data is laborious and expensive
+federated semi-supervised learning,researchers,federated semi-supervised learning has been explored by many researchers
+fssl methods,labeled data,FSSL methods consider different places and status of labeled data
+labeled clients,unlabeled clients,labeled clients are fully labeled data and unlabeled clients are other clients without labels
+unlabeled clients,global model,the global model is aggregated from sub-consensus models to boost FSSL performance
+unlabeled clients,mean-teacher based consistency regularization framework,mean-teacher based framework in unlabeled clients causes accuracy degradation when classes are imbalanced
+unlabeled clients,catastrophic forgetting problem,catastrophic forgetting problem arises in CNNs as models may forget knowledge learned on labeled clients
+rscfed,catastrophic forgetting problem,RSCFed attempts to address the catastrophic forgetting problem by adjusting aggregation weights for labeled and unlabeled clients.
+rscfed,negative impact,RSCFed seems to just alleviate the negative impact on the unlabeled clients.
+sub-consensus models,training problems,Sub-consensus models may occur unstable training problems.
+sub-consensus models,communication cost,Sub-consensus models may increase the communication cost.
+fedconsist,pseudo labeling methods,FedConsist achieves promising results by utilizing pseudo labeling methods to produce artificial labels.
+fedirm,pseudo labeling methods,FedIRM achieves promising results by utilizing pseudo labeling methods to produce artificial labels.
+pseudo labeling methods,non-iid setting among local clients,Pseudo labeling methods do not consider the Non-IID setting among local clients.
+semi-supervised learning (ssl),pseudo labeling methods,Pseudo labeling methods are shown to be effective in semi-supervised learning (SSL).
+fssl,pseudo labeling,Existing FSSL works only adopt standard pseudo labeling or consistency regularization on FSSL.
+difficulties,methods,Mentioned difficulties hamper the usage of these methods.
+remedy,difficulties,Other remedy is usually proposed to alleviate the difficulties.
+remedy,palliative,Remedy proposed to alleviate the difficulties is usually palliative.
+fssl,pseudo labeling,"Since the mentioned difficulties hamper the usage of these methods, other remedy is usually proposed to alleviate the difficulties, which is palliative."
+fssl,pseudo labeling,"Thus, we propose to study FSSL from the perspective of pseudo labeling, seeking for a fundamental solution to this problem."
+class balanced adaptive pseudo labeling,catastrophic forgetting problem,"Class Balanced Adaptive Pseudo Labeling, namely CBAFed, is presented to handle the catastrophic forgetting problem by proposing a fixed pseudo labeling strategy."
+labeling methods,ssl,labeling methods are used in SSL frameworks
+labeling methods,fixed pseudo labeling strategy,fixed pseudo labeling strategy is a proposed method to handle the catastrophic forgetting problem
+fixed pseudo labeling strategy,unlabeled data,fixed pseudo labeling strategy uses informative unlabeled data and their pseudo labels at the beginning of the unlabeled client training
+non-iid,fl,Non-IID and heterogeneous data partition problems in FL cause training distribution imbalance
+existing thresholds,fssl,existing thresholds are not suitable in FSSL due to imbalanced training data distribution
+adaptive thresholds,empirical distribution,adaptive thresholds are designed by considering the empirical distribution of all training data in local clients
+adaptive thresholds,previous communication round,adaptive thresholds are set by considering the previous communication round data distribution
+method,scarce classes,the method sets a reasonably high threshold for extremely scarce classes
+training process,balance,the method encourages a balanced training process
+unlabeled data,tail classes,unlabeled data is used to discover unlabeled data from tail classes
+training strategy,labeled clients,a novel training strategy is proposed for labeled clients
+training strategy,central server,a novel training strategy is proposed for the central server
+residual weight connection,previous epochs,residual weight connection skips connecting weights from previous epochs for labeled clients
+residual weight connection,global models,residual weight connection skips connecting weights from previous global models for the central server
+training distribution,imbalanced,residual weight connection helps the model reach better optimum in case of imbalanced training distribution
+training amount,small,residual weight connection helps the model reach better optimum when training amount is small
+cbafed method,effectiveness,extensive experiments show the effectiveness of CBAFed method
+cbafed,method,CBAFed presents a method to deal with the catastrophic forgetting problems in federated learning.
+cbafed,fssl,CBAFed explores a fundamental solution to FSSL via designing a novel pseudo labeling method.
+cbafed,residual weight connection method,"CBAFed introduces a residual weight connection method, to improve the robustness of the models in labeled clients and the central server."
+cbafed,datasets,"Experiments are conducted on five datasets, including CIFAR-10/100, SVHN, fashion MNIST, and ISIC 2018 Skin."
+cbafed,state-of-the-art fssl methods,"CBAFed outperforms state-of-the-art FSSL methods by a large margin, with 11.3% improvements on SVHN dataset."
+model aggregation,local training,Two research directions to deal with data heterogeneity in federated learning are model aggregation and local training.
+fedavg,weighted-averaging,FedAvg performs weighted-averaging on local weights according to the local training size.
+model aggregation,local training,Both model aggregation and local training are key components in machine learning training processes.
+self-attention-based architectures,vision transformers,"Self-attention-based architectures, such as vision transformers(ViT), have shown to be more robust to distribution shifts."
+semi-supervised learning,ssl,The goal of SSL is to train a good model with limited labeled data and much more unlabeled data.
+consistency regularization,pseudo labeling,Consistency regularization and pseudo labeling are popular research directions in SSL.
+pseudo labeling,ssl,Pseudo labeling is a method used in SSL to deal with limited labeled data.
+consistency regularization,state-of-the-art performance,Combining consistency regularization and pseudo labeling has led to state-of-the-art performance in SSL.
+pseudo labeling,pre-defined fixed threshold,Methods using pseudo labeling usually consider a pre-defined fixed threshold for pseudo labeling.
+flexmatch,unlabeled data,FlexMatch demonstrates that adjusting thresholds for different classes using the model's learning status can improve performance by leveraging unlabeled data.
+centralized ssl,fssl,"Pseudo labels update after every batch's model update in centralized SSL, but this method is not suitable for Federated Semi-supervised Learning (FSSL)."
+federated learning,fssl,"With the development of federated learning, new approaches like FSSL have emerged in semi-supervised learning."
+federated semi-supervised learning,fssl,FSSL becomes popular as a concept in the development of federated learning.
+fssl,central server,The global model is aggregated with the returned local models in the central server.
+fssl,local clients,"Central server passes the global model, adaptive thresholds, and class distribution to all local clients for training."
+local clients,labeled data,Labeled clients use labeled data to train the model with residual weight connection.
+local clients,unlabeled data,Unlabeled clients obtain new training dataset by adaptive pseudo labeling and train the model.
+local clients,central server,"After local training, local clients return trained models and number of data in each class back to central server."
+third category,fed-consist,Fed-Consist has been proposed to deal with the problem of having few fully labeled clients and mostly unlabeled clients.
+third category,fedirm,FedIRM has been proposed to deal with the problem of having few fully labeled clients and mostly unlabeled clients.
+fedirm,data heterogeneity,FedIRM does not consider data heterogeneity in federated learning.
+third category,rscfed,RSCFed proposes to perform random actions in dealing with the third category of FSSL.
+federated learning,data heterogeneity,Federated learning does not consider data heterogeneity.
+rscfed,random sub-sampling,RSCFed proposes random sub-sampling to reach consensus over clients.
+rscfed,consistency regularization,RSCFed uses standard consistency regularization for unlabeled data.
+non-iid setting,standard consistency regularization,Standard consistency regularization for unlabeled data still suffers from the Non-IID setting.
+pseudo labeling strategy,traditional,The aforementioned approaches use traditional pseudo labeling strategy.
+pseudo labeling,fssl,None of the approaches discuss how to apply pseudo labeling to FSSL.
+federated semi-supervised learning,decentralized training,The problem setting involves federated semi-supervised learning with decentralized training.
+labeled clients,unlabeled clients,The setup includes labeled clients and unlabeled clients.
+cbafed,overall pipeline,The overall pipeline of CBAFed is shown in Fig. 1.
+local models,class balanced adaptive thresholds,Local clients update local models and adapt to class balanced adaptive thresholds.
+adaptive thresholds,local clients,Adaptive thresholds are passed to local clients in Section 3.3.
+local clients,local models,All local clients update local models.
+local models,adaptive threshold,Local models are updated based on adaptive threshold.
+adaptive threshold,class distribution,Adaptive threshold is used to compute class distribution.
+labeled clients,local models,Labeled clients train local models using proposed residual weight connection.
+unlabeled clients,training set,Unlabeled clients acquire the fixed training set and train local models.
+threshold,tail class datasets,Threshold and tail class datasets are used to obtain the fixed training set.
+local training,local clients,"After local training, local clients pass trained model and data information to the central server."
+central server,new model,Central server aggregates a new model with residual weight connection.
+new model,class distribution,New model is used to compute class distribution.
+class distribution,adaptive threshold,Class distribution is used to obtain balanced adaptive threshold.
+residual weight connection,local supervised training,Residual weight connection is a training method in local supervised training.
+global model aggregation,residual weight connection,Residual weight connection is also used in global model aggregation.
+training epoch,parameters of model,Parameters of model are passed between training epochs in residual weight connection.
+training epoch,model parameters,"The final parameters of the model after each training epoch are denoted as θE, where E is the communication round. The model's parameters are updated after each training epoch."
+residual weight connection,training epoch,"Residual weight connection is used to update the final parameters of the model after each training epoch. The calculation involves a scaling parameter α1 and the number of skip epochs, denoted as s."
+averaging model weights,final weights,Averaging model weights over training steps results in a more accurate model compared to using the final weights directly. This technique is found to enhance the model's accuracy in predicting.
+pseudo labeling method,unlabeled data,"Pseudo labeling methods, such as Fixmatch and Flexmatch, use unlabeled data to generate pseudo labels for model training. These labels are utilized to supervise the model's training process."
+fixed pseudo labeling,fssl,Fixed Pseudo Labeling is a method used in Few-shot Semi-supervised Learning (FSSL) during the warm-up stage. It involves conducting pseudo labeling for unlabeled data.
+pseudo labeling,unlabeled data,Pseudo labeling is conducted for unlabeled data in the warm-up stage to train the model.
+pseudo labeling,labeled data,Pseudo labeling is conducted for both labeled and unlabeled data to train the model.
+pseudo labeling,model aggregation,Pseudo labeling is used in model aggregation using the FedAVG method.
+communication round,local model,The local model is defined by the communication round in the training process.
+fixed pseudo labeling,batch-based pseudo labeling method,Fixed pseudo labeling is proposed to handle the drawbacks of the batch-based pseudo labeling method.
+fixed pseudo labeling,catastrophic forgetting,Fixed pseudo labeling is proposed to handle catastrophic forgetting in the training process.
+fixed pseudo labeling,local model,Fixed pseudo labeling involves updating the local model with the global model in the training process.
+unlabeled client,local model,The local model is initialized with the global model for the unlabeled client during the first step of the process.
+unlabeled client,pseudo label,"The pseudo label is computed for each data from the unlabeled client, representing a key step in the process."
+unlabeled client,local client training,"A subset of unlabeled data with their pseudo labels is used as supervisory signals during local client training, indicating the importance of this step in the process."
+pseudo label,unlabeled data,"Unlabeled data is obtained with pseudo labels during the process, providing valuable information for training."
+pseudo label,training dataset,"The fixed set of pseudo labeled data is used as the training dataset for the unlabeled client, emphasizing the role of pseudo labels in the training process."
+threshold,pseudo labels,"The value of the threshold is crucial for selecting confident pseudo labels in semi-supervised learning, highlighting its impact on the quality of training data."
+threshold,informative unlabeled data,"The threshold plays a key role in selecting informative unlabeled data, which is essential for enhancing the learning process."
+curriculum pseudo labeling,fixed threshold,"Curriculum Pseudo Labeling proposes a flexible threshold for class c at time step t, contrasting with the traditional approach of using a fixed threshold."
+curriculum pseudo labeling,semi-supervised learning benchmarks,"Curriculum Pseudo Labeling aims to achieve state-of-the-art results on semi-supervised learning benchmarks, showcasing its performance in comparison to traditional methods."
+βt(c),fixed threshold τ,βt(c) is used to scale the fixed threshold τ.
+curriculum pseudo labeling,accuracy and convergence performance,Curriculum Pseudo Labeling significantly boosts the accuracy and convergence performance of various semi-supervised learning algorithms.
+fssl,heterogeneous data partition problems,"In FSSL, there exist heterogeneous data partition problems."
+labeled data,unlabeled data,"Due to the Non-IID partition, the labeled data are not balanced, so purely using the number of selected unlabeled data to design threshold is improper."
+curriculum pseudo labeling,noisy labels,Directly applying Curriculum Pseudo Labeling will introduce many noisy labels into training.
+cbapl,class balanced adaptive threshold for pseudo labeling,"To this end, we propose a novel Class Balanced Adaptive threshold for Pseudo Labeling (CBAPL)."
+non-iid data partitions,catastrophic forgetting,Non-IID data partitions in clients can easily lead to catastrophic forgetting.
+weights,local models,The weights of local models are returned to the central server.
+local models,central server,Local models are returned to the central server.
+central server,total number,The central server calculates the total number of training data.
+training data,class c,The total number of training data for class c is calculated.
+training numbers,empirical distribution,The training numbers are normalized to acquire the empirical distribution of training data.
+empirical distribution,standard deviation,The standard deviation of the empirical distribution of training data is calculated.
+class c,threshold,The threshold of class c is calculated.
+pre-defined threshold base,upper bound of threshold,The pre-defined threshold base is used to set an upper bound of threshold for class c.
+class c,training data,"If our model is trained with more data in one class, the threshold of that class will be higher."
+threshold,data,The threshold is important for balancing the empirical distribution of training data.
+curriculum pseudo labeling,cbapl,"Unlike Curriculum Pseudo Labeling, CBAPL calculates a threshold with a relatively high lower."
+pseudo labeling,cbapl,"CBAPL calculates a threshold with a relatively high lower bound, balancing the trade-off between pt(t) and C"
+pseudo labeling,class number,Normalization factor is applied to consider the class number
+thresholds,local clients,Central server passes the thresholds to local clients
+unlabeled clients,pseudo label training dataset,Unlabeled clients obtain the fixed pseudo label training dataset
+fssl,data partitions,Heterogeneous data partitions will lead to class imbalanced distribution in local clients
+long-tailed classification,pseudo labeling process,Problems in long-tailed classification will also exist in the pseudo labeling process
+pseudo labeling process,models,Models tend to classify tail (rare) classes as head (common) classes
+adaptive pseudo labeling,threshold of tail classes,Adaptive pseudo labeling can lower the threshold of tail classes
+data,pl,Much less data will be selected by PL since very few data from tailed classes will be classified as correct classes
+unlabeled data,discover unlabeled data,To enhance the learning ability and discover unlabeled data from these classes
+class,misclassified data,misclassified data is included in training with the class of second largest confidence as its label
+new training dataset,unlabeled client,the new training dataset for unlabeled client is defined as a combination of specific data sets
+final training loss,client,the final training loss in the client is rewritten based on certain parameters
+calculation,σut (c),the calculation of σut (c) is revised based on certain formulas
+synchronization round,global model,"at the synchronization round, the global model is computed using certain methods"
+experiment,method,"to evaluate the effectiveness of the proposed method, experiments are conducted on specific datasets"
+dataset splitting,pre-processing,Dataset splitting and pre-processing are related steps in the data preparation process
+training datasets,clients,Training datasets contain multiple clients for the federated semi-supervised learning (FSSL) setting
+dirichlet distribution dir(γ),non-iid data,A Dirichlet distribution is used to generate Non-IID data partition for clients
+sgd optimizer,momentum of 0.9,SGD optimizer is utilized with a momentum of 0.9 in the implementation details
+resnet18,vit,ResNet18 and ViT are adopted as backbones in the architecture for local training
+pytorch,resnet18,ResNet18 is adopted from PyTorch for all datasets as mentioned in implementation details
+fssl methods,rscfed,"Method is compared against state-of-the-art FSSL methods, including RSCFed"
+non-iid fssl,[31],Non-IID FSSL is mentioned in reference to [31]
+labeled client,weight,The weight of labeled client is enlarged in the synchronization round
+client,fssl,Clients share weight in each FSSL synchronization round
+fedavg,[19],Network against FedAvg [19] is mentioned for comparison
+fedavg,clients,FedAvg is trained with all clients as an upper bound and with only one labeled client as the lower bound
+fedavg,residual weight connection,FedAvg trained with only one labeled client using residual weight connection is mentioned
+fed-consist,[31],Fed-Consist [31] is mentioned in comparison
+pseudo labeling,fed-consist,Fed-Consist utilizes traditional batch-based pseudo labeling method
+pseudo labeling,labeled client,Fixed pseudo labeling is proposed without enlarging the weight of labeled client
+cbafed,state-of-the-art methods,CBAFed achieved superior performances over all competitors on the five benchmark datasets
+cbafed,fedavg,Performance of CBAFed surpasses all state-of-the-arts by a large margin and approaches the upper bound obtained by FedAvg
+pseudo labeling,class,Strong power of fixed pseudo labeling and class is shown in some easy tasks
+fedavg,fixed pseudo labeling,FedAVG trained with all one labeled clients using fixed pseudo labeling
+fed-consist,fixed pseudo labeling,Fed-Consist using fixed pseudo labeling
+fedavg+,fedavg,FedAVG+ is FedAvg trained with all one labeled clients
+fed-consist+,fixed pseudo labeling,Fed-Consist+ using fixed pseudo labeling
+rscfed,cbafed,Comparison between RSCFed and CBAFed methods
+rscfed,fedavg,Comparison of RSCFed against FedAVG method
+rscfed,fed-consist,Comparison of RSCFed against Fed-Consist method
+fedavg,svhn dataset,Comparison of FedAVG method with SVHN dataset
+fedavg,vit backbone,Comparison of FedAVG method with ViT backbone
+fed-consist+,fedavg+,Comparison of Fed-Consist+ against FedAVG+ method
+consist,fedirm,Both Consist and FedIRM are methods mentioned in the context used with fixed pseudo labeling in Fed-Consist [31].
+consist,fedavg,Consist method is mentioned in comparison to FedAVG [19] in terms of performance increase.
+fedirm,fedavg,Comparison between the performance of FedIRM and FedAVG methods is discussed in the context.
+fedavg,partially labeled clients,Experiments are conducted on partially labeled clients using the FedAVG method as mentioned in the context.
+residual weight connection,fedavg,"The performance of FedAVG method is compared with and without residual weight connection, showing enhancement with the connection."
+vision transformer,heterogeneous data and distribution shifts,The ViT (Vision Transformer) method is discussed for being more robust to heterogeneous data and distribution shifts.
+vit backbone,vision transformer,"ViT Backbone, also known as Vision Transformer, has shown to be more robust to heterogeneous data and distribution shifts."
+vision transformer,federated learning,Vision Transformer has been demonstrated to converge faster with better optimum in Federated learning.
+vit backbone,svhn dataset,Experiments on SVHN dataset using ViT-Tiny as backbone for all competitors to study the effect of the method.
+method,comparison results,Table 2 shows the comparison results of the method in outperforming all other methods.
+fedavg [19],residual weight connection,"Trained on one labeled client, FedAVG w/ residual weight connection surpasses the one w/o residual weight connection showing the effectiveness of the residual weight connection."
+cbafed,residual weight connection,"To better understand the effectiveness of CBAFed, experiments were conducted to study how to use the residual weight connection."
+cifar-10,training data,Experiments on CIFAR-10 were conducted by dividing the whole training data into 10 clients with two labeled clients and eight unlabeled clients.
+method,comparison results,Table 3 shows the comparison results of the method in having better performance compared with all state-of-the-art FSSL methods.
+clients,number,Clients are labeled with respect to the number of local epochs
+clients,residual weight connection,Clients are labeled with respect to the usage of residual weight connection
+residual weight connection,communication cost,Usage of residual weight connection does not add any burden in communication cost
+communication cost,statistics,Communication cost is low compared to model's parameter statistics
+communication cost,method rscfed,Communication cost is only 66% of the method RSCFed
+pseudo labeling strategies,fssl,Discussion of performing pseudo labeling in Federated Semi-Supervised Learning
+pseudo labeling strategies,batch-based pseudo labeling,Discussion of why traditional batch-based pseudo labeling in FSSL
+cbafed,federated semi-supervised learning,Presentation of Class Balanced Adaptive pseudo labeling (CBAFed) for FSSL
+cbafed,federated semi-supervised learning,CBAFed is a method designed for Federated Semi-Supervised Learning
+cbafed,fixed pseudo labeling strategy,CBAFed proposes the use of a fixed pseudo labeling strategy to handle catastrophic forgetting problem
+cbafed,class balanced adaptive thresholds selection method,CBAFed introduces a class balanced adaptive thresholds selection method to deal with the Non-IID setting in FSSL
+pseudo labeling strategy,catastrophic forgetting problem,The fixed pseudo labeling strategy is proposed to handle the catastrophic forgetting problem
+non-iid setting,class balanced adaptive thresholds selection method,The class balanced adaptive thresholds selection method is designed to address the Non-IID setting in FSSL
+class balanced adaptive thresholds selection method,better pseudo labels,The class balanced adaptive thresholds selection method is used to select better pseudo labels for the model
+residual weight connection method,model,The residual weight connection method is designed to make the model reach better optimum
+cbafed,datasets,CBAFed is evaluated on five datasets to show the superiority of the method
+cbafed,performance,The performances of CBAFed on five datasets demonstrate the superiority of the method
+fssl methods,good model in warm-up,"Like other FSSL methods, a good model in warm-up cannot be guaranteed if the number of data in labeled clients are extremely few"
+final global model,performance,"If the number of data in labeled clients are extremely few, the final global model may not perform well"
+pseudo labeling,experiment,A simple experiment is conducted using pseudo labeling on SVHN dataset with ResNet18
+experiment,batched pseudo labeling (1 local training epoch),The experiment considers five training strategies including Batched pseudo labeling (1 local training epoch)
+experiment,batched pseudo labeling (5 local training epochs),The experiment considers five training strategies including Batched pseudo labeling (5 local training epochs)
+experiment,fixed pseudo labeling (1 local training),The experiment considers five training strategies including Fixed pseudo labeling (1 local training)
+batched pseudo labeling,local training epoch,Batched pseudo labeling strategy involves 5 local training epochs.
+fixed pseudo labeling,local training epoch,Fixed pseudo labeling strategy involves 1 local training epoch.
+fixed pseudo labeling,local training epoch,"Fixed pseudo labeling strategy also involves 5 local training epochs, where the training dataset is not updated after pseudolabeling."
+fixed pseudo labeling,local training epoch,Fixed pseudo labeling strategy includes 5 local training epochs with the fixed training dataset being updated at the beginning of every training epoch.
+labeled client,local training epoch,"For labeled clients, the local training epoch is fixed at 1 for all 5 strategies."
+communication round,test accuracy,The test accuracy after the communication round is indicated in the left figure of Fig. 3.
+batch-based pseudo labeling,fssl,Batch-based pseudo labeling performs poorly in FSSL because CNNs tend to not work well on out-of-distribution data.
+communication round,predicted accuracy,The right figure of Fig. 3 displays the predicted accuracy of communication round one in five local training epochs of strategies (2) and (5).
+fixed pseudo labeling method,catastrophic forgetting,The fixed pseudo labeling method is effective in preventing catastrophic forgetting.
+strategy (3),best performance,Strategy (3) performs the best among all strategies mentioned.
+strategy (5),performance comparison,"Strategy (5) performs much worse than strategy (3) and (4), indicating that one local training epoch is optimal."
+strategy (3),convergence speed,"Comparing strategy (3) with (4), the former exhibits better performance while the latter demonstrates faster convergence speed."
+local training epochs,convergence speed,"More local training epochs can accelerate convergence speed but might degrade performance, as observed."
+vergence speed,local training epochs,"Vergence speed refers to the speed at which a neural network converges during training. Local training epochs are the number of training iterations focused on a specific dataset batch, impacting the convergence speed."
+local training epochs,convergence speed,Local training epochs directly impact the convergence speed of the neural network. More epochs can speed up convergence but may also lead to performance degradation.
+local training epochs,performance degradation,Increasing the number of local training epochs to speed up convergence can potentially degrade the overall performance of the neural network.
+ablation study,main components,"An ablation study is conducted to analyze the impact of the main components of a method. In this context, the main components are residual weight connection, class balanced pseudo labeling, and tail class data discovery."
+main components,"residual weight connection, class balanced pseudo labeling, tail class data discovery","The main components of the method include residual weight connection, class balanced pseudo labeling, and tail class data discovery."
+results,datasets,"The results of the ablation study are shown on three datasets: CIFAR-10, CIFAR-100, and Fashion-MNIST."
+datasets,"cifar-10, cifar-100, fashion-mnist","The ablation study results are presented for three datasets: CIFAR-10, CIFAR-100, and Fashion-MNIST."
+support,funding sources,"This work was supported by the National Natural Science Foundation of China, Shanghai Natural Science Foundation, and the Science and Technology Commission of Shanghai Municipality."

@@ -1,0 +1,172 @@
+node_1,node_2,edge
+vision transformers,images,Vision Transformers convert images to sequences by slicing them into patches
+images,patches,Images are sliced into patches
+patches,speed/accuracy tradeoff,The size of patches controls a speed/accuracy tradeoff
+patches,patch size,Changing the patch size typically requires retraining the model
+patch size,weights,Randomizing the patch size at training time leads to a single set of weights that performs well across a wide range of patch sizes
+weights,model,"Single set of weights performs well across a wide range of patch sizes, tailoring the model to different compute budgets"
+authors,technical contributions,All authors made significant technical contributions
+lucas,project,Lucas started and led the project
+vision transformers,vits,Vision Transformers (ViTs) cut images into non-overlapping patches and perform all computations on tokens created from these patches
+vision transformers,convolutional neural network,Patchification procedure in Vision Transformers is a shift away from the previously dominant convolutional neural network (CNN) approach
+image patch tokens,tasks tokens,Specialized tokens for new tasks can be added and image patch tokens can be mixed with tokens from other modalities
+patch size,vit models,Role of the patch size has received little attention in Vision Transformers (ViT) models
+patch size,role,The patch size plays a significant role in determining the compute and predictive performance of a model in the context
+patch size,vit paper,"The original ViT paper mentions working with three patch sizes (32×32, 16×16, and 14×14 pixels), which later influenced many follow-up works to fix the patch size at 16×16 pixels"
+model,patch size,"The patch size influences the compute and predictive performance of a model without changing the model parametrization, as discussed in the context"
+patch size,flexivit,The FlexiViT model proposed in the context aims to overcome the limitations of standard ViTs by allowing for a flexible patch size that matches or outperforms fixed-patch ViTs without added cost
+flexivit,randomize,"To train FlexiViT, the patch size is randomized during training to adaptively resize positional and patch embedding parameters for each patch size, as mentioned in the context"
+performance,optimized resizing operation,performance is optimized through resizing operation
+optimized resizing operation,training procedure,resizing operation is optimized through a training procedure based on knowledge distillation
+flexivit models,downstream tasks,FlexiViT models demonstrate efficiency in various downstream tasks
+patch sizes,fine-tuning,flexible backbone performance is preserved even after fine-tuning with a fixed patch size
+transfer learning,model cheaply,model is fine-tuned cheaply for transfer learning
+flexibility,patch size,flexible patch size is used to accelerate pre-training
+flexivit,alternative architectural ways,FlexiViT outperforms alternative architectural ways in controlling performance-compute trade-off in ViT models
+vit's efficiency,patchification,efficiency of ViT is explored by exploiting patchification according to recent works
+token,importance,"Some approaches aim to quantify a token’s importance and remove the least important ones, during or after training."
+transformers,cascade,Trained a cascade of Transformers using increasing number of tokens to allow early exiting during inference.
+tokens,sequence length,"SuperViT patchifies an image at multiple scales, passes all patches to ViT, while dropping random tokens to reduce the sequence length."
+supernet,subnets,"NAS field is converging towards training one supernet from which individual, differently-shaped subnets can be extracted."
+flexivit,vit,"FlexiViT is introduced as the complement of ViT, aiming to make ViT models more flexible."
+vit,imagenet-21k dataset,The ViT model is trained on the public ImageNet-21k dataset for experiments.
+vit,vision transformer (vit) architecture,"FlexiViT is based on the Vision Transformer (ViT) architecture, introducing necessary notation."
+patchiﬁcation,patch embeddings,"The input image undergoes patchiﬁcation to generate patches xi, which are then used to compute patch embeddings ei."
+vit,sequence length,The sequence length s = (cid:98)h/p(cid:99) · (cid:98)w/p(cid:99) is the number of patches (or tokens) after patchiﬁcation and controls the amount of compute used by the ViT
+vit,self-attention,"self-attention scales as O(s2) = O(h4) = O(w4), i.e. quartically in terms of image height (or width)"
+patch embedding weights,ωk,where ωk ∈ Rp×p×c are the patch embedding weights
+position embeddings,patch embeddings,we add learned position embeddings πi ∈ Rd to the patch embeddings ti = ei + πi
+patch size,input sequence length,"for a given image size h × w, the patch size p determines the length s of the input sequence to the Transformer model: smaller patch sizes correspond to longer input sequences and slower, more expressive models"
+vit models,scale and patch size,"we denote ViT models as ViT-S/p, where S ∈ {S, M, B, L, . . .} is the model scale and p is the patch size"
+patch embedding weights,patch size,there are only two parts of the model where the parameter vectors depend on the patch size: the patch embedding weights ωk and the position embedding π
+vit model,patch size,we will develop a ﬂexible ViT model which works simultaneously for any patch size
+standard vits,flexibility,"Standard ViTs are not ﬂexible, we first show that evaluating a standard pre-trained ViT"
+model,patch size,The performance of standard ViT models rapidly degrades as the inference-time patch size departs from the one used during training.
+patch embedding weights,position embeddings,"In order to change the patch size, the patch embedding weights and the position embeddings are resized with bilinear interpolation."
+position embeddings,resize approach,Resize approach was proposed in the original ViT paper to fine-tune at higher resolution.
+flexivit-b model,vit-b/16 and vit-b/30 models,FlexiViT-B model matches both ViT-B/16 and ViT-B/30 when evaluated at their training patch sizes and outperforms them for all other patch sizes.
+model,performance,The model shows performance improvement when evaluated at different patch sizes.
+image,patchhw,Image is patchified flexibly by resizing it with patchhw.
+model,patch size,"The model needs to define an underlying parameter shape for the patch size, and the learnable parameters are resized on-the-fly as part of the model's forward pass."
+learnable parameters,model's forward pass,The learnable parameters are resized on-the-fly as part of the model's forward pass.
+patch size,image resolution,"The patch size needs to perfectly tile the image, and the image resolution of 240² px allows for a large variety of patch sizes."
+patch size,image size,"Changing the patch size is related to, but not identical to, changing the image size. The patch size is purely a change to the model while changing the image size may drastically reduce the available information."
+model,image size,Changing the image size can have a significant impact on the model by drastically reducing the available information.
+vits,patch sizes,Flexibility in ViTs is explored by sampling patch sizes in two alternative ways.
+distribution,patch sizes,The choice of distribution for patch sizes can have little difference on the results.
+patch,original patch,Matching the tokens of the original patch is a key aspect in the optimization problem solving for patch embeddings.
+patch size,tiling setting,"Perfect tiling may not be strictly necessary, and arbitrary patch sizes can be used in the context of the tiling setting."
+patch size,downsampling,The optimization problem solution in downsampling depends on the patch distribution.
+x,n,"X is related to N as part of the equation X = N (0, I)"
+pseudoinverse,ˆω,"The pseudoinverse ˆω is defined as P ω = (BT)+ω, which shows the relation between pseudoinverse and ˆω"
+pseudoinverse resize,p p∗,The PI-resize operation is defined as P p∗(4) and is related to the matrix P p∗ in the context of resizing patch embedding weights
+p vec(ω),pi-resize,The operation p vec(ω) is related to PI-resize as part of the PI-resize transformation process
+pi-resize,alternative heuristics,"PI-resize is compared to several alternative heuristics to validate its effectiveness, showing a relation between PI-resize and alternative heuristics"
+pi-resize,customized patch sizes,"PI-resize is mentioned in the context of dealing with variable patch sizes, indicating a relationship between PI-resize and customized patch sizes"
+connection to knowledge distillation,popular technique,"The context mentions the connection of knowledge distillation to popular techniques, indicating a relationship between knowledge distillation and popular techniques"
+knowledge distillation,popular technique,Knowledge distillation is mentioned as a popular technique for training a smaller student model to mimic a larger teacher model.
+student model,teacher model,A student model is trained to mimic the predictions of a teacher model in knowledge distillation.
+student model,performance,Improving the performance of the student model compared to standard label-supervised training is mentioned in the context.
+data,patch distribution,"Instead of X, target the patch distribution in the data, producing a resize operation depending on the data."
+patch distribution,resizing,Targeting the patch distribution in the data can lead to a resizing operation in the context.
+patch embeddings,patch size,"Considering a patch x and patch embedding weights omega, the importance of patch size in resizing patch embeddings is highlighted."
+patch,input image,Discussing the concept of resizing patch embeddings involves taking a patch of the input image.
+resize,bilinear interpolation,Resizing both the patch and the embedding weights with bilinear interpolation is mentioned in the context.
+token norm,inductive bias,A dramatic change in token norm is considered as an inductive bias that hinders learning in the context.
+inductive bias,learning,The inductive bias is mentioned to hinder the learning process.
+token norm,vit,Token norm is mentioned as a part of the reason for ViT's inflexibility. They are related in terms of ViTs architecture and flexibility.
+embedding,resize,The resizing of input x and embedding omega should ideally maintain the same patch embeddings. Embedding and resizing are related in terms of maintaining information and consistency.
+embedding,patch embeddings,Embeddings and patch embeddings are related as embedding is used to create patch embeddings. The consistency in patch embeddings is crucial for the model's performance.
+layernorm,model architecture,The use of LayerNorm for normalizing tokens requires changing the model architecture. They are related in terms of architectural compatibility and model performance.
+learning,inductive bias,The inductive bias hinders learning of a single FlexiViT. Learning and inductive bias are related in terms of the impact on model training and performance.
+resize operation,linear transformation,The linear resize operation can be represented by a linear transformation. Resize operation and linear transformation are related in terms of mathematical operations and structural representation.
+resize operation,multi-channel inputs,The resize operation affects the channels of multi-channel inputs independently. Resize operation and multi-channel inputs are related in terms of input processing and channel manipulation.
+knowledge distillation,optimization problem,Knowledge distillation corresponds to a challenging optimization problem. Knowledge distillation and optimization problem are related in terms of learning strategies and difficulty levels.
+optimization problem,supervised training,optimization problem is more challenging than standard supervised training
+student,teacher,initializing the student close to the teacher simplifies the optimization problem
+teacher,student,teacher usually has a different (larger) architecture than the student
+flexivit,vit teacher,student FlexiViT initialized with weights of powerful ViT teacher significantly improves distillation performance
+model,flexivit-b,the model used for the experiments is a FlexiViT-B initialized and distilled from powerful ViT-B/8 model
+teacher’s patch embedding weights,position embeddings,teacher's patch embedding weights are PI-resized to 32 × 32 and position embeddings are bilinearly resampled to 7 × 7 at initialization
+student model,teacher,"we train the student model following the FunMatch approach, minimizing the KL-divergence between the predictions of the teacher and the student FlexiViT"
+flexivit model,vit-b/8 model,minimizing the KL-divergence between predictions of FlexiViT and ViT-B/8 models for training the student model
+initialization,random initialization,The process of setting the initial values of model parameters to random initialization leads to supervised training from labels.
+initialization,flexivit,The unique initialization capability of FlexiViT provides considerable benefits compared to other methods.
+distillation,patience,"Distillation process requires patience as mentioned in references [5, 54]."
+flexivit,teacher initialization,Teacher initialization in FlexiViT significantly improves accuracy at the largest patch sizes.
+flexivit,vit-b/30,FlexiViT achieves similar performance to ViT-B/30 at small patch sizes.
+flexivit,vit-b/16,FlexiViT achieves similar performance to ViT-B/16 when trained for 300 epochs.
+vit-b/30,vit-b/16,ViT-B/30 and ViT-B/16 models are compared as baselines in the same setting.
+t-sne visualizations,intermediate representations,Figure 6 presents t-SNE visualizations of intermediate representations of network layers across different grid sizes.
+internal representation,flexivit,FlexiViT's internal representations are analyzed to understand the processing of inputs with different patch sizes.
+feature map representations,grid sizes,Feature map representations are similar across grid sizes from the first layer onward as shown in Figure 6.
+mlp sublayer,block 6,The layer representations diverge at the MLP sublayer of block 6 before converging again at the final block.
+cls token representations,grid sizes,CLS token representations remain aligned across grid sizes.
+flexivit,vits,FlexiViT can be trained flexibly without significant loss of upstream performance compared to ViTs.
+flexivits,individual fixed patch-size vits,Pre-trained FlexiViTs are still comparable to individual fixed patch-size ViTs when transferred to other tasks.
+flexivit,vit-b/16,FlexiViT is compared to ViT-B/16 and a ViT-B/30 model with the same distillation setup but with a fixed patch size.
+flexivit-b model,downstream computer vision tasks,A pre-trained FlexiViT-B model is used in a diverse set of downstream computer vision tasks at two patch sizes.
+flexivit,plain (inflexible) vit model,FlexiViT performs the same or better than a plain ViT model pre-trained at the same patch size.
+vit model,patch sizes,ViT model performance is verified at different patch sizes to determine if flexible pre-training is better than training several fixed ViTs.
+vit model,pre-training,"Flexible pre-training of a single ViT model may be preferable over pre-training multiple fixed ViTs, as indicated by the results."
+model contrastively,flexivit,Text model is trained contrastively for the frozen FlexiViT to evaluate its performance in zero-shot classification and retrieval.
+flexivit,object detection,"FlexiViT's transferability to object detection is tested using OWL-ViT, an open-vocabulary object detector, with evaluation on LVIS dataset."
+uvim,coco panoptic segmentation dataset,"UViM, a general-purpose modeling approach for vision, is trained on the COCO panoptic segmentation dataset using FlexiViT as initialization for the image encoder."
+segmenter's linear decoder setup,semantic segmentation,Segmenter's linear decoder setup is used for transferring to semantic segmentation and evaluation on Cityscapes and ADE-20k datasets.
+flexivit,vit models,"FlexiViT model matches the two fixed ViT models across a diverse set of tasks, lagging behind at large patch size and leading to small or significant improvement at smaller patch size."
+pre-trained flexivit,pre-training multiple vits,There is no significant downside in using a pre-trained FlexiViT instead of pre-training multiple ViTs for different patch sizes.
+flexivit,transfer learning,"FlexiViT enables a new way of making transfer learning more resource efficient, saving accelerator memory and compute."
+flexivit,sequence length,FlexiViT can be cheaply finetuned at small sequence length and used at test time with much longer sequence to achieve higher performance.
+flexivit,grid sizes,"FlexiViT demonstrates a large performance boost with increased grid size, while the standard ViT model's accuracy quickly deteriorates."
+flexivit-b model,imagenet-21k dataset,FlexiViT-B model was pretrained on ImageNet-21k dataset with distillation
+flexivit-b model,imagenet-1k dataset,FlexiViT-B model was transferred to the ImageNet-1k dataset for experiments
+pretrained flexivit,imagenet-1k dataset,pretrained FlexiViT was experimented on the ImageNet-1k dataset
+pretrained flexivit,fixed vit-b/30 model,pretrained FlexiViT was used as a baseline compared to fixed ViT-B/30 model
+model,patch sizes,model performance was evaluated at different patch sizes such as 8x8 grid and 24x24 grid
+model,accuracy,model achieved 81.8% accuracy at 8x8 grid and 85.3% accuracy at 24x24 grid
+model,training cost,model gained 3.5% accuracy at no additional training cost
+flexivit,neural network models,flexible and fixed models were compared in terms of transfer and performance
+lit transfer,model,"Flexified LiT transfer showed the best results, while fixed LiT transfer of FlexiViT performed well with different patch sizes"
+open-vocabulary detection,image-text models,Image-text models were transferred for open-vocabulary detection
+flexible patch sizes,pre-training,Flexible patch sizes were utilized to accelerate pre-training of models like ViT-B/16
+vit-b/16 models,epochs,ViT-B/16 models are trained for different epochs.
+vit-b/16 models,curricula,(Flexi)ViT-B/16 are different curricula.
+training setups,flexifying,Flexifying existing training setups
+pre-trained models,transfer,existing pre-trained models can also be flexified during transfer to downstream tasks.
+transfer,datasets,"We use the same set of 6 transfer datasets from Section 4, with the same settings."
+transfer,patch size,"we now also randomize the patch size during transfer, and evaluate the single resulting model at different patch sizes."
+flexivit,transfer,Flexible transfer of FlexiViT works best.
+fixed model,transfer,flexifying a fixed model during transfer also works surprisingly well.
+multimodal image-text training,flexilit,"In FlexiLiT, we train a text tower to produce text embeddings that align well with visual embeddings."
+multimodal image-text training,flexiclip,FlexiCLIP is used for multimodal image-text training.
+lit,flexivit models,"LiT baselines using FlexiViT models are provided, indicating a direct relationship between the two concepts"
+flexilit-b,flexivit-b/30,"FlexiLiT-B performs the best on average, while FlexiViT-B/30 gets very close results, suggesting a close relationship in performance"
+lit-vit baselines,flexilit,"LiT-ViT baselines match FlexiLiT on the sequence length trained for, but performance drops quickly with a different sequence length, indicating a performance-related relationship"
+flexiclip,image-text training setup,"FlexiCLIP is used in from-scratch image-text training setup, suggesting a connection between FlexiCLIP and the training process"
+flexiﬁcation,object detection training,"Flexiﬁcation works for object detection training, indicating the suitability of flexiﬁcation for this specific task"
+owl-vit,ﬂexible patch sizes,"OWL-ViT training is modified to introduce flexible patch sizes, showcasing a relationship between OWL-ViT and the patch size modification"
+patch size,improved results,The patch size leads to improved results over evaluation at the smallest patch size.
+flexiﬁcation,detection,Flexiﬁcation is valuable for detection.
+flexiﬁcation,training times,Flexiﬁcation can be used to pre-train ﬁxed ViTs faster.
+curriculum,patch sizes,A curriculum is specified as a sequence of probability distributions over the patch sizes.
+training with a patch size curriculum,better performance,Training with a patch size curriculum leads to better performance per compute budget than standard training.
+shape or texture bias,patch size,Shape or texture bias largely depends on the patch size.
+flexivit,similar texture bias to a vit,FlexiViT evaluated at each patch size has a similar texture bias to a ViT trained and evaluated at that same patch size.
+model and dataset size,flexivit models of the base size (-b),The focus is on FlexiViT models of the base size (-B) trained on 12 M images.
+patch size models,imagenet-1k (1.2 m images),Patch size models are trained on ImageNet-1k using the ImageNet-1k DeiT III model as teacher.
+deit iii model,flexivit-l model,FlexiViT-L model matches or outperforms DeiT III models and EfﬁcientNetV2
+input patch size,patch size,It becomes more effective to change model width than patch size
+input patch size,sequence length,Changing the input patch size is not the only way to trade off sequence length and compute in ViTs
+varying patch embedding stride,patch size,"One alternative is to fix the patch size and change its sampling stride, i.e. extract overlapping patches to increase sequence length"
+model depth,flexivit,"Depth pruning differs fundamentally from FlexiViT: it scales linearly in depth, uses a subset of parameters, and allows progressively refining a prediction"
+flexivit,patch embedding strategy,FlexiViT utilizes the unique patch embedding strategy of ViTs for trading off compute and predictive performance with a single model.
+flexivit,pre-training costs,FlexiViT can significantly reduce pre-training costs by only training a single model for all scales at once.
+flexivit,downstream tasks,FlexiViT performs well at a variety of downstream tasks.
+flexivit,attention relevance,The attention relevance of FlexiViT can significantly change at different patch sizes.
+flexivit,token representations,"FlexiViT has token representations at different patch sizes, as shown in the analysis of attention and token representations across scales."
+patch embedding strategy,vits,The patch embedding strategy of FlexiViT is based on ViTs.
+pre-training costs,single model,"By training only a single model for all scales at once, FlexiViT can reduce pre-training costs significantly."
+token representations,patch sizes,The representation of tokens at different patch sizes is analyzed. The representation of tokens is taken from block 6 and averaged across the I21K validation set. There is a comparison of representations at different scales to understand the changes in attention relevance.
+token representations,attention relevance patterns,"As the patch size decreases in FlexiViT, the attention relevance patterns concentrate into smaller areas throughout the image. There are significant changes in attention at different scales."
+patch sizes,cosine similarity,"As the patch size decreases in FlexiViT, each token splits into multiple tokens. The cosine similarity between token representations at different patch sizes is measured to find correspondences."
+ensembling,prediction accuracy,Ensembling multiple predictions of the same FlexiViT at different scales is explored to improve prediction accuracy. It is found that running a single FlexiViT at a specific compute budget is more efficient than ensembling multiple smaller ones.

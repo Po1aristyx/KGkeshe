@@ -1,0 +1,192 @@
+node_1,node_2,edge
+boosting,parallel complexity,"Boosting has a parallel complexity that has been studied in recent works, establishing tradeoffs between training rounds and parallel work per round."
+boosting,algorithms,"Boosting algorithms are discussed in the context, including the performance matching theoretical lower bounds and settling the parallel complexity."
+boosting,weak-to-strong learners,"The parallel complexity of Boosting, including lower bounds and algorithms, is discussed in relation to weak-to-strong learners."
+boosting,sample-optimal,The parallel complexity of Boosting algorithms in the context focuses on being nearly sample-optimal.
+boosting,adaboost,Boosting algorithms like AdaBoost are mentioned as examples that work by running a base learning algorithm on reweighted versions of the training data.
+adaboost,base learning algorithm,AdaBoost is an algorithm that iteratively runs a base learning algorithm on reweighted data to produce a sequence of classifiers in the Boosting process.
+training rounds,parallel work per round,The tradeoff between the number of training rounds and total parallel work per round is discussed in terms of the parallel complexity of Boosting.
+training data,large weights,The training data is updated to put larger weights on samples misclassified by the algorithm.
+training data,smaller weights,The training data is updated to put smaller weights on samples classified correctly.
+samples misclassified,large weights,Samples misclassified by the algorithm are assigned larger weights during training data update.
+samples classified correctly,smaller weights,Samples correctly classified are given smaller weights during training data update.
+training iteration,previous classifiers,The next training iteration is focused on points with which the previous classifiers struggle.
+"classifiers h1, . . . , hp",votes,"After many rounds, the classifiers h1, . . . , hp are finally combined by taking a weighted majority vote among their predictions."
+boosting algorithms,grove and schuurmans,Boosting algorithms like Grove and Schuurmans have been developed over the years.
+boosting algorithms,rätsch et al.,Boosting algorithms like Rätsch et al. have been developed over the years.
+boosting algorithms,servedio,Boosting algorithms like Servedio have been developed over the years.
+boosting algorithms,friedman,Boosting algorithms like Friedman have been developed over the years.
+gradient boosting algorithms,xgboost,Modern Gradient Boosting algorithms like XGBoost often achieve state-of-the-art performance on learning tasks.
+gradient boosting algorithms,lightgbm,Modern Gradient Boosting algorithms like LightGBM often achieve state-of-the-art performance on learning tasks.
+gradient boosting algorithms,data cleaning,Modern Gradient Boosting algorithms often achieve state-of-the-art performance on learning tasks while requiring little to no data cleaning.
+boosting,natekin and knoll,"One drawback of Boosting, as highlighted by Natekin and Knoll, is that it is completely sequential."
+training steps,previous steps,Each of the consecutive training steps requires the output of previous steps in Boosting algorithms.
+boosting algorithms,base learning algorithm,Boosting algorithms use the base learning algorithm for reweighted learning problem.
+gradient boosting algorithms,iterations,Gradient Boosting algorithms often require hundreds to thousands of iterations to achieve the best accuracy.
+iterations,accuracy,Iterations are required to achieve the best accuracy.
+machines,training,There is no way to parallelize the steps of Boosting and distribute the work among the machines.
+boosting,training,The training time of the base learning algorithm is directly multiplied by the number of steps of Boosting.
+works,boosting,Multiple recent works have studied parallelization of Boosting.
+tradeoffs,training rounds,Previous studies aim for an understanding of the inherent tradeoffs between the number of training rounds p and the total parallel work per round.
+algorithms,guarantees,Previous studies include parallel Boosting algorithms with provable guarantees on accuracy.
+studies,algorithms,Previous studies leave a significant gap between the performance of the parallel algorithms and the proven lower bounds.
+contribution,work,The main contribution of this work is to develop a parallel algorithm with a better tradeoff between p and t.
+boosting,parallel boosting,"parallel Boosting is studied within the theoretical framework of Boosting, specifically in the context of weak-to-strong learning"
+learning algorithms,boosting algorithms,Boosting algorithms are inspired by the concept of weak-to-strong learning and have contributed to its development
+weak-to-strong learning,weak-to-strong learning,Weak-to-strong learning refers to the theoretical framework where binary classification over an input domain is studied with the goal of boosting the accuracy of weak learners
+distribution,distribution,"In weak-to-strong learning, a distribution over the input domain is used to generate samples for training weak learners"
+hypothesis,hypothesis,The goal in weak-to-strong learning is to produce a hypothesis that accurately predicts the labels of samples from the distribution
+sample complexity,weak-to-strong learner,The sample complexity of the weak-to-strong learner is defined as the number of samples required to achieve a certain level of accuracy in the hypothesis prediction
+weak-to-strong learner,complexity,The complexity of the weak-to-strong learner is a key concept discussed in the context.
+weak-to-strong learner,adaboost,AdaBoost is highlighted as one of the algorithms extensively studied in weak-to-strong learning.
+hypothesis set,weak-to-strong learner,The hypothesis set denoted by H in relation to weak-to-strong learner W is mentioned.
+vc-dimension,hypothesis set,The VC-dimension of hypothesis set H is a factor in defining strong learners in weak-to-strong learning.
+sample complexity,adaboost,"AdaBoost is known for producing strong learners with sample complexity mAda(ε, δ) based on hypotheses and V-dimension."
+classifier,adaboost,The classifier function (f(x)) in relation to AdaBoost is discussed in terms of producing hypotheses from H.
+voting classifier,sample complexity,"The voting classifier produced by AdaBoost and its relation to sample complexity mAda(ε, δ) is highlighted."
+parallel boosting,weak-to-strong learner,The concept of parallel Boosting is formalized in the context of weak-to-strong learning.
+training data,weak learner,"All training happens in the weak learner, as observed in the context."
+weak learner,definition,The weak learner proposed a definition of parallel Boosting
+p,t,"A weak-to-strong learning algorithm has parallel complexity (p, t) for p consecutive rounds with t distributions queried"
+weak learner,distribution,The weak learner returns t hypotheses based on the distributions queried
+weak-to-strong learner,hypothesis,The weak-to-strong learner outputs a hypothesis f at the end of p rounds
+t,query distributions,One machine/thread can handle each of the t parallel query distributions in a round
+weak-to-strong learner,sample complexity,Focus on parallel weak-to-strong learners that are near-optimal in terms of sample complexity and accuracy tradeoff
+weak-to-strong learner,output classifiers,Aim for output classifiers f with sample complexity matching that of AdaBoost
+expected loss,ld(f),The expected loss as denoted by LD(f) is related to the function f and is represented by the formula LD(f ) = O(m−0.01)
+lower bounds,stronger,The lower bounds mentioned in the context are made stronger by focusing on values very close to γ−2d
+adaboost,weak-to-strong learners,Classic AdaBoost and other weak-to-strong learners are mentioned in the context as producing voting classifiers with margins Ω(γ)
+classic adaboost,other weak-to-strong learners,"Classic AdaBoost and other weak-to-strong learners are both cited in the context as having a parallel complexity of (Θ(γ−2 ln m), 1)"
+karbasi and larsen,algorithm,"Karbasi and Larsen [2024] introduced an algorithm with parallel complexity of (1, exp(O(d ln(m)/γ2)), representing an alternative tradeoff in the context"
+subsequent work,lyu et al.,Subsequent work later by Lyu et al. [2024] presented a general tradeoff between p and t
+accuracy,algorithms,The accuracy of the algorithms mentioned in the context is proven by arguing that they produce a voting classifier with margins Ω(γ)
+lower bound side,karbasi and larsen,"On the lower bound side, Karbasi and Larsen [2024] presented three possible scenarios that must hold for the algorithm"
+parameters,karbasi and larsen,Karbasi and Larsen [2024] established the parameters for the lower bound
+karbasi,larsen,Authors of the paper mentioned in the context
+p,"{ω(γ−2d), ω(γ−2 ln m), exp(ω(d))}","Either p is greater than or equal to the minimum of Ω(γ−2d), Ω(γ−2 ln m), exp(Ω(d))"
+p,exp(ω(d)),p is compared to exp(Ω(d) in terms of constraints
+t,exp(ω(d)),Constraint on t being exp(Ω(d)
+p,o(γ−2),Alternative lower bound for p = O(γ−2)
+p,ln t,Relation between p and ln t in the context of p ln t = Ω(γ−2d)
+adaboost,parallel boosting,Comparison between standard AdaBoost and parallel Boosting
+upper and lower bounds,parallel boosting,Discussion on upper and lower bounds for parallel Boosting
+theorem 1.1,algorithm 1,Statement of general result and the algorithm associated with it
+c,γ-weak learner,"c is a concept, W is a γ-weak learner for c"
+hypothesis set,vc-dimension d,Hypothesis set with VC-dimension d mentioned
+algorithm 1,weak-to-strong learner ar,Algorithm 1 yielding a weak-to-strong learner AR with specific complexity
+ly et al.,bound,Ly et al. [2024] in the exponent of t
+ly et al.,p,"ignore the ln(ln(m)/(δγ2)) factor, it gives the clean tradeoff for any p from 1 to O(γ−2 ln m)"
+p,t,p ln t = Ω(γ−2d ln m)
+t,d,t ≥ exp(exp(Ω(d)))
+t,m,Comparing Theorem 1.2 to known upper bounds
+p,exp(ω(d)),The term p = exp(Ω(d)) is also near-tight
+adaboost,advantage γ,"If we run AdaBoost, and in every iteration, we check whether a previously obtained hypothesis has advantage γ under the current weighing, then we make no more than exp(O(d ln(m/d))) queries to the weak learner"
+weak learner,hypothesis,"The weak learner returns distinct hypotheses, which are crucial for generating the hypothesis set."
+γ,vc-dimension,The value of γ is related to the VC-dimension of the hypothesis set.
+algorithm 1,universal constant,Algorithm 1 involves a universal constant Cn as a reference point for its results.
+training set s,weak learner w,S is the input training set provided to the weak learner W in the context.
+weak learner w,linear classifier g,The weak learner W produces a linear classifier g at Line 21 as mentioned in the context.
+linear classifier g,hypotheses,The linear classifier g is defined as a linear combination of hypotheses in the context.
+hypotheses,linear classifier g,Hypotheses are related to the linear classifier g as they are used in its definition.
+linear classifier g,voting classifier f,The linear classifier g corresponds to a voting classifier f with coefficients normalized and no sign operation.
+voting classifier f,correct label c(x),The voting classifier f is correct if and only if the product of correct label c(x) and g(x) is greater than 0.
+theorem 2.1,theorem 1.1,Theorem 1.1 follows from Theorem 2.1 via generalization bounds for linear classifiers with large margins.
+breiman [1999],linear classifier g,Breiman's min-margin bound relates to linear classifiers satisfying a certain condition c(x)g(x) ≥ γ.
+unknown concept c,linear classifier g,Unknown concept c relates to the linear classifier g through the condition c(x)g(x) ≥ γ.
+algorithm 1,linear classifier,Algorithm 1 produces a linear classifier with margins of order γ
+algorithm 1,parameters,Algorithm 1 produces a linear classifier with margins of order γ based on suitable parameters
+algorithm 1,classifier,Algorithm 1 produces a classifier with large margins
+algorithm 1,lemma,This section focuses on the lemmas that describe how Algorithm 1 produces a classifier with large margins
+parameters,algorithm 1,Algorithm 1 produces a linear classifier with margins of order γ based on suitable parameters
+linear classifier,margins,Algorithm 1 produces a linear classifier with margins of order γ
+lemma,algorithm 1,This section focuses on the lemmas that describe how Algorithm 1 produces a classifier with large margins
+lemma,classifier,This section focuses on the lemmas that describe how Algorithm 1 produces a classifier with large margins
+lemma,large margins,This section focuses on the lemmas that describe how Algorithm 1 produces a classifier with large margins
+algorithm 1,voting classifier,Output of Algorithm 1 is a Voting classifier
+concept,hypotheses,Concepts mentioned in the context that are crucial for reasoning in terms of Definition 1 and the process of simulation
+concept,definition,"The definition provided in the context, specifically Definition 1 (ε-approximation), is a key concept for understanding the overall process"
+concept,distribution,The distribution D over X is fundamental for defining the ε-approximation concept and for applying it to hypotheses and weak learners
+concept,multiset,"The concept of a multiset plays a significant role in determining the ε-approximation for D, c, and H as per Definition 1"
+concept,training dataset,The reference distribution D0 over the training dataset S is essential for the bagging part of the method mentioned in the context
+hypotheses,set h,"The hypothesis set H plays a crucial role in determining the ε-approximation for the concept c, D, and the multiset T"
+training dataset,subsampler t,The subsample T ∼ Dn0 is utilized as a γ/2-approximation for D0 in the bagging process
+hypothesis,advantage,The hypothesis h produced by a weak learner has an advantage γ on T and γ/2 on the entire dataset S relative to D0
+weak learner,boosting step,The Boosting step is crucial in simulating a γ/2-weak learner when provided with a γ/2-approximation for the target distribution
+strategy,bagging step,The strategy involves a parallel bagging step where multiple subsamples are sampled to query the weak learner and obtain hypotheses for Boosting steps
+r boosting,"distributions d1, d2, . . . , dr","The R Boosting steps involve sequentially obtaining distributions D1, D2, . . . , DR."
+learning rate,"approximation for dr among h1, h2, . . . , ht","A fixed learning rate assumes a worst-case advantage of γ/2.5 and finds at least one γ/2-approximation for each Dr among h1, h2, . . . , ht."
+parallel round of querying,weak learner,"A single parallel round of querying the weak learner is sufficient for performing R steps of Boosting, reducing p by a factor R."
+distributions,d0,The challenge is that the distributions Dr diverge from D0 as we progress in the Boosting steps.
+approximation for d0,samples from d0,The focus is on obtaining approximations for Dr when only having access to samples from D0.
+distance,distributions,"The authors approach the problem by tracking the ""distance"" between the distributions."
+distance,max-divergence,"By bounding both D∞(Dr, D0) and D∞(D0, Dr), the authors can leverage the advanced composition theorem from the differential privacy literature."
+max-divergence,dr,The authors can leverage the advanced composition theorem from the differential privacy literature to bound the probability of obtaining an approximation for Dr when sampling from D0.
+max-divergence,locality,"Since the max-divergence has ""locality"", one can bound the divergence between the two distributions via a worst-case study of a single entry."
+dr,d0,The authors track the distance between Dr and D0 in terms of the Kullback-Leibler divergence (KL divergence) between them.
+kl divergence,max-divergence,Comparing the max-divergence expression to Eq. (2) reveals that it is a worst-case estimation of the KL divergence.
+kl divergence,relative entropy,"The KL divergence, also known as relative entropy, between two distributions P and Q is always."
+kl divergence,relative entropy,"The KL divergence, also known as relative entropy, between two distributions P and Q is always non-negative and equal to zero if and only if P = Q."
+kl divergence,max-divergence,"The KL divergence is not a proper metric as it is not symmetric and it does not satisfy the triangle inequality, unlike the max-divergence."
+kl divergence,boosting algorithm,Our results reveal that the KL divergence captures particularly well the behavior of our Boosting algorithm.
+kl divergence,variational inference,"To estimate the probability of obtaining a γ/2-approximation for Dr when sampling from D0, we employ the duality formula for variational inference to estimate such a probability in terms of KL(Dr ∥ D0)."
+kl(dr ∥ d0),lemma 4.6 of lyu et al.,The relationship between the KL(Dr ∥ D0) and Lemma 4.6 of Lyu et al. is mentioned in the context as a way to estimate a probability.
+p,q,The relationship between P and Q is defined in the context as P being absolutely continuous with respect to Q.
+q,a,Q and A are both mentioned in the same context as factors to determine absolute continuity.
+p,identical supports,"The results are expressed in terms of identical supports for simplicity, showing a relationship between P and identical supports."
+p,absolute continuity,P is required to ensure absolute continuity with respect to Q in the context.
+q,same support as p,Q requires the same support as P to ensure the relationship holds in the context.
+x,"{−1, 1}","The concept c maps X to {-1, 1}, defining a relationship between X and the set {-1, 1}."
+h,"{−1, 1}x","The hypothesis set H is defined as a subset of {−1, 1}X, indicating a relationship between H and {−1, 1}X."
+˜d,d,"The distributions ˜D and D are mentioned in the context to have the same support, establishing a relationship between them."
+kl(d ∥ ˜d),4γ2r,The relationship between KL(D ∥ ˜D) and 4γ2R is established to show a condition when KL(D ∥ ˜D) is sufficiently small.
+eq. (3),lemma 2.4,The generality of Lemma 2.4 is exploited on both sides of Eq. (3) to define the random variable X : T (cid:55)→ λ1{T∈G} and later choose λ carefully.
+x,theorem 2.3,Theorem 2.3 ensures that X has high expectation for T ∼ Dn.
+x,λ,Setting λ in a way that leverages the high expectation of X for T ∼ Dn.
+x,t ∼ ˜dn,Setting λ to obtain a lower bound on the expectation of X relative to T ∼ ˜Dn.
+lemma 2.5,classifier g produced by algorithm 1,"Lemma 2.5 relates to the general goal of showing that the linear classifier g satisfies c(x)g(x) = Ω(γ) for all x ∈ S, with high probability."
+normalization factors,lemma in next step,Standard techniques allow reducing the goal of showing that the product of normalization factors is small to bounding the number of samples needed in the bagging step in the next lemma.
+kl divergence,dr ∥ d0,"The analysis in terms of the KL divergence shows a trichotomy: if KL(Dr ∥ D0) is small, Lemma 2.5 yields the result."
+universal constant,existence,"Lemma 2.6 states the existence of a universal constant Cn and sets conditions for all R ∈ N, 0 < δ < 1, 0 < γ < 1/2."
+γ-weak learner w,hypothesis set h,The gamma-weak learner W uses a hypothesis set H to induce normalization factors ZkR+r ensuring that R * normalization factor < exp(−γ2R/2).
+algorithm 1,"hypotheses hkr+1,..., hkr+r","Algorithm 1 produces hypotheses hkR+1,..., hkR+R which induce normalization factors ZkR+1,..., ZkR+R."
+"dembo and zeitouni [1998, lemma 6.2.13]","lee [2022, theorem 2.1]","The proof sketch references Dembo and Zeitouni [1998, Lemma 6.2.13] and Lee [2022, Theorem 2.1] to leverage a simpler form for demonstration."
+kl(dr' ∥ d1),telescopic decomposition,KL(DR' ∥ D1) undergoes a telescopic decomposition to reveal the intricate relationships in the problem.
+dr' ∥ d1,small value,"If KL(DR' ∥ D1) is small (at most 4γ2R), Lemma 2.5 provides a guarantee with sufficient probability."
+kl(dr′ ∥ d1),term,"If KL(DR′ ∥ D1) is large, then either (i) the term − ln(cid:81)R′−1 or (ii) the term(cid:80)R′−1 has a specific approximation within TR′,1, . . . , TR′,t/R. Additionally, if i=1 DR′(i)c(xi)(−hr(xi)) is sufficiently large, then the existence of h∗ satisfying that r=1 αrDR′(i)c(xi)h∗(xi) > γ is implied."
+h∗,γ,"h∗ has margin at least γ with respect to DR′, implying the conclusion of the induction step."
+h∗,dr′,"h∗ has margin at least γ with respect to DR′, this relationship is crucial for concluding the induction step."
+x,[2m],"Input domain X is defined as [2m], where m represents the number of training samples for the learner. This is important for the construction of the lower bound."
+x,"{−1, 1}","Uniform random concept c is defined over domain X with output values {-1, 1}. This information is utilized in the construction of a weak learner."
+weak learner,concept,The weak learner is a concept in the context of deterministic choice and connecting to parallel Boosting.
+weak learner,coin problem,The weak learner uses inspiration from the coin problem to construct hypotheses for processing query distribution.
+coin problem,biased coin,The coin problem involves observing outcomes of a biased coin to determine the bias.
+coin problem,direction of bias,The goal in the coin problem is to determine the direction of the bias of a biased coin.
+coin problem,algorithm,Any algorithm for guessing the bias of a biased coin is mentioned in the context.
+weak learner,distribution d,The weak learner processes a query distribution D by returning the hypothesis with advantage γ under D.
+weak learner,error rate,The expected error rate is discussed in relation to the hypotheses chosen by the weak learner.
+distribution d,hypothesis,The distribution D is processed by the weak learner returning the first hypothesis with advantage γ under D.
+coin tosses,biased towards c(x),The outcomes of up to p coin tosses are discussed in relation to being 2γ biased towards a specific value.
+expected error,lower bound,The expected error is compared to the lower bound requirement in the context.
+w,c,W rarely has to return c upon a query
+w,hi,W can use hi to answer all queries
+t,hi,"provided that t is small enough, W can use hi to answer all queries"
+d,hi,"query distribution D that is independent of hi, the expected loss of hi satisfies Ehi[LD(hi)] = 1/2 − 2γ due to the bias"
+d,loss,the loss of hi under D is highly concentrated around its expectation (over the random choice of hi)
+hi,concentrated queries,"to handle concentrated queries, if we add 2O(d) uniform random hypotheses to H, then these may be used to answer all concentrated queries"
+hi,queries,hi being independent of the queries in the ith round allows W to answer all queries in round i
+w,hi,"if W can answer all the queries in round i using hi, then hi+1, . . . , hp are independent of any queries the weak-to-strong learner makes in round i + 1"
+error,p,expected error of exp(− O(γ2p)) is much larger than m−0.01 for small p in the improved lower bound
+proof,m,previous proof shows something much too small in terms of expected error exp(− O(γ2p))
+proof,tradeoff,The previous proof shows a tradeoff between p and t.
+proof,independence,It is mentioned that hi can answer an independently chosen query distribution D.
+hi,query distribution,hi can answer an independently chosen query distribution D.
+tradeoff,parameters,There is a tight tradeoff between the parameters.
+lower bound,algorithm,Establishing improved lower bounds and an essentially optimal algorithm.
+lower bound,training rounds,There is a tradeoff between the number of training rounds and the parallel work per round.
+future work,theoretical tools,Future work may focus on understanding the applicability of the theoretical tools developed here to other settings.
+lemmas,investigating,The term 'lemmas' is related to 'investigating' as the study mentioned in the context may involve investigating the extent to which post-processing of hypotheses obtained can improve the complexity of parallel Boosting algorithms.
+post-processing,complexity,The term 'post-processing' is related to 'complexity' as the context discusses how post-processing of hypotheses obtained in the bagging step can potentially improve the complexity of parallel Boosting algorithms.
+research direction,parallel boosting algorithms,The term 'research direction' is related to 'parallel Boosting algorithms' as the context mentions that investigating to what extent post-processing of hypotheses obtained in the bagging step can improve the complexity of parallel Boosting algorithms is an interesting research direction.
+european union,research funding,The term 'European Union' is related to 'research funding' as the research mentioned in the context is co-funded by the European Union.
+independent research fund denmark,research funding,The term 'Independent Research Fund Denmark' is related to 'research funding' as the research mentioned in the context is also funded by Independent Research Fund Denmark.
+european union,granting authority,"The term 'European Union' is related to 'granting authority' as the context mentions that the European Union is not responsible for the views and opinions expressed, nor can the granting authority be held responsible for them."

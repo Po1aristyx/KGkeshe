@@ -1,0 +1,269 @@
+node_1,node_2,edge
+model inversion attacks,private training data,Model inversion attacks aim to infer and reconstruct private training data
+model inversion attacks,private face images,MI attacks have raised concerns about the leaking of sensitive information such as private face images used in training a face recognition system
+model inversion attacks,algorithms for mi,"Recently, several algorithms for MI have been proposed to improve the attack performance"
+algorithms for mi,attack performance,"Recently, several algorithms for MI have been proposed to improve the attack performance"
+optimization objective of sota mi algorithms,attack performance,"We analyze the optimization objective of SOTA MI algorithms, argue that the objective is sub-optimal for achieving MI, and propose an improved optimization objective that boosts attack performance significantly"
+mi overfitting,reconstructed images,"We analyze 'MI overfitting', show that it would prevent reconstructed images from learning semantics of training data, and propose a novel 'model augmentation' idea to overcome this issue"
+proposed solutions,sota mi attack accuracy,Our proposed solutions are simple and improve all SOTA MI attack accuracy significantly
+proposed solutions,celeba benchmark,"In the standard CelebA benchmark, our solutions improve accuracy by 11.8% and achieve for the first time over 90% attack accuracy"
+privacy implications,deep learning models,Our findings demonstrate that there is a clear risk of leaking sensitive information from deep learning models
+deep learning models,sensitive information,Deep learning models are used to extract sensitive information.
+deep learning models,privacy implications,Consideration should be given to the privacy implications of using deep learning models.
+models,privacy implications,The privacy implications of models need to be considered.
+code,privacy implications,The code related to the models may have privacy implications.
+demo,privacy implications,The demo associated with the models may have privacy implications.
+models,https://ngoc- nguyen- 0.github.io/re- thinking_model_inversion_attacks/,The models can be accessed at the provided link.
+dnns,privacy,Deep neural networks are being used in domains with privacy concerns.
+dnns,sensitive datasets,DNNs are being applied in domains involving sensitive datasets.
+privacy,attacks,There is a concern about privacy attacks on DNNs.
+model inversion,privacy attacks,Model Inversion attacks are a type of privacy attack.
+model inversion,face recognition system,Model Inversion attacks can be used to attack face recognition systems.
+face recognition system,sensitive face images,Face recognition systems may contain sensitive face images used in training.
+related work,model inversion attacks,Previous work has introduced Model Inversion attacks.
+related work,linear regression,Initial related work targeted linear regression.
+related work,dnns,Recent related work extends Model Inversion attacks to complex DNNs.
+whitebox setting,attacker,"In the context, the attacker is assumed to have complete knowledge in a whitebox setting, indicating a relationship between the two concepts."
+whitebox setting,knowledge,"The attacker in a whitebox setting is assumed to have complete knowledge, highlighting the importance of knowledge in this context."
+attacker,model subject,"The attacker is assumed to have complete knowledge of the model subject to attack, suggesting a relationship between the attacker and the model subject."
+platforms,downloading,"Many platforms provide downloading of entire trained DNNs for users, indicating a relationship between platforms and downloading."
+whitebox attacks,importance,"Whitebox attacks are important, emphasizing the significance of whitebox attacks in this context."
+gmi attack,generative model inversion,"The GMI attack is related to Generative Model Inversion, which is a proposed attack method to learn a distributional prior via GANs."
+public information,distributional prior,"Public information is leveraged to learn a distributional prior via GANs in the context, establishing a relationship between public information and distributional prior."
+distributional model inversion,kedmi,"KEDMI is proposed as Knowledge-Enriched Distributional Model Inversion, where an inversion-specific GAN is trained by leveraging knowledge from the target model."
+varitional model inversion,proposed,"VMI is proposed as Variational Model Inversion, where a probabilistic interpretation of MI leads to a variational objective for the attack."
+kedmi,vmi,"KEDMI and VMI achieve SOTA attack performance, indicating their similar effectiveness in the context."
+sota mi,issues,"The paper revisits SOTA MI, studies two issues pertaining to all SOTA MI, and proposes solutions, highlighting the relationship between SOTA MI and the identified issues."
+approaches,common,"Common and central to all approaches proposed in recent works is an inversion step, indicating a shared characteristic among different approaches in the context."
+optimization objective,identity loss,"The optimization objective in the inversion step involves the identity loss, which is the same for all SOTA MI, pointing out a common factor in the context."
+sota mi,negative log-likelihood,SOTA MI is formulated as the negative log-likelihood for the reconstructed samples under the model being attacked
+sota mi,identity loss,Effective design of the identity loss has not been studied in SOTA MI
+model inversion (mi) attack,reconstruct private training data,The problem of the Model Inversion (MI) attack is to reconstruct private training data based on model parameters
+sota mi algorithms,sub-optimal,Analyzing the optimization objective of existing SOTA MI algorithms shows that they are sub-optimal
+sota mi algorithms,performance boost,Improved optimization objective boosts the performance of SOTA MI algorithms
+mi overfitting,prevents reconstructed images from learning identity semantics of training data,MI overfitting prevents reconstructed images from learning identity semantics of training data
+identity loss,subtleties in all sota mi,Identity loss in all SOTA MI is studied to propose improvements that boost the performance of all SOTA significantly
+identity loss,issues and improvements,Analysis of identity loss in all SOTA MI highlights the issues and proposes improvements
+our solutions,sota mi algorithms,Our solutions can improve SOTA MI algorithms
+solutions,sota mi algorithms,Solutions can improve SOTA MI algorithms significantly
+solutions,attacker,Solutions achieve over 90% attack accuracy
+identity loss,mi,Existing identity loss may be sub-optimal for MI. Propose an improved identity loss for MI
+concept of mi overfitting,impact on mi,Analyze the impact of concept of MI overfitting on MI and propose a novel solution based on model augmentation
+concept of mi overfitting,model training,Idea inspired by conventional issue of overfitting in model training and data augmentation as a solution to alleviate the issue
+solutions,experiments,Extensive experiments conducted to demonstrate the effectiveness of solutions
+work,rising threats of mi attacks,Work sounds alarm over the rising threats of MI attacks
+work,measures against leaking of private information,Work urges more attention on measures against the leaking of private information from DNNs
+mi,attacker,Attacker abuses access to model M trained on private dataset Dpriv for MI
+latent code distribution,prior loss,Categorizing SOTA MI attacks based on difference in latent code distribution and prior loss
+gan,prior loss,pGAN(z) is a GAN prior in categorizing SOTA MI attacks
+generator,prior loss,G is generator of a GAN in categorizing SOTA MI attacks
+discriminator,prior loss,D is discriminator of a GAN in categorizing SOTA MI attacks
+g,d,Generator and discriminator of a GAN
+g,d,Are mentioned as G and D
+g,d,Generator and discriminator of a GAN
+g,d,Central to all these methods is an inversion step –called secret revelation–
+g,d,Inversion step performs optimization
+g,d,Lambda Lprior (z) in optimization function
+g,d,"Id(z; y, M) in optimization function"
+g,d,QN from the concept 'Prior loss Lprior−D(G(z))
+g,d,Log D(G(z)) from the concept 'Prior loss Lprior−D(G(z))
+g,d,"Ez∼q(z){Lid(z; y, M ) + λLprior(z)} in the optimization process"
+g,z,G(z) used in optimization function
+g,z,Reconstruction problem in high-dimensional data
+d,z,Central step in all methods - inversion step
+d,z,"minimization of Lid(z; y, M ) + λLprior(z)"
+d,z,"arg minEz∼q(z){Lid(z; y, M ) + λLprior(z)}"
+z,g,Reconstruction problem in high-dimensional data
+z,d,Central step in all methods - inversion step
+identity loss,reconstruction,Identity loss (Lid) guides the reconstruction of the image (x = G(z)) that is most likely to be recognized by model M as identity y.
+identity loss,mi methods,"All SOTA MI methods use the same identity loss (Lid), although they have different assumptions about q(z) and the prior loss Lprior."
+q(z),prior loss,"Improving q(z) and prior loss leads to advances in MI, with different assumptions about q(z) and the prior loss Lprior."
+lid,mi algorithms,"Improvement of Lid can lead to a performance boost in all SOTA MI algorithms, as observed by improving q(z) and Lprior."
+lid,reconstructed image,"Lid (Lid(x; y)) guides the reconstruction of the image (x = G(z)), leading to a performance boost in SOTA MI methods."
+kedmi,vmi,KEDMI and VMI formulate identity loss as an optimization to minimize negative log likelihood
+identity loss,optimization,Identity loss is formulated as an optimization to minimize negative log likelihood under model parameters
+identity loss,cross-entropy loss,Identity loss is linked to cross-entropy loss as described by Lid(x; y) and Eqn. 1
+identity loss,sota mi methods,Identity loss used in SOTA MI methods is considered sub-optimal for MI as shown in Eqn. 2 and Fig. 1 2⃝
+penultimate layer activations,identity loss,Penultimate layer activations referred to as p are essential for identity loss calculation
+penultimate layer activations,training data representations,Penultimate layer activations need to be close to training data representations for successful inversion
+training data representations,class k,The training data representations for class k are represented by wk.
+training data representations,'simon',The training data representations need to reconstruct a sample close to the private training data of 'Simon'.
+mi,exp(pt wk),MI requires attention on maximizing exp(pT wk).
+"(cid:80)ning(cid:80)nj=1,j̸=k",exp(pt wj),There is a need for more attention on maximizing exp(pT wk) compared to a task related to minimizing exp(pT wj).
+proximity,private training data,The analysis investigates the proximity between private training data and reconstructed data.
+proximity,reconstructed data,The analysis investigates the proximity between private training data and reconstructed data.
+identity loss,exp(pt wk),There is a need for an improved identity loss focusing on maximizing exp(pT wk) for MI.
+1p,1,1p is concatenated with 1 at the end to include bias as wi includes biases at the end.
+penultimate layer representations,kedmi,The analysis uses penultimate layer representations and KEDMI.
+private training data,reconstructed data,Visualization shows the penultimate layer representations for private training data and reconstructed data using KEDMI.
+evaluation model,face.evolve,The evaluation protocol uses face.evoLve to extract representations.
+evaluation protocol,face.evolve,Used to extract representations
+3 randomly chosen identities,knn distance,Results shown for these identities along with KNN distance
+identity loss,sota mi methods,Identity loss in SOTA MI methods is sub-optimal
+penultimate representations,inversion,Penultimate representations used during inversion
+kedmi,reconstructed data,KEDMI is unable to reconstruct data close to private training data
+facial images,reconstructed facial images,Private and reconstructed facial images are qualitatively different
+proposed identity loss (llogit),reconstruction of data close to private training data,Proposed identity loss can guide the reconstruction of data close to private training data
+penultimate layer representations,knn distances,Can be observed using both penultimate layer representations and KNN distances for target classes
+mi algorithms,target classifiers,Similar results shown using additional MI algorithms and target classifiers
+logit maximization,mi identity loss,Proposing Logit Maximization as an improved MI identity loss
+logit,pt wk,"The objective of directly maximizing the logit, pT wk, instead of maximizing the log likelihood of class k for MI is proposed."
+identity loss,llogit,The proposed Llogit can be easily integrated into all existing SOTA MI algorithms by replacing Lid with our proposed Llogit in Eqn. 1.
+llogit,pt wk,The equation for Llogit defines the relationship between pT wk and the identity loss proposed in Eqn. 3.
+regularizing p,preg,The regularization of p using preg in Eqn. 3 helps in limiting the value of
+identity loss,reconstruction of private training data,The proposed identity loss (Eqn. 3) significantly improves the reconstruction of private training data compared to existing identity loss in SOTA MI algorithms.
+identity loss,overcoming mi overfitting,The proposed identity loss is discussed as a method to overcome MI overfitting in SOTA methods in the subsequent section of the context.
+mi overfitting,sota mi methods,The concept of MI overfitting has considerable impacts in state-of-the-art multiple-instance (MI) methods.
+mi overfitting,conventional concept of overfitting,The concept of MI overfitting is discussed in comparison to the conventional concept of overfitting in machine learning.
+overfitting,model learning,Overfitting is defined as the model fitting too closely to the training data during the model learning (training stage).
+overfitting,semantics of the training data,"Overfitting occurs when the model fails to adequately learn the semantics of the training data, resulting in poor performance on unseen data."
+mi overfitting,kedmi,MI overfitting is demonstrated using the KEDMI method.
+reconstructed samples,lack of identity semantics,Reconstructed samples show lack of identity semantics due to fitting too closely to the model during inversion.
+reconstructed samples,low identity loss,The reconstructed samples have very low identity loss under the target model M due to MI overfitting.
+identity loss,target model m,"Identity loss is very low under the target model M, as mentioned in the context."
+quantitative results,prevalence of mi overfitting,Quantitative results are used to validate the prevalence of mutual information (MI) overfitting in state-of-the-art (SOTA) MI methods.
+mi overfitting,sota mi methods,The context highlights that mutual information (MI) overfitting is a significant issue in even the most advanced MI methods.
+reconstructed samples,identity loss,"The identity loss of 1,500 reconstructed samples from the target model M is visualized w.r.t. M and another target classifier M′."
+vgg16,identity semantics,"Some samples show low identity loss under the target model M but large identity loss under the unseen VGG16 model M′, indicating a lack of identity semantics."
+model augmentation,mi overfitting alleviation,Model augmentation is proposed as a solution to alleviate mutual information (MI) overfitting during inversion.
+maug,efficientnet-b0,Maug = EfficientNet-B0 is used as a replacement target classifier in model augmentation to observe samples with large identity loss.
+overfitting in mi,concept of overfitting,"The context formalizes the concept of overfitting in mutual information (MI), specifically relating to instances where reconstructed samples fit too closely to the target model."
+reconstructed samples,target model,"reconstructed samples fit closely to the target model and adapt to random variation and noise, failing to adequately learn semantics of the identity."
+reconstructed samples,identity semantics,"it could be observed that the reconstructed samples lack identity semantics, leading to poor performance under another unseen model."
+reconstructed samples,mi overfitting,"some reconstructed samples hint at suffering from MI overfitting, as they lack identity semantics when tested under another unseen model."
+identity loss,target model m,some reconstructed samples show low identity loss under the target model M but lack identity semantics.
+identity loss,unseen model m′,"for a considerable percentage of reconstructed samples with low identity loss under M, the identity loss under another unseen model M′ is large."
+model augmentation,mi overfitting,"a proposed solution to MI overfitting involves model augmentation, inspired by the conventional issue of overfitting in model training."
+data augmentation,overfitting,data augmentation is proposed as a solution to alleviate overfitting issues in model training.
+training,data augmentation,Training and data augmentation are mentioned as solutions to alleviate overfitting issues.
+training dataset,overfitting,Augmenting the training dataset could alleviate the issue of overfitting.
+target model,knowledge distillation (kd),Knowledge distillation is proposed with the target model as the teacher to alleviate overfitting.
+target model,model augmentation,The target model is augmented to alleviate overfitting.
+target model,inversion step,The target model is used in the inversion step to compute the identity loss.
+identity loss,model augmentation,Model augmentation is involved in computing the identity loss.
+model augmentation,identity loss,Model augmentation is used together with the target model in the inversion step to compute the identity loss.
+m (i)aug,performance analysis,The performance of augmented models is analyzed.
+identity loss under m (i)aug,poor performance of samples with mi overfitting,Samples with MI overfitting have poor performance under the augmented models.
+mi,overfitting,MI overfitting perform poorly under M (i) aug
+samples,mi overfitting,samples with MI overfitting perform poorly under M (i) aug
+samples,identity semantic,samples lack identity semantic
+experiment setups,gmi,exact experiment setups in [5] for GMI [39]
+experiment setups,kedmi,exact experiment setups in [5] for GMI [39] and KEDMI [5]
+vgg16,ir152,target model VGG16 [30] / IR152 [14]
+ir152,face.evolve,target model VGG16 [30] / IR152 [14] / face.evoLve [7]
+face.evolve,vgg16cnn(conv3),evaluation model face.evoLve ResNet-18 [14] / CNN(Conv5)
+ir-se50,emnist,IR-SE50 [10] / EMNIST [9]
+private dataset,public dataset,Private Dataset / Public Dataset CelebA [24] / CIFAR-10 [20] / MNIST [22] / CelebA / MNIST
+gmi,kedmi,"SOTA MI approaches: GMI [39], VMI [36], and KEDMI [5]"
+gmi,vmi,"SOTA MI approaches: GMI [39], VMI [36], and KEDMI [5]"
+vmi,kedmi,"SOTA MI approaches: GMI [39], VMI [36], and KEDMI [5]"
+experimental setup,model augmentation,Experimental setup and model augmentation are related as they are both components of the methodology being discussed.
+face recognition,digit classification,These are tasks being evaluated with the proposed method on different datasets.
+face recognition,celeba dataset,CelebA dataset is used for the face recognition task.
+face recognition,ffhq dataset,FFHQ dataset is used for the face recognition task.
+digit classification,mnist handwritten digits dataset,MNIST dataset is used for digit classification task.
+image classification,cifar-10 dataset,CIFAR-10 dataset is utilized for image classification task.
+private dataset dpriv,public dataset dpub,The datasets are split into two disjoint parts for training and extracting prior information respectively in the data preparation protocol.
+dpub,adversary,The adversary uses Dpub to gain prior knowledge about features that are general to the task.
+dpub,features,Adversary uses Dpub to gain prior knowledge about features that are general to the task.
+dpub,task,Adversary uses Dpub to gain prior knowledge about features that are general to the task.
+adversary,prior knowledge,Adversary uses prior knowledge to gain information about features.
+prior knowledge,features,Adversary gains information about the features using prior knowledge.
+task,features,Features are general to the task.
+gmi,kedmi,GMI and KEDMI use exactly similar model architecture in experiments.
+kedmi,experiments,KEDMI uses exactly similar model architecture in experiments.
+face recognition,celeba,Face recognition is performed on CelebA.
+face recognition,ffhq,Face recognition is performed on FFHQ.
+face recognition,vgg16,VGG16 is used as a SOTA face recognition model.
+ir152,face recognition,IR152 is used for face recognition.
+face.evolve,face recognition,face.evoLve is used as a SOTA face recognition model.
+mnist,digit classification,Digit classification is performed on MNIST.
+digit classification,cnn,CNN with 3 convolutional layers and 2 pooling layers is used for digit classification.
+image classification,vgg16,VGG16 is used for image classification.
+vmi,resnet-34,ResNet-34 is used for face recognition on CelebA in VMI.
+vmi,resnet-10,ResNet-10 is used for digit classification on MNIST in VMI.
+evaluation metrics,mi attack,Evaluation Metrics are used to evaluate the performance of a MI attack.
+mi attack,reconstructed image,MI attack assess whether the reconstructed image exposes private information.
+reconstructed image,private information,Reconstructed image exposes private information.
+reconstructed image,target label,Reconstructed image exposes private information about a target label.
+reconstructed image,target identity,Reconstructed image exposes private information about a target identity.
+private information,target label/identity,Private information is exposed about a target label/identity.
+qualitative evaluations,visual inspection,Qualitative evaluations are conducted by visual inspection.
+quantitative evaluations,different metrics,Quantitative evaluations are conducted using different metrics.
+attack accuracy,evaluation model,Evaluation model predicts the label/identity of the reconstructed image.
+evaluation model,target model,Evaluation model is different from the target model.
+evaluation model,training dataset,Evaluation model is trained on the same private dataset.
+high accuracy,reconstructed images,High accuracy on reconstructed images means they are exposing private information.
+k-nearest neighbors distance,reconstructed image,KNN Dist indicates the distance between the reconstructed image and corresponding images in the private training dataset.
+k-nearest neighbors distance,feature space,KNN Dist is measured as l2 distance between two images in the feature space.
+face.evolve,vgg16,"Both face.evoLve and VGG16 are target models used in the experiment setup, showing a relationship as target models."
+face.evolve,dpriv = celeba,The evaluation model face.evoLve is associated with the private dataset CelebA used in the experiment setup.
+face.evolve,kedmi,"The proposed method achieves better reconstruction of private data leading to improved attack performance, using KEDMI as a baseline."
+face.evolve,mi algorithms,"The proposed method addresses major problems in MI algorithms, resulting in new state-of-the-art performance for face.evoLve."
+vgg16,dpriv = celeba,The target model VGG16 is also associated with the private dataset CelebA used in the experiment setup.
+kedmi,celeba/ celeba experiments,"KEDMI is utilized as a baseline method in the CelebA/ CelebA experiments, showcasing a relationship between the baseline method and experiments."
+logit maximization,model augmentation,Logit Maximization is related to Model Augmentation as they are the key concepts mentioned in the context and are discussed in Section 3.1 and 3.2 respectively.
+logit maximization,identity loss,Logit Maximization is related to identity loss as the existing identity loss is replaced with improved identity loss Llogit in Sec 3.1.
+model augmentation,identity loss,Model Augmentation is related to identity loss as the existing identity loss is replaced with proposed Laug identity loss in Sec 3.2.
+identity loss,llogit,Identity loss is related to Llogit loss as Llogit is the improved version of identity loss mentioned in Sec 3.1.
+identity loss,laug,Identity loss is related to Laug loss as Laug is the proposed version of identity loss mentioned in Sec 3.2.
+llogit,laug,Llogit and Laug are related as they are both losses used in the model inversion process discussed in the context.
+proposed methods,experiment setups,The proposed methods yield significant improvement in MI attack accuracy in all experiment setups as mentioned in the context.
+proposed methods,private training data,The proposed methods are able to reconstruct data close to the private training data compared to existing SOTA MI algorithms.
+knn results,proposed methods,KNN results clearly show that the proposed methods are effective in reconstructing data close to private training data.
+kedmi baseline,attack accuracy,KEDMI baseline attack accuracy is improved by 12.4% under IR152 target classifier using the proposed methods.
+kedmi baseline,face.evolve,KEDMI baseline is related to face.evoLve as they are both mentioned in relation to the attack accuracy improvements.
+celeba,vgg16,CelebA/CelebA/VGG16 - relationship between CelebA dataset and VGG16 model in the context of MI attack experiments
+celeba,cifar-10,CelebA - relationship between CelebA dataset and CIFAR-10 dataset in the context of MI attack experiments
+celeba,mnist,CelebA - relationship between CelebA dataset and MNIST dataset in the context of MI attack experiments
+ffhq,celeba,FFHQ - relationship between FFHQ dataset and CelebA dataset as public data for experiments
+ir152,face.evolve,"IR152, face.evoLve - relationship between different target classifiers used in the experiments"
+ir152,vgg16,"IR152, VGG16 - relationship between IR152 model and VGG16 model in the context of MI attack experiments"
+vmi,stylegan,VMI - relationship between VMI experiments and StyleGAN model
+vmi,flow model,VMI - relationship between VMI experiments and Flow model in the context of MI attack experiments
+stylegan,flow model,Both StyleGAN and Flow model are used to learn the distribution of z.
+dpriv,celeba,Specific experiment setups mention Dpriv = CelebA.
+dpriv,dpub,Experiment setups mention Dpriv and Dpub.
+dpriv,evaluation model,Dpriv is related to the evaluation model.
+celeba,resnet-34,Experiment setups mention CelebA and ResNet-34.
+celeba,bido-hsic,CelebA is related to the defense model BiDO-HSIC.
+resnet-34,evaluation model,ResNet-34 is related to the evaluation model.
+bido-hsic,face.evolve,BiDO-HSIC is related to the evaluation model face.evoLve.
+celeba,face.evolve,CelebA is related to the evaluation model face.evoLve.
+public data,private data,Public and private data are mentioned as two types of data in the context. They are related as contrasting categories.
+methods,sota attack performances,"The proposed methods are mentioned to consistently improve the baseline SOTA attack performances, indicating a direct positive relationship."
+method,attack accuracy,"The method proposed is mentioned to boost the attack accuracy of the IR152 target model from 52.87% to 77.27%, indicating a significant improvement."
+defense models,attack accuracy,"The defense models provided by BiDO-HSIC are evaluated for their effectiveness in boosting the attack accuracy, suggesting a direct relationship between the models and accuracy."
+defense models,celeba dataset,"The defense models provided by BiDO-HSIC are mentioned to be trained on the CelebA dataset, indicating a relationship between the models and the dataset they are trained on."
+knowledge transfer,defense model,"Knowledge transfer is mentioned from the defense model to Maug using Dpub, indicating a relationship where information is passed from one entity to another."
+defense models,sota defense bido-hsic,"The SOTA defense BiDO-HSIC is mentioned to be rather ineffective for the proposed MI, indicating a negative impact relationship."
+conclusion,sota mi approaches,"The conclusion section revisits SOTA MI and discusses issues pertaining to all SOTA MI approaches, suggesting a relationship where the conclusions are drawn based on the analysis of the approaches."
+identity loss,mi,"Existing identity loss in SOTA is analyzed in relation to MI, suggesting that the current loss method is sub-optimal for MI."
+concept,mi overfitting,"The concept of MI overfitting is formalized and shown to have a considerable impact even in SOTA, suggesting a relationship where the concept is key to understanding the issue of overfitting."
+extensive experiments,results,"Extensive experiments are mentioned to demonstrate the results for KEDMI and GMI for IR152, face.evoLve, and VGG16 target models, suggesting a relationship where experiments lead to results."
+dpub,ffhq,Dpub is related to FFHQ in the context of evaluation model = face.evoLve
+evaluation model,face.evolve,Evaluation model is related to face.evoLve in the context
+top 1 accuracies,sota mi (imp.),Top 1 accuracies are compared to SOTA MI (Imp.) in the context
+knn distance,attack accuracies,KNN distance is related to attack accuracies in the context
+mi algorithms,attack accuracy,MI algorithms impact the attack accuracy in the context
+imp.,celeba/ffhq/ir152,Improvement shows an increase in attack accuracy from CelebA/FFHQ/IR152
+imp.,knn dist,Improvement compared to KNN Distance in the context
+ir152,attack accuracies,IR152 is related to attack accuracies in the context
+attack accuracies,celeba/ffhq/face.evolve,Attack accuracies are reported in the context of CelebA/FFHQ/face.evoLve
+attack accuracy,24.40%,Attack accuracy has improved by 24.40% in the context
+our solutions,sota,Our solutions can significantly improve SOTA in the context
+ethical concerns,privacy of machine,Ethical concerns prompt serious consideration on the privacy of machine in the context
+experimental setups,previous work,Experimental setups follow previous work in the context
+scale of experiments,previous works,The scale of our experiments is comparable to previous works in the context
+experimental setups,experiments,Both terms are related as experimental setups are used to conduct experiments.
+experiments,previous works,Experiments mentioned in the context are compared to previous works.
+experiments,blackbox/ label-only attacks,The methods used in experiments are extended to consider blackbox/ label-only attacks.
+methods,blackbox/ label-only attacks,The extension of methods discussed is for blackbox/ label-only attacks.
+improved mi methods,malicious users,The improved MI methods can have negative societal impacts if used by malicious users.
+improved mi methods,privacy attacks on dnns,The improved MI methods contribute to increased awareness about privacy attacks on DNNs.
+research,"national research foundation, singapore","The research is supported by the National Research Foundation, Singapore."
+research,ai singapore programmes,The research is supported under AI Singapore Programmes.
+project,sutd project pie-sgp-ai-2018-01,The project is supported by SUTD project PIE-SGP-AI-2018-01.
+reviewers,valuable comments,Reviewers provided valuable comments.
+loo yi,helpful discussion,Loo Yi and Kelly Kuo were thanked for their helpful discussion.
+kelly kuo,helpful discussion,Loo Yi and Kelly Kuo were thanked for their helpful discussion.

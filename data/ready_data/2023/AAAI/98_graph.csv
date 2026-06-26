@@ -1,0 +1,122 @@
+node_1,node_2,edge
+human-in-the-loop framework,model performance,The human-in-the-loop framework aims to improve model performance by eliminating confounding factors.
+human-in-the-loop framework,interpretable methods,These methods
+model performance,black-box methods,Concept-based methods sacrifice model performance for interpretability
+clinical-related concepts,model performance,Inefficient usage of clinical-related concepts contributes to the performance loss in explainable architectures.
+existing methods,narrow focus,Most existing methods
+multi-modal explainable disease diagnosis framework,medical images,The framework aligns medical images with clinical concepts semantically at multiple levels.
+multi-modal explainable disease diagnosis framework,clinical-related concepts,It addresses the challenge by considering semantic connections between image regions and concepts.
+image-level,regional token level,The framework encompasses three levels: global image
+regional token level,concept subspace level,These levels include alignment at both regional and conceptual levels for enhanced understanding.
+post-hoc methods,medical experts or patients,post-hoc methods do not enable understanding for medical experts or patients
+human-interpretable concepts,decision process,exploration of concept-based methods integrates high-level concepts into the decision process
+automatically discovering concepts,concept annotations,discovered concepts can reduce the need for annotations but may be unclear and unreliable
+concept activation vectors (cavs),model's features,CAVs train linear classifiers to verify if representations separate human-defined concept examples
+concept bottleneck model (cbm),task labels,CBM predicts concepts and then uses them to predict task labels
+medical experts,clinical treatments,CBM mimics the process where medical experts assess symptoms for disease diagnosis
+trustworthy medical image analysis,clinicians' trust,CBM is important for trustworthy analysis to build trust among clinicians
+trustworthy skin disease diagnosis,cbm,Section 2.2 specifically discusses trustworthy skin disease diagnosis using CBM
+clinical treatments,diagnosis of skin diseases,Clinical treatments involve assessing symptoms before diagnosing skin diseases.
+skin disease diagnosis,deep learning and healthcare,Skin disease diagnosis is a research area at the intersection of deep learning and healthcare.
+saliency map,explanation approaches,Saliency map and attention mechanisms are used for explaining skin lesion diagnoses.
+abcd-rule,7-point checklist,ABCD-rule and 7-point checklist are authoritative criteria for dermatologists in diagnosing skin diseases.
+dermoscopic concepts,lucieri et al. (2020),Lucieri et al. predict dermoscopic concepts for model interpretability.
+information sharing,coppola et al. (2020),Coppola et al. use multi-task learning for increased interpretability through shared features.
+confounding concepts,yan et al. (2023),Yan et al. discover and eliminate confounding concepts in datasets.
+spectral relevance analysis,lapuschkin et al. (2019),Spectral relevance analysis is a technique used by Yan et al. for dataset analysis.
+cbe (patrício et al. 2023),segmentation module,CBE uses a segmentation module for preprocessing images and enhancing interpretability.
+1 × 1 convolution,feature maps,CBE encourages feature maps extraction through 1 × 1 convolutions.
+cnn-based image encoder,multimodal representation learning,The first stage of the method uses a CNN-based image encoder to extract visual features from medical images
+large language model (llm)-based concept encoder,multimodal representation learning,In parallel
+image level,alignments,The framework aligns images at the image level to facilitate better understanding of the correspondence between visual content and concepts.
+token level,alignments,Alignment also occurs at the token level
+concept level,alignments,Alignment is further done at the concept level
+feature extractor,leveraging correspondences,The feature extractor is directed to use these aligned representations to more effectively exploit the connections between images and concepts.
+skincon dataset,application,The framework can be applied to datasets like SkinCon
+explainable disease diagnosis,second stage,After the image-concept alignment
+image-level alignment module,global correspondence between images and concepts,The image-level alignment module is designed to maximize the similarity of global representations for accurate image-concept pairs compared to random ones
+image-level alignment module,accuracy,By maximizing similarity in the image-level alignment
+attention-based token-level image-concept alignment module,fine-grained alignments,This module enhances the alignment between image sub-regions and individual concept word tokens
+concept activation vectors,concept-level alignment,Concept activation vectors are used in the concept-level alignment module to map image representations into the concept space
+first two modules,image and concept matches,These modules work together to refine the initial image and concept matches before moving to prediction.
+single layer on top of image encoder,concept prediction,This layer is added to predict concepts using the image features learned in the first stage
+image encoder,diagnosis prediction,The encoder's output is used for both concept detection and subsequent diagnosis prediction through a linear probe.
+concept contributions,concept-based explanations,Concept contributions are part of the generated explanations that showcase the role of individual concepts in the decision-making process.
+localization,concept-based explanations,Localization refers to identifying the image regions associated with specific concepts
+explainable disease diagnosis,method,The second stage of the method is dedicated to performing an explainable disease diagnosis.
+image encoder,first stage,In the first stage
+explainable decision module,second stage,The decision module is part of the second stage
+clinical concepts,predicted,The method predicts clinical concepts in images
+linear predictor,concept bottleneck,A concept bottleneck is applied to map the concept subspace to disease prediction.
+linear predictor,interpretable,The linear predictor's decision is based on detected concepts
+weight matrix,linear predictor,The weight matrix indicates the importance of each concept in the final disease prediction.
+human medical expert,editing,Experts can edit the predictor for more reliable diagnoses when needed.
+wrong or counter-intuitive phenomenon,observation,Observations of unexpected outcomes prompt experts to modify the predictor.
+image representation v'i,input,Image representations (v'i) are fed into the system for analysis.
+derm7pt dataset,dermoscopic image dataset,Derm7pt is a subset of the larger dermoscopic image dataset
+image representation (vi),input image ii,vi is the encoding of an input image Ii obtained through the freezing image encoder Ec.
+freezing image encoder (ec),image encoding process,Ec is responsible for encoding input images into a feature representation used for further analysis.
+concept detection,concept scores,The FC layer fc detects concepts and generates scores representing their presence in the image.
+fc layer (fc),concept extraction,fc is an intermediate step for extracting concept information from the image representation.
+disease classification,linear layer (fd),fd uses the detected concepts to classify diseases
+cross-entropy loss (ce),objective function,CE is a component of the loss function used to optimize the model's performance in concept detection and disease diagnosis.
+β (hyperparameter),balancing concept detection and diagnosis,β controls the relative importance of concept detection and disease classification during joint training.
+model leveraging concept knowledge,disease diagnosis without concept bottleneck,The model uses concept annotations during training to improve diagnosis performance while maintaining explainability.
+image encoder,classification head,A simple classification head is applied on top of the image encoder for direct disease diagnosis without concept bottleneck.
+derm7pt,clinical concepts,Derm7pt is a dataset containing 1011 images with various clinical concepts related to melanoma skin lesions.
+derm7pt,7 dermoscopic concepts,The dataset includes 7 specific dermoscopic concepts.
+derm7pt,nevus and melanoma classes,After filtering
+ph2,melanocytic lesions,PH2 contains 200 dermoscopic images of melanocytic lesions with different types.
+ph2,common nevi,atypical nevi
+skin-con,fine-grained annotations,Skin-Con is a dataset with 3230 images annotated for detailed analysis.
+skin-con,22 concepts,It contains 22 concepts with at least 50 images each.
+skin-con,malignant,benign
+skin-con,f17k (groh et al. 2021),Data from F17k is used for selecting concepts with a minimum number of images.
+sarkar et al. (2022),ante-hoc model,Their approach involves an ante-hoc model with a concept encoder and a decoder for image reconstruction.
+calbert weights,multi-level alignment,During training
+image encoder,classification heads,In the second stage
+adam optimizer,learning rate,The optimizer used is Adam with a learning rate of 5e-5 in the first stage and 1e-4 in the second stage.
+τ1,τ2,τ3
+β,dataset-specific value,β is set to 1 for Derm7pt and SkinCon datasets
+mica,disease diagnosis,MICA's performance is compared in disease diagnosis
+mica,concept-based approaches,MICA is compared with other state-of-the-art concept-based methods on various datasets.
+mica,explainability,The method's explainability is evaluated using multiple XAI metrics.
+table 1,classification comparison results,Classification results are reported in Table 1 under different metrics.
+auroc,accuracy,f1 score
+test-time intervention,diagnosis prediction,In the first case of Figure 3(a)
+irregular streaks,melanoma,By replacing the concept score of irregular streaks with the ground-truth label
+correct predicted value,nevus,In the second case
+test-time intervention,diagnosis accuracy,Figure 3(b) shows the change in diagnosis accuracy when zeroing concepts above a certain threshold
+threshold values,diagnosis accuracy,The accuracy decreases when threshold values decrease
+plausibility,believability,Plausibility relates to how believable an explanation seems based on human knowledge of the world or the problem domain.
+understandability,comprehensibility,Understandability concerns how easily humans can grasp the provided explanation.
+explainability,comprehensibility,The context defines 'understandability' as how easily a human user can comprehend the explanation without requiring technical knowledge
+plausibility,understandability,The model aims to achieve both plausibility and understandability
+concept-based visual explanations,textual explanations,The model provides both types of explanations – concept-based visual and textual.
+concept localization,image,Concept localization is generated by visualizing token-level correspondences with the input image.
+concept contribution,softmax result,Concept contribution is calculated by multiplying concept logits and corresponding weights from the last linear layer.
+negative class fluence,contradiction,A 'despite' signals a contradiction when present in the context of negative class fluence.
+label efficiency,real-world applications,High label efficiency enables practical implementation in real-world applications without extra data or annotations.
+training data proportion,label efficiency,The model's efficiency is assessed by using different proportions of training data in the second stage.
+auc (area under the curve),acc (accuracy),Performance metrics used in the paper
+disease diagnosis results,data proportions,Results are shown for various data proportions (100%
+dataset,num#derm7ptph2skincon15 / 75 / 150,These are specific datasets used in the experiment
+mica,skin disease diagnosis,MICA is a proposed framework for skin disease diagnosis.
+mica,multi-modal explainable concept-based framework,MICA is designed to be multi-modal and provides explanations through concept alignment.
+medical images,clinical-related concepts,MICA learns correspondences between medical images and clinical concepts for diagnosis.
+global image level,regional token level,MICA aligns concepts at multiple levels
+concept subspace level,global image level,regional token level
+diagnosis performance,training data proportion,The model's performance remains stable even with limited training data
+50% training data,10% training data,Performance degradation is more noticeable when using only 10% of the data
+doctors' diagnostic process,detected symptoms,The method aligns with the doctors' practice of making diagnoses based on observed symptoms.
+age level,concept subspace level,The context suggests that 'age level' and 'concept subspace level' are part of a broader categorization or comparison within the method being discussed.
+regional token level,age level,concept subspace level
+method,other concept-based models,The method is compared to 'other concept-based models' and outperforms them.
+interpretability,performance,The method aims to preserve 'interpretability' while also achieving 'superior performance'.
+interpretability,visual and textual explanations,The method provides both 'visual' and 'textual' explanations
+skin image datasets,experiments and explainability analysis,Experiments and explainability analysis are conducted on 'skin image datasets' to evaluate the method.
+superior performance,label efficiency,The method simultaneously achieves 'superior performance' and 'label efficiency'
+hong kong innovation and technology fund,funding support,The work is supported by this fund.
+shenzhen science and technology innovation committee fund,funding support,Another funding source for the project.
+project of hetao shenzhen-hong kong science and technology innovation cooperation zone,funding support,A third funding source for the project.
+preprint,arxiv,The work is an 'arXiv preprint'

@@ -1,0 +1,217 @@
+node_1,node_2,edge
+3d scene,single image,The 3D scene and single image are mentioned together as the main focus of the context
+3d scene,panoptic 3d scene reconstruction,Panoptic 3D scene reconstruction is a task related to understanding and modeling the 3D scene
+3d scene,2d instances,The 3D scene involves filling in 2D instances into 3D voxels according to estimated depth
+panoptic 3d scene reconstruction,3d reconstruction,Panoptic 3D scene reconstruction involves both 3D reconstruction and 3D panoptic segmentation tasks
+2d instances,3d voxels,2D instances are filled into 3D voxels according to estimated depth
+instance-channel ambiguity,voxel-reconstruction ambiguity,The context mentions two ambiguities related to filling 2D information into 3D voxels
+buol,bottom-up framework with occupancy-aware lifting,BUOL is introduced as a Bottom-Up framework with Occupancy-aware Lifting to address the ambiguities in panoptic 3D scene reconstruction
+3d voxels,3d instances,3D voxels are refined and grouped into 3D instances according to predicted 2D instance centers
+multi-plane occupancy,depth,Multi-plane occupancy is leveraged together with depth to fill the whole regions of things and stuff
+multi-plane occupancy,depth,multi-plane occupancy is leveraged together with depth to fill the whole regions of things and stuff
+method,performance advantage,Our method shows a tremendous performance advantage over state-of-the-art methods on synthetic dataset 3D-Front and real-world dataset Matterport3D
+code and models,will be released,Code and models will be released
+feature lifting,2d to 3d,Comparison of the feature lifting from 2D to 3D
+buol,occupancy-voxel-reconstruction ambiguity,Our BUOL: Occupancy-aware lifting with the deterministic semantic assignment in the bottom-up framework leads to Occupancy-voxel-reconstruction ambiguity.
+2d semantic category maps,whole regions of things,The predicted 2D semantic category maps are lifted to the whole regions of things
+voxels,3d instances,The voxels are finally grouped into 3D instances by corresponding 2D instance centers
+joint learning,3d reconstruction and perception,Joint learning of 3D reconstruction and perception is a challenging and practical problem for various applications
+existing works,3d reconstruction,Existing works focus on combining 3D reconstruction with semantic segmentation or instance segmentation
+pioneer work,"3d reconstruction, 3d semantic segmentation","A pioneer work unifies the tasks of 3D reconstruction, 3D semantic segmentation"
+3d reconstruction,3d semantic segmentation,Both are tasks that are unified into panoptic 3D scene reconstruction from a single RGB image
+3d reconstruction,3d instance segmentation,Both are tasks that are unified into panoptic 3D scene reconstruction from a single RGB image
+3d semantic segmentation,3d instance segmentation,Both are tasks that are unified into panoptic 3D scene reconstruction from a single RGB image
+3d reconstruction,panoptic 3d scene reconstruction,Panoptic 3D scene reconstruction includes 3D reconstruction
+3d semantic segmentation,panoptic 3d scene reconstruction,Panoptic 3D scene reconstruction includes 3D semantic segmentation
+3d instance segmentation,panoptic 3d scene reconstruction,Panoptic 3D scene reconstruction includes 3D instance segmentation
+dahnert et al.,3d reconstruction,Dahnert et al. achieve 3D reconstruction in their pipeline
+dahnert et al.,3d semantic segmentation,Dahnert et al. achieve 3D semantic segmentation in their pipeline
+dahnert et al.,3d instance segmentation,Dahnert et al. achieve 3D instance segmentation in their pipeline
+dahnert et al.,panoptic 3d scene reconstruction,Dahnert et al. achieve panoptic 3D scene reconstruction in their pipeline
+2d instance masks,3d voxels,Instance masks are lifted to channels of 3D voxels in the transformation process
+2d instance masks,front-view surface of 3d objects,Instance masks are lifted to fill voxel channels on the front-view surface of 3D objects
+2d instance masks,depth map,Instance masks are lifted using the depth map in the transformation process
+instance masks,voxel channels,Instance masks are lifted to fill voxel channels in the transformation process
+2d instance masks,3d objects,Instance masks are lifted to fill voxel channels on the front-view surface of 3D objects
+2d instance masks,lifted 3d surface masks,Instance masks are lifted to refine lifted 3D surface masks
+3d model,3d surface masks,3D model is adopted to refine the lifted 3D surface masks
+top-down panoptic 3d scene reconstruction,performance limitations,The limitations hinder the performance of the top-down panoptic 3D scene reconstruction frameowork
+voxels,2d instance masks,2D instance masks are lifted to fill voxel channels
+2d instance masks,front-view surface,Instance masks are lifted to fill voxel channels on the front-view surface of 3D objects
+randomized assignment,deterministic instance-channel mapping function,Dahnert et al. propose a randomized assignment to address the challenge of instance-channel ambiguity
+instance-channel mapping function,randomized assignment,The instance-channel mapping function proposed by Dahnert et al. utilizes a randomized assignment to assign instance ids to different channels of voxel features.
+instance-channel ambiguity,3d refinement model,"The instance-channel ambiguity arises when an instance id may be assigned to an arbitrary channel, which can confuse the 3D refinement model."
+voxel reconstruction ambiguity,2d-to-3d lifting,The voxel reconstruction ambiguity occurs during the 2D-to-3D lifting process when depth from a single view only propagates 2D information onto the frontal surface in the camera frustum.
+object regions,frontal surface,The object regions behind the frontal surface pose a challenge for the 3D refinement model to accurately reconstruct.
+buol,bottom-up framework with occupancy-aware lifting,"BUOL, a Bottom-Up framework with Occupancy-aware Lifting, is proposed in this paper to address the ambiguities for panoptic 3D scene reconstruction from a single image."
+instance-channel ambiguity,bottom-up framework,"To address the instance-channel ambiguity, the bottom-up framework lifts 2D semantics to 3D semantic."
+semantics,voxels,Semantics are lifted to 3D semantic voxels in the bottom-up framework
+instance-channel ambiguity,deterministic assignment mapping,Instance-channel ambiguity is tackled by a deterministic assignment mapping from semantic category ids to voxel channels
+voxel-reconstruction ambiguity,occupancy-aware lifting mechanism,Voxel-reconstruction ambiguity is tackled using the occupancy-aware lifting mechanism for accurate 3D refinement
+2d priors stage,2d-to-3d lifting stage,"The 2D priors stage predicts various 2D information, which is then leveraged in the 2D-to-3D lifting stage"
+2d semantics,3d voxel features,2D semantics are lifted into deterministic channels of 3D voxel features
+3d refinement stage,3d occupancy,The 3D refinement stage predicts dense 3D occupancy in each voxel for reconstruction
+3d panoptic reconstruction,3d instance/semantic segmentation masks,Ground truth annotations of 3D panoptic reconstruction include 3D instance/semantic segmentation masks.
+3d panoptic reconstruction,dense 3d occupancy,Ground truth annotations of 3D panoptic reconstruction include dense 3D occupancy.
+3d instance/semantic segmentation masks,2d instance center,Annotations of 3D instance/semantic segmentation masks and dense 3D occupancy can be converted to 2D instance centers.
+2d semantic segmentation,depth map,Annotations of 3D panoptic reconstruction can be converted to 2D semantic segmentation and depth map for supervised learning.
+3d panoptic reconstruction,3d supervised learning,Ground truth annotations can be used for supervised learning in both 2D and 3D.
+3d voxels,2d instance centers,"During inference, instance ids are assigned to 3D voxels based on 2D instance centers."
+3d voxels,3d offsets,"During inference, instance ids are assigned to 3D voxels based on 3D offsets."
+3d scene reconstruction,bottom-up framework,The proposed bottom-up framework with occupancy-aware lifting outperforms prior approaches in 3D scene reconstruction.
+pre-processed 3d-front,matterport3d,The method achieves a high panoptic reconstruction quality on both pre-processed 3D-Front and Matterport3D datasets.
+single-view 3d reconstruction,3d geometry,Single-view 3D reconstruction learns 3D geometry from a single-view image.
+single object,ellipsoid mesh,The method attempts to deform an initialized ellipsoid mesh for a single object.
+disn,signed distance fields,DISN predicts signed distance fields to generate the single 3D mesh.
+uclid-net,3d feature grids,UCLID-Net back-projects 2D features to object-aligned 3D feature grids using regressed depth map.
+corenet,3d volume,CoReNet is proposed to lift 2D features to 3D volume.
+corenet,2d features,CoReNet is proposed to lift 2D features to 3D volume by ray-traced skip connections.
+pix2vox,3d volumes,Pix2Vox is proposed to select high-quality reconstructions for each part in 3D volumes generated by different view images.
+transformerfusion,multi-view images,TransformerFusion selectively stores features extracted from multi-view images.
+3dmv,3d geometry,3DMV combines the features extracted from 3D geometry with lifted multi-view image features to predict per-voxel semantics.
+scancomplete,per-voxel semantics,ScanComplete is proposed to predict complete 3D geometry with per-voxel semantics by devising 3D geometry with filter kernels invariant to the overall scene size.
+3d-rpn,box proposals,Methods based on box proposals predicted by 3D-RPN pay more attention to the fusion of 3D geometry features and lifted image features.
+sgpn,point grouping proposals,SGPN predicts point grouping proposals for point cloud instance segmentation.
+rfd-net,instance mesh,RfD-Net focuses on predicting instance mesh of the high objectness proposal predicted by point cloud proposal network.
+gspn,bounding box,"Instead of directly regressing bounding box, GSPN generates proposals by reconstructing shapes."
+gspn,bounding box,GSPN generates proposals by reconstructing shapes from noisy observations instead of directly regressing bounding box
+pointgroup,tgnn,PointGroup and TGNN learn to extract per-point features and predict offsets to shift each point toward its object center
+lahoud et al.,instance labels,Lahoud et al. propose to generate instance labels by learning a metric that groups parts of the same object instance
+occuseg,number of occupied voxels,OccuSeg predicts the number of occupied voxels for each instance to guide the clustering stage of 3D instance segmentation
+hais,point aggregation,HAIS introduces point aggregation for preliminarily clustering points to sets and set aggregation for generating complete instances
+atlas,3d semantic segmentation,Atlas is proposed to directly regress a truncated signed distance function (TSDF) from a set of posed RGB images for jointly predicting the 3D semantic segmentation of the scene
+aic-net,anisotropic convolution,AIC-Net is proposed to apply anisotropic convolution to the 3D features lifted from 2D features by the corresponding depth to adapt to the dimensional anisotropy property voxel-wisely
+mesh r-cnn,mask r-cnn,Mesh R-CNN augments Mask R-CNN with a mesh
+mesh r-cnn,mask r-cnn,Mesh R-CNN augments Mask R-CNN with a mesh prediction branch to refine the meshes converted by predicted coarse voxel representations.
+mask2cad,cad model,Mask2CAD leverages the CAD model to match each detected object and its patches.
+patch2cad,cad model,Patch2CAD leverages the CAD model to match each detected object and its patches.
+total3dunderstanding,mesh edges,Total3DUnderstanding is proposed to prune mesh edges with a density-aware topology modifier to approximate the target shape.
+panoptic 3d scene reconstruction,dahnert et al.,"Panoptic 3D Scene Reconstruction from a single image is first proposed by Dahnert et al., and they deliver a state-of-the-art top-down strategy with Mask R-CNN as 2D instance segmentation and random assignment for instance lifting."
+buol,panoptic/instance segmentation,Our BUOL is the first bottom-up method for panoptic/instance segmentation with reconstruction from a single image.
+2d priors,3d occupancy,"Given a single 2D image, we aim to learn corresponding 3D occupancy and 3D panoptic segmentation by extracting 2D priors."
+2d priors,3d panoptic segmentation,"Given a single 2D image, we aim to learn corresponding 3D occupancy and 3D panoptic segmentation by extracting 2D priors."
+occupancy-aware feature lifting block,2d priors,"An efficient occupancy-aware feature lifting block is designed to lift the 2D priors to 3D features, giving a good initialization for the following learning."
+bottom-up panoptic 3d scene reconstruction model,3d occupancy,A bottom-up panoptic 3D scene reconstruction model is utilized to learn the 3D occupancy.
+bottom-up panoptic 3d scene reconstruction model,3d panoptic segmentation,A bottom-up panoptic 3D scene reconstruction model is utilized to learn the 3D panoptic segmentation.
+3d scene reconstruction,3d panoptic segmentation,"3D scene reconstruction model is utilized to learn 3D occu-pancy and 3D panoptic segmentation, with a 3D refine-ment model mapping the lifted 3D features to 3D occupancy, 3D semantics, and 3D offsets."
+3d scene reconstruction,2d image,Panoptic 3D scene reconstruction aims to map 2D image x to semantic labels ˆs3d and instance ids ˆi3d.
+2d priors,2d model fθ,"2D priors s2d, d, c2d, omp are learned using a 2D model Fθ."
+2d priors,3d features,Learned 2D priors need to be lifted to 3D features for training.
+occupancy-aware feature lifting,2d priors,Occupancy-aware feature lifting block is designed to lift 2D priors to 3D features for training purposes.
+occupancy-aware feature lifting block,designed,The occupancy-aware feature lifting block is designed for the goal of lifting 2D semantics to 3D features for training.
+2d semantics s2d,coarse 3d semantics i 3d,The 2D semantics S2d is lifted to coarse 3D semantics I 3d in the whole region of things and stuff.
+2d priors,3d voxels,2D priors are lifted to 3D voxels using occupancy-aware lifting.
+2d priors,3d model,2D priors are used to predict 3D results using the 3D model.
+multi-plane occupancy omp,meaningless region,Multi-plane occupancy omp is used to remove the meaningless region of the lifted 3D features.
+conv,conv-bn-relu block,Conv is a Conv-BN-ReLU block
+3d features,panoptic reconstruction,lifted 3D features are coarse and cannot be used for panoptic reconstruction directly
+3d encoder-decoder model gϕ,3d occupancy,3D encoder-decoder model Gϕ is used to predict 3D occupancy
+3d semantic map,3d offsets,3D semantic map and 3D offsets are refined by 3D occupancy
+3d semantics,3d offsets,3D semantics and 3D offsets are first refined by 3D occupancy
+3d instances,stuff,3D instances and stuff are combined to obtain panoptic 3D scene reconstruction
+truth center map,2d gaussian-encoded heatmaps,truth center map is defined as 2D Gaussian-encoded heatmaps
+2d instances,2d semantics,"2D instances and 2D semantics are rendered by 3D instances and 3D semantics, respectively"
+depth estimation loss,[18],depth estimation loss follows [18]
+depth estimation loss,estimated depth,depth estimation loss penalizes the difference between the estimated depth and the ground truth depth
+multi-plane occupancy loss,3d ground truth occupancy,multi-plane occupancy loss is obtained by sampling the 3D ground truth occupancy
+buol,3d loss,"BUOL 3D loss is composed of 3D occupancy loss, 3D semantic loss, and 3D offset loss"
+training,2d model fθ,"to stabilize the training, 2D model Fθ is first trained with L2d"
+training,3d model gϕ,"after the 2D model Fθ converges, the 3D loss L3d is applied to train 3D model Gϕ"
+experiments,synthetic dataset 3d-front,experiments are conducted on the pre-processed synthetic dataset 3D-Front
+experiments,real-world dataset matterport3d,experiments are conducted on the real-world dataset Matterport3D
+method,our method,our method is compared with other methods in the experiments
+3d-front,matterport3d,"These are dataset names mentioned in the context, representing different 3D scenes datasets used for comparison."
+3d-front,state-of-the-art panoptic 3d scene reconstruction methods,3D-Front dataset is compared with state-of-the-art panoptic 3D scene reconstruction methods in order to evaluate the effectiveness of the proposed method.
+3d-front,3d scene reconstruction,3D-Front dataset is used for panoptic 3D scene reconstruction as part of the experiment setup.
+3d-front,blenderproc,"BlenderProc is the tool used to render RGB images along with depth, semantic map, and instance mask for the 3D scene reconstruction using the 3D-Front dataset."
+matterport3d,state-of-the-art panoptic 3d scene reconstruction methods,Matterport3D dataset is used for comparison with state-of-the-art panoptic 3D scene reconstruction methods to evaluate the method's effectiveness.
+matterport3d,3d scene reconstruction,Matterport3D dataset is used for panoptic 3D scene reconstruction as part of the experiment setup.
+matterport3d,instance grouping,Matterport3D dataset is mentioned in the context in the context of instance grouping for 3D reconstruction.
+3d-front,3d occupancy,3D occupancy o3d is used as guidance for 3D reconstruction in the context of the 3D-Front dataset.
+3d-front,reconstructed semantics,Reconstructed 3D semantics are obtained for the 3D-Front dataset using the 3D occupancy o3d.
+3d-front,reconstructed offsets,Reconstructed 3D offsets are obtained for the 3D-Front dataset using the 3D occupancy o3d.
+3d panoptic segmentation,instance grouping,"Instances are grouped using 2D instance centers, 3D offsets, and 3D semantics for 3D panoptic segmentation, mentioned in the context."
+3d offsets,2d instance centers,The 3D offsets and 2D instance centers are combined to group 3D instances at multi-plane
+3d semantics,3d instances,The 3D semantics are combined with the 3D instances grouped by the instance grouping block to predict panoptic 3D scene reconstruction results
+2d loss,panoptic segmentation loss,The total loss for BUOL includes 2D loss and panoptic segmentation loss
+panoptic segmentation,loss,Panoptic segmentation loss is represented by the term L2d in the context
+weights w2d,objective,The weights w2d are used to balance the objective in the context
+bottom-up framework w/,occupancy-aware lifting,The Bottom-Up framework can be with or without Occupancy-aware lifting in the context
+bu-3d,instance grouping,BU-3D denotes a bottom-up framework with instance grouping by 3D centers in the context
+matterport3d,indoor dataset,Matterport3D is described as a real-world indoor dataset in the context
+panoptic reconstruction quality p rq,reconstructed segmentation quality rsq,P RQ and RSQ are metrics adopted for panoptic reconstruction quality in the context
+recognition quality rrq,metrics,RRQ is used as a metric to evaluate recognition quality.
+p rqth,things,P RQth denotes recognition quality of things.
+p rqst,stuff,P RQst denotes recognition quality of stuff.
+p rq,average measure,P RQ is calculated by the average measure across categories.
+p rqk,category k,P RQk is the recognition quality for category k.
+rsqk,rrqk,RSQk is multiplied by RRQk in the calculation of P RQk.
+intersection over union (iou),"true positives, false positives, false negatives","IoU is a metric used to calculate P RQk based on true positives, false positives, and false negatives."
+predicted mask i,ground truth mask ˆi,The predicted mask i is compared with the ground truth mask ˆi using IoU.
+evaluate resolution,panoptic 3d scene reconstruction,The evaluate resolution is set for the panoptic 3D scene reconstruction.
+resnet-50,2d panoptic-deeplab,ResNet-50 is adopted as the shared 2D backbone of 2D Panoptic-Deeplab.
+semantic head,semantic segmentation,The semantic head is used for semantic segmentation.
+instance center estimation,center head,Instance center estimation is followed by the center head.
+"depth head, multi-plane occupancy head",geometry priors,The depth head and multi-plane occupancy head are designed for geometry priors.
+3d model,"2d resnet-18, aspp-decoder",2D ResNet-18 and ASPP-decoder are converted to 3D models for 3D encoder-decoder.
+"3d occupancy head, 3d semantic head, 3d offset head",panoptic 3d scene reconstruction,"3D occupancy head, 3D semantic head, and 3D offset head are designed for panoptic 3D scene reconstruction."
+3d occupancy head,3d semantic head,"These two terms are related as they both refer to different aspects of 3D scene reconstruction, with occupancy head focusing on occupancy and semantic head focusing on semantics."
+3d occupancy head,3d offset head,"The terms 3D occupancy head and 3D offset head are related as they both contribute to panoptic 3D scene reconstruction, with occupancy head focusing on occupancy and offset head focusing on offset information."
+3d semantic head,3d offset head,"The terms 3D semantic head and 3D offset head are related as they all play a role in panoptic 3D scene reconstruction, with semantic head focusing on semantics and offset head focusing on offset information."
+adam,solver,"Adam is the solver utilized for the datasets, demonstrating a relationship of implementation and optimization in the context."
+learning rate,decay scheduler,The learning rate and decay scheduler are connected as the learning rate is combined with the polynomial decay scheduler to manage the training process.
+model,codebase,"The model trained with the official codebase is indicated with *, highlighting the relationship between the model and the codebase used for training."
+2d model,3d model,"The 2D model is trained initially followed by the training of the 3D model, suggesting a sequential relationship in the training process."
+resnet-50,3d-front,"The ResNet-50 model is used for initialization in 3D-Front, which is also utilized in the pre-trained model on Matterport3D, indicating a shared relationship between the models."
+buol,state-of-the-art method,"BUOL is compared with the state-of-the-art method, revealing a comparison relationship in terms of performance and efficiency."
+state-of-the-art method,proposed buol,"The proposed BUOL outperforms the state-of-the-art method by a large margin, +11.81%"
+dahnert et al.,2d segmentation,2D segmentation in Dahnert et al. [6] is replaced with the same 2D model as ours
+buol,td-pd,BUOL reconstructs the bed better than TD-PD with occupancy-aware lifting
+buol,td-pd,BUOL can recognize all the chairs while TD-PD obtains the sticky chair
+buol,bu,BUOL achieves better Panoptic 3D Scene Reconstruction results
+buol,ol,BUOL achieves better Panoptic 3D Scene Reconstruction results
+buol,dahnert et al.,BUOL outperforms the state-of-the-art Dahnert et al. [6] by +7.46% PRQ with the proposed bottom-up framework and occupancy-aware lifting
+dahnert et al.,method,"Dahnert et al. [6]+PD is compared to our method, and our method improves the PRQ by +4.39%"
+buol,qualitative results,The BUOL is used to generate the qualitative results.
+buol,3d scene reconstruction,The effectiveness of BUOL for panoptic 3D scene reconstruction is verified in this section.
+td-pd,chair,TD-PD can only segment the chair in the first row.
+td-pd,buol,"In the first row, TD-PD is compared to BUOL in terms of segmentation."
+buol,wall,BUOL is able to reconstruct the wall in the second row.
+buol,curtains,BUOL segments curtains batter than TD-PD in the second row.
+prq,matterport3d,The PRQ of Matterport3D is much lower than that of 3D-Front due to noisy ground truth.
+td-pd,state-of-the-art prq,TD-PD is considered the state-of-the-art PRQ method.
+bu-3d,baselines,The proposed method is compared to baselines in the ablation study.
+td-pd,2d panoptic-deeplab,TD-PD uses the same 2D Panoptic-Deeplab as the baseline method.
+td-pd,instance masks,TD-PD predicts instance masks for the 2D model.
+bu-3d,3d instances,BU-3D groups 3D instances by the predicted 3D centers.
+bu,rrq,BU significantly boosts the performance of RRQ by +5.85% which proves the effectiveness of the bottom-up framework
+prqst,stuff,"The drop of PRQst for stuff may come from the lower capability of used 3D ResNet + ASPP, compared with other methods equipped with stronger but memory-consuming 3D UNet"
+prq,proposed bottom-up framework,"Overall, the proposed bottom-up framework achieves +3.3% PRQ better than the top-down method"
+bu,td-pd,The bottom-up framework performs better than the top-down method
+td-pd,chairs,"TD-PD fails to recognize the four chairs, while BU reconstructs and segments better"
+2d instance center,3d instance center,"Comparing the 2D instance center with the 3D instance center for 3D instance grouping, the PRQth for thing has improved by 5.03%, which proves 3D instance grouping with 2D instance center performing better than that with the 3D instance center"
+instance grouping,2d instance center,The instance grouping with 2D instance center performs better than that with the 3D instance center.
+instance grouping,3d instance center,The error introduced by the estimated depth dimension may impact the position of the 3D instance center.
+grouping,multi-plane,Grouping in multi-plane is easier for 3D offset learning via reducing one dimension to be predicted.
+bu,bu-3d,Qualitative comparison BU with BU-3D shows inaccurate 3D instance centers in the result of BU-3D.
+table,chair,Inaccurate 3D instance centers in the result of BU-3D misclassify a chair as a part of the table.
+chair,table,The result in the first row does not recognize one chair.
+voxel-reconstruction ambiguity,occupancy-aware lifting,Occupancy-aware lifting is proposed to provide the 3D features in full 3D space to tackle voxel-reconstruction ambiguity.
+buol,bu,Quantitative comparing BUOL with BU shows improvement in PRQth by 2.93% for thing and PRQst by 4.75% for stuff.
+2d model,3d model,Multi-plane occupancy predicted by the 2D model improves the effectiveness of the 3D model in predicting more accurate occupancy of the 3D scene.
+buol,others,"With occupancy-aware lifting, BUOL reconstructs 3D instances better than others."
+bed,occluded region,"BUOL can reconstruct the occluded region of the bed, while other settings fail to tackle this problem."
+buol,occluded region of the bed,BUOL can reconstruct the occluded region of the bed
+instance-channel ambiguity,top-down method,To analyze the instance-channel ambiguity in the top-down method
+instance masks,random assignment,"When lifting instance masks with random assignment, the model achieves 47.76% PRQ"
+random instance-channel assignment,scene understanding,Fitting random instance-channel assignment makes the model pay less attention to scene understanding
+instance-channel,sorted categories,"We try to apply instance-channel with sorted categories, which improves PRQ to 48.92%"
+instance-channel,arbitrary number of instances with different categories,"Because an arbitrary number of instances with different categories may exist in an image, resulting in the randomness of instance number even for the same category"
+bottom-up method,bu,"Our proposed bottom-up method, also called BU, lifts semantics with deterministic assignment"
+randomness of instance-channel assignment,pressure of the 3d model,The pressure of the 3D model can be reduced with the reduction in the randomness of instance-channel assignment
+bottom-up method,instance-channel ambiguity,Bottom-up method can address the instance-channel ambiguity
+bottom-up framework,occupancy-aware lifting,"In this paper, we propose a bottom-up framework with occupancy-aware lifting (BUOL) for panoptic 3D scene reconstruction"
+buol,ambiguity,BUOL is designed to address the ambiguity in voxel-reconstruction by leveraging multi-plane occupancy predicted by a 2D model.
+buol,occupancy-aware lifting,BUOL leverages occupancy-aware lifting to improve 3D reconstruction and perception.
+buol,top-down framework,BUOL outperforms state-of-art approaches through its top-down framework for 3D reconstruction and perception.
+buol,panoptic 3d scene reconstruction,BUOL is believed to drive the area of panoptic 3D scene reconstruction from a single image forward.

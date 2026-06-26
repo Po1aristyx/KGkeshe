@@ -1,0 +1,104 @@
+node_1,node_2,edge
+motion perception,autonomous driving,Motion perception is a crucial component for autonomous driving systems.
+object-level trajectory prediction,classical approaches,Classical approaches focus on predicting trajectories specifically for objects.
+detectors,agents,Detectors are responsible for identifying agents
+unseen categories,open-set scenarios,Failure in detecting unseen categories poses a challenge for object-level trajectory prediction.
+self-supervised pillarmotion,our approach,Our approach compares with self-supervised PillarMotion
+point clouds,class-agnostic motion prediction,Some methods predict motion for the entire environment using point cloud data.
+fully-supervised motionnet,performance gap,Our approach narrows the performance gap between self-supervised and fully-supervised methods.
+annotated point cloud data,cost and time-consuming,The acquisition of fully-supervised methods requires a significant amount of expensive and time-intensive labeled data.
+amount of annotated point cloud data,costliness,The amount of annotated point cloud data is described as costly.
+amount of annotated point cloud data,time-consuming,Acquiring annotated point cloud data is also time-consuming.
+weakmotionnet,weakly supervised approach,WeakMotionNet proposes a weakly supervised method using limited foreground-background annotations.
+weakmotionnet,consistency-aware chamfer loss,It introduces a loss function that uses correspondence differences between frames.
+weakmotionnet,matching results,WeakMotionNet relies on matching results between individual frames.
+pillarmotion,self-supervised training,PillarMotion presents a self-supervised approach without annotations.
+pillarmotion,multi-modality pairs,Its training process is less flexible due to the need for paired image and point cloud data.
+self-supervised methods,fully-supervised methods,There is a performance gap between self-supervised and fully-supervised techniques.
+our approach,unlabeled lidar data,Our approach uses only unlabeled LiDAR data for motion prediction.
+our approach,pseudo label generation,We generate pseudo motion labels as part of our method.
+our approach,spatial and temporal regularizations,Our method incorporates spatial and temporal information from point cloud sequences.
+self-supervised class-agnostic motion prediction,optimal transport solver,Our approach incorporates an optimal transport solver for motion prediction.
+self-supervised class-agnostic motion prediction,spatial and temporal regularization losses,The approach includes three simple yet effective spatial and temporal regularization losses.
+our approach,state-of-the-art (sota) self-supervised methods,Our method surpasses SOTA self-supervised methods by a large margin.
+fully-supervised methods,our method,Our method significantly reduces the performance gap with fully-supervised methods.
+class-agnostic motion prediction,object-level trajectory forecasting,Classical approaches rely on object detection
+open-set scenarios,unknown classes,In open-set scenarios
+object detection,tracking,Traditional motion prediction systems involve object detection and tracking.
+object detection,forecasting,Forecasting is part of the typical motion prediction process.
+motionnet,spatial-temporal pyramid network,MotionNet is a pioneer in this task
+lstm-ed,convolutional lstm,LSTM-ED introduces convolutional LSTM to aggregate temporal context for motion prediction.
+be-sti,semantic decoder,BE-STI utilizes an additional semantic decoder to guide motion prediction
+weak-motionnet,foreground and background semantic annotations,Weak-MotionNet trains MotionNet in a weakly-supervised manner with limited semantic annotations.
+pillarmotion,self-supervised training,PillarMotion proposes a self-supervised approach without annotations
+pillarmotion,fully-supervised model,There is a performance gap between PillarMotion (self-supervised) and fully-supervised models
+scene flow estimation,point clouds,Scene flow estimation involves understanding dense 3D motion fields from point cloud data.
+scene flow estimation,self-supervised methods,Some self-supervised scene flow estimation methods rely on establishing connections without explicit labels.
+self-supervised scene flow estimation,point correspondences,Methods in scene flow estimation rely on establishing point correspondences between source and target point clouds for pseudo scene flow labels.
+pseudo scene flow label,3d coordinate difference,The 3D coordinate difference between matching pairs is treated as a pseudo scene flow label.
+chamfer distance loss,self-supervised scene flow learning,Many scene flow estimation methods utilize the chamfer distance loss to drive their learning process.
+class-agnostic motion prediction task,scene flow estimation,Scene flow estimation is different from motion prediction in terms of objectivity: scene flow focuses on estimating motion between observed point clouds
+dense 3d flow,time-consuming,Estimating dense 3D flow is considered time-consuming
+real lidar point clouds,lack of one-to-one correspondences,Applying scene flow estimation on real LiDAR data is challenging due to the difficulty in obtaining accurate one-to-one correspondences.
+proposed approach,pseudo labels generation,Our proposed method generates pseudo labels without ground truth by matching point clouds.
+proposed approach,class-agnostic motion prediction,The method aims to address the class-agnostic motion prediction problem.
+pseudo labels,matching problem,The process of generating pseudo labels is a matching problem
+motionnet,supervised loss lsup,MotionNet is trained using the generated pseudo labels through a supervised loss function.
+initial stage of training,cluster consistency loss,At the initial stage of training
+self-supervised methods,data itself without annotations,Self-supervised methods learn from data without the need for ground truth annotations.
+fully-supervised learning,ground truth labels,In contrast to fully-supervised learning
+motion,variation in coordinates,Motion can be defined as the change in coordinates between corresponding points in two consecutive frames.
+bev cells,2d coordinates,BEV cells (Bird's Eye View) have 2D coordinates that are matched between frames.
+source bt,target bt +t,Matching occurs between BT (source) and BT +t (target) on consecutive BEV maps.
+virtual bev map v_t,bev cells bt,BEV cells BT are part of the virtual BEV map V_T.
+static background regions,moving objects,These terms describe contrasting situations in the context. Static background regions refer to cells without apparent motion
+low-quality pseudo labels,unsatisfactory results,The low-quality pseudo labels lead to poor predictions
+spatial and temporal consistency regularization terms,inaccurate predictions,These regularization terms are introduced to address and penalize inaccurate predictions
+rigid objects,consistent predicted motions,Rigid objects
+pseudo labels within rigid objects,inconsistency,In real-world scenarios
+directly learning from pseudo labels,half-object prediction issue,Learning from inaccurate pseudo labels can result in contradictory predictions
+pre-warping operation,improvement in pseudo label quality,The pre-warping operation helps iteratively enhance the quality of pseudo labels as the prediction accuracy increases.
+time horizon,accuracy of predicting motion,As the time horizon increases
+forward-backward divergence,reliability,The inconsistency becomes noticeable in cells with incorrect predictions
+backward regularization,incorrect predictions,Lb generally penalizes incorrect predictions while having less impact on correct ones.
+self-supervised motion learning process,benefits,The backward regularization is shown to effectively benefit the self-supervised motion learning.
+overall loss functions,components,Balancing the contribution of Lsup
+proposed approach,state-of-the-art motion prediction methods,In Section 4
+dataset,nuscenes,Evaluations are primarily conducted on the large-scale self-driving dataset nuScenes.
+nuscenes,annotations,nuScenes contains 850 scenes with annotations for evaluation.
+training,validation,500 scenes for training
+nuscenes dataset,performance comparison,Our approach is evaluated on the nuScenes dataset
+training,validation,The data is split into 500 scenes for training
+pre-processing,point clouds,Pre-processing includes cropping point clouds within a range (-32m to 32m) and setting voxel size to 0.25m.
+input,current sweep,The model takes the current sweep and the past four sweeps as input.
+input,past four sweeps,The model uses past four sweeps in addition to the current sweep for input.
+baseline model,motionnet,MotionNet serves as the baseline model due to its effectiveness and flexibility.
+training,epochs,The model is trained for 20 epochs with a learning rate of 0.002.
+optimizer,adam,Adam is used as the optimizer for model training.
+implementation,pytorch,The model is implemented using the PyTorch framework.
+hardware,rtx 3090 gpu,A single RTX 3090 GPU is utilized for model implementation.
+hyperparameters,α,β
+temporal input,sequence with 5 frames,The model accepts a sequence of 5 frames as input
+temporal output,next 1s,Results are shown for the prediction of the next 1s (T' = 5).
+evaluation metrics,previous works,Performance is measured using the same evaluation metrics as in previous works like [19
+scene flow estimation methods,pointpwc,Scene flow estimation methods
+scene flow estimation methods,rigidflow,Scene flow estimation methods
+class-agnostic motion prediction methods,lstm-ed,These methods include LSTM-ED
+class-agnostic motion prediction methods,motionnet,MotionNet is another class-agnostic motion prediction method in the comparison.
+class-agnostic motion prediction methods,pillarmotion,Our approach outperforms PillarMotion
+class-agnostic motion prediction methods,be-sti,BE-STI is also a class-agnostic method included in the evaluation.
+weakly-supervised method,weakmotionnet,Our approach surpasses WeakMotionNet
+static model,fully-supervised models,The static model is contrasted with fully-supervised models like FlowNet3D and HPLFlowNet.
+ground truth speeds,static,slow (≤ 5m/s)
+performance,result visualizations,The context discusses the improvement of performance
+regularization term,inconsistency in predictions,When trained with pseudo labels Lsup
+cluster consistency loss lc,spatial consistency,Cluster consistency loss Lc contributes to improved spatial consistency in the prediction results.
+forward regularization lf,prediction results,With the addition of forward regularization Lf
+backward regularization lb,noise suppression,Backward regularization Lb helps to significantly suppress noise predictions
+weakmotionnet [15],waymo dataset,The approach is evaluated on the Waymo dataset
+mean errors,0.05m,0.4m
+previous self-supervised methods,fully-supervised ones,The context suggests that the new method surpasses or closes the performance gap between previously self-supervised techniques and those that rely on full supervision.
+study,rie2020 industry alignment fund - industry collaboration projects (iaf-icp) funding initiative,The study is funded by this specific grant program.
+study,cash and in-kind contribution from industry partner(s),Industry partners provide financial and practical support for the research.
+research,moe acrf tier 2 grant (moe-t2ep20220-0007),This research also receives funding from a Ministry of Education (MoE) Academic Research Fund Tier 2 grant.
+research,moe acrf tier 1 grant,Another source of funding for the research is a Tier 1 grant from the same ministry.

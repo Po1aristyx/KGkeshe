@@ -1,0 +1,214 @@
+node_1,node_2,edge
+shadows,differentiable rendering,Shadows are an important aspect of differentiable rendering as they contribute to the realism of the images by considering if the path to a light source is unobstructed.
+differentiable rendering,triangle meshes,Differentiable rendering involves generating shadows in triangle meshes efficiently.
+shadows,differentiable shadow maps,"Differentiable shadow maps provide faster results compared to light transport simulation, while still maintaining accuracy."
+differentiable rasterizers,visibility information,Combining pre-filtered shadow mapping with differentiable rasterizers enables the generation of differentiable visibility information.
+shadow maps,shadows,Shadow maps are mentioned as a technique for adding shadows to pixels in the context
+shadow maps,differentiable rendering frameworks,The adaptation of shadow maps to work in differentiable rendering frameworks is described in the context
+shadow mapping,differentiable shadows,The context explains how certain approximations of shadow mapping can be differentiated to achieve differentiable shadows
+differentiable rasterizers,differentiable shadows,Existing differentiable rasterizers are mentioned in the process of handling differentiable shadows
+shadows,inverse graphics problems,Shadows play a crucial role in inverse graphics problems as they provide realism significantly faster than global methods.
+differentiable shadow mappings,"pose estimation, geometry reconstruction, interactive editing","The trade-off and possibilities of differentiable shadow mappings are demonstrated in various applications such as pose estimation, geometry reconstruction, and interactive editing by manipulating shadows."
+differentiable rendering,computing derivatives of rendering process,Differentiable rendering allows computing derivatives of the rendering process to generate a virtual image from a set of scene parameters.
+renderers,scene representations,Renderers are differentiated based on the type of scene representations they work with.
+renderers,triangle meshes,The focus of the discussion is on renderers specifically designed for triangle meshes.
+triangle meshes,rasterization,Renderers for triangle meshes involve point-sampling the scene on a regular grid in the image plane using rasterization.
+rasterization,point sampling,Rasterization involves point sampling of the scene.
+rasterization,gradient computation,Some rasterizers approximate the gradient computation to make scene parameter derivatives calculation easier.
+rasterization,anti-aliasing,Some rasterizers use anti-aliasing for smoothness and to ensure differentiability.
+rasterization,local shading,Different approaches vary in terms of local shading of a pixel during rasterization.
+renderers,monte carlo integration,Physically-based renderers often utilize Monte Carlo integration to approximate the rendering equation numerically.
+monte carlo integration,rendering equation,Monte Carlo integration is used to approximate the rendering equation in physically-based renderers.
+renderers,visibility discontinuities,Techniques have been developed to handle visibility discontinuities in gradients within differentiable renderers.
+gpus,ray-triangle intersection,Modern GPUs have specialized hardware for ray-triangle intersection in rendering.
+gpus,ray-triangle intersection,GPUs possess specialized hardware for ray-triangle intersection
+gpus,rasterization-based renderers,GPUs cannot match the performance of rasterization-based renderers
+multi-view 3d reconstruction,inverse problems,Multi-view 3D reconstruction and related inverse problems are examples for the potential of differentiable rendering
+nerf,neural implicit surfaces,Recent combinations of inverse graphics with machine learning techniques like NeRF and neural implicit surfaces are particularly successful
+shadows,indirect illumination,Missing shadows or indirect illumination in the differentiable rendering process are often compensated for by assuming certain settings
+light,material,Modeling the interaction of light and material as a black box neural network is one way to compensate for missing shadows or indirect illumination in differentiable rendering
+differentiable renderers,machine learning models,Differentiable renderers have been used in a variety of contexts to train machine learning models
+local shading models,approximate global solutions,Little effort has been spent on combining local shading models and approximate global solutions in the context of differentiable rendering
+differentiable rendering,soft shadows,"Lyu et al. [42] approximated soft shadows in the context of differentiable rendering, but their gradients are limited by the proxy geometry used for shadow computation."
+soft shadows,image-based lighting,Soft shadows are produced by image-based lighting.
+shadow mapping,depth image,"Shadow mapping is based on the observation that points in a scene are lit based on the closest point to the light source, which is represented in the depth image."
+shadow mapping,point light source,Shadow mapping is based on the concept of points in a scene being lit by a point light source.
+shadow mapping,shadow map,"Shadow mapping uses a shadow map, which is a depth image from the perspective of the light source."
+shadow mapping,local shading models,"In local shading models, light is added over all light sources and shadow computation is performed for each individual light source using a shadow map per light."
+light source,point,Points in a scene are lit by a (point)light source if they are closest to the light source.
+point light source,position,A point light source is defined by its position.
+light source,direction vector,"The direction vector, p, is denoted to the light source in this context."
+light source,distance,The distance to the light source is denoted as 'd' in the described space.
+light source,shadow map,The shadow map is parameterized over the rays emanating from the light source in this context.
+light source,shadow map,The setup of the shadow map in this context is based on the light source placement.
+light source,visibility function,"The visibility of any point is determined by the shadow map, which is related to the light source in this context."
+shadow map,visibility function,"The visibility function is influenced by the shadow map, which is parameterized over rays from the light source."
+sampling artifacts,costly,The process of sampling artifacts is mentioned to be costly.
+point x,integral,Integral needs to be evaluated for every point x in the scene.
+shadow map,pre-filter,One would much pre-filter the shadow map.
+convolving f,evaluating the smoothed shadow map,Simply convolving f with k and then evaluating the smoothed shadow map is different.
+discrete values,0 and 1,The result would take only the discrete values 0 and 1.
+approximations,overview,Better approximations are mentioned with an overview in [16].
+functions,approximation to eq. (3),The approximation to Eq. (3) is built from the set of pre-computed functions.
+approach,approximations,Our approach works with all such approximations.
+variance shadow maps,example,Our approach demonstrates it at the example of variance shadow maps [12].
+local shadow map,probability distribution,The local shadow map may be considered a probability distribution.
+integration domain in eq. (3),measure,It is irrelevant what points are in the integration domain in Eq. (3) as long as the measure of the integration domain is correct.
+weighted mean,variance of the shadow map,The local weighted mean and variance of the shadow map are mentioned.
+measure,best bound,v(x) is a measure and the best bound for this measure is mentioned.
+one-sided chebyshev or cantelli inequality,bound,The one-sided Chebyshev or Cantelli inequality is mentioned in relation to a bound.
+percentage closer filtering,case,"Similar to percentage closer filtering, it may happen that d(x) < µx."
+filtered version,approximation,µx is a filtered version of f in this case.
+d(x),µx,"The relationship between d(x) and µx is that d(x) can be less than µx due to the filtered version of f. In this case, the approximation of the visibility function decreases as d(x) approaches the light source."
+ˆv(x),d(x),"The slightly modified visibility function, ˆv(x), is related to d(x) by the formula ˆv(x) = σ2xx + (d(x) − µx)2 where d(x) > µx. This function helps handle shadow mapping and self-shadowing artifacts."
+shadow maps,percentage closer filtering,Shadow maps have been observed to be very similar to percentage closer filtering. This comparison helps to understand the effectiveness of shadow mapping techniques.
+shadow mapping,self-shadowing artifacts,Shadow mapping suffers from self-shadowing artifacts known as 'shadow acne'. Biasing the depths towards the light source in the visibility test can alleviate these artifacts.
+v(x),f(l(x)),"The relationship between V(x) and f(L(x)) is that V(x) equals 0 when d(x) is greater than f(L(x)), else it equals 1. This relationship helps in determining the lighting of points relative to the light source."
+shadow maps,graphics hardware,The usefulness of shadow maps lies in the fact that they can be efficiently approximated using graphics hardware. Rendering the scene from the perspective of the light source and storing only the depth values helps in this process.
+shadow acne,bias β,The resulting problem of 'shadow acne' is commonly tackled by introducing a bias β for the depth comparison.
+bias β,depth comparison,A bias β is introduced for the depth comparison to consider points with d(x) ≤ f (L(x)) + β to be lit.
+aliasing artifacts,shadow boundaries,"Various techniques have been suggested for dealing with aliasing artifacts resulting from the discrete nature of shadow maps, particularly across shadow boundaries."
+aliasing artifacts,percentage closer filtering,Many approaches for dealing with aliasing artifacts can be interpreted as approximations of percentage closer filtering.
+percentage closer filtering,neighborhood around l(x),"Instead of comparing d(x) to only f (L(x)), a small neighborhood around L(x) in the shadow map is considered in percentage closer filtering."
+neighborhood around l(x),rays,The percentage of rays around L(x) that would lit x is taken into consideration when considering the neighborhood around L(x) in the shadow map.
+shadow mapping,visibility function,"In Differentiable Filtered Shadow Mapping, the goal is to differentiate the visibility function with respect to the scene parameters Θ."
+binary visibility v,x,The binary visibility V(x) has zero derivative almost everywhere.
+v(x),percentage closer filtering,The exact form v(x) of percentage closer filtering (Eq. (3)) is smooth.
+x,integration domain,The integration domain not only varies with the scene parameters but also depends on x.
+ˆv,computation of ∂ ˆv∂θ,We suggest to rather consider ˆv.The main difficulty in computing ∂ ˆv∂Θ is that the shadow map f is only piecewise smooth.
+shadow map f,smooth regions,"The derivatives of the integrals in Eq. (4) challenging to compute because the shadow map f is only piecewise smooth, and the boundaries of the smooth regions may change with Θ."
+shadow map idea,existing rasterizers,"Similar in spirit to the original shadow map idea, we can use existing rasterizers."
+existing solution,rendering from the perspective of the light,We can readily exploit any existing solution and simply render from the perspective of the light.
+differentiable rasterizers,smoothing by differentiable rasterizers,Most differentiable rasterizers effectively replace the piecewise smooth functions f and f 2 with smoothed functions ˜f and ˜f 2.
+˜f,∇˜f,"The vectors ˜f and ˜f 2 represent the discrete versions of ˜f and ˜f 2, with ∇˜f and ∇ ˜f 2 their Jacobians w.r.t. Θ."
+ˆv,elements dependent on the shadow map,The elements in ˆv dependent on the shadow map are µ and σ2.
+weighted mean µ,convolution,The weighted mean µ is a convolution.
+elements,ˆv,ˆv depends on the elements in the shadow map
+µ,weighted mean,The weighted mean µ is a convolution dependent on µ
+µ,shadow map,The weighted mean µ is dependent on the shadow map
+weighted mean,g,The mean can be expressed as a scalar product depending on G
+m1,first discrete moment,The first discrete moment m1 is a derivative of the shadow map
+m1,g˜f,The first discrete moment m1 is equal to G˜f
+m2,g ˜f 2,The second discrete moment m2 is equal to G˜f 2
+d,light source,The distance d is independent of the shadow map and varies with the position of the light source
+d,geometry,The distance d is independent of the shadow map and varies with the geometry
+ˆv,variables,ˆv is a piecewise rational function of the variables
+image-based lighting (ibl),point lights,"Image-based lighting (IBL) is not supported, but the illumination from some environment maps can be sufficiently well approximated by a collection of point lights."
+point lights,shadow map,Our reference implementation is based on NVD-IFFRAST [30] for creating and smoothing the shadow map.
+jacobians ∇˜f and ∇ ˜f 2,scene parameters,The Jacobians ∇˜f and ∇ ˜f 2 (w.r.t. the scene parameters) are not explicitly computed.
+reverse-mode differentiation,gradients,"Rather, we use reverse-mode differentiation to compute the gradients of an objective function."
+shadow map,light source,"We currently use a single shadow map per light source, which supports directional lights and spot lights."
+omnidirectional point lights,shadow maps,Omnidirectional point lights can be implemented by creating and querying several shadow maps.
+area lights,point light sources,Area lights or environment lighting would have to be approximated by point light sources.
+differentiable rasterizer,automatic differentiation,"By building on an existing differentiable rasterizer and automatic differentiation, our code becomes rather straightforward."
+renderscene function,smoothed discrete depth image ˜f,The RENDERSCENE function returns the smoothed discrete depth image ˜f
+renderscene function,˜f 2,The RENDERSCENE function returns ˜f 2
+f,f 2,The modular design of NVDIFFRAST first provides the discrete values f and f 2 = f ⊗ f
+m1,m2,"Once the discrete smoothed shadow maps have been computed, the visibility for a point x ∈ X can be computed with Alg. 2"
+l,rendershadowmap function,Algorithm 1 is used to Render the shadow map for a light source l
+x,pl,"The function RENDERSHADOWMAP(X , pl, k) receives X and pl as inputs"
+f,f 2,Our hypothesis is that the discrete shadow map f and f 2 must
+x,p,Compute the visibility between a point x and a light at p given the pre-filtered shadow map
+µ,m1,"In the COMPUTEVISIBILITY function, σ2 is computed as m2 - m2"
+d,µ,If d ≤ µ then return 1 in computing the visibility
+jacobian,visibility,The Jacobian of the visibility ∇xv is discussed in the context of highly tessellated occluder and planar receiver.
+smooth versions,shadow discontinuities,Smooth versions ˜f and ˜f 2 are used for properly tracking shadow discontinuities.
+disabling the smoothing,modularity of nvdiffrast,The modularity of NVDIFFRAST allows disabling the smoothing for achieving certain effects.
+single square occluder,single shadow,A single square occluder casts a single shadow on a single square receiver in the setup.
+mean squared error,reference shadow image,Optimization minimizes the mean squared error to reproduce the shadow in a reference configuration.
+discontinuous discrete shadow map,nvdiffrast's antialias function,The target configuration is not attained when using the discontinuous discrete shadow map without using NVDIFFRAST’s antialias function.
+filtering f and f 2,scene parameters and shadow boundaries,Filtering f and f 2 cannot recover the connection between the scene parameters and the shadow boundaries.
+smooth functions,antialias to f and f 2,Using the smooth functions by applying antialias to f and f 2 shows the expected convergence across variations of all other parameters.
+shadow map resolution,filter kernel size,The shadow map resolution and the filter kernel size are key parameters that directly affect the quality of the shadow approximation.
+shadow map approximation,quality,The quality of the shadow map approximation directly affects its performance and accuracy.
+backward pass,gradient computation,"The backward pass influences the gradient computation, which in turn impacts any optimization based on it."
+shadow map jacobians,occluder geometry,"High tessellation of occluder geometry results in sparse shadow map Jacobians, affecting the overall shadow map rendering."
+filter kernel sizes,shadow map convergence plots,"Different filter kernel sizes result in distinct convergence plots for the shadow map experiment, showcasing the impact of filter kernel sizes on the optimization process."
+filter kernel size,optimization,"The filter kernel size can affect the optimization process, as demonstrated by its impact on gradient descent and other variants."
+occluders,shadow map resolution,Low shadow map resolution may lead to occluders being inaccurately portrayed in the scene.
+gradient descent,momentum-based variants,Both are optimization algorithms commonly used in machine learning.
+larger kernels,runtime,The size of kernels affects the runtime performance.
+shadow map resolution,occluders,Low resolution of shadow maps can result in occluders being missed in the visibility test.
+object,rectangular floor plane,An object is placed on a floor plane for illumination in this scenario.
+directional lights,illuminate,The lights are used to illuminate the object placed on the floor plane.
+reference image,light directions,Aim is to recover light directions from a single reference image.
+shadow map resolutions,filter kernel sizes,Optimization involves testing different shadow map resolutions and filter kernel sizes.
+light direction estimation,four lights,Estimating light directions with four lights and varying filter kernel sizes and shadow map resolutions.
+path-traced images,local shading models,Comparison between path-traced images and images based on local shading models and pre-filtered shadow maps.
+quantitative results,light direction estimation experiment,Results from the light direction estimation experiment are quantitatively analyzed.
+shadow map resolution,filter kernel size,Increasing shadow map resolution or filter kernel size increases the runtime.
+accuracy,error bounds,The optimization behaves robustly with high accuracy and consistent error bounds across resolutions and filter sizes.
+filter size,accuracy,The accuracy improves slightly with larger filter size.
+shadow map resolution,filter footprint,Lowering the shadow map resolution has a similar effect because the effective filter footprint increases if the filter size stays constant.
+optimization,local minima,We observe that the optimization for one light can get stuck in local minima where the shadows do not align but the shade of the floor plane matches that in the reference image.
+shadows,image,"For multiple lights, shadows dominate the image."
+lights,error bounds,"This scenario is less likely for multiple lights, which could explain the different error bounds."
+lights,accuracy,"Recovering multiple lights is more difficult, hence the lower average accuracy."
+challenges,task,These challenges are specific to the task.
+method,parameters,"In general, we observe that our method works robustly with different sets of parameters."
+experiments,workstation,We run all experiments on a workstation with an NVIDIA 1070 Ti GPU with 8 GB VRAM.
+pose estimation,orientation,Estimating the orientation and position of an object from images is a classic computer vision task.
+object,images,Estimating the orientation and position of an object from images is a classic computer vision task.
+shadows,cues,Shadows provide viable cues for convergence.
+shadows,convergence,Shadows provide viable cues for convergence in most cases.
+shadows,ambiguity,The shadow of an object in the image provides viable cues for reducing the ambiguity.
+object,shadows,Shafer and Kanade noticed that the shadow of an object in the image provides viable cues for reducing the ambiguity.
+object,retrieving,Given only a single image makes retrieving the rigid transformation of a known object ill-posed.
+object,transformation,Given only a single image makes retrieving the rigid transformation of a known object ill-posed.
+object,translational degree of freedom,"We consider a simplified version of the 6D problem, allowing only 2 translational and one rotational degree of freedom."
+object,rotational degree of freedom,"We consider a simplified version of the 6D problem, allowing only 2 translational and one rotational degree of freedom."
+object,parameters,"We recover the parameters t = (x, y) (translation parallel to the plane) and φ (rotation around the object-centric “up” axis)."
+object,receiver plane,We place an object in front of a receiver plane and a directional light orthogonal to the plane.
+object,directional light,We place an object in front of a receiver plane and a directional light orthogonal to the plane.
+object,reference image,"Given a reference image Iref, we recover the parameters t = (x, y) (translation parallel to the plane) and φ (rotation around the object-centric “up” axis)."
+light,plane,We place an object in front of a receiver plane and a directional light orthogonal to the plane.
+object,image resolution,"This experiment is repeated for different camera image resolutions (1282, 5122, 10242)."
+shading model,images,We verify that our local shading model can generate images similar to the reference images.
+results,camera image resolutions,We report quantitative results for the 5122 resolution in Table 1.
+mitsuba 3,rotation and translation,"Mitsuba 3 recovers the rotation and translation most accurately, which could be attributed to its accurate gradient computation, using multiple sub-pixel samples."
+rotation error ∆φ,translation error ∆t,"We measure the rotation error ∆φ, the translation error ∆t, and the total runtime t, averaged over ten runs."
+rotation error ∆φ,runtime t,"We measure the rotation error ∆φ, the translation error ∆t, and the total runtime t, averaged over ten runs."
+translation error ∆t,runtime t,"We measure the rotation error ∆φ, the translation error ∆t, and the total runtime t, averaged over ten runs."
+mitsuba 3,reference images,We show that this is the case by using our renderer as reference for one experiment (see Table 1) and finding our method to yield the most accurate results in this instance.
+shadows,object surface shading,"Across all experiments, not using shadows at all and relying purely on the shading of the object surface performs worst, yet still manages to converge to reasonable"
+object surface,shading,object surface relies on the shading for performance
+rasterization,path tracing,rasterization is faster than path tracing
+rasterization,shadow mapping,shadow mapping increases runtime in rasterization
+pose estimation accuracy,path tracing approach,pose estimation accuracy similar to path tracing approach
+modern gpus,ray-triangle intersections,modern GPUs have hardware units for ray-triangle intersections
+system with nvidia rtx 3080 ti,path tracing runtime,NVIDIA RTX 3080 Ti improves path tracing runtime
+pose,articulated objects,"variation within objects is governed by pose, like articulated objects"
+deformations,morphable models,deformations are described by morphable models
+face geometry,morphable models,face geometry is a prominent example of morphable models
+shadow of the face,face geometry,face geometry reconstructed from shadows of the face
+morphable model assembled by li et al.,synthetic shadows,synthetic shadows generated from the morphable model
+synthetic shadows,morphable model,Synthetic shadows were generated from the morphable model in the first experiment.
+optimization result,images,The optimization result can be compared not just based on images but also geometry.
+optimization result,geometry,The optimization result can be compared not just based on images but also geometry.
+shadows,light sources,Using more shadows only slightly increases the runtime but significantly improves the accuracy due to multiple shadow passes.
+face geometry,silhouettes,Reconstructions of face geometry are performed from 'real' silhouettes created manually by artist Charles Burns.
+silhouettes,real silhouettes,"Face geometry reconstructions are performed from 'real' silhouettes, showing manual creation by artist Charles Burns."
+ground truth,resulting geometry,The lack of ground truth makes it difficult to quantify the resulting geometry.
+shadow art,design,Shadow Art is the design of a 3D object based only on the shadows it casts.
+shadow images,silhouettes,The shadow images are reduced to silhouettes when solving the design problem of Shadow Art computationally.
+object,volumetric grid,"In the traditional approach, the object is represented on a volumetric grid for Shadow Art."
+shadow receivers,shadows,Shadow receivers play a key role in the generation of shadows as discussed in the context.
+cameras,lights,"Cameras and lights are mentioned together in the context, indicating a relationship between them."
+gradient pre-conditioning,smoothness term,The gradient pre-conditioning and smoothness term are constraints imposed for optimization in the context.
+triangle mesh,geometry,A triangle mesh is discussed as one possible representation of the generated geometry.
+automatic differentiation,gradient descent,The combination of automatic differentiation and gradient descent is highlighted for optimizing scene parameters.
+object,shapes,"The object can be represented as a collection of shapes, showcasing a relationship between them."
+triangle meshes,geometry representation,The reference implementation based on triangle meshes can be extended to work with any geometry representation as long as it can be differentiably rendered.
+signed distance functions,spheres,"The approach can work with geometry representations such as signed distance functions or spheres, which can be rendered differentiably."
+interactive modeling from shadows,rasterization-based implementation,The interactive modeling approach involves a rasterization-based implementation to generate shadows and gradients of the objective function in real time.
+shadow art setting,shadow modeling setting,The shadow art setting can be transformed into a shadow modeling setting where users can interactively paint target shadows and apply appropriate deformation to the initial geometry in real time.
+differentiable rasterization,local shading models and shadow maps,Using differentiable rasterization with local shading models and shadow maps bridges the gap between efficient differentiable renderers and renderers based on path tracing and Monte Carlo methods for light transport modeling.
+camera and light,shadow art,The use of co-located camera and light in shadow art allows users to interactively modify the shadow of the reference object and apply real-time deformation to the mesh.
+global illumination,direct shadows,"Global illumination is a broader concept that includes direct shadows, but focusing only on direct shadows neglects other effects of global illumination"
+local shading models,shadow maps,"Within the framework of local shading models, simplifying assumptions have been made regarding shadow maps, and so far only point light sources have been considered along with one planar shadow map"
+variance shadow maps,artifacts,"The particular choice of variance shadow maps suffers from artifacts such as light bleeding, where shadows become lighter in regions of high depth variance"
+geometry,triangle meshes,Triangle meshes have been used for the representation of geometry in the context
+global illumination,ambient occlusion,"Apart from shadows, various effects of global illumination like ambient occlusion have been recreated by efficient real-time approximations"
+global illumination,reflections and refractions,Global illumination effects such as reflections and refractions can be recreated by efficient real-time approximations similar to the approach mentioned in the context
+geometry representations,signed distance fields,"Signed distance fields, a popular geometry representation in the vision community, can work with shadow maps as well"
+geometry representations,nerfs,"NeRFs, another geometry representation popular in the vision community, can also work with shadow maps, but the efficiency may vary due to the main efficiency achieved by rasterizing triangle primitives"

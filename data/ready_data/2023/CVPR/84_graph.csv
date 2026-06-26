@@ -1,0 +1,259 @@
+node_1,node_2,edge
+single image deweathering,dataset type,single image deweathering is more sensitive to the dataset type rather than the model
+weatherstream,"all real-world weather effects (rain, snow, and rain fog degradations)",WeatherStream captures all real-world weather effects along with their clean image pairs
+state-of-the-art methods,synthetic pairs,Previous state-of-the-art methods train on synthetic pairs
+state-of-the-art methods,sim2real domain gap,Previous state-of-the-art methods are limited by the Sim2Real domain gap
+pipeline,light-transport physics,The pipeline uses the power of light-transport physics
+model,"small, initial seed dataset","A model trained on a small, initial seed dataset rejects unwanted scenes"
+pipeline,unwanted scenes,The pipeline rejects approximately 99.6% of unwanted scenes
+pipeline,new scenes and degradations,The pipeline can generalize to new scenes and degradations
+training data,dataset collected through this procedure,Training on a dataset collected through this procedure leads to improvements on existing weather removal methods
+dataset,code,The dataset and code can be found on the following website
+weather degradations,pre-trained computer vision models,"Pre-trained computer vision models are able to work on clear weather conditions, which makes them useful for removing weather degradations."
+field,dataset bottlenecked,"The field is dataset bottlenecked, which means it faces limitations in terms of available datasets."
+techniques,deep networks,"State-of-the-art techniques use deep networks, but they suffer from the same scene not being able to be observed simultaneously with and without weather artifacts."
+same scene,weather artifacts,"The same scene cannot be observed with and without weather artifacts at the same time, causing issues for training deep networks."
+ideal pairs,pair of clean and degraded images of the same scene at the same time,"It is not possible to train deep networks on ideal pairs, a pair of clean and degraded images of the same scene at the same time due to the restrictions mentioned."
+dataset bottleneck,simulated pairs,"Previous work has attempted to solve the dataset bottleneck by using simulated pairs, which are artificially created to address the lack of real data."
+clean image,weather degradations,Simulated pairs are formed by starting with a clean image of a scene and artificially adding weather degradations to simulate various conditions.
+simulated pairs,diverse weather conditions,"Simulating the diverse weather conditions one can encounter is a difficult task, and existing simulators for rain are difficult to generalize."
+simulated pairs,generalization errors,"Simulated pairs have been the most common approach, despite researchers encountering generalization errors."
+pseudo-real pairs,clean and degraded images,Pseudo-real pairs are formed without the use of simulators and involve clean and degraded images without artificial additions.
+video-based deraining method,rain,One way to obtain pseudo-real pairs is to use a video-based deraining method to remove rain from images.
+simulators,video-based deraining method,The use of simulators can be improved by employing a video-based deraining method to remove rain from a scene.
+video-based deraining method,ground-truthing,The video-based deraining method involves ground-truthing with limited performance in certain rain effects.
+gt-rain,time multiplexed pairs,GT-RAIN is a recent method that focuses on introducing time multiplexed pairs for better results.
+time multiplexed pairs,video sequences,Time multiplexed pairs are obtained by grabbing frames with and without rain from input video sequences.
+human annotation,time multiplexed pairing,Using human annotation for time multiplexed pairing is challenging due to scalability issues.
+video sequences,criteria,Video sequences do not meet the criteria for a magic moment.
+video sequences,human observers,"A further limit to scalability is that human observers must be highly trained to control for factors such as illumination shifts, weather API errors, and dynamic objects in videos."
+framework,light transport techniques,"In this paper, the authors formulate light transport techniques to help decide if frames should be included in the training data."
+light transport techniques,time multiplexed pairs,Contributions of the work involve formulating how time multiplexed pairs should be selected using light transport techniques.
+time multiplexed pairs approach,human annotated approach,The only previous approach is human annotated and limited to rain.
+dataset,image pairs,"Automation scales the dataset, enabling the authors to obtain a dataset of 188K image pairs."
+dataset,performance improvement,"The dataset includes diverse rain and snow of different shapes, sizes, and strengths, resulting in a 1.5 dB improvement in performance across various state of the art baselines."
+dataset release,acceptance,The dataset will be released conditional on acceptance.
+image deweathering,degradation removal,Image deweathering aims to remove degradations caused.
+dataset,acceptance,The dataset will be released conditional on acceptance
+image deweathering,rain,Image deweathering aims to remove degradations caused by rain
+image deweathering,fog,Image deweathering aims to remove degradations caused by fog
+image deweathering,snow,Image deweathering aims to remove degradations caused by snow
+image deweathering,aesthetic appeal,Image deweathering aims to remove degradations for aesthetic appeal
+related work,image deweathering,"Related work focuses on the removal of degradations caused by rain, fog, or snow"
+detec- tion,detection,Detec- tion is related to detection
+segmentation,detection,Segmentation is related to detection
+detec- tion,segmentation,Detection is related to segmentation
+stereo,detection,Stereo is related to detection
+stereo,segmentation,Stereo is related to segmentation
+depth prediction,detection,Depth prediction is related to detection
+depth prediction,segmentation,Depth prediction is related to segmentation
+depth prediction,stereo,Depth prediction is related to stereo
+depth prediction,completion,Depth prediction is related to completion
+detec- tion,depth prediction,Detection is related to depth prediction
+detec- tion,completion,Detection is related to completion
+segmentation,depth prediction,Segmentation is related to depth prediction
+segmentation,completion,Segmentation is related to completion
+stereo,depth prediction,Stereo is related to depth prediction
+stereo,completion,Stereo is related to completion
+rain,rain streaks,Rain is related to rain streaks
+snow,snowflakes,Snow is related to snowflakes
+unpaired real data,gans,Some works rely on unpaired real data through GANs
+gt-rain,dataset,GT-RAIN collects a dataset of real rainy and clean image pairs separated
+gt-rain,dataset,GT-RAIN collects a dataset of real rainy and clean image pairs
+gt-rain,clean image pairs,GT-RAIN collects a dataset of real rainy and clean image pairs
+gt-rain,rain stopped,GT-RAIN process involves manually determining when the rain stopped
+gt-rain,filtering unsuitable internet videos,GT-RAIN process involves manually filtering thousands of unsuitable internet videos
+gt-rain,ground truth criterion,GT-RAIN filters videos that violate their ground truth criterion
+method,image pairs,Our method allows us to collect image pairs at scale
+method,larger dataset,Our method yields a dataset that is larger than GT-RAIN
+method,better quality dataset,Our method yields a dataset that is better in its quality than GT-RAIN
+method,inclusive of diverse weather conditions,Our method yields a dataset inclusive of diverse weather conditions
+papers,specific weather removal,Most papers focus on removal of a specific weather
+works,removing multiple weather conditions,there are works that can remove multiple weather conditions in a single model
+all-in-one network,multi-encoder single-decoder setup,all-in-one network uses a multi-encoder single-decoder setup
+neural architecture search,all-in-one network,all-in-one network uses neural architecture search
+discriminator,all-in-one network,all-in-one network uses a discriminator to decide which encoder to backpropagate losses to
+transweather,self-attention within patches,TransWeather uses self-attention within patches to remove smaller weather degradations
+teacher,unified all-weather removal model,A teacher-student scheme has been explored to train a unified all-weather removal model
+teacher,multiple teachers,A teacher-student scheme uses multiple teachers for each weather condition
+prior methods,"rain, snow, and fog removal","prior methods for rain, snow, and fog rely on synthetic deraining and desnowing pairs"
+paper,time multiplexed,This paper introduces time multiplexed
+rain,fog,"Rain, snow, and fog mentioned as weather conditions that rely on synthetic deraining and desnowing pairs."
+rain,snow,"Rain, snow, and fog mentioned as weather conditions that rely on synthetic deraining and desnowing pairs."
+rain,deraining,Rain mentioned with deraining as a process to remove rain effects from images.
+snow,desnowing,Snow mentioned with desnowing as a process to remove snow effects from images.
+rain,training data,Rain mentioned in context of training data creation using time multiplexing pairs.
+fog,training data,Fog mentioned in context of training data creation using time multiplexing pairs.
+snow,training data,Snow mentioned in context of training data creation using time multiplexing pairs.
+time multiplexing pairs,light transport principles,"Introduction of time multiplexing pairs for rain, fog, and snow and reliance on light transport principles to determine suitable paired scenes."
+time multiplexing pairs,training data,Mention of time multiplexing pairs as a form of training data and the efforts to collect suitable pairs for different weather conditions.
+training data,light transport principles,Reliance on light transport principles for creating informative time multiplexed pairs to use as training data.
+weather,environment,Weather and environment are related as potential causes for brightness variation.
+weather,forward models,Weather is used as input for forward models that simulate image-based changes related to weather effects.
+rain streaks,weather,Rain streaks are generated as a result of weather effects.
+rain streaks,image,Rainy images are constructed as a combination of clean images and rain streak layers.
+snow particles,snowy image,Snow particle masks and snowy images are linked where snow particles are used to create snowy images.
+snow particles,snow mask,Snow particles are defined by the snow mask which determines their spatial distribution.
+snow particles,chromatic aberration map,Snow particles are affected by the chromatic aberration map which distorts their appearance.
+snow particles,rgb pixel intensity,Snow particles exhibit isotropic derivatives in RGB pixel intensity as stated in principle 2.
+particle chromatic variation,rain streaks,"Rain streaks and snowflakes show isotropic derivatives in RGB pixel intensity, as indicated in principle 2."
+snowflakes,isotropic derivatives,Snowflakes exhibit isotropic derivatives in RGB pixel intensity.
+falling particles,photometry,The photometry of falling particles is consistent with Eq. (3) for particle intensity.
+falling particles,frame,The time in which the falling particle is in frame.
+objects,adverse weather,Objects in adverse weather tend to be blurred due to the existence of scattering effects.
+scattering effects,objects,Objects in adverse weather tend to be blurred due to the existence of scattering effects.
+particles,irradiance,"Ep and Ebg denote the irradiance of the particle and the background, respectively."
+exposure time,camera,T denotes the exposure time of the camera.
+particle intensity,pixel intensity,Ip is the pixel intensity of the background.
+bright,rain and snow,Empirical studies have shown that both rain and snow are bright regardless of background irradiance.
+background intensity,intensity,Linear relationship between ∆I and background intensity Ibg.
+clean image data,degraded image data,Intensity between clean and degraded image data Ip − Ibg is linearly related to the background intensity Ibg.
+color channels,"∆r, ∆g, ∆b",Linear relationship between clean and degraded image data Ip − Ibg is true across color channels.
+background intensity ibg,pixel intensities,The concept of background intensity Ibg is linearly related to pixel intensities in the three color channels as discussed in the context.
+pixel intensities,weather artifacts,Pixel intensities in the three color channels are related to weather artifacts as mentioned in the context.
+brightness variations,objects or lighting,"Anisotropic deviations in the vector [∆R, ∆G, ∆B]T provide a clue about brightness variations in scenes that are not due to weather such as objects or lighting."
+degraded image,clean image,A degraded image is blurrier than a clean image due to scattering effects as stated in the context.
+rain and snow related phenomenon,"dense rain, snow accumulation, haze or fog","Equations (1) and (2) do not represent the complexity of rain and snow related phenomena such as dense rain, snow accumulation, haze or fog as discussed in the context."
+scattering effects,veiling effect,Scattering effects can cause a 'veiling' effect throughout the scene as a result of introducing scattering effects not modeled by Equations (1) and (2) as mentioned in the context.
+weatherstream pipeline,light transport principles,The proposed WeatherStream pipeline utilizes light transport principles to identify magic moments for various weather effects.
+atmospheric attenuation coefficient,scene,The atmospheric attenuation coefficient is constant throughout the scene.
+model,dehazing,The model can be further refined to include multiple scattering effects in dehazing.
+single scattering output radiance,atmospheric point spread function,"The single scattering output radiance is convolved with the atmospheric point spread function (APSF), which accurately simulates the effects of multiple scattering."
+apsf,multiple scattering,The atmospheric point spread function (APSF) accurately simulates the effects of multiple scattering.
+rain,snow,"By substituting rain and snow models for underlying radiance, we can obtain the light transport model."
+underlying scene,fog effects,"The underlying scene represents no fog effects, but with rain streaks and snowflakes."
+apsf,generalized gaussian distribution (ggd),The atmospheric point spread function (APSF) can be approximated with a generalized gaussian distribution (GGD) which has a low-pass filter effect on the image.
+particle size,particle atmospheric density,The exact parameters of the GGD approximation are dependent on particle size and particle atmospheric density.
+ambient illumination,weather effects,Principle 4 (Illumination Consistency) states that the ambient illumination should remain consistent despite weather effects.
+ambient illumination,clean and degraded images,"From Principle 1 and Eq. (10), we know that the ambient illumination L∞ should be consistent between clean and degraded images."
+ambient illumination,global intensity change,Veiling effects from falling particles contribute to a global intensity change which can be confounded with illumination shifts in an uncontrolled scene.
+illumination shift,seed model,"The fourth principle is that we cannot predict the illumination shift, and use a seed model to learn whether the illumination has shifted with a sufficiently high safety margin to avoid false positive selection."
+seed dataset,seed model,"We first begin with a seed dataset from previous work [2]. This seed dataset enables a model to be trained (""seed model"")."
+light transport principles,pipeline,We detail the pipeline in Fig. 3 and explain how the light transport principles are used (Sec. 3).
+transport parameters,pipeline,The transport parameters are detailed in the pipeline as shown in Fig. 3.
+pipeline,light transport principles,The pipeline explains how the light transport principles are used in Section 3.
+clean image,degraded image,"Attempting to find a pair of images, (c, d) represent a clean and degraded image, respectively."
+data filtering,weather metadata,The data filtering process involves analyzing attached weather metadata as discussed in Section 5.
+clean image set,degraded image set,"The set of candidate clean and degraded images is denoted as Dc and Dd, respectively."
+operator,filter,"An operator is needed to filter out suitable pairs of clean and degraded images, denoted by fWeatherStream."
+mapping blocks,light transport principles,Each mapping block corresponds to one of the four light transport principles.
+verification block,principle 1 - images with object motion,The first verification block aligns data with Principle 1 by filtering images exhibiting object motion.
+optical flow computation,gunnar-farneback algorithm,The computation of optical flow involves using the Gunnar-Farneback algorithm.
+gunnar-farneback algorithm,optical flow map,The Gunnar-Farneback algorithm is used to generate the optical flow map representing motion regions in the image.
+rain streaks,snowflakes,Rain streaks and snowflakes are typically randomly distributed throughout the scene.
+rain streaks,snowflakes,Rain streaks and snowflakes move at a high velocity compared to movements from scene objects.
+rain streaks,falling particles,"Rain drops and snowflakes, which are rain streaks, have a terminal velocity of 200 mm and a radius between 0.5-2.5 mm."
+rain streaks,falling particles,"Rain streaks include rain drops and snowflakes, which move fast and have specific characteristics in the flow field."
+rain streaks,rain drops,"Rain streaks consist of rain drops, which move at high speeds due to their characteristics."
+snowflakes,falling particles,Snowflakes are falling particles that have specific characteristics and move at defined velocities.
+temporal averaging,weather particles,Temporal averaging is used to remove weather particles from consecutive frames to enhance the optical flow map.
+static objects,clean images,Static objects are identified by comparing differences between clean and degraded images.
+weather removal,weather effects,The function fweather removal removes weather effects to create clean images by eliminating weather-related variability.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+bstatic,b,Bstatic is mentioned as a component along with BOF and Bsky to create the union B.
+bstatic,bof,Bstatic is mentioned as a component along with BOF and Bsky to create the union B.
+bstatic,bsky,Bstatic is mentioned as a component along with BOF and Bsky to create the union B.
+b,cid:101,B is mentioned in the context along with cid:101 in the filtering process.
+cid:101,dc,cid:101 and Dc are mentioned in the context in relation to crops bigger than 256 x 256.
+cid:101,dd,cid:101 and Dd are mentioned in the context in relation to crops bigger than 256 x 256.
+b,ˆdstatic(x),B is mentioned in the process of thresholding with ˆdstatic(x) in the context.
+ˆdstatic(x),γchrom var,ˆdstatic(x) is mentioned in the context along with γchrom var for thresholding.
+γchrom var,cmax,γchrom var is set based on the gap between color channel intensities Cmax and Cmin.
+γchrom var,cmin,γchrom var is set based on the gap between color channel intensities Cmax and Cmin.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+rain streaks,snowflakes,Rain streaks and snowflakes are mentioned as weather effects in the context.
+snowflakes,image pairs,Snowflakes are mentioned in relation to image pairs in the context.
+degraded part,veiling effect,A degraded part of an image is related to the veiling effect caused by multi-scatter model.
+multi-scatter,apsf,Multi-scatter is mentioned with the accompanying APSF in the context.
+contrast,blur,Contrast and blur are mentioned as metrics to measure scene quality in the context.
+contrast,scene,Contrast is used to measure the scene quality in the context.
+blur,scene,Blur is used to measure the scene quality in the context.
+contrast,blur,The two key metrics mentioned in the context are lower contrast and blur. These metrics are used to measure contrast and blur of a scene.
+contrast,metric fgrad,The first metric fgrad is a normalized measurement of the difference between the magnitudes of the gradients of two components (cid:101)c and (cid:101)d. This metric is calculated using Sobel filters.
+blur,metric ffft,The second metric ffft is a normalized measurement of the difference between the magnitudes of the low-pass filtered reconstructions of two components (cid:101)c and ¯d. The function flp is used to calculate the log scale magnitude spectrum of the low-pass filtered reconstructions.
+filtering block,color verification,"After measuring contrast and blur, the remaining data is passed into another filtering block for color verification. This block helps to remove false positive pairs by ensuring isotropic intensity variations across RGB channels."
+filtering block,principle 2,The filtering block leverages Principle 2 from Sec. 3 to avoid false detection of rain streaks and snowflakes. This principle ensures isotropic intensity variations across RGB channels.
+filtering function,cmax(x) and cmin(x),The filtering function used in the context calculates Cmax(x) and Cmin(x) by comparing magnitude variations across RGB channels. It helps in determining the Bchrom var value.
+cutoff frequency,low-pass filtered reconstruction,The chosen cutoff frequency for low-pass filtered reconstruction depends on the characterization of the APSF. This cutoff frequency is influenced by factors like optical thickness T and particle properties.
+optical thickness t,particle density,Optical thickness T is dependent on particle density in the atmosphere.
+forward scattering parameter q,particle size,Forward scattering parameter q is a function of the particle size.
+weatherstream dataset,diverse weather effects,"The WeatherStream Dataset contains diverse weather effects such as rain, fog, and snow conditions."
+image pairs,weather effects,Visualization highlights some representative image pairs with various weather effects.
+cutoff,empirical analysis,The exact location of the cutoff used is found through empirical analysis of the range of factors in the dataset.
+degraded sharpness,clean sharpness,"For both metrics, degraded sharpness is subtracted from clean sharpness to normalize images."
+degraded image,clean image,Scenes are rejected if the degraded image is sharper than the clean image.
+filtering block four,illumination verification,Filtering Block Four focuses on Illumination Verification as a part of the pipeline.
+illumination shifts,veiling effects,Determining whether a global change of intensity arose due to veiling effects or illumination shifts is an important part of the pipeline.
+stimulus change of illumination,time multiplexing,A stimulus change of illumination may occur during time multiplexing.
+seed model,illumination shifts,The seed model is used to distinguish between illumination shifts and veiling effects.
+seed model,illumination shifts,Training on a small seed dataset helps the model generate a binary decision boundary to assess illumination consistency between frames.
+model,decision boundary,The model mentioned is used to generate a decision boundary to assess illumination consistency between frames.
+frames,pairs,Frames in Dc and Dd are assigned as pairs based on temporal closeness within a hysteresis threshold.
+weatherstream dataset,weather videos,The WeatherStream Dataset is used for scraping Weather Videos.
+videos,database,We built a webscraper to automatically collect and maintain a database of over 5000 YouTube live streams and corresponding geographic coordinates.
+streams,scenes,The streams cover a diverse range of scenes.
+streams,camera parameters,The streams cover a diverse range of camera parameters.
+streams,unique locations,The streams cover unique locations spanning 94 countries.
+streams,resolution,Streams must adhere to a minimum resolution of 1280×720 pixels to be considered for inclusion.
+streams,frame rate,Streams must adhere to a minimum frame rate of 30fps to be considered for inclusion.
+evaluation,score,"A quantitative evaluation of the streams used shows an NIQE score of 2.938, comparable to other datasets."
+level,weather condition,We continuously determine the level of daylight and weather condition of the scene.
+scene,weather condition,"If a scene contains an adverse weather condition, a ten second video is downloaded with detailed weather metadata."
+videos,weather condition,"If a scene contains an adverse weather condition, a ten second video is downloaded with detailed weather metadata."
+videos,hour,Candidate videos are scraped for an additional hour when the weather condition ends.
+time frame,candidate videos,We expect to process over 2 million candidate videos within a ten month time frame.
+videos,light transport constraints,"Videos need to meet light transport constraints, affecting the number of pairs that can be aggregated."
+dataset,statistics,The dataset statistics mention the number of pairs collected at the time of writing.
+dataset,pairs,Dataset consists of pairs which are collected either automatically or manually.
+pairs,time,Number of pairs collected from Weather-Stream pipeline is specified.
+human intervention,dataset management,Human intervention is recommended for managing the dataset to ensure its accuracy.
+baseline dataset,simulated pairs,Baseline dataset consists of simulated pairs of all-weather data.
+models,configurations,State of the art models are retrained on different configurations provided by the authors.
+protocol,weather conditions,Protocol for rain is replicated for multiple weather conditions during the evaluation process.
+test set,gt-rain,Test set is merged with GT-RAIN collection process to have a broader coverage.
+method,publication,TransWeather and Restormer are mentioned as methods published in CVPR'22.
+gt-rain,merged,"GT-RAIN is merged with rain, covering a specific size and weather conditions."
+transweather,restormer,TransWeather and Restormer are methods mentioned in CVPR'22.
+transweather,uformer,TransWeather and Uformer are methods mentioned in CVPR'22.
+transweather,rain-robust,"TransWeather has a relation with Rain-robust, both mentioned in ECCV'22."
+restormer,uformer,Restormer and Uformer are methods mentioned in CVPR'22.
+rain-robust,rainfogsnowoverallpsnr,Rain-robust contributes to the overall PSNR across different weather conditions.
+synthetic,weatherstream,Models trained on synthetic pairs and manual collection datasets are compared with models trained on WeatherStream dataset.
+automation,manual collection,Automation is compared to manual collection in terms of scalability and color quality.
+transweather,restormer,"TransWeather, Restormer, and Uformer are mentioned in both Manual and Final datasets, showing consistency across datasets."
+bg,blur,"Different filtering blocks (BG, Blur, Illum.) contribute to improvements in PSNR and SSIM, demonstrating the importance of each block."
+blur,illum.,Blur refers to the third; Illum. refers to the fourth.
+psnr,ssim,PSNR and SSIM metrics are used as quantitative metrics of quality.
+psnr,ssim,Tab. 2 shows that our dataset improves almost all PSNR and SSIM metrics for all weather modalities.
+psnr,ssim,The PSNR/SSIM increase is most likely due to over-smoothing in the manual model from lack of consideration for the blurring effect from the multiple scattering model.
+psnr,ssim,We see an increased ability to remove snowflakes and rain streaks.
+restormer model,tab. 3,The Restormer model is retrained for results in Tab. 3.
+restormer model,psnr,"Our dataset improves almost all PSNR and SSIM metrics for all weather modalities, with the Restormer model notably improving by 1.49dB."
+restormer model,cnn architectures,This dataset provides improvements for both transformer and CNN architectures.
+snowflakes,rain streaks,"Both snowflakes and rain streaks are mentioned together in the context, indicating that they are related in terms of weather phenomena."
+data,generalizability,"The mentioned data contributes to increased generalizability, showing a relationship between the two terms."
+raindrops,veiling effect,"The removal of raindrops and snowflakes also results in the removal of the veiling effect when using WeatherStream, suggesting a relationship between these terms."
+inter-model variation,inter-dataset variation,"The context mentions that inter-model variation appears less than inter-dataset variation, linking these two terms."
+psnr,ssim,"Tab. 3 shows the improvement in PSNR and SSIM with the introduction of each successive filter block, indicating a relationship between these two terms."
+performance,weather effects,"The context discusses the performance of models trained on simulated pairs in the presence of visible weather effects, suggesting a relationship between performance and weather effects."
+data,importance,"The context reinforces the importance of having the right data, implying a relationship between data and importance."
+weatherstream,models,Models trained on WeatherStream are better at removing particles and veiling effects.
+model,architecture,"larger changes in performance and visual quality for deweathering, as compared to changing the model architecture."
+weatherstream,light transport properties,WeatherStream employs light transport properties with an initial model trained on a small seed dataset.
+weatherstream,improvements,end-result: all models trained on WeatherStream perform better.
+weatherstream,ground-truth pairs,"automating light transport leads to more consistent ground-truth pairs, laying a foundation for future challenges."
+dataset,simulated datasets,An area of future work is to combine our dataset with simulated datasets.
+weatherstream,segmentation labels,"WeatherStream is also an on-going effort, and we aim to later include paired segmentation labels to support recognition tasks in adverse conditions."
+deweathering models,weatherstream,"Deweathering models trained on WeatherStream may also support the re-use of pretrained models for downstream tasks such as detection, segmentation, depth prediction, and completion."
+research,visual machines group,We thank members of the Visual Machines Group (VMG) at UCLA for feedback and support. This research was partially supported by ARL W911NF20-
+chinese group,ucla,"The Chinese Group (VMG) mentioned is affiliated with UCLA, indicating a relationship between them."
+research,arl w911nf20-2-0158,"The research work mentioned was partially supported by ARL W911NF20-2-0158, indicating a funding and support relationship."
+a.k.,nsf career award iis-2046737,"A.K. was supported by an NSF CAREER Award IIS-2046737, indicating a personal relationship with the award."
+a.k.,army young investigator program (yip) award,"A.K. was supported by Army Young Investigator Program (YIP) Award, indicating another personal relationship with the award."

@@ -1,0 +1,571 @@
+node_1,node_2,edge
+causal normalizing flows,theory,Causal normalizing flows refer to the theoretical aspect of using normalizing flows for causal inference.
+causal normalizing flows,practice,Causal normalizing flows are applied in practice to understand causal relationships.
+causal normalizing flows,causal inference,Causal normalizing flows are used for causal inference.
+causal models,causal ordering,Causal models are identifiable from observational data given a causal ordering.
+causal models,autoregressive normalizing flows (nfs),Causal models can be recovered using autoregressive normalizing flows.
+design and learning choices,causal normalizing flows,Different design and learning choices affect how causal normalizing flows capture the underlying causal data-generating process.
+do-operator,causal nfs,Implementation of the do-operator in causal NFs allows answering interventional and counterfactual questions.
+experiments,causal normalizing flows,Experiments validate the design and training choices of causal normalizing flows.
+causal nfs,approaches for approximating causal models,Causal NFs are compared to other approaches for approximating causal models.
+causal nfs,real-world problems,Causal NFs are used to address real-world problems with mixed discrete-continuous data and partial knowledge on the causal graph.
+causal nfs,code,The code for the work on causal NFs can be found at the provided link.
+deep learning,causal reasoning,Deep learning is increasingly used for causal reasoning to find underlying causal relationships.
+causal relationships,observed variables,Causal relationships are found among the observed variables to determine causal discovery and answer what-if questions.
+causal inference,observational data,Causal inference problems are solved using only observational data and partial knowledge of the causal graph.
+causal graph,structural causal model,Partial information about the causal graph of the structural causal model is used to estimate causal effects.
+deep neural networks,causal inference,Previous works have relied on deep neural networks for iterative estimation of conditional distributions for causal inference.
+intervention,causal data-generating process,Approaches fix the value of intervened variables to predict the effect on the causal data-generating process.
+categorical variable,checking account,"The distributions of the categorical variable checking account are mentioned in the context, indicating a relationship between these two terms."
+causal normalizing flow,categorical variable,"The term 'categorical variable' is associated with the causal normalizing flow in the context, suggesting a relationship between these two concepts."
+binary variable,users' sex,"The binary variable xS representing the users' sex is mentioned in relation to the users' sex, indicating a relationship between these two terms."
+parameter amortization techniques,ad-hoc parameter,"The practice of addressing a high number of parameters with ad-hoc parameter amortization techniques is discussed, showing a relationship between these concepts."
+implicit distributions,evaluating the learnt distribution,"The approach of using implicit distributions is contrasted with the inability to evaluate the learnt distribution, highlighting a relationship between these terms."
+causal-generating process,dnn,"The aim of learning the full causal-generating process using a single DNN is mentioned, indicating a relationship between these two concepts."
+causal normalizing flow,broad class of causal data-generating processes,"Causal normalizing flows are discussed as a natural choice to approximate a broad class of causal data-generating processes, showing a relationship between these concepts."
+causal nfs,underlying causal dependencies,"Causal NFs designed to capture the underlying causal dependencies are mentioned, highlighting a relationship between these terms."
+do-operator,causal inference tasks,"An implementation of the do-operator to efficiently solve causal inference tasks is introduced, indicating a relationship between these two concepts."
+continuous-discrete data,partial knowledge,"The ability of the causal NF framework to deal with mixed continuous-discrete data and partial knowledge on the causal graph is discussed, showing a relationship between these terms."
+causal graph,real-world applications,The causal graph is key for real-world applications
+causal graph,causal nfs,Causal NFs outperform competing methods using a single DNN to approximate the causal data-generating process
+causal nfs,competiing methods,Causal NFs outperform competing methods using a single DNN to approximate the causal data-generating process
+scms,gnns,Some works connect SCMs with GNNs but lack identifiability guarantees
+scms,interventions,Interventions on the GNN are performed by severing the graph
+exogenous random variables,endogenous random variables,"The exogenous random variables, u, are transformed into observed endogenous random variables, x, according to function ˜f"
+endogenous random variables,non-existent node,This pair of terms are not directly related in the given context
+causal graph,scm,An Structural Causal Model (SCM) induces a causal graph describing the functional dependencies of the system
+scm,causal graph,The causal graph of an SCM is a directed graph that describes the functional dependencies of the causal mechanism
+adjacency matrix,causal graph,"The adjacency matrix, A, of the causal graph describes the functional dependencies of the causal mechanism"
+adjacency matrix,exogenous random variables,"The adjacency matrix, A, is defined based on the derivative of function ˜f with respect to the exogenous random variables"
+causal ordering,variables causing others,"In the case of an acyclic causal graph, a causal ordering can describe which variables do not cause others and which ones may cause them"
+permutation π,causal ordering of an scm m,"A permutation π is considered a causal ordering of a structural causal model (SCM) M if, for every variable xi that directly causes xj, the index of xi in the permutation is less than the index of xj."
+scms,causal inference,Structural causal models (SCMs) enable causal inference by allowing answers to what-if questions related to forcing fixed values on variables (interventional queries) and exploring the effects of changing values of dimensions on specific observations (counterfactual queries).
+structural equivalence,matrices s and r,"Two matrices S and R are considered structurally equivalent if they have zeroes in the same positions. Additionally, one matrix is deemed structurally sparser than another if every zero element in the second matrix corresponds to a zero element in the first matrix."
+normalizing flows (nfs),probability density of observations,Normalizing flows are a model family used to express the probability density of observations by applying the change-of-variables rule to a given random vector x of size d.
+normalizing flow,neural network,A normalizing flow is a neural network with parameters that takes x as input.
+normalizing flow,log-density,The log-density of a normalizing flow involves a base distribution and log-likelihood expression.
+normalizing flow,maximum likelihood estimation (mle),The use of maximum likelihood estimation (MLE) is natural for learning the parameters of a normalizing flow.
+normalizing flow,autoregressive normalizing flows (anfs),ANFs are a specific type of normalizing flows that are focused on.
+log-density,log-likelihood expression,The log-density expression naturally leads to the use of log-likelihood expression for learning.
+autoregressive normalizing flows (anfs),transformer,ANFs include a transformer as part of their structure.
+autoregressive normalizing flows (anfs),conditioner,ANFs include a conditioner as part of their structure.
+transformer,monotonic function,The transformer in ANFs is a strictly monotonic function.
+conditioner,variables preceding zi,The conditioner in ANFs only takes the variables preceding zi as input.
+causal normalizing flows,sequence of i.i.d. observations,Causal normalizing flows are related to a sequence of i.i.d. observations.
+causal normalizing flows,unknown scm m,Causal normalizing flows are generated according to an unknown SCM M.
+causal normalizing flows,causal ordering π,Causal normalizing flows have knowledge of causal ordering π.
+causal normalizing flows,causal graph a,Causal normalizing flows have knowledge of the whole causal graph A.
+causal ordering,causal graph,"The causal ordering π is known at least, and at most the whole causal graph A is known."
+anf tθ,parameters θ,The objective is to design and learn an ANF Tθ with parameters θ that captures M by maximizing observational likelihood.
+causal normalizing flow,interventional queries,"The model is designed to successfully answer interventional and counterfactual queries during deployment, enabling causal inference."
+scms,tmi maps,"To achieve the objective, the approach resorted to triangular monotonic increasing (TMI) maps, bridging the gap between SCMs and normalizing flows."
+diffeomorphic data-generating process,acyclic causal graph,"The assumptions include diffeomorphic data-generating process and no feedback loops, resulting in an acyclic causal graph."
+causal sufficiency,exogenous variables,"The assumptions also cover causal sufficiency, where exogenous variables are assumed to be mutually independent."
+anfs,tmi maps,"ANFs are TMI maps approximators, which has been exploited in the past to prove that ANFs are universal density approximators."
+anfs,scm,"ANFs can be rewritten as a tuple in SCM, proving the relation between ANFs and SCM."
+scm,pu,"SCM can be rewritten as a tuple in Pu, showing the connection between SCM and Pu."
+˜f,pu,˜f and Pu have a causal relationship where ˜f is a function involving Pu.
+uani,xi,"xi is a function of its exogenous ancestors uani, indicating a dependency between uani and xi."
+xi,f,"xi is part of a TMI map f, linking the two concepts together."
+f,nfs,"f is part of causal NFs family, establishing a relationship between f and NFs."
+family f ×pu,tmi maps with fully-factorized distributions,The family F ×Pu of TMI maps with fully-factorized distributions are leveraged to find a causal NF Tθ such that the i-th component of Tθ(x) is a function of the true exogenous variable ui
+scm m,non-linear ica problem with tmi generators,"Identifying the true exogenous variables of an SCM M is equivalent to solving a non-linear ICA problem with TMI generators, as stated by Xi and Bloem-Reddy [38]"
+"causal nf (tθ, pθ) ∈ f × pu","observational distribution generated by m = (f , pm) ∈ f × pu","If a causal NF (Tθ, Pθ) matches the observational distribution generated by M, then the exogenous variables of the flow differ from the real ones by a function of each component independently"
+causal nf,scm,"Functional dependencies of the causal NF must agree with that of the SCM, i.e., Tθ needs to be causally consistent with M"
+functional dependencies,causal nf,"The functional dependencies of the causal NF must agree with that of the SCM, ensuring that Tθ needs to be causally consistent with M."
+causal nf,scm,"If a causal NF Tθ isolates the exogenous variables of an SCM M, then ∇xTθ(x) ≡ I − A and ∇uTan, where A is the causal adjacency matrix of M, indicating causal consistency with the true data-generating process, M."
+scm,causal nf,"Causal NFs are a natural choice to estimate an unknown SCM since both SCMs and causal NFs fall within the same family F × Pu, are causally consistent when identical observational distributions exist, and differ by an invertible component-wise transformation."
+scm,exogenous variables,A causal NF Tθ must isolate the exogenous variables of an SCM M to ensure causal consistency.
+f,pu,"SCMs and causal NFs fall within the same family F × Pu, showcasing causal consistency and differences by an invertible component-wise transformation."
+causal nfs,real-world problems,"Causal NFs are extended to handle mixed discrete-continuous data and partial knowledge on the causal graph, which are common properties of real-world problems."
+causal nfs,discrete data,Causal NFs are extended to also account for discrete data by considering a continuous version of the observed discrete variables with independent noise.
+discrete data,observational noise,"The model considers observational noise in the discrete data, independent of the exogenous variables."
+discrete data,continuous variables,"A continuous version of the observed discrete variables is considered by adding independent noise, such that the real distribution is still recoverable."
+partial knowledge,causal graph,"We rarely know the entire causal graph, but often have partial knowledge on causal relationships between observed variables in real-world problems."
+partial knowledge,observed variables,"When only partial knowledge on the graph is available, we can still work with a subset of observed variables and their causal relationships."
+causal relationship,observed variables,The concept of a causal relationship between a subset of observed variables is discussed.
+observable variables,modified acyclic graph,"Observed variables are represented in a modified acyclic graph, denoted as A."
+acyclic graph,strongly connected components,The modified acyclic graph A is obtained by finding the strongly connected components.
+subsets of variables,unknown causal relationships,Variables with unknown causal relationships are treated as a block.
+linear scm,underlying scm,Example of a linear Structural Causal Model and its relation to the underlying SCM is given.
+causal nfs,underlying scm,Causal Normalizing Flows are discussed as a natural choice to learn the underlying SCM.
+linear scm,tmi map,The linear SCM can be approximated with a causal NF represented as a TMI map.
+causal equations,composition of functions,The causal equations can be unrolled into a composition of functions structurally sparse.
+functions,transformation,The functions can be compacted into a single transformation.
+ancestors,xi,"Each xi depends on its ancestors, uani."
+causal paths,representation,Direct and indirect causal paths in the representation become indistinguishable due to shortcuts.
+equations,u as a function of x,"The equations can be inverted to write u as a function of x, which is structurally equivalent to I - A."
+equations,u,Equations are written to represent u as a function of x.
+equations,x,Equations written are structurally equivalent to I − A.
+equations,i − a,Equations are structurally equivalent to I − A.
+equations,scm,Above steps can be applied to any considered acyclic SCM.
+scm,app. b,Refer to App. B for a more detailed discussion on considered acyclic SCM.
+equations,jacobian matrices,Causal dependencies can be reasoned through the Jacobian matrices of the theta (u).
+equations,diffeomorphic assumption,"The diffeomorphic assumption implies generators, ∇xTθ(x) and ∇uT, to invert the causal equations."
+scm,generators,Diffeomorphic assumption implies generators to invert the causal equations.
+scm,kernels,Diffeomorphic assumption acts on kernels to invert the causal equations.
+equations,scm,Different representations of an SCM can inspire the design choices for causal NFs.
+nf,architecture,"First architecture imitates the unrolled equations, defining causal NF as a function from u to x."
+nf,i + a,"When full knowledge of the causal graph A is assumed, information flow from u to x is masked by I + A."
+nf,structural sparsity,Structural sparsity per layer is replicated by masking the flow with I + A in causal NF.
+nf,shortcuts,Each layer of NF is restricted such that shortcuts at the optima cannot exist.
+causal nf,diam(a),The causal NF needs at least L = diam(A) layers to avoid shortcuts and differentiate between direct and indirect causal paths.
+causal nf,causal ordering,"If only the causal ordering is known, the causal NF will need to learn the necessary zeroes during training to maintain causal consistency."
+causal nf,masking,Extra masking can be used in the causal NF to force each layer to be structurally equivalent to I - A.
+inverse equations,scm,Modeling the inverse equations of the Structural Causal Model (SCM) can help build a causal NF from x to u.
+autoregressive nature,anfs,"The autoregressive nature of the Adaptive Neural Filters (ANFs) used here in building causal NFs allows them to sequentially compute the inverse, capturing all indirect dependencies."
+inverse,compute,inverse has an influence on compute as they compute the inverse sequentially
+u1,x3,u1 indirectly influences x3 via x2 and x2 has to be generated first
+x2,x3,x2 influences x3 as x2 has to be generated first before the influence of u1 on x3
+causal nf,optimization,causal NF needs to rely on optimization to discard spurious correlations
+causal nf,identify,causal NF should be able to identify exogenous variables in order to perform interventions
+causal nf,isolate,causal NF needs to isolate exogenous variables associated with endogenous variables
+causal nf,expressiveness,causal NF should have a least restrictive condition of expressiveness to reach the optima
+anf layer,tmi approximator,a single ANF layer is a universal TMI approximator
+causal nf,identifiable,"if causal NF follows a valid causal ordering w.r.t. the true causal graph, it can be identifiable up to elementwise transformations"
+causal consistency,scm,causal consistency of the causal NF needs to share causal dependencies of the SCM at the optima
+jacobian matrices,structural equivalent,Jacobian matrices of the causal NF and SCM need to be structurally equivalent
+causal graph a,generative model,The generative model in Eq. 5 by design holds for any sufficient number of layers L ≥ diam A.
+causal graph a,abductive model,The abductive model in Eq. 6 ensures causal consistency when L = 1.
+abductive model,selected architecture for the causal nf,"In cases where the selected architecture for the causal NF does not ensure causal consistency by design, but we have access to the causal graph, we can use this extra information to regularize our MLE problem."
+abductive model,generative models,"Remarkably, the abductive model with a single layer enjoys all the necessary properties of a causal NF by design."
+abductive models,generative models,"It is not straightforward why abductive models can be causally consistent by design, but generative models cannot."
+mapping x → u,structurally sparser (ui depends on pai),The consequence of the mapping x → u being structurally sparser (ui depends on pai) than that of u → x (xi depends on ani)
+u → x,xi depends on ani,The consequence of the mapping u → x being that xi depends on ani
+u → x,causal consistency,Ensuring causal consistency from u to x does not necessarily imply causal consistency from x to u.
+generative models,forward pass as u → x,Generative models design their forward pass as u → x
+abductive models,forward pass as x → u,Abductive models design their forward pass as x → u
+do-operator,enabling interventions and counterfactuals,The Do-operator enables interventions and counterfactuals through the mathematical operator do(xi = α)
+do-operator,scm m,"The the do-operator simulates a physical intervention on an I that fixes the observational value xi = α, inducing an alternative model SCM M"
+do-operator,scm,"The implementation of the do-operator works specifically for the recursive representation of the SCM, as indicated in Fig. 4a."
+scm,exogenous distribution pu,"The SCM can be manipulated by modifying the exogenous distribution Pu while keeping the causal equations untouched, as proposed in the context."
+scm,intervention do(xi = α),"An intervention do(xi = α) updates the Pu of the SCM, restricting the set of plausible u to those that yield the intervened value α."
+intervention do(xi = α),mu,"The intervened SCM is defined as Mu, where the density of PIu takes a specific form."
+mu,dirac delta,The Dirac delta in Mu is located at the unique value of ui that yields xi = α after applying the causal mechanism.
+dirac delta,causal equations ˜fi,The Dirac delta is located at the unique value of ui that yields xi = α after applying the causal mechanism ˜fi in the context.
+exogenous variables,scm representation,"Exogenous variables can be applied to any SCM representation, as illustrated in Fig. 4"
+autoregressive nature,causal nfs,Implementation details highlight the autoregressive nature of causal NFs
+exogenous variables,tθ(x),Exogenous variables u are obtained from Tθ(x) as part of the generation process
+intervened value,observational value,The observational value is replaced by its intervened value during the generation of samples
+causal nf,true causal paths,The causal NF is aimed at isolating exogenous variables and preserving true causal paths
+causal nf,interventions and counterfactuals,Details and step-by-step algorithms are provided to compute interventions and counterfactuals using causal NFs
+causal nfs,previous works,Empirical evaluation section compares causal NFs with previous works
+ablative study,4-node chain scm,An ablation study is conducted on a 4-node chain SCM to explore the impact of varying the number of layers L
+generative models,abductive models,Ablation study distinguishes between generative models (u → x) and abductive models (x → u)
+causal nf,observational and interventional distributions,Different choices of the causal NF aim to be causally consistent and capture observational and interventional distributions
+regularization,jacobian,Regularization on the Jacobian (Eq. 7) is used in the context to ensure certain properties
+regularization,jacobian,Regularization on the Jacobian is indicated with the ⋆ superscript.
+abductive causal nf,information,Abductive causal NF with information on A and L = 1 outperforms the rest of models across all metrics.
+models,metrics,The abductive causal NF with information on A and L = 1 outperforms the rest of models across all metrics.
+ablation study,experimental setup,We evaluate every network combination described in Tab 1 on a 4-chain SCM and assess the extent to which these models.
+observational distribution,kl(pm∥pθ),"Capture the observational distribution, using KL(pM∥pθ)"
+original scm,causally consistent,Remain causally consistent w.r.t. the original SCM
+interventional tasks,rmse,"Perform at interventional tasks, such as estimating the Average Treatment Effect (ATE) and computing counterfactuals, both of which we measure with the RMSE w.r.t. the original SCM"
+causal nf,mask autoregressive flows (mafs),Every causal NF uses Mask Autoregressive Flows (MAFs) as layers.
+network design,causal knowledge,"Specifically, we show network design (generative u → x vs. abductive x → u) and causal knowledge (ordering vs. graph)"
+generative models,causal graph,Generative models (u → x) using the causal graph cannot capture the SCM with L < diam A = 3
+scm,l,The SCM cannot be captured with L < diam A = 3.
+abductive models,observational distribution,Abductive models accurately fit the observational distribution.
+causal graph,architecture,Embedding the causal graph in the architecture significantly improves the ATE estimation.
+network designs,abductive models,"Abductive models result in more accurate estimates of the observational distribution, interventional, and counterfactual queries compared to other network designs."
+regularization,abductive model,"Regularization works well in all cases, but renders useless for the abductive model with L = 1 and knowledge on the graph."
+abductive model,design choices,The causal abductive model with L = 1 outperforms the rest of design choices.
+causal nf,works,Causal NF is compared with CAREFL and VACA.
+carefl,abductive nf,CAREFL is an abductive NF with knowledge on the causal ordering and affine layers.
+vaca,variational auto-encoding gnn,VACA is a variational auto-encoding GNN with knowledge on the graph.
+carefl,do-operator,CAREFL has been modified to use the proposed do-operator from §5.
+scms,triangle,TRIANGLE is a 3-node SCM with a dense causal graph.
+scms,largebd,LARGEBD is a 9-node SCM with non-Gaussian Pu and made out of two chains with common initial and final nodes.
+scms,simpson,"SIMPSON is a 4-node SCM simulating a Simpson’s paradox, where the relation between two variables changes if the SCM is not properly approximated."
+results,proposed causal nf,The proposed causal NF outperforms both CAREFL and VACA in terms of performance and computational efficiency.
+results,vaca,"VACA shows poor performance, and is considerably slower due to the complexity of GNNs."
+results,carefl,Our causal NF outperforms CAREFL with the do-operator proposed in §5.
+scms,vaca,"Comparison, on three non-linear SCMs, of the proposed causal NF, VACA, and CAREFL with the do-operator proposed in §5."
+nfs,fair classifiers,Causal NFs enable both fair classifiers and accurate unfairness metrics.
+nfs,unaware,Results are averaged on five runs with the logistic classifier being unaware.
+logistic classifier,svm classifier,Both Logistic classifier and SVM classifier are machine learning algorithms used for classification tasks.
+fair ufull,fair xfair u,Both fair ufull and fair xfair u are related to fairness auditing and classification tasks.
+carefl,causal nf,CAREFL and Causal NF are architectures used in counterfactual estimation tasks with a focus on being causally consistent.
+german credit dataset,uci repository,"The German Credit dataset is a dataset from the UCI repository used for predicting loan repayment based on a small set of features, including sensitive attributes."
+chiappa,app. e,Chiappa proposed using a partial graph while App. E contains additional details and results.
+neural spline layer,scm,The neural spline layer is used in the abductive model to capture the underlying SCM in training causal NF.
+binary feature credit risk,binary variable sex,The binary feature credit risk is predicted while ensuring counterfactual fairness with respect to the binary variable sex.
+counterfactual fair,binary variable sex,The concept of counterfactual fairness is discussed with respect to the binary variable sex in the context.
+binary classifier κ,"x → {0, 1}","A binary classifier κ mapping X to {0, 1} is considered to be counterfactually fair if it maintains zero counterfactual unfairness for all possible factual values xf ∈ X."
+counterfactual unfairness,zero,Counterfactual unfairness is said to remain zero for all possible factual values xf ∈ X in a counterfactually fair scenario.
+classifier,counterfactually fair,A classifier is deemed to be counterfactually fair if it satisfies the condition where the difference between P(κ(xcf) = 1
+classifier,sensitive attribute xs,Different models are audited based on the inclusion or exclusion of the sensitive attribute xS to evaluate their fairness.
+classifier,counterfactually fair,"A certain classifier is described as counterfactually fair as it takes the exogenous variables from the causal NF, achieving comparable or better accuracy while maintaining counterfactual fairness."
+performance,unfairness of the classifiers,"The performance and unfairness of the classifiers are summarized, showing that classifiers using non-sensitive exogenous variables from the causal NF achieve comparable or better accuracy while remaining counterfactually fair."
+causal nfs,use-case,The use-case presented demonstrates that Causal NFs may indeed be effective in achieving counterfactual fairness as evidenced by the performance results in the context.
+causal nfs,real-world causal inference problems,Causal NFs being a valuable asset for real-world causal inference problems
+causal nfs,observational distribution of an underlying scm,Causal NFs being able to match the observational distribution of an underlying SCM
+causal nfs,network designs,Exploration of different network designs for causal NFs due to limited data availability and local optima
+causal nfs,do-operator,Provision of causal NFs with a do-operator to efficiently solve causal inference tasks
+causal nfs,competing methods,Empirical validation showing that causal NF framework outperforms competing methods
+causal nfs,mixed data and partial knowledge on the causal graph,Demonstration of causal NF framework's ability to deal with mixed data and partial knowledge on the causal graph
+scms,assumptions,Limitations due to standard assumptions made about SCMs
+unmeasured hidden confounders,causal sufficiency assumption,Presence of unmeasured hidden confounders may break causal sufficiency assumption
+true causal graph,assumed causal graph,"Mismatches between the true causal graph (e.g., it may contain cycles) and the assumed causal graph"
+causal graph,assumption,The assumption of mismatches between the true causal graph and our assumed graph/ordering may lead to poor estimates of interventional and counterfactual queries.
+true causal graph,causal dependencies,The non-bijective true causal dependencies may invalidate our theoretical and practical findings.
+mle estimation,exogenous variables,"MLE estimation for learning the causal NF does not test the independency of the exogenous variables during training, which breaks the causal sufficiency assumption."
+mle estimation,flow matching,"Future work may explore alternative losses other than MLE, such as flow matching."
+causal nfs,causal discovery,Future work could involve applying causal NFs to other problems like causal discovery.
+causal nfs,fair decision-making,Future work could explore the application of causal NFs in fair decision-making.
+causal nfs,neuroimaging,Future work could investigate the use of causal NFs in neuroimaging.
+experimental data,framework validation,"In the above contexts, it would be essential to validate the suitability of the framework using experimental data to prevent potential harms."
+acknowledgements,batuhan koyuncu,Acknowledgements include thanking Batuhan Koyuncu and Jonas Klesen for their invaluable feedback.
+acknowledgements,jonas klesen,Acknowledgements include thanking Batuhan Koyuncu and Jonas Klesen for their invaluable feedback.
+acknowledgements,anonymous reviewers,Acknowledgements include thanking the anonymous reviewers whose feedback helped improve the manuscript.
+dfg grant 389792660,trr 248 – cpec,DFG grant 389792660 is part of TRR 248 – CPEC
+pablo s´anchez mart´ın,german research foundation,Pablo S´anchez Mart´ın thanks the German Research Foundation for funding
+"cluster of excellence “machine learning – new perspectives for science”, exc 2064/1",project number 390727645,"Cluster of Excellence “Machine Learning – New Perspectives for Science”, EXC 2064/1 is supported by project number 390727645"
+international max planck research school for intelligent systems (imprs-is),pablo s´anchez mart´ín,IMPRS-IS supports Pablo S´anchez Mart´ín
+christopher m bishop,nasser m nasrabadi,Christopher M Bishop and Nasser M Nasrabadi are the authors of the book 'Pattern recognition and machine learning'
+patrick chao,patrick bl¨obaum,Patrick Chao and Patrick Bl¨obaum are authors of 'Interventional and counterfactual inference with diffusion models'
+patrick bl¨obaum,shiva prasad kasiviswanathan,Patrick Bl¨obaum and Shiva Prasad Kasiviswanathan are authors of 'Interventional and counterfactual inference with diffusion models'
+silvia chiappa,the thirty-third aaai conference on artificial intelligence,Silvia Chiappa presented 'Path-specific counterfactual fairness' at The Thirty-Third AAAI Conference on Artificial Intelligence
+djork-arn´e clevert,thomas unterthiner,"Djork-Arn´e Clevert, Thomas Unterthiner, and Sepp Hochreiter are authors of 'Fast and accurate deep network learning by exponential linear units (elus)'"
+thomas unterthiner,sepp hochreiter,Thomas Unterthiner and Sepp Hochreiter are authors of 'Fast and accurate deep network learning by exponential linear units (elus)'
+exponential linear units,learning,Exponential linear units (ELUs) are a type of activation function used in neural networks for learning.
+corinna cortes,vladimir vapnik,Corinna Cortes and Vladimir Vapnik are authors of the paper on Support-vector networks published in Machine Learning in 1995.
+david r cox,regression analysis,"David R Cox's paper discusses the regression analysis of binary sequences, published in 1958."
+g. darmois,analyse g´en´erale des liaisons stochastiques,"G. Darmois focused on the general analysis of stochastic connections, specifically on analyzing linear factor analysis, published in 1953."
+dheeru dua,casey graff,"Dheeru Dua and Casey Graff are associated with the UCI Machine Learning Repository, as stated in their paper published in 2021."
+conor durkan,artur bekasov,"Conor Durkan, Artur Bekasov, Iain Murray, and George Papamakarios collaborated on the paper about Neural spline flows, presented at NeurIPS 2019."
+frederick eberhardt,richard scheines,Frederick Eberhardt and Richard Scheines discussed interventions and causal inference in their paper published in the Philosophy of Science journal in 2007.
+deep end-to-end causal inference,arxiv,The paper 'Deep end-to-end causal inference' is published as an ArXiv preprint with abs/2202.02195 URL.
+nipype,frontiers in neuroinformatics,Nipype is a neuroimaging data processing framework published in the journal 'Frontiers in Neuroinformatics' in the year 2011 with ISSN 1662-5196.
+nonlinear independent component analysis,neural networks,The concept of Nonlinear independent component analysis is discussed in the journal 'Neural Networks' with ISSN 0893-6080 in the year 1999.
+combining interventional and observational data using causal reductions,arxiv,The paper 'Combining interventional and observational data using causal reductions' is published as an ArXiv preprint with abs/2103.04786 URL.
+algorithmic recourse,imperfect causal knowledge,"Algorithmic recourse under imperfect causal knowledge is discussed in the paper by Amir-Hossein Karimi, Bodo Julius von K¨ugelgen, Bernhard Sch¨olkopf, and Isabel Valera."
+algorithmic recourse,advances in neural information processing systems 33,"Algorithmic recourse is discussed in the Advances in Neural Information Processing Systems 33 paper by Amir-Hossein Karimi, Bodo Julius von K¨ugelgen, Bernhard Sch¨olkopf, and Isabel Valera."
+causal autoregressive flows,the 24th international conference on artificial intelligence and statistics,"Causal autoregressive flows are discussed in The 24th International Conference on Artificial Intelligence and Statistics paper by Ilyes Khemakhem, Ricardo Pio Monti, Robert Leech, and Aapo Hyv¨arinen."
+adam: a method for stochastic optimization,improved variational iclr,"Adam: A method for stochastic optimization as discussed in the paper by Diederik P. Kingma and Jimmy Ba in Proc. of Improved variational ICLR, 2015."
+advances in neural information processing systems,curran associates,"Advances in Neural Information Processing Systems paper by Durk P Kingma, Tim Salimans, Rafal Jozefowicz, Xi Chen, Ilya Sutskever, and Max Welling is published by Curran Associates, Inc. in 2016."
+inverse autoregressive flow,inference,The concept of inverse autoregressive flow is related to the process of inference in the context of the given paper.
+contributions to the theory of convex bodies,michigan mathematical journal,"The paper 'Contributions to the theory of convex bodies' was published in the Michigan Mathematical Journal in 1957, showcasing a relation between the two concepts."
+causal-gan,implicit generative models,"Causal-gan refers to the concept of learning causal implicit generative models with adversarial training, as discussed in the paper by Kocaoglu et al."
+counterfactual fair,neural information processing systems 30,"counterfactual fair is a concept introduced in the paper presented in the Annual Conference on Neural Information Processing Systems 2017, establishing a relation between the two terms."
+flow matching,generative modeling,Flow matching is a technique used for generative modeling as discussed in the paper presented at The Eleventh International Conference on Learning Representations.
+bijective causal models,counterfactual identifiability,"The concept of bijective causal models discusses the counterfactual identifiability of these models, as highlighted in the paper by Nasr-Esfahany et al."
+bijective causal models,tifiability,Bijective causal models discuss the concept of tifiability within causal modeling.
+arxiv,preprint,ArXiv is a platform known for publishing preprints.
+george papamakarios,iain murray,George Papamakarios and Iain Murray have collaborated on masked autoregressive flow for density estimation.
+theo pavlakou,density estimation,Theo Pavlakou has contributed to the field of density estimation.
+george papamakarios,theo pavlakou,George Papamakarios and Theo Pavlakou have worked together on creating masked autoregressive flow for density estimation.
+"long beach, ca, usa",neural information processing systems 2017,"The Annual Conference on Neural Information Processing Systems 2017 was held in Long Beach, CA, USA."
+george papamakarios,eric t. nalisnick,George Papamakarios and Eric T. Nalisnick have collaborated on normalizing flows for probabilistic modeling and inference.
+danilo jimenez rezende,probabilistic modeling,Danilo Jimenez Rezende is involved in the area of probabilistic modeling.
+shakir mohamed,balaji lakshminarayanan,Shakir Mohamed and Balaji Lakshminarayanan are involved in the research on normalizing flows for probabilistic modeling and inference.
+j. mach. learn. res.,2021,The research published in the Journal of Machine Learning Research discusses work from the year 2021.
+alvaro parafita,jordi vitri`a,Alvaro Parafita and Jordi Vitri`a have collaborated on estimand-agnostic casual query estimation with deep casual graphs.
+ieee access,2022,The research published in IEEE Access is from the year 2022.
+nick pawlowski,daniel coelho de castro,Nick Pawlowski and Daniel Coelho de Castro have collaborated on deep structural casual models for tractable counterfactual inference.
+ben glocker,counterfactual inference,Ben Glocker is involved in the field of counterfactual inference.
+neural information processing systems 33,virtual,The Annual Conference on Neural Information Processing Systems 33 was virtual in the year 2020.
+judea pearl,causality,Judea Pearl is the author of the book 'Causality' published in 2009 by Cambridge University Press.
+pedro sanchez,sotirios a. tsaftaris,"Pedro Sanchez and Sotirios A. Tsaftaris collaborated on the topic of Diffusion causal models for counterfactual estimation in CLEaR, 2022."
+pablo s´anchez-martin,miriam rateike,"Pablo S´anchez-Martin, Miriam Rateike, and Isabel Valera worked together on designing variational graph autoencoders for causal queries at the Proceedings of the AAAI Conference on Artificial Intelligence in 2022."
+depth-first search,linear graph algorithms,Depth-first search and linear graph algorithms are related concepts in the field of computer science that are often used together to traverse and analyze graphs in an efficient manner.
+self-supervised learning,data augmentations,"Self-supervised learning with data augmentations is a technique in machine learning that utilizes data augmentation to isolate content from style, contributing to improved learning performance."
+generative models,indeterminacy,"Generative models exhibit indeterminacy in their outputs, leading to challenges in their characterization and identifiability in the field of artificial intelligence and statistics."
+pmlr,kevin xia,Kevin Xia is one of the authors of the paper presented at PMLR
+kevin xia,yushu pan,Yushu Pan is one of the authors of the paper published by Kevin Xia
+kevin xia,elias bareinboim,Elias Bareinboim is one of the authors of the paper published by Kevin Xia
+neural causal models,counterfactual identification,The paper is related to the use of neural causal models for counterfactual identification
+counterfactual identification,estimation,The paper is related to counterfactual identification and estimation
+causalvae,structural causal models,The paper discusses CausalVAE along with structural causal models for disentangled representation learning
+graph neural networks,structural causal models,The paper discusses the relationship between graph neural networks and structural causal models
+causal nf,exogenous variables,"The causal NF Tθ isolates the exogenous variables of an SCM M, showing a relationship between them in the context of causal consistency."
+identifiability,deep learning models,"The definition of identifiability used in the context is better suited for deep learning models, highlighting a connection between identifiability and deep learning."
+thm. 1,prop. 5.2,"Thm. 1 from the main paper corresponds to [38, Prop. 5.2], indicating a correspondence between the theorems mentioned."
+variable,u,"The variable u, recovered by Tθ, is represented as ˜u = h(u) in the context."
+variable,xi,"One observed variable, xi, is discrete in the context."
+function,f,A function f maps u to x in the context.
+noise distribution,pε,There exists a fixed noise distribution Pε in the context.
+mechanism,g,There exists a mechanism g in the context.
+variable xi,uani,The variable xi is related to uani in the context.
+variable xi,ui,The variable xi is related to ui in the context.
+mechanism g,"fi(uani, ui)","The mechanism g is used with fi(uani, ui) to generate the observed variable xi in the context."
+noise distribution pε,ε,The noise distribution Pε is related to ε in the context.
+generative processes,assumption,"The generative processes are studied under the assumption that for two processes with εa, certain conditions hold."
+observed variable,exogenous variable,"The observed variable ˜xi is considered to be a transformation of a continuous exogenous variable, ui, through a function ˜fi."
+function,diffeomorphism,The function ˜fi is assumed to be a diffeomorphism according to our assumptions.
+quantization process,observed variable,The xi variable is a result of a quantization process applied to the transformation of the continuous exogenous variable.
+noise assumption,dequantize,The noise assumption is utilized to dequantize the observed variable xi by adding an additive noise mechanism.
+noise mechanism,observed variable,An additive noise mechanism is assumed to be present in the process of dequantizing the observed variable xi.
+original distribution,noiseless observed variables,The original distribution of the noiseless observed variables can be recovered with the given assumptions.
+theoretical insights,work of xi and bloem-reddy,"The theoretical insights from the work of Xi and Bloem-Reddy can still be applied, focusing on the noisy case rather than the noiseless one."
+generator,noise mechanism,"The generator and noise mechanism are merged together by mapping the non-injective part of u to ε itself, resulting in a new function that replaces the noise variable by the floating part of ˜fi(uani, ui) before quantization."
+noise mechanism,g ◦ fi,The noise mechanism interacts with g ◦ fi function when the noise is uniformly distributed and g ◦ fi = ˜fi if xi were discretized by taking its integer part.
+continuous variables,discrete variables,"By adding noise to discrete variables while keeping them recoverable, we can learn a mapping between continuous variables that learns a version of the generator function before the observed values were discretized."
+discrete distribution,continuous distribution,"The observed discrete distribution is always recoverable, independently of whether we learn the (unknown and unrecoverable) underlying continuous distribution before being discretized."
+causal ordering,partial knowledge,"When we have partial information about the causal graph of M, we know the causal ordering π, allowing us to expand our framework to settings with partial knowledge about the causal graph."
+causal graph,m,M is related to the causal graph as the subject of the information being discussed.
+causal ordering,π,"π represents the causal ordering, forming part of the information available about the causal relationships."
+causal relationships,upper diagonal,"The upper diagonal contains half of the causal relationships, indicating a specific relationship between multiple causal relationships."
+causal relationships,edges on a,"A contains some causal relationships, suggesting a connection between causal relationships and edges on A."
+scm,fig. 6a,"Fig. 6a represents an SCM, involving all known relationships except the one between x2 and x3."
+scm,relationships,"An SCM involves relationships between variables, with the relationships being crucial to understanding the model."
+fig. 6a,x2,"Fig. 6a highlights the relationship between x2 and x3 as unknown, impacting the overall understanding of the model."
+fig. 6a,x3,"Fig. 6a presents x3 as one of the variables with an unknown relationship, affecting the clarity of the model."
+confounder,x2 & x3,The existence of a confounder between x2 and x3 suggests a hidden variable influencing their relationship.
+fig. 7,original problem,"Fig. 7 represents the original problem that needs to be solved, setting the context for further discussions."
+unknown relationships,nodes,Nodes with unknown relationships form a group that requires attention in solving the problem and maximizing likelihood.
+edges,joint distribution,Learning the joint distribution involves understanding the edges between variables and their collective impact.
+anfs,general-jacobian nf,Applying an ANF is compared to using a general-Jacobian NF in learning relationships and distributions.
+anf,joint distribution,ANF can learn the joint distribution within the blocks with a fixed ordering.
+anf,universal density approximator,ANF is a universal density approximator.
+blocks,joint distribution,The joint distribution is within the blocks.
+case,increase,"In that case, we need to increase something."
+figure 6,scm,Figure 6 shows an example of an SCM with partial knowledge.
+figure 7,illustrative example,Figure 7 provides an illustrative example applying the method for partial information.
+tarjan's algorithm,sccs,Tarjan's algorithm is applied to find the SCCs of the graph.
+general nf,solve,Solved with a general NF.
+anf,solve,Solved with an ANF.
+block,element,Elements of the block have relationships with other blocks and elements within the block.
+graph,anf,The ANF can model every case from the graph through optimization.
+dependency,causally consistent nf,A causally consistent NF cannot model the dependency between x4 and x3 through x2.
+method,tarjan’s algorithm,The method adopted involves running Tarjan’s algorithm to group all nodes by their SCCs.
+ordering,inter-scc edges,An ordering consistent with the known inter-SCC edges is chosen to fix the edges within the SCCs.
+scc-edges,node-edges,There are edges between every pair of edges of two SCCs if there exists at least one edge between them.
+mle problem,anf,The MLE problem is solved with an ANF as described in the main manuscript.
+identifiability theory,results,The described method fits almost-perfectly into the already-covered theory in §3 relating to identifiability theory and following results.
+identifiability theory,results,The identifiability theory and following results are mentioned as requiring a fixed ordering.
+identifiability theory,scm,The identifiability theory refers to Structural Causal Models(SCM) and how they can be equivalent by applying KR transports.
+results,fixed ordering,"The results of the theory require a fixed ordering, which does not need to be causal."
+scm,ordering,SCM can be equivalent following a fixed ordering by applying KR transports.
+scm,thm. 1,The technical implications of Thm. 1 apply to SCM based on a fixed ordering.
+scm,cor. 2,The technical implications of Cor. 2 apply to SCM based on a fixed ordering.
+graphs,dag,All possible graphs reduced into a Directed Acyclic Graph (DAG) using the partition of SCCs are exactly equal.
+variable,function,Observed variables in a graph can be represented as a function of the parent nodes and exogenous variables.
+exogenous variables,true variables,Exogenous variables can be represented in terms of the true variables using KR transport.
+tmi maps,observational distribution,TMI maps with different intra-SCC orders generating the same observational distribution
+processes,"invertible, scc-wise transformation","two processes differ by an invertible, SCC-wise transformation of the variables u"
+elements,elements,M and ˜M the elements from F × Pu and ˜F × Pu respectively
+element,observational distribution,identical observational distribution as both M and ˜M
+elements,"invertible, component-wise transformation","the elements of ˜M and ˆM differ by an invertible, component-wise transformation h"
+ui,˜ui,˜ui = hi(ˆui) = hi(KRi(uSi ))
+each scc si,˜usi,"for each SCC Si, ˜uSi = hSi(KRSi(uSi)) = (hSi ◦ KRSi)(uSi)"
+causal consistency,partial knowledge,Causal consistency with partial knowledge of the causal graph
+causal nf tθ,exogenous variables of an scm m,"causal NF Tθ, with partial knowledge of the causal graph, SCC-wise isolates the exogenous variables of an SCM M"
+tθ,true data-generating process m,"Tθ is causally consistent with the true data-generating process, M, with respect to each SCC"
+tθ(x)i,h(usi),"The term Tθ(x)i is equal to h(uSi), indicating a relationship in the equation. This relationship is crucial in the context of causal generator."
+tθ(x)i,"fsi(xpasi, xsi)","Tθ(x)i = h(fSi(xpaSi, xSi)) shows the dependency between Tθ(x)i and fSi(xpaSi, xSi), implying a functional relationship between the two terms."
+tθ(x)i,m,"The gradients of Tθ(x)i agree with those from M, indicating a consistency in the gradient calculations of Tθ(x)i with M."
+thm. 3 and cor. 4,results from the main manuscript,"Thm. 3 and Cor. 4 provide analogues to results from the main manuscript, suggesting similarities or comparisons between the mentioned terms."
+causal consistency,causal relationships between sccs,"Causal consistency refers to the causal relationships between SCCs as a whole, highlighting the scope of causal relationships being considered."
+sccs,individual nodes,"The context distinguishes between reasoning about SCCs as a whole versus individual nodes, emphasizing the difference in granularity of analysis."
+scc-identifiability,causal scc-consistency,"By treating each SCC as a whole, concepts like SCC-identifiability and causal SCC-consistency can be discussed and analyzed effectively."
+interventions,counterfactuals on sccs,It is mentioned that interventions and computation of counterfactuals can be performed on SCCs when focusing on SCCs as a unit of analysis.
+gx,iux,"The relationship between Gx and Iux is defined as u = (I − G)x, illustrating a specific mathematical dependency between the two terms."
+linear scm,{x1:=u1 ; x2:=2x1+u2 ; x3:=3x2+u3},"The linear SCM example is provided in its usual recursive formulation, showing a way to represent the system with iterative steps."
+formulation,recursions,"The context mentions different ways of formulating a process: (a) with recursions, (b) without recursions. Both terms are related to the process of defining a system or function."
+recursions,process,Recursions are related to the process of defining a system in this context.
+multiple representations,scms,"The context discusses the multiple representations of Structural Causal Models (SCMs), highlighting different ways to represent these models."
+example,scm,"An illustrative example of a Structural Causal Model (SCM) is discussed in the context, showcasing how different models are equivalent."
+recursive scm,equations,The concept of Recursive Structural Causal Models (SCMs) is related to providing recursive equations to describe the model.
+equations,system,Equations are mentioned in the context in relation to solving the system iteratively based on causal dependencies.
+equations,function,"Equations can be written as a function from one variable to another, as explained in the context."
+equations,unroll,The context discusses unrolling equations to directly link one variable with another in the system.
+equation,unroll,"The process of expanding an equation into a series of smaller equations, as mentioned in the context."
+equation,multi-step function,"The concept of representing a series of linear operations in multiple steps, as mentioned in the context."
+matrices,sparse,"The matrices G1, G2, G3 mentioned in the context are valid as long as they are at most as sparse as G, indicating a relationship between matrices and sparsity."
+linear operation,compress,"The concept of compressing a sequence of linear equations into a single operation, as mentioned in the context."
+linear operation,vectorial form,"The process of representing linear operations in vectorial form, as described in the context."
+indirect paths,direct paths,"The context discusses the collapsing of all paths into direct paths, thus eliminating the distinction between indirect paths."
+primes,paths,Primes and paths are related as mentioned in the context where it is fairly easy to multiply two primes (paths) and obtain their product
+paths,product,Paths lead to the product and performing prime factorization of the number is prohibitive
+product,collapsed paths,The product of two paths can lead to collapsed paths which makes prime factorization prohibitive
+u,x,Equations can be inverted to go from x to u as mentioned in the context
+x,u,Equations can be inverted to go from u to x as presented in the context
+exogenous variables,scm representation,Exogenous variables can be obtained in one go using a convenient SCM representation as discussed in the main manuscript
+linear scm,non-linear scm,The causal relationships of a linear SCM can be extended to the general case of a non-linear SCM representation
+m,x,"Non-linear SCM M is of the form x = ˜f (x, u) to represent causal relationships with exogenous variables"
+scm,recursive scm,"Recursive SCM is a representation of an SCM where the equations are unrolled by having multiple functions zl = fl(zl−1), and in each one the equations for which the non-recursive equation of its parents is already known are unrolled."
+scm,unrolled scm,"Unrolled SCM is a representation of an SCM where the equations are unrolled by having multiple functions zl = fl(zl−1), and the equations for which the non-recursive equation of its parents is already known are unrolled."
+scm,collapsed scm,Collapsed SCM is a representation of an SCM where all the different layers are expanded and written in a (probably complex) formula that encompasses all changes in a single step. The composition of these functions has a Jacobian matrix structurally equivalent to I + diam(A).
+scm,reverse scm,"Reverse SCM is a representation of an SCM where each ˜fi(xpai, ui) is assumed to be bijective with respect to ui, allowing the computation of its inverse to obtain ui as a function of the observed values."
+inverse,ui,"The inverse is computed to obtain ui as a function of the observed values, ui = ˜f(xpai, xi)."
+inverse,jacobian matrix,The Jacobian matrix of the inverse will be structurally equivalent to I + A ≡ I − A.
+jacobian matrix,variables,Jacobian matrices are used to talk about causal dependencies between variables.
+do-operator,interventions,The do-operator simulates a physical intervention on an SCM to induce an alternative model.
+do-operator,counterfactuals,The do-operator is used to compute counterfactuals by fixing the observational value and removing causal dependency.
+scm,equation,The do-operator in an SCM is carried out by replacing the i-th equation with a constant function.
+intervention,scm,The concept of intervention is related to the Structural Causal Model (SCM) as mentioned in the context regarding shaping the data-generating process through intervention.
+do-operator,recursive representation,"The do-operator is specifically related to the recursive representation of the SCM as described in Fig. 4a, where it plays a crucial role in the intervention processes."
+abductive model,causal graph,"The abductive model with knowledge on the causal graph is mentioned as having a specific case similar to Fig. 8d, indicating a relationship between the model and the causal graph."
+exogenous distribution,causal generator,"The proposed implementation involves manipulating the SCM by modifying the exogenous distribution Pu while keeping the causal generator untouched, indicating a relationship between the distribution and the generator."
+intervention,endogenous variables,"Intervention in the SCM updates the distribution Pu to have positive density mass on values that result in the intervened variable yielding the intervened value, directly impacting the endogenous variables."
+scm,distribution,"The intervened SCM is defined as distribution P Iu), where the density of the updatedI = (˜f , P Iu is of the formiI p(u) ∝ p(u) · δ{˜fi(x,u)=α}(u)"
+xi,ui,The only way of altering the value of xi without altering those of its parents is through ui
+xi,uj̸=i,The only way of altering the value of xi without altering those of its parents is through uj̸=i
+ui,uj̸=i,"Using the causal sufficiency assumption, we can squeeze the Dirac delta directly in the distribution of the i-th exogenous variable"
+scm,generator,"Since this implementation does not make any assumption at all in the functional form of the generator, but directly works on the distribution of the exogenous variables"
+architecture,causal nf,"The implementation can be implemented on any SCM representation and, hence, on any of the architectures for the causal NF"
+data-generative process,causal consistency,The data-generative process should be causally consistent to properly work.
+data-generative process,proper isolation,The data-generative process should properly isolate u.
+changes,properly propagated,Changes should be causally consistent to be properly propagated.
+ui,stochasticity,ui accounts only for the stochasticity of xi not explained by its parents.
+step-by-step algorithms,interventions and compute counterfactuals,Algorithms perform interventions and compute counterfactuals step-by-step.
+algorithm,alg. 1,Algorithm 1 is presented to perform interventions.
+algorithm,alg. 2,Algorithm 2 is presented to compute counterfactuals.
+observed distribution,generated vs. given,The observed distribution can be generated or given for sampling.
+interventional distribution,sample,"Algorithm 1 samples from the interventional distribution, P(x"
+counterfactual distribution,factual sample,Algorithm 2 gets counterfactual values from the factual sample.
+proposed implementation,dependency removal,The proposed implementation removes every dependency from the descendants with respect to the ancestors.
+implementation,dependency,Implementation removes every dependency from the descendants with respect to the ancestors.
+implementation,intervened value,Implementation removes every dependency from the descendants through the intervened value.
+descendants,ancestors,Descendants are related to ancestors in the concept of dependency removal.
+value u2,value of α,The value of u2 is related to the value of α in the context of fixing x2 = α given x1.
+observed value x2,value of α,The observed value x2 is related to the value of α in the concept of fixing the output of the network.
+ancestor u1,descendant x3,Ancestor u1 has an indirect influence on descendant x3 passing through the intermediate variable x2.
+intermediate variable,x2,The concept of x2 is mentioned as an intermediate variable in the given context.
+x2,cancels out,The concept of x2 is related to the action of cancellation as indicated in the context.
+u1,∂u1,There is a partial derivative relationship mentioned between u1 and ∂u1 in the given context.
+ancestors,descendants,The lack of correlation between ancestors and descendants through intervened variables is highlighted in the context.
+carefl,vaca,"Two different algorithms proposed in the context, CAREFL and VACA, are related to each other as they are compared in terms of interventions with their models."
+carefl,interventional distribution,CAREFL is related to the concept of interventional distribution as mentioned in the context.
+methods,carefl,"The methods compared in the context, namely CAREFL, are related to each other in terms of interventions."
+implementations,do-operator,The implementation of the do-operator is discussed in the context in relation to interventions.
+algorithm,proposed method,The proposed method does not take into account that the value of ui to fix α depends on the observed values of its parents.
+algorithm,node,The algorithm only works when the node has no parents.
+algorithm,comparisons,The algorithm we proposed was replaced for the comparisons in §6 and App. D.
+vaca,intervention,An approach for intervening on VACA is completely reminiscent to the traditional implementation.
+ancestors,intervened variable,Ancestors cannot influence the intervened variable nor its descendants.
+ancestors,model,Removing the ancestors from the equation requires recalibrating the model.
+middle computations,intervention,The middle computations after an intervention change in more complex ways than just removing the ancestors from the equation.
+triangle scm,vaca,The triangle SCM is a non-linear model that VACA could learn with two layers.
+operations,intervention,"If we were to intervene with x2 = α, the real SCM would yield different values for x1, x2, and x3."
+scm,intervene,SCM describes the Structural Causal Model and the action of intervening is related to manipulating variables within the model
+scm,do(x2 = α),Intervening with do(x2 = α) in SCM results in a different expression for x3
+vaca,z1,VACA involves z1 as a variable in its model
+vaca,z3,VACA involves z3 as a variable in its model
+x3,α,The value of x3 is influenced by the value of α in the context
+causal nf,generator,causal NF maintains the generator and adjusts u2 to ensure the correct value is yielded
+cpu,ram,The CPU used in experiments had 8 GB of RAM
+cpu,amd epyc 7702 64-core processor,Experiments were run using CPUs like AMD EPYC 7702 64-Core Processor
+cpu,intel(r) xeon(r) cpu e5-2698 v4 @ 2.20ghz,Experiments were run using CPUs like Intel(R) Xeon(R) CPU E5-2698 v4 @ 2.20GHz
+training methodology,evaluation methodology,Every experiment had a specific training and evaluation methodology
+experiment,synthetic,Experiments involved generating synthetic data for analysis
+scm,dataset,"SCM is a concept with 20,000 training samples, 2500 validation samples, and 2500 test samples mentioned in the dataset."
+model,epoch,"Each model is run for 1000 epochs, and results shown correspond to the test set evaluation at the last epoch."
+adam,learning rate,Adam is used for optimization with an initial learning rate of 0.001.
+hyperparameter tuning,grid search,"For hyperparameter tuning, grid search is always performed with a similar budget."
+hyperparameter tuning,validation loss,Hyperparameter tuning involves selecting the best combination according to validation loss.
+experiment,repeated,Every experiment is repeated 5 times.
+scm,empirical evaluation,SCMs employed in the empirical evaluation section of the main paper are described.
+variable,distribution,"Exogenous variables follow a standard normal distribution N(0,1), except for LARGEBD which follows a uniform distribution U(0,1)."
+scm,equations,12 SCMs are defined encompassing both linear and non-linear equations.
+softplus operation,function,The softplus operation s(x) = log(1.0 + ex) is defined as a function.
+u1,f1,u1 is related to f1 through an equation f1(u1) = u1
+x2,f3,"x2 is related to f3 through an equation f3(x2, u3) = 0.25 · x2 + 2 · u3 and f3(x2, u3) =(x2 − 5)315+ u3"
+u2,f2,"u2 is related to f2 through an equation f2(x1, u2) = ex1/2 + u2/4 and f2(x1, u2) = 5 · x1 − u2"
+u3,f3,"u3 is related to f3 through an equation f3(x2, u3) = 0.25 · x2 + 2 · u3 and f3(x2, u3) =(x2 − 5)315+ u3 and f3(x2, u3) = −0.5 · x2 − 1.5 · u3"
+x3,f4,"x3 is related to f4 through an equation f4(x3, u4) = x3 + u4 and f4(x3, u4) = x3 + u424(32)"
+u5,f5,"u5 is related to f5 through an equation f5(x4, u5) = −x4 + u5"
+u1,f1,u1 is related to f1 through an equation f1(u1) = u1
+u2,f2,"u2 is related to f2 through an equation f2(x1, u2) = 10 · x1 − u2"
+u3,f3,"u3 is related to f3 through an equation f3(x2, u3) = 0.25 · x2 + 2 · u3"
+u2,f2,u2 is related to f2 through an equation f2(u2) = 2 − u2
+x2,f3,"x2 is related to f3 through an equation f3(x1, x2, u3) = 0.25 · x2 − 0.5 · x1 + 0.5 · u3"
+u1,f1,u1 is related to f1 through an equation f1(u1) = s(1.8 · u1) − 1
+x2,f3,"x2 is related to f3 through an equation f3(x1, x2, u3) = 0.25 · x2 − 1.5 · x1 + 0.5 · u3"
+x3,f4,"x3 is related to f4 through an equation f4(x3, u4) = x3 + 0.25 · u4"
+x1,f2,x1 is related to f2 through an equation f2(u2) = u2
+x1,f2,"x1 is related to f2 through an equation f2(x1, u2) = s(1 − x1)"
+x2,f3,"x2 is related to f3 through an equation f3(x1, x2, u3) = tanh(2 · x2) + 1.5 · x1 − 1 + tanh(u3)"
+x3,f4,"x3 is related to f4 through an equation f4(x3, u4) =x3 − 45(cid:112)√10 · u4+ 3 +25"
+x1,f3,"x1 is related to f3 through an equation f3(x1, u3) = L(x1, u3)"
+x2,f3,"x2 is related to f3 through an equation f3(x1, u3) = L(x2, u4)"
+x3,f4,"x3 is related to f4 through an equation f4(x2, u4) = L(x3, u5)"
+x4,f5,"x4 is related to f5 through an equation f5(x4, u5) = L(x4, u6)"
+x5,f7,"x5 is related to f7 through an equation f7(x5, u7)"
+x6,f8,"x6 is related to f8 through an equation f8(x6, u8) = 0.3 · u8 + (s(x6 + 1) − 1)(cid:18)x7 · 1.3 + x8(cid:18)−1−s3"
+x7,f9,"x7 is related to f9 through an equation f9(x7, x8, u9) = CDF(cid:19)+ 1(cid:19)+ 2, 0.6, u9"
+x8,f9,"x8 is related to f9 through an equation f9(x7, x8, u9) = CDF(cid:19)+ 1(cid:19)+ 2, 0.6, u9"
+u4,x1,"Variable u4 is related to variable x1 through the function ˜f4(x1, u4) = tanh(1.5 · x1) +TRIANGLELIN"
+u3,x2,"Variable u3 is related to variable x2 through the function ˜f3(x1, x2, u3) = 0.5 · x1 · x2 +1"
+u1,u2,"Variable u1 is related to variable u2 through the function ˜f2(x1, u2) = 2 · x2 1 + e−x2"
+e−x2,u3,"The term e−x2 is related to variable u3 through the function ˜f3(x1, x2, u3) =2+x1+ u3"
+abductive models,generative models,"abductive models and generative models have different complexities based on the number of nodes d, as indicated in Tab 1"
+jacobian regularization,time overhead,"the inclusion of Jacobian regularization introduces a significant time overhead, as depicted in Fig. 10"
+causal graph information,ordering,"leveraging causal graph information or relying solely on ordering has minimal impact on computational time, as shown in Fig. 10"
+scm,causal nf,the mismatch of the distribution Pu between SCM and causal NF negatively affects performance
+maf layer,elu activation functions,"the flow is fixed to have a single MAF layer with ELU activation functions, determined through cross-validation for the optimal number of layers and hidden units"
+normal distribution,laplace distribution,"There is a notable distinction between Normal and Laplace distributions in terms of density estimation, but minimal implications for Average Treatment Effect (ATE) and counterfactual estimation."
+tails,outliers elements,"The disparity between Normal and Laplace distributions may originate from dissimilarities in their tails, leading to bigger errors at the outliers elements."
+architecture of causal nf,model struggles,"With the particular architecture of causal NF, every model struggles to model the denser TRIANGLE SCM."
+masked autoregressive flow (maf),triangle scm,Masked Autoregressive Flow (MAF) layer faces challenges in accurately modeling the TRIANGLE SCM.
+flow architecture,performance,Investigation of the potential impact of flow architecture on performance is considered in the context of the TRIANGLE SCM.
+base distribution,normal distribution,Normal and Laplace are different base distributions from which the parameters (θ) are learned.
+base distribution,laplace distribution,Normal and Laplace are different base distributions from which the parameters (θ) are learned.
+base distribution,flow architectures,"Differences in base distribution affect KL divergence, while the choice of flow architecture influences the overall performance."
+kl divergence,flow architecture,"Differences in base distribution affect KL divergence, while the choice of flow architecture influences the overall performance."
+flow architecture,mlp,We cross-validate again the optimal number of layers and hidden units of the MLP internally used by the unique layer of the Causal NF.
+mlp,number of layers,We cross-validate again the optimal number of layers and hidden units of the MLP internally used by the unique layer of the Causal NF.
+mlp,hidden units,We cross-validate again the optimal number of layers and hidden units of the MLP internally used by the unique layer of the Causal NF.
+causal nf,number of layers,We cross-validate again the optimal number of layers and hidden units of the MLP internally used by the unique layer of the Causal NF.
+causal nf,hidden units,We cross-validate again the optimal number of layers and hidden units of the MLP internally used by the unique layer of the Causal NF.
+scms,nsf,We employed the same set of SCMs as in App. D.2. and the results compare Causal NF with MAF layer to NSF layer.
+scms,maf,We employed the same set of SCMs as in App. D.2. and the results compare Causal NF with MAF layer to NSF layer.
+maf,nsf,NSFs are built on top of MAFs and are expected to outperform MAFs.
+kl divergence,nsf,Our empirical analysis reveals that the NSF consistently outperforms the MAF across three metrics including KL divergence.
+ate estimation,nsf,Our empirical analysis reveals that the NSF consistently outperforms the MAF across three metrics including ATE estimation.
+counterfactual estimation,nsf,Our empirical analysis reveals that the NSF consistently outperforms the MAF across three metrics including counterfactual estimation.
+flow architecture,practitioners,The practical implications of selecting an appropriate flow architecture should be taken into consideration by practitioners.
+causal nf,carefl,Causal NF is compared with CAREFL in this section.
+causal nf,vaca,Causal NF is compared with VACA in this section.
+vaca,dropout rate,Hyperparameter tuning for VACA involved cross-validation of the dropout rate with specific values.
+carefl,number of layers in the flow,Hyperparameter tuning for CAREFL involved cross-validation of the number of layers in the flow.
+carefl,hidden units in the mlp composing the flow layers,Hyperparameter tuning for CAREFL involved cross-validation of the hidden units in the MLP composing the flow layers.
+causal nf,abductive model,Causal NF used the abductive model with a single layer.
+causal nf,mlp composing the layer of the flow,Causal NF cross-validated the number of layers and hidden units in the MLP composing the layer of the flow.
+results tab 4,performance of each model,Tab 4 shows the performance of each model for all the considered datasets.
+causal nf,performance,The proposed Causal NF consistently outperforms other models.
+causal nf,carefl,"Causal NF consistently outperforms CAREFL in terms of performance and computational efficiency. Causal NF achieves similar performance to CAREFL in terms of observational fitting, while surpassing it on interventional and counterfactual estimation tasks. Additionally, Causal NF outperforms CAREFL in computational speed."
+causal nf,vaca,"Causal NF consistently outperforms VACA in terms of performance and computational efficiency. The performance of VACA is notably inferior, and its computation time is significantly longer."
+vaca,gnns,VACA computation time is significantly longer primarily due to the complexity of graph neural networks (GNNs).
+carefl,layers,"The optimal CAREFL architectures often have multiple layers, resulting in increased computation time."
+single layer,computational complexity,"Causal NF has a single layer, reducing computational complexity."
+do-operator,results,The do-operator proposed in §5 is used to obtain results that are averaged over five runs.
+results,performance,"Results are evaluated based on performance, as shown in the table above."
+results,time,"The evaluation of results also involves measuring the time taken, as shown in the table above."
+evaluation,sampling,"Evaluation involves sampling, as indicated in the table above."
+evaluation,training,"The evaluation process includes training, which is detailed in the provided context."
+evaluation,training,"The evaluation process includes training, which is detailed in the provided context."
+training,performance,"Performance is also influenced by the training process, as discussed in the section."
+training,do-operator,The training process involves the use of the do-operator for causal inference.
+nsf,causal nf,"Neural Spline Flow (NSF) is used in a single layer of Causal NF, as described in the context."
+causal nf,mlp,Causal NF internally uses an MLP with 3 layers and 32 hidden units each.
+causal nf,adam,Causal NF uses Adam as the optimizer with a learning rate of 0.01.
+adam,optimizer,Adam is used as an optimizer in the context.
+optimizer,learning rate,The optimizer is used with a learning rate of 0.01.
+optimizer,plateau scheduler,The optimizer uses a plateau scheduler with a decay factor of 29.
+plateau scheduler,decay factor,The plateau scheduler has a decay factor of 29.
+observational distribution,interventional distribution,Observational distribution and Interventional distribution are mentioned in the context.
+observational distribution,pair plot,Observational distribution is shown in a pair plot in the context.
+interventional distribution,pair plot,Interventional distribution is shown in a pair plot in the context.
+x3,x4,The plot illustrates the dependency of x4 on x3.
+x3,x1,The plot illustrates the dependency of x4 and x5 on the ancestors x1 and x2.
+x3,x2,The plot illustrates the dependency of x4 and x5 on the ancestors x1 and x2.
+epoch,training,The training is performed for 1000 epochs.
+results,pair plots,Results include pair plots from one of the 5 runs.
+results,5-fold cross-validation,"Results are reported using 5-fold cross-validation with a split for train, validation, and test data."
+fig. 15,pair plots,"Fig. 15 shows two pair plots from one of the 5 runs, chosen at random"
+true empirical distribution,learnt distribution by causal nf,"The true empirical distribution is shown in blue, and the learnt distribution by Causal NF is depicted in orange"
+fig. 15a,observational distribution,Fig. 15a illustrates the observational distribution
+fig. 15b,interventional distribution,"Fig. 15b illustrates the interventional distribution, obtained when we intervene on the sex variable and set it to 1"
+causal nf,achieving a remarkable fit,Causal NF achieves a remarkable fit in both observational and interventional cases
+discrete data,causal nf,Causal NF demonstrates its capability to handle discrete data
+partial knowledge of the causal graph,causal nf,Causal NF demonstrates its capability to handle partial knowledge of the causal graph
+fig. 14,partial causal graph,Figure 14 shows the partial causal graph used for the German Credit dataset
+sccs,causal relationships,Rectangles show strongly connected components (SCCs) grouping different variables. Solid arrows represent causal relationships between SCCs
+partial causal graphs,causal nfs,The proposed method deals with partial causal graphs using causal NFs
+fig. 15,pair plot,Figure 15 displays a pair plot of real (in blue) and generated (in orange) data of the German dataset
+observational distributions,interventional distributions,"Above, the samples from the true and learnt observational distributions. Below, the samples from the true and learnt interventional distributions"
+causal nf,handling observational and interventional distributions,Causal NF demonstrates its capability to handle both the true and learnt observational and interventional distributions
+interventional distributions,causal nf,Causal NF is able to handle interventional distributions in order to correctly intervene
+causal nf,discrete data,Causal NF is able to handle discrete data for correct intervention

@@ -1,0 +1,235 @@
+node_1,node_2,edge
+personalized federated learning,balance,"Personalized federated learning (FL) involves balancing local model improvement and global model tuning, addressing the challenge of aligning personal and global objectives."
+personalized federated learning,bayesian hierarchical models,"The approach in personalized federated learning is inspired by Bayesian hierarchical models, leading to the development of a self-aware personalized FL method."
+bayesian hierarchical models,self-aware personalized fl method,"Inspired by Bayesian hierarchical models, a self-aware personalized FL method is developed for balancing local and global models in federated learning."
+fl,global model,Federated learning (FL) aims to train a global model that is distributed across clients rather than centralized in the cloud.
+fl,edge devices,Federated learning transforms machine learning ecosystems by leveraging computation and data resources of billions of edge devices without raw data leaving the devices.
+fl (federated learning),global model,FL aims to train a global model that aggregates gradients or model updates from the participating edge devices.
+fl (federated learning),personalization,Recent research in FL has significantly extended its original scope to address the emerging concern of personalization.
+personalization,fl system,A broad term that often refers to an FL system that accommodates client-specific data distributions of interest.
+personalization,client-specific data distributions,Personalization often refers to an FL system that accommodates client-specific data distributions of interest.
+fl system,client,Each client in a personalized FL system holds data that can be potentially non-identically and independently distributed.
+client,data,Each client in a personalized FL system holds data that can be potentially non-identically and independently distributed.
+data,non-identically and independently distributed,Data held by each client in a personalized FL system can be potentially non-identically and independently distributed.
+device,on-device model,Each device hopes to improve its on-device model through personalized FL.
+personalization,practical benefits,"While the practical benefits of personalization have been widely acknowledged, its theoretical understanding remains unclear."
+personalization,theoretical understanding,"While the practical benefits of personalization have been widely acknowledged, its theoretical understanding remains unclear."
+existing works,personalized fl,Existing works on personalized FL often derive algorithms based on a pre-specified optimization formulation.
+optimization formulation,algorithms,Existing works on personalized FL often derive algorithms based on a pre-specified optimization formulation.
+optimization formulation,explanations,Explanations regarding the formulation or its tuning parameters rarely go beyond heuristic statements.
+personalization,optimization problem,"In this work, we take a different approach. Instead of specifying an optimization problem to solve, we start with a toy example and develop insights into the nature of personalization."
+personalization,nature,Personalization is examined to gain insights into its nature from a statistical uncertainty perspective.
+personalization,fl,The context discusses critical questions related to personalized FL.
+fl,lower-bound baselines,Lower-bound baselines of personalized FL are discussed in relation to each client performing local training without FL or all clients participating in conventional FL training.
+fl,upper-bound,The upper-bound for the client in FL is mentioned to be unclear.
+goal,client,The goal of each client is mentioned to be improving its local model performance.
+fl training,global model,The discussion includes the design of FL training that interprets the global model and aggregates local models for fine-tuning each client's training.
+q1,q2,"Both questions, Q1 and Q2, are acknowledged to be challenging."
+q1,fl,Q1 relates to obtaining baselines for personalized FL in different scenarios.
+global model,client-specific information,The context mentions the need to characterize client-specific and globally-shared information in relation to the global model.
+fl updates,underlying discrepancy,FL updates are required to adapt to the underlying discrepancy among client-specific local data.
+aggregation approach,fl updates,The discussion mentions the need for the popular aggregation approach in the context of FL updates.
+data distributions,sample sizes,The popular aggregation approach mentioned does not account for the distribution discrepancy due to not sharing clients' data and estimating underlying data distributions being unrealistic.
+data distributions,distribution discrepancy,"It is highly nontrivial to measure and calibrate such a discrepancy in FL settings, which is a key motivation of the work."
+interpreting personalization,hierarchical model-based perspective,The technical contribution includes interpreting personalization from a hierarchical model-based perspective and providing theoretical analyses for FL training.
+interpreting personalization,self-fl,"Proposing Self-FL, an active personalized FL solution that guides local training and global aggregation via inter- and intra-client uncertainty quantification is another contribution."
+self-fl,hierarchical modeling,Self-FL is the first work that connects personalized FL with hierarchical modeling and utilizes uncertainty quantification to drive personalization.
+personalized fl,client-speciﬁc model parameters,The term personalization in FL often refers to the development of client-speciﬁc model parameters for a given model architecture.
+personalized fl,local model,"In this context, each client aims to obtain a local model that has desirable test performance on its local data distribution."
+personalized fl,applications,Personalized FL is critical for applications that involve statistical heterogeneity among clients.
+personalized fl,global model,A research trend is to adapt the global model for accommodating personalized local models.
+personalized fl,multi-task learning,Prior works often integrate FL with other frameworks such as multi-task learning.
+personalized fl,meta-learning,Prior works often integrate FL with other frameworks such as meta-learning.
+personalized fl,transfer learning,Prior works often integrate FL with other frameworks such as transfer learning.
+personalized fl,knowledge distillation,Prior works often integrate FL with other frameworks such as knowledge distillation.
+personalized fl,lottery ticket hypothesis,Prior works often integrate FL with other frameworks such as the lottery ticket hypothesis.
+personalized fl,ditto,"For example, DITTO formulates personalized FL as a multi-task learning problem."
+ditto,mtl,DITTO formulates personalized FL as a multi-task learning (MTL) problem and regularizes the discrepancy of the local models to the global model using the `2 norm.
+fedem,mtl,FedEM uses the MTL formulation for personalization under a ﬁnite-mixture model assumption and provides federated EM-like algorithms.
+meta-learning,pfedme,"From the perspective of meta-learning, pFedMe formulates a bi-level optimization problem."
+pfedme,bi-level optimization problem,pFedMe formulates a bi-level optimization problem for personalized FL
+pfedme,moreau envelopes,pFedMe introduces Moreau envelopes as clients’ regularized loss
+perfedavg,method,PerFedAvg proposes a method to find a proper initial global model
+perfedavg,quick adaptation,PerFedAvg proposes a method that allows quick adaptation to local data
+pfedhn,central hypernetwork,pFedHN proposes to train a central hypernetwork for generating personalized models
+fedfomo,method,FedFOMO introduces a method to compute the optimally weighted model aggregation for personalization
+self-fl,experimental comparison,"We will focus on the experimental comparison of Self-FL with DITTO, pFedMe, and PerFedAvg"
+pfedme,multi-task learning,pFedMe represents personalized FL formulations like multi-task learning
+pfedme,meta-learning,pFedMe represents personalized FL formulations like meta-learning
+existing personalized fl methods,limitations,A limitation of existing personalized FL methods is that they do not provide a clear answer to question Q1
+existing personalized fl methods,interpretation of fl-trained results,"Existing personalized FL methods do not provide a clear answer to question Q1, making it unclear how to interpret the FL-trained results"
+irrelevant tasks and data,biased results,Any personalized FL methods that require a pre-specified global objective may cause significant biases to local clients in the extreme case where the clients are equipped with irrelevant tasks and data
+bayesian perspective,self-fl,We discuss how Self-FL approaches personalized FL with theoretical insights from the Bayesian perspective
+parent parameter,global model,"The assumption is that the parent parameter represents the global model, which has a posterior distribution."
+zm,✓(l),"The zm in Eqn. (2) may also be denoted by ✓(L), for reasons that will be seen in Eqn. (3)."
+postulated model,✓1,"From the perspective of client m, it is supposed that the postulated model is Eqn. (1) for m = 2, . . . , M, and ✓1 = ✓0."
+posterior distributions,✓1,It can be verified that the posterior distributions of ✓1 without and with global Bayesian learning are p(✓1
+global bayesian learning,✓1,The posterior distributions of ✓1 without and with global Bayesian learning are p(✓1
+bayes estimate,✓1,"Using mean square error as risk, the Bayes estimate of ✓1 or ✓0 is the mean of the posterior distribution, namely ✓(L) as defined above."
+flat prior,✓0,The flat prior on ✓0 can be replaced with any other distribution to bake prior knowledge into the calculation.
+posterior mean,✓(fl),"The above posterior mean ✓(FL) can be regarded as the optimal point estimation of ✓1 given all the clients’ data, thus is referred to as 'FL-optimal'."
+posterior variance,reduced uncertainty,The posterior variance quantifies the reduced uncertainty conditional on other clients’ data.
+posterior variance,reduced uncertainty,The posterior variance quantifies the reduced uncertainty conditional on other clients’ data
+personalized fl gain,client 1,We define the following Personalized FL gain for client 1 as
+bayesian posterior,client 1,"Its learned information regarding ✓1 is represented by the Bayesian posterior of ✓1 conditional on either its local data z1 (without communications with others), or the data z1:M in hindsight (with communications)"
+posterior uncertainty,weighted sum of clients' local posterior means,"For the former case, the posterior uncertainty described weighted sum of clients’ local posterior means, and the uncertainty will be reduced by a factor of GAIN1"
+bayesian posterior,point estimation,"Since a point estimation of ✓1 is of particular interest in practical implementations, we treat as the theoretical limit in the FL context"
+posterior mean,local data quality,"For the latter case, the posterior mean ✓(FL)1 depends only on the local data quality"
+2reduce,1,2reduce is much smaller than 1
+personalized fl gain,one,personalized FL gain approaches one
+global parameter m,zm,global parameter m (or zm)
+global parameter,large variance,global parameter has a large variance
+clients,underlying data-generating process,the clients follow the same underlying data-generating process
+clients,weighted sum,weighted sum of clients
+client m,precision,client m’s precision
+client 1,quality data,client 1 has much higher quality data compared with the other clients combined
+fl,client 1,client 1 almost learns on its own
+client 1,gain1,client 1 can still contribute to other clients through the globally shared parameter
+gain for client 2,gain2,the gain for client 2 would be GAIN2
+local training steps,✓fl,Local training steps to achieve FL
+client 1,training steps,client 1 performs training steps
+local data,negative log-likelihood loss,using its local data and negative log-likelihood loss
+number of steps and initial value,client 1,"client 1 can obtain the intended FL1, which is much larger than one"
+local objective,quadratic loss,local objective coincides with the quadratic loss
+learning rate,gradient descent,denote the learning rate by running the gradient descent
+client 1,learning rate,client 1 will obtain for steps with the initial value
+eqn. (6),eqn. (3),Eqn. (6) becomes FL1 in Eqn. (3) if and only if
+init1,pm=1(20 + 2m),INIT1=mPm=1(20 + 2m)
+l1,2121 ⌘,L1=1(21 ⌘)
+p,210 + 2m,P=1(210 + 2m)
+zm,local optimal solution ✓(l),zm is treated as the local optimal solution ✓(L)
+zm,variance of ✓(l),zm is the variance of ✓(L)
+zm,finite sample m,zm is due to finite sample m
+zm,fl-optimal solution ✓(fl),zm can obtain the FL-optimal solution ✓(FL)
+zm,fl-optimal solution ✓(g),zm can obtain the FL-optimal solution ✓(G)
+zm,personal parameter at round t,zm is the personal parameter at round t
+zm,inter-client uncertainty,zm represents inter-client uncertainty
+zm,intra-client uncertainty,zm represents intra-client uncertainty
+asymptotics,convergence,Theoretical understanding of the convergence can be approximated using asymptotics.
+data-generating process,standard stochastic boundedness,Consider the data-generating process with Op denoting standard stochastic boundedness.
+error bound,personalized parameter,The result gives an error bound of each client’s personalized parameter.
+error bound,server's parameter,The result gives an error bound of the server’s parameter.
+error bound,estimation error,The estimation error of each personalized parameter and the server parameter can uniformly go to zero.
+estimation error,optimization error,The estimation error involves an optimization error as the first term.
+estimation error,statistical sample size,The estimation error is also influenced by the statistical sample size.
+statistical sample size,number of clients,The statistical sample size impacts the number of clients participating.
+parameter,sample variance,The sample variance is used to estimate the parameter in practice.
+round,local training,Each round of local training is treated as the optimization from a bootstrapped sample.
+client,personal parameter,Each client uses its personal parameter as a surrogate of local convergence at each round.
+empirical variance,empirical variance,Empirical variances are used to estimate the parameter values in the process.
+multi-dimensional parameters,matrix multiplications,"For multi-dimensional parameters, the derivations involve matrix multiplications for estimation."
+uncertainty measures,vectors,Uncertainty measures are introduced for vectors in the learning process.
+variance,trace,Variance is defined as the trace of the matrix in the context of neural network models.
+empirical variances,local fluctuation,Empirical variances contribute to understanding the fluctuation of local training in Self-FL.
+baseline fl training,rounds,baseline FL training runs for certain rounds
+baseline fl training,local models,the fluctuation of local models does not hinder variance approximation
+local models,variance approximation,the fluctuation of local models does not hinder variance approximation
+implementation details,self-fl,We include the implementation details of Self-FL
+learn,parametric models,We derived how to learn parameters for parametric models
+client,local training,a client often cannot obtain the exact local training
+client,personalization,a client often cannot obtain the exact personalization
+self-aware personal fl,self-fl,Algorithm 1 Self-aware Personal FL (Self-FL)
+client,eqn. (13),Clients use Equation (13) for computation
+client,server,Clients communicate with the server for model aggregation
+server,global model,Server aggregates local models to update the global model
+server,inter-client uncertainty,Server distributes global model along with inter-client uncertainty to clients
+self-fl framework,communication cost,"Self-FL has the same communication cost as FedAvg, with additional transmission of uncertainty values"
+self-fl framework,computation cost,Additional computation cost for Self-FL to obtain inter-client and intra-client uncertainties
+self-fl framework,sample variance,Self-FL uses sample variances for computation as detailed in Equations (13) and (14)
+self-fl,empirical risk,Self-FL does not depend on a particular formulation of the empirical risk
+experimental studies,experimental setup,Experimental setup involves the use of different datasets and evaluation methods
+aws p316 instances,experiments,AWS p316 instances are used for conducting experiments
+self-fl,performance,Self-FL provides promising personalization performance in complex scenarios
+synthetic data,experimental results,Experimental results show the performance of FL algorithms in different scenarios using synthetic data
+two-layer bayesian model,scalar data point,Synthetic dataset is constructed based on the two-layer Bayesian model with each data point as a scalar
+fl system,client data parameters,FL system aims to estimate global and local model parameters using client data
+mnist data,number of clients,"MNIST dataset has 10 output classes and is used with a total of 1,000 clients"
+non-iid mnist dataset,client samples,Each client has samples from the non-IID MNIST dataset
+non-iid mnist dataset,fedprox,non-IID MNIST dataset used in the same approach as FedProx for heterogeneous data generation
+femnist dataset,federated extended mnist (femnist) dataset,FEMNIST dataset has 62 output classes
+fl system,200 clients,FL system has M = 200 clients
+clients,power law,local sample size of clients follows a power law
+cifar10 data,images,CIFAR10 Data has images of dimension 32 3
+cifar10 data,output classes,CIFAR10 Data has 10 output classes
+pfedme repository canh t. dinh,non-i.i.d. data,non-i.i.d. data provided by the pFedMe repository Canh T. Dinh
+pfedme repository canh t. dinh,total of 20 clients,total of 20 clients in the system
+sent140 data,text sentiment analysis dataset,Sent140 Data is a text sentiment analysis dataset containing tweets
+sent140 data,output classes,Sent140 Data has two output classes
+sent140 data,772 clients,Sent140 Data has 772 clients
+wake-word data,self-fl,Self-FL evaluated on Wake-word Data
+amazon alexa,wake-word detection task,private audio data from Amazon Alexa for the wake-word detection task
+wake-word detection task,output classes,wake-word detection task has two output classes
+output classes,wake-word detected,"The context mentions that the task has two output classes, one of which is 'wake-word detected'."
+output classes,wake-word absent,"The context mentions that the task has two output classes, one of which is 'wake-word absent'."
+audio stream,spectrogram,The context mentions that the audio stream from the speaker is represented as a spectrogram.
+audio stream,convolution neural network (cnn),The context mentions that the audio stream is fed into a convolution neural network (CNN).
+cnn,stack of convolutional and max-pooling layers,The context mentions that the CNN is a stack of convolutional and max-pooling layers (11 in total).
+trainable parameters,around 3,The context mentions that the number of trainable parameters is around 3.
+clients,heterogeneity,The context mentions that the heterogeneity between clients comes from the intrinsic property of different device types.
+self-fl,global model update,The context mentions that Self-FL can update the global model with smoothing average.
+smoothing average,global model update,The context mentions that updating the global model with smoothing average allows integration of historical information and reduces instability.
+activity rate,global model update,"The context mentions that given an activity rate, the server updates the global model using a smoothing average to reduce instability."
+mnist data,femnist data,"The context mentions the results on MNIST and FEMNIST data, providing a description of both datasets."
+mnist,femnist,MNIST and FEMNIST are two datasets being compared in the context
+mnist,data,MNIST is described as a dataset in the context
+femnist,data,FEMNIST is described as a dataset in the context
+mnist,learning rate,MNIST uses a learning rate of ⌘ = 0.03 as mentioned in FedProx
+mnist,batch size,MNIST uses a batch size of 10 as suggested in FedProx
+femnist,learning rate,FEMNIST uses a learning rate of ⌘ = 0.01
+femnist,batch size,FEMNIST uses a batch size of 10
+fl training,rounds,FL training runs for 200 rounds from scratch
+comparison,fedavg,"For comparison, FedAvg is implemented along with three other techniques"
+comparison,ditto,"For comparison, DITTO technique is implemented"
+comparison,pfedme,"For comparison, pFedMe technique is implemented"
+comparison,perfedavg,"For comparison, PerFedAvg technique is implemented"
+real-world data,local training steps,The theoretical value of local training steps lm for real-world data is computed using Eqn. (16)
+self-fl framework,local training steps,The actual local training steps for the Self-FL framework is determined in the context
+self-fl framework,lmax,lmax is set to 40 for Self-FL framework
+model parameters,neural coefficients,Model parameters such as neural coefficients are represented by model parameters
+experimental results,convergence performance,Experimental results compare the convergence performance of different FL algorithms
+mnist,convergence performance,Figure 1a compares the convergence performance of different FL algorithms on MNIST
+femnist,convergence performance,Figure 1b compares the convergence performance of different FL algorithms on FEMNIST
+femnist,self-fl,Self-FL algorithm yields more stable convergence compared with FedAvg and the other three personalized FL methods due to our smoothing average in aggregation. Self-FL achieves the highest personalized accuracy when the global model converges.
+self-fl,ditto,"To corroborate that the performance advantage of Self-FL does not come from a larger potential local training steps, we perform an additional experiment where we use a local step as l = 40 for DITTO, pFedMe, and PerFedAvg on the FEMNIST dataset."
+self-fl,pfedme,"To corroborate that the performance advantage of Self-FL does not come from a larger potential local training steps, we perform an additional experiment where we use a local step as l = 40 for DITTO, pFedMe, and PerFedAvg on the FEMNIST dataset."
+self-fl,perfedavg,"To corroborate that the performance advantage of Self-FL does not come from a larger potential local training steps, we perform an additional experiment where we use a local step as l = 40 for DITTO, pFedMe, and PerFedAvg on the FEMNIST dataset."
+ditto,pfedme,"In this scenario, the test accuracy of these three FL algorithms is 71.33%, 68.87%, and 71.08%, respectively."
+pfedme,cifar-10,"We also perform experiments on the CIFAR-10 dataset from the pFedMe repository. In each round, we randomly select 5 out of 20 clients to participate in FL training."
+pfedme,cnn model,We also perform experiments on the CIFAR-10 dataset (from the pFedMe repository Canh T. Dinh (2020)) with the CNN model from PyTorch example PyTorch (2022).
+fl algorithms,local training step,All FL algorithms have a local training step set as 40 for the baseline methods
+fl algorithms,self-fl,Test accuracy comparison shows that Self-FL achieves higher accuracy compared to other FL algorithms
+self-fl,local initialization,"Self-FL consists of three key components, and adjusting local initialization gives the highest contribution to its performance"
+self-fl,dynamic local training steps,"Self-FL consists of three key components, one of which is dynamic local training steps"
+self-fl,variance-weighted global aggregation,"Self-FL consists of three key components, one of which is variance-weighted global aggregation"
+fl algorithms,clients,Evaluation results show the distribution of personalized performance across clients for different FL algorithms
+clients,test accuracy,Evaluation results show the weighted test accuracy of clients with the top 10% most samples and the average test accuracy of the worst 10% clients
+clients,self-fl,Self-FL outperforms other FL algorithms in terms of personalized performance distribution across clients
+self-fl,personalization performance,Self-FL's personalization performance is visualized in Figure 3 by plotting the histograms of the user-level test accuracy.
+user-level test accuracy,local model,The user-level accuracy is obtained by evaluating the final local model of each client on his local dataset.
+self-fl,baseline fedavg,The user-level test accuracy distribution shows that Self-FL improves the local model performance compared to baseline FedAvg.
+femnist,test accuracy comparison,Table 1 shows the test accuracy comparison on FEMNIST for different FL algorithms.
+self-fl,audio domain,The performance of Self-FL on an audio dataset is evaluated for wake-word detection in Subsection 4.1.
+cnn,wake-word detection,A CNN is used for wake-word detection in the personalization task to improve performance at the device type level.
+fedavg,ditto,"FedAvg and DITTO use sample size-based weighted average for model aggregation, but do not consider data heterogeneity."
+ditto,fedavg,DITTO and FedAvg are compared with both equal-weighted and sample size-based weighted model averaging during aggregation.
+fedavg,perfedavg,FedAvg is implemented along with PerFedAvg which uses first-order approximation and equal-weighted aggregation.
+perfedavg,fedavg,PerFedAvg is implemented along with FedAvg which uses equal-weighted and first-order approximation for aggregation.
+pfedme,various hyper-parameters,pFedMe did not converge with various hyper-parameters.
+trade-off,false accepts,One can control the trade-off between false accepts in wake-word detection by tuning the threshold.
+trade-off,false rejects,One can control the trade-off between false rejects in wake-word detection by tuning the threshold.
+pre-trained model,fl,A pre-trained model is used to warm-start FL by evaluating its detection performance as the baseline.
+fl algorithms,realative false accept (fa),"To compare the performance of different FL algorithms, the relative false accept (FA) value of the resulting model is used as the metric."
+fa,fr,The relative FA and FR values are computed with respect to the baseline model.
+fa,fr,relationship between FA (False Alarm) and FR (False Rejection) in the context of performance evaluation
+global model,updated global model,relationship between the baseline global model and the updated global model in terms of performance comparison
+local models,pre-trained model,relationship between local models being initialized from a pre-trained model in the context of model performance
+heterogeneous data,sample size-based aggregation rule,relationship between having heterogeneous data and using a sample size-based aggregation rule in FedAvg-w and Ditto-w models
+ablation studies,client sampling setting,relationship between conducting ablation studies and considering the client sampling setting in the context of model performance evaluation
+ditto-e,perfedavg,relationship between DITTO-e and PerFedAvg personalized FL algorithms in terms of personalization performance comparison
+self-fl,fedavg-w,Self-FL outperforms FedAvg-w and DITTO-w across all device types
+self-fl,ditto-w,Self-FL outperforms FedAvg-w and DITTO-w across all device types
+self-fl,personalized fl,Self-FL connects personalized FL with hierarchical modeling
+self-fl,uncertainty-driven local training steps,Self-FL's key component is using uncertainty-driven local training steps and aggregation rules
+self-fl,global model aggregation,Self-FL addresses the challenge of balancing local model regularization and global model aggregation
+uncertainty quantification,personalization,Self-FL utilizes uncertainty quantification to drive personalization
+huili chen,"alexa ai, amazon","Huili Chen worked as a Applied Scientist Intern at Alexa AI, Amazon"

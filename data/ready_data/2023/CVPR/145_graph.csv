@@ -1,0 +1,216 @@
+node_1,node_2,edge
+deep convolutional neural networks (dnns),video resolution upscaling,DNNs are used for video resolution upscaling in the modern video delivery system.
+video resolution upscaling,server,The server encodes videos using a super-resolution model for better video quality and transmission efficiency.
+video resolution upscaling,chunks,Videos are divided into chunks and overfitted with a super-resolution model to achieve better quality and efficiency.
+chunks,storage,Increasing the number of chunks for overfitting quality leads to increased storage requirements.
+chunks,bandwidth resources,Increasing the number of chunks consumes more bandwidth resources for data transmission.
+chunks,model capacity,Decreasing the number of chunks through training optimization requires high model capacity.
+video resolution upscaling,method,A novel method is proposed for high-quality and efficient video resolution upscaling tasks.
+video resolution upscaling,spatial-temporal information,The method leverages spatial-temporal information to accurately divide video into chunks for efficient upscaling.
+method,chunks,The method accurately divides videos into chunks to keep the number of chunks and model size to a minimum.
+method,storage requirement,The method advances into a single overfitting model with a data-aware joint training technique to reduce storage requirement with minimal quality drop.
+models,mobile phone,The models are deployed on an off-the-shelf mobile phone for real-time video super-resolution.
+sr (super-resolution),deep learning,"Deep learning-based SR is the core enabler of many applications in image/video reparation, surveillance system enhancement, medical image processing, and high-quality video live streaming."
+traditional methods,deep learning-based methods,"Traditional methods use classic interpolation algorithms, while deep learning-based methods learn a mapping function from LR to HR using external data for better generalization ability."
+deep learning-based methods,new methods,The benefits of deep learning-based methods have driven interests in designing new methods to deliver high-quality video.
+sr model,resolution,The SR model is utilized to upscale the resolution of LR video.
+hr video,bandwidth consumption,Transmitting HR video directly consumes tremendous bandwidth between servers and clients.
+pretrained sr model,end users,A practical method is to deploy a pretrained SR model on the devices of the end users.
+sr model,limited data,The deployed SR model trained with limited data usually has limited generalization ability.
+overfitting property,dnn,New approaches exploit the overfitting property of DNN by training an SR model for each.
+dnn,sr model,DNN exploits overfitting property by training an SR model for each video chunk.
+sr model,video chunk,SR model is trained for each video chunk.
+video,sr models,Video is delivered alongside corresponding SR models to the clients.
+trade-off,model expressive power,Trade-off between model expressive power and storage efficiency improves quality of resolution upscaled videos.
+sr models,video segments,Increasing video segments improves overfitting quality.
+sr models,data volume,Increasing video segments increases data volume and system overhead.
+sr models,system overhead,Increasing video segments increases system overhead.
+training techniques,sr models,Training techniques are proposed to reduce the number of SR models.
+sr backbones,handcrafted modules,Overparameterized SR backbones and handcrafted modules are used to ensure model capacity for learning tasks.
+execution speed,resource-constraint,Resource-constraint degrades execution speed at the user-end.
+video resolution upscaling,spatial-temporal data overfitting (stdo),Novel approach STDO is introduced for high-quality and efficient video resolution upscaling.
+video,spatial-temporal information,Spatial-temporal information is used to accurately divide video into chunks.
+images,intra-image information density,Images may have different levels of intra-image information density.
+images,inter-image information density,Images may have different levels of inter-image information density.
+texture complexity,unbalanced information density,Unbalanced information density may occur within frames of the video.
+information density,frames of the video,"Information density within or between frames of the video is unbalanced, which should be properly managed for data overfitting."
+psnr values,different locations in a video frame,PSNR values at different locations in a video frame form certain patterns regarding the video content.
+frame of the video,patches,Each frame of the video is evenly divided into patches for processing.
+patches,chunks,All the patches are split into multiple chunks based on PSNR regarding all frames.
+video chunks,independent sr models,Independent SR models are used to overfit the video chunks before delivery to clients.
+spatial-temporal information,data overfitting,"Spatial-temporal information is used for data overfitting, reducing the number of chunks and overfitting models."
+similar data patches,smaller sr model,"Since each chunk has similar data patches, a smaller SR model can be used without handcrafted modules for overfitting, reducing the computation burden on devices."
+experimental results,method,Experimental results demonstrate that the method achieves real-time video resolution upscaling from 270p to 1080p on an off-the-shelf mobile phone with high PSNR.
+video chunks,independent sr models,"STDO encodes different video chunks with independent SR models, further improving the method through a Joint approach."
+joint training technique (jstdo),single sr model,"JSTDO results in one single SR model for all chunks, reducing the storage requirement."
+sr model,data-aware joint training technique,A data-aware joint training technique is designed to train a single SR model with more data from higher information density chunks and less data from their counterparts.
+model training,informative data,The discovery shows that more informative data contributes majorly to the model training.
+unbalanced information density,video frames,Unbalanced information density within video frames universally exists and constantly changes along the video timeline.
+unbalanced information density,spatial-temporal data overfitting method stdo,"Leveraging unbalanced information density in the video, a spatial-temporal data overfitting method STDO is proposed for video resolution upscaling, achieving outperforming video quality and real-time execution speed."
+data-aware joint training technique,different chunk information density,An advanced data-aware joint training technique considers different chunk information density and reduces the number of SR models to a single model with negligible quality degradation.
+models,off-the-shelf mobile phone,"The models are deployed on an off-the-shelf mobile phone, achieving real-time super-resolution performance."
+single image super resolution (sisr),srcnn,"For SISR tasks, SRCNN is the pioneer of applying DNN to image super resolution."
+srcnn,dnn,SRCNN is the pioneer of applying DNN to image super resolution.
+sisr tasks,fsr-cnn,FSR-CNN followed by ESPCN make progress in Single Image Super Resolution tasks.
+dnn,image super resolution,DNN is related to image super resolution as it is used for enhancing image resolution through deep neural networks.
+fsr-cnn,espcn,FSR-CNN and ESPCN are both methods that make progress in efficiency and performance in image super resolution tasks.
+vdsr,vgg,VDSR uses VGG network as the backbone to enhance image super resolution performance.
+srresnet,resnet,SRResNet proposes a super resolution network using ResNet as a backbone.
+edsr,batch norm,EDSR removes batch norm in residual blocks to improve image resolution by considering absolute pixel differences.
+wdsr,relu,WDSR finds that ReLU can impede information transfer and increases the width of the feature map to address this issue.
+senet,attention mechanisms,"SENet represents networks with channel attention mechanisms, which are applied in image super resolution tasks for better performance."
+transformer,computer vision,"Transformers have shown excellent performance in computer vision, leading to their application in various vision transformer models for image super resolution."
+vsr,sisr,VSR methods learn from SISR framework and some existing methods like EDSR and WDSR have shown results in VSR tasks.
+alignment,motions,Some VSR works perform alignment to estimate motions between images by computing optical flow through DNNs.
+rent vsr,motion estimation,rent VSR works perform alignment to estimate the motions between images by computing optical flow by DNNs
+motion estimation,optical flow computation,rent VSR works perform alignment to estimate the motions between images by computing optical flow by DNNs
+deformable convolution (dconv),geometric transformation,DConv was first used to deal with geometric transformation in vision tasks because the sampling operation of CNN is fixed
+tdan,feature alignment,"TDAN applies DConv to align the input frames at the feature level, which avoids the two-stage process used in previous optical flow based methods"
+edvr,alignment improvement,EDVR uses their proposed PCD alignment module and the TSA fusion module to further improve the robustness of alignment and take account of the visual informativeness of each frame
+dnln,alignment performance improvement,DNLN also apply Dconv in their model to achieve a better alignment performance
+d3dnet,alignment performance improvement,D3Dnet also apply Dconv in their model to achieve a better alignment performance
+content-aware dnn,video chunk overfitting,NAS was the first proposed video delivery framework to consider using DNN models to overfit each video chunk to guarantee reliability and performance
+nemo,super-resolution application,"NEMO selects key frames to apply super-resolution, greatly reducing the amount of computation"
+nemo,key frames,NEMO selects key frames to apply super-resolution
+nemo,computation,NEMO greatly reduces the amount of computation on the client sides
+cafm,long video,CaFM splits a long video into different chunks by time
+cafm,sr models,CaFM design a handcrafted layer along with a joint training technique to reduce the number of SR models and improve performance
+emt,meta-tuning,EMT proposes to leverage meta-tuning and challenge patches sampling technique
+emt,model size,EMT further reduces model size and computation cost
+srvc,video,SRVC encodes video into content and time-varying model streams
+srvc,model streams,SRVC encodes video into content and time-varying model streams
+proposed method,generalization ability,The proposed method aims to tackle the limited generalization ability
+proposed method,sr model,The proposed method aims to tackle the limited generalization ability caused by using only one general SR model
+proposed method,videos,The proposed method aims to tackle the limited generalization ability caused by using one general SR model to super-resolve various videos
+proposed method,video chunks,Previous works split the video by time and train separate SR models to overfit each of the video chunks
+patches,spatial location information,Patches have spatial location information which is fed into neural networks for training.
+patches,redundancy,Patches fed into the neural network indiscriminately may cause redundancy.
+psnr,patch locations,Values of PSNR at different patch locations form a clear boundary when using a general SR model.
+psnr,content of the current video frame,PSNR values at different patch locations are strongly related to the content of the current video frame.
+boundary patterns,frames,"Diverse boundary patterns can be seen in different frames, showcasing temporal information."
+spatial-temporal information,divide video into chunks,The observation of spatial-temporal information motivates the accurate division of a video into chunks.
+patches,texture complexity,Key insight is to cluster patches with similar texture complexity across all frames.
+sr model,video chunks,"One SR model is used to overfit each patch group, effectively reducing the number of video chunks and associated SR models."
+encoding efficiency,video duration,Reducing the number of video chunks and associated SR models improves encoding efficiency regardless of video duration.
+sr model,video content,"Each SR model only overfits specific video content with similar texture complexity, reducing quality degradation."
+spatial-temporal data,joint training manner,Proper scheduling of spatial-temporal data allows extension to a joint training manner.
+spatial-temporal data,method,"The spatial-temporal data is properly scheduled, our method can be extended to a joint training manner"
+method,sr model,our method can be extended to a joint training manner which generates a single SR model for the entire video
+video,time length,Suppose the video time length is T
+training set,video,then the training set for this specific video is D = {Pn}N where N = I × J × T
+pretrained sr model,lr patches,We use a pretrained SR model f0(·) to super-resolve all of the LR patches
+lr patches,psnrs,compute their PSNRs with the HR patches
+psnr,boundary,"we find that the distribution of the PSNR is usually not uniform, and shows a clear boundary regarding the content of the video"
+training set,chunks,We divide the training set D into multiple chunks by grouping
+video,content,"The content of the video is mentioned, indicating a relationship between the video and its content."
+training set,chunks,"The training set D is divided into multiple chunks, showing a relationship between the training set and chunks."
+d,patches,"The patches Pn in D are part of the training set D, indicating a relationship between D and patches."
+psnrs,chunks,"Chunks are grouped based on similar PSNRs, showing a relationship between PSNRs and chunks."
+video super-resolution,results,"Comparison of video super-resolution results is made, indicating a relationship between video super-resolution and results."
+sr model,video chunk,"An SR model fsrk is trained to overfit each video chunk ˆDk, showing a relationship between SR models and video chunks."
+information density,chunks,"Data is grouped based on information density into chunks, indicating a relationship between information density and chunks."
+sr model,data,"By accurately identifying and grouping data into chunks, each SR model becomes easier to 'memorize' similar data, showing a relationship between SR models and data."
+sr model,chunks,SR models are divided into chunks to make it easier to memorize similar data and demands smaller models that can be executed in real-time.
+sr model,spatial-temporal information,SR model utilizes spatial-temporal information of each patch in the video to reduce the number of video chunks and overfitting.
+chunks,sr models,"By using only one SR model, the set of chunks and all SR models demonstrate PSNR in Table 1 for super-resolving the entire video."
+patches,quality drop,"Patches with low PSNR usually contain rich features and contribute more to model learning, improving generalization ability to less informative data."
+model trained with ˆd0,quality drop,The model trained with the most informative chunk ˆD0 experiences a moderate quality drop compared to the model trained with all patches.
+model trained with ˆdk,quality degradation,"The model trained with ˆDk experiences severe quality degradation, suggesting that the patches in ˆDk are less informative for model learning."
+training technique,spatial-temporal data,The joint training technique carefully schedules spatial-temporal data to train a single SR model that overfits the entire video.
+temporal data,training,The temporal data participated in the training process to train the single SR model.
+training,single sr model,The training process was specifically for training a single SR model that overfits the entire video.
+patches,ˆd0,"All patches for ˆD0 were kept and used, while the entire ˆDk was removed."
+ˆdk,chunks,The entire ˆDk was removed for the rest of the chunks.
+random sampling,patches,A portion of the patches from each chunk was randomly sampled while gradually decreasing the sampling proportion.
+joint dataset,optimization problem,A single model was trained by solving the optimization problem using the joint dataset.
+stdo,different data overfitting methods,"STDO was compared with different data overfitting methods on different SR backbones, showing comparison results."
+stdo,jstdo,STDO and JSTDO were applied to videos with different scenes and time lengths to prove the advantages of the proposed methods.
+stdo,video super-resolution,STDO achieves outperforming video super-resolution quality
+stdo,computation budgets,STDO achieves using lowest computation budgets
+sr model,jstdo,our single SR model obtained by JSTDO
+jstdo,heterogeneous information density,JSTDO effectively exploits heterogeneous information density among different video chunks
+jstdo,training performance,JSTDO achieves better training performance
+model,off-the-shelf mobile phone,we deploy our model on an off-the-shelf mobile phone to show our model can achieve real-time video super-resolution
+ablation study,key parameters,we show our ablation study on key parameters used in STDO and JSTDO methods
+computation cost,backbones,Computation cost for different backbones with VSD4K video game-45s
+models,resolution upscaling factors,computation cost for the models with different resolution upscaling factors
+video datasets,super-resolution,most video datasets for super-resolution only provide several adjacent frames as a mini-video
+mini-video sets,network,Those mini-video sets are not suitable for a network to overfit
+vsd4k,video dataset,we adopt the VSD4K collected in [30] for our video super-resolution work
+hr video,1080p,HR videos are set to a resolution of 1080p
+lr video,bicubic interpolation,LR videos are generated using bicubic interpolation
+sr models,espcn,ESPCN is one of the SR models mentioned
+sr models,srcnn,SRCNN is one of the SR models mentioned
+sr models,vdsr,VDSR is one of the SR models mentioned
+sr models,edsr,EDSR is one of the SR models mentioned
+sr models,wdsr,WDSR is one of the SR models mentioned
+patch sizes,48×54,Patch sizes of 48×54 are used for scaling factor 2 and 4
+patch sizes,60×64,Patch sizes of 60×64 are used for scaling factor 3
+hyperparameter configuration,l1 loss,L1 loss function is used in hyperparameter configuration
+training epochs,different decay rates,Different training epochs have different decay rates
+sr models training,adam optimizer,Adam optimizer is used for training the SR models
+sr models training,l1 loss,L1 loss is used as the loss function in training the SR models
+sr models training,learning rate,Different learning rates are set for different SR models
+sr models training,decay at different training epochs,Decay is applied at different training epochs for the SR models
+edsr model,16 resblocks,EDSR model contains 16 resblocks
+wdsr model,16 resblocks,WDSR model contains 16 resblocks
+state-of-the-art methods comparison,general model overfitting,Our method is compared with state-of-the-art methods that use general model overfitting
+state-of-the-art methods comparison,time-divided model overfitting,Our method is compared with state-of-the-art methods that use time-divided model overfitting
+psnr heatmaps comparison,stdo and jstdo,STDO and JSTDO have similar values in the key content zone and outperform time-divided method
+video categories,vsd4k,Three video categories are sampled from VSD4K
+video time lengths,15s and 45s,"Videos are tested on two different video time lengths, 15s and 45s"
+comparison results,table 2,Our results are shown in Table 2
+vsd4k,15s,"VSD4K is tested on two different video time lengths, including 15s."
+vsd4k,45s,"VSD4K is tested on two different video time lengths, including 45s."
+vsd4k,stdo,VSD4K is used in the implementation of STDO to divide spatial-temporal data into chunks and achieve the best results.
+awdnn,nas,awDNN and NAS are state-of-the-art neural network-based SR video delivery methods that overfit videos by using different approaches.
+nas,cafm,NAS and CaFM are state-of-the-art neural network-based SR video delivery methods that handle videos through different techniques.
+stdo,psnr,STDO implementation compares the performance by computing the PSNR of each method and shows consistent improvements over previous works.
+stdo,sr model,"STDO overfits each SR model to one video chunk with similar information density, making it suitable for small and low capacity models."
+vdsr,edsr,"VDSR, EDSR, and WDSR are relatively new models mentioned in the context that affect quality degradation when computation drops below a certain level."
+espcn,srcnn,ESPCN and SRCNN are extremely small network models discussed in the context that show quality degradation when used with time-divided method.
+small networks,espcn,"ESPCN is mentioned as one of the small networks, showing a relation"
+small networks,srcnn,"SRCNN is mentioned as one of the small networks, showing a relation"
+psnr,stdo,"STDO is mentioned in relation to PSNR, indicating a metric for quality comparison"
+psnr,jstdo,"JSTDO is compared to PSNR, indicating another metric for quality comparison"
+sr models,data-aware joint training,The concept of data-aware joint training is linked with reducing the number of SR models
+stdo,jstdo,"STDO and JSTDO are compared regarding PSNR and model parameters, showing a performance relationship"
+wdsr,stdo,WDSR model is mentioned in relation to STDO for a comparison
+total number of parameters,stdo,"STDO is mentioned in relation to the total number of parameters, indicating a comparison metric"
+psnr,jstdo,PSNR of JSTDO has only negligible degradation compared with STDO.
+jstdo,stdo,JSTDO still outperforms baseline methods in both super-resolution quality and total parameter counts when compared with STDO.
+jstdo,stdo,"JSTDO heatmap has similar patterns with the one using STDO, further proving the joint training technique effectiveness."
+stdo,cafm,"Frame super-resolved from 270p to 1080p (×4) by CaFM, STDO, and JSTDO."
+stdo,jstdo,"JSTDO heatmap has similar patterns with the one using STDO, further proving the joint training technique effectiveness."
+stdo,jstdo,Smaller SR models can be used with STDO for data overfitting.
+stdo,jstdo,No handcrafted modules are needed for both STDO and JSTDO.
+cafm,stdo,"STDO and JSTDO methods mentioned, which suggests a relationship between CaFM and STDO"
+video chunks,overfitting models of stdo,"video chunks deployed alongside overfitting models of STDO, indicating a relationship between them"
+samsung galaxy s21,snapdragon 888,"Samsung Galaxy S21 with Snapdragon 888 used for testing execution performance, linking the two devices"
+patch,unique index,"Each patch will have a unique index to help assemble into frames, establishing a relationship between patch and unique index"
+criteria for real-time,latency less than 50 ms and fps greater than 20,"Criteria for real-time defined as latency less than 50 ms and FPS greater than 20, indicating a relationship between the two criteria"
+wdsr,edsr,"WDSR used for super-resolving videos from 270p to 1080p, contrasting with EDSR, showing a relationship between the two models"
+small scale sr models,execution speed,"Using small scale SR models ensures acceleration of execution speed, indicating a relationship between the two terms"
+spatial-temporal data overfitting method,high super-resolution quality,"High super-resolution quality ensured by spatial-temporal data overfitting method, linking the two concepts"
+number of chunks,stdo,"Varying the number of chunks in STDO for evaluation, indicating a relationship between the number of chunks and STDO"
+performance improvement,spatial-temporal information,"STDO brings performance improvement when accounting for spatial-temporal information, suggesting a relationship between the two concepts"
+ablation study,number of chunks,"In this context, the ablation study discusses varying the number of chunks for evaluating video super-resolution quality."
+number of chunks,video super-resolution quality,The quality of video super-resolution is being evaluated by varying the number of chunks in this study.
+number of chunks,"available models (espcn, wdsr)",The trends of PSNR based on the number of chunks are plotted for ESPCN and WDSR models.
+stdo,number of chunks,Claim is made that STDO uses fewer chunks compared to time-divided methods based on the evaluation results.
+data scheduling,joint training,The context talks about varying sampling proportion in joint training for super-resolution quality improvement.
+jstdo,sampling proportion,Sampling proportion is varied in JSTDO by increasing patches from one set and decreasing from another.
+informative data,training patches,The overall video super-resolution quality increases when more informative data is used in training.
+video,multiple scene conversions,Long video with multiple scene conversions is created by combining the mentioned shorter videos.
+game-45s video,vlog-45s video,The game-45s video and vlog-45s video are combined to create a longer video with multiple scene conversions.
+video,scene conversions,"Videos contain multiple scene conversions, which can be processed in the context of the data overfitting approach"
+long video,wdsr,Long video trained on WDSR achieved an STDO result of 39.92 dB with a scaling factor of 4
+long video,overfitting two videos,Long video result was close to the average value of overfitting two videos (43.99 dB and 37.76 dB)
+video,chunks,Videos are divided into chunks based on spatial-temporal information for data overfitting approach
+video,sr model,Each video chunk is overfitted with an independent SR model or a novel joint training technique to produce a single SR model for all video chunks
+number of chunks,sr models,The method successfully minimizes the number of chunks and corresponding SR models
+sr models,super-resolution quality,Low capacity SR models are able to achieve high super-resolution quality
+method,mobile devices,The method is deployed on mobile devices for real-time video super-resolution performance
+national science foundation,air force office of scientific research,The work is partly supported by the National Science Foundation and the Air Force Office of Scientific Research
+cns-2204445,air force office of scientific research fa9550-20-1-0090,Both CNS-2204445 and Air Force Office of Scientific Research FA9550-20-1-0090 are mentioned as sources of funding for the material
+authors,nsf and afosr,"The opinions, findings, and conclusions or recommendations expressed in this material are attributed to the authors and not necessarily reflect the views of NSF and AFOSR"

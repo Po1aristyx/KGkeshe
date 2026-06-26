@@ -1,0 +1,229 @@
+node_1,node_2,edge
+vector graphics,semantic segmentation,"Vector graphics are utilized for semantic segmentation of roughcast floorplans, which can be directly used for interior furnishing and room space modeling."
+semantic segmentation,roughcast floorplans,Semantic segmentation of roughcast floorplans is addressed in the paper to improve interior furnishing and room space modeling.
+roughcast floorplans,bare wall structures,Roughcast floorplans with bare wall structures are targeted for semantic segmentation in the paper.
+vector floorplans,line segments,"Regular elements in vector floorplans, such as line segments, are fully utilized for more integral segmentation."
+line segments,room boundaries,Line segments are classified as room boundaries in the segmentation pipeline.
+line segments,regions partitioned by line segments,"Line segments partition regions, which are classified as room segments in the segmentation pipeline."
+regions partitioned by line segments,room segments,Regions partitioned by line segments are considered as room segments in the segmentation pipeline.
+graph neural networks,line segments,Two-stream graph neural networks are used to process line segments effectively in the segmentation pipeline.
+graph neural networks,partitioned regions,Two-stream graph neural networks are used to process partitioned regions effectively in the segmentation pipeline.
+metric,room integrity,The new metric proposed captures room integrity
+metric,boundary regularity,The new metric proposed captures boundary regularity
+method,segmentations,The method produces regular segmentations
+source code,https://github.com/drziji/vecfloorseg,Source code is available at the given link
+floorplans,geometric primitives,2D floorplans consist of geometric primitives
+floorplans,data representation,"Floorplans are a data representation for interior designs, indoor construction, and property development"
+raster images,fixed resolutions,In contrast to raster images with fixed resolutions
+vector graphics,irregularly structured data,It is difficult to apply image-based backbone networks directly to vector graphics due to the irregularly structured data
+semantic segmentation,roughcast floorplans,Semantic segmentation of roughcast floorplans into rooms with labeled types is a fundamental task
+interior designers,roughcast floorplan,Interior designers usually first draw the roughcast floorplan
+interior designers,elements like wall blocks and pipe barrels,Interior designers draw roughcast floorplans including basic elements like wall blocks and pipe barrels for property development.
+interior designers,furniture layout and 3d room spaces,"After drawing, interior designers can construct and customize furniture layout and 3D room spaces."
+room spaces,semantic segmentation,Obtaining semantic segmentation of room spaces is important for catering to various needs.
+humans,automatic recognition,"While humans find room layout recognition straightforward, automatic recognition with accurate semantics and boundaries is challenging."
+recent works,image-based segmentation networks,Recent works use powerful image-based segmentation networks to predict room segmentation in a pixel-wise manner.
+methods,texts and furniture,"Methods rely on texts and furniture to determine semantic labels, which are sometimes not available in roughcast floorplans."
+prior works,vector graphics,Some prior works process vector graphics for recognition purposes.
+this work,semantic segmentation of roughcast floorplans,The current work makes the first attempt at semantic segmentation of roughcast floorplans.
+floorplans,semantic segmentation,Floorplans are the subject of semantic segmentation in this work.
+floorplans,2d roughcast floorplans,The work focuses on semantic segmentation of 2D roughcast floorplans.
+floorplans,vector graphics,The segmentation output is in the form of vector graphics when working with floorplans directly.
+vector roughcast floorplans,challenges,Vector roughcast floorplans pose challenges in terms of room segmentation.
+room spaces,polygonal regions,Room spaces can be subdivided into polygonal regions based on input lines.
+room spaces,semantic classification,Room types define room segmentation through semantic classification of polygonal regions.
+lines,boundaries,Lines (including extended lines) serve as potential boundaries of different rooms.
+lines,room segmentation,Classification of lines as boundaries or not assists in room segmentation.
+graph attention network (gat),two-stream,A two-stream graph attention network (GAT) is designed for the task of room segmentation.
+primal stream,primal graph,The primal stream takes as input the primal graph that encodes line endpoints as vertices and line segments as edges.
+primal stream,dual stream,"Furthermore, the two streams should enhance each other rather than being separated."
+primal stream,modulated gat layer,"To facilitate data exchange between two streams, we present a novel modulated GAT layer to fuse information from one stream into the graph network computation of the other stream."
+dual stream,dual graph,The dual stream takes as input the dual graph that encodes partitioned regions as vertices and their adjacency as edges.
+dual stream,modulated gat layer,"To facilitate data exchange between two streams, we present a novel modulated GAT layer to fuse information from one stream into the graph network computation of the other stream."
+classical metrics,new metric,both classical metrics and a new metric that we develop to focus on integral segmentation show that our results improve previous image-based results significantly.
+modulated gat layer,graph network computation,We present a novel modulated GAT layer to fuse information from one stream into the graph network computation of the other stream.
+datasets,raster image-based results,Datasets are compared to raster image-based results for compact boundaries and better integrity.
+floorplan,indoor applications,"Floorplan understanding is crucial for various indoor applications such as interior designs, room space modeling, and real estates."
+traditional methods,floorplan,"Traditional methods treat a floorplan as an image and rely on low-level image processing and predefined rules to detect walls, doors, and windows."
+deep learning-based floorplan segmentation,field,Deep learning-based floorplan segmentation dominates the field and achieves superior performance.
+previous works,fully convolutional network (fcn),"Previous works employ a fully convolutional network (FCN) to recognize room types, boundaries, and indoor furniture."
+zeng et al.,deep multi-task network,"Zeng et al. design a deep multi-task network to learn room types and boundaries, respectively, and model their spatial interactions by boundary-guided attentions."
+latest works,semantic segmentation networks,"Latest works employ more powerful semantic segmentation networks and utilize object detection to detect furniture and texts, enhancing segmentation performance."
+pixel noises,drawing styles,Pixel noises and drawing styles are related concepts in the context of generating aliased predictions near room boundaries and outlier fragments in segmented rooms.
+drawing styles,aliased predictions,Drawing styles lead to aliased predictions near room boundaries and outlier fragments in segmented rooms.
+room boundaries,outlier fragments,Room boundaries are related to outlier fragments in the context of generating segmented rooms.
+floorplan,vectorized floorplans,This work explores direct segmentation with vectorized floorplans instead of traditional floorplans.
+lines,regions,Lines in a floorplan are extended to partition space into regions for vector floorplan segmentation.
+line classification,room boundaries,Line classification is related to identifying room boundaries in the vector floorplan segmentation task.
+region classification,room types,Region classification determines different room types in the vector floorplan segmentation task.
+vector graphics recognition,2d cad designs,Vector graphics are widely used in 2D CAD designs.
+vector graphics recognition,urban designs,Vector graphics are widely used in urban designs.
+vector graphics recognition,graphic designs,Vector graphics are widely used in graphic designs.
+vector graphics recognition,circuit designs,Vector graphics are widely used in circuit designs.
+2d cad designs,resolution-free high precision geometric modeling,2D CAD designs facilitate resolution-free high precision geometric modeling.
+floorplan,vector floorplan input,The proposed method provides an overall pipeline for vector floorplan segmentation from the input stage to the output stage.
+primal and dual graphs,cnn image features,Primal and dual graphs are associated with CNN image features to compute the vertex/edge embeddings.
+gnn with modulated gat layers,two tasks: primal edge classification and dual region classification,GNN with modulated GAT layers is used in two parallel streams to learn primal edge classification and dual region classification tasks.
+two gnn streams,identical,The two GNN streams have identical functions in learning primal edge classification and dual region classification tasks.
+primal edge classification,dual region classification,Both primal edge classification and dual region classification are tasks related to classification in the context of the ontology extraction. They are distinct tasks but are mentioned in a similar context.
+gnn streams,architecture,The GNN streams and architecture are related as the GNN streams have identical architecture as mentioned in the context.
+cad floorplans,symbol spotting,"CAD floorplans are used for panoptic symbol spotting as mentioned in the context, indicating a relationship between the two terms."
+vectorized object detection,detection methods,"Vectorized object detection is explored by Jiang et al., achieving superior accuracy compared to detection methods working on raster graphics. This comparison indicates a relationship between the two terms."
+graph neural networks (gnn),traditional neural networks,"GNNs extend traditional neural networks to graph structured data, such as social networks and recommendation systems, as mentioned in the context, indicating a relationship between the two terms."
+graph convolutional network,graph attention network,GCN and GAT are types of graph learning models that have shown ground-breaking performances for different graph tasks.
+graph attention network,adaptive attention weights,GAT is known for learning adaptive attention weights for neighbors based on their similarity and relevance to the center node.
+novel graph attention module,heterogeneous information from two different streams,"The novel graph attention module is designed to modulate the attention operations using information from two different streams, enhancing the tasks of floorplan segmentation."
+2d vector roughcast floorplans,semantic segmentation,"The goal is to perform semantic segmentation on 2D vector roughcast floorplans, dividing them into different room regions."
+geometric line segments,polygonal regions,"The input consists of geometric line segments representing wall structures, which are extended and divided into polygonal regions for further processing."
+polygonal regions,feature embeddings,"Polygonal regions are calculated with their feature embeddings, as described in Sec. 3.1 and Sec. 3.2."
+polygonal regions,segmentation,"Two-stream GNN is used for segmentation, where polygonal regions are classified into different room types."
+line segment,room regions,Primal stream of GNN predicts whether a line segment separates different room regions.
+room regions,room types,Dual stream of GNN classifies partitioned polygon regions into different room types.
+room layouts,private areas,Aesthetically pleasing room layouts contain rooms separated into private areas like bedrooms.
+room layouts,connected rooms,"Rational room layouts contain rooms connected without wall separation, like living rooms, corridors, dining rooms, etc."
+room space,regular and rectangular room regions,Interior designers partition room space with extended wall structures to create regular and rectangular room regions.
+line segments,polygonal regions,Line segments are extended to divide the design space into a set of polygonal regions.
+partitioned regions,room type classification,Semantic segmentation is achieved by classifying the room type of each partitioned region.
+rasterization,semantic segmentation,rasterization and semantic segmentation are both techniques used in computer graphics to process and analyze images.
+semantic segmentation,room type,semantic segmentation can be used to classify different room types based on the spatial relation between wall structures and region layouts.
+room type,partitioned region,the room type classification is applied to each partitioned region for semantic segmentation.
+graphs,spatial relation,graphs are constructed to encode the spatial relation between wall structures and region layouts.
+input capturing line structures,primal graph,the input capturing line structures are represented as vertices and edges in the primal graph.
+primal graph,g*,the primal graph G is used to define the dual graph G* for capturing partitioned room regions.
+vertices,line segments,vertices in the primal graph represent end points of line segments.
+edge segments,wall structures,edge segments in the primal graph encode the spatial relation with wall structures.
+extended line segment,room boundary,an extended line segment may only represent a possible room boundary in the vector floorplan.
+polygonal room regions,dual graph,the partitioned polygonal room regions are represented as nodes and edges in the dual graph.
+primal graph,region,The primal graph bounds the region.
+primal graph,mean value,The mean value of primal vertex attributes is taken as the attribute of the dual vertex.
+primal graph,dual vertex,Primal graph attributes are related to the dual vertex.
+dual graph,adjacency of two polygonal regions,ij ∈ E∗ in the dual graph indicates the adjacency of two polygonal regions.
+dual graph,correspondence between primal and dual edges,There is a correspondence between primal and dual edges.
+dual graph,dualization operation,The dualization operation is defined on edges in the dual graph.
+primal edge,dual edge,A primal edge has a corresponding dual edge.
+input embedding,two graphs,"After constructing two graphs, we embed vertex and edge attributes as input features."
+raster image,vector floorplans,"Despite the equivalence of raster images and vector floorplans, features from raster images help improve spatial receptive field."
+raster image,vertex embedding,The features obtained from the raster image are used along with geometric features for vertex embedding.
+primal graph vertices,feature vector,"The embedding for primal graph vertices V is given by v ∈ Vfv = xv + pev, where xv ∈ RC denotes the feature vector indexed by the coordinates of v from the rasterized floorplan image feature."
+primal graph vertices,sinusoidal positional encoding,The embedding for primal graph vertices V includes the sinusoidal positional encoding of vertex positions.
+dual vertex,polygonal region,"The embedding of a dual vertex v∗ captures the features of a polygonal region by computing it as the average feature of points sampled from the polygonal region enclosed by Gv∗ = {Vv∗ ,Ev∗}."
+dual vertex,delaunay triangles,Interior points Iv∗ are sampled by using the centers of Delaunay triangles within the polygonal region enclosed by Gv∗.
+primal edge,input features,"The primal edges are embedded by mapping their attributes to input features, as primal edges contain attributes other than endpoint positions."
+features,input,features are mapped to input in the context of the graph neural network
+edge,e,an edge in the graph contains attributes mentioned in Sec. 3.1
+coordinates,additional attributes,coordinates and additional attributes are mapped to features using learnable projection matrices
+coordinates,vertex,coordinates are used to compute feature embeddings for vertices in the context of dual edges
+vertex,embeddings,vertices are embedded into feature embeddings
+stream,graph neural network,input features of two graphs are fed into a two-stream graph neural network to learn high-level semantic features
+two streams,boundary line classification,"two streams address complementary tasks, including boundary line classification"
+two streams,polygonal region classification,"two streams address complementary tasks, including polygonal region classification"
+regions,edges,edge-based modulation is used to learn vertex features in one stream by considering regions separated by edges
+gat layer,modulated gat layer,The modulated GAT layer is a novel layer that learns vertex features in one stream by incorporating edge features from the other stream.
+stream,vertex feature,The stream accumulates features from its neighboring vertices to update the vertex feature.
+vertex feature,neighboring vertices,The vertex feature is updated by accumulating features from its neighboring vertices.
+adaptive weight,neighborhood features,The adaptive weight αij is computed to balance neighborhood features in the modulated GAT layer.
+dual edge feature,weight matrix,The dual edge feature from the other stream is mapped to a weight matrix to modulate the similarity between two vertices.
+primal edge,dual edge,The dual edge ∗e ∈ E∗ is unique and its feature is directly obtained from the dual stream GNN.
+dual edge,primal edges,"For a dual edge e∗, its corresponding primal edges are represented by a set ∗(e∗) and we obtain the feature as the average of all primal edges in this set."
+vertices,edge features,"After the feature aggregation on vertices, we update the edge features of two streams in the lth-level modulated GATf l+1 eij+ Θe(f l vi"
+output features,prediction tasks,The output features of the two-stream GNN are used for prediction tasks.
+edge features in g,binary classification head,The edge features in G produced by the primal stream are fed into a binary classification head to predict whether or not an edge in G separates different room regions.
+vertex features,room types,The vertex features in G∗ from the dual stream are projected into the probabilities of the vertices belonging to different room types.
+boundary classification loss,room type classification loss,We optimize the two-stream network by minimizing the boundary classification loss for lines Lp and room type classification loss for regions Lr.
+binary cross entropy,cross entropy,Lp classifies primal line segments as lying on the boundaries of rooms by the binary cross entropy. Lr classifies dual polygonal regions into corresponding room types by the cross entropy.
+overall loss,hyper-parameter,"The overall loss L is defined as L = λp · Lp + Lr, where the hyper-parameter λp is set to 0.5 empirically."
+overall loss l,λp,"The overall loss L is defined using the hyper-parameter λp as L = λp · Lp + Lr, where λp is set to 0.5 empirically."
+datasets,experiments,Datasets are used in experiments to evaluate the performance.
+r2v,cubicasa-5k,Experiments are conducted on two datasets including R2V and CubiCasa-5k.
+r2v,floorplan segmentation dataset,R2V is a floorplan segmentation dataset used in experiments.
+cubicasa-5k,large-scale floorplan dataset,CubiCasa-5k is a large-scale floorplan dataset used in experiments.
+r2v,10 semantic categories,R2V dataset covers 10 semantic categories.
+cubicasa-5k,12 room types,CubiCasa-5k dataset includes annotations of 12 room types.
+cubicasa-5k,11 furniture types,CubiCasa-5k dataset includes annotations of 11 furniture types.
+input,raster floorplan,The longer side of a raster floorplan is rescaled for feature extraction.
+input,256,The longer side of a raster floorplan is rescaled to 256 for feature extraction.
+white color,input image,The white color is used to form an input image with a size of 256x256 for feature extraction.
+2d coordinates,graph vertices,"The 2D coordinates of graph vertices are uniformly scaled to the range [0, 255]."
+ri metric,room prediction integrity,Illustration of the proposed RI metric for room prediction integrity is shown in Figure 3.
+network,gnn,The implementation is based on the prevalent GNN code base PyG for training the network.
+sgd optimizer,momentum,The SGD optimizer is used with momentum µ=0.9 for training the network.
+pre-trained weights,fine-tuning,The CNN image feature backbone is loaded with pre-trained weights provided by mmsegmentation and fine-tuned during training.
+data augmentation,randomly flipped,Training data is randomly flipped with a probability of 0.5 as data augmentation.
+learning rate,cosine annealing strategy,The network is trained for 200 epochs with a learning rate initialized as 0.01 and scheduled with the cosine annealing strategy.
+mean intersection over union (miou),class-wise mean accuracy (macc),Evaluation metrics include mean Intersection over Union (mIoU) and class-wise mean Accuracy (mAcc).
+ri metric,fragmented segments,The proposed RI metric penalizes fragmented segments to maintain room integrity.
+regions,rooms,"Regions with consistent labels are treated as rooms, as shown in Fig. 3."
+predicted rooms,ground truth rooms,A match is built between predicted rooms and ground truth rooms using optimal bipartite matching.
+predicted rooms,ground truth rooms,"The cost metric C(p, g) = 1 − IoU(p, g) is used for each pair of prediction p ∈ P and ground truth g ∈ G."
+product,average iou of matched rooms,RI is defined as the product of the average IoU of matched rooms and F1-score.
+precision,recall,RI calculation involves precision and recall calculations.
+t p,matched prediction and ground truth pairs,T P represents the matched prediction and ground truth pairs.
+f p,predicted rooms without matched ground truth,F P represents predicted rooms without a matched ground truth.
+methods,backbone,"Different methods are compared based on the backbone used, such as VGG-16, ResNet-50, ResNet-101, etc."
+val-set,test-set,Results of different methods are compared based on validation set and test set performances.
+ocrnet,ourresnet-101,OurResNet-101 is compared with OCRNet in terms of performance in floorplan segmentation.
+ocrnet,deeplabv3+,OCRNet is compared with DeepLabV3+ in image-based semantic segmentation.
+ocrnet,dfpr,OCRNet is compared with DFPR in floorplan segmentation.
+dfpr,deeplabv3+,DFPR is compared with DeepLabV3+ in image-based semantic segmentation.
+dfpr,our proposed method based on vector floorplans,DFPR is compared with the proposed method based on vector floorplans in terms of performance.
+false negatives,ri,increase false negatives contributes to lower RI.
+qualitative comparison,fig. 4,The qualitative comparison is provided in Fig. 4.
+categories,room,color bar of room categories is displayed.
+deeplabv3+,ocrnet,DeepLabV3+ and OCRNet expand receptive fields and integrate contextual features to improve the performance.
+outputs,aliasing boundaries,outputs suffer from aliasing boundaries and inconsistent segmentation.
+dfpr,room segmentation,DFPR integrates boundary information to assist room segmentation.
+performance,roughcast floorplans,performance on roughcast floorplans is addressed.
+image-based floorplan segmentation methods,datasets,qualitative comparison with image-based floorplan segmentation methods on two datasets.
+r2v,cubicasa,examples from R2V are compared with the last row from Cubicasa.
+vertex embedding,vertex samp.,Vertex Embedding is related to vertex sampling.
+backbonearchitecture,p-stream gat ours,backboneArchitecture is part of the p-stream GAT Ours.
+weight matrix,identity matrix,The learnt weight matrix g(f l∗eij) is mentioned in relation to an identity matrix in Eq. 7.
+vertex category,learnable embedding,"xv is a learnable embedding indexed by vertex category, as mentioned in the context."
+document,edge features,Ablation studies on edge features are mentioned in Table 4.
+dual map,dual edge features,The concept of using dual map is related to using dual edge features from the other stream.
+edge ini.,edge embeddings,The relationship is about using edge embeddings of Eq. 4 and 5 in the concept of edge initialization.
+interior textures,shortcut semantic inference,"The absence of interior textures or text symbols affects shortcut semantic inference, leading to degraded performance."
+predicted boundaries,sawteeth patterns,"When zoomed in, the predicted boundaries exhibit sawteeth patterns, impacting post-processing and down-stream applications."
+line segments,smooth boundaries,"The method takes advantage of regular line segments to generate smooth boundaries, as opposed to the sawteeth patterns mentioned."
+regions,room segmentation,"The method utilizes regions to ensure consistent room segmentation, as discussed in the context."
+vertex embedding,positional encodings,Vertex Embedding for primal and dual graphs include positional encodings (Sec. 3.2).
+image features,good performance,"Results show the significance of image features for good performance, as indicated in Tab. 3 upper part."
+backbone,resnet-50,ResNet-50 is mentioned as the backbone in all ablation studies.
+tab. 3 upper part,significance,Tab. 3 upper part reveals the significance for good performance.
+tab. 3 upper part,performance,Tab. 3 upper part reveals the significance for good performance.
+embeddings,dual vertices,An alternative to the embeddings of dual vertices in Eq. 3 is to consider the region centroid only.
+region centroid,interior sampling,An alternative to the embeddings of dual vertices in Eq. 3 is to consider the region centroid only instead of interior sampling.
+sampling strategy,works better,Results show the sampling strategy works better.
+two-stream gnn,dual stream,The Two-Stream GNN consists of a necessary dual stream for segmentation prediction.
+segmentation prediction,primal stream,"The Two-Stream GNN consists of a necessary dual stream for segmentation prediction, and a primal stream for boundary line classification."
+interaction,modulated gat layer,Interactions between necessary dual stream for segmentation prediction and primal stream for boundary line classification are implemented by our proposed modulated GAT layer.
+attention weights,clear region and boundary patterns,The attention weights can capture clear region and boundary patterns under dual edge feature modulation.
+connected vertices,different rooms,The attention weights are small if two connected vertices lie in different rooms.
+connected vertices,same room,The attention weights become greater when two connected vertices are in the same room.
+gat layers,vanilla attention,GAT layers with vanilla attention do not show such obvious adaptiveness.
+adaptiveness,performance difference,The lack of obvious adaptiveness in GAT layers with vanilla attention explains the performance difference.
+limitations,superior results,"Despite producing superior results compared with image-based floorplan segmentation methods, our method cannot give accurate predictions in several scenarios."
+limitations,predictions,Our method cannot give accurate predictions in several scenarios.
+small regions,wrong labels,"For extremely small regions within a floorplan, our method tends to assign wrong labels."
+small regions,interior samples,"For extremely small regions within a floorplan, our method tends to assign wrong labels, partly because these regions have few meaningful interior samples."
+method,labels,The method tends to assign wrong labels due to regions with few meaningful interior samples.
+regions,interior samples,Regions with few interior samples can produce incorrect vertex embedding features.
+categories,wall blocks and railings,Similar categories like wall blocks and railings are being misclassified.
+shape priors,door and window features,Detailed shape priors like door and window features can help tackle misclassification of similar categories.
+method,line primitives,The method can only handle line primitives and use polylines as a substitution for curves currently.
+curves,b-spline and bezier curves,The method finds it difficult to process complex curves like B-Spline and Bezier curves.
+segmentation,vector roughcast floorplans,Semantic segmentation is performed on vector roughcast floorplans to produce compact and regular segmentation.
+segmentation methods,image-based segmentation methods,Existing image-based segmentation methods are not directly applicable to the vector graphics segmentation problem.
+graph attention network,vector graphics,A two-stream graph attention network is proposed to directly work on vector graphics for segmentation.
+vector graphics,industrial design,Vector graphics are important for industrial design
+industrial design,future research,This work hopes to inspire future research on vector graphics based deep learning for intelligent industrial design and analysis.
+research,vector graphics,Future research is inspired by the importance of vector graphics in industrial design.
+research,deep learning,Future research may focus on deep learning for intelligent industrial design and analysis.
+national natural science foundation of china,research support,This work is supported by the National Natural Science Foundation of China.
+china postdoctoral science foundation,research support,This work is supported by the China Postdoctoral Science Foundation.
+boundary classification task,segmentation,The boundary classification task enhances segmentation through their shared embedding layers.
+modulated gat layer,mutual enhancement,The modulated GAT layer facilitates mutual enhancement further.
+edge embedding,boundary prediction,Edge embedding contributes to the boundary prediction in the primal stream.
+edge embedding,room segmentation,Edge embedding contributes to the room segmentation in the dual stream.
+modulation by dual edges,gat layers,Modulation by dual edges in GAT layers is important for the results.
+feature interaction,two-stream gnn,Visual analysis demonstrates how feature interaction between two-stream GNN works.

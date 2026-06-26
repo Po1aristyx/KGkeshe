@@ -1,0 +1,251 @@
+node_1,node_2,edge
+reinforcement learning,latent dynamics,"Reinforcement learning often involves environments with complex observations and simple underlying dynamics, which are referred to as latent dynamics. Understanding how reinforcement learning operates under these latent dynamics is a key aspect of this context."
+latent dynamics,statistical requirements,"The paper discusses the statistical requirements for reinforcement learning under latent dynamics, highlighting the fact that these requirements are poorly understood in many cases."
+latent dynamics,algorithmic principles,"The paper also explores the algorithmic principles for reinforcement learning under latent dynamics, emphasizing the need to develop efficient observable-to-latent reductions."
+observable-to-latent reductions,algorithm,The paper presents provably efficient observable-to-latent reductions as algorithmic solutions for transforming algorithms for latent MDPs into ones that can handle rich observations.
+latent dynamics,rich observations,The discussion includes how rich observations can make well-studied settings for reinforcement learning with function approximation intractable when combined with latent dynamics.
+observable-to-latent reductions,agent,The reductions discussed in the paper are designed to enable an agent to operate on rich observations by transforming algorithms for latent MDPs.
+reinforcement learning,latent dynamics,"The decoupling of latent dynamics from the complex observation process naturally suggests a modular framework for algorithm design: first learn a representation that decodes the latent state from observations, then apply a reinforcement learning algorithm for the latent dynamics on top of the learned representation."
+representation learning,reinforcement learning,There is a growing body of theoretical and empirical work developing algorithms that combine representation learning and reinforcement learning to develop scalable algorithms.
+representation learning,scalable algorithms,There is a growing body of theoretical and empirical work developing algorithms that combine representation learning and reinforcement learning to develop scalable algorithms.
+representation learning objectives,existing approaches,"The representation learning objectives have been compared to existing approaches in terms of their drawbacks which include tailored classes of latent dynamics models, unwieldy analysis, and lack of modularity."
+existing approaches,limitations,"The existing approaches suffer from three primary drawbacks outlined as limitations: tailored classes of latent dynamics models, unwieldy analysis, and lack of modularity."
+framework,reinforcement learning under general latent dynamics,"A new framework is introduced, called reinforcement learning under general latent dynamics, to address the limitations mentioned. The framework allows the agent to perform control based on high-dimensional observations with dynamics of the environment."
+agent,control,The agent performs control based on high-dimensional observations.
+agent,latent state space,The dynamics of the environment are governed by an unobserved latent state space.
+latent state space,observations,The latent states can be uniquely decoded from observations.
+latent state space,realizable representations,We supply the learner with a class of representations that is realizable in the sense that it is powerful enough to represent the true decoder.
+markov decision process (mdp),latent dynamics,We do not assume specific structure on the MDP that governs the latent dynamics.
+markov decision process (mdp),base mdp class,We make the minimal assumption that the latent dynamics belong to a base MDP class which is statistically tractable.
+latent states,reinforcement learning algorithm,There exists some reinforcement learning algorithm with low sample complexity that is capable of learning a near-optimal policy for every MDP in the class.
+representation learning,exploration,Representation learning and exploration must be intertwined for reinforcement learning under latent dynamics.
+learning,latent dynamics,"The context revolves around learning under latent dynamics, where representation learning and exploration are intertwined."
+learning,exploration,"An accurate decoder is required to explore the latent state space, but exploration is required to learn an accurate decoder."
+exploration,decoder,An accurate decoder is required to explore the latent state space.
+exploration,errors,Exploration is required to prevent errors from compounding during the interleaving process.
+errors,compounding,One must prevent errors from compounding during the interleaving process.
+errors,interleaving process,Errors need to be prevented from compounding during the interleaving process to develop provable sample complexity guarantees.
+setting,latent-dynamics,"For the general latent-dynamics setting considered, it is unclear whether techniques from prior works can be applied or if the setting is statistically tractable."
+statistical problem,strong structural assumptions,Challenging statistical problems in the base MDP are addressed through strong structural assumptions by prior works.
+setting,computational considerations,The setting's statistical tractability is analyzed while ignoring computational considerations.
+question,statistical modularity,The first contribution considers the question of statistical modularity in the context of the base MDP class and the corresponding latent-dynamics problem.
+class,sample complexity,Statistical modularity demands that the sample complexity of the latent-dynamics setting should be controlled by a bound on the sample complexity of the base MDP class.
+statistical modularity,latent-dynamics setting,Statistical modularity does not extend to the latent-dynamics setting.
+pushforward coverability,latent dynamics,Pushforward coverability is a general structural condition on the latent dynamics that enables sample efficiency.
+algorithmic modularity,statistical landscape,Algorithmic modularity leads to a modular understanding of the statistical landscape.
+observable-to-latent reductions,rl under latent dynamics,Observable-to-latent reductions help in reducing RL under latent dynamics to the simpler problem of RL with latent states directly.
+algorithmic modularity,base mdp class,Algorithmic modularity enables the use of an arbitrary base algorithm for the base MDP class to solve the corresponding latent-dynamics problem.
+statistical modularity,algorithmic modularity,Algorithmic modularity is a stronger property than mere statistical modularity.
+additional feedback,modeling assumptions,both terms are mentioned in the context as part of settings that sidestep the lower bound through additional feedback and modeling assumptions.
+latent states,training,latent states are revealed during training as mentioned in the context.
+latent states,deployment,latent states are not revealed at deployment as mentioned in the context.
+function approximation conditions,estimation,stronger function approximation conditions enable the estimation of self-predictive latent models through representation learning as discussed in the context.
+algorithm,rl,the results of the algorithm are discussed in the context for RL under latent dynamics.
+algorithm,mdp,the algorithm proposed in the context transforms any sample-efficient algorithm for the base MDP class into a sample-efficient algorithm for the latent-dynamics setting.
+framework,mdp,the context introduces a framework for reinforcement learning under general latent dynamics which involves a Markov decision process (MDP).
+markov decision process,state space,The Markov decision process (MDP) consists of a state space X
+markov decision process,action space,The Markov decision process (MDP) consists of an action space A
+markov decision process,reward distribution,The Markov decision process (MDP) consists of a reward distribution
+markov decision process,initial state distribution,The Markov decision process (MDP) consists of an initial state distribution
+markov decision process,transition kernel,The Markov decision process (MDP) consists of a transition kernel
+markov decision process,policy,The Markov decision process (MDP) involves the selection of a policy
+state space,action space,The state space X and action space A are components of a Markov decision process
+state space,reward distribution,The state space X is related to the reward distribution of a Markov decision process
+state space,transition kernel,The state space X is related to the transition kernel of a Markov decision process
+action space,reward distribution,The action space A is related to the reward distribution of a Markov decision process
+action space,transition kernel,The action space A is related to the transition kernel of a Markov decision process
+reward distribution,transition kernel,The reward distribution is used in generating the transition kernel of a Markov decision process
+policy,randomized,"The policy involves the selection of a randomized, non-stationary policy"
+policy,evolution,The policy leads to the evolution of an episode
+πm,πrns,πM is the policy that maximizes the objective function J M (π) within the set of policies Πrns.
+"qm,⋆","qm,πm","QM,⋆ is defined as QM,πM, where QM,πM represents a specific type of Q function."
+f,x,f is a function mapping from the Cartesian product of X and A to the real numbers.
+h,[h],h is the horizon variable within the range of values denoted by [H].
+g,x,g is a function that maps from the state space X to the real numbers.
+t mh,bellman operator,"T Mh is the Bellman operator defined for MDP M and horizon h, which computes the value function based on the rewards and next state values."
+f,t mh,T Mh can be computed using the Bellman evaluation operator defined by f.
+"dm,π",occupancy measures,"dM,π represents the occupancy measures for a specific layer h in the MDP."
+online reinforcement learning,learning algorithm alg,"In online reinforcement learning, the algorithm ALG interacts with an unknown MDP M ⋆ to learn a policy."
+policy,value function vf,The goal of the learning algorithm is to output a final policy that maximizes the value function Vf.
+t rounds,final policy π,"After T rounds of interaction, the algorithm outputs a final policy π that aims to maximize the value function."
+risk,objective function j m ⋆,Risk is defined as the difference between the objective function J M ⋆ for the optimal policy and the objective function for the algorithm's final policy.
+x,a,X and A are countable variables assumed in the presentation.
+latent dynamics,mdps,Latent dynamics are considered under general latent dynamics where MDPs M⋆ are governed by the evolution of an unobserved latent state sh.
+mdps,latent state,MDPs are defined over a latent state space S.
+mdps,decodable emission process,MDPs consist of a base MDP defined over a latent state space and a decodable emission process.
+decodable emission process,emission process,"An emission process is said to be decodable if for any two different latent states s and s', the distribution over observations of the two states does not intersect."
+decodable emission process,latent state,An emission process maps each latent state to a distribution over observations.
+mdps,action,MDPs evolve based on the agent's action ah via a process.
+latent state,agent,The latent state evolves based on the agent's action.
+latent state,observations,The agent observes xh generated by the emission process xh.
+x,emission process,X is generated by the emission process as xh ∼ ψh+1(sh)
+decoder,latent states,The decoder ensures that the latent states can be uniquely decoded from the observations
+decoder,latent mdp,The decoder ensures that the latent MDP is correctly associated with observations
+base mdp,latent mdp,"The base MDP is referred to as a base MDP, differentiating it from a latent MDP"
+latent objects,latent mdp,"A convention is applied to latent objects, such as a latent MDP, when possible"
+base mdp,latent space,"The latent space of the base MDP is not assumed to be small, aiming to understand structural assumptions required for learnability under latent dynamics"
+base mdp,structural assumptions,Structural assumptions on the base MDP are explored to enable learnability under latent dynamics
+base mdp,mlat,No inherent restrictions are placed on the base MDP Mlat
+class of base mdps,induced latent-dynamics mdps,Classes of base MDPs induce classes of latent-dynamics MDPs
+set of base mdps,set of decoders,"Given a set of base MDPs and a set of decoders, a class of induced latent-dynamics MDPs is defined"
+decoder,φ,"The class Mlat represents our prior knowledge about the underlying MDP Mlat; concrete classes considered in prior work include tabular MDPs [KAL16; DKJADL19; MHKL20; ZSUWAS22; MFR23], linear dynamical systems [DMRY20; DR21; Mha+20], and in particular, the class Mlat may itself warrant using function factored MDPs [MLJL21]. At the same time, the class Φ represents our prior knowledge or inductive bias about the emission process, enabling representation learning."
+decoder,mlat,"The class Mlat represents our prior knowledge about the underlying MDP Mlat; concrete classes considered in prior work include tabular MDPs [KAL16; DKJADL19; MHKL20; ZSUWAS22; MFR23], linear dynamical systems [DMRY20; DR21; Mha+20], and in particular, the class Mlat may itself warrant using function factored MDPs [MLJL21]."
+mlat,φ,"At the same time, the class Φ represents our prior knowledge or inductive bias about the emission process, enabling representation learning."
+mlat,φ,"In what follows, we investigate what conditions on Mlat make the induced class ⟨Mlat, Φ⟩ tractable, both statistically (statistical modularity; Section 3) and via reduction (algorithmic modularity; Section 4)."
+φ,mlat,"At the same time, the class Φ represents our prior knowledge or inductive bias about the emission process, enabling representation learning."
+φ,mlat,"In what follows, we investigate what conditions on Mlat make the induced class ⟨Mlat, Φ⟩ tractable, both statistically (statistical modularity; Section 3) and via reduction (algorithmic modularity; Section 4)."
+statistical modularity,section 1,"This section presents our main statistical results. We begin by formally defining the notion of statistical modularity introduced in Section 1, present our main impossibility result (lower bound) and its implications (Section 3.2), then give positive results for the general class of pushforward-coverable MDPs (Section 3.3)."
+section 4,reductions,"For example, in Section 4 we will be concerned with reductions from observation-space algorithms to “base algorithms” that operate on the latent state space."
+observation-space algorithms,latent state space,"For example, in Section 4 we will be concerned with reductions from observation-space algorithms to “base algorithms” that operate on the latent state space."
+mdp class,statistical complexity,"MDP class can be learned up to ε-optimality using comp(M, ε, δ) samples"
+mdp class,algorithm,"An algorithm exists which attains Risk(T, ALG, M) ≤ ε with probability at least 1 − δ, after T = comp(M, ε, δ) rounds of online interaction in M"
+base mdp class,statistical modularity,"For any decoder class Φ, the induced latent-dynamics MDP class can be learned with statistical complexity that is polynomial in: (i) the statistical complexity for the base class, and (ii) the capacity of the decoder class"
+mdp class,statistical modularity,"MDP class is statistically modular under complexity comp(Mlat, ε, δ) if comp(⟪Mlat, Φ⟫, ε, δ) = poly(comp(Mlat, ε, δ), log"
+mdp class,strong statistical modularity,"Mlat admits strong statistical modularity if Eq. (4) holds when comp(Mlat, ε, δ) is the minimax sample complexity for Mlat"
+statistical modularity,mlat,The statistical complexity of supervised learning with the decoder class Φ is represented by log
+statistical modularity,mdp classes,"For most MDP classes Mlat considered in the literature on sample-efficient reinforcement learning with function approximation, statistical modularity is impossible."
+statistical modularity,natural complexity upper bound,statistical modularity is under the natural complexity upper bound for the class of interest
+statistical modularity,lower bound,our central technical result is the following lower bound which shows that statistical modularity can be impossible even when the base MDP is known to the learner a-priori
+lower bound,statistical modularity,our central technical result is the following lower bound which shows that statistical modularity can be impossible even when the base MDP is known to the learner a-priori
+lower bound,result from song,the lower bound is a significant generalization of the result from Song et al.
+base mdp,learner,"even when the base dynamics are fully known, strong statistical modularity is impossible; any algorithm will require at least episodes to learn"
+latent-dynamics class,low-rank mdps,the latent-dynamics class may be seen to be a set of low-rank MDPs so that low-rank MDP algorithms may be applied directly on the observations
+appendix e.2,observations,observations are mentioned in Appendix E.2.
+base mdp,mlatstatistical modularity,Base MDP is related to MlatStatistical Modularity.
+mlatstatistical modularity,tabularcontextual bandits,MlatStatistical Modularity is related to TabularContextual Bandits.
+state occupancy,pushforward coverabilitylinear cb/mdp,State Occupancy is related to Pushforward CoverabilityLinear CB/MDP.
+model class,coverability,Model Class is related to Coverability.
+eluder dimension,bellman completenessq⋆-irrelevant state abstraction,Eluder Dimension is related to Bellman CompletenessQ⋆-Irrelevant State Abstraction.
+linear mixture mdp,linear q⋆/v ⋆,Linear Mixture MDP is related to Linear Q⋆/V ⋆.
+state/state-action occupancy,model class + coverability,State/State-Action Occupancy is related to Model Class + Coverability.
+low state-action occupancy (∀ π : s → ∆(a)),model class + coverability (∀ π : s → ∆(a)),Low State-Action Occupancy is related to Model Class + Coverability.
+binary trees,unobserved latent state space,Binary Trees are part of the Unobserved Latent State Space.
+starting distribution,roots of the n trees,Starting Distribution is uniform over the Roots of the N Trees.
+reward,leaf node,The reward of 1 is received if and only if they navigate to the leaf node that corresponds to the index of their current tree.
+observed state space,latent state space,"The observed state space is identical to the latent state space, but the emission process shifts the index of the tree by an unknown amount."
+base mdp,decoder class,"Despite the base MDP being known and the decoder class satisfying realizability, the agent requires near-exhaustive search to identify the value of the shift and recover a near-optimal policy."
+taxonomy,statistical modularity,"A taxonomy of statistical modularity is discussed, proving that many well-studied function approximation settings do not admit statistical modularity."
+mdp classes mlat,structural assumptions,MDP classes Mlat that place structural assumptions via the value functions become intractable under latent dynamics because it is not possible to take advantage of structure in value functions without learning a good representation.
+mdp classes,mlat,MDP classes such as Mlat place structural assumptions on the transition distribution.
+mdp classes,mlat,MDPs with low state occupancy complexity or low-rank MDPs are sometimes tractable under latent dynamics.
+mdp classes,figure 1,Most of the MDP classes in Figure 1 can be embedded into the construction of Theorem 3.1 using a single base MDP Mlat.
+mdp classes,figure 1,Several new results are required to establish that certain base classes in Figure 1 are tractable under latent dynamics.
+base classes,tractable,Certain base classes are shown to be tractable under latent dynamics.
+base classes,figure 1,Proving positive results in Figure 1 requires showing that certain base classes are tractable under latent dynamics.
+pushforward-coverable mdps,statistically modular,Pushforward-coverable MDPs are statistically modular.
+pushforward coverability,coverability parameter,Pushforward coverability is a strengthened version of the coverability parameter.
+sample-efficient reinforcement learning,latent dynamics,sample-efficient reinforcement learning enables learning under latent dynamics
+linear mdps,mdps with low state-action occupancy,some classes of MDPs like linear MDPs and MDPs with low state-action occupancy become statistically tractable
+coverability coefficient cpush,mdp mlat,the pushforward coverability coefficient Cpush for an MDP Mlat with transition kernel Plat is defined
+low-rank mdps mlat,cpush(mlat) ≤ d,Low-Rank MDPs Mlat in dimension d admit a pushforward coverability coefficient Cpush(Mlat) ≤ d
+low-rank mdps,analytically sparse low-rank mdps,Concrete examples include tabular MDPs Mlat and analytically sparse Low-Rank MDPs
+exogenous block mdps,weakly correlated noise,Concrete examples include Exogenous Block MDPs with weakly correlated noise
+statistically modular,decoder class φ,Pushforward-coverable MDPs are statistically modular for any decoder class Φ
+base mdp class mlat,pushforward coverability bounded by cpush(mlat) ≤ cpush,for any base MDP class Mlat with pushforward coverability bounded by Cpush(Mlat) ≤ Cpush
+ability,statistical modularity,Ability enables statistical modularity.
+ability,pushforward coverability,Ability satisfies pushforward coverability.
+base,latent dynamics,Base dynamics satisfy pushforward coverability.
+base,statistical complexity,Algorithm scales with the statistical complexity of the base MDP class.
+complexity comp,minimax complexity,Complexity chosen above is not the minimax complexity for Mlat.
+base mdp class,pushforward coverable mdps,Every set of pushforward coverable MDPs is also a set of coverable MDPs.
+set of pushforward coverable mdps,set of coverable mdps,Every set of pushforward coverable MDPs is also a set of coverable MDPs.
+cpush,emission process ψ⋆,"For any emission process ψ⋆, Cpush holds."
+base mdp class,decoder class φ,Despite access to realizable base MDP class and decoder class Φ.
+latent-obs,observation-level function approximation conditions,Latent-obs satisfies observation-level function approximation conditions.
+pushforward coverability,sample complexity guarantees,Existing approaches provide sample complexity guarantees under pushforward coverability.
+m ⋆,pushforward coverability,M ⋆ satisfies pushforward coverability.
+m ⋆,parameter cpush,M ⋆ satisfies pushforward coverability with parameter Cpush.
+ψ⋆,realizable model class,It is highly nontrivial to construct these for the latent-dynamics MDP M ⋆.
+latent-dynamics mdp m ⋆,pushforward coverability,Latent-dynamics MDP M ⋆ satisfies pushforward coverability.
+lat,ψ⋆,lat and ψ⋆ are related in the context of pushforward coverability with parameter Cpush.
+lat,m,lat is related to M in the context of base MDP class
+lat,φ,lat is related to Φ in the context of decoder class
+m,φ,M is related to Φ as part of observer-level function approximation classes
+mdps,test functions,MDPs can have low-dimensional linear embeddings that approximate Bellman updates for a set of test functions
+mdps,bellman backups,MDPs can have low-dimensional linear features that approximate Bellman backups in observation-space
+mdps,golf,MDPs can apply GOLF for latent-dynamics by satisfying the Bellman completeness assumption
+mdps,algorithmic modularity,MDPs are related to the concept of algorithmic modularity
+modularity,statistical modularity,The study of modularity can extend to statistical modularity as a potential open question
+standard mdps,statistical modularity,The possibility of standard MDPs being statistically modular is an open question
+algorithmic modularity,observable-to-latent reductions,"Algorithmic modularity is the focus of the context, while observable-to-latent reductions are aimed for through representation learning."
+algorithmic modularity,statistical modularity,Algorithmic modularity is stated to be a stronger property compared to statistical modularity.
+algorithmic modularity,representation learning,Algorithmic modularity involves the usage of representation learning to achieve observable-to-latent reductions.
+statistical modularity,algorithmic modularity,Statistical modularity is compared to algorithmic modularity as a weaker property in the context.
+representation learning,algorithmic modularity,Representation learning is utilized for achieving observable-to-latent reductions within the concept of algorithmic modularity.
+representation learning oracle,o2l,"O2L acts as a universal reduction when the representation learning oracle has low risk, transforming algorithms for one class into another."
+algorithm,replearn,The REPLEARN algorithm is used to choose representations based on collected data.
+alglat,representation,ALGlat is updated with compressed trajectory data represented by the chosen representation.
+final policy,alglat,ALGlat returns the final policy to be deployed for collecting trajectory data.
+alglat,final policy,ALGlat is responsible for returning the final policy according to the given context.
+trajectory,policy,The trajectory is collected based on the policy deployed by ALGlat.
+policy,π(t),"ALGlat chooses policy π(t,k) based on the given context."
+o2l meta-algorithm,representation learning,The O2L meta-algorithm learns a near-optimal policy by performing representation learning as described in the context.
+policy,latent space,ALGlat operates in the latent space to determine the policy.
+representation learning oracle replearn,base rl algorithm alglat,REPLEARN and ALGlat are key components in the process described in the context.
+"(t,k)",alglat,"The base algorithm ALGlat produces a latent policy (t,k) : S×[H] → ∆(A)"
+alglat,πlat,ALGlat produces a final latent policy πlat: h=1
+alglat,π(t),ALGlat produces a final latent policy π(t): h=1 (cf. Line 8 of Algorithm 1)
+alglat,replearn,"The base algorithm ALGlat can achieve low-risk with access to the true latent states, sh = ϕ⋆(xh), assuming high-quality representation learning by the oracle REPLEARN"
+replearn,φ,REPLEARN requires access to a realizable decoder class Φ
+replearn,hindsight observability,REPLEARN relies on hindsight observability conditions enabling self-predictive representation learning
+replearn,representation learning oracle,A representation learning oracle can be instantiated to meet the conditions for O2L in the context
+representation learning oracle,o2l,The representation learning oracle can be instantiated in O2L under certain conditions.
+representation learning oracle,sample complexity guarantee,The representation learning oracle inherits the sample complexity guarantee for ALGlat.
+representation learning oracle,algorithmic modularity,The representation learning oracle helps achieve algorithmic modularity.
+hindsight observability,pomdps,Hindsight observability is considered in the context of POMDPs.
+hindsight observability,training time,"At training time, the algorithm has access to additional feedback due to hindsight observability."
+hindsight observability,latent states,"In hindsight observability, the true latent states are revealed to the learner after each episode."
+learner,hindsight observability framework,"In the hindsight observability framework, the learner must execute observation-space policies despite receiving the true latent states after each episode."
+online classification oracle,latent states,The online classification oracle uses the revealed latent states to achieve low classification loss.
+online classification oracle,adaptively generated data,The online classification oracle achieves low classification loss with respect to ϕ⋆ under adaptively generated data.
+latent states,generic classification oracles,"The latent states are used as input to generic classification oracles, based on which a concrete end-to-end sample complexity bound is given."
+end-to-end sample complexity bound,concrete,The end-to-end sample complexity bound is instantiated to give a concrete value.
+hindsight observations,deterministic estimate,The hindsight observations collected so far produce a deterministic estimate.
+online classification oracle,repclass,"The online classification oracle, denoted via REPclass, is given the true decoder ϕ⋆ at each step."
+repclass,regret,"The regret of the oracle, measured via REPclass, is the 0/1 loss for classification."
+online classification oracle,repclass,The online classification oracle REPclass is used to measure the regret for the true decoder.
+randomization distribution,regret,The expected regret of the online classification oracle REPclass is bounded by the randomization distribution over the policy.
+oracle,regret,The online classification oracle REPclass has expected regret bounded by a known upper bound.
+oracle,sequence,The online classification oracle REPclass has expected regret bounded by a sequence of policies.
+online classification oracle,oracle,The online classification oracle REPclass is assumed to have low expected regret under certain conditions.
+online classification oracle,o2l,The online classification oracle is applied within O2L at the end of each iteration.
+iteration,classification oracle,"At the end of each iteration in O2L, the classification oracle is updated with trajectory information."
+o2l,classification oracle,update the classification oracle with the trajectory
+riskobs(t k),o2l reduction,Riskobs(T K) denote the risk of the O2L reduction when run for T epochs of K episodes
+risk⋆(k),alglat,expected risk of ALGlat when executed
+alglat,base algorithm,base algorithm with base risk Risk⋆(K)
+risk⋆(k),base algorithm,expected risk of ALGlat when executed
+alglat,latent states,access to the true latent states sh = ϕ⋆(xh) for K episodes
+riskobs(t k),risk⋆(k),Riskobs(T K)] ≤ Risk⋆(K) +2K
+risk⋆(k),expweights.dr,representation learning oracle (EXPWEIGHTS.DR; Algorithm 3 in Appendix G.1)
+algorithm,expweights.dr,"Algorithm 3 in Appendix G.1 is based on a derandomization of the classical exponential weights mechanism, which satisfies Assumption 4.2 with Estclass ≲ H log"
+expweights.dr,decoder realizability,"Under decoder realizability (ϕ⋆ ∈ Φ), EXPWEIGHTS.DR (Algorithm 3) satisfies Assumption 4.2 with Estclass(T ) = (cid:101)O(H log"
+algorithm,theorem 4.1,"Instantiating Theorem 4.1 with the above representation learning oracle, we obtain the following algorithmic modularity result."
+alglat,expweights.dr,"For any base algorithm ALGlat, under decoder realizability (ϕ⋆ ∈ Φ), O2L with inputs T, K, Φ, EXPWEIGHTS.DR, and ALGlat achieves E[Riskobs(T K)] ≲ Risk⋆(K) +HK log"
+risk⋆(k),o(k−1/2),"As an example, suppose that Risk⋆(K) = O(K−1/2), which is satisfied by many standard algorithms of interest."
+algorithms,standard,Many standard algorithms of interest mentioned in the context
+setting,corollary 4.1,Setting T according to Corollary 4.1
+algorithmic modularity,self-predictive estimation,Algorithmic modularity via self-predictive estimation
+algorithms,risk bound,Obtains an expected risk bound using O(H log
+data,estimators,Data is generated adaptively based on the estimators it produces
+oracles,online classification error bound,Online oracles for classification can be directly obtained from offline classification oracles
+online rl setting,hindsight observations,Studying the general online RL setting without hindsight observations
+objective,representation learning oracle,Representation learning oracle attains low regret with respect to the objective
+representation,decoder,Learns a representation by jointly fitting a decoder together with a latent model
+alglat,base algorithm,"ALGlat is a specific algorithm described in the context, while base algorithm is a general term referring to a fundamental algorithmic concept."
+alglat,estimator,"ALGlat is mentioned as a part of the base algorithm, while estimator is another computational component described in the context."
+selfpredict.opt,algorithm 4,"SELFPREDICT.OPT is an estimator mentioned in the context, specifically Algorithm 4, which relates to the computational process described."
+selfpredict.opt,self-regret,"SELFPREDICT.OPT is shown to attain low optimistic self-regret under certain statistical conditions, indicating a relationship between the two terms in the context."
+base mdp,self-prediction target,"The base MDP is mentioned as a part of the statistical conditions, with a function approximation condition enabling the expression of the self-prediction target as a latent model."
+online rl setting,general latent dynamics,"The general online RL setting and general latent dynamics are discussed together, indicating a relationship between the two concepts in the context."
+statistical modularity,reinforcement learning,The discussion on statistical and algorithmic modularity for reinforcement learning under latent dynamics suggests a relationship between statistical modularity and reinforcement learning in the context.
+high-dimensional observations,reinforcement learning,"The presence of high-dimensional observations is mentioned in relation to reinforcement learning, highlighting a connection between the two terms in the context."
+pushforward coverability,learnability,The concept of pushforward coverability is contrasted with learnability under latent dynamics.
+exogenous block mdp problem,general framework,The Exogenous Block MDP problem is identified as a special case of the general framework being discussed.
+feedback,hindsight observability,Different types of feedback weaker than hindsight observability are explored as potential strategies to bypass the challenges highlighted in Section 3.
+algorithmic modularity,unified representation learning objective,The possibility of deriving a unified representation learning objective that facilitates algorithmic modularity where statistical modularity is achievable is considered.
+algorithmic modularity,statistical modularity,Discussion revolves around whether algorithmic modularity necessitates stronger modeling assumptions compared to statistical modularity.
+statistical assumptions,self-predictive objective,Exploration of the minimal statistical assumptions required to minimize the self-predictive objective in Section 4.2 is suggested as a first step towards addressing the identified problems.
+good representations,self-prediction,The inquiry involves exploring how to encourage the discovery of good representations through self-prediction without solely relying on optimism towards base models.
+self-prediction,computationally efficient fashion,"The efficiency of minimizing self-prediction is contemplated, particularly concerning computational aspects."
+nan jiang,funding support,"Acknowledgment of funding support received by Nan Jiang from NSF IIS-2112471, NSF CAREER IIS-2141781, Google Scholar Award, and Sloan Fellowship."

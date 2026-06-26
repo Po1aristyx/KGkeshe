@@ -1,0 +1,184 @@
+node_1,node_2,edge
+web services,randomized online experiments,Companies use randomized online experiments to estimate the causal impact of new features and policies.
+causal impact,new features and policies,These experiments estimate the effect of adopting new features or policies on performance metrics.
+performance metrics,click rate,Examples include estimating the increase in click rate due to changes.
+performance metrics,subscription rate,The impact on subscription rate from discounts or special offers.
+simple difference in means estimator,standard estimator,The Simple Difference in Means Estimator (SDME) is commonly used due to its simplicity.
+sdme,online a/b testing platforms,Used by many platforms for estimating causal effects despite its limitations.
+small effects,observational units,Even small effects can go unnoticed when experiments involve thousands or millions of units.
+additional data,covariates,Covariates are collected alongside experimental data.
+covariates,estimation of causal effects,We propose using covariates to improve causal effect estimation in online experiments.
+general-purpose algorithm,covariate-adjusted causal estimators,An adapted algorithm enables the implementation of more advanced estimators.
+online a/b testing,covariate-adjusted causal estimators,These estimators are tailored to the online A/B testing context.
+benefits,costs,and risks
+covariate-adjusted estimators,causal effects,covariate-adjusted estimators help to provide more precise quantification of the causal effects of interest
+covariate-adjusted estimators,imbalance across treatment arms,covariate-adjusted estimators address issues related to imbalance often found in experiments
+more precise estimates,experimentation time,precise estimates reduce experimentation time
+more precise estimates,decision-making processes,precise estimates facilitate faster adoption of beneficial interventions
+a/b tests,randomized controlled trials/online randomized experiments,A/B tests are a type of randomized experiment used by online companies to measure causal impact
+a/b tests,customers,In A/B tests
+online companies,product improvement,Online companies rely on A/B tests to find new opportunities and improve products
+online companies,efficiency,Efficiently finding opportunities and measuring impact is crucial for online company growth
+experiments,units (sellers,streamers
+a/b tests,customers,A/B tests involve randomly assigning half of the customers (treatment group) to the new experience and the rest to the old one.
+treatment group,control group,The treatment group sees the new experience
+metrics of interest,kpi (key performance indicator),During the experiment
+average causal effect,difference in means (dim),The DIM approach calculates the average difference in KPI values between the treatment and control groups to estimate the effect.
+a/b tests,ubiquitous in the industry,Due to their simplicity and low cost
+front-end changes,search engines,A/B tests are employed to evaluate modifications to search engines like Google
+back-end changes,online retailers,Similar evaluations happen for online retail platforms like Amazon
+streaming media services,netflix,twitch
+social networks,facebook,linkedin
+travel services,lyft,uber
+unlucky randomization,artificially better or worse,relation: defending against
+covariate adjustment methods,continuously growing literature,relation: related to
+guo et al. (2021),jin and ba (2021),relation: examples
+estimation accuracy,variance reduction,relation: benefits
+generalized oaxaca-blinder estimators (gobes),flexible,general purpose method
+online a/b tests,estimating causal effects,relation: context
+section 2,notation for the problem of interest,relation: introduced in
+section 3,gobes,relation: described in
+section 4,use of gobes for experimentation,relation: discussed in
+section 5,experimental results,relation: presented in
+section 6,discussion and next steps,relation: concludes with
+causal inference,tools,methodologies
+randomized controlled trial (rct),a/b test,An RCT is a specific type of A/B test where each experimental unit is randomly assigned to either the control group (A) or the treatment group (B) to eliminate bias.
+causal claims,data collection,Causal claims are based on the validity of data collected
+randomization,key technical device for causality,Randomization is a crucial aspect of both RCTs and A/B tests
+potential outcomes,causal model,The potential outcomes framework is adopted to precisely define causal relationships
+n units,treatments,Each of the N units is exposed to one of T treatments
+individual unit,potential outcomes (yn(t)),For every unit
+splawa-neyman et al.,1923/1990,causal inference
+rubin,1977,potential outcomes framework
+potential outcome yn(t),unit in the experiment,Each unit is associated with a latent vector of potential outcomes
+alternative treatments (control,treatment),t = 2
+average treatment effect (ate),population,The ATE represents the average causal effect in the population when a unit is exposed to treatment instead of the control.
+outcome of interest,ate,The ATE quantifies the impact on the outcome that would result from adopting the alternative treatment strategy compared to the baseline.
+random assignment,rcts (randomized controlled trials),Randomized controlled trials are used to estimate the ATE
+a/b tests,ate estimation,A/B tests are also employed to estimate the ATE
+ate,random assignment mechanism,The fundamental mechanism of an A/B test is its random assignment mechanism
+random assignment mechanism,binary random variable,Each unit has a binary random variable Jn
+binary random variable,control,If Jn=0
+binary random variable,treatment,When Jn=1
+ate,difference-in-means estimator,The ATE is estimated using the difference-in-means estimator
+difference-in-means estimator,average outcome in treatment group,The estimator calculates the mean of outcomes for units in the treatment group.
+difference-in-means estimator,average outcome in control group,Similarly
+covariates,additional unit-level information,Covariates
+covariates,oaxaca-blinder estimators,Leveraging covariates allows for more advanced estimation methods like generalized Oaxaca-Blinder estimators.
+online a/b testing,effect sizes,In online A/B testing
+online a/b tests,causal effects,The goal of employing models in online A/B testing is to precisely estimate these causal effects
+gobe (generalized outcome bootstrap estimator),unbiased estimator,The two-step GOBE proposed by Cohen and Fogarty (2020) is asymptotically unbiased.
+gobe (generalized outcome bootstrap estimator),efficient,The two-step GOBE is more efficient than the difference-in-means estimator.
+difference-in-means estimator,comparison method,The two-step GOBE is an alternative to the difference-in-means estimator
+guo and basse (2021),conditions,Guo and Basse provide conditions for regression models to yield unbiased and asymptotically normal estimates.
+gaussian approximation,algorithm,Algorithm 1 employs a Gaussian approximation
+cohen and fogarty (2020),two-step gobe proposal,They propose a methodological advancement for handling small effect sizes in online A/B testing.
+jin and ba (2021),flexible models,Jin and Ba contribute to the development of flexible models in the context of online A/B testing.
+algorithm 1,reliable,The context discusses the importance of reliability in Algorithm 1 due to the small team size and the need for stable estimates.
+reliable,methods,The reliable methods refer to algorithmically sound routines within the context.
+methods,causal effects,The methods aim to estimate the causal effects of interest.
+interpretable,results,The requirement for interpretable results connects the need for transparency and ease of interpretation to the outcomes of the experiments.
+interpretable,policy-making,Interpretability is crucial for practitioners to make decisions based on the results.
+section 5,experiments,In Section 5
+experiments,linear models,Linear models
+gobe,difference in means [dim],DIM and LR are examples of GOBE estimators.
+gobe,simple linear regression [lr],LR is another type of GOBE estimator.
+ridge regression,lasso,Both are regularized versions of simple linear regression.
+ridge regression,elastic net,They share the common feature of penalizing the weight vector.
+weight vector,penalty,Regularization involves shrinking the weight vector using a penalty term.
+regularization parameter,γ,γ is the parameter controlling the degree of regularization.
+regularization parameter,loss function,The regularization parameter is used to control the complexity of the model
+lasso,ridge regression,LASSO and Ridge regression are both regularization techniques
+elastic net regression,lasso,ridge regression
+regularization hyperparameter,streamlined automated procedure,Regularization hyperparameters need to be tuned for optimal performance
+cross-validation,optimal regularization level,Cross-validation is used to find the best value for the regularization parameter by evaluating its impact on the model's performance across multiple data splits.
+coefficient of determination,left-out-data,The coefficient of determination is calculated on the left-out data during the cross-validation process to assess the model's fit.
+performance and computation cost,number of potentially noisy regressors,The context discusses the relationship between these two terms in the context of analyzing the performance and cost in relation to the quantity of regressors.
+analysis duration,sample size,The text explains the connection where the sample size is dependent on the specified analysis duration
+analysis duration (d = 7 days),variance reduction in larger experiments,For D = 7 days
+analysis duration (d = 28 days),variance reduction in smaller experiments,For D = 28 days
+quartile (first),experiments with sample size n ∈ [f^(-1)_n,d(0.25)]
+quartile (last),experiments with sample size n,d(1)
+robustness to chance imbalance,treatment arms' comparability,In A/B tests
+randomization,covariates,The context describes that randomization ensures the distribution of covariates is coincidental between treatment and control groups
+covariates,outcome y,Covariates are mentioned to be predictive of the outcome
+treatment,control group,These two terms are contrasting experimental groups in an A/B test
+treatment,condition (c1),The context specifies that a specific condition (C1) is assigned to the treatment group
+a/b test,valid inferences,An A/B test is mentioned to yield valid inferences when its construction satisfies certain criteria
+triggering logic,probability,The triggering logic refers to how the system assigns treatments based on some criteria
+triggering logic,violation of treatment assignment rule,When the triggering logic systematically deviates from the required randomization
+imbalance level (ζ),split-specific imbalance,The imbalance level is a measure of the difference in the average values of a specific variable between the treatment and control groups
+randomization,split (i (s)0,i (s)1)
+monte carlo procedure,empirical bivariate distribution,The Monte Carlo procedure involves repeated simulations to generate an empirical distribution of the ATE estimates
+estimator (ate),confidence interval (ci),An estimator of the Average Treatment Effect ((cid:91)ATE) is accompanied by a confidence interval (CI) M(α) calculated using a chosen model
+control arm,experiment,The control arm refers to the group without treatment in an experiment
+treatment arm,meta-analysis,The treatment arm receives the intervention
+imbalance level,atem,The horizontal axis represents imbalance level (ζ) and the vertical axis represents ATEM for DIM
+imbalance level,marginal distribution of imbalance level,The plot shows the marginal distribution of imbalance level
+imbalance level,marginal density of atem,On the right side
+atem (dim),unconditional unbiased,ATEM(DIM) is unconditionally unbiased
+imbalance,bias in ate estimation,Estimators that are sensitive to imbalance can lead to biased results when pre-experimental covariates are imbalanced.
+stable estimators,efficient experimentation,Stable estimators contribute to more efficient experimentation
+imbalance level,confidence in experimental findings,An estimator's sensitivity to imbalance affects the confidence experimenters have in their findings.
+relative metric,dim counterpart,The relative metric is a comparison of the MetricDIM to MetricM
+relative metrics,imbalance level ζ,The relative metrics increase in value as the absolute value of the imbalance level
+imbalance quantiles sj,re-randomizations,For each experiment
+analysis day d = 7,experiments,The relative metrics are reported for the control arm at analysis day 7
+algorithm 2,buckets,Algorithm 2 is applied for S = 10
+difference in means estimator,linear adjusted estimators (lr1,lr)
+confidence interval,calibration,Calibration is assessed by computing the fraction of times the estimated confidence interval spans the true value
+estimated variance,experimentation time,Smaller estimated variances result in shorter experimentation times
+robustness metric,nominal coverage,The robustness metric checks whether the confidence intervals are well-calibrated
+hypothesis testing framework,null hypothesis (h0),H0 is the initial assumption of no effect (LIFT = 0) in the context
+null hypothesis (h0),fixed alternative hypothesis (h1),H1 posits a fixed percentage effect size δ
+data collected (first d=7 days),predictions for future units,The data is used to make predictions on the number of future units triggering during the experiment's progression.
+predictions,estimated variances,Predictions and estimated variances are computed based on the data observed after D=7 days.
+day d′,ability to reject h0,D' represents the first future day where we can reject H0 with 80% power at a given significance level (π = 80%
+higher precision,shorter experimentation time,Greater precision in estimates leads to a reduction in the required time for experimentation.
+model m,default dim,Model M is compared to the default method (DIM) in terms of the impact on experimentation time.
+spurious fold,experiment,In the context
+computation cost,sample size,The computation cost of running covariate-adjusted methods increases at a faster rate with the 'Sample Size' compared to the dimensionality of the covariates.
+computation cost,covariates' dimensionality,The computation cost of covariate-adjusted methods also increases with the 'Covariates' dimensionality
+linear regression model,true causal effect,Since the true 'True Causal Effect' is unknown
+median of median errors,number of spurious folds,In Figure 9
+median of median errors,day d=7,The errors are measured at a specific point in time
+folds (horizontal axis),day d = 7,The context describes 'folds' being measured at a specific point in time
+day d = 7,analysis,Day D = 7 refers to a stage within the analysis process.
+quartiles,experiments,Experiments are divided into four quartiles based on sample size.
+quartiles,fn,7
+sample size,quartiles,Quartiles are based on the distribution of sample sizes.
+monte carlo random draws,spurious covariates,These are generated for a large number of iterations to assess robustness.
+spurious covariates,estimate of ate,Spurious covariates affect the computation of the empirical error in estimating ATE.
+ate,estimate of atew,ATEw is the target parameter being estimated in the experiments.
+error,percentage absolute difference,Error is measured as the percentage absolute difference between the estimated and true ATE.
+figure 9,results,Figure 9 displays the results of the error analysis across different methods and sample size quartiles.
+noisy covariates,performance of covariate adjusted methods,The robustness of performance is demonstrated when there are noisy covariates; they have limited impact on variance reduction.
+spurious noisy covariates,median variance reduction,In Figure 10
+generalized oaxaca-blinder estimators (gobes),estimation of causal effects,GOBEs are proposed for estimating causal effects in online A/B testing
+linear and nonlinear regression models,precise estimates of causal effects,These models contribute to the precision of causal effect estimation as discussed in Section 5.2.
+sample size,computation cost,The computation cost is not prohibitive
+online a/b testing,value and potential,The paper highlights the value and potential of using GOBEs in online A/B testing scenarios.
+algorithm 1,simple but general procedure,Algorithm 1 outlines the core procedure for implementing GOBEs.
+causal effects of interest,simple difference in means estimator,GOBEs outperform the simple difference in means method in terms of precision and robustness.
+causal effects of interest,difference in means estimator,The causal effects of interest are said to outperform the simple difference in means estimator in terms of precision and understanding the effectiveness of an intervention.
+estimators,practitioners,Estimators facilitate practitioners to understand the impact of interventions more quickly
+upfront cost,computational and statistical,The upfront cost involves both computational resources and statistical considerations
+section 5.5,performance and computation cost analysis,In Section 5.5
+linear models,spurious covariates,The analysis examines how models handle large experiments and high-dimensional covariates
+interpretable and simple linear models,section 4,These models are chosen due to practical concerns and requirements outlined in Section 4.
+generalized oaxaca-blinder framework,non-linear regression functions,Though the focus is on linear models
+linear regression functions,neural networks,These terms are mentioned in the same context and are both types of flexible
+non-convex optimization problem,equation (3),The optimization problem refers to the specific equation mentioned
+cross-fitting approaches,section 4,Cross-fitting is discussed as a method in a specific section of the text.
+flexible non-linear methods,simple linear methods,Flexible non-linear methods are contrasted with simple linear methods
+guo et al. (2021),discussion,This reference is cited to support the claim that flexible methods can outperform linear ones.
+methodological side,guo and basse (2021),Guo and Basse's work is mentioned as a foundation for a framework providing guarantees for regression models.
+causal effects estimation,guo and basse (2021),Their framework relates to the estimation of causal effects within the broader context.
+cohen and fogarty (2020); list et al.,2022,optimal regression models
+conditions for guarantees,strengthening characterization,Improving the conditions and characterization would enhance the appeal of these approaches.
+applied side,pipelines for automated identification,Future research includes developing pipelines to automate the selection of optimal regression functions.
+large datasets,applied side,The presence of large datasets is a factor in the context of automated regression function identification.
+optimal regression functions,large and heterogeneous datasets,The context highlights that identifying the optimal regression functions is essential in the context of dealing with large and diverse data sets.
+identification of optimal regression functions,adoption at scale,The main objective is to automate this process for widespread adoption.
+large,flexible covariate adjusted regression methods,exciting challenges
+covariate adjustments,online a/b testing,Covariate adjustments are being considered for implementation in scalable online experiments.

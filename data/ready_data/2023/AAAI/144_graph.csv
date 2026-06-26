@@ -1,0 +1,228 @@
+node_1,node_2,edge
+depth map super-resolution (dsr),3d vision,DSR is crucial for enhancing 3D vision
+high-resolution (hr) depth maps,low-resolution (lr) depth maps,Both HR and LR depth maps share the same intrinsic phase
+rgb,depth maps,The spectral phase of RGB includes the phase information of depth maps
+intrinsic phase-preserving dsr paradigm,ippnet,IPPNet is a proposed method based on the intrinsic phase-preserving paradigm for DSR
+phase-preserving filtering module (ppfm),ippnet,PPFM is a key component of IPPNet used to generate dynamic filters
+ppfm,rgb signal,PPFM modulates the phase-preserved RGB signal for depth enhancement
+depth sensors,edge devices,Depth sensors are commonly found in edge devices like mobile phones and VR/AR glasses
+visual slam,gesture recognition,Both are applications enabled by depth sensors in edge devices
+acquired depth map,cost,Limited cost and sensor capability result in low-resolution depth maps
+nyu v2,rgb-d-d,Both are benchmark datasets used for extensive experiments
+ippnet,sota performance,IPPNet achieves state-of-the-art performance on benchmark datasets
+visual slam,gesture recognition,related techniques in the context
+depth map,low-resolution (lr),LR depth maps are commonly acquired due to cost and sensor limitations
+apple,huawei,examples of companies with specific LR depth map resolutions
+dsr,promising solutions,Depth map super-resolution (DSR) is seen as a potential solution
+high-resolution (hr) color image,rgb image,RGB images are often associated with HR depth maps
+rgb guided dsr,recovering the hr depth map,RGB images are used to help restore depth map resolution
+phase preserving filtering scheme,selectively preserve desired geometric patterns,Proposed method to address artifacts in DSR
+existing dsr frameworks,two categories,DSR approaches can be classified into two main groups
+dsr frameworks,single depth map super-resolution (sdsr),SDSR is a category of DSR frameworks that utilizes insufficient information
+dsr frameworks,rgb-guided depth map super-resolution (gdsr),GDSR is another category of DSR frameworks that focuses on utilizing corresponding RGB images for performance improvement.
+gdsr methods,joint filtering,Joint filtering is a type of cooperative guidance scheme used in GDSR methods.
+gdsr methods,progressive feature aggregation,Progressive feature aggregation is another type of cooperative guidance scheme employed in GDSR methods.
+rgb information,over-texture artifacts,Unrestricted RGB information can lead to over-texture artifacts
+edge information in rgb images,dsr,Various works have focused on better exploiting edge information in RGB images for enhancing DSR performance.
+edges in rgb images,over-textured predictions,Edges in RGB images
+discrete fourier transform (dft),spectrum analysis,DFT is an example of spectrum analysis used to examine data.
+depth maps,rgb images,Depth maps and RGB images exhibit significant differences in frequency domain.
+intrinsinc phase,spokes,The intrinsic phase refers to the phase of spokes in the frequency domain representing principal geometric patterns.
+spectral components,principal texture patterns,Spectral components along the spokes correspond to principal texture patterns of original depth maps and RGB images.
+depth map,rgb image,Depth maps generally have fewer spokes than RGB images
+noise,vanishing components,The vanishing components in the depth map are considered noise compared to the RGB image.
+phase-aware filter,noisy texture pruning,A phase-aware filter is suggested for removing noisy textures during guided depth super-resolution.
+ippnet,phase-preserving filtering module (ppfm),IPPNet includes a PPFM for cross-content collaboration between depth map and color image features.
+rgb and depth map,gdsr (guided depth super-resolution),IPPNet facilitates efficient cooperation of RGB and depth map for GDSR.
+ppfm,cross-content guided collaborative filtering,PPFM is a method used for cross-content filtering between depth map and color image features.
+phase-aware filtering stream,ppfm,One of the two information streams in PPFM
+modulation stream,ppfm,The other stream in PPFM
+rgb features,depth map features,Both types of features are processed by PPFM for collaboration and improved performance.
+ippnet,ppfm,IPPNet is the proposed framework that incorporates PPFM for depth map super-resolution.
+nyu v2 dataset,performance evaluation,IPPNet's performance is benchmarked against state-of-the-art on the NYU v2 dataset.
+middlebury dataset,performance evaluation,IPPNet's performance is also evaluated on the Middlebury dataset.
+rgb-d-d dataset,real-world branch,IPPNet outperforms existing methods specifically on the real-world branch of the RGB-D-D dataset.
+depth map super-resolution (dsr),related work,DSR methods are mentioned in the context as a field related to the proposed IPPNet.
+scheme,unidirectional schemes,scheme outperforms existing unidirectional schemes
+depth map super-resolution (dsr),lr depth map,DSR methods leverage only LR depth map for accurate HR depth map recovery
+gdsr methods,rgb modality,GDSR methods utilize RGB modality as guidance for depth map reconstruction
+heuristic rules,early works,Early works based on heuristic rules to transfer fine-grained structures
+cnns,data-driven approaches,Data-driven approaches like DJF and DG use CNNs for feature extraction and regression
+dkn,spatially-variant kernels,DKN proposes to learn spatially-variant kernels for each pixel
+jiif,graph attention mechanism,JIIF uses graph attention mechanism to learn interpolation weights
+ppfm,phase-aligned rgb features,PPFM strengthens depth features with phase-aligned RGB features
+rgb information,over-texture artifacts,Former works using RGB information can result in over-texture artifacts
+ppfm,depth features,PPFM strengthens depth features with phase-aligned RGB features for improved fusion quality.
+guided depth completion,dual-branch framework,Several methods use a dual-branch framework to separately extract features of sparse depth and color images.
+sparse depth,color images,These methods fuse features of sparse depth and color images for final depth predictions.
+phase-preserving filter mechanism,rgb features,A phase-preserving filter mechanism is designed to selectively exploit RGB features for depth enhancement.
+phase-preserving filtering module,lr and hr depth maps,The module exploits the homogeneous spectral properties of LR and HR depth maps for precise fusion.
+gdsr task,lr depth image,In GDSR
+hr rgb guidance,corresponding hr image,The HR RGB guidance corresponds to the HR image for depth enhancement.
+gdsr task,lr depth image,In GDSR task
+lr depth image,hr rgb guidance,The LR depth image has a corresponding HR RGB guidance.
+scaling factor,hr depth target,The scaling factor 's' relates to the up-sampling of the LR depth image to match the HR depth target.
+bicubic interpolation,lr depth image,Bicubic interpolation is applied to the LR depth image to create an up-sampled initialization.
+up-sampled initialization,hr depth target,The up-sampled initialization serves as a basis for recovering the HR depth target.
+neural network f,rgbd pair,The neural network F processes the RGBD pair to recover residual details.
+phase power spectrum,dft,The Phase Power Spectrum is analyzed using the Discrete Fourier Transform (DFT).
+dft,rgb image,DFT computes the spectral representation for both RGB images and depth maps.
+dft,depth map,DFT is also applied to depth maps to analyze their spectral properties.
+anisotropic filters,lr depth map,Anisotropic filters can be derived from the LR depth map for specific purposes.
+lr depth map,rgb image,LR depth map is used to derive anisotropic filters for suppressing chaos in the RGB image.
+ˆg,consistent component,ˆG represents the component consistent with the spectral phase of the depth signal.
+n,undesirable noise,n denotes textured details which are considered as noise for the depth map.
+cross-modality guided phase-preserving filtering module (ppfm),depth map features,PPFM achieves phase-aware filtering between depth map features and color image features.
+ppfm,color image features,PPFM also works with color image features for filtering purposes.
+phase-aware filtering stream,depth map features,The phase-aware filtering stream generates filters from depth map features to eliminate texture components in RGB features.
+modulation stream,depth map features,The modulation stream strengthens depth map features using purified RGB features.
+filter prediction block (fpblock),spatial kernel generator,In the implementation
+∗ (convolution),modulation ratio (λ),Convolution operation is involved
+fpblock,two layers block,FPblock is composed of two layers as depicted in the figure.
+*,convolution,* symbol represents convolution operation.
+λ,modulation ratio,λ is the fixed modulation ratio
+ψi,depth features,Ψi generates phase-aware filters based on depth features.
+ψi,filtered rgb features,Ψi also uses filtered RGB features for phase-aware filtering.
+ψi (noise filtering),rgb features,Ψi is designed to filter noise from RGB features.
+ψi (strengthening),depth map,Ψi strengthens the depth map using cleaned RGB information.
+phase-preserving filtering module,dft (discrete fourier transform),The module's filtering process is analyzed using DFT.
+ψi,phase integration,Ψi adjusts via phase integration over spectra with phase φ.
+phase power spectrum,measuring component intensity,Phase power spectrum quantifies the ability to filter specific phase components.
+phase-preserving module,gdsr methods,Previous GDSR methods employ heuristic joint filtering schemes.
+rgb guidance,depth flow,RGB guidance is directly transferred to depth flow through filtering schemes.
+rgb,extra textures,RGB contains extra textures which are not suitable for depth maps.
+extra textures,error noise,Extra textures correspond to surface details and act as erroneous noise for depth maps.
+noise patterns,erroneous structure details,Noise patterns need to be eliminated to avoid propagating erroneous structure details.
+lr depth map,hr depth map,LR depth map is produced from HR depth map via a specific degradation process.
+amplification factor,k,Amplification factor K is used to relate LR and HR depth maps.
+eq. 4,eq. 5,Equation 4 is rewritten as Equation 5 in the process of decomposition.
+dft,decomposition,DFT is used to decompose the equation for analysis.
+f(k · xi),f(ni),F(K · xi) and F(ni) are components in the DFT results expressed in polar form.
+dft,phase,The DFT results are expressed in polar form with φ representing the phase.
+phase,depth map,The intrinsic phase of the depth map relates to the behavior of the DFT.
+denoise,rgb,The module can achieve precise denoise for RGB signals.
+feature embedding,neighborhood information,Feature embedding encodes the features of a patch region
+filters,kernel size,The kernel size of filters is reduced to 1 for flexibility and efficiency.
+pixel-wise multiplication,modulation,Pixel-wise multiplication is mentioned in the context of modulation techniques.
+pixel-wise multiplication,gating,Pixel-wise multiplication is also related to gating methods.
+convolution,element-wise multiplication,Information fusion is simplified from convolution to element-wise multiplication.
+information fusion,element-wise multiplication,element-wise multiplication is a simplified form of information fusion in the context of neural networks.
+ppfm,ippnet,PPFM is a component of the proposed IPPNet framework for DSR.
+rgb encoder,depth encoder,Both RGB encoder and depth encoder are parts of IPPNet
+ppfm,rgb features,PPFM integrates RGB features and depth features in a guided and impulsive manner.
+ppfm,depth features,PPFM also processes depth features alongside RGB features.
+refinement module,depth feature,The refinement module enriches the processed depth feature for improved accuracy.
+resblocks,rgb encoder,ResBlocks
+resblocks,depth encoder,ResBlocks
+refinement module,resblocks,The refinement module
+refined features,residual image,A convolution layer applied to the refined features generates the residual image for image restoration.
+convolution layer,refined features,applied to generate the residual image
+residual image,input depth image,summed to obtain the restored depth map
+predicted depth map,ground truth depth map,constrained by minimizing L1 loss
+l1 loss,dgth - bdh,represents the difference between predicted and ground truth depth maps
+hr image,lr input depth map,generated from HR ground truth via bicubic downsampling
+resblocks,depth encoder,rgb encoder
+phase-preserving filtering blocks,n (set to 3),number of blocks used in the method
+adam optimizer,model training,used for optimization
+learning rate,1 × 10−4,initial value
+pytorch,implementation,framework used for coding the method
+nvidia tesla v100 gpu,training,硬件设备用于训练模型
+training,phase-preserving filter,implementation of the filter is part of the training process
+root mean squared error (rmse),evaluation metric,RMSE measures the difference between prediction and ground truth
+nyu v2,rgb/d pairs,NYU v2 dataset contains RGB/D pairs for training and testing
+middlebury,testing,Our model is tested on the Middlebury dataset
+lu dataset,ippnet,IPPNet surpasses current state-of-the-art approaches on the Lu dataset
+cross-modality phase-preserving filtering,depth images,Filtering technique uses depth information for filtering RGB image noise
+rmse results,upsampling,Comparison of RMSE for different upsampling factors
+our method,state-of-the-art approaches,Our method achieves the best performance compared to existing approaches
+rgb images,depth information,Depth information is used to filter errors in RGB images
+gf (he,sun,and tang 2013)
+dg (gu et al. 2017),methods,DG is another method mentioned for comparison
+dgf (wu et al. 2018),methods,DGF is a method compared against the proposed approach
+rgbmethods,filtering,RGBMethods are first used for filtering erroneous noise
+gf,he,sun
+dg,gu et al. 2017,DG is associated with Gu et al.'s work in 2017
+dgf,wu et al. 2018,DGF is a method by Wu et al. in 2018
+djf,li et al. 2016,DJF is credited to Li et al. in 2016
+dmsg,hui,loy
+dsrnet,guo et al. 2019,DSRNet is developed by Guo et al. in 2019
+pac,su et al. 2019,PAC is a method created by Su et al. in 2019
+fdkn,kim,ponce
+dkn,kim,ponce
+fdsr,he et al. 2021,FDSR is a technique by He et al. in 2021
+dctnet,zhao et al. 2022,DCTNet is introduced by Zhao et al. in 2022
+jiif,tang,chen
+ahmf,zhong et al. 2022,AHMF is associated with Zhong et al.'s work in 2022
+pmbanet,ye et al. 2020,PMBANet is created by Ye et al. in 2020
+ippnet,ours,IPPNet is the proposed method in this context
+nyu v2,dataset,NYU v2 is a benchmark dataset used for evaluation
+middlebury,dataset,Middlebury is another benchmark dataset
+rmse,performance metric,RMSE is a measure of performance in depth map upsampling
+models,nyu v2,trained on
+rgb information,depth features,modulates
+ipp-net,fine-grained depth details,produces
+methods,blurred edges,generate
+ippnet,artifacts,produces fewer
+dmsg (2016),fdkn (2021),comparable approaches
+fdkn (2021),fdsr (2021),comparable approaches
+fdsr (2021),jiif (2021),comparable approaches
+jiif (2021),ippnet (ours),comparable approaches
+rgb-d-d,dsr dataset,is a
+rgb image,mobile phone,captured by
+lr depth map,tof camera,captured by
+hr depth map,industrial helios camera,captured by
+rmse,edge errors,comparison in terms of
+rmse,edge errors,Both are metrics used to evaluate the performance of image processing methods
+edge errors,percentage of errors over 1.2%,Edge errors are quantified by the percentage of errors exceeding a certain threshold (1.2%) in the edge area.
+he et al. (2021),comparison,The comparison of performance is attributed to the work of He et al. in 2021.
+ippnet,rgb-d-d,IPPNet is trained directly on RGB-D-D data and outperforms other approaches.
+ippnet,superiority,IPPNet demonstrates its superiority and generalization ability in guided noisy depth map super-resolution tasks.
+noisy middlebury,testing,Noisy Middlebury dataset is used for testing the performance of the model.
+art,books,noisy middlebury
+multiplicative gaussian noise,simulating noisy lr input depth map,Multiplicative Gaussian noise is added to simulate noisy low-resolution depth maps for training purposes.
+nyu v2,clean hr color guidance,NYU v2 provides clean high-resolution color guidance for training the model.
+rmse,results,RMSE is presented as the metric for evaluating the performance of different methods.
+ippnet,state-of-the-art results,IPPNet achieves state-of-the-art results in guided noisy depth map super-resolution tasks.
+phase-preserving filtering scheme,ippnet,The proposed phase-preserving filtering scheme is a key component of IPPNet
+8× upsampling,visual comparisons,8× upsampling results are visually compared among different methods in Figure 4.
+ippnet,accurate depth results,IPPNet yields more accurate depth results compared to other algorithms.
+inference time,nvidia titan xp gpu,Inference time is tested on a NVIDIA TITAN XP GPU
+rgb-d-d,real-world branch,Training in the real-world manner is done using the real-world branch of the RGB-D-D dataset.
+lr depth maps,tof camera,LR depth maps are captured by the ToF camera of a mobile phone for training in the real-world setting.
+ippnet,best performance,In the real-world training setting
+resolution,192 × 144,The initial resolution mentioned in the context.
+target resolution,512 × 384,The target resolution for image scaling.
+training settings,sec. implementation details,The reference for unchanged training settings.
+ippnet,state-of-the-art,IPPNet is described as achieving a state-of-the-art performance.
+models,nyu v2,Existing ×4 models are trained on the NYU v2 dataset.
+ppfm,phase power spectrum,PPFM's effect on the phase power spectrum of RGB features is analyzed.
+lr depth map,phase power spectrum,The phase power spectrum of the LR depth map is also compared.
+ppfm,intrinsic phase-preserving filter,PPFM uses an intrinsic phase-preserving filter generated by depth features.
+rgb features,noise patterns,Noise patterns in RGB features are suppressed by PPFM.
+ppfm,undesired textures,PPFM effectively attenuates undesired textures in RGB images.
+refinement module,iv w/o refinement module,The impact of the Refinement Module is studied in an ablation experiment.
+cross-modality fusion strategies,adition,Adition is one of the evaluated fusion methods in the comparison.
+cross-modality fusion strategies,concatenation,Concatenation is another fusion method compared in the study.
+deformable convolution,kim,ponce
+sft,wang et al. 2021,SFT
+modulation,best performance,Modulation demonstrates the best performance among the fusion strategies.
+ippnet,phase-preserving filtering scheme,IPPNet utilizes the phase-preserving filtering scheme for guided DSR tasks.
+model complexity,×16 sr scale,Model complexity is compared for methods at ×16 Super-Resolution (SR) scale.
+efficiency,performance,IPPNet achieves high efficiency with the best performance.
+ablation study experiments,nyu v2,Ablation studies are conducted on the NYU v2 dataset to evaluate design choices.
+supplementary material,network structure details,The supplementary material contains more network structure details.
+depth maps,information fusion,Exp. I uses depth maps as input without information fusion.
+rgb image,dsr task,RGB image plays a vital role in the DSR (Depth Super-Resolution) task.
+filtering stream,ppfm (phase-preserving filtering module),Exp. II removes the filtering stream from the PPFM.
+rgb images,depth maps,RGB images can contain erroneous structure details harmful to depth maps.
+fusion,rgb and depth,Exp. III fuses RGB and depth simultaneously for DSR.
+phase-preserving filtering,removing over-textured noise,Depth filters RGB to perform phase-preserving filtering
+rm (refinement module),model's performance,The refinement of depth features by RM boosts the model's performance.
+ppfm,rm,Exp. V places PPFM after RM
+phase-preserving filtering dsr framework,ippnet,IPPNet is the proposed phase-preserving filtering DSR framework.
+rgb image,depth map,Both RGB image and depth map are involved in the cooperation for image processing.
+extra undesired texture patterns,rgb guidance,RGB guidance contains extra undesired texture patterns for the depth map.
+phase preserving filtering module,cross-content guided collaborative filtering,The Phase Preserving Filtering Module enables cross-content filtering between depth and RGB features.
+depth map super-resolution,ippnet framework,IPPNet demonstrates its effectiveness in guided depth map super-resolution settings.
+national science foundation of china,u20b2072,61976137
+sjtu medical engineering cross research grant,yg2021zd18,Part of the work was also supported by SJTU Medical Engineering Cross Research Grant.

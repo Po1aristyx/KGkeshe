@@ -1,0 +1,223 @@
+node_1,node_2,edge
+vanishing point detection,previous works,previous works commonly relied on techniques for vanishing point detection
+vpdetr,end-to-end framework,VPDETR is a proposed novel end-to-end framework for vanishing point detection
+vpdetr,manhattan and non-manhattan world datasets,VPDETR is applicable to both types of datasets
+transformer decoders,positional embedding of anchor points,Transformer decoders use positional embedding of anchor points as queries
+vanishing points,parallel lines in the 3d world,Vanishing points are intersection points of parallel lines projected onto the 2D image
+vanishing point detection,fundamental problem,Vanishing point detection is a fundamental problem in 3D vision
+accurate vanishing point detection algorithm,tasks like camera calibration,An accurate detection algorithm benefits tasks such as camera calibration
+vpdetr,state-of-the-art methods,VPDETR achieves competitive performance compared to existing state-of-the-art methods
+orthogonal loss,cross-prediction loss,Both losses are introduced to improve accuracy on Manhattan world datasets
+vanishing point detection,traditional methods,traditional vanishing point detection methods include line/contour detection
+deep learning approaches,vanishing point detection,deep learning has shown great potential in vanishing point detection tasks
+neurvps,inference speed issue,NeurVPS needs to sample a large number of candidate points
+lin et al. (2022),inference speed issue,similar to NeurVPS
+tlc,transformer,TLC uses Transformer to classify straight lines into four categories
+tong et al. (2022),additional line category,TLC requires additional line category classification
+tlc,transformer,TLC uses Transformer for line classification.
+tlc,additional line category annotations,TLC requires extra annotations for line categories.
+post-processing,enhance performance,Post-processing is needed to boost performance in TLC.
+detr,object detection,DETR is a work focusing on end-to-end object detection.
+detr,transformer encoder-decoder architecture,DETR employs a transformer-based architecture for detection.
+object queries,learnable queries,In DETR
+set loss function,object permutation,DETR's set loss handles object permutation issues.
+nms,hand-designed components,DETR eliminates NMS
+deformable detr,convergence,Deformable DETR aims to improve the convergence of DETR.
+dab-detr,performance,DAB-DETR focuses on enhancing the performance of DETR.
+detr,other applications,DETR has been adapted for various applications in follow-up works.
+vpdetr,vanishing point detection,VPDETR is proposed for end-to-end vanishing point detection.
+vanishing point detection,vpdetr,VPDETR is an end-to-end framework proposed for vanishing point detection.
+vpdetr,decoder part,The modification in VPDETR focuses on the decoder part.
+anchor vanishing point positional encoding,vpdetr,VPDETR utilizes anchor vanishing point positional encoding as queries.
+set prediction,vpdetr,VPDETR is based on set prediction
+manhattan world assumption,vanishing points,The Manhattan world assumption deals with three orthogonal vanishing points in each image.
+cross-prediction loss,manhattan world assumption,For the Manhattan world assumption
+orthogonal loss,manhattan world assumption,Orthogonal loss is also introduced for the Manhattan world assumption to enhance accuracy.
+vpdetr,state-of-the-art (sota) method (zhou et al. 2019a),VPDETR outperforms the SOTA method in terms of inference speed.
+inference speed,vpdetr,VPDETR achieves an inference speed of 16 FPS.
+manhattan world datasets,non-manhattan world datasets,VPDETR handles both Manhattan and non-Manhattan world datasets.
+manhattan world assumption,cross-prediction loss,The cross-prediction loss is proposed to improve accuracy under the Manhattan world assumption.
+cross-prediction loss,orthogonal loss,Both cross-prediction loss and orthogonal loss contribute to enhancing accuracy.
+vpdetr,state-of-the-art models,VPDETR achieves a balance of accuracy and inference speed similar to state-of-the-art models.
+vanishing point detection,line detection,Line detection is a step in the process of vanishing point detection.
+vanishing point detection,contour detection,Contour detection is another method used in conjunction with line detection for vanishing point detection.
+ransac,line clustering,RANSAC is one of the algorithms used to cluster parametric lines in vanishing point detection.
+hough transform,line clustering,The Hough transform is also utilized for line clustering in the context of vanishing point detection.
+learning-based methods,vanishing point detection,Learning-based methods have proven effective in recent years for vanishing point detection.
+neurvps,zhou et al.,NeurVPS is a vanishing point estimation method introduced by Zhou et al.
+liu et al.,vapid,Liu et al. propose an efficient conic convolution in VaPiD.
+lin et al.,hough transform,Lin et al. incorporate the Hough transform into deep neural networks.
+tong et al.,transformer,TLC (Tong et al.) is the first to apply Transformer to vanishing point detection.
+detr,carion et al.,DETR
+deformable detr,zhu et al.,Deformable DETR
+efficient detr,yao et al.,Efficient DETR
+detr,efficient detr,Efficient DETR is a variant of DETR that improves decoder queries.
+efficient detr,yao et al. (2021),Efficient DETR is proposed by Yao et al. in 2021.
+dab-detr,liu et al. (2022),DAB-DETR is introduced by Liu et al. in 2022
+dn-detr,li et al. (2022),DN-DETR
+dino,zhang et al. (2022),DINO
+detr,line segment detection,DETR has been adapted for line segment detection.
+detr,3d object detection,DETR has also been applied to 3D object detection.
+detr,instance segmentation,DETR is used for instance segmentation as well.
+vpdetr,vanishing point detection,VPDETR is a modified DETR designed for vanishing point detection tasks.
+cnn,image features extraction,A CNN extracts features from an image in VPDETR.
+transformer encoders,backbone,The backbone is refined by the Transformer encoders.
+decoder,dual queries,The decoder uses dual queries for determining vanishing points.
+positional queries,anchor points,Positional queries (anchor points) are determined by the decoder.
+content queries,decoder embeddings,Content queries are decoder embeddings in dual queries.
+vanishing points,anchor points,Vanishing points correspond to the anchor points.
+dual queries,iterative refinement,Dual queries are iteratively refined across multiple layers.
+final decoder layer,confidence scores,The final decoder layer predicts confidence scores.
+final decoder layer,vanishing points,The final decoder layer also predicts vanishing points.
+bipartite graph matching,loss calculation,Bipartite graph matching is used to calculate the loss.
+anchor points,(liu et al. 2022),The learning of anchor points is inspired by (Liu et al. 2022).
+gaussian sphere representation,vanishing point,The vanishing point is represented using a Gaussian sphere.
+pq,mlpp,The positional query Pq is obtained through an MLPp.
+cat,concatenate,Cat refers to the concatenation operation in obtaining Pq.
+pe,sinusoidal positional encoding,PE signifies sinusoidal positional encoding.
+pe,vector,PE maps a float to a vector with D/2 dimensions
+mlpp,vector,MLPp projects a 3D/2 dimensional vector into D dimensions
+mlps,content query cq,MLPs is learned conditional on the content query Cq
+˜pq,pq,˜Pq is obtained by multiplying Pq with the scaled MLPs output
+queries,self-attention module,queries are formed in the self-attention module
+vq,cq,Vq is formed using Cq in queries
+kq,cq,Kq is also formed using Cq in queries
+deformable detr,cross-attention operations,Deformable DETR performs cross-attention operations
+el_i,score branch,El_i is fed into the score branch for confidence scores
+el_i,prediction branch,El_i is also used in the prediction branch for residuals
+score_l_i,prediction quality,score_l_i represents the prediction quality
+∆xl,∆yl_i,residuals of vanishing points
+prediction quality,angle,The smaller the angle between the prediction and the ground truth
+vpdetr,vanishing points,VPDETR predicts a set of N vanishing points.
+vanishing points,ground-truth targets,A bipartite matching is conducted between predicted vanishing points and ground-truth targets.
+bipartite matching,permutation function σ(·),A bipartite matching objective is optimized using a permutation function σ(·).
+l1 distance,vectors,d(·
+angle,vectors,a(·
+indicator function,1{·},1{·} is an indicator function used in the optimization process.
+hungarian algorithm,optimal permutation σ∗,The optimal permutation σ∗ is computed using a Hungarian algorithm.
+optimal permutation σ∗,losses,Losses are computed based on the optimal permutation σ∗ from the bipartite matching.
+regression loss,l1 distance loss,Regression loss uses a simple L1 distance loss as a baseline.
+cross-prediction loss,manhattan world assumption,Cross-prediction loss is designed for datasets fitting the Manhattan world assumption.
+cross-prediction loss,vanishing point,The loss involves predicted and ground-truth vanishing points.
+vanishing point,cross product,In the Manhattan world
+orthogonal loss,manhattan world,Orthogonal loss is proposed specifically for datasets in the Manhattan world.
+orthogonal loss,vanishing point,This loss relates to the orthogonality of vanishing points.
+dist(a,b),min(d(a
+orthogonal loss,vanishing points,The orthogonal loss ensures that the predicted vanishing points are orthogonal to each other
+classification loss,binary cross-entropy loss (bce),The classification loss is based on BCE
+score prediction,angle between predicted vanishing points and ground-truth,Scores are predicted based on the minimum angle with the predicted vanishing point compared to the ground-truth.
+ltotal,regularization loss (lreg),classification loss (lcls)
+manhattan world datasets,non-manhattan world dataset,The method can be applied to both types of datasets
+nyu depth,dataset,NYU Depth is a dataset mentioned in the context.
+su3 dataset,synthetic outdoor images,The SU3 dataset consists of synthetic outdoor images.
+scannet dataset,rgb-d images,ScanNet contains RGB-D images of real-world indoor scenes.
+vanishing points,cad models,Vanishing points in the SU3 dataset are computed from CAD models.
+scannet,vanishing points,Vanishing points in ScanNet are estimated using surface normals.
+yud,dataset,YUD is another dataset mentioned
+svvp,real-world street view dataset,SVVP is a real-world street view dataset with 500 images.
+methodj-linkage,tardif (2009),MethodJ-linkage is attributed to Tardif (2009).
+simon et al. (2018),wu et al. (2021),Both Simon et al. (2018) and Wu et al. (2021) are mentioned in the context.
+consac,kluger et al. (2020),CONSAC is a method associated with Kluger et al. (2020).
+neurvps,zhou et al. (2019a),NeurVPS is a technique credited to Zhou et al. (2019a).
+ours,end-to-end trainable,Ours is an end-to-end trainable method
+simon et al.,2018,Publication Year
+wu et al.,2021,Publication Year
+lu et al.,2017,Publication Year
+li et al.,2019b,Publication Year
+consac,kluger et al.,Developed By
+tlc,tong et al.,Developed By
+neurvps,zhou et al.,Developed By
+lin et al.,2022,Publication Year
+ours*svvp,tong et al.,Related Work
+su3.world dataset,nyu depth,Pre-training Dataset
+silberman et al.,2012,Publication Year
+zhou et al.,2019a,Citation
+liu,zhou,and zhao
+scannet,500 images,Evaluation Data
+svvp,su3,Evaluation Datasets
+yud,svvp,Evaluation Datasets
+angle accuracy (aa),threshold,Evaluation Metric
+nyu depth dataset,kluger et al.,Citation
+lin et al.,2022,Citation
+bipartite matching,angular errors,Method
+recall curve,area under the curve (auc),Evaluation Measure
+prediction,confidence threshold,predictions with confidence above a certain threshold are selected as output for the general dataset.
+manhattan world dataset,highest score,For the Manhattan World dataset
+predicted value,existing results,Predicted values are compared with existing results to select additional outputs based on inner product threshold.
+vanishing points,final output,Up to three vanishing points are selected as the final output when their inner product is below a certain threshold.
+ours∗,400 queries,Ours∗ uses 400 queries for prediction and bipartite graph matching for selection.
+nvidia rtx2080ti,implementation platform,The model is implemented on Nvidia RTX2080Ti for inference speed comparison.
+λreg,λcross,Both λreg and λcross are set to 5 in the equations.
+λcls,λorth,λcls and λorth are set to 1.
+resnet-50,backbone,ResNet-50
+transformer,c3 layer,The C3 layer of the multi-scale feature map is used as input to the Transformer.
+queries,number,The number of queries is set to 20.
+training epochs,learning rate decay,Models are trained for 220 epochs with learning rate decay at the 200th epoch.
+adamw optimizer,learning rate,Training uses the AdamW optimizer with a base learning rate of 5 × 10^-5.
+j-linkage,si-mon et al.,Our model is compared with state-of-the-art methods including J-Linkage and Simon et al.
+wu et al.,comparison,Our model is also compared with Wu et al.'s method.
+our model,j-linkage,comparison during evaluation
+our model,simon et al.,comparison during evaluation
+our model,wu et al.,comparison during evaluation
+our model,lu et al.,comparison during evaluation
+our model,li et al.,comparison during evaluation
+our model,consac+dlsd,comparison during evaluation
+our model,neurvps,comparison during evaluation
+our model,tlc,comparison during evaluation
+our model,lin et al.,comparison during evaluation
+j-linkage,not learning-based method,method classification
+t-linkage,not learning-based method,method classification
+contrario-vp,not learning-based method,method classification
+quasi-vp,not learning-based method,method classification
+tlc,learning-based method,method classification
+consac,needs line segments as inputs,input requirement
+neurvps,end-to-end trainable,method characteristic
+lin et al.,end-to-end trainable,method characteristic
+our method,truly end-to-end,method characteristic
+nyu depth,non-manhattan dataset,dataset description
+su3,dataset for evaluation,dataset usage
+scannet,dataset for evaluation,dataset usage
+svvp,dataset for evaluation,dataset usage
+yud,dataset for evaluation,dataset usage
+top-k,#pred,evaluation criteria
+top-k,#gt,evaluation criteria
+method,vanishing points,method is for classifying candidate points as vanishing points
+our method,end-to-end,our method is truly end-to-end
+our methods,sota methods,comparison shows our methods achieve comparable or better performance
+su3 benchmark,zhou et al. 2019b,SU3 benchmark is referenced along with authors
+scannet benchmark,dai et al. 2017,ScanNet benchmark is referenced along with authors
+svvp benchmark,tong et al. 2022,SVVP benchmark is referenced along with authors
+nyu depth benchmark,silberman et al. 2012,NYU Depth benchmark is referenced along with authors
+inference speed,16 fps,refers to the inference speed of the method
+vpdetr,vanilla detr,VPDETR is compared with vanilla DETR in an ablation study
+orthogonal loss,cross-prediction loss,both losses improve the performance of the model
+su3 dataset,ablation experiments,ablation study is conducted on the SU3 dataset
+model,detr,DETR is a type of model.
+vpdetr,model,VPDETR is another variant of the model.
+c3 level of features,predicting vanishing points,C3 level features are ideal for predicting vanishing points due to their balance of semantic and geometric information.
+c5 level,geometric information,C5 level has a low resolution leading to loss of geometric information.
+c4 level,geometric information,C4 level also loses geometric information due to its low resolution.
+multi-scale features,accuracy improvement,Using multi-scale features does not enhance the model's accuracy.
+gradient norm,final prediction,Gradient norm indicates the influence of each pixel on the model's final prediction.
+input image,vanishing point detection,The model focuses on specific regions of the input image for predicting vanishing points.
+svvp,vanishing point detection dataset,SVVP is a dataset used for evaluating vanishing point detection.
+su3,vanishing point detection dataset,SU3 is another dataset for vanishing point detection evaluation.
+scannet,vanishing point detection dataset,ScanNet is a third dataset utilized for testing vanishing point detection performance.
+c5,resnet-50,C5 refers to the last layer feature map of ResNet-50.
+c4,resnet-50,C4 is the penultimate layer in ResNet-50.
+resnet-50,c5,C5 is the last layer feature map of ResNet-50
+resnet-50,c4,C4 is the penultimate layer of ResNet-50
+resnet-50,c3,C3 is the third to last layer of ResNet-50
+vanishing points,straight line information,Model pays more attention to places rich in straight line information for predicting vanishing points
+traditional methods,straight line,Traditional methods use straight line clues to infer vanishing points
+vpdetr,end-to-end framework,VPDETR is a novel end-to-end framework for vanishing point detection
+vpdetr,manhattan world datasets,VPDETR is capable of handling Manhattan and non-Manhattan world datasets
+orthogonal loss,manhattan world datasets,Orthogonal loss improves model accuracy for Manhattan world datasets
+cross-prediction loss,manhattan world datasets,Cross-prediction loss is introduced for improving model accuracy in Manhattan world datasets
+our method,accuracy and inference,Our method achieves a good balance of accuracy and inference speed
+orthogonal loss,cross-prediction loss,Both are types of losses used in the described method for achieving a balance between accuracy and inference speed.
+accuracy,inference speed,The method aims to achieve a good balance between these two factors in vanishing point detection.
+yud dataset,domain gap problem,The general performance on the YUD dataset is affected by the domain gap problem
+vanishing point detection,end-to-end inference,The method serves as a new paradigm for detecting vanishing points in images in an end-to-end manner.
+national natural science foundation of china (nsfc),funding source,The work was supported by NSFC
+no. 62371009,no. (nsfc grant numbers),These numbers refer to specific grant awards from the National Natural Science Foundation of China.

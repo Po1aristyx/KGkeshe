@@ -1,0 +1,222 @@
+node_1,node_2,edge
+hairstyle,reference image,Hairstyle is being transferred from a reference image to an input photo for virtual hair try-on.
+long hairstyle with bangs,pixie cut,Transforming a long hairstyle with bangs to a pixie cut involves removing existing hair and inferring how the forehead would look.
+hat-wearing person,visible hair,Transferring partially visible hair from a hat-wearing person in a different pose.
+stylegan,hallucinating any missing parts,Past solutions leverage StyleGAN for hallucinating any missing parts and producing a seamless face-hair composite.
+stylegan,gan inversion or projection,StyleGAN is used for producing a seamless face-hair composite through GAN inversion or projection.
+hallucinations,transferring hairstyle,There remains a challenge in controlling the hallucinations to accurately transfer hairstyle and preserve the face shape and identity of the input.
+multi-view optimization framework,reference composites,The optimization framework uses two different views of reference composites to semantically guide occluded or ambiguous regions.
+information sharing,two poses,"Our optimization shares information between two poses, producing high fidelity and realistic results from incomplete references."
+framework,prior work,Our framework outperforms prior work in a user study that consists of significantly more challenging hair transfer scenarios than previously studied.
+jennifer aniston,hairstyle,"What makes Jennifer Aniston keep her same hairstyle for over three decades? Perhaps she likes the classic, or perhaps changing her hairstyle is a decision too high-stakes."
+hairstyle transfer,stylegan2,"StyleGAN2 is a generative adversarial network used for synthesizing highly realistic face images, which is a key component in the process of hairstyle transfer."
+hairstyle transfer,state-of-the-art techniques,"The state-of-the-art techniques for hairstyle transfer include StyleYourHair, Barbershop, LOHO, and MichiGAN, which aim to manipulate multiple hair attributes of an input image."
+hairstyle transfer,hairfit,HairFIT is a method that attempts to solve the challenge of transfer degradation in hairstyle transfer when the reference hair comes from a person with a different headpose or facial shape.
+styleyourhair,barbershop,StyleYourHair and Barbershop are two methods that are part of the state-of-the-art techniques for hairstyle transfer.
+hairfit,pose,HairFIT and pose are related through the alignment step to align the pose of the target hair to the input face.
+styleyourhair,hairfit,StyleYourHair improves upon HairFIT’s results by optimizing for an aligned pose within StyleGAN2’s latent space.
+styleyourhair,misalignment,"StyleYourHair can handle a certain degree of misalignment, but often struggles to preserve details of the reference hair texture."
+styleyourhair,details,"StyleYourHair often struggles to preserve details of the reference hair texture, especially for intricate and non-straight hairstyles."
+trade-off,hallucinating new details,"There is a trade-off between hallucinating new details, which is crucial for handling highly different poses, and preserving the original texture from the reference images."
+trade-off,preserving original texture,"There is a trade-off between hallucinating new details, which is crucial for handling highly different poses, and preserving the original texture from the reference images."
+trade-off,goals,The trade-off is evident between hallucinating new details for aligning poses and preserving the original texture from the reference images.
+styleyourhair,barbershop,StyleYourHair and BarberShop results are compared in terms of producing better results based on pose difference.
+multi-stage optimization,dilemma,Performing a multi-stage optimization serves the purpose of tackling the dilemma between hallucinating new details for aligning poses and recovering face-hair details from original input images.
+pose alignment,face-hair details,The pose alignment is crucial for recovering face-hair details from the original input images.
+pose alignment,3d projection,Pose alignment is achieved explicitly via 3D projection on RGB images.
+pose alignment,latent code(s) sharing,Pose alignment is also done implicitly via latent code(s) sharing during multi-view optimization.
+rgb images,segmentation masks,"Unlike previous methods, the proposed approach operates entirely on RGB images instead of segmentation masks, providing more flexibility."
+multi-view optimization,3d information,Multi-view optimization for hairstyle transfer incorporates 3D information to align poses for both face and hair images.
+multi-view optimization,original images,Leveraging both views in multi-view optimization helps preserve details from the original images.
+multi-view optimization,3d information,Multi-view optimization for hairstyle transfer incorporates 3D information to align poses for both face and hair images.
+method,results,The proposed method shows superior results over existing works in various challenging scenarios.
+method,existing works,The proposed method outperforms existing works in all scenarios according to thorough analysis and user study.
+generative adversarial networks,stylegans,"Generative Adversarial Networks, starting with [11, 18], introduced StyleGANs which have shown great success in 2D image generation by learning realistic training data distribution corresponding to a fixed low-dimensional distribution."
+generative adversarial networks,image generation,Generative Adversarial Networks have shown success in 2D image generation through realistic training data distribution.
+generative adversarial networks,latent code,Generative Adversarial Networks learn a latent code for downstream tasks such as image manipulation.
+image generation,learning,Image generation is achieved through learning realistic training data distribution.
+latent code,downstream task,The learned latent code can be used in a downstream task like image manipulation.
+michigan,hair generation network,MichiGAN uses a conditional hair generation network for hairstyle transfers.
+michigan,hair shape,MichiGAN can control hair shape in hairstyle transfers.
+michigan,hair appearance,MichiGAN can also control hair appearance in hairstyle transfers.
+hairfit,pose-invariant hairstyle transfer network,HairFIT is a pose-invariant hairstyle transfer network.
+reference hair,input face pose,The reference hair is aligned to match the input face pose in hairstyle transfers.
+stylegan2,random latent code,StyleGAN2 maps a random latent code to an intermediate latent code in a new space called W.
+stylegan2,details control,The generator in StyleGAN2 controls details at different scales through weight demodulation.
+stylegan2,replicated latent codes,Replicated latent codes are used as input to the generator in StyleGAN2.
+pivotal tuning inversion (pti),projection quality,PTI improves the projection quality by directly tuning generator weights.
+generator weights,projection quality,The projection quality is directly influenced by tuning generator weights.
+generator weights,optimized latent code,Generator weights are tuned around the optimized latent code w.
+regularization technique,optimized latent code,The regularization technique is used to optimize the latent code w.
+latent code,input image,The latent code is optimized to better match the input image.
+pie,w space,PIE introduces hierarchical optimization by first optimizing the latent code in the W space.
+w space,w + space,The latent code is transferred from the W space to the W + space for optimization.
+pulse,high-resolution image,PULSE reconstructs a high-resolution image from a small reference image using the StyleGAN latent space.
+reference hair image,hair information,The method requires hair information from the reference hair image.
+input face image,additional information,Additional information from the input face image is required by the method.
+loho,image2stylegan++,LOHO adopts loss functions from Image2StyleGAN++ to combine face-hair inputs.
+orthogonalization optimization technique,loss functions,The orthogonalization optimization technique is used to combine loss functions.
+barbershop,semantic regions,Barbershop predicts semantic regions of inputs to create a 'target segmentation mask' of the output.
+target segmentation mask,output,A target segmentation mask is created for the output using rule-based or GAN-based inpainting
+latent codes,target segmentation mask,"Two separate latent codes are optimized in W + space, one for matching the face and the other for hair, while conforming to the target segmentation mask"
+latent optimization,f/s space,Latent optimization is done in the proposed F/S space to preserve original details
+guides,face and hair views,Two guides in face and hair views are simultaneously optimized to result in better hair texture
+segmentation mask,multi-view optimization,"Instead of estimating the final output from the segmentation mask, multi-view optimization uses face-hair composites in RGB space to produce results that better preserve input facial structure and hairstyle"
+hairnet,target segmentation mask,HairNet aims to remove the target segmentation mask through a two-step process involving baldification
+target segmentation mask,baldification,target segmentation mask is removed through a two-step process involving baldification using StyleFlow
+baldification,styleflow,baldification is achieved using StyleFlow
+styleflow,network,StyleFlow is followed by another network for transferring hairstyle
+pose differences,hairstyle transfer,handling pose differences is crucial for successful hairstyle transfer
+hairstyle transfer,3d rotation,3D rotation is incorporated to preserve geometric consistency in hairstyle transfer
+3d rotation,geometric consistency,3D rotation helps preserve geometric consistency in hairstyle transfer
+ih,if,goal is to transfer hair from image Ih to image If while preserving all remaining details
+hair texture,face identity,important details to preserve in hairstyle transfer are hair texture and face identity
+hair texture,background,important details to preserve in hairstyle transfer are hair texture and background
+input images,guide images,"The optimization process involves staying faithful to the input images while constructing guide images to preserve important details such as hair texture, face identity, and background."
+w space,w + space,"The proposal is to optimize on W space followed by W + space, similar to a technique in PIE [37] for editing semantic attributes of an image."
+our guide images,two viewpoints,The optimization process incorporates guide images from two viewpoints to enhance detail fidelity.
+guide images,hair,"The guide images are used to provide an initial estimate of how the hair would look, achieved through a cut-and-paste composite of face and background from one image and hair from another."
+pose of if and ih,preserve details,Using multi-view guide images in the pose of If and Ih helps preserve details that could be lost from using a single viewpoint alone.
+ih,eg3d latent space,An approach involves projecting Ih into the EG3D latent space to generate geometrically consistent guide images.
+latet codes,stylegan2 weights,Optimizing StyleGAN2 weights while freezing latent codes using PTI [29] is proposed to further improve detail fidelity.
+ih,eg3d,Ih is projected into the EG3D latent space for rendering purposes.
+ih,texture,"Regions in the texture from Ih’s viewpoint are replaced with original pixels of Ih, while the rest is projected texture from EG3D’s rendering."
+ih,facial keypoints,Facial keypoints from Ih are used to compute the faces’ widths and centers after applying scaling and translation.
+texture,eg3d,The texture is rendered using EG3D’s rendering pipeline.
+facial keypoints,semantic regions,"Facial keypoints and semantic regions are used together to handle various corner cases, such as re-painting unwanted hair regions."
+iface,iguide,Iface and Iguide are a pair of guide images generated by the multi-view optimization.
+ih,iguide,Ih and Iguide are a pair of guide images providing complementary information about hair and face from different poses.
+iface,ihair,Iface and Ihair are guide images used for multi-view latent optimization.
+guide image,original pixels,The guide image is fully accurate in regions with the original pixels seen in the original viewpoint.
+optimization goal,combine information,The optimization goal is to combine information from both guide images to generate a final output accurately capturing the realistic hair and other details.
+loss functions,attend to viewpoints,The multiple loss functions attend to both viewpoints with different spatial emphasis.
+alignment,construct guide images,The input face If and reference hair Ih are aligned to construct guide images.
+output of stylegan2's generator,latent code and noise input,The output of the StyleGAN2's generator is determined by a latent code w(i) or w+(i) and a stochastic noise input n(i).
+balancing weights,loss functions,The balancing weights λ(·) are used to adjust the impact of each loss function.
+optimization,generate output image,The objective of the W and W + optimization is to generate an output image fitting the corresponding Iguide without appearing unrealistic.
+guide images,unwanted artifacts,"Guide images can contain various unwanted artifacts, which is a main challenge addressed in the context."
+guide images,imprecise nature,The design of loss functions is tolerant of the imprecise nature of guide images.
+masked perceptual loss,learned perceptual image patch similarity (lpips),Masked Perceptual Loss is based on Learned Perceptual Image Patch Similarity (LPIPS) for comparing input images in a deep feature space.
+binary mask,indicating regions of interest,A binary mask is applied to indicate regions of interest in the deep feature space of the two input images.
+masked perceptual loss,applying additional pre-masking,The approach involves applying additional pre-masking to mask out ambiguous regions in the guide images.
+masked perceptual loss,mask for regions of interest (roi),The Masked Perceptual Loss involves the use of masks for regions of interest (ROI) to exclude certain regions from the loss computation.
+regions,loss,Regions are excluded from the loss by setting them to 0 in both input images.
+viewpoint,region of interest,"The viewpoint is balanced by a weight in the region of interest, which is set higher when the region covers the original pixels of a specific area."
+loss,face,"The loss that attends to the face in the Iface guide has a higher weight than the face loss in the Ihair per for face, hair, and background regions."
+face,hair,"The face loss in the Iface guide has a higher weight than the face loss in the Ihair per for face, hair, and background regions."
+regions of interest,global loss,There are 3 regions of interest considered for the global loss.
+global loss,output,The global loss function attempts to match the overall appearance of the output to the Iguide.
+mse,32x32 down-sampled input images,Mean square error is computed on 32x32 down-sampled input images to reduce the effect of matching visible seams from higher resolution Iguide.
+output,learned distribution,"To prevent the output from deviating too far from the learned distribution, the optimized latent code(s) are forced to be close to their initial values through L2 loss."
+optimized latent code(s),initial value,"To prevent the output from deviating too far from the learned distribution, the optimized latent code(s) are forced to be close to their initial values through L2 loss."
+w latent space,initial values,The estimated mean of the W latent space is used as the initial values for optimizing w.
+latent code,mapping network,"The latent code w from the first stage becomes the initial value for the optimization in W + extended latent space, which is drawn randomly through the mapping network f."
+latent code,noise maps,"Noise Regularization Loss ensures that the noise maps will be used for capturing the stochastic variations, and not for encoding the content meant to be captured by the latent code."
+latent code,guide images,"To enable information sharing between the two guide images (Iface guide) from two viewpoints, the latent codes for both images are forced to be close together by using the Latent Similarity Loss."
+latent code,guide images,"We optimize latent codes to match guide images of the same person and hairstyle but in different poses, enforcing information sharing between them."
+latent code,latent codes,"In StyleGAN2, latent codes in early layers correspond to high level concepts, whereas the remaining layers capture low-level information. This motivates the optimization in W + extended space for different aspects of the image."
+latent codes,last few layers,"The latent codes of the last few layers are constrained to be the same, enforcing information sharing between them."
+latent code w,single latent code,Latent code W is optimized as a single latent code which is duplicated for the first l layers and remaining layers are interpolated from current latent codes of each guide image.
+latent code,guide image,"The latent code for each guide image is partly similar due to random interpolation, producing realistic results."
+w + extended space,latent code for each layer,Optimization in W + extended space involves separately optimizing the latent code for each layer and sharing the last few layers of both W+ latent codes during optimization.
+last few layers,w optimization stage,The last few layers of both W+ latent codes are shared during optimization in the W Optimization stage.
+details,guide images,The hallucination stage aims to generate details not currently visible in the guide images.
+stage,hallucinate details,The stage aims to hallucinate details in order to make them visible in the guide images.
+guide images,output images,The output images of this stage are essentially the projection of the guide images.
+iface guide,ihair guide,The projection is done by optimizing on W latent space to fit each guide image.
+guide images,iface guide,The guide images capture the overall appearance of the desired outputs.
+unknown regions,facial features,Unknown regions may correspond to unseen facial features occluded by the hair.
+facial features,hair,Some facial features may be occluded by the hair from incomplete reference hair.
+unknown regions,hallucinated,Details from unknown regions need to be hallucinated and blended with the rest of the image.
+pre-masking,masked perceptual loss,The pre-masking is designed in Masked Perceptual Loss to include regions that need to be hallucinated.
+unknown regions,hallucinated,The Masked Perceptual Loss includes all the unknown regions that need to be hallucinated.
+face region,hair region,Different regions like face region occluded by hair or hair region occluded by other objects need to be hallucinated.
+image cropping,hair region,Hair region may not be visible due to image cropping.
+segmentation masks,face and hair regions,The segmentation masks are used for face and hair regions respectively.
+background regions,covered by,Background regions not covered by the guide images are specified as ¬M bg.
+m bg,m bg,Both M bg is set to be the background regions in If not covered by the transferred hair (Mbg).
+m bg,mroi,"M bg is constructed by composing different semantic regions from If and Ih, detailed in Appendix A.3. Mroi is applied on the deep feature maps, while Mroi is applied on raw RGB images."
+m bg,¬mroni,"¬Mroni is applied on raw RGB images, while M bg is set to be the background regions in If not covered by the transferred hair (Mbg)."
+mroi,¬mroni,"Mroi is applied on the deep feature maps, while ¬Mroni is applied on raw RGB images. Using both masking techniques is crucial to natural and seamless blending."
+mroi,iguide,Mroi is applied to the output to allow the hair or face shape to be different from Iguide's and freely grow outward if it leads to a more natural result.
+iface,ihair,We update the target images for the optimization from guide to the more complete versions based on the output images generated.
+oface,ohair,The output of the previous stage is used as a target image for the optimization process.
+oface,ihair,The target images for optimization are updated based on the output of the previous stage and the reference images.
+oface,ihair,Oface and Ihair are related as known regions in Oface are replaced with correct details from the original Ihair
+oface,iguide,Oface and Iguide are related as hallucinated parts from Oface are copied to Iguide
+ohair,iguide,Ohair and Iguide are related as hallucinated parts from Ohair are combined with the parts in Iguide that are known to be correct
+ihair,iguide,Ihair and Iguide are related as known details from original images are superior to the projection from EG3D
+pti,optimization.per,PTI is used for optimization.per to refine output images by allowing the optimization of StyleGAN's weights.
+output images,faces,The purpose is to match the original details from faces for the output images.
+output images,hair,The purpose is to match the original details from hair for the output images.
+llpips,pti,LLPIPS is used in the PTI optimization to calculate the reconstruction loss.
+generated image,tuned weights,The generated image is produced using the tuned weights in the optimization process.
+mask for face,mbg,The mask for the face includes Mbg.
+mask for hair,mh,The mask for hair is represented by Mh.
+styleyourhair,barbershop,Comparison is made between StyleYourHair and Barbershop in the experiments section.
+styleyourhair,loho,Comparison is made between StyleYourHair and LOHO in the experiments section.
+user preference,user study,User preference is evaluated via a user study.
+hair reference,flipped,"In StyleYourHair, the configuration ensures the hair reference is never flipped."
+styleyourhair,barbershop,"StyleYourHair can produce more realistic results in unaligned cases than LOHO and Barbershop. However, the hair details often look different from the reference hairstyle (row 5). We also observe that StyleYourHair may perform poorly when the pose difference becomes too large (row 3), as also shown in our user study for pose in Table 1."
+barbershop,loho,"LOHO and Barbershop often struggle to fit the reference hair accurately when the poses are not well aligned (rows 3-5), resulting in various artifacts, such as remnants of the original hair or wrong placement of the target hair."
+loho,styleyourhair,"StyleYourHair can produce more realistic results in unaligned cases than LOHO and Barbershop. However, the hair details often look different from the reference hairstyle (row 5). We also observe that StyleYourHair may perform poorly when the pose difference becomes too large (row 3), as also shown in our user study for pose in Table 1."
+barbershop,target hair,"Barbershop performs well in preserving hair texture when the poses are similar. However, it falls short when handling challenging cases, such as transitioning from a long to a short hairstyle or removing bangs."
+loho,target hair,"LOHO and Barbershop often struggle to fit the reference hair accurately when the poses are not well aligned (rows 3-5), resulting in various artifacts, such as remnants of the original hair or wrong placement of the target hair."
+styleyourhair,target hair,"Our method can accurately transfer hairstyle even when the input face and hair are misaligned (3rd, 4th row). It can also hallucinate missing details such as a forehead that was previously occluded (1st row), or shorten the hair (2nd row). In general, LOHO and Barbershop struggle with pose misalignment, while StyleYourHair struggles to preserves the input’s face shape and hair details."
+pose difference,user study,The pose difference is highlighted as a factor in the user study conducted for pose in Table 1
+method,hairstyles,The method discussed in the context can transfer hairstyles convincingly while still preserving the original face shape and hair details
+user study,amazon mechanical turk,The user study mentioned in the context was conducted using Amazon Mechanical Turk
+method,current state of the art,"Results of the method mentioned in the context were compared with the results of current state of the art methods: StyleYourHair, Barbershop, and LOHO"
+participant,in-put face,Each participant in the user study was shown an in-put face marked as 'Face'
+participant,reference hair,Each participant in the user study was shown a reference hair marked as 'Hair'
+our method,state-of-the-art hairstyle transfer methods,Our method outperforms state-of-the-art hairstyle transfer methods on FFHQ datasets in all challenging scenarios
+hair type,image,The task of transferring the hairstyle from an image is discussed in the context
+hairstyle,image,The hairstyle is transferred from the image 'Hair' to the person in the image 'Face'.
+task,transfer,The task accomplishes transferring the hairstyle to the person's face from the image.
+row,output,The output row consists of four images from each method in random order.
+participant,evaluation,Each task was evaluated by 3 different participants.
+image,resolution,All images were in 256x256 resolution.
+user study,benchmark,"Two challenging benchmarks, FFHQ-P and FFHQ-S, are constructed for the user study."
+benchmark,dataset,The benchmarks FFHQ-P and FFHQ-S are constructed from the test set of Flickr-Faces-HQ dataset (FFHQ).
+ffhq-p,input,FFHQ-P contains 150 random input face-hair pairs from FFHQ.
+ffhq-s,pair,FFHQ-S contains 300 pairs categorized into 12 different configs with varying levels of difficulty.
+config,scenario,"Each config contains 25 random input pairs and is a combination of four possible scenarios involving pose misalignment, face inpainting, and background inpainting."
+hair shape,smaller,"The shape of the hair becomes smaller, requiring background in-painting."
+hair shape,requires background in-painting,The shape of the hair requires background in-painting.
+hair regions,if and ih,Automatically detect scenarios based on the hair regions in If and Ih.
+ih,hat,Scenarios where the hat region in Ih represents the hair reference is not fully visible.
+pose difference range,ffhq-p,"User study on pose-invariant hairstyle transfer, with our method outperforming others in all pose difference ranges."
+hair reconstruction metrics,psnr ssim lpips fid,"Hair reconstruction results in the self-transfer experiment evaluated using metrics like PSNR, SSIM, LPIPS, FID."
+test pairs,participants,"Using all test pairs, participants preferred our results 56.2% of the time."
+input face,input reference hair,"In the self-transfer experiment, both the input face and input reference hair are set to be the same for evaluation."
+hair region of the output,blended back to the input image,The hair region of the output will be blended back to the input image to ensure accuracy in the self-transfer experiment.
+ips,fid,IPS and FID are related as they are mentioned together in the context as part of a method.
+hair region,input image,The hair region of the output is blended back to the input image to ensure that the difference in score only comes from the hair.
+output,difference in score,The hair region of the output will be blended back to the input image to ensure that the difference in score only comes from the hair.
+ablated versions,pipeline,"The ablated versions of the pipeline may produce results that may look realistic but fail to match the Ih’s hairstyle, have unlikely hair shapes or structures, have sharp boundaries, or contain an incomplete background."
+scores,"method, loho, barbershop, and styleyourhair","The scores of our method, LOHO, Barbershop, and StyleYourHair are reported in Table 3."
+input face,hair,"Unsurprisingly, when there is no misalignment between the input face and hair, Barbershop generally achieves excellent hair reconstruction quality."
+barbershop,alignment,"Like ours, StyleYourHair is specifically designed to be pose-invariant, but their hair reconstruction quality seems to suffer greatly, as shown in our comparison."
+hair reconstruction quality,performance,"Our method achieves better performance at hair reconstruction than StyleYourHair, but also suffers from similar drawbacks."
+evaluation metric,hairstyle transfer,We also propose a novel evaluation metric for hairstyle transfer that focuses on the ability to preserve facial shape of the original person.
+keypoints,input face,We accomplish comparing detected keypoints of the input face If and those on the output using a simple Root-Mean-Square Error (RMSE).
+keypoints,facial contour,"These keypoints were detected using an off-the-shelf library Dlib, and we only used keypoints on the facial contour."
+keypoints,off-the-shelf library,The keypoints were detected using an off-the-shelf library.
+keypoints,facial contour,Keypoints used on the facial contour for evaluation.
+keypoints,rmse,Method outperforms others with an RMSE of 10.89.
+rmse,styleyourhair,RMSE lower than StyleYourHair's.
+rmse,barbershop,RMSE lower than Barbershop's.
+rmse,loho,RMSE lower than LOHO's.
+pipeline,component,Assessing the importance of each component in the pipeline.
+component,iface guide,Results shown by using only Iface guide from a single view.
+component,hallucination stage,Results shown without using the hallucination stage.
+component,latent sharing structure,Results shown without using the latent sharing structure.
+component,pre-masking,Results shown without using pre-masking in Lper.
+config i,hairstyles,Using only Iface guide from a single view yields inaccurate hairstyles.
+config ii,hair results,"Without optimization in W, the method produces unrealistic hair results."
+config ii,artifacts,Method produces unrealistic hair results with various artifacts.
+lighting,unnatural,The color of lighting is mentioned as unnatural which indicates a relationship between the two concepts
+hair detail,reference hair view,The hair detail needs to be shared from the reference hair view for accuracy which signifies a relationship between the two concepts
+pre-masking,boundary,"The pre-masking affects the boundary of face and hair regions, hinting at a relationship between the two concepts"
+hair regions,face,The boundary between hair regions and the face can lead to visible seams which shows a relationship between the two concepts
+hair details,background,The original hair details and background need to be blended seamlessly which indicates a relationship between the two concepts

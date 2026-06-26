@@ -1,0 +1,228 @@
+node_1,node_2,edge
+gaussian processes,uncertainty,Gaussian processes are a powerful framework for quantifying uncertainty
+gaussian processes,sequential decision-making,Gaussian processes are a powerful framework for sequential decision-making
+gaussian processes,linear systems,Gaussian processes are limited by the requirement of solving linear systems
+linear systems,cubic cost,Solving linear systems has a cubic cost in dataset size
+linear systems,conditioning,Solving linear systems is sensitive to conditioning
+stochastic gradient algorithms,linear systems,Stochastic gradient algorithms are a computationally efficient method of approximately solving these linear systems
+stochastic gradient descent,accurate predictions,Stochastic gradient descent often produces accurate predictions
+stochastic gradient descent,convergence,Stochastic gradient descent does not converge quickly to the optimum
+stochastic gradient descent,predictive distributions,Stochastic gradient descent produces predictive distributions close to the true posterior
+stochastic gradient descent,large-scale regression tasks,Stochastic gradient descent achieves state-of-the-art performance on sufficiently large-scale or ill-conditioned regression tasks
+gaussian processes,sequential decision-making,"Gaussian processes are often used for sequential decision-making, which leads to state-of-the-art performance in various tasks."
+gaussian processes,optimizing molecules,Gaussian processes are used in tasks such as optimizing molecules in computational chemistry settings.
+gaussian processes,automated hyperparameter tuning,Gaussian processes are used in automated hyperparameter tuning.
+gaussian processes,computational cost,The main limitation of Gaussian processes is that their computational cost is cubic in the training dataset size.
+gaussian processes,inducing point methods,"Efforts have been directed towards addressing the computational cost limitation of Gaussian processes using inducing point methods, which approximate the GP posterior."
+gaussian processes,conjugate gradient methods,"Efforts have been directed towards addressing the computational cost limitation of Gaussian processes using conjugate gradient methods, which approximate the computation needed to obtain the GP posterior."
+stochastic gradient descent (sgd),training machine learning models,"SGD is a leading technique for training machine learning models at scale, particularly in deep learning and related settings."
+stochastic gradient descent (sgd),good predictive performance,"Empirically, SGD often leads to good predictive performance, even when it does not fully converge."
+deep learning,stochastic gradient descent (sgd),SGD is a common technique used in deep learning for training machine learning models.
+sgd,deep learning,SGD is the default regime in deep learning and is commonly used to learn kernel hyperparameters in the context of GPs
+sgd,implicit biases,Researchers study implicit biases and related properties of SGD in deep learning
+sgd,good performance,SGD is mentioned to often not requiring full convergence for good performance
+sgd,linear systems,SGD is explored to help accelerate computations of linear systems arising in GP computations
+sgd,quadratic problem,SGD is applied to a quadratic problem for drawing GP posterior samples
+gp,kernel hyperparameters,SGD is commonly used to learn kernel hyperparameters in the context of GPs
+gp,gp posterior samples,SGD is applied to drawing GP posterior samples by solving a quadratic problem
+gp,linear systems,SGD helps accelerate computations of linear systems arising in GP computations
+gp posterior samples,quadratic problem,SGD is applied to drawing GP posterior samples by solving a quadratic problem
+pathwise conditioning technique,optimization problem,The pathwise conditioning technique of re-cast as an optimization problem applied to drawing GP posterior samples
+pathwise conditioning technique,optimization problem,"The pathwise conditioning technique of Wilson et al. [50, 51] is re-cast as an optimization problem."
+optimization problem,low-variance sgd sampling estimator,The optimization problem is applied with the low-variance SGD sampling estimator of Antorán et al. [3].
+proposed method,inducing point gaussian processes,The proposed method is extended to inducing point Gaussian processes.
+sgd-approximated gp posteriors,true posterior,SGD-approximated GP posteriors match the true posterior in regions near and far away from the data despite optimization not fully converging.
+sgd,variational and conjugate gradient methods,SGD produces strong results compared to variational and conjugate gradient methods on large-scale and poorly-conditioned regression tasks.
+sgd,thompson sampling task,SGD produces strong results on a parallel Thompson sampling task where error bar calibration is paramount.
+gaussian processes,random function f,A Gaussian Processes is characterized by the random function f : X → R over some set X.
+gaussian processes,mean function,A Gaussian Processes is uniquely determined by a mean function µ(·) = E(f (·)).
+gaussian processes,covariance kernel,"A Gaussian Processes is uniquely determined by a covariance kernel k(·,·′) = Cov(f (·), f (·′))."
+pathwise conditioning,posterior,pathwise conditioning can be used to write the posterior directly as the random function
+posterior,random function,the posterior can be represented as the random function with a specific formula
+posterior,matrix inverses,"due to the matrix inverses present, the cost of computing the expressions is O(N^3)"
+random fourier features,efficient sampling,the techniques rely on random Fourier features for efficient sampling
+x,stationary,X is the dimension and k is considered stationary in the context
+random fourier features,random functions,Random Fourier features are sets of random functions used for efficient sampling
+normalized spectral measure,kernel matrices,the spectral measure of the kernel is used to construct unbiased estimators of kernel matrices
+fourier features,sample functions,Fourier features can be used to efficiently sample functions from the Gaussian process prior
+fourier features,monte carlo estimator,"using a precomputed set of Fourier features, the Monte Carlo estimator can be represented as a linear combination of features"
+fourier features φ,monte carlo estimatorf,"The Monte Carlo estimator approximately samples from GP(0, k) based on the precomputed set of Fourier features Φ, leading to O(N∗) cost."
+monte carlo estimatorf,˜f,The Monte Carlo estimatorf is replaced by ˜f in the pathwise conditioning formula (2) for sampling from the posterior as per the proposed algorithms.
+"sgd, cg, svgp",gp inference,"Comparison of SGD, CG, and SVGP methods for Gaussian Process (GP) inference with a squared exponential kernel on 10k datapoints is shown in Figure 1."
+sgd,cg,"SGD converges in all of input space except at the edges of the data, while CG needs more compute and may produce errors if stopped too early."
+cg,exact solution,"CG converges to the exact solution if more compute is used, but can produce errors if stopped too early as per the given compute budget."
+svgp,data summarization,"SVGP can summarize the data with only 20 inducing points, showing its efficiency in data summarization."
+"sgd, cg",infill asymptotics,"Infill asymptotics is considered where a large number of points near zero cause a very ill-conditioned kernel matrix, affecting the convergence of CG and impacting the performance of SGD."
+"sgd, cg",large domain asymptotics,"Large domain asymptotics involve data on a regular grid with fixed spacing, making the problem better conditioned and allowing both SGD and CG to recover efficiently."
+regular grid,fixed spacing,"regular grid with fixed spacing. This problem is better conditioned, allowing SGD and CG to recover the exact solution."
+sgd,cg,"Conjugate gradients (CG) are the most widely used algorithm to solve quadratic problems, both in the context of GPs [20, 19, 4] and more generally [33, 10]. CG reduces GP posterior inference to a series of matrix-vector products, each of O(N^2) cost. Given the system A^-1b, the number of matrix-vector products needed to guarantee convergence of CG to within a tolerance of ε [41], is N(i=1)N(i=1)(^)cond(A) logO(^)cond(A)"
+sgd,quadratic optimization problems,"This problem is better conditioned, allowing SGD and CG to recover the exact solution."
+cg,gp posterior inference,"CG reduces GP posterior inference to a series of matrix-vector products, each of O(N^2) cost."
+cg,convergence of cg,"The number of matrix-vector products needed to guarantee convergence of CG to within a tolerance of ε [41], is N(i=1)N(i=1)(^)cond(A) logO(^)cond(A)"
+a^-1b,matrix-vector products,"Given the system A^-1b, the number of matrix-vector products needed to guarantee convergence of CG to within a tolerance of ε [41], is N(i=1)N(i=1)(^)cond(A) logO(^)cond(A)"
+n^2,cost,"CG reduces GP posterior inference to a series of matrix-vector products, each of O(N^2) cost."
+cg,gp,"CG performs well in many GP use cases, for instance Gardner et al. [19] and Wang et al. [46]."
+cond(kxx+σ),cg,"The condition number cond(Kxx+Σ) need not be bounded, and conjugate gradients may fail to converge quickly [41]."
+cg,gradient descent,"By exploiting the quadratic structure of the objective, CG obtains substantially better convergence rates than gradient descent [8, 52]."
+gradient descent,sgd,This presents a pessimistic outlook for gradient descent and related methods such as SGD which do not take explicit advantage of the quadratic nature of the objective.
+sgd,machine learning,"Nonetheless, the success of SGD in large-scale machine learning [9] motivates us to try it anyway."
+sgd,gp,We now develop and analyze techniques for drawing samples from GP posteriors using SGD.
+optimization problem,optimal representer weight solution,"The optimization problem (5), with optimal representer weight solution v∗, requires O(N 2) operations to compute both its."
+optimal representer weight solution,square error and regularizer terms,The optimal representer weight solution requires O(N^2) operations to compute both its square error and regularizer terms exactly.
+square error loss term,minibatching,"The square error loss term is amenable to minibatching, which gives an unbiased estimate in O(N) operations."
+regularizer,fourier features,"The regularizer can be stochastically estimated with Fourier features using the identity ∥v∥2= Eω1,...,ωL∼ρ vT ΦT (x)Φ(x)v."
+estimators,sgd objective,Combining both estimators gives our SGD objective where D is the minibatch size and L the number of Fourier features.
+regularizer estimate,number of fourier features,The regularizer estimate is unbiased even when drawing a single Fourier feature per step; the number of features controls the variance.
+cg step,complexity,Equation (7) presents O(N) complexity in contrast with the O(N^2) complexity of one CG step.
+gp posterior samples,sgd computation,We now frame GP posterior samples in a manner amenable to SGD computation similarly to (7).
+pathwise conditioning expression,prior function sample,We approximate the prior function sample using the Fourier feature approach and the posterior mean with the minimizer obtained by SGD.
+minimizer,sgd,The minimizer v∗ of equation (7) is obtained by Stochastic Gradient Descent (SGD).
+posterior sample,uncertainty reduction term,Each posterior sample's uncertainty reduction term is parametrized by a set of representer weights.
+posterior sample,representer weights,Each posterior sample's uncertainty reduction term is parametrized by a set of representer weights.
+linear solve,representer weights,Representer weights are obtained through a linear solve against a noisy prior sample evaluated at the observed inputs.
+optimization objective,representer weights,An optimization objective targets a sample's optimal representer weights.
+noisy targets,high gradient variance,Minibatch estimation results in high gradient variance due to the presence of noisy targets.
+noise term,regularizer,The noise term is moved into the regularizer to avoid high gradient variance.
+optimization objective,variance reduction technique,A modification of the optimization objective generalizes the variance reduction technique of Antorán et al. to the GP setting.
+minibatch gradient variance,objectives,Figure 2 illustrates the minibatch gradient variance for these objectives.
+inducing points,linear cost,Inducing points ensure linear cost in dataset size for sampling objectives.
+algorithms,costs,Algorithms with costs have a relation in terms of being independent of the dataset size.
+algorithms,dataset size,"Algorithms mentioned have a relation with dataset size, as costs are independent of the dataset size."
+gps,inducing point posteriors,GPs can achieve costs independent of dataset size through inducing point posteriors.
+sgd sampling,gps,SGD sampling is extended to GPs through inducing point posteriors.
+gradient variance,optimization,Gradient variance throughout optimization is shown in Figure 2.
+smaller numbers of inducing points,test rmse and negative log-likelihood,Test RMSE and negative log-likelihood decrease as the number of inducing points decreases.
+optimal inducing point mean,inducing point approximation,The optimal inducing point mean is related to the inducing point approximation of Titsias.
+inducing points,pathwise conditioning,Pathwise conditioning is applied to inducing points.
+kullback-leibler-optimal inducing point approximation,titsias,The Kullback-Leibler-optimal inducing point approximation of Titsias is related to a specific expression.
+optimal inducing point mean,wild et al.,The optimal inducing point mean is referred to in Wild et al.
+gaussian,nyström approximation,The Nyström approximation is identified as a matrix approximation to the Gaussian process.
+fourier features,gaussian process,Fourier features are used to sample the Gaussian process approximation.
+m,inducing points,The approximation error is small when the number of inducing points (M) is large.
+number of inducing points,samples,The cost of inducing point representer weight updates is proportional to the number of samples and inducing points.
+stochastic gradient variational gaussian processes,stochastic estimator,The update cost of inducing point representer weights contrasts with the update cost of stochastic gradient variational Gaussian processes.
+sgd with m ≈ 100k inducing points,regular sgd on houseelectric (n ≈ 2m),"SGD with approximately 100k inducing points matches the performance of regular SGD with 2M data points, but is much faster."
+sgd-based scheme,posterior gaussian process,The scheme is detailed for obtaining approximate samples from the posterior Gaussian process using SGD.
+sgd,convergence,"Although SGD has lower cost per iteration than CG, its convergence to the true optima is slower."
+optima,euclidean representer weight space,"Optima, as shown in Figure 3, is much slower with respect to both Euclidean representer weight space."
+optima,reproducing kernel hilbert space (rkhs) induced by the kernel,"Optima, as shown in Figure 3, is much slower with respect to both RKHS induced by the kernel."
+predictions obtained by sgd,exact gp,The predictions obtained by SGD are very close to those of the exact GP and effectively achieve the same test RMSE.
+sgd posterior on a 1d toy task,error bars,SGD posterior on a 1D toy task exhibits error bars of the correct width close to the data.
+differences between sgd and exact posteriors,borders of data-dense regions,Differences between SGD and exact posteriors concentrate at the borders of data-dense regions.
+convergence of gp posterior mean with sgd and cg,time on an a100 gpu,Convergence of GP posterior mean with SGD and CG as a function of time on an A100 GPU on the ELEVATORS dataset.
+posterior function samples in pathwise form,prior function sample,"Posterior function samples in pathwise form include the prior function sample f ~ GP(0, k)"
+sgd,approximate posteriors,"SGD-computed approximate posteriors behavior is characterized by splitting the input space X into three regions - prior, interpolation, and extrapolation regions."
+prior,interpolation,"Points in the Prior Region are sufficiently distant from the observed data, while the Interpolation Region includes points close to the training data."
+sgd,error,SGD incurs small error in the Interpolation Region as characterized through subspaces of the RKHS.
+canonical basis functions,weighed linear combinations,"The weighed linear combinations of canonical basis functions are computed according to the given formula expressed using the notation k(xj,·)"
+canonical basis functions,kernel principal component analysis,These canonical basis functions also appear in kernel principal component analysis
+canonical basis functions,orthonormal,Canonical basis functions are orthonormal with respect to the RKHS inner product
+courant–fischer characterization,eigenvalues and eigenvectors,The Courant–Fischer characterization of eigenvalues and eigenvectors is lifted to the RKHS Hk induced by k
+spectral basis function,smoothness,"The top spectral basis function is a function of fixed RKHS norm, also referred to as fixed degree of smoothness defined by the kernel k"
+spectral basis function,observations,"Spectral basis functions take maximal values at the observations, implying that u(1) will be large near clusters of observations"
+sgd,true posterior,"Empirically, SGD matches the true posterior in the given region"
+sgd,spectral basis functions,SGD converges quickly in the directions spanned by spectral basis functions
+proju(i),orthogonal projection,proju(i) is the orthogonal projection onto the subspace spanned by u(i)
+exact gp,sgd error,Exact GP and SGD error comparison in Figure 4
+2-wasserstein distance (w2),marginals,W2 values show difference near the data (interpolation region) and far from training data
+spectral basis functions,interpolation region,Low-index spectral basis functions are in the interpolation region where W2 error is low
+spectral basis functions,extrapolation region,Functions of index 10 and larger lie on the extrapolation region where the error is large
+polyak-averaged sgd,predictive mean,Polyak-averaged SGD provides the predictive mean after t steps
+gradient,g-sub-gaussian,Assuming the stochastic estimate of the gradient is G-sub-Gaussian
+mean,representer weights,Predictive mean obtained with initial set of representer weights equal to zero
+learning rate,λ1,Using a learning rate of 0 < η < λ1(λ1+σ2)
+subspaces,basis functions,Subspaces in general are spanned by basis functions.
+subspaces,appendix e.1,General subspaces spanned by basis functions are provided in Appendix E.1.
+g,o(λ2,Expect G to be at most O(λ2
+posterior mean,posterior samples,The result extends immediately from the posterior mean to posterior samples.
+sgd,posterior gp,SGD converges to the posterior GP quickly in the data-dense region.
+sgd,spectral basis functions,"SGD converges to the posterior GP quickly in the data-dense region, namely where the spectral basis functions corresponding to large eigenvalues are located."
+sgd,kernel matrix,SGD can perform well even when the kernel matrix is ill-conditioned.
+extrapolation region,input space,The Extrapolation Region can be found by elimination from the input space of the prior and interpolation regions.
+extrapolation region,prior regions,The Extrapolation Region can be found by elimination from the input space of the prior and interpolation regions.
+sgd,error,SGD incurs low error in both the prior and interpolation regions.
+iterative regularization,benign nonconvergence,"iterative regularization is a similar phenomenon which has been observed in the inverse problems literature, in contrast to benign nonconvergence"
+iterative regularization,inverse problems literature,both terms are related as iterative regularization is observed in the inverse problems literature
+wasserstein distance,exact gp predictions,"Wasserstein distance to the exact GP predictions is high, indicating a difference between them"
+sgd,small representer weights,"SGD tends to return small representer weights, implying a relationship between the two terms"
+test rmse,nll,Test RMSE and NLL are compared as a function of compute time on a TPUv2 core for CG and SGD
+sgd gps,empirical evaluation,empirical evaluation focuses on the predictive and decision-making properties of SGD GPs
+sgd gps,scalable gaussian process techniques,SGD GPs are compared with the two most popular scalable Gaussian process techniques: preconditioned conjugate gradient (CG) optimization and sparse stochastic variational inference (SVGP)
+cg,preconditioned cholesky,CG uses a pivoted Cholesky preconditioner of size 100
+sparse stochastic variational inference (svgp),gpjax,"GPJax SVGP implementation is employed for sparse stochastic variational inference, using M = 4096 inducing points for all datasets"
+linear systems,ill-conditioning,robustness to the ill-conditioning of linear systems is considered
+wang et al.,datasets,Wang et al. refer to datasets from the UCI repository.
+uci repository,datasets,Datasets are obtained from the UCI repository.
+n,datapoints,The datasets range in size from N = 15k to N ≈ 2M datapoints.
+d,dimensionality,The datasets have dimensionality ranging from d = 3 to d = 90.
+matérn-3/2 kernel,hyperparameters,Matérn-3/2 kernel is used with a fixed set of hyperparameters obtained using maximum marginal likelihood.
+sgd,batch size,SGD is run for 100k steps with a fixed batch size of 512.
+cg,datasets,CG runs a maximum of 1000 steps for datasets with N ≤ 500k.
+svgp,variational parameters,SVGP learns variational parameters for M = 4096 inducing points.
+elbo,adam,ELBO is maximized with Adam until convergence.
+predictive variances,log-likelihood computations,Predictive variances are estimated for log-likelihood computations.
+predictive mean,single core,The predictive mean is needed to be obtained on a single core of a TPUv2 device.
+multiple samples,repeating computation,Drawing multiple samples requires repeating the computation in parallel.
+small setting,n ≤ 20k,"In the small setting where N is less than or equal to 20k, taking 100k steps of SGD is comparable to running CG to tolerance."
+cg,exact solution,CG converges to the exact solution.
+sgd,increased test error,SGD tends to present increased test error due to non-convergence.
+large setting,n ≥ 100k,"In the large setting where N is greater than or equal to 100k, neither method converges within the compute budget."
+sgd,better rmse and nll results,SGD achieves better RMSE and NLL results in the large setting.
+svgp,cg and sgd,SVGP always converges faster than CG and SGD.
+svgp,buzz dataset,SVGP performs best on the BUZZ dataset.
+sgd,progress in prediction space,SGD makes the vast majority of its progress in prediction space in its first few iterations.
+datasetnpol,re,DatasetNPOL utilized the RE value for its calculations.
+datasetnpol,svgp,DatasetNPOL did not run SVGP in low noise conditions.
+datasetnpol,ms sgd,Metric values were reported based on DatasetNPOL for Ms SGD.
+datasetnpol,cg,The values for DatasetNPOL were significant for CG calculations.
+re,sgd,RE values were compared with SGD values.
+re,cg,RE values were compared with CG values.
+svgp,sgd,SVGP performance was compared with SGD performance.
+svgp,cg,SVGP performance was compared with CG performance.
+ms sgd,cg,Metric values from Ms SGD were compared with CG values.
+svgp,cg,Performance of CG severely degrades on all datasets and optimization diverges for all datasets in comparison to SVGP
+svgp,sgd,"Optimization diverges for all datasets in SVGP, while SGD's results remain essentially unchanged"
+svgp,kernel matrix,"SVGP is sensitive to kernel matrix conditioning, which affects the algorithms under consideration"
+sgd,kernel matrix,"Noise only changes the smallest kernel matrix eigenvalues substantially, which does not affect convergence for the top spectral basis functions in SGD"
+inducing points,sgd,Time required for 100k SGD steps scales roughly linearly with inducing points
+inducing points,houseelectric,"Inducing point variant of the method is demonstrated on HOUSEELECTRIC, the largest dataset"
+sgd,rmse,SGD's performance in terms of RMSE degrades less than 10% even when using 218k points.
+sgd,nll,SGD's performance in terms of NLL degrades less than 10% even when using 218k points.
+large-scale parallel thompson sampling,gaussian processes,Fundamental goal of scalable Gaussian processes is to produce uncertainty estimates useful for sequential decision making.
+large-scale parallel thompson sampling,large-scale recommender systems,"Motivated by problems in large-scale recommender systems, we benchmark SGD on a large-scale Bayesian optimization task."
+gp,parallel thompson sampling,"We draw a target function from a GP prior g ∼ GP(0, k) and optimize it on X = [0, 1]d using parallel Thompson sampling."
+gp,matérn-3/2 kernel,"To eliminate model misspecification confounding, we use a Matérn-3/2 kernel."
+matérn-3/2 kernel,length scales,"The Matérn-3/2 kernel is used to consider length scales of (0.1, 0.2, 0.3, 0.4, 0.5) for both the target function and the models."
+team,model,"In large-scale Bayesian optimization, training and posterior function optimization costs can become significant, and predictions may be needed on demand."
+team,compute,"For this reason, two variants of the experiment are considered with different levels of compute."
+sgd,svgp,"In the small-compute setting, SGD is run for 15k steps, SVGP is given M = 1024 inducing points and 20k steps to fit the variational parameters."
+thompson sampling,approximate inference methods,Maximum function values obtained by Thompson sampling with approximate inference methods are presented as a function of acquisition steps and compute time on an A100 GPU.
+algorithm,time,"In the small-compute setting, the approximately 1.5 hours required for 30 Thompson steps with SVGP and SGD are dominated by the algorithm."
+gpu,thompson steps,GPU hours required for 30 Thompson steps with SVGP and SGD are dominated by the algorithm used to maximize the models' posterior samples.
+gpu,svgp,GPU hours required for 30 Thompson steps with SVGP and SGD are dominated by the algorithm used to maximize the models' posterior samples.
+gpu,sgd,GPU hours required for 30 Thompson steps with SVGP and SGD are dominated by the algorithm used to maximize the models' posterior samples.
+cg,time,"CG takes roughly twice the time, requiring almost 3h of wall-clock time."
+sgd,progress,"SGD makes the largest progress per acquisition step, finding a target function value that improves upon the initial training set maximum twice as much as the other inference methods."
+vi,cg,"VI and CG perform comparably, with the latter providing slightly more progress both per acquisition step and unit of time."
+methods,random search,"Despite their limited compute budget, all methods outperform random search by a significant margin."
+inference methods,maximum target value,"In the large-compute setting, all inference methods achieve a similar maximum target value by the end of the experiment."
+cg,sgd,CG and SGD make similar progress per acquisition step but SGD is faster per unit of time.
+svgp,cg,SVGP is slightly slower than CG per both.
+sgd,uncertainty quantification technique,"In summary, our results suggest that SGD can be an appealing uncertainty quantification technique for large-scale GP-based sequential decision making."
+stochastic gradient algorithms,gaussian process posterior means,"In this work, we explored using stochastic gradient algorithms to approximately compute Gaussian process posterior means and function samples."
+stochastic gradient algorithms,optimization objectives,We derived optimization objectives with linear and sublinear cost for both.
+stochastic gradient algorithms,predictions,We showed that SGD can produce accurate predictions—even in cases when it does not converge to an optimum.
+stochastic gradient algorithms,effects,We developed a spectral characterization of the effects.
+sgd,regression tasks,SGD was benchmarked on regression tasks and achieved state-of-the-art performance for sufficiently large or ill-conditioned settings.
+sgd,thompson sampling benchmark,SGD matches the performance of more expensive baselines at a fraction of the computational cost on a Thompson sampling benchmark.
+david r. burt,tricks,David R. Burt suggested a few tricks which helped in completing the development of the theory.
+bruno mlodozeniec,small mistake,Bruno Mlodozeniec identified and corrected a small mistake in the proof of Appendix E.1.
+jal,university of cambridge harding distinguished postgraduate scholars programme,JAL was supported by the University of Cambridge Harding Distinguished Postgraduate Scholars Programme.
+ja,microsoft research,JA acknowledges support from Microsoft Research through its PhD Scholarship Programme.
+ja,epsrc,JA acknowledges support from the EPSRC.
+jmhl,turing ai fellowship,JMHL acknowledges support from a Turing AI Fellowship under grant EP/V023756/1.
+at,cornell university,AT was supported by Cornell University.
+cambridge tier-2 system,university of cambridge,This work has been performed using resources provided by the Cambridge Tier-2 system operated by the University of Cambridge.
+cambridge tier-2 system,university of cambridge research computing service,The Cambridge Tier-2 system is provided by the University of Cambridge Research Computing Service.
+cambridge tier-2 system,epsrc tier-2 capital grant,The Cambridge Tier-2 system is funded by an EPSRC Tier-2 capital grant.
+cloud tpus,google's tpu research cloud,Cloud TPUs are supported with Google's TPU Research Cloud.

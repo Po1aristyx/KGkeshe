@@ -1,0 +1,146 @@
+node_1,node_2,edge
+visual document understanding (vdu),document,The context highlights that VDU is a domain focused on understanding documents beyond basic OCR
+docformerv2,multi-modal transformer,DocFormerv2 is described as a multi-modal transformer specifically designed for Visual Document Understanding.
+docformerv2,encoder-decoder transformer,This model has an encoder-decoder architecture
+unsupervised tasks,pre-training,DocFormerv2 is pre-trained with carefully designed unsupervised tasks to align local features across modalities.
+tabfact,state-of-the-art performance,DocFormerv2 shows state-of-the-art performance on TabFact
+infovqa,state-of-the-art performance,It also outperforms competitors by +1.4% on InfoVQA.
+funsd,state-of-the-art performance,An improvement of +1.0% is noted on the FUNSD dataset.
+scene-text vqa tasks,generalization capabilities,DocFormerv2 demonstrates better generalization by outperforming comparably-sized models on scene-text VQA tasks.
+docformerv2,pali,It even performs better than larger models like PaLI on scene-text VQA tasks.
+docformerv2,flamingo,Comparable performance to Flamingo
+visual layout and structure,accurate understanding,The content's layout and structure are crucial for achieving accurate understanding.
+linearization,sub-optimal performance,Naive linearization of text results in sub-optimal performance due to changes in semantic meaning based on layout.
+figure 1 - table 5,experiments demonstrating layout impact,These experiments in the figure and table illustrate the effect of layout on performance.
+vdu,multi-modal approach,VDU necessitates a multi-modal approach that combines text and visual features considering the document's 2D layout.
+vision-language learning,feature alignment,In vision-language learning
+local and layout-relative understanding,document vqa,semantic labeling
+page-number,interpretation context,The interpretation of a '1' as a page number or numeric value depends on its location in the document.
+vdu domain understanding,tasks requiring layout-specific knowledge,VDU tasks emphasize the importance of understanding the context of the document's layout.
+docformer v1,vdu model,DocFormer v1 is a model specifically designed for the Visual Document Understanding domain.
+prominent published research papers,table 1,The research focus is catalogued in Table 1
+tilt (powalski et al. 2021),encoder-decoder transformer for vdu,TILT is a proposed model that employs an encoder-decoder transformer specifically designed for Visual Document Understanding (VDU).
+docformerv2,multiple unsupervised pre-training tasks,DocFormerv2 simplifies the architecture by having several unsupervised tasks
+our approach (docformerv2),not using a separate visual module,DocFormerv2 does not utilize a dedicated visual component like a CNN or Transformer
+ocr model,bounding-box location,The OCR model predicts a word's bounding box coordinates to encode spatial information.
+spatial features,word's font-size and importance,Spatial features provide cues about a word's size
+docformerv2,unsupervised pre-training,DocFormerv2 follows the practice of unsupervised pre-training for downstream task fine-tuning.
+pre-training tasks,downstream tasks,The pre-training tasks are designed as a close proxy for downstream tasks.
+encoder,token-to-line task,The Token-to-Line Task focuses on local feature semantic alignment
+vdu tasks,local feature semantic alignment,Local feature alignment is crucial for key-value prediction in VDU tasks
+value prediction,key,In a VDU task like VQA
+visual question answering (vqa),vdu tasks,VQA is an example of a VDU task where understanding the document context is vital.
+document,line,A document consists of multiple lines
+docformerv2,encoder-decoder transformer architecture,DocFormerv2 is a type of architecture that combines an encoder and decoder for processing multi-modal data
+pre-training,token-to-line prediction task,During pre-training
+docformerv2,docvqa task,The pre-trained DocFormerv2 provides a +2.2% improvement on the DocVQA task
+prediction heads,grid prediction,After pre-training
+docformerv2,end-to-end trainable,The entire architecture of DocFormerv2 is designed to be trained end-to-end
+docformerv2 (dfv2),multi-modal encoder-decoder architecture,DFv2 is a type of architecture that serves as a multi-modal encoder-decoder.
+dfv2,small,base
+dfv2,multi-modal inputs,DFv2 accepts multi-modal inputs
+image of the document (i),visual feature,The visual branch of DFv2 processes the flattened image sequence to create an image embedding.
+text extracted by ocr model (t),multi-modal inputs,OCR text and OCR bounding box coordinates are part of the multi-modal data fed into DFv2.
+spatial features (s),multi-modal inputs,Spatial features
+v (image embedding),visual branch,V is a simplified image embedding created by a linear layer applied to the image input.
+swin,vit,expensive image encoders
+frcnn variants,bulky object-detection networks,Prior VDU work employed these networks
+transformer,dfv2,The architecture of DFv2 is based on transformers
+vdu prior-art,transformer layers,The context mentions that VDU prior-art uses transformer layers
+permutation-invariant,transformer layers,These terms are connected because the property of permutation-invariance is associated with the functioning of transformer layers.
+2d-positional encoding (ps),transformer layers,The 2D-positional encoding is computed for transformer layers
+predicted text (t),ocr model,An OCR model is used to predict the text
+sentence-piece sub-word tokenizer,predicted text (t),The tokenizer is applied to the predicted text
+maximum sequence limit (s),predicted text (t),This parameter limits the sequence length during training and testing
+pre-trained model,downstream train data,The pre-trained model is fine-tuned on specific downstream tasks' training data.
+industrial document library (idl),pre-training data,The IDL is the dataset used for unsupervised pre-training of the model.
+idl,various industries (e.g.,tobacco
+document images,idl,The dataset consists of millions of document images hosted by UCSF.
+ocr-text,document images,OCR-text is extracted from the document images for pre-training.
+unsupervised pre-training,idl and ocr-text,The data is used for unsupervised learning
+unsupervised pre-training,idl 64m,The data distribution for unsupervised pre-training is presented in the supplemental section of IDL 64M.
+fine-tuning,provided training set,The model is fine-tuned on the provided training set.
+fine-tuning,validation/test set,Numbers are reported on the corresponding validation/test set.
+our approach,no dataset-specific hyperparameter tuning,This approach does not involve dataset-specific hyperparameter tuning.
+pytorch,huggingface library,The model was implemented using Pytorch and the Huggingface library.
+evaluation metrics,docvqa,ANLS is used for DocVQA.
+evaluation metrics,infovqa,ANLS is used for InfoVQA.
+evaluation metrics,st-vqa,ANLS is used for ST-VQA.
+evaluation metrics,funsd,F1-score is used for FUNSD.
+evaluation metrics,cord,F1-score is used for CORD.
+evaluation metrics,textvqa,Accuracy is used for TextVQA.
+evaluation metrics,ocr-vqa,Accuracy is used for OCR-VQA.
+table vqa,wikitable,These datasets study table understanding on Wikipedia tables.
+table vqa,tabfact,TabFact involves table understanding and fact verification.
+entailed statements,refuted statements,Entailed and refuted statements are prepared for table understanding tasks.
+language semantics,location (visual,spatial)
+document,virtual grid division,The document is virtually divided into a m x n grid for organizing OCR tokens.
+ocr token,grid number,Each OCR token is assigned a grid number based on its top-left location.
+grid number,scan-order,If a token falls on the boundary of multiple grids
+normalized image coordinates,prediction exclusion,Tokens falling on the boundary of normalized image coordinates are ignored for prediction.
+grid,width and height,Each grid has its own width (∆x) and height (∆y).
+grid,number of grids in a row (m),m represents the total number of grids horizontally.
+decoder,language modeling,The decoder performs denoising masked language modeling
+spatial features,masking during pre-training,During pre-training
+spatial features,grid and line prediction,Masking spatial features makes the model predict grid numbers and line information without explicit position cues.
+loss,ldlm,Loss function Ldlm is used for the denoising masked language modeling task.
+pre-training loss,downstream tasks,The final loss combines pre-training losses (Lf
+token-to-line and token-to-grid linear prediction heads,pre-training,These heads are removed after pre-training
+docformer v2 large,previous state of the art,DocFormer v2 large outperforms the previous state-of-the-art on WikiTableQuestions and TabFact datasets.
+docformer v2 large,layoutlmv3 large,DocFormer v2 large is compared to LayoutLMv3 large
+docformer v2 large,t5large+2d+u,DocFormer v2 large also outperforms T5large+2D+U
+funsd dataset,semantic entity-labeling task,DocFormer v2 is tested on the FUNSD dataset for the task of semantic entity-labeling
+funsd dataset,jaume,ekenel
+funsd dataset,four classes,The FUNSD dataset has four categories: question
+entity-level performance,f1 score,Entity-level performance is measured using F1 score
+docformerv2,grayed models,DocFormerv2 outperforms existing methods without using entity box priors in pretraining and finetuning.
+docformerv2,pix2structlarge,DocFormerv2 is compared to Pix2Structlarge
+docvqa,infographicsvqa,DocFormerv2 is trained on an extra document VQA dataset and further fine-tuned
+docvqa,infographicsvqa,Comparison: Our work performs better on DocVQA with a gain of 0.79%
+our approach,pix2struct,Methods comparison: Our approach outperforms Pix2Struct
+pix2struct,methods based on only image,Category: Pix2Struct belongs to methods that rely solely on image information.
+t5large+2d+u,methods based on only text / (text + spatial) features,Comparison: T5large+2D+U is among the methods using only text or text with spatial features.
+layoutlmv3large,methods based on image + text + spatial features,Methods comparison: LayoutLMv3large is a part of the ensemble using combined image
+layoutlmv2,layoutlmv3large,Comparison: Both LayoutLMv2 and LayoutLMv3 are models utilizing image
+docformerv2large,layoutlmv2,Comparison: Both models
+docformerv2,previous state of the art,Performance: DocFormerv2 outperforms the previous best method on Document VQA datasets.
+cord dataset,entity extraction task,Task: DocFormerv2 is evaluated for entity extraction on the CORD dataset.
+cord,1000 receipts,Description: CORD contains 1000 receipts split into train
+fine-grained fields,4 coarse-grained categories,Hierarchy: CORD defines entities under 4 broad categories with 30 fine-grained fields within them.
+docformerv2,97.7% f1 score,Performance: DocFormerv2 achieves a high F1 score of 97.7% on the entity extraction task.
+docformerv2,existing methods,Comparison: DocFormerv2 outperforms existing entity extraction methods.
+docformerv2 pre-training tasks ablation,baseline,Table 8 shows the impact of three pre-training tasks (B: Baseline
+visual features,token-to-line prediction,Both are among the pre-training tasks in DocFormerv2
+token-to-line prediction,token-to-grid prediction,These are two distinct pre-training tasks in DocFormerv2
+docformerv2,layoutlmv2,The study compares the robustness of DocFormerv2 to LayoutLMv2 in response to OCR errors.
+ocr errors,robustness to ocr errors,This experiment evaluates the models' ability to handle artificial character typos in the FUNSD dataset.
+docformerv2,generative decoder,DocFormerv2's generative decoder exhibits resilience against OCR errors
+multi-modal training,denoising language modeling task,Both tasks are part of the ablation experiments conducted on DFv2 -small
+dfv2 -small,1m doc pre-training,The ablation study was performed on a smaller version of DocFormerv2
+docformerv2,solving ocr problem,DocFormerv2 demonstrates its effectiveness in solving OCR problems with a smaller model and less data.
+previous sota,best performance,Bolded numbers indicate the best performance
+generative decoder,performance drop,The generative decoder experiences a -1.68% performance drop compared to the encoder-only LayoutLMv2 when facing 20% OCR errors.
+generative decoder,layoutlmv2,Generative decoder is compared to LayoutLMv2
+ocr errors,f1 score,The impact of OCR errors is measured through F1 score evaluation
+pre-training data size,dfv2's performance,The pre-training data size affects DocFormerv2's performance
+docformerv2,st-vqa,DocFormerv2 outperforms comparable models like GIT and LaTr by a significant margin (+2.2%) on ST-VQA.
+docformerv2,textvqa,The combination of ST-VQA and TextVQA training sets improves DocFormerv2's performance (indicated by †).
+down-stream tasks,f1 scores,The context discusses F1 scores as a measure of performance for down-stream tasks.
+st-vqa,textvqa training sets,The combination of ST-VQA and TextVQA training sets is mentioned as being used for the ablation study.
+dfv2,lay-outlmv2,DFv2 outperforms Lay-outLMv2
+dfv2,limited data (11m documents),Both models were trained on the same smaller dataset
+dfv2,64m documents,DFv2 improves further with more data
+token-to-grid pre-training,benefits,The Token-to-Grid pre-training task was found to provide benefits in the ablation section.
+token-to-grid pre-training,virtual grid-size,The empirical determination of the optimal grid size
+grid sizes,harm,Smaller or asymmetric grid structures like 4x1 are not ideal
+docformer v2,vision and token-to-line enabled,DocFormer v2 enables vision and Token-to-line capabilities.
+docformer v2,more ablations,Additional ablation experiments are provided in the supplemental material.
+conclusion,importance of two,The conclusion highlights the significance of the two aspects mentioned within the paper
+docformerv2,approach,DocFormerv2 refers to the approach discussed in the context
+approach,pre-training tasks,The approach includes two novel pre-training tasks.
+pre-training tasks,enriching encoder representations,Pre-training tasks are responsible for enriching encoder representations.
+local semantic information,encoder representations,Local semantic information enhances encoder representations during pre-training.
+docformerv2,state-of-the-art numbers,DocFormerv2 achieves state-of-the-art performance on multiple datasets.
+experiments,state-of-the-art numbers,Experiments lead to the state-of-the-art results across various datasets.
+vdu datasets,scene-text vqa datasets,Experiments are conducted on both VDU and scene-text VQA datasets
+ablations,downstream performance,Ablations study the impact of design choices on the performance of the model in real-world scenarios.

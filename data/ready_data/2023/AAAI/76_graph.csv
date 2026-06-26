@@ -1,0 +1,160 @@
+node_1,node_2,edge
+de-occlusion problem,background image extraction,The de-occlusion problem specifically refers to the task of extracting clear background images by removing foreground occlusions.
+de-occlusion problem,foreground occlusions,The main challenge in the de-occlusion problem is dealing with removing or compensating for objects that block the view.
+current research,discrete images,Most current research primarily focuses on generating discrete images from calibrated camera arrays.
+limited perspectives,struggles with dense occlusions and fast motions,Due to limited perspectives
+spike camera,ultra-high temporal resolution,The spike camera stands out because of its exceptional temporal resolution
+spike camera,dynamic range,Its dynamic range is another advantage that makes it a promising sensor for occlusion removal.
+spkoccnet,multi-view imaging,Our proposed SpkOccNet utilizes a single spike camera for continuous multi-view imaging to tackle occlusions.
+spkoccnet,long-short-window feature extractor (lsw),LSW is used within SpkOccNet to integrate spatial-temporal information from multiple views.
+spkoccnet,cross-view mutual attention-based module (cva),CVA is a key component of SpkOccNet that facilitates effective fusion and refinement of multi-view data.
+s-occ dataset,real-world spike-based data,The S-OCC dataset
+spkoccnet,efficiency and generalization capabilities,Experimental results show that SpkOccNet is efficient and capable of handling diverse scenes with dense occlusions.
+synthetic aperture imaging (sai),frame-based algorithms,These algorithms are part of the SAI task
+dense occlusions,challenges for visual algorithms,The presence of dense occlusions creates difficulties for algorithms designed to handle visual scenes.
+discrete multi-view exposures,limitation of frame-based algorithms,Frame-based algorithms rely on discrete exposures
+sharp frames,challenge in high-speed scenarios,Obtaining sharp frames is difficult in high-speed situations
+foreground occlusions (e.g.,fences),crucial for autonomous driving perception
+fast-moving spike camera,dataset capturing tool,The spike camera is used to capture a dataset for studying occlusion removal in high-speed scenarios.
+occlusion removal,spkoccnet (proposed method),The proposed SpkOccNet aims to recover sharp backgrounds by addressing occlusions in high-speed scenes.
+acquisition of sharp and continuous-view information,high-speed scenarios,The challenge is related to obtaining clear and continuous data in fast-paced situations.
+neuromorphic sensors,significant and ongoing challenge,Neuromorphic sensors address the open problem in high-speed imaging.
+neuromorphic sensors,event cameras,Event cameras are a type of neuromorphic sensor known for their asynchronous event generation.
+event cameras,brandli et al. 2014,Event cameras were introduced or mentioned in the work by Brandli et al.
+event cameras,lichtsteiner,posch
+event cameras,occlusion removal tasks,Some studies have employed event cameras for tasks that involve removing occlusions.
+spike cameras,neuromorphic sensors,Spike cameras are another type of neuromorphic sensor.
+spike cameras,fovea in the retina,Spike cameras mimic the retinal structure
+absolute light intensity,spike cameras,Spike cameras record absolute light intensity due to their integration mechanism.
+refocusing events,camera intrinsic parameters,Refocusing events relies on camera settings for accurate alignment.
+refocusing events,distance information,Distance between objects and the camera affects the accuracy of event-based processing.
+spike-based sai,synthetic aperture imaging,Our work explores spike-based SAI for the first time
+proposed spkoccnet,occlusion removal,SpkOccNet is introduced for occlusion removal
+camera array,frame-based cameras,Earlier works
+vaish et al. (2004),vaish et al. (2006),Vaish et al. (2004) used coordinate relationships
+pei et al. (2013),energy minimization problem,Pei et al. (2013) formulated a problem to identify pixels from different views
+zhang et al. (2017),related works,Zhang et al. are among the works mentioned in the context
+occlusion recognition,moving camera with imu data,Zhang et al. (2017) uses IMU data as a clue for occlusion recognition.
+all-in-focus image prediction,later method (yang et al. 2014),This method is capable of predicting all-in-focus images
+deoccnet (wang et al. 2020),residual atrous spatial pyramid pooling module,DeOccNet incorporates this module to enhance receptive fields for occlusion removal.
+shifted micro-lens images,dynamic filter,Zhang et al. (2021) employ shifted micro-lens images with a dynamic filter for exploring light field information.
+event-based sai,event cameras,Event cameras demonstrate potential in seeing through dense occlusions due to their high temporal resolution.
+snns (event-based sai),cnns (event-based sai),Zhang et al. (2021) use SNNs as the encoder and CNNs as the decoder for event-based SAI.
+event-based sai,camera intrinsic,These approaches require the camera's intrinsic parameters for reconstruction.
+event-based sai,camera translation matrices,Complicated settings include the translation matrices of the camera and target depth prior.
+spike cameras,advantages,Spike cameras offer high temporal resolution
+spike cameras,temporal resolution,One of the main advantages is their high temporal resolution.
+texpo,timestamp exposure begins,Texpo refers to the duration when the exposure starts; it is a key parameter affecting image sharpness in fast motion.
+lt,hidden sharp image,Lt represents the sharp image at any specific moment t
+motion blur,caused by fast motion,Motion blur occurs when there is camera movement during the exposure time Texpo.
+foreground occlusion area,enlargement due to motion blur,The enlargement of the foreground area is a result of motion blur
+spike camera,imaging process,Spike cameras provide integrative sampling
+ωimage,quantity of information captured by frames,Ωimage represents the captured information in traditional cameras
+ωspike,quantity of information captured by spikes,Ωspike corresponds to the continuous recording of the spike camera
+tvoid,time when the image captures nothing,Tvoid is the period when the camera is not capturing anything
+sai,system for seeing in action,SAI (not explicitly defined but likely a method or technology) is compared to spike cameras for their ability to see through backgrounds.
+visible area,during camera motion,In SAI
+spike camera,background objects xa and xb,The spike camera offers more clues from continuous viewpoints
+s-occ dataset,occlusion removal with spike cameras,S-OCC is the first dataset constructed for occlusion removal tasks using spike cameras.
+spike camera,camera motion,The spike camera is moved quickly during each shot
+spkoccnet,continuous spikes,Spikes from the moving spike camera are fed into SpkOccNet for processing.
+spkoccnet,long-short-window feature extractor (lsw),LSW is the first step in SpkOccNet
+spkoccnet,cross-view attention-based fusion (cva),CVA is used for fusing information across different viewpoints in the spike data.
+occlusions,model robustness,The five intricate occlusions are designed to enhance the model's ability to handle various challenges.
+occlusions,potential of spike cameras,These occlusions showcase the capabilities of spike cameras in overcoming traditional limitations.
+square iron mesh,hexagonal iron mesh,Both are listed as occlusions
+dense iron frame,fence,Both are described as occlusions
+irregular fabric net,diverse levels of occlusion,This net represents one of the five occlusions with varying complexity.
+occlusions,complexity,Occlusions introduce complexity to the work.
+camera motion,occlusion setups,The camera motion and occlusion setups are utilized for recording.
+outdoor scenes,dataset,Recorded outdoor scenes are used to create the dataset.
+108 sequences,training,108 sequences are randomly picked for training.
+20 sequences,testing,Remaining 20 sequences are for testing.
+static scenes,grayscale images,For static scenes
+spike camera,background scenes,Spike camera captures background scenes without occlusion.
+spike stream (s),input,Spike stream is the input to the SpkOccNet model.
+spkoccnet,model,The model SpkOccNet is designed to predict the background image.
+h × w,spatial resolution,H × W represents the spatial dimensions of the spike stream.
+t,time steps,T signifies the number of time steps in the spike stream.
+sensitive,private information,not included
+long-short-window feature extractor,cva module,The CVA module is part of the Long-Short-Window Feature Extractor
+long-short-window,saux+ and saux-,These are three windows split from the input S
+sc (center window),spatial structure,Sc serves as the spatial reference for reconstruction
+dense window representation (reprdw),saux+ and saux-,Saux+ and Saux- are transformed using ReprDW to provide dense representation.
+f_long,f_dense,Features f_long and f_dense are fused using a channel-attention layer to create f_fuse.
+channel attention layer,fusion of f_long and f_dense,This layer is responsible for combining f_long and f_dense to produce f_fuse.
+f_fuse,cva input,f_fuse is used as input to the CVA module for further feature fusion with f+
+f+ and f−,attention mechanism,f+
+conv layers,prediction layer,The prediction layer
+transformer block,self-attention,The standard Transformer block performs self-attention using Q
+mutual attention (mva),swin transformer blocks,MVA is adopted in the Swin Transformer blocks
+window-based attention,swin transformer,Swin Transformer uses window-based attention to reduce computing cost
+f fuse,f+,In MVA
+f fuse,f−,f fuse is also fused with f− through mutual attention.
+channel attention layer,mdta layer,The layer contains an MDTA layer for attention and a Conv layer for channel reduction.
+channel attention layer,conv layer,The layer concatenates features and applies a Conv layer after MDTA for feature transformation.
+prediction layer,fcva,The prediction layer
+cross-view attention-based fusion (cva),mutual window attention (mwa),CVA consists of two MWA modules for feature exchange.
+cva,non-overlapping sliding window,CVA operates on dense groups with non-overlapping windows of length Wdense.
+sliding window,image-like representations,Accumulated spikes in each window are transformed into image-like representations.
+cumulated sc,wdense/waux image-like representations,Sc is transformed into these representations after accumulating along the time axis.
+wdense/waux image-like representations,r+,After ReprDW
+wdense/waux image-like representations,r-,Similarly
+reprdw,saux+ and saux-,ReprDW processes Saux+ and Saux- separately.
+deocc extracter,m enc−dec,The DeOcc Extracter is a U-shape network (M enc−dec).
+features f+,f−,fm enc−dec+/−
+spikes in sc,rlong,For Sc
+reprlw,blurred effect,ReprLW creates a blurred effect from Sc's spikes.
+rc,feature f long,The U-shape feature extractor M enc−dec receives Rc and outputs feature f long.
+f long,essential structural information,Despite motion blur
+motion blur,structural information,motion blur is present in 'f long'
+representation rdense,continuous view changes,Rdense is generated from Sc with residual Conv layers M res to capture effective features from dense viewpoints that accommodate continuous view changes.
+residual conv layers m res,effective features f dense,M res is used to ensemble effective features f dense
+s-occ dataset,training and network implementation details,The supplementary file contains detailed information about the S-OCC dataset
+u-shaped feature extractor,baseline,The U-shaped feature extractor serves as a baseline in the comparison
+deoccnet (wang et al. 2020),image domain,DeOccNet is a model known for good performance in the image domain
+smid (sc),accumulated grayscale images,Smid is a part of Sc that is processed to create three grayscale images resembling those from a camera with a short exposure time.
+grayscale images,sequence captured by a camera,grayscale images are similar to sequences captured with an exposure time of 15ms and a frame rate close to 25 fps.
+exposure time of 15ms,frame rate,The sequence is captured with an exposure time of 15ms and a frame rate near 25fps
+model e-sai,event cameras,E-SAI is based on event cameras and uses a hybrid SNN-CNN model.
+spike s,30 dense windows,Spike S is split into 30 dense windows as input for the E-SAI model.
+spkoccnet,deoccnet,SpkOccNet outperforms DeOccNet in terms of PSNR and SSIM
+spkoccnet,e-sai method,SpkOccNet has a higher PSNR (26.83dB) than the E-SAI method
+spkoccnet,parameter size,SpkOccNet has a much smaller parameter size (4.9M) compared to DeOccNet (39.04M) and E-SAI (18.59M).
+fence occlusion scenario,extensive occlusions,The 'Fence' scenario poses significant challenges due to extensive occlusions.
+fabric net occlusion scenario,densely-packed and irregular occlusions,The 'Fabric Net' scenario presents challenges with densely-packed and irregular occlusions.
+fabric net,occlusions,The context explains that the 'Fabric Net' is a method that deals with occlusions
+our method,higher-quality image reconstructions,Our method is compared favorably
+our method,e-sai (2021),Our method is contrasted with E-SAI (2021)
+our method,deoccnet (2020),Both Our method and DeOccNet (2020) are mentioned as competitors
+deoccnet (2020),e-sai (2021),DeOccNet (2020) is compared to E-SAI (2021)
+deoccnet (2020),spkoccnet,Both DeOccNet (2020) and SpkOccNet are methods being compared in the context
+e-sai (2021),blurry image reconstructions,E-SAI's main drawback is that its reconstructed images appear blurry.
+total,comparison of various de-occlusion methods,A comparison is made among multiple de-occlusion methods
+baseline u-net,other methods,Baseline U-Net serves as a reference or baseline for comparing the performance of the discussed de-occlusion methods.
+ablation study,proposed modules in spkoccnet,An ablation study is conducted to evaluate the effectiveness of the modules introduced in the SpkOccNet method.
+proposed modules,spkoccnet,The context discusses the proposed modules within the context of SpkOccNet.
+ablation experiments,tab.2,These experiments are presented in Table 2.
+lsw,row 1-3,The LSW's effectiveness is tested in Rows 1
+rlong,r+,r−
+dense representation,rdense,Row 2 focuses on the dense representation Rdense.
+temporally dense viewpoint information,performance enhancement,Row 1 and 3 show that dense spike representation enhances performance by preserving viewpoint information.
+viewpoints at both ends,longer time window representation,Rows 2 and 3 compare the impact of these viewpoint representations.
+cva,row 3 and row 4,CVA's effectiveness is validated in Rows 3 and 4
+mmva,feature fusion,Row 4 uses the proposed MMVA for feature fusion in CVA.
+input length of spikes,psnr ↑,Ablation on input length is studied in Table 3
+images as input,comparison,Row 3 and 4 also compare the performance with using images as input.
+dense window representations,fig. 7,Visual examples of dense window representations are shown in Figure 7.
+dense window representations,occluded viewpoints,The dense window representations
+rc (long window representation of sc),blurred texture,Rc simulates the overall blurred texture
+input spike length,viewpoint changes,The input spike length represents the extent of viewpoint changes during camera motion.
+spike cameras,frame-based cameras,Spike cameras are contrasted against frame-based cameras
+spkoccnet,viewpoint integration,SpkOccNet integrates information from different viewpoints.
+mutual attention,effective fusion and refinement,Mutual attention is employed for effective fusion and refinement of information.
+s-occ dataset,real-world spike-based dataset for occlusion removal,We contribute the first real-world spike-based dataset
+psnr,background reconstruction,As input length increases
+spike-based dataset,occlusion removal,S-OCC is a real-world dataset specifically designed for the task of occlusion removal within the context of effective fusion and refinement.
+algorithm,occlusion removal results,The algorithm achieves impressive occlusion removal by using a single camera with fast motion.
+single camera,fast motion,The algorithm's success relies on the ability to handle occlusions using only a camera that captures rapid movement.
+national natural science foundation of china,financial support,This work received funding from the Chinese research foundation
+china postdoctoral science foundation,financial support,Additional financial support came from the China Postdoctoral Science Foundation

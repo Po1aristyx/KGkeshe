@@ -1,0 +1,104 @@
+node_1,node_2,edge
+graph clustering formulation,multicut (weighted correlation clustering),The proposed method is based on multicut
+multicut,sparse formulation,The traditional multicut formulation involves a sparse graph
+dense multicut,node feature vectors,In dense multicut
+efficient formulation and inference,quadratic representation and computation complexity,The proposed method contrasts with multicut/weighted correlation clustering by having a more efficient representation and computational process.
+greedy algorithms,dense setting,The paper shows how to adapt greedy algorithms for multicut to work effectively in the dense setting
+instance segmentation,cityscapes dataset,Empirical results on Cityscapes demonstrate the advantages of the proposed approach for instance segmentation tasks.
+imagenet datasets,clustering performance,Performance on ImageNet datasets highlights the effectiveness of the approach in clustering.
+graph-based clustering,graph topology,Graph-based clustering approaches require specification of the graph topology
+complete graph,scalability challenge,Using a complete graph for clustering is not scalable due to its quadratic growth in edges. This is a challenge that needs to be addressed.
+graph structure learning,additional complexity,One approach to address the scalability issue is graph structure learning
+edge-based multicut formulation,proposed method,Our proposed method uses the edge-based multicut formulation to efficiently cluster graphs on complete graphs
+edge costs,inner products of node features,Edge costs are computed based on inner products of node features.
+storage requirements,quadratic growth with number of nodes,By using inner products
+full adjacency matrix,multicut,In multicut
+node features,edge costs (on demand),Edge costs can be computed on demand using stored node features.
+sparse subgraphs,adaptively during solving process,The algorithm uses sparse subgraphs
+scalability,complete graph simulation,Adaptive sparsification enables simulating multicut on complete graphs with a smaller subset.
+nearest neighbor search,efficient and scalable implementations,Fast nearest neighbor search is a key technology for obtaining scalable algorithms.
+dense multicut instances,moderate time solving,Our method allows solving large dense multicut problems in a reasonable amount of time.
+proposed formulation,multicut on complete graphs with factorized edge costs,We introduce a new graph clustering formalism using complete graphs and factorized edge costs.
+proposed algorithms,gaec (greedy additive edge contraction),We provide scalable algorithms
+proposed algorithms,balanced edge contraction,Another proposed algorithm is a more efficient variant inspired by balanced edge contraction.
+message passing,dual domain,Message passing is a technique studied in the dual domain for multicut problems
+multicut,algorithms,These algorithms
+move-making,primal heuristics,Move-making is another line of efficient primal heuristics
+dense graphs,unsuitable,Efficient algorithms for multicut and move-making are unsuitable for very large dense graphs.
+correlation clustering,complete graphs,Algorithms for correlation clustering on complete graphs were proposed in Pan et al.
+k-means,lloyd's algorithm,K-Means is similar to Lloyd
+k-means,number of clusters,In K-Means
+spectral clustering,weighted graph,Spectral clustering relies on a given weighted graph and computes a clustering using graph Laplacian eigenvalues (Von Luxburg
+lazy edge contraction,nn graph,Lazy edge contraction foregoes recomputation of nearest neighbors after contraction
+alg. 3,exhaustive search,In Alg. 3
+nearest neighbors (nn),contraction candidates,The algorithm performs contractions until no contraction candidates are present in the NN graph
+normalized edge costs,cluster size,Kardoost & Keuper's balanced edge contraction approach normalizes edge costs with cluster size
+lazy approach,normalized edge costs,Lazy approach does not always provide nearest neighbors
+approximate nearest,efficient methods,Efficient methods are explored for finding approximate nearest neighbors in the context of lazy edge contraction.
+extended feature set,nn graph,The extended feature set is used in constructing the NN graph for large clusters
+computational complexity,basic formulation (3),The basic formulation with α = 0 in (10) is solvable in time O(
+zonotope vertex enumeration,computational complexity,Zonotope vertex enumeration is used in (Veldt et al.
+multicut,clustering fully connected graphs,Multicut is a technique used for clustering fully connected graphs
+dgaec,dlaec (variant),DLAEC is a variant of DGAEC
+sec. 3.2,edge costs,Edge costs are discussed in Sec. 3.2
+feature vectors,r2 space,Each node's feature vector is in a two-dimensional space
+issue,using a large enough positive value of α,The issue of at least two vectors preferring the same cluster can be resolved by using a large α with a specific parameter in the algorithm.
+multicut,complete graphs,Experiments are conducted on complete graphs for studying the benefits of the multicut algorithm.
+gaec,greedy additive edge contraction algorithm,GAEC
+alg. 1,gaec,Alg. 1 refers to the greedy additive edge contraction algorithm
+rama,gpu-based multicut solver,RAMA is a recent GPU-based solver for multicut
+abbas & swoboda,2022,rama
+nvidia a40 gpu,rama,RAMA is evaluated on an NVIDIA A40 GPU with 48GB of memory
+dgaec,algorithm 2,DGAEC
+k-means,larger instance,Our algorithms are faster specifically for the larger instance compared to other methods.
+rama solver,smaller instance,RAMA solver performs better than all others on the smaller instance.
+rama solver,larger instance,Runs out of memory for the larger instance.
+our formulation,more clusters,Our formulation creates more clusters than the number of classes due to outliers.
+feature extractor,outliers,Outliers in the feature space cause the feature extractor to create more clusters without groundtruth.
+clustering,fully connected graphs,Clustering is applied to fully connected graphs using multicut.
+quality of clustering,imagenet validation set,Performance is evaluated on the ImageNet validation set.
+table 1,imagenet-100,imagenet-1000
+algorithms comparison,dense multicut problem,Comparison of algorithms for solving the dense multicut problem on ImageNet.
+alg. 3,incremental nearest neighbour search,Alg. 3 uses incremental NN search for improved performance.
+gpu based solver,memory constraints,Some methods
+objective value,clusterings,The objective value of the clustering is a performance metric.
+imagenet val. set,instances of varying sizes,The context describes a comparison of algorithms on different sized instances taken from the ImageNet validation set.
+our algorithms,dgaecinc,dlaec
+axial-resnet50,pretrained network,Axial-ResNet50 is a pretrained model used to compute node features for the study.
+axial-resnet50,wang et al.,2021
+node features,128-dimensional,4× downsampled
+dense multicut problem,1631 instances,There are 1631 dense multicut problem instances created for evaluation
+semantic class predictions,goal of the multicut problem,The evaluation involves first making semantic class predictions and then forming multicut instances to partition nodes based on those categories.
+objects (car,person,etc.)
+semantic class,objects,The context discusses the mapping of semantic class to different objects.
+dense multicut problem instances,cityscapes validation set,These instances are created from 500 images of the Cityscapes validation set
+cityscapes dataset,comparison of panoptic segmentation,Table 3 provides a comparison of panoptic segmentation methods on this dataset.
+clustering fully connected graphs by multicut,alg. 1 (sparse multicut),The paper compares Alg. 1 for sparse multicut with a dense multicut approach.
+dense multicut,dapplaec algorithm,Dense multicut uses the DAppLAEC algorithm for computation.
+panoptic quality,average panoptic quality,Tables 3 and 4 compare the performance in terms of average panoptic quality.
+compute time,average compute times (t [s]),Table 4 shows the average compute times for different methods.
+objective value,obj (×106),The tables also include the average objective value of clustering.
+upsampling,original image resolution,After clustering
+multicut problem,handcrafted sparse graph structure,The paper contrasts a complete graph formulation with a handcrafted sparse graph for better performance.
+long-range edges,occlusions,Long-range edges are used in the sparse graph to handle occlusions.
+dense multicut formulation,sparse handcrafted graph,The dense multicut formulation performs better than multicut on the sparse graph
+dense multicut formulation,panoptic quality metric,The dense multicut is evaluated using the panoptic quality metric
+panoptic quality,avg. panoptic quality over all thing classes,This metric is an average measure of segmentation quality across different classes.
+alg. 1,computing multicut,Alg. 1 is used for computing the multicut solution in both dense and sparse graph settings.
+dense gaec,gaec,Dense GAEC is a variant of GAEC that operates on a dense graph
+run time,our most naive algorithm (dgaec),DGAEC has a higher run time compared to GAEC
+dgaec,gaec,DGAEC is slower than GAEC
+gaec,lazy edge contractions,Our algorithms surpass GAEC with lazy edge contractions
+lazy edge contractions,approximate initial nearest neighbours search,Lazy edge contractions and approximate search contribute to runtime improvement.
+our lazy contraction algorithms,greedy ones,Our lazy algorithms show slight improvement in objective value over greedy ones.
+table 5,effect of changing affinity strength,Table 5 studies the sensitivity of affinity strength with varying α values.
+α,good clustering quality,Having α > 0 is crucial for achieving good clustering quality.
+α,set differently for each semantic class,Setting α differently for each semantic class leads to further improvement.
+optimizing multicut,factorized edge costs,Multicut optimization is feasible with edge costs represented by inner products of features.
+factorized edge costs,inner products of features,The approach relies on feature-based edge cost computation.
+our approach,theoretical advantage,Our approach bypasses the need for learning graph structure
+our approach,differentiable layer,Embedding as a differentiable layer is a theoretical advantage for neural networks.
+learning graph structure,differentiable layer,The context suggests that learning graph structure is a possibility that can be incorporated as a differentiable layer within neural networks
+fully connected graphs,multicut,This part of the text discusses clustering fully connected graphs using the multicut method.
+reviewers,helpful suggestions,The authors express gratitude to the reviewers
+jan-hendrik lange,related works discussion,They also thank Jan-Hendrik Lange for their discussions regarding related works.

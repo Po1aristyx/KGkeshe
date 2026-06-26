@@ -1,0 +1,249 @@
+node_1,node_2,edge
+graph-based methods,whole slide histopathology image analysis,Graph-based methods are extensively applied to whole slide histopathology image analysis to model the spatial relationships among different entities.
+methods,wsis,Existing methods focus on modeling WSIs with homogeneous graphs but are unable to capture complex structural relations between biological entities.
+heterogeneous graph-based framework,nuclei for wsi analysis,A novel heterogeneous graph-based framework is proposed to leverage inter-relationships among different types of nuclei for WSI analysis.
+wsi,nucleus-type attribute,WSI is formulated as a heterogeneous graph with a 'nucleus-type' attribute to each node and a semantic similarity attribute to each edge.
+heat,edge and node heterogeneity,A new heterogeneous-graph edge attribute transformer (HEAT) is presented to leverage edge and node heterogeneity during message aggregating.
+pooling mechanism,graph-level features,A new pseudo-label-based semantic-consistent pooling mechanism is designed to obtain graph-level features and mitigate the over-parameterization issue of conventional cluster-based pooling.
+association-based localization methods,causal-driven approach,"A causal-driven approach is proposed to improve the interpretability by attributing the contribution of each node, overcoming limitations of existing association-based localization methods."
+experiments,tcga benchmark datasets,Extensive experiments on three public TCGA benchmark datasets demonstrate the effectiveness of the proposed framework.
+framework,experiments,The framework is tested through extensive experiments on TCGA benchmark datasets.
+framework,methods,The framework outperforms state-of-the-art methods on various tasks.
+framework,codes,The codes related to the framework are available at a specific URL.
+histopathology slides,diagnosis,Histopathology slides provide rich information for diagnosis of cancer diseases.
+histopathology slides,treatment planning,Histopathology slides provide rich information for treatment planning of cancer diseases.
+digital scanners,wsi analysis,Technological advancements in tissue digital scanners facilitate the development of whole slide histopathology image analysis.
+wsi analysis,deep learning techniques,Deep learning techniques play an important role in accurate and automated analysis of WSIs.
+wsi,memory,"Since it is difficult to fit the complete WSI into memory, most works adopt multiple instance learning."
+multiple instance learning (mil),wsi analysis,MIL is adopted to divide the WSI into instances for analysis
+wsi analysis,graph neural networks (gnns),GNNs have made progress in representing spatial relationships between instances for WSI analysis
+graph neural networks (gnns),graph of instances,WSIs are represented as graphs of instances using GNNs
+convolutional neural networks (cnns),gnns,"CNNs focus on locality in Euclidean space, while GNNs focus on locality on graph topology for analyzing deep connections in image data"
+gnns,relational information,GNNs are able to learn relational information and distinguish cells based on their apposition to tumor cells or normal stroma
+relational information,prognosis,Relational information learned by GNNs is important for prognosis in WSI analysis
+existing paradigms,graph-based wsi analysis,Existing paradigms focus on representing WSI with a homogeneous graph structure for analysis
+graph-based wsi analysis,gnns with cluster-based pooling,WSI analysis is done using GNNs with cluster-based pooling for predicting responses
+gnns with cluster-based pooling,drawbacks,"Despite successes, methods using GNNs with cluster-based pooling suffer from several drawbacks"
+gnns,homogeneous graphs,"GNNs on homogeneous graphs focus on aggregating direct relational information from neighboring nodes, where the complex relational information of the graphs is often neglected."
+clusters,node embeddings,"For different graphs, the clusters defined by similarities between node embeddings have inconsistent meanings."
+gnns,overfitting,GNNs tend to easily overfit due to a lack of identifiability.
+wsi analysis framework,heterogeneous graph,A novel framework for WSI analysis leverages a heterogeneous graph to learn the inter-relationships among different types of nodes and edges.
+nucleus-type attribute,node,"The heterogeneous graph introduces a 'nucleus-type' attribute to each node, which can serve as an effective data structure for modeling the structural interactions among the nuclei in the WSI."
+heterogeneous-graph edge attribute transformer (heat) architecture,aggregation process,"To tackle the aggregation process in the heterogeneous graph, a novel heterogeneous-graph edge attribute transformer (HEAT) architecture is proposed."
+biological entities,wsi,The diverse structural relations among different biological entities in the WSI can be incorporated to guide the GNN for more accurate prediction.
+graph-level representations,slide-level prediction,"To obtain the graph-level representations for slide-level prediction, a semantic-consistent pooling mechanism is proposed."
+semantic-consistent pooling mechanism,pseudo-label pooling,PL pooling pools node features to the graph level based on clusters with a fixed definition. This mechanism can regularize the graph pooling process and distill context knowledge from a pretrained model to alleviate over-parameterization.
+granger causality,localization method,"Granger causality based localization method is proposed to identify potential regions of interest with clinical relevance, providing insights to pathologists and enhancing the clinical usability of the approach."
+method,benchmark datasets,"The method is evaluated on three TCGA public benchmark datasets including COAD, BRCA, and Camelyon 16 datasets from the TCGA project, comparing to various latest state-of-the-art methods."
+wsi analysis approaches,mil,"WSI analysis approaches generally adopt MIL, which divides the WSI into fixed-size patches and compresses the information of these patches into low-dimensional vectors."
+dimensional vectors,wsi-level features,Conventional methods aggregate bags of instances to learn WSI-level features for final predictions.
+dimensional vectors,embedding vectors,Tellez et al. compress the WSI-level image into embedding vectors and use a standard CNN to perform patch-level and WSI-level cancer classification.
+embedding vectors,wsi-level cancer classification,Tellez et al. compress the WSI-level image into embedding vectors and use a standard CNN to perform patch-level and WSI-level cancer classification.
+graph topology,complex structures of wsis,"Graph-based methods model the interactions between instances via graphs, providing more flexibility to analyze complex structures of WSIs."
+patch-gcn,wsi with homogeneous graphs,"Chen et al. propose patch-GCN, a method of modeling WSI with homogeneous graphs."
+graph convolutional neural network (gcn),regress survival data,Chen et al. regress survival data with a graph convolutional neural network (GCN).
+graph-based mil method,graph transformer networks,Zheng et al. propose a graph-based MIL method using graph transformer networks.
+recent method,wsis with heterogeneous graphs,"A recent method is proposed to model WSIs with heterogeneous graphs, introducing heterogeneity in each patch by different resolution levels."
+resolution level heterogeneity of patches,complex contextual interaction between patches,"The recent method only considers the resolution level heterogeneity of patches, with insufficient ability to model the complex contextual interaction between patches in the same resolution level."
+graph neural networks,sota gnns,Although the SOTA GNNs
+graph neural networks,homogeneous graphs,"Graph Neural Networks have been successful in many problem domains, but they are mostly focused on homogeneous graphs, which limits their capability in mining structural information."
+homogeneous graphs,heterogeneity,"Homogeneous GNN algorithms do not incorporate the potential heterogeneity in nodes and edges, limiting their ability to capture structural information."
+heterogeneity,graph pooling,"Heterogeneity in nodes and edges needs to be addressed in methods like Graph Pooling, which aims to aggregate node-level features to obtain graph-level features."
+heterogeneous-graph edge attribute transformer (heat),structural information aggregation,HEAT is used for structural information aggregation.
+pseudo-label-based (pl),graph pooling,PL is used for graph pooling.
+clusters,embeddings,Graph pooling algorithms are based on clusters of the embeddings.
+clusters,similarity,Clusters are constructed based on similarity.
+gnns,interpretability,GNNs are recognized as 'blackboxes' due to their poor interpretability.
+parameters,overfitting,Inconsistent clusters based on similarity can lead to overfitting due to a large degree of freedom in parameters.
+network attribution methods,blackboxes,Network attribution methods are used to open the 'blackboxes' of GNNs.
+gnnexplainer,node features,GNNExplainer is a method explaining the contributions of node features to GNN predictions.
+feature masks,node,feature masks are trained on each node
+feature masks,edge,feature masks are also trained on each edge
+feature masks,prediction loss,feature masks are trained to minimize the prediction loss of a trained GNN
+pgexplainer,gnnexplainer,PGExplainer shares the same objective as GNNExplainer
+pgexplainer,generative model,PGExplainer trains a generative model to generate explanations
+gem,explanation generators,Gem trains explanation generators from the causal perspective
+granger causality,explanations,Granger Causality is used for generating explanations
+heterogeneous graph,graph,"A heterogeneous graph is defined by a graph G = (V,E,A,R)"
+heterogeneous graph,entities,Heterogeneous graph is defined by the set of entities
+heterogeneous graph,relations,Heterogeneous graph is defined by the set of relations
+heterogeneous graph,entity types,Heterogeneous graph is defined by the set of entity types
+heterogeneous graph,edge attributes,Heterogeneous graph is defined by the space of edge attributes
+granger causality,information,Granger Causality is used for prediction based on information
+granger causality,variable,Granger Causality excludes variable X for prediction
+wsi classification,wsi x,WSI Classification is performed on given WSI X
+wsi classification,heterogeneous,WSI Classification is performed on a heterogeneous graph
+x,y,X Granger-causes Y
+wsi classification,wsi x,Classification of WSI X
+wsi classification,graph g,Classification of graph G constructed from WSI X
+graph g,gnn model m,Prediction of label y with GNN model M using graph G
+graph g,node v,Assignment of importance score f(v) to node v in G
+heterogeneous edge attribute transformer,graph attention mechanism,Comparison of Heterogeneous Edge Attribute Transformer with conventional graph attention mechanism
+heterogeneous edge attribute transformer,transformer architecture,Inspiration from transformer architecture for Heterogeneous Edge Attribute Transformer
+heterogeneous edge attribute transformer,heat layer,Introduction of Heterogeneous Edge Attribute Transformer (HEAT) layer
+heat layer,biological entities,Aggregation of structural relations between biological entities in heterogeneous graph using HEAT layer
+heat layer,node types,Incorporation of node types into aggregation process in HEAT layer
+heat layer,edge features,Incorporation of continuous edge features into aggregation process in HEAT layer
+edge,edge attributes,Learning of edge similarities using edge attributes
+heterogeneous edge attribute transformer,architecture,Generalization of architecture to incorporate continuous or high-dimensional edge attributes
+heterogeneous edge attribute transformer,linear layers,Simplification of architecture by avoiding overfitting through the use of linear layers
+node,key vec-projection layer,The source node is projected into a key vector projection layer.
+node,value,The value is computed by the dot-product similarity between the query and key vectors.
+node,embedding,The node embeddings are projected into a node-type-invariant embedding space.
+value,linear transformed edge attribute,The linear transformed edge attributes are multiplied to the similarity score to incorporate the edge attributes.
+edge attributes,linear projection layer,The edge attributes are projected by the linear projection layer Wedge.
+attention score,value vector,The final attention scores are obtained to the value vector.
+final attention score,edges,The final attention score of the edges aggregating all the heads.
+output features,node-type,The output features contain both the node-type and edge-attribute-specific information.
+heat layer,meta-relations,Hence the HEAT layer can capture the introduced meta-relations in a heterogeneous graph constructed from a WSI.
+wsi,heterogeneous graph,We introduce our methodology of modeling the WSI with a heterogeneous graph.
+patches,nodes,These patches define the nodes of the graph constructed.
+patches,node type,"To define the corresponding node type, we use HoverNet pretrained on the PanNuke dataset."
+hovernet,nuclei,HoverNet detects nuclei in each patch and assigns types to these nuclei.
+nucleus type,patch,"By majority votes, we take the most frequently predicted nucleus type to be the type of the patch."
+patches,kimianet,"We use a pretrained feature encoder (i.e., KimiaNet) to obtain the embeddings of each patch."
+embeddings,patch,"The patches in the context are represented by embeddings as features, serving as the nodes in the heterogeneous graph."
+node,edge,"The edges and edge attributes are defined based on the nodes, such as embeddings of patches, in the heterogeneous graph."
+node,neighbor nodes,"For each node, the k-nearest neighbor algorithm is used to find nodes with similar features, connecting edges between the node and these neighboring nodes."
+edge,head and tail node features,"The Pearson R correlation is computed between the head and tail node features as the edge attributes, introducing heterogeneity in the edges."
+graph,heterogeneity,The heterogeneous graph G consists of heterogeneity introduced by different node types and edge attributes.
+graph,meta-relations,"Through edge attributes, meta-relations in the WSI are highlighted in the heterogeneous graph, outlining relationships between nuclei."
+nuclei,wsi,"A heterogeneous graph outlines the meta-relations between the nuclei in a whole slide image (WSI), revealing structural interactions between cells for improved performance on various tasks."
+heat algorithm,heterogeneous graph,"The HEAT algorithm is applied to the heterogeneous graph, updating node features and edge features to enhance the graph representation."
+projection layers,node type,Initialize projection layers for each node type
+source node,target node,"Project the source node and Compute value vector, Project the target node"
+edge attribute,latent edge features,Project the edge attribute and Compute latent edge features
+node features,node types,Aggregates structural information by transforming node features from different node types
+edge attributes,semantic relations,"Edge attributes are included in the aggregation process, hence can model different semantic relations"
+target node,neighbor nodes,Updates target node feature by averaging its neighboring node features
+source nodes,target node,Aggregates information from neighboring source nodes and updates target node features
+attention vectors,neighbor nodes,Softmax operation on attention vectors and aggregation of information from neighboring nodes
+graph,gl,The updated graph Gl is returned as the output of the l-th HEAT layer.
+graph,heat layer,The updated graph Gl is returned as the output of the l-th HEAT layer.
+algorithm 1,heat layer,Algorithm 1 demonstrates the overall process of our proposed HEAT layer.
+pl,pseudo-label,"We introduce a novel pooling method - pseudo-label (PL) pooling, to aggregate information with respect to the pseudo-labels (i.e., node types) predicted from a pretrained teacher network."
+pl,hovernet,"We introduce a novel pooling method - pseudo-label (PL) pooling, to aggregate information with respect to the pseudo-labels (i.e., node types) predicted from a pretrained teacher network (e.g., HoverNet [12])."
+feature matrix,pseudo-labels,"Unlike conventional methods of pooling features based on clusters, we define clusters using a pretrained node classifier. Pooling from pseudo-labels ensures the semantic consistency in cluster definitions and distills the context knowledge (e.g., nuclei features) from the teacher network."
+node type,feature matrix,"Specifically, for each node type a, we pool all node features belonging to type a into a single vector ha with a readout layer. The pooled features from each node type are then aggregated into a feature matrix S ∈ R"
+node type,pretrained node classifier,"Unlike conventional methods of pooling features based on clusters, we define clusters using a pretrained node classifier."
+node type,teacher network,"Specifically, for each node type a, we pool all node features belonging to type a into a single vector ha with a readout layer. The pooled features from each node type are then aggregated into a feature matrix S ∈ R"
+pl-pool algorithm,workflow,Algorithm 2 presents the workflow of the proposed PL
+pl pooling,pseudo-labels,"Pooling with the pseudo-labels allows for clustering patch representation according to nuclei types, enhancing graph-level features with prior knowledge on nuclei type distributions."
+pl pooling,cancer classification tasks,An ablation study in Table 4 shows that PL Pooling outperforms existing pooling methods in cancer classification tasks.
+prior knowledge regularization,heat and pl pooling algorithm,Motivation for introducing prior knowledge in the proposed HEAT and PL pooling algorithm is discussed.
+prior knowledge regularization,wsi data,"WSI data contain enriched prior knowledge, integrating which into the framework regularizes the model, leading to improved testing performance."
+model,testing performance,"Grating such knowledge into the framework regularizes the model, such that the testing performance improves."
+designs,prior cancer staging,"Therefore, we design the above two designs by integrating prior Cancer Staging."
+designs,auccancer classificationd,"Therefore, we design the above two designs by integrating AUCCancer ClassificationD."
+heat layer,prior knowledge,"Specifically, for the HEAT layer, we integrate the prior knowledge of node type and node attributes when extracting node-level features."
+pl pooling,prior definitions,"For PL Pooling, we pool node-level features using prior definitions on node clusters."
+data augmentations,regularize the learning,"Moreover, we perform data augmentations (e.g., random pruning on edges and nodes) to regularize the learning from training distributions."
+other regularization,achieve the goal,"Besides that, other regularization such as imposing a Gaussian prior on the model weights (i.e., using a Bayesian neural network) would also achieve the goal."
+granger causality,causal regions,We make use of the Granger causality to outline causal regions in the WSI with the causal graph explainer.
+causal contribution,node v,"Given a trained GNN model M, the causal contribution of each node v is calculated using a specific formula."
+node v,"l(y, ˜yg)","The relationship between the node v and L(y, ˜yG) is defined as the calculation of difference between the true label y and the predicted label based on input graphs G."
+node v,causality heatmap,The node v can be visualized with the causal contribution computed for each patch in the causality heatmap.
+instance interpretation,causality,"Addressing causality in instance interpretation can adjust for observational and selection biases, leading to improved explanation accuracy."
+explainer,pathologists,The causal property of the explainer could facilitate pathologists in finding potential biomarkers for diagnosis and prognosis by highlighting patches with clinical relevance in the WSI.
+patchgcn,heat,Our method (HEAT) shows better AUC and accuracy compared to PatchGCN in cancer typing results [%] on the TCGA–ESCA dataset.
+gtnmil,heat,Our method (HEAT) outperforms GTNMIL in terms of Macro-F1 accuracy on the TCGA–ESCA dataset.
+h2-mil,heat,Our method HEAT performs better in terms of accuracy compared to H2-MIL in cancer typing results on the TCGA–ESCA dataset.
+cancer staging,tasks,The benchmark methods mentioned in the context include tasks for cancer staging.
+cancer classification,tasks,The benchmark methods mentioned in the context include tasks for cancer classification.
+cancer staging,cases,"In the cancer staging task, all cases are divided into different stages."
+cancer classification,cases,"In the cancer classification task, all cases are divided into normal and tumor classes."
+cancer typing,tcga–esca dataset,"For the cancer typing task, the TCGA–ESCA dataset is used to divide cases into different types."
+cancer typing,adenocarcinoma,"In the cancer typing task, cases are divided into 'Type I: adenocarcinoma'."
+cancer typing,squamous cell carcinoma,"In the cancer typing task, cases are divided into 'Type II: squamous cell carcinoma'."
+framework,camelyon 16 dataset,The localization ability of the framework is evaluated on the Camelyon 16 dataset.
+dataset,supplementary materials,A detailed summary of datasets is provided in supplementary materials.
+wsis,tcga–coad,WSIs from the TCGA–COAD dataset are used for the cancer staging and classification tasks.
+framework,pytorch library,The proposed framework is implemented in Python using the Pytorch library.
+framework,nvidia tesla v100 gpus,The proposed framework runs on a server equipped with four NVIDIA TESLA V100 GPUs.
+tool,openslide,openslide is used as the tool for implementing the framework.
+pooling method,comparable pooling methods,"The context mentions the comparison of 'our pooling method' with 'various comparable pooling methods', indicating a relation of comparison between these two concepts."
+tool,wsis,"It is mentioned that 'openslide' is used as the tool to process the 'WSIs', implying a tool-WSIs relation."
+dropout ratio,dropout layer,"The context states that the dropout ratio of each dropout layer is selected as 0.2, indicating a direct relationship between these two concepts."
+models,epochs,"It is mentioned that all models are trained with 150 epochs, establishing a relation between 'models' and 'epochs'."
+batch size,2,"The context specifies that the batch size is selected as 2, showing a direct relationship between 'batch size' and the specific value '2'."
+loss function,adam optimizer,"The context states the adoption of the cross-entropy loss to train the network for classification tasks, using the Adam optimizer with a learning rate and weight decay values. This indicates a relation between 'loss function' and 'Adam optimizer'."
+data augmentations,training graphs,"The context mentions performing data augmentations on the training graphs by randomly dropping the edges and nodes, and adding Gaussian noises to the node and edge features, suggesting a relation between 'data augmentations' and 'training graphs'."
+method,sota methods,"There is a comparison of 'our method' with an array of SOTA methods, indicating a relation of comparison between 'method' and 'SOTA methods'."
+five-fold cross-validation,overall performance,"The context mentions using five-fold cross-validation to evaluate the overall performance of the framework and other methods, establishing a relation between 'five-fold cross-validation' and 'overall performance'."
+feature extraction,pretrained kimianet,"It is mentioned that the pretrained KimiaNet is used as the feature extraction for all methods for a fair comparison, suggesting a relation between 'feature extraction' and 'pretrained KimiaNet'."
+framework,wsi analysis,Framework for WSI analysis mentioned in the given context.
+wsi analysis,data augmentation,WSI analysis takes the advantage of data augmentation.
+wsi analysis,method,WSI analysis reduces method to produce rich features.
+patchgcn,survival data,PatchGCN is a hierarchical graph-based model on survival data.
+patchgcn,gcn model,Method PatchGCN is adapted as a GCN model with global attention pooling.
+aucaccuracy,macro-f1,"Evaluation metrics AUCAccuracy and Macro-F1 used for cancer staging, classification, and typing tasks."
+gtnmil,graph transformer network,Method GTNMIL is a graph-based MIL method based on the graph transformer network.
+h2-mil,multiple instance learning,Method H2-MIL is a tree-graph-based multiple instance learning method that utilizes different magnification levels.
+wsi analysis methods,our method,"Our method demonstrates improved performance compared to WSI analysis methods, indicating a potential better representation of interaction of patches in WSI."
+aggregation on a graph of instances,aggregation on bags of instances,"Aggregation on a graph of instances is more effective than aggregation on bags of instances in staging tasks, implying that graph-based methods are better at capturing global information of WSI for staging tasks."
+methods h2-mil00.0333coad-s coad-c brca-s brca-c,p-values of two-sample t-tests on aucs between our method and baselines,"P-values of two-sample t-tests on AUCs are presented in table 6, showing statistical significance of improvements over most baseline methods under the 0.05 significance level."
+our method,hipt,"Our method achieves an AUC of 89.69, outperforming the AUC of 87.4 by HIPT in the BRCA subtyping task."
+our method,sota methods,"Statistical significance of improvements over SOTA methods is demonstrated through a t-test on the AUCs, presented in Table 6."
+patch,node,"Causal contribution of each patch is computed using Equation (1), with visualization of the patch image associated with that node for outlining causal regions."
+patch,equ.,Patch is visualized using Equation (1).
+patch,image,Patch image is associated with the node.
+image,causal regions,Image is associated with causal regions related to predictions.
+patch,causal regions,Patch is visualized to outline the causal regions related to the predictions.
+causal regions,predictions,Causal regions are related to predictions.
+causal explanation method,baseline graph interpretation methods,Causal explanation method is compared to baseline graph interpretation methods.
+causal explanation method,association-based explainer,Causal explanation method is compared to association-based explainer.
+association-based explainer,heatmap,Association-based explainer provides a smooth heatmap highlighting important regions.
+heatmap,important regions,Heatmap highlights important regions.
+heatmap,tumor regions,Heatmap is less accurate in localizing tumor regions.
+pathologists,abnormal regions,Pathologists need to traverse abnormal regions to identify tumor regions.
+causal explainer,tumor regions,Causal explainer outlines tumor regions accurately.
+heatmap,ground-truth tumor regions,Heatmap is more concentrated on ground-truth tumor regions.
+causal explainer,"association-based explainers (e.g., gnnexplainer [39])",Causal explainer outperforms association-based explainers like GNNExplainer.
+method,sota gnns,Method is compared with State-of-the-Art Graph Neural Networks.
+method,heterogeneous graph construction,Method evaluates the effectiveness of heterogeneous graph construction.
+hgt,discrete edge types,HGT defines discrete edge types.
+edge types,positive correlations,Edge types represent positive correlations between nodes.
+edge types,negative correlations,Edge types represent negative correlations between nodes.
+correlations,edge,positive correlations between the nodes of the edge
+correlations,negative correlations,negative correlations between the nodes of the edge
+method,sota gnn aggregation methods,our method compared to various SOTA GNN aggregation methods on the TCGA–ESCA dataset
+method,homogeneous gnn architectures,"our method outperforms SOTA homogeneous GNN architectures [32, 36, 37]"
+method,heterogeneous gnn architectures,"our method is also superior to some recently heterogeneous GNN architectures [16, 28]"
+pooling strategy,comparable pooling methods,comparison of our proposed pooling strategy to a variety of comparable pooling methods
+pooling strategy,sum/max/mean poolings,"including basic pooling methods, such as sum/max/mean poolings and advanced pooling strategies [15, 25]"
+pooling strategy,cancer classification,comparison results of cancer classification on TCGA–COAD dataset with fixed model architecture GCN [36] and feature encoder KimiaNet [26]
+pooling strategy,semantic-consistently defined clusters,"outperforms the competitors, which validates the advantage of using semantic-consistently defined clusters in pooling"
+wsi datasets,cancer classification,observe the WSI datasets for cancer classification
+wsi datasets,balanced dataset,"compose a balanced dataset (i.e., normal:cancer = 1:1) with the undersampling strategy to study the difference in class distributions"
+undersampling strategy,class distributions,The undersampling strategy is used to study how the difference in class distributions affect the performance of the model.
+undersampling strategy,performance,The undersampling strategy is used to study how it affects the performance of the model.
+pretrained features,framework,The pretrained features are a key component of the proposed framework.
+pretrained features,embedding models,The pretrained features are extracted from diverse embedding models to improve generalizability.
+pannuke dataset,hovernet,"The PanNuke dataset, used to pretrain the HoverNet node type classifier, leads to a broad generalization of HoverNet."
+contrastive learning,pretrained models,Contrastive learning can be adopted to fine-tune pretrained models for better generalizability to new datasets.
+hovernet classifier,sensitivity,The performance of the HoverNet classifier influences the sensitivity of the framework.
+pannuke dataset,hovernet,The HoverNet trained on the PanNuke dataset can be transferred to the TCGA dataset for patch types classification with good performance.
+pannuke dataset,common cancer types,The PanNuke dataset contains WSIs of most of the common cancer types.
+pannuke dataset,tcga dataset,There are domain overlaps between the PanNuke dataset and cohorts of the TCGA dataset.
+hovernet,patch types classification,HoverNet can be transferred to the TCGA dataset for patch types classification with good performance.
+hovernet,node types,Node types generated by unsupervised K-means clustering are used for cancer classification using HoverNet.
+coad,cancer classification,Cancer classification on COAD is performed using node types generated by unsupervised K-means clustering.
+coad,auc: 98.5,"The performance of cancer classification on COAD is measured by the AUC, which is 98.5."
+hovernet,predicted node,HoverNet is used to predict node types for cancer classification.
+unsupervised k-means clustering,hovernet predicted node types,"The performance of unsupervised K-means clustering (AUC: 98.5) is lower than that using HoverNet predicted node types (AUC: 99.9), demonstrating that incorporating the pretrained HoverNet outperforms unsupervised methods."
+unsupervised k-means clustering,hovernet,The pretrained HoverNet is incorporated to outperform unsupervised methods in WSl analysis.
+hovernet predicted node types,unsupervised methods,"Using HoverNet predicted node types (AUC: 99.9) outperforms unsupervised methods, showing better performance."
+heterogeneous graph-based framework,wsi analysis,A novel heterogeneous graph-based framework is presented for WSI analysis.
+heterogeneous graph-based framework,graph,WSI is modeled as a heterogeneous graph with various node types and edge attributes.
+wsi analysis,heterogeneous graph,WSI is modeled as a heterogeneous graph for analysis.
+wsi analysis,locality information,The method leverages the locality information of WSI.
+wsi analysis,relational information,The method mines the complex relational information of WSI.
+edge attribute transformer architecture,graph,A novel heterogeneous edge attribute transformer architecture is designed to aggregate the structural information in the graph.
+edge attribute transformer architecture,semantic consistent pooling method,"The architecture aggregates structural information, while the semantic consistent pooling method addresses potential over-parameterization problems."
+pooling method,over-parameterization problems,The pooling method addresses potential over-parameterization problems to improve the effectiveness of the framework.
+framework,proposed framework,The proposed framework is effective and validated through extensive experiments on public datasets.
+framework,graph-based computer vision tasks,"The framework could be adapted to other graph-based computer vision tasks, such as 3D point cloud analysis and anomaly detection."
+theme-based research scheme,t45-401/22-n,The Theme-based Research Scheme is identified by the code T45-401/22-N.
+theme-based research scheme,national natural science fund,The Theme-based Research Scheme is funded by the National Natural Science Fund (62201483).
+theme-based research scheme,hku-tcl joint research center for artificial intelligence,The Theme-based Research Scheme collaborates with the HKU-TCL Joint Research Center for Artificial Intelligence.
+hku-tcl joint research center for artificial intelligence,tcl corporate research (hong kong),The HKU-TCL Joint Research Center for Artificial Intelligence is sponsored by TCL Corporate Research based in Hong Kong.

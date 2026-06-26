@@ -1,0 +1,133 @@
+node_1,node_2,edge
+real-world image super-resolution (rwsr),low-quality (lq) images,RWSR addresses the challenge of upsampling low-quality images.
+low-quality (lq) images,complex and unidentified degradations,LQ images often have complex degradation
+generative adversarial networks (gans),difficult to train,Existing method
+continuous diffusion models,numerous inference steps,These models require a high number of steps during the restoration process.
+iterative token evaluation and refinement (iter) framework,discrete diffusion model,ITER uses a discrete diffusion model for image restoration
+vqgan codebook,pre-trained with high-quality (hq) images,The codebook provides a reference for restoring quality in the upscaled images.
+distortion removal,hq token prediction,A sub-task in ITER
+texture generation,discrete diffusion model and token refinement network,This task refines the output after distortion removal through iterative refinement.
+token evaluation network,token refinement network,The evaluation network assists the refinement process by assessing and selecting steps.
+token evaluation network,adaptive refinement steps,The network adaptively determines the number of refinement steps based on the initial restoration.
+distortion removal output,status check,The evaluation network checks the progress of the distortion removal to guide the refinement.
+iterative refinement,satisfactory results,Iterative refinement contributes to achieving satisfactory results.
+iter,total iteration step,ITER refers to the total number of steps required
+real-world super-resolution (rwsr),subtasks,RWSR is divided into distortion removal and conditioned texture generation.
+distortion removal,reconstruction loss,Distortion removal involves a reconstruction loss
+reconstruction loss,pixel-wise l1/l2 loss,Pixel-wise L1/L2 loss is part of the reconstruction loss.
+reconstruction loss,feature space perceptual loss,Feature space perceptual loss is another component of the reconstruction loss.
+adversarial loss,texture generation,Adversarial loss is used for generating textures
+srgan,generative adversarial networks (gans),SRGAN is an example of GAN-based methods for super-resolution.
+gans,fixed preference,Most GAN-based models have a fixed preference for restoration and generation.
+sr3,diffusion model (dm),SR3 uses diffusion models for more realistic generation
+ldm,diffusion model (dm),LDM also employs diffusion models for improved generative ability.
+diffusion models (dms),iterative steps,DMs require hundreds or thousands of iterative steps for generation.
+discrete token space,iter framework,ITER is proposed to address the two sub-tasks of RWSR in discrete token space
+gan,iter,ITER is more advantageous because it requires fewer iteration steps and is more suitable for real-world LQ inputs with complex degradations
+dm-based methods,iter,ITER outperforms DM-based methods due to its fewer iteration steps and effectiveness on complex LQ inputs.
+iterative evaluation and refinement approach,texture generation,The approach is designed to improve texture generation by making better decisions on token refinement during the iterative process.
+token evaluation block,iterative refinement process,The token evaluation block enables adaptive balancing between distortion removal and texture generation based on the initial token quality.
+user-controlled visual effects,threshold value,Users can manually adjust the visual effect of the output without retraining the model by setting a threshold.
+single image super-resolution (sisr),bicubic downsampled lq images,The context discusses recent advancements in SISR specifically for handling low-quality images downscaled by bicubic interpolation.
+recent literature reviews,more comprehensive summaries,These reviews provide a broader perspective on SISR and generative models
+single image super-resolution,network architectures,Recent SISR methods have made progress with improvements in network architectures.
+network architectures,deeper and wider networks,Methods like Kim
+residual learning,power,Deeper and wider networks with skip connections demonstrate the power of residual learning
+attention mechanisms,channel attention,Examples include channel attention by Zhang et al. (2018b).
+attention mechanisms,spatial attention,Spatial attention has been employed by Niu et al. (2020) and Chen et al. (2020).
+attention mechanisms,non-local attention,Non-local attention has been explored by Zhang et al. (2019b)
+vision transformers,cnn-based networks,Vision transformers have surpassed CNNs in SISR
+vision transformers,real-world super-resolution (rwsr),Recent works focus on RWSR
+rwsr,implicit degradation representation learning,Some methods like Fritsche
+bsrgan,real-esrgan,Both BSRGAN (Zhang et al. 2021b) and Real-ESRGAN (Wang et al. 2021c) are manually designed for super-resolution.
+real-esrgan,manually designed degradations,Real-ESRGAN adopts manual degradation models.
+bsrgan,real-esrgan,Both BSRGAN and Real-ESRGAN belong to the category of methods that synthesize low-quality (LQ) inputs using manually designed degradation spaces.
+bsrgan,zhang et al. (2021b),BSRGAN is a method proposed by Zhang et al.
+real-esrgan,wang et al. (2021c),Real-ESRGAN is another method by Wang et al.
+li et al. (2022),learning degradations from real lq-hq faces,Li et al. propose a method that learns degradations from real data pairs.
+adversarial training,distortion removal,Adversarial training is used for generating missing details
+stylegan,real face sr,StyleGAN is employed for super-resolution of real faces.
+stylegan,yang et al. (2021),Yang et al. demonstrate StyleGAN's effectiveness for real face SR.
+gan networks,missing textures,GANs are used to generate missing textures in real LQ images.
+biggan generator,natural image restoration,Pan et al. use a BigGAN for restoring natural images.
+vqgan,image synthesis,VQGAN is known for its superior performance in image synthesis.
+vqgan,real sr of faces,VQGAN is effective in real super-resolution
+diffusion models,continuous feature space,Diffusion models operate in a continuous feature space.
+discrete diffusion models,texture generation,Discrete diffusion models excel at texture generation and have faster inference.
+discrete diffusion models,gu et al. (2022),Examples of discrete diffusion models include those by Gu et al.
+discrete diffusion models,image restoration,Our work is the first to demonstrate the potential of discrete diffusion models for image restoration.
+iterative token sampling approach,texture generation in rwsr,We propose a new method for texture generation in the discrete representation space pre-trained by VQGAN.
+vector-quantized auto-encoder (vqvae),stage i: hq images to discrete tokens,VQVAE is used to encode high-quality (HQ) images into discrete tokens Sh.
+distortion removal encoder,stage ii: lq images to tokens,A separate encoder is trained to remove distortions from low-quality (LQ) images and encode them into cleaner tokens Sl.
+stage iii: texture generation with discrete diffusion,sl and sh,The texture generation process involves the diffusion between the clean and distorted discrete tokens
+continuous latent diffusion models,contrast (ours),Our method contrasts with previous approaches that utilize continuous latent spaces.
+complex distortions,encoded tokens,The encoded tokens are noisy due to the complex distortions present in Il.
+lq encoder el,hq code indexes sh,El is employed to predict HQ code indexes as a preprocess step to remove distortions in Il.
+sl (encoded image tokens),clean token space,By employing El
+missing details,generating through eq. (2),Generating natural textures from the cleaned Sl is a challenging task due to the ill-posed nature.
+iter (iterative token evaluation and refinement),rwsr (restoration with style recovery),ITER is proposed as an approach for RWSR
+discrete diffusion model,initial image token s0,The diffusion process starts with an initial image token and evolves through a Markov process.
+discrete diffusion model,forward diffusion process,This model involves a forward diffusion process that gradually adds noise to the initial image tokens.
+bond-taylor et al. (2022),discrete diffusion model,Their work contributes to the understanding and development of discrete diffusion models.
+gu et al. (2022),discrete diffusion model,Another reference for discrete diffusion models
+threshold value (α),starting time step (ts),α is used to determine the appropriate Ts by comparing the mask ratio
+binary mask (ms),starting time step (ts),ms is the binary mask for the starting time step
+starting state (st),starting time step (ts),St is initialized using ms and the source state Sl
+mask transition (mt),starting time step (ts),mt is initially set to ms
+reverse diffusion process (pϕr),time steps {ts,...
+initial state (s0),final outcome (isr),The final outcome Isr is computed by applying DH to S0
+adaptive inference strategy,efficiency (iter),The strategy improves efficiency and preserves initial good tokens
+training dataset,hq images,HQ images are sourced from various datasets like DIV2K
+training dataset,lq images,LQ images are generated from HQ images using a degradation model
+second-order degradation model,realsr (wang et al. 2021b),The second-order degradation model is used for producing LQ images
+realsr (wang et al. 2021b),drealsr (wei et al. 2020),Both RealSR and DRealSR are real-world LQ image benchmarks for evaluating the performance of the model.
+realsr (wang et al. 2021b),dped-iphone (ignatov et al. 2017),These are real-world LQ image datasets used for model evaluation.
+realsr (wang et al. 2021b),real-srset (zhang et al. 2021b),More real-world LQ image datasets
+synthetic dataset,div2k validation set,A synthetic dataset is created using the DIV2K validation set for validating model configurations.
+el,ϕr,El and ϕr are part of the ITER model
+el,ϕe,ϕe is another network component in the ITER model
+reverse diffusion step,conditioned discrete diffusion model,The reverse diffusion step is learned within the conditioned discrete diffusion model
+iter model,markov chain,The ITER model is a conditioned Markov chain that transitions from ground truth to masked tokens.
+quantitative comparison,real-world benchmarks,The table presents a comparison on real-world benchmarks for various methods.
+bsrgan,real-esrgan,Results of BSRGAN and Real-ESRGAN are compared
+femasr mm-realsr,ours ldm-bsr,Both FeMaSR and Ours LDM-BSR are methods being compared in the experiments.
+gan-based approaches,iter,The text discusses a comprehensive comparison of the proposed method (ITER) with other GAN-based approaches.
+adam optimizer,optimization,The Adam optimizer is employed for optimizing all three networks in the training process.
+pytorch,implementation,All networks are implemented using the PyTorch framework.
+hq images,batch,Each batch contains 16 high-quality (HQ) images of size 256x256 for training.
+lr = 0.0001,specific parameters,The optimizer's learning rate is set to 0.0001.
+β1 = 0.9,specific parameters,β1 parameter is set to 0.9 for the optimizer.
+β2 = 0.99,specific parameters,β2 parameter is set to 0.99 for the optimizer.
+400k iterations,training duration,The networks are trained for 400
+4 tesla v100 gpus,computational resources,Training is conducted on 4 Tesla V100 GPUs.
+refinement network,texture generation,The refinement network is evaluated for its effectiveness in adding textures to the initial results
+token evaluation block,model preference,The token evaluation block helps manage the model's preference towards removing distortions or generating textures.
+psnr metric,quality of distortion removal,PSNR is used to evaluate the quality of distortion removal
+lpips metric,performance of texture generation,LPIPS
+iterative refinement stage,over-smoothed texture,Without iterative refinement
+iterative refinement,realistic results,With iterative refinement
+threshold value α,visual effects adjustment,The threshold value α in Eq. (6) influences how the model adjusts its visual effects according to the input.
+iterative refinement network,framework,The iterative refinement network plays a crucial role in the framework.
+top-k tokens,maskgit (chang et al. 2022),An alternative method in MaskGIT selects the top-k tokens for retention or refinement.
+greedy selection strategy,local propagation,Under the greedy selection
+black mask,regions refined until α = 0.4,ts = 3
+threshold α,number of refinement steps,A larger α leads to fewer valid tokens identified
+valid tokens,consistent results,A smaller number of valid tokens with a larger α results in more consistent output.
+real-world image super-resolution,texture generation,ITER is designed for texture generation in the context of real-world image super-resolution
+gan-based techniques,painstaking training,GANs require a meticulous training process compared to ITER's simpler approach.
+discrete diffusion generative pipelines,token evaluation and refinement blocks,ITER incorporates these blocks for refining results during iterative evaluation
+lpips (learned perceptual image patch similarity),psnr (peak signal-to-noise ratio),Both LPIPS and PSNR are used as quantitative measures to evaluate the performance of different α thresholds.
+α (threshold),effectiveness,The effectiveness of α thresholds is demonstrated through score curves
+smaller α,better psnr scores,Smaller α values lead to enhanced PSNR
+α = 0.5,optimal lpips score,A balance between texture generation and perceptual quality is achieved at α = 0.5
+iter,more adaptable framework,During inference
+flexibility in balancing distortion removal,texture generation during inference,The context discusses the balance between these two processes in the context of discrete diffusion models.
+iter,discrete diffusion models,ITER has shown superior performance with fewer iterations
+rie2020 industry alignment fund,study support,The study is funded by this industry alignment fund
+iaf-icp funding initiative,funding source,The IAF-ICP Funding Initiative is a part of the RIE2020 program that supports the project.
+industry partner(s),cash and in-kind contribution,The project also receives contributions from one or more industry partners in the form of both financial and non-financial support.
+top-k masking technique,local propagation problem,The top-k masking technique faces this issue
+token evaluation block,local propagation trap avoidance,The proposed token evaluation network helps mitigate the local propagation problem by improving the iterative refinement process.
+low-level vision tasks,locality property,These tasks have a natural tendency for neighboring features to be correlated
+swin transformer blocks,large receptive fields,Swin transformers provide a large receptive field
+confidence scores,previous selections,Higher confidence scores surround previously selected features due to the preference for local propagation.

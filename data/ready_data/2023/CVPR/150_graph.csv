@@ -1,0 +1,225 @@
+node_1,node_2,edge
+3d image generative models,3d volumes,3D image generative models often operate on 3D volumes of fixed extent with limited camera motions.
+3d image generative models,nature scenes,Investigating unconditionally synthesizing unbounded nature scenes with generative 3D models.
+3d image generative models,scene representation,Scene representation consists of extendable scene layout grid and panoramic skydome in 3D generative models.
+camera motions,scene representation,Scene representation enables rendering from arbitrary camera poses with extensive camera motions.
+world model,scene representation,Learning a generative world model from single-view internet photos based on the scene representation.
+methods,scene extrapolation,Approach enables scene extrapolation beyond fixed bounds of 3D generative models
+world model,persistent world representation,"Support for a persistent, camera-independent world representation in contrast to auto-regressive 3D prediction models."
+image and video models,realism,Generative image and video models have achieved remarkable levels of realism.
+image and video models,explorable world,"Image and video models are still far from presenting a convincing, explorable world."
+virtual camera,movement,"Moving a virtual camera through models is not like walking in the real world, movement is different."
+auto-regressive 3d synthesis methods,persistence,"Auto-regressive 3D synthesis methods exemplify the lack of persistence in generating 3D scenes, where parts of the scene may change unexpectedly with camera movement."
+scene,camera motion,The lack of spatial and temporal consistency in scenes can give them a dream-like quality when camera motion is not consistent.
+unconditional generative model,3d scenes,The aim is to develop an unconditional generative model capable of generating unbounded 3D scenes with a persistent underlying world representation.
+machines,3d worlds,"Machines capable of generating unbounded, persistent 3D worlds could be used to develop agents that plan within a world model or to build virtual reality experiences."
+virtual reality experiences,natural world,Virtual reality experiences that feel closer to the natural world rather than appearing as ephemeral hallucinations could be developed using machines generating persistent 3D worlds.
+unconditional generative model,3d scenes,The aim is to develop an unconditional generative model capable of generating unbounded 3D scenes with a persistent underlying world representation.
+terrain,skydome,The 3D world is modeled with a terrain represented by a scene layout grid and a skydome.
+terrain,scene layout grid,"The terrain in the 3D world is represented by a scene layout grid, which is an extendable 2D array of feature vectors."
+terrain,3d world,The 3D world is modeled with a terrain represented by a scene layout grid and a skydome.
+terrain,scene layout grid,The terrain is represented by a scene layout grid
+terrain,3d,We ‘lift’ these features into 3D and decode them with an MLP
+scene layout grid,extendable 2d array of feature vectors,The terrain is represented by a scene layout grid—an extendable 2D array of feature vectors that acts as a map of the landscape
+layout grid,limited size,We train using a layout grid of limited size
+layout grid,inference,we can extend the scene layout grid by any desired amount during inference
+camera trajectories,3d landscapes,"enabling unbounded camera trajectories. Since our underlying representation is persistent over space and time, we can fly around 3D landscapes in a consistent manner"
+generative models of 3d data,generative models of infinite videos,"Our work builds upon two prior threads of research that tackle generating immersive worlds: 1) generative models of 3D data, and 2) generative models of infinite videos"
+models of meshes,volumes,"generators of meshes, volumes, radiance fields"
+radiance fields,consistent 3d world,"These models represent a consistent 3D world by construction, and excel at rendering isolated objects and bounded indoor scenes"
+infinitenature,visual worlds of infinite extent,"methods like InfiniteNature, which can indeed simulate visual worlds of infinite extent"
+infinitenature,methods,InfiniteNature is mentioned as one of the methods used to simulate visual worlds of infinite extent.
+methods,unbounded scene synthesis,Methods like InfiniteNature enable unbounded scene synthesis by predicting new viewpoints auto-regressively from a starting view.
+unbounded scene synthesis,persistent world representation,Unbounded scene synthesis methods do not ensure a persistent world representation; content may change when revisited.
+our method,prior 3d generators,"The method aims to combine the best of both worlds, generating boundless scenes (unlike prior 3D generators)."
+our method,3d world,Our method aims to represent a persistent 3D world (unlike prior video generative models).
+3d generative model,unbounded nature scenes,An unconditional 3D generative model is presented for unbounded nature scenes with a persistent world representation.
+generative pipeline,camera extrapolation,The generative pipeline is augmented to support camera extrapolation beyond the training camera distribution by extending the terrain features.
+model,single-view landscape photos,The model is learned entirely from single-view landscape photos with unknown camera poses.
+related work,image and view extrapolation,"Related work discusses image and view extrapolation, along with techniques like image inpainting and outpainting."
+2d,3d,"2D image synthesis techniques are often applied within a 3D representation, as explored in prior work."
+video generation,synthesize realistic videos,Video generation aims to synthesize realistic videos from different types of input.
+conditional video generation,unconditional video generation,"Conditional video generation generates sequences by conditioning on one or a few images, while unconditional video generation produces long videos often from noise input."
+3d,global scene consistency,Some recent work preserves global scene consistency via extra 3D geometry inputs such as point clouds or voxel grids.
+generative view synthesis,novel view synthesis,Generative view synthesis and novel view synthesis aim to produce new views of a scene from single or multiple image observations.
+views,scene,Views are produced from a scene by constructing a 3D representation.
+views,image observations,Views can be produced from single or multiple image observations.
+methods,generative view synthesis,Generative view synthesis methods have been proposed for producing 3D representations from 2D supervision.
+methods,neural volumetric representations,Generative view synthesis methods utilize neural volumetric representations.
+methods,novel objects,Generative methods have demonstrated impressive results on generating novel objects.
+methods,faces,Generative methods have demonstrated impressive results on generating faces.
+methods,indoor environments,Generative methods have demonstrated impressive results on generating indoor environments.
+approach,nature scenes,"The approach can generate globally consistent, large-scale nature scenes solely from unstructured 2D photo collections."
+work,view generation methods,The work is inspired by recent perpetual view generation methods like InﬁniteNature and InﬁniteNature-Zero.
+view generation methods,nature scenes,View generation methods can generate unbounded fly-through videos of natural scenes.
+video sequences,auto-regressive manner,Video sequences are generated in an auto-regressive manner which limits their ability to achieve globally consistent 3D scene content.
+layout generator gland,random latent code,The layout generator Gland samples a random latent code to produce a 2D scene layout grid representing the shape and appearance of a terrain map.
+camera rays,feature plane,Sampled points along camera rays passing over the feature plane are decoded into color feature fcolor and density σ for volume rendering.
+global scene representation,consistent-by-construction,The global scene representation is trained to generate consistent-by-construction and realistic novel views spanning large-scale scenes.
+inﬁnicity [44],scenedramer [8],InﬁniCity and SceneDreamer leverage birds-eye-view representations for scene synthesis.
+scenescape [18],mesh representation,SceneScape builds a mesh representation from text for scene synthesis.
+scene representation,unbounded landscapes,The scene representation for unbounded landscapes consists of a scene layout grid and a skydome.
+random noise code z,stylegan2 generator gland,random noise code z is passed to a StyleGAN2 generator Gland
+2d feature grid fland,2d function over spatial coordinates x and z,2D feature grid fland is bilinearly interpolated to obtain a 2D function over spatial coordinates x and z
+2d function over spatial coordinates x and z,"interpolate(gland(z), (x, z))(1)","2D function over spatial coordinates x and z is obtained by interpolating Interpolate(Gland(z), (x, z))(1)"
+3d scene,multi-layer perceptron m,"To define a full 3D scene, a multi-layer perceptron M is used to compute the content at any 3D location"
+3d scene,scene grid feature,"To define a full 3D scene, a scene grid feature is used to compute the content at any 3D location"
+"fland(x, z)",multi-layer perceptron m,"The 2D-to-3D lifted feature fcolor and the density σ at point (x, y, z) are computed using multi-layer perceptron M based on fland(x, z)"
+2d scene layout grid,radiance field over all 3d points within the bounds of the grid,The 2D scene layout grid determines a radiance field over all 3D points within the bounds of the grid
+2d scene layout grid,feature vectors in the grid,The feature vectors in the grid encode appearance information and the height of the terrain at their ground location
+desired camera pose,rays r from the camera origin through 3d space,"To render an image from a desired camera pose, rays r from the camera origin through 3D space are cast"
+"sample points (x, y, z)",fcolor and σ at each point,"Sample points (x, y, z) along the rays are used to compute fcolor and σ at each point"
+volume rendering,rgb image of the terrain,Volume rendering is used to composite fcolor along each ray into projected 2D image features and form an initial RGB image of the terrain
+linear projection p,image features,The linear projection P is applied to the image features to generate a transformed representation.
+image features,left half of fig. 2,The image features are depicted in the left half of Fig. 2 as part of the illustration.
+image features,ray r,Each sampled point along ray r in the image features is indexed in order of increasing distance from the camera.
+layout extension procedure,noise codes z,The layout extension procedure involves sampling noise codes z in a grid arrangement at inference time.
+feature grids,bilinear blending weights,The feature grids are multiplied by bilinear blending weights for smooth transition between adjacent grids.
+di (inverse-depth),point i,The inverse-depth di (disparity) is associated with each point i in the context.
+mask mlr,sky regions,The mask mLR is intended to differentiate sky regions from non-sky regions in the context.
+color,disparity,Color and disparity are used for segmentation of real images in the context.
+training,segmented real images,The approach achieves training using segmented real images to replace color and disparity for sky pixels with zero.
+zero disparity,zero-valued color feature,"To achieve zero disparity, all weights along a ray must be zero, resulting in a zero-valued color feature."
+transparent sky regions,land geometry,"The model learns to generate transparent sky regions, but land geometry can also become partially transparent."
+opacity,viewing rays,Visible decreases in opacity along viewing rays are penalized using finite differences of opacity.
+feature grid,geometry of arbitrary size,"While Gland creates a fixed-size feature grid, the objective is to generate the geometry of arbitrary size for long-distance camera motion."
+feature grid,x and z dimensions,A way is devised to extend the feature grid in the x and z dimensions to enable long-distance camera motion at inference time.
+z,2d layout feature grid,Sampling noise codes z in a grid arrangement generates a 2D layout feature grid of size H × W.
+image interpolation approach,two dimensions,The image interpolation approach from SOAT is generalized to two dimensions for a smooth transition between independently sampled layout features.
+corner anchors,modulated feature,"The modulated feature fk, l+1 is constructed for each of the four corner anchors k by applying Gl, the l-th layer of Gland, in a fully convolutional manner over the entire sub-grid."
+modulated feature,feature grids,"The interpolation weights βk(x, z) are used to interpolate between the four feature grids by stitching 2 x 2 sub-grids in an overlapping manner, resulting in a scene layout feature grid of arbitrary size."
+layout generator,reﬁnement network,"Due to the computational cost of volume rendering, a reﬁnement network Gup is used to upsample the initial generated image ILR to a higher-resolution result IHR, while adding textural details."
+reﬁnement network,terrain image,"The reﬁnement network Gup uses StyleGAN2 backbone to produce a reﬁned terrain image IHR, by replacing feature layers with feature output, and concatenating RGB residual layers with ILR, dLR, and mLR."
+reﬁnement network,sky mask,The reﬁnement network also predicts a reﬁned disparity map and sky mask for compositing with the skydome.
+reconstruction loss,reﬁned disparity and mask outputs,"A reconstruction loss is computed between the initial and reﬁned disparity and mask outputs, and Gup is penalized for producing gray sky pixels in IHR outside the predicted mask mHR."
+stylegan2,layer-wise texture details,"For fine texture details, StyleGAN2 also uses layer-wise techniques to enhance the overall quality of the image."
+stylegan2,layer-wise spatial noise,StyleGAN2 uses layer-wise spatial noise in intermediate generator layers for fine texture details.
+2d noise pattern,texture 'sticking',Using a fixed 2D noise pattern results in texture 'sticking' as we move the camera.
+2d noise pattern,convolutional gridding artifacts,Removing the 2D noise pattern entirely results in convolutional gridding artifacts.
+2d image-space noise,projected 3d world-space noise,"To improve spatial consistency, the 2D image-space noise is replaced with projected 3D world-space noise."
+noise input,projection of samples from a grid of noise,The noise input to G_up is the projection of samples from a grid of noise for spatial consistency.
+same resolution of the layout features,noise pattern,The noise pattern is drawn from a standard Gaussian distribution defined on the ground plane at the same resolution of the layout features.
+ground plane,layout features,The noise pattern is defined on the ground plane at the same resolution of the layout features.
+noise pattern,3d world-space noise,The 2D image-space noise is replaced with projected 3D world-space noise for spatial consistency.
+remote content,skydome generator,"Remote content, including the sky and distant mountains, is modeled separately with a skydome generator."
+skydome generator,stylegan3 architecture,The skydome generator follows the StyleGAN3 architecture for modeling remote content.
+sky segmentation,real image distribution,Sky segmentation and real image distribution are used in constructing the real image distribution in GAN training phases.
+horizontal flipping,"56,982 images","After filtering, 56,982 images are used for training and augmented with horizontal flipping."
+camera,object-centric,This describes the distribution of the camera in an object-centric manner.
+dataset,ground truth poses,The dataset lacks ground truth poses which are usually needed for training purposes.
+training poses,layout feature grid,The training poses are sampled uniformly across the layout feature grid.
+camera view frustum,layout grid,The near half of the camera view frustum should fall within the layout grid.
+aerial layout,camera pose,The aerial layout is generated without any specific camera pose information.
+fland,camera pose information,Fland is generated without any camera pose information.
+camera pose,initial training pose bank,A camera pose is sampled from the initial training pose bank based on the inverse terrain density at each camera position.
+camera,occluding geometry,The sampling scheme avoids placing the camera within occluding geometry.
+scene representation,layout grid,The model enables motion through a synthesized landscape with the extensibility of the layout grid.
+camera trajectories,landscapes,The model allows for arbitrary motion through synthesized landscapes including long camera trajectories.
+camera movements,example landscapes,Example landscapes generated by the model with various camera movements are shown.
+scene synthesis,camera motions,"Scene synthesis involves generating landscapes based on camera motions, resulting in consistent changes in imagery"
+scene synthesis,underlying geometry,"Scene synthesis is consistent with the underlying geometry, where hills move across the image or become closer as the camera moves"
+aerial feature grid,camera poses,Extending the aerial feature grid allows placing the camera outside the distribution of training camera poses while maintaining consistency
+layout features,synthetic ‘ﬂights,Persistent and extendable layout features enable synthetic 'flights' over large distances that can return to a consistent start
+model,state-of-the-art methods,The model is compared with three state-of-the-art methods in scene representation analysis
+inﬁnitenature-zero,world model,InﬁniteNature-Zero allows unbounded camera trajectories but lacks a persistent world model
+gsn,eg3d,GSN and EG3D are compared to the model in scene representation analysis
+skydome generator,terrain image,The skydome generator synthesizes distant content consistent with the generated terrain image
+synthesis network,cylindrical coordinates,The synthesis network is conditioned on cylindrical coordinates to generate panoramic skydome images
+skydome image,panoramic view,The skydome image can be unwrapped to produce a panoramic skydome image.
+network,synthesis network,The synthesis network is conditioned on cylindrical coordinates.
+network,terrain,The network is adapted by conditioning on the terrain.
+terrain,skydome generator,Conditioning on the foreground terrain image encourages the skydome generator to generate a sky that is consistent with the terrain content.
+skydome generator,camera viewpoint,The skydome is rendered to an individual camera viewpoint using camera ray directions.
+skydome image,terrain image,The skydome image is composited with the terrain image using the sky mask.
+layout generator,refinement network,The refinement network is trained by operating on outputs of the layout generator.
+skydome generator,landscap images,The skydome generator is trained using real landscape images.
+stylegan2,additional losses,additional losses are included in the StyleGAN2 objective for each training stage
+stylegan2,architecture,the architecture of StyleGAN2 is specified for each training stage
+stylegan2,hyperparameters,hyperparameters are provided for StyleGAN2 in the supplemental
+dataset,camera poses,the dataset LHQ includes camera poses for training on natural landscapes
+lhq,unposed images,"LHQ dataset contains 90K unposed, single-view images of natural landscapes"
+lhq,filtering process,a filtering process is performed on LHQ dataset prior to training
+lhq,auxiliary outputs,auxiliary outputs such as disparity and sky segmentation are obtained using the pretrained DPT model on LHQ dataset
+disparity,sky segmentation,disparity and sky segmentation are obtained as auxiliary outputs using the pretrained DPT model
+model,3d-consistent view synthesis,the model enables 3D-consistent view synthesis under rotating or translating camera trajectories
+model,extrapolate layout features,"the model can extrapolate layout features at inference time, enabling camera motions outside of the training camera distribution"
+infinitenature-zero,image quality,image quality is evaluated using camera motions from InfiniteNature-Zero as FID on 5K images after moving 100 steps forward
+infinitenature-zero,one-step consistency,one-step consistency is evaluated as the L1 error when backwards warping one camera step using InfiniteNature-Zero
+5k images,100 steps forward,The process involves moving 5K images after taking 100 steps forward.
+5k images,l1 error,The L1 error is calculated for the 5K images when undergoing backwards warping one camera step.
+l1 error,backwards,The L1 error is calculated when backwards warping a camera step.
+original frame,result after a pair of forward/backward steps,Cycle consistency is measured as the L1 error between the original frame and the result after a pair of forward/backward steps.
+infinitenature-zero,single step,InfiniteNature-Zero is more consistent for a single step.
+infinitenature-zero,cyclic consistency error,InfiniteNature-Zero has a non-zero cyclic consistency error.
+image quality,model applications,The image quality degrades after repeated model applications.
+gsn,layout feature grid,GSN utilizes a layout feature grid.
+gsn,indoor scenes,GSN focuses on bounded indoor scenes.
+eg3d,tri-plane representation,EG3D uses a tri-plane representation.
+world models,feature grid and tri-plane representation,The world models consist of a feature grid and tri-plane representation.
+gsn,unbounded trajectories,GSN does not allow for unbounded trajectories.
+image quality,fid,The image quality is evaluated as FID on 5K images.
+image quality,training camera poses,The image quality is evaluated on training camera poses.
+model,image,"The model generates better images than other methods, showing consistent image quality."
+fid,image quality,FID is used to evaluate image quality.
+camera motion,image quality,Image quality is evaluated at a distance of 100 forward steps based on camera motion.
+model,fid,"The model attains better FID, indicating high image quality."
+model,inﬁnitenature-zero,The model is compared with InﬁniteNature-Zero in terms of image quality.
+model,3d generative models,The model is compared with 3D generative models like EG3D and GSN.
+model,view synthesis,Our model enables long-range view synthesis by rendering global scenes from different viewpoints.
+model,scene description,The model renders a global scene description from different viewpoints.
+3d generative models,view extrapolation,3D generative models like EG3D and GSN do not support view extrapolation on unbounded scenes.
+model,geometry regularization,Model variations include geometry regularization to improve generated geometry.
+geometry regularization,terrain,"Geometry regularization impacts the solidity of the terrain, but inconsistencies exist between the terrain and mask prediction."
+geometry regularization,mask prediction,"Geometry regularization affects the mask prediction, showing inconsistencies with the terrain."
+geometry regularization,sky mask,Geometry regularization uses sky mask inputs to discourage boundary effects between the terrain and sky.
+upsampler,inverse-depth,The upsampler operates on inverse-depth inputs to enhance the terrain and sky rendering for boundary effects.
+upsampler,sky mask,The upsampler uses sky mask inputs to improve the rendering process and reduce geometric inconsistencies.
+upsampler,rgb,The upsampler processes RGB inputs along with inverse-depth and sky mask to maintain consistency in the final image composite.
+inﬁnitenature-zero,persistent global representation,"InﬁniteNature-Zero lacks a persistent global representation, leading to non-zero cyclic consistency error in contrast to the fully consistent model."
+inﬁnitenature-zero,explicit warping,InﬁniteNature-Zero uses explicit warping for better one-step consistency compared to the 2D upsampling operation in the model.
+unconditional generative models,gsn,"To compare with GSN and EG3D, the FID on sets of output images is computed to evaluate the performance."
+unconditional generative models,eg3d,"To compare with EG3D and GSN, the FID on sets of output images is computed to assess the generative model quality."
+zero cyclic consistency error,unconditional generative models gsn,Comparison between zero cyclic consistency error and GSN in terms of their performance in the domain
+zero cyclic consistency error,unconditional generative models eg3d,Comparison between zero cyclic consistency error and EG3D in terms of their performance in the domain
+unconditional generative models gsn,unconditional generative models eg3d,Comparison between GSN and EG3D in terms of their performance in the domain
+unconditional generative models gsn,our method,Comparison between GSN and the method used in the context in terms of generalization to new camera positions
+unconditional generative models eg3d,our method,Comparison between EG3D and the method used in the context in terms of consistency error and 2D upsampling reliance
+our model,alternative architecture with lower consistency error,Experimentation with an alternative architecture that builds on extendable triplane units with lower consistency error and faster rendering speed compared to the current model
+inﬁnitenature-zero,auto-regressive nature,Discussion on the quality degradation of InﬁniteNature-Zero's output as the camera trajectory becomes longer due to its auto-regressive nature
+inﬁnitenature-zero,camera rotation,Limitation of InﬁniteNature-Zero in synthesizing plausible views under camera rotation as it was trained only on forward movement
+gsn,eg3d,Comparison between GSN and EG3D in terms of consistency error and rendering quality
+forward movement,plausible views,The model trained only on forward movement is unable to synthesize plausible views under camera rotation.
+gsn,long camera trajectories,"GSN and EG3D struggle with long camera trajectories, producing unrealistic outputs as the cameras approach the spatial limits of the training camera distribution."
+gsn,flickering and grid-like artifacts,"In the case of GSN applied to the setting, the results contain flickering and grid-like artifacts which are mitigated by projected noise."
+layout generator,resolution of the scene layout grid,The resolution of the scene layout grid and the number of samples per ray affect the quality of the volume-rendered output.
+layout generator,number of samples per ray,Higher resolution and more samples for the layout generator lead to the best image quality.
+reﬁnement network,upsamples and reﬁnes the layout generator output,"The reﬁnement network operates on RGB images, inverse-depth, and sky mask to upsample and refine the layout generator output."
+layout generation,feature grid resolution,"Higher feature grid resolution in layout generation yields the best results, bounded by computational limits."
+layout generation,samples per ray,"More samples per ray in layout generation yield the best results, bounded by computational limits."
+fid,5k samples,FID is computed on 5K samples for speed.
+reﬁnement network,low-resolution image,Reﬁning the low-resolution image improves image quality.
+reﬁnement network,depth,"Reﬁning the depth improves image quality, but can lead to jittery results."
+reﬁnement network,sky-mask,"Reﬁning the sky-mask improves image quality, but can lead to jittery results."
+reﬁnement network,projected noise,The addition of projected noise into the reﬁnement network results in smoother frames with lower consistency error.
+upsampler,rgb image,Upsampling only the RGB image can lead to output that is inconsistent with the generated sky mask.
+upsampler,projected noise,Upsampling with projected noise results in spatial consistency of texture detail.
+generator,world,The unconditional world generator is presented.
+world generator,3d nature scenes,The world generator is designed for unbounded synthesis of persistent 3D nature scenes.
+world generator,persistent world representation,The world generator builds a persistent world representation to model scene content.
+world generator,terrain image,The world generator utilizes volume rendering to form a terrain image.
+world generator,skydome,The world generator combines the rendered terrain with a separate skydome to synthesize novel viewpoints.
+3d nature scenes,persistent world representation,The persistent world representation models scene content for unbounded synthesis of 3D nature scenes.
+3d nature scenes,terrain image,The 3D nature scenes involve volume rendering to form a terrain image.
+3d nature scenes,skydome,The 3D nature scenes combine the rendered terrain with a separate skydome to synthesize novel viewpoints.
+persistent world representation,terrain image,The persistent world representation can be decoded via volume rendering to form a terrain image.
+persistent world representation,skydome,The persistent world representation is combined with a separate skydome to synthesize novel viewpoints.
+terrain image,skydome,The terrain image is combined with a separate skydome to synthesize novel viewpoints.
+image generation,view synthesis,The model enables 3D consistent image generation and view synthesis of unbounded scenes.
+image generation,landscape photos,"The model enables 3D consistent image generation and view synthesis of unbounded scenes learned from single-view, unposed landscape photos."
+view synthesis,landscape photos,"The model enables view synthesis of unbounded scenes learned from single-view, unposed landscape photos."
+landscape photos,view synthesis,"The model enables view synthesis of unbounded scenes learned from single-view, unposed landscape photos."
+andrew liu,fruitful discussions,Andrew Liu and Richard Bowen had fruitful discussions.
+andrew liu,helpful comments,Andrew Liu and Richard Bowen had helpful comments.
+richard bowen,fruitful discussions,Andrew Liu and Richard Bowen had fruitful discussions.
+richard bowen,helpful comments,Andrew Liu and Richard Bowen had helpful comments.
+internship,google,The project was part of an internship at Google.

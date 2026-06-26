@@ -1,0 +1,272 @@
+node_1,node_2,edge
+click-based interactive image segmentation,target masks,The goal of click-based interactive image segmentation is to extract target masks with the input of positive/negative clicks.
+clicks,methods,"Every time a new click is placed, existing methods run the whole segmentation network to obtain a corrected mask."
+mask correction network,whole segmentation network,"To this end, we propose an efficient method to correct the mask with a lightweight mask correction network. The whole network remains a low computational cost from the second click."
+correction network,click-guided self-attention module,"Thus, a simple correction network with limited capacity is not likely to achieve comparable performance with a classic segmentation network. Thus, we propose a click-guided self-attention module and a click-guided correlation module to effectively exploit the click information to boost performance."
+templates,click features,"First, several templates are selected based on the semantic similarity with click features."
+self-attention module,pixels,Then the self-attention module propagates the template information to other pixels.
+correlation module,templates,While the correlation module directly uses the templates to obtain target outlines.
+architecture,click-guided modules,"With the efficient architecture and two click-guided modules, our method shows preferable performance and efficiency compared to existing methods."
+code,https://github.com/feiaxyt/emc-click,The code will be released at https://github.com/feiaxyt/EMC-Click.
+interactive image segmentation,object of interest,Interactive image segmentation aims to select the object of interest with minimal iterative interactions.
+interactive image segmentation,computer vision tasks,"Interactive image segmentation is aimed at benefitting various computer vision tasks such as semantic segmentation, instance segmentation, and medical image analysis."
+interactive image segmentation,interaction strategies,Different interaction strategies have been studied to simplify the interactive process in image segmentation.
+interaction strategies,bounding boxes,Interaction strategies in image segmentation include bounding boxes as a method to simplify the interactive process.
+interaction strategies,clicks,Interaction strategies in image segmentation include clicks as a method to simplify the interactive process.
+bounding boxes,object boundary,The performance of methods based on bounding boxes may drop if the bounding boxes are not tightly drawn due to the complexity of the object boundary and appearance.
+click-based method,users,The click-based method only requires the users to progressively place positive and negative interactions.
+click-based method,users,The click-based method requires users to progressively place positive and negative clicks on the foreground and background areas.
+click-based method,efficiency,"Efficiency is of great importance to interactive segmentation methods, including the click-based method."
+interactive segmentation methods,deep learning-based interactive segmentation methods,Deep learning-based interactive segmentation methods have achieved considerably better performance compared to traditional methods.
+click-based method,ritm,RITM investigates different designs for interactive segmentation and achieves state-of-the-art results with a classic segmentation network in the click-based method.
+ritm,interactive segmentation,RITM investigates different designs for interactive segmentation.
+focalclick,efficiency,"FocalClick proposes target crop and focus crop strategies to segment two selected local regions efficiently, focusing on efficiency."
+focalclick,click-based methods,FocalClick is an efficient method for click-based interactive segmentation.
+mask,user clicks,"The masks are dated with the input of user clicks, indicating a relationship where user clicks are used to refine the masks."
+network,segmentation,"A strong segmentation network is mentioned, implying a relationship where network is related to segmentation."
+network,refinement network,"Majumder et al. propose to refine the mask with a lightweight refinement network, indicating a relationship where network is used for refinement."
+network,mask correction network,"The model consists of a base segmentation network and a lightweight mask correction network, implying a relationship where network is part of a mask correction network."
+click,interactive segmentation,"Efficient click-based interactive segmentation methods are required for efficiency, indicating a relationship where clicks are used in interactive segmentation."
+network,efficient click-based interactive segmentation model,"In this work, an efficient click-based interactive segmentation model is developed, highlighting a relationship where the network is integral to the model."
+feature augmentation modules,click-guided self-attention module,"Two feature augmentation modules are proposed, including a click-guided self-attention module, indicating a relationship where the module is part of feature augmentation."
+feature augmentation modules,click-guided cor,"Two feature augmentation modules are proposed, including a click-guided cor, suggesting a relationship where the module is part of feature augmentation."
+feature augmentation modules,click information,"The feature augmentation modules, including the click-guided self-attention module and the click-guided correlation module, aim to effectively exploit the click information to augment the features in the mask correction network."
+click features,template features,The click features are enriched by selecting several template features based on the semantic similarity between the clicks and other pixels.
+self-attention module,template features,The self-attention module propagates the information of the template features to other pixels to improve segmentation performance.
+correlation model,target contours,The correlation model directly learns target contours for segmentation improvement.
+emc-click,click-based interactive method,EMC-Click is proposed as an efficient click-based interactive method to correct masks via a lightweight mask correction network interactively.
+feature augmentation modules,segmentation accuracy,The two feature augmentation modules are designed to improve segmentation accuracy by effectively exploiting the click information.
+emc-click,base segmentation networks,EMC-Click is built on different base segmentation networks to evaluate models on several benchmarks.
+networks,evaluate,networks are evaluated on several benchmarks
+networks,models,models are evaluated along with networks on several benchmarks
+models,benchmarks,models are evaluated on several benchmarks
+method,performance,the method achieves preferable performance
+method,efficiency,the method achieves preferable efficiency
+method,state-of-the-art methods,the method compared to state-of-the-art methods
+interactive image segmentation,computer vision,Interactive image segmentation is a research topic in computer vision
+methods,optimization,methods are based on optimization on a graph over image pixels
+grabcut,methods,GrabCut is a classic method that extends to an iterative energy minimization problem
+grabcut,energy minimization problem,GrabCut extends to an iterative energy minimization problem
+deep learning,fields,Deep learning has been applied in many fields
+xu et al.,interactive segmentation method,Xu et al. are the first to propose a CNN-based interactive segmentation method
+xu et al.,positive/negative clicks,Xu et al. encode the positive/negative clicks as positive/negative distance maps
+mahadevan et al.,iterative sampling strategy,Mahadevan et al. add an iterative sampling strategy on Xu et al. during training
+brs,network,BRS proposes optimizing the network online based on user-specified location information during the annotation process
+f-brs,brs,f-BRS accelerates BRS
+f-brs,online,f-BRS accelerates BRS by optimizing online
+annotation process,user-specified location information,user-specified location information is utilized during the annotation process
+f-brs,brs,f-BRS accelerates BRS by optimizing a small part of the network
+ritm,end-to-end click-based interactive segmentation method,RITM conducts experiments to investigate the design principle of an end-to-end click-based interactive segmentation method
+click-based method,mainstream,click-based method is described as the mainstream due to its simplicity and well-established training and evaluation protocols
+interactive methods,extreme points,"interactive method, such as extreme points, are also exploited"
+interactive methods,boundary points,"interactive method, such as boundary points, are also exploited"
+interactive methods,bounding boxes,"interactive method, such as bounding boxes, are also exploited"
+deep learning-based methods,high computational cost,"deep learning-based methods suffer from a high computational cost, especially with strong backbones like ResNet101"
+mask refinement,interactive segmentation,Mask refinement is commonly used in interactive segmentation to get fine-level results
+ris-net,click positions,RIS-Net samples multiple regions based on the click positions for local refinement
+emc-click,base segmentation network,EMC-Click framework includes using a base segmentation network to extract target-aware features and make predictions
+mask correction network,click location,The mask correction network first maps the click location to the feature map and extracts the click features.
+mask correction network,click features,The mask correction network extracts the click features and samples template features that are similar to the click features.
+click features,template features,Several template features that are similar to the click features are sampled.
+template features,click-guided self-attention module,The click-guided self-attention module propagates the template information to other pixels.
+template features,click-guided correlation module,The click-guided correlation module extracts target outlines via the correlation between the templates and the feature map.
+mask correction network,combined features,"Both modules, click-guided self-attention and click-guided correlation, augment the features and the combined features are used to predict the mask."
+focalclick,previous mask,FocalClick crops a region based on the difference between the previous mask and the coarsely predicted mask to refine the details.
+zhang et al.,local area,Zhang et al. refines a local area centered on the target based on the coarse segmentation results.
+edgeflow,global mask,EdgeFlow is a method to refine the global mask.
+99%accuracynet,refinement methods,99%AccuracyNet is a method to refine masks and it is one of the common refinement methods.
+focus-cut,segmentation network,Focus-Cut trains a segmentation network to not only segment the target object but also refine local details.
+mask correction network,refinement network,"Our mask correction network is somewhat like a refinement network, but the difference lies in directly using this network to correct masks."
+refinement network,correction masks,The refinement network is used to correct masks when a new click is placed.
+refinement network,base segmentation network,"The base segmentation network runs only for the first click, while the refinement network is used to correct masks."
+refinement network,inference time,The architecture of the refinement network reduces the inference time significantly compared to traditional methods.
+clicks,foreground and background areas,Clicks provide key information for locating the foreground and background areas.
+click maps,click information,"Most methods encode clicks as click maps where the regions around the clicks are highlighted, but the click information is not explicitly exploited."
+cdnet,click information propagation,CDNet propagates click information to other pixels via non-local networks to re-weight the affinity matrix.
+ifpn,click feature propagation,"IFPN learns a sparse graph model to perform click feature propagation, modeling dependencies between clicks and other pixels."
+multi-head self-attention module,click information propagation,"A multi-head self-attention module is constructed to propagate click information to other pixels, inspired by CDNet and IFPN methods."
+our method,cdnet and ifpn,Our method is more efficient compared to CDNet and can exploit more information compared to IFPN.
+templates,click features,Several templates are selected to enrich the click features in the proposed method.
+correlation module,click information propagation,A correlation module is proposed to help in the propagation of click information.
+cdnet,ifpn,CDNet and IFPN are compared in terms of their capability to exploit information.
+cdnet,information,CDNet can exploit more information compared to other methods.
+ifpn,information,IFPN can exploit less information compared to CDNet.
+correlation module,click information,A correlation module is proposed to exploit the click information explicitly.
+segmentation mask,lightweight mask correction network,The segmentation mask is corrected using a lightweight mask correction network.
+segmentation mask,click-guided self-attention module,The segmentation mask is improved using a click-guided self-attention module.
+segmentation mask,click-guided correlation module,The segmentation mask is enhanced using a click-guided correlation module.
+interactive segmentation,segmentation task,Interactive segmentation is a special type of segmentation task.
+interactive segmentation,segmentation network,Interactive segmentation involves the use of a segmentation network.
+click maps,distance maps,Click maps can be defined as distance maps in interactive segmentation.
+click maps,binary disks,Click maps can be defined as binary disks in interactive segmentation.
+click maps,image,Click maps are concatenated with the image to be fed to the segmentation network.
+click maps,predicted mask,Click maps are concatenated with the predicted mask to be fed to the segmentation network.
+user,segmentation mask,The user decides where to place the next click based on the current segmentation mask.
+user,updated segmentation mask,The user obtains an updated segmentation mask after each click.
+user,segmentation network,The user runs the whole segmentation network to obtain an updated segmentation mask.
+segmentation network,deeplabv3+,A strong segmentation network like DeepLabv3+ is usually used in the interactive segmentation model.
+mask,segmentation network,The segmentation accuracy directly depends on a strong segmentation network like DeepLabv3+. Running the whole segmentation network is usually required to achieve satisfactory results.
+mask,lightweight network,"To avoid running the whole segmentation network for each click, a lightweight network is built to correct the segmentation mask in each iteration."
+click,base segmentation network,The base segmentation network takes the input image and the first click to generate target-aware features and a coarse mask.
+click,mask correction network,"Starting from the second click, all clicks are directly fed into the mask correction network to correct the previously predicted mask."
+input image,first click,The base segmentation network takes the input image and the first click to generate target-aware features and a coarse mask.
+input image,first click c1,The work takes the input image and the first click C1 as input
+input image,target-aware features ft,The work generates target-aware features Ft from the input image
+input image,coarse mask mc,The work generates a coarse mask Mc from the input image
+coarse mask mc,mask correction network,The mask correction network takes the coarse mask Mc as input
+mask correction network,mask correction network,"The mask correction network outputs an updated mask based on input from target-aware features, original image, and previously predicted mask"
+click set ct,target-aware features ft,The mask correction network takes the click set Ct and target-aware features Ft as input
+click set ct,original image i,The mask correction network takes the click set Ct and original image I as input
+click set ct,previously predicted mask mt-1,The mask correction network takes the click set Ct and previously predicted mask Mt-1 as input
+mask correction network,preexisting mask,The mask correction network can also take a preexisting mask as input
+first click,mask correction network,The mask correction network is run after the first click
+fca-net,first click,FCA-Net treats the first click differently from other clicks
+fca-net,mask correction network,FCA-Net needs to run the whole network for each click
+mask correction network,traditional segmentation network,A simple mask correction network may not achieve comparable performance with a traditional segmentation network
+traditional segmentation network,click information,The proposal aims to exploit click information to enhance performance compared to a traditional segmentation network.
+click information,click-guided self-attention module,The click-guided self-attention module is used to propagate information based on the click information.
+click information,click-guided correlation module,The click-guided correlation module utilizes the click information to learn target outlines through correlation.
+image,positive/negative click maps,The image and positive/negative click maps are concatenated to extract low-level features.
+image,previous mask,The image and previous mask are concatenated for feature extraction.
+target-aware features,convolutional layer,The channel number of target-aware features is adjusted using a convolutional layer.
+fl,ft,The low-level features Fl are concatenated with target-aware features Ft to learn fused features.
+location of clicks,feature maps,The location of clicks is mapped onto feature maps for information extraction.
+click features,templates,Click features are considered as templates for further processing.
+click-guided self-attention module,multi-head attention,The click-guided self-attention module utilizes multi-head attention to propagate information.
+click-guided correlation module,target outlines,The click-guided correlation module is used to learn target outlines through correlation.
+number of clicks,satisfactory segmentation accuracy,The number of clicks required for accurate segmentation is discussed.
+informative locations,semantic similarity,Informative locations are selected based on their semantic similarity to clicks.
+templates,template selection,Templates are enriched and selected based on certain criteria.
+features,pixels,Features of pixels are used to calculate similarity and distance between them.
+positive templates,negative templates,Templates are either positive or negative based on the likelihood of being an object or background.
+positive templates,pixels,Positive templates are selected based on the likelihood of being an object.
+object,background,Pixels are classified into object or background.
+positive clicks,negative clicks,Similarity to positive and negative clicks is used to calculate the likelihood of being an object.
+dp,rhf×wf,Dp denotes the normalized distance map RHf×Wf
+v,"u,v","V u,v denotes the similarity scores between the pixel (u, v) and positive/negative clicks"
+"du,v",normalized minimum distance,"Du,v represents the normalized minimum distance between (u, v) and positive clicks"
+on,"vn, vp, dn",On = (Vn + (1 − Vp)) ∗ (1 − Dn) where Dn measures the normalized minimum distance between each pixel and negative clicks
+kn,kp,Kn negative templates from the top Kn locations of the negative score map
+fpt,fnt,Positive and negative template features are represented as Fpt ∈ RKp×C and Fnt ∈ RKn×C
+click-guided self-attention,click information,Our first way to exploit the click information is through click-guided self-attention
+multi-head attention,computer vision,Multi-head attention is widely used in computer vision to capture long-range dependencies among different pixels
+qkv multi-head attention,representation,We adopt the standard qkv multi-head attention to augment the representation of each pixel with the selected templates
+fu,hf wf,"To perform multi-head attention, we first reshape the feature Fu to a size of Hf Wf × C"
+multi-head attention,feature,multi-head attention involves reshaping the feature Fu and learning the augmented feature Fs through self-attention
+feature,fs,"Feature Fs is obtained by adding attention based on Q, K, and V to Fu"
+attention module,click-guided self-attention module,The attention module is further defined as a click-guided self-attention module which utilizes click information
+object,click-guided correlation attention module,Click-guided correlation attention module is used to learn the contour of the object of interest
+siamese object tracking architecture,correlation,Correlation is widely used in the Siamese object tracking architecture for target localization
+target features,template,Target features from the first frame are used as templates for learning pixel-wise similarity maps in RANet
+pixel-wise correlation,target outlines,Pixel-wise correlation is employed to learn target outlines for improving segmentation performance
+pixel-wise correlation,learn target outlines,The pixel-wise correlation is used to learn target outlines to improve segmentation performance.
+pixel-wise correlation,similarity map,A similarity map is obtained through pixel-wise correlation between positive template and feature Fu.
+positive template,similarity map,Positive template is correlated to generate positive similarity maps.
+negative correlation similarity maps,positive correlation similarity maps,Negative and positive correlation similarity maps are processed by linear transformations.
+correlation operation,positive/negative similarity maps,Correlation operation is applied to generate positive and negative similarity maps.
+positive/negative similarity maps,features for segmentation,Positive/negative similarity maps are transformed into features for segmentation through convolutional layers.
+positive features,negative features,Positive and negative features are concatenated and fused by a convolutional layer.
+correlation-based augmented feature,concatenated features,Correlation-based augmented feature is generated by concatenating positive and negative features.
+augmented features,segmentation mask,Augmented features are used to predict the segmentation mask through convolutional layers.
+mask correction network,structure,Mask correction network has a lightweight structure with resolution at 1/4 of the image.
+mask correction network,performance improvement,Mask correction network exploits click information to explicitly improve performance.
+pipeline,segmentation networks,The pipeline can be built on different existing segmentation networks.
+pipeline,hrnet+ocr,"Following FocalClick [8], HRNet+OCR is chosen as a base segmentation network to show the effectiveness of the proposed method."
+pipeline,segformer,"Following FocalClick [8], SegFormer series is chosen as a base segmentation network to show the effectiveness of the proposed method."
+hrnet+ocr,segformer,HRNet+OCR and SegFormer series are chosen as base segmentation networks to show the effectiveness of the proposed method.
+models,segformerb0,"For lightweight models like SegFormerB0, the mask correction network transforms the number of backbone feature channels to 64."
+models,hrnet18s,"For lightweight models like HRNet18s, the mask correction network transforms the number of backbone feature channels to 64."
+models,segformerb3,"For larger models like SegFormerB3, the mask correction network transforms the number of backbone feature channels to 96."
+models,hrnet18,"For larger models like HRNet18, the mask correction network transforms the number of backbone feature channels to 96."
+models,hrnet32,"For larger models like HRNet32, the mask correction network transforms the number of backbone feature channels to 96."
+templates,channel number,The number of selected templates Kp and Kn is set to be equal to the channel number.
+model,coco dataset,"The model is trained on a combination of COCO [25] and LVIS [14] datasets, following RITM [40]."
+model,lvis dataset,"The model is trained on a combination of COCO [25] and LVIS [14] datasets, following RITM [40]."
+model,sbd dataset,The performance of the model is reported on the SBD [16] dataset for a fair comparison of some previous methods.
+loss function,normalized focal loss,The normalized focal loss [38] is used for both the base segmentation.
+our-maskcorrection-c9638423.5,focalclick-hrnet18s,Our network model with Mask Correction and specific parameters interacts with the FocalClick network model utilizing hrnet-18s architecture
+our-maskcorrection-c9638423.5,focalclick-hrnet32,Our network model with Mask Correction and specific parameters interacts with the FocalClick network model utilizing hrnet-32 architecture
+focalclick-hrnet18s,focalclick-segb0,The FocalClick network model utilizing hrnet-18s architecture is related to the FocalClick network model utilizing SegB0 architecture
+focalclick-hrnet32,focalclick-segb3,The FocalClick network model utilizing hrnet-32 architecture is related to the FocalClick network model utilizing SegB3 architecture
+focalclick-segb0,ours-hrnet18s,The FocalClick network model utilizing SegB0 architecture is related to our network model utilizing hrnet-18s architecture
+ours-hrnet18s,ours-hrnet32,Our network model utilizing hrnet-18s architecture is related to our network model utilizing hrnet-32 architecture
+ours-hrnet32,ours-segb36.79,Our network model utilizing hrnet-32 architecture is related to our network model utilizing SegB36.79 architecture
+noc,iou,The Number of Clicks (NoC) metric is directly related to the Intersection over Union (IoU) threshold in evaluating the predicted mask against the ground truth
+noc,noc@85,The Number of Clicks (NoC) metric is compared with the Number of Clicks required to reach an 85% Intersection over Union (IoU) threshold
+noc@85,noc@90,The Number of Clicks required to reach an 85% Intersection over Union (IoU) threshold is related to the Number of Clicks required to reach a 90% IoU threshold
+maskcorrection-c64,channel,MaskCorrection-C64 is defined as setting the channel of the mask correction network to 64
+maskcorrection-c64,channel,MaskCorrection-C64 denotes setting the channel of the mask correction network to 64
+maskcorrection-c64,hrnet18s,MaskCorrection-C64 is used for HRNet18s
+maskcorrection-c64,segformerb0,MaskCorrection-C64 is used for SegFormerB0
+maskcorrection-c96,hrnet18,MaskCorrection-C96 is used for HRNet18
+maskcorrection-c96,hrnet32,MaskCorrection-C96 is used for HRNet32
+maskcorrection-c96,segformerb3,MaskCorrection-C96 is used for SegFormerB3
+method,computational cost,The computational cost of our method is different between the first click and other clicks
+method,inference time,"Our method needs to run the base segmentation network and the mask correction network for the first click, resulting in slightly higher inference time compared with RITM"
+method,efficiency,"Our method shows higher efficiency from the second click even compared with FocalClick, since our mask correction network is lightweight"
+mask correction network,computational cost,The computational cost of the mask correction network will not change with the base segmentation network if we fix the configuration
+mask correction network,inference time,"From the second click, we only run the mask correction network, significantly reducing the inference time compared to other methods"
+training strategy,positive click,We adopt the iterative training strategy by randomly sampling the first positive click in the target area
+lightweight mask correction network,iterative training,The lightweight mask correction network enables efficient iterative training.
+adam optimizer,training the network,We use the Adam optimizer to train the network.
+data augmentation strategies,"random resizing, horizontal flip, random jittering of brightness, contrast, and rgb values","We add data augmentation strategies, including random resizing, horizontal flip, random jittering of brightness, contrast, and RGB values."
+"grabcut dataset, berkeley dataset, davis dataset, sbd dataset, pascal voc dataset",evaluation datasets,"We evaluate our method on five commonly used datasets, including GrabCut, Berkeley, DAVIS, SBD, and Pascal VOC."
+davis dataset,evaluation of video object segmentation methods,The DAVIS dataset is originally constructed for the evaluation of video object segmentation methods.
+sbd dataset,evaluate the interactive,The SBD dataset is the largest and has been widely used to evaluate the interactive.
+sbd dataset,objectmethods,The SBD dataset is used to evaluate the objectMethods
+objectmethods,f-brs-b-resnet50,f-BRS-B-ResNet50 is one of the objectMethods
+objectmethods,cdnet-resnet50,CDNet-ResNet50 is one of the objectMethods
+objectmethods,focuscut-resnet50,FocusCut-ResNet50 is one of the objectMethods
+objectmethods,focalclick-hrnet18s,FocalClick-hrnet18s is one of the objectMethods
+objectmethods,ritm-hrnet18,RITM-hrnet18 is one of the objectMethods
+ritm-hrnet18,focalclick-hrnet18s,RITM-hrnet18 and FocalClick-hrnet18s are related objectMethods
+ritm-hrnet18,ours-hrnet18s,RITM-hrnet18 and Ours-hrnet18s are related objectMethods
+ours-hrnet18,edgeflow-hrnet18,Ours-hrnet18 and EdgeFlow-hrnet18 are related objectMethods
+ours-hrnet18,ritm-hrnet32,Ours-hrnet18 and RITM-hrnet32 are related objectMethods
+ours-hrnet18,ours-hrnet32grabcutberkeleysbdtrain data,Ours-hrnet18 is related to Ours-hrnet32GrabCutBerkeleySBDTrain Data
+sbd dataset,time,The SBD dataset is used for evaluating Time
+time,iou,Time is used to calculate IoU
+noc@85,noc@90,NoC@85 and NoC@90 represent the number of clicks required to reach different IoU thresholds
+focalclick-segb3,ours-segb3,FocalClick-SegB3 and Ours-SegB3 have similar number of clicks required for reaching different IoU thresholds
+focalclick-segb3,ours-segb3,"Although FocalClick-SegB3 and Ours-SegB3 have similar number of clicks, the inference time of Ours-SegB3 is significantly lower"
+ours-segb3,focalclick-segb3,"Ours-SegB3 has a significantly lower computational cost compared to FocalClick-SegB3, especially at a threshold change from 90% to 95%"
+our method,focalclick,"Our method outperforms FocalClick, especially on challenging images and scenarios requiring high IoU"
+our method,cd-net,Different versions of our method show superior performance and efficiency over CD-Net
+our method,ritm,Our method demonstrates competitive performance compared to RITM
+our method,focuscut,Our method competes with FocusCut and performs competitively
+our method,pseudoclick,Our method competes with PseudoClick and performs competitively
+our method,transclick,Our method competes with TransClick and performs competitively
+our method,sbd dataset,Our method achieves outstanding performance on the largest SBD dataset
+our method,inference time,Our method demonstrates preferable performance with significantly low inference time from the second click
+our method,component,Ablation studies verify the effectiveness of each component in our method
+baseline,simple convolutional mask correction network,The baseline method uses only a simple convolutional mask correction network.
+simple mask correction network,high performance,A simple mask correction network alone cannot achieve high performance.
+first click,base segmentation network (hrnet18s),Inputting the first click to the base segmentation network is significant for the performance.
+correlation module,self-attention module,The correlation and self-attention modules are analyzed for their performance.
+base segmentation network,correlation and self-attention modules,The performance of the base segmentation network is influenced by the correlation and self-attention modules.
+correlation module,self-attention module,The correlation and self-attention modules are compared with and without the adoption of negative templates.
+click-guided self-attention module,click-guided correlation module,The introduction of the click-guided self-attention and correlation modules is beneficial for boosting the performance.
+click-guided self-attention module,click-guided correlation module,"The introduction of the click-guided self-attention module and the click-guided correlation module brings significant improvements over the simple mask correction network, indicating that they learn complementary augmented features and can be combined to boost performance."
+click-guided self-attention module,correlation module,"The adoption of positive templates is a natural choice since they contain rich information regarding the target. However, the negative templates are also vital since negative clicks are often selected in distractor areas, and they contain information that can discriminate the target from the background. The employment of the negative templates effectively improves the performance of both the correlation and self-attention modules."
+click-guided correlation module,correlation module,"The adoption of positive templates is a natural choice since they contain rich information regarding the target. However, the negative templates are also vital since negative clicks are often selected in distractor areas, and they contain information that can discriminate the target from the background. The employment of the negative templates effectively improves the performance of both the correlation and self-attention modules."
+template selection module,click features,The template selection module further improves performance by sampling several templates to enrich the click features.
+positive templates,negative templates,"The necessity of negative templates. All positive and negative templates are input to the self-attention and correlation modules. The adoption of positive templates is a natural choice since they contain rich information regarding the target. However, the negative templates are also vital since negative clicks are often selected in distractor areas, and they contain information that can discriminate the target from the background."
+performance,modules,"The adoption of positive templates is a natural choice since they contain rich information regarding the target. However, the negative templates are also vital since negative clicks are often selected in distractor areas, and they contain information that can discriminate the target from the background. The employment of the negative templates effectively improves the performance of both the correlation and self-attention modules."
+erroneous area,high semantic similarity,The erroneous area is mentioned to show high semantic similarity to the target.
+negative clicks,erroneous area,Placing two more negative clicks in the erroneous area helps the model successfully segment it.
+score maps,clicks,The score maps change with the clicks in the interactive process.
+score maps,effective discrimination,Score maps can effectively discriminate the areas of interest and other objects.
+correlation similarity maps,target contours,The change in correlation similarity maps helps in learning the target contours by correlating templates with feature maps.
+templates,correlation results,The correlation results provide rich information to discriminate the target from other areas by using several templates.
+correlation results,feature maps,Employing correlation results as features helps in better segmenting the target.
+computational cost,first click,The method still requires a relatively high computational cost in the first click.
+base segmentation network,resolution reduction,Reducing the resolution of the base segmentation network may help reduce computational costs.
+mask correction network,iteratively update mask,A lightweight mask correction network is constructed to iteratively update the mask.
+mask correction network,update,"The mask correction network is constructed to iteratively update the mask, reducing computational cost."
+mask correction network,click-guided correlation module,A click-guided correlation module is proposed to exploit click information and boost the performance of the mask correction network.
+mask correction network,click-guided self-attention module,A click-guided self-attention module is proposed to exploit click information and boost the performance of the mask correction network.
+mask correction network,method,Experiments demonstrate that the method achieves competitive performance and higher efficiency compared to state-of-the-art methods.
+click,information,Click information is effectively exploited to boost the performance of the mask correction network.
+mask correction network,performance,The mask correction network aims to boost the performance by exploiting click information.
+method,performance,Experiments demonstrate that the method achieves competitive performance.
+method,efficiency,Experiments demonstrate that the method achieves higher efficiency compared to state-of-the-art methods.

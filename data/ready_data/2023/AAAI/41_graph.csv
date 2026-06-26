@@ -1,0 +1,153 @@
+node_1,node_2,edge
+stylegan,state-of-the-art,is a
+stylegan,initial noise vectors,maps to
+initial noise vectors,style codes,control
+latent spaces,disentangled,are heavily
+latent spaces,manipulate,easy to
+editing methods,stylegan,include
+stylerig,3d morphable face model,required by
+stylitgan,stylerig,comparison with
+stylitgan,indoor scenes,can handle
+yang et al.'s method,binary classifier,uses
+latent space directions,indoor lighting,represent
+stylitgan,stylerig,advantage over
+stylitgan,complex indoor scenes,extends to
+color or albedo,changed by yang et al.'s method,affected by
+stylitgan,diverse realistic relighting effects,generates
+styleflow,gan-control,requirement comparison
+stylegan,latent variables (w+),StyleGAN is manipulated by adjusting the w+ latent variables without modifying the model weights.
+latent variables (w+),lighting directions (di),The model seeks a set of lighting directions that are independent of w+ and influence the generated image.
+lighting directions (di),generated images,These lighting directions
+pretrained stylegan,random gaussian noise,An image is generated from random Gaussian noise using the pretrained StyleGAN.
+novel relighted versions,original image,The model generates novel relighted versions of the same image by combining the original with different lighting directions.
+latent directions,relighting directions,These two terms refer to the same set of directions in the context
+classifier (f),latent directions,Classifier F is trained to predict the relighting directions applied to image pairs
+pretrained decomposition model (d),image decomposition,The first stage of the method uses a pretrained model to decompose images
+consistency loss,albedo,The consistency loss maintains the albedo unchanged while the image undergoes relighting
+diversity loss,shading,The diversity loss encourages diverse shading changes in the images
+stylitgan,first stage,StyLitGAN has two stages; the first one involves decomposing images
+stylitgan,second stage,The second stage of StyLitGAN involves jointly optimizing the latent directions and classifier F for relighting-related tasks.
+latent directions,relighting,Latent directions are specifically designed to pertain to relighting
+baseline stylegan models,pretrained models,These models
+dual-contrastive loss,training method,The baseline models use a dual-contrastive loss to optimize the StyleGAN training.
+stylegan2,baseline models,StyleGAN2 is another model type used with pre-trained models from [13] for specific room categories.
+image decomposition,albedo,shading
+forsyth and rock method,decomposition technique,This self-supervised method
+bhattad and forsyth variant,decomposition technique,A variant of Forsyth's method
+statistical spatial models,decomposition parameterization,By adjusting these models
+forward selection process,finalizing relighting directions,A selection process is employed to choose directions that minimize albedo and geometry shifts while maintaining diverse relighting.
+i(w+),stylegan-generated image,I(w+) represents the image produced by StyleGAN with modified style codes w+.
+albedo,unchanged in relighting,In relighting
+shading,variable in relighting,The primary focus of relighting is to alter the shading of an image.
+gloss,variable (when available),Gloss may also change in the relit image
+over-saturation penalty,under-saturation penalty,Both are components of the saturation penalty calculation
+pixel intensity,saturation threshold,The penalty is computed as the mean squared difference between pixel intensity (Ii
+stylegan,style code directions,StyleGAN is prompted to find directions that do not change albedo and strongly change the image.
+albedo,shading components,During recoloring
+loss weights (λ coefficients),good results,Obtaining good results from image edits depends on carefully choosing the λ coefficients for various losses.
+image decomposition models,admissible models,Multiple models are used to obtain directions
+prompting stylegan,direction selection process,The process involves guiding StyleGAN to find specific directions through different model inputs.
+hyperparameter settings,directions,Directions are obtained across various hyperparameter settings to ensure versatility.
+admissible models,albedo change,We choose admissible models based on a plot of albedo change versus diversity
+admissible models,forward selection,After finding a subset of admissible models
+superpoints [19],interest points,SuperPoints is employed to locate 100 interest points in the original StyleGAN-generated image.
+image patches,albedo change measurement,Albedo change is measured between patches formed around interest points under different lightings.
+rgb vectors,albedo difference,The difference in albedos is calculated for RGB vectors at each location
+illumination field,linear function approximation,The illumination field on small patches is modeled as a linear function.
+albedo,illuminance intensity,The albedo remains constant while the illuminance intensity may change.
+illumination field,albedo,The illumination field on a patch can be modeled as a linear function
+linear function,pixel intensities,In the equation pij = (pxi + pyj + pc)aij and qij = (qxi + qyj + qc)bij
+similar albedo,strong linear dependency,If two patches have similar albedos
+cosine distance,linear independence,The cosine distance measures the linear independence of images
+illumination cone theory,physically plausible shading,According to illumination cone theory
+linear combination,image independence,To determine if an image is new
+log det x,linear dependency measure,A large negative logarithm of the determinant of the image matrix indicates strong linear dependency among the images.
+decomposition models,hyperparameters,We investigated different instances of decomposition models obtained using various hyperparameter settings.
+decomposition models,three families,Three families of decomposition models were examined in total.
+hyperparameter settings,three families of decomposition,The context describes different families of decomposition
+stylitgan,first family,StyLitGAN is part of the first family of decomposition methods mentioned.
+16 directions,stylitgan,Each model from StyLitGAN produces 16 directions
+albedo change,diversity,These are evaluated metrics for comparing models
+inadmissible models,16 strong relighting directions,Inadmissible models are excluded
+yang et al. [48],sota unsupervised model,Yang et al.'s method is considered the state-of-the-art unsupervised model for image decomposition.
+gan-control [39],relighting,GAN-control attempts relighting but sometimes changes the scene layout
+example images,statistical models,Images used for decomposition are drawn from statistical models.
+second family,albedo,shading
+statistical models,albedo,shading
+albedo,shading,and gloss decomposition
+collection of models,rational process,We can choose a model from the collection through a rational process.
+approach for selecting directions,scatter plot of 25 instances,The approach involves creating a scatter plot to analyze different hyperparameters and image decomposition models.
+16 directions,final experiments,We find 16 directions in our final experiments
+numbers of directions,complex and high-dimensional search space,Finding multiple directions is challenging due to the complexity and dimensionality of the search space.
+16 directions (n=4),better balance between relighting diversity and albedo change,16 directions provide a balance
+forward selected set of directions,scene relightings,These directions are used to generate scene relightings
+stylitgan,models in figure 3,Scene relightings from StyLitGAN are compared for reference in Figure 4
+persistent semantics,columns,Each column corresponds to a type of illumination
+bedside lamps,d1,d2
+soft shadows,relights,Soft shadows are observed across different relightings.
+cast shadows,relights,Cast shadows also change with respect to world coordinates during relighting.
+inter-reflections,relights,Inter-reflections occur as part of the lighting changes in the scene.
+glossy changes,relights,Glossy changes are evident when the lighting conditions alter.
+world coordinates,relighting,All relightings are done with respect to world coordinates
+consistency loss,diversity loss,Consistency loss maintains shading and global illumination
+stylegan,resurfacing,Original StyleGAN generates images
+recoloring directions,w+ + di,Recoloring directions allow for individual changes in surface colors and materials while preserving the original scene.
+sota method [26],comparison,Our method is compared to a state-of-the-art physically motivated method that uses CGI data.
+geometry,albedo,The method fixes geometry and albedo while altering shading.
+clearly relightings,generated images,The goal is to generate images that visually demonstrate clear relightings.
+scene,geometry,The context discusses the fixing of geometry in a scene.
+scene,albedo,Both geometry and albedo are mentioned as elements to be fixed in the scene.
+geometry,shading,Shading is mentioned as a component that can be visibly changed in the scene.
+shading,soft shadows,Soft shadows are an example of the shading effects that can be displayed.
+shading,cast shadows,Cast shadows are another type of shading effect discussed.
+shading,gloss,Gloss is also a part of the complicated illumination effects mentioned.
+resurfacing,relit-1,Relit-1 is one of the directions used for resurfacing
+resurfacing,relit-5,Relit-5 is another direction used in conjunction with Relit-1 for precise control over relighting.
+slider,user-controllable,A slider is provided for users to control the weight of relighting effects.
+slider,interpolation,Moving the slider results in a seamless interpolation between lighting directions.
+relit-2 direction,scalar coefficients,The effect of the direction is persistent and smooth when applied with varying scalar coefficients.
+image generation,original layout,The method generates images based on the original layout.
+image generation,material changes,Images can show different materials or colors.
+image generation,furniture changes,Furniture can be modified in the generated images.
+illumination effects,color changes,Consistent illumination effects are tied to the color changes in the images.
+figure 6,example,Figure 6 illustrates the described image generation capabilities.
+furniture changes,display illumination effects,The context discusses how the method addresses changes in furniture and ensures consistent display illumination according to those changes.
+figure 6,method's goals,Figure 6 demonstrates the successful achievement of the method's objectives.
+figure 7 and figure 8,relighting between directions,These figures showcase interpolation sequences for smooth lighting changes between different directions.
+figure 15 (supplementary),relighting and recoloring directions,It shows the separation of relighting and recoloring effects.
+quantitative evaluation,albedo and lighting shifts,This part evaluates shifts in albedo and lighting.
+figure 3,evaluation of albedo and lighting shifts,Figure 3 provides a method for assessing these shifts.
+table 1,clean-fid,Table 1 compares the generated image dataset's quality using FID scores.
+gan-control (gc),lighting representation,GAN-control uses a spherical harmonic predictor for representing lighting.
+kdl (kitchen,dining,living room)
+stylegan,conference room,kitchen
+living room,conference room,The context suggests that both living rooms and conference rooms are types of spaces
+stylegan (sg),relighting (rl),SG + RL indicates that StyleGAN is combined with relighting techniques
+stylegan (sg),resurfacing (rs),SG + RS implies that StyleGAN can also incorporate resurfacing
+sg + rl + rs5.01,37.40trained on a parameterized 3d face reconstruction model,These two phrases are possibly related to the training process or a specific version of the model that combines StyleGAN with relighting and resurfacing for 3D face reconstruction.
+3d face reconstruction model,lsun bedroom dataset,The model is trained on the LSUN Bedroom dataset
+gc model,lsun bedroom dataset,GC model refers to a separate model trained on the LSUN Bedroom dataset
+gc model,gc in figures 3,9
+gan-control (gc),bedroom,GC (GAN-control) fails to relight complex bedroom scenes
+normal variance,multilum,Normal variance is measured using a predictor
+multilum training data,angular error,The angular error is used as a measure for evaluating the performance of finetuning methods on the Multilum test set.
+multilum dataset,1000 indoor scenes,The Multilum dataset consists of 1000 scenes
+multilum dataset,25 lighting conditions per scene,Each scene in the Multilum dataset has 25 physically relit and captured images.
+omnidata (normal predictor),surface normal prediction variance,Without finetuning
+omnidata (finetuned),surface normal prediction consistency,Finetuning Omnidata with Multilum data reduces the variance in surface normal predictions.
+stylitgan images,improvement in surface normal prediction,Using StyLitGAN relights for finetuning also improves surface normal prediction
+stylitgan,relighting directions for stylegans,StyLitGAN is capable of finding relighting directions for StyleGAN models trained on other datasets.
+taskonomy test images,general performance,The general performance of the finetuned normal predictor on Taskonomy test images is similar to that observed with the Multilum dataset.
+prediction consistency,relit images,The context discusses the focus on prediction consistency for re-lit images of the same scene.
+prediction consistency,general performance,The performance in question refers to the overall consistency across different relights.
+original model,general performance,The original model's performance is compared to the finetuned models.
+25 distinct relights,worse than,The context mentions that using 25 distinct relights performs better than the discussed method.
+base accuracy,not at the cost of,The improved method does not sacrifice base accuracy.
+finetuned models,accuracy,Finetuned models' accuracy is compared on the Taskonomy test set.
+finetuned models,losses in some blocks,Some finetuned models experience accuracy losses in certain blocks.
+taskonomy test set,comparison,Accuracy of finetuned models is compared on this extensive benchmark.
+stylegan,intrinsic images,In the follow-up work
+aniruddha kembhavi,derek hoiem,min jin chong
+national science foundation,support,The research was supported by an NSF grant.
+nsf grant no. 2106825,funding,This specific grant number indicates the financial support received.
+boeing corporation,gift,The project also received a gift from Boeing Corporation.

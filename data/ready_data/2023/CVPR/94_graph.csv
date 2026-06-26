@@ -1,0 +1,208 @@
+node_1,node_2,edge
+instance segmentation,object instances,Instance segmentation involves segmenting different object instances with a mask of fixed resolution
+instance segmentation,binary mask,Challenging task to predict the optimal binary mask for each instance
+feature pyramid network,dual-level feature pyramid network,Dual-level FPN with adaptive feature aggregation developed to increase mask grid resolution gradually
+feature pyramid network,mask,FPN used for segmentation of objects with high-quality masks
+dual-level feature pyramid network,region-level top-down path,r-FPN introduced to incorporate complementary contextual and detailed information from different stages of i-FPN
+region-level top-down path,image-level fpn,r-FPN incorporates information from different stages of i-FPN for segmenting objects
+mask switch module,instance,MSM developed to select the most suitable mask resolution for each instance for high efficiency
+mask switch module,memory costs,MSM developed to alleviate increase in computation and memory costs caused by using large masks
+dynamask,performance improvements,DynaMask method brings consistent and noticeable performance improvements over other state-of-arts at a moderate computation overhead
+instance segmentation,computer vision task,Instance segmentation is described as an important task within computer vision.
+instance segmentation,class label prediction,Instance segmentation aims at predicting the class label for each instance of interest.
+instance segmentation,binary mask prediction,Instance segmentation also aims at predicting the binary mask for each instance of interest.
+instance segmentation,deep convolutional neural networks (cnns) based is methods,Recent years have witnessed significant advances in deep CNNs based IS methods.
+deep convolutional neural networks (cnns) based is methods,training data,Deep CNNs based IS methods have seen significant advances with a rich amount of training data.
+two-stage is methods,single-stage is methods,Existing IS methods can be divided into two major categories: two-stage and single-stage methods.
+two-stage is methods,higher segmentation accuracy,Two-stage methods could produce higher segmentation accuracy compared to single-stage methods.
+two-stage is methods,more computational resources,Two-stage methods cost more computational resources than single-stage methods.
+dynamic mask selection results,irregular shapes,Some 'hard' samples with irregular shapes like 'person' are assigned larger masks.
+dynamic mask selection results,regular shapes,The 'easy' samples like 'frisbee' are assigned smaller masks.
+proposal-based two-stage methods,is methods,The proposal-based two-stage methods are a type of IS methods that follow a detection-and-segmentation paradigm.
+proposal-based two-stage methods,top performers,"The proposal-based two-stage methods, specifically those which follow a detection-and-segmentation paradigm, are still considered the top performers."
+mask r-cnn,proposals,Mask R-CNN first generates a group of proposals with an object detector.
+mask r-cnn,foreground/background segmentation,Mask R-CNN then performs per pixel foreground/background segmentation on the Regions of Interest (RoIs).
+high-resolution masks,excessive predictions on the smooth regions,"High-resolution masks often generate excessive predictions on the smooth regions, leading to high computational complexity."
+objects with irregular shapes,fine-grained masks,"Objects with irregular shapes demand more fine-grained masks to predict, known as 'hard' samples."
+objects with regular shapes,coarser masks,"In comparison, objects with regular shapes and fewer details can be efficiently segmented using coarser masks."
+objects with irregular shapes,hard samples,"Objects with irregular shapes require more fine-grained masks to predict, referred to as 'hard' samples."
+objects with regular shapes,easy samples,"Objects with regular shapes and fewer details can be segmented using coarser masks, referred to as 'easy' samples."
+mask size,is performance,The adaptively adjusting the mask size for each instance is proposed to improve IS performance by assigning high-resolution masks to 'hard' objects and low-resolution masks to 'easy' objects.
+'easy' objects,'hard' objects,The mask size is adjusted differently for 'easy' and 'hard' objects to reduce computation for 'easy' samples and improve accuracy for 'hard' samples.
+'easy' samples,'hard' samples,"The adjustments in mask size aim to reduce redundant computation for 'easy' samples while improving accuracy for 'hard' samples, achieving a balance between accuracy and speed."
+mask r-cnn,mask average precision,"Directly predicting a high-resolution mask using Mask R-CNN unexpectedly degrades the mask average precision, which is attributed to the oversimplified mask head and extraction of RoI features from coarse pyramid levels."
+roi features,mask size,"The RoI features of larger objects are extracted from higher pyramid levels with coarse downsampling operations, leading to limitations in increasing mask size for these RoIs."
+mask grid size,mask predictions,"The mask grid size is gradually enlarged in the proposed dual-level FPN framework to make more precise mask predictions, overcoming the oversimplification issue in Mask R-CNN."
+traditional image-level fpn,region-level fpn,"In addition to traditional image-level FPN, a region-level FPN is designed in the proposed framework to achieve coarse-to-fine mask prediction by constructing information flows between them at different pyramid levels."
+i-fpn,r-fpn,Information flows are constructed between i-FPN and r-FPN at different pyramid levels to incorporate complementary context for mask prediction in the proposed framework.
+i-fpn,r-fpn,"Information flows between i-FPN and r-FPN at different pyramid levels, aiming to incorporate complementary contextual and detailed information from multiple feature levels for high-quality segmentation"
+i-fpn,r-fpn,"Dual-level FPN framework is developed for IS, with direct information flows from i-FPN to r-FPN at multiple levels, facilitating complementary information aggregation from multiple pyramid levels"
+dynamask,mask switch module (msm),DynaMask presents a data-dependent Mask Switch Module (MSM) with negligible computational cost to adaptively select masks for each instance
+dynamask,dynamic mask selection method (dynamask),"DynaMask proposes a dynamic mask selection method to adaptively assign appropriate masks to different instances, assigning low-resolution masks to 'easy' samples for efficiency and high-resolution masks to 'hard' samples for accuracy"
+dynamask,is accuracy and efficiency,"Extensive experiments demonstrate that DynaMask achieves a good trade-off between IS accuracy and efficiency, outperforming many state-of-the-art two-stage IS methods at a moderate computation overhead"
+mask r-cnn,mask resolution,"For Mask R-CNN, directly increasing the mask resolution will decrease the mask AP."
+dynamask,mask resolution,"For our DynaMask, higher mask resolution results in better performance."
+instance segmentation,mask r-cnn meta-architecture,"To date, most of the top-performing IS methods still follow the Mask R-CNN meta-architecture."
+instance segmentation,mask scoring r-cnn,Mask Scoring R-CNN aligns the mask quality and score by using a branch to explicitly learn the quality of predicted masks.
+mask scoring r-cnn,mask quality,Mask Scoring R-CNN aligns the mask quality and score by using a branch to explicitly learn the quality of predicted masks.
+mask scoring r-cnn,score,Mask Scoring R-CNN aligns the mask quality and score by using a branch to explicitly learn the quality of predicted masks.
+bmask r-cnn,boundary details,BMask R-CNN leverages boundary details to improve mask localization ability.
+dct-mask,high-resolution binary masks,DCT-Mask encodes high-resolution binary masks into compact vectors through the discrete cosine transform (DCT).
+panet,two feature pyramids,PANet constructs two feature pyramids for improving mask prediction.
+htc,cascaded refinement,HTC performs cascaded refinement on both detection and segmentation tasks and explores the reciprocal relationships between them.
+pointrend,fine-grained features,PointRend extracts fine-grained features in a multi-stage manner.
+reﬁnemask,fine-grained features,ReﬁneMask extracts fine-grained features in a multi-stage manner.
+features,predictions,tract fine-grained features in a multi-stage manner performing point-based predictions over the blurred areas
+areas,roi feature,performing predictions over the blurred areas while refining the entire RoI feature
+samples,masks,assigning small masks for 'easy' samples and large masks for 'hard' samples to achieve a balance between efficiency and accuracy
+networks,architecture,adjusting the network architecture according to the input feature
+model compression methods,blocks and channels,dynamic model compression methods either drop blocks or prune channels for speeding
+fpn framework,mask size,gradually increasing the mask size to achieve higher-quality IS
+feature hierarchies,complementary information,enhancing feature hierarchies by incorporating complementary information from different levels of FPN
+memory cost,mask switch,reducing computation and memory cost using Mask Switch
+mask switch module (msm),four different switching states,"MSM outputs four different switching states, corresponding to four different mask resolutions"
+skipnet,conventional methods,"SkipNet skips convolutional blocks through a reinforcement learning-based gating network, while conventional methods typically predict a fixed-size mask irrespective of the object type"
+huang et al.,li et al.,"Huang et al. propose a multi-scale dense network with multiple classifiers, while Li et al. adopt an end-to-end dynamic routing framework"
+drnet,modern cnns,DRNet attempts to reduce the redundancy on the input resolution of modern CNNs
+dynamic masks,segmenting different instances,Employing dynamic masks at different resolutions for segmenting different instances has rarely been explored in the field of IS
+dynamic mask selection framework,different objects,A dynamic mask selection framework is devised to adaptively allocate suitable masks to different objects
+dynamask,dynamic mask selection,DynaMask is a framework that dynamically allocates suitable masks to objects based on their segmentation difficulties.
+dynamask,dual-level fpn,DynaMask introduces a dual-level FPN architecture for improving IS quality.
+dual-level fpn,mask switch module (msm),The Dual-Level FPN architecture proposed by DynaMask includes a Mask Switch Module (MSM) for dynamically allocating appropriate masks to instances.
+r-fpn,i-fpn,The region-level FPN (r-FPN) integrates more detailed information from lower layers of i-FPN.
+r-fpn,i-fpn,"r-FPN starts from an RoI-Aligned region-wise feature and is gradually enhanced by fusing complementary information from {P2, P3, P4} of i-FPN"
+r-fpn,"{p2, p3, p4}","r-FPN is enhanced by fusing complementary information from {P2, P3, P4} of i-FPN"
+"{ltiny, lsmall, lmedium, llarge}",r-fpn,"Top-down region-based feature hierarchies are denoted by {Ltiny, Lsmall, Lmedium, Llarge} which involve the feature Lr of r-FPN"
+"{ltiny, lsmall, lmedium, llarge}",i-fpn,Top-down region-based feature hierarchies from Ltiny to Llarge involve the features of i-FPN
+"{lr, pi}",fam,Feature Aggregation Module (FAM) integrates features Lr and Pi from r-FPN and i-FPN respectively
+lr,pi,"There exist spatial misalignments between Lr and Pi due to upsampling and RoI pooling operations, which may degrade segmentation performance"
+fam,deform conv1,FAM contains Deform Conv1 which adjusts the positions of Lr to better align it with Pi
+fam,3 × 3 conv,Concatenated features from Lr and Pi are passed through a 3 × 3 Conv to obtain the offset map ∆o
+lr,∆o,Lr is aligned to Pi with the learned offset ∆o
+gumbel-softmax,msm,Reparameterization method Gumbel-Softmax is introduced to allow the gradient back-propagation for updating MSM
+gumbel-softmax,categorical distribution,"The Gumbel-Softmax function is used as a continuous, differentiable approximation to the original softmax function, which is based on a categorical distribution with class probabilities"
+gumbel-softmax,gumbel distribution,Samples are drawn from the Gumbel distribution in the process of using the Gumbel-softmax function
+gumbel-softmax,temperature parameter,"The Gumbel-softmax function depends on a temperature parameter denoted by τ, which affects the relationship between the log probabilities and the Gumbel noise"
+gumbel-softmax,masks,The Gumbel-Softmax function is used to generate masks and optimize their resolution for improved segmentation performance
+categorical distribution,original softmax function,The Gumbel-Softmax function serves as an approximation to the original softmax function based on a categorical distribution with class probabilities
+gumbel distribution,samples,Samples are drawn from the Gumbel distribution during the process of using the Gumbel-softmax function in generating masks
+temperature parameter,gumbel-softmax,"The Gumbel-softmax function is affected by a temperature parameter τ, which influences the generation of masks based on log probabilities and Gumbel noise"
+masks,segmentation performance,Improving the resolution of masks through the Gumbel-Softmax function can enhance segmentation performance
+masks,optimization,The Gumbel-Softmax function is used to optimize the resolution and allocation of masks for better segmentation results
+mask loss function,edge loss,The edge loss is discussed as a comparison to the mask loss function. The edge loss is proposed as a better indicator for revealing mask quality compared to the mask loss function.
+msm y,output resolution,"The output of MSM Y is represented as [y1, y2, ..., yK] where each element corresponds to the output resolution."
+feature alignment moudule (fam),deform conv1,Deform Conv1 adjusts the spatial positions of upsampled r-FPN feature Lr and the cropped i-FPN feature Pi within the Feature Alignment Module (FAM).
+deform conv2,objects,"Deform Conv2 acts as an attention mechanism, attending to the salient parts of objects within the Feature Alignment Module."
+feature alignment moudule (fam),improving mask prediction,The FAM is integrated into different stages of r-FPN and plays a key role in enhancing the accuracy of mask prediction.
+dual-level fpn framework,mask switch module (msm),The dual-level FPN framework consists of the Mask Switch Module (MSM) which significantly contributes to the framework.
+mask switch module (msm),dual-level fpn framework,MSM is a part of the proposed dual-level FPN framework that brings performance improvement but at the price of expensive computation and memory burdens.
+mask switch module (msm),adaptive mask grid resolution,"MSM is developed to adaptively adjust the mask grid resolution for different instances, aiming for accurate segmentation."
+mask switch module (msm),optimal mask assignment,"MSM serves as a lightweight classifier illustrated in Fig. 4, which helps in finding the optimal mask resolution from a collection of candidates for accurate segmentation with minimal resource cost."
+mask switch module (msm),channel-wise attention module,"MSM contains a channel-wise attention module, followed by convolutional and fully-connected layers, to aid in selecting the optimal mask resolution."
+dual-level fpn framework,mask prediction,The dual-level FPN framework plays a key role in improving the mask prediction.
+dual-level fpn framework,segmentation accuracy,The dual-level FPN framework aims to achieve a good trade-off between segmentation accuracy and efficiency.
+adaptive mask grid resolution,segmentation accuracy,Adaptive mask grid resolution is essential for achieving accurate segmentation in different instances.
+optimal mask assignment,optimal mask resolution,Optimal Mask Assignment refers to finding the optimal mask resolution from a collection of candidates for accurate segmentation with minimal resource cost.
+channel-wise attention module,optimal mask resolution,The channel-wise attention module in MSM helps in selecting the optimal mask resolution for accurate segmentation.
+roi feature,msm,The input RoI feature fed to Mask Switch Module (MSM) for candidate resolution selection.
+msm,switching state,The switching state in MSM decides the resolution of mask grid for segmenting an object.
+msm,gumbel-softmax,The output of MSM should be transformed into a one-hot prediction using Gumbel-Softmax.
+"y = [y1,··· , yk]",discrete sampling,The process of transforming the output P of MSM into a one-hot prediction using discrete sampling.
+budget constraint,e(c),The budget constraint is defined in terms of the maximum value of E(C) and Ct-1.
+edge maps,edge loss,The edge loss is computed based on the edge maps of different resolutions.
+ground-truth edge,laplacian operator,The ground-truth edge is generated by applying the Laplacian operator on the ground-truth mask.
+laplacian operator,soft edge map,The Laplacian operator is used to obtain a soft edge map from the ground-truth mask.
+soft edge map,binary edge map,The soft edge map is converted into a binary edge map by thresholding.
+object edges,masks,"The object edges are predicted using masks of different resolutions, showing that higher-resolution masks produce edges closer to GT (smaller loss), while lower-resolution masks produce edges more different from GT (larger loss)"
+edge loss,quality of masks,"The edge loss could better reveal the quality of masks, where higher-resolution masks result in smaller loss while lower-resolution masks result in larger loss"
+model,sub-optimal solution,"By optimizing the edge loss, the model tends to converge to a sub-optimal solution where all instances are segmented with the largest mask, 112 × 112, resulting in a minimal prediction loss"
+budget constraint,model,"To avoid the sub-optimal solution and reduce computational cost, the model is proposed to be trained with a budget constraint"
+msm,budget constraint,The model is trained with a budget constraint to reduce computational cost and avoid sub-optimal solutions while achieving optimal results
+information entropy loss,resolution predictions of msm,"Information entropy loss is introduced to balance the resolution predictions of MSM, where the frequency of resolution is calculated based on output probability vectors"
+instances,current batch,"The instances of the current batch are being discussed, indicating a direct relationship between them."
+frequency,k-th resolution,"The frequency of the k-th resolution is calculated, suggesting a relationship between frequency and resolution."
+information entropy loss,k,"The information entropy loss is defined based on the parameter k, implying a relationship between the two concepts."
+element,k,"The entropy loss term aims to push each element towards K, indicating a relationship between the elements and K."
+msm,different resolutions,"MSM tends to select different resolutions with similar probabilities, suggesting a relation between the selection process and resolutions."
+objective function,mask branch,"The total objective function of the mask branch is obtained by combining different terms, indicating a relationship between the objective function and the mask branch."
+trade-off hyper-parameters,λ1 and λ2,"The trade-off hyper-parameters λ1 and λ2 are involved in calculating the total objective function, suggesting a relationship between the hyper-parameters and the objective function."
+regularization term,budget constraint and information entropy loss,"The regularization term is obtained by combining the budget constraint and information entropy loss, indicating a relationship between the regularization term and these components."
+experiments,benchmark instance segmentation datasets,"Extensive experiments are performed on benchmark instance segmentation datasets COCO and Cityscapes, highlighting a relationship between experiments and the datasets."
+coco,cityscapes,"Both COCO and Cityscapes datasets are mentioned, indicating a relationship between these two datasets."
+mask ap,evaluation metric,"The standard mask AP is used as the evaluation metric on COCO and Cityscapes datasets, suggesting a relationship between the metric and evaluation."
+cityscapes datasets,standard mask ap,Cityscapes datasets are evaluated using the standard mask AP as the evaluation metric.
+mask r-cnn,pointrend,Example results of Mask R-CNN and PointRend are shown in Figure 6.
+pointrend,dynamask,Example results of PointRend and DynaMask are shown in Figure 6.
+mask r-cnn,backbone,Mask R-CNN uses ResNet-50-FPN as the backbone.
+mask r-cnn,hyper-parameters,The hyper-parameters for Mask R-CNN are set in the same way as in MMDetection.
+msm,four switching states,MSM has four switching states corresponding to four candidate resolutions.
+hyper-parameter λ1,0.1,The hyper-parameter λ1 is set as 0.1.
+model,pre-trained,The model backbone is pre-trained on ImageNet.
+training modules,learning rate,All training modules use SGD with the same initial learning rate.
+training schedule,data augmentation,The training schedule and data augmentation for the ablation study are defined in MMDetection.
+dynamask,mask r-cnn,DynaMask is compared with the baseline Mask R-CNN on COCO.
+dynamask,backbones,DynaMask is compared with the baseline Mask R-CNN using ResNet-50 and ResNet-101 backbones.
+dynamask,mask r-cnn,"DynaMask outperforms Mask R-CNN by a large margin. The performance is improved by 2.9% AP and 2.8% AP with '1×' and '2×' schedules, respectively, when ResNet-50-FPN backbone is used."
+dynamask,mask r-cnn,"DynaMask outperforms the baseline by 3.3%, and 3.6% with '1×' and '2×' schedules in terms of AP75, respectively. Similar observations can be obtained when ResNet-101-FPN is used as the backbone."
+dynamask,state-of-the-art methods,"We then compare the segmentation performance of DynaMask with many other state-of-the-art methods on COCO. Without bells and whistles, DynaMask surpasses these methods with visible margins."
+dynamask,two-stage is methods,"Furthermore, we compare our method with other representative two-stage IS methods on Cityscapes val set. Our method outperforms Mask R-CNN by 4.2%. Its performance on large objects is 5.8% AP higher than Mask R-CNN."
+dynamask,high-resolution masks,DynaMask uses high-resolution masks to achieve high-quality segmentation on large and difficult objects
+dynamask,objects,DynaMask achieves finer and more accurate predictions around the objects' boundaries
+dynamask,r-fpn,DynaMask introduces an r-FPN to fuse complementary information from multiple stages for segmenting difficult instances with large masks
+mask r-cnn,uniform coarse mask,Mask R-CNN employs a uniform coarse mask for prediction
+pointrend,point-wise refinement,PointRend makes point-wise refinement only at the blurred regions
+dynamask,mask resolution prediction,DynaMask selects suitable masks for different instances based on mask resolution prediction
+dynamask,hard objects,DynaMask assigns large masks to hard objects with irregular shapes and complex boundaries
+easy samples,"skis, ""suitcase"", ""dining table""","Easy samples with regular shapes and less details are assigned small masks like skis, suitcase, dining table"
+samples,small masks,Samples with regular shapes and less details are assigned small masks.
+samples,skis,Samples with regular shapes and less details are assigned small masks like skis.
+samples,suitcase,Samples with regular shapes and less details are assigned small masks like suitcases.
+samples,dining table,Samples with regular shapes and less details are assigned small masks like dining tables.
+maskdynamaskdynamask,method,DynaMaskDynaMask is a method for something.
+mask r-cnn,backboneresnet-50-fpn,Mask R-CNN uses BackboneResNet-50-FPN.
+mask r-cnn,resnet-101-fpn,Mask R-CNN also uses ResNet-101-FPN for something.
+dynamask,method,DynaMask is a method used for something.
+mask r-cnn,meinst [31],Mask R-CNN can be compared with MEInst [31].
+meinst [31],mask r-cnn [10],MEInst [31] can be compared with Mask R-CNN [10].
+mask r-cnn [10],bmask r-cnn [6],Mask R-CNN [10] is related to BMask R-CNN [6].
+mask r-cnn [10],tensormask [5],Mask R-CNN [10] is related to TensorMask [5].
+mask r-cnn [10],mask scoring [14],Mask R-CNN [10] is related to Mask Scoring [14].
+mask r-cnn [10],condinst [26],Mask R-CNN [10] is related to CondInst [26].
+mask r-cnn [10],blendmask [2],Mask R-CNN [10] is related to BlendMask [2].
+mask r-cnn [10],pointrend [17],Mask R-CNN [10] is related to PointRend [17].
+mask r-cnn [10],solov2 [28],Mask R-CNN [10] is related to SOLOv2 [28].
+mask r-cnn [10],dct-mask† [25],Mask R-CNN [10] is related to DCT-Mask† [25].
+mask r-cnn [10],reﬁnemask [30],Mask R-CNN [10] is related to ReﬁneMask [30].
+quantitative analysis,correlations,The quantitative analysis provided in the text focuses on the correlations between the predicted mask resolutions and the class in supplemental files.
+budget constraint,model complexity,The influence of the budget constraint on the model complexity (FLOPs) is explored in Table 5 by analyzing the average FLOPs calculated over all instances of the validation set.
+models,computational costs,"Different values of hyper-parameters Ct and λ2 result in models with varying computational costs, showcasing the influence of these parameters on the final model complexity."
+mask,instances,The text highlights that utilizing a large mask (112 × 112) for all instances may result in redundant computation as many instances in the COCO dataset can be efficiently segmented with smaller masks.
+redundancy,computation reduction,"Reducing redundancy in computation for easier samples can lead to significant computation reduction, while maintaining accuracy for harder samples by using larger masks, as discussed in the text."
+target flops,computation reduction,"Setting the target FLOPs to a smaller value can result in more significant computation reduction, albeit with a slight degradation in accuracy, as mentioned in the text."
+model accuracy,flops,"The text compares model accuracy, FLOPs, and runtime of different two-stage IS methods to validate the efficiency of the model."
+model accuracy,flops,Model accuracy is compared with FLOPs for different two-stage IS methods in Tab. 6
+model accuracy,runtime,Model accuracy is compared with runtime for different two-stage IS methods in Tab. 6
+model accuracy,dynamask method,DynaMask method achieves visible performance gain with a small amount of extra computational cost compared to other methods in Tab. 6
+flops,runtime,FLOPs and runtime are tested and compared with different two-stage IS methods in Tab. 6
+dynamask method,pointrend,DynaMask method outperforms PointRend by 1.2% AP with comparable runtime
+dynamask method,dct-mask,DynaMask method outperforms DCT-mask by 0.3% AP with comparable runtime
+dynamask method,htc,DynaMask produces a similar segmentation result as HTC but is faster due to the hybrid cascade refinement done by HTC
+mask size,mask switch module (msm),"Mask Switch Module outputs four different candidate mask resolutions, and one of them is chosen as the uniform output mask size in Tab. 7"
+larger mask resolutions,higher segmentation performance,"Models with larger mask resolutions achieve higher segmentation performance, especially on large objects, but at the cost of increased computational cost"
+methodmask r-cnn,ap,"MethodMask R-CNN and AP are related as shown in Table 5, where the performance is compared with the influence of budget constraint."
+dynamask,ct,DynaMask and Ct have a relationship demonstrated in the context where the value of Ct is 0.4.
+ap,table 6,The relationship between AP and Table 6 is evident in the context where speed comparison of different methods on the validation set is conducted.
+ap,table 7,AP is related to Table 7 as seen in the performance analysis with different mask sizes.
+size-based mask selection method,table 8,The relationship between the size-based mask selection method and Table 8 is established as the performance and mask distributions of different mask selection methods are compared.
+input image,width and height,"The width and height of the input image are denoted by w0 and h0 respectively, as mentioned in the context."
+highest mask resolution,index (k0),"The highest mask resolution is indexed by k0 at 112x112 resolution, as stated in the context."
+object size,resolution mask,"The larger objects are assigned higher resolution masks, which aligns with common sense as described in the context."
+size-based method,baseline,"The size-based method achieves comparable performance with the baseline at a lower cost, as indicated in the context."
+dynamask (ct = 0.4),baseline,"DynaMask outperforms the baseline by 0.7% AP at a slight additional cost, showcasing the effectiveness of the proposed mask selection strategy."
+proposed mask selection strategy,object segmentation difficulties,"The proposed mask selection strategy can better partition different objects based on their segmentation difficulties, leading to improved performance."
+dual-level fpn structure,instance segmentation performance improvement,"The dual-level FPN structure is proposed to enhance instance segmentation performance with minimal computation and memory overhead, as discussed in the context."
+image-level fpn (i-fpn),region-level top-down path (r-fpn),"In addition to the traditional i-FPN, a r-FPN is augmented to gradually enlarge the mask size, as part of the devised structure for exploring contextual and detailed information."
+image-level fpn (i-fpn),region-level top-down path (r-fpn),r-FPN is augmented on top of i-FPN to gradually enlarge mask size and incorporate more details.
+region-level top-down path (r-fpn),mask switch module (msm),MSM is introduced to adaptively select suitable masks for each proposal to reduce computation and memory cost.
+region-level top-down path (r-fpn),mask size,Mask Switch Module (MSM) is introduced to reduce mask size to reduce redundant computation for easy samples.
+mask switch module (msm),computation overhead,MSM helps in reducing computation overhead by selecting suitable masks for each proposal.

@@ -1,0 +1,121 @@
+node_1,node_2,edge
+segmentation-based methods,regression-based methods,These two primary groups classify existing text detection techniques
+srformer,detr-based model,SRFormer is a unified model derived from DETR
+segmentation,regression,SRFormer integrates segmentation and regression for enhanced robustness and simplified post-processing.
+segmentation branches,first few decoder layers,Segmentation predictions are incorporated early in the decoder layers to leverage their robustness.
+progressive regression refinement,subsequent layers,Regression is refined progressively in later layers to improve performance without increasing computational load.
+mask-informed query enhancement module,instance queries,This module enhances queries using segmentation results as soft ROI
+empirical analysis,favorable segmentation predictions,The analysis shows that segmentation can yield good results even at the initial decoder layers.
+method,performance gains,The proposed method achieves performance improvements through its design.
+end-to-end learning approach,geometric calculations,These methods simplify the pipeline by incorporating geometric calculations as part of their post-processing.
+localization precision,segmentation-based approaches,Segmentation-based approaches generally have higher localization precision compared to end-to-end learning methods
+segmentation-based models,pixel-level localization,Segmentation-based models offer pixel-level accuracy in localizing text.
+segmentation-based models,variations in text appearance,They are robust against diverse font styles
+binary masks,complete text instances,Extracting complete text instances from binary masks requires intricate post-processing.
+regression-based methods,segmentation-based methods,DETR aims to combine the strengths of both by unifying regression and segmentation.
+detr (detection transformers),object detection,DETR is a popular method in object detection
+detr variants,notable success,These variants have shown significant achievements in improving upon traditional methods.
+drawbacks,combining regression- and segmentation-based methods,The goal is to mitigate drawbacks by merging the strengths of both approaches.
+detr variants,performance,DETR variants have shown notable success in improving performance across various text detection benchmarks.
+detr models,regression-based paradigm,Most DETR models follow a regression-based approach
+proposed model (sr-former),segmentation chunk,The segmentation chunk improves pixel-level representations
+proposed model (sr-former),regression chunk,The regression chunk focuses on high-level semantic features and refines localization with minimal post-processing.
+mask-informed query enhancement module,prediction output,This module enhances queries using masks as ROI indicators
+proposed module,supervision signals,Combining segmentation and regression supervision strengthens the model's optimization.
+proposed module,supervision signals,The proposed module includes supervision signals for both segmentation and regression.
+proposed module,detr model,Our contribution unifies DETR
+detr model,state-of-the-art performance,Unified DETR achieves new state-of-the-art in scene text detection benchmarks.
+proposed method,segmentation map,The model uses the segmentation map only in the initial decoder layers.
+proposed method,pixel-level features,This allows the model to acquire robust pixel-level features without complex post-processing.
+proposed method,regression-based approaches,Our method outperforms regression-based ones in training efficiency
+detr (detection transformer),end-to-end transformer-based paradigm,DETR introduced a fully end-to-end approach
+detr's limitations,training convergence,DETR faced challenges in training convergence.
+detr's limitations,feature resolution,It also had limitations in feature resolution
+traditional approaches,comparison,DETR's unified model compares unfavorably to traditional methods in certain aspects.
+detr,training convergence,DETR's limitations are mainly regarding its convergence speed.
+detr,feature resolution,DETR faces limitations in feature resolution which affects its competitiveness.
+deformable detr,sparse multi-scale features,Deformable DETR addresses DETR's limitations by incorporating these features for improved efficiency.
+conditional-detr,improved positional priors,This variant enhances DETR's training process with better positioning.
+anchor-detr,improved positional priors,Similar to Conditional-DETR
+dab-detr,improved positional priors,Another variant that improves positional information for better training.
+group-detr,label assignment strategies,Group-DETR focuses on enhancing label assignment for stable matching during training.
+dn-detr,label assignment strategies,Li et al.'s approach improves matching stability
+transformer decoder,query representation,Our study centers on enhancing the transformer decoder's ability to represent queries effectively.
+transformer decoder,training convergence,The goal is to accelerate the decoder's contribution to faster convergence.
+segmentation-based scene text detectors,pixel-level prediction,These methods combine pixel-level prediction for accurate object detection.
+craft,weakly supervised approach,CRAFT uses this strategy to train character segmentation models.
+psenet,text center region prediction,PSENet starts by detecting text kernel for instance segmentation.
+dbnet,differentiable binarization,DBNet incorporates binarization for more precise detection.
+dbnet,network,DBNet is a type of network that embeds differentiable binarization and predicts threshold and segmentation maps.
+differentiable binarization,feature,DBNet incorporates differentiable binarization as a feature within its network architecture.
+low-level representations,property,Learning low-level representations improves robustness to domain gaps and font variations.
+post-processing operations,drawback,Inference time is affected by the need for post-processing on the CPU
+east,regression-based method,EAST is an end-to-end
+abcnet,regression-based method,ABCNet introduces Bezier curve control points for arbitrary-shaped texts
+detr architecture,architecture,TESTR and DPText utilize the DETR architecture for scene text detection
+srformer,model,SRFormer is the proposed model
+resnet50,pre-trained backbone,The model starts with ResNet50 as a pre-trained backbone for feature extraction.
+model architecture,resnet50,The overall structure of SRFormer utilizes ResNet50 as its backbone.
+resnet50,backbone,ResNet50 serves as the backbone for feature extraction in SRFormer.
+transformer encoder,backbone,The transformer encoder updates the flattened backbone features.
+transformer encoder,feature pyramid network,Combined with the backbone and updated features
+fused features,decoding stage,Fused features are channeled into the decoding stage.
+fused features,mask prediction head,Fused features also feed into the mask prediction head.
+information bottleneck,original detr segmentation heads,Interaction between query representations and high-resolution features addresses this issue.
+two-stage approach,shared group of decoder embeddings,A two-stage decoder uses encoder output to initialize shared embeddings.
+segmentation&regression chunk,decoder,The first few layers perform instance-wise mask and coordinate prediction.
+regression-only chunk,layer-by-layer refinement,Follows the Segmentation&Regression Chunk for more precise polygon control points.
+decoder queries,encoder outputs,Decoder queries are initialized with encoder outputs for improved performance.
+dense anchor grids map,segmentation masks,The dense anchor grids map is designed to bridge the gap between the dense representation of segmentation masks.
+decoder embedding (qd),classification score (scls),qd combines the top-K classification scores from scls to generate dense predictions.
+instance-level queries,control point-level queries,Hierarchical representation is formed by combining instance-level and control point-level queries for filtering and modeling relationships.
+instance-level attention,point-level attention,Instance-level attention filters similar predictions
+bounding box output from encoder,polygon prediction,The box output provides initial polygon points
+polygon control points,position encoding (pe),Sinusoidal positional encoding (PE) is used in conjunction with an MLP to encode the coordinates of polygon control points.
+text instance segmentation,initial layers of decoder,Segmentation is performed only at early decoder stages based on experimental evidence.
+state-of-the-art performance,previous sota methods,SRFormer outperforms state-of-the-art methods (DPText) on TotalText
+srformer,dptext,SRFormer surpasses DPText by +1.3%
+srformer,i3cl,SRFormer outperforms I3CL by a significant margin on three benchmarks.
+decoder layer number,segmentation & regression chunk,The study investigates the impact of varying the number of layers in the Segmentation & Regression Chunk.
+greater emphasis on segmentation,improved recall rates,Increased emphasis on segmentation generally leads to better recall but lower precision.
+first layer of the decoder,favorable segmentation results,The first decoder layer provides strong segmentation
+87.1% f1-score,competitive performance,SRFormer achieves a competitive F1-score without pre-training.
+totaltext dataset,training data,The context discusses the model being trained on the TotalText dataset
+first decoder layer (layer 0),dptext,The F1-score comparison shows a significant gap of 26.96% in performance between the predictions of the first decoder layer and the full DPText model.
+srformer,dptext,SRFormer is compared to DPText for data efficiency
+srformer,50% samples in totaltext dataset,SRFormer is trained with 50% of the dataset
+proposed method,dptext,The proposed method outperforms DPText
+cross-domain robustness,evaluated,The text discusses evaluating the robustness of the models across different domains.
+training regimen,testing regimen,Models' robustness is assessed by both training and testing under varying conditions.
+domain robustness,totaltext,TotalText is a model with a limited scope within scenes and languages
+totaltext,mlt,MLT encompasses a wide array of both domains compared to TotalText
+mlt,dptext,Exclusion of MLT data from training affects DPText's performance negatively.
+dptext,srformer,SRFormer shows a performance improvement (+13.18% on MLT
+synthetic data,srformer,SRFormer's capacity for real-world generalization is demonstrated by its better performance even with limited synthetic data.
+training set,synthtext,Training sets include SynthText
+training set,tt (totaltext),Training set combinations for evaluation include SynthText + TT + MLT and SynthText + TT.
+dptext,mlt17,Evaluation is performed on the MLT17 dataset.
+dptext,totaltext (tt),Performance is also evaluated on the TotalText dataset.
+srformer,dbnet,Comparison includes inference time with DBNet
+post-processing,segmentation methods,Segmentation methods require complex post-processing for final output.
+complex post-processing,final outputs,Post-processing is required after identifying segmentation map in tation methods to obtain the final results.
+our method,segmentation and regression losses,During training
+final output,regression head,The regression head determines the final output
+model inference,post-processing time,Our method has negligible post-processing time compared to DBNet
+dbnet,significant post-processing time,DBNet incurs high variability per image due to its lengthy post-processing.
+dptext,negligible post-processing time,DPText also demonstrates low post-processing time
+srformer,mask prediction,SRFormer uses mask prediction for providing a location prior and extracting distinctive information for decoder queries.
+robustness against textual deformations,improved domain transferability,Enhanced robustness and improved adaptability across different domains are key benefits of SRFormer.
+training efficiency,data utilization,Experiments show notable improvements in both training efficiency and data utilization with our method.
+srformer,overall performance,Our method consistently outperforms competitors across various tasks.
+training efficiency,data utilization,The proposed method improves both training efficiency and data utilization.
+training efficiency,overall performance,The method leads to notable improvements in overall performance.
+proposed method,text detection,The efficacy is demonstrated in the context of text detection.
+proposed method,divergent detection tasks,Believed to be effective for tasks requiring domain robustness and data efficiency.
+national key r&d program of china,work support,The work is partially supported by this program.
+hk rif (r7030-22),work support,Additional funding from the HK RIF is acknowledged.
+hk itf (ghp/169/20sz),work support,Also funded by the HK ITF grant.
+huawei flagship research grants,work support,Grants from Huawei are acknowledged.
+hku-scf fintech academy r&d funding schemes,work support,Funding from the academy in 2021 and 2022.
+hong kong rgc grf (hku 17208223),work support,Recipient of a Hong Kong GRF grant.
+shanghai artificial intelligence laboratory,ph.d. advisor relationship,Heming Cui is Qingwen Bu's Ph.D. advisor and a courtesy researcher.

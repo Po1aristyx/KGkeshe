@@ -1,0 +1,231 @@
+node_1,node_2,edge
+visual reprogramming,pretrained vision models,Visual reprogramming leverages the intrinsic capabilities of pretrained vision models by adapting their input or output interfaces to solve downstream tasks.
+pretrained vision models,downstream tasks,Visual reprogramming leverages pretrained vision models to solve downstream tasks with different labels.
+downstream labels,pretrained labels,"When adapting the output interface, label mapping methods transform pretrained labels to downstream labels by establishing a gradient-free one-to-one correspondence between the two sets of labels."
+pretrained labels,downstream labels,"However, one-to-one mappings may overlook the complex relationship between pretrained and downstream labels."
+bayesian-guided label mapping (blm) method,one-to-one mappings,"Motivated by the observation that one-to-one mappings overlook the complex relationship between labels, a Bayesian-guided Label Mapping method is proposed."
+bayesian-guided label mapping (blm) method,pretrained labels,BLM constructs a probabilistic label mapping matrix to quantifying pairwise relationships between pretrained and downstream labels.
+bayesian-guided label mapping (blm) method,bayesian conditional probability,"The assignment of values to the constructed matrix is guided by Bayesian conditional probability, considering the joint distribution of downstream labels and the labels predicted by the pretrained model."
+bayesian-guided label mapping (blm) method,pretrained vision models,Experiments demonstrate the superior performance of BLM over existing methods for pretrained vision models.
+bayesian-guided label mapping (blm) method,vision-language models,Experiments demonstrate the superior performance of BLM for vision-language models.
+blm,probabilistic lens,The success of BLM offers a probabilistic lens to understand and analyze the effectiveness of Visual reprogramming.
+probabilistic lens,understand,The probabilistic lens is used to understand and analyze the effectiveness of VR.
+probabilistic lens,analyze,The probabilistic lens is used to understand and analyze the effectiveness of VR.
+vr,visual tasks,VR is used for visual tasks.
+vr,visual reprogramming,VR is also known as visual reprogramming (VR).
+vr,adversarial reprogramming,VR is also known as adversarial reprogramming.
+visual reprogramming,adversarial reprogramming,Visual reprogramming is also called adversarial reprogramming.
+visual reprogramming,pretrained model,Visual reprogramming repurposes a pretrained model for downstream tasks without changing the model.
+pretrained model,downstream tasks,Pretrained models are repurposed for downstream tasks.
+pretrained model,label mapping function,A label mapping function is needed to map outputs of pretrained models to downstream labels.
+label mapping function,output layers,The label mapping function avoids the computational cost of training fully-connected output layers through backpropagation.
+label mapping function,one-to-one lm,Existing VR methods adopt a gradient-free one-to-one label mapping function.
+one-to-one lm,many-to-many relationship,One-to-one label mapping overlooks the many-to-many relationship between pretrained and downstream labels.
+pretrained model,downstream labels,The complex relationship between pretrained and downstream labels may limit the performance of VR.
+figures,strategy,"The context mentions the two subfigures Figure 1a and Figure 1b in relation to the strategy mentioned, indicating a connection between the presentation of statistical results and visual illustrations."
+logits,softmax layer,"The context discusses the distribution of logits, which are the model outputs before the softmax layer, showcasing a relationship between these two concepts."
+images,dataset,"The context compares drawbacks from the perspectives of individual images and the entire dataset, suggesting a direct link between the representation of images and the dataset being considered."
+classifier,downstream tasks,"The context mentions the reuse of an ImageNet-pretrained classifier in downstream tasks, indicating a relationship between the classifier used and the tasks being performed subsequently."
+pretrained label,image,"The context describes the mapping of images 'Dog' and 'Osteospermum' into pretrained labels, showcasing the association between these labels and the corresponding images."
+labels,logits,"The context discusses how multiple pretrained labels receive high logits for images like 'Chihuahua' and 'Basenji', indicating a relationship between the predicted labels and the logarithmic values assigned."
+pretrained labels,'sea urchin',The pretrained label 'Sea Urchin' is mentioned as one of the labels that share similar features and score high.
+pretrained labels,'daisy',The pretrained label 'Daisy' is mentioned as one of the labels that share similar features and score high.
+pretrained labels,'automobile' class,The 'Automobile' class from CIFAR10 is mentioned in relation to pretrained labels and label assignments.
+'sea urchin','daisy',The pretrained labels 'Sea Urchin' and 'Daisy' are mentioned as labels that share similar features and score high.
+'automobile' class,'moving van',The 'Automobile' class from CIFAR10 cannot be paired with the optimal pretrained label 'Moving Van' due to label assignments.
+'moving van','truck',"The pretrained label 'Moving Van' has been greedily mapped to the label 'Truck', causing suboptimal label assignments."
+one-to-one lm,pretrained labels,"The one-to-one LM function retains only the label with the highest logit, ignoring the probabilities of other related labels."
+probabilistic lm matrix,pretrained labels,"The probabilistic LM matrix replaces the one-to-one LM function, allowing predictions to consider diverse contributions from all pretrained labels."
+probabilistic lm matrix,downstream label,"The probabilistic LM matrix quantifies the relationship between a pretrained label and a downstream label, enabling a many-to-many mapping strategy."
+bayesian-guided label mapping (blm),probabilistic lm matrix,The Bayesian-guided label mapping assigns values to elements in the probabilistic LM matrix based on Bayesian conditional probabilities.
+joint distribution,predicted pretrained labels,The joint distribution is calculated from the predicted pretrained labels on downstream tasks.
+joint distribution,ground-truth downstream labels,The joint distribution is calculated from the ground-truth downstream labels.
+blm,blm+,"BLM is further extended to BLM+, which aggregates top-K predicted probabilities instead of using a single predicted label."
+blm,blm+,BLM+ accounts for uncertainty in the predictions when estimating the joint distribution.
+probabilistic many-to-many lm,deterministic one-to-one lm,The theoretical analysis justifies that probabilistic many-to-many LM has the potential to outperform deterministic one-to-one LM.
+blm,blm+,Experiments are conducted on 12 datasets to show the effectiveness of BLM and BLM+.
+blm,blm+,Both BLM and BLM+ are applied to different input VR methods (padding and watermarking) on pretrained ResNet and ResNeXt.
+blm,blm+,BLM and BLM+ are applied to vision-language models to demonstrate their general applicability.
+empirical findings,blm,Empirical findings provide evidence that BLM facilitates leveraging pretrained knowledge for diverse downstream tasks.
+empirical findings,blm+,Empirical findings provide evidence that BLM+ facilitates leveraging pretrained knowledge for diverse downstream tasks.
+blm,blm+,Both BLM and BLM+ offer insights into understanding the effectiveness of VR.
+vr,pretrained,VR is related to pretrained models as they are used in VR studies to understand their effectiveness
+pretrained,downstream label spaces,"Pretrained models are related to downstream label spaces as they reveal the relations between them, guiding future studies into more interpretable VR methods"
+model reprogramming,transfer learning methods,Model reprogramming is among transfer learning methods and introduces an efficient learning framework for adapting models pretrained on large-scale data to downstream tasks
+model reprogramming,pretrained models,Model reprogramming involves adapting pretrained models for downstream tasks by changing input or output interfaces purposefully
+pretrained models,knowledge,"Knowledge can be reused on new tasks by repurposing diverse pretrained models for downstream tasks, sidestepping exhaustive finetuning of the model"
+pretrained vision models,resnet,Pretrained vision models like ResNet are repurposed for downstream tasks
+pretrained vision models,vit,Pretrained vision models like ViT are repurposed for downstream tasks
+repromising,diverse pretrained models,"Repromising encompasses repurposing diverse pretrained models for downstream tasks, including vision, language, acoustic, and graph models"
+vpt,vit,VPT integrates prompts alongside image embeddings leveraging ViT
+vpt,eevpt,EEVPT enhances VPT by embedding parameters within self-attention layers
+vpt,transhp,TransHP learns prompt tokens to encode coarse image categories in addition to VPT
+clip,coop,Models like CLIP utilize text-prompting methods such as CoOP
+clip,cocoop,Models like CLIP utilize text-prompting methods such as CoCoOP
+clip,maple,Models like CLIP also learn layer-specific mapping functions with models like MaPLe
+input vr,pretrained models,Input VR introduces trainable noise to images before feeding them into pretrained models
+padding-based vr,watermarking-based vr,"Padding-based models preserve image integrity while introducing noise to outer frames, whereas watermarking-based models overlay noise patterns on images"
+relying solely on input vr,output mapping methods,Output mapping methods bridge the gap between pretrained labels and downstream labels to align different label spaces
+mapping methods,alignment,mapping methods are introduced to facilitate alignment between different label spaces
+mapping methods,deep learning-based methods,"Mainstream approaches include deep learning-based and statistical inference-based (i.e., gradient-free) LM methods"
+mapping methods,statistical inference-based methods,"Mainstream approaches include deep learning-based and statistical inference-based (i.e., gradient-free) LM methods"
+deep learning-based methods,fully connected layer,Deep learning-based methods insert a learnable fully connected layer to connect pretrained and downstream labels
+gradient-free lm methods,random label mapping (rlm),"As for gradient-free LM methods, random label mapping (RLM) establishes mappings between an equal number of randomly selected pretrained labels and downstream labels, masking out other unused ones"
+random label mapping (rlm),pretrained labels,"As for gradient-free LM methods, random label mapping (RLM) establishes mappings between an equal number of randomly selected pretrained labels and downstream labels, masking out other unused ones"
+random label mapping (rlm),downstream labels,"As for gradient-free LM methods, random label mapping (RLM) establishes mappings between an equal number of randomly selected pretrained labels and downstream labels, masking out other unused ones"
+frequent label mapping (flm),optimal one-to-one mappings,Frequent label mapping (FLM) selects optimal one-to-one mappings using a greedy approach based on the number of pairs between pretrained and downstream labels
+iterative label mapping (ilm),frequent label mapping (flm),"Iterative label mapping (ILM) extends FLM by updating mappings at each epoch, refining the output label mapping as input VR patterns evolve"
+blm,suboptimal solutions,We propose BLM to address these issues
+pretrained task,input and output variables,"Problem Setup. Consider a pretrained task with input and output variables X S and Y S, jointly defined over X S × Y S"
+pretrained classifier,logits vector,The pretrained classifier fpre produces a logits vector fpre(xS) for each input xS in X S.
+downstream task,input and output variables,The downstream task involves input and output variables X T and Y T defined over X T × Y T.
+downstream task,training dataset,The training dataset DT consists of training samples drawn from X T × Y T for the downstream task.
+input vr function,learnable parameters,The input VR function fin(·
+output lm function,output logits of fpre,The output LM function f ω aligns the output logits of fpre with the downstream label space by a transformation ω.
+output lm function,gradient-free lm,The study focuses on gradient-free LM where f ω does not introduce additional trainable parameters but leverages fin and fpre.
+mapping between,output label transformation,The output LM function f ω serves to find a mapping between each yS ∈ Y S and yT ∈ Y T through an output label transformation ω.
+xt,arg max softmax(˜yti ),xT is predicted by arg max softmax(˜yTi )
+xt,f (xti ),f (xTi ) is shorthand for (fpre ◦ fin)(xT)
+y s,y t,A deterministic one-to-one relation between Y S and Y T implies only a single “correct” yS ∈ Y S exists for each yT ∈ Y T
+y s,y t,"Each element ωyS,yT quantifies the relationship between yS ∈ Y S and yT ∈ Y T"
+y s,y t,The flexible many-to-many LM implies the inherent complexity in label correspondence
+y s,y t,"In Section 4, we investigate how to assign values to our probabilistic LM based on Bayes’ theorem"
+y t,x t,The objective of VR is to maximize p(Y T
+input vr,fpre◦fin,The input VR obtained from fpre◦fin is denoted as the predicted probability of pretrained label yS for input xT
+predicted probability,pretrained label ys,The predicted probability is linked to the pretrained label yS for input xT
+output label transformation,"ω ∈ [0, 1]ks×kt",The output label transformation ω amounts to estimating the true downstream label yT
+estimated output label transformation,➁,The estimated output label transformation ➁ represents the probability of the true downstream label yT
+conditional probability,"ωys,yt","Conditional probability ωyS,yT is used to quantify the contributions from pretrained label yS to downstream label yT"
+output lm,"f ω,ys","The output LM f ω,yS is associated with the conditional probability ωyS,yT"
+blm,blm+,"Two strategies, BLM and BLM+, are presented for estimating the joint distribution of p(Y T = yT, Y S = yS"
+blm,estimations,BLM and BLM+ are presented for these estimations
+example,estimation,"we include a simple example to illustrate the estimation of p(Y T = yT, Y S = yS"
+fpre,fin,≡ (fpre ◦ fin)(xT)
+input,xt,model for a given input xT
+label,xt,label for xT
+frequency,predicted logits,we could intuitively count the frequency of (ˆySi ; θ) denote the predicted logits obtained from the pretrained
+joint distribution p(y t = i = ys ∧ yt i = yt),estimate:i,"to estimate:i . We define ˆySˆpBLM(Y T = yT, Y S = yS"
+estimation,[40],"This estimation is similar to [40], see Appendix B for more discussion"
+images,vr water-marking,incorporated with VR water-marking or padding patterns
+input,pretrained model,fed into a fixed pretrained model to obtain logits and predicted labels
+true labels,predicted labels,the true labels (of yT) and predicted labels (of yS) are used to estimate ωBLM or ωBLM+
+output logits,pretrained models,reweights output logits of pretrained models for the downstream labels
+results,prediction,the predicted results can be derived
+backpropagation,update,backpropagation is performed to update the input VR
+summing,laplace smoothing coefficient,"in addition to summing up Eq. (6) for yT ∈ Y T, we add Laplace smoothing coefficient λ to ensure the denominator of Eq. (5) being non-zero"
+coefficient,λ,Coefficient λ is used to ensure the denominator of Equation (5) is non-zero in the context.
+ks,y s,kS represents the size of Y S in the context.
+ys,x t,yS is related to X T as per the context.
+ωblm,"ωys,yt","The estimation of ωyS,yT contributes to the final probabilistic LM ωBLM in the context."
+blm,blm+,"BLM is mentioned as the base model, while BLM+ is introduced as an extension that considers top-K predicted probabilities for more robust estimations in the context."
+f (xt,y′,"f(xT) and y' are related as per the context, representing the predicted labels for the input xT."
+softmax,f,The softmax function and f are combined to predict the probability for any given yS in Y S.
+f,xt,f function is applied to xT in order to find the argmax of the predictions.
+blm+ strategy,joint density,"Within the BLM+ strategy, the joint density is approximated."
+blm+ strategy,blm,"BLM+ strategy is similar to BLM, with Laplace smoothing and size of Y S being considered."
+y s,ys,The probability of Y S being yS given X T is calculated using BLM+.
+blm+,blm,BLM+ estimation is derived from Eq. (9) and Eq. (8) similar to BLM.
+k,α · kt,The value of K is decided based on the size of downstream label space kT using the hyper-parameter α.
+blm,blm+,The learning of BLM and BLM+ allows seamless integration into existing VR pipelines.
+blm,pretrained resnet or resnext,BLM learning is model-agnostic and compatible with pretrained ResNet or ResNeXt models.
+blm+,blm,The learning pipeline of BLM+ is shown separately from that of BLM.
+lm methods,"rlm, flm, ilm, blm, blm+","The completed pseudocode for all LM methods including RLM, FLM, ILM, BLM, and BLM+ are available in the Appendix D."
+blm+,detailed discussion,"BLM+ refers to a specific training pipeline discussed in the context, whereas a detailed discussion is mentioned as an important part of Appendix D.i"
+matrix operations,appendix d.i,"Matrix operations are discussed in detail in Appendix D.i, highlighting their importance in the context"
+approximation,true probability,"The approximation mentioned in the context is compared to the true probability, indicating a relationship between the two concepts"
+training pipeline of blm,pretrained label space,"The training pipeline of BLM involves a pretrained label space, indicating a dependency between these concepts"
+label space,training set,"The label space and training set are both crucial components in the context of the training pipeline, highlighting their relationship"
+hyper-parameter λi,probabilistic lm ωblm,"The hyper-parameter λi is utilized in the context to influence the probabilistic LM ωBLM, showcasing a connection between the two concepts"
+training pipeline of blm+,pretrained label space,"Similar to BLM, the training pipeline of BLM+ also involves a pretrained label space, suggesting a commonality between the two training pipelines"
+ωblm+,initialize,Initialization of the variable ωBLM+ with an empty set in the algorithm
+ωblm+,compute,The computation or update of the LM Matrix leads to the usage of ωBLM+ in the algorithm
+ωblm+,predict,The prediction of downstream labels involves using ωBLM+ in the algorithm
+ωblm+,update,The update of VR Patterns entails the modification of ωBLM+ in the algorithm
+blm+,blm,The theoretical analysis explains the preference for probabilistic many-to-many LM (BLM+) over deterministic one-to-one LM (BLM)
+flm,{flm : y s → y t},This defines the function Flm and its parameters where flm maps from label space Y S to label space Y T
+flm(ys),"{yt, 1 − yt}",The function flm(yS) can output either yT or 1 - yT
+acc(flm),ep(ys),The expected accuracy of function flm is defined as Ep(yS) multiplied by the marginal distribution of pretrained labels
+fplm,fdlm,fplm represents probabilistic LM and fdlm represents deterministic LM
+acc(fplm),acc(fdlm),It is proven that the accuracy of probabilistic LM is greater than or equal to the accuracy of deterministic LM
+ilm,vr,"Following ILM, ResNet-18 and ResNeXt are used for testing VR performance on various downstream datasets"
+rlm,flm,"Previous gradient-free LM methods RLM, FLM, and ILM are used as baselines for comparison"
+deep learning-based lm,pretrained model,deep learning-based LM is connected to the output of the pretrained model
+lm,neural network,LM is treated as a single-layer linear neural network
+lm methods,inputs,all LM methods operate on the same inputs
+input vr,padding-based vr,Padding-based input VR adds trainable noise to the outer frames of centered images
+blm,blm+,BLM and BLM+ yield the highest accuracy across all datasets except for SVHN
+blm,ilm,"On ResNet-18, compared to the SOTA (i.e., ILM), BLM achieves an average improvement of 4.7% across the 12 datasets"
+blm+,ilm,"On ResNet-18, compared to the SOTA (i.e., ILM), BLM+ achieves a 6.1% enhancement"
+12 datasets,blm+,BLM+ achieves a 6.1% enhancement on the 12 datasets.
+12 datasets,resnext-101,"On ResNeXt-101, BLM and BLM+ achieve accuracy improvements of 3.2% and 3.8% on average, respectively with respect to the 12 datasets."
+resnext-101,blm,"On ResNeXt-101, BLM and BLM+ achieve accuracy improvements of 3.2% and 3.8% on average, respectively."
+resnext-101,blm+,"On ResNeXt-101, BLM and BLM+ achieve accuracy improvements of 3.2% and 3.8% on average, respectively."
+tasks,ucf101,The elevation in accuracy is particularly pronounced in tasks with a higher number of classes like UCF101.
+tasks,cifar100,The elevation in accuracy is particularly pronounced in tasks with a higher number of classes like CIFAR100.
+ilm,svhn,"On SVHN, ILM performs slightly better."
+blm,gradient-free lm methods,"Compared to current gradient-free LM methods, the deep learning-based LM may still have an advantage in the performance of downstream tasks due to the learning capacity of the linear layer neural network with respect to BLM."
+blm+,blm,Our proposed BLM and BLM+ aim to bridge the gap between gradient-free LM and deep learning-based LM.
+blm+,blm,BLM and BLM+ have been observed to possess greater interpretability and fewer parameters compared to deep learning-based LM.
+blm,watermarking-based vr,"BLM can be applied to different input VR methods, overlaying trainable noise patterns on resized images, and outperforms ILM in accuracy by 6.1% and 7.5%, respectively. BLM and BLM+ close the gap between current gradient-free and deep learning-based LM in the case of watermarking-based VR."
+blm+,watermarking-based vr,"BLM+ can be applied to different input VR methods, overlaying trainable noise patterns on resized images, and outperforms ILM in accuracy by 6.1% and 7.5%, respectively. BLM and BLM+ close the gap between current gradient-free and deep learning-based LM in the case of watermarking-based VR."
+resnet-18,blm,"ResNet-18 is used as the pretrained model for BLM in watermarking-based VR, where BLM outperforms the best-performing baseline ILM in accuracy."
+resnet-18,blm+,"ResNet-18 is used as the pretrained model for BLM+ in watermarking-based VR, where BLM+ outperforms the best-performing baseline ILM in accuracy."
+blm,vision-language models,"BLM is applied on vision-language models like CLIP, achieving an average accuracy of 79.1% on 12 datasets and outperforming the baseline methods on 11 datasets."
+blm+,vision-language models,"BLM+ is applied on vision-language models like CLIP, achieving an average accuracy of 79.3% on 12 datasets and outperforming the baseline methods on 11 datasets."
+datasets,baseline methods,Datasets are compared against baseline methods and outperform them on 11 datasets
+blm,blm+,Comparison between BLM and BLM+ in the context of ablation study
+probabilistic lm,one-to-one lm,Comparison in the ablation study results of BLM by replacing probabilistic LM with one-to-one LM
+ωblm,blm+,Calculating ωBLM in BLM+ without subsequent iterations
+aggregating probabilities,top-k predicted probabilities,Results of removing aggregating probabilities from BLM+ and using top-K predicted probabilities
+blm+,blm,"When both 'Top-K' and 'Bayes' are applied to BLM+, it degenerates into the same results as 'Bayes' of BLM"
+datasets,pretrained model (resnet-18),Use of pretrained model ResNet-18 for ablation study results of BLM and BLM+
+'bayes',ω,Employing 'Bayes' to compute ω improves accuracy across most datasets
+'top-k',redundant information,Applying 'Top-K' to BLM+ helps in filtering out redundant information
+oxfordpets dataset,cat and dog breeds,Use of OxfordPets dataset to classify cat and dog breeds
+top-k predicted probability,numer,Effectively using top-K predicted probability filters out numer in the context of the OxfordPets dataset
+oxfordpets dataset,cat and dog breeds,The OxfordPets dataset is used to classify cat and dog breeds.
+top-k predicted probability,irrelevant categories,Using top-K predicted probability effectively filters out numerous irrelevant categories in the pretrained label space.
+blm,blm+,"For both BLM and BLM+, iterative updates are crucial as the initial input VR may deviate considerably from the final iteration."
+domains of downstream and pretrained tasks,input vr,"The greater the disparity between the domains of downstream and pretrained tasks, the more pronounced the impact of the input VR, emphasizing the necessity of iteration updates."
+probabilistic lm,pretrained and downstream label spaces,The probabilistic LM obtained by BLM or BLM+ can elucidate the connection between pretrained and downstream label spaces.
+visualizarion results,input vr and top-weighted pretrained labels,Figure 4 shows the visualization of input VR and top-weighted pretrained labels applying BLM+.
+training loss,weight changes,Training loss and weight changes (Euclidean norm) of probabilistic LM ωBLM+ per iteration are plotted below.
+pretrained resnet-18,marigold,"Pretrained ResNet-18 is used, and the downstream label 'Marigold' is selected as an example."
+labels in downstream tasks,resnet-18 pretrained on imagenet-1k,Figure 3 shows the visualization results for three- Top-K - Iter Ours.
+outputs,label,"Weights are assigned to the 1,000 outputs of the pretrained model corresponding to a downstream label."
+edamame,organisms,"Top-weighted labels for 'Edamame' correspond to organisms such as snakes and artichokes, which share similarities in color and shape."
+texture dataset,'fibrous',The predominant labels associated with 'Fibrous' from the texture dataset include rough-textured items like 'Hay' and 'Komondor'.
+dog,sub-breed canines,'Dog' encompasses various sub-breed canines.
+blm+,pretrained labels,"From a visualization perspective, top-weighted pretrained labels and input VR patterns are shown at different iteration stages using BLM+."
+marigold,pretrained labels,"During the update of weights and patterns, pretrained labels transition gradually from dissimilar labels to those that share more similarities in color, shape, and texture."
+label space,sizes kt,Figure 5 shows the relationship between different sizes of label space.
+label space sizes,accuracy improvement,Tasks with larger label spaces report more pronounced performance improvements.
+label space sizes,many-to-many relationship,The strength of BLM and BLM+ lies in unraveling the complex many-to-many relationship in tasks with numerous classes.
+training dataset sizes,accuracy,BLM and BLM+ yield higher accuracy compared to RLM and ILM consistently.
+training dataset sizes,training data fraction,"With approximately a 40% fraction of the downstream training data, BLM or BLM+ can achieve similar accuracy compared with training on the entire dataset."
+laplace smoothing coefficient λ,performance analysis,The parameter experiments and performance analysis regarding the impact of Laplace smoothing coefficient λ for BLM and BLM+ are detailed in Appendix G.
+top-k ratio α,performance analysis,The parameter experiments and performance analysis regarding the impact of top-K ratio α for BLM and BLM+ are detailed in Appendix G.
+lm matrices,visualization and analysis,The visualization and analysis of LM matrices derived from gradient-free and deep learning-based methods can be found in Appendix I.
+training cost analysis,discussion,Training cost analysis is discussed in Appendix J.
+lm methods,visualization results,Additional visualization results of LM methods applied to pretrained vision models are presented in Appendix K.
+visualization results,lm methods,LM methods are used to produce visualization results
+pretrained vision models,lm methods,pretrained vision models are applied to LM methods
+blm,vision-language models,Application of BLM to vision-language models is explored
+blm+,vision-language models,Application of BLM+ to vision-language models is explored
+blm,ilm,Comparison of accuracy improvement of BLM and BLM+ with ILM is presented
+blm+,ilm,Comparison of accuracy improvement of BLM+ with ILM is presented
+pretrained resnet-18,ilm,Comparison of accuracy improvement of BLM and BLM+ with ILM using pretrained ResNet-18
+pretrained resnet-18,cifar100,Accuracy of methods is tested for CIFAR100 using pretrained ResNet-18
+lm methods,vr,Focus on output LM methods for VR
+gradient-free lm methods,pretrained and downstream label spaces,Drawbacks in current gradient-free LM methods related to the relationship between pretrained and downstream label spaces
+blm,bayes' theorem,BLM calculates LM matrices guided by Bayes' theorem
+blm+,bayes' theorem,BLM+ calculates LM matrices guided by Bayes' theorem
+top-k predicted pretrained labels,blm,Probability of top-K predicted pretrained labels is aggregated in BLM
+top-k predicted pretrained labels,blm+,Probability of top-K predicted pretrained labels is aggregated in BLM+
+blm,probabilistic lens,BLM offers insights into understanding the effectiveness of VR through a probabilistic lens
+blm+,probabilistic lens,BLM+ offers insights into understanding the effectiveness of VR through a probabilistic lens
+nsf&csiro responsible ai program,grant number 2303037,The NSF&CSIRO Responsible AI program is associated with grant number 2303037.
+jzq,arc grant number dp240101006,JZQ is supported by ARC with grant number DP240101006.
+research,university of melbourne’s research computing services,This research is also supported by The University of Melbourne’s Research Computing Services.
+research,petascale campus initiative,This research is also supported by the Petascale Campus Initiative.
+reviewers,manuscript,The reviewers dedicated time to carefully review the manuscript.

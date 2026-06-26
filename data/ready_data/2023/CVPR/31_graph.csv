@@ -1,0 +1,169 @@
+node_1,node_2,edge
+vision-centric autonomous driving perception,bird’s-eye-view (bev) representation,Bird’s-eye-view (BEV) representation is widely adopted in modern methods for vision-centric autonomous driving perception to describe a 3D scene.
+bird’s-eye-view (bev) representation,voxel representation,Bird’s-eye-view (BEV) representation is more efficient than voxel representation in describing a 3D scene.
+bird’s-eye-view (bev) representation,tri-perspective view (tpv) representation,Tri-perspective view (TPV) representation is proposed as an improvement over bird’s-eye-view (BEV) representation in describing the 3D scene with finer details.
+tri-perspective view (tpv) representation,transformer-based tpv encoder (tpvformer),Transformer-based TPV encoder (TPVFormer) is proposed to lift image features to the 3D tri-perspective view (TPV) space effectively.
+transformer-based tpv encoder (tpvformer),attention mechanism,Attention mechanism is employed in transformer-based TPV encoder (TPVFormer) to aggregate image features corresponding to each query in each TPV plane.
+lidar-based methods,lidar segmentation task on nuscenes,Using only camera inputs can achieve comparable performance with LiDAR-based methods on the LiDAR segmentation task on nuScenes.
+vision-based 3d perception,lidar-based one,Vision-based 3D perception emerges as a promising alternative to LiDAR-based perception in extracting 3D information from 2D images.
+3d information,2d images,3D information is extracted from 2D images
+vision-based models,surrounding cameras,vision-based models are empowered by surrounding cameras
+3d perception tasks,depth estimation,depth estimation is one of the tasks related to 3D perception
+3d perception tasks,semantic map reconstruction,semantic map reconstruction is one of the tasks related to 3D perception
+3d perception tasks,3d object detection,3D object detection is one of the tasks related to 3D perception
+3d surrounding perceiving,3d scene,3D surrounding perceiving involves effectively representing a 3D scene
+conventional methods,3d space,conventional methods split the 3D space into voxels
+modern methods,bird’s-eye-view,modern methods mainly focus on the ground plane (bird’s-eye-view) for outdoor scenes
+modern methods,height dimension,modern methods collapse the height dimension for outdoor scenes
+occupancy prediction,lidar semantic labels,occupancy prediction requires sparse lidar semantic labels for training and predictions
+occupancy prediction,voxels,occupancy prediction requires predictions for all voxels
+semantic scene completion,dense training,dense training is a part of the process of semantic scene completion
+semantic scene completion,dense testing,dense testing is another aspect involved in semantic scene completion
+semantic scene completion,rgb images,RGB images are used as inputs for semantic scene completion
+lidar segmentation,lidar data,LiDAR data is used for point query in LiDAR segmentation model
+tpvformer,semantic voxel occupancy prediction,TPVFormer produces semantic voxel occupancy prediction with sparse point supervision
+voxel-based representations,vision-centric autonomous driving,voxel-based representations are used for vision-centric autonomous driving
+monoscene,image features,MonoScene backprojects image features to all possible positions in the 3D space
+monoscene,voxel representation,MonoScene obtains the initial voxel representation and further processes it using a 3D UNet
+3d perception,multi-view images,it is challenging to generalize 3D perception to multi-view images due to the inefficiency of voxel representations
+bev-based scene representation,voxels,BEV-based methods aim to provide a more compact representation of scenes compared to voxel-based methods
+bev-based scene representation,height information,BEV-based methods implicitly encode the height information in each BEV grid for a more compact representation of scenes
+image features,bev space,recent studies focus on how to effectively transform features from the image space to the BEV space
+depth map,image features,a depth map is predicted for each image and utilized to project image features into the 3D space followed by BEV pooling
+tpv-former,lidar semantic labels,TPV-Former uses sparse LiDAR semantic labels for training and predicts the semantic occupancy for all voxels
+lidar,sparse semantic labels,LiDAR uses sparse semantic labels for training
+lidar,3d information,LiDAR implicitly encodes the 3D information of each object
+3d object detection,bev-based methods,BEV-based methods perform well on the 3D object detection task
+3d object detection,coarse-level bounding boxes,3D object detection predicts coarse-level bounding boxes for commonly seen objects
+3d structures,various objects,Objects with various 3D structures can be encountered in real scenes
+3d structures,fine-grained understanding,It requires a more comprehensive and fine-grained understanding of the 3D surroundings
+bev,fine-grained 3d structures,Unknown how to generalize BEV to model fine-grained 3D structures
+bev,efficiency and detection performance,It remains unknown how to generalize BEV while preserving its efficiency and detection performance
+tri-perspective view (tpv) representation,3d scene,TPV representation describes a 3D scene
+bev,perpendicular planes,Generalizing BEV by accompanying it with two perpendicular planes
+3d surroundings,3d structure,3D surroundings models the 3D structure to provide a comprehensive description.
+feature,point,A feature of a point in 3D space is obtained by projecting it into each of the three planes and using bilinear interpolation.
+tpv representation,3d scene,The TPV representation describes the 3D scene at an arbitrary resolution and produces different features for different points in 3D space.
+tpvformer,tpv features,The TPVFormer encoder is used to effectively obtain TPV features from 2D images.
+image cross-attention,tpv grid queries,Image cross-attention is performed between TPV grid queries and corresponding 2D image features to lift 2D information to the 3D space.
+cross-view hybrid-attention,tpv features,Cross-view hybrid-attention is performed among TPV features to enable interactions among the three planes.
+tpv,bev queries,TPV and BEV queries are compared to demonstrate the superiority of TPV in a vision-based 3D semantic context.
+bev-based perception,3d detection,BEV-based perception achieves great success in vision-centric 3D detection from multi-view images.
+bev,3d semantic occupancy prediction,It is mentioned that it is difficult to apply BEV to 3D semantic occupancy prediction.
+bev,3d semantic occupancy prediction,BEV is difficult to apply to 3D semantic occupancy prediction as it requires a more fine-grained description of the 3D space.
+implicit representations,3d coordinate,Implicit representations learn a continuous function that takes the 3D coordinate of a point and outputs the representation of this point.
+implicit representations,explicit representations,"Implicit representations and explicit representations have different advantages, with implicit representations enabling arbitrary-resolution modeling and computation-efficient architectures."
+hybrid explicit-implicit representations,implicit representations,Hybrid explicit-implicit representations inject spatial information into the continuous mapping of implicit representations and share computation-efficient architectures with them.
+hybrid explicit-implicit representations,explicit representations,Hybrid explicit-implicit representations have a better spatial awareness of explicit representations and focus on small-scale complex scenes for 3D-aware image rendering.
+implicit representation,outdoor scenes,The proposed approach aims to use implicit representation to model outdoor scenes for 3D surrounding perception in autonomous driving.
+autonomous driving perception,3d scene,Autonomous driving perception requires both expressive and efficient representation of the complex 3D scene.
+bev,tpv,The proposed approach generalizes Bird's Eye View (BEV) to Top-View Perspective (TPV) for autonomous driving perception.
+bev,tpv,"BEV representation uses a 2D feature map to encode the top view of a scene, while TPV representation involves expressive and efficient representation of the complex 3D scene by preserving the dimensionality of the real world."
+voxel representation,tpv,"Voxel representation describes a 3D scene with dense cubic features, while TPV representation involves expressive and efficient representation of the complex 3D scene."
+voxel representation,bev,"Voxel representation uses a 3D dense cubic feature description, while BEV representation uses a 2D feature map to encode the top view of a scene."
+voxel representation,height information,"Voxel representation discards height information, affecting the description of a 3D scene"
+voxel representation,3d scene,Voxel representation cannot comprehensively describe a 3D scene
+voxel representation,tri-perspective view (tpv) representation,Proposal of Tri-Perspective View (TPV) representation to model 3D space at full scale
+3d scene,tri-perspective view (tpv) representation,Introduction of Tri-Perspective View (TPV) representation to model the 3D scene
+tri-perspective view (tpv) representation,three axis-aligned orthogonal tpv planes,"Learning three axis-aligned orthogonal TPV planes for top, side and front views"
+point querying formulation,query point,"Given a query point, TPV representation aggregates its projections on the top, side and front views"
+tpv representation,point querying,TPV representation aggregates projections of a point on different views to describe it comprehensively
+tpv planes,3d feature space,The TPV planes construct a full-scale 3D feature space through repetition along orthogonal directions and summation. This allows for storage and computation with lower complexity compared to the voxel feature space.
+tpv planes,bev,"Compared with BEV, TPV planes are perpendicular to each other, which results in diversified point features along orthogonal directions. TPV representation offers a more comprehensive and fine-grained understanding of 3D surroundings while remaining efficient."
+tpvformer,vision-centric autonomous driving perception,"TPVFormer is designed for vision-centric autonomous driving perception, highlighting the importance of vision in autonomous driving."
+tpvformer,transformer-based tpv encoder,"TPVFormer is specifically introduced as a transformer-based encoder for lifting image features to TPV planes, emphasizing its role in image processing."
+tpv planes,tpv queries,"TPV planes and TPV queries are correlated, as each TPV query corresponds to a grid cell feature in one of the three planes, indicating a direct relationship between the two concepts."
+tpv queries,pilar region,"TPV queries encode view-specific information from the corresponding pilar region, showcasing the connection between TPV queries and the specific regions they represent."
+cvha,ica,"The hybrid-cross-attention block (HCAB) in TPVFormer includes both CVHA and ICA attention mechanisms, highlighting the collaboration between these two components for effective image processing."
+hcab blocks,hab block,"The HAB block contains only CVHA attention and specializes in contextual information encoding, following HCAB blocks."
+tpvformer,tpv queries,TPVFormer is built by stacking N1 HCAB blocks and N2 HAB blocks. TPV queries play a crucial role in the TPVFormer architecture.
+tpv queries,tpv planes,"TPV queries and TPV planes are used in attention and 3D representation contexts, respectively."
+tpv queries,hcab blocks,TPV queries are enhanced with raw visual information from image features in HCAB blocks.
+tpv queries,hab blocks,TPV queries are refined with contextual clues from other queries in HAB blocks.
+tpv queries,tpv planes,TPV queries play a key role in mapping to a 2D grid cell region in the view and further to a 3D pillar region extending from the view.
+image cross-attention,tpvformer,"In TPVFormer, image cross-attention is used to lift multi-scale and possibly multi-camera image features to the TPV planes."
+full-scale vanilla cross-attention,efficient deformable attention,Deformable attention is employed instead of full-scale vanilla cross-attention in TPVFormer for computational efficiency.
+"tpv query th,w","coordinates (x, y) in the top view","The TPV query th,w located at (h, w) in the top plane is used to calculate its coordinates (x, y) in the top view in the real world HW."
+"tpv query th,w","reference points for the query th,w","For each TPV query th,w, N ref HW reference points are uniformly sampled along the orthogonal direction of the plane."
+"coordinates (x, y) in the top view",inverse projection function p,"The coordinates (x, y) in the top view are obtained through the inverse projection function P."
+"reference points for the query th,w","set of reference points in the world coordinate for query th,w","Ref w h,w represents the set of reference points in the world coordinate for each query th,w."
+"reference points for th,w",image feature maps,"The reference points for th,w need to be projected into the pixel coordinate in order to sample the image feature maps."
+"reference points in the pixel coordinate for query th,w",perspective projection function ppix,"Ref p h,w is the set of reference points in the pixel coordinate for query th,w obtained through the perspective projection function Ppix."
+multiple cameras in different directions,"{ref p,j","Multiple cameras in different directions will generate a set of {Ref p,j where Nc denotes the number of cameras."
+"invalid sets from {ref p,j",image captured by the corresponding camera,"Invalid sets from {Ref p,j can be removed if none of the reference points falls onto the image captured by the corresponding camera."
+tpv queries,sampled image features,TPV queries are updated by summing up the sampled image features weighted by their attention weights
+image features,cameras,"Image features are obtained from the jth camera and used in the deformable attention function DA(th,w, Ref p,jh,w, Ij) as part of the process"
+tpvformer,3d semantic occupancy prediction,TPVFormer framework is used for predicting semantic occupancy in 3D space
+image backbone network,multi-scale features,Image backbone network is used to extract multi-scale features from multi-camera images
+cross-attention,2d features,Cross-attention is utilized to lift 2D features to the TPV space for adaptive feature extraction
+cross-view hybrid attention,interactions between tpv planes,Cross-view hybrid attention enables interactions between different TPV planes for context extraction
+context extraction,views,Views are used in context extraction to benefit the process.
+tpv planes,key and value in deformable attention,The TPV planes are used as key and value in deformable attention to reduce computation.
+tpv query,"th,w","The TPV query is related to the specific location th,w in the top plane."
+reference points,three disjoint subsets,The reference points are grouped into three disjoint subsets containing points from different planes.
+fine-grained segmentation tasks,lightweight mlp,A lightweight MLP is applied for fine-grained segmentation tasks using only two linear layers and an intermediate activation layer.
+task descriptions,"rtoph,w, rsideh,w, rfronth,w","Task Descriptions involve the collection of reference points from the top, side, and front planes."
+neighborhood of the query,reference points on the top plane,Reference points on the top plane are sampled from the neighborhood of the query.
+uniform sampling,3d points,3D points are uniformly sampled along the direction perpendicular to the top plane.
+deformable attention,"cvha(th,w)","CVHA(th,w) is calculated based on deformable attention with the input being the query and reference points."
+tpv planes,fine-grained view-specific information,TPV planes encode fine-grained view-specific information of a 3D scene.
+tpv planes,point and voxel features,TPV planes are converted to point and voxel features in the context by projecting points onto TPV planes to retrieve corresponding features and then summing them up to obtain per-point features.
+points,feature generation process,Points query their features from TPV representation in the feature generation process.
+tpv planes,voxel features,TPV planes are broadcast along the corresponding orthogonal direction to produce three feature tensors for voxel features.
+tpv planes,h × w × d × c,TPV planes are broadcast to produce three feature tensors of size H × W × D × C to obtain full-scale voxel features.
+tpv planes,lidar points,"Although the positions of physical points are unknown in advance, TPV planes are used for tasks such as semantic occupancy prediction with LiDAR points."
+3d semantic occupancy prediction,lidar points,Model is trained using sparse semantic labels (LiDAR points) for 3D semantic occupancy prediction.
+3d semantic occupancy prediction,rgb images,"For 3D semantic occupancy prediction, the model uses only RGB images as inputs."
+semantic labels,lidar points,Semantic labels are produced for LiDAR points and utilized for semantic occupancy in 3D space.
+semantic occupancy,voxels,Semantic occupancy is predicted for all the voxels in concerned 3D space during testing.
+benchmark,method,"No benchmark is provided, so a qualitative analysis of the method is performed."
+lidar segmentation task,point querying formulation,LiDAR segmentation task corresponds to the point querying formulation for predicting the semantic label of a given point.
+lidar segmentation task,rgb images,"RGB images are used as input for LiDAR segmentation task, and the points are used to query their features."
+point clouds,lidar segmentation task,LiDAR segmentation task does not necessarily use point clouds as input but can use other sources like RGB images.
+semantic scene completion,ssc,"In the conventional SSC, the semantic label is predicted for each voxel inside a certain volume based on an initial LiDAR scan."
+rgb images,semantic scene completion,RGB images are used as input for Semantic Scene Completion to predict the semantic label for each voxel.
+voxel labels,semantic scene completion,The training process for Semantic Scene Completion is supervised with voxel labels for predicting occupancy and semantic labels.
+tpv representation,voxel features,TPV representation adopts voxel feature formulation to generate full-scale voxel features as described in Section 3.3.
+prediction results,lidar segmentation ground truth,prediction results are compared to LiDAR segmentation ground truth for comprehensive analysis
+tpvformer,resnet101-dcn,"TPVFormer-Base version utilizes ResNet101-DCN for performance, whereas TPVFormer-Small version uses ResNet-50 pretrained on ImageNet for efficiency"
+cross entropy loss,lovasz-softmax loss,"both types of loss functions are employed to optimize the network performance, with cross entropy loss used for point classification accuracy and lovasz-softmax loss used to maximize IoU score for classes"
+3d semantic occupancy prediction,lidar scans,real points from LiDAR scans are used as input to optimize the IoU score for classes in 3D semantic occupancy prediction
+pseudo-per-voxel labels,sparse point cloud,pseudo-per-voxel labels are generated from sparse point cloud by assigning empty label to voxels without points
+monoscene,ssc task,setting of MonoScene is followed in the SSC task for fair comparison
+monoscene,ssc task,"The term MonoScene is mentioned in the context in relation to the SSC task, indicating a direct relationship between the two concepts."
+2d unet,efficientnetb7,"The model architecture adopted in the context is based on the 2D UNet with a pre-trained EfficientNetB7, suggesting a dependency between the two concepts."
+lidar segmentation,tpvformer-base,"The LiDAR segmentation results are compared with TPVFormer-Base, indicating a comparison or evaluation relationship between the two concepts."
+lidar,method,LiDAR is a sensor technology used in the Method mentioned in the context.
+lidar,camera,LiDAR technology may be used in conjunction with a Camera in various applications as indicated in the context.
+camera,js3c-net,"Camera and JS3C-Net are both mentioned in the context, indicating a relationship in the field of computer vision and scene modeling."
+monoscene,tpvformer,"MonoScene and TPVFormer are both methods related to scene modeling and representation, suggesting a similar domain of application."
+tpvformer,lidar segmentation results,"TPVFormer is benchmarked against LiDAR-based methods in the context, indicating a comparison and evaluation relationship."
+3d scene,2d image,The 3D scene can be completed at a high resolution using only a 2D image as input.
+3d structural information,point clouds,Point clouds provide the 3D structural information for LiDAR-based methods.
+visual input,point clouds,Visual input can capture more semantic information than point clouds.
+cylinder3d,trucks,Cylinder3D fails to predict one of the two trucks on the rightmost side in Figure 5.
+tpvformer,monoscene,TPVFormer is compared against MonoScene in the semantic scene completion task.
+tpvformer,monoscene,TPVFormer outperforms all other methods in IoU and mIoU compared to MonoScene.
+tpvformer,monoscene,TPVFormer has fewer parameters and lower computation compared to MonoScene.
+tpvformer,nuscenes,TPVFormer is analyzed on the validation sets of nuScenes for LiDAR segmentation.
+tpvformer,semantickitti,TPVFormer is analyzed on the validation sets of SemanticKITTI for semantic scene completion.
+loss functions,cross entropy loss,Both cross entropy loss and lovasz-softmax loss are employed for LiDAR segmentation.
+lidar segmentation,voxel,Voxel predictions are used in LiDAR segmentation for segmentation tasks.
+lidar segmentation,point,Point predictions are also used in LiDAR segmentation for segmentation tasks.
+voxel,point,Both voxel and point predictions are used as input to loss functions which results in high mIoUs.
+voxel,tpv,Different prediction types like voxel and point can be used as input to loss functions.
+point,tpv,TPV resolution and feature dimension can be ablated for LiDAR segmentation.
+tpv,bev,"Comparisons can be made between BEV, voxel, and TPV representations for LiDAR segmentation."
+bev,voxel,"BEV and voxel are compared in terms of feature dimension, GPU memory usage, grid resolution, and performance metrics like mIoU and FLOPs"
+tpvformer,bev,TPVFormer is compared with BEV in terms of achieving highest mIoU with fewer parameters and FLOPs
+tpvformer,voxel,TPVFormer is compared with voxel in terms of achieving highest mIoU with fewer parameters and FLOPs
+tpvformer,model architectures,Model architectures are mentioned in comparison with TPVFormer which may result in inferior performance of voxel representation
+tpv,voxel,"TPV and voxel are compared in terms of latency, where sequential processing of three TPV planes may account for comparable latency with voxel"
+number of hcab blocks,number of hab blocks,The relationship between the number of HCAB blocks and HAB blocks is studied in terms of IoU improvement
+tpv,voxel,"TPV representation is able to describe the fine-grained structures of a 3D scene, which is related to voxel in achieving semantic voxel occupancy prediction."
+hcab,hab,"The IoU improves as HCAB blocks increase, validating the importance of direct visual clues for geometry understanding. Semantic prediction relies on both visual and contextual information as the highest mIoU is achieved with a moderate number of HCAB and HAB blocks."
+tpv,tpvformer,"TPVFormer model is based on the attention mechanism to lift image features to the 3D TPV space, demonstrating that the TPVFormer produces consistent semantic voxel occupancy prediction with only sparse point supervision during training."
+lidar-based methods,tpvformer,"Current TPVFormer still underperforms LiDAR-based methods for lidar segmentation, showing the comparison between the two methods."
+vision-based method,lidar-based methods,The vision-based method has achieved comparable performance with LiDAR-based methods on the nuScenes LiDAR segmentation task.
+vision-based method,acknowledgement,The vision-based method is acknowledged for its support in part by various grants mentioned in the context.
+lidar-based methods,acknowledgement,LiDAR-based methods are acknowledged to have support in part by various grants mentioned in the context.

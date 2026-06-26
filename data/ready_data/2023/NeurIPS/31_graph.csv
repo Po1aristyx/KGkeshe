@@ -1,0 +1,249 @@
+node_1,node_2,edge
+abstractmodel distillation,privacy leakage of machine learning,AbstractModel distillation is proposed as a technique to reduce the privacy leakage of machine learning.
+abstractmodel distillation,knowledge distillation,AbstractModel distillation is mentioned in the context as a framework for knowledge transfer where knowledge is transferred from a teacher model to a student model.
+student models,training data,student models interact with training data indirectly through a teacher model.
+membership inference attacks,knowledge distillation,membership inference attacks are designed to study the privacy provided by knowledge distillation to both teacher and student training sets.
+distillation,privacy,distillation provides limited privacy across various domains as shown by new attacks.
+membership inference attacks,private dataset,"membership inference attacks can succeed on a private dataset even if the target model is not queried on actual training points, but on inputs influenced by training data."
+hard labels,teacher’s predictions,Teacher's predictions contain 'useful dark knowledge' which explains the phenomenon of hard labels
+model distillation,model compression,Model compression is a variant of model distillation
+model distillation,training more accurate models,Training more accurate models is another variant of model distillation
+model distillation,distilling the teacher model,Distilling the teacher model is a key concept within model distillation
+privacy-preserving machine learning community,distillation,Distillation has been adapted in the privacy-preserving machine learning community to protect the privacy of training data
+student model,teacher model,"The student model learns only from the teacher's predictions, which is a form of data minimization"
+teacher model,"strong, non-private, training approaches","The teacher model is trained with strong, non-private, training approaches"
+model distillation,privacy guarantee,Model distillation does not provide a rigorous privacy guarantee like differential privacy
+privacy attacks on machine learning,membership inference attacks,Membership inference attacks are a class of privacy attacks on machine learning
+likelihood ratio attack (lira),distillation set,The Likelihood Ratio Attack (LiRA) is adapted to the distillation set
+likelihood ratio attack (lira),distillation setting,LiRA attack adapted to the distillation setting
+likelihood ratio attack (lira),model distillation,LiRA attack surprisingly works well at inferring membership in some cases where model distillation fails
+model distillation,membership inference,model distillation fails to protect against membership inference
+student queries,membership inference attack,student queries used in membership inference attack to predict membership status
+teacher model,student model,teacher model used to query student model for membership inference
+teacher model,cross-example leakage,teacher model encodes membership information about examples in predictions on seemingly unrelated examples
+parrot,predictions,Parrot has an influence on the predictions made on student queries based on the membership information
+parrot,teacher,The student model manages to imitate the teacher by learning from the parrot in the teacher's training set
+teacher,student,There is a transfer of peculiarities from the teacher model to the student model through distillation process
+training datasets,privacy risk,"Similarity between the teacher and student training datasets increases the risk of privacy, along with higher temperature parameters"
+adversary,teacher training set,"An adversary can amplify privacy risk by poisoning the teacher training set, as mentioned in recent work"
+distillation,privacy protection,"Distillation process provides little privacy protection to student examples, highlighting the importance of evaluating privacy risks"
+attacks,privacy risks,The presented attacks can help experts evaluate the risks associated with model distillation and identify ways to mitigate them
+approaches,privacy risks,"Two approaches identified for mitigating privacy risks in distillation are deduplicating teacher and student datasets, and reducing leakage from teacher model using differential privacy guarantees"
+machine learning privacy,privacy attacks,"Machine learning models are vulnerable to privacy attacks, as discussed in background and related work section"
+membership inference attacks,attribute inference attacks,These attacks capture different types of leakage about the training data or individual examples.
+attribute inference attacks,property inference attacks,Attribute inference attacks lead to property inference attacks.
+property inference attacks,training data extraction,Property inference attacks are related to training data extraction in terms of capturing leakage about the training data.
+membership inference attacks,membership inference,"The focus is on membership inference attacks, which aim to determine if a particular example was used to train a model."
+membership inference,privacy attack,Membership inference is a widely studied privacy attack.
+membership inference attacks,membership inference attacks,Various membership inference attacks have been proposed in the literature.
+membership inference attacks,target example,Membership inference attacks aim to determine a target example's membership.
+membership inference attacks,membership score,Membership inference attacks usually involve computing a membership score for a target example.
+membership score,model's prediction,Membership scores often make use of the model's prediction on the target example.
+model's prediction,example's loss,The model's prediction is used to compute the example's loss in some membership inference attacks.
+model's prediction,other score,Model's prediction is also used to compute other scores in membership inference attacks.
+model,querying the model,Some attacks rely on querying the model with examples near or derived from the target.
+querying the model,target,Querying the model involves using examples near or derived from the target.
+state-of-the-art likelihood ratio attack (lira),training shadow models,LiRA involves training many shadow models in its attack strategy.
+shadow models,target example,"Half of the shadow models contain the target example, while the other half does not, in the LiRA attack."
+example,"(x, y)","The example is represented as (x, y)"
+example,in models,The example is associated with IN models
+example,out models,The example is not associated with OUT models
+adversary,shadow model f,The adversary queries each shadow model f
+shadow model f,logits,The shadow model f computes the logits
+adversary,muin,"The adversary fits a Gaussian N(muin, sigma^2_in) to the logits for all models containing the example"
+adversary,pdf,The adversary computes the PDF of each Gaussian
+pdf,likelihood ratio,The likelihood ratio is computed based on the PDF
+lira,knowledge distillation,The attacks in this paper will be derived from LiRA but adapted to the variety of distillation settings considered
+teacher model ft,teacher dataset dt,The teacher model fT is first trained on the teacher dataset DT
+dataset dq,teacher ft,A dataset of images annotated by the teacher is generated by querying the teacher fT on an (unlabeled) student training set
+student model fs,dataset dq,The student model fS is trained on the dataset DQ
+new model f(cid:48),adversary,"To attack a new model f(cid:48), the adversary computes probability density functions and likelihood ratios"
+knowledge distillation,teacher model ft,Distillation begins by training a teacher model fT on the teacher dataset
+teacher model ft,soft labels,The teacher model fT is used to generate soft labels for the student dataset
+teacher model,soft labels,The teacher model is used to generate soft labels for the student dataset.
+soft labels,student dataset,Soft labels generated by the teacher model are used for the student dataset.
+query dataset,student model,Training on the query dataset produces the student model.
+distillation,temperature scaling,Distillation includes 'temperature' scaling where the logits are scaled by a temperature parameter before the softmax is applied.
+logits,probability vector,The softmax function converts logits into a probability vector.
+distillation,knowledge distillation,Knowledge distillation in private machine learning is mentioned in the context.
+distillation,privacy attacks,Distillation has been suggested to mitigate prevent privacy attacks.
+distillation,ensemble of teacher models,Distillation is used to reduce an ensemble of teacher models into a single model.
+differential privacy guarantees,ensemble of models,Distillation is used to reduce an ensemble of models into a single model that has provable differential privacy guarantees.
+models,distillation,Ensembles of models are designed to be private and use distillation to condense these models.
+teacher model,differential privacy guarantee,Differential privacy guarantee is enforced by training the teacher and student models with differential privacy.
+distillation,differential privacy,Distillation is a component used to improve the privacy of an overall approach with differential privacy.
+distillation,privacy guarantees,"Distillation procedure focuses on itself, while works offering privacy guarantees have limits on attack effectiveness."
+distillation,membership inference attacks,"Repeated distillation is considered to prevent membership inference attacks, and stronger attacks are designed to evaluate the privacy provided by distillation."
+privacy guarantees,attack effectiveness,Privacy guarantees have limits on attack effectiveness.
+teacher dataset,student dataset,Teacher dataset is sensitive while student dataset is nonsensitive.
+teacher dataset,distillation,Distillation is used to protect against membership inference attacks in the context of a private teacher dataset.
+student dataset,distillation,Distillation is used to protect against membership inference attacks in the context of a private student dataset.
+private teacher,teacher dataset dt,Private Teacher threat model describes a scenario where the teacher dataset DT is sensitive and the student dataset DS is nonsensitive.
+private teacher,student dataset ds,Private Teacher threat model assumes the adversary has knowledge of the student dataset DS.
+private teacher,private machine learning approaches,Private Teacher threat model is used in most private machine learning approaches.
+private student,teacher dataset,Private Student threat model assumes the adversary has access to the teacher dataset.
+private student,student dataset,Private Student threat model describes a scenario where the teacher dataset is nonsensitive and the student dataset is sensitive.
+self-distillation,teacher and student datasets,"Self-Distillation refers to the scenario where the teacher and student datasets are identical, commonly used during model compression or to improve model performance."
+membership inference,sensitive dataset,"For each threat model, the success of the adversary at performing membership inference on the sensitive dataset is measured."
+membership inference,true positive rate (tpr) and false positive rate (fpr),"Membership inference success is measured by the true positive rate (TPR) and false positive rate (FPR) as suggested by Carlini, Chien, Nasr, Song, Terzis, and Tramer."
+membership inference,membership inference accuracy on each individual example,Membership inference success is also evaluated by investigating the membership inference accuracy on each individual example.
+membership inference accuracy,individual example,The membership inference accuracy on each individual example is investigated to analyze the performance of attacks.
+model distillation,privacy,"Beyond distillation's potential uses in privacy, the attacks on distillation have implications for leaked private information during learning-based model extraction attacks."
+model extraction,distillation,"Model extraction attacks often resemble model distillation, where an adversary reproduces the functionality of a target model into the weights of a local model."
+adversary,api access,"In model extraction, an adversary uses API access to a target model to reproduce its functionality into the weights of a local model."
+target model,teacher model,The target model in model extraction is analogous to the teacher model in distillation.
+local model,student,The local model in model extraction is analogous to the student in distillation.
+private teacher threat model,membership inference attacks,Attacks in the Private Teacher threat model allow an adversary to inspect their local model to perform membership inference attacks on the target model's training data.
+private student threat model,model extraction defensive setting,"The Private Student threat model has implications for a defensive setting in model extraction, where the target model's owner wants to link queries made to the target model with a model they believe has been extracted from their model."
+cifar-10,dawnbench benchmark,The code from the DAWNBench benchmark is used as a starting point on CIFAR-10 for training an accurate ResNet-9 model in under 15 seconds.
+cifar-10,imagededup library,The imagededup library is used to remove 5275 duplicates from CIFAR-10.
+cifar-10,teacher set and student set,"CIFAR-10 dataset is split into a teacher set of 30,000 examples and a student set of 14,725 examples."
+wikitext103,gpt-2 architecture,"The GPT-2 architecture is used on WikiText103 with certain specifications such as context window, heads, layers, and embedding size."
+wikitext103,teacher set and student set,"WikiText103 dataset is split into a teacher set of 500,000 records and the remaining records are used to train the student models."
+purchase100 and texas100,neural networks,Single-layer neural networks with specific hidden layer sizes are trained on Purchase100 and Texas100 datasets.
+purchase100 and texas100,teacher and student sets,Datasets Purchase100 and Texas100 are subsampled to create teacher and student sets.
+purchase100,accuracy of student models,Student models reach 74-75% accuracy on Purchase100 dataset.
+texas100,accuracy of student models,Student models reach 54-55% accuracy on Texas100 dataset.
+teacher models and student models,cross entropy loss,"Teacher models are trained with sparse cross entropy loss, while student models are trained with a dense cross entropy loss to mimic the soft labels predicted by the teacher."
+lira-based attacks,shadow models,All LiRA-based attacks use 100 shadow models for calibration.
+lira-based attacks,figures produced,All figures are produced by running the attack on over 1000 LiRA-based attacks.
+shadow models,calibration,Shadow models are used for calibration in producing figures
+shadow models,attacks,The attack is performed on over 1000 models including shadow models.
+shadow models,membership inference attacks,Needing to train a large number of shadow models is a limitation of attacks based on shadow models.
+shadow models,training efficiency,Training efficiency is commented on in relation to shadow models in Appendix B.4
+training,shadow models,Training is needed for a large number of shadow models.
+training,membership inference attacks,Training is a requirement for conducting membership inference attacks
+privacy,distillation,Prior work in privacy has used distillation to enhance privacy of the teacher set.
+distillation,vulnerability,Distillation affects the vulnerability of teacher examples to membership inference
+teacher model,student model,"Student model post-processes teacher model, with limitation on attacks imposed by data processing inequality"
+attacks,student model,attacks are mentioned to be no more powerful on the student model than they are on the teacher
+attacks,teacher,attacks are mentioned to be no more powerful on the student model than they are on the teacher
+distillation process,anticipate,Stepping through the distillation process can help us anticipate how distillation can impact the privacy of the teacher set
+teacher model,privacy perspective,"The ﬁrst step, training the teacher model, is the most well-understood from a privacy perspective"
+membership inference,teacher model,the large literature on membership inference applies to the teacher model
+membership inference,attacks,recent work has found that state-of-the-art membership inference attacks are better at attacking some “outlier” examples than other “inlier” examples
+queries,teacher examples,"some queries will capture information about teacher examples, perhaps due to some similarity between the queries and teacher examples"
+membership inference attacks,distilled student models,Membership inference attacks work surprisingly well on distilled student models
+transfer lira,lira,Transfer LiRA attack is a simple extension of LiRA to the distillation setting
+shadow teacher models,lira,IN and OUT Gaussians for LiRA are calibrated on shadow teacher models
+similarity between teacher and student models’ predictions,distillation,The success of Transfer LiRA attack relies on the similarity between teacher and student models’ predictions
+information loss,transfer lira,Information loss occurs because Transfer LiRA does not use distillation in any way
+end-to-end lira,distillation procedure,End-to-End LiRA involves training shadow models with the entire distillation procedure
+shadow teacher models,shadow student models,Shadow teacher models are distilled into shadow student models
+student training set,shadow teacher models,Knowledge of the student training set is required to query the shadow teacher models
+shadow student models,lira,LiRA is calibrated using shadow student models
+shadow teacher models,shadow student models,The shadow teacher models are responsible for training the shadow student models.
+transfer lira,distillation,"Transfer LiRA does not require access to in-distribution data to train teacher models, unlike Distillation."
+distillation,privacy,Distillation provides limited privacy in model training.
+figure 3,distilled models,Figure 3 shows the change in per-example attack success rate on distilled models.
+example vulnerability to lira on teacher model,example vulnerability to end-to-end lira after distillation,Each example's vulnerability to LiRA on the teacher model vs. vulnerability after distillation is compared.
+cifar-10,texas-100,Plots for CIFAR-10 and Texas-100 are provided in the Appendix.
+texas-100,vulnerable examples in the teacher model,Texas-100 dataset has the most vulnerable examples in the teacher model remaining susceptible to attacks based on teacher predictions.
+teacher examples on each dataset,end-to-end lira,"For a large fraction of teacher examples on each dataset, End-to-End LiRA achieves almost the same membership inference performance as attacking the teacher model directly."
+transfer lira,roc curves for each strategy,"ROC curves for each strategy are shown, including Transfer LiRA."
+membership inference accuracy,direct attack on teacher model,"Membership inference accuracy is impacted by direct attacks on the teacher model, showing the correlation between the two concepts."
+teacher examples,privacy benefits from distillation,"Some teacher examples do not observe privacy benefits from distillation, indicating a lack of privacy improvement in certain cases."
+vulnerability drop,"examples on cifar-10, purchase-100, texas-100","Certain examples experience a drop in vulnerability by a specific percentage on different datasets, showing the impact of distillation on vulnerability."
+privacy benefits from distillation,limited privacy benefits,"Distillation provides limited privacy benefits overall, highlighting the constrained impact on privacy improvement."
+per-example student attack success rate,variance in attack success rate,"The per-example student attack success rate exhibits a high variance, possibly influenced by statistical uncertainty and other factors, indicating the variability in attack success."
+examples,significant privacy benefits from distillation,"Some examples demonstrate significant privacy benefits from distillation, irrespective of the original model's vulnerability, suggesting varying impacts of distillation."
+plot,positive correlation in vulnerability,"Each plot shows a positive correlation, where examples vulnerable to attacks on the teacher model also tend to be vulnerable after distillation, indicating a consistent pattern in vulnerability."
+examples,vulnerability to attack on teacher model,"Examples vulnerable to attacks on the teacher model also tend to be vulnerable after distillation, leading to a consistent vulnerability pattern across different scenarios."
+teacher model,vulnerability,The teacher model tends to be more vulnerable after distillation.
+teacher model,differential privacy,"Reducing the vulnerability of the teacher model, perhaps using techniques such as differential privacy, is likely to improve the student's privacy."
+membership inference,student models,"Membership inference still performs well on distilled student models, even though these models never directly use any of the teacher data."
+membership inference,student queries,"For a membership inference attack to be successful on the student model, it must be the case that the student queries reveal some membership information about the teacher examples."
+membership inference,teacher examples,"For a membership inference attack to be successful on the student model, it must be the case that the student queries reveal some membership information about the teacher examples."
+student query dataset dq,new attack,"To rigorously evaluate how membership information is encoded in the student queries, we will design a new attack that only has access to the student query dataset DQ."
+lira,adversary,We adapt LiRA to a setting where only the student query scores are available to the adversary.
+teacher examples,student query scores,The adversary can only rely on information about teacher examples that is indirectly contained in the student query scores.
+teacher examples,student query scores,Teacher examples indirectly contain information that is extracted from the student query scores.
+student query scores,lira,Similar approach to combine queries is used by LiRA in the adaptation to the setting.
+teacher example,gaussian distribution,A Gaussian distribution is fitted to the logits of each student example for each teacher example.
+teacher example,lira,LiRA is calibrated using the teacher label logit rather than the student label logit due to more influence of the teacher example on the teacher label logit.
+student example,gaussian distribution,The examples are used to fit Gaussian distributions to infer the memberships.
+teacher example,informative student examples,Many uninformative student examples for each teacher example are filtered to improve performance.
+teacher example,student queries,Student queries are filtered for all teacher examples based on the largest mean gap
+teacher,information,"The teacher's information is encoded in the student queries, showing the relationship between the two concepts"
+student queries,private information,"Student queries leak private information, indicating a direct relationship between the two concepts"
+membership inference accuracy,shadow models,"The membership inference accuracy is plotted after distillation using student query attack with 4000 shadow models, highlighting the relationship between the two concepts"
+membership inference accuracy,examples,"There is a high variance in student model membership inference accuracy across different examples, suggesting a relationship between the accuracy and the examples"
+vulnerability,queries,"There is a decay in vulnerability with queries, which is dataset-dependent and example-dependent, indicating the relation between the vulnerability and queries"
+access,student models,"Prior attack with access to the student models is mentioned, showing the relationship between access and student models"
+attack,student models,"The prior attack with access to the student models outperformed this attack, indicating a relation in terms of performance and effectiveness."
+student model,training,"Training a student model makes it easier to extract private information from student queries, suggesting a relationship between training and data extraction."
+student model,student queries,"The process of training a student model makes it easier to extract private information from student queries by interpolating between them, establishing a relationship in terms of data extraction."
+modifications,student query attack,"The modifications made for the student query attack significantly improve membership inference, indicating a close relationship in terms of effectiveness."
+modifications,tpr,"Applying both modifications achieves a TPR of 10^-3 at a FPR of 10^-4, suggesting a strong relationship between modifications and True Positive Rate."
+modifications,fpr,"Applying both modifications achieves a TPR of 10^-3 at a FPR of 10^-4, indicating a correlation between modifications and False Positive Rate."
+ablations,membership information,"Our ablations shed light on where membership information is contained in distillation’s dark knowledge, hinting at a relationship in terms of insight and understanding."
+logit,teacher label,"Membership information in distillation's dark knowledge is predominantly in the logit corresponding to the teacher label, showing a direct relationship between the two."
+student queries,bird class,"In the example with the parrot, only two student queries were also in the bird class, emphasizing the importance of label scores in relation to student queries."
+student,query,"Students queries mentioned in several sections of the context show a relationship between students and queries, indicating their importance in various attacks."
+teacher,example,"Teacher examples are discussed in relation to vulnerable examples, showing a relationship between teachers and examples."
+attack,leakage,"Various types of attacks are discussed in terms of their impact on privacy leakage, indicating a clear connection between the two."
+indirect,queries,"The discussion on indirect queries highlights their impact on privacy risk, showing how these queries are related to the overall context."
+student query attack,near-duplicates,"The performance of the student query attack is compared between near-duplicates removed from CIFAR-10, indicating a relationship in the success rate of the attack."
+student query attack,deduplication,"Comparison is made between duplicated and deduplicated student query attacks in terms of attack success rate, highlighting the impact of deduplication on privacy risk reduction."
+teacher examples,duplicate student examples,Teacher examples with duplicate student examples are analyzed to determine the membership information carried in student queries that are duplicates of teacher examples.
+student examples,teacher examples,Duplicates of teacher examples among student examples are identified as carrying membership information in their queries.
+deduplication,privacy risk,"Significant reduction in privacy risk is observed with deduplication, although indirect queries can still pose a threat by carrying membership information."
+student attacks,duplication,Duplication in student attacks is shown to worsen the attacks based on the displayed Figure 11.6.
+teacher set poisoning,data poisoning attacks,"Data poisoning attacks introduced into a training set can increase the vulnerability for other examples in the training set, according to Tram`er, Shokri, San Joaquin, Le, Jagielski, Hong, Carlini, Chen, Shen, Shen, Wang, Zhang."
+distillation,poisoning in the teacher set,The interaction between distillation and poisoning in the teacher set is explored to measure the effect of poisoning on examples' vulnerability in teacher predictions.
+poisoning counts,teacher membership inference accuracy,Higher poisoning counts lead to an increase in teacher membership inference accuracy for many examples in the study.
+poisoning counts,teacher membership inference accuracy,Higher poisoning counts are related to higher teacher membership inference accuracy as they shift to the right on the x-axis.
+poisoning,teacher vulnerability,"Poisoning does not impact the relationship between teacher vulnerability and student vulnerability, as they move upward on the y-axis identically."
+poisoning,student vulnerability,"Poisoning does not impact the relationship between teacher vulnerability and student vulnerability, as they move upward on the y-axis identically."
+poisoning attack,student query set,"The poisoning attack does not specifically target the student query set, leading to an interesting open question about the existence of poisoning attacks that could increase membership leakage on the student model."
+poisoning attack,teacher model's vulnerability,"It is an interesting open question whether poisoning attacks exist that could increase membership leakage on the student model, with potential impact on the teacher model's vulnerability."
+adversary,student query set,"If an adversary can poison the student set by adding duplicates of target examples, the resulting student queries will increase risk on those target teacher examples."
+knowledge distillation,temperature scaling,"When introducing knowledge distillation, a modification known as temperature scaling was proposed by Hinton, Vinyals, Dean, et al., which makes two simple changes to distillation."
+temperature scaling,temperature hyperparameter,"Temperature scaling involves introducing a temperature hyperparameter H, which when increased, rescales the logits and flattens the resulting probability distribution of student queries."
+temperature scaling,gradients,"Temperature scaling also involves rescaling gradients by a 1/H 2 factor, which can improve performance by modifying this parameter."
+temperature,performance,Modifying the temperature parameter can improve performance.
+modifying,performance,Modifying the parameter can improve performance.
+manipulation,teacher outputs,Manipulation of the teacher outputs might improve empirical privacy.
+temperatures,distillation-based defense,High temperature reduces private information.
+temperatures,student models,Lower temperatures are less vulnerable than higher temperatures.
+model accuracy,temperatures,Model accuracy at different temperatures is similar.
+entropy,query probabilities,Entropy of query probabilities decreases when H is small.
+accuracy decrease,high temperatures,Accuracy decrease resulted from high temperatures.
+adversary,student queries,Difference between an adversary with access to student queries and one who only has access to a student model.
+access,temperature-scaled student logits,With access to temperature-scaled student logits.
+student model,temperature-scaled student logits,The student model has access to temperature-scaled student logits. Adversaries can reverse the scaling of temperature-scaled student logits by multiplying them by H.
+temperature,attacks,"Low temperatures lead to weaker attacks on the student model. However, the process of reversing these attacks is unknown."
+lira,student model's logits,"LiRA accounts for rescaling the student model's logits, making it scale-invariant."
+temperature-scaled student model,adaptive attacks,An interesting open question is how to adaptively attack temperature-scaled models.
+teacher dataset,student dataset,There may be a distribution drift between the teacher and student datasets when sensitive teacher data and non-sensitive student data are from the same distribution.
+cifar-10,cifar-100,CIFAR-10 teacher model distilled with a CIFAR-100 student set results in improved attack performance despite differences in class overlap and size.
+model accuracy,distilling on in-distribution data,Distilling with a different dataset can improve attack performance even though the resulting model is somewhat less accurate than when distilled on in-distribution data.
+teacher model predictions entropy,attack performance improvement,Higher entropy in the teacher model predictions leads to an improvement in attack performance.
+distribution data,entropy,The higher entropy of the teacher model predictions influences the distribution data due to encoding more membership information.
+entropy,teacher model predictions,The higher entropy of the teacher model predictions allows for encoding more membership information.
+cifar-100,cifar-10,Results show that CIFAR-10 student set results in lower leakage compared to CIFAR-100. Increasing entropy in CIFAR-100 leads to higher leakage.
+cifar-10,leakage,CIFAR-10 student set results in the lowest leakage among others.
+cifar-100,privacy leakage,A CIFAR-100 student set results in more privacy leakage than a CIFAR-10 student set due to increased entropy in CIFAR-100 predictions.
+privacy preserving training algorithms,privacy-utility tradeoff,Privacy preserving training algorithms commonly exhibit a 'privacy-utility' tradeoff where stronger privacy leads to worse predictive performance.
+model's predictive performance,privacy enforced by the model,There is a tradeoff between stronger privacy enforced by the model and the model's predictive performance.
+models,section 6,Models trained throughout Section 6 are mentioned in the context
+attack performance,model accuracy,Differences in attack performance are mentioned in relation to changes in model accuracy
+temperature,vulnerability to attacks,Increasing temperature increases vulnerability to attacks
+temperature,model accuracy,Increasing temperature does not significantly impact model accuracy
+distribution drift,vulnerability to attacks,Distribution shift leads to higher vulnerability to attacks
+distribution drift,model accuracy,Distribution shift reduces model accuracy
+deduplication,vulnerability to attacks,Deduplication reduces vulnerability to attacks
+deduplication,model accuracy,Deduplication increases model accuracy slightly
+membership inference attacks,knowledge distillation,Membership inference attacks are used to evaluate the extent to which knowledge distillation protects the privacy of training data
+model distillation,privacy improvement,Model distillation can improve privacy
+average-case privacy,worst-case vulnerable examples,average-case privacy can significantly improve after distillation while worst-case vulnerable examples often see only marginal benefits
+teacher model,differentially private training,"techniques which make the teacher model more private, such as differentially private training, should be seen as complementary to distillation"
+student training set,model distillation,the student training set should not be seen to have improved privacy as a result of model distillation
+privacy properties of distillation's dark knowledge,privacy attacks on model extraction attacks,"our work offers insights into the privacy properties of distillation's dark knowledge, which may be of broader interest, and imply privacy attacks on model extraction attacks which rely on similar algorithms to knowledge distillation"
+limitations of our work,strong threat model,"the main limitation of our work is the strong threat model under which our attacks work, using the same threat model as the 'online' version of the LiRA attack"
+student query attack,shadow models,the large running time of the student query attack from Section 5 requires thousands of shadow models to obtain good performance
+distillation,membership information,Distillation propagates membership information
+distillation,future work,Distillation leaves future work to attempt to improve the attack's efficiency
+work,attack,Future work aims to improve the attack's efficiency
+acknowledgements,andreas terzis,Acknowledgements for helpful comments on the work from Andreas Terzis
+acknowledgements,andreas schou,Acknowledgements for helpful comments on the work from Andreas Schou

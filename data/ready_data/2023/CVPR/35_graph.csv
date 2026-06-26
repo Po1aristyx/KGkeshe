@@ -1,0 +1,181 @@
+node_1,node_2,edge
+neural radiance field (nerf),camera poses,NeRF is optimized jointly with camera poses in forward-facing scenes.
+neural radiance field (nerf),undistorted monocular depth priors,Undistorted monocular depth priors are incorporated to improve camera movement handling.
+undistorted monocular depth priors,relative poses between consecutive frames,Monocular depth priors help in constraining the relative poses between consecutive frames.
+neural radiance field (nerf),3d geometry reconstruction,NeRF is used for generating photo-realistic images from novel viewpoints with accurate 3D geometry reconstruction.
+neural radiance field (nerf),camera parameters estimation,NeRF training requires the estimation of camera parameters for input images.
+camera poses,structure-from-motion,Structure-from-motion is a popular option for estimating camera parameters.
+camera parameters,input images,The camera parameters need to be estimated for the input images.
+structure-from-motion (sfm) library colmap,estimation of camera parameters,COLMAP is a popular library used for estimating camera parameters for input images.
+colmap,nerf research,COLMAP could be an obstacle to NeRF research due to its long processing time and lack of differentiability.
+nerfmm,camera poses and neural implicit representation,NeRFmm proposes to optimize camera poses and neural implicit representation simultaneously.
+barf,camera poses and neural implicit representation,BARF also proposes to optimize camera poses and neural implicit representation.
+sc-nerf,camera poses and neural implicit representation,SC-NeRF proposes to optimize camera poses and neural implicit representation as well.
+camera poses,input image,"Methods like NeRFmm, BARF and SC-NeRF optimize camera poses for input images."
+slam,pose estimation,The literature of Simultaneous localisation and mapping (SLAM) shows that pose estimation can benefit from estimating relative poses between images.
+radiance field,shape-radiance ambiguity,The radiance field is known to suffer from shape-radiance ambiguity.
+camera parameters,nerf,"Estimating camera parameters jointly with NeRF adds ambiguity, resulting in slow convergence and unstable optimization."
+large camera motion,monocular depth estimation,"To handle the limitation of large camera motion, monocular depth estimation can be helpful."
+monocular depth estimation,constraint shape-radiance ambiguity,Monocular depth estimation provides strong geometry cues that are beneficial to constrain shape-radiance ambiguity.
+monocular depth estimation,relative poses between adjacent depth maps,Relative poses between adjacent depth maps can be easily injected into the training pipeline via Chamfer Distance due to monocular depth estimation.
+monocular depth estimation,multi-view stereo depth estimation,"Monocular depth estimation does not require camera parameters as input, in contrast to multi-view stereo depth estimation."
+monocular depth estimation,mono-depth,The term mono-depth is used for simplicity in reference to monocular depth estimation.
+mono-depth maps,multi-view consistent depth maps,"Mono-depth maps are not multi-view consistent; however, they are transformed to undistorted multiview consistent depth maps by explicitly optimizing scale and shift parameters during NeRF training."
+mono-depth maps,nerf training,Mono-depth maps are taken into a depth-wise loss along with NeRF training in previous works.
+mono-depth maps,rendered depth,Scale and shift parameters for each mono-depth map are explicitly optimized during NeRF training by penalizing the difference between rendered depth and mono-depth.
+nerf,multiview consistency,"NeRF is trained based on multiview consistency, which transforms mono-depth maps into undistorted multiview consistent depth maps."
+multiview consistent depth maps,loss terms: a) chamfer distance loss,Multiview consistent depth maps are leveraged in two loss terms: a) a Chamfer Distance loss between two depth maps of adjacent images.
+multiview consistent depth maps,loss terms: b) depth-based surface rendering,Multiview consistent depth maps are leveraged in two loss terms: b) a depth-based surface rendering.
+depth maps,images,"Two depth maps of adjacent images are mentioned, indicating a relationship between the two concepts."
+depth maps,relative pose,"Depth maps inject relative pose to the system, showing a connection between depth maps and relative pose."
+depth-based surface rendering loss,relative pose estimation,"The depth-based surface rendering loss improves relative pose estimation, linking the two concepts."
+camera poses,nerf,"The method optimizes camera poses and a NeRF jointly, suggesting a relationship between camera poses and NeRF."
+camera poses,sequence of images,"The camera poses are optimized from a sequence of images with large camera motion, indicating a connection between camera poses and sequence of images."
+mono-depth,unposed-nerf training,"The mono-depth is integrated into unposed-NeRF training by modeling scale and shift distortions explicitly, linking mono-depth and unposed-NeRF training."
+relative poses,camera-nerf joint optimization,"Relative poses are supplied to the camera-NeRF joint optimization, suggesting a relationship between relative poses and camera-NeRF joint optimization."
+relative pose estimation,depth-based surface rendering loss,"The relative pose estimation is regularized with a depth-based surface rendering loss, indicating a connection between relative pose estimation and depth-based surface rendering loss."
+camera motion,method performance,"The method is able to handle large camera motion, leading to improved performance, suggesting a relationship between camera motion and method performance."
+state-of-the-art methods,method,"The method outperforms state-of-the-art methods, showcasing a comparison between state-of-the-art methods and the method."
+novel view synthesis,interpolations,"Early Novel View Synthesis approaches applied interpolations between pixels, linking Novel View Synthesis and interpolations."
+nerf,photorealistic rendering,"NeRF has become popular for its photorealistic rendering, indicating a characteristic of NeRF."
+nerf,scene representation,"NeRF is a popular scene representation, associating NeRF with scene representation."
+nerf's performance,additional regularisation,"Techniques are proposed to improve NeRF's performance with additional regularisation, linking NeRF's performance with additional regularisation."
+nerf,performance,"NeRF's performance is improved with additional regularisation, depth priors, surface enhancements, or latent codes."
+nerf,camera parameters,Most approaches require pre-computed camera parameters obtained from SfM algorithms.
+camera parameters,sfm algorithms,Pre-computed camera parameters are obtained from SfM algorithms.
+pose estimation,nerf,iNeRF shows that poses for novel view images can be estimated using a reconstructed NeRF model.
+generative adversarial networks,nerf,GNeRF combines Generative Adversarial Networks with NeRF to estimate camera poses.
+camera intrinsics,nerf,NeRFmm jointly optimises both camera intrinsics and extrinsics alongside NeRF training.
+camera distortion,geometric loss,SC-NeRF parameterises camera distortion and employs a geometric loss to regularise rays.
+nerf,camera distortion,NeRF parameterises camera distortion and employs geometric loss to regularise rays.
+garf,gaussian-mlps,GARF shows that using Gaussian-MLPs makes joint pose and scene optimisation easier and more accurate.
+sinerf,siren layers,SiNeRF uses SIREN layers and a novel sampling strategy to alleviate the sub-optimality of joint optimisation in NeRFmm.
+sinerf,nerfmm,SiNeRF uses SIREN layers and a novel sampling strategy to alleviate the sub-optimality of joint optimisation in NeRFmm.
+llff,forward-facing dataset,LLFF shows promising results on the forward-facing dataset.
+mono-depth maps,joint optimisation,We address the issue by closely integrating mono-depth maps with the joint optimisation of camera parameters and NeRF.
+unposed-nerf training,large camera motions,We tackle the challenge of handling large camera motions in unposed-NeRF training.
+images,camera poses,Our method takes a sequence of images as input to reconstruct NeRF and jointly estimates the camera poses.
+images,nerf,Our method takes a sequence of images as input to reconstruct NeRF and jointly estimates the camera poses.
+images,camera poses,Our method takes a sequence of images as input to reconstruct NeRF and jointly estimates the camera poses.
+images,nerf,Our method takes a sequence of images as input to reconstruct NeRF and jointly estimates the camera poses.
+monocular depth maps,point clouds,"Monocular depth maps are generated from a mono-depth estimation network, and point clouds are reconstructed from these depth maps."
+monocular depth maps,depth maps,"The distortion parameters are supervised by minimizing the discrepancies between the mono-depth maps and depth maps rendered from NeRF, which are multiview consistent."
+point clouds,nerf,"The undistorted depth maps provide constraints for NeRF optimization, and the camera poses by restricting the shape-radiance ambiguity, which eases the training process."
+nerf,camera poses,"NeRF and camera poses are optimized jointly with inter-frame and NeRF losses, improving the accuracy of the camera poses for the scene representation."
+nerf,loss terms,"The method details NeRF in Section 3.1 and unposed-NeRF training in Section 3.2, emphasizing the importance of loss terms in the overall training pipeline."
+nerf,training pipeline,"NeRF discussions start in Section 3.1 and conclude with an overall training pipeline in Section 3.5, demonstrating the methodological progression in the training process."
+nerf,scene,NeRF represents a scene as a mapping function that maps a 3D location and a viewing direction to a radiance colour and a volume density value.
+nerf,mapping function,NeRF is implemented with a mapping function parameterised by a neural network.
+nerf,optimised,NeRF can be optimised by minimising photometric error in rendering.
+nerf,camera poses,NeRF optimisation includes camera poses in the rendering process.
+nerf,joint optimisation,Prior works show that NeRF can be optimised jointly with camera parameters by minimising photometric error.
+joint optimisation,camera parameters,The key in joint optimisation lies in conditioning camera ray casting on variable camera parameters.
+camera parameters,camera poses,"Camera parameters, denoted as Π, include camera intrinsics, poses, and lens distortions. In this work, only camera poses are estimated, represented by a transformation Ti = [Ri"
+mono-depth sequence,multi-view consistent depth maps,Mono-depth sequence D = {Di
+multi-view consistent depth map,undistorted depth maps,"A multi-view consistent depth map D∗i for Di is recovered using linear transformation parameters (αi, βi) for each mono-depth map. The undistorted depth maps are back-projected using known camera intrinsics to point clouds for optimisation."
+point clouds,camera intrinsics,point clouds are mapped using the known camera intrinsics
+point clouds,relative pose,the relative pose between consecutive point clouds is optimized
+consecutive pair of instances,chamfer distance,Chamfer Distance is used for point cloud loss calculation for consecutive pair of instances
+point cloud,surfaced-based photometric loss,surface-based photometric loss is used in addition to point cloud loss for supervision in matching
+point cloud,photometric consistency,photometric error penalizes differences in appearance between associated pixels based on photometric consistency
+point cloud,projection matrix,point cloud is projected onto images using a projection matrix
+point cloud,camera,point cloud is projected onto images using camera parameters
+overall loss function,nerf parameters,NeRF parameters are optimized by minimizing the overall loss function
+method,nerf,"Our method returns the optimised NeRF parameters Θ, camera poses Π, and distortion parameters Ψ."
+joint optimization,nerf,Joint optimisation is mostly achieved by enforcing the consistency between an undistorted depth map D∗i and a NeRF rendered depth map ˆDi.
+mono-depth,nerf,"Mono-depth provides strong geometry prior for NeRF training, reducing shape-radiance ambiguity."
+nerf,multi-view consistency,NeRF provides multi-view consistency so we can recover a set of multi-view consistent depth maps for relative pose estimations.
+relative pose constraint,unposed-nerf methods,"Penalising incorrect relative poses between frames can help to regularise the joint optimisation towards smooth convergence, especially for aforementioned unposed-NeRF methods."
+rect relative poses,frames,Relative poses between frames are used to regularize joint optimization towards smooth convergence.
+losses,relative poses,The losses proposed aim to constrain relative poses.
+novel view synthesis,depth prediction,Qualitative results of novel view synthesis and depth prediction are shown on Tanks and Temples dataset.
+synthesised images,depth maps,Images and depth maps are visualized for all methods in the qualitative results.
+scenes,tanks and temples,Experiments are conducted on two datasets: Tanks and Temples and ScanNet.
+scenes,scannet,Experiments are conducted on two datasets: Tanks and Temples and ScanNet.
+indoor,outdoor,Scenes captured at both indoor and outdoor locations are used for evaluation.
+nerf,scenes,Novel view synthesis is conducted following NeRF on the scenes.
+nerf,sequences,Novel view synthesis is conducted following NeRF on the sequences.
+nerf,motion,Performance analysis is done under smooth motion following NeRF.
+scannet,pose accuracy,ScanNet dataset is used for evaluating pose accuracy.
+scannet,depth accuracy,ScanNet dataset is used for evaluating depth accuracy.
+scannet,novel view synthesis,ScanNet dataset is used for evaluating novel view synthesis quality.
+images,novel view synthesis,1/8 of the images in each sequence are held out for novel view synthesis.
+images,evaluation,Images are used for evaluation.
+depth maps,poses,Depth maps and poses are employed for evaluation.
+images,novel view synthesis,Images are used for novel view synthesis in the evaluation process.
+depth maps,poses,Depth maps and poses provided by ScanNet are used for evaluation as ground truth.
+images,down-sampled,ScanNet images are down-sampled to 648 × 484 during preprocessing.
+poses,evaluation,Poses are used for evaluation of the proposed method in different aspects.
+method,evaluation,The proposed method is evaluated with standard evaluation metrics for novel view synthesis.
+method,pose evaluation,The proposed method is also evaluated for pose using visual odometry metrics.
+ate,ground truth positions,Absolute Trajectory Error (ATE) measures the difference between estimated camera positions and ground truth positions.
+rpe,image pairs,Relative Pose Error (RPE) measures relative pose errors between pairs of images.
+depth metrics,evaluation,Standard depth metrics are used for evaluation of depth.
+metric scale,median value,Metric scale is recovered by matching the median value between rendered and ground truth depth maps.
+model architecture,nerf,The model architecture is based on NeRF with some modifications.
+nerf,relu activation function,NeRF model architecture is based on ReLU activation function with a few modifications
+nerf,softplus,"NeRF model architecture is based on NeRF with a few modifications, one being replacing ReLU activation function with Softplus"
+nerf,adam optimisers,We use 2 separate Adam optimisers for NeRF and other parameters
+nerf,initial learning rate,The initial learning rate for NeRF is 0.001
+nerf,pose and distortion learning rate,The initial learning rate for the pose and distortion is 0.0005
+nerf,rgb loss,We remove the inter-frame losses and depth loss to refine the model with the RGB loss only
+nerf,training step,"For each training step, we randomly sample 1024 pixels (rays) from each input image and 128 samples per ray"
+nerf,epoch,"We decay the learning rates with different schedulers to refine for 10,000 epochs"
+nerf,loss terms,"We balance the loss terms with λ1 = 0.04, λ2 = 1.0 and λ3 = 1.0"
+nerf,camera poses,"To obtain the camera poses of Figure 4, we compare our method with pose-unknown baselines"
+pose-unknown baselines,barf,"We compare our method with pose-unknown baselines, including BARF"
+pose-unknown baselines,nerfmm,"We compare our method with pose-unknown baselines, including NeRFmm"
+pose-unknown baselines,sc-nerf,"We compare our method with pose-unknown baselines, including SC-NeRF"
+ballroom,method,"The method discussed in the context involves Ballroom, indicating a relationship between the two concepts."
+museum,method,"The method discussed in the context involves Museum, indicating a relationship between the two concepts."
+method,colour bar,"The method discussed in the context involves the relative scaling of colour, indicated by the colour bar, showing a relationship between them."
+nerfmm,lpips,There is a relationship between NeRFmm and LPIPS with a scaling of 0.54.
+sc-nerfssim,lpips,There is a relationship between SC-NeRFSSIM and LPIPS with a scaling of 22.50.
+pose,nerf model,"The test pose is initialized based on the learned pose of the training frame closest to it while keeping the NeRF model fixed, indicating a relationship between Pose and NeRF model."
+baseline method,evaluation protocol,"Each baseline method is evaluated using the same evaluation protocol, indicating a relationship between Baseline method and Evaluation protocol."
+quantitative results,qualitative results,The quantitative results summarized in Tab. 1 and the qualitative results shown in Fig. 3 indicate a relationship between Quantitative results and Qualitative results.
+test views,training views,"The test views sampled from videos are close to the training views, leading to potential overfitting and good results, indicating a relationship between Test views and Training views."
+novel views,training poses,"Additional qualitative evaluation is conducted on more novel views by fitting a bezier curve from the estimated training poses, indicating a relationship between Novel views and Training poses."
+camera pose,method,The method significantly outperforms other baselines in all metrics related to camera pose evaluation
+colmap,tanks and temples,COLMAP estimations are used as reference poses in Tanks and Temples where ground truth poses are not available
+depth estimation,baseline models,"Our depth estimation is more accurate than baseline models such as BARF, NeRFmm, and SC-NeRF"
+dpt,depth estimation,"Compared with DPT, our depth estimation is shown to be more accurate after undistortion"
+estimated rotation,camera trajectories,Our estimated rotation is two orders of magnitudes more accurate than others when visualising camera trajectories and rotations
+camera trajectories,rotations,These terms are related as camera trajectories involve the movement path and rotations represent the orientation changes of the camera during the process.
+rendered depth maps,ground-truth depths,"The rendered depth maps are evaluated based on the ground-truth depths provided by ScanNet, indicating a relationship between the accuracy of rendered depth maps and the actual depths."
+rendered depth maps,mono-depth maps,"A comparison is made between the rendered depth maps and the mono-depth maps estimated by DPT, highlighting the superiority of the rendered depth maps after undistortion using multiview consistency in the NeRF optimisation."
+rendered depth maps,dpt,"The rendered depth maps outperform DPT by a large margin after undistortion using multiview consistency in the NeRF optimization, indicating a performance comparison between the two methods."
+method,colmap,"A comparison is made between the pose estimation accuracy of the method and COLMAP against ground truth poses in ScanNet, demonstrating a relationship in terms of accuracy assessment."
+nerf model,colmap poses,"The NeRF model trained with learned poses is compared to COLMAP poses on ScanNet and Tanks and Temples for novel view synthesis quality analysis, showcasing a relationship between the two methods in scene representation."
+method,trajectory,The learned trajectory is fitted with a bezier curve in each method
+method,viewpoints,New viewpoints are uniformly sampled for rendering in each method
+method,results,The method generates significantly better results than previous methods
+method,artifacts,"The previous methods show visible artifacts, but our method does not"
+method,nerf model,The NeRF model is trained from scratch using the same settings and loss as the original NeRF in each method
+method,colmap poses,The estimated poses are compared to the COLMAP poses indirectly in each method
+method,view synthesis,The COLMAP-assisted NeRF baseline is outperformed by our method in terms of pose estimation for novel view synthesis
+colmap,low-texture scenes,COLMAP performs poorly in low-texture scenes and sometimes fails to find accurate camera poses
+colmap,artifacts,"In a low-texture scene, COLMAP provides inaccurate pose estimation that causes NeRF to render images with visible artifacts"
+method,camera pose,Our method renders high-quality images due to robust optimization of camera pose
+colmap,poses,"COLMAP fails to estimate correct poses, which results in artifacts in synthesised images."
+ours,ours-r,Our two-stage method (Ours-r) outperforms both COLMAP+NeRF and our one-stage method (Ours).
+ours-r,colmap+nerf,Our two-stage method (Ours-r) outperforms both COLMAP+NeRF and our one-stage method (Ours).
+two-stage method,one-stage method,"Interestingly, this experiment also reveals that the two-stage method shows higher accuracy than the one-stage method."
+nerf,poses,"Bad pose initialisation in the NeRF optimisation causes potential local minimum, but the two-stage approach re-initialises NeRF resulting in higher performance."
+paramaters and components,model,"In this section, the effectiveness of the parameters and components added to the model is analysed in the ablation study."
+depth distortions,pose accuracy,Ignoring depth distortions leads to a degradation in pose accuracy as inconsistent distortions introduce errors and confuse NeRF for geometry.
+pose accuracy,inter-frame losses,The inter-frame losses significantly contribute to improving pose accuracy by providing constraints between frames.
+pose accuracy,depth loss,The removal of depth loss leads to drift and degradation in pose accuracy as the distortions of input depth maps are only optimised locally through inter-frame losses.
+camera pose,nerf model,"The proposed method optimises camera pose and the NeRF model jointly, working on challenging scenes and improving pose estimation."
+nope-nerf,camera pose estimation,"NoPe-NeRF is an end-to-end differentiable model for joint camera pose estimation and novel view synthesis, showing effectiveness and robustness on challenging scenes."
+nope-nerf,mono-depth maps,"NoPe-NeRF uses mono-depth maps to constrain relative poses between frames and regularize the geometry of NeRF, leading to better pose estimation."
+robustness,nope-nerf,The robustness of the NoPe-NeRF model is discussed in the context of challenging scenes.
+pose estimation,novel view synthesis,Improved pose estimation leads to better novel view synthesis quality.
+pose estimation,geometry reconstruction,Improved pose estimation also contributes to better geometry reconstruction compared with other approaches.
+model,large-scale scenes,The unknown-pose NeRF models are discussed in the context of applying them to large-scale scenes in the future.
+theo costain,proofreading,Theo Costain is thanked for their helpful proofreading.
+michael hobley,discussions,Michael Hobley is thanked for their helpful discussions.
+shuai chen,proofreading,Shuai Chen is thanked for their helpful proofreading.
+xinghui li,discussions,Xinghui Li is thanked for their helpful discussions.
+wenjing bian,china scholarship council,Wenjing Bian is supported by the China Scholarship Council.
+wenjing bian,university of oxford scholar,Wenjing Bian is supported by the University of Oxford Scholar program.

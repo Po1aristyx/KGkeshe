@@ -1,0 +1,129 @@
+node_1,node_2,edge
+context retrieval,context incorporation,The context discusses a method that efficiently incorporates multiple pieces of context into a model
+vanilla encoder-decoder architecture,context encoding,This architecture separates the process of encoding context and predicting target sequences.
+vanilla encoder-decoder architecture,prediction of target sequence,The model's simplicity allows it to compete with more specialized mechanisms in terms of performance.
+chunked-cross-attention mechanism,language modeling,The model is compared to Chunked-Cross-Attention in terms of language modeling score (bits-per-byte
+efficiency,parameter count and computation cost,The proposed model is more efficient in terms of both parameters and computational resources.
+metrics for measuring context utility,training of the retriever,These metrics guide the training process to optimize the context retrieval component.
+downstream tasks,question answering,The model demonstrates competitiveness on tasks like question answering
+memorization,internal parameters,The model does not rely on memorizing facts but rather utilizes the retrieved context effectively.
+memorization behavior,model size,Memorization contributes to the increase in model size.
+world knowledge,memorization,An alternative to memorization is incorporating world knowledge from external sources.
+external sources,retrieval,Models with external retrieval architectures search a large external key-value store.
+context retriever,external key value store,The context retriever searches the store for relevant context.
+key value store,similarity matching,Keys are used for similarity-based searching
+dense embeddings,keys,Dense embeddings can serve as keys
+values,raw text,Values can be the raw text itself
+tome,dense embedding,TOME stores dense embeddings for entity mentions.
+retro,raw text,Retro retrieves and integrates raw text context.
+vector similarity techniques,searching,These techniques are used to find relevant content within the key-value store.
+retrieval granularity,context integration,Both are components of the context-augmented language model architecture discussed
+token retrieval,context encoding,Token Retrieval is a part of the context retrieval process
+gating decoupled,context encoding,Gating Decoupling implies that the context encoding is separate from the language model's inference at runtime
+encoder-decoder cross-attention,context incorporation,The cross-attention mechanism is used for integrating the language model input with the retrieved context
+client,server,The client sends input to the server
+language model (lm),decoder,The LM and Decoder are jointly trained but operate independently during inference
+targeted applications,architecture,The architecture is designed to cater to specific applications
+figure 1,architecture of context augmented language model,Figure 1 illustrates the overall structure of the model
+table 1,architectural differences,Table 1 compares the architectural aspects of the proposed model with previous retrieval-augmented models
+context encoder,language model decoder,The context encoder (Enc) and language model decoder (Dec) are components in the system. Enc is responsible for encoding input tokens
+input token sequence (x),next tokens (y),The task involves predicting the next tokens (y) in a sequence based on the input token sequence (x).
+retriever,context (c),The retriever is used to identify relevant context (c) given an input token sequence (x).
+encoder output (henc(c)),decoder,The encoder output HEnc is fetched and used by the decoder through cross-attention to influence the final prediction.
+no-retrieval,retrieval,No-retrieval mode operates without incorporating external context
+inference time,online operations,At inference time
+encoder,decoder,The encoder and decoder are jointly trained at training time. They work together for both on- and offline tasks during inference.
+offline retrieval,triplets (x,y
+masking,targets y,During training
+attention matrix,block diagonal,The encoder's attention matrix is block diagonal due to the independence of context encodings
+context,linear loop,Each diagonal block of the attention matrix is processed independently in a linear fashion.
+computation cost,linear in the number of context,Both encoder and decoder's computation cost increases linearly with the number of contexts.
+retriever,approximate nearest neighbor search,During online inference
+retrieval database,key-value pairs,Precomputed encoder outputs and retrieval embeddings are stored in a database for fast access during inference.
+input sequence,cross attention,The decoder uses cross-attention to generate the output sequence
+encoder-decoder context incorporation mechanism,auto-regressive language modeling,The mechanism is used for both tasks
+auto-regressive language modeling,open domain question answering,Both tasks utilize the 'encoder-decoder' setup
+english c4 dataset,auto-regressive language modeling,The model is trained on C4 version 2.2.1 for language modeling
+retrieval database,auto-regressive language modeling,The database is prepared using the train split for both training and evaluation of the language model.
+retro [4],parameter efficiency,Retro serves as a comparison for the more parameter-efficient approach
+client-server scenario,limited client capacity,The parameter-efficient approach is beneficial in scenarios where clients have limited capacity
+c4 val,unfiltered,language model evaluation
+c4 val,filtered,language model evaluation
+nq-open train,question answering task,The NQ-open train split is used for preparing the retrieval database for open domain question answering.
+nq-open dev,question answering task,The NQ-open development set is used for evaluating the performance of the open domain question answering model.
+c4 val,filtered c4 val,The context differentiates between 'C4 Val' and 'filtered C4 Val'
+c4 val,nq-open train,Both 'C4 Val' and 'NQ-open Train' are mentioned as separate datasets
+c4 val,nq-open dev,Similar to 'NQ-open Train'
+c4 val,nq-open test,This is another test dataset in the context
+wiki database,entries,The context discusses the number of entries in the Wiki Database
+c4 auto-regressive lm,natural question qa task,These are two separate tasks
+sliding window processing,retrieval database,The sliding window is used to create the retrieval database
+chunk size,input window size,The context specifies 'chunk size' and 'input window size' as hyperparameters
+c4,retro,C4 and Retro are mentioned as competing or similar approaches
+auto-regressive language model,model sizes,The context discusses different model sizes
+mt5 base,large,and xl
+bit-per-byte (bpb),comparison metric,Bpb is a tokenizer-agnostic metric used to compare models
+context incorporation,encoder-decoder cross attention,The experiment shows that simple Encoder-Decoder cross attention can achieve context incorporation without modifying the model.
+context retrieval,utility function,The goal of context retrieval is to find context sequences that maximize a utility function
+decoupled encoder-decoder,performance,The proposed method is compared to Retro on auto-regressive language modeling and question answering tasks
+natural question,question answering task,The end-to-end results are demonstrated on the Natural Question test.
+limited set of important tokens,external information,Tokens of functional words like 'the'
+log-likelihood,language models,The evaluation measures the difference in log-likelihood of two language models
+c4 (validation split),models,The models are evaluated on the validation split of C4 for performance analysis.
+nltk [3],pos tagging,NLTK is used to assign part-of-speech tags to target tokens for analyzing the impact on different token types.
+noun (nn,nnp,nns
+adjective (jj),impact of context retrieval,Adjectives also showed significant improvement due to context.
+verb (vb,vbz,vbg
+preposition (in),impact of context retrieval,Prepositions are less helped by context since their prediction mainly relies on immediate local context.
+coordinating conjunction (cc),impact of context retrieval,Coordinating conjunctions see minimal improvement from context
+target token,input sequence vs context sequence,The presence or absence of a target token in the context sequence significantly affects the improvements.
+encoder-decoder lm model,training,The model was trained for a total of 1
+warmup steps,standard training schedule,10
+pre-trained models,training from scratch,Fine-tuning on pre-trained models resulted in similar performance to training from scratch
+additional training,lower learning rate,After standard training
+tpuv3 chips,training,Base and large models used 64 TPUv3 chips
+model with retrieval,model without retrieval,The model with retrieval outperformed the one without at some point during training
+performance improvement,retrieval,The performance of larger models (large and XL) significantly improved after incorporating retrieval
+figure 4b,training curve,The figure shows the difference in performance trends between models with and without retrieval.
+decoupled encoder-decoder,t5.1.1 checkpoints,The model weights are initialized from T5.1.1 checkpoints.
+decoupled encoder-decoder,fid,Both decoupled Encoder-Decoder and FiD use a similar architecture
+jointly fine-tuning,train split,The model was jointly fine-tuned on the encoder and decoder with 20 context passages per input.
+validation,dev split,Validation was performed every 1
+learning rate,10^(-4),A fixed learning rate of 10^(-4) was used.
+optimizer,adafactor optimizer,Adafactor optimizer was employed for training.
+training,64 tpuv3 chips,Training occurred on 64 TPUv3 chips.
+evaluation,squad,Evaluation metrics were string exact match with SQuAD normalization.
+natural question task,test split,Final evaluation was done on the test split for the Natural Question task.
+grounded context transfer,natural question,The context transfer is demonstrated on the Natural Question dataset
+original model output,retrieved passages,To assess grounded context transfer
+output changed,remaining context passages,76% of the time
+accuracy,grounded transfer,The accuracy is higher (51.5%) when the model output is from grounded transfer compared to the rest (35.4%).
+model output,inference latency,The evaluation includes computation implications
+inference latency,space-time trade-off,The study also examines the trade-off between latency and memory usage in the context of the model's performance.
+xl model,1.56b parameters,In the Natural Question experiment
+xl model,encoder,The evaluation refers to the specific encoder component of the 1.56B XL model.
+natural question experiment,1.56b xl model,The context describes using the 1.56B XL model in the Natural Question experiment.
+1.56b xl model,table 3b,The model is specified in Table 3b.
+1.56b xl model,encoder output,The model's encoder has a dimension of 2048.
+encoder output,dimension,The output has a dimension of 2048.
+encoder output,bfloat16,The activation data type is bfloat16.
+natural question experiment,tpuv3 core,Profiling shows it takes 200ms to encode on a single TPUv3 core.
+tpuv3 core,encoding time,Encoding time for 20 context passages is 200ms.
+dpr query embedder model,tpuv2 chip,Inference takes around 8ms unbatched on a TPUv2 chip.
+dpr embeddings,approximate similarity search,ScaNN is used for similarity search with a recall@20 of 0.97.
+nvme ssd,reading encoded embeddings,Reading from an NVMe SSD takes around 1.5ms.
+network,transmitting encoded embeddings,Transmission of one encoding over the network takes 0.8ms.
+disk space,network bandwidth,The approach requires a significant amount of disk space and network bandwidth.
+cost and energy consumption,cheaper and consumes less energy,The approach uses generic hardware with lower cost and energy consumption.
+disk space,network bandwidth,relation: requires
+dimensionality of encoder output,disk space,relation: scales with
+dimensionality of encoder output,network bandwidth,relation: scales with
+encoder,compression,relation: possible solution
+encoder,dimensionality reduction,relation: possible solution
+encoder,projection layer,relation: possible addition
+context augmented language model,encoder-decoder architecture,relation: based on
+encoder-decoder models,decoupled computation,relation: property
+context encoding,offline pre-computation,relation: method
+decoder,parameter efficiency,relation: advantage
+language modeling,c4 dataset,relation: task
+question answering,natural questions,relation: task

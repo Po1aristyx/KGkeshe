@@ -1,0 +1,221 @@
+node_1,node_2,edge
+data scraping,social media,Data scraping from social media is mentioned as a means to obtain datasets.
+data scraping,datasets,Data scraping from social media is mentioned as a means to obtain datasets.
+data poisoning attacks,scraping,Data poisoning attacks have been proposed as a bulwark against scraping.
+data poisoning attacks,data,Data poisoning attacks make data unlearnable by adding perturbations.
+methods,unauthorized use of data,Existing methods aim to prevent unauthorized use of data through data poisoning attacks.
+ar poisoning,poisoned data,AR poisoning is introduced as a method to generate poisoned data without access to the broader dataset.
+ar perturbations,datasets,AR perturbations are generic and can be applied across different datasets.
+ar perturbations,architectures,AR perturbations can poison different architectures.
+ar poisons,defenses,AR poisons are more resistant against common defenses such as adversarial training and strong data augmentations.
+analysis,data poison,The analysis provides insight into what makes an effective data poison.
+datasets,state-of-the-art neural networks,Increasingly large datasets are used to train state-of-the-art neural networks.
+datasets,web scraping,Collecting enormous datasets through web scraping makes it intractable for a human to review samples in a meaningful way.
+datasets,consent,Collecting enormous datasets through web scraping makes it intractable to obtain consent from relevant parties.
+commercial facial recognition systems,personal data,Companies have trained commercial facial recognition systems using personal data collected from media.
+facial recognition systems,personal data,Facial recognition systems are already trained using personal data collected from media platforms.
+facial recognition systems,data poisoning,Data poisoning is focused on inducing poor performance for a network trained on the perturbed data.
+data poisoning,neural network,Data poisoning involves crafting malicious perturbations to images to cause erroneous output for a neural network trained on the modified data.
+data poisoning,availability attack,Data poisoning for indiscriminate poisoning to damage average model performance is often referred to as an availability attack.
+poisoner,central server,"Assuming data is hosted on a central server controlled by the poisoner, the poisoner is allowed to perturb the entire dataset."
+data poisoning,unlearnable data,"Perturbing every image in the training dataset is referred to as poisoning, which leads to the creation of unlearnable data."
+data poisoning,backdoor attacks,Data poisoning method differs from backdoor attacks and targeted poisoning attacks.
+autoregressive (ar) data poisoning,neural networks,Autoregressive data poisoning is introduced for degrading overall performance of neural networks on clean data.
+ar(p) process,markov chain,An AR(p) process is described as a Markov chain.
+ar processes,data,AR processes that are data and architecture-independent.
+ar processes,architecture-independent,AR processes that are data and architecture-independent.
+ar(p) process,markov chain,An AR(p) process is a Markov chain.
+markov chain,linear combination,"An AR(p) process is a Markov chain, where each new element is a linear combination of p previous ones, plus noise."
+ar perturbations,cheap to generate,"AR perturbations are cheap to generate, not requiring any optimization or backpropagation through network parameters."
+ar perturbations,generic,AR perturbations are generic; the same set of AR processes can be re-used to.
+ar processes,perturbations,The same set of AR processes can generate perturbations for different kinds of data without access to a surrogate network or other images in a dataset.
+resnet-18,ar poisons,"A ResNet-18 trained on these AR poisons is unable to generalize to clean test data, even with the help of strong data augmentations."
+data poisoning,works,Our method also provides new insight into why data poisoning works.
+poisons,easy to learn,Effective poisons are typically easy to learn and construct AR perturbations which are separable by a manually-specified CNN.
+perturbations,separable,Our manually-specified CNN makes use of what we call AR perturbations which are easily separable.
+ar perturbations,ar filters,"AR perturbations are easily separable. Our manually-speciﬁed CNN makes use of what we call AR ﬁlters, which are attuned to detect noise from a speciﬁc AR process."
+ar filters,ar poisoning,"Our manually-speciﬁed CNN makes use of what we call AR ﬁlters, which are attuned to detect noise from a speciﬁc AR process. AR poisoning’s effectiveness is competitive or better than error-maximizing, error-minimizing, and random noise poisoning across a range of architectures, datasets, and common defenses."
+ar poisoning,indiscriminate poisoning attack,"AR poisoning represents a paradigm shift for what a successful indiscriminate poisoning attack looks like, and raises the question of whether strong indiscriminate poisons need to be generated by surrogate networks for a given dataset."
+error-minimizing noise,neural networks,"To conduct poisoning attacks on neural networks, recent works have modiﬁed data to explicitly cause gradient vanishing [31] or to minimize the loss with respect to the input image [18]. Images perturbed with error-minimizing noises are a surprisingly good data poisoning attack."
+error-maximizing noise,neural networks,"To conduct poisoning attacks on neural networks, recent works have modiﬁed data to explicitly cause gradient vanishing [31] or to minimize the loss with respect to the input image [18]. Images perturbed with error-minimizing noises are a surprisingly good data poisoning attack."
+resnet-18,cifar-10,"A ResNet-18 (RN-18) trained on a CIFAR-10 [20] sample-wise error-minimizing poison achieves 19.9% final test accuracy, while the class-wise variant achieves 16.4% final test accuracy after 60 epochs of training [18]."
+strong adversarial attacks,clean data,"More recently, strong adversarial attacks, which perturb clean data by maximizing the loss with respect to the input image, have been shown to be the most successful approach thus far [10]."
+cifar-10,test accuracy,"A correlation exists between CIFAR-10 dataset and the test accuracy obtained, indicating the performance of the model"
+poison,network,The creation of poisons for error-minimizing and error-maximizing purposes requires a surrogate network to optimize perturbations
+poison,optimization,"Perturbations for poisons are optimized using a surrogate network, which can be an expensive process"
+cifar-10,poison,"Crafting the main CIFAR-10 poison can be time-consuming, taking roughly 6 hours on 4 GPUs"
+ar perturbations,network parameters,"AR perturbations do not require access to network parameters, allowing for quick generation without backpropagation or GPU usage"
+error-minimizing perturbations,error-maximizing perturbations,A technical overview of error-minimizing and error-maximizing perturbations is provided in Section 3.1 on Random Noise
+random noise,data poisoning,"Random noises have been explored as baselines for data poisoning, used as perturbations to manipulate the model"
+rn-18,cifar-10 poison,An RN-18 trained on CIFAR-10 poison through random noise application can still generalize to the test set with approximately 90% accuracy
+rn-18,chance accuracy,"If the noise is applied class-wise, a RN-18 trained on the CIFAR-10 poison will achieve around chance accuracy of ~10%"
+random perturbations,uniform patch regions,"Random perturbations consist of a fixed number of uniform patch regions, similar to the class-wise poison known as 'Regions-16'"
+ar poisons,test performance,"AR poisons degrade test performance more than error-maximizing, error-minimizing, and random poisons on almost every architecture"
+ar poisons,strong data augmentations,AR poisons are effective against strong data augmentations and can even mitigate some effects of adversarial training
+poisons,learned quickly,poisons which are learned quickly have a more harmful effect on the poison-trained network
+poisons,training loss,"perturbations help minimize the training loss, the more effective the poison is"
+ar perturbations,provably separable and markovian in local regions,designing AR perturbations that are provably separable and Markovian in local regions
+poisons,gradient alignment,[9] propose to employ gradient alignment [11] to generate poisons
+gradient alignment,poisons,The proposal is to employ gradient alignment to generate poisons.
+gradient alignment,computationally expensive,Employing gradient alignment is computationally expensive; it requires a surrogate model to solve a bi-level objective.
+poisons,generation of an unlearnable dataset using neural tangent kernels,The proposal involves the generation of an unlearnable dataset using neural tangent kernels for poisons.
+unlearnable dataset,surrogate model,The method requires training a surrogate model and takes a long time to generate the unlearnable dataset.
+invertible transformation,control learnability of a dataset for authorized users,The proposal is to use an invertible transformation to control the learnability of a dataset for authorized users.
+data poisoning methods,adversarial training,It has been shown that data poisoning methods can be broken using adversarial training.
+ar poisons,focus on adversarial training,The AR poisons do not focus on adversarial training.
+ar poisons,competitive performance,"Despite not focusing on adversarial training, AR poisons demonstrate competitive performance."
+data poisoning methods,perturb the entire training dataset,"A thorough overview of data poisoning methods, including those that do not perturb the entire training dataset, can be found in a specific source."
+dnns,k-class classification task,DNNs are used for the K-class classification task
+dnns,clean training and test datasets,DNNs are trained on clean training and test datasets
+dnns,parameters ✓,DNNs have parameters denoted by ✓
+dnns,dp,DNNs are trained on Dp
+dnns,test set,DNNs perform poorly on the test set
+dnns,n samples in the clean training set,DNNs trained on clean training set contain n samples
+dnns,labels yi,DNNs are associated with labels yi
+dnns,poisons,DNNs are used to create poisons
+k-class classification task,clean training and test datasets,K-class classification task involves clean training and test datasets
+clean training and test datasets,parameters ✓,Clean training and test datasets are associated with parameters ✓
+class-wise poisons,model,Class-wise poisons trick the model to learn the perturbation over the image content
+sample-wise poisons,training set,Sample-wise poisons are applied to every sample of the training set
+surrogate network,clean training data,The surrogate network is affected by the clean training data in terms of maximizing or minimizing the loss according to the objective
+error-maximizing poisoning,error-minimizing poisoning,"Both methods aim to construct poison to impact the surrogate network on clean training data, but they have opposite goals: maximizing error in one and minimizing it in the other"
+adversary,network,The adversary manipulates the network trained on poison to perform poorly on the test distribution
+autoregressive noise,local regions,Autoregressive noise perturbations have a structure where local regions are Markovian and exhibit linear dependence on neighboring pixels
+poison,clean images,Our algorithm crafts poison by perturbing clean images using additive noise
+autoregressive processes,poison,Autoregressive processes are used to generate the additive noise poison in our method
+ar process,conditional mean,"An autoregressive (AR) process models the conditional mean of xt, as a function of past observations"
+ar model,degree p,An AR process that depends on p past observations is called an AR model of degree p
+ar filter,signal,This filter produces a zero response for any signal generated by the AR process with coefficients
+perturbation,normalized samples,Normalized samples of perturbations are generated by AR processes
+images,class label,"For each class label, a set of AR processes is constructed"
+images,sliding window,"For each class label, an AR process from the set is applied inside a sliding window"
+ar process,initial observations,Using an AR process requires initial observations to populate the perturbation vector
+ar process,perturbation vector,"The AR process requires initial observations, which are populated in the perturbation vector."
+ar process,sliding window,The AR process is applied within the sliding window using a specific process.
+sliding window,ar process,The sliding window starts at a specific point of the AR process and is applied within it.
+ar process,2d array,The AR process involves generating entries in the 2D array.
+ar process,algorithm,The AR process is part of the algorithm described.
+data poisoning,perturbations,Perturbations that are easy to learn have been shown to be more effective at data poisoning.
+signal,network,Signals that are easily interpolated by a network will be quickly identified and used as a shortcut.
+signal,imperceptible perturbations,Seeking imperceptible perturbations that are easy to learn.
+signal,autoregressive signals,"If there exists a simple CNN that can classify autoregressive signals perfectly, then these signals will be easy to learn."
+cnn,autoregressive signals,Signals classified perfectly by a simple CNN can serve as a shortcut for learning by commonly-used CNNs.
+perturbations,ar perturbations,"Demonstrating separability of autoregressive perturbations, despite looking visually complex, as actually very simple."
+filtres,ar perturbations,AR filters satisfy an important Lemma 3.1 when cross-correlation operator produces a zero response.
+noise,ar process,Construction of an AR filter that produces a zero response for any noise generated from the corresponding AR process.
+ar filtre,signals,Constructing a CNN that uses solely these AR filters to classify signals.
+perturbation,ar process,AR filter can correctly designate the AR process from which the perturbation was made.
+ar filter,ar process,The AR filter is correctly designated with zero response in the AR process. This relationship is crucial for verifying the claim made in Appendix A.2.
+ar process,perturbation,The AR process generates perturbations which are classified by a 3-layer CNN. This relationship is important for understanding the classification process.
+model,clean data,"The model is interested in learning classes of clean data perturbed by AR signals, indicating a relationship between the two concepts."
+ar perturbations,3-layer cnn,"AR perturbations are specified by a 3-layer CNN, demonstrating that they can serve as bait for CNNs. This relationship highlights the impact of AR perturbations on the CNN model."
+experiments,training dataset,The experiments seek to perturb each sample in the training dataset with AR perturbations to induce a learning shortcut. This relationship is essential for understanding the experimental design.
+training loss,generalization,The goal is to minimize the training loss but prevent generalization by inducing a learning shortcut with AR perturbations. This relationship highlights the trade-off between training loss and generalization.
+ar processes,random search,AR processes are generated using a random search method that promotes diversity. This relationship highlights the generation process of AR processes.
+coefficient vector,ar filter,"The coefficient vector is used to produce the AR filter, which is convolved with perturbations. This relationship demonstrates the role of coefficient vectors in generating AR filters."
+convolution outputs,similarity,The norms of convolution outputs are used as a measure of similarity between AR processes. This relationship highlights the evaluation metric for AR processes.
+resulting convolution outputs,measure of similarity between processes,The resulting convolution outputs are used as a measure of similarity between processes.
+minimum,cutoff t,"If the minimum of these norms is below a cutoff T, the process is considered."
+coefﬁcients,ar process,The coefﬁcients of the AR process are identified for a class.
+perturbation,image,Coefﬁcients of the AR process are used to produce a perturbation for each image in the class.
+perturbation,✏,The perturbation is scaled to be exactly of size ✏ in the `2-norm.
+poisoning methods,`2 norm,"To level the playing field among all poisoning methods, all perturbations are measured using `2 norm."
+ar poisoning,clean test data,AR poisons can degrade a network’s accuracy on clean test data.
+strong data augmentations,ar poisoning,"Strong data augmentations are an effective defense against all poisons, but AR poisoning is largely resistant."
+adversarial training,clean data,Adversarial training and diluting the poison with clean data remain strong defenses against poisons.
+ar poisoning method,other poisons,AR poisoning method is competitive with other poisons considered.
+poison,network,A poison is effective if it can cause the trained network to have poor test accuracy on clean data
+poison,dataset,All experiments follow the same general pattern: we train a network on a poisoned dataset
+poison,perturbations,"CIFAR-10, and CIFAR-100 poisons considered in this work contain perturbations"
+rn-18,poison,Experimental Settings. We train a number of ResNet-18 (RN-18) models on different poisons
+optimizer,poison,"For our optimizer, we use SGD"
+error-max,poisons,Error-Max poisons are marked with class-wise and sample-wise poisons.
+error-min,poisons,Error-Min poisons are marked with class-wise and sample-wise poisons.
+error-max,[10],Error-Max poisons are generated using the open-source implementation of [10].
+error-min,[18],Error-Min poisons are generated using the open-source implementation of [18].
+error-min,`2 pgd attack,A 20-step `2 PGD attack is used to optimize Error-Min poisons.
+class-wise poisons,sample-wise poisons,Class-wise poisons and sample-wise poisons are marked with.
+class-wise poisons,random noises,Three class-wise random noises are included in the method.
+sample-wise poisons,random noises,Three class-wise random noises are included in the method.
+ac noises,variety of datasets,AC noises are effective across a variety of datasets.
+rn-18,model architectures,CIFAR-10 test accuracy for a variety of model architectures is evaluated using RN-18 poisons.
+error-max,error-min,Error-Max and Error-Min poisons are crafted using a RN-18.
+rn-18,vgg-19,"RN-18 is used in crafting Error-Max and Error-Min poisons, along with VGG-19."
+rn-18,googlenet,"RN-18 is used in crafting Error-Max and Error-Min poisons, along with GoogLeNet."
+rn-18,mobilenet,"RN-18 is used in crafting Error-Max and Error-Min poisons, along with MobileNet."
+rn-18,efﬁcientnet,"RN-18 is used in crafting Error-Max and Error-Min poisons, along with EfﬁcientNet."
+rn-18,densenetvit,"RN-18 is used in crafting Error-Max and Error-Min poisons, along with DenseNetViT."
+random noise,regions-p noise,"To generate Regions-p noise, we sample RGB vectors from a Gaussian distribution and repeat each vector along dimensions, resulting in a grid-like pattern of uniform cells or regions."
+random noise,class-wise random noise,"Random Noise is also considered in crafting class-wise random noise poison, where perturbations for each class are sampled from a Gaussian distribution."
+ar perturbations,dataset and architecture,"AR Perturbations are Dataset and Architecture Independent, as they are not dataset-specific and can be used for images of new datasets."
+error-maximizing and error-minimizing poisons,classiﬁcation,"Perturbations optimized using PGD are known to be relevant features, necessary for classiﬁcation."
+error-max,crafting network,A crafting network trained on clean data is needed to produce reasonable gradient information for Error-Max poisons.
+ar perturbations,ar processes,"AR perturbations are generated from dataset-independent AR processes, which can be used to generate noise for images of new datasets."
+ar processes,images,AR processes can be used to generate noise for images of new datasets
+ar processes,datasets,AR processes can be used to perturb any dataset of K or fewer classes
+ar processes,generality,"AR perturbations show generality to different kinds of datasets, inducing correlation between samples and labels"
+ar poisons,competitiveness,AR poisons are either competitive or the most effective poison in reaching chance accuracy on different datasets
+network architecture,poison training,Different network architectures are evaluated for effectiveness of AR poisons in poison training
+poison training,test set accuracy,Evaluation of test set accuracy on different network architectures after poison training with different AR poisons
+error-max and error-min poisons,generalization,Error-Max and Error-Min poisons show relatively good generalization in CIFAR-10 test accuracy
+standard augmentations,cutout,Standard augmentations plus Cutout are used in perturbing clean images within a ball of size ✏
+standard augmentations,cutmix,Standard augmentations plus CutMix are used in perturbing clean images within a ball of size ✏
+standard augmentations,mixup,Standard augmentations plus Mixup are used in perturbing clean images within a ball of size ✏
+mixup,clean images,Mixup is used to perturb clean images within a ball of size ✏
+clean images,2 ball of size ✏,Clean images are perturbed within a 2 ball of size ✏
+ar poison,cnn architectures,AR poison is effective across all CNN architectures
+ar poison,vit,AR poison is the most effective poison against ViT
+ar poison,googlenet,"AR poison is much more effective over other poisons, achieving improvements on GoogLeNet"
+ar poison,inception modules,AR poison is particularly effective on GoogLeNet due to the presence of Inception modules
+ar perturbations,convolution operation,AR perturbations are meant to target the convolution operation
+ar perturbations,transformer network,"AR perturbations affect transformer network, contrary to expectation"
+ar perturbations,various filter sizes,The use of various filter sizes may exaggerate the separability of AR perturbations
+data augmentations,ar perturbations,Data augmentations and smaller perturbations are used in the poisoning method
+data augmentation,training,Data augmentation strategies are used during training to modify data for preventing learning of perturbations.
+data augmentation,cutout,Data augmentation strategies like Cutout are benchmarked against AR poison to evaluate their effectiveness in disabling poisons.
+data augmentation,cutmix,Data augmentation strategies like CutMix are benchmarked against AR poison to evaluate their effectiveness in disabling poisons.
+data augmentation,mixup,Data augmentation strategies like Mixup are benchmarked against AR poison to evaluate their effectiveness in disabling poisons.
+mixup,poisons,Mixup augmentation seems to be the most effective at disabling poisons.
+poisons,test set performance,A RN-18 poison-trained using standard augmentations plus Mixup shows a boost in test set performance.
+poisons,cutout,A RN-18 poison-trained using our AR poison plus Cutout cannot achieve any boost in test set performance.
+poisons,cutmix,A RN-18 poison-trained using our AR poison plus CutMix cannot achieve any boost in test set performance.
+poisons,mixup,A RN-18 poison-trained using our AR poison plus Mixup cannot achieve any boost in test set performance.
+poisons,perturbations,Perturbations of different sizes affect the effectiveness of poisons.
+perturbations,ar poison,AR poison achieves the smallest drop in effectiveness under varying sizes of perturbations.
+random noise,poison,Random noise at a small perturbation size of ✏ = 0.5 no longer has the poisoning effect.
+ar poisoning,data augmentation strategies,AR poisoning dominates under all strong data augmentation strategies at ✏ = 0.5.
+ar poisoning,mixup,AR poisoning dominates under Mixup augmentation at ✏ = 0.5.
+augmentation strategies,ar poisoning,"AR poisoning dominates under Mixup augmentation strategy. AR poisoning is exceptionally effective for small perturbations, unlike other poisons."
+augmentation strategies,pixels,"In all three augmentation strategies, pixels are either dropped or scaled."
+ar poisoning,small perturbations,AR poisoning is exceptionally effective for small perturbations.
+pixels,scaling,Pixels in augmentation strategies are either dropped or scaled.
+scaling,ar perturbation,Scaling an AR perturbation does not affect how the corresponding matching AR filter will respond.
+ar perturbation,ar filter,Scaling an AR perturbation does not affect how the corresponding matching AR filter will respond.
+condition,lemma 3.1.8,The condition outlined in Lemma 3.1.8.
+adversarial training,cifar-10 test accuracy,Table 4 shows CIFAR-10 test accuracy after adversarially training with different radii.
+adversarial training,ar poisons,AR poisons remain effective for small radii in adversarial training.
+mixing poisons with clean data,cifar-10 test accuracy,Table 5 shows CIFAR-10 test accuracy when mixing poisons with clean data.
+data,poisoned data,"The context highlights the use of clean proportion of the data, emphasizing the importance of not using poisoned data. Additionally, adversarial training is discussed as an effective counter strategy against p-norm constrained data poisons."
+adversarial training,model,Adversarial training has been shown to enable a model trained on poisoned data to achieve nearly the same performance as training on clean data.
+adversarial training,standard training,"Adversarial training is computationally more expensive than standard training and leads to a decrease in test accuracy when the perturbation radius, ⇢a, of the adversary is large."
+data poisoning methods,adversarial training,Recent work has focused on developing better data poisoning methods that are robust against adversarial training at larger adversarial training radius ⇢a.
+adversarial training,different perturbation radii,Adversarial training involves training models with different perturbation radii to improve robustness against attacks.
+adversarial training,pgd attack,Adversarial training involves using PGD attack with a step-size to enhance model robustness.
+adversarial training,clean data,Comparison between the performance of adversarial training on clean data and adversarial training with perturbations.
+data poisoning methods,adversarial training,Data poisoning methods are sensitive to adversarial training even with smaller training radii.
+data poisoning methods,poisoning radius,Effectiveness of data poisoning methods is affected by the relative sizes of training and poisoning radii.
+trade-off,standard test accuracy,"There exists a trade-off between standard test accuracy and robust test accuracy, which can be influenced by the training radius."
+poisons,adversarial training radius,The effectiveness of poisons decreases as the adversarial training radius increases.
+poisons,ar perturbations,AR perturbations remain effective at smaller radii compared to other poisons.
+poisoning performance,clean data,Evaluation of poisoning performance using different proportions of clean and poisoned data.
+poisons,clean data,Poisons are considered effective if the addition of poisoned data impacts test accuracy compared to training only on clean data.
+poisons,clean data,Poisons remain effective compared to other poisons even when clean data is mixed in. AR poisons are much more effective when a small portion of the data is clean.
+poisons,data,Using an additional 95% of AR data leads to a ~9% decrease in test set generalization.
+poisons,network,AR poisoned data is worse than useless for training a network.
+data,clean data,AR perturbations make effective poisons for preventing a network from generalizing to the clean test distribution.
+ar poisoning,dataset,AR poisoning does not need access to a broader dataset or surrogate network parameters.
+ar poisoning,networks,AR poisons are more potent when training using a new network architecture.
+ar poisoning,data augmentations,"AR poisons are more potent when training using strong data augmentations like Cutout, CutMix, and Mixup."
+ar poisoning,defenses,AR poisoning is competitive or among the best against defenses like adversarial training.
+datasets,test performance,AR processes are able to degrade the test performance of networks trained on three different 10 class datasets.
+poisons,ar poisoned data,AR poisoned data is worse than useless when it is mixed with clean data.

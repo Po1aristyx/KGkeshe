@@ -1,0 +1,242 @@
+node_1,node_2,edge
+model,benchmark,The model achieves superior detection performance compared to other state-of-the-art methods as validated through extensive experiments on the common-used benchmark.
+model,code,The code for the model is available at https://github.com/DIG-Beihang/ALLOW.git.
+model,object detection,"The traditional object detection models operate under the closed world assumption, while the proposed model explores unknown information to address the issue of encountering unknown objects during detection."
+owod,object detection,"Open World Object Detection (OWOD) involves identifying both known and unknown object categories, as opposed to traditional object detection models."
+owod,unknown objects,OWOD aims to identify unknown objects that may not have appeared during the training phase and learn them incrementally once their annotations are provided.
+owod,detection models,"OWOD pioneers the concept of Open World Object Detection, where detection models should be able to identify both known and unknown object categories."
+owod,unknown-discover strategies,OWOD works manually designed complex unknown-discover strategies in previous works.
+owod,background region proposals,OWOD works selected specific regions as unknown proposals from the background.
+owod,uncertainties,The unknown-discover strategies introduced uncertainties in open world learning.
+ore,auto-labelling strategy,ORE adopted an auto-labelling strategy in RPN for selecting unknown objects.
+ore,background region proposals,ORE selected top-k background region proposals as unknown objects.
+ow-detr,attention-driven pseudo-labelling,OW-DETR designed an attention-driven pseudo-labeling for selecting query boxes.
+ow-detr,high attention scores,OW-DETR selected query boxes with high attention scores.
+ow-detr,known class boxes,Query boxes selected by OW-DETR were not matched with known class boxes.
+unknown-discover strategies,low-quality unknown proposals,"Unknown-discover strategies may choose parts of known proposals or authentic background regions, leading to low-quality unknown proposals."
+unknown-discover strategies,semantic patterns,Low-quality unknown proposals may not contain meaningful semantic patterns.
+unknown-discover strategies,unknown recognition,Unknown-discover strategies may affect the ability to accomplish unknown recognition.
+unknown-discover strategies,detection performance,Introducing low-quality unknown proposals may degrade the detection performance of known categories.
+object detection,object-level feature-entanglement process,Learning of object detection is seen as an object-level feature-entanglement process.
+object detection,local-connected convolution computation,The learning of object detection involves local-connected convolution computation.
+known proposal,class-specific traits,A known proposal encompasses not only its class-specific traits but also context information.
+known proposal,propagated context information,A known proposal propagates context information with potential unknown objects.
+unknown features,context information,unknown features are extracted along with the propagated context information
+closed world detection model,unknown features,closed world detection model is capable of extracting unknown features without unknown-discovery strategies
+annealing-based label-transfer framework,open world object detection task,Annealing-based Label-Transfer framework is proposed for the open world object detection task
+known proposals,unknown features,known proposals distill unknown features of meaningful patterns
+known proposals,unknown recognition,known proposals accomplish unknown recognition by disentangling unknown features
+known label,unknown class,known label is transferred to the unknown class to guide the model in decoupling unknown and known traits
+images,known and unknown objects,most images contain both known and unknown objects
+images,objects,Images simultaneously contain known and unknown objects
+images,semantic patterns,Images distill the unknown traits of meaningful semantic patterns
+semantic patterns,known proposals,Semantic patterns distill unknown traits from known proposals
+semantic patterns,proposals,Semantic patterns subtly avoid selecting unknown proposals and alleviate uncertainties
+image,semantic,Images contain unknown objects and meaningful semantic patterns
+sawtooth annealing scheduling strategy,disentanglement degree,Sawtooth Annealing Scheduling strategy adjusts the degree to encourage collaborative learning
+disentanglement degree,known classes,Disentanglement degree encourages collaborative learning of both known and unknown classes
+label-transfer learning,unknown supervision,Label-Transfer Learning cannot access the unknown supervision
+disentanglement level,unknown traits,Determining the disentanglement level affects the ability to mine unknown traits
+disentanglement level,informative known semantic,Determining the disentanglement level affects the balance between informative known semantic and unknown identification
+annealing,material science,Concept of annealing is borrowed from material science
+atoms,solid material,Atoms redistribute within solid material under temperature control
+sawtooth annealing scheduling strategy,decision boundaries,Sawtooth Annealing Scheduling strategy rebuilds decision boundaries with consideration of both known and unknown classes
+decision boundaries,classes,Decision boundaries promote the harmonious learning of both known and unknown classes
+annealing-based label-transfer owod model,first owod work without manually selecting unknown proposals,"The proposed Annealing-based Label-Transfer OWOD model is the first OWOD work without manually selecting unknown proposals, achieving state-of-the-art performance."
+annealing-based label-transfer owod model,unknown recall performance,"Unlike previous models, the proposed Annealing-based Label-Transfer OWOD model not only reports the unknown recall performance but also presents the unknown mAP performance."
+annealing-based label-transfer owod model,equilibrium index (ei),A novel evaluation metric Equilibrium Index (EI) is introduced to comprehensively measure the unknown and known detection performance by the Annealing-based Label-Transfer OWOD model.
+object detection,object-level feature entanglement,"Object detection is viewed as an object-level feature entanglement, leading to the proposal of Annealing-based Label-Transfer Learning."
+label-transfer learning,meaningful unknown traits,"Label-Transfer Learning is introduced to disentangle the meaningful unknown traits from all known proposals, helping in alleviating uncertainties."
+label-transfer learning,sawtooth annealing scheduling strategy,"A Sawtooth Annealing Scheduling strategy is designed to adjust the disentanglement degree by Label-Transfer Learning, ensuring collaborative learning of known and unknown classes."
+label-transfer learning,owod evaluation metric equilibrium index,"A new OWOD evaluation metric Equilibrium Index is proposed to evaluate known and unknown detection performance, showcasing the effectiveness of Label-Transfer Learning."
+extensive experiments,commonly used dataset,"Extensive experiments conducted on the commonly-used dataset prove the effectiveness of the proposed method, showing a substantial increase in unknown mAP performance."
+method,unknown map performance,"The method reported a substantial increase in unknown mAP performance, with 200% gains compared to previous state-of-the-arts."
+unknown map performance,object detection,"The increase in unknown mAP performance is related to object detection, where multiple objects should be recognized and localized inside an image."
+object detection,deep learning,Object detection has been promoted by the development of deep learning.
+object detection,traditional object detection models,Traditional object detection models are under an ideal closed world assumption where the classes to be detected must be labeled and given in the training phase.
+traditional object detection models,unknown objects,Traditional object detection models might encounter unknown objects that are not appeared in the training phase.
+object detection,open set and open world settings,"To handle the problem of encountering unknown objects, approaches have explored open set and open world settings."
+open set and open world settings,training set,"In the open set setting, the knowledge obtained through the training set is incomplete, leading to encountering categories not in the training set during inference."
+open set and open world settings,classifier,The classifier during inference may encounter categories that do not appear in the training set under open set and open world settings.
+open set classification and detection,knowledge obtained,Open set classification and detection occur when the knowledge obtained through the training set is incomplete.
+open set classification and detection,categories,The classifier during inference may encounter categories that do not appear in the training set under open set classification and detection.
+open set classification and detection,works,Several works have explored the open set classification and detection task under a number of assumptions.
+open set classification problem,minimization problem,The open set classification problem was defined as a constrained minimization problem.
+open set classification problem,multi-class classifier,The open set classification problem was extended to a multi-class classifier by follow-up works.
+unknowns,feature space,Unknowns in the feature space of the model can be identified and used for classification purposes.
+method,identify,The method proposed in the context aims to identify the unknowns in the feature space.
+method,use,The method proposed in the context uses the OpenMax classifier to estimate ensemble risk.
+classifier,estimate,The OpenMax classifier is used to estimate the ensemble risk in the proposed method.
+framework,identifies,The metric learning framework developed by Liu et al. identifies invisible classes as unknown classes through a long-tail recognition setting.
+learning,used,Self-supervised learning and unsupervised learning with the reconstruction method have been used in the recognition problem of open set.
+framework,studies,The framework studied by Dhamija et al. in the context focuses on the open set object detection task.
+protocol,proposed,Dhamija et al. proposed the open set object detection protocol in their study.
+works,improved,Subsequent works improved the detection performance by measuring the uncertainties.
+model,proposed,Bendale et al. proposed the first open world image recognition model.
+system,evaluated,Bendale et al. presented a protocol for the evaluation of open world recognition systems.
+method,proposed,Xu et al. proposed a meta-learning method for open world tasks.
+open world recognition systems,protocol,The protocol is used for the evaluation of open world recognition systems.
+xu et al.,meta-learning method,Xu et al. proposed a meta-learning method for matching new samples with a dynamic set of known classes.
+new sample,unknown class,The new sample is identified as an unknown class when it shows low similarities to all known classes.
+recent works,open world classification,"Recent works attempted to address open world classification with long-tail distribution, few-shot learning, and zero-shot learning."
+joseph et al.,ore method,Joseph et al. proposed the ORE method for open world detection.
+unknown object,rpn,An unknown object aware RPN is designed in the ORE method to detect unknown objects.
+sa,semantic topology,The work SA utilizes semantic topology by defining a semantic centroid in feature space for each category.
+object instances,belonging centroids,Object instances are pushed close to their belonging centroids during learning in SA.
+ow-detr,end-to-end framework,"OW-DETR proposed an end-to-end framework comprising pseudo-labeling, novelty classification, and object scoring."
+wu et al.,unknown-classified owod problem,Wu et al. defined the Unknown-Classified OWOD problem and designed a two-stage detector based on similarity and clustering.
+zhao et al.,object-level feature entanglement,Zhao et al. proposed object-level Feature Entanglement through local-connected convolutional operations of the multi-layer neural networks.
+unknown features,known features,Unknown features and known features can be entangled and propagated to known proposals.
+closed world detector faster rcnn,unknown features,Closed world detector Faster RCNN can extract unknown features but mistakenly recognize them as known classes.
+unknown features,proposals,Previous methods adopted complex unknown-discover strategies to deal with unknown detection by selecting unknown proposals.
+propagation,known features,Known class-specific features could be propagated to known proposals.
+unknown objects,known objects,The method explores unknown information from known proposals to improve the detection performance of unknown objects while maintaining that of known objects.
+unknown detection,uncertainties,Previous methods cannot always accurately select unknown proposals and thus introduce too many uncertainties.
+unknown detection,learning of unknown objects,Too many uncertainties in unknown detection can harm the learning of unknown objects.
+unknown detection,known classification,Too many uncertainties in unknown detection can influence the known classification as well.
+method,unknown information,The method explores the unknown information from known proposals through a reasonable disentanglement process.
+method,detection performance,The proposed method improves the detection performance of unknown objects.
+model,open world object detection performance,The Annealing-based Label Transferring model improves the open world object detection performance.
+model,known traits,The model disentangles the known traits and unknown information from known proposals.
+model,unknown information,The model effectively improves the open world object detection performance through disentangling known traits and unknown information.
+object-level feature entanglement,owod,"The object-level feature entanglement is a key aspect in OWOD, representing how features of objects are intertwined within the framework."
+annealing-based label-transfer owod framework,label-transfer learning,The Annealing-based Label-Transfer OWOD framework incorporates Label-Transfer Learning as a strategy for collaborative learning of known and unknown classes.
+annealing-based label-transfer owod framework,saw-tooth annealing scheduling strategy,The Annealing-based Label-Transfer OWOD framework utilizes a Saw-tooth Annealing Scheduling strategy to achieve the learning goals in object detection.
+object-level feature entanglement,known class-specific characteristics,"The entanglement of object-level features involves known class-specific characteristics, leading to the recognition and classification of instances in object detection."
+label-transfer learning,saw-tooth annealing scheduling strategy,The Label-Transfer Learning paradigm integrates a Saw-tooth Annealing Scheduling strategy to facilitate the collaborative learning process in object detection.
+training phase,known classes,Instances of known classes are assigned class labels and bounding box annotations during the training phase.
+known classes,unknown classes,Both known class set K and unknown class set U exist during inference and should be identified by the OWOD models.
+task,unknown classes,"In the (t + 1)-th task, unknown classes of interests are labeled and integrated into the known class set."
+unknown classes,object-level features,"Object-level features of multiple objects, including unknown ones, will be simultaneously perceived and entangled together."
+evaluation metrics udp,evaluation metrics udr,UDP and UDR are used in the evaluation to illustrate the localization rate of unknown objects and the rate of correct classification of localized unknown objects respectively.
+object-level feature entanglement,unknown characteristics,The object-level feature entanglement enables the capturing of unknown characteristics by object detection models.
+close world object detection models,open world object detection models,Both close world and open world object detection models are capable of capturing unknown characteristics due to object-level feature entanglement.
+udp results,unknown instances,The UDP results show that unknown instances tend to be mistakenly identified as known ones.
+owod models,unknown recall results,"Previous OWOD models only reported unknown recall results, hiding the fact that unknown mean Average Precision (mAP) is extremely low due to mis-classification."
+unknown detection,known map performance,"The learning between unknown and known classes is a trade-off, where the unknown detection is improved at the cost of known mAP performance."
+unknown information,known proposals,Unknown information can be distilled with appropriate guidance from known proposals to improve unknown detection.
+images,known and unknown instances,"Most images contain known and unknown instances, enabling the extraction of unknown traits without conflicting with known discriminative features."
+meaningful semantic patterns,unknown traits,"Meaningful semantic patterns can be used to extract unknown traits while maintaining known discriminative features, improving unknown detection."
+features,detection,"Features play a crucial role in detection, both known and unknown."
+task,performance,Improving on the unknown detection would contribute to enhancing performance in the OWOD task.
+architecture,model,The model is based on the architecture shown in Figure 3.
+architecture,detection,The model could be based on any closed world detection architecture.
+label-transfer learning,strategy,The Label-Transfer Learning follows the Sawtooth Annealing Scheduling strategy.
+model,learning process,The model guides the learning process to distinguish known and potential unknown information.
+pipeline,phases,The whole Label-Transfer Learning pipeline consists of two phases - forming phase and extending phase.
+phase,disentanglement degree,The disentanglement degree is increased in the extending phase to learn unknown information.
+phase,performance,The known detection performance is adversely affected by the increasing disentanglement degree in the extending phase.
+phase,decision boundaries,The decision boundaries of both known and unknown objects are rebuilt in the extending phase.
+decision boundaries,unknown objects,"Both decision boundaries and unknown objects are considered in the context, indicating a relationship between them in the process."
+known classes,unknown recognition ability,"The known classes form decision boundaries along with recognition of unknown objects, leading to the empowerment of the OWOD model with the ability to recognize unknown instances."
+owod model,unknown recognition ability,"The OWOD model is empowered with the unknown recognition ability, which helps in preserving known identification accuracy."
+incremental learning approaches,previous owod models,Incremental learning approaches adopted from previous OWOD models involve storing a balanced set of examples from previous tasks and finetuning the current model to alleviate the forgetting problem in the incremental process.
+object detection,object-level entanglement process,"Object detection involves an object-level entanglement process, implying a relationship between these terms in the context."
+known proposal,discriminative class-specific traits,"A known proposal may contain discriminative class-specific traits, indicating a relationship between the proposal and the traits."
+discovery labels,classifier improvement,Assigning discovery labels helps in improving the classifier's ability to recognize and discriminate among different classes.
+feature-entangled proposal,one-hot label,"Assigning a one-hot label to a feature-entangled proposal strengthens its class-specific discrimination, suggesting a relationship between these terms."
+feature-entangled proposal,one-hot label,The feature-entangled proposal is assigned a one-hot label to strengthen class-specific discrimination but may suppress generalized information.
+classifier,features,The classifier is guided to recognize different features in order to accomplish unknown and known classification.
+unknown classification,known classification,The model is guided to distinguish between unknown and known classifications to promote unknown classification.
+label-transfer modification,one-hot label,"The label-transfer modification transfers the original one-hot label of an object to the unknown class, denoted as y′."
+label-transfer modification,classification regularization,The label-transfer modification is used in classification regularization to encourage the model to explore unknown characteristics.
+label-transfer learning,model,Label-Transfer Learning can effectively and efficiently encourage the model to explore unknown characteristics of known proposals and generalize to unknown categories without ground-truth supervision.
+object-level feature,unknown labels,"Decoupling object-level features, especially without explicit unknown labels, is challenging."
+label-transfer learning,unknown detection,Label-Transfer Learning could improve the unknown detection
+disentanglement degree λ,specific unknown supervision,disentanglement degree λ is hard to determine without specific unknown supervision
+disentanglement degree,known performance loss,A large disentanglement degree will lead to a dramatic known performance loss
+disentanglement degree,guide the learning of unknown information,A small disentanglement degree cannot sufficiently guide the learning of unknown information
+sawtooth annealing scheduling,mutual advancement of unknown and known learning,Sawtooth Annealing Scheduling strategy ensures the mutual advancement of unknown and known learning
+known identification performance,improve the unknown detection,known identification performance is first sacrificed to improve the unknown detection
+decision boundaries,both known and unknown classes,learning to form the decision boundaries of both known and unknown classes
+training phases,forming phase,"the whole training follows an end-to-end pipeline, which could be seen as two successive phases, namely the forming phase and the extending phase"
+iteration number p,forming phase total iteration pf,"We denote p as the iteration number, and Pf indicates the total iteration of forming phase"
+sawtooth annealing scheduling,constant τ,"Sawtooth Annealing Scheduling could be formalized with a constant τ demonstrating the annealing speed, regulating the decoupling as the training iteration increases"
+forming phase,closed world setting,model is actually trained in a closed world setting where parameters in the forming phase
+model,forming phase,The model is actually trained in a closed world setting in the forming phase.
+model,closed world setting,The model is trained in a closed world setting during the forming phase.
+model,parameters,Parameters of unknown classifiers Wu are removed in the forming phase.
+model,one-hot supervision,Informative but mixed semantics are formed under the one-hot supervision of known categories in the forming phase.
+w,parameters,W is the full classifier parameters.
+w/wu,parameters,W/Wu means the full classifier parameters without the unknown classifier's.
+θ,parameters,Θ represents the other parameters in the whole network except the classifiers.
+disentanglement degree,unknown learning,The disentanglement degree is abruptly changed to the peak to promote the unknown learning in the extending phase.
+disentanglement degree,co-learning,The disentanglement degree is gradually decreased to encourage the co-learning of both unknown and known categories in the extending phase.
+classifier,fine-tune,"In the extending phase, only fine-tuning the classifier is done to avoid destroying the informative features."
+known map performance,validation datasets,Figure 4 demonstrates the known mAP performance on the validation datasets.
+known map performance,model,The known mAP performance proves the point about sacrificing known performance to improve the unknown ones in the model.
+λ,known map drop,"With the annealing strategy, after the initial known mAP drop, it increases as the λ diminishes."
+model,decision boundaries,"Along with the known mAP boosts, the model rebuilds the decision boundaries with consideration of both known and unknown categories."
+map,boosts,mAP boosts refer to the improvement in mean average precision in the context of the model
+model,decision boundaries,The model rebuilds decision boundaries considering both known and unknown classes to reach equilibrium
+method,open world object detection,The proposed method focuses on open world object detection
+datasets,owod,Datasets used for OWOD are Pascal-VOC and MS-COCO
+map,owod evaluation,mean average precision (mAP) is a common evaluation metric for OWOD
+equilibrium index (ei),known,EI is a new metric designed to evaluate the OWOD performance of both known and unknown classes
+closed world baseline models,k map c,The closed world baseline models are evaluated based on K mAP c.
+closed world baseline models,u map c,The closed world baseline models are evaluated based on U mAP c.
+u map c,0,The unknown mAP c is defined as 0.
+open world model,k map o,The known mAP of the evaluated open world model is K mAP o.
+open world model,u map o,The unknown mAP of the evaluated open world model is U mAP o.
+equilibrium index,u map o,The Equilibrium Index is calculated based on the unknown mAP o.
+equilibrium index,k map o,The Equilibrium Index is calculated based on the known mAP o.
+equilibrium index,k map c,The Equilibrium Index is calculated based on the known mAP c.
+equilibrium index,u map c,The Equilibrium Index is calculated based on the unknown mAP c.
+known classes,unknown classes,Known classes and unknown classes may be negatively correlated.
+owod model,unknown map gains,The goal of OWOD model is that the unknown mAP gains should be larger than the known mAP loss.
+ei,owod performance,"The larger the EI is, the OWOD performance is better."
+ei,negative value,"If the model sacrifices too much known accuracy but improves limited unknown detection performance, then the EI is a negative value."
+faster rcnn,resnet-50,Faster RCNN uses ResNet-50 as the backbone.
+faster rcnn,cosine classifier,Faster RCNN uses the cosine classifier.
+detr,ow-detr,DETR follows OW-DETR.
+best model,baseline method,The best model in the forming phase is taken as the baseline method for comparison.
+training,sgd op,"During training, the SGD op is used."
+baseline method,comparison,The baseline method is used for comparison in the forming phase.
+baseline method,sgd optimizer,SGD optimizer was used during training with the baseline method.
+baseline method,batch size,The batch size is set to 8 for the baseline method.
+model,performance,Our model achieves superior performance in terms of traditional evaluation metrics.
+model,detection metrics,Our model is compared based on traditional detection metrics.
+model,evaluation metrics,Our model achieves superior performance on newly-proposed evaluation metrics.
+model,faster rcnn,Our model is compared to Faster RCNN as a reference.
+model,detr,Our model is compared to DETR in terms of performance.
+model,state-of-the-art comparison,Our model is part of the state-of-the-art comparison.
+model,task,Our model is evaluated based on different tasks.
+ow-detr,ours-detr,These are two specific models mentioned in the given context that are being compared in terms of their performance in the OWOD setting.
+ow-detr,faster rcnn,"OW-DETR is mentioned to outperform other state-of-the-art OWOD methods, including those based on the Faster RCNN backbone, in terms of unknown mAP and class recall."
+ow-detr,ore,"Comparison is made between OW-DETR and ORE, with OW-DETR showing better performance in terms of unknown mAP and class recall."
+ow-detr,detr architecture,"OW-DETR demonstrates even higher unknown performance when based on DETR architecture, showing the effectiveness of Annealing-based Label-Transfer Learning."
+state-of-the-art comparison,owod methods,"Table 1 shows the comparison of the state-of-the-art OWOD methods, including our method, in terms of various evaluation metrics such as WI, A-OSE, mAP, and Recall."
+classes,tasks,"Classes are added in the subsequent tasks, affecting the recognition ability of unknown classes."
+ore,performance,Performance of ORE is consistent with the ability to recognize unknown classes.
+method,comparison methods,Our method outperforms comparison methods in U-mAP and unknown Recall metrics.
+model,collaborative learning,Our model is capable of promoting collaborative learning of both known and unknown classes.
+model,full model,"Our full model yields superior performance, and each module contributes to the proposed model."
+state-of-the-arts,"udr, udp, and new ei metric","Comparison with state-of-the-arts in terms of UDR, UDP, and new EI metric shows our model achieves superior performance."
+ore,t1 task,ORE in t1 task achieves slightly better UDR performance.
+k-map loss,ei performance,K-mAP loss has a direct relationship with EI performance as mentioned in the context
+sa,detr,SA and DETR have a comparison relationship in terms of their U-mAP in the task mentioned
+sa,detr,"SA and DETR both have lower EI performance compared to their closed world baseline, indicating a negative impact on their performance"
+incrementally learning,obstacles for unknown learning,"Incrementally learning may bring obstacles for unknown learning, leading to EI performance less than 0"
+proposed framework,components,"The proposed framework is composed of different components, each contributing to the overall performance as investigated in Table 3"
+label-transfer learning,faster rcnn model,"The absence of Label-Transfer Learning degrades the model to the Faster RCNN model, impacting the ability to accomplish unknown detection"
+sawtooth annealing scheduling,fixed λ value,"SAS influences the λ value in the model, affecting its ability to detect unknown classes as described in the context"
+auto-labelling strategies,model,"The auto-labelling strategies proposed by ORE are implemented in the model to improve performance, as shown in the context"
+label-transfer,detection performance,The full Label-Transfer greatly damages the known detection performance.
+label-transfer,unknown identification,The known detection performance being greatly damaged by the full Label-Transfer will in turn harm the unknown identification.
+al,unknown-discovery strategy,Employing the unknown-discovery strategy AL cannot bring performance gains for the model.
+full model,best performance,"In conclusion, the full model achieves the best performance."
+module,proposed method,Each module contributes to the proposed method.
+peak of λ,sawtooth annealing scheduling strategy,Investigating the peak of λ in the Sawtooth Annealing scheduling strategy.
+peak of λ,k-map performance,Different peaks of λ do not impact the K-mAP performance but influence the unknown one.
+peak of λ,unknown detection performance,"The higher λ is, the higher unknown detection performance is."
+peak of λ,"u-map, ei, u-recall, and udp","Different peaks of λ affect U-mAP, EI, U-Recall, and UDP performance."
+annealing speed τ,proposed model,The model with different τ achieves similar detection performance with either slightly higher K-mAP.
+model,performance,"The model achieves similar detection performance with different parameters, including λ and annealing speed."
+model,owod detection,The larger λ results in better OWOD detection performance for the model.
+model,annealing speed,"The model is insensitive to the annealing speed, showcasing the robustness of the proposed model."
+model,visualization,The visualization of the proposed model in t1 and t4 tasks shows its effectiveness in detecting classes and learning semantic classes incrementally.
+model,framework,The proposed Annealing-based Label-Transfer framework for OWOD is effective in collaborative learning of known and unknown classes without manual strategies.
+strategies,model,"The strategies mentioned in the context are utilized in the model developed, indicating a relationship between these two concepts."
+experiments,benchmark,"The experiments conducted were performed on a common-used benchmark, suggesting a direct relationship between experiments and benchmark."
+model,open world detection performance,"The developed model exhibits state-of-the-art performance in open world detection, implying a correlation between the model and the performance."
+work,national natural science foundation of china,"The work mentioned in the context was supported in part by the National Natural Science Foundation of China under Grant 62206010, establishing a connection between the two entities."

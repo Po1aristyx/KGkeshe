@@ -1,0 +1,230 @@
+node_1,node_2,edge
+clip,text-video cross-modal retrieval,CLIP is leveraged for text-video cross-modal retrieval by tuning the backbone with heavy modules.
+clip,knowledge forgetting,Tuning the backbone with heavy modules leads to knowledge forgetting from upstream models.
+vop,text-video co-operative prompt tuning,VoP is proposed as an efficient tuning method for the text-video retrieval task.
+vop,video & text prompts,VoP introduces both video & text prompts as a powerful baseline with few trainable parameters.
+prompt mechanisms,spatio-temporal characteristics of videos,Novel video prompt mechanisms are developed based on the spatio-temporal characteristics of videos to improve performance.
+prompt mechanisms,performance improvement,The video prompt mechanisms aim to improve performance with specific trainable prompts.
+vop,framework,VoP is described as an end-to-end framework for text-video cooperative prompt tuning.
+mechanisms,trainable prompts,"Specific trainable prompts are used to model frame position, frame context, and layer function."
+vop,average r@1 gain,Enhanced VoP achieves a 1.4% average R@1 gain compared to full fine-tuning.
+vop,parameter overhead,Enhanced VoP achieves performance improvement with 6× less parameter overhead.
+retrieval task,image-text knowledge,The goal of the retrieval task is to transfer pre-trained image-text knowledge to the video domain.
+retrieval task,video domain,The retrieval task involves transferring pre-trained knowledge to the video domain with fine-tuning.
+retrieval task,pre-trained image-text knowledge,The retrieval task involves the transfer of pre-trained image-text knowledge to the video domain with fine-tuning.
+fine-tuning strategy,useful knowledge,The dominant full fine-tuning strategy may forget useful knowledge acquired during pre-training.
+fine-tuning strategy,overfitting risk,Full fine-tuning strategy poses a risk of overfitting as the model is updated with limited downstream data.
+full fine-tuning,useful knowledge,Full fine-tuning risks forgetting useful knowledge acquired during pre-training.
+full fine-tuning,overfitting risk,Full fine-tuning poses a risk of overfitting by updating the entire model with limited data.
+prompt tuning,transferability challenges,Prompt tuning is introduced to address the challenges limiting transferability and generalizability.
+prompt tuning,generalizability challenges,Prompt tuning is aimed at addressing challenges that limit generalizability and transferability.
+prompt tuning,uni-modal applications,"Prompt tuning, compared to uni-modal applications, is a flexible and lightweight fine-tuning protocol."
+prompt tuning,text-video cross-modal retrieval,"Text-video cross-modal retrieval, requiring more parameters, can benefit from the parameter-efficient prompt tuning."
+vop,text-video co-operative prompt tuning,The proposed approach of VoP is the Text-Video Co-operative Prompt Tuning strategy which introduces tunable prompts for both textual and visual encoders.
+vop,video prompts,VoP utilizes video prompts to exploit essential video-specific information and design novel prompts from different perspectives.
+video prompts,position-specific video prompts,"One type of video prompt designed is the position-specific video prompts, modeling shared information between frames at the same relative position."
+video prompts,generated context-specific video prompts,"Another type of video prompt is the generated context-specific video prompts, integrating contextual messages into the intra-frame modeling."
+position-specific video prompts,generated context-specific video prompts,The position-specific and context-specific video prompts are both designed to enhance the modeling of video information from different perspectives.
+video prompts,contextual message,Video prompts integrate injected contextual message from the frame sequence into the intra-frame modeling.
+video prompts,intra-frame modeling,Video prompts integrate injected contextual message from the frame sequence into the intra-frame modeling.
+video prompts,function-specific video prompts,Function-specific video prompts adaptively assist to learn intra- or inter-frame affinities by sensing the transformation of layer functions.
+intra-frame modeling,frame sequence,Video prompts integrate injected contextual message from the frame sequence into the intra-frame modeling.
+function-specific video prompts,layer functions,Function-specific video prompts adaptively assist to learn intra- or inter-frame affinities by sensing the transformation of layer functions.
+vop,pre-trained foundation models,"By exploring video-specific prompts, VoP offers a new way to transfer pre-trained foundation models to the downstream video domain."
+vop,solutions,"We compare our solutions with popular tuning strategies on MSR-VTT, DiDeMo, ActivityNet, and LSMDC."
+vop,downstream video domain,"By exploring video-specific prompts, VoP offers a new way to transfer pre-trained foundation models to the downstream video domain."
+vop,text-video retrieval,We propose the VoP as a strong baseline that effectively adapts CLIP to text-video retrieval with negligible trainable parameters.
+video prompts,video-specific information,"To exploit video-specific information, we further develop three video prompts respectively conditioned on the frame position, frame context, and layer function."
+video prompts,pre-trained knowledge,"Learning video-specific information while maintaining the pre-trained knowledge, our video prompts deliver an average R@1 improvement of up to 4.2% for VoP, and therefore exceed full fine-tuning by up to 1.4% with much fewer trainable parameters."
+video prompts,trainable parameters,"Learning video-specific information while maintaining the pre-trained knowledge, our video prompts deliver an average R@1 improvement of up to 4.2% for VoP, and therefore exceed full fine-tuning by up to 1.4% with much fewer trainable parameters."
+contrastive vision-language pre-training,large-scale visual and textual pairs,The Contrastive Vision-Language Pre-Training benefits from the use of large-scale visual and textual pairs collected from the Internet.
+contrastive vision-language pre-training,learning visual representation,The goal of Contrastive Vision-Language Pre-Training is to learn visual representation under natural language supervision.
+clip,relevant image-text pairs,CLIP matches relevant image-text pairs via training two uni-modal encoders with a contrastive loss.
+clip,align,The success of CLIP and its derivative works demonstrates the potential of adapting pre-trained vision-language models like CLIP and ALIGN to various downstream applications.
+clip,albef,The success of CLIP and its derivative works demonstrates the potential of adapting pre-trained vision-language models like CLIP and ALBEF to various downstream applications.
+video-language understanding area,existing efforts,"In the video-language understanding area, existing efforts such as HowTo100M and Frozen in Time have attempted to pre-train on large-scale video datasets."
+howto100m,frozen in time,Both HowTo100M and Frozen in Time are existing efforts in the video-language understanding area that have attempted to pre-train on large-scale video datasets.
+clip,clip4clip,This work follows CLIP4Clip to explore the adaptation of pre-trained CLIP to the text-video retrieval task.
+text-video retrieval,semantically similar samples,The goal of Text-Video Retrieval is to match semantically similar samples across text and video modalities.
+text-video retrieval,dual-branch structure,Text-Video Retrieval methods commonly apply a dual-branch structure to align the uni-modal features extracted by individual encoders.
+uni-modal features,individual encoders,uni-modal features are extracted by individual encoders.
+cross-modal fusion mechanisms,offline features,cross-modal fusion mechanisms are designed after extracting offline features.
+task-specific end-to-end fine-tuning,large-scale pre-trained models,task-specific end-to-end fine-tuning has achieved noticeable results with large-scale pre-trained models.
+clipbert,end-to-end fine-tuning,ClipBERT suggested that end-to-end fine-tuning could outperform using densely extracted offline features.
+clip4clip,similarity calculation mechanisms,CLIP4Clip investigated similarity calculation mechanisms based on pre-trained CLIP.
+clip4clip,large-scale video-text data,CLIP4Clip post-pretrained the CLIP on large-scale video-text data to improve performance.
+x-pool,cross-modal attention,X-Pool employed cross-modal attention for a text to attend its most semantically similar frames.
+prompt tuning,series of solutions,"around prompt tuning, a series of solutions are proposed to reduce the overhead of trainable parameters."
+natural language processing (nlp),prompt learning,natural language processing has advanced prompt learning which initially fills the sample into properly handcrafted prompt templates.
+pre-trained language model,task,A pre-trained language model is designed to understand tasks.
+pre-trained language model,prompt tuning,Prompt tuning is a method inspired by CLIP for optimizing text prompts.
+clip,textual labels,CLIP embeds textual labels for object recognition.
+coop,text prompts,CoOp applies trainable text prompts for few-shot image classification.
+text prompts,video-understanding tasks,Text prompts have been adopted for video tasks like action recognition.
+prompt tuning,vision backbones,Prompt tuning has been successfully applied to vision backbones.
+visual prompt tuning,video domain,The effectiveness of visual prompt tuning in video applications is still uncertain.
+prompt tuning,video-specific information,Prompt tuning is being explored for modeling video-specific information.
+clip,text-video retrieval,The pre-trained CLIP is adapted for text-video retrieval.
+clip,text-video retrieval,CLIP is adapted for text-video retrieval to benefit from its strong downstream potential.
+clip,text set t,CLIP is applied to the text set T for text-video retrieval.
+clip,video set v,CLIP is applied to the video set V for text-video retrieval.
+vop,cross-modal alignment,VoP collaboratively promotes cross-modal alignment with negligible trainable parameters.
+video prompts,video,Video prompts are devised with the consideration of the inherent nature of video for superior performance.
+clip,image-text pre-training,CLIP utilizes large-scale contrastive image-text pre-training to align cross-modal embeddings from a relevant pair in a joint latent space
+text encoder,[eos],"The text encoder tokenizes input text description, projects them into word embeddings, and obtains the final text embedding by projecting the last token, which corresponds to the [EOS] token"
+visual encoder,[cls],"The visual encoder splits the image into non-overlapping patches, projects them into a sequence of patch tokens, and obtains the final image embedding by projecting the [CLS] token from the last layer"
+image,text,The similarity score between the image and the text can be calculated as the cosine similarity of their respective embeddings
+clip,videos,CLIP adapted for videos by learning a video embedding based on frame embeddings for similarity score calculation and retrieval
+parameter-efficient manner,non-parametric approach,"To avoid extra parameters, a non-parametric approach is applied by taking average of all frame embeddings as video embedding"
+clip,prompts,Text-Video Co-operative Prompt Tuning involves keeping the backbone fixed and optimizing trainable continuous embeddings (prompts) during fine-tuning for reduced per-task storage and memory usage
+text branch,tuning performance,Learning prompts only for the text branch limits the tuning performance
+tuning performance,learning prompts,The tuning performance is limited by the fact that learning prompts only for the text branch overlooks its potential.
+tuning performance,visual encoder,"To address the challenge of collaboratively tuning the visual encoder, they propose Text-Video Co-operative Prompt Tuning (VoP) that inserts prompts in each layer of both visual and text encoders."
+learning prompts,text branch,Learning prompts only for the text branch overlooks the potential of collaboratively tuning the visual encoder.
+learning prompts,collaboratively tuning,Learning prompts only for the text branch overlooks the potential of collaboratively tuning the visual encoder.
+text encoder,textual prompts,"In the text branch, they introduce a set of learnable tokens (textual prompts) into each layer of the text encoder."
+visual encoder,video prompts,"In the vision branch, they introduce video prompts to efficiently adapt CLIP to text-video retrieval."
+vop framework,video prompts,"To efficiently adapt CLIP to text-video retrieval, VoP tunes the prompts introduced in all layers of both uni-modal encoders."
+video prompts,conventional visual prompts,"Video prompts can replace conventional visual prompts to model essential information of frame position, context, and layer function."
+visual prompts,each layer,Visual prompts are appended to each layer of the visual encoder.
+visual prompts,textual prompts,"By jointly minimizing text-to-video and video-to-text cross-entropy losses, both textual and visual prompts are fine-tuned."
+textual prompts,visual prompts,"By jointly minimizing text-to-video and video-to-text cross-entropy losses, both textual and visual prompts are fine-tuned."
+vop,frames,The current VoP faces the dilemma of treating frames as independent images.
+vop,video prompts,Video prompts are combined with VoP for text-video retrieval.
+vop,learned prompts,"VoP refers to the current Video over Prompts system where learned prompts are used. The shortcoming mentioned is that the learned prompts are shared for all frames, ignoring the order of the frame sequence."
+vop,shared prompts,"Shared prompts in VoP are shared between all frames at the same relative position in their belonged videos, ignoring the frame sequence."
+position-specific video prompts,relative position information,Position-specific video prompts are introduced to inject information about the relative position of the current input frame. Visual prompts are only allowed to be shared between all frames at the same relative position in their belonged videos.
+position index,frame position,The position index of the current frame in the video is used to query the table for prompts. The frame position indicates the specific location of a frame in the video.
+vopp,position-specific parameters,"VoPP, a modification to VoP, increases the capacity for informative videos by introducing more tunable position-specific parameters."
+vopp,position-agnostic tokens,VoPP uses position-specific tokens instead of position-agnostic tokens. Changing only a part of these tokens is found to be sufficient for both effectiveness and efficiency.
+vopc,context-specific video prompts,"VoPC refers to VoP with Context-Specific Video Prompts, where additional context-specific information can be exploited for better performance."
+vop,context-specific video prompts,VoP is related to Context-Specific Video Prompts as they are both discussed in the context of video prompts and their generation.
+current scheme,contextual relationships in videos,"The current scheme cannot exploit contextual relationships in videos, indicating a lack of connection between current scheme and contextual relationships in videos."
+current frame,contextual information from the rest of the video,"When addressing the current frame, it is suggested to integrate contextual information from the rest of the video, emphasizing the importance of this relationship."
+context,modeling module (cmm),"The Context Modeling Module (CMM) is involved in modulating frame tokens with contextual information, establishing a relationship between CONTEXT and CMM."
+fully-connected (fc) layer,prompt tokens,"The FC layer generates prompt tokens conditioned on modulated frame tokens, illustrating the relationship between the FC layer and prompt tokens."
+global contextual information,generated prompts,"Global contextual information is encoded into the generated prompts, allowing it to participate in intra-frame modeling."
+cmm,fc layer,Parameters of CMM and the FC layer are shared between all encoder layers.
+cmm,bi-directional long short-term memory (bilstm),Bi-directional Long Short-Term Memory (BiLSTM) is an overall preferable choice for CMM.
+vop,function-specific video prompts (vopf),VoP is associated with Function-Specific Video Prompts (VoPF).
+vop,video transformers,VoP is associated with video Transformers.
+transformer,clip visual encoder,Attaching a Transformer on top of the CLIP visual encoder increases the number of training parameters significantly.
+visual encoder,two parts,"The visual encoder is split into two parts according to the depth of the layer, with each part undertaking different functions."
+first part,spatial self-attention,The first part of the visual encoder still performs spatial self-attention for tokens of each frame.
+second part,inter-frame spatio-temporal self-attention,The second part of the visual encoder now performs inter-frame spatio-temporal self-attention without changing structure.
+inter-frame spatio-temporal self-attention,layers,"The visual prompts in the layers are prepared for the input sequence, indicating a relationship between inter-frame spatio-temporal self-attention and layers."
+layers,input sequence,"The visual prompts in the layers are prepared for the input sequence, showing a relationship between layers and input sequence."
+layers,visual prompts,"The visual prompts in the layers are adaptively divided into frame-level and video-level ones, suggesting a relationship between layers and visual prompts."
+video,frames,"The input sequence consists of patch tokens from all frames of the same video, indicating a relationship between video and frames."
+trainable frame positional embedding,tokens,"A trainable frame positional embedding is added to all tokens from the video to retain positional information, showing a relationship between trainable frame positional embedding and tokens."
+tokens,positional information,"A trainable frame positional embedding is added to all tokens from the video to retain positional information, indicating a relationship between tokens and positional information."
+position-specific and context-specific video prompts,shallow layers,"We use VoPF+P and VoPF+C to indicate the deployment of position-specific and context-specific video prompts at Ks shallow layers while applying VoPF, demonstrating a relationship between position-specific and context-specific video prompts and shallow layers."
+text-video retrieval benchmarks,msr-vtt,"We conduct experiments on benchmarks for text-video retrieval, including MSR-VTT, indicating a relationship between text-video retrieval benchmarks and MSR-VTT."
+video captions,videos,"MSR-VTT contains 10,000 videos, each paired with about 20 captions, showing a relationship between video captions and videos."
+data splits,test data,"The test data in both splits is 'test 1k-A', which is comprised of 1,000 video-text pairs following JSFusion, indicating a relationship between data splits and test data."
+splits,test 1k-a,"The data split 'test 1k-A' is comprised of 1,000 video-text pairs according to JSFusion."
+splits,'msr-vtt-9k',The data split 'MSR-VTT-9k' is another split mentioned.
+splits,'msr-vtt-7k',The data split 'MSR-VTT-7k' is another split mentioned.
+didemo,"10,000 flickr videos","DiDeMo contains 10,000 Flickr videos with 40,000 sentences."
+activitynet,"20,000 youtube videos","ActivityNet contains 20,000 YouTube videos."
+lsmdc,"118,081 video clips","LSMDC contains 118,081 video clips extracted from 202 movies."
+lsmdc,"109,673 videos in training set","LSMDC contains 109,673 videos in the training set."
+lsmdc,"7,408 videos in validation set","LSMDC contains 7,408 videos in the validation set."
+lsmdc,"1,000 videos in test set","LSMDC contains 1,000 videos in the test set from movies disjoint with the training and validation set."
+evaluation metrics,standard retrieval metrics [27],"The Evaluation Metrics includes following the standard retrieval metrics to use R@K, MnR, and MdR for evaluation."
+baselines,commonly used fine-tuning protocols,Baselines include a comparison of methods with other commonly used fine-tuning protocols.
+proj,fine-tune,Both 'Proj' and 'fine-tune' are actions related to adjusting specific components of the encoders.
+partial,fine-tune,'Partial' and 'fine-tune' are actions specifically related to adjusting the last layers of the encoders.
+adapterattn,fine-tune,'AdapterATTN' involves fine-tuning the FC layers that are part of the multi-head self-attention layer in the encoders.
+adapterffn,fine-tune,'AdapterFFN' involves fine-tuning the FC layers that are part of the feed-forward network in the encoders.
+adapterattn,adapterffn,"'AdapterATTN' and 'AdapterFFN' are both methods for adjusting the FC layers in the encoders, each related to a different network component."
+backbone,frozen,"The 'backbone' parameters are kept 'frozen' unless stated otherwise, indicating they are not altered during optimization."
+optimizer,adamw,"The 'optimizer' used for optimization is 'AdamW', known for its weight decay setting."
+learning rate,cosine schedule,The 'learning rate' is decayed following a 'cosine schedule' during optimization.
+frames,video,"Frames are sampled from each video, where 12 frames are uniformly selected in accordance with previous studies."
+video frames,resized,All 'video frames' are 'resized' to 224x224 dimensions.
+textual tokens,maximum number,The 'maximum number' of 'textual tokens' is determined for the experiments.
+co-operative multi-modal prompts,higher performance,The co-operation of prompting multi-modal branches leads to higher performance.
+video prompts,vop,Appending only one video prompts can significantly improve VoP to even compete with Full.
+video prompts,"position-specific, context-specific and function-specific video prompts","Position-specific, context-specific and function-specific video prompts respectively bring 0.5%, 1.0% and 3.1% average R@1 gain."
+vopp and vopc,superior performance,VoPP and VoPC obtain a superior performance than all other efficient tuning protocols on average.
+vopf,full,VoPF even outperforms Full by 0.3% without introducing more parameters to VoP.
+video prompts,higher performance benefits,Combining the video prompts can lead to higher performance benefits.
+vopf,vopf+p and vopf+c,"Compared to VoPF, VoPF+P and VoPF+C further achieve 0.9% and 1.1% R@1 improvements."
+performance,parameter and computation limitations,we provide sufficient solutions to choose from according to the strictness of the parameter and computation limitations.
+co-operative uni-modal prompts,vop,"We report the performance of using CLIP without fine-tuning, tuning with uni-modal prompts, and using our proposed VoP."
+tuning,uni-modal prompts,The use of uni-modal prompts in tuning outperforms directly applying CLIP without tuning.
+tuning,vop,"The proposed VoP achieves better results compared to using uni-modal prompts, showing that prompting both encoders enables better adaptation to the downstream text-video retrieval task."
+tuning,clip,Uni-modal prompts in tuning outperform directly applying CLIP without tuning.
+vop,encoders,Prompting both encoders in VoP enables better adaptation to the downstream text-video retrieval task.
+t2v r@1 gains,methods,Comparison against full fine-tuning shows gains in t2v R@1 for all methods.
+adapterattn,adapterffn,Both AdapterATTN and AdapterFFN have the number of hidden dimensions set to 64.
+vop,prompt length,"The prompt length for both encoders, P t and P v, is set to 8 by default in VoP."
+vopp,vopc,Video prompts for VoPP and VoPC have a length set to 4.
+vopf,vopf+p,VoPF and VoPF+P have K s set to 8.
+vopf,vopf+c,VoPF and VoPF+C have K s set to 8.
+vopf+p,vopf+c,Both VoPF+P and VoPF+C have K s set to 8.
+vopf+p,vopf,Both VoPF+P and VoPF have K s set to 8.
+methods,tuning protocols,Our methods are compared with popular tuning protocols on five benchmarks.
+t2v r@1 gains,full fine-tuning,Comparison shows t2v R@1 gains relative to full fine-tuning.
+t2v r@1 gains,fig. 3,The t2v R@1 gains are represented in Fig. 3 in comparison against full fine-tuning.
+vop,competitive tuning protocols,VoP achieves competitive or superior performance than other efficient tuning protocols with only 0.1% parameter storage.
+vop,partial,R@1 of Partial is on average 0.2% higher than that of VoP
+bilstm,cmm,BiLSTM achieves the best results on more datasets in comparison to CMM choices in VoP
+cmm,vop,"We report the R@1, R@5 and R@10 results on five benchmarks regarding the CMM choices in VoP."
+vop,hyperparameters of prompts,Ablation on hyperparameters of prompts in VoP is shown in Figure 4.
+vop,prompt depth,Effect of Prompt Depth in VoP is illustrated in Fig. 4.
+visual prompts,video-specific prompts,The number of visual prompt tokens that are replaced with corresponding video-specific prompts is varied in Figure 5.
+fig. 4,number of layers,Increasing the number of layers inserted into prompts is positively correlated with the performance of VoP.
+prompt depth,performance of vop,The performance of VoP is positively correlated with the prompt depth.
+prompt length,performance,Steadily increasing the prompt length does not lead to continuous growth of performance.
+prompt tokens,performance,Using only 8 tokens remains a competitive performance with parameter efficiency.
+prompt tokens,video-specific prompts,Inserting video-specific prompts does not lead to the best results for all cases.
+specific prompts,prompt tokens,Turning only half of the 8 prompt tokens into specific ones achieves a more universal choice.
+vopc design,results,The current VoPC design achieves better results.
+layers with different functions,intra-frame spatial self-attention,The first K shallow layers perform intra-frame spatial self-attention in VoPF.
+deep layers,inter-frame spatio-temporal self-attention,The subsequent deep layers perform inter-frame spatio-temporal self-attention in VoPF.
+general knowledge,frames,"General knowledge shared between all frames across videos, complementing the video prompts that may focus on other information around a specific frame."
+frames,videos,Frames are part of videos and share general knowledge across different frames.
+videos,prompts,Video prompts in the context may focus on specific information around a frame.
+r@1,candidates,R@1 metric is used to compare the performance of three candidates.
+cmm,vopc,"Effect of CMM in VoPC context, mentioned as a model choice for contextual information."
+choices,cmm,Different choices are evaluated to model contextual information using CMM.
+choices,transformer,Transformer is one of the choices evaluated for modeling contextual information.
+choices,lstm,LSTM is one of the choices evaluated for modeling contextual information.
+choices,bilstm,BiLSTM is one of the choices evaluated for modeling contextual information.
+bilstm,benchmark,BiLSTM is noted as a more effective choice in general when compared on five benchmarks.
+vopc,practice,"In VoPC, contrary to common practice in temporal modeling, CMM outputs frame tokens modulated with contextual information for generating prompts instead of directly updating [CLS] tokens."
+cmm,[cls],Comparison between generating prompts for token sequence with CMM or directly updating [CLS] tokens for a more effective option.
+vopc,metric,VoPC achieves leadership in nearly all metrics by generating prompts for the token sequence to achieve cross-frame communication.
+methods,tuning,"Qualitative results of four tuning methods: Full, Partial, VoP, and VoPF+C are shown in Figure 7."
+query text,rank-1,"Given the query text, the rank-1 position or performance is represented."
+ks,vopf,"Ks influences the performance of VoPF, where a larger value leads to more shallow layers for intra-frame spatial self-attention and fewer deep layers for inter-frame spatio-temporal self-attention."
+ks,r@1,"R@1 increases with the increasing value of Ks until Ks = 8, indicating the importance of intra-frame message exchanging in shallow layers."
+ks,layers,Properly substituting the functions of layers with the value of Ks brings improvements in performance.
+r@1,ks,"The performance indicated by R@1 starts to drop as Ks continues to increase beyond 8, showing a trade-off between the two."
+ks,trade-off,The choice of Ks = 8 is considered to achieve the best trade-off in performance.
+t2v retrieval examples,test set,The t2v retrieval examples are visualized with the test set of MSR-VTT-9k.
+tuning methods,full,"Full tuning method is compared with other tuning methods, such as Partial, VoP, etc., for retrieval examples."
+full,video,"Full tuning method can retrieve the correct video in certain examples, demonstrating its effectiveness."
+partial,unrelated one,"Partial tuning method sometimes matches an unrelated video, showing its inferiority compared to other methods."
+full,japanese book,Full tuning method fails to recognize a 'Japanese' book in a certain example.
+tuning protocols,parameter-efficient tuning methods,relationship: parameter-efficient tuning methods succeed by capturing visual clues of Japanese characters and related English words
+japanese book,japanese characters and related english words like tokyo,relationship: indicates that updating all parameters might be an unsatisfactory strategy as more knowledge from large-scale text-image pre-training is forgotten
+full,vopf+c,relationship: understanding the whole event represented by sequenced frames and selecting more relevant candidates from a global view
+textual elements like “priest”,semantic misalignments,relationship: overcoming minor semantic misalignments and selecting more relevant candidates from a global view
+concept of “tail”,interaction of “playing with”,relationship: distinguishing the correct video from hard negative candidates
+prompt tuning,clip for text-video retrieval,relationship: continuing the vein of prompt tuning to transfer pre-trained CLIP for text-video retrieval with both effectiveness and efficiency
+vop,video prompts,relationship: exploring three video prompts to model different video-specific information
+revenue,vop,The revenue of VoP implies that there is a financial aspect related to VoP.
+video prompts,video-specific information,Different video prompts are used to model various video-specific information.
+video prompts,combinations,Different combinations of video prompts can be selected depending on the strictness of the limits on parameter overhead.
+combinations,parameter overhead,The selection of different combinations depends on the limits of parameter overhead.
+combinations,average relative improvement,Different combinations can achieve at most 1.4% average relative improvement.
+parameter overhead,average relative improvement,The strictness of limits on parameter overhead impacts the average relative improvement.
+trainable parameters,fine-tuning,There are much fewer trainable parameters compared to full fine-tuning.
+work,future research,The hope is that the work can inspire future research on fully exploiting large foundation models in video-understanding tasks.
+work,acknowledgement,"The work was supported by STI 2030, NSFC General Program, and Alibaba Group through their respective programs."
+sti 2030 - major projects,nsfc general program,STI 2030 was supported by NSFC General Program.
+sti 2030 - major projects,alibaba group,STI 2030 was supported by Alibaba Group through Alibaba Research Intern Program.
+nsfc general program,alibaba group,NSFC General Program was also supported by Alibaba Group through their program.

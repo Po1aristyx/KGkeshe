@@ -1,0 +1,76 @@
+node_1,node_2,edge
+lower restricted secant inequality (rsi-),upper error bounds (eb+),The context discusses that the main contribution is to show the optimality of gradient descent (GD) method specifically for the classes of objective functions induced by these two conditions.
+gradient descent (gd) method,classes of objective functions,GD is shown to be exactly optimal on the classes of functions induced by RSI- and EB+ conditions.
+optimality results,choice of conditions,Optimality results are sensitive to the specific conditions
+accelerated methods,additional assumptions,The text implies that additional assumptions are necessary to explain the efficiency of accelerated methods in practice
+convex set of global minima (f),optimization problem,F refers to the set of differentiable functions with a focus on finding a minimum in X ∗f.
+gradient descent (gd),update rule,GD uses the update rule xi+1 = xi - α∇f(xi)
+first-order algorithm,iterates,function values
+projection onto x ∗f,x∗,x∗ refers to the orthogonal projection of a point onto the set of global minima X ∗f.
+lower restricted secant inequality (rsi−),non-convex functions,RSI−(µ) includes non-convex functions but enforces stronger gradients in directions away from X ∗ to prevent flat landscapes.
+upper error bounds (eb+),first-order algorithms,Section 5 proves a lower bound on the convergence rate of first-order algorithms under RSI− and EB+.
+objective function,iterates (xj,f(xj)
+gradient (∇f),function values (f(xj)),Each iterate includes the gradient at the current point and its corresponding function value.
+x0,initial point (x0 ∈ rd),The algorithm starts with an initial point x0.
+xj,xj+1,The iterates form a sequence where xi+1 is the next iterate after xi.
+x ∗,gradient direction,RSI− enforces that gradients point in the opposite direction of X ∗ when x is far from it.
+section 2,rsi− and eb+ definition,This section introduces and discusses RSI− and EB+.
+section 3,related works,Section 3 examines connections to existing literature.
+section 4,interpolation conditions,This section provides necessary and sufficient conditions for RSI− and EB+.
+section 5,convergence rate,Section 5 focuses on proving the lower bound for convergence rates.
+appendix,detailed proofs,Proofs of theorems and results are provided in the appendix.
+gradient descent,learning rate,The context discusses the relationship between gradient descent and its learning rate
+learning rate,convergence rate,The learning rate affects the convergence rate; a smaller learning rate like α = µ/L2 guarantees a faster convergence rate.
+l2 regularization,convergence rate,L2 regularization (L2 on f) influences the convergence rate
+strongly convex function,worst-case convergence rate,Gradient descent has a worst-case convergence rate for strongly convex and L-smooth functions
+rsi−,additional term,RSI− is a direct bound on an additional term in the algorithm
+eb+,additional term,EB+ is another direct bound on an additional term
+optimization path,resnet18,The optimization path of a ResNet18 trained for classification on CIFAR10 verifies the interpolation conditions of RSI − ∩ EB+.
+rsi − ∩ eb+,practical deep learning setting,RSI − ∩ EB+ provides linear convergence guarantees and is empirically applicable to neural networks
+lower conditions,upper conditions,These conditions in the literature for first-order optimization mainly fall into two categories: lower bounds (like strong convexity) and upper bounds on the objective function's properties.
+strong convexity,lower bound,Strong convexity is a type of lower condition that bounds the curvature of the objective function.
+neural networks,loss functions,Neural networks are known for their highly non-convex loss functions.
+cifar10,dataset,ResNet18 was trained for classification on the CIFAR10 dataset.
+local minima,empirical applicability,RSI − ∩ EB+ is applicable to local minima in practical scenarios.
+weak-smoothness,expected smoothness,In the context
+lower conditions,upper conditions,The authors argue that lower conditions can be transformed into equivalent upper conditions and vice versa
+error bounds eb+,error bounds from [24],EB+ is described as the natural upper equivalent to error bounds typically found in a reference
+rsi−(µ),eb+(l),Necessary and sufficient interpolation conditions are discussed for RSI−(µ) ∩ EB+(L)
+rsi−(µ) ∩ eb+(l),performance estimation problems (pep),The search for interpolation conditions for RSI−(µ) ∩ EB+(L) is motivated by PEP
+first-order optimization algorithm a,worst-case convergence,The goal is to analyze the slowest worst-case convergence for the algorithm A
+worst-case convergence,first-order optimization algorithm a,The context discusses the slowest convergence rate of algorithm A in the context of a class of objective functions.
+objective function class c,starting point x0,The optimization problem aims to find the slowest convergence rate for A with respect to all f within the class C and a specific initial point x0.
+step number n,problem (5),The convergence rate is measured at step n
+functional space,tractable,Searching for f directly in the functional space is generally difficult
+problem (6),g (set of interpolating families),Problem (6) reduces to finding the set of all families that can be interpolated by some function in C.
+interpolation conditions,formulation,A crucial aspect of the analysis is formulating the necessary and sufficient conditions for a family to belong to G
+rsi- ∩ eb+,theorem 1,The theorem introduces interpolation conditions specifically for RSI- ∩ EB+
+perturbation term,function λ(∥x − xi∥2),The perturbation term is added to fϵ
+rsi−(µ),eb+(l),fϵ
+theorem 1,corollary 1,These results are used to prove the optimality of gradient descent for RSI− and EB+ problems.
+function fϵ,β,convex set x ∗
+gradient descent,first-order algorithm,Theorem 1 and Corollary 1 together imply that gradient descent is optimal among all first-order algorithms.
+interpolation conditions,independence,The interpolation conditions in Theorem 1 are stated as independent
+interpolation,rsi−(µ) ∩ eb+(l),A concept admits interpolation if and only if it admits interpolation in the intersection of RSI−(µ) and EB+(L).
+corollary 1,independent interpolation conditions,The sufficient interpolation conditions stated in Corollary 1 are independent
+interpolable family,x ∗,Given an interpolable family
+xn+1,fn+1,gn+1
+lower bound,convergence rate,A lower bound is derived for the convergence rate of first-order algorithms on RSI− and EB+.
+number of steps,dimension d,The lower bound assumes the number of steps is smaller than the dimension; this is common in high-dimensional optimization.
+worst-case functions,orthogonal gradients,Observed gradients of worst-case functions for optimal algorithms tend to be orthogonal
+rsi−(µ),eb+(l),These two concepts are related as they are the intersection of two sets where RSI−(µ) represents the region where gradient descent is suboptimal
+gradient descent,optimality,Gradient descent is mentioned as being exactly optimal on RSI−(µ) ∩ EB+(L) in the context
+lower bounds,theorem 2,The bounds established in Theorem 2 are described as tight
+theorem 2,convergence guarantees,Proposition 1 is mentioned as providing the corresponding convergence guarantees
+complexity classes,sensitivity of theoretical optimality,The theorem highlights the sensitivity of theoretical optimality to the choice of complexity classes
+optimization problem,solving,The context discusses the optimal solution for both the first and second bounds in the theorem
+ill-conditioned functions,substantial,ill-conditioned functions can lead to a substantial increase in the value of n
+threshold l,circle of center x0 − g0,L determines whether x∗ must be within the circle centered at x0 with radius ∥g0∥2
+circle of center x0,radius ∥g0∥2,The circle has a center at x0 and a radius equal to the norm of g0
+x1,x0 − g0,x1 is equal to x0 minus g0 when L2 is used
+x1,x0 − µ2,For L1
+x1,x0 − µl2 g0,x1 minimizes both ∥x1 − x∗∥2 and a different quantity when L2 is used
+rsi−(µ),eb+(l),RSI− and EB+ are intersected for a specific range of L and µ values
+worst-case convergence rate,heavy ball (hb) algorithm,The figure shows the worst-case linear convergence rate of the HB algorithm on the intersection of RSI− and EB+
+gradient descent,heavy ball (hb),Gradient descent is a special case of HB with a momentum parameter β set to 0
+optimal rate of convergence,β = 0,α = 0.1 = µ_l2

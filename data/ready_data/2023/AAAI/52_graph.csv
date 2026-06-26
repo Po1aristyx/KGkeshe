@@ -1,0 +1,157 @@
+node_1,node_2,edge
+abstractpolicy optimization (po),high-dimensional continuous control tasks,PO algorithms are designed to handle the high-dimensionality of real-world continuous control tasks.
+trust region policy optimization methods,popular approach,TRPO is a popular strategy within the context of PO to stabilize policy updates.
+kl divergence,used in trpo,TRPO traditionally relies on the KL divergence to limit policy changes.
+wasserstein distance,alternative to kl divergence,The Wasserstein distance is proposed as a natural alternative to define trust regions or regularize objectives.
+state-of-the-art works,approximations or limited to discrete spaces,Current methods either approximate the Wasserstein distance or don't provide a continuous-space algorithm.
+optimal transport trust region policy optimization (ot-trpo),proposed algorithm,We introduce OT-TRPO to address the lack of a suitable algorithm for continuous state-action spaces.
+infinite-dimensional optimization problem,avoided with dual reformulation,OT-TRPO provides a one-dimensional dual formulation to bypass the need for infinite-dimensional optimization.
+dual problem,solution for policy update,The optimal policy update is derived analytically from the solution of the dual problem.
+computation of optimal transport costs,optimal transport maps,OT-TRPO implicitly characterizes optimal transport costs and maps through the dual formulation.
+experimental evaluation,control tasks,The paper presents an experimental evaluation of OT-TRPO across various control tasks.
+experimental evaluation,control tasks,The context discusses providing an evaluation of the approach specifically for different control tasks.
+optimal transport discrepancies,advantage over state-of-the-art approaches,OT discrepancies are proposed as a means to offer an advantage compared to existing methods.
+reinforcement learning (rl),policy optimization (po),RL
+trust region policy optimization (trpo),kl divergence,TRPO uses the KL divergence as a similarity measure in policy optimization but alternatives like Wasserstein distance are mentioned.
+wasserstein distance,optimal transport discrepancy,The Wasserstein distance is a specific type of optimal transport discrepancy
+optimization problem,policy space,The main challenge in PO algorithms is optimizing policies within a constrained space
+optimal transport discrepancies,trust region,The context discusses using optimal transport discrepancies to construct a trust region
+general compact polish spaces,continuous domains,These spaces refer to the type of domains where actions and states are continuous
+policy optimization problem,strong duality,The paper establishes strong duality for the optimal transport trust region policy optimization problem in general metric spaces.
+dual reformulation,optimal policy update,The dual reformulation helps ensure an optimal policy update within the trust region without requiring line searches.
+analytical expression of transport maps,computation of optimal transport discrepancies,An analytical expression is used to avoid computationally intensive optimal transport discrepancy calculations.
+optimal transport trust region policy optimization (ot-trpo),algorithm for continuous settings,OT-TRPO is the proposed algorithm that leverages the derived duality theory for policy optimization in continuous spaces.
+policy updates,monotonic improvement,Policy updates in OT-TRPO are shown to lead to a monotonic increase in the performance function.
+optimal transport discrepancy constraint,rl benchmarks,The context discusses the use of optimal transport discrepancies in the context of reinforcement learning (RL) benchmarks
+our method,po (policy optimization),Our method is specifically designed for policy optimization and shown to be effective in comparison to other PO algorithms.
+behavior guided policy gradient (bgpg),wasserstein distance penalty,BGPG replaces the KL divergence trust region in TRPO with a Wasserstein distance-based penalty in a behavioral space.
+trpo (proximal policy optimization),ppo (proximal policy optimization),Both TRPO and PPO are mentioned as traditional methods
+wasserstein natural policy gradient (wnpg),speeding up po,WNPG attempts to enhance PO by incorporating local behavior information but is slower than TRPO and PPO.
+trust regions,guarantee,Our approach guarantees the use of trust regions
+[22] (bgpg),[29] (trpo),References to specific algorithms
+[20] (wnpg),wasserstein information matrix,WNPG incorporates the Wasserstein Information Matrix to improve PO efficiency.
+trust regions policy optimization (trpo),idea of trust regions,TRPO does not build on the idea of trust regions
+wasserstein policy optimization (wpo),related work,The closest related work to TRPO is WPO
+compact polish spaces,general setting,This work encompasses both continuous and discrete state-action spaces
+non-direct policy parametrizations,level of generality,The generality of the work allows for non-direct policy parametrizations
+wasserstein distributionally robust optimization (dro),connection,The work is connected to DRO
+exact optimal transport-based trpo,continuous settings,TRPO performs exact updates in continuous settings by leveraging optimal transport theory to avoid computational burdens.
+discrete-time markov chain,mdp (markov decision process),A policy induces a discrete-time Markov chain
+state of the system,state space s,The state of the system
+probability distribution p⇢,⇡,markov chain
+state-value function v海尔潁(s),expected long-term return,V海尔潁(s) represents the expected long-term return when starting from state s under policy ⇡.
+action-value function q海尔潁(s,a),state-value function v海尔潁(s)
+expected long-term return r,action-value function q海尔潨(s,a)
+po problem,unknown state transition kernel p,The PO problem involves solving an MDP with an unknown state transition kernel P.
+finite state and action spaces,optimal policy,In finite spaces
+continuous state and action spaces,measurable optimal policy,For continuous spaces
+finite state-action space,optimal policy,An optimal policy is guaranteed to exist when the state-action space is finite.
+continuous state-action space,measurable optimal policy,In the continuous setting
+theorem 6.11.11 (reference),appropriate assumptions,This theorem guarantees the existence of an optimal policy with specific conditions on state and action spaces
+polish space,transport cost,A Polish space
+probability measures,optimal transport discrepancy,The optimal transport discrepancy measures the minimum cost to transform one probability measure into another
+type-p wasserstein distance,c(µ,⌫) with c = dp
+po context,optimal transport discrepancy,In the policy optimization context
+trpo (trust region policy optimization),trust region,TRPO employs a trust region to update policies
+policy discrepancy,optimization problem,The discrepancy serves as a measure of closeness between policies
+dual optimal solution,primal solution,Given the dual optimal solution
+policy iteration algorithm,optimal transport-based trust regions,The algorithm uses trust regions based on optimal transport to address the complexity of the discounted state-occupancy measure.
+expected return,discounted state-occupancy measure,The approximation L⇡(˜⇡) replaces the complex dependency on the discounted state-occupancy measure ⇢˜⇡ with ⇢⇡ for stability.
+policy update rule,l⇡(˜⇡),The rule involves maximizing the approximation L⇡(˜⇡) at each time step to improve the current policy.
+policy (⇡),policy change,A conservative policy update is made
+optimal transport discrepancy,trust region,The method uses an optimal transport discrepancy instead of the KL divergence to define the trust region
+problem (p),intractable,Problem (P) is considered intractable due to its infinite-dimensional nature when the state or action spaces are continuous
+continuous state or action space,infinite-dimensional optimization problem,The complexity arises from the continuous nature of the state and action spaces
+line search (trpo),computations of optimal transport discrepancy,In TRPO
+wasserstein distributionally robust optimization (dro),tractable dual reformulation,The algorithm draws inspiration from prior works on Wasserstein DRO to find a more manageable dual representation of Problem (P).
+assumption 1,state space,This assumption likely pertains to some specific properties or requirements of the state space for the dual reformulation to hold.
+state space,compact subset of a polish space,Assumption 1 states that the state space is assumed to be a compact subset of a Polish space.
+reward function,continuous function,The reward function r is assumed to be continuous.
+action spaces,continuous in both s and a,Action spaces are assumed to be continuous in both state s and action a.
+optimal measurable (stationary) policy,po problem,There exists an optimal policy for the PO problem formulated in Section 3.
+duality result,[24,theorem 6.11.11
+transport cost,c(a,a0)
+advantage function,a⇡(s,a)
+primal problem (p),dual problem (d),Strong duality holds between Problems (P) and (D).
+problem (d),one-dimensional and convex,Problem (D) has a simple structure involving only the current policy.
+trust region constraint,optimal policy,The optimal policy results from balancing the proximity to the closest (T⇤(s
+maximizers of the ⇤-regularized advantage ⇤(s,a),optimal policy
+ambiguous set,dro (distributionally robust optimization),Similar results in DRO deal with evaluating the worst-case cost over an ambiguous set
+corollary 2,results of this section,Corollary 2 provides specific insights on the relationship between the trust region constraint and the optimal policy.
+t⇤(s,a),t⇤-regularized advantage
+t0(s,a),closest maximizer of advantage functions
+dro (distributionally robust optimization),ambiguous set of probability distributions,In DRO
+optimal transport discrepancy,trust region constraint,The trust region constraint in DRO involves a single optimal transport discrepancy instead of an average.
+state space,joint continuity of advantage in state and action,The problem's regularity depends on the joint continuity
+finite-dimensional linear optimization problem,discrete case,In the discrete setting
+uncountable product of polish spaces,applicability of dro results,In the continuous setting
+policy,probability measure over state space,A potential alternative approach is to view a policy as a probability measure
+[33] (reference),similar result in the discrete case,This reference presents a similar result
+continuous setting,infinite-dimensional linear programming,The proof strategy in the continuous setting requires the use of abstract machinery from infinite-dimensional linear programming.
+discrete setting,continuity and measurability,In the discrete setting
+optimal policy update,singleton,In the continuous case
+convex optimization problem,dual multiplier,Our proof shows that finding the dual multiplier is a one-dimensional convex problem
+discrete state-action spaces,finite state-action spaces,We specialize to discrete spaces
+policy ϖ,state-occupancy measure ρ,Policy ϖ is represented as a discrete measure on states and actions
+state-occupancy measure ρ,probability distribution,ρ_i represents the probability distribution over states under policy ϖ.
+corollary 3,strong duality,Corollary 3 states that for a given policy
+strong duality result,theorem 1,The strong duality result is analogous to Theorem 1.
+theorem 1,corollary 2,Analogous results to Theorem 1 also include Corollary 2.
+corollary 2,problem (p),Corollary 3 provides an implementable algorithm for the policy update
+problem (p),problem (d),Substituting discrete measures in (P) and (D) leads to finite support observations.
+discrete-p,discrete-d,Both discrete-P and discrete-D are optimization problems with finite sample spaces.
+policy update,corollary 3,An optimal policy is derived from Corollary 3
+state-action space,empirical distributions,The representation is applicable when policies and state-occupancy measures are empirical distributions.
+policies,state-occupancy measures,Policies and state-occupancy measures are interrelated in the context.
+mixed-integer optimization problem (discrete-p),one-dimensional convex program (discrete-d),Solving discrete-D provides the optimal Lagrange multiplier for the trust region constraint in discrete-P.
+primal problem,trust region constraint,The optimal Lagrange multiplier from discrete-D is used to compute actions for the primal problem's trust region constraint.
+policy update (10),[33,theorem 1
+probability mass splitting,wasserstein dro literature,This 'mass splitting' is consistent with the Wasserstein Distributionally Robust Optimization (DRO) literature.
+b⇤i,j,b⇤i
+d(i,aj),singleton
+performance function j,advantage function estimation error,Proposition 4 shows that our policy update improves performance function J up to the estimated advantage function error.
+estimated advantage function ˆa⇡,true advantage function a⇡,The improvement is guaranteed if the estimated advantage function is close to the true one (with a given error condition).
+estimated advantage function ˆa,performance function,Optimal transport-based trust region policy optimization leads to monotonic improvement of the performance function.
+true advantage function,performance difference lemma,The proof builds on the performance difference lemma (see (2)).
+problem (p),closed-form expression of the optimal policy,The proof of Theorem 1 constructs a closed-form expression for the optimal policy solving problem (P).
+finite action space,[33,theorem 2
+continuous state-action space setting,novelty,This result is novel for the continuous state-action space setting.
+duality results,practical algorithm for ot-trpo,We use duality results on Section 4 to derive a practical algorithm for OT-TRPO.
+policy search set ⇧,set of policies ⇡✓,Restricted to the set of policies parametrized by a Rd for continuous differentiability.
+rd,policy parametrization,Covered for policy parametrizations like softmax and Gaussian policies.
+policy parametrizations,softmax and gaussian policies,The context mentions that commonly used policy parametrizations include softmax and the Gaussian policies
+dual problem (d),one-dimensional convex problem,The dual problem D is reformulated as a one-dimensional convex problem for every vector in Rd.
+current policy,vector ✓,A current policy is represented by the vector ✓
+trust region,optimal policy update,The optimal policy update is derived within the trust region after solving the one-dimensional convex problem.
+discrete setting,monte carlo methods,In the discrete setting
+continuous case,weighting every visited state equally,In the continuous case
+advantage function,estimation methods,The advantage function is estimated using Monte Carlo methods
+gae,neural network approximation,GAE uses a neural network to approximate the value function
+evaluation of g,various ways,The context mentions different methods for evaluating G
+finite actions,convex optimization problem,The evaluation of finite actions relates to solving a one-dimensional convex optimization problem in Algorithm 1.
+gaussian policy parametrization,approximation of g(.,✓)
+gaussian policy,mean (m(s)),In the Gaussian policy
+policy approximation,neural network (nn),A neural network is used to approximate the advantage function
+direct parametrization,convex optimization solver,Direct parametrization involves solving a one-dimensional convex optimization problem
+direct parametrization,policy update,In the direct parametrization
+continuous states,discrete actions,policy network update
+standard deviation,independent runs,The standard deviation is calculated across 10 independent runs.
+policy evaluation,mean,Each policy evaluation represents the mean of 10 sampled trajectories.
+ot-trpo,larger final returns,OT-TRPO leads to larger final returns.
+ot-trpo,lower variance,It also has lower variance compared to other algorithms.
+ot-trpo,slower learning curve,In few cases
+performance gain,bgpg and wngp,OT-TRPO's performance gain confirms trust regions stabilize training.
+optimal transport discrepancies,kl divergence,OT discrepancies provide a more natural notion of closeness than KL divergence.
+cliffwalking-v0,optimal policy ⇡⇤,Example in CliffWalking-v0 shows the difference between optimal and candidate policies.
+cliffwalking-v0,candidate policy ⇡,Both policies differ at one state.
+trpo,optimal policy,TRPO cannot converge to the optimal policy with KL divergence due to lack of shared support.
+wpo,ot-trpo,OT-TRPO improves upon WPO in terms of policy performance and trust region constraint.
+trust region constraint,violation,In Taxi-v3
+costs,actionable knobs,Costs are related to actionable knobs
+trust region,geometry,The trust region's geometry is shaped by the costs
+costs,prior knowledge,Costs can encode prior knowledge about the environment or exploration preferences.
+costs,exploration strategies,Costs influence the chosen exploration strategies within the problem context.
+algorithm,convergence properties,The main focus is on studying the convergence properties of the proposed algorithm.
+project,funding sources,The project receives funding from various sources
+project,nccr automation,It is part of the NCCR Automation grant (51NF40_180545).
+project,eth,The project is partially supported by the ETH (Swiss Federal Institute of Technology).

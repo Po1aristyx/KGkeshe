@@ -1,0 +1,265 @@
+node_1,node_2,edge
+interactive preference learning systems,human preferences,Interactive preference learning systems infer human preferences
+interactive preference learning systems,queries,Interactive preference learning systems present queries as pairs of options
+queries,pairs of options,Queries are presented as pairs of options
+queries,binary choices,Queries as pairs of options and collecting binary choices
+binary choices,limited information,Binary choices provide limited information about preference strength
+binary choices,human response times,We leverage human response times to address the limitations of binary choices
+human response times,preference strength,Human response times are inversely related to preference strength
+choices,response times,Method combines choices and response times for estimating utility functions
+utility functions,ez diffusion model,Utility functions are grounded in the EZ diffusion model from psychology
+preference strength,response times,Response times complement choices by providing extra information about preference strength
+queries,strong preferences,"For queries with strong preferences, response times provide extra information leading to improved utility estimation"
+estimator,preference-based linear bandits,Estimator is incorporated into preference-based linear bandits for fixed-budget best-arm identification
+datasets,simulations,Simulations on three real-world datasets demonstrate the impact of using response times in preference learning
+additional materials,"code, slides, talk video","Additional materials such as code, slides, and talk video are available at a specified URL"
+preference learning,recommender systems,Preference learning from human binary choices is widely used in recommender systems
+preference learning,assistive robots,Preference learning from human binary choices is widely used in assistive robots
+preference learning,fine-tuning large language models,Preference learning from human binary choices is widely used in fine-tuning large language models
+assistive robots,fine-tuning large language models,assistive robots and fine-tuning large language models are both mentioned in the context as separate entities related to the use of technology.
+preference-based bandit problem,binary choices,"preference-based bandit problem is framed as a system presenting queries as pairs of options, whereas binary choices are mentioned as popular because they are easy to implement and impose low cognitive load on users."
+binary choices,researchers,researchers have considered binary choices to be popular and easy to implement but lacking in revealing preference strength.
+additional explicit human feedback,implicit human feedback,"researchers have incorporated both additional explicit human feedback, such as ratings, labels, and slider bars, and implicit human feedback, specifically response times, to enhance the understanding of preference strength in decision-making processes."
+online retailer,recommended product,"the context mentions how an online retailer presents users with binary queries regarding a recommended product, highlighting user interaction with online platforms."
+recommended product,users,"users are repeatedly presented with queries about whether to purchase or skip recommended products, emphasizing the decision-making process in online shopping scenarios."
+probability of skipping,response time,"Response time can help overcome the limitation of accurately inferring user preferences when there is a lack of variation in choices, as it shows an inverse relationship with preference strength."
+user preferences,response time,"Psychological research indicates an inverse relationship between response time and preference strength, where longer response times may indicate weaker preferences and quick responses may indicate strong preferences."
+response time,preference strength,"Response time can uncover subtle differences in preference strength, even when choices appear similar, helping to accelerate preference learning."
+human choices,response times,"Psychological research has extensively studied the relationship between human choices and response times, using complex models like Drift-Diffusion Models and Race Models."
+complex models,response times,"Complex models like Drift-Diffusion Models and Race Models align with both behavioral and neurobiological evidence, and they rely on computationally intensive methods to estimate underlying human utility functions from human choices and response times."
+real-time interactive systems,complex models,The computationally intensive methods required by complex models like Drift-Diffusion Models and Race Models make them impractical for real-time interactive systems.
+response times,real-time interactive systems,Response times are mentioned as impractical for real-time interactive systems
+response times,choices,Response times are leveraged to transform binary choices into richer continuous signals
+response times,utility estimation,Response times complement choices in utility estimation and provide additional information about preference strength
+utility functions,linear utility functions,"Faster estimators typically estimate utility functions for a single pair of options without aggregating data across multiple pairs, limiting their ability to leverage linear utility functions"
+linear human utility functions,difference-based ez diffusion model,"A computationally efficient method is proposed to estimate linear human utility functions from both choices and response times, grounded in the difference-based EZ diffusion model"
+utility estimation,logistic regression methods,The proposed method for utility estimation is compared to traditional logistic regression methods that rely solely on choices
+response times,preferences,"Response times complement choices, particularly for queries with strong preferences."
+response times,estimator,"Our linear-regression-based estimator integrates seamlessly into algorithms for preference-based bandits with linear human utility functions, enabling interactive learning systems to leverage response times for faster learning."
+response times,choices,Our utility estimator incorporates both choices and response times.
+estimator,generalized successive elimination algorithm,We specifically integrated our estimator into the Generalized Successive Elimination algorithm for fixed-budget best-arm identification.
+response times,bandits,"To the best of our knowledge, this is the first work to integrate response times into bandits (and RL)."
+estimator,algorithms,Our linear-regression-based estimator integrates seamlessly into algorithms for preference-based bandits with linear human utility functions.
+response time models,parameter estimation techniques,These terms are related as they are both reviewed in Appendix B and are connected to preference-based RL.
+random variable,expectation,The expectation of a scalar random variable x is denoted by E [x].
+random variable,variance,The variance of a scalar random variable x is denoted by V [x].
+feature vector,binary queries,Feature vectors and binary queries are both part of the problem setting for preference-based bandits with a linear utility function.
+landing page,product page,"In the online retailer example, the query space X defines the difference between actions like purchasing a product and skipping to the landing page."
+human utility,linear utility function,Human utility is assumed to be linear in the feature space in the preference-based bandits.
+utility difference,query,The utility difference is defined for each query x ∈ X as ux := x⊤θ∗.
+query,human choices,Human choices are modeled based on the queries using the EZ-Diffusion Model integrated with the linear utility structure.
+ez-diffusion model,dezdm,"EZ-Diffusion Model is based on the dEZDM, as mentioned in reference [8, 67]."
+human decision-making,stochastic process,Human decision-making is interpreted as a stochastic process in the model.
+evidence accumulation,time,Evidence accumulates over time to compare two options in the decision-making process.
+non-decision time,encoding,A fixed amount of non-decision time is spent to perceive and encode the query.
+brownian motion,drift,Evidence accumulation follows a Brownian motion with drift x⊤θ∗.
+absorbing barriers,decision making,"The process of evidence accumulation continues until it reaches the upper or lower absorbing barriers, at which point a decision is made."
+decision time,response time,The decision time is part of the total response time needed for making a choice.
+choice probability,expected choice,The choice probability is related to the expected choice in the decision-making process.
+learner,choices,The choice probability in the context matches that of the Bradley and Terry model when the learner relies solely on choices.
+learner,bandit problem,"If the learner relies solely on choices, then the bandit problem reduces to the transductive linear logistic bandit problem."
+bandit problem,transductive linear logistic bandit problem,The bandit problem reduces to the transductive linear logistic bandit problem in the context.
+parameters,absolute drift,The absolute drift reflects the human's preference strength for the query x.
+parameters,barrier,The barrier represents the human's conservativeness in decision-making.
+conservativeness,evidence,"A more conservative human requires more evidence to decide, resulting in slower but more consistent choices."
+consistencies,decisions,"Larger values of absolute drift indicate stronger preferences, leading to faster decisions and more consistent choices."
+conservativeness,choices,A less conservative human decides faster but makes less consistent choices.
+human decision-making process,binary query,The human decision-making process involves selecting between two arms for a binary query x.
+cx = 1,cx = −1,"The terms cx = 1 and cx = -1 are denoted as different states of the accumulation process, representing the random stopping time and the total response time respectively."
+tx,"trt,x","The terms tx and tRT,x are related as the decision time tx contributes to the total response time tRT,x, given by the sum of tnondec and tx."
+e[cx],e[tx],"The terms E[cx] and E[tx] are related as they represent the expected choice and expected decision time respectively, plotted as functions of the utility difference."
+tnondec,"trt,x","The terms tnondec and tRT,x are related as tnondec is assumed to be constant across all queries, enabling the learner to recover the decision time tx from tRT,x."
+tnondec,"trt,x","The terms tnondec and tRT,x are further related as the impact of tnondec on the method relying on decision times is shown to be negligible."
+best-arm identification,fixed budget,The terms Best-arm identification and fixed budget are related as the learning objective focuses on the best-arm identification problem within a fixed budget.
+b,z,The terms B and Z are related as B represents the total interaction time budget provided to the learner and Z signifies the arm space.
+z,x,The terms Z and X are related as Z is the arm space and X denotes the query space provided to the learner.
+x,tnondec,The terms X and tnondec are related as the learner selects a query from X and tnondec represents the non-decision time in the learning process.
+θ∗,a,The terms θ∗ and a are related as the human's preference vector θ∗ and the decision barrier a are both unknown during the learning process.
+learner,arm,The learner must recommend an arm from Z
+learner,goal,The goal is to recommend the unique best arm minimizing the error probability
+arm,z∗,Recommendation of arm z∗ is based on maximizing z⊤θ∗
+error probability,(cid:98)z,Minimizing the error probability P [(cid:98)z ̸= z∗]
+generalized successive elimination (gse) algorithm,total budget b,GSE algorithm divides the total budget B into multiple phases
+queries,human choices,Collecting both human choices and decision times
+queries,decision times,Collecting both human choices and decision times
+preference vector θ∗,elimination of arms,Estimates the preference vector θ∗ and eliminates arms with low estimated utilities
+decision times,estimation of preference strength,Decision times provide complementary information about preference strength for accurate estimation of θ∗
+estimator,preference learning,Novel estimator combined with decision times and choices to estimate θ∗ for preference learning
+estimator,gse algorithm,Estimator integrated into GSE algorithm to improve preference learning
+utility estimation,estimating human preference,Utility estimation addresses the problem of estimating human preference θ∗ from a fixed dataset
+i.i.d.,independent,"Samples from the same query x are i.i.d., while samples from different queries are independent."
+estimator,"the “choice-decision-time estimator”, choice-only estimator","Section 3.1 introduces a new estimator, the “choice-decision-time estimator,” which uses both choices and decision times, in contrast to the commonly used “choice-only estimator” that only uses choices."
+choice-decision-time estimator,choice-only estimator,"Sections 3.2 and 3.3 theoretically compares these estimators, analyzing both asymptotic and non-asymptotic performance and highlighting the advantages of incorporating decision times."
+relationship,"human utilities, choices, decision times","The choice-decision-time estimator is based on the following relationship between human utilities, choices, and decision times, derived from eq. (1)."
+choices,decision times,"Intuitively, when a human provides consistent choices (i.e., large"
+linear regression problem,θ∗,This relationship formulates the estimation of θ∗ as a linear regression problem.
+choice-decision-time estimator,"choices, decision times, ordinary least squares (ols), estimate θ∗/a","Accordingly, the choice-decision-time estimator calculates the empirical means of both choices and decision times, aggregates the ratios across all sampled queries, and applies ordinary least squares (OLS) to estimate θ∗/a."
+sampled queries,ordinary least squares (ols),sampled queries are used with OLS to estimate θ∗/a
+θ∗/a,best arm,estimating θ∗/a is sufficient for identifying the best arm
+θ∗/a,rankings of arms,the ranking of arm utilities based on θ∗/a is identical to that based on θ∗
+"θch,dt",θ∗/a,"θCH,DT is an estimate of θ∗/a"
+choice-only estimator,query x,"for each query x, the random variable (cx + 1)/2 follows a Bernoulli distribution"
+2aθ∗,best-arm identification,estimating 2aθ∗ is sufficient for best-arm identification
+2aθ∗,parameter 2a,parameter 2a does not impact the ranking of arms
+2aθ∗,logistic regression problem,estimating 2aθ∗ is formulated as a logistic regression problem
+θch,mle,MLE provides the estimate of θCH
+θch,optimization methods like newton’s algorithm,MLE can be efficiently solved using optimization methods like Newton’s algorithm
+xsample,vector,"Terms x ∈ Xsample and vector y are related as per the context, where y is mentioned in relation to x in the context."
+"θch,dt,n",θ,"There is a relation between terms θCH,DT,n and θ in the context, as they are compared in terms of being greater than 0."
+datasets,vector,"Datasets and vector y are related in the context, where datasets are mentioned in the context."
+asymptotic variance,constant,"Asymptotic variance depends on a problem-specific constant, which is mentioned in the context."
+queries,expected decision time,"Queries and expected decision time are related, as queries' choices and decision times are discussed together in the context."
+weight,information,"Weight and information are related, where weight represents the information provided by each query's choices and decision times in the context."
+estimator,asymptotic normality,"Estimator and asymptotic normality are related, as the choice-only estimator's asymptotic normality result is discussed in the context."
+i.i.d. dataset,xsample,"There is a relation between i.i.d. dataset and Xsample in the context, where each x ∈ Xsample is mentioned to be independent."
+x,xsample,"In the given context, x and Xsample are related as x ∈ Xsample, indicating that x is a sample from Xsample."
+x,a,"The factor a2 V [cx] weights each query x by its own factor a, which represents the query's contribution to utility estimation."
+y,"θch,n","As n approaches infinity, the relationship between the vector y and θCH,n is characterized by the following asymptotic variance."
+"θch,n",a,"The asymptotic variance equation involves the difference between θCH,n and 2aθ*."
+y,d,"The asymptotic variance equation contains a term D, which has a relation with the vector y in the context."
+a,v [cx],The weight factor a2 V [cx] represents the information contributed by the query's choices to utility estimation.
+x,θ*,"The weight factor a2 V [cx] depends on the utility difference x⊤θ∗, showing the relation between x and θ*."
+preferences,choices,"Strong preferences lead to choices that contribute minimally to utility estimation, as indicated by the weight factor decay."
+x,tx',"In the choice-decision-time estimator theorem, queries are weighted by the decision time tx', establishing a relationship between x and tx'."
+choice-decision-time estimator,queries,"The choice-decision-time estimator (theorem 3.1), queries are weighted by minx′∈Xsample E [tx], which depends on both Xsample and E [tx]."
+queries,e [tx],"Comparing the orange and gray curves shows that E [tx] is generally larger than the choice-only weight, a2 V [cx]."
+e [tx],choice-only weight,"The actual weight in the choice-decision-time estimator, which is the minimum expected decision time across sampled queries, is less than or equal to the orange curve but is likely still higher than the choice-only weight."
+choice-decision-time estimator,preferences,"This suggests that when preferences are strong, decision times complement choices by capturing preference strength, leading to improved estimation."
+choice-decision-time estimator,decision times,"As the barrier a increases, the choice-decision-time weight rises."
+choice-only weight,preferences,"When queries have weak preferences, the choice-decision-time weight may be lower than the choice-only weight."
+preferences,decision times,"When preferences are strong, decision times complement choices by capturing preference strength, leading to improved estimation."
+barrier,conservativeness,"A higher barrier reflects greater conservativeness in human decision-making, leading to longer decision times and more consistent choices."
+decision-making,decision times,"Decision times complement choices, particularly for queries with strong preferences."
+decision-making,choices,This figure illustrates the different contributions of choices and decision times to utility estimation.
+decision times,utility estimation,This figure illustrates the different contributions of choices and decision times to utility estimation.
+utility difference,decision times,This figure illustrates the different contributions of choices and decision times to utility estimation.
+utility difference,choice-decision-time estimator,"This comparison shows that decision times complement choices, particularly for queries with strong preferences."
+utility difference,choice-only estimator,"This comparison shows that decision times complement choices, particularly for queries with strong preferences."
+weights,asymptotic variances,Compares the weights E [tx] and a2 V [cx] in the asymptotic variances for the choice-decision-time estimator and the choice-only estimator.
+weights,non-asymptotic concentration bounds,"Compares the weights in the non-asymptotic concentration bounds, showing similar trends, though these weights may not be optimal due to proof techniques."
+concentration bounds,two estimators for utility difference estimation,"Focuses on the simpler problem of estimating the utility difference for a single query, without aggregating data from multiple queries."
+estimators,non-asymptotic concentration bounds,Estimators discussed in the context are compared to non-asymptotic concentration bounds.
+estimators,preference vector θ∗,Analysis of estimators extends to the full estimation of the preference vector θ∗.
+query,dataset,"Given a query x ∈ X, the task is to estimate the utility difference ux := x⊤θ∗ using the fixed i.i.d. dataset {(cx,sx,i, tx,sx,i)}i∈[nx]."
+estimator,estimate,Applying the choice-decision-time estimator yields an estimate that estimates ux/a rather than ux.
+estimator,estimate,Applying the choice-only estimator yields an estimate that estimates 2aux rather than ux.
+estimator,model,Choice-only estimator in equation (6) aligns with the EZ-diffusion model's drift estimator.
+estimators,elements,Estimators from Xiang Chiong et al. and Berlinghieri et al. combine elements of estimators from equations (5) and (6).
+estimators,section,Demonstration in section 5.2 shows that estimators from Wagenmakers et al. and Xiang Chiong et al. are similar.
+estimators,wagenmakers et al.,Wagenmakers et al. are mentioned in relation to estimators
+estimators,xiang chiong et al.,Xiang Chiong et al. are mentioned in relation to estimators
+estimators,our proposed estimator,The proposed estimator is compared to other estimators in the context
+choice-decision-time estimator,eq. (5),The choice-decision-time estimator is associated with eq. (5)
+choice-only estimator,eq. (6),The choice-only estimator is linked to eq. (6)
+p,ϵ,"In the given context, the inequality condition involving P and the term ϵ is mentioned in the equation P ("
+v,θ∗,The equation a(cid:112)V [cx] / 2.4 shows a relation between the terms V and θ∗
+ch,dt,"The terms CH and DT are related to each other as shown in the equation CH,DT (·) and mnon-asym"
+nx,ϵ,The condition nx ≥ 1/ ˙µ(2aux) · nx [ϵ/(2a)]2(cid:17) establishes a relationship between the terms nx and ϵ
+x,θ∗,The term x⊤θ∗ is mentioned in the context indicating a relationship between x and θ∗
+a,v,The equation a(cid:112)V [cx] / 2.4 indicates a connection between the terms a and V
+m,"ch,dt","The weights m(·) from theorems 3.3 and 3.4 are functions of CH,DT indicating a relation between m and CH,DT"
+nx,x,The dataset size nx growing with x⊤θ∗ indicates a relationship between nx and x
+weights,estimation errors,The weights determine how quickly estimation errors decay suggesting a relationship between weights and estimation errors
+preferences,estimation,"For strong preferences, the choice-decision-time weights improve estimation suggesting a relation between preferences and estimation"
+fixed-budget best-arm identification,choice-decision-time estimator,The ability of the choice-decision-time estimator to extract more information from queries with strong preferences is especially valuable in fixed-budget best-arm identification.
+fixed-budget best-arm identification,bandit learners,"Bandit learners strategically sample queries, update estimates of θ∗, and eliminate lower-utility arms in fixed-budget best-arm identification."
+choice-decision-time estimator,learners,"The choice-decision-time estimator allows learners to leverage decision times to gain more information from queries with strong preferences, improving bandit learning performance."
+gse,generalized successive elimination algorithm,The Generalized Successive Elimination (GSE) algorithm is introduced for fixed-budget best-arm identification in preference-based linear bandits.
+gse,pseudo-code,The pseudo-code for GSE is shown in algorithm 1.
+component,section 5,component is empirically compared in section 5
+gse,algorithm 1,GSE pseudo-code is shown in algorithm 1
+algorithm 1,η,"algorithm 1 uses hyperparameter η to control number of phases, budget per phase, arms eliminated"
+algorithm 1,b,algorithm 1 divides total budget B evenly across phases
+b,bbuff,a buffer sized by Bbuff is reserved to prevent overspending in any phase
+bbuff,gse,Bbuff is related to GSE as it is used to control budget allocation in the algorithm
+gse,experimental design λ,GSE computes an experimental design λ to guide query sampling
+experimental design λ,query space,experimental design λ is a probability distribution over the query space
+transductive design,λtrans,transductive design is one of the experimental design options
+weak-preference design,λweak,weak-preference design is another experimental design option
+transductive design,weak-preference design,both designs minimize the worst-case variance of utility differences
+weak-preference design,θ∗,weak-preference design identifies queries with weak preferences based on θ∗
+weak-preference design,θch,weak-preference design uses θCH to identify queries with weak preferences
+gse,query sampling,GSE samples queries based on the experimental design
+phase,gse,GSE exhausts the phase's budget to estimate θ∗
+phase,budget,total budget B is divided evenly across phases
+θ∗,"choice-decision-time estimator θch,dt","θ∗ is estimated using either θCH,DT"
+budget,estimates,"The phase's budget is estimated using either the choice-decision-time estimator θCH,DT or the choice-only estimator θCH."
+estimates,θ∗,"The phase's estimates θ∗ are calculated using the choice-decision-time estimator θCH,DT or the choice-only estimator θCH."
+estimates,arms,Arms with low estimated utilities are eliminated in the process.
+arms,gse,GSE recommends the best arm after eliminating arms with low estimated utilities.
+algorithm 1,gse algorithms,"The key difference between algorithm 1 and previous GSE algorithms is the involvement of queries with random response times, unknown to the learner."
+algorithm 1,resource consumption,"Previous work assumes fixed resource consumption per query, which algorithm 1 does not follow."
+resource consumption,random resource usage,"Previous work assumes fixed resource consumption per query, while algorithm 1 adopts a random sampling procedure to allocate queries based on design, considering random resource usage."
+random resource usage,elimination parameter,Random resource usage requires tuning the elimination parameter η to balance data collection and arm elimination.
+random resource usage,buffer size,Random resource usage also requires tuning the buffer size Bbuff to prevent overspending.
+hyperparameters,elimination parameter,The hyperparameters include the elimination parameter η
+hyperparameters,buffer size,The hyperparameters also include the buffer size Bbuff
+initialization,z1,Z1 is initialized as Z in the context
+phase k,budget bk,Each phase k has a budget Bk in the context
+design 1,λk,"In Design 1, λk is set as λtrans,k"
+design 2,sample queries xj,Design 2 involves sample queries xj
+estimate 1,(cid:98)θk,Estimate 1 relates to the parameter (cid:98)θk
+estimate 2,(cid:98)θk,Estimate 2 is associated with the parameter (cid:98)θk
+output,utility z⊤(cid:98)θk,The output is related to the utility calculation z⊤(cid:98)θk
+(cid:98)z ∈ zk+1,arms in zk,The single (cid:98)z ∈ ZK+1 is compared to the arms in Zk
+empirical results,gse variations,The empirical results compare the GSE variations introduced in section 4
+"(1) (λtrans,(cid:98)θch,dt)",transductive design,Transductive design involves choice-decision-time estimator
+"(2) (λtrans,(cid:98)θch)",transductive design,Transductive design includes choice-only estimator
+"(3) (λweak,(cid:98)θch)",weak-preference design,Weak-preference design utilizes choice-only estimator
+estimation performance,synthetic data,The estimation performance of GSE variations is evaluated on synthetic data
+estimation performance,utility difference,"Estimation performance is dependent on the utility difference x⊤θ∗, as discussed in section 3."
+estimation performance,barrier a,"Estimation performance depends on the barrier a, as discussed in section 3."
+barrier a,preference strength,The performance of the choice-only estimator is affected by the barrier a and preference strength.
+utility difference,arm z,"Arm z is scaled to cZ · z, effectively scaling the utility difference x⊤θ∗."
+cz value,preference strength,"Small cZ values correspond to weak preferences, while large values correspond to strong preferences."
+cz value,performance,"As cZ increases and preferences become stronger, the performance of the choice-only estimator first improves and then declines."
+cz value,utility difference,Increasing cZ theoretically simplifies best-arm identification by increasing utility differences between the best arm and others.
+best-arm identification goal,performance,"Performance is evaluated by P[arg maxz∈Z z⊤(cid:98)θ ̸= z∗], reflecting the best-arm identification goal."
+λweak access,true θ*,λweak access allows access to the true θ∗ for perfect computation of the terms used in algorithm 1.
+preference strength,performance,"As preferences become stronger, the performance of the choice-only estimator with the transductive design first improves and then declines."
+decline,choices,The subsequent decline highlighted by the dark curved band supports the insight that choices from queries with strong preferences provide limited information.
+performance,cz,"Fixing cZ and examining the horizontal line, performance first improves and then declines."
+trend,barriers,"This trend aligns with fig. 2a and section 3.2, where higher barriers a increase the choice-only weights for queries with weak preferences."
+estimation error probabilities,estimation,Three heatmaps show estimation error probabilities for better estimation.
+estimation error probabilities,transductive design,The choice-only estimator with the transductive design struggles as consumption across queries.
+estimation error probabilities,choice-decision-time estimator,"The choice-decision-time estimator with transductive design outperforms as cZ increases, highlighting that choices from queries with strong preferences provide limited information."
+estimation error probabilities,weak-preference design,The weak-preference design improves by sampling queries with weak preferences but assumes perfect knowledge of theta and equal resource.
+queries,weights,"The weights of most queries decrease, leading to a later performance drop."
+choice-only estimator,weak-preference design,"In Figure 3b, for moderate cZ, the choice-only estimator with the weak-preference design outperforms the transductive design, demonstrating that focusing on queries with weak preferences improves estimation."
+algorithm 1,x⊤θ∗,"In line 6 of algorithm 1, many ˙µ(x⊤θ∗) approach zero, preventing informative queries from being sampled, leading to a performance decline for large values of cZ."
+weak-preference design,θ∗,The advantage of the weak-preference design assumes perfect knowledge of θ∗ and equal resource consumption across queries.
+transductive design,θ∗,"In practice, where θ∗ is unknown and weak-preference queries require longer response times, the transductive design performs better."
+choice-decision-time estimator,choice-only estimators,"Figure 3c shows that the choice-decision-time estimator consistently outperforms the choice-only estimators under both the transductive and weak-preference designs, particularly for strong preferences."
+decision times,choices,"For queries with strong preferences, decision times complement choices and improve estimation, while for queries with weak preferences, decision times add little value but do not degrade performance."
+theoretical insights,section 3,The performance also confirms the theoretical insights from section 3.
+preferences,decision times,The relationship between preferences and decision times is that decision times add little value but do not degrade performance.
+performance,barrier a,"A higher barrier 'a' supports the improvement in performance, as indicated by fig. 2a and section 3.2.5.2."
+gse variations,bandit performance,This section compares the bandit performance of six GSE variations.
+gse variations,choice-decision-time estimator,The 4th GSE variation evaluates the performance of the choice-decision-time estimator.
+choice-decision-time estimator,response times,Response times are used in place of decision times with the choice-decision-time estimator.
+gse variations,non-decision time tnondec,The 4th GSE variation evaluates the performance of the choice-decision-time estimator when the non-decision time tnondec is unknown.
+linear utility structure,choice-only estimator,"By incorporating the linear utility structure, we obtain the choice-only estimator."
+empirical mean,binary choices,The empirical mean is calculated based on the binary choices that are coded as 0 or 1.
+food-risk dataset,snack dataset,There are two datasets mentioned - the food-risk dataset and the snack dataset.
+violin plots,box plots,"The figure shows violin plots with overlaid box plots for datasets (a), (b), and (c), representing the distribution of best-arm identification error probabilities."
+gse variations,budgets,"The error probabilities are shown across six GSE variations and two budgets, with each variation and budget having its median and quartiles calculated."
+error probabilities,bandit instances,The error probabilities are averaged over 300 simulations under different random seeds for all bandit instances.
+gse variation,xiang chiong et al.,"The 6th GSE variation is based on Xiang Chiong et al.'s equation, forming the foundation for the following choice-decision-time estimator."
+choice-decision-time estimator,cid:98,The choice-decision-time estimator is represented by cid:98 and is used in various variations mentioned in the context.
+choice-decision-time estimator,berlinghieri et al.,The choice-decision-time estimator is mentioned as being incorporated from Berlinghieri et al.'s work.
+estimator,linear utility structure,The estimator is based on or incorporates a linear utility structure.
+gse,bandit instances,Six GSE variations are evaluated on bandit instances constructed from real-world datasets.
+participants,dezdm parameters,"For each participant, dEZDM parameters are estimated."
+bandit instance,gse variations,Bandit instances are simulated with GSE variations to assess performance.
+"λtrans,(cid:98)θch,dt","λtrans,(cid:98)θch","λtrans,(cid:98)θCH,DT outperforms λtrans,(cid:98)θCH, highlighting the benefit of incorporating decision times."
+"λtrans,(cid:98)θch","λweak,(cid:98)θch","λtrans,(cid:98)θCH outperforms λweak,(cid:98)θCH, as discussed in section 5.1."
+"λtrans,(cid:98)θch,dt","(λtrans,(cid:98)θch,rt)","λtrans,(cid:98)θCH,DT performs similarly to λtrans,(cid:98)θCH,RT, indicating minimal impact of not knowing the non-decision time."
+"(λtrans,(cid:98)θch,logit)","(λtrans,(cid:98)θch,dt,logit)","(λtrans,(cid:98)θCH,logit) and (λtrans,(cid:98)θCH,DT,logit) do not perform as consistently well as (λtrans,(cid:98)θCH,DT), showcasing the effectiveness of the proposed choice-decision-time estimator."
+utility estimator,choices and response times,The utility estimator combines choices and response times to provide a better estimation of preference strength.
+response times,preference strength,"Response times provide complementary information about preference strength, especially for queries with strong preferences."
+bandit algorithm,response times,Incorporating response times into a bandit algorithm consistently improved results across three real-world datasets.
+approach,reliance on reliable response time data,"One limitation of this approach is its reliance on reliable response time data, which can be challenging in crowdsourcing settings."
+reliance on reliable response time data,crowdsourcing settings,Reliance on reliable response time data may be challenging in crowdsourcing settings where participants' focus can vary.
+eye-tracking data,ddm framework,Future work could integrate eye-tracking data into the DDM framework to monitor attention and filter unreliable responses.
+non-decision times,estimating them directly from data,"One direction is to relax the assumption of known non-decision times by estimating them directly from data, following methods proposed by Wagenmakers et al."
+non-decision times,data,One direction is to relax the assumption of known non-decision times by estimating them directly from data.

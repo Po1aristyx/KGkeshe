@@ -1,0 +1,260 @@
+node_1,node_2,edge
+test-time domain adaptation in semantic segmentation,efficiency,Efficiency is mentioned as crucial in Test-time domain adaptation in semantic segmentation
+test-time domain adaptation in semantic segmentation,effectiveness,Effectiveness is mentioned as crucial in Test-time domain adaptation in semantic segmentation
+existing methods,low efficiency,Existing methods are described as having low efficiency
+existing methods,ignore semantic adaptation,Existing methods are mentioned to ignore semantic adaptation
+existing methods,accumulated errors caused by unstable optimization and abnormal distributions,Existing methods would suffer from accumulated errors caused by unstable optimization and abnormal distributions
+proposed approach (diga),backward-free,The proposed backward-free approach for TTDA-Seg is called Dynamically Instance-Guided Adaptation (DIGA)
+proposed approach (diga),non-parametric way of adaptation,The proposed approach utilizes each instance to dynamically guide its own adaptation in a non-parametric way
+proposed approach (diga),error accumulation issue and expensive optimizing cost,The proposed approach avoids the error accumulation issue and expensive optimizing cost
+dynamically instance-guided adaptation (diga),distribution adaptation module (dam) and a semantic adaptation module (sam),DIGA is composed of a distribution adaptation module (DAM) and a semantic adaptation module (SAM)
+distribution adaptation module (dam),source bn statistics,DAM mixes the instance and source BN statistics to encourage the model to capture robust representation
+semantic adaptation module (sam),historical prototypes and instance-level prototypes,SAM combines the historical prototypes with instance-level prototypes to adjust semantic predictions
+semantic adaptation module (sam),parametric classifier,SAM can be associated with the parametric classifier to mutually benefit the final results
+extensive experiments evaluated on five target domains,effectiveness and efficiency of the proposed method,Extensive experiments evaluated on five target domains demonstrate the effectiveness and efficiency of the proposed method
+diga,new state-of-the-art performance in ttda-seg,DIGA establishes new state-of-the-art performance in TTDA-Seg
+source code,available,Source code for the proposed method is available
+diga,ttda-seg,"The proposed method, DIGA, establishes new state-of-the-art performance in TTDA-Seg"
+diga,source code,The source code for DIGA is available at https://github.com/Waybaba/DIGA
+semantic segmentation (seg),computer vision,Semantic segmentation is a fundamental task in computer vision
+semantic segmentation (seg),visual-based robot,Semantic segmentation is an important step in the visual-based robot
+semantic segmentation (seg),autonomous driving,Semantic segmentation is an important step in autonomous driving
+deep-learning techniques,segmentation models,Modern deep-learning techniques have achieved impressive success in segmentation. There is a mention of one serious drawback of them
+domain shifts,problem,Researchers have devoted great effort to domain generalization and domain adaptation to solve the well-known problem caused by domain shifts
+domain generalization (dg),domain adaptation (da),Researchers have devoted great effort to both domain generalization and domain adaptation to solve the problem caused by domain shifts
+domain generalization (dg),generalized models,Domain generalization aims to learn generalized models with only labeled source data
+domain adaptation (da),model,Traditional domain adaptation attempts to adapt the model on the target domain by using both labeled source data and unlabeled target data
+da,target data,DA assumes that the unlabeled target data are available in advance and can be chronically exploited to improve target performance.
+da,ttda,"[41] introduces the test-time domain adaptation (TTDA), which aims at adapting the model during the testing phase in an online fashion."
+ttda,model,TTDA aims at adapting the model during the testing phase in an online fashion.
+existing methods,backward-based methods,"existing methods can be divided into two categories: backward-based methods [1,22,27,37,41] and backward-free methods [15,25,28,33]."
+existing methods,backward-free methods,"existing methods can be divided into two categories: backward-based methods [1,22,27,37,41] and backward-free methods [15,25,28,33]."
+backward-based methods,parameters,backward-based methods focuses on optimizing the parameters of models with self-supervision losses.
+backward-based methods,entropy loss,"backward-based methods focuses on optimizing the parameters of models with self-supervision losses, such as entropy loss."
+entropy loss,distribution adaptation,Both distribution adaptation and semantic adaptation can be achieved with entropy loss.
+entropy loss,semantic adaptation,Both distribution adaptation and semantic adaptation can be achieved with entropy loss.
+accumulated errors,forget the original well-learned knowledge,The accumulated errors may lead the model to forget the original well-learned knowledge and thus cause performance degradation.
+adapt the model,updating statistics in batch normalization (bn) layers,The second category aims to adapt the model in the distribution level by updating statistics in batch normalization (BN) [25] layers.
+updating statistics in batch normalization (bn) layers,instance normalization,Instance normalization [28] directly replaces the source statistics with those from each instance.
+updating statistics in batch normalization (bn) layers,mirza et al,Mirza et al [25] study the impacts of updating the historical statistics by instance statistics.
+updating statistics in batch normalization (bn) layers,illustration of the implementation of our diga,"Illustration of the implementation of our DIGA. Given a source model, our DIGA can be readily equipped with only access to the BN layers, classifier head, and feature head."
+error accumulation,abnormal target distributions,These methods also suffer from the error accumulation issue caused by abnormal target distributions.
+error accumulation,neglect of semantic adaptation,These methods also suffer from the error accumulation issue caused by the neglect of semantic adaptation.
+diga,ttda-seg,"To this end, we propose a holistic approach, called Dynamically Instance-Guided Adaptation (DIGA), for TTDA-Seg."
+dynamically instance-guided adaptation (diga),ttda-seg,DIGA is a technique designed for TTDA-Seg and takes into account effectiveness and efficiency.
+diga,instance,"DIGA leverages each instance for its own adaptation in a non-parametric manner, avoiding error accumulation."
+diga,distribution adaptation module (dam),DIGA is implemented with DAM to compute the weighted sum of source and current statistics in BN layers for adapting target distribution.
+diga,semantic adaptation module (sam),DIGA is implemented with SAM to build a dynamic non-parametric classifier for adjusting semantic prediction.
+dam,source statistics,DAM computes the weighted sum of the source statistics to adapt target distribution.
+dam,current statistics,DAM computes the weighted sum of the current statistics to adapt target distribution.
+sam,historical prototypes,SAM builds a dynamic classifier by mixing historical prototypes with instance-level prototypes.
+sam,instance-level prototypes,SAM builds a dynamic classifier by mixing historical prototypes with instance-level prototypes.
+non-parametric classifier,parametric classifier,The non-parametric classifier can be associated with the parametric one to further benefit the adaptation results.
+ttda-seg,backward-free approach,"A backward-free approach is proposed for TTDA-Seg, allowing implementation within one forward propagation with low computation cost."
+ttda-seg,considerate approach,A considerate approach is introduced for adapting the model in both distribution and semantic aspects.
+ttda-seg,two types of classifiers,The method takes mutual advantage of two types of classifiers to achieve further improvements.
+ttda-seg,usability,The method proposed is easy to implement and use.
+classifiers,method,The method mentioned in the context uses two types of classifiers to achieve further improvements.
+method,models,The method is model-agnostic and can be readily injected into existing models.
+experiments,source domains,Experiments are conducted on three source domains to test the method.
+experiments,target domains,Experiments are conducted on five target domains to test the method.
+ttda-seg,performance,The method produces new state-of-the-art performance for TTDA-Seg.
+ttda-seg,continual ttda-seg,Superiority of the method is verified in the challenging task of continual TTDA-Seg.
+test-time domain adaptation,ttt,Test-time Domain Adaptation (TTDA) is first proposed in TTT.
+test-time domain adaptation,fields,"TTDA is applied to many fields such as instance tracking, object detections, and reinforcement learning."
+ttt,extensions,"Extensions of TTT require an extra training process on source data, making it inapplicable when only the source model is available."
+fully test-time domain adaptation,practical setting,Fully Test-time Domain Adaptation setting is proposed for practical applications.
+fully test-time domain adaptation,methods,Fully TTDA methods can be categorized into backward-based adaptation and backward-free adaptation.
+tent,self-supervision adaptation methods,TENT is the pioneer of self-supervision adaptation methods.
+tent,entropy,TENT proposes to minimize the entropy by updating BN affine parameters during test time.
+eata,efficiency,EATA shows that skipping low entropy samples would achieve higher efficiency.
+eata,performance,EATA shows that skipping low entropy samples would achieve higher performance.
+tropy samples,efficiency,tropy samples are mentioned to achieve higher efficiency.
+tropy samples,performance,tropy samples are mentioned to achieve higher performance.
+updated regularization term,forgetting problem,Updated regularization term is utilized to alleviate the forgetting problem.
+efficient framework,contrastive learning,An efficient framework is introduce by introducing contrastive learning.
+methods,time and gpu memory,The problem with these methods is that they cost a long time and large GPU memory due to backpropagation.
+backward-free branch,bn statistics adaptation,Most of the approaches focus on BN statistics adaptation in the backward-free branch.
+in,batch statistics,IN directly uses batch statistics to update statistics.
+momenmtum,running average,Momenmtum uses running average to update statistics.
+dua,running average,DUA uses running average to update statistics.
+t3a,denoise the classification results,T3A proposes to denoise the classification results in the post-processing stage.
+domain adaptive for semantic segmentation (dass),domain gap,DASS aims to bridge the domain gap between the training and testing data.
+adversarial training architectures,domain-invariant features,Early works in DASS mainly focus on building adversarial training architectures to learn the domain-invariant features.
+self-training techniques,entropy minimization,Some approaches require self-training techniques such as entropy minimization.
+self-training techniques,pseudo-labeling,Some approaches require self-training techniques such as pseudo-labeling.
+entropy minimization,pseudo-labeling,These two concepts are mentioned as approaches for domain adaptation and are related in the context of source-target data requirements.
+entropy minimization,source-free da (sfda),Entropy minimization is compared to Source-free DA as a more practical approach for domain adaptation without the need for source data during adaptation.
+pseudo-labeling,self-supervised training,"Pseudo-labeling is discussed in relation to self-supervised training, mentioning a multi-head structure to increase reliability."
+methodology problem definition,semantic segmentation (ttda-seg),"The problem definition of test-time domain adaptation in semantic segmentation (TTDA-Seg) is presented, highlighting the goal of adapting the model utilizing continuously incoming testing data in an online fashion."
+testing data,continuous adaptation,"Testing data is continuously adapted in an online fashion, as shown in Figure 1."
+model fθ,instance xt,Model fθ receives an instance xt at each testing step.
+model fθ,segmentation prediction ˆyt,Model fθ produces segmentation prediction ˆyt simultaneously with adaptation.
+adaptation modules,distribution alignment module,The adaptation modules include the distribution alignment module (DAM) for distribution alignment.
+adaptation modules,semantic adaptation module,The adaptation modules include the semantic adaptation module (SAM) for semantic adaptation.
+testing sample,source pretrained model,The testing sample is input into the source pretrained model for distribution alignment by DAM.
+distribution alignment module,instance statistics,Distribution alignment is performed by weighted summing of the source statistics and instance statistics.
+source statistics,instance-aware prototypes,Source statistics are weighted by instance-aware prototypes for semantic adaptation.
+parametric classifier,non-parametric classifier,The final prediction is obtained by mutual advantage between the original parametric classifier and the dynamic non-parametric classifier.
+diga,instance-aware information,DIGA helps to adapt the model with the guidance of instance-aware information.
+diga,dam,DIGA consists of a distribution adaptation module (DAM) which aligns the distribution for better results.
+dam,pixels,DAM leverages reliable pixels to guide predictions of other pixels in a non-parametric way.
+dam,source model,"DAM improves the segmentation results, especially for instances similar to the source."
+sam,feature level,SAM is implemented in the feature level for semantic alignment.
+sam,prototypes,SAM is guided by prototypes for semantic alignment.
+semantic alignment (f-g),feature level,semantic alignment (f-g) is implemented in the feature level for semantic alignment.
+original classifier,non-parametric classifier,The final prediction is obtained by the fusion of original classifier and non-parametric classifier built by SAM.
+distribution adaptation module (dam),adversarial training,The most common way to adapt the distribution is based on adversarial training.
+distribution adaptation module (dam),minimization of distribution gap metrics,The most common way to adapt the distribution is based on minimization of distribution gap metrics.
+ttda,limited available training data,These methods are not suitable for TTDA due to limited available training data.
+ttda,high-cost backpropagation,These methods are not suitable for TTDA due to the high-cost backpropagation.
+batch normalization (bn),static mismatch between domains,Recent works show that the static mismatch between domains in the Batch Normalization (BN) layers is a major reason that causes the performance degradation in cross-domain testing.
+bn layer,input feature representation f,"Given the input feature representation F, the corresponding output is given by the BN layer."
+bn layer,expected value and variance of input feature f,"For each BN layer, given the input feature representation F, the corresponding output is given by: BN (F) = γ+ β, F − E[F] / V ar[F]."
+dua,statistics,"DUA proposes to adapt the statistics γ, β of BN layers to the target domain with a dynamic learning module."
+dua,performance,"Despite the efficiency, its performance is still not satisfactory."
+dua,information,One possible reason is that the updating rate is usually very small so that instance-level information is not fully considered during each instance evaluation.
+distribution adaptation module (dam),γ,"Instead of updating the γ, β, the proposed DAM dynamically merges the source and instance BN statistics."
+distribution adaptation module (dam),mean,The mean and variance calculated with the t-th instance during testing.
+distribution adaptation module (dam),variance,The mean and variance calculated with the t-th instance during testing.
+semantic adaptation module (sam),category,"The proposed DAM is a category-agnostic, however category-specific is also important to segmentation adaptation."
+semantic adaptation module (sam),distribution,"The proposed DAM aligns the distribution of feature maps globally, but category-specific distribution is also important."
+ttda-seg,semantic adaptation,TTDA-Seg mentions the importance of implementing semantic adaptation.
+semantic adaptation,entropy maximization,Two methods for semantic adaptation are entropy maximization and pseudo-labeling.
+semantic adaptation,pseudo-labeling,Two methods for semantic adaptation are entropy maximization and pseudo-labeling.
+entropy maximization,gradient-based backpropagation,Entropy maximization requires gradient-based backpropagation.
+pseudo-labeling,gradient-based backpropagation,Pseudo-labeling also requires gradient-based backpropagation.
+dam,distribution alignment,Distribution alignment is implemented by DAM.
+object,object,Pixels of the same object share similar properties.
+segmentation model,encoder,The segmentation model consists of an encoder for dense visual feature extraction.
+encoder,"pixel x(h,w)",The encoder maps each pixel to a feature.
+encoder,"feature z(h,w)",The encoder maps each pixel to a feature z.
+segmentation model,classifier,The segmentation model consists of a classifier for following prediction.
+classifier,prediction,The classifier is responsible for making predictions.
+feature,pixel,Pixels are mapped to features in the context of feature extraction.
+classifier,distribution,The classifier maps features to a distribution for prediction in the context of classification.
+classes,distribution,"The distribution is over classes, indicating the relationship between classes and the prediction distribution."
+pixels,centroids,Centroids of each class in feature space are calculated based on pixels whose confidences are larger than a certain threshold.
+instance-aware prototypes,prediction,"Instance-aware prototypes are used to make predictions, which may lead to unstable predictions due to instance variance."
+historical prototypes,prototypes,"Historical prototypes are calculated by averaging prototypes from a large number of target instances, leading to more stable prototypes compared to instance-aware prototypes."
+prototypes,instances,"Prototypes are calculated for different instances, which are used in prediction and stability analysis."
+instance-aware prediction,class,The relationship between instance-aware prediction and class is that the prediction is made for each class based on the given context.
+historical prediction,instance-aware prototype,"Historical prediction can be obtained by combining predictions of two types of prototypes, including instance-aware prototypes."
+non-parametric classifier,dynamic non-parametric classifier,"By combining predictions of the two types of prototypes, a dynamic non-parametric classifier is formed."
+prediction,target testing sample,Prediction of the target testing sample is obtained as the output of the algorithm DIGA (Testing Phase).
+instance-aware prototypes,historical prototypes,"Instance-aware prototypes are calculated during the testing phase, along with historical prototypes, to make non-parametric predictions."
+non-parametric predictions,dynamic non-parametric classifier,"Non-parametric predictions are calculated based on the two types of prototypes, contributing to the formation of a dynamic non-parametric classifier."
+original parametric classifier,non-parametric prototype classifier,"There are two types of predictions - one from the original parametric classifier and one from the non-parametric prototype classifier, both contributing to the final prediction."
+λf,classifiers,λF balances the importance of two classifiers
+overall process of diga,alg. 1,The overall process of DIGA is shown in Alg. 1
+method,source model,"Our method is evaluated on sim2real scenarios, where the source model is pretrained with three different domains"
+gta5,images,"GTA5 provides 24,971 images with 19 semantic classes"
+synthia,simulated images,"Synthia includes 12,000 simulated images with 16 semantic classes"
+gta5+synthia,combination of datasets,GTA5+Synthia is the combination of GTA5 and Synthia datasets
+performance,evaluation,Performance is evaluated on five target domains
+number of samples,"{500, 1,000, 2,000, 100, and 400}","The number of samples is {500, 1,000, 2,000, 100, and 400} for different target domains"
+evaluation metric,mean intersection-over-union (miou),The mean intersection-over-union (mIoU) is used as the evaluation metric
+source models,pretrained on datasets,"For source models pretrained on GTA5 and GTA5+Synthia, the mIoU of shared semantic categories is reported"
+semantic classes,missing annotations,"Due to missing annotations, the mIoU of some semantic classes is reported differently"
+state-of-the-art methods,miou comparison,Comparison with state-of-the-art methods is done in terms of mIoU with the best score highlighted
+bdd,ma,Both BDD and MA are datasets used for adaptation in the context of the research being discussed
+bdd,idd,BDD and IDD are datasets used for adaptation in the context of the research being discussed
+bdd,cc,BDD and CC are datasets used for adaptation in the context of the research being discussed
+ma,idd,MA and IDD are datasets used for adaptation in the context of the research being discussed
+ma,cc,MA and CC are datasets used for adaptation in the context of the research being discussed
+idd,cc,IDD and CC are datasets used for adaptation in the context of the research being discussed
+gta5,synthia,GTA5 and Synthia are domains mentioned in the method section of the research
+synthia,gta5+synthia,Synthia and GTA5+Synthia are domains mentioned in the method section of the research
+gta5+synthia,cs,GTA5+Synthia and CS are domains mentioned in the method section of the research
+bdd,diga,BDD is a dataset used for adaptation in the context and DIGA (Ours) is mentioned as a method which achieves good performance
+ma,diga,MA is a dataset used for adaptation in the context and DIGA (Ours) is mentioned as a method which achieves good performance
+idd,diga,IDD is a dataset used for adaptation in the context and DIGA (Ours) is mentioned as a method which achieves good performance
+cc,diga,CC is a dataset used for adaptation in the context and DIGA (Ours) is mentioned as a method which achieves good performance
+resnet-101,imagenet,ResNet-101 is mentioned as the backbone model pretrained on ImageNet
+momentum updating rate,ρp and ρbn,Both terms are related as they represent the components of momentum updating rate with specific values mentioned in the context.
+momentum updating rate,"weights of dam, sam, and classifier association","The weights of DAM, SAM, and classifier association are all set to 0.8, hence related to the momentum updating rate in terms of their values."
+"weights of dam, sam, and classifier association",dam,"DAM is one of the components for which the weights are specified in the context, thereby showing relation between the two terms."
+"weights of dam, sam, and classifier association",sam,"SAM is another component for which the weights are specified in the context, showing a relation between the two terms."
+"weights of dam, sam, and classifier association",classifier association,"Classifier association is also a component for which the weights are specified in the context, hence showing relation between the terms."
+confidence bar for prototype selection p0,0.9,The confidence bar for prototype selection P0 is explicitly set to 0.9 in the context.
+experiments,rtx3090 gpu,"All the experiments mentioned in the context are specified to be conducted with one RTX3090 GPU, indicating a relation between the two terms."
+compared methods,backward-based methods,The compared methods are categorized into backward-based methods and backward-free methods in the context.
+compared methods,backward-free methods,"The compared methods are also categorized into backward-free methods in the context, showing a relation between the terms."
+backward-based methods,tent,"TENT is mentioned as a backward-based method in the context, indicating a direct relation between the two terms."
+tent,eata,"EATA is proposed as an extension to TENT in the context, showing a clear relation between the two terms."
+tent,image classification,Both TENT and image classification are terms related within the context of the discussed methods.
+eata,ttda-seg,EATA is implemented for TTDA-Seg by minimizing the entropy of pixel-level output as per the context.
+eata,model optimization,"EATA is mentioned to only leverage reliable samples during model optimization for TTDA-Seg, showing a relation between the terms."
+backward-free methods,in,"IN is specified as a backward-free method in the context, showing a relation between the terms."
+in,instance statistics,"IN uses instance statistics to replace source ones in BN at each testing step as mentioned in the context, indicating a relation between the terms."
+momentum,momentum updating rate,Momentum mentioned as a term in the context is related to the momentum updating rate specified with a certain value.
+momentum,instance statistics,"Momentum utilizes the instance statistics to update BN in a momentum-based manner as per the context, showing a direct relation between the terms."
+dua,momentum,"DUA proposes a decaying strategy to adaptively control the momentum of BN updating as mentioned in the context, showing a relation between the terms."
+bn updating,momentum control,BN updating controls the momentum to influence the stability of instance statistics in SITA
+sita,extra augmented samples,SITA leverages extra augmented samples to obtain stable instance statistics
+source statistics,instance statistics,source statistics are mixed with instance statistics to improve the results
+methods,source models,all methods are implemented using the same source models
+methods,parameters,methods are compared based on selected parameters for each source-target pair
+backward-based methods,performance improvement,backward-based methods consistently improve performance on CityScapes but not on other target domains
+synthia,miou increase/decrease,TENT increases mIoU on CityScapes but reduces mIoU on BDD100K when using Synthia as the source domain
+self-supervision,choice for ttda-seg,using self-supervision only may not be a good choice for TTDA-Seg based on the reported results
+backward-free methods,effectiveness on different datasets,backward-free methods are generally effective on CityScapes and BDD100K but not consistent on other datasets
+in [28],average miou reduction,IN [28] reduces average mIoU by ignoring the source statistics
+diga,miou improvement,DIGA consistently improves the mIoUs of the source models
+diga,miou,DIGA consistently improves the mIoUs of the source models on all settings and outperforms all the compared methods by a large margin in most cases.
+diga,momentum,"DIGA is higher than the best competitor (Momentum [33]) by 4.41%, 7.07%, and 3.4% in average mIoU for GTA5, Synthia, and GTA5+Synthia settings, respectively."
+diga,segmentation results,DIGA consistently improves the segmentation results of the source model and outperforms other state-of-the-art methods.
+diga,ttda-seg,The above observations demonstrate the effectiveness and universality of the proposed method for solving TTDA-Seg.
+diga,segmentation results,It is clear that our DIGA consistently improves the segmentation results of the source model and outperforms other state-of-the-art methods.
+diga,ablation study,"We conduct ablative study to investigate the effectiveness of the components of the proposed DIGA, i.e., domain adaptation module, semantic adaptation module, and classifier association."
+diga,gta5,Experiments are evaluated on five target domains with the source model pretrained on GTA5.
+bn branch,historical,"Directly using BN statistics of the source for normalization, regarded as the baseline or source model."
+bn branch,instance,Using instance statistics for normalization.
+instance,historical,Instance model produces worse performance than the Historical model on all target domains.
+dam,historical,DAM improves the results in most cases and obtains an improvement of 1.48% in average mIoU over the Historical model.
+dam,instance,DAM is not deteriorated by the negative impact of Instance too much and still produces competitive results to the Historical.
+dam,instance,DAM effectively merges the guidance of instance knowledge into historical statistics to achieve an effective and stable adaptation process.
+sam,semantic branch,In the semantic branch.
+sam,historical,"SAM clearly outperforms both non-parametric classifiers in average mIoU. Specifically, our SAM surpasses the “Historical” classifier by 2.36% in average mIoU."
+historical,instance,The “Instance” classifier obtains lower average mIoU than the “Historical” classifier.
+instance,cityscapes,"The “Instance” classifier outperforms the “Historical” classifier on three datasets (CityScapes, BDD and Mapillary)."
+instance,bdd,"The “Instance” classifier outperforms the “Historical” classifier on three datasets (CityScapes, BDD and Mapillary)."
+instance,mapillary,"The “Instance” classifier outperforms the “Historical” classifier on three datasets (CityScapes, BDD and Mapillary)."
+sam,bn branch,"Similar to the BN branch, when the gap between “Historical” and “Instance” classifiers is large, SAM may not bring improvement, e.g., the IDD case."
+sam,idd,"Similar to the BN branch, when the gap between “Historical” and “Instance” classifiers is large, SAM may not bring improvement, e.g., the IDD case."
+performance,inferior classifier,The text mentions the performance without influencing by the inferior classifier. This suggests a relationship between the two terms in terms of comparison and impact.
+parametric classifier,non-parametric classifier,"The text discusses the association of the parametric classifier (outputs of DAM) and the non-parametric classifier (outputs of SAM), indicating a relationship between the two classifiers and their combined results."
+methodssource-onlytent,eata,"The text mentions the methods TENT and EATA in a comparison table, indicating a relationship in terms of different approaches or techniques."
+tent,eata,"The text provides a comparison of the average time and memory cost between TENT and EATA, suggesting a relationship in terms of performance metrics."
+backward-based methods,inference time and gpu memory cost,"The text mentions that backward-based methods significantly improve the inference time and GPU memory cost, indicating a relationship between the methods and the performance metrics."
+sita,extra augmented image,"The text mentions that SITA uses extra augmented image during testing, suggesting a relationship between the method and the technique of image augmentation."
+sita,extra augmented image,SITA uses extra augmented image during testing
+extra augmented image,computational cost,The computational cost is doubled when using extra augmented image
+diga,backward-free methods (momentum and dua),DIGA and the other backward-free methods have lightweight designs
+diga,miou,DIGA surpasses Momentum and DUA in mIoU
+diga,ttda-seg method,DIGA is an effective and efficient TTDA-Seg method
+diga,dam and sam,DIGA includes the adaptation modules DAM and SAM
+dam,sam,DAM and SAM are guided by instance-aware information
+diga,distribution and semantic levels,DIGA can adapt the model at both distribution and semantic levels
+diga,state-of-the-art results,DIGA achieves state-of-the-art results in TTDA-Seg
+diga,adaptive weights,Investigate the learning of adaptive weights in DIGA
+diga,object detection,"Implement DIGA in other tasks, e.g., object detection"
+eu h2020 project ai4media,acknowledgement,Acknowledgement for support by EU H2020 project AI4Media
+prin project creative,acknowledgement,Acknowledgement for support by PRIN project CREATIVE
+natural sciences and engineering research council of canada (nserc),acknowledgement,Acknowledgement for support by NSERC
+engineering research council of canada (nserc),discovery grants program,Engineering Research Council of Canada (NSERC) is associated with the Discovery Grants program
+ttda-seg,experiments,TTDA-Seg is involved in experiments of continual TTDA-Seg
+parametric classifiers,non-parametric classifiers,There is a relationship between parametric and non-parametric classifiers in leveraging mutual benefit
+environments,ever-changing and complex,"Real-world applications, such as autonomous driving, involve ever-changing and complex environments"
+ttda-seg,continual ttda-seg experiment,TTDA-Seg is related to the design of a continual TTDA-Seg experiment for simulating practice scenarios
+environment,sequentially incoming target domains,Dynamic environment is built by sequentially incoming target domains for the continual TTDA-Seg experiment
+source model,synthia-pretrained model,Synthia-pretrained model is used as the source model for reporting mIoU after meeting each target domain
+method,tent,Comparison between our method and TENT is made in Figure 5
+tent,tent-continualadapt,Two versions of TENT are implemented: TENT-ContinualAdapt and TENT-SourceAdapt
+cityscapes dataset,tent-continualadapt,TENT-ContinualAdapt is compared to CityScapes dataset in terms of mIoU percentages.
+tent-continualadapt,tent-sourceadapt,TENT-ContinualAdapt is compared to TENT-SourceAdapt in terms of mIoU percentages at different rounds
+tent,errors,It is mentioned that TENT accumulates errors during adaptation which leads to a worse model
+diga,errors,"In contrast to TENT, DIGA does not have the error accumulation problem"
+diga,efficiency,"DIGA consistently performs well across all domains, indicating its efficiency"
+ttda-seg,efficiency,Efficiency is highlighted as an important factor in TTDA-Seg
+ttda-seg,computational costs,Investigation into the computational costs of TTDA-Seg is mentioned in table 3

@@ -1,0 +1,264 @@
+node_1,node_2,edge
+maximum entropy inverse reinforcement learning (irl),diffusion generative models,IRL approach used to improve sample quality of diffusion generative models by training the diffusion model using log probability density
+irl,diffusion model,IRL formulation named Diffusion by Maximum Entropy IRL (DxMI) is a minimax problem that reaches equilibrium when both models converge to the data distribution
+diffusion model,energy-based model (ebm),joint training of a diffusion model and an EBM using an EBM to represent the log density
+diffusion by maximum entropy irl (dxmi),diffusion by dynamic programming (dxdp),DxDP is proposed as a reinforcement learning algorithm for diffusion models and used as a subroutine in DxMI
+dxmi,diffusion by dynamic programming (dxdp),DxMI uses DxDP to make the diffusion model update efficient by transforming the problem into an optimal control formulation
+dxmi,diffusion models,Empirical studies show that diffusion models fine-tuned using DxMI can generate high-quality samples in as few as 4 and 10 steps
+dxmi,energy-based model (ebm),"DxMI enables the training of an EBM without MCMC, stabilizing EBM training dynamics"
+generative modeling,imitation learning,Generative modeling is a form of imitation learning. The expert to be imitated in generative modeling corresponds to the underlying data generation process.
+generative modeling,diffusion models,"The connection to imitation learning plays a central role in diffusion models, which generate samples by transforming Gaussian noise through iterative additive refinements."
+diffusion models,behavioral cloning,"During training, a diffusion model is essentially an instance of behavioral cloning, an imitation learning algorithm that mimics an expert's action at each state."
+diffusion models,generation tasks,"The trajectory in diffusion models provides a step-by-step demonstration of how to transform Gaussian noise into a sample, allowing diffusion models to achieve a new state-of-the-art in many generation tasks."
+behavioral cloning,slow generation speed,"Behavioral cloning is responsible for the diffusion model's key limitation, the slow generation speed."
+behavior-cloned policy,reliable,behavior-cloned policy is not reliable when the state distribution deviates from the expert demonstration
+sample quality,diffusion model,the sample quality from a diffusion model degrades as the gap between training and generation grows
+diffusion model,fine-grained diffusion trajectory,"a diffusion model is typically trained to follow a fine-grained diffusion trajectory of 1,000 or more steps"
+diffusion model,sample quality,speeding up a diffusion model while maintaining its high sample quality is a problem of great practical value
+neural network evaluations,expensive,"since 1,000 neural network evaluations are prohibitively expensive, fewer steps are often used during generation"
+generation,distribution shift,"fewer steps are often used during generation, incurring the distribution shift from the training phase and thus degraded sample quality"
+slow generation,diffusion models,the slow generation in diffusion models can be addressed by employing inverse reinforcement learning
+inverse reinforcement learning,imitation learning approach,inverse reinforcement learning is another imitation learning approach that can address slow generation in diffusion models
+behavioral cloning,irl approach,"unlike behavioral cloning, the IRL approach first infers the reward function"
+irl,reward function,IRL approach infers the reward function that explains the trajectory
+diffusion models,irl,IRL allows a faster generation trajectory to be found by guiding a sampler using the learned reward when applied to diffusion models
+adversarial training,reward function,Adversarial training involves a reward function like a discriminator classifying the training data and diffusion model's samples
+adversarial approach,limited exploration,Adversarial approach may have drawbacks such as limited exploration
+diffusion by maximum entropy irl,diffusion model,DxMI is a minimax problem that jointly optimizes a diffusion model and an energy-based model
+diffusion by maximum entropy irl,energy-based model,DxMI jointly optimizes a diffusion model and an energy-based model
+diffusion model,reward signal,Diffusion model is trained to maximize the reward from EBM provided as the estimated log density
+diffusion model,entropy maximization,Diffusion model is trained to maximize the reward from EBM while simultaneously maximizing the entropy of generated samples
+entropy maximization,exploration,Maximization of entropy in DxMI facilitates exploration and stabilizes the training dynamics
+entropy maximization,minimax problem,Entropy maximization lets the minimax problem have an equilibrium when both the diffusion model and the EBM become the data distribution
+diffusion model,ebm,Both the diffusion model and the EBM contribute to the data distribution.
+diffusion model,dxmi,The diffusion model update step in DxMI is equivalent to maximum entropy RL.
+diffusion model,dxdp,Diffusion by Dynamic Programming (DxDP) is a novel maximum entropy RL algorithm for updating a diffusion model without difficulties.
+diffusion model,ddpm,Estimating the gradient of the marginal entropy of a diffusion model's samples is difficult for discrete-time diffusion models like DDPM.
+dxmi,maximum entropy rl,The diffusion model update step in DxMI is equivalent to maximum entropy RL.
+dxmi,memory constraints,Back-propagating the gradient through the whole diffusion model is often infeasible due to memory constraints.
+ddpm,gradient explosion or vanishing,"The gradient may explode or vanish during propagation through time in discrete-time diffusion models like DDPM, causing training instability."
+dxdp,marginal entropy estimation,DxDP mitigates the marginal entropy estimation issue by optimizing the upper bound of the original objective.
+dxdp,dynamic programming,DxDP interprets the objective as an optimal control problem and applies dynamic programming using value functions.
+diffusion model,optimal control,DxDP removes the need for back-propagation in time by interpreting the objective as an optimal control problem.
+dxdp,policy gradient methods,DxDP is compared to policy gradient methods and found to converge faster and provide stronger diffusion models.
+dxdp,rl algorithm,DxDP is described as an RL algorithm with broader utility for fine-tuning diffusion models from human or AI feedback.
+dxmi,training diffusion models,"DxMI is effective in training diffusion models and EBMs, providing a novel way to train EBMs without MCMC."
+dxmi,image generation tasks,DxMI can train strong short-run diffusion models that generate samples in 4 or 10 neural network evaluations on image generation tasks.
+dxmi,energy-based anomaly detectors,DxMI can be used to train strong energy-based anomaly detectors.
+dxmi,ebm,"DxMI provides a novel way to train EBMs without MCMC, which is computationally demanding and sensitive to hyperparameters."
+dxmi,dxdp,The paper introduces the DxDP algorithm in Section 4 and provides experimental results and related work for DxMI in Sections 5 and 6 respectively.
+dxmi,diffusion models,DxMI is part of the broader context of training diffusion models and EBMs.
+dxmi,mcmc,"DxMI provides a novel way to train EBMs without MCMC, which is computationally demanding and sensitive to the choice of hyperparameters."
+dxmi,github.com/swyoon/diffusion-by-maxentirl.git,The code for DxMI can be found at the specified GitHub repository.
+diffusion model,discrete-time stochastic samplers,Discrete-time stochastic samplers are a type of diffusion models that synthesize samples through iterations according to certain mathematical conditions.
+diffusion model,continuous-time diffusion models,Continuous-time diffusion models represent another category of diffusion models that correspond to a different type of solver.
+diffusion model,reward function,Diffusion models can be trained with reinforcement learning using a reward function to optimize the generation process.
+diffusion model,energy-based model,Diffusion models and energy-based models are related in the context of using mathematical functions to model and generate samples.
+energy-based model,scalar function,Energy-based models utilize a scalar function called energy to represent and characterize the data distribution.
+energy-based model,ebm,"Both terms refer to the same concept, where an energy-based model is often abbreviated as EBM."
+energy-based model,probability distribution,Energy-based models use energy functions to represent probability distributions.
+probability distribution,energy function,Probability distributions are represented using energy functions in the context of energy-based models.
+energy-based model,kl divergence,Training an energy-based model involves minimizing the Kullback-Leibler (KL) divergence.
+energy-based model,mcmc sampling,"Training an energy-based model requires computing the gradient with respect to parameters, which involves Markov Chain Monte Carlo (MCMC) sampling."
+ebm,maximum entropy irl,Energy-based models are connected to maximum entropy Inverse Reinforcement Learning (IRL) through a model for an expert's policy.
+action,cost,"In the context of maximum entropy IRL, actions are associated with costs represented by the energy function."
+action,maximum entropy,Actions follow a distribution in maximum entropy IRL that minimizes cost and maximizes entropy.
+ebm,diffusion model,EBMs are used in the context of Generalized Contrastive Divergence to minimize reverse KL divergence with a diffusion model.
+p(x),π(x),p(x) and π(x) are related in the context of KL(π(x)
+p(x),log p(x),p(x) is used as the data distribution and log p(x) is mentioned as the reward in the context of a maximum entropy RL problem.
+p(x),q(x),p(x) and q(x) are related in the context of minimizing the divergence between p(x) and q(x.
+π(x),log p(x),π(x) is the stochastic policy and log p(x) is mentioned as the reward in the context of a maximum entropy RL problem.
+log p(x),p(x),log p(x) is considered as the reward for training the diffusion model instead of log p(x).
+log p(x),q(x),log q(x) is used as the reward for training the diffusion model instead of log p(x).
+q(x),p(x),q(x) is used as a surrogate for p(x) in the context of Diffusion by Maximum Entropy IRL (DxMI).
+q(x),π(x),"q(x) is trained to be close to p(x) by minimizing the divergence between p(x) and q(x), where achieving p(x) = q(x) = π(x) is the goal."
+p(x),q(x),p(x) and q(x) are related in the context of minimizing the divergence between p(x) and q(x.
+ebm,diffusion model,"The learning problem of DxMI is formulated by incorporating EBM (q(x)) and the diffusion model (π(x)), with the objective of maximizing KL(p(x)"
+generalized cd (gcd),cd,"Generalized CD (GCD) is introduced in Eq. (5) as a generalization of CD by incorporating a general class of samplers, replacing specified MCMC sample distributions"
+gcd,variational maximum likelihood,"GCD is mathematically equivalent to a formulation called variational maximum likelihood or adversarial EBM, as discussed in the EBM literature"
+gcd,diffusion model,"The main contribution is exploring the application of discrete-time diffusion models as π(x) in GCD, a novel use not previously investigated in the literature"
+diffusion model,π(x),The diffusion model is represented as π(x) in the context.
+diffusion model,optimization,The optimization of the diffusion model is mentioned as challenging in the context.
+diffusion model,entropy estimation,Entropy estimation is highlighted as challenging for the diffusion model in the context.
+optimization,entropy estimation,Both optimization and entropy estimation are referred to as challenging tasks in the context.
+dxmi,diffusion model,"In DxMI, diffusion model is updated alongside an EBM in an alternate manner to find the Nash equilibrium."
+θ,energy eθ(x),Parameters θ and ϕ are defined as the parameters of the energy Eθ(x) and a diffusion model πϕ(x) respectively.
+ϕ,diffusion model,Parameter ϕ is specifically associated with the diffusion model in the context.
+ebm update,diffusion model,A specific subroutine is required for updating the diffusion model separately from the EBM update.
+optimization,ebm,Optimization with respect to EBM is described as minθ Ep(x)[Eθ(x)] − Eπϕ(x)[Eθ(x)].
+γ,energy,The energy is regularized by the square of energies with a constant γ to ensure the energy remains bounded.
+diffusion model,parameter ϕ,The diffusion model parameter ϕ should ideally be updated by minimizing KL(πϕ
+πϕ,qθ,Difficulties in updating πϕ parameter are mentioned due to the estimation of margnial entropy and the KL divergence with qθ.
+continuous normalizing flows,entropy estimators,"continuous normalizing flows are mentioned as models, while entropy estimators are mentioned as estimators which are related in the context of entropy estimation."
+k-nearest neighbors,variational methods,"k-nearest neighbors are mentioned as an entropy estimator, while variational methods are also mentioned as entropy estimators, both related in the context of entropy estimation."
+diffusion by maximum entropy irl,dataset d,"Diffusion by Maximum Entropy IRL is presented as an algorithm involving input Dataset D, indicating a relationship in the context of algorithm operation."
+diffusion by maximum entropy irl,energy eθ(x),"Diffusion by Maximum Entropy IRL is presented as an algorithm involving Energy Eθ(x), indicating a relationship in the context of algorithm operation."
+diffusion by maximum entropy irl,value v t,"Diffusion by Maximum Entropy IRL is presented as an algorithm involving Value V t, indicating a relationship in the context of algorithm operation."
+diffusion by maximum entropy irl,xt,"Diffusion by Maximum Entropy IRL involves the variable xt in its operations, indicating a relationship within the algorithm."
+diffusion by dynamic programming,rl algorithm,"Diffusion by Dynamic Programming is presented as a RL algorithm, indicating a relationship in the context of reinforcement learning algorithms."
+diffusion by dynamic programming,optimal control formulation,"Diffusion by Dynamic Programming leverages optimal control formulation to address difficulties, indicating a relationship in the context of algorithm design."
+diffusion by dynamic programming,value functions,"Diffusion by Dynamic Programming uses value functions to perform the diffusion model, indicating a relationship in the context of algorithm implementation."
+dxdp,optimal control formulation,DxDP leverages optimal control formulation to perform the diffusion model update efficiently.
+dxdp,value functions,DxDP leverages value functions to perform the diffusion model update efficiently.
+dxdp,diffusion model,DxDP can be used separately from DxMI to train a diffusion model.
+optimal control formulation,data processing inequality,The optimal control formulation minimizes an upper bound obtained from the data processing inequality.
+data processing inequality,auxiliary distribution,The data processing inequality introduces an auxiliary distribution for the formulation.
+auxiliary distribution,conditional gaussians,The auxiliary distribution is considered where it is factorized into conditional Gaussians.
+optimal control formulation,controller,The formulation results in an optimal control problem where the controller is optimized.
+controller,terminal cost,The controller is optimized to minimize the terminal cost and running costs for each transition.
+running cost,conditional entropy maximization,The running cost log πϕ(xt+1
+running cost,regularization,The second running cost regularizes the 'velocity' of the system.
+running cost,velocity,The second running cost regularizes the 'velocity'
+temperature,running costs,The temperature τ balances between the terminal and running costs.
+conditional entropy,diffusion model,"For the diffusion model considered in this paper (Eq. (1)), the conditional entropy has a particularly simple expression H(πϕ(xt+1"
+entropy running cost,σt,"Optimizing the entropy running cost amounts to learning σt’s in diffusion, and we treat σt’s as a part of the diffusion model parameter ϕ in DxMI."
+dxmisw,auc,SW denotes the sliced Wasserstein distance between samples and data. AUC is computed for classification between data and uniform noise using the energy.
+dynamic programming,eq. (8),We propose a dynamic programming approach for solving Eq. (8). Dynamic programming introduces
+value function,break down the problem,The value function helps in breaking down the problem into smaller problems at each timestep.
+value function,policy,The policy is optimized through iterative applications of policy evaluation and policy improvement steps.
+policy,diffusion model,The policy in this case is a diffusion model that is optimized through iterations.
+value function,cost-to-go function,The value function is defined as the cost-to-go function Vtψ(xt) in this context.
+value function,neural network,"A value function can be implemented with a neural network, with various design choices explored."
+policy evaluation,value function,"During policy evaluation, the value function is estimated for the current state."
+policy evaluation,bellman residual,The diffusion model is optimized by minimizing the Bellman residual during policy evaluation.
+policy improvement,value function,The estimated value from the value function is used to improve the diffusion model during policy improvement.
+trajectory,diffusion model,The diffusion model is optimized for each state in a trajectory sampled from the policy.
+diffusion model,trajectory,Trajectory x0:T sampled from diffusion model πϕ(x0:T)
+diffusion model,next-state value,Diffusion model optimized to minimize the next-state value and running costs
+diffusion model,policy evaluation,Each iteration of policy evaluation and improvement involves diffusion model
+policy evaluation,gradient step,Each iteration of policy evaluation and improvement involves a single gradient step
+adaptive velocity regularization (avr),method,Adaptive Velocity Regularization (AVR) involves a method for systematically determining hyperparameters
+hyperparameters,auxiliary distribution,Determining the hyperparameters involves the auxiliary distribution
+inequality,optimization,Optimizing the inequality to be as tight as possible by solving the inequality
+expectation,exponential moving average,Computing the expectation involves using exponential moving average during training
+value function,image generation experiments,"In image generation experiments, value function is independent of time"
+image generation experiments,design choices,"When using diffusion models for image generation, design choices are introduced"
+design choices,training stability,Design choices are introduced to enhance performance and training stability
+value function,time,"The value function can be independent of time, which reduces the number of parameters to be trained. A time-independent value function can learn better representation due to exposure to diverse inputs, while a time-dependent value function never observes samples with noise levels different from those of xt."
+time,value update,"In the value update step of image generation experiments, a time cost function R(t) is introduced, which only depends on time t. This time cost stabilizes training and ensures that the value function decreases monotonically over time."
+running cost terms,diffusion model (policy),"The running cost terms are retained in the diffusion model (policy) update step, while a time cost R(t) is predetermined and fixed throughout training to stabilize the training process by reducing variability."
+time cost,running costs,The time cost R(t) is introduced to stabilize the training process by reducing variability caused by fluctuating running costs during the initial stage of training.
+monotonicity,irl,Monotonicity is known to be beneficial in Inverse Reinforcement Learning (IRL) for episodic tasks.
+r(t),linear time cost,"The linear time cost is given as R(t) = c where c = 0.05, encouraging the value to decrease linearly as time progresses."
+r(t),sigmoid time cost,The sigmoid time cost is defined by R(t) = σ(−t+T /2))−σ(−t−1+T /2)) where σ(x) = (1+exp(−x))−1. It leads the value function to follow a sigmoid function centered at T /2.
+other forms of r(t),r(t),Other forms of R(t) are also possible.
+τ1,τ2,"Typically, τ1 is greater than τ2, showing the benefit of exploration. Setting τ1 not equal to τ2 does not violate the maximum entropy formulation."
+scaling τ2,scaling s2t's,"Scaling τ2 is equivalent to scaling s2t's, allowing them to be set arbitrarily."
+dxmi,diffusion model and an ebm,DxMI is applied to train a diffusion model and an Energy-Based Model (EBM) as demonstrated in empirical studies.
+dxmi,2d 8 gaussians data,"DxMI is illustrated on 2D 8 Gaussians data, showing its application in training a five-step diffusion."
+model,time-dependent value network,The model is parametrized by a time-dependent value network.
+model,time-conditioned multi-layer perceptron (mlp),The model is parametrized by a time-conditioned multi-layer perceptron (MLP).
+value network,energy,The last time step of the value network is treated as the energy.
+sample quality,sliced wasserstein distance (sw),Sample quality is measured with sliced Wasserstein distance (SW) to test data.
+energy function,classification performance,The quality of an energy function is quantified through the classification performance to uniform noise samples.
+maximum entropy regularization τ,energy,Setting an appropriate value for maximum entropy regularization τ greatly benefits the quality of both the energy and the samples.
+maximum entropy regularization τ,uniform noise samples,The effect of maximum entropy regularization τ on the quality of both energy and uniform noise samples is investigated.
+dxmi,gan,"Without entropy regularization, DxMI behaves similarly to GAN."
+fastdpm,sft-pg,FastDPM is related to SFT-PG as they are mentioned together
+fastdpm,dxmi,FastDPM is related to DxMI as DxMI is mentioned as the starting point of DxMI fine-tuning in context
+dxmi,value guidance,DxMI is related to Value Guidance as they have linear time cost in context
+backbone: ddgan,ddgan,"Backbone: DDGAN is related to DDGAN, as Backbone: DDGAN points to the backbone of DDGAN in context"
+backbone: edm,edm (heun),Backbone: EDM is related to EDM (Heun) as they are mentioned together
+backbone: edm,edm (ancestral),Backbone: EDM is related to EDM (Ancestral) as Backbone: EDM points to the backbone of EDM (Ancestral) in context
+consistency model,edm (ancestral),Consistency Model is related to EDM (Ancestral) as they are both mentioned in the same context
+consistency model,dxmi,Consistency Model is related to DxMI as both are mentioned in the same context
+dxmi,diffusion models,DxMI is related to Diffusion Models as DxMI can be used to fine-tune a diffusion model with reduced generation steps
+conditional imagenet,lsun bedroom,conditional ImageNet and LSUN Bedroom are datasets used for image generation experiments.
+ddpm,ddgan,DDPM and DDGAN are diffusion model backbones used for image generation experiments.
+ddpm,edm,DDPM and EDM are diffusion model backbones used for image generation experiments.
+ddgan,dxmi,DDGAN is not adjusted for noise schedule while DxMI fine-tunes the diffusion models.
+dxmi,distillation methods,DxMI surpasses the pre-trained starting point unlike distillation methods.
+dxmi,single-step generation,DxMI does not support single-step generation.
+dxmi,generative model,DxMI offers a principled approach to training a high-quality generative model with a moderate computation burden.
+generative model,training,Generative model training involves a principled approach with a moderate computation burden.
+ddgan,dxmi,"DDGAN and DxMI are compared in terms of their formulations, where DxMI can still enhance sample quality compared to DDGAN."
+dxmi,sft-pg,DxMI outperforms SFT-PG in terms of sample quality enhancement and different learning approaches.
+dxmi,dynamic programming,DxMI uses dynamic programming to guide the learning of the diffusion model instead of policy gradient.
+dxmi,maximum entropy principle,DxMI incorporates the maximum entropy principle for facilitating exploration.
+dxmi,value function,DxMI uses the value function to guide learning of the diffusion model compared to policy gradient approaches.
+sampler update,temperature parameters,The temperature parameters are set to zero in the sampler update to observe the effects on FID and Recall.
+value function,useful information,The investigation aims to determine if the trained value function captures useful information.
+value function,classifier guidance,Both involve shifting the trajectory of generation slightly to capture useful information.
+value function,discriminator guidance,Both involve shifting the trajectory of generation slightly to capture useful information.
+value function,generation,The value function is used to shift the trajectory of generation.
+generation,sample quality metric,Sample quality metric improvement is observed while sampling the next step with a small drift.
+value function,data density gradient,The value function gradient is aligned well with the data density gradient.
+dxmi,anomaly detection,DxMI is used for training an accurate energy function on an anomaly detection task.
+mvtec-ad dataset,rgb images,The MVTec-AD dataset contains RGB images.
+mvtec-ad dataset,object categories,The MVTec-AD dataset contains images of 15 object categories.
+test set,defective object images,The test set consists of both normal and defective object images.
+test set,anomaly label,Each image in the test set is provided with an anomaly label.
+test set,defect location,Each image in the test set is provided with a mask indicating the defect location.
+mask,defect location,A mask is used to indicate the defect location in the context
+anomalies,anomaly detection,The goal is to detect and localize anomalies in the context
+object category,performance,Performance is measured by AUC computed per object category in the context
+energy function,multi-modal data distribution,The energy function should reflect the multi-modal data distribution in the context
+preprocessing protocol,image transformation,Each image is transformed using a pre-trained EfficientNet-b4 according to the preprocessing protocol in the context
+spatial coordinate,energy value,Each spatial coordinate is treated independently for the energy value in the context
+energy function,energy value,The energy function is used to evaluate the energy value of spatial features in the context
+max pooling,anomaly detection,Max pooling is used for anomaly detection in the context
+bilinear interpolation,anomaly localization,Bilinear interpolation is used for anomaly localization in the context
+autoencoder architecture,energy function,An autoencoder architecture is employed for the energy function in the context
+reconstruction error,energy,The reconstruction error of a sample is treated as its energy in the context
+diffusion model,five-step time-conditioned mlps,The diffusion model and the value function are represented as five-step time-conditioned MLPs in the context
+diffusion models,dxmi,"Unlike conventional diffusion models, DxMI allows for a flexible choice of π(x0) in the context"
+initial distribution,sampler,The initial distribution for the sampler is set to the data distribution applied with noise in the context
+anomaly classification,localization performance,DxMI demonstrates strong anomaly classification and localization performance in the context
+dxmi,anomaly classification and localization performance,DxMI demonstrates strong anomaly classification and localization performance
+dxmi,table 5,"DxMI demonstrates strong anomaly classification and localization performance, as shown in Table 5"
+entropy maximization,τ = 0,"When entropy maximization is disabled by τ = 0, the diffusion model fails to explore and only exploits regions of minimum energy, resulting in poor performance"
+moderate level of τ = 0.1,sampler and the energy function,"We observe that a moderate level of τ = 0.1 benefits both the sampler and the energy function, as it encourages exploration and provides a suitable level of diversity in negative samples"
+generation steps in diffusion models,sample quality,Significant effort has been dedicated to reducing the number of generation steps in diffusion models during sampling while preserving sample quality
+diffusion model,noise schedule,One popular approach is to keep the trained diffusion model unchanged and improve the sampling phase independently by tuning the noise schedule
+neural network,short-run sampling,The sample quality can be further improved when the neural network is directly tuned for short-run sampling
+distillation methods,faster diffusion sampler,"Distillation methods train a faster diffusion sampler using training signal from a longer-run diffusion model, showing strong performance"
+distilled model,teacher model,"A distilled model usually cannot outperform the teacher model, but adversarial or IRL methods may exceed full-length"
+adversarial methods,irl methods,Adversarial or IRL methods may exceed full-length diffusion models.
+adversarial methods,hybrid methods,Hybrid methods combine distillation with adversarial loss.
+adversarial methods,denoising step,Adversarial training is applied to each denoising step.
+dxmi,sft-pg,DxMI and SFT-PG rely fully on adversarial training for final samples.
+rl,diffusion model,RL is often employed to fine-tune diffusion models for a reward function.
+reward signal,computer program,The source of the reward signal can be a computer program.
+reward signal,human evaluator,The source of the reward signal can be a human evaluator.
+dxmi,log data density,DxMI focuses on a setting where the estimated log data density is the reward.
+rl,diffusion models,"When RL is applied to diffusion models, the policy gradient is the dominant choice."
+dxmi,policy gradient,DxMI offers a value function-based approach as an alternative to the policy gradient.
+entropy rl,diffusion models,Maximum entropy RL for diffusion models is investigated but only in the continuous-time setting.
+dxdp,discrete-time setting,"DxDP investigates the discrete-time setting, which is more suitable for accelerating generation speed."
+dxmi,diffusion model,DxMI provides a method of utilizing a diffusion model to eliminate the need for MCMC.
+ebm training algorithms,mcmc,"Many existing EBM training algorithms rely on MCMC, which is computationally expensive and difficult to optimize for hyperparameters."
+hyperparameters,optimization,Hyperparameters are expensive and difficult to optimize for.
+ebm,generative model,Joint training of an EBM with a separate generative model is a widely employed strategy to avoid MCMC.
+ebm,normalizing flow,EBMs can be trained jointly with a normalizing flow.
+ebm,generator,EBMs can be trained jointly with a generator.
+ebm,diffusion model,EBMs can be trained jointly with a diffusion model.
+dxmi,prior works in ebm,DxMI shares the objective function with several prior works in EBM.
+entropy-regularized irl,convergence guarantees,"The convergence guarantees of entropy-regularized IRL are provided in [91, 92] under certain assumptions."
+entropy-regularized rl,diffusion models,More focused analysis on entropy regularized RL for diffusion models is provided.
+maxent rl,entropy regularized rl,"Theoretical analyses have been conducted on MaxEnt RL under finite state and action spaces, which is relevant for the discrete version of entropy-regularized RL."
+sequential decision making,generative modeling,"In this paper, we leverage techniques from sequential decision making to tackle challenges in generative modeling."
+generative modeling,connection,Generative modeling reveals a significant connection between these two fields.
+connection,algorithmic innovations,The connection between generative modeling and another field may spur a variety of algorithmic innovations.
+connection,practical applications,The connection between generative modeling and another field may find numerous practical applications.
+generative models,fairness issues,Generative models trained solely using DxMI may possess fairness issues.
+models,harm,The models created during our experiments are not capable enough to cause realistic harm.
+dxmi,hyperparameters,"Training multiple components simultaneously, DxMI introduces several hyperparameters."
+dxmi,training,"DxMI is not directly applicable to training a single-step generator. However, a diffusion model fine-tuned by DxMI can be distilled to a single-step generator."
+dxmi,flexibility,DxMI does not offer the flexibility of using a different value of generation steps T during the test time.
+models,deep neural networks,Theoretical analysis that rationalizes the empirical results will be an important direction for future work related to models built on deep neural networks.
+s. yoon,funding,S. Yoon is supported by a KIAS Individual Grant (AP095701) via the Center for AI and Natural Sciences at Korea Institute for Advanced Study and IITP/MSIT (RS-2023-00220628).
+h. hwang,funding,H. Hwang and F. Park are supported in part by IITP-MSIT grant RS-2021-II212068 (SNU AI Innovation.
+iitp-msit grant rs-2021-ii212068,snu ai innovation hub,Supported in part by the IITP-MSIT grant RS-2021-II212068 (SNU AI Innovation Hub)
+iitp-msit grant 2022-220480,training and inference methods for goal oriented ai agents,Supported in part by the IITP-MSIT grant 2022-220480 (Training and Inference Methods for Goal Oriented AI Agents)
+rs-2022-ii220480,training and inference methods for goal oriented ai agents,Supported in part by the RS-2022-II220480 (Training and Inference Methods for Goal Oriented AI Agents)
+msit,"ministry of science, ict","Supported in part by the Ministry of Science, ICT (MSIT)"
+global research support program in the digital field program(rs-2024-00436680),iitp,"Supervised by the Global Research Support Program in the Digital Field program(RS-2024-00436680), which is supervised by the IITP (Institute for Information & Communications Technology Planning & Evaluation)"
+kiat grant p0020536,hrd program for industrial innovation,Partially supported by the KIAT grant P0020536 (HRD Program for Industrial Innovation)
+srrc nrf grant rs-2023-00208052,snu-aiis,Supported in part by the SRRC NRF grant RS-2023-00208052 (SNU-AIIS)
+snu-ipai,snu-iamd,Supported in part by SNU-IPAI and SNU-IAMD
+snu bk21+ program in mechanical engineering,snu institute for engineering research,Supported in part by the SNU BK21+ Program in Mechanical Engineering and SNU Institute for Engineering Research
+microsoft research asia,snu interdisciplinary program in artificial intelligence,Supported in part by Microsoft Research Asia and the SNU Interdisciplinary Program in Artificial Intelligence
+national research foundation of korea (nrf),korea government (msit),Partially supported by the National Research Foundation of Korea funded by the Korea government (MSIT)
+posco science fellowship,posco tj park foundation,Partially supported by the POSCO Science Fellowship of POSCO TJ Park Foundation
+y.-k. noh,nrf/msit (no.rs-2024-00421203),Partly supported by Y.-K. Noh and NRF/MSIT (No.RS-2024-00421203)
+y.-k. noh,iitp/msit (2020-0-01373),Partly supported by Y.-K. Noh and IITP/MSIT (2020-0-01373)

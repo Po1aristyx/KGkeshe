@@ -1,0 +1,237 @@
+node_1,node_2,edge
+diffusion models,image quality,Diffusion models are primarily concerned with generating images and are evaluated based on image quality.
+diffusion models,variation,Diffusion models are also evaluated based on the amount of variation in the results they produce.
+diffusion models,condition,"Diffusion models aim to align the generated results with a given condition, such as a class label or text prompt."
+classifier-free guidance approach,unconditional model,"The classifier-free guidance approach uses an unconditional model to guide a conditional model, improving prompt alignment and image quality but reducing variation."
+guiding generation,image quality,"Guiding generation using a smaller, less-trained version of the model itself improves image quality without compromising variation."
+guiding generation,variation,"Guiding generation using a smaller, less-trained version of the model itself maintains the amount of variation in the results."
+imagenet generation,record fids,"The method leads to significant improvements in ImageNet generation, setting record FIDs of 1.01 for 64x64 and 1.25 for 512x512."
+diffusion models,synthetic images,Denoising diffusion models generate synthetic images by reversing a stochastic corruption process.
+neural network,denoiser,A neural network that implements the denoiser is a central design element in denoising diffusion models.
+architecture,design element,Architectures have been proposed as central design elements in various proposals.
+denoising process,solving differential equation,The denoising process corresponds mathematically to solving an ordinary or a stochastic differential equation.
+parameterizations,solvers,Different parameterizations and solvers have been evaluated for the denoising process.
+denoiser,condition input,"The denoiser is typically conditioned on a class label, an embedding of a text prompt, or some other form of conditioning input."
+training objective,diffusion model,The training objective of a diffusion model aims to cover the entire (conditional) data distribution.
+problems,low-probability regions,Model suffers problems in low-probability regions due to not having enough data to learn from.
+guidance,sampling temperature,Classifier-free guidance (CFG) standard method used for lowering the sampling temperature.
+denoiser network,sampling process,Training a denoiser network to operate in both conditional and unconditional setting steers the sampling process.
+unconditional generation task,better prompt alignment,"Unconditional generation task specifies a result to avoid, resulting in better prompt alignment."
+cfg,probability density,CFG implicitly raises the conditional part of the probability density to a power greater than one
+cfg,low-temperature sampling method,CFG has drawbacks that limit its usage as a general low-temperature sampling method
+cfg,conditional generation,CFG is applicable only for conditional generation
+conditional generation,guidance signal,The guidance signal for conditional generation is based on the difference between conditional and unconditional denoising results
+unconditional and conditional denoisers,sampling trajectory,The sampling trajectory can overshoot the desired conditional distribution due to the difference in tasks of unconditional and conditional denoisers
+prompt alignment and quality improvement effects,unclear relationship,It remains unclear how exactly the prompt alignment and quality improvement effects relate to each other
+cfg,image quality,CFG improves image quality
+autoguidance,task discrepancy problem,Autoguidance does not suffer from the task discrepancy problem
+guiding model,model capacity and/or training time,The guiding model can be obtained by simply limiting model capacity and/or training time
+autoguidance,effectiveness,We validate the effectiveness of autoguidance in various synthetic test cases as well as in practical image synthesis in class-conditional and text-conditional
+synthetic test cases,practical image synthesis,Both terms are mentioned in the context as being relevant in class-conditional and text-conditional settings.
+synthetic test cases,practical image synthesis,Both terms contribute to enabling guidance for unconditional synthesis.
+synthetic test cases,quantitative tests,The terms are related as the generated image distributions are evaluated quantitatively using FID and FDDINOv2 metrics.
+synthetic test cases,imagenet-512 and imagenet-64 generation,The terms are related as new records were set in image generation using synthetic test cases.
+practical image synthesis,quantitative tests,Both terms are interconnected since the generated images are evaluated quantitatively.
+quantitative tests,fid metric,The FID metric is used for quantitative evaluation.
+quantitative tests,fddinov2 metric,The FDDINOv2 metric is employed for quantitative evaluation.
+imagenet-512 generation,imagenet-64 generation,Both terms are part of the context showcasing new records in image generation.
+denoising diffusion,generates samples,The process of denoising diffusion involves generating samples from a distribution by iteratively denoising pure white noise.
+denoising diffusion,sequence of smoothing densities,Denoising diffusion considers a sequence of increasingly smoothed densities in the process.
+denoising diffusion,heat diffusion of pdata(x),Denoising diffusion involves considering heat diffusion of a distribution pdata(x) into a sequence of smoothed densities.
+white noise,backwards evolution towards low noise levels,White noise is evolved backwards towards low noise levels in the process.
+score function,numerical solution of ode,The score function is utilized in solving the ordinary differential equation (ODE) numerically.
+score function,neural network,The score function [20] ∇x log p(x; σ) can be approximated using a neural network Dθ(x; σ) parameterized by weights θ.
+neural network,dθ,The neural network Dθ(x; σ) is used for the denoising task.
+x,sample,The vector x is a sample that is evaluated in the score function.
+dθ,x,Dθ(x; σ) is used to estimate ∇x log p(x; σ) by comparing Dθ(x; σ) to x.
+sample,denoised sample,The network can either predict a denoised sample or a score vector for analysis purposes.
+label,conditional distribution,"Each data sample x is associated with a label c, and we seek a sample from the conditional distribution p(x"
+denoiser network,c,"The denoiser network Dθ(x; σ, c) is trained to accept c as an additional conditioning input for controlling the outcome at generation time."
+training images,approximation errors,The clarity of the training images is affected by approximation errors made by finite-capacity networks.
+training images,classifier-free guidance (cfg),The broadly used trick called classifier-free guidance (CFG) pushes the samples of training images towards higher likelihood of the class label.
+training images,canonical images,The network sacrifices variety for 'more canonical' images of the training images that it appears to be better capable of handling.
+classifier-free guidance (cfg),samples,The classifier-free guidance (CFG) pushes the samples towards higher likelihood of the class label.
+"denoiser networks d0(x; σ, c)","denoiser networks d1(x; σ, c)","The guidance in a diffusion model involves two denoiser networks D0(x; σ, c) and D1(x; σ, c) that achieve a guiding effect by extrapolating between their respective denoising results by a factor w."
+w,d0,Setting w = 0 recovers the output of D0.
+w,d1,Setting w = 1 recovers the output of D1.
+w,d1,Choosing w > 1 over-emphasizes the output of D1.
+denoisers,scores,"Recalling the equivalence of denoisers and scores, guidance grants access to the score of the density implied in the parentheses."
+cfg,unconditional denoiser dθ(x; σ),"In CFG, an auxiliary unconditional denoiser Dθ(x; σ) is trained to denoise the distribution p(x; σ) marginalized over c. This is typically done using the same network Dθ with an empty conditioning label."
+cfg,d0,"In CFG, D0 is set as Dθ(x; σ,∅) and D1 as Dθ(x; σ, c)."
+cfg,bayes’ rule,"By Bayes’ rule, the extrapolated score vector becomes ∇x log p(x"
+bayes’ rule,sample,Bayes’ rule guides the sample to more strongly align with the specified class c.
+diffusion ode,score function of equation 5,Solving the diffusion ODE with the score function of Equation 5 produces samples from the data distribution specified by pw(x
+sample,density,The sample having come from density p1 rather than p0.
+colors,image quality,Over-saturation of colors can affect the image quality.
+improvement,image quality,"Improvement in image quality is often remarkable, despite drawbacks."
+guidance values,image quality,High guidance values are commonly used to improve image quality.
+cfg,image quality,CFG is mentioned as a method to improve image quality.
+cfg,mechanism,The mechanism by which CFG improves image quality is being discussed.
+prompt alignment,image quality,Prompt alignment is mentioned in relation to image quality.
+unguided diffusion models,unsatisfactory images,Unguided diffusion models often produce unsatisfactory images.
+diffusion models,cfg,CFG is suggested as a remedy to the problems with diffusion models.
+toy example,denoiser network,A small-scale denoiser network is trained in a 2D toy example.
+dataset,local dimensionality,The dataset is designed to exhibit low local dimensionality.
+local detail,noise removal,Local detail emerges upon noise removal.
+local detail,hierarchical emergence,Local detail exhibits hierarchical emergence.
+manifold,realistic images,The properties of the dataset are expected from the actual manifold of realistic images.
+outliers,score matching,Score matching leads to outliers in the context of diffusion.
+maximum likelihood,ml estimation,It is mentioned that ML estimation leads to a certain outcome.
+maximum likelihood (ml) estimation,score matching,"Maximum likelihood estimation leads to a conservative fit of the data distribution, while score matching is generally not equal to ML estimation but closely related."
+score matching,ml estimate,"For a multivariate Gaussian model, the optimal score matching fit coincides with the ML estimate."
+model,training sample,The model attempts to cover all training samples.
+data distribution,likelihood,The model attempts to cover all training samples by estimating the likelihood of the data distribution.
+noise level,score field,Models of different capacity at an intermediate noise level show different learned score fields and implied density.
+model capacity,data envelopment,"Stronger models envelop the data more tightly, while weaker models' density is more spread out."
+image generation,training data,A tendency to cover the entire training data in image generation can lead to the model producing strange and unlikely images.
+2d distribution,classes,Fractal-like 2D distribution with two classes indicated by gray and orange regions.
+orange class distribution,conditional sampling using a small denoising diffusion model,The small denoising diffusion model generates outliers based on the orange class distribution.
+outliers,classifier-free guidance (w = 4),Classifier-free guidance (w = 4) eliminates outliers but reduces diversity by over-emphasizing the class.
+outliers,naive truncation via lengthening the score vectors,Naive truncation via lengthening the score vectors as a method of reducing outliers.
+outliers,our method concentrates samples on high-probability regions,Our method reduces outliers by concentrating samples on high-probability regions without reducing diversity.
+guidance,gradient of the (log) ratio of the two learned densities,Guidance moves points according to the gradient of the ratio of the two learned densities.
+score,contours,The score is used to represent the ground truth noise-free density shown by the contours.
+contours,guidance,The contours illustrate the additional force introduced by guidance during sampling.
+guidance,force,Guidance introduces an additional force causing the points to concentrate at the core of the data density.
+force,samples,The force causes the samples to avoid outliers and concentrate at the core of the data density.
+extremities,loss penalties,Extremities are present to avoid high loss penalties during training.
+network,images,The network has only been trained on real noisy images as inputs.
+network,samples,The network may not be prepared to deal with unlikely samples during sampling.
+guidance,outliers,Classifier-free guidance eliminates outliers during generation.
+guidance,class boundary,Guidance ensures that samples avoid the class boundary during generation.
+samples,distribution branches,Entire branches of the distribution are dropped due to the guidance.
+samples,manifold core,Samples are pulled towards the core of the manifold by the guidance.
+samples,outlier samples,"The unlikely outlier samples are eliminated by the guidance, improving image quality."
+image quality,guidance,The image quality improvement is attributed to the guidance.
+phenomenon,quality difference,The phenomenon of samples being pulled towards the core is due to a quality difference between networks.
+denoiser d0,task,Denoiser D0 has a more difficult task compared to the other denoiser network.
+denoiser d0,denoiser d1,"D0 faces a more difficult task of generating from all classes at once, whereas D1 can focus on a single class for any specific sample."
+network d0,data,network D0 attains a worse fit to the data due to the more difficult task and typically only a small slice of the training budget.
+cfg,sample,CFG boosts the likelihood of the sample having come from the class c and the higher-quality implied distribution.
+guidance,ode vector field,guidance contributes to the ODE vector field by pulling the samples towards higher values of log [p1(x
+contour of the density ratio,hypothetical classifier,Each contour of the density ratio corresponds to a specific likelihood that a hypothetical classifier would assign on a sample being drawn from p1 instead of p0.
+cfg,manifold,"CFG can be seen as a form of adaptive truncation that identifies when a sample is likely to be under-fit and pushes it towards the general direction of better samples, concentrating samples at the manifold."
+denoisers,predictions,The predictions of the denoisers will disagree more decisively in these regions.
+truncation,overshooting,"The truncation “overshoots” the correction and produces a narrower distribution than the ground truth, but in practice this does not appear to have an adverse effect on the images."
+truncation,gans,"CFG can be seen as a form of adaptive truncation that identifies when a sample is likely to be under-fit and pushes it towards the general direction of better samples, inspired by the truncation trick in GANs."
+truncation,language models,"CFG can be seen as a form of adaptive truncation that identifies when a sample is likely to be under-fit and pushes it towards the general direction of better samples, inspired by lowering temperature in generative language models."
+images,variation,"Images generated with naive truncation tend to show reduced variation, oversimplified details, and monotone texture."
+images,quality improvement,Our method aims to isolate the image quality improvement effect by directly guiding a high-quality.
+d1,model,D1 is a model trained on the same task and data distribution as model D0 mentioned in the context
+d0,model,D0 is also a model trained on the same task and data distribution as model D1
+low capacity,model,The model mentioned in the context has low capacity
+under-training,model,Model D0 may suffer from under-training
+autoguidance,model,Autoguidance is a procedure where a model is guided with an inferior version of itself
+2d toy example,context,"In the context mentioned, a 2D toy example is discussed"
+score matching,limited model capacity,"Under limited model capacity, score matching tends to over-emphasize low-probability regions of the data distribution"
+errors,model,Autoguidance seeks to identify and reduce the errors made by the stronger model
+prediction,weaker model,Autoguidance measures the difference between the prediction of the weaker model and the stronger model
+perturbation,two models,"When the two models agree, the perturbation is insignificant, but when they disagree, the difference indicates the general direction towards better samples"
+autoguidance,d1,"Autoguidance is expected to work if the two models, such as autoguidance and D1, suffer from degradations that are compatible with each other."
+d1,lack of capacity,D1 can be expected to suffer from lack of capacity.
+visual quality difference,unconditional images,Visual quality difference is obvious if we inspect the unconditional images generated by current large-scale models.
+edm2-s model,fid,The EDM2-S model trained with ImageNet-512 yields a FID of 2.56 in the class-conditional setting and 11.67 in the unconditional setting.
+discriminator guidance,explicit classifier,Discriminator guidance trains an explicit classifier to discriminate between the generated samples and noisy training samples at each noise level.
+training data,shuffling,"Models trained separately or for a different number of iterations differ not only in accuracy of fit, but also in terms of random initialization, shuffling of the training data."
+guidance,quality gap,"For guidance to be successful, the quality gap should be large enough."
+quality gap,systematic spreading-out of the density,The quality gap should be large enough to make the systematic spreading-out of the density outweigh random effects.
+quality gap,random effects,The quality gap should be large enough to make the systematic spreading-out of the density outweigh random effects.
+synthetic degradations,controlled experiment,"To validate our hypothesis, we perform a controlled experiment using synthetic corruptions."
+models,corruptions,"We find that as long as the degradations are compatible, autoguidance largely undoes the damage caused by the corruptions."
+base model,edm2-s,"As the base model, we use EDM2-S trained on ImageNet-512 without dropout."
+models,autoguidance,"Applying autoguidance, we reach the best result with w = 2.25, matching the base model’s FID."
+base model,dropout,"We construct D1 by applying dropout to the base model, and D0 by applying dropout to the base model."
+base model,input noise,"We construct D1 by modifying the base model to add noise to the input images and adjusting the σ conditioning input of the denoiser. The guiding model D0 is constructed similarly, but with a."
+denoiser,adjusted,The denoiser is adjusted accordingly.
+guiding model d0,constructed,"The guiding model D0 is constructed similarly, but with a noise level increase of 20% (FID = 9.73)."
+autoguidance,best result,"Applying autoguidance, we reach the best result (FID = 2.56) with w = 2.00, again matching the base model’s FID."
+d1,dropout,"Mismatched degradations: If we corrupt D1 by dropout and D0 by input noise, or vice versa, guidance does not improve the results at all."
+d0,input noise,"Mismatched degradations: If we corrupt D1 by dropout and D0 by input noise, or vice versa, guidance does not improve the results at all."
+guidance,disable,"In these cases, the best FID is obtained by setting w = 1, i.e., by disabling guidance and using the less corrupted D1 exclusively."
+experiment,main hypothesis,"While this experiment corroborates our main hypothesis, we do not suggest that guiding with these synthetic degradations would be useful in practice."
+diffusion model,degradations,"A realistic diffusion model will not suffer from these particular degradations, so creating a guiding model by introducing them would not yield consistent truncation towards the data manifold."
+primary evaluation,imagenet,Our primary evaluation is carried out using ImageNet (ILSVRC2012) [8] at two resolutions: 512×512 and 64×64.
+imagenet,diffusion model edm2,"For ImageNet-512 we use latent diffusion [42], while ImageNet-64 works directly on RGB pixels. We take the current state-of-the-art diffusion model EDM2 [24] as our baseline."
+edm2,sampling parameters,We use the EDM2-S and EDM2-XXL models with default sampling parameters: 32 deterministic steps with a 2nd order Heun sampler [23].
+pre-trained model,publicly available,"For most setups, a pre-trained model is publicly available, and in the remaining cases we train the models ourselves using the official implementation."
+models,implementation,The remaining cases we train the models ourselves using the official implementation.
+degradations,guiding model,We use two degradations for the guiding model: shorter training time and reduced capacity compared to the main model.
+edm2-s,xs-sized guiding model,"With EDM2-S, for example, we use an XS-sized guiding model that receives 1/16th of the training iterations of the main model."
+method,improves,Table 1 shows that our method improves FID [13] and FDDINOv2 [51] considerably.
+size,model,"This beats the 1.68 achieved by the concurrently proposed CFG + Guidance Interval [27], and is the best result reported for this dataset regardless of the model size."
+model,improves,Using the largest model (EDM2-XXL) further improves the record to 1.25.
+autoguidance,classifier-free guidance,Autoguidance is related to Classifier-free guidance as it is mentioned in the same context and both are methods of providing guidance in a certain task.
+autoguidance,fid,Autoguidance is related to FID as it is mentioned in the same context and FID is a parameter used in evaluating the results of autoguidance.
+autoguidance,eda technique,Autoguidance is related to EMA technique as EMA length parameters are mentioned in the context as a parameter used in autoguidance.
+autoguidance,imagenet-512,Autoguidance is related to ImageNet-512 as it is mentioned in the same context and Autoguidance is evaluated on ImageNet-512 dataset.
+fid,eda technique,FID is related to EMA technique as EMA length parameters are mentioned in the context as a parameter used in evaluating the results.
+fid,imagenet-512,FID is related to ImageNet-512 as it is mentioned in the same context and FID is a parameter used in evaluating the results on ImageNet-512 dataset.
+eda technique,imagenet-512,EMA technique is related to ImageNet-512 as it is mentioned in the same context and EMA length parameters are used in evaluating the results on ImageNet-512 dataset.
+ema length parameters,best configuration,"The two are swept over for the best configuration, denoted with a star, suggesting interdependence."
+imagenet-64,fid and fddinov2,"The dataset shows an improvement in FID and FDDINOv2, setting new records of 1.01 and 31.85 respectively."
+autoguidance,unconditional models,"Autoguidance can be applied to unconditional models, indicating versatility and potential improvement in results."
+conditional imagenet generation,unconditional results,"While conditional ImageNet generation may be close to saturation, the results for unconditional models remain surprisingly poor."
+edm2-s,fid of 11.67,"In the unconditional setting, EDM2-S achieves a high FID of 11.67, suggesting subpar quality of generated images."
+autoguidance,fid,"Enabling autoguidance substantially lowers the FID, indicating improvement in image quality."
+guiding model,main model,"Independent EMA lengths for the guiding and main models show beneficial results, with a significant decrease in FID when they are forced to use the same EMA."
+reduced training time,capacity degradation,"Isolating the effect of each degradation (reduced training time, capacity) shows their impact on the models individually."
+tree frog,palace,Both mentioned in the context as classes of ImageNet-512
+tree frog,mushroom,Both mentioned in the context as classes of ImageNet-512
+palace,mushroom,Both mentioned in the context as classes of ImageNet-512
+palace,castle,Both mentioned in the context as classes of ImageNet-512
+mushroom,castle,Both mentioned in the context as classes of ImageNet-512
+edm2-s,cfg,Comparison made between various models in terms of performance
+edm2-s,fid,Results and guidance weights mentioned in connection with EDM2-S
+fid,cfg,Comparison made in terms of performance
+edm2-s,guiding model,Association between EDM2-S and guiding model
+fid,guiding model,Association between FID and guiding model
+capacity of the guiding model,xs,Comparison made regarding the capacity of the guiding model
+capacity of the guiding model,xxs,Comparison made regarding the capacity of the guiding model
+xxs,xs,Comparison made regarding the capacity of the guiding model
+xxs,s,Comparison made regarding the capacity of the guiding model
+guidance weight,capacity of the guiding model,Sensitivity to guidance weight mentioned with respect to the capacity reduction of guiding model
+ema length,edm2,Similar sensitivity mentioned in both contexts
+em,search,Utilization of EMA mentioned in the context for parameter search
+degradations,guiding model,"Several degradations were explored for the guiding model. Different strategies such as reducing training data, applying guidance interval, or deriving the guiding model did not show benefits."
+autoguidance,training,Limitation of autoguidance is the need to train a separate guiding model. The additional training cost is mentioned to be modest when using a smaller model and shorter training time.
+model,quantizing,Quantizing the main model to lower precision did not yield a useful guiding model. It suggests a relationship between the precision of the model and the usefulness of the guiding model.
+cfg,our method,"Both CFG and our method tend to improve the perceptual quality of images, guiding the results towards clearer realizations as the guidance weight increases."
+cfg,canonical images,CFG seems to have a tendency to head towards a more limited number of canonical images per class.
+our method,wider gamut of image compositions,Our method produces a wider gamut of image compositions compared to CFG.
+unfguided sample,incompatible elements,Sometimes the unguided sample contains incompatible elements of multiple possible images.
+cfg,struggles to decide,CFG apparently struggles to decide what to do when faced with an unguided sample.
+our method,focuses on the red foreground object,Our method first builds the large red element into a castle and with increased guidance focuses on the red foreground object.
+number of possible output images,lower fid,"A higher number of possible output images is consistent with a lower FID, implying better coverage of the training data."
+lower fid,better coverage of the training data,lower FID implies better coverage of the training data.
+deepfloyd if,large-scale image generators,DeepFloyd IF is applied to large-scale image generators.
+deepfloyd if,cascade of three diffusion models,DeepFloyd IF generates images as a cascade of three diffusion models.
+cfg,image quality,CFG significantly improves image quality.
+cfg,style and layout of the image,CFG simplifies the style and layout of the image towards a canonical depiction.
+autoguidance,cfg,"To combine autoguidance with CFG, Equation 3 is extended to cover multiple guiding models and distribute the total guidance weight among them using linear interpolation."
+our method,image quality,Our method improves image quality and better preserves the image’s style and visual complexity.
+guiding methods,useful artistic control,"Using both guiding methods simultaneously will serve as a new, useful artistic control."
+classifier-free guidance,entangles several phenomena,"Classifier-free guidance entangles several phenomena together, and a different perspective along with simple practical changes opens up a new design space."
+perspective,simple practical changes,Both are mentioned in the same sentence implying a relationship through opening up a new design space
+connection,conditioning,"Removing the connection to conditioning enables better results, showing a direct relationship between the terms"
+conditions,proving the conditions,"Future work involves proving the conditions that allow autoguidance to be beneficial, linking the terms through research focus"
+autoguidance,beneficial,"Autoguidance focuses on being beneficial, indicating a positive relationship between the terms"
+guiding model,best,Deriving good rules of thumb for selecting the best guiding model suggests a relationship based on optimization
+generator,trained,"Large-scale image generators are trained in successive stages, showing a direct relationship in the training process"
+guidance,modifications,"Various modifications to guidance can induce degradations, showing a relationship through alteration"
+approaches,provide additional benefits,"The question of whether certain approaches could provide additional benefits remains open, indicating a potential relationship for improvement"
+autoguidance,conceptual similarity,"Autoguidance bears conceptual similarity to contrastive decoding, hinting at a relationship through shared ideas"
+guidance,downsides,Reducing the downsides of guidance by making noise level-dependent weight implies a relationship through improvement
+schedules,key benefit,"Key benefit from schedules appears to be the reduction of downsides, showing a relationship based on positive outcomes"
+guidance,cfg,Guidance and CFG are related in the context of suppression at high noise levels. Guidance schedules help suppress CFG at high noise levels.
+autoguidance,interval method,"Autoguidance is compared with the interval method in the context, which was not found to be beneficial in combination."
+autoguidance,distribution,Autoguidance and distribution are related in the context of both models targeting the same distribution at high noise levels.
+study,combinations,Further study on various possible combinations is mentioned in the context as a natural next step.
+metrics,precision and recall,"Alternative metrics, such as precision and recall, are suggested to further isolate the origin of improvement in the context."
+metrics,human preference score,"Alternative metrics, such as Human Preference Score, are suggested in the context for evaluating performance."
+metrics,pickscore,"Alternative metrics, such as PickScore, are mentioned in the context for evaluating performance."
+acknowledgments,david luebke,Acknowledgments mention David Luebke for discussions and comments.
+acknowledgments,janne hellsten,Acknowledgments mention Janne Hellsten for discussions and comments.
+acknowledgments,ming-yu liu,Acknowledgments mention Ming-Yu Liu for discussions and comments.
+acknowledgments,alex keller,Acknowledgments mention Alex Keller for discussions and comments.
+acknowledgments,tero kuosmanen,Acknowledgments mention Tero Kuosmanen for maintaining compute infrastructure.
+acknowledgments,samuel klenberg,Acknowledgments mention Samuel Klenberg for maintaining compute infrastructure.

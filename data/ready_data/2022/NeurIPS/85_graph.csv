@@ -1,0 +1,222 @@
+node_1,node_2,edge
+conditional random fields (crfs),end-to-end deep neural network (dnn) solutions,CRFs were popular tools but have fallen out of favor and been replaced by DNN solutions due to higher computational cost and weaker practical performance
+combined dnn-crf approaches,pure dnn solutions,"combined approaches have considered, but their speed and practical performance still falls short of best performing pure DNN solutions"
+generic combined approach,log-supermodular crf,log-supermodular CRF acts as a regularizer to encourage similarity between outputs in a structured prediction task
+dnn solutions,generic combined approach,"generic combined approach is widely applicable, practical, and in some cases, it can rival carefully engineered pure DNN solutions for the same structured prediction task"
+machine learning applications,structured prediction problems,a wide range of machine learning applications can be cast as structured prediction problems
+crfs,structured prediction problems,CRFs were popular for structured prediction problems as they allow modeling of the problem structure and can incorporate domain knowledge
+deep neural networks (dnns),crf-based approaches,"Deep neural networks have become increasingly popular and efficient, while CRF-based approaches have become less practical due to increases in data set and model sizes."
+deep neural networks (dnns),sample inefficiency,"Deep neural networks can be sample inefficient, as mentioned in reference [26]."
+deep neural networks (dnns),structured output,"Deep neural networks may fail to produce solutions that respect natural constraints required by the structured output, especially when the output is a combinatorial object."
+deep neural networks (dnns),neural information processing systems (neurips 2022),Deep neural networks were discussed in the 36th Conference on Neural Information Processing Systems (NeurIPS 2022).
+sample inefficiency,deep neural networks (dnns),"Sample inefficiency is a characteristic of deep neural networks, as noted in reference [26]."
+crf-based approaches,model sizes,CRF-based approaches have become less practical due to increases in data set and model sizes.
+structured output,natural constraints,"Structured outputs of deep neural networks may fail to meet natural constraints required for structured output, especially in cases where the output is a combinatorial object."
+neural information processing systems (neurips 2022),deep neural networks (dnns),Deep neural networks were discussed in the 36th Conference on Neural Information Processing Systems (NeurIPS 2022).
+neighboring particles,tend to behave similarly,neighboring particles and their behavior being similar
+soft knowledge,improve the training of dnn models,soft knowledge enhancing the training of DNN models
+soft knowledge,smooth the structured output,soft knowledge helping in smoothing the structured output
+existing approaches,combine dnns with crfs,existing approaches involving the combination of DNNs with CRFs
+structured variational autoencoders,models for stereo depth estimation,structured variational autoencoders and models for stereo depth estimation being related
+hybrid model,existing dnn,hybrid model combining existing DNNs
+hybrid model,crf,hybrid model combining with a CRF
+crfs,log-supermodular potentials,CRFs utilizing log-supermodular potentials for smoothing
+potential functions,attractive graphical models,potential functions belonging to attractive graphical models
+approach,attractive smoothing,approach being named attractive smoothing
+hybrid model,training and prediction overhead,hybrid model keeping training and prediction overhead low
+expressive crf,act like a regularizer for the dnns,expressive CRF working as a regularizer for DNNs
+approach,continuous log-supermodular crfs,approach involving continuous log-supermodular CRFs
+crf,dnn,CRF can provide performance improvements with only a modest overhead compared to the original DNN in a range of applications. The hybrid approach combining CRF and DNN resulted in a performance improvement over the pure DNN architecture.
+crf,graph,"CRFs represent a joint probability distribution over a structured output given data observations, factorizing as a product of nonnegative potential functions over a given graph structure."
+graph,potential functions,"The potential functions in CRFs are defined over a given graph structure, with nonnegative pairwise potentials encouraging local consistency and agreement between the variables."
+log-supermodular,lsm,LSM potential functions are described as log-supermodular functions that encourage agreement between the variables they operate on.
+log-supermodular,log-supermodular function,"A function f is considered log-supermodular if f(x)f(y) ≤ f(x ∧ y)f(x ∨ y) for all x, y in D."
+log-supermodular,log-submodular,"If the inequality from the definition of log-supermodular is reversed, the function f is said to be log-submodular."
+log-supermodular,hessian matrix,A twice continuously differentiable function is log-supermodular if the off-diagonal elements of the Hessian matrix of log(f) are nonnegative over the domain.
+log-supermodular,potential functions,"If all potential functions are log-supermodular, the function p(y"
+log-supermodular,global maxima,Log-supermodular functions represent classes of functions where global maxima can be efficiently found in both discrete and continuous settings.
+log-supermodular,crfs,Continuous log-supermodular functions have a rich history in the study of Conditional Random Fields (CRFs) in both theory and practice.
+log-submodular,submodular function,Submodular and supermodular functions satisfy a similar inequality with sums replacing products.
+crfs,theory,CRFs have a rich history in the study of both theory and practice.
+crfs,practice,CRFs have a rich history in the study of both theory and practice.
+continuous log-supermodular crfs,theoretical properties,Continuous log-supermodular CRFs enjoy similar theoretical properties to their discrete counterparts.
+discrete log-supermodular/log-submodular models,real-world settings,discrete log-supermodular/log-submodular models are widely used in real-world settings.
+crfs,computer vision tasks,discrete log-supermodular/log-submodular models are used in a variety of computer vision tasks.
+continuous log-supermodular crfs,practical applications,continuous log-supermodular CRFs have not received much attention in practical applications.
+structured prediction tasks,nn+crf model,General architecture of the end-to-end NN+CRF model for structured prediction tasks is shown in Figure 1.
+structured prediction problems,supervised learning problems,structured prediction problems considered here are supervised learning problems.
+neural networks,data observations,two neural networks are trained to construct the parameters of a CRF given a data observation x.
+neural networks,crf,neural networks are used in combination with CRFs in the end-to-end model shown in Figure 1.
+discriminator network,vector of outputs,The discriminator network produces a vector of outputs as a result of its operation.
+discriminator network,parameter network,The discriminator network and the parameter network are both involved in producing structured outputs through joint probability modeling.
+parameter network,vector of outputs,The parameter network generates a vector of outputs that is important in the joint probability modeling of structured outputs.
+parameter network,relationship,The parameter network controls the strength of the relationship between neighboring variables in the output.
+video,frame,The input task involves processing video frames to determine the presence of objects.
+video,object,The aim of the video task is to identify objects present in each frame of the video.
+dnn,vector v,A DNN processes the frames of the video to generate vectors indicating the presence of objects.
+dnn,frame,The DNN operates on each frame of the video to make predictions about the presence of objects.
+chain-structured crf,sequence of vectors,A chain-structured CRF is constructed based on the sequence of vectors generated by the DNN.
+random variable,time slice,Each binary random variable at a specific time slice corresponds to the presence of an object from a set.
+parameter net,outputs,The outputs a and c from the parameter net are used in the equation to compute the potential function ϕff
+potential functions,log-supermodular,The nonnegativity constraint on c ensures that each potential function is log-supermodular.
+video frames,smoothness property,The potentials encourage the smoothness property over the sequence of video frames for the object detection task.
+structured objects,univariate potential functions,"When applying attractive smoothing for structured objects y ∈ S, the univariate potential functions could be arbitrary."
+pairwise potentials,supermodular function,"The pairwise potentials are of the form exp(g(yi, yj"
+input/output pair,potential function values,The potential function values for each input/output pair are parameters of the CRF.
+continuous models,multivariate gaussian distribution,Similarities between random variables in continuous models are often modeled using a multivariate Gaussian distribution.
+multivariate gaussian distribution,parametric family,"Multivariate Gaussians representing a simple, well-understood parametric family."
+multivariate gaussian distribution,gaussian crfs,"Multivariate Gaussians are associated with Gaussian CRFs, which admit exact MAP inference via matrix inversion."
+gaussian crfs,map inference,Gaussian CRFs admit exact MAP inference via matrix inversion.
+gaussian crfs,walk-summable gaussian graphical models,"In special sub-classes of Gaussian models, exact MAP inference can be done with Gaussian belief propagation in walk-summable Gaussian graphical models."
+approach based on walk-summable models,gaussian potential,An approach based on walk-summable models involves potentials of the form exp(-(yi - vi)^2) where vi is the mean parameter of a Gaussian potential.
+approach based on walk-summable models,pairwise potentials,An approach based on walk-summable models involves parameterized pairwise potentials of the form exp(-(wij * (yi - yj)^2)).
+parameterized pairwise potentials,neural network output,The parameterized pairwise potentials are modeled with parameters given as output of the parameter NN.
+joint distribution,walk-summable gaussian,The nonnegativity constraint on the parameters ensures that the joint distribution is a walk-summable Gaussian.
+gaussian crf,regularizer/smoother,The Gaussian CRF acts as a regularizer/smoother to encourage (or not) neighboring pixels to take certain values.
+crf,efficient inference,CRF in the example allows efficient inference.
+crf,modeling power,The modeling power of potential functions in CRF is limited by the Gaussian requirement.
+model,log-supermodular,The log-supermodular model is constructed by ensuring the coefficients of yiyj terms equal to wij.
+gaussian requirement,log-supermodularity,The Gaussian requirement can be relaxed to only requiring log-supermodularity in certain settings.
+potential functions,log-quadratic model,Relaxing the Gaussian requirement may lead to a resulting log-quadratic model that may not be integrable.
+structured outputs,compact subset,Structured outputs y come from a compact subset of Rn in practical applications.
+potential functions,discriminator net,Potential functions are dependent on the output of the discriminator net.
+parameter net,second order condition,The output of the parameter net is related to the second order condition for log-supermodularity.
+log-supermodular model,joint gaussian model,"The log-supermodular model contains the Gaussian model as a special case, but it may not produce a joint Gaussian model."
+log-supermodular models,log-quadratic functions,Log-supermodular models are restricted in the continuous case to log-quadratic functions for computational reasons and to avoid potential overfitting from more flexible models.
+log-supermodular models,log-quadratic functions,Log-quadratic functions are used to restrict log-supermodular models in the continuous case.
+nn+crf model,loss function selection,Selecting an appropriate loss function is required for fitting the combined NN+CRF model to data.
+nn+crf model,gradient descent,Gradient descent is used to minimize the loss for the combined NN+CRF model.
+loss functions,gradient update,Different loss functions will result in different updates during training.
+negative conditional log-likelihood (nll),marginal inference,"For the NLL loss function, marginal inference is needed as part of the gradient update."
+squared loss (sl),differentiation,"For squared loss, differentiation of the arg maxy p(y"
+huber loss (hl),differentiation,"For Huber loss and similar discriminative losses, differentiation of the arg maxy p(y"
+map inference,backpropagation,Approximate MAP inference in CRFs with continuous random variables can be performed using backpropagation.
+mean-field variational inference,particle belief propagation,These are different approaches for variational inference mentioned in the context.
+mean-field variational inference,approximate variational methods,"The approximate variational methods, such as mean-field, are used in the context as they can be easily implemented in a recurrent NN layer."
+mean-field variational inference,bethe free energy (bfe),The Bethe Free Energy (BFE) is mentioned as an approximate variational method in the context.
+mean parameters,covariances,"The variational objective is an optimization problem over mean parameters, µ, and covariances, Σ."
+polynomial-time approximation schemes,map solution,Polynomial-time approximation schemes could be applied to estimate the MAP solution in the context.
+approximate variational methods,map inference approach,The MAP inference approach of Xiong et al. is mentioned as another preferred method for variational inference.
+dnn,ml framework,The approximate variational methods can be implemented as a computation layer in an ML framework like Tensorflow and Pytorch.
+approximate variational methods,global optimum,Approximate variational methods are not guaranteed to return a global optimum in the context.
+polynomial-time approximation schemes,starting point,Polynomial-time approximation schemes could be used to pick a good starting point for optimization.
+polynomial-time approximation schemes,variational methods,The polynomial-time approximation schemes could be used to pick a good starting point for the approximate variational methods.
+crfs,stereo/monocular depth estimation,Models based purely on CRFs have been used extensively for both stereo/monocular depth estimation.
+crfs,semantic image segmentation,Models based purely on CRFs have been used extensively for semantic image segmentation.
+crfs,approximate inference,"The key challenge when applying CRFs for these problems is that fitting the CRF model and performing inference is typically intractable, which necessitates approximate inference."
+mean-field methods,particle belief propagation,Approximate inference for CRFs can be done using mean-field methods or particle belief propagation.
+superpixels,subregions,Superpixels or subregions are often used to make the inference in these models scalable.
+crfs,dnns,"Frameworks have sought to combine CRFs with DNNs, e.g., for stereo matching, for image segmentation, and for image colorization."
+crfs,features,Features in models based on CRFs are typically hand-constructed.
+image colorization,messaoud et al.,Messaoud et al. [37] are mentioned in the context as authors of a paper related to image colorization.
+image colorization,crfs,CRFs are mentioned in the context as a method that can be abandoned for image colorization.
+combined approaches,existing dnn+crf approaches,Existing combined approaches are highlighted in the context to illustrate limitations of DNN+CRF approaches.
+hybrid approaches,vision applications,Hybrid approaches are mentioned in relation to vision applications in the context.
+log-supermodular potentials,end-to-end framework,The end-to-end framework in the context differs from existing DNN+CRF approaches by using log-supermodular potentials.
+gpu implementation,approximate inference routines,The GPU implementation of approximate inference routines is highlighted in the context as making the approach scalable for vision tasks.
+discretization,continuous inference,Discretization is mentioned in the context as not being used to reduce continuous inference to discrete inference.
+models,discriminative losses,Models in the context are trained with discriminative losses instead of minimizing the negative log-likelihood.
+structured prediction,dnns with crfs,Significant work on structured prediction combining DNNs with CRFs is mentioned in the context.
+log-supermodular crfs,dnns,Log-supermodular CRFs are mentioned in relation to DNNs in the context as part of the focus on structured prediction.
+spen,continuous energy minimization,Belanger et al. [4] consider a general framework for continuous energy minimization related to SPEN in the context.
+spen,nn energy function,Contrasting approaches of SPEN and NN energy functions are mentioned in the context regarding problem structure incorporation.
+graber and schwing,spen,Graber and Schwing proposed an alternative to SPEN that allows problem structure incorporation in the context.
+spen,structured svm framework,SPEN is a part of a generalized structured SVM framework
+approach,inference,The approach leads to less time-consuming inference
+framework,dnn models,The hybrid framework is evaluated using existing DNN models
+tensorflow 2.2,nvidia tesla v100 gpu,Models were implemented using Tensorflow 2.2 and run on a 3× NVIDIA Tesla V100 GPU
+source code,github,All source code and learned model weights are available on GitHub
+application domains,qualitative and quantitative results,Qualitative and quantitative results are presented for each of the application domains
+discriminator net,dnn,Discriminator Net is a DNN that produces a structured output
+stereo matching models,performance,Comparison and performance of stereo matching models are presented in Table 1
+deeplabv3+,crf variant,Performance of DeepLabv3+ and its CRF variant on the coco-stuff validation data is shown in Table 2
+deeplab,crf,"DeepLab is a semantic image segmentation model with 41.4M parameters, while the CRF variant adds an additional .5M parameters."
+grid crf,h × w,"Grid CRF has dimensions represented by H × W, where H and W are the height and width of input image(s) for the DNN."
+gaussian potentials,sg,Gaussian potentials from equations (1) and (2) are denoted as SG in the text.
+log-supermodular potentials,lsm,log-supermodular potentials from equations (3) and (4) are denoted as LSM in the text.
+marginal inference,gpu scheme,Approximate inference is done via gradient ascent on the mean-field lower bound using the GPU scheme mentioned.
+stereo matching,gc-net,End-to-end DNN solutions like GC-Net are commonly used for stereo matching due to their speed and accuracy.
+end-to-end dnn solutions,stereo matching,end-to-end DNN solutions have become the most popular approach for stereo matching
+gc-net,psm-net,GC-Net and PSM-Net are mentioned as examples of end-to-end DNN solutions for stereo matching
+gc-net,cspns,GC-Net and CSPNs are architectures selected for evaluation
+psm-net,leastereo,PSM-Net and LEAStereo are architectures selected for evaluation
+gc-net,leastereo,GC-Net and LEAStereo are architectures selected for evaluation
+gc-net,kitti 2015 leaderboard,GC-Net was the first architecture to learn a cost aggregation function and LEAStereo was near the top of the KITTI 2015 leaderboard
+psm-net,cost aggregation function,PSM-Net minimizes multiple losses during training
+psm-net,huber loss,PSM-Net minimizes multiple losses during training using the Huber loss function
+gc-net,adam optimizer,All models were trained from scratch with the Adam optimizer
+adam optimizer,learning rate,Adam optimizer was used with learning rate set to 0.0001
+input images,randomly cropped,input images were randomly cropped to a dimension of 256×512
+data sets,scene flow,proposed approach evaluated using Scene Flow data set
+data sets,virtual kitti 2,proposed approach evaluated using Virtual KITTI 2 data set
+synthetic data sets,pretrain dnns,synthetic data sets are used to pretrain DNNs
+dnn architectures,combined dnn+crf architectures,pure DNN architectures compared with combined DNN+CRF architectures
+predicted disparity,ground truth,mean absolute error between predicted disparity and ground truth used as evaluation metric
+disparity setting,combined approach,The fixed maximum disparity setting (D) is being investigated in conjunction with the combined approach to determine if it leads to significant performance improvements in terms of MAE and 1 pixel error.
+combined approach,nn approaches,The combined approach is compared to pure NN approaches to evaluate if it results in significant performance improvements.
+crfs,parameters,CRFs introduce additional parameters to the model but do not significantly increase prediction time despite the increase in the number of parameters.
+crfs,models,"The performance of different models, with and without CRFs, is presented in Table 1 to compare the impact of CRFs on test set performance."
+ga-net,performance,The published performance of GA-Net on the Sceneflow data set is included for comparison with other models.
+psm-net,lsm,PSM-Net with LSM achieved the best overall performance on Sceneflow and PSM-Net (LSM) also achieved the best Sceneflow performance.
+psm-net,gc-net,PSM-Net (LSM) achieves the best Sceneflow performance while GC-Net (LSM) achieved the best Virtual KITTI2 performance.
+gc-net,lsm,Adding LSM to GC-Net achieved the biggest performance improvements and also resulted in the best performing model on Virtual KITTI2.
+gc-net,psm-net,Even the comparatively older architectures GC-Net and PSM-Net perform comparably or better than the more recent LEAStereo when a LSM CRF is used.
+leastereo,gc-net,"On Virtual KITTI2, LEAStereo’s base performance is only slightly better than GC-NET and PSM-Net, but the performance is improved significantly by adding a CRF."
+lsm,sg,"The LSM CRF always outperforms the SG CRF, sometimes significantly, suggesting that the added flexibility of LSM over SG does not result in significant overfitting."
+crf,base model,The addition of the CRF appears to result in smoother local neighborhoods compared to the base model
+crf,base model,"Better predictions on regions with fine details and thin areas, e.g., the spokes of wheels and the leaves of plants"
+sg,lsm,"Comparing SG with LSM, we see that SG tends to oversmooth, especially in regions with a lot of fine details, as compared to LSM"
+sg,lsm,This seems to be the primary difference between the two models
+image colorization,grayscale image,"Given a grayscale image as input, the model needs to generate a full color image"
+dnn models,"encode-decoder, fcn architecture","Many early DNN models used an encode-decoder, FCN architecture"
+dnn models,classification loss,Some DNN models used classification loss
+dnn models,ℓ1 loss,Some DNN models used smoothed ℓ1 loss
+dnn models,ℓ2 loss/mse,Some DNN models used ℓ2 loss/MSE
+approaches,generative adversarial networks (gans),More recent approaches have used generative adversarial networks (GANs) to generate colorful vivid images
+image colorization,color bleeding,One common problem with models trained to colorize images is that of color bleeding
+chromagan framework,color bleeding,An example of color bleeding was produced by the ChromaGAN framework
+hybrid approach,smooth local,The hybrid approach can smooth local
+chromagan framework,hybrid approach,The ChromaGAN framework is used to evaluate the hybrid approach for smoothing local neighborhoods and mitigating color bleeding.
+chromagan framework,generative adversarial network,The ChromaGAN framework utilizes a generative adversarial network for image colorization.
+generative adversarial network,image colorization,The generative adversarial network is used for image colorization as part of the ChromaGAN framework.
+generator network,2 missing color channels,The generator network in ChromaGAN is responsible for generating the two missing color channels.
+discriminator network,generated color images,The discriminator network in ChromaGAN is used to judge the authenticity of the generated color images.
+grid-structured crf,nns,A grid-structured CRF is incorporated into the ChromaGAN model in conjunction with the pair of NNs (neural networks).
+parameter net,crf,The parameter net takes the single channel image as input and generates potential parameters for the CRF (Conditional Random Field).
+vitoria et al.,epochs,The training and hyperparameter tuning follow the methodology proposed by Vitoria et al. over a span of 10 epochs.
+ilsvrc2012,1.3 million images,ILSVRC2012 dataset contains approximately 1.3 million images categorized into 1K classes.
+peak signal to noise ratio,structural similarity index measure,The models are evaluated using peak signal to noise ratio (PSNR) and structural similarity index measure (SSIM).
+ssim,index measure,SSIM value was averaged across RGB channels when calculated against ground truth color images
+ssim,psnr,ChromaGAN has a 23.09 PSNR / 0.915 SSIM while Chroma-GAN (LSM) has a 24.19 PSNR / 0.927 SSIM (larger is better in both cases)
+hybrid model,color bleeding,hybrid model can sometimes significantly reduce color bleeding
+hybrid model,model,three examples of some visual improvements that were obtained by the hybrid model
+model,segmentation,Segmentation results on the COCO-Stuff validation set
+crf,dnn,CRF has a smoothing effect on the DNN output
+semantic segmentation,image classification,"semantic segmentation problem, an image classification problem in which each pixel in the input image is assigned an individual category"
+semantic segmentation,pixel classification,output is the per pixel classification
+encoder-decoder architecture,deeplabv3+,DeepLabv3+ architecture is an encoder-decoder architecture
+features,decoder network,The features are extracted using a decoder network to perform up-sampling.
+input image,size,The input image has a size of H × W × 3.
+logit tensor,output,"The output logit tensor will be of size H × W × C, where C is the number of possible classes."
+pixel,logit vector,"For each pixel, there is a logit vector of size C to represent the scores of that pixel belonging to the corresponding class."
+class score,neighbouring pixels,Each class score of neighbouring pixels should have dependency on each other.
+dnn+crf model,neighbours,The previous DNN+CRF model encourages similarities between neighbors.
+crf,class,We apply a CRF for each class but enforce that those CRFs all share the same parameters.
+coco-stuff dataset,images,The COCO-Stuff dataset contains all images from the COCO-2017 dataset.
+data set,training,Both models were trained on this data set for 30 epochs with batch size 12.
+models,evaluation,We evaluate the learned models using Mean Intersection-Over-Union (MIoU) and Pixel Accuracy.
+results,lsm crf,The LSM CRF yields a mild improvement with respect to both metrics.
+experiment,crf,Figure 4 shows the qualitative results of this experiment: Adding the CRF.
+crf,segmentation map,"Adding the CRF smooths the segmentation map, eliminating some obvious prediction errors in the pure DNN model"
+crf,local consistency,CRFs provide a simple tool to smooth/regularize and encourage local consistency in DNN outputs
+crf,log-supermodular models,Attractive smoothing via continuous log-supermodular models can yield significant performance improvements in practice
+framework,dnn approaches,The flexible framework evaluated here can easily be incorporated into existing DNN approaches
+framework,architectures,Hybrid CRF+DNN frameworks be considered when designing new frameworks/architectures
+empirical evidence,hybrid crf+dnn frameworks,These results provide enough empirical evidence to suggest that hybrid CRF+DNN frameworks be considered
+experimental approach,limited types of potential functions,The experimental approach mentioned in the text uses limited types of potential functions for simplicity.
+experimental approach,limited types of smoothing,The experimental approach discussed in the context also uses limited types of smoothing techniques.
+limited types of potential functions,limited types of smoothing,Both limited types of potential functions and limited types of smoothing are utilized in the experimental approach mentioned.
+potential functions,smoothing,The experimental approach utilizes potential functions as well as smoothing techniques.
+potential functions,log-supermodular potential functions,The text hints at considering more expressive log-supermodular potential functions in the future.
+log-supermodular potential functions,arity larger than two,The future work may involve log-supermodular potential functions with an arity larger than two.
+darpa perceptual task guidance (ptg) program,contract number hr00112220005,The work was supported by the DARPA Perceptual Task Guidance (PTG) Program under the specific contract number HR00112220005.

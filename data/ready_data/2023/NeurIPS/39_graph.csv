@@ -1,0 +1,212 @@
+node_1,node_2,edge
+online reinforcement learning,episodic markov decision processes,Online reinforcement learning is considered in episodic Markov decision processes.
+online reinforcement learning,mdps,Online reinforcement learning is considered in episodic Markov decision processes (MDPs).
+mdps,linear 𝑞 𝜋-realizability assumption,Episodic Markov decision processes (MDPs) are considered under the linear 𝑞 𝜋-realizability assumption.
+linear 𝑞 𝜋-realizability assumption,action-values,It is assumed that the action-values of all policies can be expressed as linear functions of state-action features under the linear 𝑞 𝜋-realizability assumption.
+linear 𝑞 𝜋-realizability assumption,linear mdps,The linear 𝑞 𝜋-realizability assumption class is known to be more general than linear MDPs.
+mdps,transition kernel,MDPs where the transition kernel and the reward function are assumed to be linear functions of the feature vectors.
+mdps,reward function,MDPs where the transition kernel and the reward function are assumed to be linear functions of the feature vectors.
+linear mdps,feature vectors,"In linear MDPs, the transition kernel and the reward function are assumed to be linear functions of the feature vectors."
+linearly 𝑞 𝜋-realizable mdps,states,"Linearly 𝑞 𝜋-realizable MDPs have states where for any policy, all the actions have approximately equal values."
+states,linear mdp,States in linearly 𝑞 𝜋-realizable MDPs where skipping over these states by following an arbitrarily fixed policy transforms the problem to a linear MDP.
+linearly 𝑞 𝜋-realizable mdps,learning algorithm,A novel (computationally inefficient) learning algorithm is derived for linearly 𝑞 𝜋-realizable MDPs that simultaneously learns what states should be skipped over and runs another learning algorithm on the linear MDP hidden in the problem.
+linear mdp,𝜀-optimal policy,"A method returns an 𝜀-optimal policy after polylog(𝐻, 𝑑)/𝜀2 interactions with the MDP, where 𝐻 is the time horizon and 𝑑 is the dimension of the feature vectors."
+online rl algorithm,polynomial-sample-complexity,The method returns the first polynomial-sample-complexity online RL algorithm for this setting.
+reinforcement learning,markov decision process,Reinforcement learning involves an agent interacting with an environment modeled as a Markov decision process.
+feature-map,state-action pairs,A feature-map maps state-action pairs to d-dimensional vectors for extracting important information.
+linear mdps,transition functions,"In linear MDPs, the transition and reward functions are assumed to be linearly factorizable."
+value-based approaches,action-values,Value-based approaches like q_pi-realizability focus on modeling action-values with features.
+sample-efﬁcient algorithms,linear mdps,There are sample-efficient algorithms for discovering near-optimal policies in linear MDPs.
+linear mdp,𝑞 𝜋-realizable mdp,"Both are types of MDPs mentioned in the context, with a relationship of being compared for sample-efficient solutions under different access models and settings."
+𝑞 𝜋-realizable mdp,online rl,"𝑞 𝜋-realizable MDPs are mentioned to be sample efficiently solvable under online RL, indicating a relationship where online RL can be used to solve 𝑞 𝜋-realizable MDPs in a sample efficient manner."
+linear mdp,simulator,"Linear MDPs are mentioned to be accessed through a simulator with a state-reset function, indicating a relationship where simulators play a role in accessing linear MDPs."
+sample-efficient algorithms,linear mdp,"Sample-efficient algorithms are discussed in the context for discovering near-optimal policies in linear MDPs, showcasing the relationship between the algorithms and linear MDPs."
+zanette et al.,eleanor,"Zanette et al. introduced the algorithm ELEANOR, which is mentioned in the context to serve as a starting point for further work, indicating a relationship between the authors and the algorithm."
+du et al.,open problem,"Du et al. are mentioned to have a related open problem that is resolved in the context, indicating a relationship where the authors' work addresses the open problem."
+skippyeleanor,algorithm 1,"SKIPPYELEANOR is presented as Algorithm 1, showing that it is a sample-efficient solution to the problem."
+skippyeleanor,online interactions,"SKIPPYELEANOR utilizes online interactions only, making it a provably sample-efficient solution."
+linear 𝑞 𝜋-realizability,linear mdps,"Section 3 discusses the difference between linear 𝑞 𝜋-realizability and linear MDPs, which motivates the approach."
+mdps,rich structure,"Section 4.2 establishes a rich structure inherent in 𝑞 𝜋-realizable MDPs, which acts as the technical foundation to this work."
+theorem 4.1,main result,"Section 5 gives a summary of the proof of Theorem 4.1, which is the main result."
+positive definite matrices,r,Positive definite matrices are denoted in R𝑑×𝑑.
+𝑎,𝑏,The relation 𝑎 ≈𝜀 𝑏 is defined if
+i,{𝐵},The indicator function I{𝐵} is defined for a boolean-valued 𝐵.
+m1(𝑋),probability distributions,M1(𝑋) is the set of probability distributions supported on set 𝑋.
+episodic finite horizon rl,markov decision process (mdp),The setting of episodic finite horizon RL involves a finite-action Markov decision process (MDP) for sequential decision-making.
+s,state space,The state space S is split across stages.
+state space,s𝑡,The state space S is split into S𝑡 across stages.
+action spaces,size a,Finite action spaces of size A are considered.
+transition kernel,𝑃,The transition kernel 𝑃 describes the transitions between successive stages.
+reward kernel,r,"The reward kernel R is defined for giving rewards in [0, 1]."
+agent,environment,An agent interacts with the environment in an episode lasting 𝐻 steps.
+action,current state,The agent takes some action in the current state.
+mdp,agent,An agent interacts with the Markov Decision Process (MDP) by following a policy 𝜋
+policy 𝜋,history of interaction,Policy 𝜋 assigns a probability distribution over actions to each history of interaction
+memoryless policies,set π,"Memoryless policies, where the action distribution depends only on the last state, are elements of the set Π = {𝜋 : S → M1([A])}"
+state 𝑠,mdp,"Starting at state 𝑠 in an MDP induces a probability distribution over histories denoted by P𝜋,𝑠"
+reward,next-state,"The reward and next-state are independent, given the current state and last action."
+"state-action pair (𝑠, 𝑎)","distribution p𝜋,𝑠,𝑎","For any action 𝑎, P𝜋,𝑠,𝑎 is the distribution over histories when action 𝑎 is used in state 𝑠 under policy 𝜋."
+state-value function 𝑣 𝜋,total reward within the first episode,State-value function 𝑣 𝜋 is the expected total reward within the first episode when policy 𝜋 is used.
+action-value function 𝑞 𝜋,expected total reward within the first episode,"Action-value function 𝑞 𝜋 is the expected total reward within the first episode for state-action pair (𝑠, 𝑎) under policy 𝜋."
+optimal policy 𝜋★,"state-action pair (𝑠, 𝑎)","An optimal policy 𝜋★ satisfies 𝑞 𝜋★(𝑠, 𝑎) = sup 𝜋∈Π for all state-action pairs (𝑠, 𝑎) in S × [A]."
+"state-action pair (𝑠, 𝑎)",optimal state-action pair,"State-action pair (𝑠, 𝑎) under optimal policy 𝜋★ is associated with optimal state-action pair values 𝑞★(𝑠, 𝑎) and 𝑣★(𝑠)."
+mdp,linear mdp,"Linear MDPs are a type of MDP that have a specific property related to linearity, as described in Deﬁnition 3.1."
+linear mdp,bellman error,"A key consequence of the linear MDP assumption is that the inherent Bellman error scales with the misspeciﬁcation 𝜅, as mentioned in the context."
+bellman error,bellman operator,"The Bellman error property is also related to the closedness to the Bellman operator, which is crucial in the analysis of approximation errors for algorithms tackling linear MDPs."
+linear mdps,action-value functions,linear MDPs involve action-value functions which are approximately linear in this context
+action-value functions,uniform value-function approximation error,there is a relationship between action-value functions and uniform value-function approximation error mentioned in the context
+uniform value-function approximation error,feature map,uniform value-function approximation error is influenced by the feature map in this context
+feature map,parameters,feature map is related to parameters as per the given context
+parameters,memoryless policy,parameters affect memoryless policy in the context described
+memoryless policy,feasible regime,memoryless policy and feasible regime have a relationship in the context
+feasible regime,value-function approximation error,feasible regime is correlated with the value-function approximation error according to the context
+value-function approximation error,algorithm,value-function approximation error is related to deriving an algorithm in this context
+policy,mdp,"A policy interacts with the MDP online for a certain number of steps, as mentioned in the context."
+mdp,state,"In the MDP, it is only possible to observe the features of the current state and take actions accordingly."
+mdp,action,The MDP allows taking an action and subsequently observing the resulting reward and next state.
+state,initial state,"In the episodic setting, the next state is reset to the initial state after every H steps."
+mdp,transition kernel,Our definition of MDP does not require the existence of a vector-valued measure to represent the transition kernel.
+algorithms,linear mdps,Algorithms developed for linear MDPs are not directly applicable to Problem 3.3.
+mdp,linear,"Only the right MDP is linear, while algorithms developed for linear MDPs are not directly applicable to all MDPs."
+mdp,q 𝜋-realizable,"Both MDPs mentioned are q 𝜋-realizable, but only the right MDP is linear."
+linear mdp,bellman error,"A linear MDP can have a low inherent Bellman error, as mentioned in the context."
+mdp,action-values,"The main intuition behind the work is that red states have no bearing on action-values, so they can be skipped in the MDP."
+state,action-value,The range of any state is defined as the maximum possible difference in action-value that the choice of action in that state can make.
+action choice,transitions and rewards,Action choices in low-range states can affect transitions and rewards in a nonlinear way.
+mdp,uniform value-function approximation error 𝜂,MDP is considered with uniform value-function approximation error 𝜂 in Proposition 3.4
+states 𝑠 ∈ s,range(𝑠),states 𝑠 ∈ S are considered based on range(𝑠) in Proposition 3.4
+𝛼,states 𝑠 ∈ s,range(𝑠) is compared with 𝛼 in Proposition 3.4
+states 𝑠 ∈ s,misspeciﬁcation scaling,states 𝑠 ∈ S have misspeciﬁcation scaling with error 𝜂 in Proposition 3.4
+mdp,parameter norms scaling,MDP has parameter norms scaling inversely with 𝛼 in Proposition 3.4
+state action,range(𝑠),state action is related to range(𝑠) in Proposition 3.4
+mdp,realizability assumption,MDP is considered under the realizability assumption in the approach
+oracle,range(𝑠) < 𝛼,oracle can determine whether range(𝑠) < 𝛼 in the approach
+mdp,skippy step,MDP could be converted to one with a skippy step in the approach
+policy,skippy policy,policy is referred to as skippy policy in the approach
+proof,appendix c,The details of the proof are deferred to Appendix C.
+missing piece,solving the general case,"The missing piece for solving the general case, Problem 3.3, involves learning an oracle."
+oracle,linear mdp,"An oracle is needed to suggest when to skip over a state, and it is combined with the learning algorithm for the linear MDP."
+approach,skippyeleanor,"A general approach leads to the algorithm SKIPPYELEANOR, which runs a modified version of ELEANOR with guessed oracles."
+algorithm,results,The main results of the algorithm are presented following the outlined plan.
+algorithm 1,skippyeleanor,Algorithm 1 is the SKIPPYELEANOR algorithm.
+optimistic problem parameters,optimization problem 4.10,The optimistic problem parameters are estimated by solving Optimization Problem 4.10.
+optimization problem 4.12,input,"Optimization Problem 4.12 is solved with the input of estimated parameters ˆ𝐺, ¯𝜃."
+consistency check,solve optimization problem 4.12,The process involves solving Optimization Problem 4.12 after a consistency check is performed.
+solve optimization problem 4.12,input,Optimization Problem 4.12 is solved with a given input.
+solve optimization problem 4.12,maximum discrepancy,The value of maximum discrepancy is recorded while solving Optimization Problem 4.12.
+solve optimization problem 4.12,arguments,The arguments for Optimization Problem 4.12 include direction and stage.
+input,"ˆ𝐺, ¯𝜃",The input for the optimization problem consists of ˆ𝐺 and ¯𝜃.
+"ˆ𝐺, ¯𝜃",recorded value,"The recorded value, denoted as x, corresponds to the maximum discrepancy."
+maximum discrepancy,discrepancy_threshold,The comparison with the discrepancy threshold determines the continuation of the process based on the value of x.
+useful component,"proj𝑍 (𝑄,𝑖) 𝑣","The projection of Proj𝑍 (𝑄,𝑖) 𝑣 is calculated as the useful component."
+average_uncertainty,uncertainty_threshold,"If the average uncertainty is less than or equal to the uncertainty threshold, the algorithm flow proceeds accordingly."
+𝑖,𝐻,The iteration proceeds from i to H following the defined steps.
+𝑆1,𝑠1,Initialization step where 𝑆1 is set equal to 𝑠1.
+skippyeleanor,optimistic estimates,SKIPPYELEANOR computes optimistic estimates of the action-values
+skippyeleanor,optimistic policy parameter ¯𝜃,SKIPPYELEANOR calculates an optimistic policy parameter ¯𝜃
+skippyeleanor,guess ˆ𝐺,SKIPPYELEANOR makes a guess ˆ𝐺 to a near-optimal design
+range estimates,states,the range estimates are used to determine states to be skipped over
+states,stochastic versions of skippy policies,states are determined based on range estimates and used in running stochastic versions of skippy policies on the MDP
+states,probability of skipping,probability of skipping is larger for states with lower ranges
+eleanor,action-value function,ELEANOR aims to estimate the action-value function of a state-action pair
+eleanor,reduced mdp,"Unlike ELEANOR, we would like to estimate the action-value function in the reduced MDP"
+low-range states,transitions,low-range states that are skipped over in the reduced MDP have their corresponding transitions replaced by skippy steps
+transitions,skippy steps,Transitions are replaced by skippy steps in the process.
+exploratory policies,next states,Exploratory policies skip over next states to collect data.
+phase i,phase ii,"Phase I involves running SKIPPYPOLICY for a set number of unskipped states, whereas Phase II involves rolling out a different policy for the remaining states."
+reduced mdp,original mdp,Stage-mapping function 𝑝 relates stages in the reduced MDP to stages in the original MDP.
+data,estimates,Checking if collected data is consistent with estimates by calculating maximal discrepancy.
+iteration counter 𝑚,reducing the iteration counter 𝑚 by 1,The iteration counter 𝑚 is reduced by 1 to throw away the data collected in this iteration.
+discrepancy,gap between the value of 𝜋𝑚𝐻 and 𝑣★(𝑠1),"If the discrepancy is small enough, the gap between the value of 𝜋𝑚𝐻 and 𝑣★(𝑠1) scales with how much new information is collected."
+skippyeleanor,near-optimal policy,SKIPPYELEANOR finds a near-optimal policy after polynomially many interactions with the MDP.
+skippyeleanor,policy 𝜋,SKIPPYELEANOR interacts with the MDP for at most many steps before returning a policy 𝜋.
+enclosing ellipsoid,matrix 𝑄ℎ,The technical details about the effects of using the matrix 𝑄ℎ as an enclosing ellipsoid for Θℎ are provided in this section.
+valid preconditioning,matrix sequence 𝑄 = (𝑄ℎ)ℎ∈[𝐻 ],𝑄 = (𝑄ℎ)ℎ∈[𝐻 ] is a valid preconditioning matrix sequence if it satisfies specific conditions.
+eigenvectors,linear subspace,The linear subspace is spanned by those eigenvectors.
+linear subspace,orthogonal projection matrix,The orthogonal projection matrix is onto the subspace.
+valid preconditioning,enclosing ellipsoid,The enclosing ellipsoid is defined for valid preconditioning.
+enclosing ellipsoid,shrinks,The enclosing ellipsoid shrinks when a new vector is added.
+preconditioning,sequence,The length of sequence 𝐶ℎ corresponding to 𝑄ℎ according to Deﬁnition 4.2 is at most 𝑑1.
+ellipsoid,design,"An (unknown) ellipsoid that aligns better with Θ𝑄 𝑑0 := 4𝑑 log log(𝑑) + 16, together with a probability distribution 𝜌𝑄 a near-optimal design for Θ𝑄 design follows from [Todd, 2016, Part (ii) of Lemma 3.9]."
+enclosing ellipsoid,policies,"As 𝑄ℎ only provides an enclosing ellipsoid for Θℎ, we introduce ℎ of policies of size ℎ (i.e., satisfying Deﬁnition F.1)."
+range function,range estimation,"range𝑄 is easy to estimate, and can be used to bound the range function (proved in Appendix F)."
+set of functions,linearity,𝑞 𝜋-realizability (Deﬁnition 3.2) implies the linearity of many more functions than the action-value functions.
+functions,linearity,Functions with approximate linearity play a crucial role in the algorithm and analysis.
+functions,parameters,Parameters of functions can be estimated by least squares using the features.
+functions,admissible,Expected admissible values of functions are linearly realizable.
+parameters,states,Parameters of functions are small relative to the states' range of Q-value.
+admissible,realizable,"If a function is alpha-admissible, then it is realizable for all states."
+states,range,Parameters of functions are small for all states relative to the range of Q-value.
+states,policies,Set of policies are constructed based on states to determine action-values.
+action-values,policies,Linear combination of action-values of policies is proportional to functions of states.
+policy,parameter,"In the context, policies are defined with parameters, indicating a direct relationship between the two concepts."
+guess,design parameters,"The context discusses a guess on the near-optimal design parameters, highlighting a relationship between the concept of guess and design parameters."
+valid guess,correct guess,"The context differentiates between a valid guess and a correct guess, suggesting a relationship between these two concepts."
+guess,policy parameter,"The context mentions a guess of policy parameters, indicating a relationship between the concepts of guess and policy parameters."
+guess,range values,"The context highlights how from a guess, corresponding range values can be calculated, suggesting a relationship between guess and range values."
+range values,feature difference,"The context mentions the calculation of range values based on feature differences, indicating a relationship between range values and feature differences."
+zero vector,feature vectors,The zero vector is mentioned in the context if all feature vectors are the same.
+function,vector,"The notation 𝑎⊤f𝑏 for any 𝑎, 𝑏 ∈ R𝑑 denotes the function involving vectors."
+function,projection matrix,The projection matrix is used in the context in the context of functions.
+eigenvectors,design matrix,The design matrix 𝑉(𝐺 𝑄 ℎ) contains eigenvectors in the context.
+projection matrix,linear subspace,The projection matrix is used to project onto the linear subspace in the context.
+projection matrix,orthogonal complement subspace,The projection matrix is used in the context for orthogonal complement subspace.
+function,states,The function Tr(f) involves states in the context.
+function,guarantee,The special admissibility guarantee is stated in the context for the function.
+function,action-values,SKIPPYELEANOR estimates action-values of states through the function in the context.
+step reward,estimated value-function,Step reward and the estimated value-function are related as the step reward contributes to the calculation of the estimated value-function.
+step reward,reduced mdp,Step reward is related to the reduced MDP as it is mentioned in the context that low-range states are skipped in the reduced MDP.
+estimated value-function,reduced mdp,The estimated value-function is related to the reduced MDP as it is calculated based on the states in the reduced MDP.
+estimated value-function,𝑞 𝜋-values,"The estimated value-function is related to the 𝑞 𝜋-values. Due to the linearity of 𝑞 𝜋-values, they can be used as target variables for estimating the policy parameters."
+reduced mdp,𝑞 𝜋-values,The reduced MDP and 𝑞 𝜋-values are related as the 𝑞 𝜋-values are used in the reduced MDP to estimate the policy parameters.
+least-squares estimator,policy parameters,The least-squares estimator and policy parameters are related as the least-squares estimator is used to estimate the policy parameters.
+estimation process,optimization problem 4.10,The estimation process and Optimization Problem 4.10 are related as the whole estimation process leads to defining Optimization Problem 4.10.
+parameters,trajectories,Parameters ˆ𝐺 and ¯𝜃 are related to trajectories of SKIPPYPOLICY.
+trajectories,skippypolicy,Trajectories are related to SKIPPYPOLICY starting from stage 𝑡.
+skippypolicy,suppression,"For simplicity, the dependence of quantities on ˆ𝐺 and ¯𝜃 is suppressed."
+quantity,bringing back,Quantities suppressed will be brought back later.
+skipping probability,policy 𝜋+,Skipping probability 1- 𝜏 is related to policy 𝜋+.
+policy 𝜋+,skippypolicy,Policy 𝜋+ is also used in SKIPPYPOLICY.
+clipped action-value estimates,algorithm 1,Clipped action-value estimates are defined as recorded in Line 9 of Algorithm 1.
+state,index,State 𝑠 is related to the index 𝐼 of the first state that is not skipped by SKIPPYPOLICY.
+𝑄,range𝑄,𝑄 is an accurate estimate of range𝑄
+𝑄,features,𝑄 can be linearly expressible using features
+features,least-square targets,least-square targets can be related to features
+estimation,policy value,estimated policy value can be re-expressed as the sum of all rewards
+rewards,policy value,rewards contribute to the estimated policy value
+optimization problem,optimistic parameters,optimization problem aims to find optimistic parameters
+𝐻,state,state is related to 𝐻 for optimization problem
+conﬁdence ellipsoid,least-squares estimates,least-squares estimates are in the conﬁdence ellipsoid
+𝐸→,𝑠𝑖(cid:1),The relation between 𝐸→ and 𝑠𝑖(cid:1) is expressed as 𝐸→(𝑠𝑖(cid:1)) = 𝐸→(𝑠𝑖(cid:1)) - 𝐸→(𝑠𝑖+1(cid:1))
+𝐸→,𝑠𝐻+1(cid:1),The relation between 𝐸→ and 𝑠𝐻+1(cid:1) is defined as 𝐸→(𝑠𝐻+1(cid:1)) = 0
+𝑠𝑖,s𝑖,The terms 𝑠𝑖 and 𝑆𝑖 are related as 𝑠𝑖 ∈ S𝑖
+¯𝜑𝑄,𝑠𝑖,The relation between ¯𝜑𝑄 and 𝑠𝑖 is denoted as 𝐹(𝑠𝑖(cid:1)) = ¯𝜑𝑄(𝑠𝑖) ¯𝜑𝑄(𝑠𝑖)⊤𝐸(𝑠𝑖(cid:1))
+¯θ,¯𝜃𝑡,"The terms ¯Θ and ¯𝜃𝑡 are related, with ¯Θ = (B(4𝑑0𝐻 𝐿2/𝛼)) 𝐻 denoting the base set for the variables ¯𝜃𝑡"
+ˆ𝐺,˜𝜃𝑡𝑖,"If ˆ𝐺 is the correct guess, there exists some ˜𝜃𝑡𝑖 in R𝑑 such that for all (𝑠, 𝑎) ∈ S𝑡 × [A], where 𝜂0 is defined in Lemma 4.7"
+skippyeleanor,optimization problem 4.10,"The 𝑚th iteration of SKIPPYELEANOR aims to verify the accuracy of the estimated targets of Optimization Problem 4.10 and detect any discrepancies, using Corollary 4.11 on the targets’ decomposition into 𝐹-functions."
+data,least-squares solution,The data collected in the 𝑚th round is filtered and used to define the least-squares solution for estimating the matrix-valued 𝐹.
+data-point,least-squares uncertainty term,"The data-point's least-squares uncertainty term needs to be sufficiently low according to the indicator 𝑐 𝑗𝑘𝑖, and the prediction non-negative for analysis."
+appendix e.1,least-squares analysis techniques,"Appendix E.1 establishes the norm of the product of matrix 𝑦𝑘𝑖 ˆ𝐺 ¯𝜃 and the projection matrix Proj∥(𝑄,𝑖) is small using least-squares analysis techniques."
+optimization problem 4.12,consistency check,"Optimization Problem 4.12 includes a consistency check to test if the norm of the product of matrix 𝑦𝑘𝑖 ˆ𝐺 ¯𝜃 and the projection matrix Proj∥(𝑄,𝑖) is small as established earlier."
+lemma e.1,projection 𝑤,"Lemma E.1 shows that the projection 𝑤 = Proj𝑍 (𝑄,𝑖) 𝑣 is close to 𝑣, where 𝑣 is the outcome of Optimization Problem 4.12."
+lemma e.1,consistency check fails,"Lemmas E.1 implies that if the consistency check fails, then the projection 𝑤 aligns well with the subspace Proj⊥(𝑄,𝑖) projects to."
+lemma e.4,valid preconditioning,Lemma E.4 indicates that 𝑄 stays a valid preconditioning after appending 𝑤 to the list of values that 𝑄 is calculated from.
+theorem 4.1,appendix e,The proof of Theorem 4.1 is presented in Appendix E.
+lemma 4.4,lemma e.5,"These two lemmas are combined to bound the number of times the average uncertainty can be large, which has implications for the sample complexity of SKIPPYELEANOR (Corollary E.6)"
+skippyeleanor,corollary e.6,The sample-complexity result for SKIPPYELEANOR is implied by the combination of Lemmas 4.4 and E.5
+consistency check,optimization value,"The limited number of times the consistency check can fail leads to guarantees regarding the performance of the policy returned by the algorithm, as shown in Corollary E.9"
+optimization problem 4.10,average uncertainty term,"The difference between the optimization value of Optimization Problem 4.10 and the average uncertainty term scales with the average uncertainty term, as demonstrated in Lemma E.8 and Corollary E.9"
+skippyeleanor,line 17,"When SKIPPYELEANOR returns in Line 17, the elements related to it are close"
+optimization value,𝑣★(𝑠1),"The optimization value 𝐶 ˆ𝐺, ¯𝜃(𝑠1) is close to 𝑣★(𝑠1), as stated in Lemma E.10"
+lemma e.10,theorem 4.1,"The optimism property proved in Lemma E.10, regarding the optimization value, combined with other arguments, leads to proving Theorem 4.1"
+skippyeleanor,lsvi-ucb,"One approach discussed for future work involves replacing SKIPPYELEANOR with LSVI-UCB as the underlying algorithm, to potentially address the problem of learning near-optimal policies from online interactions with a q_pi-realizable MDP"
+lsvi-ucb,eleanor,LSVI-UCB is mentioned as the underlying algorithm that can be replaced with ELEANOR in the given context.
+lsvi-ucb,"jin et al., 2020b","LSVI-UCB is related to the authors Jin et al., 2020b who provided the concept in the context of computationally efficient implementations."
+parameter ˆ𝐺,optimization problem 4.10,The challenge involves computing the optimal solution for parameter ˆ𝐺 in Optimization Problem 4.10 as stated in the context.
+least-squares targets,parameter ˆ𝐺,The parameter ˆ𝐺 interacts with the least-squares targets in a highly nonlinear way according to the context.
+optimization problem 4.10,additive approximation error,The context mentions that there is a computational challenge of deriving a computationally efficient approximation with an additive instead of a multiplicative approximation error for Optimization Problem 4.10.
+optimization problem 4.10,multiplicative approximation error,"The context highlights the difference between additive errors increasing linearly in 𝐻, while multiplicative errors increase exponentially in the context of Optimization Problem 4.10."
+problem 3.3,satisﬁability problem,It may be possible to show a computational hardness result for Problem 3.3 by reducing it to the satisﬁability problem as mentioned in the context.
+auxiliary functions,section 4.2,The work on the realizability of auxiliary functions (Section 4.2) is of independent interest for designing provably efficient algorithms for related problem settings according to the context.
+𝑞 𝜋-realizability,batch rl,The context mentions 𝑞 𝜋-realizability in batch RL as one of the problem settings where designing provably efficient algorithms is of interest in the context of independent work on auxiliary functions.
+data collection,batch rl,"In the setting of 𝑞 𝜋-realizability in batch RL, where the data collection is not controlled, as stated in the context."

@@ -1,0 +1,160 @@
+node_1,node_2,edge
+extreme classification (xc),large numbers of classes,XC involves predicting over a vast range of classes
+zero-shot extreme classification,novel classes,This task requires generalizing to unseen classes without additional supervision.
+semsup-xc,state-of-the-art zero-shot and few-shot performance,SemSup-XC is a model designed to achieve top performance in these scenarios.
+legal data,e-commerce data,Three datasets for SemSup-XC are derived from legal
+wikipedia data,automatically collected semantic class descriptions,Class descriptions are obtained automatically for facilitating generalization.
+hybrid matching module,input instances,Matches instances to class descriptions using a combination of semantic and lexical similarity.
+contrastive learning,semsup-xc,The model is trained using contrastive learning
+baselines,state-of-the-art performance,SemSup-XC outperforms existing methods on all three datasets.
+precision points,zero-shot and one-shot tests,Gains of up to 12 points in precision for zero-shot and over 10 points for one-shot tests.
+recall@10,improvements,Similar gains are observed for recall@10.
+ablation studies,hybrid matching module and class descriptions,The study highlights the significance of these components.
+indian institute of technology,delhi,department of computer science and engineering
+institute of technology,delhi,india
+pranjal aggarwal,ameet deshapande,karthik narasimhan
+40th international conference on machine learning,honolulu,hawaii
+pmlr 202,proceedings of the 40th international conference on machine learning,PMLR 202 is the proceedings of the conference
+semsup-xc,github.com/princeton-nlp/semsup-xc,SemSup-XC is associated with a GitHub repository
+github.com/princeton-nlp/semsup-xc,https://huggingface.co/spaces/pranjal2041,Both URLs point to online resources
+movie and product recommendation,search-engines,e-commerce product tagging
+zero-shot and few-shot extreme classification (zs-xc,fs-xc),gupta et al.
+large number of fine-grained classes,limited or no labeled data per class,These are challenges faced in ZS-XC and FS-XC
+large label space,increased computational expense and model size,These are additional challenges in the context of ZS-XC and FS-XC
+semsup,extreme classification (xc),SEMSUP is a method used for developing models
+semsup,prohibitively computational expense,The original SEMSUP is computationally expensive as it encodes descriptions of all classes for each training batch
+semsup,sentence-level semantic similarity,SEMSUP relies on sentence-level similarity
+human intervention,collecting class descriptions,Original SEMSUP requires human effort for collecting descriptions
+semsup-xc,semsup,SemSup-XC is a developed remedy to address the limitations of SEMSUP
+semsup-xc,hybrid-match,SemSup-XC introduces a Hybrid-Match model that combines lexical and semantic similarity for enhanced representation.
+semsup-xc,semsup-web,SEMSUP-WEB is an automatic pipeline for discovering high-quality class descriptions without manual input.
+semsup-xc,contrastive learning objective,SemSup-XC employs a contrastive learning approach to enhance model generalization and performance.
+semantic supervision for zero and few-shot extreme classification (semsup-xc),large-scale automated class description collection,relation:uses - SemSup-XC employs this collection for improved understanding of classes.
+large-scale automated class description collection,heuristic filtering,relation:includes - The collection process involves filtering with heuristics to enhance quality.
+contrastive learning objective,previous work (semsup),comparison:outperforms - SemSup-XC's contrastive learning improves computation speed by up to 99% compared to SEMSUP.
+contrastive learning,training speed,improvement:increases - Contrastive learning speeds up training by a significant amount.
+semsup-xc,hybrid-match,component:uses - SemSup-XC incorporates Hybrid-Match for lexico-semantic matching.
+hybrid-match,semantic similarity (sentence level),feature:utilizes - Hybrid-Match combines semantic similarity and contextual lexico-semantic similarity.
+hybrid-match,contextual lexico-semantic similarity (token level),feature:utilizes - Hybrid-Match also utilizes token-level similarity.
+zs-xc (zero-shot extreme classification),gzs-xc (generalized zero-shot extreme classification),category:dataset - Both are XC datasets with different settings.
+zs-xc,fs-xc (few-shot extreme classification),category:dataset - Zero-shot
+semsup-xc,t5 and sentence transformers,comparison:outperforms - Surprisingly
+semsup-xc,larger unsupervised language models,outperforms in extreme classification
+semsup-xc,t5 and sentence transformers,by over 30 P@1 points on EURLex
+semsup-xc,proposed hybrid matching module,importance demonstrated in ablation studies
+extreme classification,large label spaces,deals with prediction over thousands to millions of classes
+zero-shot extreme classification (zs-xc),unseen classes,models tested without prior exposure
+generalized zero-shot (g-zs),combined set of train and unseen classes,evaluated on both unseen and trained classes
+few-shot extreme classification (fs-xc),small number of supervised examples,available for unseen classes
+fine-grained classes,heavy-tailed distribution,characteristics of extreme classification problem
+mode collapse,qualitative error analysis,phenomenon observed in model predictions
+coil,information-retrieval model,COIL is a specific type of information-retrieval model introduced by Gao et al. (2021a).
+coil,lexical similarity,COIL addresses the issue of treating semantically similar tokens as dissimilar by incorporating lexical similarity.
+coil's drawback,treating semantically similar tokens as dissimilar,COIL treats 'pictures' and 'photos'
+hybrid-match,proposed solution,Hybrid-Match is introduced to address COIL's limitation by exploiting token similarity.
+hybrid-match,bert token-embedding similarity,Hybrid-Match uses BERT embeddings to create clusters of semantically similar tokens.
+hybrid-match,lexical-matching,It computes the dot-product of contextual representations for 'similar' tokens
+hybrid-match,clusters of tokens,Clusters are formed based on BERT similarity or shared lemmas
+input token,description token,For multiple similar tokens in the description
+input token,description token,The context describes a process where the choice of a description token is based on its similarity
+description,cluster membership,Descriptions are grouped into clusters based on the similarity of their tokens
+semsup-web,automatic pipeline,SEMSUP-WEB is a system that creates an automatic pipeline for collecting high-quality descriptions
+spam,irrelevant descriptions,The pipeline has sub-routines to remove spam and advertisements
+click-bait phrases,advertisements,Descriptions containing click-bait phrases are identified and removed as they often indicate advertisements.
+wikipedia,labels,Labels in Wikipedia are noted to be very specific
+amazoncat,13k,AmazonCat refers to a dataset with 13
+amazoncat,1000,In AmazonCat
+semsup-xc,92.3%,SemSup-XC is 92.3% of the total classes due to sampling constraints.
+semsup-xc,faster than semsup,SemSup-XC is faster than the traditional SEMSUP method.
+lbce,training objective,LBCE (cross-entropy loss) is part of the training objective for both SemSup-XC and SEMSUP.
+n,train dataset size,N represents the number of samples in the training dataset.
+class description,dj,Each batch sees a class description randomly sampled from Dj during training and evaluation.
+eurlex,generative t5 model,EURLex uses a generative T5 model pre-trained on significantly more data.
+groov,worse performance,GROOV's unconstrained output space might be a reason for its worse performance.
+semsup-xc,zestxml,SemSup-XC scores twice as high compared to ZestXML
+semsup-xc,splade,SemSup-XC consistently outperforms SPLADE
+eurlex-4.3k,amazoncat-13k,Comparison of few-shot P@1 performance on EURLex and AmazonCat datasets.
+tf-idf,dense bi-encoders,TF-IDF is competitive with deep baselines in zero-shot settings due to its ability to capture fine-grained information
+posed method,large datasets,The posed method scales efficiently to large datasets
+posed method,non-dictionary proper nouns,The posed method provides descriptions for non-dictionary proper nouns
+structured hierarchy information,better semantic representations,Access to structured hierarchy information leads to improved performance on datasets.
+label hierarchy,amazoncat,Large performance drops occur on AmazonCat without label hierarchy.
+hybrid-match,exact lexical matching,Hybrid-Match's components
+hybrid-match,no lexical matching,Absence of lexical matching in Hybrid-Match results in a drop of 2 P@1 points on AmazonCat.
+eurlex,hybrid lexical matching,Hybrid lexical matching improves performance by 33 P@1 points for EURLex compared to a model without it.
+class descriptions,diversity and quantity,Increasing class description diversity and quantity via augmentation improves performance.
+easy data augmentation (eda),augmentations,EDA is used for augmenting class descriptions to enhance their diversity.
+semsup-xc,semantic supervision,SemSup-XC focuses on zero and few-shot extreme classification using semantic supervision.
+semsup-xc,zero and few-shot extreme classification,The task of SemSup-XC involves handling challenging classification scenarios with limited data.
+start-up: a technician’s guide,input document,The input document for the discussed methods is a guide for technicians.
+self-instructional guide,start-up domain,The self-instructional guide is recommended for preparing for the Start-Up Domain of CCST Level I
+homecoming (high risk books),fiction book,Katey Bruscke's book 'Homecoming' is a high-risk book and an example of a fiction genre.
+rolls rm65 mixmax 6x4 mixer,powered mixers,The Rolls RM65 MixMax is a type of powered mixer with audio mixing channels.
+rm65b hexmix,single rack space unit,The RM65b HexMix is a compact unit designed to fit in a single rack space.
+semsup-xcmaclr,test preparation models,SemSup-XC and MACLR are both models used for test preparation
+maclr (xiong et al.,2022),baseline model
+textbooks,used and rental,Textbooks are available for both used and rental purposes for test preparation.
+software,test prep & study guides,Software is used for test preparation and includes study guides as part of its offerings.
+vocational tests,graduate preparation,Vocational tests are relevant for graduate preparation
+fiction literature & fiction,genres,Fiction literature encompasses various genres like thriller & suspense
+braillestudio recording equipment,musical instruments,BrailleStudio equipment might include tools for musicians or those involved in music production.
+speaker parts & components,mixer parts,These are related to the components and accessories required for mixers
+data augmentation,performance improvement,Data augmentation improves performance on EURLex by 1-2 points for P@1
+semsup-xc,effectiveness,SemSup-XC is effective in capturing label semantics with larger number of classes
+amazoncat,smaller datasets,Data augmentation might boost performance on smaller datasets with lesser labels or descriptions.
+language model generated (llm),semsup-xc,SemSup-XC consistently outperforms LLM-based approaches
+knowledge base,semsup-xc,SemSup-XC surpasses descriptions from WordNet
+eurlex,amazoncat,A 1 P@1 point improvement is demonstrated between EURLex and AmazonCat
+llm-based approaches,semsup-xc,SemSup-XC stands out by efficiently scaling to large datasets like Wikipedia
+wikipedia,large datasets,SemSup-XC can handle millions of labels
+wordnet,semsup-xc,SemSup-XC generates more diverse descriptions compared to the ones in WordNet
+maclr,semsup-xc,A qualitative comparison shows SemSup-XC's superiority in nuanced understanding and accurate predictions.
+maclr predictions,semsup-xc predictions,SemSup-XC often predicts diverse labels and correct answers
+content of the document,literature & fiction,SemSup-XC understands the context better
+document content,powered mixers (predicted by maclr),MACLR makes connections based on specific keywords
+studio recording equipment,powered mixers (predicted by maclr),SemSup-XC recognizes broader concepts even without explicit keywords
+semsup-xc,extreme classification,SemSup-XC is a method that focuses on extreme classification tasks
+multi-class and multi-label classification,xc (agrawal et al.,2013)
+convolutional neural networks (cnns),transformers,Both CNNs and Transformers have been employed in recent studies for improving accuracy in extreme classification tasks
+attention-based networks,shallow networks,Attention-based networks and shallow networks are alternative NN architectures investigated for extreme classification
+label hierarchy,tree-based methods,Tree-based methods
+sparse bag-of-words features,binary classifiers,These are traditional approaches employed in extreme classification
+zero-shot classification,zs,Zero-shot classification is also referred to as ZS
+zero-shot classification,extreme classification,The context highlights that Zero-shot classification extends to extreme classification
+zero-shot classification,text,Several works have attempted Zero-shot classification for text data (Dauphin et al.
+zero-shot classification,large label space,The challenge for Zero-shot classification lies in the large label space
+zestxml,non-contextual bag-of-words input features,ZestXML uses a linear transformation to project non-contextual features close to label features.
+zestxml,sparsified linear transformation,It employs a sparsified linear transformation to address the extreme classification problem.
+nns (neural networks),contextual representations,Subsequent works like MACLR (Xiong et al.
+maclr,xc-specific pre-training step,MACLR adds a step tailored for extreme classification
+groov,sequence-to-sequence model,GROOV uses a seq2seq model to predict novel labels
+semantically rich descriptions,hanjie et al. (2022),Hanjie et al.'s work utilizes semantically rich descriptions for enhancing Zero-shot classification.
+zero-shot extreme classification (xc),state-of-the-art performance,SemSup-XC achieves this performance on three standard XC benchmarks
+semsup-xc,hybrid-match module,The storage requirements are mainly due to Hybrid-Match
+hybrid-match,semantic similarity (sentence level),Incorporates both semantic similarity and relaxed lexical similarity at the token level
+hybrid-match,lexical similarity (token level),Combines semantic similarity and relaxed lexical similarity for improved classification
+contrastive learning,training efficiency,Used to enhance the efficiency of the training process
+semantically rich class descriptions,better understanding of the label space,Helps in comprehending the large label spaces
+semsup-xc,storage requirements,Maintains practical storage requirements despite strong performance
+future work,improving description quality,Potential area for enhancement
+future work,better architectures,Can experiment with to push the boundaries of the task
+task,practicality,Zero-shot extreme classification as a practical task
+limitations,promising results,Despite limitations
+semsup-xc,method,SemSup-XC refers to a specific method for practical task improvement.
+inherent limitations,method's drawbacks,The context discusses the limitations of SemSup-XC
+data scraping,approach,The method relies on scraping descriptions from search engines for its operation.
+toxic content filtering,post-processing technique,Post-processing is employed to remove toxic content from the scraped data.
+diverse domains,evaluation scope,SemSup-XC has been evaluated on legal
+challenging datasets,application scenario,The approach may face difficulties when applied where web scraping is complex or requires specialized knowledge.
+computational efficiency,performance metric,Efficiency is measured through throughput and comparison with other models like MACLR
+throughput,inference speed,SemSup-XC has comparable throughput to MACLR and GROOV but higher P@1 than ZestXML.
+storage requirements,resource usage,SemSup-XC occupies 17 GB of storage
+semsup-xc,dataset,SemSup-XC refers to a dataset that requires more storage
+storage,modest 17 gb space,The dataset occupies a relatively small amount of storage
+dataset's scale,large,The scale of the dataset is emphasized as being quite extensive.
+national science foundation,grant no. 2239363,The dataset's creation is supported by a grant from the National Science Foundation.
+opinions,findings,and conclusions
+views,national science foundation,The opinions may not necessarily align with the National Science Foundation's立场.
+chadha center for global india,princeton university,The center is affiliated with Princeton University.
+jens tuyls,khanh nguyen,Both are mentioned as providing feedback and comments within the Princeton-NLP group.
+princeton-nlp group,useful feedback and comments,The group receives valuable input from these individuals.

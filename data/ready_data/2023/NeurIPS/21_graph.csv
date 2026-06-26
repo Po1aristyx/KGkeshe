@@ -1,0 +1,230 @@
+node_1,node_2,edge
+reasoning,language models,Language models use reasoning to generate better answers by chaining accurate local inferences to estimate relationships between variables.
+inferences,variables,Chaining accurate local inferences enables estimation of relationships between variables not seen together in training.
+reasoning,training data,Reasoning through intermediate variables reduces bias and is effective when training data consists of overlapping local clusters of variables.
+bayes nets,variables,Training an autoregressive language model on samples from Bayes nets with only a subset of variables in each sample tests the ability of language models to match conditional probabilities with and without intermediate reasoning steps.
+training data,locally structured,"The training data is locally structured with respect to dependencies between variables, indicating a relationship between the two terms."
+training data,variables,"The training data involves dependencies between variables, pointing out the relationship between these terms."
+training data,reasoning,"The effectiveness of reasoning step by step is rooted in the local statistical structure of the training data, showing a connection between these terms."
+reasoning,training data,"The effectiveness of reasoning step by step is rooted in the local statistical structure of the training data, indicating a relationship between these terms."
+thought experiments,intuition pumps,"By considering thought experiments or 'intuition pumps' in science, we can form strong beliefs purely by thinking through a set of steps, establishing a relationship between these terms."
+large language models,tasks,"Large language models have been shown capable of performing a wide variety of tasks, illustrating a connection between these terms."
+large language models,question,"Large language models are capable of immediately answering a question, showing a relationship between these terms."
+large language models,struggle,"Large language models struggle with some complex tasks like math word problems, indicating a connection between these terms."
+reasoning,help,"In investigating the origins of reasoning, we must ask why reasoning helps at all, establishing a relationship between these terms."
+answering a question,complex tasks,answering a question is related to complex tasks as they present challenges in tasks like math word problems
+language models,chain-of-thought reasoning,language models demonstrating a 'chain of thought' for better performance indicates the importance of reasoning before providing an answer
+work,worked solutions,previous research has shown that providing worked solutions in context can be beneficial across various tasks
+language models,reasoning performance,"methods are proposed to enhance language models' reasoning performance, building on previous findings"
+chain-of-thought reasoning,training data,the usefulness of chain-of-thought reasoning in language models is attributed to the local structure in their training data
+human experience,first-person perspective,"human experience is driven by our perspective, which influences how we reason and interpret the world"
+human experience,reasoning,"our reasoning capacity extends beyond our immediate experiences, allowing us to make plans and conclusions that span time and space"
+language models,training data,"language models are trained on documents that primarily focus on a few closely related topics, facilitating the estimation of relationships between concepts that frequently co-occur"
+effect,one,Effect and one are related in the context of understanding the impact of one piece of information on another.
+information,piece,Information and piece are related as components that are used in understanding the relationship between different variables.
+variable,a,Variables and A are related as A is a specific variable used in estimating probabilities.
+variable,c,Variables and C are related in the context of estimating the conditional probability of C given A.
+probability,c,Probability and C are related as we try to estimate the probability of C given A in the given context.
+variable,b,"Variables A, B, and C are related as B is introduced as an intermediate variable in the chain-of-thought reasoning."
+variable,a,Variables A and C are related in the context of being rendered independent by conditioning on an intermediate variable B.
+variable,c,"Variables A, B, and C are related as C is the variable we aim to estimate the conditional probability of given A and B in the context of reasoning through intermediate variables."
+probability,b,Probability and B are related in the context of marginalizing over B to compute the conditional probability of C given A.
+probability,b,Probability and B are related as B is used in the calculation of conditional probabilities involving variables A and C.
+b,p,B and P are related in the context of using the fact that B multiplied by P (C
+wikipedia pages,countries,Wikipedia pages contain information about countries
+wikipedia pages,capital cities,Wikipedia pages provide information about capital cities
+countries,capital cities,Countries have capital cities
+countries,climate,Countries typically do not directly mention the climate of the capital city
+model,question,Model could succeed in answering the question directly
+model,step,Model could take the intermediate step of stating the capital of France
+capital of france,paris,The capital of France is Paris
+autoregressive model,dependencies,Model can better leverage the dependencies that are well-represented in its training data
+hypothesis,chan et al,Hypothesis is similar to that advanced by Chan et al.
+burstiness,instances of a class,Burstiness is the tendency of instances of a class to occur close together in the training data
+burstiness,in-context learning,Burstiness explains why in-context learning occurs
+burstiness,language models,Burstiness is important for language models to learn to infer tasks based on examples in the context window
+locality,burstiness,Locality and burstiness are two different statistical properties of training data
+locality,training data,Locality is a statistical property of training data
+locality,topic structures,Locality could arise from topic structures in language models
+locality,perspective,Locality could arise from a first-person perspective in humans
+concepts,strongly influence,Concepts that strongly influence each other are seen together frequently in the training set
+concepts,less frequently,Concepts that do not influence each other are seen together less frequently
+model,training data,"The model is trained on the training data, and the properties of the training data influence the model."
+intermediate variables,model,Generating values for relevant intermediate variables enables the model to match conditional probabilities more accurately.
+training data,local samples,The model is trained on local samples from a chain in the training data.
+training data,locally structured,"When the training data is locally structured, generating intermediate variables helps the model match conditional probabilities more accurately."
+model,intermediate variables,Allowing the model to select intermediate variables is helpful for reasoning through them.
+direct prediction,free generation,Direct prediction and free generation are two types of estimators as prompts in the given context.
+model,prompt,The model is prompted to predict the target variable immediately or after generating intermediate variables and their values.
+mean squared error,training tokens,Mean squared error is computed by the number of training tokens for each training condition and estimator.
+reasoning,language models,Chain-of-thought reasoning is useful for language models as it improves estimation by incrementally chaining local statistical dependencies.
+learner,bayesian networks,The learner needs to accurately estimate conditional probabilities in the context of Bayesian networks.
+learner,samples,The learner sees samples from a Bayes net to estimate conditional probabilities accurately.
+bayes net,random variables,"The Bayes net has random variables {Yi}N i=1. The distribution defined by the Bayes net is denoted as pd, the data distribution."
+bayes net,training data,"The training data is a sequence of variable indices i ∈ {1, . . . N}, and variable values vi ∈ X. Variable values always follow variable indices."
+observation distribution,bayes net,"We create local structure in our task via an observation distribution pobs, which is a distribution over subsets of the variable indices."
+observation distribution,training sequences,"pd and pobs define a distribution p on training sequences, allowing the learner to see samples from the joint distribution over certain subsets of random variables."
+local observation distributions,models,Local observation distributions enable models to learn strong dependencies and reflect some of the statistical structure of human experience.
+bayes net,local observation distributions,"The learner observes a subset of variables that are close together in the Bayes net graph, reflecting the statistical structure of human experience."
+autoregressive conditional probability estimation model,estimators,"Given the model q, we can use one of three different estimators for the conditional probabilities."
+direct prediction estimator,baseline,"The direct prediction estimator is the baseline without any reasoning, directly outputting the probability estimated by q."
+scaffolded generation estimator,ideal reasoning,"The scaffolded generation estimator represents ideal reasoning if we know the best set of steps to work through, using a scaffold set S consisting of variables to collectively d-separate the observed variable from the target variable."
+variables,observed variable,"Variables are ordered by their distance from the observed variable in the Bayes net, increasing."
+variables,target variable,"In the case of a chain, the scaffold consists of all variables between Yi and Yj."
+variables,scaffold variables,We estimate each variable given the observed variable and previously generated scaffold variables.
+variables,m monte carlo samples,We approximately marginalize over the scaffold variables’ values using M Monte Carlo samples from the conditional distributions.
+free generation estimator,scaffolded generation,It is similar to scaffolded generation in that it generates intermediate variables before the target.
+free generation estimator,model,Free generation uses the model to choose which variables to instantiate in addition to estimating their values.
+model,variable indices,We simply sample variable indices and values from q until it generates the index of the target variable.
+model,target variable,"At that point, we compute the probability of the target variable."
+risk-minimizing sequence model,reasoning through intermediate variables,The risk-minimizing sequence model benefits from reasoning through intermediate variables.
+simplified version of our task,model trained on pairs of adjacent variables,"In a simplified version of the task, the model is trained on pairs of adjacent variables from a directed chain."
+minimizer of a risk,cross entropy with entropy regularization,The minimizer of a risk consisting of cross entropy with entropy regularization exhibits a reasoning gap.
+conditional probability estimates,random variables,The bias of direct conditional probability estimates between pairs of random variables is higher than indirect estimates.
+risk minimizer q,sequence of alternating variable indices,A risk minimizer q is trained on a sequence of alternating variable indices.
+joint distribution pd,"y1, y2, ..., yn4 factorization","The joint distribution pd over Y1, Y2, ..., YN4 factorizes as pd(Y1, ..., YN ) = pd(Y1) * product(pd(Yi+1"
+observation distribution pobs,non-zero probability to adjacent variable pairs,The observation distribution pobs assigns non-zero probability only to adjacent variable pairs.
+training set,i.i.d. samples from p,The training set consists of i.i.d. samples from the distribution p over complete sequences of variable indices and values.
+locality structure in the data,marginalizing over intermediate random variables,"When the data has the locality structure as described, marginalizing over intermediate random variables leads to certain outcomes."
+random variables,conditional probabilities,Random variables are related to conditional probabilities as they are used to calculate lower-bias estimates through learned probabilities.
+random variables,adjacent variables,Random variables are related to adjacent variables as the conditional probabilities between them are used for estimating bias.
+conditional probabilities,adjacent variables,Conditional probabilities are related to adjacent variables as their relation is used for estimating bias in the prediction process.
+risk,conditional probabilities,"The risk is minimized over all possible probability distributions using conditional probabilities for non-adjacent random variables, indicating lower bias in prediction."
+risk,intermediate variables,The risk analysis involves the Monte Carlo samples of intermediate variables to characterize the minimizer of the risk over all possible probability distributions.
+sum,minimizer,The minimizer of the sum of these terms is a mixture between pd(Yi+1
+adjacent pairs,non-adjacent pairs,"On the other hand, for non-adjacent pairs Yi and Yj, q∗(Yi"
+observation distribution,yi and yj,"As a consequence of the observation distribution pobs, Yi and Yj will never appear together."
+risk,entropy regularization term,"Therefore, minimizing the risk for Yi and Yj is equivalent to minimizing the entropy regularization term since the risk does not penalize q∗(Yi"
+q∗,scaffolded estimator ˆqs,"Given q∗, we can calculate the bias of the scaffolded estimator ˆqS, where we approximately marginalize out the intermediate random variables by sampling from the conditional probability distributions q∗(Yi+1"
+conditional distributions,mixture distributions,"Since these conditional distributions are mixture distributions, we can also show that the scaffolded estimator is a mixture between p(Yi"
+bias,direct estimator,The second term in the product is exactly the bias of the direct estimator and (1− λ)2 < 1.
+scaffolded estimator,dependency structure,"Intuitively, the bias of the scaffolded estimator is lower because it leverages the dependency structure of the data, chaining together local conditional probabilities of variables that appeared together in training to estimate conditional probabilities for unseen pairs."
+density estimators,marginal distributions,"In practice, we find that density estimators tend to predict the marginal distributions for held-out pairs."
+risk minimizer,mixture between true conditional distributions and marginal distributions,The assumption that the risk minimizer is a mixture between the true conditional distributions and the marginal distributions relaxes some assumptions about the underlying data distribution.
+reasoning gap,occurring in practice for transformer language models in situations with more complex dependency and observation structures,The next section explores whether the reasoning gap occurs in practice for transformer language models in situations with more complex dependency and observation structures.
+hypothesis,locally structured training data,The hypothesis tested is that locally structured training data leads to a reasoning gap.
+language model,autoregressive density estimator with transformer architecture,The language model used is an autoregressive density estimator with a transformer architecture.
+training data structure,effectiveness of different estimators,The structure of the training data is manipulated to measure the effectiveness of different estimators.
+training conditions,scaffolded or free generation outperforming direct prediction,The key question is whether there are training conditions under which scaffolded or free generation outperforms direct prediction.
+code and data availability,https://github.com/benpry/why-think-step-by-step,Code and data for the experimental methods are available at https://github.com/benpry/why-think-step-by-step.
+estimators,mean squared error (mse) evaluation,"Estimators are evaluated using Mean Squared Error (MSE), averaging over 10 Monte Carlo samples for estimators that include intermediate variables."
+estimators,intermediate variables,Estimators include intermediate variables in the sampling process.
+samples,estimators,Carlo samples for estimators to reduce variance and drive the estimation error primarily by bias.
+samples,variance,Averaging over samples reduces variance in estimators.
+training data,bayes nets,The first step in generating training data is to create Bayes nets with random topologies.
+bayes nets,conditional probability tables,Bayes nets have conditional probability tables for each variable.
+variables,random edges,100 random edges are incrementally added between pairs of variables in the network topology.
+variables,conditional probability tables,Conditional probability tables are created for each variable in the network.
+conditional probability tables,bayes nets,Conditional probability tables are designed for the generated Bayes nets.
+variables,mutual information,Mutual information is computed between each pair of variables.
+non-adjacent pairs,conditional probabilities,Conditional probabilities favor moderately strong dependencies for non-adjacent pairs of variables.
+dependencies,reasoning effectiveness,Strong dependencies are an important precondition to the effectiveness of reasoning.
+variables,bayes nets,Variables are used to define the structure and relationships in Bayes nets.
+variables,training set,Variables are used to create a training set consisting of samples.
+bayes nets,training set,Bayes nets are used to generate a training set consisting of samples.
+bayes nets,sample,Bayes nets are used to format samples in a particular way.
+variables,observation distribution,Variables are chosen according to the observation distribution.
+observation distribution,algorithm 2,Algorithm 2 in Appendix B shows a subset of variables from an observation distribution
+observation distribution,locality,Observation distributions have the property of Locality - observed samples contain variables from a local neighborhood
+observation distribution,variable dropout,Observation distributions define Variable dropout to handle the case where certain variables may be missing
+observation distribution,held-out pairs,Observation distributions also consider Held-out pairs where some variables are held out across all training data
+locality,central variable,Locality ensures that observed samples contain a central variable along with all variables at most distance k from it
+locality,neighborhood size,A distribution controls the local neighborhood size for sampling purposes
+variable dropout,missing variables,Variable dropout deals with the scenario where certain variables may not be seen or go unnoticed
+variable dropout,model generalization,Variable dropout can help a model generalize to pairs of variables that were unseen in training
+held-out pairs,training data,Held-out pairs involve some pairs of variables held out across all training data
+held-out pairs,variable removal,"In Held-out pairs, if a local neighborhood includes a pair of held-out variables, one variable from the pair is randomly removed"
+ability,match conditional probabilities,"The ability to match conditional probabilities for held-out pairs of variables is measured via mean squared error, which is our main performance metric."
+training dataset,bayes net,"A control condition involves sampling values of variables from one Bayes net, but constructing local neighborhoods based on the structure of a different Bayes net."
+training data,local structure,Local structure in the training data is tested to drive the value of reasoning through various controls.
+estimators,sampling and scoring,Estimators in Section 2.2 are implemented via sampling from and scoring with the language.
+model,generation,Model is prompted with the target variable name and initial observation for generation. Probabilities for possible values of target variable are examined.
+generation,target variable,Generation involves sampling until the target variable name is generated.
+model,direct prediction,Direct prediction is implemented as prompts in the model architecture.
+model,free generation,Free generation is implemented as prompts in the model architecture.
+model,monte carlo estimation,Some estimators rely on Monte Carlo estimation in the model architecture.
+monte carlo estimation,samples,Monte Carlo estimation uses 10 samples.
+model,negative scaffolded generation,Negative scaffolded generation is introduced as a control estimator in the model architecture.
+pair of variables,scaffold,"For each pair of variables, a random set of variables equal in size to the scaffold is selected."
+pair of variables,language model,The language model is prompted to generate values for the negative scaffolds in the same way as in scaffolded generation.
+model,gpt-2 autoregressive transformer architecture,A smaller version of GPT-2 autoregressive transformer architecture is used in the model.
+gpt-2 autoregressive transformer architecture,huggingface transformers library,The GPT-2 autoregressive transformer architecture is implemented in the HuggingFace transformers library.
+model,data,Data is tokenized via a Byte Pair Encoding tokenizer fit to data in the model format.
+model,training,"The model architecture is trained using randomly initialized weights for 300,000 gradient steps on batches containing 3,072 tokens each."
+training,adam optimizer,Models are trained using the Adam optimizer.
+models,adam optimizer,Models in the context are optimized using the Adam optimizer
+models,training set,"The models are trained on a training set consisting of 1,000,000 samples from a single Bayes net"
+training set,bayes net,The training set consists of samples from a single Bayes net
+models,performance,The models achieved near-perfect performance on the training task
+models,architectures,Multiple different architectures are compared in the context
+architectures,results,Comparison of different architectures demonstrates robust results
+held-out pair,data points,Each held-out pair gives four data points in the context
+bayes nets,models,"Pooling across the 10 Bayes nets trained models gives 1,000 data points per training condition and estimator"
+direct prediction,free generation,Free generation performs better than direct prediction
+direct prediction,mean squared errors,Mean squared errors are calculated between direct prediction probabilities and either true or marginal probabilities for non-held-out pairs with high mutual information
+direct prediction,conditional probabilities,"In the local training conditions, direct prediction is close to perfect at matching conditional probabilities"
+model,free generation,The success of free generation demonstrates that a model trained on local subsets of a Bayes net can self-generate helpful intermediate variables.
+model,variables,"In free generation, the model generates variables until it produces the target variable."
+reasoning trace,accuracy,The length of the reasoning trace does not relate strongly to accuracy within training conditions.
+free generation,direct prediction,Free generation does not outperform direct prediction substantially when the training data is fully observed.
+training data,reasoning traces,Training on locally structured data reduces the average length of reasoning traces.
+free generation,variables,"In local training conditions, free generation usually produces a set of variables that d-separates the observed variable from the target variable."
+training conditions,reasoning traces,The training conditions with the wrong locality structure only lead to d-separating reasoning traces 34% of the time.
+training condition,variables,Fully observed training condition usually creates d-separating reasoning traces (69%) because it generates a large number of variables.
+d-separation,intermediate variables,d-separation is important because it ensures that the intermediate variables capture all the influence.
+d-separation,intermediate variables,d-separation is important because it ensures that the intermediate variables capture all the influence that the observed variable exerts on the target variable.
+d-separation,training,training on local clusters of variables is valuable in part because it makes it easy for an autoregressive model to predict.
+d-separation,conditional probabilities,d-separation is important for estimating conditional probabilities and marginal probabilities of target variables.
+training,local clusters,training on local clusters of variables is valuable because it makes it easy for an autoregressive model to predict.
+training,locally structured training data,the combination of locally structured training data and step-by-step reasoning can lead to outputting useful intermediate reasoning steps.
+step-by-step reasoning,locally structured training data,the combination of locally structured training data and step-by-step reasoning can lead to outputting useful intermediate reasoning steps.
+training,reasoning,the combination of locally structured training data and step-by-step reasoning can also lead to data complexity and reasoning.
+conditional probability estimates,training,Conditional probability estimates are calculated based on the amount of training data available.
+model,data,The model is trained on data to make predictions or generate outputs.
+direct prediction,free generation,"Direct prediction and free generation are two methods used in training models, with differences in performance."
+model,local neighborhoods,The model can be trained on data from local neighborhoods to improve performance.
+free generation,conditional probabilities,Free generation aims to match the true conditional probabilities closely after a certain amount of training.
+transformer,training corpus,A sufficiently large transformer can eventually memorize the relationships in its training corpus with enough training.
+language model,fully observed data,A language model is trained on fully observed data to evaluate data complexity and performance.
+performance,training,Performance is associated with local training in the context of language models
+training,free generation,Training involves free generation in the context of language models
+training,relevant pairs,Training involves relevant pairs in the context of language models
+local neighborhoods,strong dependencies,Local neighborhoods have strong dependencies in the context of language model datasets
+local neighborhoods,chain-of-thought reasoning,Local neighborhoods are related to chain-of-thought reasoning in the context of inference time
+training,more data-efficient,Training on local neighborhoods can be more data-efficient than on complete datasets
+reasoning,mses,MSEs are used to measure the performance of reasoning in language models
+local training conditions,direct prediction,"In local training conditions, direct prediction matches conditional probabilities well"
+language models,conditional probabilities,Language models learn to match conditional probabilities in the training distribution
+target variables,marginal probabilities,Hypothesis testing involves comparing conditional and marginal probabilities of target variables
+probabilities,marginal probabilities,The opposite trend is observed between true probabilities and marginal probabilities. A worse training condition at matching true conditional probability results in a better match with marginal probabilities.
+bayes net,variables,Variables that co-occur frequently but are not local in the Bayes net have very little influence on each other.
+variables,joint distribution,Variables that co-occur frequently but are not local in the Bayes net result in the joint distribution being very close to the product of the marginal probabilities.
+conditional probabilities,reasoning,Estimating conditional probabilities through reasoning with intermediate variables can outperform direct prediction in cases where the training data has local structure.
+training data,conditional probabilities,"In the case where the training data has the wrong locality structure, models do not reliably learn conditional probabilities that can be chained together."
+models,conditional probabilities,Models do not reliably learn conditional probabilities.
+models,chain-of-thought reasoning,Chain-of-thought reasoning is helpful in some cases.
+chain-of-thought reasoning,inferences,Chain-of-thought reasoning can help with inferences that span different topics.
+chain-of-thought reasoning,topics,Chain-of-thought reasoning can be beneficial when topics are not co-occurring often.
+chain-of-thought reasoning,concepts,Chain-of-thought reasoning can help connect concepts that are rarely co-occurring.
+chain-of-thought reasoning,inference time,Chain-of-thought reasoning can increase data efficiency at inference time.
+data,chain-of-thought reasoning,Chain-of-thought reasoning can improve data efficiency.
+humans,language models,Humans are more data-efficient than language models.
+world,first-person perspective,Humans experience the world from a first-person perspective.
+world,information,The information encountered by humans is structured in small clusters.
+information,observation neighborhoods,Data curation for language models can focus on tightly correlated observation neighborhoods.
+language models,datasets,Language models rely on datasets to train and improve their performance.
+language models,reasoning,Language models aim to improve their ability for chain-of-thought reasoning.
+reasoning,language models,Language models are used as toy models to study reasoning in cognitive science.
+language models,abstraction,Language models are trained on language corpora containing abstract concepts.
+abstraction,reasoning,Understanding the role of abstraction in reasoning can help in more naturalistic reasoning contexts.
+abstraction,language models,Analyzing how abstractions impact reasoning can enhance language models' performance.
+language models,reasoning,"Language models might learn to reason more effectively through fine-tuning, in-context learning, and reinforcement learning."
+chain-of-thought prompting,zero-shot prompting,The findings are most relevant to zero-shot prompting where a model produces steps on the way to an answer without any other examples of reasoning traces in its context window.
+methods,model,The limitations are less applicable to methods that involve giving the model examples of reasoning.
+propositional worlds,expressive languages,"Reasoning in rich, structured worlds may require more expressive languages with which to reason and specify hypotheticals."
+theoretical results,transformers,The theoretical results do not explain the phenomenon observed in practice that transformers revert to the marginal distributions for held-out pairs.
+transformers,inductive biases,Future work should explore how the inductive biases of transformers might induce behavior on unseen data.
+computation and cogniton lab,stanford nlp group,"We thank members of the Computation and Cogniton Lab, the Causality in Cognition Lab, and the Stanford NLP Group for feedback on earlier versions of this work."
+tobias gerstenberg,strong dependencies,Tobias Gerstenberg advised on the importance of strong dependencies for reasoning.
+eric zelikman,figures,Feedback provided by Eric Zelikman on the design of the figures.
+nsf expeditions grant,award number (fain) 1918771.10,"This work is supported by an NSF Expeditions Grant, Award Number (FAIN) 1918771.10."

@@ -1,0 +1,233 @@
+node_1,node_2,edge
+cross-view camera pose estimation,aerial image,The work addresses cross-view camera pose estimation by determining the camera pose of a ground-level image with respect to an aerial image of the local area.
+slicematch,ground and aerial feature extractors,SliceMatch consists of ground and aerial feature extractors for feature extraction from ground and aerial images.
+ground descriptor,aerial descriptors,The feature aggregators construct a ground descriptor and multiple pose-dependent aerial descriptors from candidate camera poses.
+aerial feature aggregator,cross-view attention module,The novel aerial feature aggregator includes a cross-view attention module for ground-view guided aerial feature selection.
+geometric projection,ground camera's viewing frustum,The aerial feature aggregator utilizes the geometric projection of the ground camera's viewing frustum on the aerial image to pool features.
+contrastive learning,pose estimation,SliceMatch is trained using contrastive learning and pose estimation is formulated as a similarity comparison between ground and aerial descriptors.
+slicematch,vigor benchmark,SliceMatch achieves a 19% lower median localization error on the VIGOR benchmark compared to the state-of-the-art using VGG16 backbone.
+resnet50 backbone,slicematch,"When using a ResNet50 backbone, SliceMatch achieves a 50% lower error compared to the state-of-the-art."
+cross-view camera pose estimation,3-degrees-of-freedom ground camera pose,Cross-view camera pose estimation aims to estimate the 3-Degrees-of-Freedom ground camera pose by comparing the captured images.
+3-degrees-of-freedom (3-dof) ground camera pose,planar location and orientation,The 3-DoF ground camera pose is related to planar location and orientation as it involves determining the camera's position and direction on a two-dimensional plane.
+ground-level image,geo-referenced overhead aerial image,The ground-level image is compared to the geo-referenced aerial image to estimate the camera's pose and its local surroundings.
+local aerial image,reference database,The local aerial image can be obtained from a reference database to improve localization accuracy.
+global navigation satellite systems (gnss),image retrieval,GNSS and image retrieval can be used as rough localization priors for obtaining the local aerial image.
+sources of error,global navigation satellite systems (gnss),"The sources of error, including GNSS, can lead to inaccuracies in the localization process."
+cross-view formulation,alternative to traditional methods,The cross-view formulation offers an alternative approach to ground camera pose estimation compared to traditional techniques.
+slicematch,identification of ground-level image pose,SliceMatch is a method used to identify the ground-level camera pose within an aerial image by dividing the horizontal field-of-view into slices and applying self-attention.
+slice-specific aerial feature maps,ground slice features aggregation,Slice-specific aerial feature maps are used for ground slice features aggregation to create a dense scoring map for camera pose estimation.
+pose-dependent aerial slice masks,aggregation of candidate poses,Pose-dependent aerial slice masks enable the aggregation of candidate poses for efficient testing and comparison with ground descriptors.
+ground-level camera pose estimation techniques,requirement of detailed maps,Techniques for ground-level camera pose estimation may require detailed 3D point cloud maps or semantic maps for accurate results.
+3d point cloud maps,semantic maps,"3D point cloud maps and semantic maps are both types of maps used for representing Earth's surface, with 3D point cloud maps providing detailed point information and semantic maps providing labeled information."
+aerial imagery,earth's surface,"Aerial imagery provides continuous coverage of Earth's surface, making it easier to collect accurate point clouds or semantic maps."
+global image descriptor-based methods,dense pixel-level feature-based methods,"Global image descriptor-based methods and dense pixel-level feature-based methods are two categories of methods used for cross-view camera localization and pose estimation, with the former focusing on compact image representation and fast inference time and the latter on preserving more details and using geometric relationships between views for accurate estimation."
+global descriptor-based approach,feature locality,"The global descriptor-based approach is improved in this work by enforcing feature locality in the descriptor, aiming for accurate and efficient camera pose estimation."
+existing global descriptor-based cross-view camera pose estimation methods,aerial encoder,"Existing global descriptor-based cross-view camera pose estimation methods have limitations in relying on the aerial encoder to encode spatial context, causing the encoder to learn more than necessary."
+aerial encoder,spatial context,The aerial encoder relies on spatial context to encode all information
+aerial encoder,local information,The aerial encoder learns to aggregate local information via the SAFA module into the global descriptor
+safa module,local information,The SAFA module helps in aggregating local information into the global descriptor
+global descriptor,cross-view localization,Global descriptor-based methods for cross-view localization do not consider the orientation of the ground camera
+global descriptor,camera pose estimation,Global descriptor-based methods are used in camera pose estimation
+slicematch,aerial feature aggregation,SliceMatch is a method for cross-view camera pose estimation that uses novel aerial feature aggregation
+aerial feature aggregation,directional information,Aerial feature aggregation in SliceMatch explicitly encodes directional information
+horizontal field-of-view (hfov),orientation-specific descriptors,HFoV is used to aggregate orientation-specific descriptors
+pose,candidates,poses are extracted for a set of candidates
+aerial features,aerial slice descriptors,aerial features are aggregated into corresponding aerial slice descriptors
+aerial features,cross-view attention,cross-view attention is used to weigh aerial features with respect to the ground descriptor
+vertical slice,azimuth range,every vertical slice in the ground image corresponds to an azimuth range in the aerial image
+feature extraction,descriptors,feature extraction is done once for constructing the descriptors for all pose candidates
+model,ground image descriptor,the model is trained by pairing ground image descriptor with aerial descriptors at different locations and orientations
+aerial feature aggregation step,cross-view attention module,aerial feature aggregation step uses a cross-view attention module for ground-view guided aerial feature selection
+ground camera's viewing frustum,aerial image,there is a geometric relationship between the ground camera's viewing frustum and the aerial image
+slicematch's design,implementation,SliceMatch's design allows for efficient implementation that runs significantly faster than previous methods
+input ground-aerial image pair,slicematch,SliceMatch extracts dense features only once and aggregates aerial descriptors at a set of poses without extra computation for an input ground-aerial image pair
+slicematch,dense features,SliceMatch extracts dense features only once
+slicematch,aerial descriptors,aggregates aerial descriptors at a set of poses without extra computation
+slicematch,ground descriptor,compares the aerial descriptor of each pose with the ground descriptor
+slicematch,cross-view camera pose estimation method,SliceMatch constructs orientation-aware descriptors and adopts contrastive learning for both locations and orientations
+slicematch,state-of-the-art,SliceMatch sets the new state-of-the-art for cross-view pose estimation on two commonly used benchmarks
+slicematch,cross-view image retrieval,related to the work most related to SliceMatch
+slicematch,aerial image patches,Cross-view image retrieval is the task of finding matching aerial image patches from a reference database for a query ground image
+slicematch,global image descriptor,This task is done by creating a global image descriptor for the query ground image and each reference aerial patch
+slicematch,cvm-net,CVM-Net uses NetVLAD to build viewpoint invariant descriptors
+slicematch,spatial attention modules,Spatial attention modules are used to extract corresponding features across views
+slicematch,transformers,L2TLR exploits the positional encoding of Transformers to learn geometric correspondences between the ground and aerial view
+slicematch,transgeo,TransGeo uses
+transformers,geometric correspondences,Transformers are used to learn geometric correspondences between the ground and aerial view
+transgeo,attention-guided non-uniform cropping,TransGeo uses attention-guided non-uniform cropping to only pay attention to informative regions in Transformers
+works,advanced architectures,"Several works have tried to synthesize one view using another to bridge the domain gap between the ground and aerial images, and some works use the geometric relationship between vertical lines in the ground image and azimuth directions in the aerial image"
+methods,pose estimation,"Some methods have tried to explicitly enforce feature locality in global representations, but they assume that the camera is located at the center of the aerial image, limiting the generalization of these methods to pose estimation"
+camera pose estimation works,retrieval,"Cross-view camera pose estimation works aim to determine the location and orientation of the ground camera in the matching aerial image, going a step further than retrieval"
+location,orientation,The semantic segmentation of the ground-level image is compared to the ground-level semantic map predicted from the aerial image for estimating the location and orientation of the ground camera
+semantic segmentation,semantic map,"In [52], the semantic segmentation of the ground-level image is compared to the ground-level semantic map predicted from the aerial image for estimating the location and orientation of the ground camera"
+aerial image,ground camera,The aerial image is used to estimate the location and orientation of the ground camera.
+aerial image,query image,Aerial image is retrieved for a query image to regress the query's location.
+query image,location,The query image's location is regressed using a multilayer perceptron.
+localization problem,multi-class classification problem,Localization problem is formulated as a multi-class classification problem.
+dense multi-modal distribution,localization ambiguity,A dense multi-modal distribution is used to capture localization ambiguity.
+dense aerial features,ground perspective view,Dense aerial features are projected to ground perspective view based on homography.
+ground camera pose,levenberg-marquardt algorithm,Ground camera pose is estimated iteratively using the Levenberg-Marquardt algorithm.
+ground image,lidar data,Ground image is fused with LiDAR data for iterative pose estimation.
+aerial patches,projective transformation,Aerial patches are subjected to projective transformation.
+patch,ground image,Localization is achieved by selecting the location of the patch with the highest similarity to the ground image in the feature space.
+orientation,ground camera,Orientation is estimated using the known location of the ground camera in the aerial image.
+end-to-end methods,global image descriptor-based,Existing end-to-end methods are either global image descriptor-based or dense local.
+global image descriptor-based,dense local feature-based,Two different types of end-to-end methods mentioned in the context
+global image descriptor-based,feature locality,Global image descriptors can benefit from the right amount of feature locality
+global image descriptor-based,autonomous driving,Direction towards accuracy and runtime requirements of autonomous driving by enforcing feature locality in global image descriptors
+bird’s-eye-view (bev) semantic mapping,ground-to-bird’s-eye-view semantic mapping,Mapping semantics from ground perspective view to BEV given ground camera pose and intrinsics
+transformer layer,dense transformer layer,Introduces a dense Transformer layer to condense ground image features along the vertical dimension
+deep learning,aerial images,Synthesizing ground-level panoramas from aerial images using deep learning
+geo-metric relationship,ground-level camera’s frustum and bev,Utilization of the geometric relationship between ground-level camera’s frustum and BEV in the works mentioned
+indoor localization,floor maps,Relevant research direction involving indoor localization using floor maps
+lalaloc,2d floor plan,Renders ground view using 2D floor plan and optimizes ground camera pose estimation
+ground camera pose estimation,global representation,The ground camera pose estimation involves utilizing the global representations of the ground-level query image and the rendered view.
+lalaloc++,global floor plan comprehension module,LaLaLoc++ introduces a global floor plan comprehension module to remove the need for explicit modeling or rendering.
+laser,geometrically-structured latent space,LASER constructs a geometrically-structured latent space through aggregating viewing ray features for Monte Carlo Localization in 2D point cloud floor maps.
+occupancy boundaries information,2d point cloud input,"To form the 2D point cloud input, LASER requires occupancy boundaries information such as walls."
+camera pose estimation task,slicematch method,The methodology explains the cross-view camera pose estimation task and introduces the SliceMatch method for this purpose.
+feature extraction,aggregation,SliceMatch separates feature extraction and aggregation in its approach to camera pose estimation.
+aggregation,geometric knowledge,aggregation utilizes geometric knowledge on how the ground camera's viewing frustum projects on the aerial image
+slicematch,pose estimation,SliceMatch formulates pose estimation as a process that compares aerial descriptors for a set of candidate poses to the ground image descriptor
+slicematch,aerial descriptors,SliceMatch compares aerial descriptors for a set of candidate poses to the ground image descriptor
+slicematch,"set ξ = {ξ1,··· , ξk}",pose estimation in SliceMatch involves comparing aerial descriptors for a set of candidate poses to the ground image descriptor
+slicematch,training set (ktrain poses),SliceMatch uses a set of Ktrain poses at a fixed uniform grid in 3-DoF pose space during training
+slicematch,inference poses (ktest poses),SliceMatch uses Ktest poses during inference and predicts the pose candidate with the most similar aerial descriptor to the ground descriptor
+image ig,feature maps zg = fg(ig) ∈ rh×w×c,"Ig is mapped to feature maps zg using the function fg, resulting in a high-dimensional output"
+image ia,feature maps za = fa(ia) ∈ rl×l×c,"Ia is mapped to feature maps za using the function fa, resulting in a high-dimensional output"
+feature extractor,feature aggregator,Feature extractor and feature aggregator are key components in the process of constructing ground and aerial descriptors from image features
+novel aggregator step,ground and pose-dependent aerial descriptors,The novel aggregator step efficiently constructs a single ground descriptor and multiple pose-dependent aerial descriptors
+novel aggregator step,extracted image features,The novel aggregator step uses 'slices' to construct aerial descriptors from the extracted image features
+slices,non-overlapping range in azimuth viewing direction,Each slice represents a non-overlapping range in the azimuth viewing direction and is used to aggregate local image features within that range
+slice,vertical rectangular region,A slice in the ground view corresponds to a vertical rectangular region in the image/feature map.
+slice,triangle-shaped region,A slice in the aerial view is a triangle-shaped region extending from a candidate pose.
+ground/aerial slice descriptor,visual information,An aggregated feature in a single slice known as ground/aerial slice descriptor contains the visual information for that viewing direction.
+ground/aerial global descriptor,concatenation of slice descriptors,A ground/aerial global descriptor is the concatenation of slice descriptors of all pose-relative orientations.
+slice descriptors,full hfov of the ground camera,The slice descriptors represent the full HFoV of the ground camera.
+ground-aerial image pair,pose predictor,The input to SliceMatch is a pair of ground-aerial image and a set of candidate ground camera poses. The pose predictor predicts the pose with the highest matching score.
+feature maps zg and za,heterogeneous feature aggregators,The extracted feature maps zg and za are fed into heterogeneous feature aggregators for further processing.
+ground aggregator aggg(zg),aerial global descriptors,The ground aggregator aggg(zg) generates aerial global descriptors for the set of pose-dependent aerial global descriptors.
+heterogeneous feature aggregators,ground aggregator,"The ground aggregator aggg(zg) generates a C-dimensional slice descriptor for N azimuth directions, where N is a hyperparameter for the number of slices."
+ground aggregator,aerial aggregator,"The aerial aggregator agga(za,(cid:98)∆g, Ξ) receives the aerial features za, the ground slice descriptors (cid:98)∆g, and the ground global descriptor dg for further processing."
+aerial aggregator,pose predictor,"The pose predictor receives the ground global descriptor dg, and the set ∆a that contains the K aerial global descriptors corresponding to the candidate poses in set Ξ."
+pose predictor,loss function,The Loss Function in this context is defined as a modification of the infoNCE loss [24] from contrastive representation learning to train SliceMatch.
+k,contribution,K poses contributes to the learning process
+cgt,cosine similarity,cGT represents the cosine similarity between dg and dGT
+dg,cosine similarity,dg is involved in the cosine similarity calculation
+τ,hyperparameter,τ is a hyperparameter in the proposed model
+ck,cosine similarity,ck is the cosine similarity between dg and dk
+l,ground truth pose,L is used to contrast the ground truth pose with other poses
+ktrain,location and orientation prediction,Ktrain poses are used to extract discriminative features for location and orientation prediction
+safa module,aggregation step,SAFA module is compared to the novel aggregation step described in the context
+geometric knowledge,views spatially relate,geometric knowledge is used to determine how the views should spatially relate
+attention,visual information,Attention is used to improve the quality by informing what aerial features are relevant based on ground slice information
+ground feature aggregator,important features,ground feature aggregator summarizes the important features in each vertical ground slice
+ig,ia,Information in ground image Ig may not be present in aerial image Ia
+g,mg,Mg is a learned mask with shape H × W × 1 that re-weighs the ground feature map zg into z′g.
+mg,zg,"g = Mg ⊙ zg, with the ability to broadcast the mask Mg over all channels of zg."
+zg,z′g,"The Sigmoid operation enforces the weights in Mg are between 0 and 1, re-weighing the ground feature map zg into z′g."
+zg,mg,"The ⊙ operation denotes element-wise multiplication, with the ability to broadcast the mask Mg over all channels of zg."
+z′g,n,"The ground slicer then divides z′g into N vertical slices, cutting the feature map along the horizontal (azimuth) direction."
+n,slice,"For each slice, a normalized slice descriptor is computed by averaging all features within the slice and applying L2 normalization."
+slice,(cid:98)∆g,Each slice local descriptor represents the model’s attended feature in the corresponding vertical slice.
+(cid:98)∆g,n,This results in the set (cid:98)∆g = set of N ground slice descriptors.
+(cid:98)∆g,agga,The aerial aggregator agga aggregates feature information on the ground slice descriptors(cid:98)∆g using a cross-view attention module and the set of poses Ξ.
+agga,ξ,"agga(za,(cid:98)∆g, Ξ) the feature selection is conditioned on the set of poses Ξ for geometry-guided feature aggregation."
+ground view,aerial view,"Since in the ground view most content that is seen in the aerial view will be occluded, a cross-view attention module is proposed to specifically address this."
+cross-view attention module,aerial features,The cross-view attention module is proposed to specifically extract the aerial features that should match the visible content of each ground slice.
+aerial feature map,ground slice descriptor,The aerial feature map is matched with each ground slice descriptor to create similarity score maps.
+aerial feature map,cross-view attention mask,The aerial feature map and the extended features are used to produce a cross-view attention mask.
+cross-view masks,importance of the aerial features,Each cross-view mask denotes the importance of the aerial features with respect to the corresponding ground slice descriptor.
+pose-dependent aerial descriptors,candidate poses,The pose-dependent aerial descriptors are constructed for the candidate poses.
+slice mask,geometry of the ground camera's viewing frustum,The slice mask expresses the geometry of the ground camera's viewing frustum in the aerial feature map.
+"slice mask p k,n",geometry of the ground camera’s viewing frustum,"The slice mask P k,n expresses the geometry of the ground camera’s viewing frustum in the aerial feature map for the n-th orientation slice, assuming that the camera would have the k-th pose."
+"slice mask p k,n",cells,"Each cell in the slice mask contains a value in the range [0, 1] proportional to how much of that cell intersects the frustum."
+"slice mask p k,n",aerial slice descriptor,"With the slice masks, the n-th aerial slice descriptor at pose k can be computed efficiently."
+aerial slice descriptor,feature map,"For each of the C channels, we compute a weighted average over all of the L × L spatial locations (i, j) in the feature map z′n a, using the elements of slice mask P k,n as weights."
+aerial slice descriptor,"dka = concat( ˆdk,1a ,··· , ˆdk,na)","Analogous to the ground view, the k-th pose’s global descriptor is obtained using dka = Concat( ˆdk,1a ,··· , ˆdk,Na)."
+proposed architecture,computational complexity,A benefit of our proposed architecture is that the computational complexity of most operations is independent of the number of candidate poses K.
+equation (4),cosine similarity comparison,Equation (4) undergoes additional multiplications and normalizations before being compared for cosine similarity.
+datasets,evaluation metrics,Datasets and evaluation metrics are introduced first to provide context for the experiments.
+vigor dataset,geo-tagged ground-level panoramas,VIGOR dataset contains geo-tagged ground-level panoramas collected in 4 US cities.
+aerial images,ground panoramas,"Each ground panorama in VIGOR dataset has aerial images associated with it, with specific positive and semi-positive criteria."
+positive aerial images,corrected ground truth,Positive aerial images with corrected ground truth are used for training and testing methods and baselines.
+quantitative results,new labels,Quantitative results with the new labels differ slightly from those reported in the literature
+same-area splits,cross-area splits,We adopt the same-area and cross-area splits from [55] to test the model’s generalization to new measurements in the same cities and across different cities
+vigor,kitti,"Qualitative evaluation of SliceMatch on VIGOR [55] and KITTI [6,33]"
+kitti dataset,ground-level images,KITTI dataset [6] contains ground-level images with a limited HFoV taken by a moving vehicle from different trajectories at different times
+different region,test2 set,The Test2 set has been captured in a different region
+evaluation metrics,mean error,We follow the convention of [50] and report the mean and median error in meters between the predicted and ground truth location over all test image pairs
+mean error,median error,"For orientation prediction, we report the mean and median absolute angular difference between the predicted and"
+orientation prediction,mean and median absolute angular difference,Mean and median absolute angular difference are key metrics used for orientation prediction.
+orientation prediction,ground truth orientation,Ground truth orientation is compared with predicted orientation for orientation prediction.
+kitti dataset,recal,"Recall is calculated under a certain threshold for longitudinal and lateral localization error, and orientation estimation error in the KITTI dataset."
+localization,thresholds,Thresholds of 1m and 5m are set for localization errors.
+orientation estimation,thresholds,Thresholds of 1° and 5° are set for orientation estimation errors.
+vgg16,feature extractors fg and fa,VGG16 is used for feature extraction up to stage 5 for both fg and fa.
+vigor dataset,vgg16,VGG16 is utilized with different spatial sizes on the VIGOR dataset.
+data pre-processing,pre-trained on imagenet,Feature extractors are pre-trained on ImageNet for data pre-processing.
+conv1×1,sequential convolution layers,Conv1×1 consists of two sequential convolution layers with a kernel size of 1 for data processing.
+slicematch,training,SliceMatch is trained end-to-end using Adam optimizer with a specific learning rate and batch size.
+inference,set of candidate camera poses,A set of candidate camera poses is used for inference during the process.
+vigor,kitti,VIGOR and KITTI are datasets mentioned in the context
+slicematch,cross-view regression (cvr),SliceMatch is compared to CVR as a baseline method for localization with known orientation
+slicematch,multi-class classification (mcc),SliceMatch is compared to MCC as a baseline method for localization and 3-DoF pose estimation
+slicematch,dsm,SliceMatch is compared to DSM for fine-grained image retrieval on the KITTI dataset
+slicematch,lm,SliceMatch is compared to LM for iterative camera pose estimation
+slicematch,α,An ablation study is conducted with different values of α for the loss function in SliceMatch
+loss,equation (1),The loss term is specifically related to Equation (1) in the context of calibration and tuning.
+baselines,corrected ground truth locations,"The baselines were evaluated based on corrected ground truth locations, indicating a relationship between them."
+model,localization error,"The model performance is measured by localization error, highlighting a direct relation between the two terms."
+ground feature map,interpolation,"The ground feature map is interpolated to acquire a modified version, thereby establishing a connection between the two terms."
+performance,slice number,"The performance of the system is influenced by the choice of slice number, demonstrating a clear relationship between them."
+slicematch,cross-view attention module,Incorporating the cross-view attention module in SliceMatch has a positive impact on the system's localization and orientation estimation performance.
+slice number values,vigor tuning split,"The different slice number values are assessed based on the VIGOR tuning split, establishing a relationship between them."
+table 1,location and orientation error,Table 1 provides information on the location and orientation error for different slice number values on the VIGOR tuning split.
+slicematch,cvr,SliceMatch outperforms CVR in terms of localization with known orientation and 3-DoF camera pose estimation as shown in Table 2 Same-Area.
+slicematch,mcc,SliceMatch also surpasses MCC in terms of localization with known orientation and 3-DoF camera pose estimation as shown in Table 2 Same-Area.
+slicematch,global descriptors,SliceMatch contrasts the learned global descriptors with aerial descriptors at different locations and orientations for more discriminative results.
+slicematch,orientation error,SliceMatch has a reduction in median orientation error especially when the orientation of test ground images is unknown.
+vgg16,resnet50,"VGG16 is used as the main backbone for comparison purposes, noting a decrease in localization and orientation error when using ResNet50 as backbone."
+slicematch,multimodal uncertainty,"SliceMatch can express its multimodal uncertainty, especially in scenes with a symmetric layout."
+slicematch,candidate poses,"SliceMatch sometimes picks candidate poses incorrectly, leading to large errors in some cases."
+slicematch,errors,"SliceMatch has a substantially lower median error than its mean error, indicating that the mean is skewed by outliers."
+slicematch,lm,"SliceMatch surpasses the fine-grained image retrieval-based method DSM. SliceMatch has lower mean and median localization error than LM, with higher recall rates."
+slicematch,orientation prediction,"SliceMatch has lower mean and median localization error than LM, while LM shows advantage in orientation prediction with a strong orientation prior."
+slicematch,longitudinal direction,SliceMatch performs better than LM in recall for localization in the longitudinal direction compared to the lateral direction.
+lm,projection,LM relies on the projection of dense local features.
+slicematch,prior,SliceMatch can work without this prior.
+lm,dense local features,LM relies on the projection of dense local features from the aerial view to ground view.
+lm,same scene,LM does not work when there is no same scene captured in the projected view and the ground view.
+cross-area generalization,new ground images,Generalization to new ground images in different areas is a more difficult task.
+test area,training area,The test area can look very different from the training area.
+mcc,scene information,MCC's feature decoder receives the full scene information from its encoder.
+slicematch,per-slice discriminative features,SliceMatch divides the observed scene into slices and seeks per-slice discriminative features.
+resnet50 backbone,improves results,Using a ResNet50 backbone further improves the results.
+kitti test2 set,20° orientation prior,SliceMatch achieves a lower median localization error than LM when the 20° orientation prior is present in both training and testing.
+lm,strong prior,LM surpasses SliceMatch in orientation prediction when a strong prior is available.
+slicematch,orientation prior,SliceMatch performs considerably better when no orientation prior is available.
+slicematch,lm,SliceMatch performs considerably better when no orientation prior is available as LM gets stuck in local optima.
+slicematch,backbone,"SliceMatch is compared to baselines on the same hardware, a single NVIDIA Tesla V100 GPU, using released code from their Same-Area Cross-Area Model."
+slicematch,resnet50,"SliceMatch is compared to baselines on the same hardware, a single NVIDIA Tesla V100 GPU, using released code from their Same-Area Cross-Area Model."
+slicematch,vigor,"Location and orientation estimation errors on VIGOR [55] are provided, where aligned images means the ground image orientation is known."
+slicematch,kitti,"Location and orientation estimation error and recall on KITTI [6, 33] are provided, where prior means the orientation is known with a certain amount of noise."
+slicematch,dsm,Results for DSM [35] are taken from [33] and the trained LM model provided by [33] is used for evaluation.
+cvr,mcc,CVR [55] and MCC [50] are implemented in Ten authors.
+slicematch,lm,SliceMatch and LM are both methods mentioned in the context for camera pose estimation. SliceMatch achieves a faster frames per second rate compared to LM on VIGOR and KITTI datasets.
+slicematch,global descriptor-based baselines,SliceMatch outperforms global descriptor-based baselines in terms of frames per second on VIGOR and KITTI datasets.
+lm,iterative method,LM is referenced as an iterative method with a lower frames per second rate compared to SliceMatch on KITTI dataset.
+slicematch,orientation estimation,"SliceMatch's architecture can learn discriminative features for both localization and orientation estimation, leading to improved accuracy in camera pose estimation."
+slicematch,renet50,"SliceMatch's performance is enhanced when using a better backbone like ResNet50, resulting in a 50% lower median error on the datasets."
+better backbone,slicematch,"The better backbone improves SliceMatch's performance, leading to a lower median error on VIGOR sets."
+better backbone,resnet50,"With ResNet50, there is a 50% lower median error on VIGOR sets, setting a new state-of-the-art."
+slicematch,global descriptor,"To construct the global descriptor for a candidate pose, efficient weighted averaging over the aerial features is needed."
+global descriptor,candidate pose,The global descriptor is used to construct a candidate pose.
+candidate pose,efficient weighted averaging,"To construct a candidate pose, only an efficient weighted averaging over the aerial features is needed."
+efficient weighted averaging,aerial features,Efficient weighted averaging is done over the aerial features to construct a candidate pose.
+aerial features,precomputed masks,The aerial features are used with precomputed masks to achieve efficient inference.
+precomputed masks,ground camera's frustum geometry,Precomputed masks represent the ground camera's frustum geometry in the aerial view.
+slicematch,priors,SliceMatch can include available priors in its candidate poses.
+priors,initial orientation estimate,Priors can be used for an initial orientation estimate in candidate poses.
+future work,pose candidates,Future work will explore adapting pose candidates for temporal filtering and sensor fusion.
+future work,efficient deep learning (edl),The future work is part of the Efficient Deep Learning (EDL) research program.
+efficient deep learning (edl),dutch research council (nwo),"The Efficient Deep Learning (EDL) research program, with project number P16-25, is partly financed by the Dutch Research Council (NWO)."

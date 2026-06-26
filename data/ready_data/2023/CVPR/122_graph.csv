@@ -1,0 +1,184 @@
+node_1,node_2,edge
+cross-modal alignment,vision-language pre-training (vlp) models,Cross-modal alignment is essential for VLP models to learn correct corresponding information across different modalities.
+cross-modal alignment,masked language modeling (mlm) tasks,Numerous masked modeling tasks have been proposed for VLP to promote cross-modal interactions.
+masked language modeling (mlm) tasks,previous masked modeling tasks,The core idea of previous masked modeling tasks is to focus on reconstructing masked tokens for learning local-to-local alignment.
+masked language modeling (mlm) tasks,semantic completion learning (scl) task,"In this paper, a novel SCL task is proposed as complementary to existing masked modeling tasks to facilitate global-to-local alignment."
+semantic completion learning (scl) task,missing semantics of masked data,SCL task complements the missing semantics of masked data by capturing corresponding information from the other modality.
+semantic completion learning (scl) task,global features,"SCL task promotes learning more representative global features, impacting the performance of downstream tasks."
+vision encoder,image-text and video-text multimodal tasks,Flexible vision encoder enables the model to perform image-text and video-text multimodal tasks simultaneously.
+vision encoder,proposed method,Experimental results show that the proposed method achieves state-of-the-art performance on vision-language benchmarks.
+proposed method,state-of-the-art performance,proposed method achieves state-of-the-art performance on various vision-language benchmarks
+proposed method,visual question answering,proposed method achieves state-of-the-art performance on visual question answering tasks
+proposed method,image-text retrieval,proposed method achieves state-of-the-art performance on image-text retrieval tasks
+proposed method,video-text retrieval,proposed method achieves state-of-the-art performance on video-text retrieval tasks
+multimodal representation learning,heterogeneity gap,multimodal representation learning bridges the heterogeneity gap between different modalities
+vision-language pre-training models,visual question answering,vision-language pre-training models show impressive semantic alignment ability on visual question answering tasks
+vision-language pre-training models,image-text retrieval,vision-language pre-training models show impressive semantic alignment ability on image-text retrieval tasks
+self-supervised vision-language pre-training models,masked modeling tasks,self-supervised vision-language pre-training models use various masked modeling tasks to model interactions between vision and language features
+masked language modeling (mlm),masked vision modeling (mvm),MLM and MVM are both self-reconstructing masked tokens by leveraging informative visible tokens to realize local-to-local alignment.
+masked language modeling (mlm),bert,"MLM, adopted by BERT, predicts the original vocabulary IDs of masked words."
+masked vision modeling (mvm),visual pre-training tasks,"There is a trend to extend MLM to visual pre-training tasks by masking visual patches and predicting original pixels, corresponding discrete tokens, or features."
+masked vision modeling (mvm),local masked tokens,MVM tasks focus on reconstructing local masked tokens but neglect global semantic information.
+local masked tokens,global semantic information,Reconstructing local masked tokens may lead to inadequate learning of global representations for cross-modal information.
+global semantic information,pre-training model performance,Global semantic features have a significant impact on pre-training model performance for downstream tasks.
+pre-training model,downstream tasks,The performance of the pre-training model is usually evaluated based on its ability to deal with downstream tasks.
+semantic features,global-to-local alignment,It is crucial to ensure global semantic features to learn accurate global-to-local alignment.
+paired vision and text data,same semantic information,Paired vision and text data represent two views of the same semantic information.
+masked data,missing semantics,The missing semantics of masked data can be completed by capturing information from the other modality.
+semantic completion learning (scl),dual parts,SCL is composed of two dual parts: masked vision semantic completion (MVSC) and masked language semantic completion (MLSC).
+mvsc (mlsc),global semantic representations,MVSC (MLSC) exploits information of complete text (vision) data to recover global semantic representations of masked vision (text) data.
+scl pre-training,attention maps,The attention maps with SCL pre-training are more discriminative and reasonable compared to the model pre-trained without SCL.
+architecture of the vision-language pre-training model,general framework,The architecture of the vision-language pre-training model adopts a general framework that consists of two uni-modal encoders and a fusion encoder.
+vision encoder,perform image-text and video-text multimodal tasks,The vision encoder enables the model to perform image-text and video-text multimodal tasks simultaneously.
+image-text,video-text,"Both tasks are mentioned to be worked on simultaneously, indicating a relationship of parallel processing or comparison between the two modalities."
+video inputs,vision encoder,"The vision encoder is mentioned to add learning parameters specifically for video inputs, suggesting a direct relationship between video inputs and the vision encoder."
+vision encoder,[cls] feature,"The [CLS] feature of each frame is treated as a bridge connecting spatial modeling within the frame and temporal modeling among frames, showing a functional relationship between the vision encoder and the [CLS] feature."
+image-text,video-text,"The model is trained successively with both image-text and video-text datasets to transfer visual knowledge from images to videos, indicating a learning transfer relationship between the two modalities."
+global representations,semantic completion learning (scl),"SCL is proposed as a pre-training task to enhance the global-to-local alignment of global representations, suggesting a relationship of improvement or enhancement of global features."
+adaptive vision encoder,multimodal pre-training knowledge,"The vision encoder is described as able to transfer multimodal pre-training knowledge between images and videos readily, highlighting a relationship of knowledge transfer or sharing."
+semantic completion learning (scl),vision encoder,"SCL is mentioned to achieve state-of-the-art performance based on a similar pre-training data scale with the help of the vision encoder, indicating a positive relationship between SCL and the vision encoder."
+dual-tower architecture,cross-fusion architecture,"The dual-tower architecture based methods employ two individual encoders to separately extract the features for the visual data and textual data, while the cross-fusion architecture based methods employ a cross-modal fusion encoder to enhance the interactions between vision and text features."
+clip,contrastive learning,"CLIP exploits contrastive learning with a huge quantity of noisy image-text pairs directly collected from the Internet, achieving remarkable results on vision-language tasks."
+frozen,curriculum learning schedule,FROZEN proposes a curriculum learning schedule to train the vision-language model on both image-text and video-text datasets by treating an image as a single-frame video.
+cross-fusion architecture based methods,albef,ALBEF aligns the image and text features with contrastive learning and feeds them into a cross-modal attention-based encoder to obtain the fused features.
+contrastive learning,cross-modal attention-based encoder,"The cross-modal attention-based encoder receives input from contrastive learning, enhancing the fused features through attention mechanisms."
+clover,cross-modal feature alignment,Clover focuses on improving cross-modal feature alignment through a tri-modal alignment pre-training task.
+model,multimodal feature fusion,"The model conducts multimodal feature fusion, enhancing performance on various downstream tasks."
+model,semantic completion learning (scl),The model follows the Semantic Completion Learning (SCL) approach to process image-text pairs for semantic completion.
+image-text pair,masked vision/language semantic completion,The image-text pair is utilized for masked vision/language semantic completion tasks in a forward propagated manner.
+masked modeling tasks,self-reconstruction of masked data,Masked modeling tasks focus on self-reconstructing masked data to improve model performance.
+masked language modeling (mlm),bert,BERT utilizes Masked Language modeling (MLM) to achieve state-of-the-art results on natural language processing tasks.
+masked vision modeling (mvm),vlmae,VLMAE introduces Masked vision modeling (MVM) with a focus on Regional Masked Image Modeling (RMIM) for feature fusion.
+input image,original pixels,The input image is used to reconstruct the original pixels depending on visible patches and corresponding text.
+masked visual-token modeling task,original video frame patches,The masked visual-token modeling task maps original video frame patches into discrete visual tokens and recovers corresponding visual tokens of masked patches for joint encoder training.
+semantic completion learning (scl) task,local masked tokens,"SCL task focuses on recovering global semantic information of masked data after cross-modal interactions, unlike tasks that only reconstruct local masked tokens."
+pre-training tasks,contrastive learning (cl),"In the pre-training tasks, Contrastive Learning (CL) involves projecting input images and texts into vision and language embedding spaces to adjust the positions of semantic features and enforce feature closeness for image-text pairs."
+pre-training tasks,vision-text matching (vtm),"Pre-training tasks include Vision-Text Matching (VTM), aiming to determine the correspondence of an image-text pair through binary classification on concatenated vision features."
+correspondence,image-text pair,The key relation between 'correspondence' and 'image-text pair' is that the correspondence refers to the relationship or connection between an image and a text pair.
+binary classification,concatenation,The 'binary classification' is performed on the 'concatenation' of vision and text global representations for alignment of different modalities.
+masked language modeling (mlm),natural language processing,MLM was used as a pretext task in 'natural language processing' and then introduced to multi-modal pre-training.
+reconstruction task,model learns,The 'reconstruction task' is important in how the 'model learns' to associate linguistic words and visual entities in local-to-local semantic alignment.
+semantic completion learning (scl),extract knowledge,SCL is significant for the model to 'learn multi-modal information fusion' and 'extract knowledge' from the other modality.
+"{imask, t} and {i, tmask}",semantic information,"For each data pair, masking the image and text separately allows the masked data to 'learn semantic information' from the other complete modality."
+data,model,Data is sent to the model for processing.
+features,masked data,Features of masked data are obtained by leveraging information from the model.
+features,complete data,Global features of masked data are compared with global features of complete data.
+masked vision semantic completion,masked language semantic completion,Both MVSC and MLSC are conducted simultaneously.
+recovered global features,masked data,Recovered global features of masked data are compared with global features of complete data.
+infonce loss,mutual information,InfoNCE loss is used to maximize mutual information between different versions of input data pairs.
+cosine similarity,temperature hyper-parameter,Cosine similarity is used in conjunction with a temperature hyper-parameter in the calculations.
+negative samples,global features,Negative samples are global features of other complete images or texts in the batch.
+scl loss,global features,SCL loss is defined to make the global features of masked images similar to complete images.
+masked image,ico of complete image,The masked image is similar to the Incomplete Image Component (ICo) of the complete image
+ico of complete image,complete image,ICo is a component of the complete image
+supplementary knowledge,global representations,Global representations will learn supplementary knowledge from corresponding tokens of the other modality to recover semantic information
+vision encoder,visual data,Vision Encoder takes visual data (video or image) as input
+vision encoder,patches,Visual data is split into patches before being transformed into sequences of vision tokens
+vision encoder,spatial positional embeddings,Learnable spatial positional embeddings are concatenated to tokens by the Vision Encoder
+vision encoder,temporal positional embeddings,Temporal positional embeddings are shared by tokens in the Vision Encoder
+patches,temporal positional embedding et visualblock,The patches and temporal positional embedding Et VisualBlock are related as all patches in the same frame share the same temporal positional embedding according to the context.
+vision tokens g0,vision encoder,The vision tokens G0 and vision encoder are related as the vision tokens G0 are fed into the vision encoder for processing image and video data.
+visualblocks,vit,The VisualBlocks and ViT are related as the vision encoder is a modified ViT containing a stack of VisualBlocks as mentioned in the context.
+visualblock,temporal attention,The VisualBlock and temporal attention are related as each VisualBlock performs temporal attention to exploit global temporal information of the visual data.
+visualblock,spatial attention,The VisualBlock and spatial attention are related as each VisualBlock conducts spatial attention to capture local spatial semantic information according to the context.
+frames,[cls] tokens,The frames and [CLS] tokens are related as multi-head attention is performed for the [CLS] tokens of all frames to produce output.
+frames,model performance,The frames and model performance are related as model performance is measured and compared on the VQA2.0 and NLVR2 datasets according to the context.
+m [cls],frame patches,The M [CLS] tokens are concatenated with the M × N tokens of frame patches as the output of the VisualBlock as mentioned in the context.
+m,n,The VisualBlock outputs frame patches denoted as Mij corresponding to the relationship between M and N tokens
+text encoder,word embeddings,The text encoder maps the input text into word embeddings through a stack of bidirectional transformers
+fusion encoder,two-stream architecture,The fusion encoder adopts a two-stream architecture with modality-specific self-attention blocks and cross-attention blocks in each layer
+vision features,language-to-vision cross-attention block,The vision features interact intra-modally in visual self-attention block and cross-modally in the language-to-vision cross-attention block
+text features,mean pooling,Text features are processed and the mean pooling of frame tokens by the fusion encoder is used as the global representation for text data
+global representation for visual data,[cls] token,The fusion encoder produces the global representation for visual data and the [CLS] token serves as the global representation for text data
+albef1,coco,ALBEF1 is a pre-trained model mentioned in the context and COCO is another model that is mentioned as being fine-tuned. Both are related through the process of model evaluation.
+flickr30k,sbu captions,Flickr30K and SBU Captions are datasets used for image-text pre-training. They are related in the context of being utilized as pre-training corpora.
+webvid,video-text pre-training,"WebVid is mentioned as a corpus for pre-training with 2.5M videos, while video-text pre-training is the process where the pre-trained model is applied. They are related in the context of being part of the pre-training process."
+clip-vit-224/16,roberta,CLIP-ViT-224/16 and RoBERTa are used to initialize vision and language encoders for the METER model. They are related in the context of being utilized for initialization in a specific model.
+scl,multimodal understanding tasks,"SCL is a model that achieves state-of-the-art performance in multimodal understanding tasks like VQA2.0 and NLVR2, implying the benefits of cross-modal fusion from a new pre-training task. They are related in the context of performance comparison and task achievement."
+model,pre-training task,Models benefit from the new pre-training task
+model,meter [9],Our model outperforms METER [9] by +1.04 and +1.14 scores on VQA2.0 test-dev and test-std
+model,vlmo [47],Our model gains +0.86 and +0.93 score improvements over VLMo [47] on NLVR2
+model,simvlm [48],Our model pre-trained with 4M images surpasses SimVLM [48]
+model,blip [28],Our model pre-trained with 4M images also surpasses BLIP [28]
+model,coco [33],Our model uses COCO [33] in the evaluation
+model,visual genome (vg) [26],Our model uses Visual Genome (VG) [26] in the evaluation
+model,conceptual captions (cc3m) [41],Our model uses Conceptual Captions (CC3M) [41] in the evaluation
+coco,flickr30k,Performance comparison of fine-tuned image-text retrieval on Flickr30K and COCO datasets
+model,albef(14m) [29],ALBEF(14M) [29] is pre-trained with > 10M images
+model,pixelbert [20],PixelBERT [20] is pre-trained with < 10M images
+msrvtt,lsmdc,Performance comparison of text-to-video retrieval on MSRVTT and LSMDC
+model,pre-training data scales,"The model is trained with CL and VTM losses, showing a relationship between the model and pre-training data scales."
+model,models,"Results are competitive with models pre-trained on larger datasets, such as ALIGN and ALBEF."
+vision,language,"The top-k candidates are filtered with vision and language encoders during inference, indicating a relation between vision and language."
+model,cl,"The model is trained with CL and VTM losses, establishing a connection between the model and CL."
+model,vtm,"During inference, VTM scores are computed for ranking, showing a relationship between the model and VTM."
+model,scl,"SCL achieves the best performance in zero-shot retrieval on Flickr30K, demonstrating a connection between the model and SCL."
+pre-trained model,scl,"SCL gains a boost from previous methods when evaluated with the pre-trained model, indicating a relationship between the pre-trained model and SCL."
+model,coco,"SCL outperforms models pre-trained on datasets of similar sizes when fine-tuned on COCO, showing a connection between the model and COCO."
+albef,scl,"SCL has a more impressive performance in five out of six recall metrics compared with ALBEF pre-trained on 14M images, indicating a relationship between ALBEF and SCL."
+model,tcl,"For fine-tuning experiments, our model surpasses previous models, such as TCL, by a large margin, establishing a relationship between the model and TCL."
+global-local,tcl,"Comparison between global-local and TCL methods, highlighting the boost in IR and TR performance on COCO and Flickr30K datasets."
+global-local,align [23],"Comparison between global-local model and ALIGN [23] model, showcasing higher scores for the global-local model with semantic completion learning."
+global features,cross-modal information,"Global features from the model capture cross-modal information, resulting in enhanced retrieval performance."
+vision encoder,video-text pre-training,Adaptability of the vision encoder for transferring image-text pre-trained model to video-text pre-training.
+image-text pre-trained model,video pre-training model,"Evaluation of the image-text pre-trained model for text-to-video retrieval on MSRVTT and LSMDC datasets, demonstrating the performance of the video pre-training model."
+scl,previous sota model,"Comparison between SCL model and the previous state-of-the-art model, showing notable performance improvements in R@1 on MSRVTT and LSMDC datasets."
+scl,existing methods,Comparing the performance improvements of SCL model over existing methods in zero-shot retrieval on MSRVTT and LSMDC datasets.
+pre-training tasks,ours (mlm+vtm+cl+scl),"Demonstrating the impact of different pre-training tasks on performance, highlighting the model pre-trained without VTM for zero-shot retrieval capabilities."
+pre-training tasks,mlm+vtm+cl+mlsc+scl,The first row shows the results of our model with all pre-training tasks.
+pre-training tasks,mlm,The second row reflects the effect of removing MLM task separately.
+pre-training tasks,vtm,The third row reflects the effect of removing VTM task separately.
+pre-training tasks,cl,The fourth row reflects the effect of removing CL task separately.
+pre-training tasks,mlsc,The fifth row reflects the effect of removing MLSC task separately.
+vision encoder,mean pooling,The effect of using Mean Pooling as part of the vision encoder for video-text retrieval tasks.
+vision encoder,frame cls,The effect of using Frame CLS as part of the vision encoder for video-text retrieval tasks.
+vision encoder,video retrieval,The effect of using the vision encoder for video retrieval tasks.
+different pre-training tasks,cl,The impact of CL as a pretext task on both retrieval and understanding datasets.
+different pre-training tasks,vtm,The impact of VTM as a pretext task on both retrieval and understanding datasets.
+different pre-training tasks,mlm,The impact of MLM as a pretext task on both retrieval and understanding datasets.
+different pre-training tasks,scl,The impact of SCL as a pretext task on both retrieval and understanding datasets.
+retrieval performance,scl,SCL boosts IR@1 and TR@1 on F30K-ZS. Lack of SCL leads to a drop in retrieval performance with feature fusion.
+scl,"ir@1, tr@1",SCL brings a significant boost in IR@1 and TR@1 on F30K-ZS compared to when SCL is not present.
+scl,"mvsc, mlsc",SCL comprises MVSC and MLSC. MVSC and MLSC have impacts on the performance of downstream tasks.
+model without mlm,accuracy of vqa2.0,"Model without MLM loses accuracy in VQA2.0, indicating the significant effect of MLM in multimodal understanding tasks."
+vtm,nlvr2,VTM has a relatively large impact on NLVR2.
+contrastive learning,retrieval,"Contrastive learning is effective for retrieval tasks, possibly due to the already learned cross-modal fusion from other pre-training tasks."
+"mvsc, mlsc",improvement of downstream tasks,"Either MVSC or MLSC can improve the performance of downstream tasks, with MVSC having a superior impact on retrieval tasks."
+"mvsc, mlsc",visual information understanding,"MVSC improves the robustness of visual information understanding, while MLSC plays a more important role in tasks like VQA2.0 and NLVR2."
+mask ratio,scl,"Mask ratios of SCL are observed in Table 7, indicating the importance of mask ratio in the context of SCL."
+mask ratio,image,"The mask ratios of image and text affect downstream tasks, especially on zero-shot retrieval. Model performance is influenced by the image mask ratio and text mask ratio."
+mask ratio,text,"When the text mask ratio is set to 0.4, the results of the image mask ratio of 0.8 are the highest. The mask ratio plays a crucial role in semantic completion and learning across modalities."
+text mask ratio,image mask ratio,Choosing 0.4 as the text mask ratio and 0.8 as the image mask ratio has been found effective in the study. Different combinations of mask ratios impact cross-modal interactions and performance.
+cross-attention visualization,text,The cross-attention visualization of text [CLS] on the whole image for the model pre-trained with or without SCL is depicted. This visualization includes cross-modal attention maps and heatmaps for better understanding.
+vision encoder design,video data,The vision encoder design is compared with other variants to analyze its effectiveness in processing video data. Mean Pooling is one of the variants that treats a video as separate images and then uses the mean for processing.
+mean pooling,video representation,Mean Pooling treats a video as M separate images and then uses the mean pooling of [CLS] tokens as the video representation.
+global cls,vision encoder,Global CLS is the vision encoder proposed by MCQ.
+vision encoder,webvid dataset,The vision encoder and text encoder are pre-trained on the WebVid dataset via contrastive learning.
+vision encoder,zero-shot cross-modal retrieval,The vision encoder and text encoder are pre-trained via contrastive learning and then conduct zero-shot cross-modal retrieval on the MSRVTT dataset.
+frame cls,performance on both video-to-text and text-to-video retrieval tasks,Frame CLS achieves the best performance on both video-to-text and text-to-video retrieval tasks.
+scl,cross-modal alignment for global representations,SCL boosts cross-modal alignment for global representations.
+[cls],whole image,Visualizing cross-attention maps between text [CLS] and the whole image in the last layer of the fusion encoder.
+[cls],"fish, lemons, asparagus in the image","After semantic completion learning, [CLS] pays attention to the fish, lemons, asparagus in the image."
+completion learning,fish,completion learning pays attention to the fish in the image
+completion learning,lemons,completion learning pays attention to the lemons in the image
+completion learning,asparagus,completion learning pays attention to the asparagus in the image
+fish,lemons,fish and lemons are both parts of the image being studied
+fish,image,fish is a part of the image being studied
+lemons,image,lemons are a part of the image being studied
+image,model,the model pre-trained with SCL identifies the dishes and sink in the kitchen from the image
+dishes,sink,the model pre-trained with SCL identifies the dishes and sink in the kitchen
+attention maps,heads,"the attention maps of different heads are distinctive, meaning each head learns various information from the image"
+model,attention maps,the model pre-trained with SCL has distinctive attention maps for different heads
+semantic completion learning,global representations,semantic completion learning encourages global representations to learn cross-modal interactions
+knowledge,modality,semantic completion learning extracts useful knowledge from the other modality
+scl,pre-training tasks,SCL differs from previous pre-training tasks by leveraging cross-modal interactions to recover global semantic information
+scl,cross-modal alignment,SCL promotes cross-modal alignment for global representations
+vision encoder,image-text,the vision encoder adapts to image-text multimodal tasks
+vision encoder,video-text,the vision encoder adapts to video-text multimodal tasks
+model,downstream tasks,the model is applied to various challenging downstream tasks
+video-text pre-training,model,The model was applied after the pre-training phase in the context mentioned
+model,challenging downstream tasks,The model was applied to various challenging downstream tasks
+evaluations,superiority,The evaluations validated the great superiority of the SCL method
+superiority,scl method,The SCL method showed great superiority as validated by the evaluations
+work,national natural science foundation of china,The work was partly supported by the National Natural Science Foundation of China
+work,shenzhen science and program,The work was partly supported by the Shenzhen Science and Program

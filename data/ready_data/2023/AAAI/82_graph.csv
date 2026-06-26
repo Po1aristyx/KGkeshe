@@ -1,0 +1,112 @@
+node_1,node_2,edge
+human pose estimation,high-resolution representation,The context highlights the importance of high-resolution representation for achieving good performance in human pose estimation models.
+high-resolution representation,computational burden,The dense high-resolution representation is mentioned as a significant computational challenge.
+sparse human keypoint locations,human pose estimation,The question asks if it's necessary to describe the whole image in a dense manner
+sharpose,dynamic transformer models,SHaRPose is based on dynamic transformer models to address the need for sparse high-resolution representations.
+sharpose,coarse stage,SHaRPose consists of a coarse stage where relations between image regions and keypoints are mined.
+sharpose,quality predictor,A quality predictor is used to refine estimation results if needed.
+sharpose,fine stage,The fine stage focuses on sparse high-resolution representations for precise estimations.
+sharpose-base,vitpose,SHaRPose-Base outperforms ViTPose with a higher AP and faster inference speed.
+sharpose-base,coco validation set,SHaRPose-Base achieves 77.4 AP on the COCO validation set.
+sharpose-base,coco test-dev set,SHaRPose-Base also performs better on the COCO test-dev set with 76.7 AP.
+human pose estimation,fundamental task,human pose estimation is a fundamental task in the field of computer vision.
+human pose estimation,action recognition,HPE forms the foundation for many downstream tasks
+human pose estimation,abnormal behavior detection,HPE also supports tasks like abnormal behavior detection due to its potential applications.
+sharpose,method,SHaRPose is a method in the field of human pose estimation.
+coarse stage,fine stage,SHaRPose consists of a coarse stage and a fine stage for different levels of representation.
+sharpose,progress,Great progress has been made in SHaRPose and other methods recently.
+peak of heatmaps,output of hpe methods,Leading methods output heatmaps
+transformer-based models,human pose estimation,The context discusses the efficiency of Transformer-based models specifically in the context of human pose estimation.
+efficiency,transformer-based models,The main question explores the computational efficiency of these models for high-resolution inputs.
+high-resolution input,computational cost,Models like ModelHRNetViT have increased computational cost due to high-resolution requirements.
+vitpose,modelhrnetvit,ViTPose is used as an example to demonstrate the experiment with different input sizes.
+intermediate transformer layer,heatmap decoder,Intermediate layer outputs are redirected to the heatmap decoder to generate heatmaps for keypoint localization.
+decoder's response,image regions,The decoder's attention shifts from global to local
+keypoint-related image regions,accurate estimation results,Sufficient context for accurate pose estimation may come from focusing on the sparse local areas containing keypoints.
+keypoint-related image regions,accurate estimation results,Sufficient for achieving accurate results
+sharpose method,human pose estimation,Proposed method specifically for human pose estimation.
+framework,pure transformers,Based on transformers
+transformer (bach et al. 2015; chefer,gur,and wolf 2021; liang et al. 2022)
+initial stage,coarse-grained patches,Processes input at a lower resolution to reduce computation.
+quality predictor module,confidence score,Evaluates predicted pose and decides further processing.
+fine stage,finer-grained patches,Used when initial prediction is not confident enough.
+image patches,strong correlations to keypoints,Split into finer detail only if they contribute to keypoint detection.
+unnecessary high-resolution image,computational burden,Prevents excessive computation by focusing on relevant patches.
+sharpose,pose estimation task,SHaRPose proposes to use sparse high-resolution representations for the first time introducing a dynamic optimization strategy in the pose estimation task.
+sharpose,transformer models,SHaRPose improves the efficiency of pure transformer models
+sharpose,vitpose-base,SHaRPose shows competitive performance
+vision transformer (vit),pose estimation,ViT is used in pose estimation due to its ability to capture long-range dependencies
+vision transformer (vit),various computer vision tasks,Transformers have shown overwhelming performance in multiple computer vision tasks
+rakamrishna et al. (2014),human body structure modeling,Their work highlights the value of Transformers for capturing long-range dependencies in human body structure modeling.
+tompson et al. (2014),human body structure modeling,Similar to Rakamrishna et al.
+table value in modeling,human body structure,The context discusses table value methods used to model the structure of the human body.
+prtr,cascaded transformer structure,PRTR proposes a cascaded transformer for end-to-end keypoint regression.
+transpose,transformer encoder,TransPose employs a transformer encoder for heatmap response generation.
+hrformer,hrnet,HRFormer adopts HRNet's structure and adds attention blocks for larger receptive fields.
+tfpose,keypoint queries,TFPose uses keypoint queries to regress coordinates from transformers.
+tokenpose,token-based heatmap representations,TokenPose proposes token-based representations to model body parts.
+vitpose,plain transformer,ViTPose explores the use of a plain transformer for pose estimation.
+cnn-based methods,global attention,Transformer-based models outperform CNNs with global attention
+sparse high-resolution representation mechanism,global modeling advantages,The paper explores a mechanism to balance global modeling with reduced computation.
+global attention,larger computation cost,The use of global attention increases computation
+coarse-inference stage,image regions and keypoints,The stage aims to capture relations between image regions and keypoints.
+coarse-inference stage,heatmap,The stage produces a coarse inferred heatmap to assess accuracy.
+coarse-inference stage,keypoint tokens,Introduced as queries to represent the keypoints for the objective.
+keypoint tokens,quality token,Keypoint tokens and the quality token are part of the input sequence.
+quality token,predicted human pose quality,The quality token helps estimate the accuracy of the predicted pose.
+transformer encoder,input token sequence,A K-layer transformer processes the composed input sequence.
+transformer encoder,output sequence,The encoder generates the final output sequence.
+keypoint decoder,output keypoint tokens,The decoder creates heatmaps using the output keypoint tokens.
+keypoint decoder,multiple linear projection module,Used to build heatmaps from the keypoint tokens.
+unified multiple linear projection module,visual tokens,The unified module projects input keypoint tokens K through a linear projection to generate feature maps.
+coarse-predicted heatmaps,decoder,The decoder utilizes the coarse heatmaps produced in the previous stage to refine the predictions.
+attention scores ˆah;k,image patches,Attention scores are used to select high-scoring image patches
+fine-grained patches,mlp,An MLP is applied to incorporate coarse-stage information into the fine-grained patch processing.
+quality embedding q0,predicted keypoints,The quality embedding helps determine the quality of predicted keypoints by fusing visual and keypoint token information.
+quality predictor module,quality score,The quality predictor computes the quality score using an MLP
+quality score q,threshold qthres,A threshold separates easy and hard samples
+fine stage,hard and easy samples,The fine stage processes only those images with low-quality scores
+fine-inference stage,model,The Fine-Inference Stage involves a model that generates high-resolution representations and makes precise pose predictions using coarse-stage attention.
+model,attention matrix,The model leverages attention scores obtained in the coarse stage
+attention matrix,keypoint tokens,The attention matrix measures interactions between keypoint tokens and coarse-grained image tokens.
+keypoint-related patch recognition,relevance score,This process requires a relevance score between image patches and keypoints for deciding which regions need high-resolution features.
+attention vector,visual tokens,Attention vectors in the Transformer layers are combined to obtain the final visual token correlation score.
+ema (exponential moving average),attention scores,EMA is used to combine attentions from different Transformer layers for a more stable representation.
+final visual token correlation score,image patches,The score is used to rank and select relevant image patches for human estimation.
+sharpose-small,sharpose-base,SHaRPose-Small and SHaRPose-Base are different models in the instantiated SHaRPose family
+sharpose-base,input size,The Base model has an input size of 384x288 pixels
+sharpose-base,feat. dim.,The Base model has a feature dimension of 384
+sharpose-base,depth,The Base model has a depth of 384
+sharpose-base,patch size,The Base model uses a patch size of 196.6
+sharpose-base,params,The Base model has 32.9 billion parameters
+sharpose-base,gflops,The computational complexity is measured in terms of GFLOPs
+sharpose-base,fine stage transformer,A separate transformer
+sharpose-base,inferred heatmaps,The Base model generates fine inferred heatmaps through a shared decoder.
+loss function,lheatmap,The loss function includes an Lmse term for heatmap prediction
+loss function,lqp,Lqp is another loss term
+coco,experiment setup,Experiments are conducted on the COCO dataset
+image patches,high-resolution representations,SHaRPose is used for generating high-resolution representations from image patches
+predicted pose quality,qthres,Qthres controls the number of samples entering the fine stage based on predicted pose quality
+transformer blocks,sharpose configuration,The depth (number of Transformer blocks) is a part of the instantiated SHaRPose models
+mmpose framework,training environment,All experiments are conducted using the MMPose framework on NVIDIA RTX 3090 GPUs
+masked autoencoder pretrain,pretraining technique,Used for exploring the potential of pure Transformers
+udp,post-processing method,UDP is used for refining the model's predictions
+confidence values,prediction objective,The model aims to predict confidence values accurately with the quality predictor
+quality predictor,convergence rate,The quality predictor converges faster than the heatmap
+coco,benchmark dataset,Comparison to state-of-the-art methods is done on the COCO dataset
+dark post-processing,model accuracy,Our model improves +0.2 AP in accuracy.
+model,inference speed,The model is nearly 1.3 times faster in inference speed.
+vitpose-base,our model,Our model has a +0.5 AP improvement over ViTPose-Base.
+shapepose-base model,pckh score,Our SHaRPose-Base model achieves a PCKh score of 91.4.
+shapepose-base model,throughput,It outperforms others with 2-3 times higher throughput.
+α,sparsity level,α controls the sparsity level of the high-resolution representation.
+α,accuracy,Increasing α from 0 to 0.4 brings significant accuracy improvement.
+α,computational costs,For higher resolutions
+256x192 input resolution,accuracy,For 256x192
+384x288 input resolution,computational costs,For 384x288
+national natural science fund of china,grant no.62172222,62072354
+postdoctoral innovative talent support program of china,grant 2020m681609,This is another grant program
+fundamental research funds for the central universities,grant qtzx23084,These funds are financial support provided by central universities for fundamental research projects.
+national natural science fund of china,postdoctoral innovative talent support program of china,Both programs are part of the broader funding landscape supporting academic research in China.
+national natural science fund of china,fundamental research funds for the central universities,These are distinct but related sources of funding
+work,national natural science fund of china,postdoctoral innovative talent support program

@@ -1,0 +1,250 @@
+node_1,node_2,edge
+inverse molecular design,diffusion models,Inverse molecular design is closely related to diffusion models in the context of material and drug discovery.
+inverse molecular design,material discovery,Inverse molecular design is directly involved in the advancement of material discovery.
+inverse molecular design,drug discovery,Inverse molecular design plays a significant role in drug discovery processes.
+diffusion models,unconditional molecular generation,Diffusion models have shown success in unconditional molecular generation.
+diffusion models,integration of multiple properties,Integrating multiple properties into diffusion models remains unexplored in the context.
+diffusion models,multi-conditional molecular generation,Diffusion models are essential for multi-conditional molecular generation.
+graph diffusion transformer (graph dit),encoder,Graph DiT integrates an encoder to learn numerical and categorical property representations.
+graph diffusion transformer (graph dit),transformer-based denoiser,Graph DiT incorporates a Transformer-based denoiser for molecular generation.
+graph diffusion transformer (graph dit),graph-dependent noise model,Graph DiT is trained with a graph-dependent noise model for accurate estimation of graph-related noise in molecules.
+graph diffusion transformer (graph dit),multi-conditional polymer generation,Graph DiT is validated for multi-conditional polymer generation.
+graph diffusion transformer (graph dit),small molecule generation,Graph DiT is validated for small molecule generation.
+graph diffusion transformer (graph dit),distribution learning,Results demonstrate the superiority of Graph DiT across nine metrics from distribution learning for molecular properties.
+graph diffusion transformer (graph dit),condition control,Results demonstrate the superiority of Graph DiT across nine metrics for condition control in molecular properties.
+graph dit,gas separation,A polymer inverse design task for gas separation demonstrates the practical utility of Graph DiT.
+diffusion models,molecular graphs,Diffusion models are essential for inverse design of materials and drugs using molecular graphs.
+diffusion models,atom/bond types,Diffusion models are trained to predict discrete graph structures and atom/bond types in denoising processes.
+discrete graph structures,atom/bond types,Discrete graph structures are related to atom/bond types when predicting graph structures in denoising processes.
+practical inverse designs,molecular synthetic score,Practical inverse designs consider factors like molecular synthetic score when generating graph structures.
+practical inverse designs,various properties,Practical inverse designs consider various properties when generating graph structures.
+multi-conditional graph generation,multi-property relations,Existing work tackles multi-property relations in the context of multi-conditional graph generation.
+multi-conditional graph generation,single-condition generation,Existing work converts multiple conditions into a single one when solving the task of multi-conditional graph generation.
+properties,diverse scales and units,"Properties have diverse scales and units, for example, synthetic complexity ranges from 1 to 5, while gas permeability varies widely."
+multi-conditions,categorical and numerical properties,Multi-conditions consist of a mix of categorical and numerical properties.
+addition,multiplication,Common practices like addition or multiplication are considered inadequate for combining multi-conditions.
+multi-conditional generation,molecules meeting multiple properties,The goal of multi-conditional generation is to discover molecules that meet multiple properties.
+test set,data points,The test set consists of 100 data points used for experimentation.
+synthesizability,o2 permeability,Properties like synthesizability and O2 permeability are considered in the context of the experiment.
+o2 permeability,n2 permeability,Properties like O2 permeability and N2 permeability are considered in the context of the experiment.
+graph,polymer,"Different sets of graphs are generated in relation to polymers, specifically aiming to meet multiple properties as constraints."
+existing work,limitation,"The limitation of the existing work is highlighted by the median rank of 30, showing failure to intersect sets of generated graphs from different single conditions in meeting multiple properties."
+proposed work,multi-conditional guidance,"The proposed work introduces multi-conditional guidance for diffusion models, successfully generating polymers that satisfy multi-property constraints, achieving a higher rank than 30 in any set of the single-conditional generated graphs."
+idea,multi-conditional guidance,"The idea of multi-conditional guidance is implemented for diffusion models, leading to the successful generation of polymers satisfying multi-property constraints."
+graphs,polymers,Graphs are generated aiming to intersect with polymers meeting multi-property constraints.
+multi-properties,representations,"To address challenges, multi-properties are projected into representations through learning."
+graph dit,graph diffusion transformer,"Graph DiT is proposed as a graph denoiser under conditions, with a condition encoder for property representation learning"
+graph dit,graph dit,Graph DiT has a condition encoder for property representation learning and a graph denoiser
+graph dit,graph tokens,Graph DiT integrates node and edge features into graph tokens for denoising
+graph dit,adaln,Graph DiT denoises tokens with adaptive layer normalization (AdaLN) in Transformer layers
+graph dit,molecular statistics,AdaLN in Graph DiT replaces the molecular statistics with condition representation for improved performance
+forward diffusion processes,graph dit,"Existing forward diffusion processes apply noise separately to atoms and bonds, impacting the accuracy of Graph DiT"
+graph dit,graph-dependent noise model,Novel graph-dependent noise model is proposed in Graph DiT to apply noise tailored to dependencies between atoms and bonds
+polymer,graph dit,Polymers generated by Graph DiT closely align with multi according to the results shown
+polymers,graph dit,The polymers generated by Graph DiT are closely aligned with multi-property constraints.
+graph dit,conditional,The polymers are generated from Graph DiT conditional on three properties.
+oracle,graph,The Oracle determines the rank of the graph among 30 single-conditionally generated graphs for each condition.
+polymer dataset,numerical conditions,The polymer dataset includes four numerical conditions for multi-conditional evaluation.
+model performance,polymer,The model performance is evaluated on one polymer dataset.
+model performance,molecule datasets,The model performance is evaluated on three small molecule datasets.
+model performance,mean absolute error (mae),"The model achieves the lowest average mean absolute error (MAE), reducing the error by 17.86% compared to the best baseline."
+model performance,accuracy,"The model excels in small molecule tasks, achieving over 0.9 accuracy on task-related categorical conditions, notably surpassing the baseline accuracy of less than 0.6."
+polymer designs,o2/n2 gas separation,The model's utility is examined in inverse polymer designs for O2/N2 gas separation.
+domain expert feedback,model's utility,Domain expert feedback highlights the model's practical utility in multi-conditional molecular design.
+molecular graph,nodes,A molecular graph consists of a set of nodes (atoms)
+molecular graph,edges,A molecular graph consists of a set of edges (bonds)
+bond,edge,A 'non-bond' is defined as a type of edge in the molecular graph
+atom,atom type,"Each atom has a one-hot encoding, denoting the atom type"
+bond features,tensor,The bond features are represented as a tensor in the molecular graph
+conditional molecular generation,model parameterized,A model parameterized by θ is used for multi-conditional molecular generation
+distribution learning,condition control,The evaluation involves both distribution learning and condition control in molecular generation
+oracle functions,conditioned property,Oracle functions can independently evaluate each conditioned property
+diffusion model,forward diffusion process,Diffusion models consist of forward diffusion processes
+diffusion process,noisy states,The diffusion process corrupts molecular graph data into noisy states
+molecular graph data (g0 = g),noisy states gt,Corruption of molecular graph data G0 into noisy states Gt through the process of q(Gt
+q(gt )(cid:81)t,stationary distribution π(g),Convergence of q(GT ) to a stationary distribution π(G) as the number of timesteps T goes to infinity
+reverse markov process pθ(g0:t ),neural networks,Parameterization of the reverse Markov process pθ(G0:T ) by neural networks for denoising latent states
+diffusion process,structural properties of molecules,Perturbation of Gt in a discrete state-space to capture the structural properties of molecules through the diffusion process
+transition matrices qv ∈ rfv ×fv and qe ∈ rfe×fe,nodes xv and edges xe,Definition of transition matrices QV and QE for nodes XV and edges XE respectively in the context of structural properties of molecules
+noise qi (i ≤ t),step i,Independent application of noise Qi to X in each step i of the diffusion process
+noise schedule,transition matrices qv and qe,Control of noise application to atom features and bond features by transition matrices QV and QE respectively
+vignac et al.,"π(g) = (mx ∈ rfv , me ∈ rfe )",Definition of π(G) as mX and mE based on the work of Vignac et al.
+π(g),mx ∈ rfv,π(G) defined as the marginal distributions of atom types mX ∈ RFV
+π(g),me ∈ rfe,π(G) defined as the marginal distributions of bond types mE ∈ RFE
+qt,αti,Transition matrix Qt at timestep t = αtI
+qt,(1− αt)1m′,Transition matrix Qt at timestep t = (1− αt)1m′
+τ,1 ατ,τ =1 ατ
+¯αt,cos(0.5π(t/t + s)/(1 + s))2,Cosine schedule option for ¯αt = cos(0.5π(t/T + s)/(1 + s))2
+gt ∼ π(g),g0,Initial sampling GT ∼ π(G) generates G0 iteratively in reversed steps
+molecular properties,conditions,Molecular properties are not considered as conditions.
+property-related guidance,additional predictors,Efforts have been made to introduce property-related guidance using additional predictors.
+m conditions,condition encoder,The condition encoder learns the representation of M conditions.
+representation,molecular representations,The statistics of the condition encoder's representation are used to replace the ones from the molecular representations.
+noise model,diffusion process,A new noise model is introduced in the diffusion process to better fit graph-structured molecules.
+transition probability,node and edge state transitions,The transition probability of a node or an edge relies on the joint distribution of nodes and edges in the prior state.
+diffusion models,node and edge state transitions,"Current diffusion models treat node and edge state transitions as independent, misaligning with the denoising process."
+difference,sampling distributions,The difference between the sampling distributions of noise in the diffusion and reverse processes introduces unnecessary challenges to multi-conditional molecular generations.
+matrix xg,graph tokens,"A single matrix XG is used to represent graph tokens for G, where graph tokens are created by concatenating the node feature matrix."
+token representations,node feature matrix xv,Token representations are created by concatenating the node feature matrix XV
+token representations,flattened edge connection matrix from xe,Token representations are created by concatenating the flattened edge connection matrix from XE
+qg,qv,QG considering the joint distribution of nodes and edges is constructed from four matrices QV
+qg,qev,QG considering the joint distribution of nodes and edges is constructed from four matrices QEV
+qg,qe,QG considering the joint distribution of nodes and edges is constructed from four matrices QE
+qg,qv e,QG considering the joint distribution of nodes and edges is constructed from four matrices QV E
+qvqg,qevn,The equation QVQG =1N ⊗ QEVN signifies a relationship between QVQG and QEVN
+qvqg,qv e,The equation QVQG =1N ⊗ QEVN ⊗ QV E indicates a relation between QVQG and QV E
+qg,qevn,QEVN is involved in the construction of QG
+qg,qv e,QV E is involved in the construction of QG
+qg,qv,QV is involved in the construction of QG
+qg,qe,QE is involved in the construction of QG
+v,cat sampling,"In the diffusion noise model, ˜p is normalized to sample Xt using categorical sampling (Cat)"
+˜p,cat,"In the diffusion noise model, ˜p is normalized to sample Xt using categorical sampling (Cat)"
+node feature transitions,both node features and edge features,The first FV columns in QG determine the node feature transitions based on both node features and edge features
+edge feature transitions,entire graph,"The remaining N · FE columns determine the edge feature transitions, depending on the entire graph"
+qv e,qev,QV E and QEV are matrices defined based on the co-occurrence frequencies of atom and bond types in training molecular graphs. They represent the probability distributions of co-occurring atom types for each bond type.
+mv e,mev,mV E is the transpose of mEV and represents the probability of co-occurring atom types for each bond type.
+qev,qv e,QEV and QV E are components combined to form XtG. They are defined as linear combinations with respect to probabilities of co-occurring atom types.
+graph dit,c,Graph DiT is a denoising model used to generate molecules under multi-conditions represented by C.
+conditional guidance,classifier-free guidance,"conditional guidance and classifier-free guidance are contrasting methods for guidance, with the former focusing on predicting noise and the latter directly estimating conditional probabilities."
+condition encoder,graph denoiser,The architecture comprises both the condition encoder and the graph denoiser components which work together to process conditions and denoise the graph.
+timestep t,d-dimensional representation,timestep t is treated as a special condition to obtain a D-dimensional representation following sinusoidal encoding.
+numerical condition ci,distinct encoding operations,"Distinct encoding operations are applied to numerical conditions ci to obtain a D-dimensional representation, each using specific encoding methods based on the condition type."
+encoding,clustering-based approach,The clustering-based approach is evaluated against alternatives like direct or interval-based encodings.
+clustering-based approach,other methods,The clustering encoding outperforms the other methods.
+graph tokens,h,Graph tokens are represented as H in the hidden space.
+h,transformer layers,The hidden space H is adapted using standard Transformer layers with self-attention and multi-layer perceptrons.
+adaln,representation of the condition,"The AdaLN is controlled by the representations of the conditions, and it provides a representation of the condition."
+representation of the condition,mean and variance values,The representation of the condition is calculated using the mean and variance values.
+neural network modules,linear layers,The neural network modules consist of linear layers with SiLU activation.
+adalngate,residuals,"The gated variant AdaLNgate is applied for residuals, incorporating the condition representation."
+structure representation,condition representation,In-Context conditioning adds condition representation to the structure representation.
+cross-attention,condition representation,Cross-Attention calculates cross-attention between the condition and structure representation
+adaln,cross-attention,AdaLN performs best among them as observed in section 4.4
+final mlp,hidden states h,The MLP is used to predict node probabilities ˜X0V and edge probabilities ˜X0E at t = 0 after the final Transformer layers
+output xg,atom and bond features ˜x0e,The output XG is split into atom and bond features ˜X0E
+generation to molecule conversion,generated graphs,"A common way of converting generated graphs to molecules selects only the largest connected component [43], denoted as Graph DiT-LCC"
+input,mae,MAE is calculated between the input and the results from Multi-Conditional Generation of 10K Polymers
+gas permeability,o2,Gas permeability is calculated for O2 among other gases mentioned in the context.
+gas permeability,n2,Gas permeability is calculated for N2 among other gases mentioned in the context.
+gas permeability,co2,Gas permeability is calculated for CO2 among other gases mentioned in the context.
+mae,input conditions,Mean Absolute Error (MAE) is calculated between the input conditions and the properties of the generated polymers using Oracles.
+mae,generated polymers,Mean Absolute Error (MAE) is calculated between the input conditions and the properties of the generated polymers using Oracles.
+oracles,generated polymers,The properties of the generated polymers are evaluated using Oracles.
+modelgraph ga,graph dit-lcc (ours),ModelGraph GA is compared to Graph DiT-LCC (Ours) in the context.
+graph dit-lcc (ours),graph dit (ours),Graph DiT-LCC (Ours) is related to Graph DiT (Ours) in the context.
+graph dit-lcc (ours),graph dit (ours),Graph DiT-LCC (Ours) is compared to Graph DiT (Ours) in the context.
+graph dit,experiment,Graph DiT is part of the experiment mentioned in the context.
+graph dit,molecular optimization,Graph DiT is compared to baselines from molecular optimization in the context.
+graph dit,diffusion models,Graph DiT is compared to baselines from diffusion models in the context.
+graph dit,polymer inverse design,Graph DiT is studied for polymer inverse design in the context.
+datasets,molecular graph,Datasets used include a molecular graph with various nodes and atoms as mentioned in the context.
+datasets,numerical properties,Datasets include both numerical and categorical properties for drugs and materials as mentioned in the context.
+numerical properties,o2perm,One of the numerical properties mentioned is O2Perm.
+numerical properties,co2perm,One of the numerical properties mentioned is CO2Perm.
+numerical properties,n2perm,One of the numerical properties mentioned is N2Perm.
+o2perm,co2perm,Numerical gas permeability conditions include O2Perm and CO2Perm.
+o2perm,n2perm,Numerical gas permeability conditions include O2Perm and N2Perm.
+co2perm,n2perm,Numerical gas permeability conditions include CO2Perm and N2Perm.
+moleculenet,hiv,MoleculeNet dataset includes a class related to HIV virus replication inhibition.
+moleculenet,bbbp,MoleculeNet dataset includes a class related to blood-brain barrier permeability.
+moleculenet,bace,MoleculeNet dataset includes a class related to human β-secretase 1 inhibition.
+sas,scs,Numerical conditions for synthesizability include synthetic accessibility (SAS) and complexity scores (SCS).
+dataset,training,"The dataset is split into training, validation, and testing sets."
+dataset,validation,"The dataset is split into training, validation, and testing sets."
+dataset,testing,"The dataset is split into training, validation, and testing sets."
+oracle,random forest,The evaluation Oracle uses random forest trained on all task-related molecules.
+oracle,model controllability,Lower MAE or higher accuracy indicates stronger model controllability.
+baselines,graph-ga,Molecular optimization baselines include Graph-GA.
+baselines,mars,Molecular optimization baselines include MARS.
+baselines,jtvae,Molecular optimization baselines include JTVAE.
+jtvae,bayesian optimization,JTVAE is combined with Bayesian optimization.
+baselines,lstm,Molecular optimization baselines include LSTM.
+graph-ga,mars,Both Graph-GA and MARS are mentioned as models in the context of molecular optimization.
+jtvae,bayesian optimization,JTVAE is combined with Bayesian optimization to form JTVAE-BO in the context of molecular optimization.
+lstm,smiles,LSTM is used on SMILES data for molecular optimization.
+hill climbing,lstm,Hill Climbing is used with LSTM for molecular optimization.
+gdss,digress,Both GDSS and DiGress are referred to as diffusion models in the context of molecular optimization.
+mood,digress v2,MOOD and DiGress v2 are mentioned as conditional versions with extra predictors in the context of molecular optimization.
+mood,digress v2,MOOD and DiGress v2 models are used for training multi-task predictors with the same architecture.
+gdss,digress,GDSS and DiGress are compared in terms of performance with rule checking in the generation-to-molecule step.
+graphga,digress,GraphGA's approach to eliminating non-valid molecules during mutation and crossover iterations is discussed in comparison with DiGress.
+graph dit,validity,"Graph DiT is mentioned to maintain over 0.8 validity without rule-based processing, unlike other models."
+synthesizability score,categorical task-specific property,MAE/Accuracy calculated by comparing input conditions and generated properties
+model(w/o rule checking),coverage,Model coverage is related to the absence of rule checking
+model(w/o rule checking),diversity,Model diversity can be affected by rule checking
+model(w/o rule checking),similarity,Model similarity is impacted by the absence of rule checking
+model(w/o rule checking),distance,Model distance is associated with the absence of rule checking
+ga (graph dit-lcc),graph dit (ours),"GA is a baseline for generating in-distribution molecules, Graph DiT shows competitive performance in fitting molecular data distributions"
+"diffusion model baselines (digress, mood)",graph dit,Diffusion model baselines could produce diverse molecules but Graph DiT shows competitive performance in fitting complex molecular data distributions
+"diffusion model baselines (digress, mood)",original data distribution,Diffusion model baselines often fail to capture the original data distribution
+graph dit,fragment-based similarity and neural network-based,Graph DiT demonstrates competitive performance in fitting complex molecular data distributions using fragment-based similarity and neural network-based methods
+fragment-based similarity,neural network-based distance metrics,These two concepts are used to achieve the best in the polymer task and rank second in the HIV small molecule task.
+lstm-hc,baselines,"LSTM-HC surpasses many baselines, achieving lower average MAE on polymer properties and higher rankings on small molecular properties."
+mars,gdss,MARS effectively manages synthetic scores for polymers but exhibits a larger MAE in gas permeability conditions compared to other baselines. GDSS performs well in gas permeability control but underperforms Graph GA and MARS in terms of the synthetic score condition.
+digress v2,mood,"DiGress v2 and MOOD, although equipped with the predictor guidance, still exhibit limited condition control compared to their unconditional counterparts over polymer and small molecule tasks."
+graph dit,diffusion models,"Graph DiT significantly improves diffusion models and achieves the best multi-conditional performance in all tasks. In polymer tasks, Graph DiT reduces MAE on all gas permeability conditions, averaging +17.8% improvement over the best baseline LSTM-HC. For small molecule tasks, Graph DiT consistently ranks top-1 in condition controllability."
+lstm-hc,graph dit,LSTM-HC consistently ranks top-1 in condition controllability with over 0.9 accuracy in categorical conditions. Graph DiT shows better controllability performance due to minimal rule-based post-generation processing.
+condition controllability,graph dit,Graph DiT consistently ranks top-1 in condition controllability with over 0.9 accuracy in categorical conditions.
+graph dit-lcc,graph dit,"Compared to Graph DiT-LCC, we observe that Graph DiT shows better controllability performance due to minimal rule-based post-generation processing."
+polymers,o2/n2 permeability ratio,Polymers are designed with high O2 and low N2 permeability based on the O2/N2 permeability ratio.
+polymers,graph dit,The top-3 polymers are all generated by Graph DiT.
+clustering-based encoding,adaln,Reference Value for similarity and diversity metrics
+clustering-based encoding,adaln,Reference Value for Graph Dependent Noise Model for other metrics
+current option,clustering-based encoding,current option as the Current Value
+current option,adaln,current option as the Current Value
+top three polymers,models,top three polymers generated by each model
+random forest algorithm,five polymers,identifies the top five polymers per method
+polymers,scientists,"evaluated by four polymer scientists, who rank them"
+rankings,utility score,Rankings are normalized to a Utility Score
+utility score,agreement score,Utility Score is converted into an Agreement Score for further evaluation
+polymers,graph dit,three polymers generated by Graph DiT are the most promising for successful polymer inverse design tasks
+digress,polymerization points,DiGress struggle to capture polymerization points
+mood,polymerization points,MOOD struggle to capture polymerization points
+digress,caron atoms,DiGress feature excessive carbon atoms
+mood,carbon atoms,MOOD feature excessive carbon atoms
+molecules,carbon atoms,Molecules frequently feature excessive carbon atoms.
+molecules,large cycles,Molecules frequently feature overly large cycles.
+carbon atoms,large cycles,Excessive carbon atoms are related to the presence of overly large cycles.
+molecular configurations,canonical geometry,Molecular configurations with significant distortion from canonical geometry may lead to poor synthesizability.
+lstm-hc,carbon chains,LSTM-HC may result in too-long carbon chains.
+lstm-hc,graph dit,LSTM-HC and Graph DiT are both methods mentioned to produce certain results.
+mars,asymmetrical graph structures,MARS produces examples with asymmetrical graph structures.
+support vector machine,digress,Support Vector Machine and DiGress are mentioned together.
+graph dit,digress,Graph DiT is mentioned with DiGress and LSTM-HC.
+graph dit,digress v2,Graph DiT is related to DiGress v2.
+graph dit,polymerization points,Graph DiT generates structurally diverse polymers with two polymerization points.
+polyimides,gas separation performance,Polyimides imply effective gas separation performance.
+oracles,generation evaluation,Oracles are used for Generation Evaluation.
+random forest,gaussian process,Random Forest and Gaussian Process are compared with an average rank of 4.4.
+model components,numerical conditional encoding,Model components include numerical conditional encoding as a significant factor.
+numerical conditional encoding,clustering encoding,"Results in Figure 4(a) highlight the superiority of clustering encoding over direct and interval-based encoding, particularly in controlling gas permeability, despite its slightly lower diversity."
+clustering encoding,direct encoding,"Results in Figure 4(a) highlight the superiority of clustering encoding over direct and interval-based encoding, particularly in controlling gas permeability, despite its slightly lower diversity."
+clustering encoding,interval-based encoding,"Results in Figure 4(a) highlight the superiority of clustering encoding over direct and interval-based encoding, particularly in controlling gas permeability, despite its slightly lower diversity."
+neural architecture for conditions,adaln,"As shown in Figure 4(b), similar to Figure 4(a), AdaLN surpasses both In-Context Conditioning and Cross-Attention in learning distribution with better condition controllability."
+adaln,in-context conditioning,"As shown in Figure 4(b), similar to Figure 4(a), AdaLN surpasses both In-Context Conditioning and Cross-Attention in learning distribution with better condition controllability."
+adaln,cross-attention,"As shown in Figure 4(b), similar to Figure 4(a), AdaLN surpasses both In-Context Conditioning and Cross-Attention in learning distribution with better condition controllability."
+graph-dependent noise model,noise to atoms and bonds,The third component validates the importance of the graph-dependent noise model compared to separately applying noise to atoms and bonds.
+predictor-free graph dit,predictor-guided digress v2,"It also shows the improvement of the predictor-free Graph DiT over the predictor-guided DiGress v2, even without the graph-dependent noise model."
+oracles,random forest,Oracles are switched from Random Forest to Gaussian Process or Support Vector Machines for ranking generative model performance.
+oracles,gaussian process,Oracles are switched from Random Forest to Gaussian Process or Support Vector Machines for ranking generative model performance.
+oracles,support vector machines,Oracles are switched from Random Forest to Gaussian Process or Support Vector Machines for ranking generative model performance.
+dit,diffusion models for molecules,DiT consistently ranked first among baselines in the context of diffusion models for molecules.
+digress,discrete noise as transition matrices,DiGress used discrete noise as transition matrices based on marginal distributions of atom and bond types.
+digress,extra predictor models,Extra predictor models are studied to guide the generation process in DiGress.
+digress,gdss,Extra predictor models are studied to guide the generation process in DiGress and GDSS.
+diffusion models,molecular property prediction,Diffusion models could also be used for molecular property prediction.
+diffusion models,conformation,Diffusion models could be used for conformation prediction.
+diffusion models,molecule generation with 3d atomic coordinates,Diffusion models could be used for molecule generation with 3D atomic coordinates.
+diffusion models,molecular graph generation,"We focus on molecular graph generation, considering the high computational cost of accurate 3D coordinates for larger molecules like polymers."
+diffusion models,predictor-free diffusion guidance,We explore predictor-free diffusion guidance instead of the classifier guidance for generating molecules under categorical and numerical conditions.
+digress,genetic algorithms,Genetic algorithms are used to optimize molecules towards property constraints.
+digress,bayesian optimization,Bayesian optimization is used to optimize molecules towards property constraints.
+digress,reinforce,REINFORCE is used to optimize molecules towards property constraints.
+digress,reinforcement learning,Reinforcement learning is used to optimize molecules towards property constraints.
+digress,sequential and graph-based generative models,Both sequential and graph-based generative models are used along with diverse sampling methods to optimize molecules.
+algorithms,sampling methods,Algorithms are used in conjunction with diverse sampling methods to produce desirable molecules.
+methods,single-objective and multi-objective optimization,"These methods have been applied to both single-objective and multi-objective optimization, integrating multiple property conditions."
+challenges,molecular optimization methods,"Several challenges in molecular optimization methods remain underexplored, including the inadequate or unclear definition of multi-property relations."
+challenges,oracle function,Challenges include inaccessibility of the oracle function for property-oriented optimization during the training phase.
+graph dit,inverse molecular design,"In this work, inverse molecular design was solved using properties as predictor-free diffusion guidance with Graph DiT."
+graph dit,generative capabilities,Results showed the remarkable generative capabilities of Graph DiT for designing promising molecules.

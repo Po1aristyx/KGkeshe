@@ -1,0 +1,132 @@
+node_1,node_2,edge
+vision-language pre-training (vlp),clip,CLIP is a notable VLP method
+clip,object recognition,CLIP yields impressive zero-shot and low-shot fine-tuning results in object recognition.
+pre-training on 400m image-text pairs,vlp models,These models
+chexzero [34],clip-like model,CheXzero is described as a strong CLIP-like model
+medical field,zero-shot disease recognition,Recent methods in the medical field use CLIP for zero-shot disease recognition without further fine-tuning.
+costly medical data annotation,reliance reduced,Using CLIP reduces the need for extensive medical data annotation
+multi-aspect matching model,image alignment,Our model enhances image alignment by leveraging medical knowledge to decompose disease terms.
+covid-19,lung diseases,Covid-19 is mentioned as a lung disease
+cardiomegaly,heart disease,Cardiomegaly is identified as a separate heart disease
+transformer-based fusion layers,discriminative features,The supervised head uses these layers to extract relevant features from the input.
+medical vision-language pre-training (vlp),two-stream approach,Most VLP methods follow this approach
+convirt,bidirectional contrastive loss,This method proposes a way to match image-reports using a bidirectional loss function.
+gloria,local contrastive loss,GLoRIA focuses on capturing fine-grained alignments between image regions and sentence tokens.
+lovt,fine-grained image-aspect matching,LoVT also contributes to fine-grained alignment
+biovil,clinical vocabulary and report-specific data augmentation,BioViL enhances biomedical text modeling by incorporating clinical language and custom data.
+biovil-t,self-supervised signals in temporal images and reports,An extension of BioViL
+mgca,pseudo-entity level alignment,MGCA aligns disease prototypes as clusters in the feature space using a clustering approach.
+current report matching methods,image-report scarcity,These methods face challenges due to limited availability of medical image reports.
+clip,data-intensive model,CLIP struggles to align data effectively due to the lack of abundant medical image-report pairs.
+disease definition matching methods,sampled biomedical text inputs,These methods showcase different types of input text for aligning with medical definitions.
+medical image reports,data-intensive models,CLIP struggles with alignment due to the scarcity of medical image reports.
+raw reports,text inputs,Current approaches represent text inputs as raw reports
+disease descriptions,text inputs,Current approaches represent either raw reports or disease descriptions without considering fine-grained details.
+misalignment issue,seen and unseen categories,The misalignment problem is exacerbated for diseases not present in the pre-training dataset.
+multi-aspect vision-language matching (mavl) framework,image-text misalignment,The paper proposes MAVL to resolve misalignment for both seen and unseen diseases.
+visual aspects,disease descriptions,Diseases are dissected into elemental aspects to enhance alignment.
+gpt-4,semi-automatic pipeline,GPT-4 is used in a semi-automatic process to extract descriptions of visual aspects.
+visual profiles,diseases,Harnessing pre-established knowledge about diseases' visual profiles.
+covid-19,edema,Covid-19 is described by its visual aspect of grainy texture.
+covid-19,pneumothorax,Covid-19's visual aspect is also compared to pneumothorax's position in the lungs.
+clinical-specific prompts,disease classes,The prompts describe possible sub-types
+chexzero [34],binary prompt,CheXzero constructs a binary prompt to obtain a binary classification of a disease.
+medklip [39],clinical descriptions,MedKLIP retrieves medical findings' descriptions from the UMLS knowledge base.
+proposed method,pathological's visual descriptions,The proposed method uses visual descriptions of diseases for effective detection in images.
+language concept bottleneck models (cbm),explainable ai,CBMs leverage visual descriptions for interpreting VL models
+proposed framework,medical models,Our framework guides pre-training for medical models using visual descriptions.
+visual descriptions of diseases,natural world objects,Extracting visual descriptions for diseases is more challenging than for objects in the natural world.
+ours,cbm studies,Ours complements CBM studies
+vlp (vision-language pre-training),supervised training,Section 3.1 discusses the reformulation of VLP for supervised learning.
+multi-aspect vision-language matching (mavl) framework,disease detection,MAVL decomposes disease detection into a multi-aspect matching process.
+multi-aspect vision-language matching (mavl) framework,disease entities,The MAVL framework decomposes disease entities into visual aspects.
+medical experts' knowledge,visual aspects of diseases,Leveraging the knowledge of medical experts helps in decomposing diseases.
+dual-head transformer model,unseen and seen pathologies,The model is designed to detect both unseen and seen diseases.
+problem setting,b image-report pairs,The task involves training a model on image-report pairs for disease diagnosis.
+multi-modal model,disease presence,The model aims to diagnose the presence of diseases in images at inference time.
+zero-shot visual grounding,heatmap,A heatmap generated by the model indicates the visual presence of a disease.
+vision module (fvision),image,fvision processes the image input to extract visual features.
+language module (ftext),textual disease description (tc),ftext handles the text input for understanding the disease description.
+fusion module (φfusion),predicted likelihood (ˆp) and heatmap (ˆm),Φfusion combines visual and textual information to produce predictions.
+clinical reports,linguistic challenges,Reports present challenges due to negation expressions and dense terminologies.
+medical entity tagging models,radgraph,RadGraph is a specific example of a medical entity tagging model.
+vlp (visual-language pre-training),supervised multi-label recognition,VLP is reformulated as a supervised multi-label recognition task.
+radgraph,entities (diseases or medical findings),RadGraph is used to extract diseases and medical findings from reports.
+entities,location (e.g.,lung
+reports,disease entities (c),Disease entities are extracted from all report databases.
+reports,locations (l),Locations are also extracted from reports for entity context.
+image i,multi-label classification,Image I is used for multi-label classification based on disease presence.
+vlp,visual aspects,VLP is enhanced by decomposing disease descriptions into visual aspects.
+disease entity,visual aspects,Each disease entity is decomposed into a set of K visual aspects.
+gauge model (llm),disease entity,The proposed framework uses a Gauge Model (LLM) to generate descriptions of visual aspects for each disease entity.
+visual aspects,knowledge base,From a medical professionals' knowledge base
+set of visual aspects sj,sj1,sj2
+description(sjk),llm,Each aspect entity sjk is described using an LLM.
+fine-grained description sj0,umls knowledge base,sj0 is a description of the disease extracted from the UMLS knowledge base.
+mavl framework,image ii,The MAVL framework performs a fine-grained matching between images and disease aspects to detect the presence of the disease.
+radgraph,medical findings,The framework leverages RadGraph's 75 medical findings for annotation and decomposition.
+expert annotation,two medical experts,Two medical experts
+visual aspects (23),consensus (7),There are 23 annotated aspects
+extra 'other' aspect,experts and llm,An 'other' aspect is added for any additional distinct features to recognize the disease.
+total visual aspects,8,The framework includes 8 visual aspects in total.
+gpt-4,visual descriptions of diseases,GPT-4 is used to extract visual descriptions programmatically for new diseases during inference.
+previous report matching methods,ours,Our method differs from previous ones as it matches with the textual representations of a common visual knowledge base.
+common visual knowledge base,disease's shape,opacity levels
+supervised transformer-based module,θground,Θground is developed for fine-grained classification of base diseases
+descriptive visual aspects,aj,AJ represents a set of descriptive visual aspects for a disease entity
+base diseases,seen diseases,The model optimizes fine-grained classification for a large set of base diseases mentioned in the pre-training dataset.
+mimic-cxr v2,dataset,MIMIC-CXR v2 is a pre-training dataset consisting of more than 227k studies with paired image-report data from 65
+paired image-report data,component of mimic-cxr v2,The dataset contains paired image and report data as part of each study.
+65,379 distinct patients,population in mimic-cxr v2
+377,110 images,total number of images in mimic-cxr v2
+chestx-ray14,downstream dataset,ChestX-ray14 is a separate dataset used for testing the model's performance on 14 diseases.
+112,120 frontal-view x-ray images,image count in chestx-ray14
+30,805 individual patients,population in chestx-ray14
+14 prevalent diseases,labels in chestx-ray14,The dataset is labeled with 14 common diseases for training
+0.8/0.1/0.1 split,partitioning of chestx-ray14,The dataset is divided into train
+padchest-seen,padchest-unseen,The context differentiates between 'seen diseases' (PadChest-seen) and 'unseen diseases' (PadChest-unseen)
+padchest-unseen,39 rare diseases,The passage specifies that the top 20 rarest diseases are part of the unseen diseases
+39 rare diseases,nord database,These 39 rare diseases are sourced from the National Organization of Rare Diseases (NORD) database.
+approximately 27% of the data,expert-annotated test samples,This portion of the data is annotated by radiologists
+rsna pneumonia,260,000 frontal-view chest x-rays
+rsna pneumonia,pneumonia segmentation and classification tasks,The dataset is suitable for both segmentation and classification tasks.
+rsna pneumonia,radiological society of north america (rsna),The dataset is collected by the RSNA.
+siim-acr pneumothorax,12,000 frontal-view chest x-rays
+covidx cxr-2,29,986 images
+covid rural,over 200 chest x-ray,COVID Rural provides a smaller dataset of chest X-rays for COVID-19 detection.
+covid-19,chest x-ray,The context mentions that COVID-19 dataset 'COVID Rural' consists of over 200 chest X-rays with annotated segmentation masks.
+covid rural dataset,annotated segmentation masks,These masks are used for segmentation evaluation within the dataset.
+chest x-ray,segmentation masks,The masks are associated with chest X-rays for the purpose of segmentation.
+partition,0.6/0.2/0.2 for train/valid/test set,The dataset is partitioned into train
+pre-training,clinicalbert,The text encoders are initialized with ClinicalBERT weights and kept frozen during pre-training.
+visual encoder,transformer fusion module,During pre-training
+fine-tuning,resnet50,For fine-tuning
+fine-tuning,resunet,ResUNet is used for segmentation
+zero-shot case,sota models,The experimental results are compared to state-of-the-art (SOTA) models for both seen and unseen diseases.
+classification,segmentation tasks,Results are presented for both classification and segmentation in the zero-shot setting.
+fine-tuning case,classification and segmentation tasks,The fine-tuning case evaluates the model's transferability on both classification and segmentation tasks.
+sec. 5.2,classification and segmentation tasks,Section 5.2 focuses on evaluating the model's performance on these tasks during fine-tuning.
+medklip,our model,Our model consistently improves upon MedKLIP by up to 8.56% in F1 scores across 5 datasets.
+supervised methods,contrastive methods,Supervised methods
+zero-shot evaluation,seen diseases,The zero-shot evaluation is conducted for seen diseases
+zero-shot evaluation,unseen diseases,A separate evaluation is also done for unseen diseases
+padchest (spain),mimic data (us),PadChest has a distribution shift from MIMIC data
+chexpert,rsna,These datasets are from different demographics
+detailed visual aspects,our method's strength,Our method excels at capturing detailed visual information
+classification of rare diseases,contrastive head,The contrastive head improves the AUC scores of MedKLIP and CheXzero by 17.26% and 7.65%
+long-tailed distribution,pathological visual profiles,Leveraging prior knowledge about pathological visual profiles boosts the classification of the long-tailed distribution of diseases.
+rsna pneumonia,covid-19,Visual grounding results shown for RSNA Pneumonia and Covid-19 in Figure 5.
+explainability,visual grounding,Explainability is important in the medical domain
+medklip,covid-19,Our model improves the Dice score of MedKLIP for Covid-19 by 5.34%.
+mavl,generalization of unseen diseases,Decomposing diseases into common visual aspects in MAVL enhances generalization for unseen diseases.
+visual grounding,abnormalities localization,Our model exhibits enhanced effectiveness in localizing abnormalities in images.
+false positive detection,other methods,Our model yields lower false positive detection compared to other methods.
+sota image-text pre-training models,comparison,Table 3 presents a comparison of our model with state-of-the-art (SOTA) image-text pre-training models.
+training (mavl) framework,pathological entities,The MAVL framework is designed to dissect pathological entities.
+mavl framework,distinct,visually descriptive aspects
+dual-head,aspect-oriented transformer,mavl framework
+performance across both seen and unseen diseases,mavl's approach,MAVL shows effectiveness for novel diseases
+aspect-based matching,mavl,MAVL's aspect-based matching leads to a 17.26% AUC improvement for rare unseen diseases.
+hospital research foundation group,funding source,This research was partially funded by the Hospital Research Foundation Group.
+women's and children's health network,funding source,The Women's and Children's Health Network also supported the research.
+dr. perperidis,funding supporter,Dr. Perperidis contributed to the funding for the project.

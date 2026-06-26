@@ -1,0 +1,248 @@
+node_1,node_2,edge
+yoco,large language models,YOCO is a decoder-decoder architecture designed for large language models.
+yoco,key-value pairs,YOCO architecture only caches key-value pairs once for large language models.
+yoco,cross-decoder,YOCO consists of a cross-decoder component stacked upon a self-decoder.
+yoco,self-decoder,YOCO includes a self-decoder that efficiently encodes global key-value caches.
+kv caches,cross-decoder,KV caches are reused by the cross-decoder via cross-attention in YOCO architecture.
+model,transformer,"YOCO model behaves like a decoder-only Transformer, although YOCO only caches once."
+yoco,gpu memory demands,YOCO design substantially reduces GPU memory demands while retaining global attention capability.
+yoco,prefilling,"The computation flow in YOCO enables prefilling to early exit without changing the final output, significantly speeding up the prefill stage."
+yoco,transformer,YOCO achieves favorable performance compared to Transformer in various settings of scaling up model size and number of training tokens.
+yoco,1m context length,YOCO is extended to 1M context length with near-perfect needle retrieval accuracy.
+yoco,inference memory,"YOCO improves inference memory, prefill latency, and throughput by orders of magnitude across context lengths and model sizes."
+decoder-only architecture,standard option,The decoder-only architecture is established as the standard option.
+serving tokens,key-value (kv) caches,"As the number of serving tokens increases, the key-value (KV) caches occupy a lot of GPU memory."
+kv caches,gpu memory,"KV caches occupy GPU memory, rendering the inference of large language models memory-bounded."
+language model,gpu memory,Large language models occupying GPU memory affects processing.
+language model,capacity,The size of language models can exceed the capacity of GPU memory.
+gpus,language model,The processing power required by language models can demand multiple GPUs.
+long-sequence input,prefilling latency,Prefilling latency for long-sequence input can be extremely high.
+h100 gpus,language model,Specific configurations of H100 GPUs are utilized for language models.
+decoder-decoder architecture,large language models,The decoder-decoder architecture proposed for large language models.
+caches,kv pairs,YOCO architecture in large language models caches KV pairs once.
+cross-decoder,self-decoder,The cross-decoder layers employ cross-attention to reuse shared KV caches obtained by the self-decoder.
+decoder-decoder architecture,encoder-decoder,The decoder-decoder architecture conceptually resembles encoder-decoder.
+encoder-decoder,decoder-only model,The whole model behaves more like a decoder-only model from an external view.
+encoder-decoder,decoder-decoder architecture,The computation flow of the decoder-decoder architecture enables prefilling to early exit before entering the self-decoder.
+decoder-only model,self-decoder,The computation flow of the decoder-decoder architecture enables prefilling to early exit before entering the self-decoder.
+yoco,kv caches,"YOCO only caches once, significantly reducing the GPU memory consumption of KV caches."
+yoco,long-sequence training,YOCO allows for more efficient system design for distributed long-sequence training.
+yoco,gated retention,"We propose gated retention for self-decoder, which augments retention with a data-controlled gating mechanism."
+retention,gated retention,Gated retention augments retention with a data-controlled gating mechanism.
+yoco,language modeling performance,Experimental results demonstrate that YOCO achieves favorable language modeling performance.
+yoco,inference efficiency,YOCO has many advantages in terms of inference efficiency.
+yoco,transformer language models,YOCO are competitive compared to Transformer language models.
+yoco,transformer,"YOCO is competitive compared to Transformer in terms of context length, needle retrieval accuracy, and performance on various tasks."
+yoco,gpu memory footprint,"YOCO improves GPU memory footprint, prefill latency, throughput, and serving capacity."
+kv caches,yoco,"The memory of KV caches can be significantly reduced by YOCO, particularly for 65B models and other model sizes."
+yoco,prefill latency,"YOCO speeds up the prefill stage significantly for different context and input sizes, reducing the prefill latency compared to Transformer."
+yoco,large language models,The results position YOCO as a strong candidate model architecture for future large language models with native long-sequence support.
+kv caches,sparse transformer,"Efforts have been made to reduce KV caches for inference through mechanisms like Sparse Transformer, linear attention, recurrent modeling, and achieving sparsity."
+kv caches,sparsity,Some research focuses on dropping KV caches to achieve sparsity for inference.
+kv caches,cross-attention,One global KV cache is kept to conduct full cross-attention for better long-context modeling compared to other approaches.
+global kv cache,full cross-attention,Global KV cache is used while conducting full cross-attention for better long-context modeling.
+previous methods,proposed architecture (yoco),Previous methods are complementary to the proposed YOCO architecture.
+multi-/grouped-query attention,yoco,Multi-/grouped-query attention can be used in YOCO.
+multi-latent attention,yoco,Multi-latent attention can be used in YOCO.
+low-bit kv quantization,memory consumption,Low-bit KV quantization can be used to reduce memory consumption.
+yoco,prefill stage,The intriguing property of YOCO greatly speeds up the prefill stage.
+yoco,autoregressive modeling,"YOCO is designed for autoregressive modeling, such as large language models (LLMs)."
+decoder-decoder architecture,self-decoder,"The decoder-decoder architecture consists of two parts, self-decoder and cross-decoder."
+self-decoder,cross-decoder,The self-decoder and cross-decoder are components of the decoder-decoder architecture.
+self-decoder,cross-decoder,Both self- and cross-decoder follow a similar block layout
+self-decoder,pre-rmsnorm,Self-decoder includes pre-RMSNorm as an improvement
+self-decoder,swiglu,Self-decoder includes SwiGLU as an improvement
+self-decoder,grouped-query attention,Self-decoder includes grouped-query attention as an improvement
+self-decoder,global kv cache,Self-decoder generates the global KV cache which is used by cross-decoder for cross-attention
+cross-decoder,global kv cache,Cross-decoder uses global cross-attention to attend to the shared KV caches produced by self-decoder
+self-decoder,causal masking,Both self-decoder and cross-decoder use causal masking in their architecture
+cross-decoder,tokens,Tokens generated by cross-decoder are fed back to self-decoder
+self-decoder,embdiddings x0,Self-decoder takes embeddings X0 as input
+embdiddings x0,intermediate vector representation xl/2:yl,Embiddings X0 are used to compute intermediate vector representation XL/2:Yl by self-decoder
+intermediate vector representation xl/2:yl,swiglu,Intermediate vector representation XL/2:Yl is processed using SwiGLU by self-decoder
+efficient self-attention,swiglu,"SwiGLU is defined as a function that involves swish, X, weights W1, and W2. It is used in relation to efficient self-attention in the given context."
+efficient self-attention,rmsnorm,"RMSNorm is used for LN(·), and LN is used in efficient self-attention, establishing a relationship between the two terms."
+efficient self-attention,causal masking,"Both efficient self-attention and causal masking are used together, indicating a functional relationship between them."
+efficient self-attention,cross-decoder,"KV caches generated by self-decoder module are used by cross-decoder in the context, creating a connection between efficient self-attention and cross-decoder."
+cross-decoder,self-decoder,"The output of self-decoder generates KV caches for cross-decoder, implying an association between the two modules."
+cross-decoder,attention,"Attention function is applied in cross-decoder modules to calculate Yl, indicating a dependency between cross-decoder and Attention."
+cross-decoder,causal masking,"Causal masking is also used for cross-attention in cross-decoder, establishing a link between the two modules."
+yoco,transformer,YOCO significantly reduces serving costs and improves inference performance compared to Transformer. YOCO roughly saves L times GPU memory for caches compared to Transformer.
+yoco,n,YOCO reduces serving costs and improves inference performance by reusing global KV caches and requiring about O(N) caches compared to N x L keys and values in Transformer decoders.
+yoco,cl,YOCO enables serving more tokens by having a much smaller amount of CL caches compared to N x L keys and values in Transformer decoders.
+yoco,l,YOCO enables to serve many more tokens without being out of GPU memory by saving GPU memory for caches compared to Transformer.
+gpu memory,batch size,"The increased batch size is beneficial to inference throughput, which can lead to being out of GPU memory."
+cross-decoder,self-decoder,"The cross-decoder reuses the outputs of the self-decoder, leading to early exit before entering the cross-decoder during the prefill stage."
+computation dependency,prefilling speed,The intriguing property of computation dependency greatly accelerates the prefilling speed.
+layers,prefilling latency reduction,"Only half the layers are needed for forward computation, resulting in at least half prefilling latency reduction."
+efficient attention modules,prefilling latency reduction,The efficient attention modules of the self-decoder contribute to reducing the prefilling latency.
+context length,prefilling latency,"For the example of 512K context length, the prefilling latency can be decreased to less than 6 seconds, showcasing a significant reduction."
+yoco,prefilling time,YOCO presents about three times speedup in terms of prefilling time compared to the example of 32K length.
+attention modules,transformer,Table 2 compares the prefilling time complexity of attention modules between Transformer and YOCO.
+self-decoder,self-attention methods,"Various efficient self-attention methods can be chosen for the self-decoder, impacting the cache memory complexity and deployment costs."
+sliding-window attention,attention range,"Sliding-window attention restricts the attention range into a fixed window size C, unlike vanilla Transformer decoders which attend to all previous tokens."
+sliding-window attention,kv cache memory complexity,"During inference, the KV cache memory complexity can be reduced from O(N) to O(C) by sliding-window attention, making memory usage constant instead of increasing with sequence length."
+sliding-window attention,multi-head self-attention,"Similar to multi-head self-attention, sliding-window attention computes the output via a specific formula, allowing for effective computation."
+gated retention,retention,"Gated retention augments retention with a data-dependent gating mechanism, enhancing the efficiency of the self-attention module."
+gated retention,parallel computation,"Gated retention unifies parallel, recurrent, and chunkwise recurrent computation paradigms, achieving the same computation results through different computation methods."
+gated retention,recurrent computation,"Gated retention combines parallel, recurrent, and chunkwise recurrent computation paradigms to achieve efficient computation and data processing."
+training process,parallel or chunkwise recurrent paradigms,The training process usually uses the parallel or chunkwise recurrent paradigms
+training process,inference stage,The inference stage can employ the recurrent paradigm for constant KV memory
+parallel representation,gated retention,"The gated retention is defined as: Q = (XWQ) ⊙ Θ, K = (XWK) ⊙ Θ,V = XWV , Θn = einθ(cid:40)(cid:89)nγ = sigmoid(XWγ)1/τ , Dnm =i=m+1gRet(X) = (QK0,⊺ ⊙ D)Vγi, n ≥ m n < m where WQ, WK, WV ∈ Rd×d and Wγ ∈ Rd×1 are learnable weights, and the temperature term τ encourages γ to 1 for better memorization"
+data-controlled decay,nvidia tensor cores,The data-controlled decay is head-wise rather than element-wise so that the computation can fully utilize NVIDIA tensor cores
+recurrent representation,output of gated retention,"Being equivalent to Equation (5), the output of gated retention can be computed recurrently"
+recurrent representation,auto-regressive inference,"During auto-regressive inference, the self-decoder maintains Sn as the intermediate state for an efficient generation"
+chunkwise recurrent representation,unified formulation,The chunk-wise representation is a unified formulation of recurrent and parallel representations
+chunk,inner-chunk,The computation is divided into inner-chunk and cross-chunk parts.
+chunk,cross-chunk,The computation is divided into inner-chunk and cross-chunk parts.
+inner-chunk,i-th chunk,Denote [i] as the i-th chunk.
+i-th chunk,i,"x[i] = x(i−1)B+1,··· , xiB, we compute the i-th chunk as:(i−1)B+j(cid:89)β(i−1)B+j =γk, D[i](j, k) =β(i−1)B+k β(i−1)B+jif j ≤ k else 0k=(i−1)B+1 [i](V[i] ⊙ βiB (cid:123)(cid:122) [i] ⊙ D[i])V[i](cid:124)"
+inner-chunk,chunkwise paradigm,Appendix B proves the equivalence between the computation paradigms.
+chunkwise paradigm,parallelism,The chunkwise paradigm combines the best of parallelism and recurrence.
+chunkwise paradigm,recurrence,The chunkwise paradigm combines the best of parallelism and recurrence.
+chunkwise paradigm,flops,"i.e., saving FLOPs compared to fully parallel computation and reducing iterations compared to recurrent computation."
+chunkwise paradigm,gpu memory consumption,"During the training and prefill stages, the chunk-wise representation increases throughput and reduces GPU memory consumption."
+chunkwise paradigm,transformer language models,Table 3: Eval Harness [10] accuracy compared with well-trained Transformer language models.
+3b model,1.6 trillion training tokens,The 3B model is scaled to 1.6 trillion training tokens.
+1t and 1.6t results of stablelm-3b-4e1t,technical report,The 1T and 1.6T results of StableLM-3B-4E1T are taken from its technical report.
+multi-head gated retention,multi-head attention,Gated retention is applied to each head similar to multi-head attention.
+multi-head gated retention,multi-scale retention,Gated retention is applied to each head similar to multi-scale retention.
+groupnorm,each head,GroupNorm normalizes each head.
+swish gate,increase non-linearity,Swish gate is applied to increase non-linearity.
+yoco,large language models,YOCO is evaluated for large language models.
+stablelm-3b-4e1t,setting of stablelm-3b-4e1t,The setting of StableLM-3B-4E1T is followed to scale up training tokens.
+proposed architectures,scaling curves,The scaling curves of the proposed architectures are presented.
+long-sequence modeling capability,1m context length,The YOCO model is scaled up to 1M context length to evaluate its long-sequence modeling capability.
+deployment advantages,"gpu memory footprint, serving capacity, prefilling time, throughput","The deployment advantages, including GPU memory footprint, serving capacity, prefilling time, and throughput, are analyzed."
+yoco,competitive performance,YOCO achieves competitive performance in various evaluation metrics.
+yoco,inference cost,YOCO significantly reduces the inference cost.
+3b-size yoco language model,number of training tokens,A 3B-size YOCO language model is trained by scaling up the number of training tokens.
+checkpoints,transformer-based language models,Checkpoints are compared with strong Transformer-based language models.
+checkpoints,transformer-based language models,Checkpoints are compared with strong Transformer-based language models for evaluation.
+checkpoints,yoco,Checkpoints are compared with YOCO model in terms of performance.
+checkpoints,openllama-v2-3b,Checkpoints are compared with OpenLLaMA-v2-3B model in the results table for evaluation.
+checkpoints,stablelm-base-alpha-3b-v2,Checkpoints are compared with StableLM-base-alpha-3B-v2 model in the results table for evaluation.
+checkpoints,stablelm-3b-4e1t,Checkpoints are compared with StableLM-3B-4E1T model in the results table for evaluation.
+checkpoints,yoco,Checkpoints are compared with YOCO model for evaluation.
+checkpoints,yoco,Checkpoints are compared with YOCO model in terms of scalability.
+yoco,openllama-v2-3b,YOCO is compared with OpenLLaMA-v2-3B model for evaluation.
+yoco,stablelm-base-alpha-3b-v2,YOCO is compared with StableLM-base-alpha-3B-v2 model for evaluation.
+yoco,stablelm-3b-4e1t,YOCO is compared with StableLM-3B-4E1T model for evaluation.
+yoco,previous well-tuned transformer language models,YOCO achieves comparable results with previous well-tuned Transformer language models.
+yoco,checkpoints,YOCO is compared with the checkpoints in terms of performance.
+yoco,1t tokens,YOCO is compared with models trained with 1T tokens for evaluation.
+yoco,1.6t tokens,YOCO is compared with models trained with 1.6T tokens for evaluation.
+yoco,scaling curves,YOCO's scalability is compared with Transformers using scaling curves.
+yoco,yocogret,YOCO is compared with YOCOgRet model for evaluation.
+yoco,yocoswa,YOCO is compared with YOCOSWA model for evaluation.
+yoco,language models,YOCO expands language models of various sizes for evaluation.
+yoco,training data,YOCO uses the same training data and settings for models of various sizes.
+yoco,transformer architecture,YOCO is augmented with improvements from the Transformer architecture for evaluation.
+yoco,rmsnorm,YOCO integrates RMSNorm improvement for evaluation.
+yoco,swiglu,YOCO integrates SwiGLU improvement for evaluation.
+yocoswa,validation loss,YOCOSWA has a relationship with validation loss as seen in Figure 3
+lm loss,model size,LM loss decreases with the scaling up of the model size as shown in Figure 3
+model size,yoco,YOCO demonstrates effective scaling with respect to the model size compared to Llama-optimized transformer architecture
+yocogret,transformer and yocoswa,"YOCOGret outperforms Transformer and YOCOSWA, showing gains from hybrid architectures of attention and retention"
+yocogret,inductive biases,"The gains in YOCOGret come from hybrid architectures with attention and retention, where the inductive biases are complementary to each other"
+hybrid architectures,findings,"Recent hybrid architectures confirm similar findings, indicating the effectiveness of hybrid models"
+context length,model training,The context length of YOCO-3B is extended to 1M tokens and the model training continues progressively with longer lengths
+model training,sequence length,Training data is up-sampled according to sequence length for effective training
+pressure test,model retrieval,The pressure test evaluates whether models can retrieve information effectively
+gemini 1.5,lwm,Follows the evaluation setting of Gemini 1.5 [30] and LWM [24]
+gemini 1.5,needle-in-a-haystack test,Uses the evaluation setting of Gemini 1.5 [30] for Needle-In-A-Haystack test
+yoco-3b-1m,needle-in-a-haystack test,Passes the Needle-In-A-Haystack test with near perfect accuracy
+needle-in-a-haystack test,multi-needle retrieval,Includes both single-needle retrieval and multi-needle evaluation
+yoco-3b-1m,minicpm-128k,Compared with MiniCPM-128K in a multi-needle evaluation
+yoco-3b-1m,chatglm3-128k,Outperforms ChatGLM3-128K in a multi-needle evaluation
+lwm-1m-text,llama-2-7b,Continues training of Llama-2-7B
+yoco-3b-1m,minicpm-128k,Outperforms MiniCPM-128K in comparison
+yoco-3b-1m,chatglm3-128k,Outperforms ChatGLM3-128K in comparison
+yarn-mistral-128k,lwm-1m-text,These are different models or datasets used in the context
+yarn-mistral-128k,chatglm3-128k,These are different models or datasets mentioned
+minicpm-128k,chatglm3-128k,These are different models or datasets mentioned
+chatglm3-128k,yoco-3b-1msize,These are different models or datasets mentioned
+yoco-3b-1msize,book data,"YOCO is utilized for language modeling with different contexts, including Book data"
+yoco-3b-1msize,repository-level code data,"YOCO is utilized for language modeling with different contexts, including repository-level code data"
+yoco,long-distance information,"YOCO utilizes long-distance information for language modeling, improving performance"
+n,needles,"N represents the number of needles, which is used for retrieval accuracy evaluation"
+n,1m tokens,N is used as a reference point for needle retrieval and token length evaluation
+nll,context length,"NLL decreases consistently with longer context length, indicating efficient utilization of context information"
+latency,throughput,Latency and throughput are key performance indicators often considered together in system evaluation.
+latency,serving capacity,Latency impacts serving capacity as it affects the speed at which requests can be processed.
+throughput,serving capacity,Throughput and serving capacity are related in terms of the rate of processing requests.
+yoco,reduces deployment cost,"YOCO is shown to significantly reduce deployment cost, especially for long-sequence inference tasks."
+user experience,latency,"User experience, particularly latency, is improved by the YOCO model."
+user experience,performance,YOCO improves user experience by maintaining good performance while reducing expenses.
+yocogret,transformer,YOCOgRet is compared with Transformer to evaluate performance differences.
+model configuration,transformer,The default model configuration is compared with the Transformer model.
+grouped-query attention,transformer,Transformer utilizes grouped-query attention for fair comparison purposes.
+flash-decoding,transformer,Transformer employs Flash-Decoding technique for fair comparison against YOCOgRet.
+kernel fusion,transformer,Transformer uses kernel fusion for fair comparison with YOCOgRet.
+gated retention,chunk-recurrent representation,Gated retention uses chunk-recurrent representation in the prefill stage for effective processing.
+gated retention,recurrent representation,Gated retention utilizes recurrent representation in the generation stage for task completion.
+chunk size,256,The chunk size for gated retention is set to 256 for efficient processing.
+triton,gated retention,A Triton kernel is implemented for the gated retention model.
+evaluation sequence length,32k to 1m,The evaluation sequence length ranges from 32K to 1M for comprehensive testing.
+gpu memory,inference memory consumption,"GPU memory consumption is crucial for performance evaluation, including model weights and intermediate activations."
+memory bottleneck,kv caches,"With an increase in context length, KV caches become the main memory bottleneck."
+activation cost,kv cache memory footprint,YOCOgRet alleviates the activation cost and KV cache memory footprint for improved efficiency.
+memory cost,yoco,Memory cost is significantly reduced using YOCO model.
+memory consumption,yoco,Memory consumption of YOCO model is shown to be significantly reduced.
+yoco,memory cost,YOCO reduces memory cost significantly
+yoco,memory consumption,YOCO's memory consumption increases slowly along the sequence length
+yoco,inference memory usage,YOCO's overall inference memory usage is significantly lower compared to Transformers
+yoco,memory usage,YOCO requires significantly less memory compared to Transformers even with long sequences
+yoco,pre-filling latency,YOCO's prefilling latency is mentioned as a concern in user experience for long-context models
+yoco,inference throughput,YOCO has varying inference throughput compared to Transformers
+yoco,gqa,YOCO can serve more tokens with less GPU memory compared to Transformer's GQA
+memory consumption,yoco,YOCO's memory consumption is mentioned as being lower than Transformers
+memory usage,yoco,YOCO requires significantly less memory compared to Transformers
+inference throughput,yoco,YOCO has varying inference throughput compared to Transformers
+gqa,yoco,YOCO can serve more tokens with less GPU memory compared to Transformer's GQA
+memory cost,yoco,YOCO significantly reduces memory cost
+inference memory usage,yoco,YOCO's overall inference memory usage is significantly lower compared to Transformers
+pre-filling latency,yoco,YOCO's prefilling latency is mentioned as a concern in user experience for long-context models
+prefilling latency,user experience,Prefilling latency is a pain point of user experience for long-context models.
+prefilling latency,model,Prefilling latency is a pain point of user experience for long-context models.
+input sequences,length,"For 512K- and 1M-length input sequences, Transformer needs about 180 seconds and 300 seconds, respectively."
+transformer,computational complexity,"The computational complexity of Transformer is O(N 2), which requires a large number of FLOPs for long context."
+transformer,prefilling time,Figure 9 shows that YOCO reduces the Transformer prefilling time from 180 seconds to less than 6 seconds for 512K context.
+yoco,prefilling time,Figure 9 shows that YOCO reduces the Transformer prefilling time from 180 seconds to less than 6 seconds for 512K context.
+prefill stage,cross-decoder,The prefill stage can early exit before entering cross-decoder.
+prefilling latency,speedup,"So, there is at least two times speedup of prefilling latency even for short context."
+yoco,transformer,"For example, YOCO is 2.87× faster than Transformer for 32K length."
+throughput,tokens,"The throughput indicates how many tokens the model can process per second, involving both pre-filling and generation time."
+model,throughput,Figure 10 shows that YOCO achieves higher throughput across context lengths compared to Transformer.
+yoco,transformer,"For the example of 512K queries, Transformer’s throughput is 4.5 token/s while YOCO reaches 43.1 token/s, i.e., achieving 9.6× speedup."
+memory consumption,batch,"As the memory consumption is reduced, we can use larger batch."
+yocogret,transformer,YOCOgRet is compared with Transformer in terms of performance and model architecture
+yocogret,mamba,YOCOgRet is compared with Mamba in terms of model parameters and architecture
+yocogret,h3,YOCOgRet is compared with H3 in terms of model architecture and performance metrics
+yocogret,retnet,YOCOgRet is compared with RetNet in terms of model parameters and performance
+h3,mamba,H3 and Mamba are compared based on their model architectures and implementation details
+transformer,mamba,Transformer and Mamba are compared in terms of model architecture and performance
+long-context evaluation figure 11,answer perplexity,reporting the answer perplexity with varying context length
+table 5,fine-grained lm perplexity results,showing the fine-grained LM perplexity results
+table 5,4.126,indicating a specific perplexity result
+table 5,4.0675.6 ablation studiesvalid. set↓ ar-hit↓ first-occur↓yoco[1:1],presenting results of the ablation studies with YOCO
+yoco[1:1],unstacked yoco[1:1],comparing different layout configurations for YOCO based on self-decoder to cross-decoder layers ratio
+yoco[1:1],yoco[3:1],comparing the performance of YOCO[1:1] and YOCO[3:1]
+yoco[1:1],yoco[1:3],comparing the performance of YOCO[1:1] and YOCO[1:3]
+yoco[1:1],yoco[0:1],comparing the performance of YOCO[1:1] and YOCO[0:1]
+scaling law,choice of layer ratio,The scaling law guides the choice of layer ratio in the model architecture.
+unstacked yoco[1:1],word embeddings x 0,The setting 'Unstacked YOCO[1:1]' utilizes word embeddings X 0 as input to the cross-decoder.
+model 'interleaved & hybrid',hybrid architecture,The model 'Interleaved & Hybrid' is a hybrid architecture that interleaves gRetNet and Transformer layers.
+'s:c',ratio of self-decoder to cross-decoder layers,'[s:c]' represents the ratio of self-decoder to cross-decoder layers in the model.
+decoder-decoder architecture (yoco),large language modeling,The decoder-decoder architecture (YOCO) is proposed for large language modeling with better inference efficiency and competitive performance.
+yoco,transformers,YOCO achieves significantly better inference efficiency and competitive performance compared to Transformers.
+yoco,large language models,Experimental results demonstrate that YOCO achieves favorable results for large language models in various settings.
+yoco,inference efficiency,"Profiling results show that YOCO improves inference efficiency by orders of magnitude, especially for long-sequence modeling."
+ben huntley,gpu cluster,Ben Huntley is acknowledged for maintaining the GPU cluster.
+long-sequence training,cube,The long-sequence training utilizes CUBE.
+triton kernel,gated retention,The Triton kernel is implemented for gated retention based on FLA.
+research and development program of china,grant no. 2020yfa0804503,This work was supported in part by National Key Research and Development Program of China under Grant No. 2020YFA0804503.
+development program of china,grant no. 2020yfa0804503,The Development Program of China has been funded under Grant No. 2020YFA0804503.
+national natural science foundation of china,grant no. 62272264,The National Natural Science Foundation of China has been funded under Grant No. 62272264.
+beijing academy of artificial intelligence,national natural science foundation of china,The Beijing Academy of Artificial Intelligence has collaborated with the National Natural Science Foundation of China.
+beijing academy of artificial intelligence,grant no. 62272264,The Beijing Academy of Artificial Intelligence has received funding under Grant No. 62272264.

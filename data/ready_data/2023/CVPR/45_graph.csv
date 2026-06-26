@@ -1,0 +1,231 @@
+node_1,node_2,edge
+semi-supervised semantic segmentation,labeled data,semi-supervised semantic segmentation has achieved promising performance with a small fraction of labeled data
+semi-supervised semantic segmentation,unlabeled data,most existing studies treat all unlabeled data equally and barely consider the differences and training difficulties among unlabeled instances
+instance-specific supervision,model's evolution,Differentiating unlabeled instances can promote instance-specific supervision to adapt to the model’s evolution dynamically
+differences,instance-specific supervision,"In this paper, we emphasize the cruciality of differences and propose an instance-specific and model-adaptive supervision for semi-supervised semantic segmentation"
+imas,semi-supervised semantic segmentation,"In this paper, we emphasize the cruciality of differences and propose an instance-specific and model-adaptive supervision for semi-supervised semantic segmentation, named iMAS"
+imas,performance,"Relying on the model’s performance, iMAS employs a class-weighted symmetric intersection-over-union to evaluate quantitative hardness of each unlabeled instance"
+imas,training,iMAS supervises the training on unlabeled data in a model-adaptive manner
+imas,augmentation,iMAS dynamically adjusts the augmentation for each instance such that the distortion degree of augmented instances is adapted to the model’s generalization capability across the training course
+semantic segmentation,large datasets,"Semantic segmentation studies have achieved significant progress, relying on large datasets with high-quality pixel-level annotations."
+semantic segmentation,semi-supervised semantic segmentation (sss),Semi-supervised semantic segmentation has been proposed as a solution to reduce the requirement for labeled data in semantic segmentation studies.
+semi-supervised semantic segmentation (sss),labeled data,Semi-supervised semantic segmentation aims to mitigate the requirement for labeled data which is essential in achieving significant progress in semantic segmentation studies.
+semi-supervised semantic segmentation (sss),unlabeled data,Semi-supervised semantic segmentation utilizes unlabeled data along with labeled data to improve performance in segmentation.
+self-training (st),consistency regularization (cr),Self-training and consistency regularization are two main branches of approaches in semi-supervised semantic segmentation.
+self-training (st),data perturbations,Self-training approach follows a scheme of selective re-training on labeled and unlabeled data alternatively to improve segmentation performance.
+consistency regularization (cr),data perturbations,Consistency regularization-based approaches tend to apply data or model perturbations for improving prediction consistency in semantic segmentation.
+consistency regularization (cr),unlabeled data,Consistency regularization approaches enforce prediction consistency between different perturbed views of unlabeled data in semantic segmentation.
+strong data perturbations,cutmix,Strong data perturbations like CutMix have been shown to significantly benefit the performance of semi-supervised semantic segmentation training.
+consistency regularization (cr),contrastive learning techniques,Current state-of-the-art approaches integrate advanced contrastive learning techniques into consistency regularization-based approaches to exploit unlabeled data more efficiently for segmentation.
+cr-based approaches,unlabeled data,"CR-based approaches aim to exploit unlabeled data efficiently by incorporating techniques from [21, 24]."
+unlabeled data,pseudo-labels,"Works in [21, 24] aim to rectify pseudo-labels through training an additional correcting network."
+unlabeled data,learning difficulties,Majorities of SSS studies treat unlabeled data equally and ignore differences and learning difficulties among samples.
+unlabeled data,perturbing instances,Perturbing unlabeled data indiscriminately can lead to over-perturbation of difficult-to-train instances.
+model,generalization capability,Over-perturbations from indiscriminate perturbation of data can exceed the generalization capability of the model.
+model,effective learning,Over-perturbations hinder effective learning from unlabeled data.
+model,distribution,Hurt data distribution by improper perturbations as discussed in [47].
+sss studies,consistency losses,"In most SSS studies, consistency losses on different unlabeled instances are minimized in an average manner."
+consistency losses,model overfitting,Blindly averaging consistency losses can lead to model overfitting to noisy supervision.
+instance differences,instance-specific supervision,Instance differences are emphasized to provide instance-specific supervision on unlabeled data in a model-adaptive way.
+unlabeled samples,instantaneous instance 'hardness',Design an instantaneous instance 'hardness' to estimate generalization ability and current training difficulties in differentiating unlabeled samples.
+hardness,generalization ability,Hardness is used to estimate the current generalization ability of the model.
+hardness,training difficulties,Hardness is also used to estimate the current training difficulties of distinct unlabeled samples.
+evaluation,training status,The evaluation of hardness is closely related to the training status of the model.
+evaluation,model's performance,Hardness evaluation is assessed based on the model's performance.
+evaluation,adjustment of operations,The evaluation of hardness can be leveraged to adjust operations in the SSS procedure.
+model,evolution,A difficult-to-train sample can become easier with the evolution of the model.
+data,augmentation,Unlabeled data is weakly augmented by Aw() before fed into both the student and teacher models.
+hardness,information utilization,Hardness information can be utilized to apply adaptive augmentation on unlabeled data and weigh the unsupervised loss.
+model's weight,update,The teacher model's weight is updated by the exponential moving average of the student model's weight across the training course.
+imas,semi-supervised semantic segmentation,iMAS is proposed as an instance-specific and model-adaptive supervision for semi-supervised semantic segmentation.
+imas,teacher model,iMAS jointly trains the student and teacher models in a mutually-beneficial manner.
+teacher model,student models,The teacher model is an ensemble of historical student models.
+teacher model,pseudo-labels,Teacher model generates stable pseudo-labels for unlabeled data.
+imas,instance hardness,"In iMAS, the instance hardness of each unlabeled sample is evaluated."
+teacher model,segmentation predictions,Class-weighted symmetric intersection-over-union is used to evaluate the segmentation predictions of the teacher and student models.
+teacher model,ema teacher,There may be considerable disagreement between predictions of the EMA teacher and the current student.
+teacher model,unlabeled data,Teacher model generates stable pseudo-labels for unlabeled data.
+teacher model,historical,The teacher model is an ensemble of historical student models.
+unlabeled instance,model-adaptive data perturbations,Model-adaptive data perturbations are performed on each unlabeled instance based on evaluation results.
+unlabeled instance,weighted consistency loss,An instance-specific weighted consistency loss is minimized to train models in a curriculum-like manner.
+imas,model’s generalization capability,"iMAS benefits from an instance-specific and model-adaptive design, which helps it better adapt to the model’s generalization capability throughout the training processes."
+imas,state-of-the-art (sota) performance,iMAS obtains state-of-the-art (SOTA) performance on Pascal VOC 2012 and Cityscapes datasets under different partition protocols.
+imas,high miou,"iMAS method obtains a high mIOU of 75.3% with only 183 labeled data on VOC 2012, which is 17.8% higher than the supervised baseline and 4.3% higher than the previous SOTA."
+imas,sss performance,"iMAS can boost the SSS performance by highlighting the instance differences, without introducing extra network components or training losses."
+imas,class-weighted teacher-student symmetric iou,"iMAS performs a quantitative hardness-evaluating analysis for unlabeled instances in segmentation tasks, based on the class-weighted teacher-student symmetric IoU."
+imas,instance-specific and model-adaptive sss framework,iMAS proposes an instance-specific and model-adaptive SSS framework that injects instance hardness into loss evaluation and data perturbation to dynamically adapt to the model’s evolution.
+related work,cr-based semi-supervised learning,Recent studies on CR-based semi-supervised learning have achieved impressive improvements in classification tasks.
+related work,mean-teacher,Mean-Teacher aimed to generate a more robust and accurate solution in semi-supervised learning.
+mean-teacher,pseudo-label,Mean-Teacher aimed to generate a more robust and accurate pseudo-label using ensemble techniques.
+unlabeled batch,hardness evaluation strategy,VAT aimed to calculate the supervised loss based on the hardness evaluation strategy for the unlabeled batch.
+segmentation predictions,weakly-augmented instances,The algorithm aims to obtain segmentation predictions on weakly-augmented instances.
+pseudo-labels,teacher model,The algorithm obtains pseudo-labels from the teacher model.
+uda,mixmatch,Both UDA and MixMatch improved performance by using more advanced augmentations.
+adversarial perturbations,"randomaug, mixup","Performance improvement was achieved by using adversarial perturbations, randomAug, and Mixup."
+fixmath,strong augmentations,FixMath inherited the idea of strong augmentations to boost accuracy.
+"contrastive learning, distribution alignment, sinkhorn-knopp clustering",neg,"Recent research introduced additional training and supervision techniques like contrastive learning, distribution alignment, Sinkhorn-Knopp clustering, and neg."
+contrastive learning,distribution alignment,Both contrastive learning and distribution alignment are techniques used to enhance performance in semi-supervised classification.
+contrastive learning,sinkhorn-knopp clustering,Contrastive learning is also compared to Sinkhorn-Knopp clustering as a method for performance enhancement.
+contrastive learning,negative training,Contrastive learning is mentioned in conjunction with negative training as ways to enhance performance.
+class,segmentation performance,Recent studies aim to achieve dense segmentation performance with only a fraction of labels through various techniques.
+rectifying the pseudo-labels,training extra correcting networks,One approach to improving performance is rectifying pseudo-labels by training extra correcting networks.
+rectifying the pseudo-labels,re-balancing the classes,Another approach includes re-balancing classes to improve the pseudo-labels.
+rectifying the pseudo-labels,using multiple predictions,Rectifying pseudo-labels can also involve using multiple predictions for better results.
+rectifying the pseudo-labels,extra losses,Rectifying pseudo-labels can be achieved through the use of extra losses.
+rectifying the pseudo-labels,stronger augmentations,Rectifying pseudo-labels may also include utilizing stronger augmentations for improved results.
+rectifying the pseudo-labels,advanced contrastive learning,Rectifying pseudo-labels is discussed in relation to the advanced contrastive learning for better performance.
+instance hardness,hard example mining,Instance hardness is closely related to hard example mining as studied in the field of curriculum learning.
+hard example mining,curriculum learning,These are techniques used in machine learning to deal with the difficulty of training instances and learning from a curriculum approach.
+hard example mining,instantaneous training losses,The evaluation of hard example mining relies on the training losses at a specific moment during the training process.
+hard example mining,historical training losses,The evaluation of hard example mining relies on the cumulative training losses over the training history.
+hard example mining,ground truths,Hard example mining is evaluated based on how well it captures the ground truth labels.
+hard example mining,hardness measurements,The concept of hardness in training instances is a critical aspect of hard example mining.
+hard example mining,unlabeled instances,Hard example mining faces challenges when dealing with instances that lack accurate label information.
+curriculum learning,unlabeled instances,Curriculum learning also encounters difficulties when handling instances without precise label information.
+hard example mining,hard and easy groups,Some methods in hard example mining categorize samples into hard and easy groups based on their level of difficulty.
+hard example mining,quantitative hardness analysis,"While some approaches focus on qualitative analysis, there is a need for more quantitative hardness analysis in tasks like segmentation."
+curriculum learning,instantaneous training losses,The evaluation of curriculum learning also takes into account the training losses at specific instances during training.
+curriculum learning,historical training losses,The evaluation of curriculum learning relies on the cumulative training losses over the training history.
+curriculum learning,ground truths,Curriculum learning aims to learn based on the ground truth labels provided.
+instantaneous training losses,ground truths,The training losses at a specific moment are compared with the ground truth labels to evaluate the training process.
+historical training losses,ground truths,The cumulative training losses over time are compared with the ground truth labels to evaluate the training progress.
+hardness measurements,unlabeled instances,The concept of hardness measurements is particularly relevant when dealing with instances lacking label information.
+quantitative hardness analysis,segmentation tasks,"There is a need for specific quantitative hardness analysis, especially in the context of segmentation tasks."
+encoder,decoder,Encoder and decoder working on both labeled and unlabeled data simultaneously.
+training loss,scalar hyper-parameter,The overall training loss formulation depends on the scalar hyper-parameter to adjust the relative importance between the supervised loss and the unsupervised loss.
+imas,quantitative hardness analysis,iMAS can perform quantitative hardness analysis for each unlabeled instance effectively.
+imas,model-adaptive guidance,iMAS can supervise the training on unlabeled data in a model-adaptive fashion across the training course.
+imas,cr-based semi-supervised framework,iMAS is built on top of the CR-based semi-supervised framework for joint training of student and teacher models.
+student model,teacher model,The student model and teacher model are trained in a mutually-beneficial manner with learnable weights.
+pseudo-labels,teacher model,The pseudo-labels are generated by the teacher model for training on the unlabeled data.
+student model,total loss l,"The student model is trained by minimizing the total loss which consists of two cross-entropy loss terms, Lu and Lx, applied on labeled and unlabeled data, respectively."
+cross-entropy loss,prediction distributions,"The cross-entropy loss is denoted as H(z1, z2) between prediction distributions z1 and z2."
+supervised loss,calculated,The supervised loss Lx is calculated as shown in Equation 3.
+weakly-augmented labeled instance,segmentation result,The segmentation result ˆyi represents the output of the student model on the weakly-augmented labeled instance.
+image,segmentation mask,The segmentation mask corresponds to the image with a resolution of H × W.
+unlabeled data,key to semi-supervised learning,Leveraging the unlabeled data is crucial for semi-supervised learning and distinguishes the method from others.
+cr-based studies,unsupervised loss,"In most CR-based studies, the standard unsupervised loss Lstdu is defined using certain criteria."
+high-confidence predictions,predefined confidence threshold,A predefined confidence threshold τ is used to select high-confidence predictions.
+weakly-augmented unlabeled instance,τ,The confidence threshold τ is used to select high-confidence predictions for weakly-augmented unlabeled instances.
+weakly-augmented unlabeled instance,represents standard instance-agnostic strong augmentations,"Weakly-augmented unlabeled instances represent standard instance-agnostic strong augmentations, including intensity-based data augmentations and CutMix."
+instance-specific supervision,training of unlabeled data,Instance-specific supervision is provided on the training of unlabeled data in iMAS.
+hardness of each weakly-augmented unlabeled instance,strategy ϕ,The hardness of each weakly-augmented unlabeled instance is evaluated using the strategy ϕ in iMAS.
+instance-specific supervision,strong augmentations,Instance-specific supervision is provided on the strong augmentations in iMAS.
+data,instance hardness,Data losses to the ground truth are used to assess instance hardness in semi-supervised segmentation.
+dynamics,accuracy label information,The dynamics of sample hardness cannot be easily identified without accurate label information.
+hard,sample,"The difficulty level of a sample can vary from easy to hard, impacting the model's performance."
+model,evolution,Models evolve over time to adapt to changing requirements and improve performance.
+teacher model,student model,The teacher and student models aim to reach a consensus on challenging instances.
+class-weighted iou,segmentation results,The class-weighted IoU is used to evaluate segmentation results and assess the level of hardness in the task.
+evaluation,model performance,Evaluation of model performance helps estimate training difficulties and adapt the training process accordingly.
+segmentation predictions,student model,Segmentation predictions are generated by the student model for weakly-augmented instances.
+class-index,segmentation result,The class index corresponds to a specific segmentation result in the task.
+wiou,segmentation masks,wIoU calculates the class-weighted Intersection over Union between segmentation masks for evaluation purposes.
+wiou,hardness,"wIOU is used for hardness evaluation at each iteration, where hardness γi is calculated based on wIOU values"
+gamma,unlabeled instance,"Gamma (γ) represents the hardness of each unlabeled instance, with harder instances having larger values while easier ones have smaller values"
+instance,hardness,Instance hardness is used for adaptive augmentations and perturbations in the training process
+augmentations,instance hardness,Augmentations are adjusted based on the absolute hardness value of each instance for adaptive augmentation
+cutmix,instance hardness,Random pairs of unlabeled data in CutMix are replaced with specific hard-easy pairs based on the corresponding hardness
+losses,instance hardness,Losses of different unlabeled instances are weighed by their corresponding hardness during loss modification
+segmentation studies,intensity-based augmentation,Supervised segmentation studies involve intensity-based augmentation as one type of augmentation
+segmentation studies,cutmix,Supervised segmentation studies also involve CutMix as another type of augmentation
+supervised segmentation studies,intensity-based augmentation,Supervised segmentation studies mainly consist of intensity-based augmentation as one of the two different types mentioned in the context.
+supervised segmentation studies,cutmix,Supervised segmentation studies mainly consist of CutMix as one of the two different types mentioned in the context.
+intensity-based augmentation,standard intensity-based data augmentations,Intensity-based augmentation involves standard intensity-based data augmentations that randomly select two kinds of image operations.
+distribution-specific designs,augmentation degree,Distribution-specific designs adjust the augmentation degree for unlabeled instances.
+distortion caused by the intensity-based strong augmentation,weakly-augmented output,The distortion caused by intensity-based strong augmentation is proportionally weakened by the corresponding weakly-augmented output.
+harder instances with larger hardness,model,Harder instances with larger hardness are not perturbed significantly to avoid challenging the model on potentially out-of-distribution cases.
+easier instances with lower values of γ,model,"Easier instances with lower values of γ, which have been well fitted by the model, can be further learned from their strongly-augmented variants in model-adaptive augmentations."
+cutmix,augmentations,CutMix is a technique used to boost semi-supervised semantic segmentation augmentations.
+cutmix,copy and paste random size regions among different unlabeled images,CutMix involves copying and pasting random size regions among different unlabeled images.
+augmentations,cutmix,Augmentations are associated with the CutMix technique.
+augmentations,table 1,Various image transformations listed in iMAS include augmentations.
+cutmix,"semi-supervised semantic seg-weak augmentationsrandom scale randomly resizes the image by [0.5, 2.0]",CutMix is a technique to boost semi-supervised semantic segmentation augmentations like weak augmentations that involve randomly resizing images.
+cutmix,cutmix-based augmentations,CutMix is the basis for CutMix-based augmentations.
+cutmix,predefined probability,CutMix is applied between unlabeled instances with a predefined probability.
+instance,segmentation results,"Instances and their corresponding segmentation results are related as one instance leads to another, impacting their segmentation results."
+augmentation pairs,cutmix,"The augmentation pairs are randomly generated, contrasting with the model-adaptive design of CutMix which specifies copy-and-paste pairs between hard and easy samples based on instance hardness."
+mean hardness,trigger probability,The mean hardness of samples influences the trigger probability of CutMix augmentation over the mini-batch instead of using a predefined hyper-parameter.
+sequences,unlabeled samples,Sequences are obtained by sorting unlabeled samples of a mini-batch in the ascending and descending orders based on the instance hardness.
+element-by-element,hard-easy pairs,"Aggregating two sequences element-by-element generates the hard-easy pairs, providing a structured way of pairing samples based on their difficulty levels."
+model-adaptive cutmix,expressed formulation,"The model-adaptive CutMix formulation is expressed mathematically as a series of operations involving generated region masks, hard-easy pairs, and triggering probabilities."
+pseudo-labels,revised,Pseudo-labels need to be revised accordingly after applying CutMix data augmentations to ensure consistency and accuracy in the labeling process.
+mutual augmentation,bernoulli process,"Mutual augmentation is applied following a Bernoulli process, triggered only when a uniformly random probability is higher than the average hardness gamma."
+unsupervised loss,learning difficulty,"The model-adaptive unsupervised loss is designed to consider the learning difficulty of each instance, enabling the system to learn from unlabelled data differentially."
+unsupervised loss,easiness,"The unsupervised losses for each instance are weighed based on their corresponding easiness, evaluated by 1 - γ, which is used in calculating the unsupervised loss."
+unsupervised loss,model-adaptive augmentations,"Combined with model-adaptive augmentations, the unsupervised loss calculation method is enhanced and optimized."
+curriculum learning,training,"Inspired by curriculum learning, training is prioritized on easy samples over hard ones to improve the learning process."
+hardness,image instance,"The hardness is evaluated upon each (weakly augmented) image instance, guiding the system in performing strong augmentations separately."
+image instance,augmentations,Image instance is augmented using two strong augmentations separately to avoid over-distorted variants.
+model,model-adaptive designs,Model is designed in a way to utilize model-adaptive designs effectively.
+experiments,method,Method efficacy is examined through experiments on standard semi-supervised semantic segmentation benchmarks.
+semantic segmentation benchmarks,ablation studies,Extensive ablation studies are conducted to verify the superiority and stability of the method on semantic segmentation benchmarks.
+dataset,backbone,DeepLabv3+ based on Resnet is adopted as the segmentation backbone for experimentation on datasets like Pascal VOC2012 and Cityscapes.
+pascal voc2012,cityscapes,Datasets like Pascal VOC2012 and Cityscapes are used for experimentation in semi-supervised segmentation.
+voc20126,classes,VOC20126 consists of 21 classes with training and validation images.
+segmentation boundary dataset,training set,Segmentation Boundary dataset provides additional training images for the blended training set.
+cityscapes,urban street scenes,Cityscapes dataset focuses on urban street scenes for segmentation.
+teacher models,resnet weights,Teacher models use ResNet weights pre-trained on ImageNet for the encoder.
+momentum,learning-rate decay,SGD optimizer with momentum and polynomial learning-rate decay is used for training.
+sgd optimizer,momentum,SGD optimizer with a momentum of 0.9 is adopted to train the student model.
+learning-rate decay,initial value,A polynomial learning-rate decay with an initial value of 0.01 is adopted to train the student model.
+total training epoch,voc2012,The total training epoch is 80 for VOC2012.
+total training epoch,cityscapes,The total training epoch is 240 for Cityscapes.
+training images,pascal voc2012,Training images are randomly cropped into 513× 513 for Pascal VOC2012.
+training images,cityscapes,Training images are randomly cropped into 769× 769 for Cityscapes.
+validation images,cityscapes,The sliding evaluation is used to examine the performance on validation images with a resolution of 1024 × 2048 for Cityscapes.
+bu,bx,Bu = Bx = 16 is set.
+sync-bn,all runs,The sync-BN is adopted for all runs.
+imas,performance,Demonstrates the superior performance of iMAS on both classic and blended VOC 2012 and Cityscapes under different semi-supervised partition protocols.
+u2pl,blended voc,Prioritizes selecting high-quality labels from classic VOCs on blended VOC.
+labels,dataset,Randomly sample labels from the entire dataset.
+partitions,results,"Adopt the same partitions as specified in [7, 27] and reproduce corresponding results."
+images,official voc train set,images are sampled from the official VOC train set
+images,total,"1,464 samples in total"
+images,cityscapes train set,"Labeled images are sampled from the Cityscapes train set, including 2,975 samples in total"
+results,resnet-101,Results are reported using Resnet-101
+resnet-101,supervised,Results are reported using Resnet-101. The performance gain becomes more noticeable
+resnet-101,resnet-50,Results are reported using Resnet-50
+imas,sota methods,"In Tables 2 and 3, we compare our iMAS with recent SOTA methods on blended and classic VOC"
+imas,resnet-50,iMAS can consistently outperform others regardless of using ResNet-50 as the segmentation encoder
+imas,resnet-101,iMAS can consistently outperform others regardless of using ResNet-101 as the segmentation encoder
+imas,supervised baseline,"iMAS can improve the supervised baseline by 11% and 9.1% when using ResNet-50 and ResNet-101 as the encoders, respectively"
+imas,st++,iMAS can improve the ST++ by 2.2%
+imas,supervision,iMAS utilizes a specific model-adaptive supervision approach on the unsupervised loss to improve performance.
+imas,cutmix augmentations,iMAS is effective in combination with CutMix augmentations to achieve better results in the evaluation.
+imas,pascal voc 2012,iMAS's results are reported on PASCAL VOC 2012 where improvements over the supervised baseline are shown.
+imas,performance,iMAS demonstrates improved performance under different scenarios and conditions.
+imas,labels,"iMAS shows effectiveness in achieving high mIOU using fewer labels compared to other methods, demonstrating label efficiency."
+imas,hegseg,"iMAS leverages model-adaptive guidance, treating each instance differently and utilizing instance-specific strategies from HegSeg."
+imas,cityscapes,"iMAS is evaluated on challenging Cityscapes, showcasing its effectiveness with ResNet-50 as the segmentation encoder."
+resnet-50,cityscapes,ResNet-50 is used for challenging Cityscapes in segmentation tasks.
+imas,output stride= 8,"iMAS achieves high mIOUs of 75.2%, 78.1%, 78.2%, 80.2% with output stride= 8."
+imas,supervised baseline,iMAS obtained a performance gain of 10.3% against the supervised baseline.
+imas,u2pl,"iMAS achieved a performance gain of 6.5% against the previous best, U2PL."
+imas,pseudo-rectifying networks,iMAS does not rely on pseudo-rectifying networks for its performance.
+imas,self-supervised supervisions,iMAS does not rely on extra self-supervised supervisions for its performance.
+imas,sotas,iMAS achieves better performance than the previous State of the Arts (SOTAs).
+loss weight,confidence threshold,The effect of the loss weight and confidence threshold on VOC and Cityscapes is examined.
+instance-specific guidance,model-adaptive guidance,The impressive performance of iMAS demonstrates the effectiveness and importance of instance-specific and model-adaptive guidance.
+labeled samples,semi-supervised performance,Providing more labeled samples can easily improve the semi-supervised performance.
+model-adaptive guidance,hyper-parameters,The impact of model-adaptive guidance and various hyper-parameters is examined in ablation studies.
+model-adaptive guidance,hyper-parameters,Model-adaptive guidance is affected by various hyper-parameters and their effectiveness is crucial for the success of the model.
+imas,instance-specific guidance,The key of iMAS lies in the instance-specific guidance which is essential for the model.
+imas,model-adaptive guidance,iMAS focuses on model-adaptive guidance to improve standard operations.
+imas,unsupervised loss,iMAS is influenced by unsupervised loss and its impact on the model.
+hyper-parameters,loss weight,Different hyper-parameters like loss weight λu and τ influence the overall effectiveness of the model.
+λu,τ,Choosing the right values for λu and τ is crucial for improving model performance on different datasets.
+hardness evaluations,unlabeled data,Hardness evaluations decrease on unlabeled data as the model performance improves
+easy instances,instance-1,Easy instances can hold low hardness from the beginning
+hard instances,instance-2,Hard instances have fluctuating hardness along the training process
+segmentation results,pascal voc 2012,Segmentation results are presented on Pascal VOC 2012
+segmentation results,183 fine labels,Segmentation results are presented using 183 fine labels
+resnet-101,encoder,Resnet-101 is used as the encoder in the segmentation process
+imas,supervision,iMAS is proposed as instance-specific and model-adaptive supervision for semi-supervised semantic segmentation
+hardness-evaluating strategies,imas,iMAS relies on class-weighted symmetric hardness-evaluating strategies
+sss performance,method,The performance of SSS is being proven through a method that requires forward unlabeled samples twice for hardness evaluations.
+method,unlabeled samples,The method requires forward unlabeled samples twice for hardness evaluations.
+method,hardness evaluations,The method is used to obtain hardness evaluations.
+imas,sss studies,iMAS is inspiring SSS studies to explore more model-related and simple approaches.
+imas,model-related approaches,iMAS is inspiring SSS studies to explore more model-related and simple approaches.
+imas,simple approaches,iMAS is inspiring SSS studies to explore more model-related and simple approaches.

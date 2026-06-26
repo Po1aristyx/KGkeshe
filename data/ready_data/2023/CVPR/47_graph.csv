@@ -1,0 +1,215 @@
+node_1,node_2,edge
+convolutional neural network (cnn),infrared small targets,CNNs are trained to detect infrared small targets in a fully supervised manner.
+infrared small targets,point-level supervision,The paper attempts to achieve infrared small target detection with point-level supervision.
+point-level supervision,cluster of pixels,"Supervised by point-level, CNNs first learn to segment a cluster of pixels near the targets."
+cnns,label evolution with single point supervision (lesps),CNNs are trained using the label evolution with single point supervision (LESPS) to progressively expand the point labels.
+lesps,pixel-level target mask,The label evolution with single point supervision (LESPS) framework helps in obtaining a pixel-level target mask to train CNNs in an end-to-end manner.
+intersection over union,object-level probability of detection,"IoU and object-level probability of detection are two key metrics in the field of object detection, where IoU measures the overlap between the predicted and ground truth bounding boxes, while object-level probability of detection focuses on accurately detecting objects in an image."
+object-level probability of detection,detection method,Object-level probability of detection is a key component in various detection methods such as contrast-based and low rank-based methods for SIRST detection.
+detection method,compact deep learning,Detection methods have evolved from handcrafted features to compact deep learning approaches like CNNs for more efficient SIRST detection.
+compact deep learning,sirst detection,"Compact deep learning techniques have been introduced to tackle the challenges in SIRST detection, aiming to improve the performance of detection models."
+sirst detection,deep learning,"SIRST detection has seen advancements with the integration of deep learning methods, which have the potential to unlock new exploration opportunities in the field."
+deep learning,natural images,"Deep learning has been extensively explored for natural images, but there is a need for further research to unlock the full potential of deep learning for SIRST detection."
+deep learning,natural images,Deep learning has been extensively explored for natural images
+infrared small targets,"very small size, weak, shapeless, textureless","Infrared small targets are usually of very small size, weak, shapeless, textureless"
+object detectors,"rcnn series, yolo series, ssd","Existing popular generic object detectors like RCNN series, YOLO series, and SSD are not suitable for SIRST detection"
+deep networks,infrared small targets,Researchers have been focusing on developing deep networks tailored for infrared small targets
+deep methods,sirst detection,Most existing deep methods for SIRST detection are fully supervised and require large datasets
+weakly supervised object detection methods,point supervision,Weakly supervised object detection methods with point supervision have been studied in the field of computer vision to reduce annotation cost
+sirst detection,weakly supervised sirst detection,"The work intends to conduct the first study of weakly supervised SIRST detection with single-point supervision, highlighting the need to address the limitations of current SIRST detection methods."
+single-point supervision,label evolution with single point supervision (lesps),"The proposed framework, LESPS, leverages the intermediate network predictions in the context of single-point supervision for weakly supervised SIRST detection, indicating a shift towards more advanced labeling techniques."
+cnns,region-to-region mapping,"During the training of SIRST detection networks, CNNs tend to segment pixels near the targets with low confidence initially, gradually learning to predict ground truth point labels with high confidence, implying a relationship between the CNNs and region-to-region mapping."
+infrared system,mapping degeneration phenomenon,"The 'mapping degeneration' phenomenon observed during the training of SIRST detection networks is attributed to the special imaging mechanism of infrared system, suggesting a causal relationship between the infrared system and mapping degeneration."
+single point supervision,lesps,"LESPS leverages the intermediate network predictions in the training phase to update the current labels, which serve as supervision until the next label update"
+lesps,updated pseudo mask labels,The network predictions can finally approximate the updated pseudo mask labels through iterative label update and network training
+lesps,pixel-level sirst detection,LESPS can significantly reduce the annotation cost and allow the network to achieve pixel-level SIRST detection in an end-to-end manner
+region-to-region mapping,cnns,Region-to-region mapping represents the mapping learned by CNNs from target regions in images to a cluster of pixels near the targets
+region-to-point mapping,gt point labels,Region-to-point mapping represents the mapping from target regions in images to the GT point labels
+end-to-end,point-to-mask label regression,End-to-end represents achieving point-to-mask label regression and direct pixel-level inference in one training
+end-to-end,pixel-level detection,End-to-end represents achieving point-to-mask label regression and direct pixel-level inference in one training
+mapping degeneration phenomenon,lesps,The mapping degeneration phenomenon is leveraged by LESPS to automatically regress pixel-level pseudo labels from the given point labels
+framework,sirst detection networks,"The framework can be applied to different existing SIRST detection networks, enabling them to achieve over 70% and 95% of its fully supervised performance in terms of pixel-level intersection over union (IoU)"
+iou,pd,Relationship between pixel-level intersection over union (IoU) and object-level probability of detection (Pd) in terms of performance metrics.
+cnns,input images,Convolutional neural networks (CNNs) learn the non-linear mapping between input images and ground truth (GT) labels in a data-driven manner.
+wang et al.,generative adversarial network,Wang et al. employed a generative adversarial network to achieve a better trade-off between miss detection and false alarm.
+dai et al.,asymmetric contextual module,Dai et al. specialized an asymmetric contextual module to improve target contrast.
+dai et al.,local contrast measure,Dai et al. further incorporated local contrast measure to improve the target contrast.
+li et al.,repetitive feature fusion,Li et al. preserved target information by repetitive feature fusion.
+zhang et al.,edge information,Zhang et al. aggregated edge information to achieve shape-aware Small Infrared Target (SIRST) detection.
+cross-level correlation,transformer-based method,"explored by Zhang et al. [52, 53] to predict accurate target mask [18]"
+uiu-net framework,multi-level and multi-scale feature aggregation,customized by Wu et al. [46] for multi-level and multi-scale feature aggregation
+cnns,lack of a large number of public datasets,"performance and generalization of CNNs are limited due to the lack of a large number of public datasets [7, 24, 45] with per-pixel annotations"
+cnns,time-consuming and labor-intensive,per-pixel manual annotations are time-consuming and labor-intensive
+sirst detection,weakly supervised segmentation with points,focus on achieving good pixel-level SIRST detection with weaker supervision and cheaper annotations raised more attention in dense prediction tasks
+image segmentation,objectiveness potential,Bearman et al. [2] introduced an objectiveness potential into a pointly supervised trainingannotationhasloss function to boost segmentation performance
+image segmentation,semantic information,Qian et al. [36] leveraged semantic information of several labeled points by a distance metric loss to achieve scene parsing
+image segmentation,inside-outside guidance approach,Zhang et al. [55] proposed an inside-outside guidance approach to achieve instance segmentation by five elaborate clicks
+inside-outside guidance approach,instance segmentation,achieve instance segmentation by five elaborate clicks
+instance segmentation,guidance approach,The guidance approach is utilized to achieve instance segmentation.
+binary point annotations,box annotations,Ten randomly sampled binary point annotations are provided within box annotations for instance segmentation.
+kernel generator,instance segmentation,Li et al. encoded each instance with a kernel generator for panoptic segmentation.
+local contrast prior,infrared small target,The local contrast prior of infrared small target is exploited to progressively evolve pseudo masks.
+mapping degeneration phenomenon,explanation,The mapping degeneration phenomenon is described together with the explanation.
+u-net,sirst detection network,U-Net is employed as the baseline network for training the SIRST detection network.
+approximates gt point,mapping degeneration,The phenomenon of 'mapping degeneration' is named where the approximation of GT point labels with increased confidence leads to this phenomenon.
+approximates gt point,easy-to-hard learning property of cnns,Training continues with the approximation of GT points and this interacts with the easy-to-hard learning property of CNNs where simpler mappings are learned first.
+mapping degeneration,special imaging mechanism of infrared systems,Mapping degeneration phenomenon is attributed to the special imaging mechanism of infrared systems where only intensity information is available without structure and texture details.
+mapping degeneration,high local contrast of infrared small targets,The mapping degeneration is associated with the high local contrast of infrared small targets where pixels within the target region have significant brightness differences.
+mapping degeneration,easy-to-hard learning property of cnns,The phenomenon of mapping degeneration is further affected by the easy-to-hard learning property of CNNs as they tend to learn simple mappings first.
+mapping degeneration,region-to-region mapping,Mapping degeneration involves the idea that region-to-region mapping is an intermediate result of region-to-point mapping due to unique characteristics of infrared small targets.
+mapping degeneration,cnns,CNNs play a role in contributing to the process of mapping degeneration by extending mapping regions beyond point labels.
+region-to-region mapping,region-to-point mapping,Region-to-region mapping is seen as an easier task and thus tends to be an intermediate step in the region-to-point mapping process.
+region-to-point mapping,cnns,CNNs contribute to the region-to-point mapping process by extending the mapping regions beyond just point labels.
+mapping degeneration,background clutter,The phenomenon of mapping degeneration is noted to be applicable in various scenes with infrared small targets due to background clutter.
+training datasets,u-net,"Training datasets, including images and labels, are used to train U-Net under a single-sample training scheme."
+degeneration,cnns,Degeneration is observed in CNNs as discussed in Section 5.1
+degeneration,point supervision,Mapping degeneration is a general phenomenon observed with point supervision
+degeneration,generalization,Generalization decelerates but aggravates mapping degeneration
+generalization,mapping degeneration,Generalization has an effect on mapping degeneration
+u-net,single-sample training scheme,U-Net is trained under a single-sample training scheme where one CNN is trained on each image
+u-net,many-sample training scheme,U-Net is also trained under a many-sample training scheme where one CNN is trained using all images with various sizes and shapes
+generalization,mapping degeneration,Generalization decelerates but aggravates mapping degeneration.
+figure 2(c),images,Figure 2(c) shows some zoom-in target regions of images and their predictions under these two training schemes.
+cnns,target pixels,CNNs can effectively segment a cluster of target pixels under both training schemes in a size-aware manner.
+cnns,intermediate results,Can we leverage the intermediate results of CNNs to regress masks?
+"target intensity, size, shape, and local background clutter",mapping degeneration,"Mapping degeneration is influenced by various factors, target intensity, size, shape, and local background clutter."
+label evolution,mapping degeneration,"Motivated by mapping degeneration, we propose a label evolution framework named label evolution with single point supervision (LESPS)"
+label evolution,network predictions,Label evolution framework is designed to leverage the intermediate network predictions in the training phase to update labels.
+network predictions,training phase,The network predictions are updated in the training phase to update labels.
+network predictions,pseudo mask labels,The network predictions approximate the updated pseudo mask labels.
+network predictions,pixel-level sirst detection,The network can learn to achieve pixel-level SIRST detection.
+network predictions,1d curves,A toy example of 1D curves is employed for easy understanding.
+1d curves,sub-ﬁgures,The sub-figures represent the network predictions.
+sub-ﬁgures,network predictions,The sub-figures represent the network predictions.
+sub-ﬁgures,left of the dotted line,Sub-figures are on the left of the dotted line.
+black curves,intermediate predictions,Black curves denote the intermediate predictions within LESPS.
+gray curves,virtual results,Gray curves represent virtual results produced by the network without label update.
+sub-ﬁgures,right of the dotted line,Sub-figures are on the right of the dotted line.
+current labels,updated labels,The first and second columns of sub-figures represent current labels and updated labels.
+predictions,current point label,Predictions are used to update the current point label to generate the 1st updated label.
+current point label,1st updated label,The current point label is updated to generate the 1st updated label.
+1st updated label,network training,The 1st updated label is then used to supervise the network training until the 2nd round label update.
+cnns,local contrast prior,CNNs can incorporate the local contrast prior to gradually recover the mask labels.
+label evolution,supervision,Label evolution consistently updates the supervision to prevent mapping degeneration.
+supervision,cnns,Supervision promotes CNNs to converge to the easy region-to-region mapping.
+nth update,current,"Taking the nth update as an example, given the current..."
+cnns,easy region-to-region mapping,CNNs are designed to converge to the easy region-to-region mapping.
+current label ln,network prediction pn,The label Ln and the network prediction Pn are integral in the process of label update.
+candidate pixel extraction,false alarm elimination,"The label update process involves candidate pixel extraction, false alarm elimination, and weighted summation."
+positive pixels,centroid point of label,"Positive pixels are represented by red circles and dots, the centroid point of the label is depicted in orange circle."
+prediction pn,positive pixels in label ˆlin,The candidate pixels in prediction Pn are correlated to the positive pixels in label ˆLin.
+tb,minimum threshold,Tb is set as the minimum threshold that controls the threshold growth rate.
+k,threshold growth rate,k controls the threshold growth rate
+li,threshold,An increasing number of ˆLi n leads to the increase of the threshold
+li,update,We then perform average weighted summation between n to achieve label candidate pixels Ei n and current label Li update.
+lin,average weighted summation,We then perform average weighted summation between n to achieve label candidate pixels Ei n and current label Li update.
+li,updated label,"Li n+1 is the updated label in the nth round, which serves as new supervision for training in the n + 1th round"
+li,supervision,"Li n+1 is the updated label in the nth round, which serves as new supervision for training in the n + 1th round"
+pixel,> 0.5,"The value of a pixel is higher than 0.5, which represents that the pixel is more likely to be positive than negative"
+pixel,positive,"The value of a pixel is higher than 0.5, which represents that the pixel is more likely to be positive than negative"
+point labels,locations,Point labels include location information with GT point labels and CNN predictions being visualized in target regions of input images.
+point labels,numbers,Point labels also involve numbers as shown in red dots in images.
+gt labels,red dotted lines,GT labels are related to red dotted lines as they represent different regions in the images.
+predictions,gt labels,Predictions and GT labels are compared through an average weighted summation to ensure convergence of CNNs.
+predictions,labels,Predictions are compared to labels to promote convergence as predictions approximate labels.
+pixel-adaptive threshold,positive pixels,"The Pixel-adaptive threshold adjusts with an increase in positive pixels in updated labels, affecting label update."
+label evolution,training,"Label evolution introduces target information for training, helping CNNs mature and learn to distinguish targets from backgrounds."
+epoch,threshold,Epoch-based threshold Tepoch ensures networks focus on targets rather than background clutter during training.
+implementation details,mapping degeneration phenomenon,Implementation details are used to analyze the mapping degeneration phenomenon.
+label evolution,sirst detection methods,Label evolution is applied to state-of-the-art SIRST detection methods with point supervision.
+sirst detection methods,point supervision,The state-of-the-art SIRST detection methods are applied with point supervision.
+pseudo labels,dynamic updated pseudo labels,Comparisons are made between dynamic updated pseudo labels and fixed pseudo labels.
+"public datasets nuaa-sirst, nudt-sirst, irstd-1k",experiments,"The three public datasets NUAA-SIRST, NUDT-SIRST, and IRSTD-1K are used in the experiments."
+training data,random flipping and rotation,The training data is augmented by random flipping and rotation.
+positive-negative sample imbalance,focal loss,"Due to the extreme positive-negative sample imbalance, focal loss is employed to stabilize the training process."
+networks,adam method,All the networks are optimized using the Adam method.
+training process,"batch size, learning rate","The training process involves batch size set to 16, learning rate initially set to 5x10^-4 and reduced by ten times at specific epochs."
+models,implementation in pytorch on a pc with nvidia geforce 3090 gpu,All models are implemented in PyTorch on a PC with an Nvidia GeForce 3090 GPU.
+pytorch,nvidia geforce 3090 gpu,implemented in PyTorch on a PC with an Nvidia GeForce 3090 GPU
+model analyses,mapping degeneration,investigate the mapping degeneration phenomenon with respect to different characteristics of intensity and size and point labels
+mapping degeneration,u-net,employ U-Net as the baseline detection network for mapping degeneration analysis
+cnn,gaussian-based extended targets,CNN predicts the zoom-in target regions of simulated images with Gaussian-based extended targets
+gaussian-based extended targets,target intensity,investigate the influence of target intensity on mapping degeneration using Gaussian-based extended targets with different peak values
+degeneration,intensity,"Higher intensity leads to a positive correlation between intensity and maximum IoU, while lower intensity leads to a negative one. Over-small intensity decelerates degeneration."
+focal loss,gt labels,Focal loss is calculated between current evolved and GT labels to supervise the network training until the next round label update.
+shape,local background clutter,"Shape, and local background clutter are investigated in supplemental material."
+lesps,initial evolution epoch,IoU results of LESPS with respect to initial evolution epoch Tepoch.
+dna-net,lesps,"Average IoU values on NUAA-SIRST, NUDT-SIRST, and IRSTD-1K achieved by DNA-Net with and without LESPS under centroid, coarse point supervision together with full supervision."
+intensity,epoch,Curve “intensity10” reaches maximum IoU at around epoch 150 while others are less than 50.
+target,size,We simulate Gaussian-based extended targets with different radii to investigate the influence of target size on mapping degeneration. Larger target size leads to lower maximum IoU and less time.
+fig. 5(b),larger target size,Quantitative results in the context show that larger target size leads to lower maximum IoU and less time to reach maximum IoU.
+fig. 5(b),size discrepancy,"Targets and GT point labels have a size discrepancy that increases as target size increases, aggravating and accelerating mapping degeneration."
+cnns,cluster of pixels,Visualization results show that CNNs can predict a cluster of pixels in a size-aware manner.
+cnns,peak values of predictions,The peak values of predictions decrease as the target size increases.
+point labels,different distances from target centroid,Point labels are placed at different distances away from the target centroid to investigate their influence on mapping degeneration.
+perturbations of label locations,maximum iou results,"Results show that small perturbations of label locations have a minor influence on the maximum IoU results, while severe perturbations can lead to a significant drop, especially when the label is close to the edge."
+targets,label locations,The same targets with different label locations reach maximum IoU at the same time.
+number of points in labels,gaussian-based extended target,Different numbers of points in labels are set to investigate its influence on mapping.
+target masks,cnns,"As the number of points increases, CNNs can learn more target information to achieve higher maximum IoU results."
+target masks,point number,The speed of mapping degeneration is irrelevant to the point number.
+predictions,point number,"Peak values of predictions increase as the number of points increases, which demonstrates that stronger supervision alleviates mapping degeneration."
+label evolution framework,experiments,"In this subsection, we conduct experiments to investigate the effectiveness and the optimal parameter settings of our label evolution framework."
+label evolution framework,lesps,We employ P A and IoU between the positive pixels in updated labels and the GT mask labels to quantitatively evaluate the accuracy and expansion degree of the current label.
+dna-net,lesps,"We compare the average results of NUAA-SIRST [8], NUDT-SIRST [24], and IRSTD-1K [54] datasets achieved by DNA-Net with (i.e., w/) and without (i.e., w/o) LESPS under centroid and coarse point supervision, respectively."
+dna-net w/o lesps,results,"DNA-Net w/o LESPS results are calculated under an extremely low threshold, which shows that detection on single point supervision is challenging."
+dna-net w/o lesps,sirst detection,Results of DNA-Net w/o LESPS demonstrate that SIRST detection on single point supervision is a challenging task.
+dna-net w/o lesps,metrics,"DNA-Net w/o LESPS shows low results compared to full supervision, indicating the difficulty of the task."
+dna-net w/o lesps,point supervision,Results of DNA-Net w/o LESPS under point supervision with threshold 0.5 are all zeros.
+dna-net w/ lesps,performance improvement,DNA-Net w/ LESPS shows significant performance improvement under both point supervisions in terms of all metrics.
+dna-net w/ lesps,fully supervised counterparts,DNA-Net w/ LESPS performance approximates the performance of their fully supervised counterparts.
+dna-net w/ lesps,point supervision,Results of DNA-Net w/ LESPS under different kinds of point supervision are comparable.
+lesps,manual annotation errors,LESPS demonstrates the ability to generalize well to manual annotation errors.
+target masks,gt labels,"Evolved target masks show increasing IoU values with GT labels in 20-time training, indicating the quality improvement during training."
+pseudo target masks,quality,The quality of pseudo target masks consecutively increases during training.
+networks,point labels,Networks can effectively learn to expand point labels to mask labels.
+labels,network predictions,The labels regressed by our LESPS during training are visualized together with some network predictions during inference.
+gt mask labels,evolved labels,The evolved labels are more closely aligned with the objects in images compared with GT mask labels.
+lesps,manually annotated errors,LESPS can alleviate the manually annotated errors.
+dna-net w/ lesps,pixel-level sirst detection,DNA-Net w/ LESPS can effectively achieve accurate pixel-level SIRST detection in an end-to-end manner.
+evolution epoch,epoch-based threshold tepoch,Investigating the optimal value of epoch-based threshold Tepoch is important.
+initial evolution epoch,p a and iou,Small initial evolution epoch results in a significant difference between P A and IoU.
+pixel-level mapping degeneration,inferior performance,Over-large initial evolution epoch results in inferior performance due to high degree of mapping degeneration.
+tepoch,performance,"Tepoch is mentioned to directly affect the performance, with inferior performance observed for Tepoch=50 compared to Tepoch=100."
+evolution threshold,k and tb,"The evolution threshold is related to the optimal values of k and Tb, where k determines the maximum threshold and Tb controls the growth rate of the threshold."
+evolution threshold,performance,Both over-large and over-small values of Tb and k in the evolution threshold result in inferior performance.
+evolution frequency,p a and iou,"Evolution frequency is positively correlated to P A and IoU, indicating a relationship between them."
+evolution frequency,label updates,"Higher evolution frequency requires more time for label updates, balancing performance and efficiency."
+evolution frequency,error accumulation,"Higher frequency (f=2) does not cause severe error accumulation, demonstrating the effectiveness of the convergence conditions of LESPS."
+lesps,convergence conditions,The effectiveness of the convergence conditions of LESPS is demonstrated in the context.
+supplemental materials,convergence issue,Supplemental materials provides more discussions on the convergence issue.
+lesps,state-of-the-art methods,LESPS is applied to several state-of-the-art CNN-based methods for comparison in the context.
+state-of-the-art methods,cnn-based methods,State-of-the-art CNN-based methods are compared in the context.
+fully supervised cnn-based methods,traditional methods,Fully supervised CNN-based methods and traditional methods are added as baseline results for comparison.
+cnn-based methods,traditional methods,CNN-based methods equipped with LESPS outperform all the traditional methods according to Table 2.
+irstd-1k,cnn full,IRSTD-1K dataset is mentioned along with the CNN Full method in the context.
+cnn centroid,cnn coarse,"CNN Centroid and CNN Coarse are mentioned together as CNN-based methods under full supervision, centroid, and coarse point supervision."
+cnn centroid,lesps,CNN Centroid is associated with LESPS as CNN-based methods equipped with LESPS.
+top-hat,mdvsfa,Top-Hat and MDvsFA are mentioned together in the context.
+mdvsfa,uiu-net,MDvsFA and UIU-Net are mentioned together in the context.
+nuaa-sirst,nudt-sirst,NUAA-SIRST and NUDT-SIRST are mentioned together in the context.
+nuaa-sirst,irstd-1k,NUAA-SIRST and IRSTD-1K are referenced together in the context.
+dna-net,lcm-based methods,DNA-Net is mentioned with LCM-based methods in the context.
+dna-net,lesps,DNA-Net is associated with LESPS in the context.
+lesps,acm,LESPS is mentioned in relation to ACM in the context.
+lesps,alcnet,LESPS is mentioned along with ALCNet in the context.
+lesps,handcrafted,LESPS refers to handcrafted annotations in the context.
+lesps,randomly sampled,LESPS refers to randomly sampled annotations in the context.
+pseudo labels,fixed pseudo labels,Comparison between dynamic updated pseudo labels and fixed pseudo labels in achieving the highest IoU values with comparable Pd and reasonable Fa increase
+pseudo labels,lesps,Dynamic updated pseudo labels by LEPSP can achieve the highest IoU values with comparable Pd and reasonable Fa increase
+dynamic updated pseudo labels,lesps,Dynamic updated pseudo labels by LEPSP can achieve the highest IoU values
+gt point label,detection results,Preservation of the eight connected regions of detection results that have union pixels with the GT point label
+gt point label,pseudo labels,Employment of the pseudo labels to retrain DNA-Net from scratch
+method,weakly-supervised sirst detection,Proposal of the first work to achieve weakly-supervised SIRST detection using single-point supervision
+method,sirst detection,Proposal of the first work to achieve weakly-supervised SIRST detection using single-point supervision
+loss function,computing negative loss on different background points,Investigation of the loss function of computing negative loss on different background points
+baseline methods,centroid point supervision,Average results of different baseline methods under centroid point supervision are shown in Table 4
+background points,false alarms,Limited handcrafted background points lead to many false alarms
+background points,class imbalance,Random sample introduces more background points and well alleviates class imbalance
+random sample,background points,Random sample introduces more background points
+weakly-supervised sirst detection,single-point supervision,The method described in the context focuses on weakly-supervised SIRST detection using single-point supervision. This highlights the relationship between these two key concepts.
+mapping degeneration phenomenon,label evolution framework,"The context mentions the discovery of the mapping degeneration phenomenon and the proposal of a label evolution framework named LELPS, indicating a direct relation between these two concepts."
+label evolution framework,single-point supervision,"The label evolution framework, LELPS, is proposed in the context as a solution to achieve point-to-mask regression with single-point supervision, establishing a clear relationship between these two terms."
+networks,sirst detection,"The approach introduced in the context allows networks to be trained for SIRST detection in an end-to-end manner, linking the concepts of networks and SIRST detection."
+experiments,method effectiveness,"The extensive experiments and insightful visualizations mentioned in the context serve to demonstrate the effectiveness and superiority of the method, showing a relationship between experiments and method effectiveness."
+method application,performance,"The method described in the context can be applied to different networks to achieve performance levels over 70% and 95% of its fully supervised performance on pixel-level IoU and object-level Pd respectively, indicating the application-to-performance relationship."
+researchers,method inspiration,"The context aims to inspire researchers by presenting interesting findings and promising results that can lead to rethinking the feasibility of achieving state-of-the-art performance in SIRST detection with much weaker supervision, connecting the concepts of researchers and method inspiration."

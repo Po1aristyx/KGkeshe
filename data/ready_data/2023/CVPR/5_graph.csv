@@ -1,0 +1,232 @@
+node_1,node_2,edge
+optical flow,clean scenes,Optical flow has achieved great success under clean scenes.
+optical flow,foggy scenes,Optical flow suffers from restricted performance under foggy scenes.
+optical flow,domain gap,"To bridge the clean-to-foggy domain gap, existing methods typically adopt domain adaptation."
+domain gap,motion knowledge,Existing methods transfer the motion knowledge from clean to synthetic foggy domain.
+synthetic-to-real domain gap,errors,"Existing methods neglect the synthetic-to-real domain gap, leading to errors when applied to real-world scenes."
+optical flow,real foggy scenes,"To handle the practical optical flow under real foggy scenes, a novel unsupervised cumulative domain adaptation optical flow framework is proposed."
+ucda-flow framework,depth-association motion adaptation and correlation-alignment motion adaptation,The framework includes depth-association motion adaptation and correlation-alignment motion adaptation modules.
+depth,optical flow,"Deeper depth leads to inferior optical flow, motivating the design of a depth-association motion adaptation module."
+cost volume correlation,synthetic and real foggy images,The cost volume correlation shares similar distribution of synthetic and real foggy images.
+synthetic fog,intermediate domain,Synthetic fog is designed as the intermediate domain in the framework.
+clean scenes,real foggy scenes,Progressively transfers knowledge from clean scenes to real foggy scenes
+clean scenes,optical flow,Optical flow has made great progress under clean scenes
+foggy scenes,scene contrast,"Fog weakens scene contrast, breaking the brightness and gradient constancy assumptions"
+motion knowledge,source domain,Transfer motion knowledge from the source domain (clean scene) to the target domain (real foggy scene) through two-stage adaptation
+source domain,intermediate domain,Transfer motion knowledge from the source domain to the intermediate domain via depth association
+intermediate domain,target domain,Distill motion knowledge of the intermediate domain to the target domain by aligning the correlation of both the domains
+domain adaptation,degradation-invariant features,Seeks degradation-invariant features to transfer the motion knowledge from the clean scene to the adverse weather scene
+rainy scenes,degradation-invariant features,Learn degradation-invariant features to enhance optical flow under rainy scenes in a supervised manner
+optical flow,rainy scenes,Optical flow enhancement under rainy scenes is the main focus of the proposed features.
+optical flow,dense foggy scenes,Yan et al. proposed a framework for optical flow under dense foggy scenes.
+dense foggy scenes,motion-invariant assumption,The framework relies on the motion-invariant assumption between clean and foggy images.
+clean images,synthetic foggy images,The framework uses clean and synthetic foggy images for optical flow under foggy scenes.
+domain adaptation,synthetic degraded images,The network adaptation handles the clean-to-foggy domain gap with synthetic degraded images.
+real foggy domain,pioneer works,The network lacks constraints to learn the motion pattern of the real foggy domain.
+real foggy scenes,pioneer works,The pioneer works fail to handle real foggy scenes due to lacking constraints.
+synthetic-to-real domain gap,pioneer works,"The pioneer works neglected the synthetic-to-real domain gap, limiting performance on real-world foggy scenes."
+domain gaps,cumulative domain adaptation framework,The goal is to handle the clean-to-foggy gap and synthetic-to-real gap in a cumulative domain adaptation framework.
+depth,optical flow,"Depth influences optical flow, with deeper depths leading to inferior flow."
+depth,atmospheric scattering model,"Depth associates clean and foggy images through atmospheric scattering, bridging the clean-to-foggy gap."
+depth,optical flow,"There is a 2D-3D geometry projection relationship between depth and optical flow, transferring motion knowledge."
+optical flow,depth,"There is a relationship between depth and optical flow, which is used as a constraint to transfer motion knowledge from the clean domain to the synthetic foggy domain."
+cost volume correlation,synthetic and real foggy images,"Cost volume correlation shares a similar distribution of synthetic and real foggy images and physically measures the similarity between adjacent frames, regardless of synthetic and real foggy images."
+cost volume,synthetic-to-real domain gap,Cost volume benefits bridging the synthetic-to-real domain gap by aligning correlation distributions to distill motion knowledge from the synthetic foggy domain to the real foggy domain.
+ucda-flow framework,real foggy scene,The UCDA-Flow framework is proposed for real foggy scene that includes depth-association motion adaptation (DAMA) and correlation-alignment motion adaptation (CAMA).
+dama stage,clean stereo images,"In the DAMA stage, optical flow, ego-motion, and depth are estimated with clean stereo images to enhance rigid motion by projecting depth into optical flow space using a 2D-3D geometry formula."
+atmospheric scattering model,clean-to-foggy gap,The atmospheric scattering model is utilized to synthesize corresponding foggy images and transfer motion knowledge from the clean domain to the synthetic foggy domain to bridge the clean-to-foggy gap.
+cama stage,synthetic and real foggy images,"In the CAMA stage, synthetic and real foggy images are transformed to bridge the synthetic-to-real domain gap."
+cama stage,synthetic-to-real domain gap,The CAMA stage aims to bridge the synthetic-to-real domain gap.
+synthetic foggy images,real foggy images,The synthetic and real foggy images are transformed to the cost volume space to align correlation distribution.
+motion knowledge,synthetic foggy domain,The correlation distribution is aligned to distill the motion knowledge of the synthetic foggy domain to the real foggy domain.
+proposed cumulative domain adaptation framework,clean domain,The framework progressively transfers motion knowledge from clean domain to real foggy domain via depth association and correlation alignment.
+method,optical flow,The proposed method transfers motion knowledge from clean domain to real foggy domain through two-stage adaptation for optical flow under real foggy scene.
+foggy scene optical flow,depth,"It is revealed that foggy scene optical flow deteriorates with depth, motivating the design of a depth-association motion adaptation to bridge the clean-to-foggy domain gap."
+cost volume correlation distribution,synthetic and real foggy images,The consistent correlation distribution of the synthetic and real foggy images benefits to closing the synthetic-to-real domain gap through correlation-alignment motion adaptation.
+optical flow,energy minimization problem,Traditional methods often formulate optical flow as an energy minimization problem for estimating per-pixel motion between video frames.
+optical flow,video frames,Motion between video frames is often formulated as an energy minimization problem in the context of optical flow.
+optical flow,energy minimization problem,Traditional methods often formulate optical flow as an energy minimization problem.
+optical flow,learning-based approaches,Learning-based optical flow approaches have been proposed to improve the feature representation in recent years.
+optical flow,pwc-net,PWC-Net applied warp and cost volume to physically estimate optical flow in a coarse-to-fine pyramid.
+pwc-net,raft,"RAFT was an important development of PWC-Net, which replaced the pyramid architecture with GRU and constructed 4D cost volume for all pairs of pixels."
+raft,gma,"To improve the motion feature representation, GMA incorporated transformer into optical flow estimation and achieved better performance than RAFT."
+authors,unsupervised cnn optical flow methods,The authors proposed the unsupervised CNN optical flow methods with photometric loss or data distillation loss to relieve the dependency on synthetic datasets.
+unsupervised optical flow framework,real foggy scenes,"In this work, an unsupervised optical flow framework for real foggy scenes is proposed."
+robust optical flow estimation,adverse weather,The robust optical flow estimation has been extensively studied for various adverse weather conditions such as rain and fog.
+image deraining,optical flow estimation,An intuitive solution to adverse weather conditions is to perform image deraining or defogging with subsequent optical flow estimation.
+deraining,defogging,deraining and defogging are related methods for removing rain and fog respectively from images or videos
+deraining,optical flow estimation,deraining is usually followed by optical flow estimation in image processing applications
+defogging,optical flow estimation,defogging is usually followed by optical flow estimation in image processing applications
+deraining,existing derain/defog methods,"deraining is a part of existing methods used for removing rain and fog, which are not optimized for optical flow"
+defogging,existing derain/defog methods,"defogging is a part of existing methods used for removing rain and fog, which are not optimized for optical flow"
+deraining,domain-invariant features,deraining involves using domain-invariant features to transfer motion knowledge from clean domain to synthetic degraded domain
+defogging,domain-invariant features,defogging involves using domain-invariant features to transfer motion knowledge from clean domain to synthetic degraded domain
+domain-invariant features,transfer motion knowledge,domain-invariant features help in transferring motion knowledge from clean domain to synthetic degraded domain
+domain-invariant features,rain-invariant features,domain-invariant features can include rain-invariant features to ensure robust optical flow under rainy scenes
+rain-invariant features,optical flow under rainy scenes,rain-invariant features are used to enhance optical flow performance under rainy scenes
+optical flow under rainy scenes,robust to degradation,the optical flow estimation under rainy scenes is made robust to degradation using rain-invariant features
+optical flow under rainy scenes,li et al.,Li et al. have attempted to address optical flow estimation under rainy scenes using rain-invariant features
+rain-invariant features,uniﬁed framework,rain-invariant features are designed within a unified framework to provide robust optical flow
+li et al.,auxiliary gyroscope information,Li et al. used auxiliary gyroscope information in their method to improve optical flow under adverse weather conditions
+auxiliary gyroscope information,robust to degradation,the auxiliary gyroscope information used is robust to degradation for enhancing optical flow estimation
+domain-invariant features,two-stage cumulative domain adaptation framework,domain-invariant features are utilized in a two-stage cumulative domain adaptation framework to bridge the synthetic-to-real domain gap in optical flow estimation
+two-stage cumulative domain adaptation framework,foggy scenes,the framework is proposed to adapt optical flow estimation for foggy scenes through a two-stage process
+dama,cama,"DAMA and CAMA are both stages in the motion adaptation process discussed in the context, each serving a specific purpose in bridging different domain gaps."
+depth,optical flow,Depth is associated with optical flow in the context to bridge the clean-to-foggy domain gap.
+synthetic foggy images,atmospheric scattering model,Synthetic foggy images are related to the atmospheric scattering model in the context for creating realistic foggy scenes.
+motion knowledge,adverse weather domain,Motion knowledge is transferred from the clean domain to the synthetic adverse weather domain through adaptation methods discussed.
+cost volume correlation,synthetic and real foggy images,"The correlation distributions of synthetic and real foggy images align, indicating a bridging of the synthetic-to-real domain gap."
+dama,depth,The DAMA associates depth with optical ﬂow via geometry projection.
+dama,optical flow,The DAMA associates depth with optical ﬂow via geometry projection.
+dama,foggy images,The DAMA renders synthetic foggy images with atmospheric scattering model.
+foggy images,atmospheric scattering model,The DAMA renders synthetic foggy images with atmospheric scattering model.
+foggy images,real foggy images,The CAMA aligns the correlation distribution of synthetic and real foggy images to distill motion knowledge of synthetic foggy to real foggy domain.
+dama,clean domain,The DAMA transfers motion knowledge from clean domain to synthetic foggy domain.
+cama,synthetic foggy domain,The CAMA aligns the correlation distribution of synthetic and real foggy images to distill motion knowledge of synthetic foggy domain to real foggy domain.
+depth,optical flow,The DAMA associates depth with optical ﬂow via geometry projection.
+fog-kitti2015,clean kitti2015,We take clean KITTI2015 and synthetic Fog-KITTI2015 as the experimental datasets.
+psnr,foggy images,"Compared to the corresponding clean images, we count the PSNR of the foggy images at different depths."
+optical flow epe,foggy images,"Compared to the corresponding clean images, we count the optical ﬂow EPE of the foggy images at different depths."
+depth value,psnr,"As the depth value becomes larger, the lower the PSNR."
+depth value,optical flow epe,"As the depth value becomes larger, the higher the optical ﬂow EPE."
+psnr,optical flow epe,"The lower the PSNR, the higher the optical flow EPE, indicating that image degradation and optical flow aggravate with larger depth."
+image degradation,optical flow aggravation,Image degradation and optical flow aggravation worsen with larger depth.
+rigid regions,consistency between geometrically computed rigid flow and directly estimated optical flow,Enhancing motion in rigid regions involves ensuring consistency between geometrically computed rigid flow and directly estimated optical flow.
+depth,fog,"To associate depth with fog, synthetic foggy images are generated corresponding to clean images using an atmospheric scattering model."
+foggy images,motion features,The synthetic foggy images are encoded into motion features to compute the temporal cost volume.
+spatial context attention (sca) module,non-local strategy,A spatial context attention (SCA) module with a non-local strategy is employed to enable the flow model to have a suitable receptive field for smooth constraint of motion feature.
+feature,fsim,The non-local similar feature fsim is used to generate k similar features corresponding to the cropped features from the motion feature f sim.
+feature,f s,The motion feature f s is used to generate k similar features corresponding to the cropped features.
+cost volume,spatial attention cost volume,The spatial attention cost volume is computed during sliding searching.
+cost volume,fused cost volume,The fused cost volume ˆcvs is produced by a residual operator.
+fused cost volume,residual operator,"The fused cost volume ˆcvs is produced by a residual operator as ˆcvs = cvtemp + αcvspa, where α denotes a fusion weight."
+pixel-wise motion knowledge,flow consistency loss,The pixel-wise motion knowledge is transferred from the clean domain to synthetic foggy domain via flow consistency loss.
+motion adaptation,depth-association motion adaptation,Depth-association motion adaptation can bridge the clean-to-foggy domain gap and provide a coarse optical flow for synthetic foggy domain.
+method,artifacts,Our method may inevitably suffer from artifacts under real foggy scenes due to the synthetic-to-real domain gap.
+feature distributions,synthetic and real foggy images,The feature distributions of the synthetic and real foggy images are visualized via t-SNE in Fig. 4 (a).
+degradation pattern discrepancy,synthetic and real foggy images,There exists an obvious synthetic-to-real style gap that restricts the optical flow performance under real foggy scenes.
+motion adaptation,domain gap,There is a relationship between motion adaptation and domain gap as the adaptation is required to bridge the gap between synthetic and real domains.
+cost volume,similarity measurement,"Cost volume is used as an adaptation bridge to physically measure the similarity between adjacent frames, thereby aiding in motion adaptation."
+depth,fog degradation,"Depth plays a key role in bridging the clean-to-foggy domain gap by impacting fog degradation, leading to more severe images and optical flow with increasing depth."
+depth,atmospheric scattering model,"Depth is associated with fog through the atmospheric scattering model, which helps bridge the clean-to-foggy domain gap."
+depth,optical flow refinement,"Depth can be used to refine optical flow of clean domain via strict geometry projection, serving as a constraint to transfer motion knowledge from the clean domain to synthetic foggy domain."
+depth,motion adaptation module,"A depth-association motion adaptation module is proposed to transfer motion knowledge between both clean and foggy domains, emphasizing the significance of depth in adaptation."
+consecutive stereo images,raft algorithm,"Given consecutive stereo images, the RAFT algorithm is utilized to estimate optical flow with an unsupervised optical flow photometric loss, aiding in motion adaptation."
+raft,optical flow,RAFT is used to estimate optical flow F with optical flow photometric loss in an unsupervised manner.
+optical flow,photometric loss,Optical flow is estimated with photometric loss.
+photometric loss,unsupervised manner,Photometric loss is used in an unsupervised manner.
+optical flow,stereo depths,Optical flow can also be used to obtain stereo depths using DispNet via photometric loss and smooth loss.
+dispnet,photometric loss,DispNet is used via photometric loss to obtain stereo depths.
+stereo depths,dense pixel correspondence,Stereo depths are used to establish dense pixel correspondence between adjacent frames through depth.
+dense pixel correspondence,2d homogeneous coordinate,Dense pixel correspondence is used with 2D homogeneous coordinate to compute corresponding points in frames.
+2d homogeneous coordinate,camera intrinsic matrix,2D homogeneous coordinate and camera intrinsic matrix are used to compute corresponding points in frames.
+camera intrinsic matrix,geometry projection equation,Camera intrinsic matrix is used in the geometry projection equation to compute corresponding points in frames.
+geometry projection equation,relative camera motion,Geometry projection equation is used to compute relative camera motion for corresponding points in frames.
+relative camera motion,posenet,Relative camera motion is estimated by PoseNet.
+posenet,rigid flow,PoseNet is used to compute rigid flow.
+rigid flow,synthetic foggy domain,Rigid flow is computed from the synthetic foggy domain.
+synthetic foggy domain,real foggy domain,Rigid flow is moved from the synthetic foggy domain to the real foggy domain.
+real foggy domain,flow network,Real foggy image is fed to the flow network of the synthetic foggy domain.
+optical flow,real foggy domain,The optical flow is estimated in the real foggy domain by the flow network and is used as pseudo-labels. The encoder of the real foggy domain is updated with the encoder of the synthetic foggy domain during training.
+synthetic foggy domain,real foggy domain,The motion knowledge of the synthetic foggy domain is distilled to the real foggy domain in the feature correlation and optical flow dimensions. The last two terms of the total objective aim to build the mathematical relationship between the synthetic and real foggy domains.
+total loss,implementation details,The total loss in the proposed framework is defined as a combination of various unsupervised losses and terms that aim to transfer knowledge and build relationships between synthetic and real foggy domains. The implementation details include setting parameters accordingly.
+λ1,λ2,Both λ1 and λ2 have values of 1 in the given context.
+n,k,The parameters N and k are set in the context with N as 1000 and k as 10.
+weight λ,ema for self-supervised training strategy,The weight λ of the EMA is set as 0.99 for the self-supervised training strategy.
+proposed framework ucda-flow,"encoders, flow decoders, disp decoder, residual block","The UCDA-Flow framework consists of multiple components, including encoders, flow decoders, disp decoder, and residual block."
+"optical flow network, disp network",clean domain,The optical flow network and disp network are trained for the clean domain using specific loss functions.
+optical flow network,"synthetic foggy domain, real foggy domain",The optical flow network is updated for both synthetic and real foggy domains with different loss functions and training epochs.
+loss l,full loss l,The full loss L is optimized for the whole framework after using loss L.
+testing model,optical flow network of the real foggy domain,The testing model only requires the optical flow network of the real foggy domain for testing.
+kitti2015 dataset,representative clean scene,The KITTI2015 dataset is used as a representative clean scene in the experiment setup.
+foggy image patches,"degradation pattern, style gap",The foggy image patches show a small difference in degradation patterns but an obvious style gap between both domains.
+correlation histogram of cost volume,correlation distributions,The correlation histogram of the cost volume shows similar correlation distributions.
+cost volume,correlation distribution,The correlation histogram of the cost volume reveals that the correlation distributions in both domains are similar. This motivates the introduction of a correlation-alignment motion adaptation module to transfer motion knowledge from synthetic foggy domain to real foggy domain.
+synthetic-to-real domain gap,correlation distribution,The goal of closing the synthetic-to-real domain gap is driven by the observation that both domains exhibit similar correlation distributions.
+synthetic foggy images,real foggy images,"Through encoding synthetic foggy images and real foggy images, the correlation values in the cost volumes are sampled to represent the correlation distribution. This enables the comparison between the two domains based on the correlation values."
+correlation values,correlation distribution,"By sampling correlation values in the cost volumes and normalizing them into [0, 1], the entire correlation distribution of cost volume for both domains is represented. This allows for the categorization of correlation values based on threshold values and the estimation of correlation distribution."
+correlation,category,Correlation of one category is sampled to ensure at least a single instance present in the real foggy domain.
+synthetic foggy domain,real foggy domain,Features of the two domains are aligned by minimizing correlation distribution distance through Kullback-Leibler divergence.
+correlation distributions,optical flow estimation capabilities,Aligned correlation distributions indicate that both domains could have similar optical flow estimation capabilities.
+aligned cost volume,optical flow,The aligned cost volume is decoded to predict optical flow for real foggy images.
+self-supervised training strategy,knowledge transfer,The self-supervised training strategy aims to improve the robustness of knowledge transfer.
+df-kitti epe,f1-all,DF-KITTI EPE is related to F1-all in terms of evaluation as F1-all represents the overall F1 score for all classes in a dataset
+figure 5,visual comparison of optical ﬂows on real fog-gof dataset,"Figure 5 provides a visual comparison of optical flows on the real Fog-GOF dataset, showcasing the differences in performance"
+methodfog-fog-gmadensefogflowrobust,f1-all,"The methods for handling foggy datasets such as Fog-GMA, DenseFogFlow, and Robust are related to the evaluation metric F1-all as they impact the performance metrics"
+fog-kitti2015,synthetic foggy kitti dataset,Fog-KITTI2015 is related to the synthetic foggy KITTI dataset as it is used to generate the synthetic foggy images for training and testing
+fog-gof,fog-gof dataset,Fog-GOF is related to the Fog-GOF dataset as it is used to create a new foggy dataset with foggy images for training and testing
+densefog,real foggy dataset collected by densefogflow,DenseFog is related to the real foggy dataset collected by DenseFogFlow as it consists of foggy images used for training and testing
+real-fog world,youtube videos under real foggy scenes,Real-Fog World is related to YouTube videos under real foggy scenes as they are used to collect degraded videos under real foggy scenes for training and testing
+youtube,foggy scenes,Youtube provides the source for foggy scenes used in the experiment.
+foggy scenes,1200 images,1200 images of foggy scenes are used for training.
+foggy scenes,240 images,240 images of foggy scenes are used for testing.
+optical flow,gyroflow,GyroFlow is one of the competing methods for adverse weather optical flow.
+optical flow,densefogflow,DenseFogFlow is one of the competing methods for adverse weather optical flow.
+optical flow,robustflow,RobustFlow is one of the competing methods for adverse weather optical flow.
+supervised methods,gma,GMA is a state-of-the-art supervised optical flow approach.
+unsupervised methods,smurf,SMURF is a state-of-the-art unsupervised optical flow approach designed for clean scenes.
+unsupervised methods,uflow,UFlow is a state-of-the-art unsupervised optical flow approach designed for clean scenes.
+unsupervised methods,selﬂow,Selﬂow is a state-of-the-art unsupervised optical flow approach designed for clean scenes.
+unsupervised methods,kitti2015,The unsupervised methods are first trained on KITTI2015 for initialization.
+supervised method,synthetic dataset,The supervised method is first trained on the synthetic dataset.
+self-supervised learning,smurf,SMURF uses self-supervised learning for training.
+fog-kitti2015,training strategies,Two different training strategies are designed for competing methods on Fog-KITTI2015.
+defogging approaches,ffa-net,FFA-Net is used as a defogging approach.
+defogging approaches,aecr-net,AECR-Net is used as a defogging approach.
+ffa-net,training,FFA-Net is used for training the comparison methods on defogging results.
+aecr-net,training,AECR-Net is used for training the comparison methods on defogging results.
+evaluation metrics,average endpoint error,Average endpoint error (EPE) is chosen as an evaluation metric.
+evaluation metrics,percentage of ﬂow outliers,Percentage of ﬂow outliers (F1-all) is chosen as an evaluation metric.
+ucda-flow,unsupervised methods,UCDA-Flow is significantly better than the unsupervised counterparts under light and dense foggy conditions.
+ucda-flow,defogging,The proposed UCDA-Flow bypasses the difficulties of directly estimating optical flow from degraded images by transferring motion knowledge from clean domain to foggy domain via unsupervised domain adaptation.
+defogging,optical flow estimation,"The pre-processing procedure defogging is positive to optical flow estimation, but the performance is still limited due to over-smoothness in defogged images."
+defogging,ucda-flow,"The proposed UCDA-Flow could handle both light and dense foggy images well, despite defog methods not being designed for optical flow and potentially causing over-smoothness in images."
+ucda-flow,optical flow,The proposed UCDA-Flow handles both light and dense foggy images by bypassing difficulties in directly estimating optical flow from degraded images.
+fog-gofl,cumulative adaptation architecture,Effectiveness of cumulative adaptation architecture is shown in improving optical flows with Real foggy images.
+optical flows,da,"Optical flows without DA, with DAMA only, with DAMA and CAMA are mentioned in the same context, indicating a relationship between them."
+optical flows,dama,"Optical flows without DA, with DAMA only, with DAMA and CAMA are mentioned in the same context, indicating a relationship between them."
+optical flows,cama,"Optical flows without DA, with DAMA only, with DAMA and CAMA are mentioned in the same context, indicating a relationship between them."
+fog-gof,densefog,"Quantitative results on Fog-GOF and DenseFog verify the superiority of our method, suggesting a comparison or relationship between them."
+'ssl',self-supervised learning optical flow,"The performance barely changes before and after 'ssl' due to fog breaking the photometric constancy assumption of self-supervised learning optical flow, limiting its capability."
+gma,smooth visualization results,"The supervised method GMA could obtain relatively smooth visualization results, indicating a positive effect or relationship between them."
+gyroflow,camera ego-motion,"Hardware-assisted GyroFlow relies on camera ego-motion captured by the gyroscope data, indicating a dependency or relationship between them."
+densefogflow,clean-to-foggy domain gap,"DenseFogFlow only bridges the clean-to-foggy domain gap, neglecting the synthetic-to-real foggy domain gap, which causes artifacts when applied to real foggy images."
+proposed cumulative adaptation framework,satisfactory results under real foggy scenes,"The proposed cumulative adaptation framework can obtain satisfactory results under real foggy scenes, indicating a positive relationship between them."
+cumulative adaptation architecture,dama-cama architecture,Cumulative Adaptation Architecture demonstrates the effectiveness of DAMA-CAMA architecture in improving motion boundary clarity.
+outliers,degradation,DAMA effectively removes most outliers caused by degradation.
+motion boundary,cumulative adaptation architecture,The motion boundary becomes clearer with both DAMA and CAMA in the cumulative adaptation architecture.
+adaptation losses,proposed method,"The adaptation losses of the proposed method, including Lgeo flow, Lconsis flow, Lself flow, and Lkl corr, contribute to the final result in optical flow estimation."
+clean domain,synthetic foggy domain,Lconsis flow aims to transfer motion knowledge from the clean domain to the synthetic foggy domain.
+motion consistency loss,optical flow result,The motion consistency loss contributes significantly to the optical flow result.
+correlation distribution alignment loss lkl,optical flow,The correlation distribution alignment loss Lkl further improves optical flow under real foggy scenes.
+depth,optical flow,The importance of depth in transferring motion knowledge is studied in improving optical flow.
+depth association,rigid motion boundary,"Depth association improves the rigid motion boundary, making optical flow global-smooth with sharp boundaries."
+depth association,optical flow,"Depth association improves the optical flow, enhancing the rigid motion boundary for synthetic foggy images."
+depth geometry association,rigid motion boundary,The depth geometry association enhances the rigid motion boundary for synthetic foggy images.
+correlation distribution alignment,different modules,"Correlation Distribution Alignment is important for the optical flow of real foggy domain, showing the effect of different modules."
+ema,local optimum,EMA prevents the weights of the network from falling into the local optimum at the training stage.
+sca,motion saliency,SCA aims to enhance the motion saliency in the cost volume.
+cda,synthetic foggy domain,CDA transfers motion knowledge from the synthetic foggy domain to the real foggy domain by aligning the correlation distributions of both domains.
+gan-based strategy,new artifacts,The GAN-based strategy may erratically produce new artifacts during image translation.
+synthetic-to-real foggy domain gap,depth,"The discrepancy between the synthetic-to-real foggy domain can be exacerbated by GAN-based strategy, while depth is suggested as a better way to synthesize foggy images."
+monocular,weak constraints,Depth estimated by monocular is not accurate enough due to weak constraints.
+sparse depth,dense depth,The sparse depth in KITTI dataset is upsampled into dense depth.
+kitti dataset,dense depth map,The sparse depth in KITTI dataset is transformed into the dense depth map.
+ucda-flow,state-of-the-art optical flow method gma,UCDA-Flow is compared with the state-of-the-art optical flow method GMA.
+ucda-flow,distant moving objects under foggy scenes,UCDA-Flow fails to detect distant moving objects under foggy scenes.
+proposed depth association motion adaptation,motion knowledge transfer,The proposed depth association motion adaptation contributes positively to motion knowledge transfer.
+ucda-flow,proposed ucda-flow,Limitations of the proposed UCDA-Flow are discussed in Fig. 9.
+stereo strategy,accuracy of depth in distant regions,Stereo strategy struggles to obtain accurate depth in distant regions.
+distant moving object,details of the distant moving object,The details of the distant moving object get lost due to severe degradation.
+lidar,detecting distant objects,There is an attempt to use lidar for detecting distant objects in the future.
+unsupervised cumulative domain adaptation framework,optical flow under real foggy scenes,An unsupervised cumulative domain adaptation framework is proposed for optical flow under real foggy scenes.
+depth,influencing optical flow,Depth is a key ingredient that influences optical flow.
+depth-association motion adaptation,clean-to-foggy domain adaptation,Depth-association motion adaptation is designed to close the clean-to-foggy domain.
+depth-association motion adaptation,clean-to-foggy domain gap,The depth-association motion adaptation is designed to close the clean-to-foggy domain gap.
+cost volume correlation,synthetic and real foggy images,The cost volume correlation shows a similar distribution in synthetic and real foggy images.
+correlation-alignment motion adaptation,synthetic-to-real domain gap,The correlation-alignment motion adaptation is devised to bridge the synthetic-to-real domain gap.
+experiments,synthetic and real foggy datasets,Experiments were conducted on synthetic and real foggy datasets to verify the superiority of the method.
+national natural science foundation of china,61971460,The work was supported in part by the National Natural Science Foundation of China under Grant 61971460.
+jcjq program,2021-jcjq-jj-0060,The work was supported in part by JCJQ Program under Grant 2021-JCJQ-JJ-0060.
+national natural science foundation of china,62101294,The work was supported in part by the National Natural Science Foundation of China under Grant 62101294.
+xiaomi young talents program,acknowledgments,The work was supported in part by Xiaomi Young Talents Program as mentioned in the Acknowledgments.

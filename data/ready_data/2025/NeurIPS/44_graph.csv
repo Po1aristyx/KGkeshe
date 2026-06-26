@@ -1,0 +1,223 @@
+node_1,node_2,edge
+language models,quantization,"Quantization of large language models (LLMs) is the main focus of the context, addressing challenges due to outlier activations."
+outlier activations,low-bit representation,Outlier activations are a major challenge in achieving efficient low-bit representation in language models.
+activations,outliers,"There are different types of outliers in the context, including Normal Outliers and Massive Outliers, affecting the model's performance."
+duquant,approach,DuQuant is introduced as a novel approach that utilizes rotation and permutation transformations to mitigate outliers effectively.
+rotation matrix,outlier dimensions,A rotation matrix is constructed using outlier dimensions as prior knowledge to redistribute outliers and enhance model performance.
+zigzag permutation,outliers,"Zigzag permutation is employed to balance the distribution of outliers across blocks, reducing block-wise variance."
+quantization process,outliers,"DuQuant simplifies the quantization process and excels in managing outliers, improving model performance."
+state-of-the-art baselines,duquant,"DuQuant outperforms the state-of-the-art baselines across various sizes and types of LLMs on multiple tasks, including 4-bit weight-activation quantization."
+natural language processing tasks,edge devices,Natural language processing tasks can present deployment challenges on edge devices due to their large number of parameters.
+natural language processing tasks,memory usage,Memory usage is a deployment challenge for natural language processing tasks due to the billions of parameters they have.
+natural language processing tasks,inference speed,Inference speed is another deployment challenge for natural language processing tasks due to their numerous parameters.
+network quantization methods,memory usage,Network quantization methods are explored to minimize memory usage by converting floating-point parameters into low-bit formats.
+network quantization methods,inference speed,Network quantization methods aim to expedite inference by quantizing both activations and weights for accelerating the matrix multiplication process.
+activation outliers,quantization step sizes,Presence of activation outliers can enlarge the quantization step sizes and cause significant accuracy loss.
+activation outliers,normal outliers,Current research has developed methods to address Normal Outliers in activations to mitigate accuracy loss.
+activation outliers,massive outliers,"Besides Normal Outliers, there exists another type of activation outlier known as Massive Outliers."
+outliers in llama2-7b,input activation of layer1 attention key projection,Visualizations show Normal Outliers with high magnitudes in the input activation of Layer1 attention key projection.
+outliers in llama2-7b,input activation of layer1 ffn down projection,"Visualizations reveal Massive Outliers in the input activation of Layer1 FFN down projection, presenting extremely."
+layer1 ffn,activation matrix,Layer1 FFN down projection reveals Massive Outliers in the Activation matrix
+layer1 ffn,smoothquant,Application of SmoothQuant on FFN down projection shows struggle with massive outliers
+smoothquant,activation outliers,SmoothQuant struggles to shift some of the activation outliers to the weight part
+omniquant,activation matrix,OmniQuant exhibits training instability issues due to the presence of Massive Outliers in the Activation matrix
+affinequant,activation matrix,AffineQuant exhibits training instability issues due to the presence of Massive Outliers in the Activation matrix
+dual transformations quantization (duquant),activation outlier values,DuQuant method aims to redistribute the activation outlier values across different channels
+dual transformations quantization (duquant),orthogonal rotation matrix,DuQuant method constructs the orthogonal rotation matrix
+dual transformations quantization (duquant),orthogonal,DuQuant method also constructs the orthogonal matrix
+rotation matrix,permutation matrix,These matrices are constructed and multiplied with the activations to perform column transformations and redistribute outliers.
+specific dimensions,outliers,Specific dimensions of outliers are identified as prior knowledge for constructing the rotation matrix.
+greedy algorithm,rotation matrix,A greedy algorithm is employed to construct the rotation matrix with identified specific dimensions of outliers.
+diagonal block-wise rotation matrices,activations,"These rotation matrices are utilized for multiplication efficiency, with each matrix responsible for a small portion of the activations."
+zigzag permutation,activation channels,The zigzag permutation is proposed for reordering activation channels to promote a more uniform distribution across different blocks.
+channels with highest activations,blocks,The channels with the highest activations are distributed across the blocks in a back-and-forth pattern.
+outliers,blocks,Outliers are redistributed within each block by another rotation transformation after establishing blocks with uniformly distributed outlier magnitudes.
+weight matrix,transpose of rotation and permutation matrices,The weight matrix is multiplied with the transpose of the rotation and permutation matrices simultaneously to preserve linear layer equivalence and smoothing weights.
+rotation and permutation transformations,quantization challenges,Theoretical analysis confirms that these transformations greatly mitigate quantization challenges induced by outliers.
+permutation transformations,quantization challenges,Permutation transformations greatly mitigate quantization challenges induced by outliers.
+duquant,quarot,"DuQuant offers several clear advantages over QuaRot, such as optimal rotation matrices and unique zigzag permutations."
+duquant,quarot,DuQuant's optimal rotation matrix surpasses QuaRot's Hadamard rotation in managing outliers.
+duquant,quarot,"DuQuant's zigzag permutation significantly reduces activation variance across blocks, providing a distinct advantage for handling massive outliers."
+duquant,quarot,DuQuant avoids time-consuming GPTQ algorithm in QuaRot by jointly smoothing weights and activations.
+duquant,llms,"DuQuant significantly outperforms existing 4-bit weight-activation quantization baselines across various benchmarks, enhancing the efficiency and capacity of quantized LLMs."
+duquant,llms,DuQuant achieves a 5% improvement in Commonsense QA tasks and a 10% increase in zero-shot MMLU benchmarks for the Vicuna-v1.5-13B LLaMA model sizes.
+duquant,llms,"In practical applications with the LLaMA2-7B model, DuQuant accelerates pre-willing phase and reduces memory usage during decoding phase, with minimal impact on performance."
+duquant,llms,DuQuant's effectiveness in enhancing the efficiency and capacity of quantized LLMs is highlighted by extensive evaluations.
+normal outliers,massive outliers,Previous works have highlighted the challenge of normal outliers and massive outliers.
+llms,activation outliers,"Activation outliers in LLMs pose a challenge for model compression, as highlighted in previous works."
+activation outliers,normal outliers,Normal Outliers are outlier features in LLMs with large values across specific feature dimensions and present in all token sequences.
+normal outliers,massive outliers,"The primary distinctions between Normal Outliers and Massive Outliers are that Normal outliers persist across all token sequences, while Massive outliers are confined to a limited number of tokens."
+massive outliers,distinct type of outlier,"Massive Outliers are a distinct type of outlier observed in LLMs, which exhibit significantly larger magnitudes than Normal Outliers."
+massive outliers,input of the down-projection layer,"Massive Outliers exist at the input of the down-projection layer within the FFN module, as discovered in contrast to previous studies observing massive outliers at the output of Transformer blocks."
+down-projection layer,ffn module,"The down-projection layer is within the FFN module, where massive outliers exist at the input, as depicted in Figure 1."
+massive activations,phenomenon,massive activations are consistently observed as a phenomenon across different layers and sizes of models
+massive activations,outlier features,massive activations challenge various approaches to eliminate outlier features
+outlier features,smoothquant,SmoothQuant shifts quantization difficulty from activations to weights by dividing the activation by a per-channel smoothing factor and multiplying it to the weight matrix
+smoothquant,down-projection layer,SmoothQuant causes weights of the down-projection to display noticeable outliers
+massive outliers,smoothing factor,massive outliers cause the smoothing factor to become significantly large
+omniquant,affinequant,OmniQuant and AffineQuant exclude their learnable parameters for the down projection layer due to unstable gradients
+massive outliers,optimization-based methods,extremely large outliers can lead optimization-based methods to encounter problems with loss explosion
+quik,int8 quantization,QUIK opts to use INT8 quantization for the down projection layer
+atom,int8 quantization,Atom applies INT8 quantization for 128 outlier channels
+massive outliers,quantization process,massive outliers introduce new challenges to the quantization process that existing methods cannot handle
+outliers,quantization process,Outliers introduce challenges to the quantization process that existing methods cannot fully address
+outliers,rotation and permutation transformations,Rotation and permutation transformations effectively handle both massive and normal outliers
+rotation and permutation transformations,duquant method,DuQuant method is built on rotation and permutation transformations
+duquant method,block-diagonal rotation matrix,Block-diagonal rotation matrix redistributes feature outliers
+duquant method,zigzag permutation,Zigzag permutation reorders outliers across different blocks
+transformer block,llms,Multi-head Self-Attention (MSA) and Feed-Forward Network (FFN) are common modules within each transformer block of LLMs
+transformer block,linear layers,Multi-head Self-Attention (MSA) and Feed-Forward Network (FFN) fundamentally consist of basic linear layers
+activation input,weight matrix,Activation input X and weight matrix W are used in the representation Y = X · W
+activation,weight,Focus on integer uniform quantization of both activation and weight
+quantization step size,activation,"The notation ⌊·⌉ means the nearest rounding operation, ∆ is the quantization step size, and z represents the zero point. Following [64, 47, 34, 39], we employ per-token quantization for activation, which entails assigning different step sizes to individual tokens of activations (∆X ∈ RT×1)."
+quantization step size,weight,"Following [64, 47, 34, 39], we employ per-channel quantization for weight, which entails assigning different output channels of weights (∆W ∈ R1×Cout)."
+duquant method,normal outliers,"To address the Normal Outliers issue stated in Section 2, current quantization methods usually adopt the smooth technique."
+smooth technique,activation,"It involves the utilization of a per-channel smoothing diagonal matrix, denoted as Λ, to scale the input activation and weight matrix."
+smooth technique,weight,"It involves the utilization of a per-channel smoothing diagonal matrix, denoted as Λ, to scale the input activation and weight matrix."
+λ - diagonal element,xj and wj,The diagonal element Λj within Λ is computed as Λj = max(
+λ−1,w,"Λ−1 relates to W in the computation of the diagonal element Λj within Λ, as mentioned in the formula Λj = max("
+migration strength,hyper-parameter,The hyper-parameter α represents the migration strength in the smoothing technique described.
+massive outliers,performance declines,The presence of Massive Outliers inducing large scaling factors Λj leads to significant performance declines in 4-bit quantization as mentioned.
+duquant method,rotation and permutation transformations,"The DuQuant method includes Rotation and Permutation transformations based on the smooth technique to redistribute features within the activation space, as described."
+rotation transformation,smooth technique,The Rotation Transformation contrasts with the smooth technique by applying rotation matrix for row or column transformations to mitigate the impact of both Normal and Massive outliers.
+outliers,transformer,Outliers are targeted by the transformer through matrix multiplication.
+outliers,rotation matrix,Mitigating outliers involves computing a rotation matrix.
+outliers,r,Rotation matrix R is capable of mitigating outliers.
+outliers,ˆr,An ideal rotation matrix R is approximated by ˆR to mitigate outliers.
+x,r,Matrix X is multiplied by rotation matrix R.
+x,outliers,Matrix X is involved in identifying and mitigating outliers.
+feature dimension,outliers,Feature dimension helps in identifying where outliers are concentrated.
+rotation matrix,ed(1),Rotation matrix is constructed using the switching matrix Ed(1).
+rotation matrix,˜r,Rotation matrix involves an orthogonal initialized rotation matrix ˜R.
+rotation matrix,orthogonal matrix,The rotation matrix ˆR is approximated through constructing orthogonal matrices and the identified feature dimensions while minimizing outliers with large magnitudes.
+approximated rotation matrix,optimal rotation matrix,"The approximated rotation matrix ˆR is constructed to effectively mitigate outliers with large magnitudes, ensuring better performance compared to randomly selected orthogonal rotation matrix."
+permutation transformation,block-diagonal rotation matrix,"The focus on local information by the block-diagonal rotation matrix ˆR introduces a limitation in further reducing outliers as it cannot integrate information across different blocks, impacting outlier minimization."
+information,blocks,"Information is integrated across different blocks to minimize outliers. Different blocks may have larger or smaller outliers, resulting in high variance among them."
+block,outliers,"One block may have relatively larger outliers while another block has smaller outliers, impacting the overall variance of outliers."
+block-diagonal rotation matrix,overall outliers,Merely utilizing the block-diagonal rotation matrix is insufficient in reducing the overall outliers effectively.
+outliers,magnitudes,"To effectively mitigate the overall outliers, balancing the outliers’ magnitudes among various blocks is essential."
+small block,largest outlier,"Within each small block, the largest outlier in dimension dj is denoted as Oj."
+mean value,largest outlier,Mbi represents the mean value of all Oj in the i-th block.
+activations,variance,The variance in activation magnitudes across various blocks is crucial in reducing overall outliers.
+zigzag permutation,overall outliers,The zigzag permutation is introduced to minimize variance and further reduce the overall outliers effectively.
+zigzag sequence,channels,A zigzag sequence assigns channels with the highest activations to the first block and continues in descending order to subsequent blocks until the end of block K.
+final block,order,"Upon reaching the final block, the order reverses, starting from the channel with the next highest activation and proceeding in ascending order."
+orthogonal matrix,zigzag permutation,"The constructed permutation is an orthogonal matrix denoted as P, satisfying the conditions PP⊤ = I and"
+outliers,blocks,The zigzag permutation matrix is proposed for globally balancing the outliers across different blocks.
+smooth technique,quantization challenge,The smooth technique is employed to shift the quantization challenge from activations to weights.
+feature outliers,activation space,The block-diagonal rotation matrix is introduced to locally redistribute feature outliers within the activation space.
+linear layers,transformer,"The linear layers within the transformer can be rewritten as Y = X · W = [(X · Λ−1) ˆR(1) · P · ˆR(2)] · [ ˆR⊤·W)],(cid:124)(cid:123)(cid:122)G(cid:125)(cid:124)(cid:123)(cid:122)⊤ · ˆRG−1(cid:125), where the notation P denotes the orthogonal permutation matrix learned via the zigzag manner."
+duquant method,smooth technique,"The DuQuant method can simultaneously smooth the weight matrix. While the commonly adopted smooth technique is effective, it can cause the weight matrix of the down-projection layer to exhibit pronounced outliers, leading to performance degradation"
+duquant method,rotation transformation,"In the proposed DuQuant method, the rotation transformation is applied to not only the activation input but also the weight matrix. The outliers induced by the smooth technique can be mitigated through our approximated rotation matrix, yielding a smoother, more quantization-friendly weight matrix"
+duquant method,complex weight quantization techniques,"Moreover, this approach eliminates the reliance on complex weight quantization techniques, such as GPTQ used in Atom and QuaRot"
+block rotation matrices,outliers,"To further decrease the computation and memory costs, the k-th block rotation matrix is constructed, with the k-th block containing the largest outlier. This strategy effectively mitigates the impact of outliers"
+block rotation matrices,computation and memory requirements,"The number of block rotation matrices is reduced from K to 1, significantly reducing computation and memory requirements"
+block rotation matrices,invertible matrix g,Incorporating the invertible matrix G significantly reduces computation and memory requirements
+invertible matrix g,x,The invertible matrix G significantly eases the quantization challenges for X.
+invertible matrix g,w,The invertible matrix G significantly eases the quantization challenges for W.
+quantization process,x,The quantization process acts as Y = (XG)(G−1W) = ˆX · ˆW ≈ ∆ ˆX∆ ˆW( ˆXq − z ˆX)( ˆWq − z ˆW).
+quantization process,w,The quantization process acts as Y = (XG)(G−1W) = ˆX · ˆW ≈ ∆ ˆX∆ ˆW( ˆXq − z ˆX)( ˆWq − z ˆW).
+proposed duquant method,theoretical analysis,Theoretical analysis is conducted to demonstrate the effectiveness of the proposed DuQuant method.
+proposed duquant method,rotation and permutation transformations,The theoretical analysis is conducted to demonstrate the effectiveness of the proposed DuQuant method in rotation and permutation transformations.
+rotation matrix,outliers,"The constructed rotation matrix effectively mitigates the maximum outlier, thereby reducing the outlier magnitude."
+zigzag permutation,variance,The zigzag permutation effectively reduces the variance and assists the rotation matrix in further decreasing the outliers.
+blocks,k,K is calculated as Cin/2n based on the number of blocks mentioned in the context.
+blocks,cin,The number of blocks is denoted by Cin.
+oj,dimension dj,Oj denotes the max outlier of dimension dj in X.
+o(1),o(2),"The reordered outliers from large to small are expressed sequentially as O(1), O(2), ..., O(Cin)."
+mbi,oj,Mbi represents the mean value of all Oj in the i-th block.
+mbi,i-th block,Mean value Mbi within each i-th block satisfies a specific condition.
+duquant,pre-trained llms,DuQuant is applied on pre-trained LLMs for experimentation.
+llama,llama2,Different versions of pre-trained LLMs LLaMA and LLaMA2 are evaluated.
+llama,llama3,The model LLaMA3 is also evaluated with different specifications.
+mistral,phi2,Models Mistral and Phi2 are considered for evaluation.
+vicuna-v1.5,pre-trained llms,Vicuna-v1.5 is another pre-trained LLM evaluated in the study.
+vicuna-v1.5,llama,Vicuna-v1.5 is compared with LLaMA model.
+wikitext2,c4,Datasets WikiText2 and C4 are used for evaluating perplexity.
+piqa,arc,"Zero-shot accuracy is evaluated on PIQA, ARC, BoolQ, HellaSwag, and WinoGrande datasets."
+vicuna,mmlu,Quantized Vicuna models are evaluated on MMLU and MT-Bench benchmarks.
+vicuna,longbench,Vicuna models are assessed for long-form generative capabilities on LongBench.
+quantization,smoothquant,W8A8 quantization is established as lossless in precision by SmoothQuant.
+quantization,per-token activation,Per-token activation quantization is applied in the study.
+quantization,per-channel weight,Per-channel weight quantization is utilized for evaluation.
+smoothquant,4-bit quantization,SmoothQuant is evaluated as lossless in precision and is primary focus in the paper for 4-bit quantization along with 6-bit quantization for weights and activations.
+4-bit quantization,6-bit quantization,The paper focuses on 4-bit and 6-bit quantization for weights and activations.
+duquant,round-to-nearest quantization,DuQuant employs round-to-nearest quantization for quantizing weights and activations.
+duquant,duquant+lwc,"The paper has developed two types of quantized models, DuQuant and DuQuant+LWC."
+duquant,clipping ratio of 0.9 for activations and 0.8 for weights,DuQuant employs a clipping ratio of 0.9 for activations and 0.8 for weights for quantization.
+duquant+lwc,learnable weight clipping (lwc) technique from omniquant,DuQuant+LWC integrates the learnable weight clipping technique from OmniQuant to improve weight matrix quantization.
+lwc,"adjusting weights by training parameters γ, β ∈ [0, 1] to compute step size ∆ = γ max(x)−β min(x)",LWC adjusts weights by training parameters to compute step size for weight matrix quantization.
+lwc,integrated into the quantized weights,The learned weight clipping factor from LWC can be integrated into the quantized weights with no additional computational or memory costs.
+duquant,lwc,DuQuant and LWC are methods used in the quantization process.
+duquant,llama1,DuQuant is compared with SOTA baselines on LLaMA1 models.
+duquant,llama2,DuQuant is compared with SOTA baselines on LLaMA2 models.
+duquant,vicuna,DuQuant is used in the quantization of Vicuna models.
+lwc,smoothquant,LWC and SmoothQuant are methods used in the quantization process.
+smoothquant,llama1,SmoothQuant is used in quantizing LLaMA1 models.
+smoothquant,llama2,SmoothQuant is used in quantizing LLaMA2 models.
+smoothquant,vicuna,SmoothQuant is used in quantizing Vicuna models.
+smoothquant,duquantqasper,SmoothQuant and DuQuantQasper are both quantization methods mentioned in the context.
+duquantqasper,multinews,DuQuantQasper is related to MultiNews as a part of the context mentioning different methods and datasets.
+duquantqasper,trec,DuQuantQasper is related to TREC as a part of the context mentioning different methods and datasets.
+duquantqasper,triviaqa,DuQuantQasper is related to TriviaQA as a part of the context mentioning different methods and datasets.
+duquantqasper,samsum,DuQuantQasper is related to SAMSum as a part of the context mentioning different methods and datasets.
+duquantqasper,repobench-p,DuQuantQasper is related to RepoBench-P as a part of the context mentioning different methods and datasets.
+duquantqasper,smoothquant,DuQuantQasper is related to SmoothQuant as both are quantization methods mentioned in the context.
+duquantqasper,affinequant,DuQuantQasper is related to AffineQuant as a part of the context mentioning different quantization methods.
+duquantqasper,duquant+lwc,DuQuantQasper is related to DuQuant+LWC as a part of the context mentioning different quantization methods.
+duquant,atom,"DuQuant quantized models significantly outperform both Atom in win rates. DuQuant only lost 16 and 1 times to Atom, respectively, while achieving 68 and 155 wins against them."
+duquant,omniquant,"DuQuant quantized models significantly outperform both OmniQuant in win rates. DuQuant only lost 16 and 1 times to OmniQuant, respectively, while achieving 68 and 155 wins against them."
+duquant,gpt-4,Utilize GPT-4 to evaluate the answers from quantized models.
+duquant,mt-bench,Compare DuQuant with Atom and OmniQuant using MT-Bench to evaluate the answers from quantized models.
+duquant,state-of-the-art baselines,Conduct a comprehensive comparison of DuQuant against state-of-the-art baselines on the LongBench for long-text generative capabilities.
+duquant,llama3,Apply DuQuant to quantize LLaMA3-8B for superior performance in various tasks.
+duquant,fp16 models,"DuQuant achieves performance comparable to FP16 models, demonstrating the effectiveness of our dual transformations."
+w6a6 setting,duquant,Performance of DuQuant is comparable to FP16 model under W6A6 setting
+duquant,fp16 model,DuQuant achieves performance comparable to FP16 model
+duquant,w4a4 setting,DuQuant maintains competitive performance unlike other methods that show weaker results under W4A4 setting
+duquant,llama3,DuQuant shows robustness with LLaMA3
+outliers,dual transformations,Success of DuQuant attributed to advanced handling of outliers achieved through dual transformations
+dual transformations,specific models,Advanced handling of outliers achieved through dual transformations is not restricted to specific models
+duquant,smoothing operation,Smoothing operation plays a basic role in DuQuant by shifting activation outliers to weight
+duquant,initial rotation,Initial rotation significantly enhances model performance in DuQuant
+permutation,second rotation,Permutation combined with a second rotation further enhances the quantized results
+massive outliers,ffn module,Massive outliers primarily occur at the down-projection of the FFN module
+ffn module,down-projection,The FFN module occurs at the down-projection
+down-projection,rotation and permutation transformations,The rotation and permutation transformations are removed for down-projection inputs
+rotation and permutation transformations,smoothing technique,The smoothing technique is applied to down-projection inputs after removing rotation and permutation transformations
+llama2-7b,llama-13b,Table 7 shows significant degradation for LLaMA2-7B and LLaMA-13B
+outliers,quantization,Outliers have an impact on quantization
+smoothing technique,outliers,The smoothing technique struggles to fully mitigate the influence of outliers
+rotation and permutation methods,outliers,Rotation and permutation methods are highly effective against both types of outliers
+normal outliers,massive outliers,Table 7 shows the impact of Normal and Massive outliers on quantization
+gpt-4,mt-bench,Figure 3 shows the evaluation of GPT-4 on the MT-Bench
+duquant,quarot,Comparison between DuQuant and QuaRot highlights key differences
+quarot,duquant,DuQuant's rotation matrix outperforms QuaRot's approach by utilizing prior knowledge to accurately target outliers.
+quarot,gptq,QuaRot employs GPTQ for weight quantization method as per Table 8.
+duquant,rtn quantization,"DuQuant attains competitive results using RTN quantization, which proves the effectiveness of zigzag permutation to enhance capacity."
+duquant,permutation frequency,"Ablations on rotation and permutation frequencies in DuQuant show that ""Perm 1"" achieves stronger performance compared to ""Perm 0"" and incurs additional computational cost."
+speedup,performance,"The approximately 2× speedup and the impressive performance are mentioned together, indicating a positive relationship between them in terms of system optimization."
+additional costs,acceptable,"The additional costs are deemed acceptable in the context, suggesting a trade-off relationship between cost and acceptability."
+permutations,performance,"Further permutations like 'Perm 2' do not improve performance, implying a negative relationship between permutations and performance improvement."
+perm 1,balance,"'Perm 1' strikes the best balance between perplexity and inference speed, indicating a harmonious relationship in system configuration."
+duquant,optimal configuration,"'Perm 1' is defined as the optimal configuration for DuQuant, suggesting a strong association between the two terms."
+inference speedup,measured,"To assess the inference speedup delivered by DuQuant, a measurement strategy from [2] is adopted, indicating a relationship between speedup and measurement."
+decoding stage,high throughput,"Batching the token generation phase in the decoding stage yields high throughput without any downside, showcasing a positive relationship between decoding and throughput."
+memory consumption,peak memory usage,"The peak memory usage of DuQuant is measured with the W4A4 kernel, highlighting a direct relationship between memory consumption and peak memory usage."
+memory consumption,duquant,DuQuant achieves up to 3.2× memory reduction in the pre-filling stage while maintaining strong memory efficiency in the decoding stage.
+duquant,smoothquant,DuQuant outperforms SmoothQuant in terms of memory reduction and decoding efficiency.
+duquant,qllm,DuQuant performs better than QLLM in terms of memory efficiency and performance.
+duquant,llama2-7b,"DuQuant stands out for its efficiency on LLaMA2-7B, surpassing other baselines."
+duquant,gptq,DuQuant does not rely on GPTQ for its quantization process.
+duquant,gradient-based training,DuQuant does not rely on gradient-based training for its quantization process.
+duquant,outliers,DuQuant manages outliers efficiently in its quantization process.
+duquant,omni,"DuQuant's quantization process is efficient, as shown in Table F24 and its performance on one NVIDIA A100."
+duquant,quantization strategy,DuQuant is an innovative quantization strategy for large language models (LLMs) that addresses the challenge of outlier activations by integrating rotation and permutation transformations.
+duquant,outlier activations,"DuQuant strategically redistributes outliers, effectively mitigating the impacts of both massive and normal outliers."
+duquant,quantization process,"DuQuant simplifies the quantization process by strategically redistributing outliers, leading to substantial improvements in model performance."
+duquant,state-of-the-art results,DuQuant establishes new state-of-the-art results in 4-bit weight-activation quantization scenarios.
+duquant,efficient llms,DuQuant enhances the deployment of efficient LLMs in resource-constrained environments.
+duquant,national natural science foundation of china,This work is supported in part by the National Natural Science Foundation of China.
+duquant,research grants council of the hong kong sar,This work is supported in part by the Research Grants Council of the Hong Kong SAR.
+duquant,innohk initiative,This work is supported in part by the InnoHK initiative.
+duquant,laboratory for ai-powered financial technologies,This work is supported in part by the Laboratory for AI-Powered Financial Technologies.

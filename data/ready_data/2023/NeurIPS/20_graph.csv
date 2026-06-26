@@ -1,0 +1,273 @@
+node_1,node_2,edge
+user-level differential privacy,generic algorithms,Generic algorithms were obtained in previous work on user-level differential privacy to work for various learning tasks.
+example-rich regime,example-scarce regime,"The focus of previous work was on the example-rich regime where users have many examples, while in this work, the example-scarce regime is considered where users only have a few examples."
+approximate-dp,item-level dp algorithm,A generic transformation of any item-level DP algorithm to a user-level DP algorithm is provided in this work.
+pure-dp,exponential mechanism,A simple technique for adapting the exponential mechanism to the user-level setting is presented for pure-DP.
+differential privacy (dp),model's leakage of personal user information,Differential privacy is a widely popular notion quantifying a model's leakage of personal user information.
+private machine learning algorithms,item-level dp,"Private machine learning algorithms have been devised under the assumption of item-level DP, where each user contributes a single example to the training dataset."
+user-level dp,algorithm output,"In the user-level DP setting, the algorithm's output needs to remain statistically indistinguishable even when all items belonging to a single user are substituted."
+privacy requirement,algorithm,The algorithm needs to meet a strong privacy requirement where the output remains statistically indistinguishable even with substitution of samples from a single user.
+privacy requirement,number of examples,Meeting the privacy requirement poses a challenge as the algorithm attempts to take advantage of the increased number of examples provided by users.
+notation,number of users,"In the notation used, n represents the number of users for defining the algorithm."
+notation,number of examples per user,"In the notation used, m represents the number of examples per user for defining the algorithm."
+input,ith user’s data xi,The input with the ith user’s data xi removed
+input,s,Denote the input with all the examples of users in S removed
+"x, x′",user-level neighbors,"Two inputs x, x′ are user-level neighbors if x−i = x′"
+a,"(ε, δ)-user-level dp","A randomized algorithm1 A : Z → O is (ε, δ)-user-level DP iff, for any x ≍ x′ and any S ⊆ O, we have Pr[A(x) ∈ S] ≤ eε Pr[A(x′) ∈ S] + δ. When m = 1, we say that A is (ε, δ)-item-level DP"
+a,"(ε, δ)-item-level dp","When m = 1, we say that A is (ε, δ)-item-level DP"
+pure-dp,case,The case δ = 0 is referred to as pure-DP
+approximate-dp,case,The case δ > 0 is referred to as approximate-DP
+input,z,There is an unknown distribution D over Z and the input x ∼ Dnm consists of nm i.i.d. samples drawn from D
+m,sample complexity,"Furthermore, we say that nm is the sample complexity of the algorithm"
+n,user complexity,Whereas n is its user complexity
+"m, ε, δ",user-level dp algorithm,"Let nTm(ε, δ; γ) denote the smallest user complexity of any (ε, δ)-user-level DP algorithm that is γ-useful for T"
+algorithm,stability,Generic Algorithms Based on Stability
+research themes,main themes,"So far, there have been two main themes of research on"
+generic algorithms,stability,Generic algorithms based on stability are the main themes of research on user-level DP learning.
+generic algorithms,tasks,Generic algorithms aim to work with many tasks.
+generic algorithms,pac learning,Generic PAC learning item-level DP algorithms can be transformed into user-level DP algorithms.
+pseudo-global stability,dp algorithms,Pseudo-globally stable algorithms can be made from DP algorithms to transform them into user-level DP algorithms.
+item-level dp algorithms,pseudo-global stability,Item-level DP algorithms can be compiled into pseudo-globally stable algorithms.
+item-level dp algorithms,user-level dp algorithms,Item-level DP algorithms can be transformed into user-level DP algorithms with some overhead in sample complexity.
+sample complexity,item-level dp algorithms,There is some overhead in sample complexity for compiling item-level DP algorithms into pseudo-globally stable algorithms.
+item-level dp algorithm,user-level dp algorithm,"There is a relationship between item-level DP algorithm with sample complexity n and user-level DP algorithm with user complexity O(log(1/δ)/ε) as long asm ≥(cid:101)Ωε,δ(n2)"
+user-level dp algorithm,samples,The algorithm under user-level DP constraint needs very few users to learn if each user has sufficiently many samples
+user complexity,item-level dp setting,The user complexity in the user-level DP setting is often roughly 1/m smaller than that of the item-level DP setting
+specific tasks,sample complexity,Active research theme to study specific tasks and provide upper and lower bounds on their sample complexity for user-level DP
+mean estimation,user-level dp,Mean estimation is well-understood under user-level DP for approximate-DP
+stochastic convex optimization (sco),user-level dp,SCO is well-understood under user-level DP for approximate-DP
+discrete distribution learning,user-level dp,Discrete distribution learning is well-understood under user-level DP for approximate-DP
+discrete distribution learning,domain,The task of discrete distribution learning on domain k
+output space o,finite,"For simplicity, we will only consider the case where the output space O is finite throughout this work"
+output space o,measure-theoretic issues,This assumption is often without loss of generality since even the output in continuous problems can be discretized in such a way that the “additional error” is negligible
+item-level setting,user-level setting,we are looking for one that can reduce the user complexity compared to the item-level setting
+privacy-dependent term,privacy-independent term,We can see that the first privacy-dependent term decreases by a factor of privacy-independent term decreases by a factor of m
+privacy-dependent term,saving factors,Is there a common explanation for these saving factors for the privacy-dependent term?
+item-level dp algorithm,user-level dp algorithm,We answer both questions by showing a generic way to transform any item-level DP algorithm into a user-level DP algorithm such that the latter saves roughly m in terms of
+dp algorithm,user-level dp algorithm,"The DP algorithm is transformed into a user-level DP algorithm, which saves roughly m in terms of the number of users required."
+stat,privacy-dependent term,The sample complexity is stated as the sum of two terms: stat and the privacy-dependent term that grows linearly in 1/ε.
+privacy-dependent term,privacy-independent term,"The privacy-dependent term grows linearly in 1/ε, while the privacy-independent term grows polylogarithmically in 1/δ."
+sample complexity,dp learning,The most common form of sample complexity of DP learning in the literature covers all the discussed tasks.
+privacy-dependent term,m,The privacy-dependent term decreases by a factor of roughly m.
+privacy-independent term,m,The privacy-independent term decreases by a factor of m.
+main theorem–simplified,t,"The Main Theorem–Simplified states that there exists an (ε, δ)-user-level DP algorithm that is (γ − o(1))-useful for task T."
+user-level dp algorithm,sample complexity,"The user-level DP algorithm has a sample complexity involving various components such as stat, εpriv, nTstat, and nTpriv."
+sample complexity,dp learning,"Our result provides a powerful and generic tool in learning with user-level DP, as it can translate DP learning into user-level DP."
+user-level dp,item-level dp,user-level DP is related to item-level DP as our result can translate any item-level DP bound to user-level DP bound.
+dependency,ε,"dependency on ε is mentioned in relation to the corollary above that recovers user complexity bounds for mean estimation, SCO, and discrete distribution learning."
+cost,algorithm,"the algorithm is computationally inefficient and the dependence on ε (and δ) is not tight, which leads to a cost."
+pure-dp,approximate-dp,pure-DP setting is less explored compared to approximate-DP in the context of learning with user-level DP.
+discrete distribution learning,sco,sample complexity of these problems is well-understood under approximate-DP but not so under pure-DP.
+item-level dp algorithms,user-level dp algorithms,"there are simple modifications of the popular pure-DP exponential mechanism that allow it to be used in the user-level DP setting, leading to improved bounds for several problems."
+pac learning,concept class,"In PAC learning, Z = X × {0, 1} and there is a concept class C ⊆ {0, 1}X."
+pac learning,error,"An error of c : Z → {0, 1} w.r.t. D is defined as errD(c) := Pr(x,y)∼D[c(x) ̸= y]."
+pac learning,task pac,"The task PAC(C; α) is to, for any distribution D that has zero error on some concept c∗ ∈ C (aka realizable by C), output c : Z → {0, 1} such that errD(c) ≤ α."
+concept class,probabilistic representation dimension,Let C be any concept class with probabilistic representation dimension d (i.e. PRDim(C) = d).
+error,distribution,"An error of c : Z → {0, 1} w.r.t. D is defined as errD(c) := Pr(x,y)∼D[c(x) ̸= y]."
+error,concept class,"An error of c : Z → {0, 1} w.r.t. D is defined as errD(c) := Pr(x,y)∼D[c(x) ̸= y]. The task PAC(C; α) is to, for any distribution D that has zero error on some concept c∗ ∈ C (aka realizable by C), output c : Z → {0, 1} such that errD(c) ≤ α."
+probabilistic representation dimension,concept class,Let C be any concept class with probabilistic representation dimension d (i.e. PRDim(C) = d).
+compare4,a,compare4 is mentioned as a concept compared with A in the context
+compare4,x,compare4 is mentioned as a concept compared across different values of x
+increased,ε,ε is mentioned as a factor that is increased in the context
+user-level,neighbors,"user-level neighbors are mentioned together, indicating they are related"
+"(ε, δ)-item-level dp algorithm","(ε, δ)-user-level dp","comparison between (ε, δ)-item-level DP algorithm and (ε, δ)-user-level DP algorithm"
+corollary 3,result,Corollary 3 implies a result
+yielded,ε,something have also yielded ε
+algorithm,input,algorithm checks input in the context
+test,input,testing if input is 'bad' or not
+output,⊥,output is ⊥ if the local condition does not hold
+item-level dp algorithm,test,item-level DP algorithm is run after the test
+utility,desired,getting the desired utility
+kohli,laskowski,Kohli and Laskowski are authors mentioned together
+ghazi,et al.,Ghazi et al. are mentioned together
+algorithm a,privacy loss,testing privacy loss of the algorithm A
+sample perfect generalization,definition 12,connection between sample perfect generalization and Definition 12
+privacy,notion,notion of privacy in the context
+generalization,privacy loss,"Generalization concept measures privacy loss in (ε, δ)-item-level DP algorithm."
+privacy loss,changing the last user,Privacy loss when changing the last user is O((cid:112)m log(1/δ) · ε) w.h.p.
+algorithm,user-level dp,Local version of user-level DP is related to algorithm fixing examples of all but one user.
+algorithm,sample perfect generalization,Algorithm fixing examples of all but one user relates to applying sample perfect generalization bound on just the input of the last user.
+sample perfect generalization,dp algorithms,Sample perfect generalization resolves an open question of Cum- mings et al. regarding DP algorithms.
+item-level dp algorithms,user-level dp algorithms,Conversion from item-level DP algorithms to user-level DP algorithms requires constructing pseudo-globally stable algorithms with sample complexity m.
+exponential mechanism,privacy loss,Exponential mechanism works by considering privacy loss.
+exponential mechanism,set h,The exponential mechanism selects from a set H of candidates using scoring functions
+exponential mechanism,scoring functions,The exponential mechanism works with scoring functions with sensitivity at most ∆
+set h,scoring functions,The set H is associated with scoring functions in the exponential mechanism
+algorithm,sensitivity ∆,The error guarantee of the algorithm scales with the sensitivity ∆
+algorithm,clipping threshold,Selecting the clipping threshold appropriately is crucial for new user-level pure-DP algorithms
+user,clipping threshold,Clipping the contribution from each user is essential for small sensitivity
+support of distribution a,hockeystick divergence,The hockeystick divergence is used in DP to evaluate the support of distribution A
+item-level dp algorithm,k-neighbors,An item-level DP algorithm ensures privacy for k-neighbors
+item-level dp algorithm,"privacy guarantee ε′,δ′","The item-level DP algorithm guarantees privacy with ε′ = kε, δ′ = ekε−1eε−1 δ"
+a(x−s),small sizes s,"In Theorem 17, the algorithm needs to compare A(x−S) for S's of small sizes"
+a(x),a(x'),A(x) is approximately equal to A(x') with certain modifications in the values of ε' and δ'.
+a(x−s),s's of small sizes,"In Theorem 17, there is a comparison between A(x−S) and S's of small sizes."
+"x0, x1, . . . , xk = x'",item-level neighbors,"There exists a sequence of x0, x1, . . . , xk = x' such that xi−1, xi are item-level neighbors for all i ∈ [k]."
+"n, n'","(ε, δ)-item-level dp algorithm a","In Theorem 7, it discusses properties of an (ε, δ)-item-level DP algorithm A for sample complexities n and n'."
+a,a',"Algorithm A' is defined as the subsampled version of algorithm A, which exhibits similar differential privacy properties with adjusted parameters ε' and δ'."
+shifted truncated discrete laplace distribution,"{0, . . . , 2κ}","The shifted and truncated discrete Laplace Distribution TDLap(ε, δ) is defined on the set {0, . . . , 2κ} with specific probability mass function characteristics."
+exponential mechanism (em),(generalized) selection problem (select),"The Exponential Mechanism is related to the (generalized) selection problem, introducing concepts of candidate set H, scoring functions, and accuracy criteria."
+algorithm a,select,"An ε-DP algorithm for SELECT is discussed in Theorem 9, providing accuracy guarantees based on sensitivities and other parameters."
+approximate-dp,user-level learning,This section focuses on proving the main result related to approximate-DP in user-level learning scenarios.
+theorem 10,parameter,Theorem 10 defines the concept of a 'parameter' and its relation to the conditions of being 'sufficiently small' as mentioned in the paper.
+parameter,absolute constant,A parameter is considered 'sufficiently small' if it is at most an 'implicit absolute constant' based on the discussion in the paper.
+theorem 10,main theorem,"The Main Theorem, represented as Theorem 10, introduces the key concept of a 'parameter' with specific values for a given task."
+main theorem,task,"The Main Theorem, denoted as Theorem 10, discusses the relationship between 'task' and 'parameter' in the context of the research paper."
+main theorem,γ,"The Main Theorem, labeled as Theorem 10, involves the parameter 'γ' and its significance in the given task and conditions."
+theorem 10,ε,Theorem 10 analyzes the concept of 'sufficiently small ε' parameter values and their implications for the task under consideration.
+main theorem,δ,"The Main Theorem, denoted as Theorem 10, addresses the role of 'δ' in conjunction with 'ε' and 'm' for the given task."
+main theorem,m,"In the Main Theorem represented by Theorem 10, the parameter 'm' is discussed in relation to 'δ' and 'ε' for the specified task."
+corollary 3,theorem 10,"Corollary 3 is derived directly from Theorem 10, implying a relationship between the conclusions drawn in both assertions."
+theorem 10,subsampling argument,"The discussion surrounding Theorem 10 mentions a 'subsampling argument,' which aids in interpreting the bounds and relationships between different values."
+theorem 11,main theorem-same ε version,"Theorem 11 introduces the concept of the 'Same ε Version' of the Main Theorem, highlighting the significance of 'ε' values for the given task."
+main theorem-same ε version,parameter,"The Main Theorem-Same ε Version, denoted as Theorem 11, discusses the importance of 'parameter' values, particularly 'γ', 'ε', and 'm' in the context of the research."
+main theorem-same ε version,δ,"In the Main Theorem-Same ε Version, represented by Theorem 11, the relationship between 'δ' and 'ε' in conjunction with 'm' is analyzed for the specified task."
+theorem 11,theorem 10,"Theorem 11 might be easier to interpret, but does not result in as sharp a bound as Theorem 10 in some scenarios."
+theorem 11,implied by theorem 10,The privacy-independent part would be implied by Theorem 10 if we use Theorem 11 under the assumption in Corollary 3.
+theorem 10,theorem 10,The privacy-dependent part is the same.
+section 3.1,sample perfect generalization,"In Section 3.1, any item-level DP algorithm satisfies sample perfect generalization."
+local version of user-level dp,sample perfect generalization,"Section 3.2.1 relates any item-level DP algorithm to a local version of user-level DP, which is related to sample perfect generalization."
+full algorithm and its guarantees,sample perfect generalization,"Section 3.2.2 describes the full algorithm and its guarantees, which relate to sample perfect generalization."
+n,o(ε(n log(1/(βδ))),"The main result implies that for n, O(ε(n log(1/(βδ))) is sample perfectly generalizing."
+dp,ε,"DP and assume that ε, δ, β, ε(cid:112)n log(1/βδ) > 0 are sufficiently small."
+dp,δ,"DP and assume that ε, δ, β, ε(cid:112)n log(1/βδ) > 0 are sufficiently small."
+dp,β,"DP and assume that ε, δ, β, ε(cid:112)n log(1/βδ) > 0 are sufficiently small."
+dp,ε′,"A is (β, ε′, δ′)-sample perfectly generalizing, where ε′ ≤ O(ε(cid:112)n log(1/βδ)) and δ′ = O(nδ)."
+β,ε′,"A is (β, ε′, δ′)-sample perfectly generalizing, where ε′ ≤ O(ε(cid:112)n log(1/βδ)) and δ′ = O(nδ)."
+ε,δ′,"A is (β, ε′, δ′)-sample perfectly generalizing, where ε′ ≤ O(ε(cid:112)n log(1/βδ)) and δ′ = O(nδ)."
+a,z n,"Theorem 13 (DP ⇒ Sample Perfect Generalization). Suppose that A : Z n → O is (ε, δ)-item-level."
+a,o,"Theorem 13 (DP ⇒ Sample Perfect Generalization). Suppose that A : Z n → O is (ε, δ)-item-level."
+a,ε,"Lemma 14. Suppose that A : Z n → O is an (ε, δ)-item-level DP algorithm."
+a,δ,"Lemma 14. Suppose that A : Z n → O is an (ε, δ)-item-level DP algorithm."
+o,o,"For every output o ∈ O, they consider the function go : Z n → R defined by go(x) := ln(Pr[A(x) = o])."
+go,z n,"For every output o ∈ O, they consider the function go : Z n → R defined by go(x) := ln(Pr[A(x) = o])."
+mcdiarmid’s inequality,robust version,"McDiarmid’s inequality is the main concept, and the robust version is a modification that works even in violating the Lipschitz property on some pairs of neighbors."
+lemma 32,mcdiarmid’s inequality,Lemma 32 is mentioned as a reference to McDiarmid’s inequality.
+function,multiplicative-lipschitz,The function is modified slightly to become multiplicative-Lipschitz to apply standard techniques.
+lemma 14,hockey stick divergence,"Lemma 14 bounds the expectation of hockey stick divergence, but it is insufficient for getting a high probability bound."
+β,δ′,"Markov’s inequality can handle β > δ′, but we require a very small β for a subsequent step of the proofs."
+theorem 13,probability,"Theorem 13 requires a high probability bound, which can be achieved by boosting the probability."
+ε,privacy loss,Boosting the β value for a small ε incurs an additive cost in privacy loss.
+prx∼dn,e≤t,The probability of x being in E≤t is calculated based on Prx∼Dn.
+lemma 14,ε′′,"From Lemma 14, ε′′ is defined as O(ε(cid:112)n log(1/δ))."
+talagrand6,product measures,A concentration result of Talagrand6 for product measures is required for a specific purpose.
+theorem 15,distribution d over z,Theorem 15 is defined for any distribution D over Z.
+theorem 15,e ⊆ z n,Theorem 15 involves a subset E of Z multiplied by n.
+theorem 15,prx∼dn [x ∈ e],Theorem 15 mentions the probability of x belonging to E under the distribution Dn.
+theorem 15,prx∼dn[dε′′ (a(x) ∥ a(x′))] ≤ o(nδ) =: δ′′,Theorem 15 discusses the probabilistic calculation involving the difference between A(x) and A(x') under certain conditions.
+theorem 15,"(x, x′) ∈ e",Theorem 15 talks about the relation between x and x' as part of set E.
+theorem 15,t = o((cid:112)n log(1/β)),Theorem 15 specifies the relationship between t and the logarithm of 1 divided by beta.
+theorem 15,"(x, x′) ∈ e≤t",Theorem 15 discusses the involvement of x and x' within a certain threshold t.
+theorem 15,"a(x) ≈ε′,δ′ a(x′)",Theorem 15 explains the similarity between A(x) and A(x') based on certain epsilon and delta values.
+theorem 15,"a(x) is (β, ε′, δ′)-sample perfectly generalizing",Theorem 15 describes the process of sample generalization with specified parameters.
+theorem 15,group privacy (lemma 6),Theorem 15 mentions the application of group privacy concept as per Lemma 6.
+theorem 15,"x, x′ ∼ dn",Theorem 15 involves x and x' following a certain distribution Dn.
+theorem 15,"a(x) ≈ε′,δ′ a(x') for ε′ = nε and δ′ = o(nδ)",Theorem 15 explains the approximation relationship between A(x) and A(x') with specified epsilon and delta values.
+a,x,The value A(x) is approximately equal to A(x') when the L0 norm of x and x' is less than or equal to n.
+a,x',The value A(x) is approximately equal to A(x') when the L0 norm of x and x' is less than or equal to n.
+a,ε',The epsilon value ε' is equal to n times epsilon and delta value δ' is equal to O(n times delta) in the context of algorithm A.
+a,δ',The epsilon value ε' is equal to n times epsilon and delta value δ' is equal to O(n times delta) in the context of algorithm A.
+a,a,"Algorithm A is (β, ε', δ')-sample perfectly generalizing and (0, ε', δ')-sample perfectly generalizing."
+a,x,Algorithm A satisfies a certain definition of a local version of user-level DP with the input x.
+a,x',Algorithm A satisfies a certain definition of a local version of user-level DP with the input x'.
+x,x,Local-deletion DP considers x-i for different i's.
+a,r,"Algorithm A is (r, ε, δ)-local-deletion DP at x when privacy loss is roughly increased by r."
+a,r,"Algorithm A is (r, ε, δ)-local-deletion DP at x when privacy loss is roughly increased by r."
+x,r,The privacy loss is increased by roughly r times m in the context of the proof related to relates sample perfect generalization to user-level DP.
+x',r,The privacy loss is increased by roughly r times m in the context of the proof related to relates sample perfect generalization to user-level DP.
+perfect generalization,user-level dp,sample perfect generalization is related to user-level DP in the context of DP distribution and algorithm
+n,r,n and r are natural numbers where r is less than or equal to n
+a,x,"A is a function from X to O in the context of (ε', δ')-item-level DP distribution D,algorithm"
+ε,δ,ε is of order O(ε'r¹·¹²m log(n/βδ')) and δ is of order O(rmδ') based on the given conditions
+a,lddp,"A is considered as (r, ε, δ)-LDDP at x with a probability of at least 1 - β in the given context"
+s,s',S and S'are fixed subsets of [n] with the same cardinality r
+t,x-t,T is related to x-T as T is a subset of x-T in the context of an algorithm
+u,u',U and U' are subsets of S and S' respectively with the same cardinality q
+a',a,A' is defined based on A in the context of the algorithm
+a',a',A' is related to itself in the context of the algorithm
+x-t,z,x-T belongs to Z(n-t)m as per Theorem 13 in the given context
+u,a',A'(xU) is not approximately equal to A'(xU') based on certain conditions
+a(x-s),a(x-s'),A(x-S) is not approximately equal to A(x-S') as per the calculation in the context
+s,s',S and S' have a relation in terms of union and subsets
+pr,d,Pr is associated with D in the context of probabilities
+s,s',S and S' are subsets of [n] with the same cardinality r in the context
+a,x,A is referring to x in the given context
+x-t,x-t,x-T is related to itself in the context of the algorithm
+s,s',S and S' are fixed subsets with the same cardinality
+s,s',S and S' are related through a union bound over all possible pairs of subsets
+subset s,lddp,The subset S is such that x−S is LDDP with appropriate parameters.
+n,κ,"Throughout, we assume that n ≥ 4κ7 where κ is from Definition 8."
+target size of s,noised,The target size of S is noised using the discrete Laplace distribution.
+algorithm,[gkk+23],"The algorithm is very similar to that of [GKK+23], with the main difference being that (i) X R1 stable is defined based on LDDP instead of the local deletion sensitivity."
+algorithm,x r1 stable,"The algorithm is very similar to that of [GKK+23], with the main difference being that (ii) our output is A(x−T ), whereas their output is the function value with Gaussian noise added."
+output,a(x−t ),"It is not hard to adapt their proof to show that our algorithm is (ε, δ)-user-level DP, as stated below."
+output,function value with gaussian noise added,"It is not hard to adapt their proof to show that our algorithm is (ε, δ)-user-level DP, as stated below."
+r1,a,"Lemma 18 (Privacy Guarantee) states that DelStabε,δ,A is (ε, δ)-user-level DP."
+r1,a,"Algorithm 1 DelStabε,δ,A(x) indicates the selection of R1 and using it in the algorithm."
+dataset x,x nm,"Input for Algorithm 1 DelStabε,δ,A(x) is Dataset x ∈ X nm."
+"privacy parameters ε, δ",algorithm a,"Parameters Privacy parameters ε, δ, Algorithm A : X (n−4κ)m → O are specified for Algorithm 1 DelStabε,δ,A(x)."
+useful,a,"Lemma 19 (Utility Guarantee) states that DelStabε,δ,A is (γ − o(1))-useful for T with nm samples."
+a,item-level dp,"Next, we prove the utility guarantee under the assumption that A is item-level DP."
+dp,ε′,DP such that ε′ = Θ
+n,κ,(n − 4κ)m samples
+"delstabε,δ,a",γ,"DelStabε,δ,A is (γ − o(1))-useful for T with nm samples"
+t,nm,(γ − o(1))-useful for T (with nm samples)
+prx∼dnm,a0,Prx∼Dnm [A0(x) ∈ ΨT] = Prx∼D(n−4κ)m[A(x) ∈ ΨT] ≥ γ
+a0,"delstabε,δ,a","A0 and DelStabε,δ,A are exactly the same as long as X R1"
+a,t,If A is γ-useful for any task T
+a0(x),n,A0(x) is equivalent to randomly selecting n − 4κ users
+r1,stable(x),X R1 running A on it
+n,4κ,"A is not (4κ, ε, δ)-LDDP at x"
+dnm,γ,"Prx∼DnmR1R1R1[DelStabε,δ,A(x) ∈ ΨT] ≥ Pr[A is not (4κ, ε, δ)-LDDP at x]Prx∼Dnm≥ γ − o(1)"
+theorem 10,lemmas 18,Theorem 10 is now “almost” an immediate consequence of Lemmas 18 and 19
+κ,o (log(1/δ)/ε),using κ = O (log(1/δ)/ε)
+lemma 19,ε,ε′ required in Lemma 19 depends polylogarithmically on n
+theorem 10,ε′,"Proof of Theorem 10. Let ε′ = ε′(n), δ′ be as in Lemma 19"
+n,ε,"The relation between N and ε is that N ∈ N is the smallest number, and the given equation involves ε in the context"
+n,m,The relation between N and m is that N is divisible by m as mentioned in the context
+n,a0,The relation between N and A0 is that the algorithm A0 operates on N samples as specified in the text
+m,κ,The relation between m and κ is that m is present in the equation along with κ
+a0,a,The relation between A0 and A is that algorithm A is constructed based on A0 as described in the text
+a,n,The relation between A and N is that algorithm A operates on N samples and n = N/m + 4κ
+a,t,The relation between A and T is that algorithm A is useful for T as mentioned in the context
+n,m,The relation between N and m is that N is divisible by m as per the equation given
+m,δ,The relation between m and δ is that m is present in the logarithmic equations involving δ
+δ,x,The relation between δ and X is that δ is mentioned in the context related to input distribution DX
+"(α, β)-pr",concept class c,"The (α, β)-PR of a concept class C is defined as a property where for every element in C and every distribution on X, there exists a specific element such that a certain condition is satisfied."
+concept class c,distribution dx,"The (α, β)-PR of a concept class C is related to a distribution DX by the requirement that for every element in C, there exists a specific distribution such that a certain condition is met."
+"prdimα,β(c)","(α, β)-pr","The PR dimension of C, denoted as PRDimα,β(C), is a measure of the (α, β)-PR property of the concept class C."
+prdim(c),"prdim1/4,1/4(c)","The probabilistic representation dimension of C, denoted as PRDim(C), is related to the (1/4, 1/4)-PR dimension of C through a specific calculation."
+"prdim1/4,1/4(c)",prdim(c),"The (1/4, 1/4)-PR dimension of C is compared to the probabilistic representation dimension of C with a particular inequality as shown in Lemma 21."
+"prdimα,1/4(c)",prdim(c),"There is a relationship between the PR dimension with (α, 1/4)-PR and the probabilistic representation dimension of C as indicated by Lemma 21."
+prdim(c),log(1/α),The probabilistic representation dimension of C is associated with the logarithm of 1/α based on a specific logarithmic calculation.
+"prdimα,1/4(c)",d,"The (α, 1/4)-PR dimension of C is related to the variable d, possibly indicating a dependency on this variable in the context."
+sample complexity,algorithm,"There is a reference to a lower bound on the sample complexity and the algorithm used in the context, suggesting a connection between the two."
+number n,users,"The number n of users is related to the variable κ in the context, indicating a relationship between them in the given scenario."
+p,"(0.01α, 1/4)-pr of c","The symbol P is used to denote a specific type of probabilistic representation of C, where the conditions involve (0.01α, 1/4)-PR according to the context."
+p,size(p),"The symbol P is related to the size of P, which is determined by certain constraints and calculations in the context."
+h,scoring function scrh(z),"The set H in the context is associated with a scoring function scrh(z), indicating a functional relationship between these entities."
+number n,κ·size(p),"The number n of users is related to the product κ·size(P) in the context, hinting at a specific mathematical relationship between them."
+algorithm,ε-dp em (theorem 9),"The algorithm in the context involves the ε-DP EM process, as defined by Theorem 9, which signifies a key component of the algorithm."
+"(ε, δ)-item-level dp",same sample complexity,"Both terms are related to the privacy-preserving mechanism in differential privacy. The concept of (ε, δ)-item-level DP focuses on achieving the same sample complexity while maintaining data privacy."
+upper bound,(cid:1),"The upper bound is mentioned along with (cid:1) in the context, indicating a relationship in the context of bounds or limits."
+lower bound,˜ω (d/ε),"The relationship between the lower bound and ˜Ω (d/ε) is highlighted in the context, specifically referring to the complexity analysis."
+sensitivity of scrh,one,"The sensitivity of scrh is mentioned to be 'one' in the context, emphasizing a direct relationship between the sensitivity of the scoring function and the value 'one'."
+error across all the samples,sensitivity,The concept of error across all samples is related to the sensitivity of the scoring function. The standard item-level step is compared to the clipping approach in terms of error aggregation.
+concentration argument,lemma 22,"The concentration argument mentioned in the context is associated with Lemma 22, indicating a logical relation between the argument and the lemma in the context of probability analysis."
+p,"(0.01α, 1/4) pr of c","The concept of P as a PR of C with certain probability is connected in the context, highlighting the relationship between the variables in the context of probabilistic reasoning."
+algorithm,scrh(z),The algorithm outputs h that satisfies scrh(z) ≤ 0.05αnm + O (size(P)/ε)
+algorithm,size(p),The algorithm outputs h that satisfies scrh(z) ≤ 0.05αnm + O (size(P)/ε)
+scrh(z),0.05αnm,The algorithm outputs h that satisfies scrh(z) ≤ 0.05αnm + O (size(P)/ε)
+0.05αnm,0.1αnm,"For a sufficiently large κ, the output is at most 0.1αnm"
+lemma 22(ii),errd(h),"By Lemma 22(ii), this implies that errD(h) ≤ α"
+m,extra examples,"If m is larger, then we can simply disregard the extra examples"
+m,log(1/δ),"If m is larger, we have m log(1/δ)ε√ε2√"
+open questions,tight user complexity bounds,An important research direction is to get a better understanding of the tight user complexity bounds for different learning tasks
+theorem 10,item-level privacy loss,Our transformation for approximate-DP (Theorem 10) has an item-level privacy loss
+algorithm 1,lddp,Algorithm 1 uses LDDP with distance O(κ) = O (log(1/δ)/ε)
+algorithm,size,The size of the possible outputs is linearly related to the algorithm.
+algorithm,complexity,The worst-case running time of the algorithm for user-level DP in [GKK+23] is not polynomial.
+algorithm,input data,The central model of DP involves the algorithm having access to the raw input data.
+model of dp,user-level dp,"Different models of DP, like the local DP model, have been studied in the context of user-level DP."
+transformation,user complexity,"[GKM21, BGH+23] give a generic transformation that reduces the user complexity in the example-rich case."
+pac learning,user complexity,Theorem 4 provides a better user complexity compared to applying the approximate-DP transformation for item-level approximate-DP learners.

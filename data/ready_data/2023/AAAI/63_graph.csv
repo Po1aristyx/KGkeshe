@@ -1,0 +1,146 @@
+node_1,node_2,edge
+multi-agent reinforcement learning frameworks,centralized training,Referred to as a method for performing well in these frameworks.
+centralized training,dense rewards,Not readily available in the real world
+current multi-agent algorithms,decentralized training,Struggle to learn without centralized training
+decentralized training,sparse rewards,The alternative setup that current algorithms face
+self-supervised intrinsic reward elign,expectation alignment principle,Inspired by self-organization in Zoology
+expectation alignment,decentralized collaboration,Agents learn behaviors that match their neighbors' expectations
+elign,external reward,Does not require external reward for learning collaborative behaviors.
+elign,centralized training,Outperforms existing methods like sparse and curiosity-based rewards in decentralized training scenarios.
+multi-agent particle environment,google research football environment,Used as testbeds for evaluating ELIGN across multiple tasks.
+increasing number of agents,scaling,ELIGN scales well in most multi-agent tasks
+coordination improvement,expectation alignment,Agents learn to divide tasks
+curiosity-driven exploration,alternative strategy,ELIGN identifies tasks where curiosity-driven exploration might not be as effective for multi-agent coordination.
+multi-agent coordination,curiosity-driven exploration,The context suggests that curiosity-driven exploration is a less useful strategy compared to multi-agent coordination
+multi-agent systems,real-world ai applications,Multi-agent systems are a type of application found in various real-world scenarios such as autonomous vehicles
+adaptive coordination algorithms,partial observability,Adaptive coordination is more difficult in decentralized training where agents operate under partial observability
+decentralized training,centralized training,In contrast to decentralized training
+partial observability,real world,Partial observability is a characteristic of real-world environments where agents must operate without complete knowledge of their surroundings.
+most successful multi-agent algorithms,centralized critic,Typically
+decentralized training,real-world constraints,The limitations of decentralized training reflect the constraints faced by agents in the real world
+collaboration,deception,These rewards involve either maximizing information
+information conveyed by an agent's actions,maximization,The rewards aim to maximize the information communicated by an agent.
+influence of an agent,shaping,Rewards also shape the impact an agent has on others.
+intentions,hiding,Agents may be incentivized to conceal their intentions.
+accurate models of other agents' policies,building,The rewards encourage agents to create accurate models of同伴 behavior.
+theory of mind,closely related component,The ability to model others is a key aspect of Theory of Mind
+our work,using theory of mind,Our approach involves using a dynamic model to calculate intrinsic motivation based on a Theory of Mind understanding.
+single dynamics model,scalability,Our method learns a single model that scales with increasing numbers of agents
+model-based reinforcement learning,related,Our work connects to model-based RL
+predicting an agent's future states,auxiliary loss,Our proposal is similar to a recent approach that uses an auxiliary loss for state prediction.
+ndousse et al. (2021),recently proposed auxiliary loss,This reference points to a concurrent study with a similar focus on predicting future states.
+decentralized training framework,nonstationarity challenge,The decentralized training framework addresses the nonstationarity challenge.
+intrinsic reward,agent's ability to model others,The intrinsic reward aims to enhance the agent's capacity to understand and predict the behavior of others.
+expectation alignment,centralized training,Expectation alignment is applied to centralized training
+partially observable markov game (pomg),state space,A POMG consists of a state space that represents the possible configurations of the environment.
+observation space,private partial view of the state,Each agent has a private observation space that reflects their limited knowledge of the environment.
+action space,stochastic policy πθi,Agents use stochastic policies (parameterized by θi) to choose actions based on their observations.
+state transition function,next state,The state transition function determines the next state based on the current state and agents' actions.
+extrinsic reward,total expected return,The team's objective is to maximize the total extrinsic reward over time.
+adversarial agents,own reward structure,In the environment
+cooperative navigation task,n agents,In the cooperative navigation task
+agent i,agent j,Agent i predicts future states for agent j based on its dynamics model
+dynamics model,future states,The dynamics model predicts how future states will evolve from the perspective of other agents.
+elign,agent behavior predictability,ELIGN promotes predictability in agent behaviors by aligning shared expectations.
+figure 1(a),action alignment,In Figure 1(a)
+agent j's receptive field,environment inference,Observations outside the receptive field can indicate environmental conditions
+training algorithm,phases of learning,The algorithm consists of three interconnected phases: dynamics model training
+dynamics model training,prior work,It follows the approach of Wang et al. (2018) and Kidambi et al. (2020) in learning dynamics models.
+algorithm 1,policy optimization,Algorithm 1 outlines the process by which the agent's policy is optimized during training.
+multi-layer perceptron,dynamics model,A three-layer Multi-Layer Perceptron is used as the dynamics model
+mean squared error,loss function,The model is trained to minimize the mean squared error between its prediction and the ground truth next observation.
+intrinsic reward,elign reward,The ELIGN reward measures how well the agent aligns with neighbors' expectations of its next state.
+theory of mind,mind-reading ability,Calculating the intrinsic reward involves simulating Theory of Mind
+receptive field,social interaction range,N(i) represents the set of neighbors within the agent's receptive field
+decentralized training,collaborative learning,In a decentralized setup
+observation radius,spatial awareness,Agents approximate each other's dynamics using their own models and knowledge of their observation radii.
+expectation alignment,competitive tasks,ELIGN is extended to competitive tasks where agents are encouraged to misalign with their adversaries' expectations.
+fθi(oi,ai),decentralized training
+intrinsic reward,elign,ELIGN is compared to sparse and curiosity-based intrinsic rewards in experiments.
+decentralized training,partial observability,Experiments focus on decentralized training under conditions where agents have limited information.
+multi-agent particle tasks,scalability,The number of agents is varied to test the scalability of the ELIGN method.
+elign,coordination improvement,ELIGN is investigated for its impact on improving coordination among agents.
+elign,fully observable tasks,ELIGN can augment centralized methods and be applied to tasks with full observability.
+google research football environment,evaluation,Experiments are conducted in various environments
+sparse,curiosity-based intrinsic rewards,ELIGN is compared to these alternative reward systems for performance.
+multi-agent particle environment,google research football environment,Both are environments used for evaluating decentralized algorithms
+decentralized algorithms,elignself,ELIGNself is an algorithm that performs well in cooperative tasks within these environments
+decentralized algorithms,elignadv,ELIGNadv is another algorithm that excels in competitive tasks
+elign,intrinsic reward,ELIGN uses alignment as an intrinsic reward to improve the training of decentralized policies
+partial observability,decentralized policies,The evaluation is done under partial observability
+multi-agent particle environment,mordatch & abbeel (2017),This environment is based on work by Mordatch & Abbeel (2017)
+google research football environment,kurach et al.,2019
+pred-prey (2v2),competitive tasks,Pred-prey is a type of competitive task within the evaluated environments.
+keep-away (2v2),competitive tasks,Keep-away is another competitive task where agents must avoid each other.
+multi-agent particle environment,two-dimensional world,The multi-agent particle environment is a two-dimensional space.
+google research football environment,three-dimensional world,The Google Research football environment is a three-dimensional variant.
+multi-agent particle environment,continuous state space,Both environments have continuous state spaces.
+google research football environment,discrete action space,Both environments have discrete action spaces.
+particle agent,position,Particle agents observe all agents' positions.
+particle agent,velocity,Particle agents observe all agents' velocities.
+football agent,one player,Each football agent controls one player.
+player,ball observation,Players observe the ball.
+player,other players' positions,Players observe other players' positions.
+player,directions,Players observe other players' directions.
+player,actions,They can apply one of ten actions.
+original environments,full observability,Original environments assume full observability.
+extended environments,partial observability,We extend these environments to be partially observable.
+receptive field,vicinity threshold,Observation is hidden beyond a vicinity threshold.
+τ,0.5 (vicinity threshold),We set τ = 0.5 for partially observable.
+heterogeneous navigation,n agents,N agents are the main subject in this context
+n agents,n2 agents,N agents are contrasted with N2 agents
+physical deception,n agents,N cooperative agents work together to deceive N2 adversaries
+physical deception,n2 adversaries,N2 adversaries are the opposing force in this scenario
+keep-away,n landmarks,The game involves N landmarks
+keep-away,m adversaries,M adversaries are the opponents in this game
+predator-prey,n slow adversaries,N slow adversaries chase and capture N fast agents
+predator-prey,n fast agents,N fast agents are the prey in this scenario
+google research football,academy 3vs1 with keeper competitive task,This context refers to a specific task within the Google Research football environment
+google research football,kurach et al.,2019
+multi-agent particle environment,training,The task is trained within the multi-agent particle environment
+tesla k40 gpu,training resource,Each experiment uses a Tesla K40 GPU for training until convergence.
+convergence,training criteria,Convergence is determined by the best evaluation episode reward not changing for 100 epochs.
+epochs,training iteration,Each epoch consists of 4
+test episodes,evaluation method,Algorithms are evaluated by running 1
+mean average test episode reward,performance metric,Reported as a measure of algorithm performance.
+google research football,baseline environment,Also used for training and evaluation
+soft actor-critic algorithm,methodology,Two versions used: decentralized (original) and centralized.
+decentralized soft-actor critic,algorithm variant,Trains each agent individually without access to others' observations and actions.
+centralized soft-actor critic,algorithm variant,Involves access to other agents' observations and actions for training.
+soft-actor critic algorithm,centralized one,The context describes a comparison between the original soft-actor critic algorithm
+intrinsic reward,coma (foerster et al.,2018)
+intrinsic reward,vdn (sunehag et al.,2017)
+sparse,goal state,SPARSE rewards agents only when they reach a specific goal state
+curioteam,multi-agent intrinsic reward,CURIOteam is a curiosity-based reward system designed for multi-agent environments
+elign,expectation alignment,ELIGN rewards are focused on aligning agents' expectations
+elignself,auxiliary loss (ndousse et al.,2021)
+hand-crafted dense rewards,oracle performance,These rewards are added as a reference to showcase the highest possible performance
+cooperative navigation,task division,In the context
+expectation alignment,multi-agent collaboration,Expectation alignment is a core aspect in multi-agent collaboration
+symmetry-breaking,cooperative navigation,Symmetry-breaking is necessary in cooperative navigation when agents are initialized in states without an optimal sub-task allocation
+elign,multi-agent strategies,ELIGN
+physical deception,elignteam,ELIGNteam is the best strategy for Physical deception
+predator-prey,elignadv,ELIGNadv excels in Predator-prey
+generalization to new partners,zero-shot coordination,The context highlights that expectation alignment aids agents in generalizing to collaborate effectively with unfamiliar partners
+multi-agent environments,exploration complexity,Future work should develop new multi-agent environments that demand exploration complexity.
+exploration complexity,curiosity,Curiosity would encourage 'search' in a multi-agent environment with exploration complexity.
+exploration complexity,expectation alignment,Both curiosity and expectation alignment would be necessary for collaboration in complex environments.
+search and rescue task,curiosity,In a search and rescue task
+search and rescue task,expectation alignment,ELIGN would speed up 'rescue' in the search and rescue task.
+elign,curiosity,Both curiosity and ELIGN are forms of rewards for successful collaboration.
+elign,expectation alignment,ELIGN emphasizes expectation alignment for multi-agent collaboration.
+legible agents,human environments,Enabling stable multi-agent training without centralized training opens opportunities for legible agents in human environments.
+legible agents,human-ai interaction,Interpretable actions improve human-AI interaction by inducing more faithful human mental models.
+predictability,legibility,Predictability does not imply legibility; future work could explore the role of legibility further.
+massive collaboration settings,expectation alignment,Future work should explore expectation alignment in settings with hundreds of agents.
+zoology research,expectation alignment,Drawing on Zoology
+self-organizing principle,elign,Inspired by the self-organizing principle in Zoology
+self-organizing principle,zoology,The self-organizing principle is a concept derived from Zoology that serves as the inspiration for ELIGN.
+elign,intrinsic reward,ELIGN is an expectation alignment
+multi-agent systems,cooperative tasks,ELIGN enhances performance in cooperative tasks where multiple agents work together.
+multi-agent systems,competitive tasks,It also improves performance in competitive scenarios where agents face adversaries.
+multi-agent particle environment,google research football environment,ELIGN is tested in two different multi-agent environments
+decentralized training,partial observability,ELIGN performs well in situations where agents learn without central coordination and must navigate partial information.
+elign,symmetry breaking,The algorithm helps agents break symmetries
+generalization,new partners,ELIGN promotes generalization to work effectively with unfamiliar teammates.
+elign,improvement,Overall

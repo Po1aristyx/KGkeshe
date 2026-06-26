@@ -1,0 +1,176 @@
+node_1,node_2,edge
+vision transformer models,tasks,Vision transformer models are used for a range of tasks.
+vision transformer models,computational costs,Vision transformer models usually suffer from intensive computational costs.
+vision transformer models,memory requirements,Vision transformer models usually suffer from heavy memory requirements.
+vision transformer models,deployment,Vision transformer models are impractical for deployment on edge platforms due to computational costs and memory requirements.
+transformers,pruning,Recent studies have proposed to prune transformers in an unexplainable manner.
+transformers,relationship,Pruning transformers in an unexplainable manner overlooks the relationship between internal units of the model and the target class.
+model,target class,Pruning transformers in an unexplainable manner leads to inferior performance in predicting the target class.
+novel explainable pruning framework,x-pruner,The proposed novel explainable pruning framework dubbed X-Pruner improves the explainability of the pruning criterion.
+prunable unit,target class,An explainability-aware mask is proposed to measure each prunable unit's contribution to predicting each target class.
+mask,values,The explainability-aware mask values differentiate between unpruned and pruned units for preserving the most informative units.
+layer-wise pruning rate,threshold,Adaptive search is performed to find the layer-wise threshold that differentiates between unpruned and pruned units based on explainability-aware mask values.
+x-pruner,transformer models,The X-Pruner method is applied on representative transformer models including the DeiT and Swin Transformer.
+x-pruner,state-of-the-art black-box methods,The proposed X-Pruner outperforms the state-of-the-art black-box methods with reduced computational costs and slight performance degradation.
+transformers,cnns,both are mentioned as major deep learning models with different structural characteristics
+transformers,multi-head attention (mha),MHA is mentioned as one of the key modules of transformers
+transformers,multi-layer perceptron (mlp),MLP is mentioned as one of the key modules of transformers
+transformers,model pruning,model pruning is discussed as a technique to compress and accelerate transformer models
+cnns,cnn pruning methods,discussed the prevailing success of CNN pruning methods
+model pruning,structured pruning,structured pruning highlighted as a technique to remove the least important parameters in pre-trained models
+criterion-based pruning,important weights/attentions,Criterion-based pruning resorts to preserving the most important weights/attentions by employing pre-defined criteria.
+criterion-based pruning,l1/l2 norm,"Criterion-based pruning resorts to preserving the most important weights/attentions by employing pre-defined criteria, e.g., the L1/L2 norm."
+criterion-based pruning,activation values,"Criterion-based pruning resorts to preserving the most important weights/attentions by employing pre-defined criteria, e.g., activation values."
+training-based pruning,retrains models,Training-based pruning retrains models with hand-crafted sparse regularizations or resource constraints.
+training-based pruning,hand-crafted sparse regularizations,Training-based pruning retrains models with hand-crafted sparse regularizations.
+training-based pruning,resource constraints,Training-based pruning retrains models with resource constraints.
+architecture-search pruning methods,optimal sub-architecture,Architecture-search pruning methods directly search for an optimal sub-architecture based on pre-defined policies.
+architecture-search pruning methods,pre-defined policies,Architecture-search pruning methods directly search for an optimal sub-architecture based on pre-defined policies.
+pruning rates,different layers,The final performance is notably affected by the selection of pruning rates for different layers.
+relevant works,methods for determining the optimal per-layer rate,Some relevant works have proposed a series of methods for determining the optimal per-layer rate.
+michel et al.,effectiveness of attention heads in transformers for nlp tasks,Michel et al. investigate the effectiveness of attention heads in transformers for NLP tasks.
+yu et al.,pruning algorithm,Yu et al. develop a pruning algorithm that removes attention scores below a learned per-layer threshold while preserving the overall structure of the attention mechanism.
+zhu et al.,method vtp with a sparsity regularization,Zhu et al. introduce the method VTP with a sparsity regularization to identify and remove unimportant patches and heads.
+vtp,sparsity regularization,VTP method with sparsity regularization to identify and remove unimportant patches and heads from vision transformers
+vtp,thresholds,VTP needs to manually try the thresholds for all layers
+previous studies,various importance metrics,previous studies resort to identifying unimportant weights by various importance metrics
+previous studies,magnitude-based,magnitude-based approaches usually lead to suboptimal results in previous studies
+previous studies,gradient-based,gradient-based methods tend to prune weights with small values in previous studies
+previous studies,mask-based,"previous studies resort to identifying unimportant weights by various importance metrics, including mask-based"
+previous studies,unimportant weights,previous studies resort to identifying unimportant weights by various importance metrics
+mask-based pruning,binary mask,"Most mask-based pruning techniques manually assign a binary mask w.r.t. a unit according to a per-layer pruning ratio, which is inefficient and sub-optimal"
+mask-based pruning,non-differentiable mask,"Most works use a non-differentiable mask in mask-based pruning, resulting in an unstable training process and poor convergence"
+x-pruner,structured pruning framework,X-Pruner is a novel explainable structured pruning framework for vision transformer models
+x-pruner,explainable ai (xai),"X-Pruner considers the explainability of the pruning criterion, inspired by the eXplainable AI field"
+important weights,semantic class-specific information,important weights in a model typically capture semantic class-specific information
+important weights,semantic class-specific information,important weights in a model typically capture semantic class-specific information
+model,semantic class-specific information,The model captures semantic class-specific information.
+unit,attention head,"The explainability-aware mask is designed for each prunable unit, such as an attention head."
+input,ground-truth label,Each input's ground-truth label is used as prior knowledge to guide the mask learning.
+unit,feature representations,One unit generates feature representations that contribute to a target class.
+unit,mask value,"If one unit generates feature representations that make a positive contribution to a target class, its mask value w.r.t. this class would be positively activated."
+pruning operation,threshold regularizer,The proposed differentiable pruning operation is accompanied by a threshold regularizer.
+layer-wise pruning algorithm,explainable manner,The layer-wise pruning algorithm is implemented in an explainable manner automatically and efficiently.
+framework,x-pruner,A novel explainable structured pruning framework called X-Pruner is proposed.
+framework x-pruner,pruning units,The framework X-Pruner prunes units that make less contributions to identifying all the classes in terms of explainability.
+framework x-pruner,explainable pruning framework,The authors developed an explainable pruning framework for vision transformers as the first work.
+prunable unit,explainability-aware mask,Each prunable unit is assigned an explainability-aware mask with the goal of quantifying its contribution to predicting each class.
+prunable unit,explainable manner,The layer-wise pruning thresholds differentiate important and less-important units in an explainable manner.
+explainability-aware mask,learning layer-wise pruning thresholds,"Based on the obtained explainability-aware masks, the layer-wise pruning thresholds are learned to differentiate important and less-important units."
+x-pruner,state-of-the-art approaches,The proposed X-Pruner outperforms a number of state-of-the-art approaches and shows its superiority in gaining explainability.
+pruning for transformers,pruning methods,Pruning for transformers has been categorized into unstructured and structured pruning methods.
+unstructured pruning,techniques,Unstructured pruning techniques include magnitude-based and hessian-based approaches.
+unstructured pruning,sparse tensor computations,"Unstructured pruning results in irregular sparsity, causing sparse tensor computations that are difficult to align."
+sparse tensor computations,irregular sparsity,"Sparse tensor computations are affected by irregular sparsity, making it difficult to align with hardware efficiency."
+structured pruning,uninformative contiguous structures,Structured pruning involves removing uninformative contiguous structures of a pre-trained model to alleviate certain problems.
+attention heads,rows of weight matrix,Attention heads and rows of weight matrix are examples of uninformative contiguous structures that can be pruned for model optimization.
+structured dropout,sub-structures of a model,Structured dropout selects specific sub-structures of a model during the inference time for optimization purposes.
+model compression techniques,pre-trained language models,"Model compression techniques were applied to a range of pre-trained language models, resulting in impressive results as discussed by Liu et al."
+transformers for nlp tasks,pruning,The focus of previous works was on pruning transformers specifically for NLP tasks.
+unstructured sparsity,structured sparsity,Chen et al. explored both unstructured and structured sparsity for vision transformers.
+first-order importance approximation method,attention heads,Chen et al. proposed a first-order importance approximation method to remove attention heads for vision transformers.
+structured pruning method,0/1 mask,Yu et al. proposed a structured pruning method for vision transformers involving a 0/1 mask to differentiate important and unimportant parameters.
+model parameters,differentiable threshold,"The structured pruning method uses a differentiable threshold to differentiate parameters, but the resulting mask is non-differentiable, potentially impacting gradient bias and weight optimization."
+gradients,weights,Gradients being biased could potentially result in suboptimal results of the remaining weights.
+yu et al.,"three efficient approaches (pruning, layer skipping, and knowledge distillation)","Yu et al. proposed to integrate three efficient approaches including pruning, layer skipping, and knowledge distillation into a unified framework to produce a compact transformer."
+existing methods,importance metrics,"Although these existing methods have made significant advances, the designing of importance metrics remains an open problem to explore."
+xai techniques,transformers,"In terms of XAI approaches, there are a variety of recent studies aiming to explain predictions made by transformers."
+chefer et al.,layer-wise relevance propagation (lrp) method,Chefer et al. proposed a layer-wise relevance propagation (LRP) method that applies to both positive and negative contributions.
+voita et al.,small portion of heads,Voita et al. found that only a small portion of heads have a salient impact on model decisions.
+jawahar et al.,semantic patterns,Jawahar et al. proved that semantic patterns are gained through higher layers.
+abnar et al.,attention scores,"Abnar et al. proposed to combine the attention scores across multiple layers, but this method failed."
+abnar et al.,attention scores,Abnar et al. proposed to combine the attention scores across multiple layers
+abnar et al.,positive and negative attributions,"However, their method failed to distinguish between positive and negative attributions"
+raghu et al.,internal representations,Raghu et al. analyzed the internal representations of vision transformers
+chefer et al.,transformers,Chefer et al. proposed a generic approach to explain transformers including multi-modal ones
+xai technology,task improvements,Advances in XAI technology have brought substantial improvements to wide-ranging tasks
+x-pruner,model explainability,X-Pruner aims to make full use of model explainability to derive the importance metric for model pruning
+x-pruner,structured pruning,X-Pruner aims to explore structured pruning by removing prunable units in vision transformers
+d,training dataset,"Let D be a training dataset, which consists of N training pairs"
+l-layer transformer,prunable parameters,"Considering an L-layer transformer f(W), its parameters are represented by W = (W1, W2, ..., WL), where Wl ∈ Rdl, 1 ≤ l ≤ L, dl is the number of prunable parameters in the l-th layer"
+layer-wise operation,pruning rates,"In the context, layer-wise operation involves pruning rates for each layer to minimize a function relative to inputs and class labels."
+x-pruner,explainability-aware mask,The proposed X-Pruner introduces an explainability-aware mask to quantify the contribution of each prunable unit to identifying classes.
+class-level mask,scalar mask,The class-level mask assigns values for each class while the scalar mask assigns a single value for all classes.
+self-attention layer,query weight,The self-attention layer consists of query weights for input-output dimensions to calculate the attention of each unit.
+"attnl,h(x)","αl,hw v","Attnl,h(x) is calculated as the product of attention weight αl,h and weight matrix W V"
+"attnl,h(x)",h,"Attnl,h(x) depends on the total number of attention heads H"
+"mha(x, m h)","attnl,h(x)","MHA(x, M H) is related to Attnl,h(x) as they both involve attention calculation"
+mlp,other linear projection layers,MLP and other linear projection layers share a similar idea in their functioning
+"mha(x, m h)",mlp,"Both MHA(x, M H) and MLP apply a similar idea in their respective layers"
+bias,across all layers,The bias is omitted across all layers for simplicity in computation
+explainability-aware mask,predicted label,The explainability-aware mask aims to identify influential weights related to the predicted label
+redundancy,prunable units,"To address redundancy among prunable units, a sparsity constraint is imposed"
+ltotal,lce,The total loss function Ltotal is defined as the sum of cross-entropy loss Lce and other regularization terms
+total loss function,lce,Lce is the cross-entropy loss component of the total loss function
+total loss function,lsmooth,"The total loss function includes a smoothing loss term, denoted by Lsmooth"
+total loss function,lsparse,"The total loss function incorporates a sparse loss term, represented by Lsparse"
+lsparse,m,"The sparse loss term, Lsparse, is dependent on the parameter M"
+binary mask,differentiable mask,"Unlike prior works using a binary mask, the proposed approach utilizes a differentiable mask to capture unit importance for each class"
+explainability-aware masks,transformers,The explainability-aware masks contribute to revealing the inner reasoning process in transformers
+pre-trained model,training procedure,The weights of the pre-trained model are kept fixed during the training procedure
+explanation-aware mask,x-pruner,The proposed X-Pruner aims to preserve important units using explainability-aware masks
+model,units,"The model consists of units, and the X-Pruner targets preserving important units"
+layer-wise threshold,parameter search space,The layer-wise threshold is chosen based on the exhaustive parameter search space [29].
+layer-wise threshold,differentiable pruning operation,The layer-wise threshold is optimized through a differentiable pruning operation in this work.
+differentiable pruning operation,threshold regularizer,The differentiable pruning operation is enhanced with a threshold regularizer for better control over non-uniform sparsity.
+differentiable pruning operation,explainability-aware masks,A differentiable pruning operation is proposed for explainability-aware masks in this work.
+explainability-aware masks,less-important units,Explainability-aware masks help identify less-important units for pruning based on a certain threshold.
+explainability-aware masks,important units,Important units are preserved in the explainability-aware masks by keeping their mask values above a certain threshold.
+differentiable pruning operation,discriminative units,The differentiable pruning operation retains discriminative units that contribute more to identifying classes above a certain threshold.
+adaptive threshold,discriminative units,Discriminative units that contribute more to identifying classes above an adaptive threshold are retained.
+pruning function,learning the threshold,The proposed pruning function enables learning the threshold with the backward gradient.
+pruning function,propose a novel regularization term,"To learn the layer-wise pruning rate with the given pruning rate in an end-to-end manner, the authors propose a novel regularization term."
+pruning rate,larger nl,"The layer-wise pruning rate tends to be larger when it has a larger total prunable parameters, which is natural for exploiting the dynamic sparsity across all layers."
+x-pruner,explainable pruning method,X-Pruner is a proposed explainable pruning method that identifies and preserves important units in an explainable and trainable way.
+x-pruner,existing black-box pruning methods,X-Pruner overcomes the drawbacks of existing black-box pruning methods.
+x-pruner,empirical guarantees on the accuracy of the pruned model,X-Pruner provides empirical guarantees on the accuracy of the pruned model.
+cifar-10,ilsvrc-12,Experiments are conducted on the CIFAR-10 and ILSVRC-12 datasets.
+cifar-10,10 classes,CIFAR-10 includes 10 classes.
+ilsvrc-12,1k classes,ILSVRC-12 contains images of 1K classes.
+deit,swin transformer,The DeiT and Swin Transformer architectures are pruned on classification tasks.
+pytorch,nvidia tesla v100 gpus,All experiments are implemented using PyTorch on NVIDIA Tesla V100 GPUs.
+nvidia tesla v100 gpus,pre-trained weights,NVIDIA Tesla V100 GPUs are used to initialize vision transformer models with pre-trained weights
+vision transformer models,baseline models,The vision transformer models are used as baseline models
+mask training process,"50 epochs for deit, 30 epochs for swin transformer",The mask training process for explainability-aware masks is 50 epochs for DeiT and 30 epochs for Swin Transformer
+mask training process,300 v100 gpu hours,The mask training process takes around 300 V100 GPU hours
+explainable pruning process,initially set all rl to α,"In the explainable pruning process, all rl is initially set to α"
+explainable pruning process,learning rate for θl and rl is 0.02,The learning rate for θl and rl in the explainable pruning process is 0.02
+explainable pruning process,fine-tuned with the adamw optimizer,The explainable pruning process is fine-tuned with the AdamW optimizer
+explainable pruning process,learning rate for other parameters is 5 ×10−4,The learning rate for other parameters in the explainable pruning process is 5 ×10−4
+explainable pruning process,momentum is 0.9,The momentum in the explainable pruning process is 0.9
+deit models,trained for 80 epochs,The DeiT models are trained for 80 epochs
+swin transformers,trained for 30 epochs,The Swin Transformers are trained for 30 epochs
+x-pruner,other state-of-the-art methods on ilsvrc-12,X-Pruner shows superiority over other state-of-the-art methods on ILSVRC-12
+x-pruner,computational costs by 51.3%-66.1%,X-Pruner can reduce the computational costs by 51.3%-66.1%
+x-pruner,accuracy drops 0.72%-1.1%,X-Pruner has much lower accuracy drops of 0.72%-1.1%
+wdpruning,save 46.2% flops,"Compared with WDPruning that can only save 46.2% FLOPs, X-Pruner shows better results"
+deit-t,wdpruning,"DeiT-T, compared with WDPruning, achieves much larger FLOP saving (66.1% vs. 46.2%) with less accuracy degradation (1.1% vs. 1.86%)."
+deit-s,uvc,"For the larger model DeiT-S, while UVC achieves the state-of-the-art top-1 accuracy among the existing methods, which is 78.82% with a 49.6% reduction in FLOPs."
+deit-s,x-pruner,The X-Pruner reduces the FLOPs for DeiT-S by 51.3% while obtaining the top-1 accuracy of 79.04%.
+swin transformer,x-pruner,"For the Swin Transformer, the X-Pruner yields significantly."
+wdpruning,x-pruner,Comparison between WDPruning and X-Pruner in terms of producing distorted vs compact explanation maps after pruning process
+wdpruning,uvc,Mention of both WDPruning and UVC as methods for producing distorted explanation maps on the pruned model
+x-pruner,attention layers,Demonstration of X-Pruner discovering head importance appropriately without per-layer pruning ratio in the attention layers
+layers 11 and 12,layer 2,"Comparison of higher layer masks with higher values to lower layer masks in transformers, indicating capturing rich semantic-level features at higher layers"
+x-pruner,wdpruning,Comparison of X-Pruner with WDPruning in terms of top-1 accuracy on CIFAR-10 dataset
+pruning rates,methods,Pruning rates and methods are related as different pruning rates are compared to different methods for accuracy evaluation.
+wdpruning,x-pruner,X-Pruner is compared with WDPruning for accuracy loss at different pruning rates showing the superiority of X-Pruner with explainability-aware mask.
+x-pruner,flops,X-Pruner is associated with saving FLOPs as it achieves better accuracy with substantial FLOPs saving compared to other methods.
+swin-s,wdpruning,Pruning method WDPruning is compared with X-Pruner for superior results when pruning the Swin-S model.
+x-pruner,explainability-aware mask,X-Pruner shows superiority in accuracy due to the use of an explainability-aware mask compared to other methods.
+class-level visual explanation maps,deit-s,Class-level visual explanation maps are visualized based on DeiT-S model for analysis.
+pruned networks,ilsvrc-12 validation set,Pruned networks are evaluated on the ILSVRC-12 validation set for visual explanation results comparison.
+deit-s,pruned models by wdpruning,The original DeiT-S and the pruned models by WDPruning are compared in the visual explanation maps.
+deit-s,x-pruner,The X-Pruner is compared to the DeiT-S model in terms of explainability-aware mask values in varying layers.
+deit-s,swin-t model,The DeiT-S and Swin-T models are compared in Table 3 with detailed results pruned using similar FLOPs pruning rates.
+deit-s,explainability-aware mask,"The DeiT-S model is pruned with a class-agnostic strategy employing an explainability-aware mask, resulting in a 2.65% performance degradation."
+deit-s,cifar-10,The top-1 accuracy for DeiT-S on CIFAR-10 with various pruning rates is shown in Figure 4.
+deit-s,attention maps,The attention maps produced by the 4-th layer for DeiT-S are visualized in Figure 6.
+deit-s,importance of individual prunable units,The importance of individual prunable units is compared to the learned pruned architecture by DeiT-S in terms of explainability-aware mask values.
+individual prunable units,importance,The importance of individual prunable units is highlighted in the context.
+attention maps,4-th layer in deit-b model,Attention maps produced by the 4-th layer in DeiT-B model are visualized.
+x-pruner,proposed,The X-Pruner is proposed as a novel explainable transformer pruning framework.
+novel explainability-aware mask,evaluate,A novel explainability-aware mask is proposed to evaluate each prunable unit’s contribution to predicting every class.
+new explainable pruning process,learn,A new explainable pruning process is introduced to learn layer-wise pruning rate until a resource constraint is reached.
+x-pruner,significantly reduce,The X-Pruner is able to significantly reduce the computational costs of several transformers in terms of model explainability.
+x-pruner,surpasses,The X-Pruner surpasses the state-of-the-art pruning methods with a minor accuracy drop.

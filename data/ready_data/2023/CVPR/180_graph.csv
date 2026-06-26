@@ -1,0 +1,261 @@
+node_1,node_2,edge
+scene graph generation,image,Scene graph generation aims to abstract an image into a graph structure.
+scene graph generation,graph,Objects are represented as graph nodes and their relations as labeled edges in scene graph generation.
+sgg models,ground-truth annotations,"Training SGG models requires time-consuming ground-truth annotations, which limits the practicability of current SGG methods."
+sgg models,object categories,The closed-set object categories limit the ability of SGG models to recognize novel objects outside of training corpora.
+visual-semantic space (vss),language-supervised sgg,A powerful pre-trained VSS is used to trigger language-supervised SGG in a simple yet effective manner.
+visual-semantic space (vss),open-vocabulary sgg,The VSS is utilized to enable open-vocabulary SGG by performing object category name grounding with a text prompt.
+semantic graphs,image language descriptions,Cheap scene graph supervision data can be obtained by parsing image language descriptions into semantic graphs.
+semantic graphs,noun phrases,The noun phrases on semantic graphs are directly grounded over image regions through region-word alignment.
+region-word alignment,pre-trained vss,Noun phrases on semantic graphs are grounded over image regions through region-word alignment in the pre-trained VSS.
+relation representations,relation recognition,Relation representations are naturally built for relation recognition based on visually-grounded objects.
+relation representations,open-vocabulary sgg,Relation representations contribute to pursuing open-vocabulary SGG.
+proposed approach,visual genome benchmark,The proposed approach is validated with extensive experiments on the Visual Genome benchmark.
+scene graph,structured representation,A scene graph is a structured representation for describing image semantics
+scene graph,image semantics,A scene graph is used to describe image semantics
+visual objects,graph nodes,Visual objects are abstracted as graph nodes in a scene graph
+visual objects,labeled graph edges,Visual objects are represented with their relations as labeled graph edges in a scene graph
+scene graph generation (sgg),tasks,SGG plays an important role in fine-grained visual understanding tasks
+vss,language-supervised and open-vocabulary scene graph generation,VSS is exploited for triggering language-supervised and open-vocabulary SGG
+graph construction,robot planning,Both terms are key concepts related to computer vision tasks mentioned in the context.
+sgg models,ground-truth scene graphs,"SGG models require massive ground-truth scene graphs for training, which are expensive to manually annotate."
+sgg models,interaction object pairs,Annotators have to connect possible interacted object pairs when annotating scene graphs for SGG models.
+sgg models,object/relation labels,"Annotators assign object/relation labels during the training of SGG models, which could be ambiguous."
+sgg models,scene graph,"SGG models result in the construction of a scene graph in the form of ⟨subject, predicate, object⟩ triplets."
+sgg models,object categories,"Existing SGG methods involve a pre-defined closed set of object categories, limiting their ability to recognize novel objects."
+sgg models,novel objects,SGG models may fail to detect novel objects outside of the pre-defined category pool.
+objects,interactions/relations,Objects and their interactions/relations are negatively affected or neglected in the context
+objects,problems,Problems may arise due to the neglect of objects in the context
+objects,real-world robot,A real-world robot may take inappropriate actions due to the lack of proper object interactions
+sgg models,closed-set,Closed-set SGG models may result in inappropriate actions by a real-world robot
+methods,language supervision,Methods leverage free-form language supervision for visual recognition tasks
+clip,image-text pairs,CLIP performs pre-training on image-text pairs to learn a visual-semantic space
+glip,object-level and semantic-rich vss,"GLIP has learned an object-level and semantic-rich VSS, leading to state-of-the-art performances"
+vss,multi-modal alignment ability,VSS has powerful multi-modal alignment ability in the context
+vss,open-vocabulary generalization ability,"VSS demonstrates open-vocabulary generalization ability, covering virtually any concepts"
+vss,sgg obstacles,VSS can address the obstacles in SGG in the context
+image description,scene graph supervision,Image description can provide scene graph supervision in the context
+scene graph supervision,image description,Scene graph supervision can be acquired from an image description by retrieving image regions aligned with noun phrases and re-arranging the description into a scene-graph-like form.
+vss,language-image pre-training,The VSS learned from language-image pre-training can be utilized to trigger language-supervised and open-vocabulary SGG.
+scene graph supervision,image language description,Weak scene graph supervision can be obtained by semantically parsing an image language description into a semantic graph and grounding its noun phrases over image regions through region-word alignment in the pre-trained VSS.
+vs3,visual-semantic space for scene graph generation,"VS3 is a novel SGG model that takes a raw image and a text prompt containing object category names as inputs, and projects them into the shared VSS as embeddings."
+object detection,image regions,VS3 performs object detection by aligning the embeddings of category names with image regions.
+relation representations,object pairs,VS3 builds relation representations for object pairs by mining relation patterns from visual and spatial perspectives using a relation embedding module.
+relation representations,relation labels,A relation prediction module takes relation representations to infer relation labels for the detected objects.
+relation prediction module,relation labels,The relation prediction module takes relation representations to infer relation labels.
+scene graph,object detections,The predicted scene graph is composed by combining object detections.
+scene graph,inferred relation labels,The predicted scene graph is composed by combining inferred relation labels.
+visually-grounded semantic graphs,image descriptions,Visually-grounded semantic graphs parsed from image descriptions could be used as weak scene graph supervision.
+vs3,novel categories,"When using a text prompt input containing novel categories, VS3 manages to detect novel objects."
+vs3,open-vocabulary generalization ability,VS3 manages to detect novel objects thanks to the open-vocabulary generalization ability natually rooted in VSS.
+vss,open-vocabulary sgg,VSS enables open-vocabulary SGG.
+pre-trained vss,real-world usage of sgg,"The exploitation of a pre-trained VSS provides an elegant solution for addressing obstacles to triggering both language-supervised and open-vocabulary SGG, making a solid step toward real-world usage of SGG."
+vs3 model,language-image pre-training knowledge,The proposed VS3 model effectively transfers language-image pre-training knowledge for benefiting SGG.
+approach,extensive experiments,We fully validate the effectiveness of our approach through extensive experiments on the Visual Genome benchmark.
+approach,state-of-the-art performances,We fully validate the effectiveness of our approach and have set new state-of-the-art performances spanning across all settings.
+scene graph,structured image representation,The concept of scene graph as a structured image representation is first introduced.
+visual genome benchmark,manually annotated,The Visual Genome benchmark is manually annotated.
+structured image representation,benchmark,"The structured image representation is first introduced, followed by the manual annotation of the Visual Genome benchmark with scene graphs."
+benchmark,manual annotation,The Visual Genome benchmark is manually annotated with large-scale scene graphs on images.
+scene graphs,images,Large-scale scene graphs are annotated on images.
+object detector,image regions,An object detector like Faster-RCNN is trained to retrieve image regions.
+relation representations,object pairs,"Relation representations of object pairs are constructed from visual, spatial, and language perspectives."
+object pairs,relation classification,The relation representations of object pairs are used for relation classification to label scene graph edges.
+message-passing mechanisms,contextual information,Message-passing mechanisms are devised to exploit contextual information for achieving desirable SGG.
+contrastive loss functions,external knowledge,Derived contrastive loss functions or incorporated external knowledge are used for training SGG models.
+vs3 model,fully supervised sgg,The proposed VS3 model is compatible with fully supervised SGG.
+training,scene graph annotations,All the mentioned methods rely on training with expensive scene graph annotations.
+language-supervised sgg,language descriptions,Language-supervised SGG aims to train SGG models using language descriptions.
+weakly supervised sgg,increasing attention,Weakly supervised SGG has recently attracted increasing attention.
+graph alignment algorithm,vspnet,"Based on a graph alignment algorithm, VSPNet proposes to supervise SGG training with scene graphs that have no object locations."
+sgg training,scene graphs,SGG training is proposed to be supervised with scene graphs that have no object locations.
+entities,relations,Entities and relations are extracted from image captions to compose unlocalized scene graphs.
+scene graphs,language parser,Unlocalized scene graphs achieved via an off-the-shelf language parser.
+text entities,image regions,Text entities are first grounded on image regions.
+grounded scene graphs,sgg models,Grounded scene graphs are used as pseudo labels to train standard SGG models.
+entity groundings,graph matching module,Entity groundings are obtained through a graph matching module.
+text entity names,predicted object labels,Text entity names are matched with predicted object labels using semantic rules.
+pre-trained language-image models,interaction-aware knowledge,Interaction-aware knowledge is distilled from pre-trained language-image models.
+region-word alignment,pretrained vss,Groundings are obtained through region-word alignment in a pretrained VSS.
+language-image pre-training,vision-language downstream tasks,Language-image pre-training is effective for boosting various vision-language downstream tasks.
+language-image knowledge,vision recognition problems,Language-image knowledge is transferred to solve vision recognition problems.
+zero-shot image classification,clip,"CLIP is a method that learns separate encoders to embed image and text into a shared space, demonstrating remarkable generalization ability on zero-shot image classification after pre-training."
+zero-shot image classification,align,"ALIGN is a method that learns separate encoders to embed image and text into a shared space, demonstrating remarkable generalization ability on zero-shot image classification after pre-training."
+clip,align,"CLIP and ALIGN learn separate encoders to embed image and text into a shared space using a contrastive loss, demonstrating remarkable generalization ability on zero-shot image classification after pre-training."
+clip,glip,"CLIP focuses on image-level representations, while GLIP focuses on learning object-level visual representations through region-word alignment."
+glip,object-level recognition tasks,GLIP has attained strong zero-shot and few-shot transferability to various object-level recognition tasks such as object detection and phrase grounding.
+he et al,visual-relation pre-training and prompt-based fine-tuning method,He et al investigate a visual-relation pre-training and prompt-based fine-tuning method for open-vocabulary SGG.
+he et al,image encoder,"He et al's image encoder relies on a pre-trained region proposal extractor, which is a bottleneck for achieving open-vocabulary SGG under the SGDET protocol."
+vs3,he et al,"VS3 directly encodes an image into region tokens, avoiding the bottleneck of region proposals unlike He et al."
+vs3,obstacles to achieving language-supervised and open-vocabulary sgg,VS3 addresses obstacles to achieving both language-supervised and open-vocabulary SGG using a unified framework.
+scene graph generation,image,"The task of scene graph generation (SGG) aims to map an image into an abstract graph SG = {O, R}, where graph edges R = {r1, ..., rM} represents their relations."
+scene graph generation,object,"nodes O = {o1, ..., oN} correspond to image objects, and graph edges R = {r1, ..., rM} represents their relations."
+object,bounding box,"Each object oi = {bi, li} ∈ O contains the bounding box coordinates bi ∈ R4."
+object,class label,"Each object oi = {bi, li} ∈ O contains its class label information li ∈ Co, where Co denotes the set of object categories."
+relation,subject,"Each relation rm ∈ R is a ⟨subject, predicate, object⟩ triplet, and we represent it as rm = ri→j = {oi, pij, oj}."
+relation,predicate,"Each relation rm ∈ R is a ⟨subject, predicate, object⟩ triplet, and we represent it as rm = ri→j = {oi, pij, oj}."
+relation,object,"Each relation rm ∈ R is a ⟨subject, predicate, object⟩ triplet, and we represent it as rm = ri→j = {oi, pij, oj}."
+vs3,sgg,The VS3 model is proposed for tackling the SGG task by extending the GLIP framework with relation recognition modules.
+scene graph supervision sg,fully supervised sgg,SGG is categorized into fully supervised and language-supervised based on the type of scene graph supervision.
+sgg,open-vocabulary sgg,"The proposed VS3 model is used to pursue open-vocabulary SGG, as mentioned in Section 3.4."
+object categories ctarget,open-vocabulary,Object categories influence whether an SGG task is referred to as open-vocabulary or closed-set.
+vs3,glip,The VS3 model extends the GLIP framework with relation recognition modules to enhance SGG capabilities.
+glip,object detection and phrase grounding,GLIP unifies object detection and phrase grounding into one framework.
+glip,cross-modal fusion module,"GLIP uses a cross-modal fusion module to achieve feature communication between ¯O and ¯P, resulting in enriched region embeddings ˜O ∈ R ¯N×d and word embeddings ˜P ∈ R ¯T×d."
+glip,image encoder,"VS3 inherits the image encoder from GLIP, to project image regions in a pre-trained visual-semantic space (VSS)."
+glip,text encoder,"VS3 inherits the text encoder from GLIP, to project text prompt words in a pre-trained visual-semantic space (VSS)."
+text encoder,image regions,Text encoder and image regions are aligned in the pre-trained visual-semantic space (VSS) to detect object regions.
+object regions,category names,The embeddings of category names and image regions in VSS are aligned to detect object regions.
+object regions,subject-object pairs,High-confidence object regions are retained to compose subject-object pairs.
+subject-object pairs,relation representations,"After composing subject-object pairs, relation representations are constructed by extracting visual and spatial features."
+relation representations,relation prediction,Relation representations are used for relation prediction of subject-object pairs.
+vss,open-vocabulary,The joint VSS aligns multi-modal embeddings and covers open-vocabulary concepts.
+glip,pre-training,"After large-scale pre-training, EncI and EncL embed the input image and text into a joint VSS."
+vss,multi-modal embeddings,VSS aligns multi-modal embeddings
+vss,open-vocabulary concepts,VSS covers open-vocabulary concepts
+vs3,enci,VS3 inherits EncI
+vs3,encl,VS3 inherits EncL
+vs3,cross-module fusion module,VS3 inherits the cross-module fusion module
+fsum,2-layer mlps (multi-layer perceptron),fsum implemented as 2-layer MLPs
+normalized center coordinates,spatial feature,normalized center coordinates of two involved objects used to measure spatial feature
+relation representation pair,relateness score,relation representation pair used to predict a relatness score
+relation representation pair,semantic label probability,relation representation pair used to predict a semantic label probability
+frelateness,mlp coupled with sigmoid activation,frelateness implemented with MLP coupled with Sigmoid activation
+fsemantic,mlp using softmax activation,fsemantic implemented with MLP using Softmax activation
+focal loss,cross-entropy loss functions,Both focal loss and cross-entropy loss functions are mentioned in the same context as different types of loss functions used in training.
+ground-truth relatness label,predicate category label,Ground-truth relatness label and predicate category label are related as they represent labels used in relation representation.
+pre-trained glip models,inherited modules in vs3,Parameters are initialized from pre-trained GLIP models for inherited modules in VS3 during training.
+image encoder,text encoder,The image encoder and text encoder are frozen during training and only fine-tuned to ease training difficulty.
+object detection,phrase grounding,Object detection is reformulated as phrase grounding in the context mentioned.
+text prompt,object detection,"Text prompt is required as input for object detection in VS3, in addition to the image input."
+category name embeddings,region embedding,Category name embeddings and region embeddings are used in the alignment score calculation for object detection.
+relation embedding module,vs3,The relation embedding module is devised to build relation representations in VS3.
+region/box features,relation representations,Relation representations are constructed based on region/box features after cross-modal fusion.
+confidence scores,non-maximum suppression,highest confidence scores are obtained after applying non-maximum suppression at inference
+object pair,normalized bounding boxes,pairwise relation representation is obtained by concatenating features from visual and spatial perspectives
+cross-modal fusion module,relation recognition modules,cross-modal fusion module is used along with relation recognition modules to prevent the degeneration of pre-trained VSS
+detected objects,predicted relations,high-confidence detected objects are retained and their relations are predicted to generate image scene graph representation
+semantic graph,image language description,semantic graphs are parsed from image language descriptions to obtain noun phrase groundings using pre-trained VSS
+noun phrases,words describing relations,noun phrases as entities/objects are extracted along with the words describing their relations from semantic graph parsing
+noun phrases,entities/objects,"The context mentions that noun phrases are extracted as entities/objects, highlighting a direct relation between the two concepts."
+extracts,noun phrases,"It is stated that the process extracts noun phrases, indicating a direct action-relation between 'extracts' and 'noun phrases'."
+extracts,words,"Additionally, the process also extracts words, implying a direct action-relation between 'extracts' and 'words'."
+words,describing,"The extracted words are described as words that describe their relations, suggesting a direct relation between 'words' and 'describing'."
+entities/objects,relations,"Furthermore, the context mentions that the process extracts the words describing the relations of the entities/objects, indicating an indirect relation between 'entities/objects' and 'relations'."
+sgtext,otext,"The context explains the relationship between SGtext and Otext, where Otext is derived from SGtext, showcasing a direct relation between 'SGtext' and 'Otext'."
+otext,rtext,"Moreover, the context states that Rtext is also derived from Otext, highlighting a direct relation between 'Otext' and 'Rtext'."
+object/relation words,categories,"The context mentions the mapping of object/relation words to categories, presenting a direct relation between 'object/relation words' and 'categories'."
+object/relation words,rules,"It is explained that object/relation words are mapped to categories by rules, indicating a direct relation between 'object/relation words' and 'rules'."
+object/relation words,wordnet synsets,"Additionally, object/relation words are mapped to categories using WordNet synsets, suggesting a direct relation between 'object/relation words' and 'WordNet synsets'."
+grounded sgtext,vs3,"grounded SGtext is mentioned as weak supervision for training SGG models, for example, the proposed VS3"
+open-vocabulary sgg,sgg models,Open-vocabulary SGG aims to train SGG models that can recognize objects of novel categories and their involved relations
+vs3,open-vocabulary sgg,VS3 is used for open-vocabulary SGG. A scheme is devised to adapt VS3 for open-vocabulary SGG by freezing image and text encoders
+base category set cbase,object category set ctarget,"The base category set Cbase is used for training the SGG model, and at inference, the object category set is Ctarget"
+novel categories,cnovel,Ctarget contains novel categories in Cnovel which are not in the base category set
+novel object class,base category,"A novel object class may have an embedding close to a base category embedding, allowing the novel class to find well-aligned image regions"
+relation representations,visual and spatial cues,"Relation representations are constructed from visual and spatial cues, which are class-agnostic, in the context of VS3"
+datasets,experimental settings,Datasets and Experimental Settings are mentioned together as key concepts related to evaluating the SGG task.
+vg150,visual genome,"VG150 is a version of the Visual Genome dataset, demonstrating a relationship between the two concepts."
+vg150,vg,VG150 is related to VG as it is a version of the Visual Genome dataset.
+vg150,images,VG150 dataset contains about 108K images for training and testing.
+scene graph,objects,An annotated scene graph of each image contains objects.
+scene graph,relation triplets,An annotated scene graph of each image has relation triplets on average.
+vg caption,scene graph,VG caption provides a text source for evaluating the language-supervised SGG setting related to scene graph.
+image-text pairs,coco caption,The challenging setting of using image-text pairs in COCO caption is considered for training SGG models.
+triplet prediction,subject,"A triplet prediction is considered correct when its subject, object, predicate labels are correct."
+triplet prediction,ground-truth triplet,"A triplet prediction is considered as correct when its subject, object, predicate labels and both the subject and object regions match with (same label or IoU>0.5) a ground-truth triplet."
+triplet prediction,graph constraint,"We obtain triplet predictions using graph constraint, which limits each subject-object pair to have only the most confident predicate."
+recall metrics,sgg settings,All recall metrics across different SGG settings in experiments are computed over VG150 test images.
+images,vg150 test split,"We exclude images seen during pre-training and get a new split of test images consisting of ∼15k test images, sufficiently large for computing stable metrics."
+vg150 test split,sgg models,We compare computed metrics of several SGG models on the original VG150 test split and the new split (<0.15 points variation).
+vs3,pre-trained glip [17] models,"We initialize VS3 from pre-trained GLIP models, specifically the GLIP-T and the larger GLIP-L trained with more data."
+vss,object detections,"Both GLIP models construct a VSS of dimension d=256, retaining the top 36 object detections per image for pairwise relation recognition."
+framework,nvidia 2080ti gpus,The whole framework is fine-tuned on 8 Nvidia 2080Ti GPUs with AdamW optimizer.
+parameters,image and text encoder,"During fine-tuning, we freeze the parameters of the image and text encoder."
+learning rate,cross-modal fusion module,We set the learning rate for the cross-modal fusion module as 1e-5 and 10x larger learning rates for the relation embedding and prediction mod.
+cross-modal fusion module,relation embedding and prediction modules,The cross-modal fusion module has learning rates for the relation embedding and prediction modules. Each module plays a crucial role in the system.
+sgg models,manually annotated scene graphs,"SGG models are trained using manually annotated scene graphs that consist of object labels and bounding boxes, as well as relation labels."
+vs3,glip variants,"VS3 is fine-tuned over two GLIP variants, GLIP-T with the Swin-T backbone and GLIP-L with the Swin-L backbone."
+object categories,text prompt input of vs3,The text prompt input of VS3 is constructed from object category names and is used for training.
+state-of-the-arts,vs3 model with swin-t and swin-l backbones,"The results of the VS3 model using different backbones are compared to the state-of-the-art approaches, showing competitive recall metrics and performance improvements."
+object detector,message-passing modules,"Previous methods use off-the-shelf object detectors and heavy message-passing modules for context information, while VS3 utilizes a light-weighted approach."
+relation recognition head,pre-trained vss,"The VS3 devises a light-weighted relation recognition head over a pre-trained VSS, suggesting the incorporation of context information."
+relation triplet,visual and spatial feature components,"The removal of visual and spatial feature components leads to a drop in the relation triplet recalls, showing the importance of these features."
+visual features,subject and object region embeddings,"The removal of visual features built from subject and object region embeddings leads to relatively larger performance drops, indicating their significance in relation recognition."
+region embeddings,pre-trained vss,"The region embeddings in the pre-trained VSS provide strong cues for relation recognition, validating their effectiveness."
+pre-trained vss,relation recognition,The pre-trained VSS provides strong cues for relation recognition.
+observations,design,"Overall, these observations validate the effectiveness of our design to mine relation patterns."
+language-supervised sgg,train sgg models,Language-supervised SGG explores to train SGG models with language descriptions of images.
+image description,semantic graph,"Each image description is parsed into a semantic graph, in the form of a set of ⟨subject, predicate, object⟩ triplets."
+object/relation phrases,vg150 categories,Object/relation phrases from language descriptions are mapped to VG150 categories by semantic rules.
+sgg model,evaluating on vg150,The learned SGG model is compatible for evaluating on VG150.
+semantic graph,image regions,The parsed semantic graph is grounded to image regions using grounding methods.
+glip-l,approach,The pre-trained GLIP-L is used in our approach for grounding image regions.
+visually-grounded semantic graphs,weak supervision,The visually-grounded semantic graphs are used as weak supervision to train our proposed VS3 like the fully supervised setting.
+vs3,text triplets,"Particularly, VS3 is trained with text triplets parsed from three different sources of text."
+graph setting,triplet annotations in vg,The unlocalized graph setting uses ground-truth triplet annotations in VG.
+coco caption setting,triplets parsed from captions in coco,The COCO caption setting leverages triplets parsed from captions in COCO.
+coco captions,coco images,"COCO captions are image-level descriptions, different from the region-level descriptions in VG, which focus on describing object interactions."
+coco captions,vg images,The number of annotated captions for each COCO image (average 5) is much less than the number for each VG image (average ∼50).
+vs3,swin-t backbone,VS3 with the Swin-T backbone (VS3 (Swin-T)) is mentioned.
+sgg methods,weak scene graph supervision,Comparison with state-of-the-art language-supervised SGG methods using weak scene graph supervision from three different text sources is mentioned.
+vg caption,coco caption,Comparison is made between VG caption and COCO caption for scene graph supervision.
+vs3,swin-t,VS3 with the Swin-T backbone (VS3 (Swin-T)) obtains substantial improvements on recall metrics over existing best results
+vs3,swin-t+freqbias,Performance gains with VS3 (Swin-T+FreqBias)
+vs3,swin-l,Using the stronger performance gains with VS3 (Swin-L)
+vs3,swin-l+freqbias,Attaining the highest performances with VS3 (Swin-L+FreqBias)
+vs3,performance gains,Further performance gains are achieved with predicate classification
+vs3,fully supervised methods,VS3 outperform many fully supervised methods
+performance gains,predicate classification,Predicate classification leads to further performance gains
+vg caption setting,scene graph supervision,Weak scene graph supervision provided via language parsing in the VG caption setting
+coco caption setting,domain shift problem,The most challenging COCO caption setting suffers from the additional domain shift problem
+coco caption setting,vg150,COCO caption setting trains on COCO but evaluates on VG150
+domain shift problem,performance,Performances are lower due to the additional domain shift problem in the COCO caption setting
+scene graph parsing strategy,ablation,Ablation on scene graph parsing strategy mentioned in the context
+grounding box acquirement,task transferring,These terms are related as they both refer to processes involved in handling tasks and strategies in scene graph parsing.
+sg parser,advanced sg parser,"These terms are related as the advanced SG parser is an enhancement of the simple SG parser, both used for extracting object and relation concepts from semantic graphs."
+triplets from a single caption,all captions,"These terms are related as they describe different approaches to training with image captions, with the latter showing better performance according to the comparison results."
+image descriptions,scene graphs,"These terms are related as scene graphs are extracted from image descriptions, and the completeness of scene graphs is vital for training a high-quality SGG model."
+sg parser,quantificational modifiers,The advanced SG parser covers additional features for dealing with complex quantificational modifiers.
+sg parser,pronouns,The advanced SG parser resolves pronouns for handling plural nouns.
+sg parser,plural nouns,The advanced SG parser handles plural nouns.
+sg parser,performance,The advanced SG parser shows a performance improvement over the simple SG parser.
+sg parser,semantic parsing,The performance boosts of the advanced SG parser indicates that the quality of semantic parsing is important for language-supervised SGG.
+vs3,vg150,VS3 is trained with 70% object categories of VG150 as base categories.
+vs3,objects,VS3 can generalize to recognize the remaining 30% novel objects.
+vs3,relations,VS3 can recognize the relations of novel objects at inference.
+vs3,evaluation metrics,Evaluation metrics are computed over two object category sets for VS3.
+predcls,sgdet,PREDCLS and SGDET are evaluation protocols adopted in addition.
+vs3,objects,VS3 detects objects in a one-stage manner.
+sgcls protocol,bounding box information,"The SGCLS protocol assumes bounding box information, which is given in the context."
+bounding box information,region proposals,"Given bounding boxes can be directly used as region proposals in two-stage detectors, as mentioned in the text."
+region proposals,vs3,"The text states that the adopted one-stage manner in VS3 has no region proposal counterpart, indicating a relationship between region proposals and VS3."
+ov-sgg,sgdetmethodimp,"Both Ov-SGG and SGDETMethodIMP are mentioned together in the text, possibly indicating a relation or comparison between the two."
+zso-sgg,predcls,"The text presents evaluation results for ZsO-SGG and PREDCLS, suggesting a relationship or comparison between the two concepts."
+fully supervised open-vocabulary sgg,ov-sgg,"The context mentions fully supervised open-vocabulary SGG and Ov-SGG together, implying a relationship or comparison between the two."
+zso-sgg,vs3,"The text discusses the performance of ZsO-SGG using VS3, indicating a relationship between ZsO-SGG and VS3."
+object detector,sgdet,"The text highlights that all previous methods neglected SGDET performances due to their object detector limitations, suggesting a relationship between object detector and SGDET."
+open-vocabulary detection,sgdet performances,"SGDET performances are associated with open-vocabulary detection, showcasing the performance metrics of the system."
+zso-sgg,vs3,"ZsO-SGG using VS3 shows higher SGDET performances, indicating the superiority of the approach in recognizing novel objects."
+sgcls metrics,svrp,SGCLS metrics of SVRP are compared in terms of performance metrics.
+pre-trained vss,open-vocabulary generalization ability,"The pre-trained VSS enables open-vocabulary generalization ability, leading to superior model performance in recognizing novel objects."
+open-vocabulary sgg,language supervision,Evaluating open-vocabulary SGG using language supervision reveals the difference in performance metrics based on the training approach.
+pre-trained model,ov-sgg and zso-sgg performances,"Using a stronger pre-trained model results in higher Ov-SGG and ZsO-SGG performances, showcasing the impact of pre-training on model performance."
+performance gap,generalization ability,The performance gap between Ov-SGG and ZsO-SGG gets closer due to better generalization ability for recognizing novel classes.
+vg caption,coco caption,"VG caption outperforms COCO caption in performance metrics, indicating the importance of dense region-level descriptions and domain shift avoidance."
+supervised open-vocabulary sgg,qualitative analysis,"The context mentions qualitative analysis as a result of supervised open-vocabulary SGG, indicating a relation between the two concepts."
+supervised open-vocabulary sgg,novel objects,"The approach of supervised open-vocabulary SGG is able to detect novel objects and their relations with other objects, showing a direct relationship between the two concepts."
+open-vocabulary sgg,fully supervised setting,The comparison between open-vocabulary SGG and fully supervised setting indicates a relationship where the language-supervised results show bias towards predicting simple relations in contrast.
+novel objects,scene graph supervision,"The detection of novel objects in the context is attributed to the method of scene graph supervision, highlighting the dependency relationship between the two concepts."
+language-supervised results,simple relations,"The language-supervised results in the context tend to predict simple relations like 'on' and 'of', indicating a direct link between language-supervised results and simple relations."
+scene graph supervision,relation predicates,Scene graph supervision parsed from language is more likely to extract relation predicates.
+scene graph supervision,cheap scene graph supervision,Cheap scene graph supervision is obtained by semantically parsing image language descriptions into semantic graphs and grounding the noun phrases through region-word alignment in the VSS.
+region-word alignment,noun phrases,Noun phrases are grounded through region-word alignment in the VSS.
+vs3 model,object detection,The VS3 model performs object detection as category name grounding in the VSS.
+vs3 model,relation representations,VS3 model naturally builds relation representations for relation recognition.
+open-vocabulary sgg,novel objects,Open-vocabulary SGG manages to detect novel objects and their relations with other objects.
+vs3,open-vocabulary generlization ability of vss,VS3 manages to detect novel objects and their relations with other objects due to the open-vocabulary generlization ability of VSS.
+pre-training knowledge,sgg,Transferring pre-training knowledge pushes SGG toward more practical scenarios.
+visual genome benchmark,state-of-the-art performances,New state-of-the-art performances are achieved on the Visual Genome benchmark.
+acknowledgment,shenzhen science and technology program,The work was supported in part by the Shenzhen Science and Technology Program.
+acknowledgment,grant zdsys20211021111415025.jcyj20220818103006012,The work was supported in part by the Grant ZDSYS20211021111415025.JCYJ20220818103006012.

@@ -1,0 +1,244 @@
+node_1,node_2,edge
+abstractstylegans,image generation,AbstractStyleGANs are at the forefront of controllable image generation
+abstractstylegans,latent space,AbstractStyleGANs produce a latent space that is semantically disentangled
+latent space,image editing,The latent space produced by AbstractStyleGANs is suitable for image editing and manipulation
+stylegans,image generation,StyleGANs have shown unprecedented success in image generation
+stylegans,disentangled latent space,StyleGANs also produce a disentangled latent space
+disentangled latent space,image editing,The disentangled latent space produced by StyleGANs is extensively used for image editing and manipulation tasks
+disentangled latent space,image manipulation,The disentangled latent space produced by StyleGANs is extensively used for image editing and manipulation tasks
+stylegans,applications,"StyleGANs are being extensively used in various applications like face-editing, video generation, face reenactment, etc., which are a testament to their usability and generality"
+stylegans,datasets,"Despite being successful on well-curated datasets, training StyleGANs on in-the-wild and multi-category datasets is still challenging"
+stylegans,stylegan-xl,A large-scale conditional StyleGAN (i.e. StyleGAN-XL) on ImageNet was recently trained successfully
+stylegans,imagenet,StyleGANs are successfully trained on ImageNet
+stylegan-xl,imagenet,StyleGAN-XL uses additional pre-trained models through the idea of a projection discriminator trained on ImageNet
+stylegan-xl,imagenet,Large-scale conditional StyleGAN (StyleGAN-XL) was trained successfully on ImageNet
+models,image domains,"Obtaining models for distinctive image domains like medical, forensics, and fine-grained data may not be feasible, limiting its generalization across domains"
+models,image domains,"Training StyleGAN with augmentations leads to low recall, which measures diversity in the generated images"
+stylegan,pre-trained models,"In this work, the aim is to train vanilla class-conditional StyleGAN without any pre-trained models on challenging real-world long-tailed data distributions"
+gan,augmentations,GAN with augmentations leads to low recall and mode collapse
+recall,mode collapse,"Low recall is associated with mode collapse, particularly for minority classes"
+output vectors w,mapping network,Output vectors w from the mapping network hinge on the conditioning variable c
+mode collapse,class confusion,Existing conditioning methods either suffer from mode collapse or lead to class confusion in W space
+proposed noisytwins,intra class diversity,"With proposed NoisyTwins, we achieve intra class diversity while avoiding class confusion"
+conditioning techniques,regularization techniques,"On augmenting StyleGAN with recent conditioning and regularization techniques, they either lead to a poor recall for minority classes or lead to class confusion"
+methods,mode collapse,Existing methods either suffer from mode collapse or lead
+long-tailed image generation,mode collapse,Existing methods in image generation suffer from either mode collapse or class confusion.
+w,w space,"To prevent the collapse of w in W space, it is necessary to ensure that changes in the conditioning variable z lead to corresponding changes in w."
+self-supervised learning,noisytwins,"Inspired by techniques in self-supervised learning, NoisyTwins is proposed to address the collapse of learned representations by decorrelating w variables through twin augmentations for class embeddings."
+gan,intra-class diversity among the generated images,The decorrelation of w vectors ensures that the GAN can produce intra-class diversity among the generated images.
+large-scale long-tailed datasets,"imagenet-lt, inaturalist 2019",NoisyTwins is evaluated on challenging benchmarks of large-scale long-tailed datasets such as ImageNet-LT and iNaturalist 2019.
+mode collapse,class confusion,Existing metrics used in GAN evaluations are not able to capture both class confusion and mode collapse.
+intra-class frechet inception distance (fid),propose to use,"As a remedy, it is proposed to use intra-class Frechet Inception Distance (FID) to address the limitations of existing metrics in capturing both class confusion and mode collapse."
+fid,intra-class frechet inception distance,The intra-class Frechet Inception Distance (FID) based on features obtained from pre-trained CLIP embeddings is proposed as a metric to measure the performance of class-conditional GANs in long-tailed data setups
+noisytwins,stylegan,"NoisyTwins enables StyleGAN to generate diverse and class-consistent images across classes, mitigating mode collapse and class confusion issues"
+noisytwins,class embeddings,NoisyTwins is introduced as an effective and inexpensive augmentation strategy for class embeddings that decorrelates latents in the W latent space
+noisytwins,stylegan2,"NoisyTwins consistently improves the performance of StyleGAN2 on large-scale long-tailed datasets of ImageNet-LT and iNaturalist-2019, achieving a new state of the art"
+noisytwins,few-shot gans,NoisyTwins can prevent mode collapse and enhance the performance of few-shot GANs
+noisytwins,tail classes,"NoisyTwins enables the generation of diverse images for tail classes even with a small number of images, attributing it to the transfer of knowledge from head classes through shared parameters"
+stylegan,image quality,StyleGAN subsequently improved its image quality
+stylegan,photorealistic images,StyleGAN could produce high-resolution photorealistic images as demonstrated on a wide variety of category-specific datasets
+stylegan,mapping network,StyleGAN introduced a mapping network
+mapping network,sampled noise,the mapping network mapped the sampled noise into another latent space
+sampled noise,latent space,"the sampled noise was mapped into another latent space, which is more disentangled and semantically coherent"
+image editing and manipulation,stylegan,the mapping network in StyleGAN demonstrated downstream usage for image editing and manipulation
+stylegan,3d information,"StyleGAN was extended to get novel views from images, making it possible to get 3D information from it"
+stylegan,class-specific datasets,StyleGAN's impressive performance on class-specific datasets allowed downstream advances in image editing and manipulation
+gans,data efficiency and imbalance,GANs for Data Efficiency and Imbalance problem was concurrently reported by Karras et al. and Zhao et al.
+data augmentation,discriminator training,different approaches like augmenting the data and differentiable data augmentation were used to enhance discriminator training
+lecamgan,lecam divergence,LeCamGAN finds that enforcing LeCam divergence as a regularization trick in the discriminator
+lecam divergence,regularization trick,LeCam divergence is used as a regularization trick in the discriminator to robustify GAN training under limited data settings.
+dynamicd,capacity of the discriminator,DynamicD tunes the capacity of the discriminator on-the-fly during training.
+cbgan,solution,CBGAN proposed a solution to train the unconditional GAN model on long-tailed data distribution by introducing a signal from the classifier to balance the classes generated by GAN.
+gsr,regularization,gSR proposes to regularize the exploding spectral norms of the class-specific parameters of the GAN in a long-tailed class-conditional setting.
+collapse-by-conditioning,limited data,"Collapse-by-conditioning addresses the limits data in classes by introducing a training regime that transitions from an unconditional to a class-conditioned setting, thus exploiting shared information across classes during early stages of training."
+noisytwins,class confusion and poor generated image quality,NoisyTwins resolves class confusion and poor generated image quality on large datasets.
+self-supervised learning,benefits in gan training,Ideas from self-supervised learning have shown their benefits in GAN training.
+ic-gan,improvement in performance on long-tailed imagenet,"IC-GAN trains GAN conditioned on embeddings on SwAV, leading to remarkable improvement in performance on the long-tailed version of ImageNet."
+sgen and reacgan,auxiliary task of instance discrimination for the discriminator,sGen and ReACGAN introduce the auxiliary task of instance discrimination for the discriminator.
+sgen,reacgan,"Both sGen and ReACGAN introduce the auxiliary task of instance discrimination for the discriminator, thereby making the discriminator focus on multiple tasks and thus alleviating discriminator overfitting."
+sgen,insgen,"sGen relies on both noise space and image space augmentations, while InsGen focuses on both noise space and image space augmentations as well."
+sgen,reacgan,"sGen and ReACGAN both follow image space augmentations, with ReACGAN focusing solely on image space augmentations."
+reacgan,contragan,Both ReACGAN and ContraGAN follow only image space augmentations.
+contragan,noisytwins,"Contrary to ReACGAN and ContraGAN, NoisyTwins performs augmentations in the class-embedding space and contrasts them in the W-space of the generator instead of the discriminator."
+stylegan,stylegan2,"StyleGAN is comprised of the Style Conditioning Based Generator (G) and discriminator network (D), while StyleGAN2 has a unique architecture that is focused on in the experiments."
+stylegan,progressive gan,"The architecture of StyleGAN is inspired by Progressive GAN, with StyleGAN featuring blocks that progressively upsample the features and resolution starting from a single root image."
+stylegan2,progressive gan,"StyleGAN2, specifically the generator part, is composed of blocks that progressively upsample the features and resolution inspired by Progressive GAN."
+stylegan2,mapping network,"The mapping network in StyleGAN2 takes in conditioning variables, a random distribution z ∈ Rd, and class conditioning label c to be converted into an embedding."
+class conditioning label,embedding,The class conditioning label is converted to an embedding which is crucial for the mapping network to output vectors in the latent space of StyleGAN.
+vectors w,latent space of stylegan,"The vectors w are output by the mapping network in the latent space of StyleGAN, where they are found to be semantically disentangled."
+w,affine transform,The vectors w are processed through an affine transform before being passed to each generator layer for conditioning the image generation process through Adaptive Instance Normalization (AdaIN).
+images,generator g,"The images from generator G, along with real images, are passed to discriminator D for training in the context of StyleGAN."
+images,real images,Images generated by generator G and real images are both used as input to discriminator D during the training process.
+generator g,discriminator d,The generator G and discriminator D are utilized for training using non-saturating adversarial losses as described in the context.
+stylegans,long-tailed data,"There are issues present in the performance of StyleGANs trained on long-tailed data, specifically related to class confusion and mode collapse as mentioned in the context."
+issues,w space,The issues in StyleGANs trained on long-tailed data are analyzed in W space to understand the class confusion and class-specific mode collapse.
+stylegan,cifar10-lt dataset,"To analyze the performance of StyleGAN on long-tailed datasets, it is trained on the CIFAR10-LT dataset as mentioned in the context."
+generated images,t-sne plot for latents,The qualitative results of generated images are plotted along with a t-SNE plot for latents in W space for each class to evaluate the performance of StyleGAN on long-tailed datasets.
+t-sne embeddings,class’s mean,t-SNE embeddings are collapsed near each class’s mean in W space
+contrastive learning,gans,contrastive learning methods improve data efficiency and prevent discriminator overfitting for GANs
+contrastive conditioning method,reacgan,"contrastive conditioning method, based on ReACGAN, is added to the baseline for evaluation"
+network,tail classes,network omits to learn tail classes and produces head class images instead
+network,semantically similar classes,"network confuses semantically similar classes, generating cars in place of trucks and airplanes instead of ships"
+spectral norm of g embedding parameters,mode collapse,constraining spectral norm of G embedding parameters can help reduce mode collapse and lead to stable training
+spectral norm of g embedding parameters,class confusion,"constraining the spectral norm of G embedding parameters leads to class confusion, as seen in t-SNE visualization"
+stylegan,imagenet-lt,StyleGAN training on datasets like ImageNet-LT with a large number of classes leads to class confusion
+stylegan,datasets,StyleGAN is trained on datasets like ImageNet-LT.
+datasets,imagenet-lt,Datasets like ImageNet-LT contain a large number of classes.
+classes,semantically similar classes,"Datasets contain a large number of classes, along with a bunch of semantically similar classes."
+classes,mode collapse,We find that mode collapse in images is linked to the corresponding collapse in latent W space.
+mode collapse,class confusion,Mode collapse in images is linked to the corresponding confusion in latent W space.
+noisytwins,collapse,Our proposed NoisyTwins mitigates collapse.
+noisytwins,confusion,Our proposed NoisyTwins mitigates confusion.
+class confusion,mode collapse,Class confusion of images is tightly coupled with the structure of W space where mode collapse occurs.
+recent sota methods,collapse,Recent State of the Art (SotA) methods are either unable to prevent collapse.
+recent sota methods,class confusion,Recent State of the Art (SotA) methods suffer from class confusion.
+technique,confusion,This work aims to develop a technique that mitigates confusion.
+technique,collapse,This work aims to develop a technique that mitigates collapse.
+frequency of training samples,class c,The expression nc is the frequency of training samples in class c.
+identity matrix,size d,I is the identity matrix of size d × d.
+noise augmentations,image space augmentation,Noise augmentations come for free as opposed to image space augmentation.
+noise augmentation,image space augmentation,Noise augmentation is contrasted with image space augmentation in terms of providing additional variation without significant computation overhead.
+noise augmentation,embedding,Noise is added in the embedding before passing it to the generator and discriminator to ensure that class embeddings occupy a continuous region in latent space.
+class embeddings,embedding,Class embeddings are described as occupying a continuous region in latent space through the addition of noise in the embedding.
+class embeddings,continuous region in latent space,Class embeddings are ensured to occupy a continuous region in latent space due to noise added in the embedding.
+embedding,noise augmentation,Noise augmentation is a strategy used in embedding to help mitigate class-wise mode collapse and generate diverse latent w for each class.
+diverse image generation,w conditioning,"Diverse image generation is achieved through diverse w conditioning in the GAN, leading to the generation of diverse latent w for each class."
+w vectors,z,"W vectors for each sample are described as becoming insensitive to changes in z, indicating a characteristic of the model."
+noisytwins,barlow-twins-based regularizer,NoisyTwins method combines noise-based augmentation twins with the Barlow-Twins-based regularizer from self-supervised learning to resolve class confusion and mode collapse.
+noisytwins,conditional embedding space,NoisyTwins method introduces noise-based augmentation twins in the conditional embedding space to enhance the model's performance.
+z,w vectors,z and w vectors are related in the context of collapse in w vectors for each class
+z,gan,z is a factor in GAN convergence to a degenerate solution generating a single sample for each class
+z,i.i.d. noise,i.i.d. noise is added to z to induce some continuity in c embeddings vectors
+c,i.i.d. noise,i.i.d. noise is added to c embeddings vectors to induce some continuity
+class,mode collapse,There is a high tendency for mode collapse in tail classes
+embedding space,augmentation strategy,Noise is added in embedding space as part of the augmentation strategy
+noisytwins,twin augmentations,NoisyTwins includes twin augmentations centered at class embeddings
+noisytwins,augmented latents,NoisyTwins stack augmented latents in batches
+noisytwins,cross-correlation,NoisyTwins minimize cross-correlation between the latents of two augmented batches
+mapping network,invariant vectors,Vectors from the mapping network are made invariant to augmentations
+vectors,augmentations,vectors are made invariant to augmentations
+image generation,diverse,diverse image generation
+class-consistent outputs,augmentations,generate class-consistent outputs for augmentations
+invariance in w,noise augmentation,enforcing invariance in w to noise augmentation
+self-supervised learning,augmentations,self-supervised learning make the representations of augmentations similar through regularization
+barlow twins,large batch size,Barlow Twins does not require a large batch size of samples
+noisytwins,same class embedding,generate twin augmentations of the same class embedding
+noisytwins,mapping network,inputs are passed to the mapping network
+cross-correlation matrix,latent variables,calculate the cross-correlation matrix of latent variables
+confusion matrix,final loss,final loss based on confusion matrix
+latents,noise augmentation,make the two latents invariant to the noise augmentation applied
+different,de-correlate,de-correlate the different
+invariant,noise augmentation,"The first term is invariant to the noise augmentation applied, indicating that the output remains similar despite the noise. This relationship is crucial in the context of the experiment being discussed."
+embedding vector,information content,The second term tries to de-correlate the different variables in order to maximize the information content of the embedding vector. This relationship highlights the goal of the process being described.
+γ,hyper-parameter,The term γ represents the hyper-parameter that determines the relative importance of the two terms in the context. This relationship shows the significance of γ in the overall optimization process.
+generator loss term,noisytwins,"The loss term related to the generator (LG + λLNT) is crucial in the proposed method, NoisyTwins. This relationship indicates that NoisyTwins incorporates the generator loss term as part of its process."
+noisytwins,experimental evaluation,"The proposed method, NoisyTwins, is empirically evaluated in the subsequent sections. This relationship signifies the practical assessment of the method discussed."
+gans,long-tailed datasets,Generative Adversarial Networks (GANs) trained on long-tailed datasets are more prone to class confusion and mode collapse. This relationship emphasizes the challenges faced when applying GANs to such datasets.
+cifar10-lt dataset,imbalance factor,"The commonly used CIFAR10-LT dataset has an imbalance factor, which is the ratio of the most to least frequent class. This relationship indicates the dataset's skewed distribution that impacts training models."
+imagenet-lt,semantically similar classes,The ImageNet-LT dataset is a long-tailed variant of the 1000 class ImageNet dataset with semantically similar classes like Dogs and Birds. This relationship highlights the complexity of the dataset due to class similarities.
+inaturalist 2019 dataset,fine-grained differences,The iNaturalist 2019 dataset comprises variants of species with fine-grained differences in their appearance. This relationship underlines the intricate nature of the dataset's classes.
+imagenet pre-trained discriminators,fine-grained datasets,ImageNet pre-trained discriminators may not be useful for fine-grained datasets like iNaturalist 2019 due to the specific augmentations used. This relationship highlights the limitations of pre-trained models for certain datasets.
+imagenet pre-trained discriminators,augmentations,ImageNet pre-trained discriminators may not be useful for fine-grained datasets due to augmentations used to train the model making it invariant to fine-grained changes.
+stylegan2 architecture,pytorch-studiogan,"PyTorch-StudioGAN, implemented by Kang et al., serves as a base for the framework using the StyleGAN2 architecture for all experiments."
+path length regularization (plr),w space,"Path Length regularization ensures changes in W space lead to changes in images, with a delayed PLR used on ImageNet-LT."
+batch size,g step per d step,"A batch size of 128 is used for all experiments, with one generator (G) step per discriminator (D) step."
+stylegans,r1 regularization,The general training setup for StyleGANs includes methods like R1 regularization.
+fid: fréchet inception distance,wasserstein-2 distance,FID represents the Wasserstein-2 Distance between real and validation data.
+(sg2) and stylegan2 with augmentation (diffaug and ada),lecam regularization method,"The baseline models (SG2) and StyleGAN2 with augmentations are compared to using the LeCam regularization method, resulting in gains only for the iNaturalist 2019 dataset."
+stylegan2,contrastive d2d-ce loss conditioning (i.e. reacgan),"On StyleGAN2, contrastive D2D-CE loss conditioning, known as ReACGAN, is used as a baseline."
+stylegan2,contrastive d2d-ce loss conditioning,StyleGAN2 uses contrastive D2D-CE loss conditioning as a baseline
+contrastive d2d-ce loss conditioning,reacgan,contrastive D2D-CE loss conditioning is also referred to as ReACGAN
+stylegan2,noise augmentation,"We provide results on all datasets, for both the proposed Noise Augmentation and the overall proposed NoisyTwins method"
+cifar10-lt,diffaug,"DiffAug is applied on all baselines for CIFAR10-LT, except on gSR"
+diffaug,ada,DiffAug is found to provide inferior results compared to ADA for gSR
+noisytwins,gsr regularization method,NoisyTwins outperforms the recent gSR regularization method and achieves improved results for all metrics
+noisytwins,fid,NoisyTwins improves FID for StyleGAN2-ADA baseline used by gSR from 32.08 to 23.02
+noisytwins,fid,NoisyTwins improves FID for StyleGAN2-ADA baseline from 32.08 to 23.02
+d2d-ce,fid,D2D-CE baseline has superior FID in comparison to baselines
+proposed ifidclip,d2d-ce model,iFIDCLIP value is similar for the baseline and D2D-CE model
+proposed ifidclip,class confusion,superiority of proposed iFIDCLIP in detecting class confusion
+inaturalist 2019,imagenet-lt,both are particularly challenging datasets with long-tailed imbalances and semantically similar classes
+stylegan2,mode collapse,"StyleGAN2 suffers from mode collapse, particularly for tail classes"
+stylegan2-ada,mode collapse,StyleGAN2-ADA also suffers from mode collapse
+gsr method,mode collapse,gSR method undergoes less mode collapse in comparison to baselines
+gsr method,class confusion,gSR method suffers from class confusion
+intra-fidclip,class confusion,"Intra-FIDCLIP is similar among gSR method and baselines, indicating class confusion"
+mode collapse,ifid,"iFID is used in the context of evaluating mode collapse, indicating a relationship between the two concepts"
+ifid,ifidclip,iFID and iFIDCLIP are related in terms of being evaluation metrics used in the context of mode collapse
+imagenet,fid,"FID is biased towards ImageNet, establishing a relationship between ImageNet and FID"
+fid,fidclip,"FIDCLIP is mentioned as a variation of FID, suggesting a relation between FID and FIDCLIP"
+precision & recall,mode collapse,"Precision & Recall metrics are mentioned in the context of mitigating mode collapse, indicating a relationship between the two concepts"
+ifid,inception-v3 networks,"iFID is evaluated based on Inception-V3 Networks, showing a relationship between these concepts"
+fid,inception-v3 networks,"FID is used in relation to Inception-V3 Networks for evaluating Generative Models, suggesting a link between FID and Inception-V3 Networks"
+generative models,inception-v3 networks,"Generative Models are evaluated based on Inception-V3 Networks, establishing a relationship between these concepts"
+ifidclip,mode collapse,"iFIDCLIP is mentioned in the context of distinguishing models with mode collapse, indicating a relation between iFIDCLIP and mode collapse"
+inaturalist 2019,ifid,"iFID is used for evaluating models trained on iNaturalist 2019, showing a connection between iNaturalist 2019 and iFID"
+models,ifidclip,"The model with mode collapse tends to have high iFIDCLIP, showing a relationship between the model and the evaluation metric."
+mean ifid,class confusion,"Mean iFID can sometimes be deceptive in detecting class confusion and collapse cases, indicating a relationship between the evaluation metric and the concept of class confusion."
+implentations,studiogan,"NoisyTwins performance is evaluated by comparing it to other methods including those in StudioGAN, establishing a relationship between the implementations and the StudioGAN framework."
+method,stylegan2,"The method is compared to StyleGAN2, indicating a relationship between the method being used and the StyleGAN2 framework."
+fid,ifidclip,"An average improvement is observed in FID, FIDCLIP, and iFIDCLIP metrics over previous state of the art (SotA), showing a relationship between the metrics being evaluated."
+sg2+ada,sg2+ada+noise (ours),"Comparison is made between SG2+ADA and SG2+ADA+Noise, indicating a relationship between the two methods being compared."
+existing approaches,cifar10-lt dataset,"Quantitative results are compared with other existing approaches on the CIFAR10-LT Dataset, establishing a relationship between the existing approaches and the dataset."
+existing approaches,fidclip,existing approaches show a relative improvement of ∼ 26% over the existing FIDCLIP method
+existing approaches,ifidclip,existing approaches show a relative improvement of ∼ 26% over the existing iFIDCLIP method
+existing approaches,sg2+diffaug,existing approaches include SG2+DiffAug method in the comparison
+existing approaches,sg2+d2d-ce,existing approaches include SG2+D2D-CE method in the comparison
+our methods,noisytwins,Our methods include NoisyTwins that shows diversity and improvement in recall
+our methods,noise augmentation,Our methods show improvement in generation quality with Noise Augmentation but suffer from mode collapse
+noise augmentation,noisytwins,Noise Augmentation combined with NoisyTwins regularization improves diversity and recall
+noisytwins,generated images,NoisyTwins generations show remarkable diversity in comparison to other methods in the generated images of tail classes
+tail classes,knowledge transfer,Successful transfer of knowledge from head classes to tail classes is demonstrated by the diversity for classes with just 5-6 training images
+head classes,shared parameters,Shared parameters in head classes contribute to the successful transfer of knowledge to tail classes
+biggan models,gsr,Comparison of FID with existing SotA reported results includes BigGAN models from gSR
+biggan models,in,Comparison of FID with existing SotA reported results includes BigGAN models from In
+biggan models,gsr,Comparison between FID of BigGAN models from gSR
+biggan models,instance conditioned gan (icgan),Comparison of FID of BigGAN models with ICGAN
+biggan models,stylegan2-ada baselines,Baseline comparison with StyleGAN2-ADA baselines
+noisytwins,stylegan2-ada method,Improvement of StyleGAN2-ADA method with the addition of NoisyTwins
+noisytwins,gsr,Outperforming existing methods of gSR
+noisytwins,icgan,Outperforming existing methods of ICGAN
+noisytwins,stylegan2 base-line,Allowing the StyleGAN2 base-line to scale to large and diverse long-tailed datasets
+noisytwins,few-shot datasets,Demonstrating the potential of NoisyTwins in class-conditional few-shot image generation
+few-shot datasets,lhi-animalfaces,Using the few-shot dataset of LHI-AnimalFaces to report results
+few-shot datasets,imagenet carnivores,Using a subset of ImageNet Carnivores to report results
+noisytwins,fid,NoisyTwins significantly improves the FID of StyleGAN2 ADA baseline by 22.2% on average for both datasets.
+noisytwins,sota transitional-cgan,Combining NoisyTwins with SotA Transitional-cGAN also leads to effective improvement in FID.
+noisytwins,hyperparameters,"Analysis of NoisyTwins w.r.t. to its hyperparameters, standard deviation (σ) of noise augmentation and regularization strength (λ)."
+noisytwins,contrastive objective,Comparison of NoisyTwins objective with contrastive objective.
+noisytwins,latent diffusion models,Comparison of NoisyTwins over Latent Diffusion Models for long-tailed class conditional generation task.
+cifar10-lt,appendix,"Ablation experiments on CIFAR10-LT, with additional details and results present in Appendix."
+noisytwins,gan fine-tuning,Comparison of NoisyTwins for GAN fine-tuning.
+noisytwins,noise variance parameter σ,Ablation over the noise variance parameter σ for CIFAR10-LT.
+noisytwins,noise strength 0.75,A moderate value of noise strength 0.75 leads to optimal results for NoisyTwins.
+noisytwins,regularization strength λ,NoisyTwins algorithm performs similarly on values near 0.01 and is robust to it for regularization strength λ.
+imagenet-lt,sota methods,Existing SotA methods for tail classes in ImageNet-LT show collapsed according to qualitative results.
+noisytwins,diverse and class-consistent image generation,NoisyTwins results in diverse and class-consistent image generation for even classes with few images
+tail classes,enhanced diversity,Tail classes get enhanced diversity through the knowledge transfer from head classes
+sg2+ada,noisytwins,NoisyTwins method improves over SG2+ADA baseline
+transitional-cgan,noisytwins,NoisyTwins is applied on top of Transitional-cGAN
+noise augmentation,contrastive learning-based methods (simclr),The goal is to achieve invariance to Noise Augmentation using contrastive learning-based methods like SimCLR
+noise augmentation,barlow twins,The goal is to achieve invariance to Noise Augmentation using Barlow Twins method
+barlowtwins,noisytwins,NoisyTwins (BarlowTwins based) produces a lower FID score compared to contrastive learning-based methods
+noisytwins,contrastive baseline,NoisyTwins performs significantly better than contrastive baseline in noise augmentation tasks
+modern vision and language models,noisytwins,Comparison and evaluation of NoisyTwins with modern Vision and Language models
+inaturalist 2019 dataset,prompt,The iNaturalist 2019 dataset is used to create a prompt 'a photo of S' for testing generation models.
+inaturalist 2019 dataset,ldm [37] model,The iNaturalist 2019 dataset is used with the LDM [37] model to perform inference and generate images.
+ldm [37] model,laion-400m,The LDM [37] model trained on LAION-400M is used to perform inference and generate images per class.
+fid,noisytwins,"FID of 57.04 is compared to the best FID of 11.46 achieved by NoisyTwins, showing differences in performance."
+gans,ldm,GANs are still ahead of general-purpose LDM for specific use cases like fine-grained generation.
+inaturalist 2019,imagenet-lt,StyleGAN2 models are analyzed on real-world datasets including iNaturalist 2019 and ImageNet-LT.
+class confusion,mode collapse,Existing works lead to either class confusion or mode collapse in the image space according to the analysis.
+latent w space,stylegan2,Collapse and confusion in the latent W space of StyleGAN2 leads to class confusion and mode collapse in the image space.
+latents,random conditioning vectors z,"Collapse occurs when the latents become invariant to random conditioning vectors z, leading to issues in class consistency."
+noise based augmentation,barlowtwins' objective,Noise-based augmentation coupled with BarlowTwins' objective imparts intra-class diversity to latent w vectors for class consistency.
+latent w space,latent w vectors,The latent W space imparts intra-class diversity to latent w vectors.
+noise augmentation,noisytwins technique,The noise augmentation and regularization comprise the proposed NoisyTwins technique.
+noisytwins technique,stylegan2,The proposed NoisyTwins technique improves the performance of StyleGAN2.
+noisytwins technique,inaturalist 2019,The proposed NoisyTwins technique establishes a new SotA on iNaturalist 2019.
+noisytwins technique,imagenet-lt,The proposed NoisyTwins technique establishes a new SotA on ImageNet-LT.
+noisytwins technique,extension,The extension of NoisyTwins for conditioning on more-complex attributes for StyleGANs is a good direction for future work.
+noisytwins technique,more-complex attributes,The extension of NoisyTwins for conditioning on more-complex attributes for StyleGANs is a good direction for future work.
+noisytwins technique,future work,The extension of NoisyTwins for conditioning on more-complex attributes for StyleGANs is a good direction for future work.
+serb-star project,work,This work was supported in part by SERB-STAR Project.
+harsh rangwani,pmrf fellowship,Harsh Rangwani is supported by PMRF fellowship.

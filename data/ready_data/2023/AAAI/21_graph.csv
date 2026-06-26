@@ -1,0 +1,209 @@
+node_1,node_2,edge
+conditional average treatment effects (cate),causal inference,CATE is a central topic in causal inference with observational data.
+causal inference,machine learning,Machine Learning-based models are used for estimating CATE
+machine learning based-models,meta-learners,Meta-learners are developed to estimate CATE without restricting to a specific ML method.
+meta-learners,heterogeneous effects,Meta-learners are designed to estimate heterogeneous effects of multivalued treatments.
+multi-valued treatments,naive extensions,Naive extensions of meta-learners face limitations when dealing with multiple treatment levels.
+error upper bounds,important parameters,Theoretical analysis focuses on error bounds as functions of parameters like the number of treatment levels.
+number of treatment levels,satisfaction,The naive extensions may not always provide satisfactory results as the number of treatments increases.
+meta-learners,strengths and weaknesses,The paper discusses and empirically evaluates the performance of meta-learners under various conditions.
+synthetic datasets,semi-synthetic datasets,The empirical evaluation includes both synthetic and semi-synthetic datasets to assess the methods.
+supervised ml,optimal intervention strategy,The context discusses the focus on supervised machine learning to determine the best course of action for interventions.
+results of supervised ml,convincing,The models' outcomes are not consistently convincing
+potential outcomes theory,causal inference,This theory forms the basis for reducing causal inference to statistical methods
+potential outcomes theory,statistical inference,It relies on making statistical inferences under specific assumptions about the data generation process.
+potential outcomes theory,neyman's work,Derived from Neyman's work
+potential outcomes theory,rubin's work,Also incorporates Rubin's work on the theory
+binary treatment setting,real-world cases,Most studies focus on binary treatments
+in-depth analysis,impact of treatment across levels,The need arises for a detailed examination of treatment effects beyond a binary classification.
+causal inference,heterogeneous treatment effects,The context discusses the problem of Causal Inference in non-binary treatment settings
+ground truth,fundamental problem of causal inference,The absence of ground truth is a major challenge in causal inference
+heterogeneous treatment effects,standard metrics,Standard metrics cannot be used to assess performance in estimating heterogeneous treatment effects due to the lack of ground truth.
+stable unit treatment value assumption (sutva),position bias,Binarizing multi-valued treatment settings violates SUTVA
+multi-valued treatment setting,binarization,The issue arises when attempting to simplify a multi-valued treatment into a binary scenario
+heiler & knaus (2022),hidden variation of treatment,Heiler & Knaus's work highlights that binarizing treatments does not separate treatment heterogeneity from other forms of heterogeneity.
+multi-valued treatments,heterogeneous treatment effects,The context discusses the problem of estimating HTEs specifically for multi-valued treatments
+heterogeneous treatment effects (htes),conditional average treatment effects (cates),HTEs and CATEs are used interchangeably in the context
+nonparametric estimators,meta-learners,Meta-learners
+meta-learners,model-agnostic algorithms,Meta-learners are also referred to as model-agnostic algorithms
+debiased machine learning (dml) estimators,observational studies,DML estimators are mentioned in the context of observational studies
+number of possible treatments,performances of heterogeneous treatment effect estimators,The paper explores the impact of the number of treatment options on the effectiveness of nonparametric estimators for HTEs.
+curth & van der schaar (2021a),strengths and weaknesses,The authors
+debiased machine learning (dml),estimators,DML refers to estimators used in observational studies
+x-learner,regression adjustment,The X-learner is based on regression adjustment for handling multi-valued treatments.
+r-learner,drawbacks,The R-learner is mentioned as having main drawbacks in the context.
+meta-learners,asymptotic bias-variance analysis,The paper conducts a theoretical analysis using an asymptotic bias-variance analysis for the meta-learners.
+m-learner,dr-learner,Both M- and DR-learners are analyzed alongside the X-learner and T-learner.
+t-learner,naive x-learner,The T- and naive X-learners are also compared in the analysis.
+number of possible treatment levels (k),impact on performance,The analysis highlights the effect of K on the learners' performance.
+propensity score,lower bound,The propensity score's lower bound is another parameter affecting the learners' performance.
+outcome model estimation error,error bounds,The accuracy of the outcome model estimation error influences the learners' bias and upper bounds.
+minimax approach,binary treatment,The paper's analysis contrasts with the minimax approach typically applied to binary treatments.
+smoothness of treatment effects,alternative analysis focus,The analysis avoids reliance on smoothness assumptions by directly examining the role of parameters.
+meta-learners for cates estimation,causal inference community,The Causal Inference community has developed various algorithms and methods for estimating CATEs
+statistical and ensemble methods,cate estimation algorithms,This includes statistical methods like Hill's (2011)
+neural networks,hybrid ml models for causal inference,Neural networks are part of the hybrid ML models reviewed by Dorie et al. (2019) for causal inference.
+s-learner,t-learner,Both the S- and T-learners are nonparametric meta-learners introduced by Künzel et al. (2019) for binary CATE estimation.
+t-learner,x-learner,The T-learner uses either a single or two models
+dr-learner,model misspecifications,DR-learner
+r-learner,nie & wager (2020),Nie & Wager present the R-learner
+nuisance functions,propensity score,The context discusses estimating nuisance functions
+r-learner,cate (conditional average treatment effect),The R-learner is introduced as a method for estimating the CATE by minimizing an orthogonalized loss function.
+pw-learner,regression-adjustment (ra-learner),The PW-learner and RA-learner are mentioned as alternative methods
+ra-learner,x-learner,The RA-learner is an improved version of the X-learner.
+multiple and continuous treatments,average dose-response estimation,Interest has grown in causal inference with multi-valued and continuous treatments
+imbens (2000),non-binary treatment setting,Imbens' work extended the potential outcomes framework and propensity score to non-binary treatment settings.
+hill (2011),bayesian additive regression trees,Hill briefly considered Bayesian additive regression trees for estimating counterfactual responses in the context of continuous treatments.
+hu et al. (2020),doubly debiased machine learning methods,Hu et al. applied doubly debiased machine learning to dose-response modeling with continuous treatments.
+bayesian additive regression trees,counterfactual response and causal effects estimation,Hu et al. (2020) use Bayesian additive regression trees for estimating counterfactual responses and causal effects.
+grf (gradient-boosted regression forests),multi-valued treatments extension,Tibshirani et al. (2020) develop an extension of GRF to handle multi-valued treatments
+schwab et al. (2020),counterfactual response curves for multiple continuous treatments,They apply neural networks and representation learning to estimate response curves for graph-structured treatments.
+harada & kashima (2021),counterfactual response curves for multiple continuous treatments,Their work also contributes to this area
+nie et al. (2021),counterfactual response curves for multiple continuous treatments,This study uses neural networks for similar purposes.
+kaddour et al. (2021),counterfactual response curves for multiple continuous treatments,Their research involves estimation methods for continuous treatments.
+binary meta-learners (x- and r-learners),naive extension by zhao & harinen (2019),Zhao & Harinen extend these learners without theoretical analysis for multi-treatment scenarios.
+section 2 (meta-learners for multi-valued heterogeneous effects),cate (causal treatment effect) estimation for multi-treatments,This section discusses the estimation approach for multiple treatments.
+section 3,problem setting,The paper's structure starts with a problem definition
+imbens (2000),rubin-neyman model extension,Imbens' work contributes to the theoretical foundation for the problem considered.
+lechner (2001),rubin-neyman model extension,Lechner's contribution further extends the model for causal inference.
+imai & dyk (2004),rubin-neyman model extension,Their work adds to the understanding of causal inference with multiple treatments.
+statistical problem,real-valued counterfactual outcome,The statistical problem involves the study of Y (t)
+y (t),treatment level t,Y (t) refers to the outcome associated with each treatment level t ∈ T
+covariates (x),treatment assignment (t),Covariates X
+generalized propensity score (gps),treatment assignment (t),GPS
+gps (r(t,x)),selection bias
+cate (τk(x)),treatment levels tk and t0,CATE
+cate (τk(x)),outcome (y),Estimating CATE aims to infer the causal effect of treatment on the outcome Y
+baseline treatment value (t0),cate (τk(x)),t0 serves as the reference point for calculating the CATE
+causal effects,potential outcomes,The causal effects are inferred from the observed sample data
+unconfoundedness assumption,observed covariates (y(t)),The treatment mechanism is assumed to be unconfounded based on the observed variables
+expected potential outcome,observed outcome (yobs),Under the given assumptions
+causal effect estimation,non-parametric estimation,The estimation of CATE is treated as a non-parametric problem
+meta-learners,supervised regression methods,Meta-learners
+r-learner,other meta-learners,Unlike R-Learner
+r-learner,multi-valued treatments,R-learner is a type of Neyman-Orthogonality-based learner that generalizes to support multiple treatments in the context of causal estimation.
+direct plug-in meta-learners,one-step learners,Direct plug-in meta-learners
+t-learner,cate estimator,T-learner is a simple CATE estimation method that estimates separate response surfaces for each treatment and calculates the difference.
+t-learner,selection bias,T-learner can suffer from selection bias if the outcome models are estimated with respect to the wrong distribution.
+cate,counterfactual outcomes,CATE stands for Conditional Average Treatment Effect
+neyman-orthogonality-based learners,r-learner,R-learner is a subclass of Neyman-Orthogonality-based learners
+importance sampling,expected squared error,The method of 'Importance Sampling' is used to estimate (cid:98)µt by minimizing the expected squared error on the nominal weighted distribution.
+s-learner,multi-valued treatments,The S-learner is designed for multi-valued treatments
+cate (conditional average treatment effect),s-learner,The S-learner computes the CATE as the difference between µ(x
+treatment (t),covariates (x),The S-learner includes T as a feature
+selection bias,pseudo-outcome meta-learners,Pseudo-outcome meta-learners are used to overcome selection bias by considering alternative representations of Yobs
+nuisance components,gps (globally predictive substitution),Nuisance components in pseudo-outcomes may include GPS
+confounding bias,(cid:98)µ (estimation of µ),The S-learner may suffer from confounding and regularization biases when estimating (cid:98)µ
+gps,well-specification,The context explains that GPS (Generalized Propensity Score) is related to the well-specification of nuisance components
+well-specification,estimator,Estimators derived from a well-specified statistical model are consistent
+m-learner,inverse propensity weighting (ipw),The M-learner is inspired by Inverse Propensity Weighting (IPW)
+m-learner,modified learned pseudo-outcome,The M-learner uses a modified pseudo-outcome (ZMk) that combines treatment assignment indicators and estimated GPS.
+dr-learner,outcome model (µ),The DR-learner estimates both the outcome model (µ) and the GPS to overcome model misspecification.
+dr-learner,gps (r),The DR-learner relies on estimating GPS (r) alongside the outcome model.
+dr-learner,parameter,Unlike the M-learner
+(cid:98)µ,estimator of outcome µ,A generic estimator (cid:98)µ represents an arbitrary estimate of the true outcome model.
+(cid:98)r,estimator of gps r,Similarly
+generalized r-learner,drawbacks,The generalized R-learner has two major limitations: it cannot be written as a weighted supervised learning problem with a specific pseudo-outcome and is non-identifiable without regularization.
+parametric families f,multi-treatment regime,Only parametric families can be considered in the context of multiple treatments.
+r-learner,cates (τk),The R-learner fails to estimate CATEs
+s-learner,ordinary least square (ols),Theoretically
+overlap assumption,outcome y(t),The analysis assumes that the outcome Y(t) is generated from a function with a dependency on treatment t and covariates X
+β∗k,βtk,βt0
+βt,predefined basis functions fj,Assumption 5.2 states that βt exists such that the CATE τk can be represented as a linear combination of fj with coefficients βt
+product effect,representation in reproducing kernel hilbert space (rkhs),The product effect is considered reasonable
+cate τk,fj(x),Under the assumptions
+x-learner,expected mean squared error err((µtl)),The error of the X-learner is given by EX
+ols estimator,βk,The proof of Theorems 5.3 and 5.4 involves expressing the OLS estimator βk.
+multivariate central limit theorem,asymptotic covariance matrix,Both proofs use the CLT and the Slutsky theorem or the Delta method to analyze the asymptotic behavior of the estimators
+ρ (sampling probability),error's upper bounds,For K=2
+curth & van der schaar (2021a),related work,Their work provides a reference point for comparison
+sampling probability ρ,t-learner,The performance of the T-learner is influenced by the sampling probability ρ; it becomes poor when ρ(t) is small and the number of treatments K increases.
+t-learner,naive x-learner,The T- and naive X-learners perform similarly
+number of treatments k,performance degradation,As the number of treatment values K grows
+binarized r-learners,generalized r-learners,Binarized and generalized R-learners cannot be expressed as model-agnostic regression and require a different theoretical analysis due to their loss function minimization nature.
+theorems 5.3 and 5.4,error's upper bound analysis,These theorems provide discussions on the relationship between error bounds
+minimax approach,originality of theorem 5.3,Theorem 5.3 offers an original insight not derivable from the minimax approach.
+number of observations (n),number of treatment values (k),The context discusses the relationship between 'n' and 'K' in terms of error bound
+rct setting,error bound,The theorem is applicable in RCT settings
+pseudo-outcome meta-learners,high error,Pseudo-outcome meta-learners can lead to high error due to their reliance on nuisance components.
+gps (grand policy spectra),m- and dr-learners,GPS is present in the denominators of M- and DR-learners
+lack of overlap,high error bound,The error bound increases when there is a lack of overlap
+number of treatments (k),1/k,The requirement for at least rmin ≤ 1/K implies that error is higher with more treatment values.
+quality of outcome models,lower error bound,The better the outcome models
+m-learner,gps (r),The M-learner is sensitive to the estimated GPS and has high variance
+dr-learner,err((cid:98)µt) and (cid:98)µt0,The DR-learner's performance improves due to the error estimation in the numerator.
+x-learner,gps (r),The X-learner is unaffected by GPS r
+x-learner,μ (outcome model),The X-learner incorporates only the outcome model (μ) and relies on its consistency for correct CATE estimation.
+x-learner,gps r (overlap assumption),The X-learner performs best when the overlap assumption (GPS r) is not respected
+m-learner,dr-learner,The error comparison depends on outcome model specification: if well-specified
+x-learner,m-learner,The X-learner can have a lower error bound under certain conditions
+x-learner,dr-learner,In numerical results
+x-learner,naive x-learner,A theoretical comparison with the Naive X-learner is impossible without knowing the distribution of T; numerical results suggest a difference.
+cate (counterfactual average treatment effect),estimation,Estimating CATE correctly requires consistent outcome models.
+error upper bound,performance metric,Error bounds reflect the expected performance of the learners.
+well-specified models,misspecified models,Model accuracy affects the superiority of one learner over another.
+rmin,k (conditions),Performance comparison depends on factors like rmin and K.
+appendix d,numerical results,Additional information with empirical comparisons is provided in Appendix D.
+meta-learners,knowledge about the distribution of t,The context contrasts meta-learners that do not have knowledge about the distribution of T with the possibility of numerical comparisons.
+x-learner,naive x-learner,The X-learner is compared to its naive version
+generalized r-learner,binarized r-learner,Both learners are briefly discussed
+m-learner,selection bias,The M-learner is mentioned to suffer from selection bias due to its simplicity.
+m-learner,consistency,Despite the disadvantage
+dr-learner,doubly robust consistency,The DR-learner provides consistency through a doubly robust approach.
+bin r-learner,identifiability,The binarized R-learner has better identifiability than its generalized counterpart.
+bin r-learner,computational cost,It has a higher computational cost compared to other methods.
+nv x-learner,selection bias,The nv X-learner
+inverse propensity weighting,selection bias,Selection bias is a type of bias that arises when sampling and comparing units
+selection bias,confounding effects,Confounding effects are the statistical dependence between the treatment T and covariates X
+low samples,selection bias,Low sample sizes can exacerbate selection bias
+meta-learner,low sample regimes,Pseudo-outcomes meta-learners and the S-learner are preferred when dealing with small sample sizes.
+t-learner,failure to learn cates,The T-learner may struggle to estimate CATEs when the treatment values have uneven distribution.
+s-learner,k ≥ 10,The S-learner is a suitable choice when there are many treatment groups (K is large).
+x-learner,insufficient information about t,The X-learner is useful when the model lacks data for a specific treatment value.
+dr-learner,quantifying uncertainties,The DR-learner provides consistent uncertainty estimates for CATEs.
+gps r,checking for consistency,After estimating GPS r
+dr-learner,consistent estimation of cate,The DR-learner is recommended for achieving a consistent estimation of the CATE.
+gps r,lack of overlap,One needs to check for lack of overlap after estimating GPS r
+meta-learners,numerical experiments,In this section
+mpehe,error in estimation,mPEHE and sdPEHE are used to measure the error in estimating the CATE in synthetic or semi-synthetic scenarios.
+precision in estimation of heterogeneous effect (pehe),estimation of treatment effect,PEHE is the metric for calculating the mean squared error in estimating the treatment effect.
+sample size (n),comparison scenarios,Meta-learners are compared under different scenarios
+number of possible treatments (k),comparison scenarios,The experiments also consider the impact of different numbers of possible treatments on the performance.
+nuisance parameters,model fitting,Model fitting of base-learners is not considered in the experiments.
+hyperparameters,default values,All hyperparameters are set to their default values throughout the experiments.
+neural networks,excluded,Neural Networks are not included in the analysis due to complexity.
+problem,cate estimation,The context discusses the need to address the problem in estimating CATEs (Conditional Average Treatment Effects).
+out-sample prediction supervised models,solution,Using these models is proposed as a potential solution to the problem.
+t-learner,naive x-learner,Both are mentioned as methods
+t-learner,regularized t-learner,The regularized T-learner also faces issues similar to the T-learner
+m-learner,poor performances,The M-learner has consistently poor performance due to Theorem 5.4.
+s-learner,stabilizes,The S-learner stabilizes when K is sufficiently large
+k,impact on performance,The value of K influences the effectiveness of different learners
+multistage fracturing enhanced geothermal system (egs),non-randomized dataset,A real-world example of a non-randomized EGS is used to demonstrate the estimation of heterogeneous treatment effects.
+heat extraction performance,assumption,The performance of heat extraction is assumed to satisfy certain conditions in the EGS context.
+lateral length,treatment t,Lateral Length is referred to as treatment T
+treatment t,13 possible values,Treatment T has 13 distinct values.
+covariates x,r11 variables,Covariates X are the remaining variables
+heat performance,logarithmic transformation,A logarithmic transformation is applied to the heat performance for a meaningful mPEHE.
+treatment t,normalized,Treatment T is normalized for analysis.
+units,n = 10000,10
+wells with high lateral length,larger fractures,The sampling strategy favors wells with high lateral length to have larger fractures.
+gps,gradient boosting models,GPS (Generalized Performance Score) is estimated using gradient boosting models.
+mpehe,sdpehe,mPEHE (mean prediction error in heterogeneity) and sdPEHE (standard deviation of prediction error in heterogeneity) are reported in Table 4.
+meta-learners,xgboost model,XGBoost model is generally better than Random Forests for most cases.
+meta-learners,random forests,XGBoost outperforms Random Forests
+x-learner,dr-learner,The X-learner and DR-learner perform better than others.
+heterogeneous treatment effects estimation,multi-valued treatments,The study focuses on estimating heterogeneous treatment effects for treatments with multiple values.
+pseudo-outcome meta-learners,standard plug-in meta-learners,Both types of meta-learners are compared.
+robinson decomposition,r-learner,The generalized Robinson decomposition is used to build the R-learner.
+error's upper bounds,bias-variance analysis,An in-depth analysis of error bounds is conducted for pseudo-outcome meta-learners.
+advantages and limitations,discussion of pseudo-outcome meta-learners,The analysis leads to a discussion of the pros and cons of each approach.
+pseudo-outcome meta-learner,impact of number of treatment levels,The context discusses the identified impact of the number of treatment levels on the performance of the meta-learners.
+pseudo-outcome meta-learner,lower bound rmin,The text highlights the effect of the lower bound rmin on the M-
+m-learner,dr learner,Both M- and DR learners are mentioned as distinct approaches within the context of meta-learning.
+m-learner,x-learner,The X-learner is compared to the M- and DR learners
+cates estimation,choice of base-learner,The quality of counterfactual outcome estimation (CATEs) is influenced by the selection of the base-learner.
+software,code and semi-synthetic dataset,The code and semi-synthetic dataset are made available at a specific GitHub repository.
+section 6.2,semi-synthetic dataset,The semi-synthetic dataset is part of the materials provided in section 6.2.
+acknowledgments,totalenergies,This work was supported by the energy company TotalEnergies.
+acknowledgments,french national agency for research and technology (anrt),Financial support also came from the French research agency ANRT.

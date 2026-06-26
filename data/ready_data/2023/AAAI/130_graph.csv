@@ -1,0 +1,145 @@
+node_1,node_2,edge
+ood detection,autonomous driving,OOD detection is a crucial ability for autonomous driving systems to ensure safety and differentiate between known classes and unexpected situations.
+ood detection,intelligent healthcare applications,In healthcare
+ood samples,id data,OOD samples are data that are not part of the initial training data (ID)
+overconfidence,ai model,Overconfidence occurs when AI models assign high confidence to unseen OOD data
+ood data,training data,Models trained only on ID data may struggle with OOD data if they lack exposure during the training process.
+ood data acquisition,real-world applications,Obtaining OOD data can be challenging in real-world scenarios due to time constraints or costs.
+researchers,ood detection methods,Researchers develop methods to address OOD detection
+generative adversarial networks (gans),ood samples,GANs are used to generate fake OOD samples based on ID data.
+gans,stable training,GANs often face challenges in stable training
+gans,realistic ood samples,Generating realistic OOD samples from only ID samples is a challenge for GANs.
+vos (virtual ood sampling),ood features,VOS synthesizes virtual OOD features from low likelihood regions of ID data in the feature space.
+vos (virtual ood sampling),gaussian distribution,VOS assumes a strict Gaussian distribution for ID data
+clip (contrastive language-image pre-training),ood detection,CLIP is used for OOD detection because it has learned a lot of knowledge
+clip,pre-trained large vision-language model,Its effectiveness in OOD detection comes from its pre-training on a vast amount of vision and language data.
+clip model,ood data,The CLIP model is used for OOD detection
+clip model,pre-trained visual encoder,The pre-trained visual encoder is necessary for OOD detection
+tagfog,clip-based textual guidance,TagFog proposes a framework that uses CLIP's textual embeddings of ID knowledge for contrastive learning during OOD detection.
+tagfog,fake ood generation,TagFog generates fake OOD data through Jigsaw transformations
+jigsaw transformations,fake ood data,Jigsaw transformations create semantically shifted images that mimic ID data for challenging OOD sample generation.
+chatgpt,textual description of id classes,ChatGPT provides richer information than just class names
+clip's textual embeddings,id knowledge,These embeddings serve as anchors for guiding the image encoder's training with contrastive learning.
+image encoder,ood discrimination,The image encoder is trained to better discriminate between ID and real OOD data using the TagFog framework.
+training data,id classes,The training data is generated based on K ID classes.
+chatgpt,descriptive text generation,ChatGPT is used to generate text for each ID class
+chatgpt's text encoder,semantic embedding,The Text Encoder creates embeddings for ID classes using the generated text.
+image encoder,feature representation,The Image Encoder learns to generate compact ID feature representations.
+supervised contrast learning (supcon),contrastive learning,SupCon is utilized for supervised contrastive learning on ID and fake OOD embedding vectors.
+fake ood data,ood detection,Fake OOD data is used during training to improve OOD detection performance.
+ood detection methods,hendrycks (reference),Most OOD detection methods
+classifier,ood separation,The classifier is trained to separate ID data from fake OOD data in the feature space.
+ood detection methods,classifier training,Most OOD detection methods train classifiers based on ID data without considering OOD data.
+hendrycks and gimpel (2016),liang,li
+ming et al. (2023),ood detection methods,Mentioned as another method that trains a classifier on ID data without OOD knowledge.
+fake ood data generation,classifier training,Proposed method uses fake OOD data alongside ID data to improve the classifier's performance.
+jigsaw technique,fake ood data generation,The Jigsaw technique is employed to create synthetic OOD data for the model.
+image encoder f,classifier head h,Both components form the proposed learning framework
+chatgpt,text encoder,Pretrained CLIP's Text Encoder is fed descriptions of ID classes obtained from ChatGPT.
+projected visual embedding,id image,The projected visual embedding zn is derived from the input ID image xn.
+image encoder (f),projected visual embedding (zn),The image encoder f generates the projected visual embedding zn through a series of transformations.
+projection module (g),projected visual embedding (zn),The projection module g processes the output of the image encoder f
+anchor,projected visual embedding (zn),During training
+supervised contrastive loss (lsc),fake ood images,LSC helps differentiate fake OOD images from anchor-guided ID images by contrasting their similarity scores.
+image encoder (f),classifier head (h),The image encoder f and classifier head h work together for classification tasks.
+loss function (l),image encoder (f),The combined loss L is minimized during training
+loss function (l),projection module (g),The projection module g is also influenced by the loss function L during training.
+temperature scaling factor (τ),loss functions (lci,lsc)
+model inference,trained model,During model inference
+model inference,ood detection strategy,Our method focuses on model training and employs a post-hoc method
+react,post-hoc ood detection method,ReAct is a recently proposed method for OOD detection
+training,model training,The context discusses the process of training a model for OOD detection.
+cifar10,cifar100,Both datasets are used as ID sets in the CIFAR benchmarks for OOD detection evaluation.
+cifar10/cifar100,ood test sets,Six datasets like Textures
+imagenet100-i,imagenet100-ii,Two different subsets of ImageNet are used as ID sets in the large-scale ImageNet benchmarks.
+imagenet100-i/ii,ood test datasets,Four datasets
+ood test datasets,places,Places is an example of an OOD dataset mentioned in the context.
+ood test datasets,textures,Another OOD dataset mentioned is Textures.
+ood test datasets,inaturalist,iNaturalist is also part of the OOD datasets for evaluation.
+ood test datasets,sun,SUN is the fourth OOD dataset referenced.
+cifar benchmarks,resnet18,ResNet18 is used as a model backbone for CIFAR benchmarks.
+cifar benchmarks,resnet34,ResNet34 is another model backbone for CIFAR benchmarks.
+imagenet100 benchmarks,resnet50,ResNet50 is used for ImageNet100 benchmarks.
+imagenet100 benchmarks,resnet101,ResNet101 is another model used for ImageNet100.
+fake ood data,cifar images (jigsaw),CIFAR images are divided into patches and rearranged to create fake OOD data.
+fake ood data,imagenet100 images (jigsaw),ImageNet100 images are also divided into patches and rearranged for fake OOD data.
+clip's text encoder,clip-l/14,CLIP-L/14 is a specific version of the Text Encoder
+projection module,fully connected layers,The projection module consists of two fully connected layers with a specific architecture.
+projection module,image resizing,The projection module uses images that are resized to 32x32 for CIFAR sets and 224x224 for ImageNet100.
+image resizing,aspect ratio,During resizing
+image resizing,random horizontal flipping,Additional image transformations include random horizontal flipping.
+image resizing,color jittering,Color jittering is also performed on the images.
+image resizing,grayscale transformation,Grayscale transformation is another applied transformation.
+training,stochastic gradient descent,The model is trained using stochastic gradient descent with momentum 0.9.
+training,weight decay,A weight decay of 1e-4 is used during training.
+learning rate,initial learning rate,The initial learning rate is 0.05
+batch size,cifar,The batch size is 512 for CIFAR datasets.
+batch size,imagenet100,The batch size is 128 for ImageNet100.
+temperature,τ,Temperature τ is set to 0.1.
+temperature,τ',Temperature τ' is also set to 0.1.
+testing,center cropping,During testing
+ood datasets,isuna,iSUNA is one of the OOD datasets used for evaluation.
+ood datasets,cifar10,CIFAR10 is another OOD dataset.
+ood datasets,cifar100,CIFAR100 is also an OOD dataset.
+ood datasets,textures,Textures is a part of the OOD dataset evaluation.
+ood datasets,places365,Places365 is another OOD dataset
+operating characteristic curve (a: auroc),ood datasets,The context discusses the operating characteristic curve (AUROC) in the context of Out-of-Distribution (OOD) datasets
+ood datasets,cifar10,CIFAR10 is one of the OOD datasets benchmarked in the table.
+ood datasets,cifar100,CIFAR100 is another OOD dataset mentioned alongside CIFAR10 in the context.
+ood datasets,f↓isuna↑,F↓iSUNA↑ is listed as an OOD dataset
+ood datasets,places365,Places365 is also an OOD dataset
+mspmahalanobis id datasetmethod,ood detection,MSP (Mahalanobis) and other methods like MSPMahalanobis ID DatasetMethod are discussed in the context of OOD detection techniques.
+model backbone,resnet18,ResNet18 is the backbone model used for evaluating the performance of OOD detection methods.
+dice+react,ood performance,DICE+ReAct is a competing method with performance metrics listed in the table.
+featurenorm odin,ood performance,FeatureNorm and ODIN are other methods evaluated for their OOD detection capabilities.
+react average,ood performance,ReAct Average is another performance metric in the context.
+tagfog (ours),ood performance,TagFog is the proposed method
+vos efficacy,method evaluation,VOS (Voilà Outlier Score) is a method requiring model retraining
+logitnorm,model retraining,Methods like LogitNorm require model retraining
+cider,model training,CIDER is another method that necessitates model training for OOD detection.
+ood datasets,average performance,Our method's performance is evaluated on OOD datasets
+our method,vos,Our method significantly outperforms VOS on CIFAR10
+our method,cider,On CIFAR100 benchmark
+model backbone,resnet34,Results with ResNet34 are in the Supplementary Section D
+our method,wideresnet28-10,Performance with WideResNet28-10 is also reported
+imagenet100 benchmarks,knn,Additional comparison includes KNN
+imagenet100 benchmarks,gradnorm,Both model backbones achieve state-of-the-art performance against GradNorm on the ImageNet100 benchmarks.
+proposed learning framework,ablation study,The proposed learning framework is studied through an ablation study in Table 5.
+cifar10,cifar100,The study compares performance on both CIFAR10 and CIFAR100 benchmarks.
+proposed text-guided learning (chatgpt),ablated versions,The proposed text-guided learning outperforms its two ablated versions
+fake ood data,lci and lsc,The performance improvement is attributed to the combination of fake OOD data and the two loss terms LCI and LSC.
+cifar100 benchmark,best baseline,The proposed method surpasses the best baseline (AUROC 89.57%-89.82%) on the CIFAR100 benchmark.
+text-guided learning (chatgpt),traditional simple description (standard),A comparison is made between the proposed ChatGPT-generated description and the standard simple descriptions in Figure 4.
+hyper-parameters τ and τ′,λ1 and λ2,number of fake ood data
+cifar100 benchmark,resnet18 model backbone,The context discusses using ResNet18 as the base model for evaluating performance on the CIFAR100 dataset.
+best baseline,performance,The dashed line shows the performance of the best available method being surpassed by the proposed approach.
+ood detection,chatgpt's textual description,ChatGPT's text is found to be helpful for improving OOD detection.
+ood detection,clip's textual embeddings,CLIP's textual embeddings also contribute to better OOD detection.
+imagenet100 benchmark,supplementary figure 2,Similar results on OOD detection performance are presented in the supplementary material
+proposed learning framework,hyper-parameters,The framework is insensitive to a wide range of hyper-parameters
+temperature factors (τ,τ'),weighting coefficients (λ1
+number of fake ood data,model training,The quantity of synthetic out-of-distribution data used impacts the model's ability to generalize.
+visual representations,proposed learning framework,The framework learns more compact visual representations for improved understanding.
+ood data,id images,The context discusses the relationship between OOD (out-of-distribution) data and ID (in-distribution) images
+model performance,hyper-parameters,The stability of the model's performance is shown in relation to the different hyper-parameters
+proposed learning framework,existing post-hoc ood detection methods,The learning framework is flexible and can be fused with existing post-hoc techniques to improve OOD detection.
+our learning framework,react,In Table 6
+our learning framework,energy,Similar improvements are observed when fused with Energy
+our learning framework,other post-hoc methods (energy,57.97/38.89
+scores from post-hoc methods,ood detection,These scores are used for OOD detection after the model has been trained with the proposed learning framework.
+ood detection performance,original methods,The fusion with our framework often leads to better OOD detection performance compared to the original methods
+anomaly degree,input data,The context describes how the 'anomaly degree' is measured using a divisor/dividend structure for the input data.
+cider,prototype construction,CIDER employs prototype construction during training to achieve better performance on CIFAR10 benchmarks.
+our approach,semantically rich clip text embeddings,Our approach utilizes CLIP text embeddings as prototypes for improved performance.
+post-hoc methods,ood scores,Post-hoc methods design OOD scores based on various network components
+react score,energy score,ReAct score improves the energy score by pruning high-activation feature components.
+ood detection,additional ood data,Performance improvement in OOD detection is often observed with access to extra real or fake OOD data.
+ood data,real ood data,Improve performance of OOD detection with access to additional OOD data.
+ood data,fake ood data,Alternative solution to acquiring real OOD data
+gans,synthetic ood data,Used for generating fake OOD data
+vos,synthetic outliers,Uses Gaussian-like feature distributions to synthesize outliers for OOD detection.
+featurenorm,input-level fakes,Utilizes input-level fake data to identify layers with large feature norm differences for OOD score design.
+jigsaw strategy,challenging ood data,Proposes a simple method to generate data locally similar to ID but globally different
+extra-modality models,clip,Large vision-language models
+extra-modality models,align,Also refers to ALIGN
+extra ood text,auxiliary tool for ood detection,Fort et al. use extra OOD text in their approach.

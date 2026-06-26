@@ -1,0 +1,245 @@
+node_1,node_2,edge
+reinforcement learning (rl),long horizon and sparse reward tasks,RL in long horizon and sparse reward tasks is notoriously difficult
+reinforcement learning (rl),training steps,requires a lot of training steps
+reinforcement learning (rl),additional reward signals,a standard solution to speed up the process is to leverage additional reward signals
+additional reward signals,learning process,shaping it to better guide the learning process
+language-conditioned rl,abstraction and generalization properties of language input,the abstraction and generalisation properties of the language input provide opportunities for more efficient ways of shaping the reward
+language-conditioned rl,reward shaping method,propose an automated reward shaping method using language input
+language-conditioned rl,automated reward shaping method,propose an automated reward shaping method using language input
+agent,auxiliary objectives,the agent extracts auxiliary objectives from the general language goal
+auxiliary objectives,question generation (qg) and question answering (qa) system,use a question generation (QG) and question answering (QA) system for the auxiliary objectives
+auxiliary objectives,intrinsic reward,receives an intrinsic reward proportional to its confidence in its answer when it succeeds
+engineer intervention,designing auxiliary objectives,does not require engineer intervention to design the auxiliary objectives
+experimental study,sample efficiency,our experimental study shows that this approach improves sample efficiency by directing exploration effectively
+abstraction,generalisation,Abstraction and generalisation are key concepts mentioned in the context that are related in the context of leveraging the abilities of language in reinforcement learning to improve generalisation and sample efficiency.
+abstraction,communication,Abstraction and communication are essential components mentioned in the context as part of leveraging language in reinforcement learning for enabling communication and improving generalisation and sample efficiency.
+generalisation,communication,Generalisation and communication play a role in language-conditioned RL where language conditions the formulation of the problem and assists the agent in learning.
+rl,language,"Reinforcement Learning (RL) is linked with language in the context of language-conditioned RL and language-assisted RL, where language is used to condition the problem formulation and assist the agent in learning."
+lc-rl,rl,Language-Conditioned RL (LC-RL) is a subset of Reinforcement Learning (RL) where language conditions the formulation of the problem.
+lc-rl,language,Language-Conditioned RL (LC-RL) specifically focuses on using language instructions to optimize the corresponding reward function.
+reward function,lc-rl,"The reward function in LC-RL is sparse, which leads to sample inefficiency in algorithms."
+reward function,sub-goals,"To tackle reward sparsity, one approach is to densify the reward by decomposing the general goal into sub-goals and rewarding them individually."
+question-generation,rl agent,The RL agent uses a question-generation module during training to generate relevant questions based on the goal.
+question-answering,trajectory,"The RL agent utilizes a question-answering module to answer questions from current trajectories, helping in optimizing the reward."
+question-answering module qa,trajectory,"The QA module looks at the trajectory to succeed, obtaining an intrinsic reward proportional to its confidence in its answer."
+trajectory,intrinsic reward,The trajectory enables the agent to obtain an intrinsic reward proportional to its confidence in its answer.
+trajectory,reconstructing partial information,Producing trajectories incentivizes the agent to reconstruct unambiguously partial information about the general language goal.
+goal decomposition,sub-goals,Previous works assume a strict decomposition of the general goal into sub-goals.
+ella method,language reward shaping technique,ELLA method is a language reward shaping technique that rewards interesting auxiliary objectives without requiring rigid ordering and correspondence with sub-goals.
+methods,expert input,All these methods suffer from the need for expert input.
+game-like environments,simple,Simple game-like environments can easily address points
+game-like environments,demanding,Complex game-like environments are more demanding to address
+agent,generate,The agent is desired to generate its own auxiliary objectives
+natural language processing (nlp) field,expert input,NLP field often requires expert input for tasks like automatic summary evaluation
+metrics,reference-less,Some successful approaches in evaluation tasks use reference-less metrics
+metrics,question generation (qg),Reference-less metrics are based on question generation (QG)
+metrics,question answering (qa),Reference-less metrics are based on question answering (QA)
+techniques,evaluate,Techniques assess the quality of a generated text by measuring the quantity of information conserved
+eager,qg/qa framework,EAGER is a QG/QA framework for RL
+agent,initial language goal sentence,Agent in EAGER reuses the initial language goal sentence to generate questions
+object,qg,A set of questions (QG) defines an auxiliary objective.
+word,agent,Generating a question consists in masking a word of the initial language goal. Then the agent tries to answer these questions.
+question,agent,Then the agent tries to answer these questions (guess the missing word) only by observing its trajectory so far.
+answer,agent,When it manages to answer a question correctly (QA) it obtains an intrinsic reward proportional to its confidence in the answer.
+qa,module,The QA module is trained using a set of successful example trajectories.
+qa,reward,"If the agent follows a path too different from correct ones at some point in its trajectory, the QA module will not answer the question correctly, resulting in zero intrinsic reward."
+sum,rewards,The sum of all the intrinsic rewards measures the quality of a trajectory in relation to the given goal.
+sum,goal,"In other words, maximizing this intrinsic reward incentivizes the agent to produce behaviour that unambiguously explains various aspects of the given goal."
+eager,framework,"To the best of our knowledge, EAGER is the only framework that can automatically 1) generate relevant auxiliary objectives, 2) determine their completion and 3) return the appropriate intrinsic reward."
+eager,dataset,This approach only assumes the agent has access to a dataset of demonstrated behaviours.
+agent,data set,The agent has access to a dataset of demonstrated behaviors
+agent,qg/qa metric,The QG/QA metric provides an information-rich measure of the quality of the agent's trajectory given a goal
+agent,eager framework,The EAGER framework lets the agent guide its own learning process by generating auxiliary objectives and producing intrinsic rewards
+eager framework,ella,EAGER retains the good properties of ELLA without requiring task-specific expert knowledge
+eager framework,ride,"EAGER is compared against RIDE, showing its robustness and sample efficiency"
+eager framework,babyai platform,EAGER is experimented with the BabyAI platform
+ella,ride,ELLA is compared against RIDE
+ella,language,ELLA leverages properties of language
+ride,intrinsic motivation,RIDE is a non-language based reward shaping approach using intrinsic motivation
+agent,trajectories,Example trajectories are used to train the QA
+trajectories,behavioral cloning,The use of example trajectories is much more parsimonious than training an agent using behavioral cloning
+agent,language-conditioned rl,Our work is placed in the LC-RL setting where an agent learns a policy to execute language commands
+language-conditioned rl,babyai platform,The BabyAI platform is used in the language-conditioned RL setting
+exploration challenges,perception challenges,These challenges are decoupled in the domain using the synthetic language.
+synthetic language,combinatorial properties,The synthetic language exhibits interesting combinatorial properties.
+synthetic language,procedural generation,Procedural generation is used to avoid overfitting in the synthetic language.
+language,abstraction,Language is used as an abstraction in hierarchical RL.
+instruction following agents,external instructions,These agents receive external instructions.
+instruction following agents,rewards,These agents also receive rewards.
+high-level policy,sequence of low-level goals,The high-level policy generates the sequence of low-level goals.
+high-level tasks,low-level tasks,High-level tasks are decomposed into low-level tasks in policy sketches.
+high-level tasks,low-level tasks,High-level tasks are decomposed into low-level tasks in ELLA.
+low-level tasks,policy sketches,Policy sketches explicitly decompose high-level tasks into low-level ones.
+learn [12],natural language instruction,[12] maps intermediate natural language instructions to intermediate rewards.
+[35],reward shaping,[35] enables reward shaping using natural language.
+high-level tasks,low-level tasks,High-level tasks are decomposed into low-level tasks.
+narration-guided method,high-level tasks,The narration-guided method decomposes high-level tasks into low-level tasks and rewards them using narration.
+high-level tasks,low-level tasks,High-level tasks are decomposed into low-level tasks.
+ella,same paradigm,ELLA is positioned in the same paradigm as other approaches with fewer assumptions about the environment or the structure of the task.
+oracle,language descriptions,An oracle provides language descriptions of environment states used for state abstraction to generate novelty intrinsic rewards and guide exploration.
+imagine,intrinsic motivation systems,IMAGINE learns language-parameterized reward functions through interaction with a social peer and autonomously uses language to generate diverse and novel goals.
+ride,intrinsically motivated exploration,"RIDE is an approach to intrinsically motivated exploration, extending classical methods like count-based methods."
+afk,world knowledge,AFK uses questions to obtain world knowledge that helps in completing tasks.
+qwa,sub-tasks,QWA uses questions to identify sub-tasks and prune irrelevant actions.
+natural language processing,question generation,Question generation methods are derived from the field of natural language processing and information retrieval.
+question generation,natural language processing,question generation is a concept related to natural language processing in the context of information retrieval and text generation methods.
+question generation,information retrieval,question generation is a concept related to information retrieval in the context of text generation methods.
+qa,text generation methods,QA and text generation methods are used together to measure the quality of generated text without human reference.
+lc-rl,partial observation markov decision process,LC-RL is discussed in the context of an augmented Partial Observation Markov Decision Process.
+goal space,goal instructions,goal space is associated with the vocabulary of goal instructions in the framework discussed.
+state space,observations space,state space is mapped to the observations space through the observation function in the framework.
+goal-conditioned state action reward function,discount factor,goal-conditioned state action reward function involves the discount factor in the reinforcement learning framework.
+policy π∗,s × v isize,π∗ maximises the discounted expected return Rπg Eπ[(cid:80)T t+k+1] for S × V isize
+sparse reward problems,"r(s, a, g)","r(s, a, g) returns 1 for any state s such that d(s, g) ≤ ϵ, for a given distance function d and a specified threshold ϵ, and 0 otherwise in sparse reward problems"
+limited number of steps,h steps,assume a limited number of steps at most H steps
+reward obtained at step t,goal g,"R(st, at, g) as the reward obtained at step t of any episode with goal g"
+methods,densifying rewards,many methods aim at densifying rewards
+auxiliary objectives,training,"objectives during training, whose accomplishment can help the agent to reach the goal g at hand"
+expert knowledge,defining auxiliary objectives,Rather than relying on expert knowledge for defining auxiliary objectives
+set of trajectories,successful examples,we assume that we have access to a set of trajectories of successful examples coupled to their respective instructions
+goal instruction,function f,Function f generates a set of auxiliary goals for any goal instruction. All auxiliary goals generated by f belong to the set of goals that help train the agent towards the original goal.
+auxiliary objective,probability,"For a trajectory and any auxiliary objective, a function determines the probability that the auxiliary objective has been achieved."
+behavioural cloning methods,policy πbc,Behavioural Cloning methods rely on learning the policy πBC that maximises the log-likelihood of example trajectories.
+demonstrations,agent,Demonstrations are used to train an agent to copy an expert based on a data set of example trajectories.
+gail,agent,"GAIL forces the agent to stay on known trajectories to avoid the need for a large number of demonstrations, but this impairs generalisation."
+method,examples,"The method mentioned is more parsimonious in the use of examples compared to other techniques, allowing the agent to receive intrinsic rewards in unencountered areas."
+eager,qg/qa,"EAGER is an automated reward shaping method based on QG/QA, comprising an agent learning module, a question generation module QG, and a learned question answering module QA."
+eager,questeval,"EAGER is inspired by works like QuestEval, a method developed for natural language generation."
+eager,data-questeval,"EAGER is inspired by works like Data-QuestEval, a method developed for natural language generation."
+eager,abstractive summarization,EAGER measures the quantity of information shared between texts similar to the process in abstractive summarization.
+eager,nlp task,"In the context of the NLP task, EAGER draws an analogy with the goal replacing the original text and the trajectory replacing the summary."
+qg/qa,questeval,"QG/QA system is based on the works like QuestEval, aimed at natural language generation."
+qg/qa,data-questeval,"QG/QA system is based on the works like Data-QuestEval, aimed at natural language generation."
+trajectory,summary,Trajectory replacing the summary. We use the QG/QA system to verify that a trajectory contains the same level of information as the language instruction.
+goal,trajectory,meaning that the goal is contained in the trajectory.
+goal,simple trajectories,"If one can easily answer the question, that means the trajectory is simple."
+goal,linguistic instruction,"We assume that the goal linguistic instruction ωg of g ∈ G is a highly expressive language instruction, containing by themselves enough world knowledge to generate questions by masking words."
+qg module,goal linguistic instruction,The QG module returns a list of k questions QGk(ωg) that can be seen as auxiliary objectives.
+qg module,linguistic instruction,The QG module returns a list of k questions QGk(ωg) that can be seen as auxiliary objectives.
+auxiliary objectives,agent,These questions can be seen as auxiliary objectives guiding the agent during training.
+auxiliary objectives,training,These questions can be seen as auxiliary objectives guiding the agent during training.
+qa module,list of tokens,Let ˜A be the set of possible answers generated automatically from the list of tokens masked by the QG.
+qa module,questions,"The QA module returns the probability for all ˜a ∈ ˜A, that ˜a answers question q, given a trajectory."
+qa module,expected answers,"Let ˜A be the set of possible answers generated automatically from the list of tokens masked by the QG. Thus, ˜A contains (q, a∗) pairs of questions and expected answers."
+qa module,probability,"The QA module returns the probability for all answers in set A, given a trajectory and question q."
+qa module,trajectory,The QA module is pre-trained using full example trajectories generated by a bot.
+qa module,no_answer token,A 'no_answer' token is included in set A to prevent the QA from answering correctly by chance.
+qa module,active set of questions,"Every time a question is answered, it is removed from the set of questions to update the active set of questions."
+qa module,reward,"To avoid giving a reward that does not have a direct link to the current step, rewards are handled based on the answer provided by the QA module."
+qa module,episodic transformer,The QA module architecture relies on the episodic transformer for handling low-level tasks.
+episodic transformer,multimodal transformers,"The architecture of the system relies on the episodic transformer that uses multimodal transformers over language, visual observation, and a list of actions."
+"(x1:l, v1:t, a1:t)",qa module,"For any time step t and any question, a (x1:L, v1:t, a1:t) tuple is given as input to the QA module."
+question,language input,"The language input x1:L is the question, a sequence of L tokens."
+question,visual input,The visual input v1:t is the list of observations for any question.
+observation,visual input,The visual input v1:t is the list of observations vt ∈ RW ×H×3.
+action,action input,"Finally, the action input a1:t is a list of discrete actions."
+network,set of possible answers,"As output, the network returns the probability distribution over the set of possible answers ˜A."
+trajectories,description,The main difficulty in ranking trajectories is that many trajectories can share the same description.
+trajectories,answer,Many trajectories can share the same description and thus can answer questions correctly.
+human,trajectories,"A human assessing several trajectories, with the same extrinsic reward, relatively to the same goal would prioritize the simplest one."
+reward,confidence,"To account for this, we make the reward proportional to the confidence in the answer at time step t."
+trajectory,complexity,"An overly complex trajectory being harder to understand for the QA, the answer should be given with less confidence."
+reward,trajectory,The reward shaping should not change the optimal policy that prevails before the reward.
+ella,reward shaping,"ELLA involves reward shaping, where the reward should not change the optimal policy and should encourage sample efficient exploration based on auxiliary-objectives."
+reward shaping,policy invariance,"Reward shaping should maintain policy invariance, ensuring that the new policy π∗ is optimal for both M and M′ = (S, A, T , G′, γ)."
+intrinsic rewards,global reward,"Using intrinsic rewards, the global reward is modified from r to r′ through a policy invariant transformation."
+transformation,policy invariance,The transformation from r to r′ is proven to be policy invariant by Mirchandani et al.
+successful trajectories,shaped reward,"Only successful trajectories receive the same return with or without the reward shaping, by subtracting the shaped reward at the final time step."
+agent,shaping reward,The agent is guided by the shaping reward as long as the policy produces unsuccessful trajectories.
+successful completion,shaping reward,"Once the agent learns to successfully complete an instruction, the shaping reward is subtracted at the last step."
+agent,extrinsic reward,The agent improves using only the extrinsic reward after the shaping reward is subtracted.
+qa system,successful trajectories,The QA system is pre-trained with successful trajectories to prevent reward hacking.
+agent,auxiliary objectives,The agent individually completes the auxiliary objectives without a meaningful trajectory.
+qa,trajectory,"The QA does not consider the trajectory meaningful and answers 'no_answer', preventing the agent to get rewarded."
+trajectory,reward,"We can define a metric to measure the adequacy of a trajectory to a goal, corresponding to our cumulative intrinsic reward over a trajectory."
+goal,questions,The QG takes the goal and returns a set of questions related to it.
+shaped reward function,bonus,"When a question is answered correctly, the shaped reward function returns a bonus to the agent."
+unsuccesful trajectories,successful trajectory,We tune λ to ensure that no unsuccessful trajectories can get more reward than a successful one from the optimal policy π∗.
+trajectory,steps,"Trajectory and steps are related as the successful trajectory takes a certain number of steps, which can affect the learning process."
+auxiliary goal generation,reward shaping,Auxiliary goal generation and reward shaping are related concepts in the context of Automatic auxiliary goal generation and reward shaping using EAGER algorithm.
+policy parameters,rl optimiser,Policy parameters and RL optimiser are related as policy parameters are updated using the RL optimiser in the Automatic auxiliary goal generation and reward shaping algorithm.
+reward,language goal,Reward and language goal are related as the agent in BabyAI receives a reward upon completing a language goal successfully.
+expressive language instructions,questions,Expressive language instructions and questions are related as the rich language instructions in BabyAI can be used to generate questions by masking words.
+token,question,"Token is used as a mask to generate questions, such as Put the «question» ball next to the blue box"
+agent,boxes,The gridworld environment includes entities like agent and boxes which the agent can interact with
+agent,balls,The gridworld environment includes entities like agent and balls which the agent can interact with
+agent,doors,The gridworld environment includes entities like agent and doors which the agent can interact with
+agent,keys,The gridworld environment includes entities like agent and keys which the agent can interact with
+agent,colors,The gridworld environment includes entities like agent that can interact with entities of 6 different colors
+rooms,tiles,Rooms in the gridworld environment are composed of tiles
+rooms,doors,Rooms in the gridworld environment are connected by doors
+doors,locked,Doors in the gridworld environment could be locked
+doors,closed,Doors in the gridworld environment could be closed
+agent,primitive navigation actions,The agent can perform 6 primitive navigation actions in the gridworld environment
+agent,observations,The agent takes sequences of observations as inputs for a recurrent network
+observations,recurrent network,Observations are the inputs for a recurrent network
+babyai platform,gridworld environment,The BabyAI platform uses the gridworld environment to run experiments
+platform,complex instructions-following environments,The platform generates complex instructions-following environments using the gridworld environment
+platform,grounded language learning,The platform is specifically designed for research on grounded language learning
+agent,environment,The agent only has access to partial observations of its environment.
+agent,n steps,"When the agent completes the task after N steps, it receives a reward."
+reward,n steps,The agent receives the reward based on the number of steps N taken to complete the task.
+rewards,tasks,"During training, all rewards are scaled up by a factor of 20 to ensure a good propagation on tasks of varying complexity."
+tasks,tasks,"The focus of the tests is on tasks of varying complexity, such as PutNextTo, Unlock, and Sequence."
+task,rooms,The task can take place in one room or two rooms.
+supervised learning,dataset,"To train the QA module through supervised learning, a dataset of example trajectories associated with language goals is built."
+qa,tasks,"The QA module is trained to operate on various tasks, including PutNextTo, PickUp, Open, and Sequence."
+training trajectories,qa,Training trajectories are used to train the QA model by providing full trajectory as input and questions generated by the QG. The cross-entropy loss over the output distribution is used to update the QA.
+qa,no_answer,QA is trained to answer 'no_answer' by preventing random guessing. Some trajectories and questions from unrelated goals are associated to ensure the QA learns to pay attention to details and not guess the answer by chance.
+goal,trajectory,Trajectory from a specific goal is associated with a question generated from a different goal to train the QA to understand and answer correctly.
+good answer,no_answer,"The correct answer to certain questions, such as when the trajectory describes an action different from the question, is 'no_answer'. This ensures the QA model learns to pay attention to details and not provide incorrect answers."
+qa,distribution of trajectories,"QA performs more efficiently when learning from a broad distribution of trajectories for similar tasks. Learning from a narrow distribution may result in the QA model not recognizing noisy trajectories during training, leading to frequent 'no_answer' responses."
+trajectories,agent,The trajectories of the agent are mentioned in the context indicating a relationship between the two terms.
+trajectories,training,"The trajectories are discussed in the context regarding training, implying a relationship between the two terms."
+qa,no_answer,"The context mentions QA often answering 'no_answer', showcasing a connection between QA and no_answer."
+intrinsic reward,reward shaping efficiency,"The lack of intrinsic reward results in the hurting of reward shaping efficiency, indicating a relationship between the two terms."
+procedural bot,random action,"The procedural bot is forced to take random actions with a certain probability, showing a connection between the two terms."
+model,training examples,"The model is trained using successful noisy trajectories as training examples, indicating a relationship between the two terms."
+reward shaping framework,proximal policy optimization (ppo) algorithm,"The reward shaping framework is evaluated using the PPO algorithm, showcasing a connection between the two terms."
+reward shaping method,algorithm agnostic,"The reward shaping method is mentioned to be algorithm agnostic, indicating a relationship between the two terms."
+framework,"ppo without reward shaping, ella and ride","The framework is compared to PPO without reward shaping, ELLA, and RIDE, indicating a relationship between the terms."
+ride,exploration method,"RIDE is an exploration method addressing the sparse reward problem, showcasing a connection between the two terms."
+eager,ella,"EAGER is mentioned to require less expert human intervention than ELLA, indicating a relationship between the two terms."
+nvidia tesla v100,10 cores,"Nvidia Tesla V100 is used with 10 cores to train the model, indicating a relationship between the two terms."
+experiments,4 seeds,"4 seeds are used in each experiment, showcasing a relationship between the two terms."
+"eager, ella, and ride",table 1,"Table 1 describes the assumptions and expert knowledge required by EAGER, ELLA, and RIDE, showing a connection between the terms."
+human expert intervention,automated parts done by the agent,"Human expert intervention involves manual input and decision-making, while automated parts refer to the tasks performed by the AI agent without human intervention."
+eager,ride,"EAGER outperforms RIDE in tasks like PutNextTo and Unlock, achieving better results without expert knowledge. It also performs better than ELLA in tasks like PutNext and Sequence."
+eager,ella,"EAGER achieves better results than ELLA in tasks like Unlock-Medium, where the goal is to open the color door by picking up the corresponding key, demonstrating superior performance without expert knowledge."
+eager,performance,EAGER reaches better performance without the need for expert knowledge
+eager,sample efficiency,EAGER gets a similar or better sample efficiency for most tasks
+sequence task,temporal constraint,The Sequence task adds a temporal constraint by chaining two tasks using 'before' or 'after' together
+eager,ell,Both EAGER and ELLA decompose the goal into auxiliary objectives
+eager,performance,"EAGER retains strong performance, doing better than RIDE and ELLA"
+eager,qa module,The slow progress of EAGER at the beginning can be attributed to the time when the agent is not good enough to efficiently trigger an intrinsic reward signal from the QA module
+eager,qa performance,Is EAGER robust to QA performance?
+qa,method,the reliability of the QA looks crucial to our method
+qa,environments,the QA could be difficult to train in some environments e.g. if you want the QA to learn to answer in a large set
+qa,answers,QA learns to answer in a large set of answers from example trajectories
+sr,qa,SR determines the success rate of the QA during training
+qa,agent,Agent is trained using reward shaping from QA
+agent,training,Agent learns faster due to receiving rewards for meaningful answers during training
+agent,qa,The agent is trained with QA having different success rates after pre-training.
+figure 4,average reward,Figure 4 shows the average reward in tasks PutNextTo and Sequence for two distributions of bot trajectories used to train QA.
+figure 4,bot trajectories,Figure 4 shows the average reward in tasks PutNextTo and Sequence for two distributions of bot trajectories used to train QA.
+sr,pre-training sr,The SR converges to pre-training SR once the agent learns to complete the trajectory leading to the extrinsic reward.
+trajectory distribution,noise,Noise is added to bot trajectories to compensate for a too narrow trajectory distribution.
+training curves,environments,Figure 4 shows training curves for two environments for QA trained on wide trajectory distribution (WD) and narrow distribution (ND).
+reward shaping method,wd,The reward shaping method trained on (WD) learns faster because they efficiently reward the agent early in training.
+design choices,qa module,How design choices on the QA module affect EAGER’s performance.
+intrinsic reward,qa module,We made two choices for the QA module and the associated intrinsic reward.
+no_answer response,associated intrinsic reward,"We added a ""no_answer"" response as a design choice for the associated intrinsic reward."
+confidence,answer,We rewarded each answer by the confidence the agent had in its own answer.
+no_answer,suppressed,both the use of 'no_answer' and the non-binary reward independently boost sample efficiency
+reward shaping method,learning agent,learning agent generates its own questions from the goal and rewards itself for correctly answering them
+reward shaping method,ella,contrast between reward shaping method and ELLA where expert knowledge is required for choosing auxiliary objectives
+reward shaping method,oracle,contrast between reward shaping method and methods calling upon an oracle for getting linguistic description of environment states
+eager,qa system,EAGER assumes the QA system was pre-trained using a pre-existing set of example trajectories
+method,babyai,"method tested on BabyAI, a 2D environment with synthetic language"
+method,more realistic environments,future work to test method on more realistic environments with true human language
+jean zay supercomputer,genci grant a0091011996,The Jean Zay supercomputer is associated with the Genci grant A0091011996.
+jean zay supercomputer,anr deepcuriosity ai chair project,The Jean Zay supercomputer benefited from the ANR DeepCuriosity AI chair project.
+jean zay supercomputer,horizon 2020 pillar-robots project,The Jean Zay supercomputer has been supported by the Horizon 2020 PILLAR-robots project.
+genci grant a0091011996,anr deepcuriosity ai chair project,The Genci grant A0091011996 is associated with the ANR DeepCuriosity AI chair project.
+genci grant a0091011996,horizon 2020 pillar-robots project,The Genci grant A0091011996 has been supported by the Horizon 2020 PILLAR-robots project.
+anr deepcuriosity ai chair project,horizon 2020 pillar-robots project,The ANR DeepCuriosity AI chair project is a part of the Horizon 2020 PILLAR-robots project.

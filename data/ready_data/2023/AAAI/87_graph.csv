@@ -1,0 +1,113 @@
+node_1,node_2,edge
+weakly-supervised temporal video grounding,multi-modal videos,The paper focuses on leveraging multi-modal videos for weakly-supervised learning
+multi-modal videos (rgb frames,optical flows),richer supervision
+labor-intensive and subjective labeling,inadequate supervision,Weakly-supervised approaches suffer from limited supervision
+challenging task,exploiting complementary information,The paper aims to tackle the challenge by utilizing complementary information across modalities.
+multi-modal distillation algorithm,model training,The proposed algorithm uses multi-modal knowledge as supervision
+single modal input,practical scenarios,The approach ensures applicability even when not all modalities are available in real-world situations.
+cross-modal mutual learning,synergic supervision,Cross-modal mutual learning enhances the model's generalization capability by integrating different modalities.
+rgb frames,optical flow,Complementary information: RGB frames capture appearances
+rgb frames,audio,Synergistic cues: Integrating multiple modalities improves generalization and robustness
+multi-modalities,model parameters,Negative impact: Increased computational costs from additional model parameters.
+multiple modalities,computational burden,Limitation: Heavier computational burden for optical flow processing.
+multiple modalities,data availability,Limitation: Audio modality may not be present in surveillance videos.
+optical flows,lucas and kanade (1981),Reference: Optical flow computation in the literature.
+model,practicability,Limited by practicality due to computational and data availability concerns.
+weakly-supervised temporal video grounding,multi-modal videos,We are the first to use multi-modal videos to address the inadequate supervision issue in weakly-supervised temporal video grounding.
+multi-modal videos,single-modal baseline,A multi-modal distillation algorithm is proposed to transfer knowledge from multi-modal videos to a single-modal student model.
+fully-supervised temporal video grounding,weakly-supervised temporal video grounding,Our work contrasts with fully-supervised methods
+multi-modal videos,mutual learning,A mutual learning algorithm explores weakly-supervised temporal video grounding with multi-modal inputs
+single-modal baseline,local-global contrastive learning,We design a single-modal model using local and global contrastive learning
+temporal video grounding,fully-supervised temporal video grounding,The task of temporal video grounding is first introduced by Gao et al. (2017)
+fully-supervised temporal video grounding,attention mechanism,Liu et al. (2018) suggest applying attention mechanism to highlight important visual features in this context.
+fully-supervised temporal video grounding,event propagation network,An event propagation network is developed in (Bao
+fully-supervised methods,labor-intensive annotations,These methods rely on annotations of temporal boundaries
+weakly-supervised temporal video grounding,rgb frames,Existing works (Gao et al. 2019; Zheng et al. 2022a
+weakly-supervised temporal video grounding,joint visual-semantic embeddings,Early works like Mithun
+weakly-supervised temporal video grounding,contrastive proposal learning,Zheng et al. (2022a) propose contrastive learning to distinguish positive segments from confusing ones in the same video.
+rgb frames,synergic input,Our work innovates by capitalizing on synergic inputs beyond just RGB frames
+single-modal baseline,multi-modal teacher model,The single-modal baseline serves as a starting point
+local contrastive learning,global contrastive learning,Both local and global contrastive learning are proposed to align the semantic content of videos and sentences within the single-modal baseline.
+multi-modal teacher model,cross-modal mutual learning,In the multi-modal teacher model
+semantic activation map (video),query sentence,Semantic activation maps are computed for each video modality to match with the query sentence
+multi-modal teacher model,single-modal student model,The student model receives additional supervision from the teacher
+temporal boundaries,ground truth (weakly-supervised),The teacher model provides more accurate temporal boundary predictions
+teacher model,semantic activation maps,The teacher model offers better estimation of semantic activation maps
+teacher model,semantic activation maps,The teacher model provides a better estimation of semantic activation maps
+global-level distillation algorithm,temporal boundaries,The algorithm encourages the student model to mimic the predictions of temporal boundaries.
+local-level distillation algorithm,semantic activation maps,It also encourages the student model to mimic the predictions of semantic activation maps.
+student model,multi-modal videos,The student model is trained with supervisory signals from multi-modal videos.
+single-modal videos,input during inference,During inference
+local-global contrastive learning,single-modal baseline,The single-modal baseline uses local-global contrastive learning
+multi-modal videos,handling insufficient supervision,The student model capitalizes on multi-modal videos to address the issue of insufficient supervision.
+multi-modal distillation algorithm,multi-modal knowledge,Crafted to distill knowledge from multiple modalities at local and global levels.
+cross-modal mutual learning framework,teacher model,Proposed to compensate for errors introduced by a single modality through mutual learning.
+previous approaches,temporal moment localization,Previous methods focused on semantic alignment between the video and the sentence for temporal moment localization.
+global contrastive learning,cpl network,The global contrastive learning module is similar to CPL network
+proposal generator,sentence reconstructor,Both components are part of the global contrastive learning and CPL network
+proposals (ck; wk),proposal candidates,Proposal candidates are defined by the center and width and consist of K elements
+visual feature (vk),sentence feature (q),Transformer encoder extracts visual features for proposals (vk) and sentence features for the input sentence (q).
+local contrastive learning,global contrastive learning,The proposed method applies both local and global contrastive learning
+multi-modal knowledge transfer,local and global alignment,Local and global alignment support multi-modal knowledge transfer
+video proposals,sentence query,The proposal is considered positive if it semantically matches the sentence query.
+positive proposal,negative proposal,A positive proposal has a lower reconstruction error compared to the negative proposal.
+reconstruction error,positive proposal,The proposal with the minimum reconstruction error is selected as the positive proposal.
+global contrastive learning,reconstruction error,The global objective contrasts the reconstruction errors of the positive proposal and full video.
+global contrastive learning,full video reconstruction,In global contrastive learning
+local contrastive learning,video snippet features,Local contrastive learning enhances the local information within video snippet features using convolutional layers.
+local contrastive learning,context-enhanced snippet features,These enhanced features incorporate more contextual information.
+multi-modality model,single-modal student model,The multi-modality model acts as a teacher to transfer its knowledge to the single-modal student model for training.
+multi-modal distillation,computational efficiency,Multi-modal distillation enables efficient training while accepting single-modal input.
+weakly-supervised setting,deficient supervision,This paradigm addresses the challenge of limited supervision in weakly-supervised scenarios.
+global-level distillation,temporal boundaries,Global-level distillation transfers knowledge of accurate global temporal boundaries from the teacher model to the student.
+teacher model,pseudo-labels,Teacher model's predictions serve as pseudo-labels for the student model in weakly-supervised scenarios.
+local-level distillation,semantic activation maps,Local-level distillation focuses on transferring knowledge of detailed semantic activation maps.
+local-level distillation,semantic activation map,The local-level distillation involves mimicking the semantic activation map
+global contrastive learning loss function,lglobal,Lglobal is the global contrastive learning loss function used in the single-modal baseline.
+charades-sta,dataset,Charades-STA is a large-scale dataset for validating the proposed method
+activitynet captions,dataset,ActivityNet Captions is another large-scale dataset used for performance evaluation
+proposed methods,state-of-the-art approaches,The proposed methods are compared against state-of-the-art approaches on both Charades-STA and ActivityNet Captions.
+scn (lin et al. 2020),method,SCN is a reference method
+mmdist teacher,mmdist baseline,The MMDist Teacher is a multi-modal model while the MMDist Baseline is a single-modal baseline
+mmdist teacher,mmdist student,The MMDist Student exploits distillation algorithm to learn from the MMDist Teacher
+mmdist student,mmdist baseline,The main difference between MMDist Student and Baseline is that the former uses distillation from the teacher
+hyperparameter of (cid:11),(cid:12),and (cid:13)
+charades-sta,activitynet-captions,Both are the datasets used to verify the proposed methods' performance
+mmdist methods,previous methods of weakly-supervised tvg,The MMDist methods outperform previous state-of-the-art methods
+mmdist baseline,cpl (gaussian-based contrastive proposal learning),The MMDist Baseline beats CPL
+mmdist baseline,cpl,MMDist Baseline is better than CPL
+mmdist baseline,multi-modal videos,MMDist Baseline does not use multi-modal videos during training but still outperforms CPL
+mmdist teacher,cpl,MMDist Teacher surpasses CPL
+mmdist teacher,multi-modal inputs,Multi-modal inputs lead to significant improvements in all evaluation metrics for the MMDist Teacher.
+mmdist teacher,multi-modal input sources,The improvements in MMDist Teacher are due to the additional cues provided by multi-modal inputs
+mmdist teacher,charades-sta,MMDist Teacher shows a 16.1% improvement in R@0.7 metric on Charades-STA compared to CPL.
+mmdist teacher,activitynet-captions,MMDist Teacher improves R@0.3 by 9.1% on ActivityNet-Captions over CPL.
+mmdist teacher,mmdist baseline,MMDist Student outperforms MMDist Baseline without using multi-modal videos.
+mmdist student,mmdist baseline,MMDist Student surpasses MMDist Baseline in grounding accuracy due to multi-modal knowledge distillation.
+mmdist student,cpl,MMDist Student's grounding accuracy exceeds CPL.
+mmdist student,activitynet-captions,MMDist Student performs slightly better than Teacher in R@0.1 and R@0.3 but slightly worse in R@0.5.
+local-global contrastive learning,model performance,Ablation studies focus on evaluating the impact of local-global contrastive learning on the model's performance.
+ablation studies,charades-sta dataset,These studies are conducted on the Charades-STA dataset to analyze the effectiveness of individual modules.
+table 3,impact,Table 3 highlights the results of the ablation studies
+model's performance,ablation studies,The context discusses the decline in performance when either local or global contrastive learning is removed
+local contrastive learning,global contrastive learning,Both types of contrastive learning contribute to the model's performance
+multi-modal distillation,local semantic activation maps,Local contrastive learning generates semantic activation maps
+temporal boundaries (global level),semantic activation maps (local level),The paper identifies two types of knowledge from the teacher
+local distillation,global distillation,Ablation study shows that both local and global distillation are essential for the full model's performance
+student baseline,full model with local and global distillation,The full model outperforms the baseline
+cross-modal mutual learning framework,teacher model,The 'cross-modal mutual learning framework' is used to collaboratively train the 'teacher model' with multi-modal videos.
+local and global level distillation algorithms,knowledge from the teacher model,These algorithms transfer 'knowledge from the teacher model' for weakly-supervised temporal video grounding.
+multi-modal videos,input for the teacher model,Multi-modal videos serve as the 'input for the teacher model'
+teacher baseline,multi-modal baseline,The 'teacher baseline' is a direct concatenation of multi-modal features
+single-modal baseline,localization accuracy,The 'single-modal baseline' has lower localization accuracy compared to the teacher model
+single-modal baseline,performance inferiority,The 'single-modal baseline' exhibits noticeable performance inferiority because it lacks cross-modal collaborative learning.
+weakly-supervised temporal video grounding,objective of the paper,The paper focuses on 'weakly-supervised temporal video grounding'
+local and global level distillation algorithms,teacher model,The knowledge is transferred from the teacher model to a single-modal student model through these algorithms.
+local and global level distillation algorithms,single-modal student model,These algorithms are designed to adapt the teacher model's knowledge for the student model
+local-global contrastive learning framework,video,The framework aligns the semantic content of videos at both local and global levels.
+local-global contrastive learning framework,language,Simultaneously
+rose (rapid-rich object search) lab,school of eee,ntu (nanyang technological university)
+rose (rapid-rich object search) lab,ntu-pku joint research institute,This research is conducted at the ROSE Lab
+ntu-pku joint research institute,nanyang technological university (ntu),The joint institute is a collaboration between NTU and Peking University
+ntu-pku joint research institute,peking university,The joint institute is also connected to Peking University.
+ng teng fong charitable foundation,funding support,The research is financially supported by a donation from this foundation.

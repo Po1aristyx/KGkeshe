@@ -1,0 +1,227 @@
+node_1,node_2,edge
+spiking neural networks (snns),dynamics,SNNs are rich in spatio-temporal dynamics
+spiking neural networks (snns),event-based neuro-morphic data,SNNs are suitable for processing event-based neuro-morphic data
+event-based datasets,static datasets,event-based datasets are usually less annotated than static datasets
+snns,overfitting,small data scale makes SNNs prone to overfitting
+snns,performance,small data scale limits their performance
+snns,static images,use static images to assist SNN training on event data
+networks,static datasets,transferring networks trained on static datasets to event data
+feature distributions,knowledge transfer,inconsistency of feature distributions hindering the effective transfer of knowledge
+feature distribution,training strategy,proposed solutions in terms of two aspects: feature distribution and training strategy
+knowledge transfer loss,domain alignment loss,knowledge transfer loss consists of domain alignment loss
+knowledge transfer loss,spatio-temporal regularization,knowledge transfer loss consists of spatio-temporal regularization
+domain alignment loss,feature distributions,domain alignment loss learns domain-invariant spatial features by reducing the marginal distribution distance between static image and event data
+spatio-temporal regularization,output features,spatio-temporal regularization provides dynamically learnable coefficients for domain alignment loss by using the output features of event data at each time step as a regularization term
+training strategy,static image inputs,proposed sliding training strategy gradually replaces static image inputs probabilistically
+spiking neural networks (snns),neurodynamic properties,SNNs are known for their rich neurodynamic properties in the spatial-temporal domain and event-driven advantages.
+neurodynamic properties,event-driven advantages,Neurodynamic properties of SNNs provide event-driven advantages.
+spiking neural networks (snns),training,Training of SNNs has been a critical area of extensive academic research.
+training,gradient backpropagation-based methods,Training of SNNs is mainly divided into gradient backpropagation-based methods.
+training,spiking time-dependent plasticity (stdp)-based methods,Training of SNNs is also categorized into spiking time-dependent plasticity (STDP)-based methods.
+training,conversion-based methods,Training of SNNs can also be done using conversion-based methods.
+snns,algorithms,SNNs show excellent performance in various complex scenarios with the proposed algorithms.
+snns,neuromorphic,event-based data
+neuromorphic,event-based data,time dimension
+neuromorphic,event-based data,dataset
+dynamic vision sensor (dvs),bio-inspired visual sensor,DVS is a bio-inspired visual sensor that operates differently from conventional cameras.
+dynamic vision sensor (dvs),intensity changes,DVS measures intensity changes at each pixel asynchronously and records the time
+dynamic vision sensor (dvs),advantages,Despite these advantages
+event cameras,event data acquisition,Event cameras face a challenge in acquiring event data due to the long and expensive shooting process
+static datasets,pre-trained deep neural networks,Pre-trained deep neural networks can be transferred well to static datasets
+static datasets,event data,Applying a pre-trained model on a static dataset directly to event data often yields suboptimal results
+static images,event data,While static images provide rich spatial information that may benefit event data
+static datasets,event data applications,Utilizing the knowledge in static datasets to benefit event data is important for the widespread deployment of networks for various event data applications.
+feature distribution,domain mismatch problem,The inconsistency of feature distribution is a critical barrier to the effective transfer of static image knowledge to event data
+feature distribution,knowledge transfer loss function,Designing a knowledge transfer loss function
+domain alignment loss,spatio-temporal regularization,The domain alignment loss and spatio-temporal regularization work together to learn temporal-spatial domain invariant features. The domain alignment loss focuses on acquiring domain-invariant spatial features
+domain alignment loss,static images,The domain alignment loss aims to reduce the marginal distribution distance between static images and event data
+domain alignment loss,event data,The domain alignment loss learns domain-invariant spatial features by reducing the marginal distribution distance between static images and event data.
+spatio-temporal regularization,dynamic coefficients,The spatio-temporal regularization provides dynamically adjusted coefficients for domain alignment loss to better capture temporal features in the data.
+knowledge transfer loss function,spatial domain-invariant features,The knowledge transfer loss function learns spatial domain-invariant features by regularizing event features in the time dimension
+knowledge transfer loss function,event features,The knowledge transfer loss function regularizes event features in the time dimension to provide dynamically learnable coefficients for ensuring comprehensive feature representation in both spatial and temporal dimensions.
+sliding training strategy,static image inputs,The sliding training strategy involves gradually replacing static image inputs with event data probabilistically during the training process
+sliding training strategy,event data,The sliding training strategy gradually replaces static image inputs with event data probabilistically during the training process to facilitate a smoother learning process.
+sliding training strategy,event data,The sliding training strategy involves gradually replacing static image inputs with event data during the training process
+experimental results,proposed method,The experimental results demonstrate that the proposed method outperforms the state-of-the-art methods on all datasets.
+domain adaptation using static data,generative event model,Messikommer et al. (2022) use a generative event model to classify event features into content and motion features
+domain adaptation using static data,convolutional transformer network,Zhao
+domain adaptation using static data,semantic segmentation,Sun et al. (2022) introduce event-based semantic segmentation to transfer existing labeled image datasets to unlabeled events for semantic segmentation tasks.
+works,ours,works are related to ours
+spatial domain invariant features,static and event data,exploit the spatial domain invariant features between static and event data through domain alignment loss
+coefficients,temporal properties,use coefficients dynamically adjusted at each time step to better capture the temporal properties in the data
+model,static spatial features,model contains not only static spatial features
+features,snn,features can provide generalized knowledge for the SNN and enhance the original SNN structure
+event-based data augmentation,event data,Li et al. (2022c) propose neuromorphic data augmentation to stabilize SNN training and improve generalization
+shen,zhao,and zeng
+gaussian mixing model,event streams,perform the mixing of different event streams by Gaussian mixing model
+labels,mixed samples,assigning labels to the mixed samples by calculating the relative distance of event streams
+data augmentation strategies,proposed method,these data augmentation strategies can be used together with our proposed method
+snn efficient training,efficient training of snns,Efficient training of SNNs is a way to improve the generalizability of the network
+kim and panda,spike activation lift,Kim and Panda propose Spike Activation Lift
+spike activation lift training,network,Spike Activation Lift Training proposed by Kim and Panda aims to help the network deliver information across all levels.
+central kernel alignment (cka),maximum mean difference (mmd),Zhan et al. analyze the plausibility of CKA as a domain distance measure relative to MMD in deep SNNs.
+subsequent works,efficient training,A number of subsequent works have contributed to the efficient training of the SNN.
+snn,small amount of event data,The performance of SNN is limited by the small amount of event data.
+static data,event data,The motivation of this paper is to solve the problem of limited event data by using static data for knowledge transfer.
+leaky integrate-and-fire (lif) neuron model,membrane potential,The update of the membrane potential in the LIF neuron model can be written in a discrete form.
+membrane potential,neurons,The membrane potential of the neurons accumulates with the input until a given threshold is exceeded.
+neuron,spike,The neuron delivers a spike when the input exceeds a given threshold Vth.
+neuron,membrane potential,The membrane potential is reset to zero when the neuron delivers a spike.
+neuron,equation,The equation expresses the relationship between membrane potential
+leaky factor,threshold,The leaky factor τ is set to 0.5 and threshold Vth to 0.5 in the equation.
+dvs,dynamic vision sensor,The Dynamic Vision Sensor (DVS) triggers an event at a specific pixel point when it detects a significant change in brightness.
+dvs,event,DVS triggers a number of events ε during a time interval in the form of {(xi
+pixel,brightness change,The pixel location x and y denote a pixel point where a significant brightness change is detected.
+brightness change,contrast threshold,The brightness change is compared to a constant contrast threshold C in the expression L(x
+events,frames,Events are integrated into frames to facilitate processing
+domain mismatch,static datasets,The scale of event datasets is relatively small compared to static datasets
+domain mismatch,event datasets,The scale of event datasets is relatively small compared to static datasets
+pre-train,static dataset,An intuitive solution strategy is to pre-train on the static dataset before fine-tuning on the event dataset.
+fine-tune,event dataset,An intuitive solution strategy is to pre-train on the static dataset before fine-tuning on the event dataset.
+central kernel alignment,cka heatmap,The central kernel alignment (CKA) method is used to measure the similarity between features and compute CKA heatmap based on samples.
+lif neurons,snn's first feature layer,LIF neurons of SNN's first feature layer are selected for membrane potential visualization.
+visualization,results,Visualization of the results is shown in Fig. 1
+network,features,The features of static data extracted from the network are compared to those extracted from the event dataset.
+neurons,membrane potential,The membrane potential distribution of neurons in the SNN is significantly different under different data training.
+static data,event data,Static data and event data cannot be well fused even under the same network structure
+static images,richer texture,There is an intuition that static images bring a richer texture
+membrane potentials,distribution,The distribution of membrane potentials is visualized based on static data and event data training.
+pre-trained model,fine-tuning,The accuracy curves show the performance of the pre-trained model on static data with fine-tuning on event data.
+static image pre-training,event fine-tuning,Simply using static image pre-training and event fine-tuning is ineffective or counterproductive for feature extraction on event data.
+domain difference,hindrance,The domain difference between static and event data is a hindrance to feature extraction.
+static image pre-training,event fine-tuning,Using static image pre-training and event fine-tuning is ineffective for feature extraction on event data
+event data,static images,Event data and static images are mentioned in the context as inputs for SNN
+knowledge transfer loss function,domain alignment loss,The knowledge transfer loss function includes domain alignment loss as one of its components
+target domain,source domain,The target domain and source domain are mentioned in the context as different domains for classification
+feature space,classifier,The feature space is used to assist in learning a better classifier
+function f,embedding function gt,Function f involves a composition of two functions
+function ht,output prediction,Function ht predicts outputs from the feature space
+neurons,membrane potential,The membrane potential of the neurons is mentioned in the context
+network weights,last layer,The network weights are shared except for the last layer.
+neurons,second-last layer,The membrane potential of neurons in the second-last layer is used to calculate the knowledge transfer loss.
+mp node,last layer,MP node in the last layer means using the membrane potential output.
+samples,same class,Two samples sampled from the same class
+cka′,vectors,CKA′ represents the computation of the kernel function of the vectors.
+domain alignment loss,spatial feature alignment,Using only domain alignment loss for spatial feature alignment may miss important information in the temporal dimension.
+spatio-temporal regularization,dynamically learnable coefficients,Spatio-temporal regularization provides dynamically learnable coefficients for the domain alignment loss.
+adaptive coefficients,specific weight assignments,Adaptive coefficients ensure specific weight assignments for data features at each time step.
+event data classification loss,regularization term,The event data classification loss at each time step is adapted as the regularization term to prevent overfitting.
+knowledge transfer loss,g(xi,s
+embedding function,network sharing,The embedding function g is modeled by network sharing between the source and target domains
+source domain,target domain,The source and target domains refer to the same data classes.
+data classes,domains,The data classes refer to the same data classes in the source and target domains.
+cka,neural network representation similarity,CKA is a similarity index to better measure neural network representation similarity.
+hilbert-schmidt independence criterion (hsic),cka,HSIC refers to Hilbert-Schmidt Independence Criterion (HSIC) and CKA can be computed using HSIC.
+vectors,correlated,The two vectors are more correlated.
+vectors,cka,subtract the CKA from 1
+cka,inputs,maximizing the correlation of the two inputs
+samples,data,express the samples xs
+domain alignment loss,gxis,t
+ηt,time step t,ηt denotes the learnable coefficient at time step t
+classification loss,event data,For classification loss of event data ℓcls−e
+momentum loss,surrogate gradient,compensate the momentum loss of surrogate gradient
+snn,generalizability,make SNN have better generalizability
+knowledge transfer loss,classification loss,add the knowledge transfer loss Lkt and classification loss of the static image Lcls−s as the total classification loss Lall
+training loss,λcls−s,total training loss can be expressed as Lall = λcls−sLcls−s + λkt
+weighting coefficients,temporally,These terms are mentioned together in the context
+model,event data characteristics,The model is mentioned in relation to adapting fine-grained to event data characteristics in the context.
+sliding training strategy,modulate the static image input portion,The sliding training strategy is described as aiming to modulate the static image input portion of the training process.
+network,relying on domain-invariant features,The network is described as gradually adapting from relying on domain-invariant features of static images and event data.
+event data,replacing static images,Event data is mentioned in relation to replacing static images gradually in the training process.
+sliding training,sliding time frame,The concept of sliding training is explained as if event data is replacing static images in a sliding time frame.
+training batch,total length of training batch,The terms training batch and total length of training batch are mentioned together
+current epoch,maximum training epoch,The current epoch and maximum training epoch are mentioned together in the context
+substitution probability,time steps,The substitution probability is described in relation to increasing with time steps in the context.
+domain invariant features,stable feature learning base,Domain invariant features are mentioned in relation to providing a stable feature learning base for the model in the early training phase.
+model,event data,The model is built on event data
+proportion of event data,domain alignment loss,As time advances
+training instability,convergence difficulties,Avoiding training instability or convergence difficulties that may result from direct or abrupt data switching.
+experiments,mainstream event datasets,Experiments are conducted on mainstream event datasets like N-Caltech101 and N-Omniglot to evaluate the effectiveness of the proposed method.
+cifar10-dvs dataset,image-event paired cep-dvs dataset,To avoid implicit data leakage
+event data,frames,All the event data is integrated into frames for N-Caltech101 and CEP-DVS datasets.
+network structure,model choices,For a fair comparison
+n-caltech101,spiking-resnet18,N-Caltech101 is used in step 10 with Spiking-ResNet18
+cep-dvs,scnn,CEP-DVS is used in step 6 and SCNN is used in step 12
+direct coding,static images,Direct coding is used for static images in input encoding strategy
+static images,hsv color space,Static images are converted to HSV color space to minimize input data mismatch
+dual-channel characteristics,event data,Adapt the dual-channel characteristics of event data to replicate value channel and duplicate static image
+braincog framework,zeng et al. 2023,Experiments are implemented based on BrainCog framework by Zeng et al. 2023
+proposed method,n-caltech101 dataset,Proposed method evaluated on N-Caltech101 dataset with VGGSNN network
+proposed method,state-of-the-art performance,Proposed method achieves state-of-the-art performance
+vggsnn network,n-caltech101 dataset,VGGSNN network achieves 93.45% accuracy on N-Caltech101 dataset
+cep-dvs,n-omniglot,Baseline experiments are re-conducted on CEP-DVS and N-Omniglot datasets
+baseline experiments,proposed method,Experimental results show that the proposed method improves accuracy over the original method.
+n-omniglot dataset,knowledge transfer,The improvement of accuracy from knowledge transfer is not as significant as the other two datasets due to the dataset's few-shot nature with only 20 available static images in each class.
+ablation experiments,proposed method,In the subsequent ablation experiments
+domain alignment loss (dal),spatio-temporal regularization (str),The validity of the domain alignment loss (DAL) and the spatio-temporal regularization (STR) term in the knowledge transfer function is verified through experiments on the N-Caltech101 dataset with VGGSNN.
+baseline method,knowledge transfer loss,Even without employing the knowledge transfer loss in our method
+knowledge transfer loss,domain alignment loss and spatio-temporal regularization,The domain alignment loss and spatio-temporal regularization contribute to better generalization of the model when combined with knowledge transfer loss.
+model,generalization,The model is a key concept in the context
+red line,training step,The red line and training step are mentioned in the same context
+spatio-temporal regularization,adaptive learning coefficients,The spatio-temporal regularization is related to the adaptive learning coefficients as mentioned in the context.
+nda,vg-dataset,NDA and VG-Dataset are mentioned together
+eventmixer,n-caltech101,EventMixer and N-Caltech101 are mentioned together
+cep-dvsn-omniglot,efficient training,CEP-DVSN-Omniglot and Efficient training are related concepts as per the context.
+domain adaptation,tet,Domain adaptation and TET are mentioned together
+knowledge-transfer,plain,Knowledge-Transfer and plain are related concepts in the context.
+architecture,combined,Architecture and Combined are mentioned together
+snn,resnet-18,SNN and ResNet-18 are related concepts based on the context provided.
+scnn,scnn,SCNN is mentioned twice
+accuracy,baseline,Accuracy is compared with the baseline
+ktl w/o dal & str,ktl w/ dal,Comparison between different knowledge transfer loss scenarios is mentioned
+cep-dvs,baseline,CEP-DVS is compared with the baseline
+ktl,dal,KTL without DAL has an accuracy of 79.66% while KTL with DAL has an accuracy of 92.64%
+ktl,str,KTL with DAL & STR has an accuracy of 30.50%
+ktl,dataset,KTL refers to knowledge transfer loss in the ablation experiments of knowledge transfer loss on different datasets
+network,vggsnn,Network methods include VGGSNN in the ablation experiments for sliding training
+n-caltech101,sliding training,N-Caltech101 is tested with sliding training in the ablation experimental results for sliding training
+cep-dvs,resnet18,CEP-DVS is tested with ResNet18 in the ablation experimental results for sliding training
+cep-dvs,sliding training,CEP-DVS is tested with sliding training in the ablation experimental results for sliding training
+dal,str,Dynamically adjusted coefficients in STR are superior to fixed coefficients in DAL
+sliding training strategy,n-caltech101,Experiments are conducted on N-Caltech101 to verify the effectiveness of the sliding training strategy
+sliding training strategy,cep-dvs,Experiments are conducted on CEP-DVS to verify the effectiveness of the sliding training strategy
+sliding training strategy,sliding training,Sliding training leads to a more stable performance
+baseline method,knowledge transfer loss methods,The performance of baseline and knowledge transfer loss methods on the N-Caltech101 dataset is shown in Figure 3. It is mentioned that the accuracy of the baseline method is slightly higher than the knowledge transfer loss methods.
+without sliding training,accuracy,The accuracy of the method without sliding training is 23.70%
+training epochs,model convergence,The relatively short training epochs for CEP-DVS cause the model to have trouble converging in the face of sudden data switches.
+sliding training strategy,problem solving,The addition of sliding training strategy solves the problem of model convergence in the face of sudden data switches.
+proposed method,experiments,The effectiveness of each part of the proposed method is shown through experiments of VGGSNN on the N-Caltech101 dataset.
+top line,accuracy,The top line with no added methods in Table 4 shows an accuracy of 92.64%.
+baseline,cep-dvs,Figure 4 shows the loss landscape visualization of the baseline method compared to our method for CEP-DVS.
+baseline,n-caltech101,Baseline performance is evaluated on the N-Caltech101 dataset.
+baseline,cep-dvs,Baseline performance is evaluated on the CEP-DVS dataset.
+knowledge transfer,model,Knowledge transfer loss function affects the performance of the model.
+sliding training strategy,stable convergence,Sliding training strategy ensures stable convergence during training.
+method,best performance,The method achieves the best performance when combined with all the approaches.
+method,snns,The method provides SNNs with more generalizability over event data.
+2d loss-landscapes visualization,li et al. 2018,2D loss-landscapes visualization is utilized to verify the generalizability of the method over event data.
+baseline,optimal results,Optimal results of the baseline are selected for experiments on N-Caltech101 and CEP-DVS.
+baseline,our method,Experiments are conducted on N-Caltech101 and CEP-DVS using the baseline and our method respectively.
+snn,knowledge transfer,SNN obtains better weights through knowledge transfer from static images.
+method,domain-invariant features,The method learns domain-invariant features of static images and event data.
+method,snn,The method provides helpful information for SNNs about features of event data.
+gradcam++,chattopadhay et al. 2018,Gradcam++ visualization method is employed to assess the learning of domain-invariant features and provide helpful information for SNNs.
+image,classification decision,Visualization allows understanding of which local locations of an image contributed significantly to the model's classification decision.
+static pictures,event data,Static pictures and event data integrated into frames have similar observations.
+model,classification decision,The model's final classification decision is a key aspect of the study.
+static pictures,event data,Static pictures and event data integrated into frames have similar object contour features when they are in the same class.
+knowledge transfer loss,static pictures,By introducing knowledge transfer loss
+knowledge transfer loss,event data,Introducing knowledge transfer loss helps the network to focus on the contour features of the category in event data.
+snns,background of the event data,Our method helps SNNs to move away from the background of the event data and focus on the features of the category itself.
+training data,knowledge transfer loss,Regardless of the amount of training data
+knowledge transfer loss,event data features,Knowledge transfer loss allows the model to finely adapt to event data features
+spiking neural networks,event-driven data,The paper explores the challenges faced by spiking neural networks when dealing with event-driven data.
+static images,snn training,Using static images to assist SNN training improves the generalization ability of the network.
+domain alignment loss,spatio-temporal regularization,The proposed domain alignment loss and spatio-temporal regularization support knowledge transfer and alleviate the domain mismatch.
+alignment loss,spatio-temporal regularization,Alignment loss and spatio-temporal regularization support knowledge transfer and alleviate the domain mismatch between static and event datasets.
+alignment loss,knowledge transfer,Alignment loss supports knowledge transfer and alleviate the domain mismatch between static and event datasets.
+alignment loss,domain mismatch,Alignment loss helps alleviate the domain mismatch between static and event datasets.
+spatio-temporal regularization,knowledge transfer,Spatio-temporal regularization supports knowledge transfer and alleviate the domain mismatch between static and event datasets.
+spatio-temporal regularization,domain mismatch,Spatio-temporal regularization helps alleviate the domain mismatch between static and event datasets.
+knowledge transfer,domain mismatch,Knowledge transfer helps alleviate the domain mismatch between static and event datasets.
+network training,sliding training strategy,We propose a sliding training strategy to bring greater stability to network training.
+network training,method performance,Experiments on different event datasets show that our method achieves the best performance.
+method performance,event datasets,Experiments on different event datasets show that our method achieves the best performance.
+study,training snns,This study provides new methods for training SNNs on event-driven datasets.
+study,neuromorphic computing,This study contributes to further development in the field of neuromorphic computing.
+acknowledgments,national natural science foundation of china,This work is supported by the National Natural Science Foundation of China (Grant No. 62372453).

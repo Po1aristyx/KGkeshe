@@ -1,0 +1,209 @@
+node_1,node_2,edge
+large-scale transformer models,downstream vision language tasks,Large-scale Transformer models bring significant improvements for various downstream vision language tasks with a unified architecture.
+large-scale transformer models,inference speed,"The performance improvements come with increasing model size, resulting in slow inference speed and increased cost for servering."
+large-scale transformer models,model size,"The performance improvements come with increasing model size, resulting in slow inference speed and increased cost for servering."
+inference speed,cost for servering,Resulting in slow inference speed and increased cost for servering.
+predictions,computation,"While some certain predictions benefit from the full computation of the large-scale model, not all inputs need the same amount of computation to conduct, potentially leading to computation resource waste."
+early exiting,computational power,"To handle this challenge, early exiting is proposed to adaptively allocate computational power in term of input complexity to improve inference efficiency."
+early exiting,input complexity,"To handle this challenge, early exiting is proposed to adaptively allocate computational power in term of input complexity to improve inference efficiency."
+output confidence,input complexity,Existing early exiting strategies usually adopt output confidence based on intermediate layers as a proxy of input complexity to incur the decision of skipping following layers.
+output confidence,decision,Existing early exiting strategies usually adopt output confidence based on intermediate layers as a proxy of input complexity to incur the decision of skipping following layers.
+early exiting strategies,output confidence estimation,"However, such strategies cannot be applied to encoder in the widely-used unified architecture with both encoder and decoder due to difficulty of output confidence estimation in the encoder layers."
+encoder,decoder,"However, such strategies cannot be applied to encoder in the widely-used unified architecture with both encoder and decoder due to difficulty of output confidence estimation in the encoder layers."
+computation power,early exiting,It is suboptimal in term of saving computation power to ignore the early exiting in encoder component.
+early exiting,vision language models,"To address this issue, we propose a novel early exiting strategy for unified vision language models."
+encoder,mue,"By decomposing the image and text modalities in the encoder, MuE is."
+text modalities,encoder,"By decomposing the image and text modalities in the encoder, MuE is."
+mue,image and text modalities,"MuE decomposes the image and text modalities in the encoder, allowing it to skip different layers in terms of modalities for improved inference efficiency while minimizing performance drop."
+mue,snli-ve and ms coco datasets,Experiments on SNLI-VE and MS COCO datasets show that MuE can reduce expected inference time by up to 50% and 40% while maintaining 99% and 96% performance respectively.
+transformer-based models,multi-modal transformer-based large-scale models,Recent advances in multi-modal Transformer-based large-scale models have brought improvements across various vision language tasks.
+transformer-based models,unified sequence-to-sequence architecture,The unified sequence-to-sequence architecture has attracted attention as a potential universal computation engine for diverse tasks in the context of Transformer-based models.
+large-scale models,expensive computational cost,The expensive computational cost of large-scale models usually hinders their applications in real-time scenarios despite their unattainable performance.
+model size,input computation,"The scaling effect suggests that the performance of the model benefits from its increased size, but not every input requires the same amount of computation to achieve similar performance."
+early exiting,input layers,Early exiting is a popular method to reduce computational costs by adaptively skipping layers on top of the input while preserving the general knowledge of the large-scale model.
+encoder-only models,early exiting decisions,Existing studies aim to deal with early exiting decisions for encoder-only models
+decoder components,encoder-decoder architectures,Existing studies aim to deal with early exiting decisions for decoder components in encoder-decoder architectures
+single-component strategies,computation cost,single-component strategies may be sub-optimal in terms of saving computation cost
+sequence-to-sequence architecture,early exiting,investigate how to perform early exiting for both encoder and decoder components in a sequence-to-sequence architecture
+layer-wise input similarities,exiting decision,make the exiting decision based on the intermediate layer-wise input similarities without going through the following layers
+modality decomposition mechanism,large-scale multi-modal models,propose a modality decomposition mechanism to enable early fusion large-scale multi-modal models
+early fusion,large-scale multi-modal models,Early fusion is enabled in large-scale multi-modal models to break the tie between modalities and provide flexible decision-making capabilities.
+early fusion,mue,"Comparison between MuE and other State-of-the-art early existing methods shows that MuE can reduce inference time with minimal performance drop, showcasing the effectiveness of early fusion."
+layer-wise task loss,each layer,"A layer-wise task loss design enforces each layer to output informative features for the final task, contributing to maintaining task performance with reduced time."
+mue,inference time,"MuE is shown to largely reduce the inference time compared to other methods, with minimal impact on performance."
+mue,sequence-to-sequence architecture,"MuE extends early exiting choices to both encoder and decoder of sequence-to-sequence architecture, showcasing pioneering work in this area."
+modalities,modalities encoder,Modalities encoder in early-fusion pre-trained models is decomposed to bring additional improvements in terms of inference efficiency.
+layer-wise task loss,decoder,"Layer-wise task loss effectively links each layer in the decoder to the final task, aiding in maintaining task performance when significant time reduction is needed."
+method,inference time,The method largely reduces the inference time of vision language models by up to 50% with minimal performance drop.
+method,vision language,The method shows promising results on several vision language benchmark datasets.
+vision language,transformer-based model,The Transformer-based model brings significant improvements to diverse downstream vision language tasks.
+vision language,sequence-to-sequence architecture,Efforts leverage the sequence-to-sequence architecture to unify diverse tasks in a generation manner.
+sequence-to-sequence architecture,universal computation engine,The sequence-to-sequence architecture builds the universal computation engine through unifying diverse tasks.
+vision language models,inference costs,The expensive inference costs hinder the application of large-scale vision language models in real-world scenarios.
+sequence-to-sequence model,challenges,Extending the sequence-to-sequence model to unified architecture is non-trivial due to dependencies in making decisions for exiting decisions and difficulties in applying confidence classifiers.
+encoder,decoder,"The encoder and decoder are mentioned together in the context, indicating a relationship between the two components in sequence-to-sequence framework."
+early exiting strategies,layer-wise input similarity,"The proposed early exiting strategies are based on layer-wise input similarity, showing a relationship between the two concepts."
+confidence classifiers,skip the encoder layer,"There is a need to apply confidence classifiers to skip the encoder layer before going through the decoder layer for task output, indicating a dependency relationship."
+layer-wise similarity,certain threshold,"The model is encouraged to skip following layers in both encoder and decoder when the layer-wise similarity reaches a certain threshold, showing a condition-based relationship."
+saturation observation,hidden-state of each transformer layer,"The saturation observation indicates that the hidden-state of each Transformer layer arrives at a saturation status as going into deep layers, establishing a relationship between the two concepts."
+inference efficiency,large-scale models,"Improving inference efficiency of large-scale models is a key focus, demonstrating the relationship between the two concepts."
+knowledge distillation,quantization,"Efforts for improving inference efficiency include knowledge distillation and quantization, suggesting a relationship between the two methods."
+weight pruning,early exiting,"Weight pruning and early exiting are explored methods for improving inference efficiency, indicating a relationship between the two concepts."
+computation resource,performance drop,"Dynamically allocating computation resource per example aims at improving the inference speed while minimizing the performance drop, showing a direct relationship between the concepts."
+deebert,fastbert,"DeeBERT and FastBERT explore early exiting strategy with BERT model, indicating a relationship between the two strategies."
+deebert,fastbert,DeeBERT and FastBERT are models that explore early exiting strategy with BERT.
+bert,deecap,BERT model and DeeCap explore early exiting strategy in different tasks.
+deecap,encoder,DeeCap is dedicated to decoder layers only and cannot be easily extended to encoders.
+encoder,decoder,The proposed early exiting strategy introduces computation resource allocation process in both encoder and decoder.
+visual language model,encoder,"The input to the visual language model includes images and text, where the encoder component is an essential part."
+visual language model,decoder,The proposed early exiting method is able to skip layers in both encoder and decoder components of the visual language model.
+image captioning,class prediction,"These are the main tasks mentioned in the context, representing the focus of the proposed approach."
+decision,skip different modalities,The decision-making process is discussed in relation to skipping different modalities for flexibility.
+modalities,decomposition,The process of decomposing modalities to allow processing independently is explained in Sec. 3.1.
+layer-wise similarity,guide early exiting,"Layer-wise similarity is used to guide the early exiting of encoder and decoder layers, as discussed in Sec. 3.2."
+layer-wise task loss,effective performance maintenance,The introduction of layer-wise task loss is described as effective for maintaining performance while reducing inference cost.
+modality decomposition,fine-tuning and inference,The decomposition of the early-fusion encoder into modality-specific encoders allows processing of image and text independently during fine-tuning and inference stages.
+image tokens,processed by resnet,Image tokens are processed by ResNet before feeding into transformer layers.
+input sequence,concatenation of token representations,The full input sequence involves the concatenation of token representations from image and text tokens.
+transformer encoder,n layers,The Transformer encoder has n layers for processing the input sequence.
+transformer encoder,layers,"The Transformer encoder has multiple layers denoted as Ei, forming the structure of the model."
+layers,transformer layer,The layers in the Transformer encoder are detailed in the Transformer layer as mentioned in reference [45].
+encoder,modality-specific encoder,The encoder is decomposed into modality-specific encoders to handle input tokens separately for images and text.
+encoder,output representations,The encoder processes input tokens and generates output representations for images and text.
+encoder,decoder,The encoded output tokens are concatenated and fed into the decoder for further processing.
+decoder,self-attention module,The decoder consists of a self-attention module in each layer for intra-token relationships within the input tokens.
+decoder,cross-attention module,The decoder includes a cross-attention module in each layer for inter-token relationships between image and text representations.
+self-attention module,cross-attention module,The output representation of the self-attention module and C is sent into the cross-attention module
+early exiting methods,classifier,Existing early exiting methods add a classifier for each layer to simulate output for input complexity estimation.
+layer-wise similarities,classifier,The output representations of each layer are fed into the classifier.
+vision language model,hidden-states,The saturation status in the vision language model shows that the similarities between hidden-states reach the top at an early stage and stay stable in the following layers.
+encoding,decoding,"In the context, the terms encoding and decoding are related as they refer to the process of converting data from one form to another, specifically in the context of token representation in the encoder and decoder layers."
+transformer,language model,"The transformer model is mentioned in relation to the language model, indicating that the transformer architecture is specifically used within the context of language modeling tasks."
+hidden-state representation,saturation,"The hidden-state representation of each layer in the Transformer model reaching saturation status is highlighted in the context, showcasing a relationship between hidden-state representation and the concept of saturation."
+layer,latter layers,"The concept of layers is discussed in relation to the latter layers within the Transformer model, specifically mentioning that as the hidden-state representation changes, it decreases in the latter layers."
+cosine similarity,similarity level,The usage of Cosine Similarity to evaluate the similarity level between layers is described in the context. This indicates a relationship between Cosine Similarity and the concept of similarity levels in the context of multi-modal sequence-to-sequence models.
+output representation,first layer,The similarity between the output representation of the first layer and the input token representation is computed.
+input token representation,text tokens,The similarity between the input token representation and text tokens is computed.
+text tokens,embed,The text tokens are embedded using Embed function.
+text tokens,enci,The text tokens are encoded using the Enci function.
+image,resnet,The image is processed using ResNet.
+img states,image,The img states store the processed image.
+txt states,text representation,The txt states store the encoded text representation.
+text representation,similarity,The similarity between the previous text representation and the current one is computed.
+enc out,concat,The Enc out is concatenated with the input and text representations.
+dec states,decoder input,The decoder states store the decoder input.
+generation tasks,image captioning,The generation tasks include image captioning.
+generation tasks,new words,New words are generated in a auto-regressive manner for generation tasks.
+early exiting strategy,step of generation,The proposed early exiting strategy applies to each step of generation.
+errors,generation results,Errors at each step accumulate and degrade the final generation results.
+computation,token numbers,Errors are reduced at the beginning of generations with a slight computation increase as token numbers are relatively small at early generation stage.
+early generation stage,token numbers,"In the beginning of generations, there is a slight computation increase since the token numbers at early generation stage are relatively small."
+decay threshold,[41],We follow [41] to utilize decay threshold.
+decay threshold,θ,Decay threshold Θ can be formulated as follows: Θ(t) = βθ + (1 − β)e−τ t/N
+timestep of generation,total number of steps,"In the formulation, t is the timestep of generation, and N is the total number of steps."
+τ,hyperparameters,"In the formulation, τ is a hyperparameter."
+layer-wise task loss,early exiting method,The main assumption of early exiting method is that the intermediate representations of some easy samples have enough information for final predictions.
+intermediate representations,test sets,Intermediate representations of some easy samples in test sets have enough information for final predictions.
+intermediate hidden states,decoding stage,Intermediate hidden states fail to predict the final results in the decoding stage of the sequence-to-sequence framework.
+significant performance drop,intermediate representation of fine-tuned model,A significant performance drop is observed with the intermediate representation of a fine-tuned model.
+decoder layer,task loss,Every decoder layer of our model is updated simultaneously with task loss to encourage the early exiting behavior and maintain performance.
+early exiting methods,stage of training,Existing early exiting methods usually adopt two stages of training.
+model,fine-tune,First stage of training is to fine-tune the model.
+exiting classifier,frozen fine-tuned checkpoint,Second stage of training involves developing an exiting classifier with the frozen fine-tuned checkpoint from the first step.
+layer-wise task loss,early exiting behavior,Layer-wise task loss encourages early exiting behavior during model training.
+layer-wise task loss,early exiting behavior,Introducing layer-wise task loss encourages early exiting behavior during fine-tuning
+model,training objective,The model can be optimized with a new training objective to balance severing final task from intermediate layer and final layer
+model,performance gap,The new training objective reduces the performance gap between early exiting and full model
+snli-ve dataset,ms coco,SNLI-VE dataset and MS COCO are used for evaluating methods for visual entailment and image captioning respectively
+snli-ve dataset,accuracy and expected time reduction rate,Accuracy and expected time reduction rate are reported on dev and test datasets using SNLI-VE dataset
+ms coco,"bleu-4, meteor",BLEU-4 and METEOR scores are reported for image captioning using MS COCO dataset
+input,model,The model takes an image and a piece of instruction text as input.
+model,image,The model processes the image as part of the input.
+model,instruction text,The model processes the instruction text as part of the input.
+model,bleu-4,The model reports BLEU-4 score in the main results.
+model,meteor,The model reports METEOR score in the main results.
+model,cider,The model reports CIDEr score in the main results.
+model,spice,The model reports SPICE scores in the main results.
+model,expected time reduction rate,The model reports the expected time reduction rate in the main results.
+model,evaluation metrics,The model mentions that the full evaluation metrics can be found in supplementary details.
+seq2seq architecture,expected time reduction rate,"A new metric is proposed to evaluate the efficiency in Seq2Seq architecture, called the expected time reduction rate."
+seq2seq architecture,encoder,The efficiency metric is defined based on the number of encoder layers used in the model.
+seq2seq architecture,decoder,The efficiency metric is defined based on the number of decoder layers used in the model.
+seq2seq architecture,computation reduction ratio,The new metric is able to reflect the overall computation reduction ratio of Seq2Seq models.
+our method,previous methods,Our method compared with previous methods reduces more computation while preserving good performance.
+ofabase,ofatiny,OFATiny is the tiny version of OFA that includes fewer encoder and decoder layers compared to OFABase.
+ofa,ofa,OFA is a unified vision language model mentioned in the context and serves as the base model for the experiments conducted.
+ofa,deecap,Our model is compared with DeeCap in image captioning tasks as mentioned in the context.
+ofa,rtx 6000 gpus,All experiments related to the model are implemented on 4 RTX 6000 GPUs as mentioned in the context.
+deebert,bert,Experiments of DeeBERT were originally conducted on BERT as mentioned in the context.
+paebb,bert,Experiments of PAEBB were originally conducted on BERT as mentioned in the context.
+deebert,ofa,DeeBERT is implemented in the decoder part of OFA architecture as mentioned in the context.
+base model,ofa,Our model is based on a unified vision language model called OFA and utilizes the Base model for downstream tasks.
+base model,6 encoder layers,The Base model consists of 6 encoder layers as mentioned in the context.
+base model,6 decoder layers,The Base model consists of 6 decoder layers as mentioned in the context.
+base model,768,The hidden state size of the Base model is 768 as mentioned in the context.
+method,computational performance,Our method saves more computation and achieves the best performance compared to other methods as mentioned in the context.
+ofa,visual entailment,"Our methods are evaluated on Visual Entailment, a classification task, as mentioned in the context."
+snli-ve dataset,method,Our method experiences only a 0.7 points accuracy drop on the test set of SNLI-VE dataset as mentioned in the context.
+ofa,main results,The main results of the experiments conducted are based on OFA architecture as mentioned in the context.
+ofa,table 1,Qualitative comparisons of the methods are shown in Table 1 where the performance of OFA is compared with other methods as mentioned in the context.
+ofa,performance drop,The performance drop of OFA in comparison to other models is discussed in the context.
+ofa,overall computation,OFA can reduce nearly 50% computation while maintaining performance in the experiments as mentioned in the context.
+ofatiny,computation saving,"OFATiny can save around 33% computation with a performance drop, as mentioned in the context."
+deebert,computation saving,DeeBERT is able to reduce around 15% of overall computation as mentioned in the context.
+deebert,overall computation,DeeBERT is only able to reduce around 15% of overall computation since it cannot skip layers in the encoder part.
+deebert,accuracy,"DeeBERT caused severe damage to accuracy, dropping from 89.2 to 78.8."
+deebert,pabee,PABEE is better than DeeBERT in terms of accuracy with a similar expected time reduction rate.
+deebert,deecap,"With performance recovery strategies, DeeCap can obtain better performance than DeeBERT and PABEE with more computation reduction."
+pabee,accuracy,PABEE is better than DeeBERT in terms of accuracy with a similar expected time reduction rate.
+pabee,deebert,PABEE is better than DeeBERT in terms of accuracy with a similar expected time reduction rate.
+deecap,deebert,"With performance recovery strategies, DeeCap can obtain better performance than DeeBERT and PABEE with more computation reduction."
+deecap,pabee,"With performance recovery strategies, DeeCap can obtain better performance than DeeBERT and PABEE with more computation reduction."
+deecap,computation reduction,"With performance recovery strategies, DeeCap can obtain better performance than DeeBERT and PABEE with more computation reduction."
+deebert,time to exit,"DeeBERT causes the highest performance drop, showing the pure classifier is unable to identify the suitable time to exit."
+deecap,performance,"With performance recovery strategies, DeeCap can obtain better performance than DeeBERT and PABEE with more computation reduction."
+deebert,pabee,Similarity or comparison between two models in terms of computation reduction
+cross-entropy loss,decoder,The loss function added on each layer of the decoder to optimize decoder layers simultaneously
+training objective,error accumulation,The training objective aims to minimize the error of a single layer and reduce overall error accumulation in autoregressive decoding stages
+mue,deecap,"Comparison of performance between MuE and DeeCap, showing MuE achieving higher performance on every metric"
+visual entailment,image captioning,Comparison in the context of image encoder layers being safely removed for visual entailment while text encoder layers are crucial for image captioning
+mue,other methods,"Comparison of MuE with other methods in visual entailment and image captioning, showing MuE's effectiveness"
+modality decomposition strategy,early exiting threshold,Analysis of the strategy by changing the early exiting threshold to control the number of encoder layers used for processing tokens
+text and image encoder layers,visual entailment and image captioning,Reporting performance with different combinations of text and image encoder layers in visual entailment and image captioning
+model,encoder layers,"The model with full encoder layers for image and text is compared to skipping text and image layers separately, showing different impacts on accuracy in visual entailment and image captioning tasks."
+text information,visual entailment,"The understanding of text information is shown to be more important than image information in the context of visual entailment tasks, leading to a drop in accuracy when text information is lost."
+image information,image captioning,"The understanding of image information is emphasized as essential in image captioning tasks, with a decrease in metrics if image layers are skipped more."
+image layers,text layers,"Skipping both image and text layers simultaneously leads to a drop in performance in both visual entailment and image captioning tasks, highlighting the need to selectively remove layers based on modality information."
+decomposition strategy,encoder,"The proposed decomposition strategy in the encoder allows for exiting earlier when modality information is unnecessary, demonstrating effectiveness in maintaining accuracy while reducing computation."
+computation reduction,model,"The context mentions the computation reduction of their model, indicating a direct relation between them."
+computation reduction,visual entailment,"Performance on visual entailment drops with the increase of computation reduction, showing a negative relationship between them."
+computation reduction,image captioning,"Performance on image captioning also drops with the increase of computation reduction, suggesting a negative relationship between them."
+computation reduction,skipped layers,"The context mentions that little reduction in computation with skipped layers brings a large amount of performance drop in some metrics, indicating a negative relationship between computation reduction and skipped layers."
+computation reduction,more difficult samples,"If mid-difficult samples are forced to exit too early due to computation reduction, they will be mistaken by output layers, showing a negative impact of computation reduction on more difficult samples."
+model,mue,"The context indicates the results of their proposed MuE model, demonstrating a direct relationship between the model and MuE."
+method,trade-off curves,"The context compares the trade-off curves of their method with other SoTA methods, showing a direct relationship between the method and trade-off curves."
+method,deebert,Our method is better than the performance of DeeBERT at the lowest computation reduction point.
+method,pabee,Our method is better than the performance of PABEE at the lowest computation reduction point.
+method,deebert,"At the start point without computation reduction, the performance of our method is slightly lower than DeeBERT."
+method,pabee,"At the start point without computation reduction, the performance of our method is slightly lower than PABEE."
+method,decomposition strategy,Our decomposition strategy brings slight degradation on overall performance.
+method,training objective,Our training objective contributes to the model's performance recovery.
+model,decomposition strategy,"The model without decomposition strategy gains the lowest test accuracy, CIDEr scores, and expected time reduction rate."
+key modality,text,Key modality which is the text is important for visual entailment and image captioning. Coarse understanding of key modality is necessary for precise prediction.
+key modality,image,Key modality which is the image is important for image captioning. It is necessary to keep more layers for key modalities to improve efficiency.
+layer,key modalities,More layers for key modalities should be kept while removing more layers for other layers to improve efficiency.
+training objective,visual entailment,Removing training objective doesn't harm performance in visual entailment.
+training objective,image captioning,"Absence of our proposed layer-wise task loss causes a drop in performance and expected time reduction rate in image captioning. Layer-wise task loss can reduce error at every timestep of decoding, benefiting final results."
+captioning,errors,Accumulation of errors in captioning leads to a drop in performance. Our proposed layer-wise task loss reduces error at every timestep of decoding.
+time reduction rate,training objective,Our proposed training objective is able to recover performance and improve time reduction rate.
+modality,tasks,Different modality information is required for different tasks in unified vision language models.
+mue,accelerating unified vision language models,MuE is proposed for accelerating unified vision language models during the inference stage.
+unified encoder,text,Unified encoder is decomposed into text to meet the features of accelerating vision language models.
+unified vision language models,accelerating,"The context mentions accelerating unified vision language models, indicating that accelerating is a characteristic or action related to unified vision language models."
+unified encoder,text and image encoders,"The context talks about decomposing the unified encoder into text and image encoders, showing a relationship between the unified encoder and the text and image encoders."
+input tokens,image text,"The context discusses splitting the input tokens of image text during the fine-tuning stage, implying a relationship between input tokens and image text."
+encoder,decoder,"The context mentions early exiting in both the encoder and decoder part in Seq2Seq architecture, highlighting a relationship between the encoder and decoder components."
+performance drop,early exiting,"The context suggests that a performance drop is caused by early exiting, indicating a relationship between performance drop and early exiting."
+decoder layer,training loss,"The context proposes training every decoder layer with the same training loss to recover the performance drop caused by early exiting, establishing a relationship between the decoder layer and training loss."
+computation,performance drop,"Experiments demonstrate that the proposed MuE reduces most computation with minimal performance drop, pointing out a relationship between computation and performance drop."
+classification and generation tasks,mue,"The context suggests that the effectiveness of methods is shown in both classification and generation tasks by the proposed MuE, illustrating a relationship between classification and generation tasks and MuE."

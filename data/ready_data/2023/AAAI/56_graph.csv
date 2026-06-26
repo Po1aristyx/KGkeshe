@@ -1,0 +1,150 @@
+node_1,node_2,edge
+energy-based constrained decoding with langevin dynamics (cold),text generation framework,COLD is a unified framework for incorporating constraints into text generation.
+constrained generation,text generation applications,COLD is applicable to various constrained generation tasks such as lexically-constrained
+lexically-constrained generation,constraint type,An example constraint is ensuring specific keywords are included in the generated output.
+abductive reasoning,constraint type,Another constraint is contextualizing the output with the left- or right-hand context.
+counterfactual reasoning,constraint type,COLD handles scenarios where text should reflect alternative realities or hypothetical situations.
+off-the-shelf language models,dependency,COLD can be applied directly to existing language models without needing task-specific fine-tuning.
+automatic evaluation,assessment method,Experiments involve automated assessments to measure the effectiveness of COLD.
+human evaluation,assessment method,COLD's performance is also evaluated through human assessments for more nuanced judgments.
+knowledge-grounded generation,hard lexical constraints,knowledge-grounded generation involves including specific keywords as strict requirements during generation.
+keyword-guided generation,hard lexical constraints,Keyword-guided generation also relies on ensuring certain keywords are present in the output.
+soft topical constraints,abductive reasoning,Soft topical constraints are used for contextually situating generated content
+story context,soft topical constraints,The story context helps to inform and guide the generated content.
+counterfactual condition,input revision,Counterfactual conditions prompt the need to revise input based on hypothetical scenarios.
+semantic coherence,counterfactual input revision,Revised content must maintain semantic coherence while adhering to minimal edit constraints.
+supervised learning,task-specific training data,Supervised learning has traditionally been the approach for various text generation tasks
+energy-based text modeling,training data requirement reduction,Energy-based models reduce dependence on task-specific training data but still involve model training.
+gpt-3,extreme scale models,GPT-3 is a large-scale model that may not allow for fine-tuning due to its complexity and resource needs.
+decoding algorithms,pretrained language models,Decoding algorithms seek to enhance language models without the need for task-specific tuning.
+pretrained language models,task-specific fine-tuning,Contrastive - Pretrained language models are mentioned as working without task-specific fine-tuning.
+allen institute for ai,work done,Location - The context specifies that the work was done at this institution.
+cold (constrained optimization for latent decoding),fine-tuning,constraints
+github repository,https://github.com/qkaren/cold_decoding,Source - The code for COLD is available at this online platform.
+conference on neural information processing systems (neurips),2022,Event - COLD was presented at this conference in the specified year.
+cold (constraints),coherence,fluency
+pet cat,couch,Location - A pet cat's preference is to sleep on a couch.
+joe (fictional character),lonely life,Condition - Joe experienced a lonely life before certain events.
+joe,companions,Cause-Effect - Joe's happiness increased after acquiring companions.
+law student,prestigious law firm,Future action - A law student might join a prestigious firm upon graduation.
+medical student,medical practice,Similarity - Both medical and law students can join professional practices.
+counterfactual reasoning,abductive reasoning,Related Technique - Both are discussed as approaches within the context of constrained generation.
+energy-based model (ebm),sampling,Method - Decoding is formulated as sampling from an energy-based model.
+energy function,induced distribution,An energy function generates a distribution
+langevin dynamics,sampling method,Langevin dynamics is introduced for the first time to efficiently perform gradient-based sampling in text-based EBMs.
+constrained decoding with langevin dynamics (cold),sampling algorithm,COLD is the proposed approach that uses Langevin dynamics for constrained text sampling.
+continuous relaxation of text,iterative updating,The continuous text is updated using gradients of the energy function in an iterative process.
+guided discretization approach,mapping back to discrete space,After continuous updates
+hard lexical constraints,soft contextual constraints,COLD unifies scenarios with both hard and soft constraints in a single framework.
+recent line of research,decoding algorithms,COLD contributes to the broader investigation of decoding algorithms for handling diverse constraints.
+optimal solution,single solution search,COLD contrasts with methods that aim to find a single optimal solution rather than a sampling process.
+empirical insights,strengths and weaknesses,The work provides new understanding of the advantages and limitations of the proposed approach.
+discrete search,differentiable reasoning,COLD decoding is compared to existing approaches for both discrete search and differentiable reasoning
+lexically constrained generation,neurologic,COLD outperforms NEUROLOGIC in lexical coverage while maintaining coherence and higher quality text.
+lexically constrained generation,delorean,COLD compares favorably to DELOREAN
+energy function,fluency constraints,COLD uses a unified framework to specify an energy function with fluency and task-specific constraints.
+energy function,task-specific constraints,The induced distribution from the energy function is sampled to generate text
+neural language models,gpt-2/3,Neural text generation models
+text sequence modeling,decoding algorithm,The process involves modeling a probability distribution over text sequences followed by a decoding algorithm to produce sequences.
+energy-based sampling,discretization,Energy-based sampling is a step in the COLD decoding procedure
+cold decoding procedure,langevin dynamics,Langevin dynamics are used in the COLD decoding procedure
+energy function e(˜y),constrained distribution,The energy function E(˜y) guides the process towards a target constrained distribution.
+soft sequence ˜y(0),initial energy-based distribution,The procedure begins with a soft sequence sampled from an initial energy-based distribution
+top-k filtering,discrete text sequence y,After Langevin dynamics
+text-based ebm (energy-based model),specific tasks,Recent work has trained text-based EBMs for specific tasks
+monotonic text generation,diverse constraints,Common decoding algorithms struggle to enforce diverse constraints because they rely on monotonic progression of tokens.
+energy-based formulation,inference (decoding) procedure,The context discusses using an energy-based formulation to develop a decoding procedure that allows language models to perform constrained generation without fine-tuning.
+pretrained language models,constrained generation,These models can perform arbitrary constrained generation tasks without being fine-tuned.
+energy-based model (ebm),sampling,Sampling from an EBM is central to the approach
+gradient-free markov chain monte carlo (mcmc),gibbs sampling,Gibbs sampling is a common MCMC method used for sampling
+langevin dynamics,gradient-based mcmc method,Langevin dynamics offers more efficient sampling by leveraging gradients of the energy function.
+text generation,sampling from ebm,Text generation is treated as sampling from an EBM in COLD decoding.
+constrained decoding with langevin dynamics (cold),flexible constrained generation,COLD is a decoding approach that allows for flexible composition of constraints based on tasks.
+continuous relaxation of text,guided discretization,COLD addresses the challenges of text sampling by combining continuous relaxation and guided discretization techniques.
+straint,energy-based form,The constraint is part of the energy-based formulation
+future contextualization constraint,coherence,The constraint encourages coherence with respect to the future context.
+n-gram similarity constraint,sequence similarity,The constraint is used to encourage sequence similarity with a reference text
+langevin dynamics,sampling from p(y),Langevin dynamics is employed for efficient sampling from the energy-based distribution.
+discrete sequence,gradient,The challenge arises because the gradient for a discrete sequence is not well-defined in the energy function.
+token vectors,continuous representation,Langevin dynamics is performed on a sequence of continuous token vectors to overcome the gradient issue.
+continuous vectors ˜y,soft sequence,The soft sequence is a representation of continuous vectors
+soft sequence ˜y,energy function e(˜y),An energy function is defined on the soft sequence
+langevin dynamics,sampling procedure,Langevin dynamics is used as a Markov chain to generate samples from the distribution defined by the energy function.
+markov chain,noise ✏(n),In the Markov chain
+step size ⌘,annealing,The step size ⌘ is annealed to control the convergence of the sampling process.
+discrete tokens,softmax(˜yt/⌧),Taking the softmax of ˜yt produces a distribution over the vocabulary
+energy function e(˜y),samples from the true distribution,The procedure described generates samples from the distribution induced by the energy function.
+constraint functions,components of the energy function,Constraint functions can be incorporated into the energy function to guide the generation of specific characteristics in the soft sequence.
+section 3.3,obtaining a discrete sequence,Further details on obtaining a discrete sequence from the soft sequence are discussed in Section 3.3.
+neural language model,cross-entropy,The neural language model uses cross-entropy to measure the match between the predicted distribution (softmax(˜yt)) and the reference distribution (p!LM(˜y<t
+soft tokens,weighted average of word embeddings,The soft tokens are calculated as a weighted average of word embeddings
+left-side context (x),reference distribution (p!lm(˜y<t,x))
+reverse language model (f lm),right-to-left lm constraint,A reverse language model constraint is used as an additional fluency constraint
+future-token prediction,past positions,In text infilling
+second position,example (the __ has eight legs),Updating the second position in a sentence like 'The __ has eight legs' requires the sample to be coherent with the preceding tokens.
+conditioning on preceding tokens,top-k filtering,The method referred to as 'top-k filtering' involves conditioning on the most likely tokens based on the soft sample ˜y
+most likely token,lm (language model),The top-k most probable tokens are derived from the language model pLM.
+soft sample ˜y,energy function e(˜y),The decoding procedure uses an energy function E(˜y) to induce the distribution for generating text samples.
+decoding procedure,cold decoding,Algorithm 1 summarizes the COLD decoding process
+cold decoding,sample-and-select approach,In COLD
+greedy decoding,initialization of ˜y,The soft sequence ˜y is initially generated using greedy decoding with the language model.
+deterministic constrained decoding,sample-and-select approach (contrast),COLD's sample-and-select differs from deterministic methods that optimize a single sequence.
+abductive language generation (nlg),beginning sentence xl,NLG problem involves generating a bridge sentence (y) that connects xl and xr
+abductive language generation (nlg),ending sentence xr,The NLG task requires non-monotonic reasoning
+left-to-right lms (e.g.,gpt-2,gpt-3)
+cold solution,energy function,COLD decoding addresses the NLG problem by composing an energy function with constraints for fluency
+soft fluency constraint,left context xl,This constraint enforces that the generated text (y) is fluent and consistent with the input sentence on the left.
+reverse fluency constraint,right context xr,By conditioning on the right context with a right-to-left LM
+future-token prediction constraint,story ending xr,This constraint ensures consistency between the generated text and the provided ending by predicting future tokens.
+cold decoding,constraints,COLD decoding uses a combination of constraints to guide the generation process for coherent and consistent stories.
+constraint,energy function,The constraint is part of the energy function
+eq. 4,eq. 7,Both equations are part of the discussion on the energy function
+langevin dynamics,n = 2000,Langevin dynamics involves a specified number of steps
+step size,⌘ = 0.1,The step size for the Langevin dynamics is set to 0.1
+delorean,previous decoding approaches,DELOREAN is a baseline method among previous decoding approaches for the task.
+left-only,yplm(yxl),LEFT-ONLY is a method that generates continuations without considering the right-side context (xr)
+automatic evaluation,standard metrics,Automatic evaluation includes metrics like BLEU
+human evaluation,amazon mechanical turk,Human evaluation is conducted through Amazon Mechanical Turk
+crowdworkers,test examples,Crowdworkers evaluate a set of 200 test examples for human assessment.
+cold solution,task,The COLD Solution is designed to address the task of generating a new story ending that is coherent with a new context while making minimal edits to the original ending.
+cold solution,energy composed of constraint functions,COLD uses an energy function consisting of constraints that promote coherence with the new context
+soft fluency constraint,new context x0l,The soft fluency constraint ensures coherence between the generated ending and the counterfactual context.
+reverse lm constraint,improve fluency,This constraint helps to improve the overall fluency of the generated ending.
+n-gram similarity constraint,original ending xr,The constraint encourages the generated ending to be similar to the original ending while maintaining coherence.
+delorean,baselines,DELOREAN is a state-of-the-art decoding algorithm compared against for the task.
+left-only,baseline,LEFT-ONLY generates a continuation without considering the minimal edit constraint
+energy function,cold solution,The energy function is part of the COLD Solution
+soft fluency constraint,reverse lm fluency constraint,Both constraints are incorporated in the energy function
+1-gram similarity constraint,given words,This constraint ensures the generated text has a high degree of similarity with the provided words.
+future-token prediction constraint,constraint words (c()),By predicting tokens after concatenating the constraint words
+neurologic,baseline,NEUROLOGIC is a state-of-the-art method compared against for lexically constrained generation.
+tsmh,baseline,TSMH is another recent method using Monte-Carlo Tree Search and serves as a comparison point.
+commongen corpus,evaluation dataset,The models are evaluated using constraint words from the COMMONGEN corpus in a strict setting.
+lexical constraints,lexically constrained decoding task,The context discusses the evaluation of 'lexical constraints' in the 'lexically constrained decoding task'
+cold (constrained decoding method),state-of-the-art method neurologic,COLD is compared to NEUROLOGIC
+cold,tsmh (lexically constrained decoding method),COLD significantly outperforms TSMH in terms of both keyword coverage and fluency.
+constraints,ablation studies,Ablation studies focus on the impact of constraints in the approach
+n-gram similarity constraint (fsim),overall coherence,The n-gram similarity constraint contributes the most to maintaining overall coherence in the abductive reasoning task.
+reverse lm fluency constraint (f lm),right-side coherence,The reverse LM fluency constraint helps improve right-side coherence to some extent.
+human evaluation,3-point likert scale,The text's fluency is rated on a 3-point scale by crowdworkers for the human evaluation.
+crowdworkers,inner-annotator agreement,Crowdworkers provide ratings
+coherence,constraints,The overall coherence is affected by the different constraints present in the model
+reverse lm fluency constraint,right-side coherence,The reverse LM fluency constraint helps improve right-side coherence by conditioning on the right-side content.
+future-token prediction constraint,right-side coherence,Removing this constraint leads to worse right-side coherence.
+constraints (uniform treatment),balance,The uniform treatment of constraints allows for easy balancing by adjusting constraint weights.
+efficiency,cold (runtime),COLD is more efficient than Mix-and-Match due to its gradient-based sampling
+cold,metropolis-hastings (mcmc sampling),COLD outperforms Mix-and-Match
+cold (gpt2-xl),gpt2-xl (model size),COLD has comparable time cost when using a larger LM like GPT2-XL
+gpt2-xl,gpt2-m,COLD is more efficient than gradient-free Mix-and-Match
+gpt2-xl,bertlarge,Mix-and-Match uses BERTLarge (340M) as another model for comparison in efficiency.
+gpt2-m,355m,GPT2-M has 355 million parameters
+gpt2-xl,1.5b,GPT2-XL has 1.5 billion parameters
+cold,runtime,The runtime is measured in seconds per sample
+cold,gradient-free mix-and-match,COLD is compared to a gradient-free method
+beam search variants,lexically constrained decoding,Previous works use beam search with lexical constraints
+additional discriminator or lm,constraint satisfaction,Recent approaches adjust vocabulary distributions to enforce constraints.
+qin et al. [45],gradient propagation,They optimize the token sequence via gradient propagation for sequence-level constraints.
+cold,energy-based modeling,COLD is formulated as an energy-based sampling method
+kumar et al. [26],lagrangian method,Their approach uses a Lagrangian method for imposing constraints.
+energy-based sampling,rank-and-select,COLD allows for generating samples for various utilities
+discretization procedure,more fluent generations,COLD introduces a novel discretization procedure to enhance fluency.

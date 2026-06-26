@@ -1,0 +1,127 @@
+node_1,node_2,edge
+personalized federated learning (fl),critical challenge,The context discusses the main issue in personalized FL
+bayesian hierarchical models,inspiration for the method,These models serve as the theoretical foundation for the developed self-aware personalized FL approach.
+self-aware personalized fl method,local personal model,Each client trains a personal model that balances local improvement and global contribution.
+self-aware personalized fl method,global model,Clients also contribute to the global model
+inter-client uncertainty quantification,balance determination,The method uses uncertainty to decide the need for more personalization or standard aggregation.
+uncertainty-driven local training steps,local training strategy,Increased inter-client variation leads to more uncertainty-driven training steps.
+uncertainty-driven local training steps,conventional local fine-tuning,Contrast to traditional methods
+sample size-based aggregation,alternative aggregation rule,The method replaces sample size-based aggregation with an uncertainty-based one.
+experiments on synthetic data,empirical validation,Experimental studies demonstrate the effectiveness of the proposed method using various datasets.
+amazon alexa audio data,real-world dataset,One of the datasets used in the experiments to showcase personalization performance.
+mnist,femnist,sent140
+distributed ml framework,fl (federated learning),FL is a type of distributed ML framework that focuses on training a global model with local data from edge devices.
+global model,aggregated gradients/model updates,FL aggregates gradients or model updates from individual edge devices to create a unified global model.
+personalization,fl system with client-specific data distributions,Personalized FL extends FL to accommodate diverse data distributions on each client
+client,non-iid (non-identically and independently distributed),In personalized FL
+on-device model,personalized fl,Each device aims to improve its on-device model using personalized FL without sharing raw data.
+heuristic statements,existing works on personalized fl,Previous works on personalized FL often rely on ad-hoc optimization formulations with limited explanation of the choices.
+our approach,statistical insights,Our work takes a different approach by developing statistical insights into personalization
+toy example,insights into personalization,We begin with a simple example to uncover fundamental principles behind personalization in FL.
+personalized fl,statistical uncertainty perspective,The context discusses the nature of personalization in the context of FL
+lower-bound baselines of personalized fl,local training without fl,These two concepts are contrasted as extremes in understanding the performance limits of personalized FL
+lower-bound baselines of personalized fl,conventional fl training,Another extreme case for the lower-bound is when all clients participate in traditional FL training
+upper-bound for the client,undefined,The question of finding the optimal performance for clients in personalized FL is posed as an open challenge
+q1,characterizing client-specific and globally-shared information,Question Q1 calls for a systematic approach to differentiate between the unique and shared aspects of client data in FL.
+q2,fl training for local model improvement,Q2 involves designing an FL process that optimizes local model performance
+two-level bayesian hierarchical models,analytically tractable setting,This simplified model is chosen to facilitate analysis
+popular aggregation approach,adapting to client-specific local data,The challenge in Q2 implies that existing aggregation methods need to be refined to address the diversity of client data.
+meta-learning,pfedme,pFedMe is a method within the context of meta-learning (Dinh et al.
+pfedme,moreau envelopes,pFedMe uses Moreau envelopes as clients' regularized loss to handle personalized FL.
+perfedavg,global model adaptation,PerFedAvg proposes a method to find an initial global model that facilitates quick adaptation to local data.
+pfedhn,central hypernetwork,pFedHN (Shamsian et al.
+fedfomo,optimally weighted model aggregation,FedFOMO (Zhang et al.
+self-fl,ditto,Self-FL is compared with DITTO
+self-fl,pfedme,Self-FL is compared with pFedMe
+self-fl,perfedavg,Self-FL also contrasts with PerFedAvg
+bayesian perspective,interpretation of fl-trained results,The Bayesian perspective provides insights into interpreting FL results
+personalized fl,bayesian posterior,The posterior variance represents the reduced uncertainty for client 1 after considering other clients' data in the Personalized FL context.
+posterior variance,reduced uncertainty,The quantity quantifies the decrease in uncertainty conditional on other clients' data.
+personalized fl gain (gain1),posterior mean (✓(fl)1),GAIN1 is used to measure the learning progress of client 1
+point estimation,theoretical limit,In practical implementations
+local data quality,posterior mean (✓(fl)1),As local data quality improves (21 → 1)
+personalized fl,standard fl,When clients are barely connected (21 ≫ 1)
+global parameter,personalized fl gain,As the personalized FL gain approaches 1
+data-generating process,fixed constant,The context describes a data-generating process where a fixed constant is involved.
+fl-optimal value,initial parameter,The proposition relates the FL-optimal value to the initial parameter
+personalized parameter,server parameter,These terms are connected as the proposition discusses the convergence of both the personalized parameters of clients and the server's parameter.
+optimization error,estimation error,The error bounds for personalized parameters and the server parameter include an optimization error term
+sample size,m/(n + m),The quantity q
+client,fl round,The error bound's convergence is stated to occur uniformly as the number of clients (M) and the FL round (t) increase.
+initial model,client,Each client starts with an initial model
+self-fl framework,alg. 1,The Self-FL framework is described in Algorithm 1.
+selected clients,updated local models,Selected clients send their updated local models to the server.
+server,global aggregation,The server performs global aggregation of the received local models.
+global model,updated global model,The server distributes the updated global model to the clients.
+communication cost,additional cost,The communication cost of Self-FL is similar to FedAvg but has extra cost for transmitting uncertainty values.
+uncertainty values,sample variance,Uncertainty values are calculated via sample variance in Eqns. (13) and (14).
+extra computation cost,online manner,The extra computation cost is minimal because sample variances are updated in an online fashion.
+personalization method,local and global training,The personalization method balances local and global training in the FL setting.
+auxiliary data,applicability,The personalization method is applicable to tasks using auxiliary data.
+experimental studies,section 4.1,Experimental setup is discussed in Section 4.1.
+self-fl,empirical risk,Self-FL does not depend on a particular formulation of the empirical risk.
+aws p316 instances,experiments,All experiments are conducted using AWS p316 instances.
+synthetic data,evaluation,We use synthetic data to evaluate the performance of Self-FL.
+two-layer bayesian model,synthetic dataset construction,A synthetic dataset is constructed based on a two-layer Bayesian model.
+fl system,clients,The FL system consists of a total of M = 20 clients.
+inter-client uncertainty,heterogeneity control,Heterogeneity level is controlled by specifying inter-client uncertainty.
+local dataset size,heterogeneity control,Each client has a specific local dataset size Nm.
+mnist,dataset,MNIST is an image dataset with 10 output classes and a multinomial logistic regression model.
+fedprox,comparison,We use the same non-IID MNIST dataset as FedProx (Li
+non-iid mnist dataset,fedprox experiment,Each client in the non-IID MNIST dataset has samples distributed unevenly.
+non-iid mnist dataset,fedprox (li,2020)
+femnist dataset,fedprox (li et al.,2020b)
+m = 200 clients,femnist dataset,This refers to the number of clients in the FEMNIST FL system.
+cifar10 data,pfedme repository canh t. dinh (2020),The non-i.i.d. data for CIFAR10 is obtained from this repository.
+20 clients,cifar10 data,This denotes the total number of clients in the CIFAR10 FL system.
+sent140 data,fedprox (li,2020)
+772 clients,sent140 data,This refers to the number of clients in the Sent140 dataset.
+private wake-word data,amazon alexa,This is a private audio dataset from Amazon's smart home device platform.
+wake-word detection task,private wake-word data,The task involves detecting a pre-defined keyword for device activation.
+two output classes,wake-word detection task,The task has binary classification outcomes: 'wake-word detected' and 'wake-word absent'.
+convolution neural network (cnn),audio stream,The audio stream from the speaker is transformed into a spectrogram and fed into the CNN.
+convolutional and max-pooling layers,cnn,The CNN consists of a stack of 11 convolutional and max-pooling layers.
+trainable parameters,cnn,The CNN has around 3 trainable parameters.
+heterogeneity,clients,Heterogeneity arises from the intrinsic properties of different device types
+in-house far-field corpus,data,This in-house dataset contains 39 thousand hours of training data and 14 thousand hours of test data
+activity rate,client sampling,In practical FL
+self-fl,global model update,Self-FL updates the global model using a smoothing average when only a portion of clients are active.
+smoothing average,global model,Updating the global model with a smoothing average helps to integrate historical information and stabilize learning.
+mnist,femnist,Results are shown for both MNIST and FEMNIST datasets
+mnist,femnist,Comparison of FL algorithms is shown for both datasets in Figure 1.
+activity rate,0.1,Set to 0.1 for both MNIST and FEMNIST in the FL training.
+learning rate,0.03 (mnist),Used for MNIST with a batch size of 10
+learning rate,0.01 (femnist),Used for FEMNIST with a batch size of 10.
+fl training,200 rounds,Runs for 200 rounds for both datasets.
+self-fl framework,lmax,For Self-FL
+local training steps,ˆlm (self-fl),Actual local training steps determined for Self-FL using a cutoff threshold lmax.
+model parameters,neural coefficients,Variance represented by ²m
+communication round,horizontal axis,Horizontal axis in Figures 1a and 1b indicates the progress of communication rounds.
+test accuracy,weighted client-level,Shown in Figure 1 for both datasets.
+fedavg,ditto,Comparison includes FedAvg and three other personalized FL techniques.
+fedavg,pfedme,Part of the comparison.
+fedavg,perfedavg,Part of the comparison
+self-fl,fedavg,Self-FL yields more stable convergence compared to FedAvg due to smoothing average in aggregation.
+self-fl,ditto,pfedme
+local step (l),ditto,pfedme
+test accuracy,self-fl,ditto
+cifar10 dataset,cnn model,Experiments conducted on CIFAR-10 with a CNN model from PyTorch example.
+cifar10,pytorch example (2022),Experiments based on the PyTorch example for CIFAR-10.
+fl algorithms,clients,Randomly selected 5 out of 20 clients participate in FL training on CIFAR-10.
+fl system,clients,The FL system consists of five clients
+fedavg,ditto,FedAvg and DITTO are compared
+fedavg,ditto (sample size-based),Both FedAvg and DITTO's sample size-based version are implemented for comparison.
+perfedavg,first-order approximation,PerFedAvg uses a first-order approximation for meta-learning.
+pfedme,dataset,pFedMe is not reported due to convergence issues on the given dataset.
+pre-trained model,fl evaluation,The pre-trained model's performance serves as a baseline for evaluating FL algorithms.
+false accept (fa),false reject (fr),The metric compares relative FA and FR values
+threshold tuning,wake-word detection,The trade-off between false accepts and rejects can be controlled by adjusting the detection threshold.
+self-fl,personalized fl,Self-FL is proposed to address the challenge in personalized FL
+local model regularization,global model aggregation,The focus of Self-FL is to balance these two aspects in the context of FL.
+uncertainty-driven local training steps,conventional local fine-tuning,Self-FL replaces conventional fine-tuning with uncertainty-driven methods for improved performance.
+size-based weights,aggregation rules,Self-FL uses uncertainty quantification to develop alternative aggregation rules
+hierarchical modeling,self-fl's connection,Self-FL integrates hierarchical modeling into its framework for enhanced personalization.
+promising performance,self-fl's empirical studies,Extensive experiments demonstrate the positive outcome of Self-FL.
+negative societal impact,none envisioned,The work does not foresee any negative consequences.
+appendix,experimental studies,remarks
+huili chen,applied scientist intern at alexa ai,amazon

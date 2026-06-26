@@ -1,0 +1,296 @@
+node_1,node_2,edge
+llms,extreme compression,LLMs are being targeted for extreme compression of 1-2 bits per parameter to enable execution on resource-constrained devices.
+existing work techniques,one-shot quantization,Existing work has focused on improving one-shot quantization techniques for weight representation.
+quantization methods,fine-tuning,State-of-the-art quantization methods like QuIP# and AQLM involve fine-tuning compressed parameters over limited calibration data.
+fine-tuning techniques,straight-through estimators,"Fine-tuning techniques often make exclusive use of straight-through estimators for compressed weights, whose performance is not well-understood."
+ste,extreme llm compression,The use of straight-through estimators for extreme LLM compression is questioned as it can be sub-optimal.
+pv-tuning,quantization-aware fine-tuning strategies,PV-Tuning is a representation-agnostic framework that improves upon existing fine-tuning strategies for LLMs.
+pv-tuning,1-2 bit vector quantization,PV-Tuning outperforms prior techniques for highly-performant models like Llama and Mistral when used for 1-2 bit vector quantization.
+pv-tuning,pareto-optimal quantization,"Using PV-Tuning, Pareto-optimal quantization is achieved for Llama-2 family models at 2 bits per parameter."
+quantization,llama-2 family models,Quantization techniques are used to compress the Llama-2 family models to 2 bits per parameter.
+llms,llama,Powerful open LLMs such as Llama are a driving factor behind the progress in large language models.
+llama,mistral,Llama and Mistral are open LLMs that are available for use and fine-tuning by end users.
+llama,phi,Llama and Phi are open LLMs that are contributing to the progress in large language models.
+open llms,local fine-tuning,The main advantage of open LLMs is that they can be fine-tuned locally by end users.
+llms,commodity hardware,"As state-of-the-art LLMs grow larger, they become harder to run on commodity hardware."
+llama-3 model,consumer gpu,"To fit the best available Llama-3 model on a consumer GPU, the model needs to be compressed below 2 bits per parameter."
+researchers,techniques,Researchers have proposed a variety of techniques for extreme quantization to achieve accurate compression.
+quantized weight representations,algorithms,Techniques for extreme quantization involve better quantized weight representations and algorithms to learn these representations.
+weight representations,group quantization,The weight representations used for extreme quantization include techniques like group quantization.
+weight representations,sparse high-precision outliers,The weight representations used for extreme quantization include techniques like sparse high-precision outliers.
+calibration algorithms,data-free methods,Different calibration algorithms include data-free methods for quantization.
+calibration algorithms,layer-wise calibration,Different calibration algorithms include layer-wise calibration techniques.
+calibration algorithms,block-wise or global fine-tuning,Different calibration algorithms include block-wise or global fine-tuning techniques.
+calibration algorithms,quantization-aware training,Different calibration algorithms include quantization-aware training methods.
+yandex,work,Work performed while at Yandex
+yandex,"king abdullah university of science and technology, saudi arabia",Work performed while at Yandex
+"king abdullah university of science and technology, saudi arabia","moscow institute of physics and technology, russia",Both universities mentioned
+llama-3 70b,dram,"Llama-3 70B model occupies 130GB in FP16, while consumer GPUs have 8-24GiB DRAM"
+neurips 2024,8th conference on neural information processing systems,Both conferences mentioned
+llama 2,wikitext-2 perplexity,Figure 1 shows perplexity and accuracy of 2-bit quantized LLAMA 2 models
+fine-tuning algorithm,quantized representations,Fine-tuning algorithm is largely orthogonal to quantized representations
+one-shot quantization,fine-tuning strategy,Disparity between interest in accurate one-shot quantization and fine-tuning strategy
+recent works,fine-tuning regimen based on straight-through estimation (ste),Many recent works use a fine-tuning regimen based on STE
+ste,representation,STE is a method mentioned in the context for estimating representations
+representation,fine-tuning,Fine-tuning involves working with representations as mentioned in the context
+fine-tuning,strategies,The context discusses various strategies for fine-tuning
+fine-tuning,quantization,Fine-tuning is applied to extreme LLM quantization according to the context
+quantization,continuous variables,Quantization consists of both continuous and discrete variables as explained in the context
+quantization,discrete variables,Quantization involves discrete variables such as integer assignments for weights in the context
+continuous variables,backpropagation,Continuous variables like learnable scales can be optimized using backpropagation according to the context
+discrete variables,optimization,"Discrete variables need optimization which is challenging, as mentioned in the context"
+optimization,fine-tuning techniques,Optimization is a key component in fine-tuning techniques as discussed in the context
+fine-tuning techniques,heuristics,Existing fine-tuning techniques use heuristics like STE or stochastic rounding as per the context
+heuristics,weight quantization,Heuristics are used for weight quantization in the context
+weight quantization,optimization theory,Weight quantization is discussed from the perspective of optimization theory in the context
+optimization theory,performance,Optimization theory is related to practical performance based on the context
+performance,solution,Performance influences the proposed solution in the context
+discrete components,continuous components,The fine-tuning process involves updating both discrete and continuous components to minimize a global objective function.
+discrete components,weight representations,Fine-tuning leads to significant improvements in weight representations by achieving new state-of-the-art in compression-accuracy trade-offs.
+continuous components,weight representations,Fine-tuning results in significant improvements across weight representations by updating both discrete and continuous components.
+training discrete quantized representations,limitations of existing optimization algorithms,The problem is analyzed to understand the limitations of existing optimization algorithms for training discrete quantized representations.
+training discrete quantized representations,novel algorithm,A novel algorithm is proposed inspired by compressed gradient methods to address the limitations of existing optimization algorithms for training discrete quantized representations.
+novel algorithm,straight-through estimation and stochastic rounding,"The proposed novel algorithm, when compared to straight-through estimation and stochastic rounding, converges to a stable solution and is significantly more accurate in practice."
+pv-tuning framework,global objective function,"The proposed algorithm is generalized into the PV-Tuning framework, which minimizes a global objective function over a general quantized representation by optimizing both continuous and discrete parameters."
+global objective function,quantized model accuracy,PV-tuning can improve quantized model accuracy by minimizing a global objective function over a general quantized representation.
+quantized model accuracy,gptq and aqlm,PV-tuning can improve quantized model accuracy for leading existing approaches such as GPTQ and AQLM.
+gptq and aqlm,popular llms,PV-tuning improves quantized model accuracy on popular LLMs including Llama-2 & 3 and Mistral.
+popular llms,state-of-the-art accuracy,"The procedure achieves state-of-the-art accuracy, measured through perplexity, in 1- and 2-bit quantized models."
+state-of-the-art accuracy,perplexity,"The procedure achieves state-of-the-art accuracy, which is measured through perplexity."
+quantization regimes,calibration data,The procedure achieves state-of-the-art accuracy in 1- and 2-bit quantization regimes while using the same amount of calibration data.
+pv-tuned models,underlying weight representations,PV-tuned models use the same underlying weight representations.
+pv-tuning,vector quantization,PV-tuning of vector quantization outperforms all prior techniques in the 1-3 bits/parameter range.
+one-shot,methods,One-shot methods quantize the model in a single pass over calibration data.
+official implementation,https://github.com/vahe1994/aqlm/tree/pv-tuning,The official implementation is available at https://github.com/Vahe1994/AQLM/tree/pv-tuning.
+ptq (post-training llm quantization),ptq methods,PTQ methods have significant interest and scale to LLMs.
+rtn quantization,weight groups,Early work used direct round-to-nearest (RTN) quantization over weight groups.
+gptq,accurate one-shot solver,GPTQ improved upon results significantly via an accurate one-shot solver.
+awq,per-channel scaling,AWQ improved results by employing per-channel scaling.
+squeezellm,non-uniform quantization,SqueezeLLM implemented non-uniform quantization.
+quip,weight representation,QuIP proposed a more accurate weight representation.
+weight representation,incoherence matrices,The accuracy of weight representation is improved by leveraging incoherence matrices.
+weight representation,outliers,Quantized weight representation saves a small fraction of outliers in full precision.
+weight representation,adapters,Quantized representations are augmented with lowrank 'adapters' that compensate quantization error.
+billm,residual binarization,BiLLM developed residual binarization that stores salient weights in progressively higher bitwidth.
+state-of-the-art methods,quip#,QuIP# is one of the state-of-the-art methods in terms of accuracy-vs-size.
+state-of-the-art methods,aqlm,AQLM is one of the state-of-the-art methods in terms of accuracy-vs-size.
+state-of-the-art methods,weight groups,Both state-of-the-art methods work by mapping weight groups to points on highly-dimensional lattices.
+aqlm,fine-tuning,AQLM showed that fine-tuning the continuous parameters can significantly improve accuracy relative to pure one-shot compression.
+quip#,fine-tuning,A variant of the fine-tuning approach adopted by QuIP# can lead to state-of-the-art compression results.
+quantized weights,sota quantization techniques,"The two state-of-the-art quantization techniques apply fine-tuning, updating continuous parameters such as quantization scales."
+discrete parameter sets,deep learning,discrete parameter sets are optimized over in deep learning
+straight-through estimator (ste),deep learning,STE is a standard choice in deep learning
+ste,llm compression,STE is used in LLM compression
+continuous parameters,discrete parameters,both continuous and discrete parameters are updated via STE
+quantization,post-training,quantization is used for post-training
+ste,instability,STE leads to instability when fine-tuning heavily quantized LLMs
+quantized models,training,quantized models are trained to minimize a global objective
+fine-tuning,quantized models,fine-tuning is done for quantized models
+optimization,post-training compression,different optimization approaches are proposed in the post-training compression setting
+objective (loss),differentiable function,The objective (loss) function ϕ is a differentiable function bounded from below used in the problem description.
+objective (loss),quantized weights,The objective (loss) function ϕ is related to the set of all possible quantized weights in the problem description.
+quantized weights,quantization method,The quantized weights are represented using a given quantization method in the problem description.
+quantization method,scalar nonlinear quantization,The quantization method is applied specifically to scalar nonlinear quantization in the problem description.
+scalar nonlinear quantization,set of vectors,Scalar nonlinear quantization pertains to the set of all vectors in Rd with specific characteristics.
+set of vectors,distinct values,The set of vectors in Rd is characterized by entries taking distinct values in the problem description.
+distinct values,cardinality,The distinct values determine the cardinality of the set defined by V(x) in the problem description.
+vector,nonempty subsets,"A vector x is partitioned into c nonempty subsets P1(x), ..., Pc(x) based on certain characteristics."
+nonempty subsets,partition,The nonempty subsets form a partition of the set induced by the vector x in the problem description.
+partition,subset relationship,The partition relationship P(y) is a superset of the partition P(x) if each element of P(x) is contained within an element of P(y).
+distinct elements,notation,Distinct elements i and j are introduced as notation in the context provided.
+p,x,P (x) is a subset of some element of P (y).
+p,y,P (y) ⊒ P (x) if and only if for all i ̸= j we have δij(x) = 1 ⇒ yi = yj.
+mp,x,"MP (x) = MP,ϕ(x) := arg min."
+mp,y,MP (x) ∈ Rd≤c and ϕ(MP (x)) ≤ ϕ(MP (x)) ≤ ϕ(x).
+mv,y,"MV (y) = MV,ϕ(y) := arg min."
+mv,x,MV (y) ∈ Rd≤c and ϕ(MV (y)) ≤ ϕ(MV (y)) ≤ ϕ(y).
+initialization,starting point,Initialization is the process of setting a starting point x0 in Rd≤c
+algorithmic idea,optimize,The key algorithmic idea is to optimize function ϕ by alternating the P and V steps
+pv method,algorithm 1,The PV method is formalized as Algorithm 1
+convergence of the pv method,ϕ is bounded below,Theorem 3.1 states the convergence of the PV method and assumes that function ϕ is bounded below
+numerical results,empirical performance,"In the numerical results, the PV approach coupled with additional algorithmic tricks shows great empirical performance"
+shallow machine learning problems,squared error,"General approach of the PV method is popular in shallow machine learning problems, where squared error function can be used"
+squared error,user-specified vector z,relationship: ∥x − z∥2 is the squared error with respect to some user-specified vector z
+algorithm,1-dimensional k-means,relationship: the algorithm recovers 1-dimensional K-means on the data vector z
+ϕ(·),log-likelihood,"relationship: depending on the choice of the set Rd, ϕ(·) is the log-likelihood"
+p and v mappings,difficult optimization problems,relationship: computing the P and V mappings requires solving difficult optimization problems
+p step,unconstrained optimization problem,relationship: The P step can be reparameterized as an unconstrained optimization problem
+codebooks,automated differentiation engine (i.e. pytorch),relationship: the “codebooks” can be optimized using an automated differentiation engine (i.e. PyTorch)
+quantized representations,gd,"relationship: for many quantized representations, MP (x) can be approximated by one or more steps of GD"
+gd,optimizing ϕ over the set v (x) of its c unique values,relationship: directly optimizing ϕ over the set V (x) of its c unique values can be done through one or more steps of GD
+c-dimensional gradient,backprop,relationship: the c-dimensional gradient can be computed efficiently by backprop
+v mapping (mv (·)),discrete space of size cd,relationship: the V mapping (MV (·)) is more difficult to approximate as it involves searching a discrete space of size cd
+ϕ(x),y,ϕ(x) can be approximated around y using a specific formula involving gradients and norms
+ϕ(x),∇ϕ(y),ϕ(x) involves the gradient of ϕ with respect to y
+y,l,y is related to a sufficiently large constant L
+ϕ,v step,ϕ is replaced by a simpler convex quadratic function in the V step
+ϕ,gd step,ϕ is replaced by a more convenient function during a GD step
+ϕ,lemma 3.2,Lemma 3.2 relates to the replacement of ϕ by a more convenient function
+y,mv,y is part of the MV process
+y,2 ∥x − y∥2,y is related to the squared Euclidean distance between x and y
+monotonicity,"mv,ϕ(y)",The Monotonicity lemma relates to the function values before and after the V step
+linearized v step,point,The point ˆx obtained via the linearized V step can not have a worse loss than the previous point y.
+linearized v step,loss,One hopes that the loss will strictly decrease so that the method makes progress.
+linearized v step,speed,The key advantage of linearized V step is that it can be performed much faster compared to the vanilla V step.
+point,loss,The point ˆx obtained via the linearized V step can not have a worse loss than the previous point y.
+loss,method,One hopes that the loss will strictly decrease so that the method makes progress.
+scalar quantization,time complexity,"For scalar quantization, each individual problem can be solved in O(log2(c)) time using binary search in sorted version of V (y)."
+vector quantization,optimization procedures,"For vector quantization, there are specialized optimization procedures for efficiently minimizing the L2 error."
+linearized v step,small gradient-based updates,The main caveat with linearized V step is that it may be impossible to make small gradient-based updates to low-bitwidth discrete weights.
+low-bit weights,optimal solution,The optimal solution to (6) is often yk itself when the desired L∇ϕ(yk) can be smaller than the lowest possible increment to obtain a quantized vector.
+low-bit weights,stuck,"In such a situation, the algorithm will get stuck on yk, which is undesirable."
+deep llms,learning rate,"Deep LLMs can have a problem with the learning rate, especially when L is large or when a small learning rate is needed."
+algorithm,updates,"The algorithm struggles to make updates when the learning rate is already too large for optimization, resulting in divergence."
+class of functions,lipschitz functions,"Instead of the usual class of functions, Lipschitz functions can be considered as an alternative."
+approximation,l-smooth functions,"For simplicity, the explanation focuses on working with L-smooth functions instead of considering different types of approximations."
+algorithm 2 pv-tuning,initial parameters,The algorithm PV-Tuning requires initial parameters for optimization.
+algorithm 3 pv-tuning,quantized model,"For one step implementation of Algorithm 3 PV-Tuning, a quantized model and subspace size tau are required."
+grad_phi,deq_model.weight,grad_phi is the gradient with respect to deq_model.weight
+grad_codebooks,backprop,grad_codebooks is the output of backpropagation
+model.codebooks,adam,model.codebooks is updated using the adam optimizer with grad_codebooks
+update,adam,update is used in the adam optimizer
+s,choose_subspace,s is chosen by the choose_subspace function
+model.codes[s],find_nearest,model.codes[s] is updated by finding the nearest value according to the update
+pv method,v step,The PV method is being modified to manipulate the V step
+cd,subspace descent,Coordinate Descent (CD) is a specific case of subspace descent
+parameters,update,parameters are to be updated either greedily or at random
+parameters,weights,parameters and weights are related in choosing which to update
+parameters,coordinates,parameters and coordinates are mentioned together in the context
+set,parameters,a set of parameters to be updated is mentioned
+set,weights,the set of parameters includes weights to be updated
+set,coordinates,the set includes coordinates for updating
+parameters,weights,parameters and weights are chosen as a set for update
+parameters,coordinates,parameters and coordinates are part of the set for update
+linear mapping,linearized subspace,the linear mapping defines the formed linearized subspace
+mapping,linearized subspace,the mapping defines the linearized subspace
+linear mapping,parameters,linear mapping is applied to parameters
+subspace,parameters,the subspace is associated with the parameters
+smoothness parameter,subspace,the smoothness parameter is related to the subspace
+subspace,parameters,subspace is spanned by the parameters
+lipschitz constants,llms,Lipschitz constants are estimated for real LLMs
+algorithm,large updates,The algorithm can apply large updates to quantized LLM weights.
+algorithm,fraction,The algorithm should only update a fraction of them at a time.
+v step,learning rate,The V step can perform with sufficiently large 'learning rate' to make non-trivial improvements to quantized weights.
+p step,v (x),The algorithm performs the P step by directly optimizing V (x) by backprop.
+algorithm,subset of quantized weights,The algorithm greedily chooses a subset of quantized weights for update in the V step.
+tau quantized weights,absolute gradient values,The arg top tau operator finds indices with the largest absolute gradient values.
+adaptive learning rates,p and v steps,"To speed up convergence, we use adaptive learning rates for both P and V steps."
+gradient values,subspace,The largest absolute gradient values build a subspace where only these values can be changed.
+adam update,weight,The update is based on the magnitude of Adam update for that weight.
+weights,adam update,The weights are selected based on the magnitude of Adam update for that weight.
+weights,τ weights,The τ weights with the largest update norm within each weight matrix are chosen.
+weights,pv-tuning,PV-tuning combined with straight-through estimation achieves slightly better accuracy.
+pv-tuning,straight-through estimation,Combining PV-tuning with straight-through estimation leads to slightly better accuracy.
+ptq works,calibration data,The preprocessing used in PTQ works introduces a small bias when sampling the calibration data.
+representations,algorithms,Representations and algorithms are compared using the same pre-processing.
+pv tuning,gradients,The most compute-intensive part of PV tuning is computing the gradients.
+llm,gradient accumulations,"To reduce the number of gradient accumulations, gradients for P and V steps are reused within one iteration."
+llm,mixed precision,Mixed precision is used to train more efficiently.
+llm,gradient checkpointing,Gradient checkpointing is used to train more efficiently.
+llm,batch accumulation,Batch accumulation is used to train more efficiently.
+llama 3 70b,sharding and optimizer offloading,"For larger LLMs such as LLAMA 3 70B, sharding and optimizer offloading are used (see Appendix H)."
+llm,single gpu,The code can train 7B LLMs on a single GPU.
+llm,larger llms,Larger LLMs like 70B fit into a single machine.
+llm,gpu,The code can train 7B LLMs on a single GPU.
+llm,machine,Larger LLMs (e.g. 70B) fit into a single machine with 8×A100.
+llm,pv-tuning,"In terms of wall-clock time, PV-tuning takes up to 1.5× longer than the fine-tuning procedure of [71] and requires additional memory in order to hold ∇ϕ(x)."
+pv-tuning,quantized representation,"Before evaluating PV-tuning, we need to choose the quantized representation to be fine-tuned."
+quantized representation,llm layer,"When quantizing a single LLM layer, we evaluate different weight representations in terms of MSE."
+quantized representation,full model,We evaluate full model quantization in terms of perplexity without finetuning.
+quantized representation,fine-tuning,We evaluate weight representations with and without finetuning.
+quantized representation,gptq,"We compare several recently proposed quantized representations, including GPTQ."
+vq/aq,outliers,Vector/additive quantization is combined with sparse outliers via pruning to improve compression efficiency.
+vector/additive quantization,low-rank compensation (lorc),Vector/additive quantization is enhanced with Low-Rank Compensation (LoRC) to address compression challenges.
+l2 errors,17th layer of llama 27b,The L2 errors are measured for the 17th layer of LLAMA 27B to assess the model's performance.
+llama 27b,redpajama dataset,Experiments are conducted on the LLAMA 27B model by calibrating it on the RedPajama dataset.
+attention query projection outputs,transformer block,The L2 error is reported in attention query projection outputs of a fixed transformer block to analyze the model's behavior.
+quantized model perplexity,wikitext-2 dataset,The quantized model perplexity is evaluated on the WikiText-2 dataset to measure the model's performance.
+diverse representations,quantization errors,Different representations are evaluated based on their quantization errors to understand their compression capabilities.
+vector quantization methods,scalar counterparts,Vector quantization methods outperform scalar counterparts
+vector quantization methods,outliers,Improvement in error reduction comes from both outliers and vector quantization methods
+vector quantization methods,low-rank compensation,Improvement in error reduction comes from both low-rank compensation and vector quantization methods
+outliers,low-rank compensation,"Both outliers and low-rank compensation contribute to error reduction, but at the cost of extra bits per parameter"
+outliers,fine-tuning,Improvement from outliers diminishes with fine-tuning
+low-rank compensation,fine-tuning,Improvement from low-rank compensation diminishes with fine-tuning
+fine-tuning,vector quantization (vq) representation,Fine-tuning strategies impact the effectiveness of the vector quantization representation
+gptq,vq,Comparison between GPTQ and VQ methods
+gptq,aqlm,Comparison between GPTQ and AQLM methods
+vq,aqlm,Comparison between VQ and AQLM methods
+gptq,target weight,GPTQ can scale the target weight and round it to nearest 2-bit integer
+vq,quantizes weights,VQ quantizes weights as a group and must find the nearest vector from its codebook
+aqlm,multi-step beam search procedure,AQLM uses a multi-step beam search procedure to choose the best combination of codes from both codebooks
+pv-tuning,search algorithms,Our PV-Tuning implementation uses these search algorithms during the subspace linearized V step
+find_nearest,alg. 3,Our PV-Tuning implementation uses these search algorithms during the subspace linearized V step (find_nearest in Alg. 3)
+pv configuration,method,We describe the full PV configuration for each method in Appendix K
+baseline,fine-tuning,"Our first baseline is fine-tuning only continuous parameters, e.g., codebooks or input/output embeddings"
+training,straight through estimation (ste),The second baseline is training with Straight Through Estimation (STE)
+stochastic rounding,appendix e.2,We also test stochastic rounding as described in Appendix E.2
+pv-tuning,ste,"Finally, we evaluate PV tuning combined with STE, but otherwise the same configuration"
+subspace size τ,number of weights,"We set the subspace size τ equal to the number of weights such that the update satisfies ∥xk+1 − xk∥/∥xk∥ ≤ 0.01, also known as known as trust ratio"
+pv-tuning,quantized models,"The results in Table 1 show that PV-Tuning consistently finds better quantized models, with STE coming consistently second"
+subspace updates,ste,We explore this further by combining subspace updates with STE
+subspace updates,ste,Combining subspace updates with STE leads to slightly better perplexity and accuracy in most setups.
+vq,gptq,"Comparing different fine-tuning strategies for VQ, GPTQ, and AQLM on LLAMA 27B in terms of perplexity on WikiText-2, C4 and average zero-shot accuracy on tasks from Section 4.3."
+gptq,aqlm,"Comparing different fine-tuning strategies for VQ, GPTQ, and AQLM on LLAMA 27B in terms of perplexity on WikiText-2, C4 and average zero-shot accuracy on tasks from Section 4.3."
+llama 27b,wikitext-2,"Comparing different fine-tuning strategies for VQ, GPTQ, and AQLM on LLAMA 27B in terms of perplexity on WikiText-2, C4 and average zero-shot accuracy on tasks from Section 4.3."
+llama 27b,c4,"Comparing different fine-tuning strategies for VQ, GPTQ, and AQLM on LLAMA 27B in terms of perplexity on WikiText-2, C4 and average zero-shot accuracy on tasks from Section 4.3."
+llama 27b,section 4.3,"Comparing different fine-tuning strategies for VQ, GPTQ, and AQLM on LLAMA 27B in terms of perplexity on WikiText-2, C4 and average zero-shot accuracy on tasks from Section 4.3."
+pv-tuning,quip#,Applying PV-tuning to QuIP# - a modification of vector quantization can significantly improve the model through PV-Tuning.
+pv-tuning,rht,Applying PV-tuning to QuIP# - a modification of vector quantization that applies Randomized Hadamard Transform before quantization and uses fixed lattices instead of learned codebooks.
+pv-tuning,model,"PV-tuning improves the model, for instance, improving WikiText-2 perplexity from 6.19 to 5.71."
+quantization,model,Halving the quantization corresponds to almost halving the quantization.
+16-bit model,perplexity,"The original 16-bit model has a perplexity of 5.13, showing a relationship between the model and its perplexity."
+quantization error,perplexity,The halving of the quantization error in terms of perplexity corresponds to improving the model performance.
+quip#,pv-tuning,"The additional details for QuIP# include PV-Tuning, indicating a relationship between the two in the evaluation."
+hyperparameters,vector quantization (vq),"The choice of hyperparameters affects vector quantization (VQ) configurations, showing a relationship between them."
+hyperparameters,1-bit vector quantization,"Hyperparameters configurations play a role in 1-bit vector quantization, indicating a relationship between them."
+codebooks,groups (vectors),The choice between larger or smaller codebooks depends on the length of the groups (vectors) in vector quantization.
+16-bit model,codebooks,"The quantization of 16 consecutive weights involves using 14-16 bit codebooks, showing a relationship between the model and codebooks."
+8-bit code,16-bit code,The comparison between 8-bit code per 8 weights and 14-bit code per 16 weights highlights the performance difference due to different codebook sizes.
+pv algorithm,vector quantization backbone,The PV algorithm utilizes a vector quantization backbone in the evaluation process.
+llama 2 & 3,mistral 7b,"The large-scale evaluation involves popular LLM models such as LLAMA 2 & 3 and MISTRAL 7B, indicating a comparison between them in the evaluation."
+llama 2,llama 3,LLAMA 2 and LLAMA 3 are different model families mentioned in the context.
+wikitext-2,c4,Perplexity is reported on WikiText-2 and C4 validation sets in the context.
+wikitext-2,c4,"Model perplexity on WikiText-2 and C4, along with average accuracy on 5 zero-shot tasks is discussed in Table 2."
+billm,onebit,BiLLM and OneBit are compared against other methods in the context.
+quip,billm,Comparison is made between QuIP and BiLLM in the context.
+db-llm,aqlm,DB-LLM and AQLM are mentioned together in the context.
+wikitext-2,c4,Quantized model perplexity on WikiText-2 and C4 validation sets is reported in Table 2.
+pv-tuning,vector quantization,PV-Tuning with vector quantization outperforms other methods for 1- and 2-bit per weight as mentioned in the context.
+llama 2,quip#,Competitors on LLAMA 2
+llama 2,aqlm,Competitors on LLAMA 2
+llama 2,onebit,Competitors on LLAMA 2
+llama 3,pv-tuning,Pushes Pareto-optimal frontier for LLAMA 3
+llama 3,table 12,Comparison in Table 12
+pv-tuning,llama 2,Pushes Pareto-optimal frontier for LLAMA 2
+7b models,70b runs,Fine-tuning efficiency requirement
+ste,pv-tuning,Shared drawback with STE method
+longest training run,2 days,The longest training run took 2 days to outperform all baselines.
+longest training run,8 gpus,The longest training run took 2 days on 8 GPUs to outperform all baselines.
+longest training run,8 days,The longest training run took 8 days to fully converge.
+pv-tuning,underlying compressed representation,PV-Tuning does not change the underlying compressed representation.
+pv-tuning,vq+pv,"PV-Tuning can reuse efficient kernels from [21, 71] for VQ+PV."
+pv-tuning,gptq+pv,PV-Tuning can use ExLlamaV2 kernels [14] for GPTQ+PV.
+pv-tuning,accuracy of extreme quantized models,PV-Tuning can significantly improve the accuracy of extreme quantized models.
+pv-tuning,large llms,PV-Tuning makes it possible to deploy large LLMs on resource-constrained devices.
+pv-tuning,specialized inference engines,PV-Tuning allows the development of specialized inference engines.
+inference speed evaluations,appendix o,We report inference speed evaluations in Appendix O.
+pv-tuning,models quantized with quip#,PV-Tuning can dramatically improve models quantized with QuIP#.
+models,quip#,models quantized with QuIP#
+algorithm,accuracy,algorithm could achieve better accuracy by simply training longer and on more data
+algorithm,training,algorithm could achieve better accuracy by simply training longer and on more data
+work,directions,work opens several new research directions
+directions,strategy,how to choose S k: while we found that a greedy strategy works in practice
+algorithm,potential applications,applying PV-Tuning to other quantization niches
+evaluation,focuses,our evaluation focuses on extreme weight-only quantization
+algorithm,optimization theory,proposed algorithm can improve LLM quantization and we are excited to see how this develops in future research
+research,kai yi,research of Kai Yi reported in this publication was supported by funding from King Abdullah University of Science and Technology
+research,konstantin burlachenko,research of Konstantin Burlachenko reported in this publication was supported by funding from King Abdullah University of Science and Technology
+research,peter richtárik,research of Peter Richtárik reported in this publication was supported by funding from King Abdullah University of Science and Technology
+reviewers,suggestions,"Reviewers provided helpful suggestions, with a specific highlight on p3Lv's suggestions for smaller codebook sizes and evaluating PV-Tuning with QuIP."
+p3lv,suggestions,p3Lv provided suggestions to consider smaller codebook sizes and evaluate PV-Tuning with QuIP.
+pv-tuning,quip,"PV-Tuning was evaluated with QuIP, producing interesting findings."
+open-source contributors,llama.cpp,Open-source contributors from llama.cpp community were thanked for their discussions and inspirations on practical use cases of quantized language models.
+open-source contributors,localllama community,Open-source contributors from LocalLlama community were thanked for their discussions and inspirations on practical use cases of quantized language models.
+yalda shabanzadeh,codebase,Yalda Shabanzadeh helped with improving the codebase.
+arthur aardvark,codebase,Arthur Aardvark helped with improving the codebase.

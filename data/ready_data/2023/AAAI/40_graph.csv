@@ -1,0 +1,136 @@
+node_1,node_2,edge
+data annotation,cost-prohibitive,The lack of annotated data is described as being both costly and potentially inaccurate.
+data annotation,accuracy,In challenging domains
+object detection,no annotated data,The context poses a solution for object detection in situations where there is a lack of annotated data.
+domain adaptation for object detection (daod),adversarial learning,Adversarial learning has been introduced in the context of DAOD to address the challenge.
+adversarial learning,student-teacher frameworks,Methods like student-teacher frameworks are also part of the DAOD approach.
+class imbalance,real-life scenarios,Class imbalance is a common issue in real-life scenarios
+class imbalance,cityscapes dataset,The Cityscapes dataset exemplifies a scenario where 'car' dominates while minority classes like 'train' are underrepresented.
+previous work on class imbalance,class-specific discriminators,Previous solutions involved using class-specific discriminators to address class imbalance in DAOD.
+class weights,boosting minority categories,Class weights have been proposed to enhance the performance of minority classes during domain alignment.
+class-aware teacher (cat) model,inter-class relation module (icrm),The CAT model is supported by the ICRm
+class-relation augmentation,cross-domains,This augmentation occurs across domains
+inter-class loss (icl),minority classes,ICL focuses on minority classes
+cityscapes → foggy cityscapes,+1.3 map,Performance improvement is demonstrated with a +1.3 mAP increase on the benchmark.
+performance,improvement,The method leads to an improvement in performance
+cropbank,collection of cropped instances,A cropbank is used to store and facilitate image augmentation.
+augmentation,source domain,Augmentation is applied within the source domain as well.
+domain adaptation (daod),image-to-image translation,These are different strategies for addressing domain adaptation
+mean-teacher (mt) framework,uda challenges,The MT framework was originally designed for semi-supervised learning but has been applied to unsupervised domain adaptation (UDA) tasks
+umt (unsupervised mean-teacher),cyclegan-generated images,UMT uses CycleGAN to generate images to train a student-teacher model
+adversarial training (at),strong-weak image augmentation,AT combines adversarial training with degraded student inputs to further decrease the domain gap.
+2pcnet,two-stage approach,2PCNet adopts a two-stage method to provide diverse pseudo-labels
+class imbalance issue,minority classes,The class imbalance problem affects minority classes
+oversight,suboptimal performance,Oversight can lead to suboptimal performance
+class imbalance,object detection,The issue of imbalance in object detection is primarily due to an overrepresentation of the background over foreground classes.
+foreground classes,unequal frequency,Foreground classes often suffer from unequal frequency within datasets
+minority classes,risk of overfitting,There is a risk of overfitting to minority classes when their instances are sparse
+over-sampling,minority classes,Over-sampling of minority classes is a strategy adopted from classification tasks to address the imbalance.
+student-teacher frameworks,dynamic threshold,Dynamic
+class imbalance,sample distribution,The approach of dynamic thresholds does not necessarily balance the sample distribution between majority and minority classes.
+daod,class-specific discriminators,DAOD methods
+daod,weighted losses,Weighted losses are another technique employed in DAOD to handle class imbalance.
+inter-class relationship,majority and minority classes,Exploring the inter-class dynamics
+majority classes,minority classes,The context discusses the comparison between majority and minority classes
+class imbalance,majority classes,minority classes
+unsupervised domain adaptation (uda),object detection tasks,UDA is a technique applied to adapt a model for object detection
+class-aware teacher (cat),mean-teacher framework,CAT is a proposed method that uses the mean-teacher framework
+inter-class relation module (icrm),class-aware teacher (cat),ICRm is a part of CAT
+class-relation augmentation,class-aware teacher (cat),This augmentation is a technique within CAT that mixes instances of related classes to reduce inter-class biases.
+inter-class loss,class-aware teacher (cat),Inter-Class Loss is a component of CAT that emphasizes loss on misclassified minority classes.
+labelled source dataset ds,images (is),ground-truth labels (ys)
+unlabelled target dataset dt,images (it),Dt is the unlabelled data in the target domain
+bounding box,ground-truth labels (ys),Ground-truth labels (Ys) contain bounding box information for the objects in the images.
+class-aware teacher (cat),mean-teacher framework,CAT builds on the mean-teacher framework
+inter-class relation module (icrm),model's class biases,ICRm is designed to quantify and map the class biases present in the model.
+minority classes,dominant majority classes,Minority classes are disproportionately misclassified as dominant majority classes
+confusion matrix,ground truth,The confusion matrix is normalized against the ground truth for real-time bias estimation.
+global matrix,model's class biases,The global matrix represents the model's class biases accumulated from batch-level data.
+class-relation augmentation,class imbalance,This component addresses class imbalance at the image level by merging minority and majority classes.
+mixup,addressing imbalanced class problem,MixUp is used to boost minority class representation and encourage model differentiation.
+closely associated minority classes,majority classes,Minority classes that share similarity with majority classes are merged using MixUp.
+minority class samples,majority classes,The context highlights the imbalance between minority and majority classes
+inter-class relation module (icrm),class imbalance,ICRm addresses the issue of class imbalance within domain adaptation
+minority classes,majority classes (specifically 'car' and 'person'),The resemblance between minority and majority classes
+model's learned biases,counterbalance,The weighted loss function in ICRm provides a counterbalance to the model's biases
+weighted loss function,minority classes,The loss function emphasizes the loss on minority classes
+inter-class dynamics,observed relationships,These dynamics are not directly present in the dataset but emerge during the model's training process.
+confusion matrix,model's predictions,The confusion matrix compares the ground-truth labels with the model's predictions during training to estimate bias.
+confusion matrix,ground-truth labels,The matrix is normalized with respect to the ground truth for a more accurate estimation of bias.
+ema (exponential moving average),model's class biases,EMA updates a global matrix representing a smoother and more comprehensive approximation of the model's biases.
+algorithm 1,process for constructing the ema matrix,This algorithm outlines the steps to create the matrix
+icrm (instance-class relationship matrix),source images,ICRm is formulated for source images using actual ground-truth labels.
+icrm,target images,For target images
+oversampling,class imbalance,Oversampling is used in classification tasks to address class imbalance by increasing minority images.
+oversampling,object detection,In object detection
+majority class,image-level resampling,Image-level resampling is ineffective in object detection because most images have at least one instance of a majority class.
+zhang et al. [46],instance-level augmentation,Zhang et al.'s work also employs instance-level augmentation for addressing class imbalance in object detection.
+class-relation augmentation,target domain adaptation,The method aims to focus more on the target domain for effective adaptation
+cropbank,source dataset,Cropbanks store class-specific instance crops extracted from source image bounding box annotations.
+cropbank,target dataset,Separate Cropbanks are maintained for source and target datasets
+instance crops,bounding box annotations,Crops are obtained from labelled source images and pseudo-labelled target images based on bounding box annotations.
+pseudo-labels,robustness,The accuracy of early pseudo-labels in the target Cropbank may be less due to their initial robustness.
+inter-class relation module (icrm),classification loss,ICRm informs a weighted parameter in the classification loss to counteract class bias
+source data,target data,The method involves training with both labelled source and unlabelled target data.
+detectron2,framework,Our framework is developed on top of the publicly available Detectron2.
+batch size,8 source images,Experiments use a batch size of 8 source images.
+batch size,8 target images,Same batch size is used for 8 target images.
+nvidia rtx3090 gpus,experimental setup,Experiments are performed using distributed computation across 4 NVIDIA RTX3090 GPUs.
+state-of-the-art in daod,comparison,The method compares with state-of-the-art DAOD methods.
+fcos/def detr/faster r-cnn,baseline comparison,Source-only baselines like FCOS/Def DETR/Faster R-CNN are included for comparison.
+adverse weather,performance drop,Object detectors' performance drops under adverse weather due to domain shift.
+domain adaptation,objective,Domain adaptation aims to bridge the gap between normal and adverse conditions.
+cityscapes → foggy cityscapes,benchmark,An experiment is conducted on the Cityscapes to Foggy Cityscapes benchmark.
+oracle upper bound,comparison,An oracle upper bound trained on only target domain with ground truth is also included.
+student-teacher framework,non-student-teacher frameworks,outperforms by a large margin
+ht,umt,tdd
+cat,cmt,improves upon by 2.1 mAP
+cat,previous state-of-the-art,achieves the new best mAP of 49.1
+mean average precision (.50 iou),map,used as evaluation metric
+pascal voc,clipart1k,domain adaptation from real to artistic domains
+real to artistic adaptation,challenging,describes the difficulty of the task
+base (at),cat,CAT is a significant improvement over the base framework (Adversarial Training)
+inter-class loss (icl),base at model,ICL improves performance by 2.3 mAP
+class relation augmentation (cra),base at model,CRA narrows the performance gap between minority and majority classes
+icl,cra,Both ICL and CRA enhance performance together
+performance gap,minority classes,CRA reduces the performance gap between minority and majority classes.
+cityscapes → foggy cityscapes benchmark,vgg16 backbone,Experiments for ablation study were conducted using this specific dataset and backbone.
+augmentation,dataset enrichment,Augmenting images enriches the dataset
+qualitative results,at (baseline),CAT improves upon AT by addressing misclassifications
+misclassification,false negatives,CAT resolves these issues in image recognition.
+false positives,false negatives,Both issues are addressed by CAT.
+misclassification,false negatives,Both misclassification and false negatives are types of errors in column 1
+misclassification,false positives,Misclassification and false positives are both in column 1
+box colour,true positives,Green represents true positives
+box colour,misclassified,Blue represents misclassification
+box colour,false negatives,Red represents false negatives
+box colour,false positives,Pink represents false positives
+excessive augmentation,model's accuracy,Excessive augmentation negatively affects the model's ability to learn accurate representations
+selective augmentation,model's performance,Selectively augmenting a subset of images helps maintain balance and improves model performance.
+class-relation augmentation (cra),mixup,CRA is compared to MixUp
+mixup,performance improvement,MixUp
+randomly selecting class instances,performance,Random selection for MixUp has a direct impact on overall performance.
+too much augmentation,negative effect,Overaugmentation has a detrimental effect on the model's performance.
+weighted classification loss,performance improvement,The weighted loss aims to enhance the model's performance by giving more importance to certain classes.
+weighted classification loss,performance of minority class,The weighted classification loss aims to enhance the performance specifically for underrepresented classes.
+class-level loss,strategy to address class imbalance,Class-level loss is a commonly used approach to tackle class imbalance in a dataset.
+inter-class loss (icl),variant of class-level losses,ICL compares to other class-level losses where only the diagonal of the Inter-Class Relation module is utilized.
+diagonal of inter-class relation module,ground-truth class likelihood,The diagonal represents the true class probability for correct classification.
+icl,predicted class likelihood,In ICL
+performance improvement,+0.5 map,Using ICL leads to a +0.5 mAP improvement compared to the variant.
+regularization term,addressing overly penalized well-performing classes,The regularization term helps prevent strong weighting of some classes
+class weight,training stability,Without regularization
+qualitative results,figure 3,Qualitative results are showcased in Figure 3
+at predictions,misclassifications,Top row in Figure 3 shows AT's predictions
+cat predictions,corrected misclassifications,Bottom row in Figure 3 demonstrates CAT's ability to correct these misclassifications.
+cat,reduction in errors,CAT also reduces both false positives and false negatives
+class-aware teacher (cat),domain adaptive object detection,CAT is proposed for Domain Adaptive Object Detection
+inter-class relation module,class-aware teacher (cat),The Inter-Class Relation module is a part of CAT
+class-relation augmentation,class-aware teacher (cat),Class-Relation Augmentation is a component of CAT that enhances minority class representation.
+inter-class loss,class-aware teacher (cat),Inter-Class Loss is another component of CAT that contributes to improved performance.
+equitable performance across classes,class-aware teacher (cat),CAT leads to more equitable performance
+cityscapes → foggy cityscapes,domain adaptation setting,Experimental settings include adapting from Cityscapes to Foggy Cityscapes
+pascal voc → clipart1k,domain adaptation setting,Another adaptation setting is from PASCAL VOC to Clipart1K
+52.5 map,sota performance,CAT achieves state-of-the-art (SOTA) performance with a score of 52.5 mAP.
+49.1 map,sota performance,CAT also achieves SOTA with 49.1 mAP on the PASCAL VOC → Clipart1K task.
+class imbalance,domain adaptive object detection,Further investigation into inter-class dynamics is relevant to addressing class imbalance in the DAOD context.

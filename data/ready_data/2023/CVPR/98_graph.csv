@@ -1,0 +1,264 @@
+node_1,node_2,edge
+masked autoencoders (mae),vision tasks,MAE has shown tremendous progress in developing vision tasks such as image and video
+masked autoencoders (mae),3d point clouds,Exploring MAE in large-scale 3D point clouds remains challenging due to the inherent irregularity
+masked autoencoders (mae),generative decoder for mae (gd-mae),The core idea is to apply a GD-MAE to automatically merge the surrounding context to restore the masked geometric knowledge
+3d mae frameworks,complex decoder,Previous 3D MAE frameworks either design a complex decoder to infer masked information from maintained regions
+3d mae frameworks,sophisticated masking strategies,3D MAE frameworks adopt sophisticated masking strategies
+generative decoder for mae (gd-mae),surrounding context,GD-MAE merges the surrounding context to restore the masked geometric knowledge
+mae,hierarchical fusion manner,MAE restores the masked geometric knowledge in a hierarchical fusion manner
+mae,flexibility,MAE's approach enjoys the flexibility of exploring various masking strategies
+mae,latency,The corresponding part costs less than 12% latency compared with conventional methods
+mae,performance,MAE achieves better performance compared to conventional methods
+mae,"benchmark datasets (waymo, kitti, once)","The proposed method is demonstrated on several large-scale benchmarks: Waymo, KITTI, and ONCE"
+mae,detection tasks,Consistent improvement on downstream detection tasks illustrates strong robustness and generalization capability
+mae,state-of-the-art results,MAE reveals state-of-the-art results in the study
+mae,labeled data,MAE achieves comparable accuracy even with 20% of the labeled data on the Waymo dataset
+mae-style pre-training,3d data,MAE-style pre-training methods rely on large amounts of carefully labeled 3D data for effective performance.
+mae-style pre-training,unlabeled data,"Fully supervised MAE-style pre-training hinders the use of massive unlabeled data, limiting its applicability in different scenes."
+mae-style pre-training,hierarchical representation,Learning hierarchical representation is significant for enabling MAE-style pre-training on the hierarchical structure in 3D supervised learning.
+mae-style pre-training,hierarchical structure,MAE-style pre-training is done on the hierarchical structure
+mae-style pre-training,convmae,ConvMAE adopts a block-wise masking strategy for MAE-style pre-training
+mae-style pre-training,point-m2ae,Point-M2AE proposes a hierarchical decoder for MAE-style pre-training
+convmae,block-wise masking strategy,ConvMAE adopts a block-wise masking strategy for pre-training
+point-m2ae,hierarchical decoder,Point-M2AE proposes a hierarchical decoder for pre-training
+multi-scale masking strategy,minimum size of masking granularity,The minimum size of masking granularity is highly correlated to the output tokens of the last stage for the multi-scale masking strategy
+gd-mae,pre-training,GD-MAE is presented as a simpler paradigm for pre-training
+gd-mae,generative decoder,GD-MAE uses a generative decoder to expand visible regions automatically
+multi-scale features,scale,multi-scale features are transformed into the same scale to enable flexible masking strategies
+multi-scale features,masking,multi-scale features enable flexible masking strategies
+masking,strategies,masking strategies are flexible
+sparse pyramid transformer,multi-scale encoder,SPT is proposed as the multi-scale encoder
+sparse pyramid transformer,pillars,SPT takes pillars as input
+pointpillars,traditional convolutions,PointPillars uses traditional convolutions for feature extraction
+sparse convolution,tokens,sparse convolution downsamples the tokens
+sparse transformer,receptive field,sparse transformer enlarges the receptive field of the visible tokens
+generative decoder,mae-style pre-training,GD simplifies MAE-style pre-training on multi-scale backbones
+generative decoder,transposed convolutions,GD consists of transposed convolutions used to upsample multi-scale features
+convolution,visible area,a convolution is utilized to expand the visible area
+features,coordinates,expanded features are indexed according to the coordinates of the masked tokens
+experiments,datasets,"extensive experiments have been conducted on Waymo Open Dataset, KITTI, and ONCE"
+waymo dataset,gd-mae,"on the Waymo dataset, GD-MAE sets new state-of-the-art detection results"
+mae framework,simpler framework,The simpler MAE framework introduced avoids complex decoders and simplifies pre-training.
+decoder,flexible masking strategies,The proposed decoder enables flexible masking strategies on LiDAR point clouds while costing less than 12% latency compared with conventional methods.
+decoder,proposed model,The proposed model uses a decoder that enables flexible masking strategies on LiDAR point clouds.
+object detection,large-scale lidar datasets,Several large-scale LiDAR datasets have been released for object detection.
+lidar datasets,object detection networks,Several large-scale LiDAR datasets have led to the proposal of many object detection networks.
+voxelnet,pointnet,VoxelNet leverages PointNet to generate a voxel-wise representation for object detection.
+second,voxelnet,SECOND exploits sparse 3D convolutions to accelerate VoxelNet.
+point2seq,3d object detection reformulation,Point2Seq reformulates the 3D object detection task as decoding words from 3D scenes in an auto-regressive manner.
+quantization errors,raw point clouds,"Due to the quantization errors of voxelization, some methods directly operate on raw point clouds for detection."
+methods,raw point clouds,methods directly operate on raw point clouds for detection
+3dssd,votenet,3DSSD extends VoteNet and proposes a hybrid sampling strategy by utilizing both feature and geometry distance for better classification performance
+approaches,3d sparse convolutions,a number of approaches take advantage of the efficiency of 3D sparse convolutions while preserving accurate point positions
+fsd,3d object detector,FSD builds a fully sparse 3D object detector to enable efficient long-range detection
+graph r-cnn,roi pooling,Graph R-CNN speeds up the RoI pooling in PointRCNN and introduces a graph-based refinement to achieve better performance
+transformer,computer vision tasks,Transformer has become a competitive feature learning module in many computer vision tasks
+point transformer,vector attention,Point Transformer employs vector attention to better extract local features
+point transformer v2,point transformer,Point Transformer V2 enhances Point Transformer and presents a more powerful and efficient model
+fast point transformer,self-attention layer,Fast Point Transformer proposes a lightweight self-attention layer and a voxel hashing-based architecture to boost computational efficiency
+stratified transformer,effective receptive field,Stratified Transformer enlarges the effective receptive field at a low computational cost by sampling nearby points densely and distant points sparsely in a stratified way
+object dgcnn,3d object detection,Object DGCNN models 3D object detection
+dgcnn,dynamic graph,DGCNN models 3D object detection as message passing on a dynamic graph
+occo,point clouds,OcCo occludes point clouds based on different viewpoints and learns to complete them
+pointcontrast,features,PointContrast contrasts point-level features from two transformed views to learn discriminative 3D representations
+depthcontrast,features,DepthContrast learns features by considering voxels and point clouds of the same 3D scene as data augmentations
+4dcontrast,4d signals,4DContrast leverages 4D signals in unsupervised pre-training to imbue 4D object priors into learned 3D representations
+mae,2d vision,"Inspired by the promising results achieved by MAE in 2D vision, some works extend it into point clouds"
+point-mae,point clouds,Point-MAE divides the point cloud into irregular point patches and aims to reconstruct the masked patches
+maskpoint,point clouds,MaskPoint represents the point cloud as discrete occupancy values and designs the decoder to discriminate masked real points and sampled fake points
+mae,outdoor point clouds,"Differently, we explore MAE in the challenging outdoor point clouds"
+sparse pyramid transformer,masked autoencoder,The designed sparse pyramid transformer and masked autoencoder are elaborated in Sec. 3.2
+sparse pyramid transformer,masked autoencoder,The designed sparse pyramid transformer and masked autoencoder are elaborated in Sec. 3.2.
+voxel-based detectors,pillar-based methods,"In contrast to conventional voxel-based detectors, pillar-based methods discretize the input point cloud with a grid"
+pillar-based methods,pillars,"In contrast to conventional voxel-based detectors, pillar-based methods discretize the input point cloud with a grid"
+pillar-based methods,dense 2d pseudo-image,"The points are assigned to pillars to generate a feature vector. Subsequently, the obtained pillar features are scattered back to their corresponding horizontal locations in the scene to form a dense 2D pseudo-image."
+pseudo-image,feature pyramid network,"The pseudo-image is then processed by a feature pyramid network, which extracts multi-scale features using convolution layers with strides of 1×, 2×, and 4×."
+swintransformer,sst,"Similar to SwinTransformer, SST divides the space into a list of non-overlapping windows with a fixed size. The self-attention is adopted among pillars within the same window."
+sst,small object detection,SST achieves impressive results for small object detection due to its single-stride property.
+3d objects,self-occlusion,"Due to the self-occlusion of 3D objects, most of the points are sparsely distributed over the surface of the objects."
+sparse points,spatial disconnection,Spatial disconnection of sparse points can be exacerbated when extensive masking is applied.
+pointpillars,convolution backbone,It will be challenging to use a traditional convolution backbone like PointPillars for visible points due to limited receptive fields.
+transformer-based pyramid structure,sst,"Inspired by SST, a transformer-based pyramid structure is introduced to achieve a large spatial scope."
+mae,2d images,"Inspired by the success of MAE in 2D images, a masked autoencoder is developed for self-supervised learning on LiDAR point clouds."
+multi-scale representations,lidar point clouds,The core idea is to use the encoder to create multi-scale representations from partial observations of the LiDAR point clouds.
+encoder parameters,detection task backbone,"After pre-training, the parameters of the encoder are used to warm up the backbone of the detection task."
+sparse pyramid transformer (spt),lidar point clouds,SPT is used to better capture features from sparse LiDAR point clouds
+spt,pointpillars,"Similar to PointPillars, SPT converts input points to a grid of 2D pillars"
+spt,pillar feature encoding (pfe) module,SPT utilizes the PFE module to encode pillar features from point clouds
+spt,pointnet,A stack of PointNet is used in SPT to aggregate features from points to get pillar-wise features
+spt,transformer encoder,SPT processes non-empty tokens through a transformer encoder with a constant resolution
+pillar feature encoding (pfe) module,pillars’ features f ∈ rm×c,PFE module processes point clouds to obtain features F represented by M×C matrix
+pillar feature encoding (pfe) module,pillars’ coordinates c ∈ rm×2,PFE module processes point clouds to obtain coordinates C represented by M×2 matrix
+pillars,features,"Pillars constitute the tokens, which are then processed by three stages."
+features,coordinates,The features and coordinates of the pillars constitute the tokens
+coordinates,tokens,The features and coordinates are used to construct tokens
+sparse convolution,downsampling,The tokens are first downsampled by a sparse convolution with a stride of 2
+sparse convolution,encoder,Sparse convolution is used to construct the transformer encoder
+regional attention,position,"Two sparse regional attention are applied to perform self-attention on tokens in the same region, accompanied by the positional embedding based on the positions of tokens in each region"
+region shift,receptive field,One region shift is employed to expand the receptive field of the tokens to capture useful contexts
+long-range contexts,local features,"The perceptual fields of tokens are broadened, and long-range contexts are aggregated, but local features are still important"
+tokens,local geometric details,Local features are important to obtain local geometric details for small objects
+local features,local geometric details,"Local features are important to obtain local geometric details, especially for small objects like pedestrians."
+shortcut,previous features,A shortcut is added to fuse previous features for adaptative fusion.
+submanifold convolution,adaptive fusion,Submanifold convolution (SubConv) is used to realize adaptive fusion.
+masking strategy,last stage of multi-scale encoder,Directly applying the original masking strategy to the last stage of the multi-scale encoder makes the pretext task too difficult for small objects.
+masking strategy,masking granularity,Different masking strategies with varied granularities are designed to make the training task from difficult to easy.
+block-wise masking,downsampled feature maps,Block-wise Masking masks a portion of non-empty tokens from downsampled feature maps and tries to recover them.
+multi-scale structure,masked regions,The multi-scale structure requires backtracing to make the masked regions consistent across scales and avoid information leakage from previous stages.
+upsample masking map,original scale,The masking map is upsampled to its original scale to determine if pixels are masked according to the input tokens' coordinates.
+tokens,masking,"Tokens are used to determine whether they are masked or not, and only the unmasked tokens are fed into the encoder."
+pedestrian,body,"In the case of a pedestrian, the whole body is masked out and needs to be recovered from the arms or elsewhere, making the task hard."
+patch-wise masking,block-wise masking,Patch-wise Masking adopts a smaller masking granularity than block-wise masking.
+patch-wise masking,upsampled tokens,"Patch-wise Masking masks some of the upsampled tokens, maintaining consistency in masking granularity."
+point-wise masking,input point clouds,Point-wise Masking directly masks out a number of the input point clouds and reconstructs the masked points inside tokens.
+point-wise decoder,masked points,"It is trivial to train a point-wise decoder to predict the coordinates of the masked points, as the positional encoding would leak the information."
+masking,mae (masked autoencoder),The masking map is used in the MAE architecture to unify multi-scale features.
+generative decoder,multi-scale feature map,The generative decoder takes as input the multi-scale feature map to unify the multi-scale features to a specific scale and recover the features of masked tokens
+generative decoder,masking map,The generative decoder takes as input the masking map to unify the multi-scale features to a specific scale and recover the features of masked tokens
+generative decoder,recovered tokens,"Finally, the recovered tokens are used for geometric reconstruction by the Generative Decoder"
+masking gran-,visibility tokens,"GD takes as input the visible tokens E1, E2, and E3 from the multi-scale encoder to capture high-level semantic features and low-level geometric features"
+masking gran-,granularity,"GD takes as input the visible tokens E1, E2, and E3 from the multi-scale encoder to capture features at the granularity of the masking strategy"
+masking gran-,reconstruction,"To enable varying masking granularity and unleash multi-scale representations for downstream tasks, the Generative Decoder is used for reconstruction"
+tokens,dense 2d feature map,"Specifically, we first transform sparse tokens into a dense 2D feature map by scattering back tokens' features according to their coordinates"
+tokens,convolutions,Performing a series of standard convolutions with the scattered tokens' features
+"[·,·]",concatenation function,"The concatenation function [·,·] is used in the context for combining two elements together."
+f,convolution or the transposed convolution,"In the context, F is determined by the scale and is related to either convolution or the transposed convolution."
+f,scale,"The scale determines F, which is the convolution or the transposed convolution."
+s,sparse features,S is used to scatter back the sparse features in the context.
+conv,convolution,Conv is a convolution with a kernel size of 3 for multi-scale feature fusion and area expansion.
+features emask,feature vector,Emask represents the features obtained by indexing the feature vector on D in the context.
+transformer decoder,generative decoder,The context illustrates the transformer decoder and the proposed generative decoder.
+visible area,last convolution,The visible area in the context is not expanded by setting the kernel size of the last convolution to 1.
+visible tokens,masked tokens,The transformer decoder in the context accepts visible tokens and masked tokens with shared learnable embeddings.
+tokens,learnable embeddings,Tokens in the context are associated with learnable embeddings in the transformer decoder.
+transformer blocks,features of masked tokens emask,Several flat transformer blocks are applied to recover the features of masked tokens Emask in the context.
+[9],flat transformer blocks,The context mentions flat transformer blocks which are referred to as [9].
+reconstruction target,masked token,The target in the context is to recover the point cloud that falls within the corresponding masked token.
+tokens,number of points,Different tokens in the context contain a varying number of points.
+pmask,point cloud,"In the context, Pmask represents the point cloud obtained by normalizing it to obtain local coordinates relative to the tokens."
+pmask,t,"Pmask is related to T, where T represents the number of masked tokens."
+masked tokens,local coordinates,"The masked tokens are transformed into local coordinates relative to them, with the number of masked tokens taken into account."
+features,masked tokens,The features of masked tokens are given by Emask ∈ RT×d. They are then projected and reshaped using a linear function.
+features,projected features,The features of masked tokens are projected using a linear function to obtain projected features.
+features,reshape operation,The features of masked tokens undergo a reshape operation after being projected using a linear function.
+transformer decoder,baseline,The transformer decoder is compared with a baseline in the pipeline design.
+features,multi-scale features,The features are utilized along with multi-scale features in the pipeline for a fair comparison.
+reconstruction loss,chamfer distance,The reconstruction loss is computed by the l2 Chamfer Distance.
+pd-mae,top-performed results,"PD-MAE results achieved are highlighted in bold, while the top-performed results are underlined."
+point2seq,afdetv2,Point2Seq is related to AFDetV2.
+point2seq,centerformer,Point2Seq is related to CenterFormer.
+point2seq,pillarnet-34,Point2Seq is related to PillarNet-34.
+point2seq,pillar-od,Point2Seq is related to Pillar-OD.
+point2seq,pointpillars,Point2Seq is related to PointPillars.
+afdetv2,centerformer,AFDetV2 is related to CenterFormer.
+afdetv2,pillarnet-34,AFDetV2 is related to PillarNet-34.
+afdetv2,pillar-od,AFDetV2 is related to Pillar-OD.
+afdetv2,pointpillars,AFDetV2 is related to PointPillars.
+centerformer,pillarnet-34,CenterFormer is related to PillarNet-34.
+centerformer,pillar-od,CenterFormer is related to Pillar-OD.
+centerformer,pointpillars,CenterFormer is related to PointPillars.
+pillarnet-34,pillar-od,PillarNet-34 is related to Pillar-OD.
+pillarnet-34,pointpillars,PillarNet-34 is related to PointPillars.
+pillar-od,pointpillars,Pillar-OD is related to PointPillars.
+pillar-od,voxset,Pillar-OD is related to VoxSeT.
+centerpoint-pillar,voxset,CenterPoint-Pillar is related to VoxSeT.
+performance comparisons,waymo leaderboard,The 'Performance comparisons' are analyzed on the 'Waymo leaderboard'.
+pedestrian 3d ap,aph,Relationship between 'Pedestrian 3D AP' and 'APH'.
+vehicle 3d ap,aph,Relationship between 'Vehicle 3D AP' and 'APH'.
+map,maphl2,Relationship between 'mAP' and 'mAPHL2'.
+l2,l1,Relationship between 'L2' and 'L1'.
+centerpoint,pv-rcnn,Comparison between 'CenterPoint' and 'PV-RCNN'.
+centerpoint,pv-rcnn,"CenterPoint is a method for 3D object detection, whereas PV-RCNN is another method for the same purpose."
+centerpoint,pv-rcnn++,"CenterPoint is a method for 3D object detection, whereas PV-RCNN++ is an enhanced version of PV-RCNN."
+centerpoint,graph r-cnn,"CenterPoint is a method for 3D object detection, whereas Graph R-CNN is another method in the same domain."
+centerpoint,gd-mae,"CenterPoint is a method for 3D object detection, whereas GD-MAE is the method developed by the authors."
+pv-rcnn,pv-rcnn++,"PV-RCNN is a method for 3D object detection, and PV-RCNN++ is an improved version of PV-RCNN."
+pv-rcnn,graph r-cnn,"PV-RCNN is a method for 3D object detection, while Graph R-CNN is another method in the same field."
+pv-rcnn,gd-mae,"PV-RCNN is a method for 3D object detection, while GD-MAE is the method developed by the authors."
+pv-rcnn++,graph r-cnn,"PV-RCNN++ is an enhanced version of PV-RCNN, and Graph R-CNN is another method in the 3D object detection domain."
+pv-rcnn++,gd-mae,"PV-RCNN++ is an enhanced version of PV-RCNN, and GD-MAE is the method developed by the authors."
+graph r-cnn,gd-mae,"Graph R-CNN is a method for 3D object detection, and GD-MAE is the method developed by the authors."
+waymo open dataset,kitti,Waymo Open Dataset and KITTI are datasets used for training and testing in the field of 3D object detection.
+waymo open dataset,once,"Waymo Open Dataset is a dataset with LiDAR point clouds for autonomous driving, and ONCE is another dataset containing point clouds."
+kitti,once,"KITTI is a dataset with LiDAR frames for training and testing, while ONCE contains point clouds for training, validation, and testing."
+point clouds,pre-training,"point clouds are kept unannotated, which are adopted by us for the pre-training"
+official evaluation metric,mean average precision (map),The official evaluation metric is mean Average Precision (mAP)
+detection results,"0-30m, 30-50m, and 50m-inf","and the detection results are divided into 0-30m, 30-50m, and 50m-Inf"
+implementation details,open-pcdet1,Our implementation is based on the codebase of Open-PCDet1.
+waymo dataset,detection ranges,"For the Waymo dataset, the detection ranges are set as (−74.88, 74.88), (−74.88, 74.88), and (−2, 4)"
+kitti dataset,detection ranges,"For the KITTI dataset, the detection ranges are (0, 69.12), (−39.68, 39.68), and (−3, 1)"
+once dataset,detection ranges,"For the ONCE dataset, the detection ranges are (−74.88, 74.88), (−74.88, 74.88), and (−5, 3)"
+pillar feature encoding module,mlps,"The pillar feature encoding module has two layers of MLPs with channel size of [64, 128]"
+3d backbone,transformer encoders,"The 3D backbone consists of three stages, each of which has two transformer encoders"
+performance comparisons,once validation split,Performance comparisons on the ONCE validation split
+pre-trained,map,Pre-trained mAP
+pyramidshortcut,gd-maevehicle,PyramidShortcut GD-MAEVehicle
+cyclist,pedestrian,"Both Cyclist and Pedestrian are entities that are analyzed in ablation studies. The metrics such as 66.68/65.24 and 57.25 are associated with Cyclist, while 53.58 is associated with Pedestrian."
+table 4,ablation study,Table 4 is related to Ablation study as it presents the results of ablation study on the Waymo validation set.
+table 5,transformer encoders,Table 5 is related to Transformer encoders as it presents an ablation study of the number of transformer encoders using 5% data for training.
+adamw optimizer,one-cycle policy,The AdamW optimizer is used with the one-cycle policy in training the model for 30 epochs with a max learning rate of 3e−3.
+center-based head,target assignment strategy,The model adopts a center-based head along with a target assignment strategy in the training process.
+detection head,centerpoint,Detection head is adopted similar to CenterPoint [71] in OpenPCDet.
+gd-mae,centerformer,"GD-MAE achieves new state-of-the-art results, higher than CenterFormer [81]."
+gd-mae,sst,GD-MAE improves the 3D APH at level 2 for vehicle and pedestrian compared to SST [9].
+gd-mae,masked autoencoder,Ablation study shows the performance improvement with GD-MAE and masked autoencoder.
+gd-mae,refinement network,"Equipped with a refinement network, GD-MAE surpasses all previously published methods."
+gd-mae,pv-rcnn++,GD-MAE outperforms PV-RCNN++ by 0.98 mAPH/L2.
+gd-mae,waymo leaderboard,GD-MAE achieves impressive results on the Waymo leaderboard.
+gd-mae,once validation split,Performance of GD-MAE is evaluated on the ONCE validation split in Table 3.
+gd-mae,centerpoint-pillar,"GD-MAE achieves an overall mAP of 64.92, which is 5.85 higher than CenterPoint-Pillar."
+gd-mae,centerpoint-voxel,"GD-MAE achieves an overall mAP of 64.92, which is 4.87 higher than CenterPoint-Voxel."
+sparse pyramid transformer,ablation study,Sparse Pyramid Transformer is used in the Ablation Study to conduct experiments.
+vehicles,sparse pyramid transformer,Vehicles benefit from Sparse Pyramid Transformer due to their larger size requiring a broader receptive field.
+local geometric features,sparse pyramid transformer,Local geometric features are important and can be improved with Sparse Pyramid Transformer.
+multi-scale structure,sparse pyramid transformer,Multi-scale structure is necessary and is utilized in Sparse Pyramid Transformer.
+gd-mae,cnn,Using GD-MAE with CNN results in an improvement in accuracy.
+gd-mae,spcnn,Using GD-MAE with SpCNN results in an improvement in accuracy.
+gd-mae,transformer,Using GD-MAE with Transformer results in an improvement in accuracy.
+ablation study,different masking granularities,Ablation study of different masking granularities is conducted using 5% labeled data for fine-tuning.
+masked autoencoder,pre-training and fine-tuning,"Masked Autoencoder with 20% of the data used for pre-training and fine-tuning provides improvements for vehicle, pedestrian, and cyclist."
+mae,unlabeled data for pre-training,Using 100% of the unlabeled data for pre-training can further improve the performance of MAE.
+pre-training,data efficiency,"Pre-training impacts data efficiency as shown in Table 6, where performance can be improved by using different proportions of annotated data."
+mae,accuracy,MAE significantly improves accuracy with only 5% of annotated data available by 3.89 mAPH.
+mae,once and kitti datasets,"The impact of MAE is verified on the ONCE and KITTI datasets, showing consistent boosts in accuracy."
+gd-mae,multi-scale encoders,"GD-MAE effect is verified on different multi-scale encoders such as convolution (CNN) and sparse convolution (SpCNN), consistently improving accuracy."
+gd-mae,proposed transformer encoder,"GD-MAE consistently improves the accuracy of different multi-scale encoders, with the highest gain observed for the proposed transformer encoder, suggesting the suitability of the simple decoder for the transformer-based encoder."
+masking granularity,lidar point clouds,"Effect of different masking granularities on LiDAR point clouds is studied, with different masking granularity levels leading to varying levels of difficulty in the pretext task of fusing hierarchical features."
+masking granularity,performance improvement,"Using finer masking granularity can ease the task and consistently improve performance, especially for pedestrians."
+block-wise masking,vehicle and pedestrian,"Pre-training with block-wise masking brings gains in APH/L2 for both vehicle and pedestrian, with performance consistently improved, particularly for the pedestrian category."
+wise masking strategy,improvement,wise masking strategy brings less improvement than other methods
+wise masking strategy,efficient features,task is too difficult to learn effective features from sparse LiDAR point clouds
+task,difficult,task is too difficult to learn effective features from sparse LiDAR point clouds
+task,sparse lidar point clouds,task is too difficult to learn effective features from sparse LiDAR point clouds
+task,efficient feature learning,overly simple task is also suboptimal for efficient feature learning
+appropriate difficulty level,patch-wise masking,"appropriate difficulty level, i.e., patch-wise masking, yields the best result"
+task,effective feature learning,overly simple task is also suboptimal for efficient feature learning
+task,patch-wise masking,"appropriate difficulty level, i.e., patch-wise masking, yields the best result"
+decoders,pedestrians,performance is better with two decoders for pedestrians
+number of decoders,performance,performance is sensitive to the number of decoders
+number of decoders,results,results are adversely affected if the number of decoders is increased or decreased
+generative decoder,best results,generative decoder achieves the best results for both pedestrians and vehicles with only a convolution
+framework,performance gains,framework could not only simplify MAE-style pre-training but also bring performance gains
+proposed decoder,runtime,proposed decoder reduces runtime to about 0.12× compared to the transformer decoder
+paper,gd-mae,"in this paper, we present a much simpler paradigm dubbed GD-MAE for LiDAR point cloud pre-training"
+sparse pyramid transformer,multi-scale encoder,sparse Pyramid Transformer is proposed as the multi-scale encoder
+visible tokens,spatial scope,Sparse Pyramid Transformer aims to increase the spatial scope of the visible tokens
+generative decoder,pre-training,introduce a Generative Decoder to simplify pre-training on hierarchical structures
+generative decoder,masking strategies,Generative Decoder enables fine-grained masking strategies for better pre-training
+pre-training,hierarchical structures,"The pre-training mentioned in the context is designed to simplify pre-training specifically on hierarchical structures, which indicates a relationship between these two concepts."
+pre-training,fine-grained masking strategies,"Additionally, the pre-training mentioned is aimed at enabling fine-grained masking strategies for better feature learning, showcasing a connection between pre-training and fine-grained masking strategies."
+waymo,kitti,"Experiments mentioned in the context are conducted on both Waymo and KITTI, which demonstrates a direct relationship between these two entities."
+waymo,once,"Furthermore, the context states that experiments are conducted on Waymo and ONCE, indicating a correlation between Waymo and ONCE in the context of experiments."
+kitti,once,"The experiments conducted in the context also involve both KITTI and ONCE, emphasizing a connection between these two entities."
+national nature science foundation of china,innovation capability support program of shaanxi,"It is mentioned in the context that this work was supported in part by The National Nature Science Foundation of China and in part by the Innovation Capability Support Program of Shaanxi, indicating a supportive relationship between these two organizations."
+national nature science foundation of china,key r&d program of zhejiang province,"Moreover, the work was also supported in part by The National Nature Science Foundation of China and in part by the Key R&D Program of Zhejiang Province, showcasing a collaboration between these entities."
+national nature science foundation of china,s&t plan of zhejiang province,"Additionally, the support for this work came in part from The National Nature Science Foundation of China and in part from the S&T Plan of Zhejiang Province, indicating a shared involvement in the project."
+national nature science foundation of china,national key r&d program of china,"The National Nature Science Foundation of China also provided support for this work in part along with the National Key R&D Program of China, highlighting a collaborative relationship between these entities."
+national nature science foundation of china,shanghai committee of science and technology,"The work was supported by The National Nature Science Foundation of China and the Shanghai Committee of Science and Technology, showing a joint contribution to the project."
+innovation capability support program of shaanxi,key r&d program of zhejiang province,"Moreover, the Innovation Capability Support Program of Shaanxi and the Key R&D Program of Zhejiang Province both provided support for the work, indicating a partnership between the two programs."
+key r&d program of zhejiang province,s&t plan of zhejiang province,"The Key R&D Program of Zhejiang Province and the S&T Plan of Zhejiang Province are both mentioned as sources of support for the work, signifying a connection between these two programs."
+key r&d program of zhejiang province,national key r&d program of china,"Additionally, the work received support from the Key R&D Program of Zhejiang Province as well as the National Key R&D Program of China, indicating a collaborative effort between these programs."
+key r&d program of zhejiang province,shanghai committee of science and technology,"The Key R&D Program of Zhejiang Province and the Shanghai Committee of Science and Technology were both involved in supporting the work, showing a connection between these two entities."
+s&t plan of zhejiang province,national key r&d program of china,"Furthermore, the project received support from both the S&T Plan of Zhejiang Province and the National Key R&D Program of China, indicating a collaborative relationship between these programs."
+s&t plan of zhejiang province,shanghai committee of science and technology,"The S&T Plan of Zhejiang Province and the Shanghai Committee of Science and Technology played a part in supporting the work, highlighting a relationship between these entities."
+national key r&d program of china,shanghai committee of science and technology,"Finally, the National Key R&D Program of China and the Shanghai Committee of Science and Technology provided support for the work, showcasing a collaboration between these entities."

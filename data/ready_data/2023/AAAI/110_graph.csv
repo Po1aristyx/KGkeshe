@@ -1,0 +1,180 @@
+node_1,node_2,edge
+surrogate reward function,agent's reward function,The surrogate reward function is used to reshape the agent's reward function.
+explorable policy,agent's behavior,Searching for an explicable policy is equivalent to shaping the agent's reward function.
+eps (method),explicable behaviors,Our method EPS generates explicable behaviors that balance task performance and human expectations.
+human expectations,task performance,Collaboration depends on meeting human expectations; optimal agent behavior should align with them.
+drone navigation scenario,autonomous driving domain,An example domain where EPS is evaluated is drone navigation
+human observer,trust,Loss of trust occurs when the agent's behavior is unexpected to the human collaborator.
+drone,human inhabited environment,Drones are expected to operate in environments shared with humans.
+curved pathway,optimal behavior,The curved pathway is more optimal because it involves fewer sharp turns
+expected behavior,human observer's perception,The straight path is perceived as more expected by humans due to its resemblance to typical behavior.
+explicable behavior,agent's optimal behavior,Explicable behavior goes beyond just being optimal; it also considers human expectations.
+explicable behavior,human's expected behavior,The problem setting of explicable policy search aims to reconcile the agent's behavior with human expectations.
+model reconciliation problem,eps (explicable policy search),Explicable policy search is a type of model reconciliation problem where the agent's behavior aligns with human expectations.
+agent,human's expectation,Our method considers human feedback based on their expectations to improve the agent's behavior.
+autonomous vehicle,owner's feedback,An autonomous vehicle can learn from its owner's feedback while adhering to standardized requirements.
+autonomous vehicle,safety,comfort
+human's expectation,domain dynamics,The challenge lies in the fact that the human's expectation is hidden and must be learned
+human's belief about domain dynamics (t h a),reward model (rh),A straightforward solution involves learning both T H A and rH from human feedback
+surrogate reward function,human's belief about domain dynamics (t h a),reward model (rh)
+eps (explainable policy search),policy search process,The modified learning objective of EPS incorporates the surrogate reward function into the policy search process.
+maximum entropy reinforcement learning,eps (explainable policy search),Though similar in some aspects
+evaluation,navigation domains,We design navigation domains for evaluating our method
+navigation domains,human's feedback,Human feedback is synthetic and generated based on the agent's expected behavior in modified domain dynamics.
+baselines,traditional rl methods,Three baselines are compared to illustrate the key advantages of EPS under model differences.
+human study,autonomous driving domain,A human study is conducted in the autonomous driving domain to demonstrate real-world relevance.
+autonomous driving domain,existing human biases,Designs driving scenarios to reveal and address human biases about the vehicle's behavior.
+driving scenarios,human biases,The context discusses designing scenarios to reveal human biases about the vehicle's domain dynamics
+our method,explicable behaviors,The method generates safe and preferred behaviors compared to baselines
+explicable policy search (eps),stochastic domains,EPS extends explicable planning to handle reinforcement learning in continuous state and action spaces
+surrogate reward function,human feedback data,The paper proposes using a learned reward function based on human input to support explicable policy search.
+communicative actions,explainable ai,This work falls under the broader area of explainable AI
+explainable behavior generation,interpretable behavior generation,The difference lies in the former being implicit and human-friendly interpretation versus the latter's emphasis on explicit rationales under interpretable models.
+deterministic domains,stochastic domains,The context contrasts classical planning in deterministic domains with the challenge of extending problem formulation to handle stochastic domains with continuous state and action spaces.
+explicable planning,legible motion planning,Legible motion planning is mentioned as a problem setting where multiple candidate goals are considered
+human's reward model,agent's reward model,The context assumes that the user's reward model may differ from the agent's
+inverse reinforcement learning (irl),reward learning,Both IRL and reward learning are mentioned as approaches to learn the reward model from human data
+human's belief about domain dynamics,inaccurate belief about domain dynamics,An inaccurate belief can lead to skewed human feedback and incorrect preference learning in IRL and related methods.
+policy learning,human feedback,Policy learning methods
+human's belief about domain dynamics,non-convergence during learning,The inaccurate belief can lead to non-convergence.
+human's belief about domain dynamics,high variances in learned behaviors,An inaccurate belief can result in high variances.
+human's belief and reward model,jointly learned,Belief and reward model are tightly coupled and need to be learned together.
+joint learning,challenging,Due to its high dimensionality
+infogail,latent code,InfoGAIL uses latent code to discover salient semantic features.
+infogail's aim,discovery,InfoGAIL focuses on discovering differences
+our problem,off-dynamics learning,Our problem can be seen as off-dynamics learning for transfer learning.
+eps,hidden target domain,The target domain is hidden within the human's mind in EPS.
+task domain,markov decision process (mdp),Tasks are formulated as MDPs
+markov decision process (mdp),agent's model (ma),The context describes an MDP represented by a tuple (S
+mdp,human's model of expectation (mh),Both MDPs share the same components except for the dynamics and reward functions
+agent's model (ma),engineered reward function (ra),MA has the true domain dynamics TA and the engineered reward function rA
+human's model of expectation (mh),human's reward function (rh),MH has the human's reward function rH
+explicable policy search (eps),policy,EPS is the problem of finding a policy that maximizes both cumulative reward and policy explicability
+policy,expected policy under human's model (πh),The policy π is compared to the human's expected policy πH in the objective function.
+policy explicability score,reconciliation factor (λ),The policy explicability score is combined with the cumulative reward via the reconciliation factor λ
+observable state and action,human's expectation,The agent's trajectory distribution is compared to the human's expectation when both state and action are observable.
+explicable policy search (eps),agent's policy (parameterized by θ),EPS aims to optimize the agent's policy such that it aligns with the human's expectation and avoids parts of the state space where differences occur.
+probability distribution of the agent's trajectory (pa(τ)),human's trajectory distribution (ph(τ)),Both objectives in Eq. (2) are based on expectations over the same trajectory distribution
+policy explicability score (eq. 2),kl divergence (dkl),The policy explicability is measured as the Kullback-Leibler divergence between the agent's and human's trajectory distributions.
+state space,differences in domain dynamics models,The agent has an incentive to avoid state spaces where its policy deviates from the human's expectation or where the model predictions differ.
+initial state distribution (ρ(s0)),first action (at),The probability of a trajectory starts with the initial state distribution and is followed by the first action.
+policy explicability score,optimization problem,The main challenge is related to solving the optimization problem
+eq. (2),surrogate reward function,The optimization problem in Eq. (2) is merged into a new formulation using a surrogate reward function to address the unknown human policy and belief.
+eq. (4),engineered reward function,In Eq. (4)
+human's belief,domain dynamics t_h,The human's belief about the domain dynamics is unknown and needs to be learned
+human's policy πh,agent's policy πθ,Both the human's policy and the agent's policy need to be estimated
+surrogate reward function uh,human's expectation of trajectories,uH is designed to capture the necessary information about the human's belief and expected policy
+preference-based formulation,reward function uh,A preference-based approach is used to learn the surrogate reward function uH that explains the human's desired trajectory distribution.
+trajectory length,length of 1,Length of 1 is considered a special case of varying trajectory lengths.
+trajectory distribution,human's feedback data,The reward function is learned to match the human's feedback data
+surrogate reward function,information from t_h,The information needed from T_H for optimizing Eq. (2) can be replaced with the learned surrogate reward function uH.
+optimizing eq. (2),non-identifiability issue,To avoid non-identifiability
+discounted surrogate reward function,entropy terms,Eq. (6) approximates Eq. (2) by applying discounting to the surrogate reward function and entropy terms
+surrogate reward function,entropy terms,The objective function consists of two parts: the first two terms involve maximizing rewards from the engineered reward and the surrogate reward learned from human feedback
+engineered reward,surrogate reward,Both are components of the agent's reward function
+agent,rewards,The agent is required to maximize rewards from both the engineered and surrogate reward functions.
+ra(st,at),λuh (st
+policy entropy,robustness,Maximizing policy entropy in EPS increases the agent's stochasticity
+environment entropy,environmental stochasticity,Maximizing environment entropy encourages the agent to prefer states with higher uncertainty.
+environment entropy,policy explicability score,The first entropy term in EPS reduces the impact on the policy's explainability.
+explicable policy search (eps),stochasticity,A distinguishing aspect of EPS is its focus on encouraging stochasticity in the agent's behavior for explainability purposes.
+environment entropy,policy explicability score,The context suggests that the goal is to reduce the impact of environmental entropy on the policy's explainability score.
+agent's policy,expected policy,These two concepts are contrasted; at stochastic parts of the environment
+stochastic parts of the environment,action choices,In these parts
+human's expectation,trajectory,Humans provide feedback on which segment of the agent's trajectory they find more expected.
+expectation-based preferences,uh (state-action utility),uH is learned using a preference-based framework
+cross entropy,feedback data,The learning process minimizes the difference between predicted and actual human preference feedback
+uncertainty-based sampling,active learning,Humans provide feedback in an active learning setting
+ta (transition dynamics),gaussian distribution,TA is modeled as a Gaussian distribution
+agent,environment,The agent interacts with the environment to collect data for learning the transition dynamics (TA).
+environment,agent,The agent interacts with the environment.
+transition data,learning,The agent collects transition data for learning.
+soft actor critic (sac),policy learning,We use SAC for policy learning; other methods are also applicable.
+expectation preferences,prediction,Non-stationary prediction of expectation preferences during learning.
+data samples,relabeling,Data samples are relabeled every time uH is updated.
+episodic preference search (eps),algorithm,The algorithm for Episodic Preference Search is described in the appendix.
+continuous navigation domains,synthetic human models,Experiments conducted on domains with synthetic human models.
+autonomous driving domain,human subject study,A human subject study is performed in the simulated autonomous driving domain.
+irb approval,user study,The human subject study is IRB-approved
+task performance,human's expectation,The user study aims to reconcile task performance with human expectations.
+domain 1 (d1),domain 2 (d2),Both domains share the same human belief that the agent is more likely to fall into the pit when close
+domain 3 (d3),domain 4 (d4),Domains D3 and D4 have contrasting dynamics: the human believes the agent is good on ice but can slip on sand
+domain 1 (d1) and domain 2 (d2),domain 3 (d3) and domain 4 (d4),These four domains differ in human beliefs about the agent's capabilities
+human inaccurate beliefs,domain dynamics,The human's beliefs about the agent's behavior in each domain are based on incorrect assumptions about the environment.
+soft actor critic (sac),deep rl from human preferences (drlhp),Baselines for comparison
+policy shaping (ps),soft actor critic (sac),Also a baseline
+human expectations,rl methods,Our method contrasts with traditional RL approaches by accounting for human preferences in learning the agent's policy.
+preference-based learning methods,domains with sparse or delayed rewards,Difficulty in dealing with / challenge for credit assignment
+deep reinforcement learning with human preferences (drlhp),poor performance,Performed poorly on all the domains
+expected policy search (eps),surrogate reward function,Uses a preference-based learning method to learn
+policy search,human's expectation,Guided by the learned surrogate reward function
+ground truth,modelled as more stochastic,Contrast between ground truth and EPS' stochastic nature
+preference-based learning,credit assignment,Challenging task in domains with sparse or delayed rewards
+baselines,performance comparison,EPS compared to other baselines in terms of return and explicability score
+domain d3,conflict between human expectations and task priorities,Task failure due to the conflict
+sampled trajectories,visual representation,Used to illustrate performance and expectations
+averaged return and explicability score,metrics for comparison,Used to evaluate performance in Table 1
+ps (preference selection),performance in d3,Performed well overall but worse in D3
+eps (expected policy search),uncertainty in learned function,Large variations in policy due to uncertain surrogate reward
+human's expectation,synthetic human model,The synthetic human model is used to compute the human's expectation in the context.
+eps agent,sac agent,EPS agent takes a detour compared to SAC agent
+pit,detour,EPS agent takes a detour to bypass the pit
+sandy road,difficulty in navigation,In D3
+top path,efficient,The top path is considered more efficient in D4.
+eps agent,human's expectation,In D3
+policy shaping agent,success / failure,Policy shaping agent is successful in D4 but fails in D3 due to uninformative results from combining policies.
+λ,uninformative policy,Multiplying policies can lead to an uninformative policy
+p1,p2,resulting policy
+task performance,lower,Conformity to human expectations sometimes leads to lower task performance for the EPS agent.
+explicability,higher,EPS agent chooses to be more explicable in D4 by respecting human expectations.
+poor behaviors,eps,EPS can generate effective behaviors that reconcile human expectation and task priorities
+intelligent reconciliation,human's expectation,EPS generates novel behaviors to reconcile human expectation and task priorities.
+intelligent reconciliation,task priorities,EPS ensures the generated behaviors adhere to task priorities.
+autonomous driving domain,simulated environment,The autonomous driving domain is a simulated environment used for evaluation.
+state space,position,velocity
+action space,discrete actions,Action space consists of five discrete actions for the autonomous driving agent.
+ego-vehicle,front car,The ego-vehicle is behind a front car (blue) initially.
+availability bias,cognitive bias,Availability bias is a type of cognitive bias humans exhibit
+availability bias,memory,Humans tend to overestimate event likelihood based on their memory.
+driving conditions,familiar,Biases can occur due to regularly driving under familiar conditions.
+driving conditions,sleety,Sleety conditions introduce different dynamics
+regular driving condition,sleety condition,The context describes a difference between these two conditions
+stochastic dynamics,slippery roads,Slippery roads cause the vehicle's dynamics to become more unpredictable or random.
+availability bias,human decision-making,Humans tend to make similar decisions under the 'similar' regular and sleety conditions
+training phase,testing phase,The user study has two distinct phases: first for training participants and then for collecting their data.
+importance ratings,5-point likert scale,Participants provided ratings for factors affecting autonomous driving on a scale of 1 to 5.
+average speed,distance to the front car,Both are factors rated by participants
+engineered reward model (ra),participants' responses,Responses from the training phase were used to create the reward model
+vehicle's braking behavior,different effectiveness,Segments showcasing varying braking effectiveness were chosen to evaluate participants' expectations.
+human data,validation,The collected human data was used to validate the availability biases in the experiment.
+trajectory segments,comparison,Pairs of trajectory segments were actively selected for participants to compare.
+collected data,training method,The collected data was used to train the proposed method and baseline models.
+learned policy,testing phase,Rollouts of the learned policy were shown to new participants for evaluation in the testing phase.
+amazon mechanical turk (mturk),data collection platform,Experiments were conducted on Amazon Mechanical Turk for recruiting participants.
+sanity check demonstration,invalid response filtering,A sanity check was included to filter out invalid responses
+ego-vehicle,availability bias,Participants' responses revealed an availability bias where they believed the ego-vehicle would slow down on a sleety day.
+ego-vehicle,steering,During training
+eps,sac,and drlhp agents
+explicable policy search,model differences between learning agent and human observer,The problem addressed in the paper focuses on addressing the issue where the agent must consider the difference in understanding between itself and its human observer.
+problem formulation,explicable policy search,The paper formulates a new problem within the context of explicable policy search
+surrogate reward function,efficient solution,The paper develops an efficient solution by introducing a surrogate reward function to make the policy search more explainable.
+stochastic environments,rl setting,The study is conducted in the realm of reinforcement learning (RL)
+continuous state and action spaces,rl setting,The method is designed for RL scenarios where states and actions are continuous.
+evaluations,simulations and human subjects,The paper's approach is tested through simulations and involves human subject experiments for validation.
+bias in belief,vehicle's dynamics,The study discusses how participants had a biased belief about the vehicle's performance in different conditions.
+safety,agent's chosen behavior,The agent prioritizes both explainability and safety in its decision-making.
+sac agent,slippery roads,The SAC (Soft Actor-Critic) agent is tested on slippery road conditions.
+human subjects,evaluations,Human subjects were involved in the evaluation process to assess the agent's performance.
+shapiro-wilk test,normality assumption,The test checks if the data follows a normal distribution for one-way ANOVA.
+levene's test,homoscedasticity assumption,This test ensures the equality of variances across groups for the one-way ANOVA.
+one-way anova,statistical test,A statistical test used to analyze the significance among multiple groups.
+human subjects,evaluated situations,The context discusses the evaluation of an approach using human subjects as part of its assessment.
+model differences,our approach,Our approach is said to better handle situations under model differences compared to baselines.
+human's objective,human's belief about domain dynamics,The work assumes the human forms expectations based on their objective and belief about the domain.
+softmax preference model,human's assumption,This refers to the specific type of preference model assumed for the human
+inaccurate belief,domain dynamics,The limitations mention that the human's belief about the domain dynamics may be inaccurate.
+information asymmetries,discrepancies,Information asymmetries can lead to dynamic changes in the human's belief
+future work,complex reconciliation,Potential directions for future work include more complex reconciliation of the expected return and policy explicability.
+future work,weighted policy explicability scores,Another direction for future work involves incorporating weighted policy explicability to address varying situations.
+nasa grant nnx17ad06g,afosr grant fa9550-18-1-0067,The context mentions that these two grants are related as they are both funding sources for the research
+authors,anonymous reviewers,The authors express gratitude towards the anonymous reviewers for their comments and suggestions

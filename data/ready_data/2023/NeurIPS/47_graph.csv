@@ -1,0 +1,198 @@
+node_1,node_2,edge
+language models,tasks,"Language models exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale."
+language models,arithmetic,"Language models paradoxically struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller specialized models excel."
+language models,apis,We show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds.
+toolformer,apis,"We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction."
+toolformer,self-supervised learning,"This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API."
+toolformer,tools,"We incorporate a range of tools, including a calculator, a Q&A system, a search engine, a translation system, and a calendar."
+toolformer,performance,"Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities."
+language models,natural language processing tasks,Large language models achieve impressive zero and few-shot results on a variety of natural language processing tasks.
+access up-to-date information,inability to access up-to-date information,The inability to access up-to-date information can lead to difficulties in understanding recent events and make individuals prone to hallucinate facts.
+tendency to hallucinate facts,inability to access up-to-date information,"The tendency to hallucinate facts is related to the inability to access up-to-date information, as mentioned by Maynez et al. and Ji et al."
+difficulties in understanding low-resource languages,lack of mathematical skills,Difficulties in understanding low-resource languages may be attributed to the lack of mathematical skills required to perform precise calculations.
+unawareness of the progression of time,lack of mathematical skills,"The unawareness of the progression of time could be linked to a lack of mathematical skills, making it challenging to calculate time intervals."
+toolformer,existing approaches,"Toolformer is proposed as a model that aims to enhance the use of tools in language models, addressing the limitations of existing approaches that either rely heavily on human annotations or restrict tool use to specific tasks."
+tool use,toolformer,"Tool use is a key component of Toolformer, which is designed to learn how to use tools in a self-supervised manner without extensive human input."
+lm,tool use,"The language model (LM) should retain its generality while incorporating tool use, allowing it to autonomously determine when and how to utilize different tools for optimal performance."
+tools,approaches,Tools and approaches are related in the context of enabling a more comprehensive use of tools that is not tied to specific tasks.
+tools,large lms,Tools are related to large LMs as the approach mentioned in the context is based on using large LMs with in-context learning to generate entire datasets.
+tools,apis,Tools are related to APIs as shown in Figure 1 where different APIs are called to obtain information for completing a piece of text.
+tools,api calls,Tools are related to API calls as the key steps in the approach involve executing API calls to filter out those that do not reduce the loss over the next tokens.
+tools,lm,Tools are related to LM as the approach mentioned in the context involves letting a LM annotate a language modeling dataset with potential API calls.
+apis,lm,APIs are related to LM as a LM is used to annotate a language modeling dataset with potential API calls.
+api calls,self-supervised loss,API calls are used in conjunction with a self-supervised loss to determine which calls help the model in predicting future tokens
+api calls,lm (language model),"The LM is finetuned on the API calls it considers useful, thus learning to control a variety of tools"
+lm (language model),variety of tools,"LMs can learn to control a variety of tools, choosing for themselves which tool to use when and how"
+dataset,pretrained model,"The approach is agnostic of the dataset being used, allowing it to be applied to the same dataset that was used to pretrain a model"
+tools,toolformer,"After learning to use tools, Toolformer, based on a pretrained GPT-J model, achieves much stronger zero-shot results"
+api calls,tuples,"API calls are represented as tuples (ac, ic) where ac is the API name and ic is the corresponding input"
+api calls,result,Each API call has a corresponding result denoted by linearized sequences
+api call,result,"An API call c with a corresponding result r can be denoted as e(c) and e(c, r) respectively. The linearized sequences of the API call not including and including its result are represented as <API> ac(ic) </API> and <API> ac(ic) → r </API> respectively."
+token sequences,special tokens,"The token sequences ""["", ""]"" and ""->"" are used to represent ""<API>"", ""</API>"" and ""→"" respectively in the context."
+dataset,plain texts,"A dataset C = {x1, . . . , x"
+lm,api calls,"The LM is used to sample a large number of API calls by exploiting its in-context learning ability. These API calls are then executed and the obtained responses are checked for predicting future tokens, serving as a filtering criterion."
+prompt p(x),api calls,A prompt P(x) is used to generate API calls for the question answering tool as shown in an exemplary prompt in Figure 3.
+prompt,question answering tool,An example of such a prompt for a question answering tool is shown in Figure 3.
+token,continuation,Let pM (zn+1
+api,call,We first sample up to k candidate positions for doing API calls by computing the probability pi = pM (<API>
+position,api call,"Given a sampling threshold τs, we keep all positions I = {i"
+api call,response,The response for each API call ci needs to be a single text sequence ri.
+position,api call,"Let i be the position of the API call ci in the sequence x = x1, . . . , xn, and let ri be the response from the API."
+model,weighted cross entropy loss,Li(z) = − n(cid:88)j=iwj−i · log pM (xj
+loss,instantiations,"The context mentions two different instantiations of the loss function, denoted as L+ and L-."
+loss,tokens,"The weighted loss over all tokens xi, . . . , xn is discussed in the context."
+api call,model,The context describes how an API call can help the model in predicting future tokens.
+filtering threshold,api calls,API calls are filtered based on a specified threshold τf.
+api call,result,The loss function is compared with and without adding an API call and its result.
+prefix,example,"The prefix e(ci, ri) is provided instead of inserting it at position i to maintain flow and patterns in examples."
+spin fishing,fly fishing,Spin fishing is distinguished between fly fishing and bait cast fishing by the type of rod and reel used.
+spin fishing,bait cast fishing,Spin fishing is distinguished between fly fishing and bait cast fishing by the type of rod and reel used.
+reels,open faced reel,"There are two types of reels used when spin fishing, the open faced reel and the closed faced reel."
+reels,closed faced reel,"There are two types of reels used when spin fishing, the open faced reel and the closed faced reel."
+nuclear safety,model finetuning,"Model Finetuning After sampling and filtering calls for all APIs, we finally merge the remaining API calls and interleave them with the original inputs. That is, for an input text x = x1, . . . , xn with a corresponding API call and result (ci, ri) at position i, we construct the new sequence x∗ = x1:i−1, e(ci, ri), xi:n; we proceed analogously for texts with multiple API calls."
+model finetuning,inference,"When generating text with M after finetuning with our approach, we perform regular"
+decoding,→ token,"The 'decoding' process halts when '→' token is produced, indicating the expectation of an API response."
+decoding,api call,The 'decoding' process is interrupted to make an 'API call' to get a response.
+decoding,</api> token,"After inserting the response and '</API>' token, the 'decoding' process continues."
+tools,lms,The exploration of 'tools' involves addressing different shortcomings of 'LMs'.
+inputs,texts,The constraint is that the 'inputs' and 'outputs' of tools should be representable as 'texts'.
+intended use,demonstrations,The tools require a few 'demonstrations' of their 'intended use'.
+question answering system,lm,"The 'question answering system' is based on another LM, specifically Atlas."
+four basic arithmetic operations,calculator,The 'calculator' tool supports the 'four basic arithmetic operations' and rounds results to two decimal places.
+wikipedia search,search engine,The 'Wikipedia Search' tool is a 'search engine' that retrieves short text snippets from Wikipedia.
+question answering tool,search,"Both tools are mentioned in the context as ways to gather information, implying a relationship in terms of information retrieval."
+search,bm25 retriever,"The search engine mentioned in the context uses the BM25 retriever for information retrieval, indicating a direct relationship."
+bm25 retriever,wikipedia dump,"The BM25 retriever indexes the Wikipedia dump from KILT, showing a relationship in the context of information indexing."
+machine translation system,lm,"The machine translation system is based on a LM for translation purposes, establishing a relationship between the two in the context of language translation."
+lm,nllb,"The LM mentioned in the context is specifically a 600M parameter NLLB model, indicating a direct relationship between the two."
+nllb,multilingual machine translation model,"The NLLB model is used as a multilingual machine translation model, showing a clear relationship in the context of translation capabilities."
+source language,fasttext classifier,"The source language for translation is automatically detected using the fastText classifier, implying a relationship in language detection."
+target language,english,"The target language for translation is always set to English, indicating a direct relationship in the context of translation output."
+calendar api,current date,"The calendar API when queried returns the current date, establishing a direct relationship between the two in the context of date retrieval."
+tool,call,A tool decides when and how to call certain criteria or tools for specific tasks.
+task,tool,Tasks are evaluated based on the performance of the considered tools in zero-shot settings.
+approach,lm abilities,The approach ensures that it does not negatively impact the language model's core LM abilities.
+model size,tool use,Investigates how the use of tools is influenced by the size of the model.
+dataset c,language model m,Uses a subset of CCNet as dataset C and GPT-J as the language model M for experimentation.
+api calls,text,API calls are determined based on heuristics for specific texts to determine their usefulness.
+thresholds τs,thresholds τf,Thresholds τs and τf are chosen individually for each tool to ensure a sufficient number of examples.
+final dataset,api calls,Table 2 shows relevant statistics of our final dataset augmented with API calls.
+m,c∗,We finetune M on C∗ using a batch size of 128 and a learning rate of 1 · 10^(-5) with linear warmup for the first 10% of training.
+gpt-j,gpt-j + cc,"In our experiments, we mainly compare GPT-J and the following models: GPT-J + CC."
+gpt-j,toolformer,"In our experiments, we mainly compare GPT-J and the following models: Toolformer."
+gpt-j,opt (66b),"We additionally compare to OPT (66B) (Zhang et al., 2022) and the original davinci variant of GPT-3 (175B) (Brown et al., 2020), two models that are about 10 and 25 times larger than GPT-J."
+downstream tasks,zero-shot setup,We evaluate on various downstream tasks considering a prompted zero-shot setup.
+downstream tasks,tool use,"This is in contrast to prior work on tool use (e.g., Gao et al., 2022; Parisi et al., 2022), where models are provided with dataset-specific examples of how a tool can be used to solve a concrete task."
+toolformer,task,Toolformer is used to solve a concrete task
+toolformer,user,Toolformer works in cases where a user does not specify in advance which tools should be used
+toolformer,models,Toolformer achieves competitive results with various models such as GPT-3
+toolformer,math benchmarks,Toolformer outperforms OPT and GPT-3 in math benchmarks
+api,k most likely tokens,An API call is initiated when API is one of the k most likely tokens
+apis,model,The model makes use of APIs with a limit of one API call per input to prevent getting stuck in a loop.
+squad,google-re,"Models are evaluated on subsets of the LAMA benchmark, which include SQuAD and Google-RE."
+lama,masked lms,LAMA benchmark was originally designed to evaluate masked LMs.
+toolformer,wikipedia search api,Toolformer is prevented from using the Wikipedia Search API to avoid unfair advantage.
+toolformer,gpt-j models,Toolformer outperforms GPT-J models without tool use in terms of performance.
+baseline,opt,baseline outperforms OPT (66B) by 11.7 points
+baseline,gpt-3,baseline outperforms GPT-3 (175B) by 5.2 points
+baseline,toolformer,Toolformer achieves stronger results than baseline
+opt,gpt-3,OPT clearly outperforms GPT-3 (175B)
+gpt-j,gpt-j + cc,GPT-J and GPT-J + CC perform about the same
+gpt-j,toolformer,Toolformer achieves stronger results than GPT-J
+toolformer,opt,Toolformer clearly outperforms OPT
+toolformer,gpt-3,Toolformer clearly outperforms GPT-3
+toolformer,web questions,Toolformer performs well in question answering tasks
+toolformer,natural questions,Toolformer performs well in question answering tasks
+toolformer,calculator tool,Toolformer decides to ask the calculator tool for help in various tasks
+kwiatkowski et al.,triviaqa,"The authors Kwiatkowski et al. (2019) and TriviaQA (Joshi et al., 2017) are mentioned as references for the evaluation process."
+toolformer,question answering tool,Toolformer is mentioned to have the question answering tool disabled to prevent trivial task solving.
+toolformer,gpt-j,Toolformer is compared to other models based on GPT-J and outperforms them based on the information retrieved from the Wikipedia search API.
+model,toolformer,Toolformer's performance is evaluated in comparison to other models for question answering tasks and temporal datasets.
+toolformer,gpt-3 (175b),Toolformer is compared to GPT-3 (175B) for question answering tasks and is mentioned to fall short of it despite outperforming other baselines.
+toolformer,calendar tool,"Toolformer's performance on temporal datasets is mentioned to not make use of the calendar tool for TEMPLAMA, but outperforms all baselines."
+toolformer,mlqa,"Results on MLQA for multiple languages including Spanish, German, Hindi, Vietnamese, Chinese, and Arabic are discussed, with Toolformer's inconsistent performance mentioned in pretraining on CCNet."
+pretraining,ccnet,Pretraining on CCNet deteriorates performance
+toolformer,gpt-j,Toolformer does not consistently outperform GPT-J
+toolformer,gpt-3 (175b),Toolformer still lags behind the much larger GPT-3 (175B) model
+toolformer,search engine,The simplicity of our search engine contributes to Toolformer lagging behind
+toolformer,query reformulation,The inability of Toolformer to interact with the search engine by reformulating its query
+toolformer,api calls,API calls improve Toolformer’s performance for all languages
+toolformer,machine translation tool,Toolformer has learned to make use of the machine translation tool
+toolformer,gpt-j,Toolformer does not consistently outperform GPT-J
+toolformer,ccnet,Toolformer does not consistently outperform GPT-J as finetuning on CCNet
+toolformer,gpt-j,Toolformer does not consistently outperform GPT-J as finetuning on CCNet deteriorates performance for some languages.
+opt,gpt-3,"OPT and GPT-3 perform surprisingly weak across all languages, mostly because they fail to provide an answer in English despite being instructed to do so."
+gpt-j,opt,A potential reason for GPT-J not suffering from this problem is that it was trained on more multilingual data than both OPT and GPT-3.
+gpt-j,europarl,"GPT-J was trained on more multilingual data than both OPT and GPT-3, including EuroParl (Koehn, 2005)."
+gpt-3,gpt-j,"In a variant of MLQA where both the context and the question are provided in English, GPT-3 performs better than all other models, supporting the hypothesis that its subpar performance on MLQA is due to the task’s multilingual aspect."
+templama,dateset,"We evaluate all models on TEMPLAMA (Dhingra et al., 2022) and a new dataset that we call DATESET."
+toolformer,templama,Toolformer outperforms all baselines for both TEMPLAMA and DATESET.
+gpt-j,api calls,"relation: GPT-J finetuned with the approach mentioned in context, both with and without API calls. API calls are helpful for larger models but not for the smallest ones. This implies a direct relationship between GPT-J and API calls based on the impact on model predictions."
+models,api calls,"relation: API calls have an impact on the performance of different sized models as discussed in the context. Larger models benefit from API calls, while the smallest models do not. This indicates a relationship between models and API calls based on the performance improvement."
+templama,calendar tool,"relation: improvements on TEMPLAMA are not attributed to the calendar tool but to tools like Wikipedia search and question answering. The use of the calendar tool in TEMPLAMA is minimal (0.2%), indicating a relationship based on the limited impact of the calendar tool on TEMPLAMA."
+templama,wikipedia search,"relation: improvements on TEMPLAMA are mostly attributed to the Wikipedia search and question answering tools, rather than the calendar tool. This indicates a relationship between TEMPLAMA and Wikipedia search based on their influence on TEMPLAMA performance."
+templama,entities,"relation: entities in TEMPLAMA are specific and rare, making the date alone insufficient for help. This implies a relationship between TEMPLAMA and entities based on the specificity and rarity of entities in TEMPLAMA."
+dataset,toolformer,relation: improvement of Toolformer in the dataset compared to other models is credited to the calendar tool which is used for 54.8% of examples. This indicates a relationship between dataset and Toolformer based on the impact of the calendar tool on Toolformer performance.
+toolformer,api calls,relation: Toolformer's performance in language modeling is evaluated to ensure it does not degrade through finetuning with API calls. This suggests a relationship between Toolformer and API calls based on the evaluation of language modeling performance.
+toolformer,ccnet,"relation: language modeling performance of Toolformer is evaluated on a subset of 10,000 randomly selected documents from CCNet. This indicates a relationship between Toolformer and CCNet based on the evaluation of language modeling performance."
+wikitext,ccnet,"WikiText and a subset of 10,000 randomly selected documents from CCNet were used for finetuning. Finetuning on CCNet leads to improved performance on the CCNet evaluation subset but deteriorates performance on WikiText."
+ccnet,gpt-j,The original pretraining data for GPT-J is more similar to WikiText than the subset of CCNet used for training.
+c∗,c,Training on C∗ does not lead to an increase in perplexity compared to training on C when API calls are disabled at inference time.
+lm,gpt-j,The ability to ask external tools for help affects the performance as the size of the LM varies.
+gpt-2,radford et al.,The smaller models from the GPT-2 family with different parameters are considered in the experiment.
+wikipedia search engine,qa benchmarks,The Wikipedia search engine is used mostly for QA benchmarks in the experiment.
+wikipedia search engine,qa benchmarks,The Wikipedia search engine is primarily used for QA benchmarks.
+wikipedia search engine,api,The API of the Wikipedia search engine is comparably easy to use.
+models,tasks,Models become better at solving tasks as they grow in size.
+models,api calls,The ability of models to make good use of the provided API improves over time.
+predictions,api calls,There remains a large gap between predictions with and without API calls even for the biggest model.
+toolformer,probability,Evaluating the perplexity of Toolformer with API calls enabled would require marginalizing over all potential API calls that the model could make.
+appendix g,llama v1 7b model,"In Appendix G, investigations in scale are extended to the LLaMA v1 7B model to see how tool-use scales with model capability instead of size."
+tools,stronger base-models,Weaker tools such as the WikiSearch tool vanish for stronger base-models.
+generating,scoring,The value of generating and scoring with a strong model is demonstrated compared to simply finetuning.
+language model pretraining,lms,Various approaches augment LMs with additional textual information during pretraining.
+information retrieval system,approaches,"The information retrieval system mentioned in the context is related to various approaches such as those mentioned in the papers by Guu et al., Borgeaud et al., and Izacard et al."
+approaches,additional information,"The approaches discussed in the context provide additional information, regardless of its helpfulness."
+toolformer,information retrieval system,"Toolformer is mentioned to learn for itself to explicitly ask for the right information, which highlights the contrast with approaches like the information retrieval system."
+approaches,external tools,"Several approaches aim to equip language models with the ability to use external tools such as search engines, web browsers, calculators, translation systems, and Python interpreters."
+external tools,models,"The models mentioned in the context learn to use external tools like search engines, web browsers, calculators, translation systems, and Python interpreters."
+models,large amounts of human supervision,Models learning to use tools can rely either on large amounts of human supervision or work in a few-shot setup tailored towards a specific task.
+models,prompting the language model,Models can work by prompting the language model in a few-shot setup tailored towards a specific task where it is known a priori which tools need to be used.
+toolformer,talm,"Toolformer is mentioned to learn how and when to use tools without requiring a specific prompt, similar to the self-supervised nature of TALM."
+talm,approach,"TALM is closely related to the approach mentioned in the context, as it uses a similar self-supervised objective for teaching a model to use a calculator and a search engine."
+talm,self-supervised objective,"TALM involves a self-supervised objective for teaching a model, as mentioned in the context."
+talm,model,"TALM focuses on teaching a model to use a calculator and a search engine, as described in the context."
+talm,calculator,"TALM aims to teach a model to use a calculator and a search engine, as outlined in the context."
+talm,search engine,"TALM involves teaching a model to use a search engine, as stated in the context."
+talm,finetuned,"TALM explores self-supervised learning in settings where a model is finetuned for downstream tasks, as mentioned in the context."
+self-training,bootstrapping techniques,The idea of using self-training and bootstrapping techniques to improve models is mentioned in the context.
+word sense disambiguation,yarowsky,"The concept of word sense disambiguation has been investigated by Yarowsky in 1995, as mentioned in the context."
+relation extraction,brin,"Brin has investigated relation extraction in the context, as stated in the context."
+relation extraction,agichtein,"Agichtein has studied relation extraction in the context, as described in the context."
+relation extraction,gravano,Relation extraction has been explored by Gravano in the context.
+parsing,mcclosky,"McClosky has researched parsing in the context, as mentioned in the context."
+sequence generation,he,"He has worked on sequence generation in the context, as outlined in the context."
+few-shot text classification,schick,"Schick has contributed to few-shot text classification in the context, as stated in the context."
+few-shot text classification,schütze,"Schütze has worked on few-shot text classification in the context, as mentioned in the context."
+retrieval,izacard,"Izacard has studied retrieval in the context of self-training and bootstrapping techniques to improve models, as described in the context."
+retrieval,grave,"Grave has explored retrieval in the context, as mentioned in the context."
+reasoning,zelikman,"Zelikman has worked on reasoning in the context, as outlined in the context."
+toolformer,approach,"Toolformer is trained on its own predictions after applying a perplexity-based filtering step, as mentioned in the context."
+limitations,lapis,"While the approach enables LMs to learn how to use a variety of tools in a self-supervised way, there are some clear limitations to what can be achieved with the method in its current form, as mentioned in the context."
+limitations,toolformer,"The current approach does not allow Toolformer to use tools in a chain, as described in the context."
+toolformer,api calls,"The API calls for each tool are generated independently in Toolformer, leading to limitations in its use for chained tool us, as mentioned in the context."
+api calls,lm (language model),The LM relies on making multiple API calls per example as part of its current approach.
+lm (language model),tool,"The LM is unable to use a tool interactively due to limitations in the current approach, which hinders browsing through search results or refining search queries."
+lm (language model),prompt,"Language Models (LMs) are sensitive to the exact wording of the input prompt, affecting the decision-making process such as whether to make an API call."
+lm (language model),bootstrapping approaches,The method can be applied iteratively similar to related bootstrapping approaches to tackle sample inefficiency.
+lm (language model),computational cost,LMs like Toolformer do not consider the tool-dependent computational cost associated with making an API call.
+toolformer,lm (language model),Toolformer is introduced as a LM that learns in a self-supervised way.
+toolformer,api calls,"Toolformer learns how to use different tools like search engines, calculators, and translation systems via simple API calls."
+api calls,search engines,Different tools such as search engines are used via API calls.
+api calls,calculators,Different tools like calculators are used via API calls.
+api calls,translation systems,Different tools like translation systems are used via API calls.
+api calls,perplexity,Filtered API calls are based on whether they reduce perplexity on future tokens.
+toolformer,zero-shot performance,Toolformer considerably improves zero-shot performance of a 6.7B parameter GPT-J model.
+toolformer,gpt-j model,Toolformer considerably improves zero-shot performance of a 6.7B parameter GPT-J model.
+gpt-j model,6.7b parameter,The GPT-J model mentioned has a 6.7B parameter.
+gpt-j model,gpt-3 model,The GPT-J model enabled by Toolformer can even outperform a much larger GPT-3 model on a range of different downstream tasks.

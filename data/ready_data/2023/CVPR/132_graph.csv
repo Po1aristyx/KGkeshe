@@ -1,0 +1,215 @@
+node_1,node_2,edge
+continual learning,trustworthiness,Continual Learning models need to be evaluated for trustworthiness and robustness to corruptions.
+state-of-the-art (sota) cl models,vulnerable to data corruptions,Existing SOTA CL models are susceptible to various data corruptions during testing.
+metamix framework,corruption robustness in cl,MetaMix is a framework designed to enhance corruption robustness in Continual Learning through self-adaptive data augmentation.
+metamix framework,generalization performance,MetaMix framework optimizes generalization performance against data corruptions during training.
+cl corruption datasets,severity levels,CL corruption datasets are constructed with varying levels of severity to evaluate the corruption robustness of algorithms.
+proposed method,sota baselines,The proposed method demonstrates effectiveness compared to the state-of-the-art baselines in Continual Learning.
+continual learning,human's ability,Continual learning (CL) aims at imitating human’s ability to learn from non-stationary data distributions without forgetting the previously learned knowledge.
+cl systems,data shifts,Existing CL systems overlook the robustness against unforeseen data shifts during testing.
+task-continual learning,der++,"For example, the accuracy of DER++ for task-continual learning decreases from 93.9% to 50.5% on split-CIFAR10."
+data corruption,image recognition systems,Data corruption can drastically impair the performance of existing image recognition systems.
+cl model,robustness,CL models need to improve their robustness to be trustworthy in real-world scenarios.
+cl model,corruptions,Training a CL model to be robust to various corruptions is difficult due to challenges like unseen corruptions and changing data distributions.
+corruptions,training images,Naively augmenting training images with seen corruptions may not help generalize to new ones during testing.
+augmentation strategy,previous tasks,Optimal augmentation strategies are task-dependent and may become less effective on tasks with evolving data distributions.
+memory buffer,data from previous tasks,A memory buffer can store data from previous tasks for augmenting and replaying at later training iterations.
+augmix,augmentation operations,"Augmix composes and combines multiple pre-defined augmentation operations with different depths and widths, showing efficacy in improving robustness under traditional supervised classification tasks."
+augmix,metamix,"To address unique challenges of corruption-robustness in Continual Learning (CL), the authors propose a temporally self-adaptive Augmix within a meta-learning framework, named MetaMix."
+metamix,memory buffer data,MetaMix adaptively augments the memory buffer data and the currently received new data by learning to mix the augmentation operations tailored to the evolving data distributions.
+memory buffer data,new data,Memory buffer data is augmented along with the currently received new data in the proposed MetaMix approach.
+metamix,lstm,"MetaMix is governed by an LSTM, which inputs context information and outputs the corresponding mixing parameters for the augmentations."
+metamix,non-stationary data distribution,MetaMix ensures the augmentation strategy automatically adapts to non-stationary data distribution.
+metamix,proposed methods,Extensive experiments on the constructed benchmarks demonstrate the effectiveness of our proposed MetaMix approach compared with several SOTA data-augmentation approaches adapted for CL.
+metamix,self-adaptive augmentation method,"We propose a self-adaptive augmentation method, MetaMix."
+proposed methods,benchmarks,"To evaluate the corruption robustness of existing and the proposed methods, we propose a new challenging benchmark where various corruptions perturb the testing data of each CL task."
+benchmarks,corruptions,"To evaluate the corruption robustness of existing and the proposed methods, we propose a new challenging benchmark where various corruptions perturb the testing data of each CL task."
+benchmarks,datasets,"To facilitate future research, we construct several new datasets, including split-CIFAR-10-C, split-CIFAR-100-C, and split-miniImageNet-C."
+datasets,cl methods,"To evaluate the corruption robustness of existing and the proposed methods, we propose a new challenging benchmark where various corruptions perturb the testing data of each CL task."
+trustworthy cl,metamix,MetaMix is a self-adaptive augmentation method proposed to achieve corruption-robustness on unseen corruptions for trustworthy CL tasks.
+metamix,training data,MetaMix learns to mix and augment the training data of each CL task.
+metamix,cl methods,MetaMix can be seamlessly integrated with existing CL methods.
+continual learning,non-stationary data distribution,Continual Learning focuses on learning non-stationary data distribution without forgetting previous knowledge.
+continual learning,memory retention,CL methods can retain memory for future replay.
+continual learning,network architectures,CL methods involve designing tailored network architectures for learning.
+continual learning,proper regularization,CL methods perform proper regularization during parameter updates.
+continual learning,bayesian methods,CL methods introduce Bayesian methods for model parameter inference.
+continual learning,subspace-based methods,CL methods include subspace-based methods for learning.
+trustworthy properties of cl,trustworthy cl,Existing literature largely ignored the trustworthy properties of CL.
+cl,task identities,CL settings can be categorized into three scenarios based on whether task identities of the testing data are available to the CL model during test time
+cl,task-continual learning,task-continual learning studies the scenario that the task identities are available during testing and is the easiest learning setting
+cl,domain incremental learning,domain incremental learning focuses on the case that all the tasks during CL solve the same classification task with different data distribution and the task identities are unknown during testing
+cl,class-continual learning,class-continual learning focuses on the scenario that task identities are unavailable and is the most difficult learning setting
+robust cl,self-purified replay,"Self-Purified Replay consider CL on noisy data stream with label noise, which is orthogonal to robust CL since they consider noisy data during training"
+robust cl,puridiver,"PuriDivER consider CL on noisy data stream with label noise, which is orthogonal to robust CL since they consider noisy data during training"
+robust cl,continual active adaptation (caa),"Continual Active Adaptation (CAA) focuses on the setting that for each data distribution, the label space for each learning task is the same. Each task only encounters a single data corruption, which is different from and orthogonal to robust CL since they focus on generalization to previously"
+task,data corruption,Each task encounters a single data corruption during testing.
+caa,data corruption,CAA focuses on generalization to previously seen corruption operations during testing.
+cl model,data corruptions,CL model should be robust to unseen data corruptions during testing.
+data augmentation,techniques,Data augmentation techniques are categorized into two classes: improving performance on clean data and being robust to data distribution shift and corruptions.
+standard data augmentation,generalization performance,Standard data augmentation aims to improve the generalization performance on clean data.
+neural network,performance,"Common augmentations like random flips, rotations, and crops aim to improve the performance of neural network."
+cutout,clean datasets,"Cutout, Mixup, CutMix, and MaxUp show excellent performance on clean datasets."
+autoaugment,cl problems,AutoAugment is computationally impractical for CL problems due to huge computation cost and separate proxy tasks.
+augmix,data corruption benchmarks,Augmix is one of the SOTA methods on data corruption benchmarks like ImageNet-C and CIFAR100-C.
+deepaugment,clean images,DeepAugment and AdversarialAugment transform and augment clean images by perturbing the representations/features.
+augment,adversarialaugment,Both Augment and AdversarialAugment are methods that transform and augment clean images by perturbing the representations/features of neural networks to generate new augmented images.
+deepaugment,adversarialaugment,DeepAugment and AdversarialAugment are mentioned as impractical for CL due to the high computation costs associated with them.
+augmix,self-adaptive augmix,The text mentions choosing AugMix over other methods and proposing a new self-adaptive AugMix for CL.
+sequence of tasks,dtr,The problem setup involves learning a sequence of tasks denoted as Dtr.
+model fθ,training task sequence dtr,The goal is to learn a model fθ on the training task sequence Dtr so that it performs well on the testing set of all the learned tasks.
+model robustness,testing set for each task tk under a collection of corruption operations c,The focus is on improving the model robustness on the testing set for each task Tk under a collection of corruption operations.
+cl corruption robustness,sequence of n tasks with test data dte,The definition of CL corruption robustness is given for a sequence of N tasks with test data Dte.
+cl corruption robustness,definition 1,Definition 1 provides the formal definition of CL corruption robustness as the expectation accuracy after applying corruptions to test data of each task.
+cl corruption robustness,collection of corruption operations c,CL corruption robustness involves the manipulation of test data using a collection of corruption operations C to evaluate the accuracy.
+cl corruption robustness,expectation accuracy,The core of CL corruption robustness is to measure the expectation accuracy after applying corruptions to the test data of each task.
+cl corruption robustness,corruption operation c,CL corruption robustness discusses the impact of applying corruption operation c on the test data to evaluate accuracy.
+augmix,preliminary of augmix,Preliminary of AugMix provides background information about AugMix as a state-of-the-art augmentation technique that improves model robustness.
+augmix,algorithm,AugMix is chosen to adapt to CL based on the requirements of being both efficient and effective for the CL algorithm.
+augmix,augmented data diversity,AugMix maintains augmented data diversity by mixing several augmentation chains to enhance model performance.
+augmix,augmentation operation set,AugMix uses an augmentation operation set O during training to create diverse augmentation chains for improved model performance.
+augmented image,mixing weights,"The augmented image is a convex mix of A chains, denoted by the mixing weights w, where the mixing weights w is sampled from a distribution."
+augmented image,original image,AugMix combines the mixed image with the original image through another random convex combination to obtain the final image.
+mixed image,original image,"With the mixed image xaug, AugMix combines it with the original image through another random convex combination to obtain the final image xaugmix."
+augmix,random augmentation policy,AugMix adopts a fixed random augmentation policy using Dirichlet and Beta distributions during the entire training process.
+augmix,jensen shannon divergence,AugMix uses Jensen Shannon divergence for regularizing the output consistency between the original and augmented data.
+metamix approach,augmix,"MetaMix Approach is a direct extension of AugMix for CL, where data examples are augmented from the memory buffer."
+new data,memory buffer,The received new data at each time point is augmented from the memory buffer in memory-based CL methods.
+fixed random augmentation strategy,cl model,"Using a fixed random augmentation strategy like AugMix may make the CL model gradually memorize the training data, especially when the memory buffer is small for CL models."
+augmentation strategy,cl model,Augmentation strategy like AugMix may make the CL model gradually memorize the training data.
+augmentation strategy,corruptions,The augmentation strategy may fail to generalize to unseen corruptions during testing.
+augmentation strategy,image mixing,The optimal augmentation strategy for image mixing is data-dependent.
+image mixing,mixing weights,The mixing weights should be specifically optimized for each task.
+mixing weights,task,"Since we cannot repeatedly tune the mixing weights for each task, an automatic self-adaptive process is necessary to achieve good performance."
+augmentation approach,robustness,"The self-adaptive data augmentation approach, namely MetaMix, is for improving robustness in CL."
+metamix,training process,Figure 2 (c) illustrates the training process of MetaMix at time t.
+cl model,memory buffer,We allocate a small memory buffer M to store data from previous tasks to help memorize previous knowledge in the CL model.
+memory buffer,replay,The data in the memory buffer will be replayed later with a new task together.
+augmentation operations,training,Suppose we have M augmentation operations during training.
+parameters,θt,The parameters at time t are represented by θt.
+function,network,The function represented by the network is fθt(x).
+sequential dependencies,previous tasks,"To capture the sequential dependencies among previous tasks, a self-adaptive LSTM mixing strategy is designed."
+lstm,current context information,The LSTM inputs the current context information and outputs the adaptive mixing parameters.
+lstm,previous tasks,The LSTM can encode the information of previous tasks into an additional hidden state.
+mlp,static model,An LSTM model is used instead of an MLP model since the tasks in CL sequentially arrive.
+metamix,augmix,"MetaMix is our proposed method which automatically adapts to the non-stationary data distribution during CL, whereas AugMix adopts a fixed and random augmentation policy."
+metamix,data distribution,MetaMix meta-learns the mixing parameters of augmentation to adapt to the non-stationary data distribution during CL.
+metamix,memory buffer,"At time t, a batch of data is sampled from the memory buffer and augmented using MetaMix."
+metamix,augmix,MetaMix and AugMix are both data augmentation techniques mentioned in the context. The context describes the augmentation procedures of these techniques.
+metamix,lstm,MetaMix uses LSTM cell with parameters to obtain mixing weights. LSTM is involved in the augmentation process described in the context.
+metamix,cl model,MetaMix interacts with the CL model to calculate losses for augmented data. Both MetaMix and CL model play a role in the model optimization process.
+lstm,context information,The context information is fed into the LSTM cell to obtain mixing weights. LSTM uses the context information as input to calculate the mixing parameters.
+augmix,optimization objective,"The optimization objective of AugMix is described in the context, involving minimizing the loss function and a specific term JS(x, xaugmix1, xaugmix2) with lambda as a parameter."
+augmentation,mixing weights,"The mixing weights for different chains in the augmentation are represented by w′t and sotfmax function is applied to ensure they are within [0,1] interval."
+augmentation,sigmoid function,"The sigmoid function is applied to m′t to ensure it is within [0,1] interval."
+data,current task,Data in current and previous tasks is essential to characterize. It contains information about labeled mini-batch data sampled from memory buffer and labeled data received at time t.
+memory data gradient,current mini-batch data gradient,"The gradient dot product ∇Lθt(xr, yr) · ∇Lθt(xt, yt) determines the degree of interference and transfer between memory data and current task mini-batch data."
+corruption operations,testing data,"Corruption operations on testing data are unseen during training, making it impossible to directly optimize the augmentation strategy for these corruptions."
+augmentation strategy,corruptions,The augmentation strategy cannot be directly optimized for these corruptions during training.
+cl model,unseen corruptions,The CL model is formulated to generalize better to unseen corruptions by splitting augmentation operations into pseudo-seen and pseudo-unseen operations.
+augmentation operations,pseudo-seen and pseudo-unseen operations,Augmentation operations are split into non-overlapping pseudo-seen and pseudo-unseen operations to simulate scenarios without overlap between training and testing corruptions.
+metamix,bi-level optimization problem,MetaMix is formulated as a bi-level optimization problem to make the CL model learn to augment and mix.
+model parameters,metamixer parameters,"The update of model parameters on the pseudo-seen set can improve the optimization of MetaMixer parameters on the pseudo-unseen set, leading to improved CL model generalization."
+lower-level optimization,performance,The lower-level optimization aims to optimize performance on the pseudo-seen and pseudo-unseen augmentation data with a consistency loss regularization constant.
+optimization constant,consistency loss,Optimization constant is used for the consistency loss in the network.
+lower-level optimization,performance,Lower-level optimization aims to optimize the performance on pseudo-seen augmentation operations.
+upper-level optimization,generalization,Upper-level optimization aims to optimize generalization on pseudo-unseen augmentation operations.
+bi-level optimization,learning to augment and mix,Bi-level optimization is used for learning to augment and mix efficiently.
+metamix,augmix,MetaMix has advantages over AugMix in terms of improving generalization to unseen corruptions and adapting to non-stationary data distribution in CL.
+training data augmentation operations,unseen operations,Training data augmentation operations are split into pseudo-seen and unseen operations to improve generalization.
+implicit regularization,low sample complexity,Implicit regularization introduced by MetaMix benefits from low sample complexity.
+metamix,non-stationary data distribution,MetaMix can automatically adapt to non-stationary data distribution in CL.
+augmix,stationary data distribution,AugMix works well only in stationary data distribution in a single task.
+consistency regularization,network output,Consistency Regularization is used to ensure network output consistency between original raw image data and augmented data.
+augmented data,consistency loss,The augmented data is used to regularize the network output with a similar consistency loss for ensuring smoother neural network responses.
+augmented data,network output,The augmented data plays a role in regularizing the network output to ensure smoother neural network responses.
+consistency loss,network output,"The consistency loss is minimized to ensure similar responses from the model to various inputs, such as xb, xb1, and xb2."
+augmented data,jensen-shannon divergence,The Jensen-Shannon divergence is minimized among the posterior distributions of the original augmented data and its variants (cid:98)xb1 and (cid:98)xb2.
+jensen-shannon divergence,kl divergence,The calculation of Jensen-Shannon divergence involves the KL divergence between distributions.
+kl divergence,network output probabilities,The KL divergence is calculated between the network output probabilities for original raw data and its augmented variants.
+augmented data,proposed algorithm,The proposed algorithm involves utilizing augmented data and its variants along with various computational operations for optimization.
+proposed algorithm,context information,The proposed algorithm uses context information as input for computing desired augmentation mixing parameters.
+xb,xorig,xb is related to xorig as it is being assigned the value of xorig in the given context
+l,d,l and d are related as l iterates from 1 to d in the given context
+op,v,operation op is randomly sampled from collection V in the given context
+xb,x′,xb is assigned the value of op(xb) where x′ is involved in the operation
+b,mtxorig,b is calculated based on mtxorig and x′ in the given context
+x′,b1,x′ is returned as part of the result in the context involving b1
+θt,ϕt,lower-level optimization problem is optimized using θt and ϕt in the given context
+xb,yb,xb and yb are used in the optimization loss function calculation in the context
+xb,(cid:98)xb1,"xb, (cid:98)xb1, and (cid:98)xb2 are used as input parameters in the loss function calculation in the given context"
+x′,b1,x′ and b1 are used together in the context
+x′,b2,x′ and b2 are used together in the context as part of Bi-level Solver algorithm
+θt,γ,θt is updated using a learning rate γ in the given context
+β,ϕ′,β is used along with ϕ′ as part of the upper-level optimization loss function calculation in the context
+j,ϕt,J is iterated over along with ϕt in the context
+θt,ϕ,lower-level optimization problem is optimized using θt and ϕ in the given context
+benchmark,cl methods,"Benchmarks are mentioned as not suitable for evaluating the corruption robustness of CL methods, indicating a relationship between the two concepts"
+protocols,cl datasets,"Protocols are followed to create several new CL datasets, indicating a relationship between the two concepts"
+metamix,augmentation operations,"MetaMix algorithm requires Augmentation Operations for its implementation, indicating a relationship between the two concepts"
+cl tasks,training iterations,"Number of training iterations for each CL task is specified, indicating a relationship between the two concepts"
+lstm metamix,metamixer lstm,"LSTM parameters of MetaMix are utilized for MetaMixer LSTM updates, indicating a relationship between the two concepts"
+bi-level solver,"θt, ϕt, xb, yb, x′","The Bi-level Solver is used to update the memory buffer M through reservoir sampling by taking into account the previous values of θt, ϕt, xb, yb, and x′."
+memory buffer m,"(xt, yt)t = ot+1;5:6:12:13:","The memory buffer M is updated using reservoir sampling to store the values of (xt, yt)t = ot+1;5:6:12:13:."
+cl corruption benchmark,"split-cifar10-c, split-cifar100-c, split-miniimagenet-c","The CL Corruption Benchmark introduces new datasets named Split-CIFAR10-C, Split-CIFAR100-C, and Split-miniImageNet-C to evaluate the generalization of CL models to unseen corruptions during testing."
+split-cifar-10-c,cifar-10 dataset,"Split-CIFAR-10-C splits the CIFAR-10 dataset into 5 disjoint tasks, each task containing 2 classes."
+split-cifar-100-c,cifar-100 dataset,"Split-CIFAR-100-C splits the CIFAR-100 dataset into 10 disjoint tasks, each task containing 10 classes."
+split-miniimagenet-c,miniimagenet dataset,"Split-miniImageNet-C splits the miniImageNet dataset into 10 disjoint tasks, each task containing 10 classes."
+performance evaluation metrics,cl models,The performance of different CL models is evaluated using specific metrics to measure their generalization to unseen corruptions during testing.
+joint tasks,task,"joint tasks are comprised of multiple individual tasks, each task being a distinct entity within the context"
+task,10 classes,each task within the joint tasks has a classification into 10 different classes
+evaluation metrics,performance,Evaluation Metrics are used to assess the performance of different methods
+backward transfer,catastrophic forgetting,"backward transfer measures the extent of forgetting, while catastrophic forgetting indicates the occurrence of severe memory loss"
+"acc kc,s",corruption c,"ACC kc,s is the robust accuracy after applying corruption operation c, showing the impact of corruption on accuracy"
+overall accuracy,task k,"overall accuracy for task k is the average accuracy across all corruption types, indicating the overall performance on the task"
+backward transfer,learning new tasks,backward transfer evaluates the impact of learning new tasks on the performance of previous tasks
+task n,"rn,k","task N and RN,k are defined similarly as the above mentioned ACC k."
+bwt,higher,"The higher BWT, the better."
+metamix,task-continual learning (task-cl),MetaMix is applied to task-continual learning (Task-CL).
+metamix,class-continual learning (class-cl),MetaMix is also applied to class-continual learning (Class-CL).
+metamix,proposed methods,The proposed methods can be seamlessly integrated with existing CL methods.
+proposed methods,sota memory-based methods,The proposed methods are integrated with SOTA memory-based methods: DER++ and CLS-ER.
+proposed methods,data augmentation approaches,The proposed methods are compared with several SOTA data augmentation approaches.
+data augmentation approaches,traditional supervised learning,The data augmentation approaches are originally designed for traditional supervised learning.
+data augmentation approaches,cl problems,The data augmentation approaches are adapted for CL problems by applying them on the new task data and the memory buffer data.
+implementation details,resnet18,ResNet18 is used as a classifier for all datasets in the implementation details.
+corruption,testing,The types of corruption during testing are not seen during training for all the compared augmentation methods.
+augmentation operations,cl baseline method,"The augmentation operations such as autocontrast, equalize, posterize, rotate, solarize, shear-x, shear-y, translate-x, translate-y are applied to the CL baseline method to improve robustness."
+memory buffer,data points,The memory buffer has a capacity of 500 data points by default.
+lstm architecture,recurrent layer,The LSTM Architecture has one recurrent layer with 5 hidden units.
+lstm architecture,fully connected layer,A linear layer (fully connected layer) is appended next to the LSTM output to generate the mixing parameters wt and mt.
+lstm architecture,parameters,"The LSTM only has about 20K parameters compared to ResNet18, which has more than 11.22 million parameters."
+task identifiers,cl learner,"The corruption robustness under task-continual learning is evaluated, where the task identifiers are provided to the CL learner during testing."
+proposed method,der++,The results integrate baselines and the proposed method with DER++.
+experiments,metamix,The experiments that integrate baselines and MetaMix with CLS-ER are put in Appendix.
+results,corruptions,The results are shown across different corruptions.
+metamix,cls-er,MetaMix is compared with CLS-ER in Appendix
+metamix,der++,DER++ performance is close to random guessing without data augmentation
+metamix,approach,The proposed self-adaptive MetaMix brings significant improvement toward corruption robustness
+metamix,models,MetaMix outperforms the average corruption robustness accuracy of the other models by a large margin
+metamix,data distribution,The effectiveness of proposed MetaMix is shown by its ability to automatically adapt to the non-stationary data distribution
+metamix,non-stationary data,"MetaMix can adapt to non-stationary data distribution, unlike the static/random augmentation methods used by compared methods"
+metamix,deep-augment,Deep-augment distorts the image such that they are very different from original images
+metamix,adversarial training,Adversarial training does not help much with corruption robustness among the compared methods
+metamix,maxup,Maxup does not help much with corruption robustness among the compared methods
+adversarial training,original images,Adversarial training can generate similar images compared to original images.
+maxup,clean data performance,Maxup aims for improving clean data performance.
+maxup,robust accuracy,Maxup is not designed for robust accuracy.
+task-cl,split-cifar100-c,Robust accuracy of Task-CL on Split-CIFAR100-C is measured.
+task-cl,der++,Robust accuracy of Task-CL is measured with DER++.
+task-cl,metamix,MetaMix significantly improves over the baseline augmentation methods for Task-CL.
+class-cl,split-cifar100-c,Results of robust accuracy of Class-CL on Split-CIFAR100-C are presented.
+class-cl,der++,Robustness of Class-CL is evaluated using DER++.
+metamix,task-cl,MetaMix significantly improves over the baseline augmentation methods in Class-CL setting due to its self-adaptivity property
+metamix,average corruption robustness accuracy,"MetaMix outperforms the average corruption robustness accuracy of other models by a large margin of 3.1%, 2.2% on Split-CIFAR100-C, and Split-miniImageNet-C, respectively"
+our proposed method,non-stationary distributions,our proposed method can automatically adapt to the non-stationary distributions
+bwt,corruption-robustness scenario,"In the corruption-robustness scenario, BWT is no longer a meaningful metric with such extreme accuracy differences"
+ablation studies,hyperparameter analyses,"Due to the limited space, we provide (1) ablation studies; (2) hyperparameter analyses, including λ, J, β, etc."
+lstm vs mlp,additional hidden state information,The effect of using LSTM vs MLP and the benefit of using additional hidden state information from previous tasks
+memory size,experiment results,"We evaluate the effect of memory size with 500 and 3000, respectively. We provide experiment results on Split-CIFAR100-C, Split-miniImageNet-C with memory size 3000 on task-CL and class-CL"
+split-cifar100-c,split-miniimagenet-c,The context mentions experiment results on Split-CIFAR100-C and Split-miniImageNet-C. These terms are related as they represent specific datasets used in the experiment.
+task-cl,class-cl,The context discusses performance results on task-CL and class-CL respectively. These terms are related as they represent different classification learning settings.
+metamix,self-adaptive data augmentation,The context introduces MetaMix as a meta-learning framework for self-adaptive data augmentation specialized for CL. These terms are related as MetaMix is specifically designed for data augmentation.
+model's robustness,metamix,The context mentions that MetaMix can substantially improve the model's robustness. These terms are related as MetaMix is presented as a solution that enhances the model's robustness.
+task-cl,proposed method,The context discusses the effectiveness of the proposed method in task-CL settings. These terms are related as the proposed method is evaluated in the context of task-CL.
+anonymous reviewers,grant nsf iii-1910492,The context acknowledges the anonymous reviewers and states that the research was supported in part by grant NSF III-1910492. These terms are related as they both relate to the support and contribution to the research.

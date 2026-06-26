@@ -1,0 +1,205 @@
+node_1,node_2,edge
+barf,garf,BARF and GARF can bundle adjust camera poses with neural radiance fields (NeRF).
+barf,nerf,BARF and GARF can bundle adjust camera poses with neural radiance fields (NeRF).
+barf,dbarf,Our DBARF is proposed to tackle the difficulties of jointly optimizing camera poses with GeNeRFs.
+garf,nerf,BARF and GARF can bundle adjust camera poses with neural radiance fields (NeRF).
+dbarf,generfs,Our DBARF can be jointly trained with GeNeRFs in a self-supervised manner.
+dbarf,barf,Our DBARF tries to tackle the issues that previous methods like BARF faced.
+dbarf,camera poses,Our DBARF bundle adjusts camera poses by taking a cost feature map as an implicit cost function.
+dbarf,generalization ability,Experiments show the effectiveness and generalization ability of our DBARF when evaluated on real-world datasets.
+generfs,3d cnn,Generalizable NeRFs (GeNeRFs) often require image feature extractions that are based on more complicated 3D CNN architectures.
+generfs,transformer architectures,Generalizable NeRFs (GeNeRFs) often require image feature extractions that are based on more complicated transformer architectures.
+generfs,dbarf,Our DBARF can be jointly trained with GeNeRFs in a self-supervised manner.
+camera poses,generfs,Jointly optimizing camera poses with Generalizable NeRFs (GeNeRFs) poses difficulties.
+camera poses,dbarf,Our DBARF bundle adjusts camera poses by taking a cost feature map as an implicit cost function.
+nerf,generfs,Generalizable NeRFs (GeNeRFs) often require image feature extractions that are based on NeRF.
+nerf,coordinate-based mlps,NeRF and its variants simplify the dense 3D reconstruction part of the traditional photogrammetry pipeline by using coordinate-based MLPs for rendering.
+nerf,camera poses,NeRF and its variants require known accurate camera poses as inputs for generating high-quality images at novel views.
+nerf,structure-from-motion,Most NeRF-related methods obtain camera poses through Structure-from-Motion (SfM) for the rendering process.
+barf,generf,"BARF applied to GeNeRF leads to quick divergence of camera poses, even with small perturbations in ground truth initialization."
+dbarf,camera poses,"DBARF shows improved results in optimizing camera poses compared to BARF, even with random initialization for camera poses."
+dbarf,camera poses,"DBARF initializes camera poses randomly, which plays a crucial role in the rendering quality of NeRF."
+dbarf,keypoint-metric reprojection error,DBARF involves the calculation of keypoint-metric reprojection error in the process of bundle adjustment.
+camera poses,nerf,"NeRF's rendering quality highly relies on accurate camera poses, which are adjusted jointly with NeRF in works like BARF to enhance performance."
+barf,camera poses,BARF is a representative work that focuses on jointly optimizing camera poses with NeRF to improve rendering quality.
+nerf,pixel coordinates,NeRF maps pixel coordinates into high-dimensional space using Fourier features to allow network learning of high-frequency image components.
+fourier features,camera poses,"Fourier features can affect the optimization of camera poses in NeRF, as gradients from high-frequency components dominate during training."
+barf,high-frequency components,"BARF adopts a coarse-to-fine strategy to deal with high-frequency components during training, adjusting camera poses accordingly."
+barf,low-frequency components,BARF masks out high-frequency components initially and then gradually reintroduces them after stabilizing low-frequency components to optimize camera poses.
+camera poses,photometric loss,Camera poses are adjusted by photometric loss during training to enhance performance instead of using keypoint-metric cost in SfM.
+camera poses,photometric loss,Camera poses are adjusted by the photometric loss during training instead of the keypoint-metric cost in SfM.
+camera poses,pre-computed camera poses from sfm,"Despite its promising results, BARF and its follow-up works still require the pre-computed camera poses from SfM."
+nerf,per-scene training,One other issue with vanilla NeRF is that it needs time-consuming per-scene training.
+nerf,generalizability across scenes,Making NeRF generalizable across scenes has recently gained increasing attention.
+generfs,accurate camera poses,"However, similar to vanilla NeRF, GeNeRFs also depend on accurate camera poses."
+generfs,joint optimization with camera poses,There is no existing work that tried to optimize the camera poses jointly with GeNeRFs.
+nerf,generfs,This intrigues us to investigate the replacement of NeRF with GeNeRFs in BARF.
+camera poses,diverge quickly,"We find that the joint optimization is non-trivial in our task settings, and the camera poses can diverge quickly even when initialized with the ground truths."
+generfs,failure of bundle adjusting generfs,"In this paper, we identified two potential reasons which cause the failure of bundle adjusting GeNeRFs."
+feature outliers,occlusions,"The first reason is the aggregated feature outliers, which are caused by occlusions."
+cost function,non-convexity,"The other reason is due to the high non-convexity of the cost function produced by ResNet features, which produces incoherent displacements."
+barf,positional encodings,The issue with incoherent displacements is similar to the issue caused by positional encodings in BARF.
+generf,relative camera poses,"We further proposed our method DBARF, which jointly optimizes GeNeRF and relative camera poses by a deep neural network."
+generf,relative camera poses,GeNeRF is deep neural network that mizes with relative camera poses to optimize camera pose correction and 3D point warping onto feature maps. The training objective in BARF is equivalent to the implicit training objective in Optimize the relative camera poses from target view in DBARF.
+camera poses,generf,"The camera poses are optimized in DBARF alongside GeNeRF without relying on absolute camera poses. Joint optimization of camera poses with GeNeRF is challenging, as shown in the experiment."
+dbarf,generf,DBARF is a method for deep bundle adjusting camera poses with GeNeRFs. It is trained end-to-end without known absolute camera poses. DBARF's generalization is demonstrated to outperform BARF and GARF without per-scene fine-tuning.
+dbarf,camera poses,"DBARF deep bundle adjusting camera poses with GeNeRFs, optimizing camera poses without requiring known absolute camera poses. Generalization ability of DBARF is shown to be superior to both BARF and GARF even without per-scene fine-tuning."
+nerf,mlp,NeRF predicts volume density with an MLP (Multi-Layer Perceptron) based on posed images for novel view synthesis.
+novel view synthesis,nerf,Novel View Synthesis involves the method NeRF for predicting volume density and pixel color for a point in 3D space.
+nerf,mlp,NeRF utilizes an MLP to predict volume density and pixel color for a point sampled at 3D space.
+pixel-nerf,nerf,Pixel-NeRF is an extension that generalizes NeRF to unseen scenes.
+ibrnet,pointnet,IBRNet uses a PointNet-like architecture to weight per-point image features from nearby views.
+ibrnet,ray transformer,IBRNet incorporates a ray transformer to predict density based on weighted image features and uses an MLP to predict pixel color.
+mvsnerf,3d cnn,MVSNeRF constructs 3D feature cost volume and uses a 3D CNN to reconstruct a neural voxel volume for predicting pixel color and volume density.
+mvsnerf,neural voxel volume,MVSNeRF involves reconstructing a neural voxel volume from 3D feature cost volume to predict pixel color and volume density.
+geonerf,casmvs-net,GeoNeRF extends MVSNeRF by incorporating CasMVS-Net to consider scene geometry in the process.
+mlp.geonerf,mvsnerf,MLP.GeoNeRF extends MVSNeRF by using CasMVS-Net to let the network be aware of scene geometry.
+mlp.geonerf,ibrnet,MLP.GeoNeRF adopts a similar approach as IBRNet to regress image color and volume density.
+mlp.geonerf,neuray,NeuRay further predicts the visibility of 3D points to tackle the occlusion issue in previous GeNeRFs.
+neuray,generfs,NeuRay further predicts the visibility of 3D points to tackle the occlusion issue in previous GeNeRFs.
+lfnr,gpnr,LFNR and GPNR adopt a 4D light field representation and a transformer-based architecture to predict the occlusions and colors for features aggregated from epipolar lines.
+nerf,nerf−−,"NeRF−− jointly optimizes the network of NeRF and camera pose embeddings, achieving comparable accuracy with NeRF methods that require posed images."
+nerf,sinerf,SiNeRF adopts a SIREN-MLP and a mixed region sampling strategy to circumvent the sub-optimality issue in NeRF−−.
+nerf,barf,BARF proposes to jointly train NeRF with imperfect camera poses with a coarse-to-fine strategy.
+resnet,fpn,ResNet gives a non-smooth cost feature map while feature patches with FPN lead to a smoother cost map
+method,sample image patches,Our method sample image patches to predict relative camera poses
+rm-nerf,gnn-based motion averaging network,RM-NeRF jointly trains a GNN-based motion averaging network to solve the camera pose refinement issue in multi-scale scenes
+rm-nerf,mip-nerf,RM-NeRF jointly trains...Mip-NeRF to solve the camera pose refinement issue in multi-scale scenes
+mip-nerf,camera pose refinement issue,Mip-NeRF to solve the camera pose refinement issue in multi-scale scenes
+gnerf,adversarial learning method,GNeRF utilized an adversarial learning method to estimate camera poses
+gnerf,camera poses,Camera poses in GNeRF are randomly sampled...predict the camera poses by taking the fake images as input
+generator,fake images,a generator generates the corresponding fake images by volume rendering
+discriminator,real and fake images,a discriminator that classifies the real and fake images
+inversion network,camera poses,An inversion network finally learns to predict the camera poses by taking the fake images as input
+vmrf,nerf,VMRF can learn NeRF without known camera poses
+unbalanced optimal transport,relative transformation,The unbalanced optimal transport is introduced to learn the relative transformation between the real image and the rendered image
+camera poses,predicted relative poses,camera poses are updated by the predicted relative poses to enable a finer training of NeRF
+works,generalizable nerfs,None of the mentioned works can be applied to generalizable NeRFs and thus require time-consuming per-scene optimization
+nerf,pose regression,NeRF and pose regression are related as they both are mentioned in the context chunk as different approaches tried for generalizability in rendering tasks.
+nerf,single-view rendering tasks,NeRF is focused on single-view rendering tasks according to the context.
+multiple views settings,single view,Multiple views settings are compared to single view and considered more challenging.
+nerf,generalizable neural radiance field,NeRF is a part of the Generalizable Neural Radiance Field methods which are discussed in the context.
+generfs,neural radiance field methods,GeNeRFs is a specific type of Neural Radiance Field methods which share a common philosophy in their network architectures.
+generfs,2d image features,GeNeRFs first extract 2D image features by projecting a point onto the feature map using differentiable bilinear interpolation function and reprojection function.
+generfs,k points,"To render a novel view, GeNeRFs either sample K points and aggregate pixel-level features for each emitted ray, or construct a 3D cost volume by plane sweep from selected nearby views."
+2d image features,reprojection function,2D image features are extracted using a reprojection function which maps points from world frame to image plane.
+k points,pixel-level features,K points are sampled and pixel-level features are aggregated for each emitted ray in the novel view.
+k points,3d cost volume,K points are used to construct a 3D cost volume by plane sweep from selected nearby views.
+3d cost volume,per-depth volume density,Per-depth volume density is predicted from the 3D cost volume by a neural network.
+3d cost volume,pixel color,Pixel color is predicted from the 3D cost volume by a neural network.
+target image,generf network,The rendered target image is given by the GeNeRF network as per equation (5)
+training loss,photometric error,The training loss for GeNeRFs is the photometric error between the rendered target image and the ground truth target image as per equation (6)
+barf,nerf,BARF can jointly optimize NeRF with imperfect camera poses as mentioned in the context
+training strategy,gradient inconsistency,"The success of BARF is attributed to the coarse-to-fine training strategy, which can deal with the gradient inconsistency between low-frequency components and high-frequency components"
+low-frequency components,high-frequency components,Low-frequency components are first learned and masked out before high-frequency components are learned in BARF
+gradient dominance,positional encodings,Gradients from high-frequency components tend to dominate the training process due to the positional encodings as described in the context
+barf variants,camera poses optimization,"BARF and its variants can optimize the camera poses jointly with NeRF, leading to the question of directly optimizing the camera poses jointly with GeNeRFs"
+generf,pretrained model,GeNeRF model is pretrained
+pose embedding,generf model,Pose embedding is constructed and jointly trained with the GeNeRF model
+camera poses,joint optimization,Camera poses are drifted even during joint optimization from ground truths
+gradient flow,back-propagation,Observing gradient flow during back-propagation to understand potential reasons
+cameras poses,generfs,Questioning the reason for preventing joint optimization of camera poses with GeNeRFs
+image feature,outlier,An image feature can be an outlier affecting the computation of gradients
+occlusion,aggregation function,Aggregation function is not aware of occlusions which affects the computation
+aggregation function fa(·),occlusions,"The aggregation function is not aware of occlusions, causing errors in the final gradient"
+∂f k,final gradient ∂lrgb,The erroneous terms ∂f k cause issues with the final gradient ∂Lrgb
+resnet-like features,non-smooth cost map,Non-smooth cost map is caused by ResNet-like features
+barf,high-frequency components,The coarse-to-fine training strategy in BARF suppresses and adds back high-frequency components
+generfs,features,Most GeNeRFs work directly on the features and do not use positional encodings
+dbarf,camera poses,DBARF jointly optimizes camera poses with GeNeRFs
+dbarf,method,DBARF proposes a method to optimize camera poses with GeNeRFs
+ibrnet,generf method,IBRNet is taken as the GeNeRF method and does not affect the applicability of the proposed method
+ibrnet,features,IBRNet aggregates features by projecting points into nearby views
+scene graph,camera poses,The scene graph is dependent on the camera poses as they are unknown initially
+image features,resnet-like backbone,Image features are extracted using a ResNet-like backbone
+image feature,target view,The image feature of the target view is warped to nearby views using camera poses and depth
+camera poses,depth,Camera poses and depth are optimized recurrently for constructing cost maps
+camera poses,cost map,Camera poses are optimized based on the cost map generated from image feature difference
+generalizable nerf,image color and density value,The generalizable NeRF is used to predict image color and density value
+image,volume rendering,The final image is rendered using volume rendering
+pose optimizer,generalizable nerf,The pose optimizer is jointly learned with the generalizable NeRF in stage C
+network,posed images,The network outputs the posed images as the final result
+"zk,i",depth value,"The sampled depth value Zk,i is mentioned in relation to the depth value, which is not accurately computed using Eq. (2b) in the context."
+nerf,scene geometry,NeRF is discussed in terms of not learning the scene geometry well in the context.
+fpn,feature pyramid network,"FPN (Feature Pyramid Network) is adopted as the feature backbone, inspired by BANet [40], in the context."
+cost feature map,relative camera poses,The cost feature map in Eq. (11) is mentioned in relation to updating the relative camera poses Pij in the context.
+fpn,object,FPN (Feature Pyramid Network) is mentioned in relation to updating the relative camera poses Pij and the depth map Di in the context.
+raft-like architecture,recurrent gru,A recurrent GRU is adopted in the RAFT-like architecture for predicting the camera poses and depth map in the context.
+camera poses,depth map,Camera poses Pij and depth map Di are updated using a GRU for predicting the relative camera pose correction ∆Pij and depth correction ∆Dk in the context.
+scene graph,nearby views,A scene graph is mentioned in relation to selecting nearby views for feature aggregation in the context.
+scene graph,target view,A scene graph records neighbors of a target view Ii.
+robust loss function,ρ(·),ρ(·) can be any robust loss function.
+camera poses,robust loss function,Simply adopting Eq. (10) to optimize the camera poses without knowing the outlier distribution to apply a suitable robust loss ρ(·) can give bad results.
+camera poses,gradient descent,First-order optimizers can also easily get stuck at bad local minima in our task.
+camera poses,approach,"Therefore, we seek an approach that can minimize Eq. (10) while bypassing direct gradient descent."
+objective function,neural network,"Instead of explicitly taking Eq. (10) as an objective and optimizing camera poses by gradient descent, we implicitly minimize it by taking the feature error as an input to another neural network."
+target view,features,"Since NeRF randomly samples points in the target view during training, we lose the spatial information of the features when the neural network directly takes Eq. (10) as input."
+super-glue,feature matches,Super-Glue is used for extracting feature matches for each candidate image pair.
+epipolar constraints,feature matches,Wrong feature matches are filtered by checking the epipolar constraints.
+images,neighbors,Two images become neighbors when they share enough image keypoint matches.
+views,neighbors,Nearby views are selected by sorting their neighbors according to the number of inlier matches in descending order.
+scene graph construction,preprocessing step,Scene graph construction is a preprocessing step that needs to be executed only once for each scene.
+edge-aware depth map smoothness loss,depth optimization,The edge-aware depth map smoothness loss is adopted for self-supervised depth prediction to penalize changes where the original image is smooth.
+warped photometric loss,camera poses optimization,The warped photometric loss is adopted for self-supervised pose optimization to warp images from nearby image j to the target image.
+generf,loss function,The same loss function is used for GeNeRF as in the equation.
+pretraining datasets,method,IBRNet and the method are pretrained on scenes from self-collected datasets from IBR-Net and real scenes captured by LLFF with the ground truth camera poses.
+net,handheld headphone,Net [47] is used to capture 33 real scenes with a handheld headphone from LLFF [27]
+handheld headphone,llff,handheld headphone captures scenes from LLFF [27]
+llff,ground truth camera poses,LLFF [27] provides ground truth camera poses
+ground truth camera poses,colmap,Ground truth camera poses are obtained from COLMAP
+scannet dataset,indoor scenes,The ScanNet dataset [6] contains 20 indoor scenes
+scannet dataset,ground truth camera poses,ScanNet dataset [6] provides ground truth camera poses
+ground truth camera poses,bundlefusion,Ground truth camera poses are provided by BundleFusion [7]
+ground truth camera poses,ibrnet,Ground truth camera poses are provided by IBRNet
+barf,ibrnet,BARF and IBRNet are evaluated on LLFF dataset [27] and ScanNet dataset [6]
+ibrnet,garf,IBRNet is trained and evaluated in the same scene with GARF
+ibrnet,generf,IBRNet is adopted as the GeNeRF implementation
+pose optimizer,dro,DRO [14] is used as the pose optimizer
+nvidia rtx a5000 gpu,24g,A single 24G NVIDIA RTX A5000 GPU is used to train both our method and IBRNet
+adam,learning rate,Adam [19] is used with a learning rate of 1e−3
+ibrnet,method,IBRNet and our method are mentioned in the context as methods that are compared in terms of nearby views selection and network training
+ibrnet,camera poses,"IBRNet uses known camera poses, while the method being discussed does not have this advantage"
+ibrnet,coarse network,"IBRNet uses both coarse and fine networks, while the method being discussed only trains a coarse network for comparison purposes"
+garf,barf,"GARF and BARF are compared in terms of rendering quality, with GARF surpassing both in the results presented"
+ibrnet,barf,"The rendering quality of IBRNet is compared to BARF, with the method surpassing BARF in certain scenes despite IBRNet having known camera poses."
+ibrnet,garf,"The rendering quality of IBRNet is compared to GARF, with the method surpassing GARF in certain scenes despite IBRNet having known camera poses."
+barf,garf,"BARF and GARF are compared in terms of rendering quality, with GARF surpassing BARF in the results presented"
+ibrnet,"ferns, flowers, fortress scenes","IBRNet is mentioned in comparison to the method for rendering quality in specific scenes like ferns, flowers, and fortress"
+ibrnet,pose accuracy,IBRNet is likely compared to the method for pose accuracy in rendering
+ibrnet,llff dataset,IBRNet is mentioned in reference to the LLFF dataset for visual results comparison
+method,per-scene finetuned visual results,The method's visual results for individual scenes are discussed
+ibrnet,our method,Comparison is drawn between IBRNet and the method for rendering quality and network training
+method,visual results,The method mentioned in the context shows per-scene finetuned visual results
+method,ibrnet,The method mentioned outperforms IBRNet in rendering images for scenes of horns and orchids
+method,room scene,The method mentioned shows an obvious artifact for IBRNet in the room scene
+method,scannet dataset,The method renders better results than IBRNet on the ScanNet dataset
+camera poses,ground truth camera poses,The differences in the camera poses visualized indicate that ground truth camera poses are not accurate
+dbarf,absolute camera poses,"DBARF does not recover absolute camera poses, instead it measures the accuracy of predicted relative camera poses"
+dbarf,relative camera poses,DBARF measures the accuracy of predicted relative camera poses rather than recovering absolute camera poses
+umeyama,pose accuracy,Umeyama is used to ground truth pose accuracy
+pose accuracy,predicted relative poses,pose accuracy is measured by taking average pose errors between predicted relative poses and ground truth camera poses
+dbarf,method,Generalization of DBARF method is discussed
+method,fine-tuning,Results of the method are shown with and without fine-tuning
+fine-tuning,depth maps,Depth maps are computed from GeNeRF after fine-tuning
+ibrnet,novel view synthesis,Our method surpasses BARF and GARF on novel view synthesis
+pose accuracy,rotation error,Rotation error of our method is compared for pose accuracy
+garf,novel view synthesis,GARF is used for novel view synthesis without per-scene fine-tuning
+pose accuracy,rotation error,"The rotation error of our method is less than 13° for most scenes in LLFF dataset without fine-tuning. With fine-tuning, rotation error is less than 1.5° except for the leaves scene"
+method,generalizable across scenes,"Our method is generalizable across scenes, proven by the results"
+camera poses,pseudo ground truth,Camera poses computed by COLMAP are pseudo ground truth. Our camera poses are better than COLMAP's
+dbarf,rendering quality,"Rendering quality of our DBARF is better than IBRNet on fern, flower, and fortress scenes"
+depth maps,rendered depth maps,Depth maps computed by our pose optimizer are better than those from NeRF. This validates the rationalization of our analysis
+cost map,divergence of dbarf,Utilizing the rendered depth map from NeRF to compute the cost map may cause our DBARF to diverge
+pose optimizer,smoother depth map,"Pose optimizer generates a smoother depth map. NeRF, on the other hand, can recover more accurate depth at scene details"
+nerf,learn better scene geometry,NeRF can learn better scene geometry under self-supervision
+pose optimizer,predict more accurate camera poses,Pose optimizer can predict more accurate camera poses with better-quality depth maps under self-supervision
+nerf,scene geometry,NeRF can learn better scene geometry
+nerf,pose optimizer,NeRF can predict more accurate camera poses with better-quality depth maps using the pose optimizer
+camera poses,generfs,DBARF can bundle adjust camera poses with GeNeRFs
+dbarf,generfs,DBARF can be jointly trained with GeNeRFs end-to-end without ground truth camera poses
+barf,dbarf,DBARF proposed as a solution to difficulties with bundle adjusting GeNeRFs where existing methods like BARF and its variants cannot work
+garf,dbarf,"DBARF proposed as a solution comparing to BARF and GARF, which require expensive per-scene optimization and good initial camera poses"
+dbarf,scences,DBARF is generalizable across scenes and does not require any initialization of the camera poses
+national research foundation singapore,dso national laboratories,Acknowledgement of support for the research/project from National Research Foundation Singapore and DSO National Laboratories
+ai singapore programme,national research foundation singapore,Acknowledgement of support from the AI Singapore Programme under the National Research Foundation Singapore
+tier 2 grant,singapore ministry of education,Acknowledgement of support from the Tier 2 grant MOE-T2EP20120-0011 from the Singapore Ministry of Education

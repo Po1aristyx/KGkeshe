@@ -1,0 +1,259 @@
+node_1,node_2,edge
+visual anomaly detection,computer vision,Visual anomaly detection is a task in computer vision.
+visual anomaly detection,one-class classification,Visual anomaly detection is usually formulated as a one-class classification task.
+visual anomaly detection,segmentation task,Visual anomaly detection is usually formulated as a segmentation task.
+student-teacher framework,visual anomaly detection,The student-teacher framework proves to be effective in solving the visual anomaly detection challenge.
+student-teacher framework,s-t only applied constraints on normal data,Previous works based on the student-teacher framework only empirically applied constraints on normal data.
+destseg,student-teacher framework,DeSTSeg is an improved model that integrates the student-teacher framework.
+destseg,pre-trained teacher network,DeSTSeg integrates a pre-trained teacher network into its framework.
+destseg,denoising student encoder-decoder,DeSTSeg integrates a denoising student encoder-decoder into its framework.
+destseg,segmentation network,DeSTSeg integrates a segmentation network into its framework.
+denoising procedure,learn robust representations,The denoising procedure allows the student network to learn more robust representations.
+multi-level s-t features,fusion,"To fuse the multi-level student-teacher features adaptively, a segmentation network is trained."
+synthetic anomaly masks,segmentation network,A segmentation network is trained with rich supervision from synthetic anomaly masks.
+experiments,industrial inspection benchmark dataset,Experiments on the industrial inspection benchmark dataset demonstrate the method's performance.
+method,achieving state-of-the-art performance,The method achieves state-of-the-art performance.
+computer vision,industrial inspection,computer vision applications such as industrial inspection
+computer vision,medical disease screening,computer vision applications such as medical disease screening
+computer vision,video surveillance,computer vision applications such as video surveillance
+ad tasks,one-class classification and segmentation,AD tasks formulated as a one-class classification and segmentation using only normal data for model training
+student-teacher (s-t) framework,knowledge distillation,student-teacher framework known as knowledge distillation proven effective in AD
+teacher network,large-scale dataset,teacher network pre-trained on large-scale dataset such as ImageNet
+teacher network,student network,teacher network pre-trained on large-scale dataset like ImageNet and student network trained to mimic feature representations
+student network,feature representations,student network trained to mimic feature representations of teacher network on AD dataset
+student network,anomalous samples,student network expected to generate different feature representations from teacher network on anomalous samples
+anomalous pixels,images,anomalous pixels and images recognized in inference phase
+knowledge distillation,feature pyramid,knowledge distillation applied at various levels of feature pyramid
+feature pyramid,discrepancies,discrepancies from multiple layers aggregated for good performance
+features,anomalous samples,The features of anomalous samples are always different between S-T networks because there is no constraint from anomalous samples during training.
+student network,teacher network,"The student network may output similar feature representations as those by the teacher network, even with anomalies."
+mvtec ad dataset,transistor category,"For the category of transistor in the MVTec AD dataset, employing the representation from the last layer outperforms multi-level features."
+representation,pixel-level auc,Employing the representation from the last layer outperforms multi-level features in terms of pixel-level AUC.
+destseg,synthetic anomalies,"DeSTSeg consists of a denoising student network, a teacher network, and a segmentation network. It introduces random synthetic anomalies into normal images for training."
+student network,corrupted image,The denoising student network takes a corrupted image as input during training.
+teacher network,clean image,The teacher network takes the original clean image as input during training.
+network,synthetic input,The network with synthetic input is trained to generate similar feature representations as the teacher network from the clean image.
+network,teacher network,The element-wise product of the student and teacher networks' normalized outputs are concatenated and utilized to train the segmentation network.
+student network,teacher network,The element-wise product of the student and teacher networks' normalized outputs are concatenated and utilized to train the segmentation network.
+segmentation network,student network,The segmentation output is the predicted anomaly score map. The feature discrepancy between the two networks is minimized.
+student network,denoising,The student network is trained to perform denoising in the feature space.
+anomalous images,teacher network,"Given anomalous images as input to both networks, the teacher network encodes anomalies naturally into features."
+anomalous images,student network,"The teacher network encodes anomalies naturally into features, while the trained denoising student network filters anomalies out of feature space."
+denoising student network,teacher network,The two networks are reinforced to generate distinct features from anomalous inputs.
+denoising student network,encoder-decoder network,"For the architecture of the denoising student network, an encoder-decoder network is decided to be used for better feature denoising instead of adopting an identical architecture as the teacher network."
+segmentation network,feature discrepancies,"Instead of using empirical aggregation, a segmentation network is appended to fuse the multi-level feature discrepancies in a trainable manner, using the generated binary anomaly mask as the supervision signal."
+method,benchmark dataset,"We evaluate our method on a benchmark dataset for surface anomaly detection and localization, MVTec AD."
+method,state-of-the-art methods,"Extensive experimental results show that our method outperforms the state-of-the-art methods on image-level, pixel-"
+method,state-of-the-art methods,Our method outperforms the state-of-the-art methods on various anomaly detection tasks.
+method,ablation studies,We also conduct ablation studies to validate the effectiveness of our proposed components in the method.
+denoising student encoder-decoder,teacher,The denoising student encoder-decoder is trained to generate different feature representations from the teacher with anomalous inputs.
+segmentation network,multi-level feature similarities,The segmentation network adaptively fuses the multi-level feature similarities to replace the empirical inference.
+experiments,benchmark dataset,Extensive experiments are conducted on the benchmark dataset to demonstrate the effectiveness of the method for various tasks.
+anomaly detection,localization,Anomaly detection and localization have been studied from numerous perspectives.
+image reconstruction,autoencoder,"In image reconstruction, researchers use autoencoder, variational autoencoder, or generative adversarial network to train an image reconstruction model on normal data."
+anomalous images,difference between the input and reconstructed images,"Anomalous images cannot be reconstructed effectively since they are not seen during training, so the difference between the input and reconstructed images can be used as pixel-level anomaly scores."
+anomaly regions,over-generalization issue,Anomaly regions still have a chance to be accurately reconstructed due to the over-generalization issue.
+parametric density estimation,extracted features of normal data,Parametric density estimation assumes that the extracted features of normal data obey a certain distribution.
+parametric density estimation,normal data,"Parametric density estimation assumes that the extracted features of normal data obey a certain distribution, such as a multivariate Gaussian distribution, and uses the normal dataset to estimate the parameters."
+anomalous data,outlier data,Outlier data are recognized as anomalous data by inference.
+assumption,gaussian distribution,"Since the assumption of Gaussian distribution is too strict, some recent works borrow ideas from normalizing flow to approximate the density of any distributions."
+normalizing flow,gaussian distribution,"Some recent works borrow ideas from normalizing flow, by projecting an arbitrary distribution to a Gaussian distribution to approximate the density of any distributions."
+memory-based approaches,anomaly score,"Memory-based approaches build a memory bank of normal data in training. During inference, given a query item, the model selects the nearest item in the memory bank and uses the similarity between the query item and the nearest item to compute the anomaly score."
+parametric density estimation,inference,Outlier data are recognized as anomalous data by inference.
+anomaly-free dataset,feature representation,"The student network is trained on an anomaly-free dataset, and its feature representation of anomalies is expected to be distinct from that of the teacher network."
+ensemble learning,student networks,Ensemble learning is used to train multiple student networks and exploit the irregularity of their feature representations to recognize the anomaly.
+student networks,feature representations,The irregularity of feature representations in student networks is exploited to recognize anomalies.
+feature representations,anomaly,[31] and [26] adopted multi-level feature representation alignment to capture both low-level and high-level anomalies.
+decoder architectures,student network,[33] designed decoder architectures for the student network to avoid the shortcomings of identical architecture and the same dataflow between S-T networks.
+s-t representations,normal inputs,Works focus on improving the similarity of S-T representations on normal inputs.
+s-t representations,anomalous input,The work additionally attempts to differentiate S-T representations on anomalous input.
+anomalous data,one-class classification ad,"Although there is no anomalous data for training in one-class classification AD, pseudo-anomalous data could be simulated for supervised training."
+anomaly simulation strategies,fine-grained anomalous patterns,Classical anomaly simulation strategies like rotation and cutout do not perform well in detecting fine-grained anomalous patterns.
+cutpaste,anomalous image,CutPaste is a simple yet effective strategy that simulates anomalous images by copying and pasting content to different locations within the image.
+perlin noise,anomalous image,Two-dimensional Perlin noise is used to simulate a more realistic anomalous image.
+simulated anomalous images,ground truth masks,"With simulated anomalous images and corresponding ground truth masks, anomalies are localized with segmentation networks."
+ground truth masks,anomalies,"Ground truth masks [29, 36, 37] are used to localize anomalies with segmentation networks"
+system,[36],The system adopts the ideas from [36] for anomaly simulation and segmentation
+destseg,teacher network,DeSTSeg consists of a pre-trained teacher network
+destseg,denoising student network,DeSTSeg consists of a denoising student network
+destseg,segmentation network,DeSTSeg consists of a segmentation network
+synthetic anomalies,normal training images,Synthetic anomalies are introduced into normal training images
+segmentation network,simulated anomalous image,The segmentation network optimizes parameters to localize anomalous regions using the simulated anomalous image
+student network,clean image,The student network takes the simulated anomalous image while the teacher network takes the original clean image
+pixel-level anomaly maps,image-level anomaly scores,Pixel-level anomaly maps are generated for image-level anomaly scores via post-processing
+model,synthetic anomalous images,The training of the model relies on synthetic anomalous images
+perlin noise,anomaly mask,Random two-dimensional Perlin noise is used to generate an anomaly mask
+anomalous image,mask region,An anomalous image is generated by replacing the mask region with a linear combination of
+anomaly mask,anomalous image,An anomalous image is generated by replacing the mask region with a linear combination of an anomaly-free image and an arbitrary image from an external data source
+anomaly mask,opacity factor β,The anomaly mask is generated by randomly choosing an opacity factor β between 0.15 and 1
+anomalous image,opacity factor β,The anomalous image is calculated using the opacity factor β in the equation Ia = β(M ⊙ A) + (1 − β)(M ⊙ In) + (1 − M ) ⊙ In
+anomalous image,mask region,The anomalous image is generated by replacing the mask region with a linear combination of images
+mask region,anomaly-free image,The mask region is replaced with a linear combination of an anomaly-free image in generating the anomalous image
+mask region,opacity factor β,The anomaly mask is generated by choosing an opacity factor β between 0.15 and 1 while considering the mask region
+anomalous image,element-wise multiplication operation,The anomalous image is calculated using the element-wise multiplication operation in the equation Ia = β(M ⊙ A) + (1 − β)(M ⊙ In) + (1 − M ) ⊙ In
+mask region,element-wise multiplication operation,The mask region is used in the element-wise multiplication operation in generating the anomalous image
+opacity factor β,element-wise multiplication operation,The opacity factor β influences the element-wise multiplication operation in the generation of the anomalous image
+anomaly mask,perlin noise,The anomaly mask generated using random Perlin noise creates more irregular and similar anomalous shapes compared to painting a rectangle anomaly mask
+image,anomaly content a,The image used as anomaly content A can be arbitrarily chosen without elaborate selection
+opacity factor β,data augmentation,The opacity factor β serves as a data augmentation technique to increase the diversity of the training set
+denoising student-teacher network,multi-level knowledge distillation approaches,"In previous multi-level knowledge distillation approaches, the input and architecture of the student network are identical to that of the teacher network"
+denoising student-teacher network,paired anomalous and normal images,The denoising student network and the teacher network take paired anomalous and normal images as input in our proposed approach
+denoising student-teacher network,encoder-decoder architecture,The denoising student network has a distinct encoder-decoder architecture
+optimization target,student network,The optimization target is established to encourage the student network to generate anomaly-specific features.
+student network,anomalous regions,The student network is to build normal feature representations on anomalous regions supervised by the teacher network.
+student network,teacher network,The denoising student network will generate different feature representations from those by the teacher network during inference.
+memory-based approaches,query item,Memory-based approaches look for the most similar normal item in the memory bank to the query item and use their similarity for inference.
+denoising student network,normal features,The denoising student network is optimized to reconstruct the normal features.
+student network,teacher network,The student network should not copy the architecture of the teacher network for the feature reconstruction task.
+cnn,local information,"The lower layers of CNN capture local information, such as texture and color."
+cnn,global semantic information,The upper layers of CNN express global semantic information.
+denoising student network,normal image,The denoising student network should reconstruct the feature of the corresponding normal image from the teacher.
+denoising student network,feature,The denoising student network should reconstruct the feature of the corresponding normal image from the teacher network.
+denoising student network,global semantic information,Such a task relies on global semantic information of the image.
+denoising student network,image denoising,The proposed task design resembles image denoising.
+encoder-decoder architecture,image denoising,The encoder-decoder architecture is widely used for image denoising.
+teacher network,encoder-decoder student network,"There is an alternative way to use the teacher network as an encoder and reverse the student network as the decoder; however, the encoder-decoder student network performs better."
+teacher network,pre-trained,The pre-trained teacher network is usually trained on ImageNet with classification tasks.
+teacher network,encoded features,The encoded features in the last layers lack sufficient information to reconstruct the feature representations at all levels.
+teacher network,imagenet,The teacher network is an ImageNet pre-trained ResNet18.
+teacher network,resnet18,The teacher network is an ImageNet pre-trained ResNet18.
+teacher network,final block,The teacher network is an ImageNet pre-trained ResNet18 with the final block removed.
+resnet18,decoder,"ResNet18 is initialized with all blocks, named S1E, and the decoder is a reversed ResNet18 with four residual blocks, named S4."
+d,s1,"S1D, S3D, S2E, S2E, S3 are mentioned in relation to the feature representation from layer T k and layer Sk."
+ftk,fsk,"Denoting FTk as the feature representation from layer T k and FSk as the feature representation from layer Sk, cosine distances can be computed."
+i,j,i and j stand for the spatial coordinate on the feature map.
+"xk(i, j)","ftk (i, j) ⊙ fsk (i, j)","Xk(i, j) is calculated as FTk (i, j) element-wise multiplied by FSk (i, j)."
+"ftk (i, j)","fsk (i, j)","FTk (i, j) and FSk (i, j) are used in the calculation of Xk(i, j) through element-wise multiplication."
+"dk(i, j)",1 - ck,"Dk(i, j) is calculated as 1 minus the cosine similarity Ck."
+lcos,"dk(i, j)","The cosine distance Dk(i, j) is used in the computation of the loss function Lcos."
+"[26,31]",cosine distances,"In [26, 31], cosine distances from multi-level features are used to represent the anomaly score of each pixel."
+segmentation network,anomaly mask,"A segmentation network is added to guide feature fusion with additional supervision signals, and the resulting binary anomaly mask is generated."
+s-t networks,synthetic anomalous image,Both the student and teacher networks use the synthetic anomalous image as input to train the segmentation network.
+anomalous image,s-t networks,Anomalous image is utilized as the input for both S-T networks.
+anomalous image,ground truth,The corresponding binary anomaly mask is the ground truth for the anomalous image.
+feature maps,upsampled features,The similarities of the feature maps are calculated and upsampled to form the upsampled features.
+upsampled features,segmentation network,The upsampled features are concatenated and fed into the segmentation network.
+segmentation network,residual blocks,The segmentation network contains two residual blocks.
+segmentation network,aspp module,The segmentation network contains an Atrous Spatial Pyramid Pooling (ASPP) module.
+segmentation network,output size,The output size of the segmentation network equals the size of X1.
+segmentation training,focal loss,The segmentation training is optimized by employing the focal loss.
+segmentation training,l1 loss,The segmentation training is optimized by employing the L1 loss.
+image,anomalous pixels,Only a small portion of the image consists of anomalous pixels that must be segmented.
+focal loss,minority category,The focal loss helps the model to focus on the minority category.
+l1 loss,sparsity of the output,The L1 loss is employed to improve the sparsity of the output.
+ground truth anomaly mask,input size,The ground truth anomaly mask is downsampled to a size equal to 1/4 of the input size.
+loss,downsample,The process of downsampling the ground truth anomaly mask is done to a size equal to 1/4 of the input size to match the output.
+downsample,ground truth anomaly mask,"The ground truth anomaly mask is downsampled in different ways such as bilinear interpolation, floor values, and ceil values."
+ground truth anomaly mask,mask,The binary ground truth anomaly mask is downsampled with different implementations affecting its appearance.
+mask,implementation,The mask is downsampled with bilinear interpolation and values are floored or ceiled to zero or one.
+implementation,region,Different downsampling implementations such as nearest interpolation or proposed approach impact the original contiguous region.
+mask,focal loss,The focal loss is computed based on the downsampled anomaly mask and the probability map.
+focal loss,l1 loss,The L1 loss is computed in the calculation of the focal loss.
+l1 loss,segmentation loss,The segmentation loss is computed as part of the overall loss calculation.
+segmentation loss,inference,"In the inference stage, the segmentation prediction is used to generate an anomaly score map."
+inference,anomalous pixels,Anomalous pixels in the input image are expected to have higher values in the output anomaly score map.
+anomaly score map,input image,Anomalous pixels in the input image are expected to have greater values in the output anomaly score map.
+anomaly score map,image-level anomaly score,"The image-level anomaly score is calculated using the average of the top T values from the anomaly score map, where T is a tuning hyperparameter."
+mvtec ad dataset,benchmark,MVTec AD dataset is one of the most widely used benchmarks for anomaly detection and localization.
+mvtec ad dataset,categories,"The MVTec AD dataset comprises 15 categories, including 10 objects and 5 textures."
+normal images,training,There are hundreds of normal images available for training.
+anomalous images,evaluation,A mixture of anomalous and normal images are used for evaluation.
+imagenet dataset,performance,ImageNet dataset can achieve comparable performance in anomaly detection.
+dtd dataset,anomaly source image a,The Describable Textures Dataset (DTD) is used as the anomaly source image A in the evaluation.
+evaluation metrics,image-level evaluation,AUC is utilized to evaluate image-level anomaly detection.
+evaluation metrics,pixel-level evaluation,AUC and average precision (AP) are selected to evaluate the pixel-level result.
+evaluation metrics,instance-level evaluation,"In real-world applications, average precision (AP) is a more appropriate metric for heavily imbalanced classes."
+cision,metric,Cision is mentioned as a metric for heavily imbalanced classes.
+instance-level evaluation,real-world applications,Instance-level evaluation is discussed in the context of real-world applications like industrial defect inspection and medical imaging lesion detection.
+per-region-overlap,ground truth,Per-region-overlap is a proposed metric that weights the connected components of different sizes in the ground truth.
+instance average precision,anomaly instance,Instance average precision is mentioned as a more straightforward metric for anomaly instances.
+prediction,ground truth,Overlap between prediction and ground truth is discussed in the context of instance recall.
+anomalous instance,prediction map,Anomalous instance detection is based on prediction map where more than 50% of the region pixels are predicted as positive.
+average precision,curve,Average precision is calculated from the curve of pixel-level precision and instance-level recall rate points.
+precision,recall,Precision at recall is calculated for applications requiring an extremely high recall.
+model,experiments,The model is evaluated in experiments under a high-stakes scenario.
+ground truth downsampling method,prior implementations,Ground truth downsampling method is discussed in contrast to prior implementations of pixel-level evaluation.
+pixel-level evaluation,poor alignment,The context mentions that prior implementations of pixel-level evaluation are poorly aligned.
+pixel-level evaluation,groundus,The groundUS is downsampled in prior implementations of pixel-level evaluation.
+groundus,stpm,The works mention STPM in relation to groundUS.
+groundus,cutpaste,The works mention CutPaste in relation to groundUS.
+groundus,draem,The works mention DRAEM in relation to groundUS.
+groundus,dsr,The works mention DSR in relation to groundUS.
+groundus,patchcore,The works mention PatchCore in relation to groundUS.
+groundus,oursus,The works mention OursUS in relation to groundUS.
+image-level anomaly detection,auc (%),Table 1 shows the Image-level anomaly detection AUC (%) on the MVTec AD dataset.
+stpm,cutpaste,STPM and CutPaste are compared in the results.
+stpm,draem,STPM and DRAEM are mentioned together in the results.
+stpm,dsr,The results mention STPM and DSR together.
+cutpaste,draem,CutPaste and DRAEM are compared in the results.
+cutpaste,dsr,CutPaste and DSR are compared in the results.
+draem,dsr,DRAEM and DSR are mentioned together in the results.
+dsr,patchcore,DSR and PatchCore are mentioned together in the results.
+patchcore,oursus,PatchCore and OursUS are mentioned together in the results.
+toothbrush,results,The results include a mention of the toothbrush.
+average,results,The results include an average value.
+average,results,The results include an average value.
+pixel-level anomaly localization,auc / ap (%),The AUC (Area Under the Curve) and AP (Average Precision) are important metrics used for evaluating the performance of anomaly localization at the pixel level.
+mvtec ad dataset,pixel-level anomaly localization,The MVTec AD dataset is used for evaluating the performance of pixel-level anomaly localization techniques.
+bilinear interpolation,downsampling,Bilinear interpolation is used in the downsampling process to convert the binary mask to 256 × 256 resolution.
+ground truth mask,downsampling,"The downsampling process affects the ground truth mask by introducing distortion, which can impact the evaluation of anomaly localization methods."
+evaluation,official pre-trained models,The evaluation of anomaly localization methods involves re-evaluating pre-trained models from previous works to ensure fair comparisons.
+methods,open-source code,Methods without open-source code are mentioned in the context
+results,original papers,Results mentioned in original papers are used for methods without open-source code
+experiments,method,Experiments of the method are repeated 5 times with different random seeds
+method,state-of-the-art,Performance of the method reaches state-of-the-art on average
+results,image-level anomaly detection,AUC is reported for the image-level anomaly detection task
+method,state-of-the-art,Method outperforms state-of-the-art by 5.6% on AP and achieves comparable AUC scores
+method,patchcore,Method achieves AUC scores comparable to PatchCore [24]
+method,industrial application scenes,Method generalizes well over a wide range of industrial application scenes
+instance-level anomaly detection,iap and iap@90,IAP and IAP@90 are reported for instance-level anomaly detection
+method,state of the art,Method achieves the state of the art for both metrics in instance-level anomaly detection
+categories,hard samples,Categories such as carpet and pill contain hard samples close to the decision boundary.
+categories,iap@90,Categories with hard samples have relatively high standard deviations of IAP@90.
+metrics,performance,Metrics can be used to determine whether the performance is acceptable for an application.
+category,cable,"For the category cable, memory-based approaches have better performance than others."
+normal pixels,intra-class distances,Normal pixels have larger intra-class distances than categories with periodic textures.
+categories,anomalies,"Categories such as grid, screw, and tile have relatively small or thin anomalies."
+methods,resolution,Methods with higher resolution are recommended for anomalies in categories.
+instance-level anomaly detection,iap,"Often used interchangeably, Instance-level anomaly detection (IAP) is a technique used to detect anomalies at the instance level, while IAP@90 is a metric that evaluates the performance of the detection method at a 90% level."
+visualization examples,method,"In the context, the method refers to the approach or technique used for anomaly detection. Visualization examples show the results generated by the method for presentation and analysis purposes."
+predictions,performance,"The predictions made by the anomaly detection method can influence the overall performance, which is the measure of how well the method detects anomalies compared to other techniques."
+failure cases,ambiguous ground truths,"Failure cases occur when the detection method is unable to correctly identify anomalies, and ambiguous ground truths, which are not clear or well-defined, can lead to such failures."
+ground truth,failure occurrences,Ground truths are responsible for a number of failure occurrences.
+ground truth,original location,The ground truth highlights both the original and misplaced location.
+ground truth,misplaced location,"The ground truth highlights both the original and misplaced location, while the prediction mask only covers the misplaced location."
+prediction mask,misplaced location,The prediction mask only covers the misplaced location.
+capsule case,distorted parts,"For a capsule case shown in the second row, the ground truth contains most of the distorted parts."
+prediction mask,entire capsule,The prediction mask covers the entire capsule.
+predictions,useful,"In these cases, we would argue that our predictions are still useful."
+failure cases,noisy backgrounds,"On the other hand, some failure cases, such as those shown in the third and fourth rows, result from noisy backgrounds."
+tiny fibers,stains,Tiny fibers and stains are highlighted due to the susceptibility of our model.
+anomalies,acceptable,We leave it to future work to investigate whether these anomalies are acceptable in order to draw more accurate conclusions.
+network architecture,ablation studies,"In Tab. 4, we evaluate the effectiveness of our three designs: replacing the training inputs of the vanilla student network with synthetic anomalies to enable a denoising procedure (den), applying encoder-decoder architecture to the student network(ed), and appending the segmentation network (seg) to replace the empirical feature fusion strategy."
+student network,anomalous images,Only changing the student network’s input to anomalous images undermines performance.
+student network,anomalous images,Changing the student network's input to anomalous images undermines performance.
+student network,ed,"Experiment 5 shows improvement when ed is added, indicating that the den can be boosted by adopting ed architecture."
+experiments 1,experiment 4,Comparisons showcase that the segmentation network can significantly improve the performances of all three metrics when comparing experiments 1 with 4.
+experiments 2,experiment 6,Comparisons showcase that the segmentation network can significantly improve the performances of all three metrics when comparing experiments 2 with 6.
+experiments 3,experiment 7,Comparisons showcase that the segmentation network can significantly improve the performances of all three metrics when comparing experiments 3 with 7.
+experiment 5,experiment 8,Comparisons showcase that the segmentation network can significantly improve the performances of all three metrics when comparing experiments 5 with 8.
+den,ed,Combination of den and ed provides more useful features for the segmentation network than a vanilla S-T network does.
+segmentation network,l1-loss,The L1-loss in the segmentation loss improves performance.
+segmentation network,segmentation network input,The input of the segmentation network is the element-wise product between the normalized feature maps of S-T networks.
+segmentation network,feature combinations,Two distinct feature combinations are used as input for the segmentation network to prove the rationality of the setting.
+s-t networks,feature maps,Input of the segmentation network involves the feature maps of S-T networks to preserve information effectively.
+s-t networks,cosine distance,Compute the cosine distance of the S-T networks' feature maps to utilize more prior information.
+s-t networks,feature maps,"The cosine distance of the S-T networks' feature maps is computed using Eq. (3), which utilizes more prior information when training the student network by optimizing the cosine distance."
+s-t networks,student network,The student network is trained using the cosine distance of the S-T networks' feature maps.
+s-t networks,student network,The student network is optimized by using more prior information from the S-T networks' feature maps.
+student network,cosine distance,"The student network is trained by optimizing the cosine distance, resulting in suboptimal performance."
+ˆx,input,"ˆX is a suitable choice as the input to balance the information and prior, leading to suboptimal performance."
+segmentation network,input,"Different input options for the segmentation network are evaluated, including concatenated-ST input and cosine-distance input."
+destseg,anomaly detection task,DeSTSeg is proposed as a segmentation-guided denoising student-teacher framework for the anomaly detection task.
+destseg,student-teacher network,The denoising student-teacher network is adopted in the DeSTSeg framework for anomaly detection.
+noising student-teacher framework,anomaly detection task,"The noising student-teacher framework is designed for the anomaly detection task, suggesting a direct relationship between them."
+denoising student-teacher network,s-t network,"The denoising student-teacher network is adopted to enhance the features generated by the S-T network, indicating a dependency relationship between them."
+denoising student-teacher network,anomalous regions,"The denoising student-teacher network is designed to generate discriminative features in anomalous regions, establishing a relationship between them."
+segmentation network,s-t network features,"The segmentation network is built to fuse the features generated by the S-T network, implying a link between them."
+proposed components,performance,"The proposed components considerably boost performance, indicating a correlation between them."
+results,previous state-of-the-art,"Our results outperform the previous state-of-the-art, suggesting a comparison relationship between them."

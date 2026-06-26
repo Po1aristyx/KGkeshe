@@ -1,0 +1,206 @@
+node_1,node_2,edge
+low-level vision,imagining quality,low-level vision is a crucial aspect for various imaging tasks
+low-level vision,image recognition applications,low-level vision supports a wide range of applications
+data augmentation,sample expansion,data augmentation is a method to increase the size and diversity of datasets.
+commonly used augmentation methods,high-level tasks,these methods are less effective in low-level tasks due to boundary effects and unrealistic context.
+cut-and-swap frequency components (cutfreq),low-level vision method,CutFreq is proposed to enhance image synthesis quality and preserve high-level representations.
+reconstructed images,real images,CutFreq differentiates between these two types in the frequency domain for better augmentation.
+model training process,two stages,the training involves separate transformation and swapping of frequency bands in CutFreq.
+low-data regime,effectiveness of cutfreq,CutFreq demonstrates its superiority when there's limited labeled data.
+labeling data,time-consuming and labor-intensive,labeling is particularly challenging
+low-level vision tasks,high overhead,low-level vision tasks have the characteristic of high overhead
+low-level vision tasks,low savings,low-level vision tasks also have the characteristic of low savings
+low-level vision tasks,poor adaptability,low-level vision tasks are known for their poor adaptability
+data augmentation,increase data amount,data augmentation techniques are used to add modified copies of data
+data augmentation,strong correlation,in mainstream tasks
+data augmentation,regularization effect,data augmentation reduces structural risk and helps the model generalize better
+data augmentation,suppress irrelevant data,it suppresses patterns unrelated to the dataset's main patterns
+state-of-the-art models,frequency domain gaps,state-of-the-art models exhibit frequency domain gaps in low-level vision tasks
+restormer (zamir et al. 2021),rain100h (yang et al. 2017),example: Restormer performance on Rain100H dataset
+restormer (zamir et al. 2021),lol (wei et al. 2018),example: Restormer performance on LoL dataset
+restormer (zamir et al. 2021),sidd (abdel-hamed,lin
+lw-isp (chen and...,low-level vision tasks,LW-ISP is another approach for low-level vision tasks
+image super-resolution,low-level vision,image super-resolution is a type of low-level vision task
+image restoration,low-level vision,image restoration
+deep neural networks (dnns),predictions,DNNs generate predictions based on discriminative regions in an image
+data augmentation methods,model's generalization ability,data augmentation methods aim to enhance a model's ability to generalize by increasing sample diversity
+warped spatial properties,poor algorithm performance,training with warped spatial properties often leads to worse performance compared to simpler augmentation methods
+flipping and rotating,simple data augmentation methods,flipping and rotating are considered simpler alternatives to data augmentation
+directional changes,high-dimensional feature domain,meaningful supervision involves directional changes in the image's feature space or other representations
+priors,data augmentation,priors in data augmentation should neither introduce dissonances nor be too disruptive but provide meaningful guidance
+lee et al. (2021),directional changes prior,Lee et al.'s work likely discusses a specific approach involving directional changes as a prior in data augmentation
+chen et al. (2021a),meaningful supervision,Chen et al. contribute to understanding how to provide meaningful supervision through data augmentation
+directional changes in the high-dimensional feature domain,instance normalization (in),Observation 1 suggests that IN
+batch normalization (bn),image classification and object detection,BN is integral to recognition tasks
+instance normalization (in),height and width dimensions (h×w),IN normalizes data across H×W dimensions
+current state-of-the-art (sota) models,reconstruction results,The SOTA models have a significant frequency-domain gap compared to real images.
+reconstructed image of sota models,real image,The difference between reconstructed and real images is discernible in the frequency domain.
+low-level vision tasks,transformer networks,Different network structures
+multi-instance augmentation strategies,cutmix (yun et al.),The author proposes using multi-instance strategies like CutMix to address the observed gaps.
+multi-instance augmentation strategies,cutmix,CutMix is an example of a multi-instance augmentation strategy mentioned in the context.
+multi-instance augmentation strategies,mixup,Mixup is another multi-instance augmentation strategy also mentioned alongside CutMix.
+multi-instance augmentation strategies,moex,MoEx is a third multi-instance augmentation strategy that is considered less suitable for low-level vision tasks.
+single-instance fine-grained augmentation,cut-and-swap frequency components (cutfreq),The paper introduces CutFreq as an alternative to multi-instance strategies
+low-level vision tasks,high-frequency components,Tasks are categorized based on their convergence behavior
+low-level vision tasks,fast convergence of high-frequency components,Other tasks exhibit fast convergence of high-frequency components
+discrete wavelet transform,input,CutFreq uses the discrete wavelet transform to decompose the input into frequency domain representation.
+standard discrete wavelet transform,ll,hl
+cut operation,frequency domain representation,The 'Cut' operation in CutFreq involves manipulating these frequency bands.
+frequency domain component convergence experiment,cutfreq augmentation method,CutFreq is inspired by the experiment and is the first method to address different low-level vision tasks.
+fast convergence stage,swap operation,In this stage
+performance approximation stage,biased learning of the input image,This stage involves exchanging frequency components to make the model learn the input image's biases.
+cutfreq,smart isp task,CutFreq improves performance by 0.17 dB in the smart ISP task
+cutfreq,image denoising,CutFreq sets new state-of-the-art results in image denoising.
+cutfreq,deraining,It also achieves state-of-the-art results in deraining.
+cutfreq,deblurring,CutFreq performs well in deblurring tasks.
+cutfreq,image enhancement,It also excels in image enhancement tasks.
+low-level vision tasks,existing methods (cutblur,copy-blend)
+low-data regime,potential of cutfreq,CutFreq demonstrates its effectiveness even in situations with limited data.
+frequency-domain gaps,prevalence in low-level vision,The paper highlights the significance of addressing frequency-domain gaps in this domain.
+gaps in low-level vision,quantitative and qualitative experiment results,The context discusses the evaluation of gaps in low-level vision through both quantitative and qualitative experiments.
+frequency-band normalized l1 distance,model convergence,This term is used to measure the convergence of the model for different frequency components.
+cutfreq augmentation method,training process,CutFreq guides the model to learn frequency domain component information during training.
+low-level vision tasks,effectiveness of cutfreq,Experiments on five low-level vision tasks demonstrate the method's effectiveness
+data augmentation (da),strategy for training neural networks,DA is a general strategy to improve neural network performance by increasing label information or forcing models to learn local details.
+mixup (zhang et al. 2017),increases label information,Mixup is a technique that combines inputs and labels to augment data and provide additional information for training.
+cutmix (yun et al. 2019),forces learning local details,CutMix is another augmentation method that focuses on mixing parts of images to enhance local detail learning.
+cutout (devries and taylor 2017),local detail learning,Cutout masks out random regions of the input to encourage the model to focus on surrounding context.
+pa-aug (choi,song,and kwak 2020)
+transmix (chen et al. 2021a),oriented towards transformers,TransMix specifically addresses the transformer structure by mixing labels based on attention maps.
+moex (li et al. 2021),feature enhancement,MoEx enhances features between different samples using PONO normalization
+low-level augmentation,copy-blend,Copy-blend is a method within low-level augmentation
+low-level augmentation,cutblur,CutBlur is another technique in low-level augmentation
+low-level augmentation,cutdepth,CutDepth extends Mixup to depth estimation tasks
+low-level augmentation,damix,DAMix generates haze images using ground truth and scale combinations
+low-level augmentation,apa,APA enhances generator-discriminator competition by augmenting real data distribution
+frequency domain processing,denoising,Frequency domain processing
+frequency domain processing,style transfer,Style transfer is different from low-level augmentation
+discrete wavelet transformation,frequency analysis,The discrete wavelet transformation is a type of frequency analysis that stands out due to its ability to capture both frequency and spatial information within a signal.
+fourier analysis,frequency analysis,Wavelet transformation is distinguished from Fourier analysis because it captures both frequency and spatial aspects
+low-level vision,hard-coded transformation,Low-level tasks are not suitable for hardcoded transformations
+general augmentation method,low-level vision,The method aims to design a general augmentation suitable for low-level tasks
+cutfreq,proposed method for low-level vision,As shown in Figure 2
+frequency domain,enhancing image generation,FDIT (Cai et al. 2021) utilizes frequency information to enhance image generation in image translation.
+wavelet transformation,low-level vision,The wavelet transformation is particularly effective in low-level vision
+base function,dilations and shifts,Starting with a base function ψ
+discrete wavelet transformation (dwt),image decomposition,DWT decomposes images into increasingly smaller and simpler segments for analysis and manipulation.
+ll band,low-frequency band,LL represents the low-frequency band
+high-frequency bands,hl,lh
+inverse discrete wavelet transform (idwt),reconstruction process,The inverse process of DWT
+haar wavelet basis,daubechies (db) wavelet basis,Several wavelet basis functions are available
+discrete fourier transform (dft),comparison,Unlike DFT
+haar basis functions,daubechies (db) basis functions,The Haar and Daubechies are the most commonly used wavelet bases in computer vision.
+haar wavelet,orthogonal wavelet function,The Haar wavelet is the most commonly used orthogonal wavelet with compact support.
+daubechies wavelet,wavelet with reasonable regularity,Daubechies wavelet offers better frequency band division but has weaker time domain support and higher computational complexity.
+daubechies wavelet,asymmetric (except n + 1),The Daubechies wavelet's asymmetry can cause phase distortion.
+cutfreq,discrete wavelet and inverse transform operations,Symmetry is crucial for CutFreq
+frequency-band normalized l1 distance (fbnd),model convergence measurement,FBND is proposed to measure model convergence for different frequency components in the context of low-level vision.
+prediction result,value of pixels,In low-level vision tasks
+frequency components,convergence state,The convergence behavior of frequency components is closely related to the specific task.
+low-frequency information,low-light image enhancement,Low-frequency information emerges as a crucial frequency component that the task focuses on in low-light image enhancement.
+lw-isp (chen and ma 2022),image denoising,Quantitative results of LW-ISP are shown for image denoising using SIDD dataset.
+lw-isp (chen and ma 2022),image enhancement,Also shows results for image enhancement using LoL dataset.
+reconstructed image,real image,The distance between the reconstructed image and the real image is measured in the frequency domain.
+frequency domain differences,degraded images,Computed and averaged frequency domain differences reflect the distinct patterns for various tasks.
+frequency patterns,datasets,Distinct frequency patterns are illustrated across different datasets for low-level vision tasks.
+reconstructed image,real image,relation in the frequency domain; distinctiveness is measured by FBND
+image denoising models,high-frequency components,models do not learn high-frequency components compared to low-frequency ones
+low-frequency components,image enhancement,learning low frequencies is a significant characteristic in image enhancement model training
+fbnd,convergence trends,used to analyze convergence across five low-level vision tasks
+high-frequency sustained convergence,image denoising,image deblurring
+high-frequency fast convergence,smart isp,image enhancement
+cutfreq,low-level tasks,introduced to address performance degradation for tasks requiring textural consistency
+cutfreq,spatial relationship,keeps neighboring regions' spatial context intact
+cutfreq,discrete wavelet transformation (dwt),CutFreq adopts DWT for decomposing input and real images into frequency domain representation.
+training sample,ground truth,In Cut operation
+cut operation,four bands (ll,hl
+ll band,further degraded bands,The LL band is further divided into four sub-bands by the wavelet transform.
+swap operation,learning stages (pe,pl)
+high frequency bands (hl,lh,hh)
+image denoising,image enhancement,Experiments involve convergence in both image denoising and image enhancement tasks.
+fast convergence (pe),performance approximation (pl),Pe and Pl indicate different stages of the learning process
+smart isp,zurich raw to rgb dataset,The method is evaluated on the Zurich dataset for smart ISP.
+zurich raw to rgb dataset,ignatov,van gool
+low-level vision tasks,(a) smart isp,(b) image denoising
+lw-isp,chen and ma (2022),LW-ISP is a model by Chen and Ma
+hinet,chen et al. (2021b),HINet is another model by Chen et al.
+restormer,zamir et al. (2021),Restormer is a model by Zamir et al.
+psnr,huynh-thu and ghanbari (2008),PSNR is an evaluation metric
+ssim,wang et al. (2004),SSIM is another evaluation metric
+multi-stage algorithms,heterogeneous knowledge distillation,Multi-stage algorithms
+pytorch 1.2.0,rtx nvidia 2080ti and ph402 sku 200,Experiments are implemented using PyTorch on these GPU specifications.
+image generation tasks,image recognition tasks,The study differentiates between these two types of tasks.
+previous high-level methods,low-level vision,Previous high-level methods don't perform well on low-level vision tasks due to their output form differences.
+color,image content information,Mixing different image content information affects the color output.
+high-level visual methods,image content information,Combining changes color and structural information
+cutmix,mixup,Both are combined in High-level visual methods
+cutmix,cutmixup,Related methods
+cropping,spatial information,Loss of spatial information occurs due to cropping
+traditional methods,rgb permutation,Examples of traditional methods
+traditional methods,blend,Sharp transformation of structure
+low-level vision methods,cutblur,Suitable for super-resolution tasks
+lw-isp,chen and ma (2022),Compared for augmentation methods in smart ISP and image denoising
+isp,dl-based methods,Derives from existing DL-based approaches
+lw-isp,color distortion,Suffers from color distortion despite superior performance
+lw-isp,local details missing,Drawback: missing local details
+our method,cutfreq,Substantially improves upon LW-ISP (Table 1)
+smart isp,data augmentation,Feasibility demonstrated through CutFreq
+image denoising,image deblurring,Low-level tasks compared in the study
+psnr (db),msssim,Metrics used to evaluate performance
+mixup (zhang et al. 2017),cutmix (yun et al. 2019),Competing methods for image processing
+mixup,zhang et al. (2017),Mixup is a technique introduced by Zhang et al. in 2017.
+cutmix,yun et al. (2019),CutMix is another method
+cutmixup,yoo,ahn
+cutout,devries and taylor (2017),Cutout is a technique developed by DeVries and Taylor in 2017.
+cutblur,yoo,ahn
+copy-blend,shyam et al. (2021),Copy-blend is a method mentioned by Shyam et al. in 2021.
+blend,prados gutiérrez et al. (2013),Blend refers to a technique discussed by Prados Gutiérrez et al. in 2013.
+rgb perm.,lee,hwang
+smart isp,ignatov,van gool
+image denoising,sidd,Table 2 compares augmentation methods for image denoising on the SIDD dataset.
+ablation study,complete augmentation,An ablation study discusses the necessity of augmenting every sample in low-level vision
+probability augmentation,performance,The performance of probability augmentation is the best
+stage-wise swapping,augmentation strategies,Our method involves stage-wise swapping of frequency bands for image processing.
+cutfreq,convergence trends,Fine-grained adjustments to CutFreq are made based on the convergence trends observed in different tasks.
+frequency bands,learning bias,The reconstructed model learns specific frequency bands during training
+decomposition times (jn),cutting standard,Using decomposition times as the cutting standard is slightly less effective than swapping specific frequency bands.
+band swapping (j2,j3),slightly worse
+first stage maintenance,model concentration,Replacing one band every 10 or 20 epochs disrupts the model's focus on learning unreplaced bands.
+un-replaced frequency bands,poorer performance,When certain frequency bands are replaced
+denoised images,global and local contrast,Our method enhances denoised images with improved global and local contrast.
+gopro dataset (nah,hyun kim,and mu lee 2017)
+hide dataset (shen et al. 2019),image deblurring,Evaluation also includes the HIDE dataset for deblurring performance.
+restormer,performance boost,Our method outperforms Restormer by 0.11 dB on average across datasets.
+cutfreq,deraining datasets,CutFreq consistently gains performance on five deraining datasets.
+restormer (zamir et al. 2021),improvement,Compared to Restormer
+lol dataset (wei et al. 2018),low-light image enhancement,Competitive results are demonstrated on the low-light LoL dataset using LW-ISP.
+lw-isp,psnr improvement,CutFreq improves PSNR by 0.13 dB based on LW-ISP.
+frequency-band normalized l1 distance (fbnd),convergence trends,Study shows FBND during training and its impact on convergence.
+swap,null option,During Swap
+high-frequency bands,performance improvement,Randomly dropping high-frequency bands leads to a 0.08 dB improvement in smart ISP and 0.03 dB in image enhancement.
+frequency discrepancies,model performance,Frequency discrepancies affect model performance
+decomposition times,image denoising,In image denoising using LW-ISP
+basis function,performance,Ablation studies show Haar basis functions' superiority
+haar basis functions,superiority,Haar basis functions are superior to Daubechies wavelets in capturing image information without introducing noise.
+dwt (discrete wavelet transform),spatial and frequency information,DWT is unique in capturing both spatial and frequency components simultaneously.
+dwt,dft (discrete fourier transform),Ablation study shows DWT outperforms DFT by 0.10 dB in the LW-ISP setting.
+dft (discrete fourier transform),image distortion,DFT aims to reduce image distortion by converting to the frequency domain.
+focal frequency loss (ffl),wavelet loss (wl),relation: competing or alternative approaches
+focal frequency loss (ffl),smart isp,relation: performance comparison
+wavelet loss (wl),smart isp,relation: performance comparison
+spectral loss,cutfreq,relation: potential future exploration
+cutfreq,deep neural networks,relation: limitation
+frequency-domain gaps,contrastive learning,relation: future possibility
+frequency-band normalized l1 distance,model performance measurement,relation: used to quantify the prevalence of frequency-domain gaps in low-level vision tasks
+low-level vision,model convergence,The context discusses the use of frequency-band normalized L1 distance to assess the convergence of models specifically in the context of low-level vision tasks.
+low-level vision,cutfreq,CutFreq is introduced as a novel approach for improving image synthesis quality in the field of low-level vision.
+cutfreq,high-level representations,CutFreq aims to preserve high-level representations with directionality.
+low-level vision tasks,effectiveness of the method,Experiments demonstrate the effectiveness of the proposed method on various low-level vision tasks.
+low-data regime,superior performance,The method performs well
+national key r&d program of china,funding source,This research was supported by the National Key R&D Program of China.
+key research and development program of shaanxi,funding source,Additional support came from the Key Research and Development Program of Shaanxi.
+national natural science foundation of china,funding source,Financial support was also provided by the National Natural Science Foundation of China.
+tsinghua university dushi program,funding source,Tsinghua University's Dushi Program contributed to the research.
+tsinghua university talent program,funding source,The Talent Program at Tsinghua University also supported the work.
+institute for interdisciplinary information core technology (iiisct),funding source,IIISCT was involved in providing financial support.
+ant group,funding source,Ant Group supported the research through the CCF-Ant Research Fund.

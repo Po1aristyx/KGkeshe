@@ -1,0 +1,38 @@
+node_1,node_2,edge
+Nesterov Method,Asynchronous Pipeline Parallel Optimization,variant of Nesterov Accelerated Gradient (NAG) used for asynchronous optimization in pipeline parallelism
+Pipeline Parallelism (PP),large neural network training,"enables training on small, interconnected devices by splitting model into multiple stages"
+Asynchronous optimization,Pipeline Parallelism,offers 100% pipeline utilization by construction but leads to stale gradients
+Nesterov Accelerated Gradient (NAG),asynchronous optimization,modified look-ahead step in NAG addresses staleness in gradients
+Nesterov Method,fixed delay in gradients,converges at sublinear rate in presence of fixed delay
+Nesterov Method,synchronous baseline,outperforms existing asynchronous methods and surpasses synchronous baseline in experiments
+Pipeline Parallelism (PP),decoder-only architectures,tested on large-scale language modelling tasks using decoder-only architectures with up to 1B parameters
+Pipeline Parallelism (PP),neural networks,partitions into sequential stages
+Pipeline Parallelism (PP),devices,distributes computations across multiple interconnected
+devices,datacenters,can be co-located in
+devices,internet,connected via
+device,stage,processes
+stage,consecutive layers,set of
+stage,adjacent stages,communicates activations and gradients with
+adjacent stages,bandwidth-constrained interconnects,communicate via
+PP methods,communication overhead,mask
+PP methods,device utilization,improve
+PP methods,training time,minimize
+pipeline scheduling strategies,forward and backward passes,order of processing
+pipeline scheduling strategies,microbatches,process
+synchronization,weights and gradients,requires synchronizing
+synchronization,pipeline utilization,hinders 100%
+asynchronous optimization,PP,enables full pipeline utilization in
+asynchronous optimization,weight updates,performs
+100% pipeline utilization,asynchronous optimization,enables
+asynchronous optimization,pipeline parallelism (PP),applied in
+asynchronous optimization,gradient staleness,introduces
+gradient staleness,optimization challenge,presents
+gradient staleness,delay correction mechanisms,necessitates
+delay correction mechanisms,convergence,ensures
+delay correction methods,gradient forecasting approaches,includes
+delay correction methods,extrapolation in weight space,includes
+extrapolation in weight space,loss landscape,makes no assumptions on
+extrapolation in weight space,update directions change slowly,assumes
+smoothness of update directions,momentum based optimizers,controlled in
+look-ahead based optimization method,gradient staleness,alleviates
+look-ahead based optimization method,Nesterov Accelerated Gradient (NAG),variant of

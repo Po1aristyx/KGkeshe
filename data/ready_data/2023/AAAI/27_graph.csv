@@ -1,0 +1,137 @@
+node_1,node_2,edge
+gans,few-shot setting,relation:difficulty
+mode collapse,overfitting,cause-effect
+implicit maximum likelihood estimation (imle),alternative to gans,comparison
+original imle formulation,generalized formulation,development
+adaptive imle,generalized imle,derivation
+existing methods,outperformed by adaptive imle,comparison
+deep generative models,image synthesis,application
+code,https://github.com/mehranagh20/adaimle,availability
+deep learning,gans,relation: subfield; GANs are a type of deep generative model introduced within the context of deep learning.
+gans,goodfellow et al.,reference: GANs were introduced by Goodfellow et al. in 2014.
+gans,brock et al.,reference: Another group of researchers
+gans,karras et al.,reference: Karras et al. have made multiple contributions to GANs in different years.
+vaes,kingma & welling,reference: Variational Autoencoders (VAEs) were introduced by Kingma & Welling in 2013.
+diffusion models,dhariwal & nichol,reference: Diffusion models
+score-based models,song et al.,reference: Song et al. contributed to score-based models in 2021.
+normalizing flows,dinh et al.,reference: Dinh et al. introduced normalizing flows in 2017.
+autoregressive models,salimans et al.,reference: Salimans et al. worked on autoregressive models.
+limited number of training examples,orphan diseases,example: An application where only limited data is available - orphan diseases.
+limited number of training examples,rare events,example: Another scenario where data is scarce - rare events for autonomous driving.
+pre-training,large-scale datasets,requirement: Many deep generative models need pre-training on large datasets.
+fine-tuning,pre-trained models,solution: Addressing data scarcity by fine-tuning pre-existing models.
+restrictive condition,identical optimal likelihood,The condition refers to all data points needing to have the same optimal likelihood
+imle algorithm,treatment of training examples,The IMLE algorithm treats all training examples equally during optimization
+imle algorithm,overfitting/underfitting,IMLE can lead to overfitting some examples and underfitting others due to its uniform treatment of all examples.
+few-shot setting,problematic for imle,In the few-shot setting
+generalized formulation of imle,new algorithm,A generalized formulation allows for a new algorithm
+generalized formulation,weaker conditions,This formulation has theoretical guarantees under less strict conditions
+adaptive imle algorithm,adaptation to different difficulties,Derived from the generalized formulation
+adaptive imle,issue resolution,It avoids the uneven fitting issue demonstrated in the bottom row of Fig. 1.
+experiments,six datasets,Experiments were conducted on six datasets to evaluate the performance of Adaptive IMLE.
+few-shot image synthesis,performance evaluation,The context discusses the evaluation of a few-shot image synthesis method
+few-shot learning,discriminative tasks,There are two main families of few-shot learning
+few-shot learning,generative tasks,The paper specifically focuses on the generative aspect of few-shot learning
+many-shot generation tasks,few-shot generation tasks,Few-shot generation differs from many-shot tasks in its requirement to utilize all training examples due to limited data availability.
+pre-training,few-shot task adaptation,Some work involves pre-training on large-scale datasets and then adapting for the specific few-shot setting.
+unconditional image generation,large-scale auxiliary datasets,Li et al.'s work (2020) is an example of using pre-training on large datasets for unconditional image generation in the few-shot context.
+implicit maximum likelihood estimation (imle),unconditional image synthesis,IMLE is a method used for unconditional image synthesis tasks
+conditional image synthesis,imle-based methods,Prior IMLE methods were mainly concentrated on conditional image synthesis
+generator (in gans),implicit generative models,Generators
+latent codes,generator (in gans),Latent codes
+gan objective,discriminator,The GAN objective involves a discriminator that distinguishes between generated images and real ones
+mode collapse,gan,The issue occurs because GANs only encourage generated samples to resemble specific training examples
+implicit maximum likelihood estimation (imle),mode collapse,IMLE is proposed as an alternative to address mode collapse by ensuring samples are generated around each training example
+mode collapse,few-shot image synthesis,In the few-shot setting
+imle (implicit maximum likelihood estimation),objective,IMLE proposes an alternative objective where the generator is encouraged to produce samples near each training example.
+distance metric,imle objective,d(.
+latent code,generator,Latent codes (z) are input to the generator (Tθ) to produce synthetic images
+space,former cluster,The context refers to the space within the previously mentioned cluster.
+ground truth data distribution,bimodal distribution,The data distribution is described as having two modes
+low-variance cluster,high-variance cluster,These clusters are contrasted
+imle,vanilla imle,Vanilla IMLE is mentioned as a special case of the more general formulation introduced in the paper.
+adaptive imle,imle,Adaptive IMLE is a new algorithm derived from the generalized formulation
+implicit generative model,likelihood,The likelihood induced by an implicit generative model like Tθ cannot be computed in closed form.
+tθ,closed form,Evaluating the likelihood for Tθ is typically done numerically due to its implicit nature and lack of a closed-form expression.
+generative model,optimization problem,The generative model refers to the goal of maximizing the likelihood of training examples without direct likelihood evaluation
+optimization problem,log-likelihood,The optimization problem aims to maximize the log-likelihood of the training examples
+training examples,model parameters θ,The model parameters θ are being optimized to maximize the likelihood of the training data.
+weights wi,optimization criteria,Each training example has a weight wi
+threshold τi,optimization,Threshold τi plays a role in the optimization process
+function φτ(·),distance transformation,Φτ(·) transforms distances between model samples and training examples
+monte carlo estimates,approximation technique,Monte Carlo methods are used to estimate the expectations in the lemma involving the function Φ(X)
+technicalities,omitted details,Some technical aspects of the lemmas are omitted for brevity
+training example,generative model,The lemma relates the expectation of a random variable to the weighted integral of one minus the likelihood
+τi,neighborhood size,τi controls the radius of the neighborhood size in the objective function. A smaller τi implies a focus on the immediate neighborhood.
+data point,immediate neighborhood,The objective aims to maximize the probability assigned by the generative model to the immediate neighborhood of each data point.
+φτ (·),φ′τ (·),These choices of functions are associated with each other and are used to compute the likelihood and its derivative.
+adaptive imle,few-shot pretraining-free generative modelling,The context discusses an adaptive IMLE method applied in the context of few-shot learning without pretraining
+curriculum learning,optimization problem,Curriculum Learning proposes a sequence of optimization problems with decreasing τi values. Each subsequent problem helps train Tθ to generate samples closer to data points.
+τi,neighbourhood size,τi controls the size of the immediate neighbourhood around each data point. The goal is to minimize τi without hindering learning.
+ez1,...,zm
+tθ(zj),generative model,Tθ is trained to produce samples that are close to data points
+training examples,likelihood maximization,By making τi's converge to zero
+bt(xi),density function,Bt(xi) represents the density function involved in the equation wi = τi * Bt(xi) dxdt
+probability distribution,generative model,The context refers to a probability distribution as the one induced by the generative model.
+generative model,adaptive imle,Adaptive IMLE is a method specifically designed for this generative model
+individualized neighbourhood radius,τi,Each data point xi has a specific radius τi
+τi,vanilla imle,Vanilla IMLE does not have individualized radii
+adaptive imle,objective,The key difference in Adaptive IMLE is its objective
+training,tθ,Tθ is trained in stages
+data points,xi,The training process involves multiple data points xi
+progressive approach,training stages,A gradual decrease in τi is achieved through a progressive training strategy
+generated samples,data points,As training progresses
+weighted problem,unweighted problem,The weighted problem can be solved using the optimal solution of an unweighted problem
+optimal solution to the unweighted problem,weighted problem,For a given ϵ′ > 0
+θk,weighted problem,θk is shown to be an optimal solution to the unweighted problem
+adaptive imle,weighted objective,Adaptive IMLE is used for pretraining-free generative modeling
+optimizers for the weighted objective,optimizers for the unweighted objective,The sets of optimizers for both objectives are identical
+weighted objective,unweighted objective,equivalent to optimizing
+unweighted objective,adaptive imle algorithm,utilized in
+adaptive imle algorithm,algorithm 2,shown in
+training process,τi's convergence,examining
+τi's convergence,maximum value of τi,converges to zero
+τi's convergence,increased concentration,observed during training
+τi's values,data points,balanced convergence towards
+fig. 2,τi values during training,plotting in
+uniform convergence,assumption,validated by
+fid,image quality,measured by
+fid,real data,comparison with
+fid,randomly generated samples,comparison with
+table 1,image quality comparison,showing
+fid,lower values,indicating better
+few-shot unconditional image synthesis,perceptual quality,The context discusses the comparison of methods in terms of their ability to generate high-quality images
+fid (frechet inception distance),generated images,FID is computed between the generated samples and real images to assess the similarity.
+precision (mode modelling accuracy),mode accuracy,Precision is used to measure the accuracy of capturing different modes in the data distribution.
+recall (mode coverage),coverage,Recall is used to measure the diversity or completeness of the generated samples in representing the dataset.
+lpips backtracking score,recall (mode coverage),LPIPS backtracking is used alongside recall to evaluate the coverage of generated samples.
+fastgan,baselines,FastGAN is a competitor method in the few-shot unconditional image synthesis without auxiliary datasets.
+mixdl,baselines,MixDL is another competing method in the same setting.
+fakeclr,baselines,FakeCLR is a baseline method for comparison.
+edm (efficient diffusion models),baselines,EDM demonstrates the potential impact of diffusion models in broader image synthesis tasks.
+tab. 1 (table 1),quantitative results,This table showcases the FID scores for various methods.
+tab. 2 (table 2),mode accuracy and coverage,Table 2 presents the comparison of mode accuracy and coverage metrics.
+latent space,reconstruction,The context discusses backtracking in the latent space and its connection to reconstructing the remaining 10% of the data.
+lpips backtracking score,mode coverage,A lower LPIPS backtracking score indicates better mode coverage of the training data.
+adaptive imle (ours),baselines,Our method significantly outperforms FastGAN
+fastgan (liu et al.,2021),adaptive imle (ours)
+mixdl (kong et al.,2022),adaptive imle (ours)
+fakeclr (li et al.,2022),adaptive imle (ours)
+high-quality images,baselines,The method produces high-quality images compared to other methods like FastGAN
+mode coverage,state-of-the-art,Adaptive IMLE sets a new state-of-the-art in mode coverage among generative models.
+edm (karras et al.,2022),computationally resource-intensive
+fakeclr,mixdl,These two are compared as they are both generative models
+fakeclr,fastgan,They are contrasted for their structural dissimilarity to target images
+our method,target images,Our method aims to produce reconstructions that are structurally similar to the target images
+our method,baselines (gan-based),Qualitative comparison shows our method's superiority in preserving semantic structures and avoiding mode collapse.
+our method,lpips backtracking,The LPIPS backtracking is used to demonstrate the structural similarity of our model's reconstruction to the target image.
+panda,grumpy cat,Both examples illustrate the diversity issue in GAN-based baselines
+obamaffhq subset,facial structure,This subset is mentioned to showcase the preservation of facial structure in our method compared to baselines.
+obamaffhq subset,mouth and hair,The mouth and hair details are highlighted for better quality in our method's generated images.
+latent space,interpolation,Our method compares the quality of interpolations between two samples in the latent space
+our method,baselines,As shown in Fig. 5
+adaptive imle,vanilla imle,In Fig. 6
+adaptive imle,vanilla imle,Table 4 shows that Adaptive IMLE consistently outperforms vanilla IMLE in terms of generated image quality.
+adaptive imle,fid,The FID scores in Fig. 6 demonstrate the improvements in generated image quality and convergence speed for Adaptive IMLE.
+fid,image quality,Lower FID indicates better image quality.
+training process,convergence speed,The improvements in FID throughout the training process validate the effectiveness of Adaptive IMLE.

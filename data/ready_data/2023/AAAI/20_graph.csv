@@ -1,0 +1,158 @@
+node_1,node_2,edge
+medical experts,problem instances,Experts' expertise varies as a function of the problem instance
+problem space,regions of differing expertise,We model changes in expertise as a partitioning of the problem space.
+expertise trees,naive approach based on nearest neighbor queries,Expertise trees are introduced to address the drawbacks of a naive approach.
+existing methods,inadequate,Our novel algorithm outperforms existing methods in certain problem settings.
+medical diagnostics,patients with symptoms,Online platform presents patients with symptoms to experts for appropriate treatment selection.
+treatment,effectiveness,Treatment's effectiveness is evaluated based on recovery
+patient,recovery,The effectiveness of treatments is evaluated based on measures of recovery.
+recovery,side effects,Effectiveness is also assessed by considering side effects.
+recovery,cost,Cost is another factor in evaluating treatment effectiveness.
+objective characteristics,success rate,Objective factors like success rate contribute to deciding the best treatment.
+objective characteristics,side effects,Side effects are part of the objective characteristics.
+objective characteristics,cost,Cost is an objective characteristic of treatments.
+expert opinions,subjective views,Expert opinions are influenced by both objective factors and subjective viewpoints.
+previous experience,differences in expert opinions,Divergences in opinions can arise from clinicians' personal experiences.
+cognitive biases,confirmation bias,Cognitive biases like confirmation bias can lead to overestimating treatment efficacy.
+confirmation bias,primacy effect,relation: Both are cognitive biases that can lead medical experts to overstate treatment efficacy.
+previous experience,individual advice,relation: Experts base their advice on their personal experiences with similar problems.
+diverse set of experts,disagreement,relation: The presence of disagreement among experts highlights the need for decision-making.
+multiple iterations,adapt to expertise,relation: Repeated decision-making allows for learning from different problem instances.
+partial feedback,outcome of decisions,relation: Observing only the results of actions taken.
+expert advice,complex decision problems,relation: Expert advice is used to address uncertainty in complex situations.
+bandits,leveraging expert advice,relation: Bandit problems refer to decision-making under uncertainty
+localized expertise,quality of experts,relation: Expertise varies depending on the problem instance's characteristics.
+human experts,specialization,relation: Human experts typically specialize in specific areas of a broader problem.
+bandits with expert advice,localized expertise,The context discusses the need for algorithms tailored to handle the challenge of localized expertise in the bandit problem.
+nearest neighbors approach,expertise tree approach,Two novel algorithms introduced
+model tree approach,expertise trees,The model tree approach is referred to as expertise trees
+contextual setting,outcomes characterized by f,In the contextual setting
+thompson's 1933 work,bandits formalization,Thompson's paper is cited as the origin of the bandits problem formulation.
+auer et al.,2002a,bandits
+chu et al.,2011,contextual bandits
+valko et al.,2013,contextual bandits
+performance bounds,localized setting,Theoretical bounds are provided for algorithms' performance in the context of localized expertise.
+execution time,empirical evaluation,The algorithms are evaluated not only in terms of performance but also in terms of execution time.
+context,time t,The context refers to the information available at a specific point in time
+n × k matrix,ξt,ξt represents the N by K matrix of advice induced by the context at time t
+policy πt,arm choice,πt determines the arm kπt chosen by the policy in round t
+policy πt,reward rπt,The learner receives a reward rπt after choosing an arm based on πt
+regret,average of collected rewards,Regret is defined as the difference between the expected cumulative reward of an optimal policy π* and the actual rewards collected
+localized expertise,expert quality,The problem considers that experts' advice can vary depending on the context
+human experts,specialization,Human experts often have a specialized area
+artificial experts,subset of the problem space,Artificial experts may also be designed for a limited range of problems
+biases,inaccuracies,Biases
+dependence of expert quality,sensitive features,Identifying how expert quality relates to specific features
+expertise context,full context,The expertise context is a subset of the full context
+expertise,quality of expert decisions,The quality of collective decisions is increased through the use of expert expertise
+features,expertise context,Features determine the definition of the expertise context
+expertise space partitioning,effective model,By partitioning the context space
+localized expertise,bandits with expert advice,Localized expertise refers to the dimension of decision-making where the optimal strategy depends on a subset of features
+human experts,textual descriptions,Human experts can incorporate textual descriptions into their decision-making
+computational cost,incorporation of features,The cost of including certain features
+arm,bandits with expert advice,In the context of bandits
+cdm system,expertise,The CDM (Collective Decision-Making) system relies on the expertise of the experts involved to make decisions.
+n,number of experts,N represents the total number of experts contributing to the decision-making process.
+k,number of arms,K signifies the number of choices or arms available in the bandit problem.
+expertise context,contextual multi-armed bandit,The problem is reduced to a contextual multi-armed bandit
+expert,arm (in the constructed bandit),Each arm in the bandit corresponds to an expert in the original problem
+quality estimate,expert (i.e.,arm)
+expertise context,quality of each expert,The quality of experts is a function of the expertise context.
+contextual bandit algorithm,specializations,Different algorithms impact the types of specializations that can be learned
+tree-based algorithms,feature selection,Tree-based algorithms perform feature selection
+treeheuristic,example of tree-based algorithm,TreeHeuristic
+meta multi-armed bandit,generalization,The approach can be seen as a generalization of a meta multi-armed bandit method.
+auer et al.,2002a,reference for meta multi-armed bandit
+bandits-with-expert-advice learner,exp4,EXP4 is an example of a bandits-with-expert-advice learner
+bandits-with-expert-advice learner,meta-cmab,Another bandits-with-expert-advice learner mentioned is Meta-CMAB
+expertise space,regions,The expertise space is partitioned into regions for independent learning.
+prior knowledge,features,Prior knowledge can be used to partition the expertise space based on likely features affecting expert performance.
+bandits with expert advice,local learning principles,The algorithm adapts local learning principles to handle the bandits with expert advice setting.
+expertise context,previous experiences,The algorithm samples experiences based on similarity to the current expertise context.
+nearest p%,previous experiences,Nearest p% method uses a percentage of previous experiences to initialize a learner when no partition information is available.
+method,knowledge,The method relies on the accuracy of the distance measure as a proxy for capturing local knowledge.
+distance threshold,overfitting/underfitting,Too large thresholds lead to overfitting by including previous experience from different regions
+expertise context,irrelevant features,Irrelevant features in the expertise context can impact the quality of the learned model.
+distance computation,model similarity,The performance of the approach depends on the accuracy of the distance computation for estimating model similarity.
+expertise trees,localized knowledge,Expertise Trees
+model trees,bandits with localized expert advice,A modified Model Tree algorithm is developed specifically for the bandits with localized expert advice scenario.
+linear regression model,leaves of the tree,In the proposed model trees
+bandits with localized expert advice,usual model tree setting,The context differentiates bandits from the traditional model tree setting
+bandit setting,exploration,In the bandit setting
+bandit setting,optimization target,The optimization target in the bandit setting is reward
+traditional model trees,leaf models,In traditional model trees
+expertise space,expert advice (ξt),Expertise trees split the space based on the expert advice rather than the same features used in the leaf models.
+expertise trees,h (history of experience tuples),Expertise trees are built using a history of experience tuples
+alg<τ (i),alg≥τ (i),Given a history H
+q(alg,h),performance estimate
+incremental expertise trees,retraining,incremental: Incremental expertise trees are proposed to avoid the expense of retraining an expertise tree for each experience; retraining occurs only when the split improves the tree's quality.
+stochasticity of the problem,bad split,causality: Stochasticity can lead to bad splits in the incremental approach
+early splits,hoeffding bounds,comparison: Hoeffding bounds are mentioned as a method to limit early splits
+additional exploration,unnecessary splits,cause-effect: Additional exploration from splits acts as an inhibitor against unnecessary splits
+performance decrease,efficiency,trade-off: The proposed incremental algorithm sacrifices some performance to achieve significantly more efficient processing.
+expertise tree,incremental tree,Building an expertise tree is more time-intensive compared to updating an incremental tree. The construction requires O(2hgκ) model estimates
+depth of h,number of partitions,Depth h is logarithmic in the number of partitions; this relationship indicates a scaling aspect.
+expertise context g,candidate splits per feature κ,Dimensions of expertise context and the number of candidate splits influence the complexity of building and updating trees.
+regret,worst-case regret,The theorem establishes a lower bound on regret
+bandits with localized expertise,meta algorithm,Meta algorithms for bandits with localized expertise suffer regret proportional to the number of regions
+regions of expertise z,homogeneous subsets,Each region in Z represents a homogeneous area where a single optimal policy applies.
+probability distribution p(z),region z,p(Z) represents the probability that a sampled context is contained within the region Z.
+regret r(t),bandit with expert advice algorithm,R(T) is the regret incurred by the algorithm
+maxz∈z p(z),no localized expertise,Minimized when the maximum probability of a region is 1
+entropy of p,maximized regret,Maximized when the entropy is maximum
+localized regret,non-localized bandit algorithm,Theorem 2 bounds the worst-case expected regret for algorithms that don't specialize in different contexts.
+worst-case expected regret,ω( n −1 n t ),This lower bound on regret for non-localized algorithms scales with the number of experts and time.
+expertise proportion p'(n),expert n,p'(n) represents the proportion of times expert n is optimal in its specialized contexts.
+best expert,probability p'(n∗),An algorithm's probability of selecting the best expert in each region is at most p'(n∗).
+linear regret,localized setting,Non-specialized algorithms incur linear regret as they fail to adapt to local expertise.
+performance gap,additional exploration,The gap in performance is caused by the extra exploration introduced by the split.
+number of arms k,exploration cost,The exploration cost increases with both the number of arms K and the number of experts N.
+number of experts n,exploration cost,The exploration cost also increases with the number of experts N.
+number of timesteps t,exploration cost,Exploration cost decreases as the number of timesteps T increases.
+p,regret,A split incurs regret proportional to (1-p) times the regret of the parent node
+parent node,child nodes,Child nodes perform additional exploration
+unnecessary split,regret amplification,An unnecessary split magnifies the regret by a factor of pT when p=0.5.
+meta-cmab,state-of-the-art approach,Meta-CMAB is one of the algorithms being compared for average reward evaluation.
+meta-cmab,state-of-the-art approach for bandits with expert advice,Meta-CMAB is a specific algorithm within the broader category of bandit algorithms with expert advice.
+treeheuristic (elmachtoub et al.,2017),our reduction presented in section 2.2
+oracle,optimal partition,The Oracle algorithm relies on prior knowledge of the optimal way to divide the problem into regions.
+nearest 1% and 10%,models trained with the nearest past experiences,These algorithms make decisions based on models that use a small percentage of recent experiences.
+expertise tree algorithm,section 3.1,The algorithm is introduced and explained in Section 3.1 of the text.
+expertise trees,collective decision-making,Expertise Trees address limitations in the process of making collective decisions.
+problem complexity,identifying appropriate regions,Increased problem complexity involves not only identifying relevant regions but also learning effectively within those regions.
+problem complexity,learning appropriate models,Challenge in problem complexity also includes developing accurate models for each identified region.
+random correlations,discriminating power,The presence of random correlations leads to splits without actual discriminatory ability
+irrelevant features,performance degradation,Splits resulting from random correlations cause the ExpertiseTree's incremental variant to suffer more from irrelevant features
+number of features,larger number,An increase in the number of features can lead to random correlations and subsequent performance issues.
+1% nearest neighbor variant,10% nearest neighbor variant,As the proportion of experiences decreases from 10% to 1%
+expertise space,approximately 100 regions,Nearest Neighbor models assume a division of the expertise space into roughly equal-sized regions
+size of expertise context,quality of distance metric,An increase in the size of the expertise context decreases the accuracy of the distance metric as a proxy for expert similarity.
+distance metric,similarity in expert quality,The decline in the quality of the distance metric leads to a decrease in the performance of Nearest Neighbor algorithms.
+expertise heatmap,64 regions,The example in Figure 2 illustrates an expertise heatmap with a specific number of regions
+expertise values,adversarial advice,For low expertise values
+classification problems,bandits,We build bandits out of classification problems
+reward distributions,over the arms,The reward distribution varies across arms in the bandit problem.
+openml data repository,datasets,Datasets are chosen from the openml data repository for evaluation.
+expertise heatmaps,expert quality,Expertise heatmaps map expertise contexts to expert quality
+context vector,expert advice,Experts provide advice on a context vector
+g features,expertise context,In each round
+g features,2 correlated features,Out of the g features
+expert,individual heatmap,Each expert is assigned an individual heatmap determining their quality based on the expertise value.
+expertise value,quality,Quality of advice is directly related to the expertise value; high values result in honest advice.
+expertise value,adversarial advice,Values close to 0 result in adversarial advice; higher expertise values lead to honest advice.
+expertise value,honest advice,High expertise values correspond to honest advice.
+regions,difficulty of the problem,Increased number of regions makes the problem more difficult.
+64 regions,hardest configuration,Correctly identifying 64 regions is challenging due to limited experiences.
+size of g,complexity of the problem,Increasing g makes the problem more complex by adding irrelevant features.
+reward,regret,Results are shown in terms of average reward rather than regret.
+treeheuristic algorithm,expertisetree algorithm,TreeHeuristic performs feature selection and partitioning like ExpertiseTree but suffers due to a single expert approach.
+treeheuristic algorithm,single expert approach,TreeHeuristic's single expert approach affects its decision-making and updates.
+learned model,generalizes less well,The learned model's performance deteriorates when only a small percentage of experiences are considered.
+1% of experiences,loss of performance,When only 1% of experiences are taken into account
+expertisetree approach,single partition,ExpertiseTree maintains a single partition because no beneficial splits are made.
+expertisetree,meta-cmab,The performance of ExpertiseTree is nearly the same as Meta-CMAB
+incremental expertisetree,more significant performance loss,As the expertise context size grows
+larger sizes,false correlations,Larger expertise context sizes are more prone to producing false correlations
+execution time,number of regions,Execution time of ExpertiseTree methods grows logarithmically with the number of regions.
+execution time,expertise context size,Execution time of ExpertiseTree methods grows quasilinearly with the expertise context size.
+nearest neighbor algorithms,constant execution time,Their execution time remains constant regardless of the number of regions or expertise context size.

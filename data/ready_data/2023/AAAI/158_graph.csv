@@ -1,0 +1,257 @@
+node_1,node_2,edge
+local optimization,black-box optimization,Local optimization is a strategy for black-box optimization
+bayesian optimization,objective functions,Bayesian optimization is used when gradients of objective functions cannot be directly evaluated.
+probabilistic model,objective function,A probabilistic model is constructed to represent the objective function in Bayesian optimization.
+gradient estimation,policy design,A policy is designed to learn about the gradient at the current location in the optimization process.
+expected value of the gradient,probability of descent,The expected value of the gradient is not always aligned with the direction maximizing the probability of descent.
+maximizing probability of descent,direction of most-probable descent,An optimization scheme is proposed to maximize the probability of descent while moving in the direction of most-probable descent.
+experiments,synthetic and real-world objectives,Experiments are conducted on both synthetic and real-world objective functions to evaluate the proposed method.
+optimization,hyperparameter tuning,Optimization is exemplified in hyperparameter tuning
+machine learning,science,related fields
+machine learning,engineering,related fields
+hyperparameter tuning,reinforcement learning,examples in machine learning
+high-dimensional global optimization,curse of dimensionality,challenge associated with
+local optimization,high-dimensional objective functions,approach for
+bayesian optimization,noisy observations,technique used with
+gaussian process (gp),objective function,models the
+gradient of the objective,gp's estimate,uncertainty minimized for
+müller et al.,proposed scheme,authors of
+directional derivative,gp's estimate of the gradient,nuances in distribution not accounted for
+gradient,uncertainty,beliefs about the gradient can have different probabilities of descent despite identical uncertainty
+expected gradient,direction maximizing the probability of descent,the expected gradient is not necessarily the direction that maximizes the probability of descent
+gradient variance,expected gradient,minimizing gradient variance and moving along the expected gradient may lead to suboptimal optimization
+local bayesian optimization,alternating scheme,a scheme for local Bayesian optimization involves alternating between identifying and moving in the direction of most probable descent
+direction of most probable descent,input space,a closed-form solution is derived for the direction of most probable descent at a given location in the input space
+gp belief,objective function,GP belief refers to the belief about the objective function in the context
+acquisition function,one-step maximum descent probability,an acquisition function is designed to optimize an upper bound of the one-step maximum descent probability
+optimization scheme,method,the components form an elegant and efficient optimization scheme which outperforms prior methods
+method,synthetic and real-world functions,the method is demonstrated to outperform prior approaches on various functions
+synthetic and real-world functions,optimization problems,These functions are the subject of the optimization tasks being discussed.
+local bayesian optimization framework,bayesian optimization (bo),Both refer to a method for solving optimization problems
+objective function,f (x),f (x) represents the objective function that needs to be optimized.
+x0,starting point,x0 is the starting point for the local optimization process.
+d(x0),local region,D(x0) denotes the local region around the starting point x0 within the domain D.
+black-box objective function,function evaluations,Function evaluations are obtained from the black-box objective function
+gradient,estimated from noisy evaluations,The gradient cannot be directly measured and must be estimated using noisy function evaluations.
+querying budget,expensive objective queries,限制查询次数是因为评估目标函数的成本较高，这要求在优化过程中策略性地选择评估点。
+gaussian process (gp),probabilistic model,A GP is a common choice for the probabilistic model used in Bayesian optimization.
+gp,bayesian optimization,GP is used in the context of Bayesian optimization for designing evaluation points.
+objective function,local bayesian optimization,Local Bayesian optimization focuses on descending from the current location using the objective function.
+curse of dimensionality,bo,The curse of dimensionality affects BO by requiring more function evaluations in high-dimensional spaces.
+gradient,joint gp belief,A GP belief on the objective function induces a joint GP belief with its gradient
+mean function,covariance function,A GP has a mean function (µ) and a covariance function (K)
+function evaluations,gradient of f,Noisy function evaluations and the gradient of the objective function (f) are jointly distributed in the context of GPs.
+derivative,k,The derivative of K is indicated by the differential operator ∇ placed before or after K
+posterior distribution,derivative ∇f (x),Given observations (X
+µx,∇f (x),µx represents the mean of the posterior distribution of the derivative ∇f (x).
+σx,derivative ∇f (x),Σx is the covariance matrix of the posterior distribution of the derivative ∇f (x).
+bayesian local optimization scheme,gradient ∇f (x),The scheme reasons about the gradient given noisy function observations for optimization.
+gibo,bayesian local optimization scheme,GIBO is a specific realization of the local BO scheme proposed by Müller et al. [18].
+müller et al.,gibo,Müller et al. are the authors who investigated the algorithm GIBO.
+uncertainty,gradient ∇f (x),In GIBO
+expected gradient,movement,After minimizing uncertainty
+gradient descent,gibo,GIBO is an algorithm that simulates gradient descent.
+gibo,local bo,GIBO is a form of local Bayesian optimization (BO).
+objective function gradient,gibo,GIBO doesn't account for nuances in the belief about the objective function gradient.
+our work,local bo,Our work designs a policy for local BO to address limitations of GIBO.
+müller et al.,local bo for policy search,Müller et al. proposed using local BO in reinforcement learning (RL).
+gibo,a-optimality,GIBO's minimization of variance is similar to the goal of A-optimality in optimal design.
+global bo,expected improvement,Global BO using expected improvement is a baseline compared to GIBO.
+cma-es,baseline,CMA-ES is another baseline algorithm compared to GIBO.
+mania et al.,augmented random search (ars),Mania et al. developed ARS
+ars,random perturbations,ARS estimates gradients using finite differencing and random perturbations.
+rl tasks,gibo,GIBO is a baseline compared against in RL tasks
+rl tasks,ars,ARS is another baseline compared against in RL tasks
+bo community,curse of dimensionality,The BO community faces the challenge of the curse of dimensionality in high-dimensional problems
+turbo algorithm,trust regions,TuRBO uses trust regions that expand and shrink based on optimization history
+turbo,baseline,TuRBO is included as a baseline in the experiments
+global bo,bfgs,McLeod et al. proposed alternating between global BO and BFGS for local optimization
+diouane et al.,trust region-based policy,Diouane et al. used a trust region-based policy for local optimization
+trust region-based policy,local phase,The trust region-based policy is used for the local phase of an optimization process.
+wang et al.,monte carlo tree search,Wang et al. proposed using Monte Carlo tree search for locally exploiting subregions with good objective values.
+optimization performance,recursive partitioning,Optimization performance is the basis for recursively partitioning the search space in Wang et al.'s approach.
+our optimization method,local optimizer,Our optimization method can replace the local optimizer in existing approaches.
+probabilistic numerical methods,hennig et al.,Probabilistic numerical methods
+bayesian quasi-newton algorithm,noisy observations of the gradient,A Bayesian quasi-Newton algorithm learns from noisy gradient observations.
+probabilistic interpretation,incremental proximal methods,There is a probabilistic interpretation of incremental proximal methods.
+probabilistic line searches,line searches,Probabilistic line searches is another approach within the probabilistic numerical methods context.
+le roux et al.,fast optimization algorithms,Le Roux et al. developed fast optimization algorithms for good generalization
+optimization algorithms,good generalization,The focus of development is on optimization algorithms that ensure good generalization abilities.
+bayesian optimization (bo),different problem,The problem addressed is distinct from Bayesian Optimization.
+natural gradient descent,maximizing probability,Natural gradient descent is shown to maximize the probability of not increasing generalization error.
+local optimization routine,sample efficiency,A local optimization routine should prioritize finding efficient paths with high sample efficiency.
+directional derivative,objective function,Directional derivatives are used to measure progress on the objective function along specific directions.
+gp belief,multivariate normal distribution,Gradient information under a GP belief follows a multivariate normal distribution.
+directional derivative,negative expected gradient,The directional derivative may or may not align with the negative expected gradient.
+∇vf (x),rate of change of f,∇vf (x) represents the rate of change of the objective function f along a vector v at point x.
+µx,mean,µx denotes the mean of the normal belief about the gradient ∇f (x).
+σx,covariance matrix,Σx represents the covariance matrix of the normal belief about the gradient ∇f (x).
+objective function,directional derivative,The directional derivative is related to the change in the objective function.
+directional derivative,negative,A negative directional derivative indicates descending on the objective function.
+descent probability,direction v,Descent probability is the probability that the directional derivative is negative for direction v.
+location x,gradient,The gradient is evaluated at location x.
+cdf of the standard normal distribution,φ,Φ represents the cumulative distribution function used in the calculation.
+v∗,most probable descent direction,v∗ is the direction that maximizes the descent probability.
+descent probability,gradient uncertainty σx,Descent probability depends on both the expected gradient and gradient uncertainty.
+posterior covariance matrix,gradient uncertainty,The trace of the posterior covariance matrix represents gradient uncertainty.
+expected gradient,negative expected gradient,Moving in the negative expected gradient direction doesn't consider gradient uncertainty.
+suboptimal behavior,decoupled minimization of uncertainty and expected gradient,Minimizing uncertainty and considering only the expected gradient separately can lead to suboptimal optimization outcomes.
+descent probability,negative expected gradient,The negative expected gradient can maximize the descent probability.
+gradient,uncertainty,Uncertainty in the gradient is measured by the trace of the covariance matrix.
+covariance matrix,gradient,The covariance matrix represents the uncertainty in the gradient.
+expected gradient,left panel,In the left panel
+middle panel,lower descent probability,In the middle panel
+first element of µx,direction of the gradient,Most of the uncertainty about the gradient concentrates on the first element of µx
+left panel,middle panel,The situation in the left panel is preferable to that in the middle panel regarding descent probability.
+left panel,middle panel,distinguishing
+expected gradient,most probable descent direction,difference
+negative expected gradient,descent direction,ignores
+mean vector µx,covariance matrix σx,jointly considered
+descent of a function,(probability of descent),depends on
+v∗ (most probable descent direction),negative expected gradient,match/mismatch
+uncertainty,∇f (x) (gradient),impossible to distinguish
+negative expected gradient,exact match,The negative expected gradient matches exactly with something.
+maximum descent probability,reduced,The maximum descent probability has reduced from near certainty.
+expected gradient,not maximizing descent probability,The expected gradient does not maximize the descent probability.
+local bo algorithm,local descent probability,The proposed local BO algorithm focuses on the local descent probability.
+most probable descent direction,v∗,v∗ represents the most probable descent direction.
+posterior covariance σx,positive definite,The posterior covariance matrix is assumed to be positive definite.
+theorem 3.1,gradient belief,The theorem relates to the belief about the gradient being normally distributed.
+φ(cid:16)(cid:113)max,maximum descent probability,This term calculates the maximum descent probability.
+cholesky decomposition,σx,The Cholesky decomposition is used to represent the posterior covariance matrix.
+cholesky decomposition,σx,Cholesky decomposition represents Σx as LL⊤
+v,σx,v maximizes the descent probability in the equation v⊤Σxv.
+w,l,A change of variable v = L−⊤w relates w to L
+rayleigh quotient,l−1µxµ⊤,The Rayleigh quotient is equivalent to w⊤L−1µxµ⊤w with w and L−1µxµ⊤.
+eigenvector,l−1µx,L−1µx is the eigenvector corresponding to the eigenvalue µ⊤x L−⊤ in the Rayleigh quotient.
+maximizer,v∗,v∗ maximizes the equation v⊤Σxv and is related to the eigenvector problem.
+w∗,σ−1,The maximizer w∗ is given by Σ−1 times a specific vector.
+v∗,σ−1x µx,v∗ can be expressed as either Σ−1x µx or −Σ−1x µx.
+theorem 3.1,linear system,Theorem 3.1 states that the most probable descent direction can be found by solving a linear system.
+search space,most probable descent direction,The search space is explored in the direction that most likely improves the objective value.
+local bo algorithm,iterative update,The local BO algorithm updates the location x iteratively using the most probable descent direction.
+x,δv∗,Location x is updated with δv∗
+iterative procedure,descent direction,The iterative procedure follows the most probable descent direction.
+objective function,iterative procedure,The objective function's value is not observed during the iterative procedure.
+maximum descent probability,stopping criterion,The iterative update stops when the maximum descent probability falls below a threshold.
+threshold,p∗,p∗ is the prespecified probability threshold for stopping the updates.
+step size,δ,The step size is set to δ = 0.001 in the experiments.
+descent probability threshold,p∗,The descent probability threshold is empirically set to p∗ = 65%.
+batch setting,gradient learning,In the batch setting
+acquisition function,look-ahead maximum descent probability,An acquisition function is derived to optimize the highest descent probability in expectation.
+acquisition function,batch setting,The acquisition function is used in the context of a batch setting for gathering multiple measurements.
+gradient,∇vf (x),∇vf (x) represents the gradient of the function in the problem.
+α0 (z),expected maximum descent probability,α0 (Z) calculates the expected probability of maximum descent after querying Z.
+eq. (4),look-ahead maximum descent probability,Equation 4 represents the look-ahead maximum descent probability.
+α (z),upper bound,α (Z) is an approximation of Eq. (4) computed as an upper bound using Jensen's inequality.
+jensen's inequality,closed-form expression,Jensen's inequality is used to derive a closed-form expression for the acquisition function α.
+(x,y),training set
+acquisition function,eq. (5),The acquisition function in Eq. (5) is mentioned.
+quadratic function,gaussian distribution,The acquisition function is an expectation of a quadratic function over a Gaussian distribution.
+cholesky decomposition,σz,LL⊤ represents the Cholesky decomposition of ΣZ.
+a,σxzl−⊤,A is denoted as ΣxZL−⊤.
+α(z),quadratic form,The third term in the expansion is the expectation of a quadratic form
+local bo via mpd,gradient learning,Local BO via MPD algorithm involves learning the gradient.
+gp,training data,GP is updated with the training data.
+objective value,f (x),Objective value is represented by f (x) with added noise ε.
+descent probability,p∗,Moves are made based on maximizing the descent probability above a threshold p∗.
+descent direction,arg max,The most probable descent direction is determined using 'arg max' to find the direction where the gradient is negative.
+gradient,function,The gradient refers to the derivative of the objective function.
+closed-form solution,acquisition function,The compact expression provides the closed-form solution for the acquisition function.
+cholesky decomposition,σx,The Cholesky decomposition is used for the linear system involving Σx.
+automatic differentiation,acquisition function,Automatic differentiation enables differentiation of the acquisition function.
+l-bfgs,optimizer,L-BFGS is a gradient-based optimizer that can be used to optimize the acquisition function.
+mpd,local bo via most-probable descent,MPD stands for the algorithm of local Bayesian optimization using the most-probable descent approach.
+experiments,method mpd,Experiments evaluate the performance of the MPD method.
+gibo,baseline,GIBO is a baseline method for local BO that minimizes the trace of the posterior covariance matrix.
+ars,baseline,ARS is another baseline that estimates the gradient using finite difference with random perturbations.
+turbo,baseline,TuRBO is a baseline method for Bayesian optimization as well.
+gradient,objective,The gradient is calculated with respect to the objective using finite difference with random perturbations.
+turbo,bayesian optimization method,TuRBO is a trust region-based Bayesian optimization method.
+müller et al.,gibo,Müller et al. provide code implementation for GIBO along with other algorithms.
+ars,müller et al.,ARS is also part of the code implementation provided by Müller et al.
+mpd,codebase,MPD is implemented in the extended version of the provided codebase.
+synthetic objectives,experiments,Experiments involve maximizing synthetic objective functions in the first part.
+gp,rbf kernel,Synthetic objective functions are generated from a GP with an RBF kernel.
+unit hypercube,[0,1]d
+objective functions,gp,Objective functions are generated by sampling from a Gaussian Process (GP) with a Radial Basis Function (RBF) kernel.
+gp,rbf kernel,A GP uses an RBF kernel for its function generation.
+müller et al.,[18],Müller et al. are referenced in the text and their work is cited with the reference number [18].
+dimensions,{25,50
+mpd,optimization,MPD (a method) is shown to optimize objective functions at a faster rate compared to other baselines.
+performance,dimensionality d,The performance difference between MPD and other methods increases with the dimensionality 'd'.
+ars,baseline,ARS is another baseline method compared to MPD in the experiments.
+mujoco,reinforcement learning,MuJoCo is used for reinforcement learning tasks involving locomotion.
+linear policy,states,A linear policy maps states to actions in the MuJoCo tasks to maximize rewards.
+mujoco tasks,environments,The MuJoCo tasks involve learning in specific environments.
+cartpole-v1,müller et al.,CartPole-v1 is one of the environments used in the experiments
+learning environment,environments,The learning environment is comprised of specific environments used for evaluation.
+cartpole-v1,4 parameters,CartPole-v1 has 4 parameters in the context.
+swimmer-v1,16 parameters,Swimmer-v1 has 16 parameters.
+hopper-v1,33 parameters,Hopper-v1 has 33 parameters.
+mpd,hopper-v1,MPD shows slower progress on Hopper-v1 compared to other baselines.
+mpd's failure,hopper function,MPD fails specifically on the Hopper function.
+state normalization scheme,hopper-v1,The Hopper-v1 experiments use a state normalization scheme.
+gibo,mpd,GIBO and MPD exhibit different behavior due to the state normalization scheme.
+gibo,mpd,After controlling for state normalization
+inverse problems,physics,Inverse problems from both physics and engineering are evaluated using the method.
+electrical engineering,inverse problem,An inverse problem from electrical engineering involves fitting a theoretical model to observed data.
+cosmology,inverse problem,Another inverse problem comes from cosmology
+log likelihood,physical model,The log likelihood is maximized for the physical model parameterized by physics-related constants.
+optimization problem,12 parameters,Eriksson et al.'s setting presents an optimization problem with 12 parameters to tune.
+rover trajectory planning problem,200-dimensional optimization problem,The rover trajectory planning problem constitutes a 200-dimensional optimization problem for tuning locations.
+rover trajectory,cost minimization,The rover's trajectory is planned to minimize a cost function.
+mpd,baselines,MPD competes against other baseline algorithms on real-world tasks.
+gibo,mpd,MPD shows better performance than the baseline GIBO in certain scenarios.
+progressive objective values,real-world tasks,Progressive objective values are observed on various real-world tasks
+16d swimmer,maximization,The 16D Swimmer problem is a maximization task.
+12d cosmo. constant,maximization,The 12-dimensional cosmological constant problem is also a maximization task.
+200d rover trajectory,minimization,The 200-dimensional rover trajectory problem involves minimization.
+mpd,p∗,MPD is associated with a parameter p∗ which has default value of 65%.
+mpd,δ,MPD uses a step size parameter δ with a default value of 0.001.
+gibo,turbo,GIBO and TuRBO are both compared against MPD in terms of optimization performance.
+cosmological constant learning problem,mpd,MPD shows significant progress and outperforms GIBO in the cosmological constant learning problem.
+learning phase,update phase,MPD consists of two novel components - a learning phase for maximizing expected posterior descent probability and an update phase for moving in the most probable descent direction.
+trace + mpd,mpd,Trace + MPD is a variant of MPD used for comparison in an ablation study.
+mpd,trace + mpd,variant of MPD that learns from minimizing trace of posterior covariance
+mpd,mpd + expected gradient,variant of MPD that uses the identified most probable descent direction
+gibo,mpd,MPD outperforms GIBO in certain tasks
+swimmer-v1,tasks,one of the tasks where MPD excels over GIBO
+cosmological constant learning,tasks,another task where MPD outperforms GIBO
+rover trajectory planning,tasks,third task where MPD shows better performance than GIBO
+expected gradient,most probable descent direction,two components of MPD algorithm that are not necessarily the same
+gibo's acquisition function,minimizing trace of posterior covariance,GIBO aims to improve expected gradient accuracy
+our acquisition function,one-step maximum descent,focuses on identifying the most probable descent direction
+gibo's 'moving' policy,acquisition function,The 'moving' policy is incompatible with the acquisition function due to differences in descent probability considerations.
+minimum descent probability threshold,p∗,p∗ represents the threshold with values tested being {50%
+mpd(p∗ = 50%),less conservative policy,MPD with p∗ = 50% is less conservative compared to the default policy with p∗ = 65%.
+mpd(p∗ = 85%),drop in performance,On the Swimmer task
+mpd(p∗ = 95%),fails to make significant progress,MPD with p∗ = 95% does not show substantial progress in the experiments.
+mpd(p∗ = 50%),increase in performance,In the rover trajectory planning problem
+rover objective function,piecewise linear,The rover objective function is found to be piecewise linear within most of its domain.
+rover objective function,piecewise linear,The rover objective function is found to be piecewise linear in most of its domain.
+p∗,threshold probability,p∗ sets a threshold for the minimum probability of making progress by moving to a new location.
+p∗,robustness,Higher thresholds of p∗ trade off robustness versus optimism.
+p∗,optimism,Higher thresholds of p∗ lead to more confidence in moves.
+p∗ = 65%,good performance,A threshold of 65% performs well in experiments.
+mpd,lower threshold,If there are structures making it easy to find a descent direction
+p∗,dynamically set,The value of p∗ could be dynamically adjusted based on recent optimization progress.
+mpd,local optimum,Increasing p∗ might indicate approaching a local optimum
+mpd,step size (δ),A larger step size like δ = 10−2 can sometimes lead to worse performance than GIBO.
+δ = 10−2,detrimental effect,This specific step size can occasionally cause MPD to fail to outperform GIBO.
+gibo,detrimental effect,GIBO is compared to a scenario with a detrimental effect caused by a step size that is too large.
+step size parameter δ,faster convergence,δ balances between faster convergence and taking steps that are too large.
+δ,problem dependent,The optimal value of δ might depend on the specific problem.
+length scale of the gp,step sizes,The length scale of the Gaussian Process could be used to determine good step sizes
+local bayesian optimization framework,maximization of the probability of descending,The framework focuses on maximizing the probability of descending on the objective function.
+update rule,direction of maximum descent probability,The update rule moves in the direction of maximum descent probability from the current location.
+acquisition function,probability of descent,The acquisition function aims to maximize the probability of descent before the next move.
+our policy,natural baselines,Our policy outperforms natural baselines in various applications.
+(local) bayesian optimization,applications across science,engineering
+bayesian optimization,nefarious purposes,BO can be misused for constructing adversarial attacks on machine learning models.
+adversarial attacks,machine learning models,Adversarial attacks are constructed on machine learning models.
+bo,human expertise,BO necessitates human expertise and ethical considerations.
+automated optimization systems,misaligned goals,Automated optimization systems may perpetuate misaligned goals in machine learning.
+better methods,local optimization,Better methods positively impact society through improved local optimization.
+national science foundation (nsf),qn and rg,QN and RG were supported by NSF grants.
+nsf award number iis-2145644,kw and jrg,KW and JRG were supported by NSF award number IIS-2145644.

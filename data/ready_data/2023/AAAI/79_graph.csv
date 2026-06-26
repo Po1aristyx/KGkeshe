@@ -1,0 +1,103 @@
+node_1,node_2,edge
+personality detection,social media posts,Social media posts provide a basis for personality detection
+personality traits,psychological lexicon,Early researchers used psychological lexicons like LIWC and MRC to analyze word usage patterns for extracting personality traits from text.
+linguistic inquiry word count (liwc),statistical word usage patterns,LIWC is a tool for identifying statistical patterns in language that relate to personality traits.
+medical research council (mrc) lexicon,statistical word usage patterns,MRC lexicon was another source used by early researchers to analyze language and connect it to personality traits.
+social media,downstream applications,Social media data supports various downstream applications such as human-computer interaction
+personality detection,downstream applications,The effectiveness of personality detection contributes to the development and improvement of these applications.
+statistical word usage patterns,personality traits,The context discusses using statistical patterns to identify personality traits from text.
+social media,massive content,Social media users generate large amounts of content that reveals their psychological activities.
+deep neural networks (dnns),personality detection,DNNs were employed to learn representations for detecting personality in posts.
+hierarchical attention network,language-personality relationship,Hierarchical attention networks were used to explore the connection between linguistic structure and personality traits.
+heterogeneous tripartite graph,psycholinguistic information,A graph was constructed to incorporate multiple types of information for personality analysis.
+dynamic graph neural networks,post set,These networks were designed to analyze sets of posts for personality inference.
+big five personality inventory,ground-truth traits,The Big Five inventory is a widely-used framework for measuring personality dimensions.
+big five personality inventory,50+ items,It consists of over 50 questions
+privacy,limitation of labels,The context acknowledges privacy concerns as a challenge for personality detection models.
+user-generated documents,personality recognition,The context discusses the challenge of accurately recognizing personality from user-generated documents
+limited labeled data,unresolved issue,The question of how to accurately detect personality with insufficient labeled data is unresolved.
+semi-pergcn,proposed method,Semi-PerGCN is a proposed graph neural network that addresses the problem in a semi-supervised manner.
+heterogeneous personality graph,data structure,The method constructs a graph that includes user nodes
+user nodes,nodes in the graph,User nodes represent individuals in the constructed graph
+word nodes,nodes in the graph,Word nodes correspond to the linguistic content
+liwc category nodes,nodes in the graph,LIWC category nodes incorporate psychological knowledge for graph augmentation.
+personality graph convolution network,model component,This network uses graph convolution to refine labeled user representations.
+path-specific attention,attention mechanism,The network employs path-specific attention to focus on relevant information within the graph.
+unsupervised graph consistent learning,learning approach,For unlabeled users
+noise invariant learning,generalization technique,Incorporating noise invariant learning improves the model's ability to generalize to unseen data with limited labeled data.
+liwc dictionary,graph neural network,D-DGCN (Yang et al. 2023a) integrates information from the LIWC dictionary and uses a message-passing based graph neural network.
+d-dgcn (yang et al. 2023a),dynamic graph neural network,D-DGCN holds a different view that the structure between user-generated posts is agnostic and employs a dynamic GNN to learn the structure automatically.
+textgcn (yao,mao,and luo 2019)
+huang et al. (2019),independent graph per document,This study constructs an independent graph for each document to reduce memory requirements and dependency on the corpus.
+texting (zhang et al. 2020),document-level graph,TextING emphasizes that words in different texts should have separate representations in a document-level graph.
+text representation of users,generalization ability,The above methods mainly focus on obtaining meaningful representations but often overlook the limitation of labeled data
+graph structure learning on text,nlp tasks,There is extensive attention on how to build graphs for better NLP tasks
+document structure level,personality detection,The context discusses the suitability of GNNs
+gnns (graph neural networks),trignet and d-dgcn,TrigNet and D-DGCN are examples of GNNs used for modeling at the document structure level in the context of personality detection.
+user information,co-occurring connections of words,The method represents user information by connecting words that frequently appear together in different posts
+unsupervised training,upper bound of supervised detection models,Unsupervised training is employed to improve the performance of supervised models
+consistency regularization,output distribution smoothing,Consistency regularization aims to maintain stable model outputs despite slight input variations
+consistency constraints,current model predictions,historical predictions
+yang et al. (2023b),consistency regularization,Yang et al.'s work is cited as an example of using consistency regularization for improved model performance.
+semi-supervised learning,consistency constraints (methods),Consistency constraints are commonly used in the context of semi-supervised learning
+leakyrelu activation function,linear transformation matrices (wz,wu
+linear transformation matrices (wz,wu,wl)
+labeled user representation (^hu),supervised personality assessment model,The refined user representation (^Hu) is fed into the model for personality assessment
+attention weight for hi (hu),user node (vu),Hu acts as the attention weight for Hi
+large-scale unlabeled users,unsupervised graph augmentations,The model utilizes unlabeled users for graph augmentation to improve robustness and generalization.
+consistency training methods,model predictions,These methods regularize the model's predictions to remain invariant to small input noise
+semi-pergcn,supervised personality graph component,The overall architecture of the model includes a supervised personality graph component
+semi-pergcn,detection component,The model has two components
+big five personality traits,output dimension of the detection component,The detection component has an output dimension of 5
+crowd-sourced annotation task,video blog,Annotators watch each video blog as part of the crowd-sourced annotation task.
+pan2015 (rangel pardo et al. 2015),data science competition,PAN2015 is a data science competition from which the dataset was collected.
+pan2015 (rangel pardo et al. 2015),four languages datasets,PAN2015 includes datasets in four languages
+english data,big five personality scores,The English data from PAN2015 has associated Big Five personality scores ranging from -0.5 to 0.5.
+mypersonality (celli et al. 2013),facebook application,MyPersonality is a dataset collected from a Facebook application.
+mypersonality (celli et al. 2013),big five personality scores,The data from MyPersonality
+semi-pergcn,evaluation metric,Semi-PerGCN is compared using Mean Absolute Error (MAE) as an evaluation metric.
+mae,prediction,MAE is the measure of prediction accuracy for personality traits
+psychological vocabulary-based models,liwc features,Psychological vocabulary-based models use 89 features extracted by the LIWC API to predict personality traits.
+liwc api,svm model,These LIWC features are fed into an SVM model for personality trait predictions.
+supervised detection process,traditional mse loss,The supervised detection process minimizes the MSE loss
+mse loss,ground-truth personality traits,The MSE loss is used to minimize the difference between the predicted personality score and the actual personality traits for a given data point.
+jointly trained,supervised detection,Supervised detection is trained alongside an unsupervised detection task
+jointly trained,unsupervised detection,Unsupervised detection helps learn invariance to input noise and supports the supervised task through shared parameters.
+optimization,supervised mse loss,The final optimization involves minimizing both the supervised MSE loss and the unsupervised consistency training loss.
+optimization,unsupervised consistency training loss,These losses are balanced using the hyperparameter (cid:21).
+training process,current mini-batch,In the training
+experiments,youtube personality dataset,Experiments were conducted on the YouTube Personality dataset
+youtube personality dataset,mypersonalitytraits,The datasets used include the Youtube Personality dataset and MyPersonalityTraits.
+methods,semi-pergcn,The proposed method is Semi-PerGCN
+semi-pergcn,baselines,Semi-PerGCN is compared against methods like LIWC
+bi-directional lstm,hochreiter and schmidhuber (1997),Bi-directional LSTM is a technique used by Sun et al. (2018)
+bert,devlin et al. (2018),BERT is a model fine-tuned by Sun et al. (2018)
+attn (lynn,bala-subramanian,and schwartz 2020)
+trignet (yang et al. 2021b),psycholinguistic knowledge-based tripartite graph network,TrigNet is a network designed to transmit messages between post entities using specific flows
+d-dgcn (yang et al. 2023a),dynamic deep graph convolutional network,D-DGCN is an automatic structure-learning model for user-generated posts
+pytorch,deep learning implementation platform,All deep learning models
+adam optimizer,optimization algorithm,Adam is the optimization method employed for training the models
+bert,word node embeddings,BERT is used to initialize word embeddings in the models.
+semi-pergcn,state-of-the-art baseline method,Semi-PerGCN performs better than the state-of-the-art method
+semi-pergcn,gru+attn,Semi-PerGCN achieves 1.51%
+proposed semi-pergcn,personality detection,The effectiveness of the model is demonstrated in personality detection.
+semi-pergcn,unlabeled data,Semi-PerGCN utilizes a large amount of unlabeled data for consistency learning.
+user representations,overfitting,Using unlabeled data helps reduce the risk of overfitting on a small training set.
+semi-pergcn,user graphs,Supervised graph learning captures rich user representations on heterogeneous user graphs.
+trignet,gru+attn model,TrigNet performs slightly inferior to GRU+Attn
+trignet,post redundancy,The redundancy of posts makes it challenging for TrigNet to obtain effective post representations.
+cnn+liwc combined model,poor performance,The CNN+LIWC combined model has poor performance
+semi-pergcn model,usefulness of components,In the experimental analysis
+data augmentation,necessity,The model's performance drops by 1.27% without consistency loss
+liwc nodes,importance,Removing LIWC nodes affects the model's performance by 1.65%
+randomly deletion (rd),data augmentation method,The study investigates the model's response to different data augmentation strategies
+liwc synonym replacement (sr),data augmentation method,Another data augmentation strategy
+performance improvement,upper limit,The relation between 'performance improvement' and 'upper limit' is that the improvement from 400 to 1000 is slower than that from 100 to 400
+semi-supervised graph neural network (semi-pergcn),personality prediction,Semi-PerGCN is proposed for the purpose of personality prediction
+semi-pergcn,large amount of unlabeled data,Semi-PerGCN aims to leverage unlabeled data to enhance the model's robustness to input noise and improve generalization.
+personality graph neural network,limited labeled data,The personality graph neural network is constructed to learn from both labeled and unlabeled data
+data augmentation,personality detection,Data augmentation is validated in the context of personality detection
+implementation,improvement,The implementation can be enhanced by exploring more metric learning methods like contrastive learning to refine user representations.
+nsfc-general technology basic research joint funds,funding support,The work is financially supported by the NSFC-General Technology Basic Research Joint Funds.
+national natural science foundation of china,funding grants,Additional funding comes from multiple grants provided by the National Natural Science Foundation of China.
+bupt excellent ph.d. students foundation,funding support,The study also receives funding from the BUPT Excellent Ph.D. Students Foundation.

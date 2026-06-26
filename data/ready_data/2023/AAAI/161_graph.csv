@@ -1,0 +1,263 @@
+node_1,node_2,edge
+abstract,emphatic algorithms,Emphatic algorithms are discussed in the abstract for stabilizing reinforcement learning.
+reinforcement learning,update rule,Reinforcement learning involves an update rule that can be selectively emphasized.
+interest function,state importance,The interest function determines the intrinsic importance of each state in the reinforcement learning process.
+adaptive methods,interest function,Adaptive methods allow the interest function to vary dynamically over states and iterations.
+meta-gradients,interest function discovery,Meta-gradients are used to automatically discover an interest function that accelerates learning.
+agent's learning process,learned interest function,The learned interest function contributes to the acceleration of the agent's learning process.
+empirical evaluations,environments,Empirical evaluations are conducted across a wide range of environments to assess performance.
+key quantities,value functions,In reinforcement learning
+rl agent,world interaction,RL agents interact in large worlds with limited computational capacity.
+trade-off,quantity prediction accuracy,A trade-off exists between the accuracy of predicting certain quantities in learning.
+quantities,learning,predicted over the course of learning
+standard rl algorithms,temporal differences (td),temporal differences (TD) is an example of standard RL algorithms
+td(λ),update rules,unstable when combined with standard bootstrapping as in TD(λ)
+emphatic algorithms,selective updating,apply selective updating while maintaining stability
+current state,bootstrapping,accounts for how much the current state is being bootstrapped from
+intrinsic measure,importance,measures importance relative to other states
+interest function,practitioner,practitioner sets the interest function to a desired positive value
+flexibility,question,added flexibility brings the question of selecting the interest function
+previous works,hand-crafted solutions,propose hand-crafted solutions for the interest function
+selective updating,emphatic algorithms,related to complex environments where external domain knowledge is difficult to encode
+emphatic algorithms,complex environments,applied in situations where external knowledge is hard to encode
+practitioners,uniform interest over states,usually use a uniform interest for all states in learning
+rl learning process,non-stationary,inherently non-stationary
+interest function,agent's updates,varies over training iterates in importance
+adaptive learning,complex environments,studied for learning interest function where hand-crafting is impractical
+meta-gradient framework,learning hyperparameters,has been successful in discovering hyperparameters
+meta-gradients,interest function,proposed to learn and adapt the interest function online
+intrinsic rewards,meta-gradient framework,successfully used within the framework for discovery
+temporal abstractions,meta-gradient framework,also utilized within the framework for learning
+interest function,meta-parameters,The interest function is parameterized by meta-parameters.
+meta-parameters,gradient descent,Meta-parameters are updated using gradient descent.
+policy,value function,Both policy and value function have parameters updated alongside the interest function.
+online fashion,adaptation,Adaptation of the interest function occurs in an online manner.
+off-policy setting,substantial gains,In the off-policy setting
+on-policy control,adapting interest function,Adapting the interest function is crucial for consistent gains in on-policy control.
+learned interest function,states of importance,The learned interest function discovers important states
+emphatic algorithms,transfer learning experiments,Emphatic algorithms prove useful in transfer learning experiments due to their ability to identify important states.
+markov decision process (mdp),tuple ⟨s,a
+finite action space a,transition probability distribution p,The transition probability distribution P operates within the finite action space A in a Markov Decision Process (MDP).
+transition probability distribution p,state s ∈ s,The transition probability distribution P defines the probabilities of moving from one state s to another in the MDP.
+action a ∈ a,state s ∈ s,Action a taken in state s influences the transition according to P and determines the reward function r(s
+reward function r(s,a),state s ∈ s
+policy π,agent's behavior,The policy π specifies the agent's behavior in choosing actions a in states s.
+expected discounted return,discount factor γ,The expected discounted return is influenced by the discount factor γ
+value function v π(s),state s ∈ s,The value function V π(s) represents the expected return starting from state s under policy π.
+temporal difference (td) algorithm,value parameters θ,The TD algorithm is used to update the value parameters θ in the process of learning.
+discounted state occupancy measure,target policy π,The discounted state occupancy measure
+emphatic algorithms,off-policy learning,Emphatic algorithms were developed to address challenges in off-policy learning.
+function approximation,bootstrapping,Both function approximation and bootstrapping are mentioned in the context of challenges in off-policy learning.
+emphatic temporal difference (etd),value parameters,ETD is an update rule for the value parameters in the context of policy evaluation.
+θt,θt+1,θt is updated to θt+1 in the ETD update rule for value parameters.
+importance sampling ratio,ρt,ρt represents the importance sampling ratio at time t.
+interest function,i(·),i(·) is an arbitrary user-defined interest function that defines the intrinsic importance of each state.
+follow-on trace,ft,Ft is the follow-on trace in the ETD update rule
+interest function,state,The interest function affects how a state is valued in the learning process.
+e td,stability,E TD's specific form ensures stability and convergence.
+importance ratios,prior correction,Importance ratios are used for prior correction in another approach.
+actor-critic setting,maximize the excursions objective,In the actor-critic setting
+stationary distribution,discounted state occupancy measure,The stationary distribution replaces the discounted state occupancy measure in a certain context.
+policy gradient,approximation,An approximation of the policy gradient is discussed
+trace ft,off-policy policy evaluation,Trace Ft is relevant both in off-policy policy evaluation and control settings.
+on-policy setting,target policy,In an on-policy setting
+interest function,inductive bias,The interest function is intended to encode useful inductive bias by emphasizing certain states.
+inductive bias,efficient way,Inductive bias can be efficiently encoded.
+interest function,specific case,Interest functions are often designed for specific and simple cases.
+emphatic algorithms,simple uniform interest,Most previous works on emphatic algorithms use a simple uniform interest over states.
+usefulness,interest function,The usefulness of an interest function can vary during the learning process.
+changing environment,continual learning,A changing environment is an example where the usefulness of interest can vary
+single task setting,non-stationary manner,In the single task setting
+adaptive interest function,advantage,An adaptive interest function offers an advantage
+off-policy control,simple chain mdp,Off-policy control is demonstrated using a simple chain MDP with four non-terminal states.
+sarsa,action-value function,One-step SARSA is used to learn the action-value function (Q-value) in the example.
+behavior policy,going right,The behavior policy biases the agent towards going right in the three rightmost states.
+target policy,learned,The target policy is what the agent aims to learn in this example.
+policy,sarsa,policy is learned via SARSA
+sarsa,emphatic weighting,SARSA with emphatic weighting is discussed
+suboptimal solution,policy,misguided policy leads to a suboptimal solution
+fixed interest function,sarsa,fixed interest function designed for SARSA
+left states,right states,states on the left are to be emphasized
+adaptive interest function,credit assignment,adaptive interest function influences credit propagation
+optimal action,starting state,credit assignment reaches starting state for optimal action
+emphatic sarsa,good policy,emphatic SARSA converges to a good policy
+standard sarsa agent,emphatic weight,comparison with standard SARSA without emphatic weights
+sarsa agent,emphatic sarsa,emphatic SARSA outperforms standard SARSA
+fixed interest,emphatic sarsa,fixed interest is outperformed by emphatic SARSA
+adaptive interest,emphatic sarsa,emphatic SARSA with adaptive interest performs better than fixed interest
+tabular settings,function approximation,no function approximation in tabular settings
+fixed interest agent,adaptive interest agent,adaptive interest agent has better sample complexity
+meta-gradient interest (mint),emphatic updates,MINT uses emphatic updates for efficient credit assignment
+behavior policy,off-policy control,behavior policy is biased in off-policy control
+sarsa agent (non-emphatic),bias,non-emphatic SARSA struggles to overcome bias
+fixed interest,optimal policy,fixed interest agent eventually finds optimal policy
+adaptive interest,optimal policy,adaptive interest guides towards optimal policy more efficiently
+adaptive interest function,learning process,improve the learning process through adaptation
+prediction error,heuristics,prediction error is one type of heuristic explored
+meta-gradients,automatic discovery,meta-gradients can automatically discover interest functions
+inner loop,outer loop,optimization involves an inner and outer loop interaction
+interest function,meta-parameters η,interest function is parameterized by meta-parameters η
+meta-parameters η,base objective j b(θ,ν
+agent's policy,value parameters,both are components of the base objective with meta-parameters
+parameters,inner loop,parameters are updated in the inner loop while meta-parameters remain fixed
+meta-parameters,resulting parameters,The meta-parameters influence the form of the resulting parameters.
+ν′(η),θ′(η),Both ν′(η) and θ′(η) are functions of the meta-parameter η.
+outer loop,meta-objective,In the outer loop
+meta-gradient,meta-objective,Meta-gradients are derived from the meta-objective to assess the impact of meta-parameters.
+meta-gradient,meta-parameters,Meta-gradients adapt meta-parameters to improve parameter efficiency.
+inner loop,agent,In the inner loop
+inner objective,j b(ν,η)
+interest function,meta-parameters,The interest function
+policy,ν,The policy
+excursions objective,future reward,The excursions objective relates to the future reward achieved by the target policy.
+counterfactual objective,alternative life objective,Both are alternative objectives to the excursions objective but involve additional complexities.
+objective function,inner loop,The inner loop is derived from the objective function.
+ν′,αbρtft,η∇νπ
+ft,η,current state
+meta-objective,inner objective,The meta-objective often has the same form as the inner objective.
+j m (ν′(η)),v π(s),J M (ν′(η)) involves V π(s) which is the value under policy π.
+[14],poor meta-optimisation landscape,[14] argues that sharing the same curvature in objectives can lead to a poor landscape.
+variance of the reward-to-go,meta-objectives,One alternative meta-objective considered is the variance of the reward-to-go.
+η′,∇ηj m,η′ is updated using the gradient ∇ηJ M in equation (9).
+∇ην′,meta-parameters,∇ην′ shows how meta-parameters affect the new parameters.
+mint,meta-gradient interest,MINT stands for Meta-gradient Interest
+algorithm 1,app. a,Algorithm 1 is found within Appendix A of a reference material.
+update rule,(9),The update rule mentioned refers to equation number 9.
+samples,sliding window of experience,Samples are reused through a sliding window of experience for both loops.
+importance sampling ratio method,[63],The method of importance sampling ratio is attributed to reference [63].
+1-step meta-gradient,[52],The 1-step meta-gradient is discussed in reference [52].
+sampling correction term,[2],The sampling correction term is mentioned in reference [2]
+experiments,questions,Experiments are conducted to answer a series of questions related to the method's performance.
+off-policy policy evaluation,linear function approximation,Experiments start with the off-policy policy evaluation using linear function approximation.
+emphatic algorithms,control setting,Emphatic algorithms' general utility is extended to the control setting.
+adaptive interest,on-policy algorithms,Adaptive interest improves the performance of on-policy algorithms.
+transfer learning setting,interest function,Transfer learning is studied by leveraging the interest function.
+transfer learning,interest function,The interest function learned in a previous task is used to speed up learning in a subsequent task within the context of transfer learning.
+hyperparameters,app. e.5(a)(b)(d)(e)(c)(f),All hyperparameters are accessible in the specified section of the application.
+off-policy evaluation,linear function approximation,Off-Policy Evaluation is studied in the context of linear function approximation.
+4rooms-8tasks (4r8t),highvariance-4rooms-8tasks (h4r8t),Both 4R8T and H4R8T are variations of the Four Rooms domain used in the empirical setup.
+emphatic algorithms,tdrc,vtrace
+mint,non-emphatic methods,MINT demonstrates significant improvement in error reduction compared to non-emphatic approaches
+linear function approximation,tile coding,Linear function approximation is implemented using tile coding in the off-policy policy evaluation setting.
+[16],four rooms domain,The reference [16] is the source for the empirical setup involving the Four Rooms domain variations.
+4r8t,highvariance-4rooms-8tasks (h4r8t),Both are environments used for highlighting their characteristics.
+4r8t,h4r8t,These are different variants of the environment used for evaluation.
+mean squared value error (msve),policies,MSVE is averaged across all policies in the evaluation.
+learning rate,bootstrapping coefficient λ,Both are hyperparameters varied for reporting algorithm performance.
+mint,etdlb - td error interest,MINT and ETDLB-TD Error Interest are compared as methods for adapting interest.
+etdlb,emphatic td,ETDLB is a standard emphatic baseline in the study.
+td with regularized corrections (tdrc),gradient td,TDRC follows the line of work on Gradient TD algorithms.
+v-trace,truncated importance sampling ratios,V-trace represents methods using truncated importance sampling ratios.
+adaptive interest,final value error,Adaptive interest leads to better final value error
+adaptive interest,better final value error,An adaptive interest results in a reduced final value error.
+h4r8t,non-emphatic methods,In H4R8T
+area under the curve,final performance,The area under the curve is considered alongside the final performance.
+etdlb,slower convergence,ETDLB sacrifices faster convergence for better final performance.
+adaptive interest,non-emphatic methods,Adaptive interest reduces the difference in performance with non-emphatic methods
+u-shaped curve,selectively emphasizing some states,Using an adaptive interest shifts the U-shaped curve to the right by emphasizing specific states.
+learning rate,emphatic algorithms,Emphatic algorithms with adaptive interest can learn with a higher learning rate.
+meta gradients,absolute value of the td error,Meta gradients method and the absolute value of the TD error show almost equal performance.
+meta gradients,any function,In theory
+meta gradients,linear function approximation,meta gradients are derived under the assumption of linear function approximation
+stochastic sample,gradient,the stochastic sample at time t represents a part of the gradient calculation
+et,one-hot vector,et denotes the one-hot vector representing the current state
+meta gradient updates,squared td error,meta gradient updates follow the direction of the squared TD error
+meta-parameters,absolute value of td error heuristic,at each iteration
+features,tabular,features are assumed to be tabular in a simplified scenario
+updates,state,updates on one state can affect another due to non-exact tabular features
+mint,interest functions,MINT learns interest functions
+learning process,4r8t,the learning process is shown for the 4R8T domain
+learning process,h4r8t,the learning process is also shown for the H4R8T domain
+goal state,hallway,the first state highlighted is next to the goal in the hallway
+interest,neighbouring states,interest diffuses to neighbouring states over time in the 4R8T domain
+state,high variance,In the H4R8T environment
+high variance state,target policy,The high variance state is visited by many trajectories that the target policy would take.
+high variance state,computation,It requires more computation to be correctly estimated due to its higher variance.
+neighbouring states,high variance state,The high variance state has a closer resemblance to the example in Fig. 1 and differs from neighbouring states.
+interest function,iterations,The interest function is visualized across iterations during training.
+h4r8t environment,high variant state,In the H4R8T environment
+end of training,less important states,At the end of training
+target policy,less important states,These states are not often visited by the target policy.
+states,bootstrapping,Many states bootstrap from the high variance state.
+4r8t domain,diffusion of interest,The diffusion of interest in the 4R8T domain is not perfectly uniform.
+tile coding,function approximator,Tile coding is used as the function approximator
+tile coding,function approximator,Tile coding is used as a function approximator in the context.
+interest function,prediction error,The interest function plays a role in lowering the overall prediction error.
+emphatic algorithms,off-policy setting,Emphatic algorithms were initially designed for the off-policy setting.
+on-policy case,flexibility,The flexibility of the interest function is applicable in the on-policy case.
+emphatic algorithms,non-linear function approximation,Emphatic algorithms are investigated with non-linear function approximation in the on-policy setting.
+minatar domain,atari 2600 testbed,MinAtar is a miniaturized version of some games from the Atari 2600 testbed.
+state representations,10 × 10 × n,The environment provides state representations with dimensions 10 × 10 × n.
+mint,baselines,MINT shows good gains compared to standard PPO and a meta-gradient approach.
+ppo agent,meta-gradient approach,Both PPO agent and meta-gradient approach serve as baselines for comparison with MINT.
+ppo agent,rl update rules,The PPO agent is a type of agent that follows Reinforcement Learning (RL) update rules.
+meta-gradient approach,meta-learning,The meta-gradient approach involves meta-learning
+target function,rl update rules,The target function is a component that appears in Reinforcement Learning update rules and can be meta-learned.
+adapting the interest,sample efficiency,Adapting the interest leads to improvements in sample efficiency in comparison to baselines.
+our method,baselines,Our method outperforms both standard and meta-learning baselines in terms of performance.
+meta-learning the target function,learning the interest function,Meta-learning the target function and learning the interest function are compared
+complete loss function,meta-learning,An approach that meta-learns the complete loss function is compared to the one in [54]
+meta-learning the interest-function,generality,Meta-learning the interest-function is suggested as a balance between generality and inductive bias.
+inductive bias,sample efficiency,The amount of inductive bias affects the sample efficiency of more general meta-learning formulations.
+generality,inductive bias,related as factors considered in the study
+learning rate,u shaped curves of performance,learning rate affects the performance as shown by the curves
+continuous control,mujoco domain,Continuous Control experiments are conducted in the MuJoCo domain
+states,actions,both are continuous in the MuJoCo domain
+ppo,adaptive interest function,adaptive interest function consistently improves over PPO
+td error,prediction setting,TD error is relevant in prediction but not in control setting
+hypergradient descent (hd),learning rate,HD dynamically updates the learning rate
+hd,mint,HD reaches similar performance as MINT in Humanoid-v3
+humanoid-v3,slower learning process,HD has a slower learning process in Humanoid-v3
+mint,hd,MINT and HD are compared
+sample complexity,our method,Our method doesn't generally increase sample complexity for better performance.
+interest function,state-dependent quantity,The interest function in HD is a state-dependent quantity
+meta-learning,reward function,Meta-learning is compared as an additional baseline for the reward function.
+ppo,emphatic variant,An emphatic variant of PPO is mentioned with a fixed interest.
+td error,interest function,An interest based on the absolute value of the TD error is another baseline.
+learning rate,hypergradient descent,Updating the learning rate via hypergradient descent is tested against MINT's performance.
+interest function,transfer experiment,The interest function is transferred in a transfer experiment to aid policy learning.
+reward function,transfer experiment,Similarly
+color,higher value,color indicates a higher value in the context.
+interest function,states near the hallways,the interest function highlights bottleneck states close to hallways in the starting state room.
+interest function,knowledge,the interest function encodes knowledge that can be useful for later tasks.
+learning,speed up,knowledge encoded in the interest function can speed up learning in new environments.
+fourroomstransfer environment,agent,the FourRoomsTransfer environment is where the agent starts in the top left corner and must reach the goal.
+distractor state,random reward,the distractor state gives a random reward
+transfer setting,interest function,in the transfer setting
+meta gradients,intrinsic reward function,meta gradients are used to learn an intrinsic reward function before transferring it to another task.
+learned interest function,actor-critic baseline,the learned interest function provides a speed-up compared to an actor-critic baseline without an interest function.
+meta-gradients,intrinsic function,Learning an intrinsic function is preferred over learning an intrinsic reward function when using meta-gradients.
+interest function,transfer learning,The interest function aids in transfer learning by highlighting important states.
+interest function,hallway,The interest function emphasizes bottleneck states like hallways in the environment.
+hallway,goal,Hallways are important as they influence the agent's trajectory towards the goal.
+interest function,reward function,The interest function highlights both positive and negative rewards
+invariance,transfer performance,Invariance in the interest function is crucial for better transfer performance.
+interest function,continual learning,The interest function's property could be beneficial in the context of continual learning.
+universal interest function,universal value functions,There is a suggestion for defining a universal interest function similar to universal value functions.
+emphatic methods,[44,27]
+off-policy prediction,convergence,The convergence of off-policy prediction is discussed in research papers.
+truncated etd algorithm,convergence,The Truncated ETD algorithm also shows convergence properties.
+prediction,control,Prediction methods were extended to control techniques.
+emphatic algorithms,linear function approximation,Emphatic algorithms perform well with linear function approximation in benchmarks.
+on-policy case,emphatic algorithms,Emphatic algorithms are effective even in the on-policy scenario.
+deep rl,emphatic algorithms,Emphatic algorithms have been adapted to deep reinforcement learning.
+impala agent,auxiliary heads,Emphatic algorithms in deep RL are built upon the IMPALA agent with auxiliary heads.
+selective updating,emphatic methods,Emphatic methods can be viewed as a form of selective updating.
+model free learning,selective updating,Selective updating has been studied in the context of model free learning.
+model based planning,selective updating,Selective updating is also relevant in model-based planning.
+hierarchical reinforcement learning,selective updating,In hierarchical RL
+initiation sets,options framework,Initiation sets are a part of the options framework for selective updating.
+interest functions,options framework,Interest functions are another aspect of the options framework for selective updating.
+meta learning,adaptation,Meta learning improves adaptation to new tasks by learning from previous tasks.
+multi-task learning,meta learning,Meta learning methods primarily focus on multi-task learning scenarios.
+meta-gradients,meta learning,Meta-gradients are a focus within meta learning for adapting to new tasks.
+multi-task learning,methods,multi-task learning is a type of methods mentioned in the context.
+meta-gradients based methods,learning,these methods focus on learning
+online cross validation,meta-gradients based methods,online cross validation is a part of the learning process in these methods.
+interest function,meta-gradients,the interest function is learned and adapted using meta-gradients.
+hand-coded solutions,feasible,hand-coded solutions are not feasible for the problem addressed.
+comprehensive experiments,performance,experiments evaluate the performance of the proposed approach.
+heuristics,adaptive method,certain heuristics can be beneficial
+recurrent neural networks,meta-learned intrinsic rewards,not considered in this work
+interest/reward functions,single environment,functions are initially trained on a single environment before transfer.
+new environment,transfer,after initial training

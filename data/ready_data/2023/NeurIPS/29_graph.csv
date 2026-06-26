@@ -1,0 +1,219 @@
+node_1,node_2,edge
+offline inverse reinforcement learning,structure of rewards and environment dynamics,Offline IRL aims to recover the structure of rewards and environment dynamics underlying observed actions in demonstrations from an expert agent.
+expertise models,clinical decision making and autonomous driving,Accurate models of expertise in executing a task have applications in safety-sensitive areas such as clinical decision making and autonomous driving.
+expert's preferences implicit in observed actions,expert's model of the environment dynamics,The structure of an expert's preferences in observed actions is linked to the expert's model of the environment dynamics.
+models of the world,inaccuracy in estimated rewards,Inaccurate models of the world obtained from limited data could lead to inaccuracy in estimated rewards.
+bi-level optimization formulation,estimation task,We propose a bi-level optimization formulation for the estimation task to address inaccuracies in estimated rewards.
+policy model,reward maximization and uncertainty penalty,The policy model maximizes reward with an increasing penalty based on the uncertainty of the estimated world model.
+algorithmic framework,bi-level optimization problem,We propose a new algorithmic framework to solve the bi-level optimization problem for optimal reward estimation.
+proposed algorithm,state-of-the-art offline irl and imitation learning benchmarks,The proposed algorithm outperforms existing benchmarks in offline IRL and imitation learning tasks.
+reinforcement learning,large-scale sequential decision-making problems,Reinforcement learning is a powerful approach for solving large-scale sequential decision-making problems
+reinforcement learning,real-world applications,RL struggles to scale to real-world applications due to limitations in reward function definition and online interactions with the environment
+reward function,online interactions,RL heavily relies on a manually defined reward function and requires online interactions with the environment
+dialogue system,robotics,"In some application scenarios like dialogue systems and robotics, it is difficult to design appropriate rewards for reinforcement learning systems"
+clinical decision making,autonomous driving,"For safety-sensitive applications like clinical decision making and autonomous driving, online trials and errors are prohibited"
+paradigm,learning from demonstrations,The new paradigm of learning from demonstrations relies on historical datasets of demonstrations to model the agent for solving sequential decision-making problems.
+paradigm,understanding the demonstrator,"In the paradigm of learning from demonstrations, it is important to understand the demonstrator and imitate the demonstrator’s behavior."
+learning from demonstrations,historical datasets of demonstrations,Learning from demonstrations relies on historical datasets of demonstrations to model the agent for solving sequential decision-making problems.
+learning from demonstrations,imitating the demonstrator’s behavior,"In learning from demonstrations, the agent imitates the demonstrator’s behavior by utilizing the collected demonstration dataset itself."
+offline inverse reinforcement learning,learning from demonstrations,Offline inverse reinforcement learning is a promising candidate to enable learning from demonstrations.
+offline inverse reinforcement learning,practical applications,Offline inverse reinforcement learning holds great promises in practical applications.
+distribution shift,offline inverse reinforcement learning,"One central challenge in offline inverse reinforcement learning arises from the distribution shift, where the recovered reward function and recovered policy cannot generalize well to new scenarios."
+recovered reward function,recovered policy,The recovered reward function and recovered policy are mentioned together as they are key components in the situation where they cannot generalize well to new unseen states and actions in the real environment.
+offline irl,sequential decision-making process,"Any inaccuracies in the sequential decision-making process induced by distribution shift will compound, leading to poor performance of the estimated reward function / policy in the real-world environment in the training process of the offline IRL."
+offline irl,fixed datasets,"Offline IRL is trained upon fixed datasets, which only provide limited coverage to the dynamics model of the real environment."
+offline irl,distribution shift,The challenge of how to alleviate distribution shift in the context of offline IRL is mentioned.
+offline reinforcement learning,conservative policy training,"In the context, offline reinforcement learning incorporates conservative policy training to avoid overestimation of values in unseen states induced by the distribution shift."
+conservatism,model-based setting,The proposal includes incorporating conservatism into a model-based setting in order to alleviate distribution shift and recover high-quality reward function from fixed demonstration datasets.
+demonstration datasets,conservatism,The model-based setting incorporates conservatism to recover a reward for an optimal policy.
+demonstration datasets,maximum likelihood estimation (mle),Offline IRL is considered as a MLE problem to recover a reward.
+demonstration datasets,optimal policy,A reward is recovered to generate an optimal policy maximizing likelihood over expert demonstrations.
+model uncertainty,conservative markov decision process (conservative mdp),High model uncertainty leads to the construction of a conservative Markov decision process for risk avoidance.
+model uncertainty,high penalty value,State-action pairs with high model uncertainty and low coverage receive a high penalty to avoid risk exploration.
+irl algorithm,reward function,An IRL algorithm is proposed to recover the reward function for optimal policy generation.
+offline irl,mle,offline IRL formulation based on MLE over observed transition samples and expert trajectories.
+offline irl,transition dynamics,transition dynamics are modeled in the offline IRL formulation.
+offline irl,reward function,reward function is modeled as the maximum likelihood estimators in the offline IRL formulation.
+offline irl,algorithm,computationally efficient algorithm is developed to solve the offline IRL formulation.
+offline irl,policy optimization problem,policy optimization problem is solved under each reward estimate in the offline IRL formulation.
+offline irl,reward update step,algorithm alternates between one reward update step and one conservative policy improvement step in the offline IRL formulation.
+offline irl,experimental data,extensive experiments conducted using robotic control tasks in MuJoCo and collected datasets for offline IRL.
+mujoco,robotic control tasks,MuJoCo is used for conducting extensive experiments with robotic control tasks.
+proposed algorithm,state-of-the-art offline irl,The proposed algorithm outperforms state-of-the-art offline IRL methods.
+proposed algorithm,imitation learning methods,The proposed algorithm outperforms imitation learning methods.
+recovered reward,expert demonstrations,Recovered reward function is transferred across different datasets to demonstrate quality from expert demonstrations.
+maxent-irl,ground-truth reward function,MaxEnt-IRL aims to recover the ground-truth reward function from expert demonstrations.
+maxent-ir,expert's policy,MaxEnt-IRL aims to imitate the expert's policy from expert demonstrations.
+expert policy πe,trajectory,The trajectory generated by the RL agent with policy πE denotes the causal entropy of the policy π.
+trajectory,maxent-irl,The MaxEnt-IRL formulation aims to recover the ground-truth reward function which assigns high rewards to the expert policy while assigning low rewards to any other policies.
+maxent-irl,reward function,MaxEnt-IRL formulation aims to recover the ground-truth reward function which assigns high rewards to the expert policy while assigning low rewards to any other policies.
+reward function,policy optimization problems,MaxEnt-IRL needs to repeatedly solve policy optimization problems under each reward function.
+policy optimization problems,online interactions,MaxEnt-IRL needs to repeatedly solve policy optimization problems under each reward function and online interactions with the environment is inevitable.
+offline irl,world model,"Given the transition dataset D := {(s, a, s′)}, we train an estimated world model P(s′"
+world model,ground-truth dynamics model,The constructed world model (cid:98)P will be utilized as an estimate of the ground-truth dynamics model P.
+world model,estimated world model,"Based on the estimated world model (cid:98)P, we propose a model-based offline approach for IRL from the ML perspective."
+world model,penalty function,The penalty function is constructed based on uncertainty heuristics over an ensemble of estimated dynamics models in practice.
+world model,optimization form,"The penalty function is a penalty function to quantify the uncertainty of the estimated world model P under any state-action pair (s, a)."
+estimated world model,entropy of the distribution,-π(a
+penalty function,uncertainty heuristics,The penalty function is constructed based on uncertainty heuristics over an ensemble of estimated dynamics models.
+penalty function,choices of the penalty function,A comprehensive study of the choices of the penalty function can be found in [37].
+formulation,offline ml-irl,"Let us make a few remarks about the above formulation, which is named Offline ML-IRL."
+unique solution,conservative mdp,unique solution is used to solve the conservative MDP
+upper-level problem (2a),"reward function r(·,·; θ)",upper-level problem optimizes the reward function so that its optimal policy maximizes the log-likelihood over observed expert trajectories
+"reward function r(·,·; θ)",optimal policy πθ,reward function r is optimized to maximize the log-likelihood over observed expert trajectories leading to an optimal policy π under θ
+likelihood function,optimal reward function,formulating the objective as a likelihood function helps to search for an optimal reward function explaining the observed expert behavior within limited knowledge about the world
+world model (cid:98)p,finite and diverse dataset d,world model is constructed based on the finite and diverse dataset D containing state-action-state pairs
+lower-level problem (2b),model-based offline rl problem,lower-level problem corresponds to a model-based offline RL problem under the current reward estimate
+state-action pairs,model uncertainty,state-action pairs not well covered by the dataset are penalized with a measure of uncertainty in the estimated world model
+optimal policy πθ,conservative mdp,optimal policy under the conservative MDP avoids risky exploration on uncertain region of the state-action space where the transition dataset has limited coverage
+world model (cid:98)p,transition dataset d,world model P is constructed from the transition dataset D
+world model (cid:98)p,approximated version of the formulation (2),world model is constructed and a certain approximated version of the formulation is solved
+reward estimator,statistical guarantee,The reward estimator can be obtained with a statistical guarantee.
+expert trajectory τ e,ground-truth transition dynamics p,The expert trajectory τ E is generated from the ground-truth transition dynamics P.
+agent samples its trajectory τ a,estimated world model p,The agent samples its trajectory τ A through interacting with the estimated world model P.
+soft q-function,soft value function,The notions of the soft Q-function and the soft value function are introduced for the conservative MDP.
+reward parameter θ,optimal policy πθ,The optimal policy πθ is defined for any reward parameter θ.
+optimal policy πθ,optimal soft value function vθ,The optimal policy πθ and the optimal soft value function Vθ have closed-form expressions under any state-action pair.
+"state-action pair (s, a)",optimal policy πθ,"The optimal policy πθ is defined for any state-action pair (s, a)."
+"state-action pair (s, a)",optimal soft value function vθ,"The optimal soft value function Vθ is defined for any state-action pair (s, a)."
+ground-truth dynamics model p,initial distribution η(·),"Under the ground-truth dynamics model P and the initial distribution η(·), the optimal policy and soft value function are further defined."
+expert policy πe,"visitation measure de(s, a)","Expert policy πE is utilized to calculate the visitation measure dE(s, a) in the expert policy πE."
+optimal policy πθ,objective function l(θ),The optimal policy πθ is used to decompose the dynamics-model mismatch error from the likelihood function L(θ).
+reward parameter θ,objective l(θ),The objective L(θ) can be decomposed under any reward parameter θ.
+surrogate objective l(θ),error term,The likelihood function decomposes into a surrogate objective L(θ) and an error term dependent on the dynamics model mismatch.
+surrogate objective l(θ),dynamics models ((cid:98)p and p),"In the surrogate objective L(θ), the dynamics models ((cid:98)P and P) are separated into two relatively independent components."
+optimizing the surrogate objective,computational tractability,The optimization of the surrogate objective is computationally tractable.
+reward parameter,likelihood objective l(θ),The connection between the reward parameter and the likelihood objective L(θ) is further elaborated in the context.
+reward parameter,surrogate objective,The connection between the reward parameter and the surrogate objective is discussed based on Assumption 1.
+reward parameter,"state-action pair (s, a)","The reward parameter is associated with the state-action pairs (s, a) based on the conditions mentioned in Assumption 1."
+"state-action pair (s, a)",bounded reward,"The state-action pair (s, a) is related to the bounded reward based on the conditions mentioned in Assumption 1."
+"state-action pair (s, a)",bounded penalty function,"The state-action pair (s, a) is related to the bounded penalty function based on common choices of uncertainty heuristics."
+bounded penalty function,ensemble variance penalty,The bounded penalty function is specifically related to the ensemble variance penalty as mentioned in the context.
+likelihood function,surrogate version,The gap between the likelihood function and its surrogate version is discussed in Lemma 2.
+model mismatch error,expert-visited state-action distribution,The model mismatch error is evaluated based on the expert-visited state-action distribution as discussed in the context.
+"transition dataset d := {(s, a, s')}",full data coverage on the joint state-action space s × a,The transition dataset is related to the importance of full data coverage on the joint state-action space.
+objective approximation error,l(θ),"The objective approximation error,"
+world model,construction,The construction of the world model is crucial to understanding the state-action space and surrogate objectives in the context.
+state-action space,surrogate objective,The state-action space and the surrogate objective are related as the space defines where the objective will be an accurate approximation.
+reward function,expert behaviors,"The reward function is essential to model expert behaviors, which are limited to a particular region in the state-action space."
+data collection,state-action space,Data collection is related to the state-action space as full coverage in data collection can be redundant due to the limited region of expert behaviors.
+sample complexity,world model,The sample complexity is analyzed in the context of constructing the world model to quantify the approximation error between objectives.
+state dataset,world model,The state dataset is used to construct the world model in discrete MDPs where the cardinality of states and actions is finite.
+transition space,expert-visited state-action pairs,"The transition space is related to expert-visited state-action pairs, defining expert-visited states and set of state-action pairs."
+state-action pair,transition samples,"Certain conditions on the number of data points and transition samples lead to specific results, ensuring the accuracy of the estimated world model."
+surrogate objective,optimal reward parameters,"The surrogate objective precisely approximates the optimal reward parameters, guaranteeing strong performance."
+performance gap,reward parameters,"Theorem 1 elaborates on the performance gap between the reward parameters ˆθ and θ∗, providing insights on their characteristics."
+appendix i,detailed proof,Appendix I contains the detailed proof
+theorem 1,ε,"Theorem 1 is defined for any ε in the range of (0, 4γCv)"
+theorem 1,"pair (s, a)","Theorem 1 is defined for the pair (s, a) in the transition dataset D"
+d,ω,The number of transition dataset D satisfies the condition on the size of Ω data points
+d,n,The number of transition dataset D should have more than N data points on each state-action pair
+c,δ,Constant c is dependent on the value of δ
+ˆθ,optimal reward parameter,The algorithm is designed to obtain the corresponding optimal reward parameter ˆθ
+ˆθ,l(θ∗) - l(ˆθ),The difference between L(θ∗) and L(ˆθ) should be less than ε
+optimal soft value function vθ(·),l(·),L(·) depends on the optimal soft value function Vθ(·)
+optimal policy πθ,l(·),L(·) depends on the optimal policy πθ
+optimal policy πθ,current reward estimate,The optimal policy πθ is solved under the current reward estimate
+optimal policy πθ,bi-level optimization problem,The optimal policy πθ is formulated in a bi-level optimization problem
+πθ,alternates between a policy optimization step,The algorithm alternates between a policy optimization step to avoid computational burden
+reward estimate θ,algorithm,The reward estimate θ is a key component in the algorithm design process
+reward estimate θ,reward parameter θk,"The reward estimate θ is related to the reward parameter θk, with both being crucial in the algorithm"
+reward estimate θ,policy estimate πk,The reward estimate θ interacts with the policy estimate πk in determining the updated policy πk+1
+reward parameter θk,policy estimate πk,The reward parameter θk is used along with the policy estimate πk in the policy improvement step
+world model (cid:98)p,policy improvement step,The world model (cid:98)P is utilized in the policy improvement step for generating an updated policy
+soft q-function,soft value function,The soft Q-function and soft value function are interrelated in the context of policy improvement
+soft q-function,"soft estimate (cid:98)qk(s, a)","The soft Q-function is linked to the soft estimate (cid:98)Qk(s, a) in the context of policy iteration"
+q-function,reinforcement learning algorithms,The Q-function is approximated by reinforcement learning algorithms like soft Q-learning and soft Actor-Critic for stable updates.
+soft q-function,approximation error,The soft Q-function is approximated with low approximation error ϵapp to achieve stable updates.
+reward parameter,policy,The reward parameter θ and policy π are initialized and used in the algorithm for both training and updates.
+world model,penalty function,"The world model is trained on transition dataset D and the penalty function U (·,·) is specified based on the world model."
+expert trajectory,gradient estimation,An expert trajectory is sampled for gradient estimation in the algorithm.
+reward optimization,iteration,"At each iteration k, reward optimization is performed based on the current reward parameter and trajectory sampling."
+reinforcement learning,offline reinforcement learning,"Reinforcement learning algorithms like SAC are used in the framework of offline reinforcement learning, as mentioned in the literature."
+reward parameter,policy,The reward parameter θk and policy πk+1 are related through the process of updating the reward parameter to θk+1.
+gradient,surrogate objective,The gradient of the surrogate objective ∇(cid:98)L(θ) is computed to update the reward parameter.
+gradient,approximation steps,Two approximation steps are taken to develop a stochastic gradient estimator of the current gradient.
+policy estimate,world model,The policy estimate πk+1 is used in the estimated world model (cid:98)P.
+trajectory,cumulative reward gradient,The cumulative reward gradient under a trajectory is used to define the stochastic estimator gk.
+reward gradient,trajectory,"The reward gradient under a trajectory is denoted as γt∇θr(st, at; θ)"
+trajectory,policy,A trajectory is sampled to update the policy πk+1
+reward parameter,update rule,The reward parameter θ can be updated according to the following update rule θk+1 = θk + αgk
+algorithm,convergence analysis,The Offline ML-IRL algorithm is summarized in Alg. 1 with convergence analysis presented in this section
+policy estimate,optimal policy,The policy estimates {πk+1}k≥0 closely track the optimal solutions {πθk}k≥0 in the long run
+assumptions,ergodic dynamics,Assumption 2 (Ergodic Dynamics) introduces constants to ensure the irreducibility and aperiodicity of the Markov chain
+markov chain,world model,The Markov chain under the estimated world model (cid:98)P is characterized by Assumption 2
+total variation norm,tv,The total variation norm denoted by ∥ · ∥TV and its relation to TV in the context of reinforcement learning.
+stationary distribution,visited states,The stationary distribution of visited states and its relationship to the policy under the world model in reinforcement learning.
+ergodic dynamics,reinforcement learning,The assumption about ergodic dynamics in reinforcement learning literature and its commonality in ensuring the mixing rate of the Markov chain.
+lipschitz reward,reward parameter,The Lipschitz Reward assumption and its conditions related to any state and action under reward parameter in reinforcement learning.
+parameterized reward,min-max/bi-level optimization problems,"The concept of parameterized reward with bounded gradient and Lipschitz smoothness, commonly seen in min-max/bi-level optimization problems."
+optimal soft q-function,surrogate objective,The discussion on Lipschitz properties of the optimal soft Q-function and the surrogate objective under certain assumptions in reinforcement learning.
+convergence result,theorem,The main convergence result summarized in a theorem that characterizes certain properties in the context of reinforcement learning.
+convergence result,estimates,The convergence result characterizes the speed of estimates {πk+1}k≥0 and {θk}k≥0.
+convergence result,stepsize,The stepsize α is set as α0 · K− 1 2 where α0 > 0 for convergence.
+convergence result,convergence results,Convergence results are obtained with O(K2 ) + O(ϵapp)KK−1(cid:88)K−1(cid:88)k=0E(cid:104)(cid:13)(cid:13) log πk+1 − log πθk E(cid:104)∥∇(cid:98)L(θk)∥2(cid:105)(cid:105)(cid:13)(cid:13)∞.
+convergence result,approximation error,Approximation error is defined as ϵapp in the convergence result.
+alg.1,stationary solution,Alg.1 identifies the approximate stationary solution of the surrogate problem in finite time.
+reward function,linearly parameterized,"The reward function is linearly parameterized as r(s, a; θ) := ϕ(s, a)⊤θ."
+stationary point,global optimum,Any stationary point of the surrogate problem is a global optimum.
+stationary point,optimal solutions,Stationary points of the surrogate problem can be connected to the optimal solutions of the offline-IRL problem.
+stationary point,global optimum,Any stationary point of the surrogate problem is a global optimum.
+stationary point,epsilon-optimal solution,Any stationary point of the surrogate objective is an epsilon-optimal solution to the maximum likelihood problem.
+surrogate objective,epsilon-optimal solution,The epsilon-optimal solution on the MLE problem implies certain conditions related to the surrogate objective.
+expert trajectories,optimal policy,"When the expert trajectories are consistent with the optimal policy, certain conditions are met."
+recovered policy,expert policy,The recovered policy is close to the expert policy measured by the KL divergence.
+stationary solution,surrogate problem,Showing the optimality of the stationary solution for the surrogate problem is non-trivial.
+stationary solution,surrogate problem,"The stationary solution is a key concept in the context, particularly in relation to the surrogate problem."
+surrogate problem,concave problem,The surrogate problem is mentioned in relation to the concave problem as it is not concave with respect to θ.
+stationary solution,optimal policy,The stationary solution together with the optimal policy forms a saddle point to the saddle point problem.
+stationary solution,saddle point,The stationary solution is mentioned in relation to the saddle point problem and its optimality.
+stationary solution,performance guarantee,"The performance guarantee is achieved for any stationary point, showing the importance of the stationary solution."
+proposed algorithm,state-of-the-art methods,The proposed algorithm is compared with other state-of-the-art methods to evaluate its performance.
+offline ml-irl,reward estimator,The quality of the reward estimator is crucial for offline ML-IRL to recover the expert's reward across different datasets.
+clare,iq-learn,CLARE and IQ-Learn are mentioned as baseline algorithms for comparison with the proposed method.
+clare,iq-learn,CLARE is mentioned along with IQ-Learn as a model-free approach in the context.
+imitation learning algorithms,behavior cloning,"Imitation learning algorithms, such as behavior cloning, are mentioned as algorithms that learn a policy to mimic expert behaviors."
+imitation learning algorithms,valuedice,"Imitation learning algorithms, including ValueDICE, are mentioned in the context."
+offline ml-irl,robotics training tasks,The performance of Offline ML-IRL is tested on a diverse collection of robotics training tasks.
+mujoco simulator,robotics training tasks,MuJoCo simulator is mentioned as the environment for robotics training tasks.
+d4rl benchmark,robotics training tasks,Datasets in D4RL benchmark are mentioned along with robotics training tasks.
+halfcheetah,environments,Halfcheetah is mentioned as one of the environments in the context.
+hopper,environments,Hopper is mentioned as one of the environments in the context.
+walker2d,environments,Walker2d is mentioned as one of the environments in the context.
+medium-replay,dataset types,Medium-replay is mentioned as one of the dataset types in the context.
+medium,dataset types,Medium is mentioned as one of the dataset types in the context.
+medium-expert,dataset types,Medium-expert is mentioned as one of the dataset types in the context.
+offline ml-irl,dynamics model,"In Offline ML-IRL, the dynamics model is estimated by neural networks which model the location of the next state by Gaussian distributions."
+transition samples,ensemble of n estimated,Transition samples and ensemble of N estimated are mentioned in the context as part of estimating the dynamics model.
+aleatoric uncertainty,penalty function,Aleatoric uncertainty and penalty function are mentioned in the context in relation to model uncertainty estimation.
+offline rl subrouinte,mopo,"Offline RL subroutine and MOPO are mentioned in the context, with a reference to implementation."
+key hyperparameters,mopo,Key hyperparameters for MOPO are selected following the same setup as mentioned in the context.
+reward function,three-layer neural network,The reward function is parameterized by a three-layer neural network as mentioned in the context.
+mopo,neural network,MOPO is parameterized by a three-layer neural network in the reward function
+reward function,three-layer neural network,The reward function is parameterized by a three-layer neural network
+reward parameter,policy,Reward parameter and policy are updated alternatingly
+proposed algorithm,benchmarks,Performance comparison between the proposed algorithm and benchmarks is shown in Figure 2 and Table 1
+iq-learn,unstable performance,IQ-Learn is not presented as it suffers from unstable performance
+offline ml-irl,benchmark algorithms,Offline ML-IRL outperforms benchmark algorithms by a large margin in most cases
+bc,valuedice,Better performance in BC and ValueDICE is obtained by using only expert demonstrations to train their agents
+offline ml-irl,experiment sets,"In experiment sets, Offline ML-IRL does not obtain the best performance in some cases"
+medium-exphopperhalfcheetah,walker2doffline ml-irl,"Performance of Offline ML-IRL given 5,000 expert demonstrations between medium-exphopperhalfcheetah and walker2dOffline ML-IRL"
+bc,valuedice,"BC and ValueDICE are two different datasets mentioned in Table 1: MuJoCo Results, comparing their results against each other. These datasets are related in terms of performance evaluation."
+valuedice,clare,"ValueDICE and CLARE are mentioned in Table 1: MuJoCo Results, comparing their performance results. These two concepts are related in terms of their performance."
+expert performance,offline ml-irl,Expert Performance and Offline ML-IRL are compared in Table 1: MuJoCo Results in terms of performance versus different datasets and expert demonstrations. The relation between these two concepts is highlighted based on their performance results.
+offline ml-irl,clare,Offline ML-IRL and CLARE are compared in terms of their performance in the related work (Appendix B). The relation between these two concepts is highlighted based on the performance evaluation discussed.
+clare,expert demonstrations,"CLARE learns a policy to match the joint visitation measure of all collected data, thus fails to imitate expert behaviors"
+offline ml-irl algorithm,recovered reward,we further present an experiment showcasing the quality of the reward recovered by the Offline ML-IRL algorithm. The recovered reward function can label transition samples for solving offline RL tasks
+reward function,transition samples,"the recovered reward function can label transition samples for solving offline RL tasks. Comparing with the numerical results of directly doing offline-IRL on the respective datasets, solving Offline RL with transferred reward function can achieve similar performance"
+offline ml-irl,recovered reward functions,"the Offline ML-IRL can recover high-quality reward functions, the recovered reward can label transition samples for solving offline RL tasks"
+offline rl,transferred reward function,solving Offline RL with transferred reward function and unlabelled transition datasets can achieve similar performance
+likelihood estimation perspective,generative world model,The generative world model is constructed to estimate the environment dynamics from the likelihood estimation perspective.
+generative world model,offline irl problem,The offline IRL problem is solved through a model-based approach by constructing a generative world model.
+offline irl problem,algorithm,A computationally-efficient algorithm is developed to recover the underlying reward function and its associated optimal policy for solving the offline IRL problem.
+algorithm,reward function,The algorithm effectively recovers the underlying reward function and its associated optimal policy in the context of model-based approach for offline IRL.
+reward estimator,algorithm,Statistical and computational guarantees are established for the performance of the recovered reward estimator by the developed algorithm.
+algorithm,existing benchmarks,"The algorithm outperforms existing benchmarks for offline IRL and Imitation Learning on high-dimensional robotics control tasks, as shown through extensive experiments."
+method,reward learning process,One limitation of the method is its focus solely on aligning with expert demonstrations during the reward learning process.
+reward learning process,metrics and data sources,"In an ideal scenario, reward learning should incorporate diverse metrics and data sources, such as expert demonstrations and preferences gathered through human feedback."
+direction,future work,One direction for future work is to broaden the algorithm framework and theoretical analysis for a wider scope in reward learning.
+m. hong and s. zeng,nsf grant cif-1910385,M. Hong and S. Zeng are supported by NSF grant CIF-1910385 as mentioned in the Acknowledgments.

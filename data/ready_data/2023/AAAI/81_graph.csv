@@ -1,0 +1,155 @@
+node_1,node_2,edge
+object detection,computer vision field,Object detection is a fundamental task within the broader context of computer vision.
+computer vision field,video surveillance,Video surveillance is an application where computer vision techniques
+computer vision field,autonomous driving,Autonomous driving relies on computer vision for tasks such as object detection to function.
+computer vision field,robot navigation,Robot navigation also employs computer vision
+video object detection (vod),object detection for video data,VOD is a specialized approach to address challenges in object detection for videos due to motion and occlusion.
+temporal information,vod models,VOD models leverage temporal information to enhance object detection performance.
+optical flow,feature aggregation,Some VOD methods use optical flow to aggregate features from neighboring frames.
+lstm (long short-term memory),feature aggregation,Other VOD methods utilize LSTM for capturing temporal dependencies.
+detr (detractor),standard object detection,DETR is a popular single-image object detection model
+detr-based video object detection,cetr (proposed framework),CETR is a proposed framework that improves upon DETR for video object detection without heavy components.
+short-term frames,long-range temporal dependency,These methods primarily focus on short-term frames
+attention-based approaches,randomly sampled images,Attention-based methods use memory structures to aggregate features
+transformer-based models,image object detection,Transformer models
+transformer-based models,video domain,Researchers are extending Transformer models to the video domain to address limitations of existing methods.
+video domain,real-time operational demands,The need for real-time processing is crucial in various systems
+existing methods,auxiliary networks,Methods like DETR heavily rely on auxiliary networks
+existing methods,multiple sequential frames,These methods require multiple sequential frames
+efficient and streamlined approaches,real-time requirements,There is a need for more efficient methods that can meet the real-time demands without compromising performance.
+context enhanced transformer (cetr),transformer-based detectors,CETR is based on DETR
+transformer framework,attention mechanism,CETR incorporates temporal information through the attention modules within the Transformer framework.
+context memory module (cmm),class-wise feature representations,CMM stores and updates feature representations non-parametrically
+cmm,prototypes (for each class),CMM represents each class as a set of prototypes to handle intra-class variations.
+score-based sampling methodology,current input,This method uses encoded memory features to make predictions
+adaptive memory updating technique,test domain,different camera settings
+single image object detection,real-time requirements,CETR aims to meet the real-time demands for practical applications.
+efficient and streamlined approaches,practical applications,The proposed method addresses the need for efficient solutions in practical scenarios.
+adaptive memory updating technique,test domain,The technique is tailored for the test domain
+online updating strategy,class-wise distribution of the test domain,This strategy is aligned with the distribution of classes in the test domain
+weighted sum of target and source domain memories,adaptation toward test data distribution,The strategy uses a combination of memories to adapt to the test data's characteristics while preserving relevant information.
+citycam dataset,real traffic video data,Experiments are conducted on CityCam
+imagenet vid,state-of-the-art video object detectors,Comparison is made with ImageNet VID to showcase the accuracy
+proposed method,video object detectors,The proposed method aims to achieve competitive performance with existing video object detectors.
+cnn-based object detectors,two-stage and one-stage detectors,Object detection techniques are categorized into two-stage (e.g.
+two-stage detectors,coarse object proposals,Two-stage detectors involve generating initial proposals before classification and refinement.
+one-stage detectors,direct object prediction,One-stage detectors skip proposal generation and directly predict objects from the input image.
+girshick (2015),two-stage detectors,Girshick's work represents a significant contribution to the development of two-stage object detectors.
+ren et al. (2015),two-stage detectors,This reference contributes to the two-stage detector pipeline as well.
+dai et al. (2016),two-stage detectors,Their work also falls under the category of two-stage object detectors.
+detr,transformer-based object detector,DETR is a prominent example of a Transformer-based object detector.
+one-stage detectors,coarse object proposals,One-stage detectors predict object locations and categories without using separate proposal generation.
+detr,efficient design,DETR's design is considered inefficient
+follow-up works on detr,efficiency,These works aim to address the efficiency issues of DETR's design.
+video object detection (vod),challenging cases,VOD tackles motion blur and occlusion
+fgfa,optical flow,FGFA uses optical flow from FlowNet to improve performance across video frames.
+manet,optical flow,Similar to FGFA
+thp,optical flow,THP employs optical flow for enhanced detection in videos.
+tpn,lstm,TPN exploits LSTM for temporal information in video object detection.
+tcnn,lstm,TCNN also utilizes LSTM to leverage temporal context.
+temporal pyramid networks (tpn),lstm,TPN uses LSTM to create temporal coherence between bounding boxes.
+temporal convolutional neural networks (tcnn),lstm,TCNN also employs LSTM for constructing temporal coherence.
+self-attention mechanism,selsa,SELSA is an example that utilizes this mechanism for global temporal cues.
+object-guided external memory (ogemn),global aggregation,OGEMN proposes to use object-guided memory for additional global aggregation.
+memory module (mega),global and local information,MEGA combines global and local information for enhanced feature representation.
+transvod,detr detector,TransVOD extends the DETR detector into video object detection.
+test-time adaptation (tta),batch normalization (bn) layers,TTA methods
+transformers,pseudo labels,Alternative TTA methods use pseudo labels for model updates
+iwasawa and matsuo (2021),jang and chung (2022),Both works are examples of using test-time pseudo labels for model adaptation.
+transformer encoder,self-attention,The Transformer encoder uses self-attention as a component
+multi-head attention,self-attention,Multi-head attention is a variant of self-attention
+cnn backbone,feature map f,The CNN backbone generates a feature map F
+feature map f,positional encoding,Feature map F is augmented with positional encoding before being fed into the Transformer encoder.
+transformer encoder,decoder layer,The Transformer encoder is followed by a decoder layer
+decoder layer,cross-attention,The decoder layer contains cross-attention layers
+object queries,transformer decoder,Object queries O are input to the Transformer decoder
+detr,encoder-decoder transformer architecture,DETR and its variants base their design on this architecture
+object queries,l-th decoder block,The object queries are processed in the l-th decoder block.
+final object queries,ol+1,The final object queries
+feedforward neural network (ffn),classification and box regression,FFN is used for classification and generating box predictions.
+hungarian algorithm,one-to-one matching,The Hungarian algorithm establishes a match between predicted objects and ground-truth targets.
+memory module,cetr,CETR proposes a memory module for video data processing.
+vod methods,memory modules or reference images,CETR addresses limitations of existing VOD methods using memory.
+memory footprint,large,Previous methods suffer from a large memory footprint.
+random sampling,memory (deng et al. 2019a; chen et al. 2020),Some approaches randomly sample memory for efficiency.
+close frames,zhou et al. 2022; cui 2023,Others use information from nearby frames to reduce memory requirements.
+selective storage,class-specific memory,CETR stores only relevant information in a fixed-size memory.
+current frame,useful information,The model utilizes only necessary information for the current frame.
+contextual information,entire dataset,CETR leverages context from the entire dataset for each frame.
+single frame detr-like methods,cetr,CETR is an extension or adaptation for single-frame DETR-based architectures.
+context memory module (cmm),transformer encoder,CMM enhances the Transformer encoder by aggregating contextual information from the entire dataset
+context memory module (cmm),fixed size memory,CMM uses a fixed size memory obtained from the entire dataset to supply temporal context information
+cnn backbone,image features,The CNN backbone extracts spatial features from the current image
+transformer encoder,image features,The Transformer encoder receives image features as input and integrates spatial context within each feature.
+memory-guided transformer decoder (mgd),spatio-temporal memory information,MGD utilizes the sampled spatio-temporal memory to enhance the semantic information of object queries.
+score-based sampling,memory for current frame,This module selectively samples relevant information from the context memory for processing the current frame data.
+single frame detr-like methods,object queries,These methods typically work with object queries
+multi-prototype class-wise memory,c classes (c number of classes),The memory has K prototypes per class
+transformer encoder,feature map f,F is fed into the Transformer encoder
+feature map f,spatio-temporal contextual information m,In the Transformer encoder
+image feature f,encoded memory feature m,M receives class information tailored to the current image
+score-based sampling module,encoded memory feature m,M is passed to the score-based sampling module for classification score calculation.
+transformer decoder,feature map f,F is forwarded to the Transformer decoder
+context memory module,instance n,The context memory module extracts N instances from image feature F.
+class-wise memory m,feature fn (from ˜f),M is updated using features from ˜F
+correlation ⟨·,·⟩,node_1 and node_3 (feature matching)
+ground-truth box (during training),set ˜f,During training
+predicted box (during inference),set ˜f,During inference
+aggregated f and m,contextual information,The combination of F and M in the Transformer encoder provides abundant contextual information.
+memory m,context from video dataset,M updates recurrently with F
+weather conditions,time periods,These terms are related as they describe the different aspects of the context
+camera locations,training,The camera locations are used for training in this context.
+camera locations,testing,Camera locations are also mentioned for testing purposes.
+imagenet vid,training split,ImageNet VID is used for training
+imagenet vid,validation videos,Validation videos are part of the ImageNet VID dataset.
+imagenet vid,30 object classes,This dataset contains videos across 30 different object classes.
+cetr,imagenet vid and det datasets,CETR is trained on both ImageNet VID and DET datasets.
+citycam dataset,zhang et al. (2017),The CityCam dataset is mentioned as a qualitative result
+baseline (liu et al. 2022),proposed method,A comparison is made between a baseline method and the proposed method on the CityCam dataset.
+object queries,ambiguity,Object queries' ambiguity is addressed in recent works based on DETR-like methods.
+transformer encoder,classification head,The Transformer encoder is used alongside a classification head during training.
+memory-guided transformer decoder,object queries,The decoder addresses object query ambiguity by integrating memory into the Transformer architecture.
+deformable detr,transvod,Cited in the context: Deformable DETR is combined with TransVOD in the research by Zhou et al. (2022).
+cetr,deformable detr,Compared in the context: CETR serves as a baseline for fast convergence
+citycam dataset,zhang et al. (2017),Cited: The dataset is introduced as CityCam in Zhang et al.'s work.
+resnet-50,backbone,Used as: In CityCam experimentation
+imagenet dataset,pre-trained weights,Initializes with: Pre-trained weights from the ImageNet dataset are utilized for ResNet-50.
+transformer encoder,transformer decoder,Components of: Both the encoder and decoder of the Transformer architecture are initialized randomly.
+resnet-101,backbone,Used as: For ImageNet VID experiments
+coco dataset,pre-trained weights,Initializes with: The entire network for ImageNet VID is initialized with pre-trained weights from the COCO dataset.
+dab-detr,cetr,Used in: Both DAB-DETR and CETR are employed in the ImageNet VID experiment and ablation study.
+coco evaluation,metric,Standard: The COCO evaluation metrics are used for performance assessment.
+iou thresholds,ap scores,Determines: AP scores are calculated based on different IoU thresholds (AP50
+imagenet vid dataset,zhou et al. (2022); chen et al. (2020); deng et al. (2019b),Protocol followed: Common evaluation protocol from these works is used for ImageNet VID.
+ap50,evaluation metric,Specific metric: AP50 is the primary metric for evaluating performance on the ImageNet VID dataset.
+memory-guided transformer decoder,object detection results,Our approach outperforms the baseline in detecting objects
+baseline model,memory-guided transformer decoder (our approach),Our model demonstrates higher confidence scores for most classes compared to the baseline.
+cmm (context memory module),transformer encoder,When used only in the encoder
+cmm (context memory module),mgd (memory-guided decoder),When combined with score-based sampling
+cmm (context memory module),multi-level thresholding,Incorporating CMM with multi-level thresholding further boosts AP50 by 1.4%.
+number of prototypes,ablation study,Table 4 shows the impact of varying the number of prototypes per class on performance.
+single frame baseline (liu et al. 2022),cmm (context memory module),CMM improves AP50 by 0.3% when used solely in the encoder
+score-based sampling,cmm + mgd,Combining CMM with score-based sampling enhances performance by 0.6% AP50.
+prototypes,performance,The number of prototypes affects performance
+citycam dataset,performance,In the CityCam dataset
+memory module,method,The context memory module employs different methods like learnable memory
+memory-guided transformer decoder,sampling strategy,Table 5 shows the impact of various class-wise memory sampling strategies on the performance
+class-wise memory sampling,performance,Employing class-wise memory sampling improves performance
+gt sampling (oracle),ap50,Ground-truth sampling (oracle) provides a substantial 17.4% AP50 increase over the baseline.
+single frame baseline,comparison,Performance is measured against a single frame baseline
+ap50,evaluation metric,AP50 is used as a primary evaluation metric for assessing the effectiveness of the proposed approaches.
+score-based sampling method,performance improvement,The score-based sampling strategy leads to the most improvement in performance.
+cmm-based test-time adaptation approach,meaningful performance improvements,The memory update technique adapted to the target domain yields meaningful performance improvements.
+memory update technique,target domain,The memory update is adapted to the target domain without further training or parameter optimization.
+camera-specific way of configuring memory,performance improvement,Adding a camera-specific configuration improves AP50 by 0.5% over the baseline.
+context memory module,spatio-temporal contextual information,The context memory module utilizes spatio-temporal information from the entire dataset.
+context memory module,single frame baseline,Our method showed a performance improvement over the single frame approach.
+citycam dataset,performance improvement,Meaningful improvement in performance was demonstrated on the CityCam dataset.
+performance improvement,single frame baseline,Our method shows a meaningful performance improvement compared to the single frame baseline.
+performance improvement,allocated memory,The improvement comes with only a slight increase in allocated memory.
+performance improvement,fps (frames per second),There is a low decrease in FPS
+method,real-time online video object detection methods,Our method demonstrated a remarkable improvement over other real-time online video object detection techniques.
+research,msit (ministry of science and ict,korea)
+msit,iitp (institute for information & communications technology planning & evaluation) grant,The support came through IITP-2023-2020-0-01819 and RS-2023-00222280 grants.
+national research foundation of korea (nrf),nrf-2021r1c1c1006897,Additional support was from the NRF grant NRF-2021R1C1C1006897.
+nrf,nrf-2018m3e3a1057288,Another grant received was NRF-2018M3E3A1057288.

@@ -1,0 +1,204 @@
+node_1,node_2,edge
+finite-arm bandits,linear function approximation,Finite-arm bandits with linear function approximation are the main focus of the study in terms of global convergence of policy gradient methods.
+policy gradient methods,linear function approximation,Global convergence of policy gradient methods is dependent on the inter-related properties between policy update and representation under linear function approximation.
+standard softmax pg,natural policy gradient (npg),Both standard Softmax PG and natural policy gradient (NPG) can achieve global convergence under linear function approximation without policy or reward realizability.
+algorithm,approximation error,Approximation error is not a key quantity for characterizing global convergence in either algorithm.
+representation,global convergence,Representation conditions that imply global convergence differ between natural policy gradient (NPG) and standard Softmax PG algorithms.
+natural policy gradient (npg),projection of reward,NPG with linear function approximation achieves global convergence if the projection of the reward onto the representable space preserves the optimal action's rank.
+optimal action's rank,approximation error,"The optimal action's rank, a key factor for NPG global convergence, is not strongly related to approximation error."
+softmax pg,representation,Global convergence of Softmax PG under linear function approximation requires the representation to satisfy a non-domination condition and preserve the ranking of rewards.
+policy gradient (pg),reinforcement learning (rl),"PG is a foundational concept in RL, used in both policy-based and actor-critic methods"
+policy gradient (pg),convergence,global convergence for PG methods has been recently established in the tabular case
+pg methods,function approximation,function approximation is needed for RL agents with large state and/or action spaces when using PG methods
+softmax pg method,linear function approximation,Softmax PG method converges with linear function approximation when actions are ranked similarly to the ground-truth reward function
+function approximation,behavior of pg methods,Understanding the behavior of PG methods under function approximation is crucial for describing RL behavior in practice
+softmax pg,stationary points,Standard Softmax PG converges to stationary points if a “compatible” function approximation is used.
+approximation error,global convergence,Approximation error perspective is overly demanding when attempting to characterize conditions that lead to global convergence of PG methods.
+optimization error,sub-optimality gap,"Global convergence results for PG methods show that if the approximation error is small, a diminishing optimization error implies a small sub-optimality gap."
+natural policy gradient (npg),optimization error,Global convergence of natural policy gradient (NPG) is achieved where the optimization error will diminish as the algorithm updates.
+pg variants,linear function approximation,Global convergence results have been established for PG variants under linear function approximation that follow a similar approximation error analysis.
+approximation error,analysis,"Approximation error analysis is performed to evaluate the error in approximations, as discussed in the context."
+approximation error,function approximation,The approximation error is associated with the function approximation and impacts the ability to represent desired quantities accurately.
+approximation error,global convergence,"The presence of non-zero approximation error can hinder global convergence, as stated in the context."
+function approximation,approximation error,"The function approximation's representation capability is influenced by the approximation error, affecting the overall analysis."
+global convergence,approximation error,"Non-zero approximation error can impede global convergence, highlighting the importance of managing approximation errors for successful convergence."
+global convergence,function approximations,Global convergence is impacted by the effectiveness of function approximations in managing approximation errors as discussed in the context.
+approximation error,global convergence,Approximation error is not a key quantity for characterizing global convergence in either case.
+approximation error,linear function approximation,Global convergence can be achieved under linear function approximation with non-zero approximation error
+approximation error,log-linear function approximation,NPG with log-linear function approximation achieves global convergence if and only if the projection of the reward onto the representable space preserves the optimal action’s rank
+approximation error,optimal action,The projection of the reward onto the representable space preserves the optimal action’s rank
+approximation error,realizable limit,Preserving the rank of the optimal action is strongly related to approximation error except in the realizable limit
+approximation error,softmax pg,The global convergence of Softmax PG follows if the representation satisfies certain conditions
+global convergence,pg methods,The conditions for global convergence of PG methods are elaborated in the paper
+linear function approximation,global convergence,Global convergence can be achieved under linear function approximation with non-zero approximation error
+log-linear function approximation,global convergence,NPG with log-linear function approximation achieves global convergence if and only if the projection of the reward onto the representable space preserves the optimal action’s rank
+optimal action,realizable limit,Preserving the rank of the optimal action is strongly related to approximation error except in the realizable limit
+softmax pg,global convergence,"The global convergence of Softmax PG follows if the representation satisfies a non-domination condition and can preserve the ranking of rewards, which goes well beyond policy or reward realizability."
+softmax pg,representation,Softmax PG cannot always converge to globally optimal policies when the non-domination condition for representation is violated.
+policy optimization problem,one state with k actions,We study the policy optimization problem under one state with K actions.
+reward vector,rk,"Given a reward vector r ∈ RK, the problem is to find a parametric policy πθ to maximize the expected reward."
+parametric policy,expected reward,The problem is to find a parametric policy πθ to maximize the expected reward.
+log-linear policy,softmax(xθ),πθ = softmax(Xθ) is called a “log-linear policy”.
+log-linear policy,action,"For all action a ∈ [K] := {1, 2, . . . , K}, sup θ∈Rdπ(cid:62) θ r,πθ(a)"
+feature matrix,full column rank,X ∈ RK×d is the feature matrix with full column rank d < K.
+policy optimization problem,non-concave maximization,"First, Eq. (2) is a non-concave maximization w.r.t. θ, due to the softmax transform."
+parametric log-linear policy,softmax(xθ),The parametric log-linear policy πθ = softmax(Xθ) cannot well approximate every policy π in the K-dimensional probability simplex.
+reward,rk,"The mean reward, denoted as r, belongs to a specific set RK as mentioned in the context."
+reward,xθ,The restriction of πθ and Xθ to low-dimensional manifolds with θ ∈ Rd for d < K imposes limitations in the linear function approximation case.
+xθ,θ,The relationship between Xθ and θ in the context is that Xθ are restricted to low-dimensional manifolds via θ ∈ Rd for d < K.
+softmax pg,npg,Softmax PG and NPG are mentioned as standard methods denoted in Algorithms 1 and 2 in the context.
+softmax pg,gradient ascent,Softmax PG is described as an instance of gradient ascent obtained by the chain rule in the context.
+npg,least squares regression,"NPG conducts updates using least squares regression, which involves projection as mentioned in the context."
+softmax pg,policy-based methods,"As representative policy-based methods, Softmax PG serves as the foundation for widely used RL methods like REINFORCE, actor-critic, TRPO, and PPO as mentioned in the context."
+npg,policy-based methods,"As representative policy-based methods, NPG serves as the foundation for widely used RL methods like REINFORCE, actor-critic, TRPO, and PPO as mentioned in the context."
+parameter,θ1,The parameter θ1 is initialized in the algorithm
+θt,θt+1,The value of θt is updated to θt+1 in each iteration of the while loop
+x,x,X is multiplied by its transpose X(cid:62)X in the algorithm
+x,r,X is multiplied by r in the algorithm
+c1,t,The value of c1 is inversely proportional to t in the optimization problem
+π∗,πθt,π∗ is the globally optimal policy while πθt is the policy produced by NPG
+approximation error,πθt,The approximation error is used to characterize the policy values in relation to πθt
+c2,approx,The value of c2 is related to the approximation error in the algorithm
+softmax pg,global convergence,Softmax PG achieves global convergence asymptotically with an O(1/t) rate of convergence that exhibits undesirable problem and initialization dependent constants.
+global convergence,function approximation,Extending global convergence result to function approximation requires additional assumptions on features due to exponentially many sub-optimal local maxima in the worst case.
+linearly realizable rewards,softmax pg,"Even with linearly realizable rewards, it is unclear if standard Softmax PG achieves global convergence."
+softmax pg,gradient eq. (4),"Standard Softmax PG uses gradient Eq. (4) instead of projection to perform updates, which makes it difficult to establish global convergence."
+approximation error,convergence,The existence of representations that create exponentially many sub-optimal local maxima makes it impossible to ensure global convergence of PG methods without imposing structure on function approximation.
+pg methods,global convergence,PG methods aim to achieve global convergence without imposing structural constraints on function approximation.
+approximation error,global convergence,"Zero approximation error is not a necessary condition for global convergence, as demonstrated by problem instances with comparable approximation error exhibiting different convergence behaviors."
+actions,feature vectors,Each action in the scenarios is described by a 2-dimensional feature vector.
+policy,convergence behavior,The sub-optimality gap between policy π and the optimal policy π* should be less than the approximation error for global convergence.
+eq. (6),global convergence,"Despite the non-zero approximation error and the inability of existing results, both Algorithms 1 and 2 can reach a global maximum."
+algorithms 1,global maximum,Both Algorithms 1 and 2 can be shown to reach a global maximum.
+constant η > 0,initialization θ1 ∈ rd,"With constant η > 0 and any initialization θ1 ∈ Rd, both Algorithms 1 and 2 guarantee global convergence."
+softmax pg,global convergence,It is much harder to establish that Softmax PG achieves global convergence in Example 1 compared to NPG.
+visualization,optimization landscape,The intuition behind Proposition 1 is illustrated using a visualization of the optimization landscape.
+optimization trajectories,iterations,The optimization trajectories show 85 iterations of NPG and 8.5 × 10^6 iterations of Softmax PG
+npg,softmax pg,Softmax PG and NPG both achieve expected reward π
+softmax pg,global convergence,Softmax PG demonstrates global convergence
+npg,global convergence,NPG is able to achieve global convergence
+global convergence,non-zero approximation error,Global convergence is obtained on unrealizable problem instances with non-zero approximation error
+non-zero approximation error,global convergence,Non-zero approximation error is useful for characterizing global convergence
+approximation error,convergence behaviors,Approximation error is not able to distinguish between scenarios where global versus local convergence is obtained
+k,d,"K = 4, d = 2"
+x,approximation error,X consists of approximation error
+approximation error,example 1,The approximation error remains similar to that of Example 1.
+approximation error,softmax pg,Softmax PG obtains π(cid:62)r(a∗) as it converges to a sub-optimal deterministic policy.
+softmax pg,npg,NPG continues to succeed while Softmax PG converges to a sub-optimal deterministic policy.
+npg,example 3,NPG fails on Example 3 but not Softmax PG.
+approximation error,example 1,Here again the approximation error is close to that of Example 1.
+npg,softmax pg,"In summary, Softmax PG achieves global convergence on Example 1 but reaches a bad local maxima on Example 2, while NPG succeeds on Example 1 and fails on Example 3."
+algorithms,convergence behavior,The algorithms demonstrate the same convergence behavior.
+quantity,global versus local convergence,The quantity cannot be approximation error alone in predicting global versus local convergence.
+quantity,global convergence,The right quantity is needed to characterize global convergence for unrealizable problems.
+npg,global convergence on example 2,NPG achieves global convergence on Example 2 but fails on Example 3.
+softmax pg,succeeds on example 3,Softmax PG succeeds on Example 3 but fails on Example 2.
+conditions,global convergence of softmax pg and npg,"The conditions must be studied for Softmax PG and NPG respectively, motivating the refined question."
+quantity,global convergence of pg methods,The quantity characterizing the global convergence of PG methods cannot be based solely on approximation error.
+pg methods,approximation error,PG methods cannot be based solely on approximation error.
+pg methods,algorithm,PG methods must be algorithm dependent.
+distinct global convergence conditions,softmax pg,Study distinct global convergence conditions for Softmax PG.
+distinct global convergence conditions,npg,Study distinct global convergence conditions for NPG.
+softmax pg,reward order preservation with adequate features,Softmax PG convergence is sufficient for Reward Order Preservation with Adequate Features.
+softmax pg,log-linear policies,Investigate a global convergence condition for Softmax PG under log-linear policies.
+softmax pg,expected reward,Softmax PG is able to improve its expected reward eventually.
+actions' rewards,ordered,Actions' rewards seem to be nicely ordered for Softmax PG convergence.
+softmax pg,local maximum reward,Softmax PG gets stuck on a bad plateau with a local maximum reward.
+softmax pg,local maximum reward,Softmax PG stops improving its expected reward on sub-optimal plateau surrounded by lower plateaus with rewards 6 and 7.
+ordering structure,global convergence,The ordering structure between different rewards is a key property behind the global convergence of Softmax PG.
+feature matrix x,reward vector r,Determining whether X allows the same action ordering as r to be realized is crucial for global convergence of Softmax PG.
+example 1,ordering preservation,"In Example 1, Xw preserves the ordering of r, ensuring that r(i) > r(j) if and only if r(cid:48)(i) > r(cid:48)(j)."
+example 3,ordering preservation,"In Example 3, Xw preserves the order of r over actions, leading to convergence to a globally optimal reward."
+example 2,ordering preservation,"In Example 2, finding w ∈ Rd such that Xw preserves the order of rewards r is impossible, leading to a different outcome compared to Examples 1 and 3."
+reward order preservation,global convergence,Theorem 1 establishes that reward order preservation with adequate representations is a sufﬁcient condition for the global convergence of Softmax PG under log-linear function approximation.
+reward order preservation,non-domination features,"If there exists at least one w ∈ Rd, s.t., r(cid:48) := Xw preserves the order of r, then for any initialization θ1 ∈ Rd, Algorithm 1 achieves global convergence of π(cid:62)"
+non-domination features,global convergence,"Examples 1 to 3 all satisfy the non-domination condition on X, and their differences lie in satisfying reward order preservation or not."
+reward order preservation,constant learning rate,Algorithm 1 with a constant learning rate η > 0 achieves global convergence of π(cid:62)
+constant learning rate,global convergence,Algorithm 1 with a constant learning rate η > 0 achieves global convergence of π(cid:62)
+condition,global convergence,The removal of condition (i) on X leads to the non-achievement of global convergence even for linearly realizable rewards
+global convergence,r,Algorithm 1 does not achieve global convergence for r as t goes to infinity based on the given initialization values
+x,r,"In the case where X = Id and d = K, Xr = r preserves the order of r"
+reward,global convergence,"When the reward is linearly realizable and Xw = r for some w in Rd, the global convergence of Softmax PG follows"
+reward,order,Theorem 1 ensures that r preserves its own order when the approximation error is zero
+reward,softmax pg,"For non-domination features and linearly realizable rewards, global convergence of Softmax PG is guaranteed based on Theorem 1"
+reward,feature matrix,"For linearly realizable rewards and non-domination features, if there exists w such that Xw = r, then Algorithm 1 converges globally"
+algorithm 1,global convergence,Algorithm 1 with a constant learning rate achieves global convergence.
+proposition 2,corollary 1,Proposition 2 and Corollary 1 together answer a question in PG literature.
+linearly realizable rewards,global convergence,"Linearly realizable reward on its own is not enough to guarantee global convergence, while with adequate features, it implies global convergence."
+order preserving reward,approximation error,Order preserving reward and approximation error are different concepts.
+approximation error,global convergence,Approximation error is not adequate for capturing the global convergence.
+approximation error,global convergence,"Approximation error, yet still enables global convergence as shown in Examples 1 and 3."
+proof idea,main theorem,Proof idea behind the main theorem consists of three parts.
+proof idea,sketch of the proof,A sketch of the proof is provided here.
+proof idea,full proof,The full proof is given in Appendix A.
+algorithm 1,πθt,Algorithm 1 guarantees that πθt will approach a (generalized) one-hot policy as t → ∞.
+softmax transform,smooth,"Softmax transform is smooth, leading to bounded values."
+learning rate,upper bounded,"Using a sufficiently small constant learning rate, we obtain an upper bound."
+monotone convergence,θt,"According to monotone convergence, θt approaches πθt as t → ∞."
+co-variance structure,softmax pg,Special co-variance structure of softmax PG shows the approach to a (generalized) one-hot policy.
+unique action reward,algorithm 1,Unique action reward assures Algorithm 1 to approach certain values as t → ∞.
+algorithm 1,θt,Algorithm 1 assures θt2 → ∞ and πθt(i) → 1 for an action i ∈ [K] as t → ∞.
+lemma 1,unique action reward condition,Removing the unique action reward condition in Lemma 1 makes πθt approach a generalized one-hot policy as t → ∞.
+lemma 1,θt,"According to Lemma 1, θt grows unboundedly."
+lemma 2,vector r(cid:48),"For any vector r(cid:48) that preserves the order of r, Lemma 2 establishes non-negative covariance of order preservation."
+r(cid:48),xw,Consider the direction w ∈ Rd such that r(cid:48) := Xw preserves the order of r.
+algorithm 1,w,w(cid:62)θt+1 = w(cid:62)θt + η · w(cid:62)X(cid:62)(cid:0)diag(πθt) − πθtπ(cid:62) = w(cid:62)θt + η · r(cid:48)(cid:62)(cid:0)diag(πθt) − πθtπ(cid:62)(r(cid:48) := Xw)
+lemma 2,θt,θt
+action i ∈ [k],r(a∗),"Take a sub-optimal action i ∈ [K] with r(i) < r(a∗), and we show that the assumption leads to a contradiction."
+sub-optimal action i ∈ [k],largest score,The sub-optimal action i ∈ [K] always has the largest score.
+sub-optimal action,largest score,"The sub-optimal action always has the largest score, due to its probability being the largest. Differences between actions' scores are unbounded."
+actions,scores,"Actions' scores differ unbounded, as shown by the exponential relationship between actions' probabilities."
+actions,xθt,The relationship between actions and Xθt is described by a formula involving the maximum value of Xθt.
+example 1,illustration,Example 1 is used for illustration purposes.
+top view,figure 1(a),The top view is shown in Figure 1(a).
+green region,[xv2],"The green region is partitioned into two sub-regions, one containing [Xv2]."
+dark sub-region,light sub-region,The dark sub-region and the light sub-region are part of the green region partition.
+v1,rd,v1 belongs to Rd.
+dark sub-region,higher plateau,The dark sub-region is closer to a higher plateau with a reward of 9.
+scaling up θt's magnitude,light sub-region,Scaling up θt's magnitude in the light sub-region ensures that it enters.
+dark sub-region,wθt > uθt,If θt must occur in finite time t < ∞.
+npg,log-linear policies,NPG convergence conditions are determined by log-linear policies.
+npg,global convergence,Global convergence conditions for NPG are investigated.
+r,x,Projection of rewards r onto feature representation X
+optimal action,update,The optimal action always receives the largest update to its score in each iteration.
+sub-optimal action,update,A sub-optimal action always receives the largest update on its score in each iteration.
+learning rate,exponential growth,The learning rate η > 0 leads to πθt(a∗) growing exponentially with t.
+optimal action,convergence,"For NPG to converge globally, the optimal action must always receive the largest update to its score."
+failure,sub-optimal action,"In Figure 1(b), a sub-optimal action always receives the largest update on its score, leading to failure."
+optimal action,least square projection,The least square projection X(X(cid:62)X)−1X(cid:62)r preserves the top ranking of the optimal action.
+algorithm 2,global convergence,A necessary and sufficient condition for Algorithm 2 to achieve global convergence π(cid:62) from any initialization.
+rate of convergence,optimal action preservation,"When the optimal action preservation is satisfied, πθt(a∗) grows exponentially with t, indicating that πθt(a∗) → 1 as t → ∞."
+true reward,least square projection,"The gap of true reward r in tabular cases is replaced with the gap of least square projection ˆr in function approximation settings in Theorem 2, similar to NPG results in tabular settings."
+approximation settings,theorem 2,approximation settings mention Theorem 2 as a reference for improving rate to super-linear.
+similarity,improving the rate,The similarity is an evidence for improving the rate to super-linear.
+geometrically increasing step sizes,tabular settings,Geometrically increasing step sizes are used in tabular settings.
+two-sided approximation error,one-sided approximation error,Two-sided approximation error relaxes into one-sided approximation error.
+one-sided approximation error,global convergence,One-sided approximation error guarantees global convergence.
+update trajectory,optimal action preservation,"Update trajectory involves problem quantities X and r, while optimal action preservation is both necessary and sufficient."
+eq. (19),global convergence,Equation (19) might not be a necessary condition for global convergence unlike optimal action preservation.
+simulation study,theoretical results,The Simulation Study is conducted to check the theoretical results.
+example 4,npg global convergence,Example 4 investigates if a strict inequality condition is required for NPG global convergence.
+example 4,r,Example 4 provides the best fit for r with specific values. The consequence of a violation in the condition of ˆr(a∗) > ˆr(a) leads to guarantees in NPG.
+npg,πθt (a∗),NPG guarantees the relationship between πθt (a∗) and πθ1 (2) for all t ≥ 1.
+npg,softmax pg,"NPG runs for 150 iterations while Softmax PG runs for 1.5 x 10^7 iterations, indicating different convergence processes."
+example 1,npg,"150 iterations of NPG are run on Example 1, showing specific results as depicted in Figure 3(b)."
+softmax pg,r,Softmax PG achieves a specific result related to r in Example 5 as shown in Figure 3(d).
+softmax pg,global convergence,"Softmax PG achieves global convergence, indicating a relationship between the two concepts"
+npg,global convergence,"NPG behaves erratically on Example 5, while not satisfying global convergence conditions, eventually approaching a sub-optimal solution, suggesting a relationship between the two concepts"
+softmax pg,r,"Figure 3(c) shows that the slope of log (π∗ - πθt)r over log t approaches -1, indicating a relationship between the two concepts"
+linear feasibility,set of inequalities,"Checking the existence of w in Theorem 1 is known as linear feasibility, involving determining whether a set of inequalities has a non-empty intersection, indicating a relationship between the two concepts"
+linear feasibility,linear programming (lp),"Linear feasiblity can be cast as Linear programming (LP) using dummy objective and constraints, hence LP techniques like the ellipsoid method can be used to solve it."
+approximation error,optimal action preservation,Checking the optimal action preservation in Theorem 2 requires the same information as in calculating approximation error.
+x,r,Calculating the projection ˆr := X(cid:62)(X(cid:62)X)−1X(cid:62)r involves X and r.
+markov decision processes (mdps),generalization,Generalization to Markov decision processes (MDPs) provides new insights and requires further investigation for resolving problems in general MDPs.
+pg-based methods,function approximation,"This work opens new directions for understanding PG-based methods under function approximation, going beyond conventional approximation error based analysis."
+function approximation,recent results on stochastic on-policy sampling,Function approximation can be combined with recent results on stochastic on-policy sampling for agnostic learning.
+function approximation,algortithm design,Investigating new global convergence conditions for function approximation might be used to achieve better representation learning in algorithm design.
+new global convergence conditions,algorithm design,New global convergence conditions could be applied in algorithm design to achieve better representation learning.
+non-linear transforms,activation functions,Non-linear transforms (activation functions) interact with low-dimensional features through gradient descent in scenarios like neural networks.
+non-linear transforms,gradient descent,Non-linear transforms interact with low-dimensional features through gradient descent in various scenarios.
+activation functions,low-dimensional features,Activation functions interact with low-dimensional features in the context of neural networks.
+activation functions,gradient descent,Activation functions interact with low-dimensional features through gradient descent in various scenarios.
+neural networks,gradient descent,Non-linear transforms (activation functions) interact with low-dimensional features through gradient descent in scenarios like neural networks.
+neural networks,non-linear transforms,Non-linear transforms (activation functions) interact with low-dimensional features through gradient descent in scenarios like neural networks.
+neural networks,activation functions,Activation functions interact with low-dimensional features in the context of neural networks.

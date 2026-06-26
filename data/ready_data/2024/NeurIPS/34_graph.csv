@@ -1,0 +1,228 @@
+node_1,node_2,edge
+dear,framework,DeAR is a framework introduced in the paper that iteratively builds a reasoning tree to tackle intricate problems within a single large language model (LLM).
+dear,tree,"DeAR adopts a tree-based question decomposition manner to plan the organization of rationales, mimicking the logical planning inherent in human cognition."
+dear,rationales,DeAR globally updates the rationales at each reasoning step through natural language feedback.
+dear,reasoning tree,DeAR constructs more adaptive and accurate logical structures for complex problems by generating and updating the reasoning process from a more global perspective.
+rationales,logical errors,The approach significantly reduces logical errors across various large language models.
+dear,tot,DeAR is an efficient method that achieves a superior trade-off between accuracy and reasoning time compared to ToT.
+dear,got,DeAR is an efficient method that achieves a superior trade-off between accuracy and reasoning time compared to GoT.
+logical errors,enhances performance across various llms,Logical errors can lead to a decrease in performance across various LLMs.
+llms,gpt,"LLMs, such as GPT, have witnessed remarkable performances in various reasoning tasks."
+llms,llama,"LLMs, including LLaMA, have witnessed remarkable performances in various reasoning tasks."
+llms,chatglm,"LLMs, such as ChatGLM, have witnessed remarkable performances in various reasoning tasks."
+gpt,llama,GPT and LLaMA are examples of scaled-up large language models that have shown remarkable performances in reasoning tasks.
+gpt,chatglm,GPT and ChatGLM are examples of scaled-up large language models that have shown remarkable performances in reasoning tasks.
+llms,chain-of-thought (cot),LLMs could enable state-of-the-art prompting approaches like Chain-of-Thought (CoT) to enhance reasoning capabilities.
+llms,tree-of-thoughts (tot),LLMs could enable state-of-the-art prompting approaches like Tree-of-Thoughts (ToT) to enhance reasoning capabilities.
+llms,graph-of-thoughts (got),LLMs could enable state-of-the-art prompting approaches like Graph-of-Thoughts (GoT) to enhance reasoning capabilities.
+tree-of-thoughts (tot),dear (decompose-analyze-rethink) reasoning,"Both are simulations based on reasoning, with ToT maintaining a tree of thoughts with intermediate nodes while DeAR reasoning involves linear, tree-based, or graph-based structures."
+tot,variants,ToT and its variants perform the reasoning process explicitly.
+tot,reasoning process,ToT performs the reasoning process explicitly and generates rationale paths sequentially.
+tot,rationale-extension,ToT approaches rationale-extension and search-based reasoning paradigm.
+tot,human-like intelligence,ToT is limited in achieving human-like intelligence in reasoning.
+tot,problem-solving abilities,ToT limits problem-solving abilities to some extent due to its rigid tree-like structure.
+tot,logical planning,ToT falls short of the logical planning inherent in human thinking.
+dear reasoning,rationales,"DeAR reasoning involves rationales through linear, tree-based, or graph-based structures."
+tot,thought branches,"ToT requires setting a fixed number of thought branches (3 branches in this context), which can lead to missing information or redundancy."
+tot,reasoning path,"ToT identifies the complete reasoning path through exploration, termination, and traceback on the nodes."
+reasoning paradigm dear,lllms' capacity for complex problem-solving,DeAR enhances LLMs' capacity for complex problem-solving by emulating human reasoning
+reasoning simplification theory,humans tend to break down intricate questions,Reasoning simplification theory suggests that humans tend to break down intricate questions into simpler ones
+"sub-questions (q3, q4, q5)",examining q2,"Sub-questions q3, q4, q5 are further divided upon examining q2"
+"sub-questions (q1, q2)",update answers,Results of sub-questions q1 and q2 are used to update answers
+reasoning tree,sub-questions,A reasoning tree is constructed guided by sub-questions in the Decompose-Analyze-Rethink cycle
+figure 1,decompose stage,The process begins with the Decompose stage as illustrated in Figure 1 (b)
+decompose stage,prompt-based method,A prompt-based method breaks down the question into simpler sub-questions at subsequent nodes in the Decompose stage
+decompose stage,analyze stage,The Analyze stage takes charge of problem-solving at the node level after the Decompose stage
+analyze stage,self-check module,The stage introduces a self-check module to ensure the quality of the generated rationales
+rethink stage,green arrows,"In the Rethink stage, the result at the current node is evaluated to determine if the reasoning in parent nodes requires further updates, indicated by green arrows"
+tots,dear,Our approach presents highlights compared to ToTs including breaking down questions into sub-question tree nodes to guide generation by DeAR
+dear,timely correction of rationales,"DeAR enables timely correction of rationales, ensuring the correctness of the root node’s answer"
+dear,extensive experiments,We conduct extensive experiments on three complex reasoning benchmarks including ScienceQA using DeAR
+scienceqa,strategyqa,Both ScienceQA and StrategyQA are complex reasoning benchmarks mentioned in the context.
+scienceqa,gsm8k,ScienceQA and GSM8K are complex reasoning benchmarks where experiments were conducted.
+gpt-3.5,llama2,GPT-3.5 and LLaMA2 are used as different backbones in the experiments conducted.
+gpt-3.5,chatglm3,GPT-3.5 and ChatGLM3 are different backbones used in the experiments.
+tree-of-thoughts (tot),graph-of-thoughts (got),Tree-of-Thoughts (ToT) and Graph-of-Thoughts (GoT) are state-of-the-art methods compared in terms of reasoning accuracy.
+dear,state-of-the-art methods,DeAR demonstrated a significant improvement in reasoning accuracy across all backbone LLMs compared to state-of-the-art methods such as Tree-of-Thoughts (ToT) and Graph-of-Thoughts (GoT).
+dear,reasoning accuracy,DeAR exhibited greater efficiency in reasoning accuracy across different datasets.
+dear,reasoning time,DeAR showed advantages in practical applications by measuring the relationship between reasoning accuracy and reasoning time.
+llm reasoning research,prompting schemes,Prompt-based Approaches in LLM Reasoning have been a growing interest with various prompting schemes applied.
+llm reasoning research,llms,LLM reasoning research aims to enhance the capabilities of large language models (LLMs) by introducing intermediate reasoning steps.
+cot,llms,Chain-of-Thought (CoT) is a method that prompts LLMs to solve problems step by step.
+chain-of-thought (cot),self-consistency,Self-consistency is a significant improvement upon Chain-of-Thought (CoT) where multiple CoT paths are initially generated and the best one is selected as the final result.
+chain-of-thought (cot),tree-of-thoughts (tot),Tree-of-Thoughts (ToT) is a search-based scheme for LLMs which innovate by structuring the reasoning process into tree structures.
+chain-of-thought (cot),graph-of-thoughts (got),Graph-of-Thoughts (GoT) is a search-based scheme for LLMs which innovate by structuring the reasoning process into graph structures.
+tree-of-thoughts (tot),graph-of-thoughts (got),"Both Tree-of-Thoughts (ToT) and Graph-of-Thoughts (GoT) design search-based schemes for LLMs, structuring the reasoning process into tree or graph structures."
+reasoning via planning (rap),llms,"Reasoning via Planning (RAP) repurposes the LLM as both a world model and a reasoning agent to conduct reasoning, expanding the reasoning space of LLMs."
+question decomposition,models’ reasoning ability,"Question decomposition decomposes complex questions into multiple sub-ones, largely improving models’ reasoning ability."
+question decomposition,neural network models,"Researchers utilize neural network models for question decomposition, showing improvements in reasoning ability."
+neural network models,questions,"Neural network models are utilized by researchers to decompose questions, as mentioned in the context."
+min et al.,question decomposition,"Min et al. focused on directly training a model to produce sub-questions using question spans, which is a type of question decomposition."
+qdmr annotations,question decomposition,"QDMR annotations are used in the alternative paradigm of collecting full question decomposition meaning representations (QDMR) annotations, as mentioned in the context."
+llms,question decomposition,"LLMs are explored for question decomposition in the era of LLMs, as mentioned in the context."
+tot,rationales,"ToT prompts the LLM to decompose the rationales by searching intermediate steps, as mentioned in the context."
+least-to-most prompting,llms,"Least-to-most prompting leverages a few examples to teach LLMs to decompose each problem into a series of simpler sub-problems, as mentioned in the context."
+question decomposition methods,reasoning and planning,"Prompting-based question decomposition methods serve as an important step in reasoning and planning with LLMs, as mentioned in the context."
+reasoning task,question,"In this paper, the intricate reasoning task focuses on the input question Q, as mentioned in the context."
+reasoning framework,llm backbone,"The aim is to design a reasoning framework with LLM backbone pθ to generate the output, as mentioned in the context."
+reasoning framework,llm backbone pθ,LLM backbone pθ is used as part of the reasoning framework design
+reasoning framework,rationale r,Rationale R is generated as an output of the reasoning framework
+reasoning framework,answer a,Answer A is generated as an output of the reasoning framework
+reasoning tree,llms,Reasoning Tree is proposed for LLMs based on reasoning simplification theory
+reasoning tree,reasoning structure,Reasoning Tree is a novel reasoning structure proposed for LLMs
+reasoning tree,reasoning tree t,Reasoning Tree T is defined as a set of tree nodes and edge set
+reasoning tree,question,Reasoning Tree decomposes and resolves sub-questions using a top-down approach
+sub-question,question,Sub-question is a part of the target question Q
+sub-question,rationale,Sub-question is resolved using a rationale r
+sub-question,score,Sub-question is evaluated based on a score s
+edge,tree nodes,Directed edge connects tree nodes in the Reasoning Tree
+tree nodes,parent node,Parent node has upper-level sub-question qp which is decomposed into lower-level ones
+parent node,child node,Parent node is decomposed into child node for sub-questions
+target question,decomposed sub-questions,Target question is decomposed step by step into sub-questions
+q,q1,Q is decomposed into q1 and q2
+q2,q3,"q2 is further decomposed into q3, q4, and q5"
+q4,she eats 3 eggs for breakfast,Rationales for q4 could be used to update rationales for 'She eats 3 eggs for breakfast'
+she eats 3 eggs for breakfast,she has 16-(3+4) = 9 eggs per day,Rationales for 'She eats 3 eggs for breakfast' could be used to update rationales for 'She has 16-(3+4) = 9 eggs per day'
+reasoning tree t,dear (decompose-analyze-rethink) cycle,Reasoning Tree T is constructed with the Decompose-Analyze-Rethink cycle
+analyze-rethink cycle,figure 2,The Analyze-Rethink cycle is demonstrated in Figure 2.
+target question q,question q0,The target question Q is initially set as the question q0 in the root node n0.
+edge node nt,"(qt, rt, st)","An existing edge node nt = (qt, rt, st) is selected from T to start the cycle."
+decompose stage,analyze stage,"In the Decompose stage, LLMs decompose the question qt into sub-questions qt+1. In the Analyze stage, reasoning and answers are conducted for the newly generated questions."
+rethink stage,decompose stage,"In the Rethink stage, newly generated rationales are used to update rationales in existing upper-level nodes. The framework then returns to the Decompose stage."
+llms,reasoning tree t,The LLMs determine the reasoning tree T for Q by following the Analyze-Rethink cycle.
+overall solution for q,rationale r0,"The rationale r0 in the root node is considered as the overall solution for Q, from which the answer A is extracted."
+whole procedure,algorithm 1,The whole procedure of extracting the answer A from Q is described in Algorithm 1.
+algorithm 1,procedure,Algorithm 1 describes the whole procedure in the context
+egg,$2,Each egg is sold for $2
+q11,r0,q11 updates r0 into r′1
+r21,q12,r21 updates q12
+r21,q31,r21 updates q31
+r21,r22,r21 updates r22
+r21,q24,r21 updates q24
+analogical reasoning theory,humans,"According to the Analogical Reasoning theory, humans conduct reasoning"
+questions,logical processes,questions are analogized to logical processes
+decomposition logic,sub-questions,decomposition logic of sub-questions resembles that of humans
+question decomposition examples,demonstration pool p,human-annotated question decomposition examples used as a demonstration pool
+cosine similarity,representations,cosine similarity calculated between representations
+q,qd,Q compared with each Qd to find top-K nearest neighbors
+question-decomposition examples,logic heuristics,question-decomposition examples are regarded as logic heuristics
+model,questions,model inspired by logic heuristics to decompose questions
+sub-question,sub-question,sub-question decomposed into multiple sub-questions at the next level
+question,coherence score,"The coherence score of a question is denoted by a numerical value, which is compared to a threshold ϵ1 to determine if further decomposition is needed."
+coherence score,threshold ϵ1,The coherence score is compared to a threshold ϵ1 to decide whether to further decompose the question.
+question,decomposition,"If the question requires decomposition, it is broken down into several sub-questions."
+sub-questions,number of sub-questions,"The number of sub-questions resulting from decomposition is not pre-specified, allowing for adaptability by the LLM."
+decomposition,sub-questions,The process of decomposition results in the creation of sub-questions for further analysis.
+threshold ϵ1,threshold ϵ2,"Different thresholds, ϵ1 and ϵ2, are used for decomposing and rethinking questions respectively."
+sub-questions,llm,"The sub-questions are analyzed, solved, self-checked, and scored by the LLM."
+capped,predefined maximum branch limit,The predefined maximum branch limit is capped to ensure computational efficiency and manageability
+adaptability,human logical characteristics,Enhancing adaptability aligns closely with human logical characteristics
+tot,got,Existing methods like ToT and GoT are compared
+prompt head,logic heuristics,A heuristic-enhanced prompt consists of a prompt head and logic heuristics
+question decomposition task,natural language,The prompt head describes the question decomposition task in natural language
+logic heuristics,effectiveness,The effectiveness of using logic heuristics is validated
+leaf node,decomposition,A leaf node nend is created as a child of decomposition
+llm,esssential rationale,The LLM generates the essential rationale
+prompt head,detailed solutions,The prompt head asks the model to generate detailed solutions
+rationales,sub-questions,The rationales for the sub-questions are obtained and evaluated
+large language models,hallucinate,Large language models often tend to hallucinate during problem-solving.
+rationales,sub-questions,"After obtaining the rationales for the sub-questions, we evaluate and correct them."
+rationales,errors,"Using generated rationales without verification can propagate errors, leading to incorrect outcomes."
+rationales,self-check method,"To address this issue, we develop a self-check method that promptly identifies and corrects these errors while providing a coherence score for each node."
+llm,errors,"If the LLM detects errors in the original rationale, it modifies the rationale."
+coherence score,refined rationale,We prompt the LLM to evaluate the logical coherence between the refined rationale and the question by generating a coherence score.
+llms,numerical values,LLMs are prompted to generate numerical values as scores
+nj,analyze stage,The obtained rationales and scores are filled into nodes nj at the end of the Analyze stage
+sjt+1,rethink and decompose,sjt+1 can support the current or subsequent cycles in Rethink and Decompose stages
+self-reflection theories,cognitive science,Self-reflection theories in cognitive science involve constantly updating reasoning results based on current information
+humans,reflective process,"During the rethinking process, humans identify existing reasoning steps"
+reasoning paths,preceding steps,Existing methods like ToT search reasoning paths based solely on preceding steps
+rethink stage,human reflective process,The Rethink stage mirrors the human reflective process
+reasoning process,logical connections,humans first identify existing reasoning steps that may require revision and automate this using LLMs to detect logical connections between ancestral and newly generated nodes
+logical connections,ancestral nodes,updating ancestral nodes based on insights from the rationales of new nodes
+lower-level nodes,higher-level nodes,"using information from lower-level nodes to rethink higher-level nodes, closely mirroring human cognitive simplification process"
+node nj,sub-questions,obtaining node nj and examining correlation between node nj and all sub-questions above level t
+analyse stage,correlation,examining the correlation between qjt+1 in Analyze Stage
+rationale,extracted node,using the rationale ˆrj to update the rationale r of each extracted node in Lk
+rationale,updated rationale,replacing rationale r with the updated rationale r′ in each extracted node
+dear,"knowledge reasoning, logical reasoning, mathematical reasoning","demonstrating the generality and effectiveness of DeAR by applying it to a wide range of tasks, including knowledge reasoning, logical reasoning, and mathematical reasoning"
+range of tasks,knowledge reasoning,"The context mentions that the range of tasks includes knowledge reasoning, highlighting the relationship between these two concepts."
+range of tasks,logical reasoning,"The context mentions that the range of tasks includes logical reasoning, suggesting a relationship between these two concepts."
+range of tasks,mathematical reasoning,"The context mentions that the range of tasks includes mathematical reasoning, indicating a relationship between these two concepts."
+knowledge reasoning,dear,"The context mentions that DeAR's adaptability is validated across tasks like knowledge reasoning, indicating a relationship between them."
+logical reasoning,strategyqa,"The context specifies that StrategyQA is used for logical reasoning, implying a relationship between logical reasoning and StrategyQA."
+mathematical reasoning,gsm8k dataset,"The context mentions the verification of mathematical reasoning ability by applying it to the GSM8K dataset, indicating a relationship between them."
+dear,multiple prompt-based methods,"In the main results, DeAR is compared with multiple prompt-based methods, suggesting a relationship between DeAR and those methods."
+gpt-3.5,llama2-7b,"The context states that experiments were conducted with three LLM backbones including GPT-3.5 and LLaMA2-7B, indicating a relationship between them."
+llama2-7b,chatglm3-6b,"Experiments were conducted with three LLM backbones including LLaMA2-7B and ChatGLM3-6B, suggesting a relationship between them."
+chatglm3-6b,huggingface23,The model ChatGLM3-6B is loaded directly from the checkpoints provided by huggingface23.
+huggingface23,thudm,The checkpoints from huggingface23 are used by THUDM for model training.
+dear framework,inference results,The DeAR Framework shows overall results on reasoning datasets and this method yields optimal inference results on the test set.
+gpt-3.5,threshold combinations,"Different threshold combinations are selected for GPT-3.5 based on validation set performance, and these combinations yield optimal inference results on the test set."
+dear,reasoning tree,"During the construction of the reasoning tree in DeAR, the maximum depth is set to 4 and the maximum number of branches is set to 3 for computational efficiency."
+reasoning tree,dear,The reasoning tree is constructed in DeAR to a maximum of 3 branches to prevent excessive depth and redundancy in sub-questions.
+baselines,experiments,"In the experiments, the settings for baselines are consistent with those described in the original papers."
+dear,accuracy,DeAR's effectiveness is verified through experiments with accuracy (ACC) as the metric for all three datasets.
+accuracy,baselines,"Improvements over baselines are statistically tested with paired t-test, showing significant improvement with p < 0.05."
+dear,tot,"DeAR outperforms ToT, indicating superiority in enhancing LLMs' reasoning ability."
+decompose stage,questions,"Decompose stage in DeAR adaptively decomposes questions based on their characteristics, leading to improvements over ToT."
+dear,got,"DeAR performs better than GoT, demonstrating the superiority of the Rethink stage in identifying correlations between reasoning steps and updating previous rationales."
+gsm8k,scienceqa,"The accuracy increase on GSM8K is greater than ScienceQA, possibly due to problems in GSM8K requiring longer rationales to be solved."
+gsm8k,rationales,Problems in GSM8K require longer rationales to be solved.
+dear,least-to-most method,DeAR outperforms the Least-to-most method across all datasets.
+dear,selfcheck method,DeAR outperforms the SelfCheck method across all datasets.
+dear,rationales,DeAR not only generates rationales based on decomposed sub-questions but also updates existing rationales in each cycle.
+dear,decompose and rethink phase,The Decompose and Rethink phase in DeAR enhances the reasoning capabilities of LLMs.
+dear,llms,"DeAR enhances stronger LLMs (e.g., GPT-4) on complex reasoning tasks."
+gpt-4,complex reasoning tasks,"DeAR enhances stronger LLMs (e.g., GPT-4) on complex reasoning tasks."
+dear,appendix b.3,Appendix B.3 includes an ablation study on the self-check method in the Analyze stage.
+dear,analyse stage,Appendix B.3 includes an ablation study on the self-check method in the Analyse stage.
+gsm8k,reasoning tree t,"For each question Q, DeAR constructs a reasoning tree T to represent the reasoning process."
+gsm8k,complexity of q,The structure of the reasoning tree T provides insights into the complexity of Q.
+t,average branch,"To analyze the nature of questions across datasets, we examine reasoning trees from three datasets using three metrics including Average Branch."
+t,average depth,"To analyze the nature of questions across datasets, we examine reasoning trees from three datasets using three metrics including Average Depth."
+t,average length of r,"To analyze the nature of questions across datasets, we examine reasoning trees from three datasets using three metrics including Average Length of R."
+reasoning trees,datasets,The reasoning trees are examined from three datasets
+reasoning trees,metrics,"The reasoning trees are examined using three metrics: 'Avg Branch,' 'Avg Depth,' and 'Avg Length of R.'"
+metrics,avg branch,The metric 'Avg Branch' indicates the average branching factor of T.
+metrics,avg depth,The metric 'Avg Depth' reflects the average depth of T.
+metrics,avg length of r,The metric 'Avg Length of R' represents the length of rationale R derived from the root node n0 upon tree completion.
+our code,available,Our code is available at: https://github.com/ShangziXue/DeAR8Table.
+tree-of-thoughts (tot),roscoe evaluation results,ROSCOE evaluation results of rationales generated by Tree-of-Thoughts (ToT) are presented in Table 3.
+graph-of-thoughts (got),roscoe evaluation results,ROSCOE evaluation results of rationales generated by Graph-of-Thoughts (GoT) are presented in Table 3.
+dear,roscoe evaluation results,ROSCOE evaluation results of rationales generated by DeAR are presented in Table 3.
+scienceqa questions,highest avg depth,ScienceQA questions have the highest 'Avg Depth' according to results in Table 2.
+scienceqa questions,lowest avg branch,ScienceQA questions have the lowest 'Avg Branch' according to results in Table 2.
+strategyqa questions,lowest avg branch,StrategyQA questions have the lowest 'Avg Branch' according to results in Table 2.
+strategyqa questions,highest avg depth,StrategyQA questions have the highest 'Avg Depth' according to results in Table 2.
+gsm8k,root node n0,"For GSM8K, the root node n0 has longer rationales R."
+questions,extensive rationales,These questions require more extensive rationales.
+root node n0,rationales r,"The root node n0 has longer rationales R, suggesting that these questions require more extensive explanations than those in the other datasets."
+dear,sc,DeAR outperforms ToT and GoT on all datasets in terms of logical entailment between question and rationale as measured by SC.
+dear,ra,DeAR outperforms ToT and GoT on all datasets in terms of alignment with ground truth as evaluated by RA.
+dear,gpt-3.5,"DeAR (using GPT-3.5) produces rationales with superior logical coherence compared to ToT and GoT, as confirmed by human evaluation results."
+rethink,dear,"In the Rethink stage, DeAR employs the same backbone LLMs to determine which nodes' rationales need to be updated, showing its effectiveness."
+random update,dear,"Compared to 'Random Update' method, DeAR performs better in terms of accuracy when selecting nodes to update at different proportions."
+random update,our method,Our method performs better in terms of accuracy compared to Random Update.
+approaches,100% update of all generated rationales,Approaches that require a 100% update of all generated rationales may not perform as well as our method.
+dear,targeted updates,"DeAR's targeted updates allow the model to autonomously select nodes that need refinement, minimizing unnecessary inference."
+threshold values ϵ1 and ϵ2,inference accuracy of dear,Different combinations of threshold values have an impact on the inference accuracy of DeAR.
+dear,gpt-3.5 backbone,DeAR with GPT-3.5 backbone is visualized in terms of the impact of different combinations of threshold values on inference accuracy.
+threshold combinations,dear’s performance,The threshold combinations that optimize DeAR’s performance on the test set are consistent with those obtained from the validation set.
+val,scienceqa,Val demonstrating the validity of the value selection method for ScienceQA
+val,gsm8k,The smaller optimal ϵ2 value for GSM8K compared to ScienceQA suggests that tackling GSM8K problems requires a more frequent or active rethinking process
+scienceqa,strategyqa,"The varying nature of reasoning demands across different tasks is highlighted, where the threshold tuning helps adapt DeAR’s reasoning process accordingly"
+dear,tot,"DeAR incorporates question decomposition and rationale updating, affecting the efficiency of reasoning. This is investigated by using ChatGLM3-6B as the backbone model"
+dear,got,"DeAR incorporates question decomposition and rationale updating, affecting the efficiency of reasoning. This is investigated by using ChatGLM3-6B as the backbone model"
+dear,tot/got,"DeAR is compared with ToT/GoT in terms of efficiency, with a focus on achieving a better trade-off between reasoning accuracy and time"
+dear,api calls,DeAR consistently requires fewer API calls on average to solve a question
+dear,reasoning accuracy,DeAR consistently achieves higher accuracy
+dear,tree-of-thoughts (tot),DeAR surpasses current state-of-the-art methods like Tree-of-Thoughts (ToT) in logical coherence and accuracy
+dear,graph-of-thoughts (got),DeAR surpasses current state-of-the-art methods like Graph-of-Thoughts (GoT) in logical coherence and accuracy
+dear,rationale update mechanism,DeAR's rationale update mechanism enhances logical consistency by iteratively refining previously generated rationales.
+dear,reasoning accuracy,"DeAR strikes a better balance between reasoning accuracy and inference time, further improving efficiency."
+dear,interpretable reasoning process,Case studies demonstrate that DeAR produces more interpretable reasoning process.
+dear,tot,DeAR is compared to ToT in terms of balancing reasoning accuracy and inference time.
+dear,got,DeAR is compared to GoT in terms of balancing reasoning accuracy and inference time.
+dear,china,This research was partially supported by grants from the National Natural Science Foundation of China.
+dear,anhui province,This research was partially supported by grants from the Key Technologies R&D Program of Anhui Province.

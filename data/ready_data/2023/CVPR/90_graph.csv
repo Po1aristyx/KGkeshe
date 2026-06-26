@@ -1,0 +1,213 @@
+node_1,node_2,edge
+weakly semi-supervised instance segmentation (ws-sis),point labels,WS-SIS uses point labels for budget-efficient and high-performance instance segmentation.
+semi-supervised approaches,trade-off between false-negative and false-positive instance proposals,The main challenge of semi-supervised approaches is the trade-off between false-negative and false-positive instance proposals.
+wssis,budget-friendly point labels,WSSIS effectively leverages budget-friendly point labels as a powerful weak supervision source.
+maskrefinenet,noise in rough masks,MaskRefineNet refines noise in rough masks.
+proposed method,fully-supervised model,The proposed method achieves promising results comparable to those of the fully-supervised model.
+proposed method,state-of-the-art semi-supervised learning method,The proposed method shows significantly superior performance over the state-of-the-art semi-supervised learning method.
+segmentation labels,pixel-level annotations,Segmentation labels necessitate delicate pixel-level annotations.
+segmentation labels,training,Segmentation labels require abundant of segmentation labels for training.
+wsis,economic point labels,This paper shows economic point labels can be leveraged to resolve the bottleneck in the proposal branch.
+wsis,weak labels,"WSIS approaches alternatively utilize inexpensive weak labels such as image-level labels, point labels, or bounding box labels."
+ssis,pixel-level labeled data,SSIS approaches employ a small amount of pixel-level labeled data.
+ssis,unlabeled data,SSIS approaches utilize a massive amount of unlabeled data.
+ssis approaches,fully-supervised learning methods,There exists a large performance gap between SSIS approaches and fully-supervised learning methods.
+ssis approaches,budget-efficient instance segmentation,SSIS approaches have shown potential in budget-efficient instance segmentation.
+training pipeline,base network,SSIS approaches often adopt the training pipeline of training a base network.
+training pipeline,fully labeled data,SSIS approaches often adopt the training pipeline of training with fully labeled data.
+fully-supervised learning methods,ssis approaches,fully-supervised learning methods often adopt SSIS approaches in training pipelines
+ssis approaches,training pipeline,"SSIS approaches follow a training pipeline that includes training a base network with labeled data, generating pseudo instance masks for unlabeled images, and training a target network using both full and pseudo labels"
+pseudo labels,false-negatives,the major challenge of SSIS approaches is the trade-off between the number of missing (false-negative) samples in pseudo labels
+pseudo labels,false-positives,the major challenge of SSIS approaches is the trade-off between the number of noise (false-positive) samples in pseudo labels
+false-negatives,false-positives,strategies for reducing false-negatives often end up increasing false-positives and vice versa
+instance segmentation framework,existing instance segmentation methods,instance segmentation methods are part of the instance segmentation framework
+existing instance segmentation methods,two-step inference process,existing instance segmentation methods typically adopt a two-step inference process for generating instance masks
+two-step inference process,instance proposals,the two-step inference process involves generating instance proposals as part of the instance segmentation framework
+instance proposals,instance masks,instance proposals are used to produce instance masks in the instance segmentation framework
+network,instance proposal,"The network fails to obtain an instance proposal, resulting in a false-negative proposal which hinders the production of the corresponding instance mask."
+network,bottleneck,The absence of proposal in the network becomes the bottleneck for producing the instance mask.
+proposal,instance mask,The presence of the proposal is crucial for producing the corresponding instance mask.
+network,point labels,"The network can address the bottleneck in the proposals by leveraging point labels, which contain only a one-pixel categorical instance cue."
+point labels,weak supervision,Point labels serve as weak supervision for resolving the performance bottleneck of the instance segmentation network.
+point labels,trade-off,Point labels help in optimally balancing the trade-off between false-negative and false-positive proposals in the instance segmentation network.
+network,training scheme,"The network formulates a new practical training scheme, Weakly Semi-Supervised Instance Segmentation (WSSIS), utilizing point labels."
+wssis task,fully labeled data,"In the WSSIS task, a small amount of fully labeled data is utilized for high-performance instance segmentation."
+wssis task,point labeled data,"In the WSSIS task, a massive amount of point labeled data is utilized for budget-efficient instance segmentation."
+wssis setting,true-positive proposals,"Under the WSSIS setting, true-positive proposals are retained using point labels for effective instance segmentation."
+true-positive proposals,mask,"Given the true-positive proposals, the mask is exploited for instance segmentation."
+true-positive proposals,point labels,true-positive proposals are kept using the point labels
+true-positive proposals,mask representation,true-positive proposals are used to exploit the mask representation of the network
+mask representation,fully labeled data,the mask representation is learned from fully labeled data
+mask representation,high-quality pseudo instance masks,the mask representation is used to produce high-quality pseudo instance masks
+feature pyramid network (fpn),multi-level feature maps,FPN consists of multi-level feature maps for multi-scale instance recognition
+feature pyramid network (fpn),pyramid level,Each pyramid level of FPN is trained to recognize instances of particular sizes
+point labels,instance size information,point labels do not have instance size information
+adaptive pyramid-level selection,level selection,Adaptive Pyramid-Level Selection estimates the best fit level for producing instance masks
+network,fully labeled data,network often fails to represent the instance mask properly on fully labeled data
+maskrefinenet,input sources,"MaskRefineNet takes inputs from image, rough mask, and point"
+maskrefinenet,instance mask refinement,MaskRefineNet refines the rough instance mask
+rough mask,target instance,The rough mask is used as the prior knowledge to be refined for the target instance.
+rough mask,maskrefinenet,The MaskRefineNet aims to further boost the quality of pseudo instance masks based on the rough mask.
+target instance,point,The point information explicitly guides the target instance.
+maskrefinenet,point labels,Point labels are leveraged as effective weak supervisions for MaskRefineNet.
+maskrefinenet,weakly semi-supervised instance segmentation (wssis),"Based on the observation that point labels are effective weak supervisions, a new training protocol named WSSIS is established for MaskRefineNet."
+point labels,budget-efficient instance segmentation,Point labels can be leveraged as effective weak supervisions for budget-efficient instance segmentation.
+maskrefinenet,pseudo instance masks,MaskRefineNet aims to boost the quality of pseudo instance masks when the amount of fully labeled data is extremely limited.
+maskrefinenet,rough instance masks,MaskRefineNet refines noisy parts of the rough instance masks
+maskrefinenet,proposed method,MaskRefineNet is part of the proposed method that can achieve competitive performance
+maskrefinenet,fully-supervised models,MaskRefineNet can achieve competitive performance to those of the fully-supervised models
+maskrefinenet,semi-supervised methods,MaskRefineNet significantly outperforms the semi-supervised methods
+mask r-cnn,instance segmentation,Mask R-CNN is a widely used method for instance segmentation
+mask r-cnn,bounding box,Mask R-CNN represents an instance as a bounding box
+solov2,point-encoded kernel parameters,SOLOv2 extracts point-encoded kernel parameters
+solov2,instance masks,SOLOv2 generates instance masks with a dynamic convolution scheme
+bounding boxes,proposals,The proposals in the form of either bounding boxes or points are used to produce an instance mask for each proposal.
+bounding boxes,instance mask,The proposal is indispensable for producing the instance mask.
+point,proposals,The proposals can also be in the form of points.
+quality,pseudo instance masks,The quality of pseudo instance masks is largely affected by the confidence score of the proposal.
+point-driven method,proposals,"The point-driven method can filter the proposals to keep only true-positive proposals, resulting in clearer quality of pseudo instance masks."
+confidence score,proposal,The quality of pseudo masks is largely affected by the confidence score of the proposal due to the trade-off between false-negative and false-positive instance proposals.
+instance segmentation,instance-level segmentation labels,Instance segmentation requires a huge amount of instance-level segmentation labels.
+annotation cost,segmentation labels,The annotation cost of segmentation labels is much higher than other labels.
+weakly-supervised instance segmentation (wsis),image-level labels,WSIS methods exploit the activation maps generated by self-attention of the network trained with only cost-efficient labels such as image-level labels.
+semi-supervised instance segmentation (ssis),small amount,SSIS methods use a small amount of annotations.
+ssis methods,fully labeled data,SSIS methods use a small amount of fully labeled data and an abundant amount of unlabeled data.
+ssis methods,unlabeled data,SSIS methods utilize the knowledge of segmentations learned with fully labeled data to generate pseudo instance masks for the unlabeled data.
+weakly semi-supervised object detection,point labels,Previous attempts to tackle the weakly semi-supervised object detection problem leverage point labels.
+weakly semi-supervised object detection,box-labeled data,"In weakly semi-supervised object detection, a few box-labeled data and a lot of point-labeled data are used."
+weakly semi-supervised object detection,detection performances,The use of point labels in weakly semi-supervised object detection shows improved detection performances compared to the semi-supervised setting.
+object detection,instance segmentation,Object detection and instance segmentation tasks share a similar goal of object-level recognition tasks.
+pointdetr,point labels,PointDETR leverages point labels as input queries for single-level feature map inference of DETR architecture.
+groupr-cnn,point labels,GroupR-CNN employs point labels to filter and augment proposals with improved positive sample assignments.
+proposals,positive sample assignments,Improved positive sample assignments are directly related to the proposals being generated in the instance segmentation process.
+maskrefinenet,high-fidelity mask refinement,The MaskRefineNet is proposed for the purpose of achieving high-fidelity mask refinement in the instance segmentation process.
+instance segmentation,pixel-level recognition task,Instance segmentation is described as a pixel-level recognition task in which individual instances need to be accurately identified and segmented.
+instance segmentation methods,two-step inference process,Existing instance segmentation methods typically involve a two-step inference process to generate proposals and produce masks for each instance.
+proposals,bounding box,Each instance in proposals is represented either as a bounding box or as a point in the proposal branch during the instance segmentation process.
+proposals,correctness of proposals at the proposal branch,The correctness of proposals at the proposal branch is crucial for the performance of the instance segmentation network.
+proposals,confidence threshold,Adjusting the confidence threshold in the proposal branch has an impact on the influence of proposals on the output instance mask.
+true-positive masks,false-positive masks,Lowering the confidence threshold leads to an increase in true-positive masks but also results in more false-positive masks in the output.
+false-positive proposals,noisy mask predictions,"False-positive proposals, such as those that are misclassified or erroneously localized, often lead to noisy mask predictions in the instance segmentation process."
+threshold,true-positive masks,Increasing the threshold may result in the loss of some true-positive masks that were detected at lower thresholds.
+true-positive masks,lower thresholds,true-positive masks detected at lower thresholds
+mask branch,instance mask,the mask branch could represent the instance mask
+thresholded proposal,missing instance masks,the absence of the thresholded proposal results in missing instance masks
+optimal threshold,instance,finding an optimal threshold per instance is impractical
+true-positive proposals,false-positive proposals,balancing between true-positive and false-positive proposals remains a challenging problem in SSIS
+teacher network,maskrefinenet,training the teacher network and MaskRefineNet with fully labeled data
+pseudo labels,maskrefinenet,pseudo labels are generated through the teacher network and further refined using MaskRefineNet
+student network,pseudo-labeled data,the student network is trained on both the pseudo-labeled data and the fully labeled data
+correct instance proposals,accurate mask representations,obtaining correct instance proposals will yield accurate mask representations to improve an SSIS network
+point label,categorical instance representation cue,point label is a one-pixel categorical instance representation cue
+point labels,annotation budget,annotation budget for point labels is known as costly-efficient by the literature
+new training protocol,weakly semi-supervised instance segmentation (wssis),we propose a new training protocol named Weakly Semi-Supervised Instance Segmentation (WSSIS) using point labels
+point labels,budget-friendly point labels,"The context mentions the use of point labels and budget-friendly point labels to provide effective guidance, implying a relationship between the two in terms of cost-effectiveness and functionality."
+training protocol,point-labeled data,"The training protocol employs point-labeled data with a small amount of fully labeled data, indicating a relationship in the context of data usage for training."
+training protocol,reduced annotation costs,"The use of point-labeled data in the training protocol leads to reduced annotation costs, suggesting a cost-saving relationship between the two terms."
+teacher network,student network,"The context describes a two-step learning procedure where a teacher network is used to train the student network, indicating a hierarchical relationship between the two networks."
+training scheme,proposed architecture,"The proposed architecture serves as a baseline for the training scheme, suggesting a foundational relationship between the two concepts."
+fpn,feature pyramid network,"Existing instance segmentation approaches adopt Feature Pyramid Network (FPN) architecture, indicating a usage relationship between the two terms."
+pyramid level,instances,Pyramid level recognizes instances of particular sizes. Extract proposals based on the size of the instance
+point labels,sampling proposals,Using point labels for sampling proposals
+pyramid level,adaptive pyramid-level selection,Adaptive Pyramid-Level Selection selects a pyramid level based on the reliability of the network
+point labels,pyramid level,Points do not contain instance size information. Estimate proper pyramid level for each point.
+instance mask,pyramid level,Generate instance mask only from the pyramid level with the maximum confidence score
+proposal branches,configuration,Follow the configuration of FPN with N = 5 for proposal branches
+point label,instance proposal,Extract instance proposal and confidence score for each point label
+confidence score,reliability,The confidence score is considered as the reliability of the prediction
+confidence score,pyramid level,Adaptively select a pyramid level with the maximum confidence score
+mask branch,pseudo instance mask,Generate a pseudo instance mask at the mask branch
+mask,pseudo instance mask,"The mask branch Fm generates a pseudo instance mask M = σ(Fm(Pk)), where σ is a sigmoid function."
+coco 2017 dataset,80 common object categories,"We evaluate our method on the COCO 2017 dataset that contains 118,287 training samples and 5,000 validation samples for 80 common object categories."
+coco training dataset,"1%, 2%, 5%, 10%, 20%∼50% subsets","To validate our method under the WSSIS regime, we randomly sample subsets containing 1%, 2%, 5%, 10%, 20%∼50% of the COCO training dataset."
+coco 10%,fully labeled data and point labeled data,COCO 10% means using 10% of the fully labeled data and the rest of 90% of the point labeled data.
+centroid point,instance mask label,We use a centroid point of an instance mask label as a point label.
+bdd100k dataset,diverse scene types and 8 classes,"We conduct experiments on BDD100K dataset, which is a large-scale driving scene dataset with diverse scene types and 8 classes."
+bdd100k dataset,7k mask-labeled images and 67k box-labeled images,The BDD100K dataset contains 7k mask-labeled images and 67k box-labeled images.
+center of the box,point label,We use the center of the box as the point label for the BDD100K dataset.
+solov2,baseline instance segmentation network,We adopt SOLOv2 as the baseline instance segmentation network.
+resnet-101,backbone network,"For both teacher and student networks, we use the same ResNet-101 backbone network."
+resnet-101 fpn,maskrefinenet,"For the MaskRefineNet, we adopt the ResNet-101 FPN architecture and produce the output only from the highest resolution pyramid level, P2."
+highest resolution pyramid level,p2,These terms are mentioned together and are part of the technical details of the model architecture.
+batch size,16,They are mentioned together as part of the training parameters.
+learning rate,1e-4,These terms are used together to describe the training setup.
+cosine decay scheduling,dice loss,These terms are mentioned together as part of the training methodology.
+maskrefinenet,teacher network,MaskRefineNet is trained using rough mask outputs from the teacher network.
+pytorch,8 v100 gpus,The proposed method is implemented using Pytorch and trained on 8 V100 GPUs.
+labeling budget calculation,coco trainset,The labeling budget calculation is used to estimate the labeling budget for the COCO trainset.
+instance masks,unlabeled data,Pseudo instance masks are generated for the unlabeled data from the teacher network.
+proposed method,baselines,The proposed method is compared against two baselines with the same network architecture and optimization strategy.
+fully labeled data,semi-supervised setting,The baselines include training with fully labeled data and training with fully labeled and unlabeled data in a semi-supervised setting.
+performance gap,fully-supervised set,There is a notable performance gap between the proposed method and the baselines when using smaller subsets with fully labeled images.
+coco 1%,coco 100%,"Comparison between subsets with fully labeled images, where COCO 1% and COCO 100% are discussed in terms of the method used."
+maskrefinenet,teacher network,"Discussion on how MaskRefineNet can refine the rough mask output from the teacher network based on three input sources, including input image, rough mask, and point information."
+maskrefinenet,maskrefinenet,Illustration of how MaskRefineNet further enriches the resultant mask representation and removes noisy parts.
+instance region,rough mask,instance region in the input image is related to the rough mask as they are both parts of the process described.
+point information,256x256,point information is resized to 256x256 according to the context.
+point information,input tensor,point information is concatenated with the rough mask into an input tensor as mentioned in the context.
+point information,point label,"point information is transformed to a heatmap with a sigma of 6, representing each point label in the form of a 2D gaussian kernel."
+maskrefinenet,teacher network,"MaskRefineNet leverages prior knowledge from the teacher network by taking rough mask predictions as input, which helps in calibrating common errors."
+maskrefinenet,point guidance,MaskRefineNet takes guidance from the input point to refine missing & noisy parts and disentangle crowded target instances in the rough mask.
+annotation budgets,ap,Performance trade-off of annotation budgets and AP is compared in Table 1.
+methods,coco test-dev,The methods are compared on the COCO test-dev under various supervisions.
+backbone network,r-101,All methods use the same backbone network of R-101.
+method,ablation study,An ablation study of the method is conducted on COCO 10% setting.
+teacher network,pseudo labels,"The quality of pseudo labels generated by the teacher network is measured using randomly sampled 5,000 images."
+point labels,weak label candidate,"The effectiveness of each weak label candidate (unlabeled, image-level, and point label) in instance segmentation is verified in Table 5."
+confidence threshold,balance between false-negative and false-positive proposals,Careful tuning of confidence threshold is required to balance between false-negative and false-positive proposals.
+average recall,precision,The average recall (AR100) and precision (AP) largely vary according to the confidence threshold.
+human effort,tuning the threshold,Human effort is required for tuning the threshold to balance between false-negative and false-positive proposals.
+image-level label,weak label,Leveraging the image-level label as a weak label can eliminate misclassified proposals and boost performance.
+label,proposals,label is used to eliminate misclassified proposals
+misclassified proposals,boosting performance,eliminating misclassified proposals leads to boosting performance from 25.9% to 29.5%
+performance gap,fully-supervised setting,performance gap between 29.5% and 39.0% compared to fully-supervised setting
+point label,weak label,point label is leveraged as a weak label to filter out proposals
+true-positive proposals,confidence threshold,keeping only true-positive proposals deprecates the requirement of the confidence threshold
+point label,instance segmentation,point labels can be leveraged as an effective source for instance segmentation
+point label,cost-efficient,point labels are cost-efficient for instance segmentation
+point labels,leveraged,point labels can be leveraged effectively for instance segmentation
+point labels,source,point labels are an effective source for instance segmentation
+methods,weak labels,methods compare against other methods using various weak labels based on labeling budget
+labeling budget,labeling time,"labeling budget is calculated considering the labeling time, following a certain cost"
+methods,total training images,all methods use the same amount of total training images
+fully labeled data,state-of-the-art semi-supervised method,ours show superior performances when using the same amount of fully labeled data compared to semi-supervised method
+fully labeled data,performance,using 5% of fully labeled data leads to performance improvement (33.7% vs. 25.6%)
+"state-of-the-art box-supervised method, boxinst [43]",efficiency,Demonstrates better efficiency compared to BoxInst [43] with lower labeling budget.
+proposed method,budget-friendly point labels,Effectiveness of budget-friendly point labels with the proposed method.
+bdd100k dataset,point labeled data,Performance is gradually improved with more point labeled data on BDD100K dataset.
+bdd100k dataset,fully labeled data,Significant performance improvements achieved on BDD100K dataset by leveraging all available point labels compared to using only fully labeled data.
+features adaptively,impact,"Impact of choosing features adaptively, as denoted in Table 2."
+input sources,maskrefinenet,Table 3 shows the impact of different input sources for MaskRefineNet.
+maskrefinenet,ap,MaskRefineNet is used to refine the Average Precision (AP) scores
+point label,centroid point,centroid point is originally used as the point label in the method
+point label,pixel,pixel is chosen randomly as a point label in the analysis
+point label,instance mask,point label is placed within the instance mask for evaluation
+point label,average quality,"Measuring the average quality of pseudo labels is directly related to the point labels, as shown in Table 4."
+point label,position,"The position of the point labels affects the robustness of the method, providing an opportunity to reduce annotation effort."
+pseudo label,quality,The quality of pseudo labels is affected by the selection of appropriate pyramid levels in Table 6.
+fpn,pseudo instance masks,FPN affects the generation of pseudo instance masks as seen in the unsatisfactory results in Table 2.
+fpn,layer feature map,"The use of FPN impacts the quality of pseudo instance masks compared to generating masks from a single layer feature map, as shown in Table 2."
+fpn,pyramid feature maps,"FPN plays a role in the quality of pseudo masks when generated from all pyramid feature maps, resulting in noisy outputs, as shown in Figure 4."
+adaptive pyramid-level selection,pyramid level,"The Adaptive Pyramid-Level Selection strategy influences the choice of an appropriate pyramid level, leading to improved quality, as demonstrated in the results."
+strategy,fpn structure,The proposed strategy is highly effective in leveraging the behavior of the FPN structure for generating high-quality pseudo labels.
+strategy,ground-truth instance size information,The result of 30.9% when using ground-truth instance size information leaves room for improvement of the method.
+maskrefinenet,teacher network,"When the teacher network has enough mask representation ability, the improvement of the MaskRefineNet is marginal."
+maskrefinenet,limited number of fully labeled data settings,"MaskRefineNet yields a considerable performance improvement, especially in the limited number of fully labeled data settings."
+maskrefinenet,quality of pseudo labels,MaskRefineNet is a remarkably effective method to improve the quality of pseudo labels in the limited quantity of fully labeled data conditions.
+input sources,maskrefinenet,"Before applying the MaskRefineNet, the quality of pseudo labels is measured as 28.6%. When the MaskRefineNet only takes an image as input, the accuracy of the pseudo labels drastically reduces to 14.8%."
+object instance masks,point guidance method,The proposed point guidance method appropriately localizes all the object instance masks.
+maskrefinenet,object instance masks,MaskRefineNet plays a role in improving the quality of object instance masks by taking the rough mask as an input source.
+maskrefinenet,pseudo labels,The quality of pseudo labels improves with the help of MaskRefineNet taking the knowledge of the teacher network for fast and stable convergence.
+point information,pseudo labels,Taking the point information as an input source can dramatically improve the quality of pseudo labels.
+point information,target instance,"Point information is used as a guidance seed for the target instance, aiding in a more accurate segmentation of occluded instances."
+maskrefinenet,hard learning scenarios,MaskRefineNet is presented to deal with hard learning scenarios with extremely limited fully labeled data.
+proposed method,instance segmentation results,"The proposed method generates high-quality pseudo instance masks, leading to promising instance segmentation results."
+unlabeled images,framework,Future direction may involve incorporating unlabeled images in the framework to address the limit in exploiting the tremendous amount of unlabeled image pools.
+unlabeled images,framework,Unlabeled images may be incorporated into the framework to extend its application to semi-supervised learning scenarios.
+framework,semi-supervised learning scenarios,The framework can be extended to semi-supervised learning scenarios by incorporating unlabeled images.
+instance segmentation scheme,point labels,Point labels are leveraged as weak supervision for cost-efficient and high-performance instance segmentation in the proposed scheme.
+modern instance segmentation frameworks,instance proposal extraction,The main performance bottleneck of modern instance segmentation frameworks arises from instance proposal extraction.
+method,point labels,The proposed method effectively exploits budget-friendly point labels as weak supervision.
+imagevision team members,youngjoon yoo,Youngjoon Yoo and ImageVision team members are acknowledged for valuable discussions and feedback.
+engineering research center program,national research foundation of korea,The Engineering Research Center Program is supported by the National Research Foundation of Korea funded by the Korean Government MSIT.
+institute of information & communications technology planning & evaluation,korea government,The Institute of Information & communications Technology Planning & Evaluation has a grant funded by the Korea government.

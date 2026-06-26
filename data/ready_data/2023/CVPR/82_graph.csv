@@ -1,0 +1,241 @@
+node_1,node_2,edge
+visual models,web-scale image-caption datasets,Visual models pretraining on web-scale image-caption datasets is a powerful alternative to traditional pretraining on image classification data.
+image-caption datasets,open-domain,"Image-caption datasets are more 'open-domain', containing broader scene types and vocabulary words."
+image-caption datasets,performance,Image-caption datasets result in models that have strong performance in few- and zero-shot recognition tasks.
+classiﬁcation datasets,ﬁne-grained categories,Large-scale classification datasets provide fine-grained categories with a balanced label distribution.
+classiﬁcation datasets,caption datasets,This work studies a pretraining strategy that uses both classification and caption datasets to unite their complementary benefits.
+image domains,vocabulary words,Model performance in downstream zero-shot recognition tasks is affected by dataset bias due to different coverage of image domains and vocabulary words in each dataset.
+preﬁx conditioning,dataset biases,Preﬁx Conditioning is a novel method that helps disentangle dataset biases from visual concepts.
+preﬁx conditioning,input data type,"Preﬁx Conditioning uses preﬁx tokens to inform the language encoder of the input data type (e.g., classification vs caption) at training time."
+language encoder,datasets,The language encoder learns from both classification and caption datasets while tailoring feature extraction to each dataset.
+preﬁx conditioning,vl pretraining objectives,"Preﬁx Conditioning is generic and can be easily integrated into existing VL pretraining objectives, such as CLIP or UniCL."
+vl pretraining objectives,clip,VL pretraining objectives can be integrated with CLIP for improved zero-shot image recognition and robustness to image-level distribution shift.
+vl pretraining objectives,unicl,VL pretraining objectives can be integrated with UniCL for improved zero-shot image recognition and robustness to image-level distribution shift.
+supervised classification datasets,imagenet,Supervised classification datasets like ImageNet have been traditionally used for pretraining image representations for downstream tasks.
+web-scale image-caption datasets,cc12m,Web-scale image-caption datasets such as CC12M have emerged as a powerful pretraining alternative for improving zero-shot models.
+web-scale image-caption datasets,in21k,Web-scale image-caption datasets can be unified with datasets like IN21K for training better zero-shot models.
+preﬁx conditioning,image-caption datasets,Preﬁx Conditioning is proposed to unify image-caption datasets for training better zero-shot models.
+preﬁx conditioning,image classification datasets,Preﬁx Conditioning is proposed to unify image caption and image classification datasets for training better zero-shot models.
+categories,objects,"Categories are related to objects as they have more balanced coverage of categories, including rare and fine-grained categories, and focus on the labeled objects in each image."
+datasets,pre-training,Datasets are related to pre-training as recent works propose to combine caption and classification datasets for pre-training.
+label-prompt,prompt,"The term prompt is used to indicate a template sentence filled with a class name, known as label-prompt."
+caption data,classification data,Training on caption and label-prompt data does not fully resolve distribution differences between open-domain caption data and classification data.
+images,objects,"Images mostly contain single objects, which are related to images from restricted domains."
+vocabulary,linguistic flexibility,The limited vocabulary lacks the linguistic flexibility required for zero-shot learning.
+class embedding,imagenet,The class embedding optimized for ImageNet may mean a photo of a dog from ImageNet instead.
+dataset biases,unified pretraining,Dataset biases negatively affect unified pretraining by reducing the generalization of learned representations and jeopardizing zero-shot performance.
+concepts,open domain,"To recognize diverse concepts in the open domain, efforts are made to address dataset biases and improve pre-training."
+language model,dataset bias,The language model needs to disentangle the dataset bias from the visual concepts to recognize diverse concepts in the open domain.
+language model,language embeddings,"The language model needs to extract language embeddings generalizable to the open domain, such as a language embedding representing a photo of a dog from an open-domain dataset."
+language embedding,photo of a dog,"The language embedding represents a photo of a dog from an open-domain dataset, such as the image-caption dataset."
+preﬁx conditioning,language embeddings,The Preﬁx Conditioning approach aims to learn dataset-specific language embeddings by pre-empting different tokens for each dataset and focusing on learning visual concepts in the remaining text tokens.
+language embeddings,dataset-specific text token,"The idea of Preﬁx Conditioning involves learning dataset-specific text tokens to absorb the bias of the dataset, allowing the remaining text tokens to focus on learning visual concepts."
+prompt tuning,learnable tokens,"Prompt tuning involves learnable tokens prepended to the input token sequences, allowing the pre-trained language models to learn task-specific knowledge and solve downstream tasks."
+preﬁx conditioning,image-caption,"Preﬁx conditioning is designed to unify image-caption and classification datasets by disentangling the dataset bias, which is a unique distinction to prompt-tuning works."
+preﬁx conditioning,classiﬁcation,Inserting the preﬁx of the classification dataset leads to better performance on classification data.
+preﬁx conditioning,unicl,A drastic performance improvement is observed when combining preﬁx conditioning with the UniCL objective because of their complementarity.
+preﬁx conditioning,pre-training,We propose novel Preﬁx Conditioning at pre-training time to unify image-label and image-caption supervision.
+preﬁx conditioning,zero-shot recognition,This simple approach improves zero-shot recognition performance by more than 6% on average in experiments on ImageNet21K and CC12M.
+pre-training,image-label,Preﬁx conditioning enables the model to switch its approach to image-label supervision.
+pre-training,vision language contrastive pre-training,"Preﬁx conditioning is the first mechanism to use preﬁxes to condition the source of the dataset during vision language contrastive pre-training, rather than post pre-training."
+imagenet21k,cc12m,ImageNet21K and CC12M are datasets mentioned in the context for tasks related to vision-language pre-training.
+preﬁx conditioning,model,"Preﬁx conditioning enables the model to switch its approach to extracting language features, showing a relationship between the two terms."
+relationship,visual representations and word embeddings,Zero-shot recognition is solved by learning the relationship between visual representations and word embeddings of the class names.
+clip,model,CLIP is a vision-language contrastive learning model that pre-trains with a large-scale image-caption data and achieves improvement in zero-shot recognition.
+align,size of image-caption data,ALIGN demonstrated the effect of scaling up the size of image-caption data on vision-language contrastive learning.
+albef,model distillation and masked language modeling,ALBEF employs model distillation and masked language modeling for improving data efficiency in vision-language pre-training.
+declip,self-supervised contrastive learning,DeCLIP harnesses self-supervised contrastive learning in its approach.
+slip,self-supervised contrastive learning,SLIP also uses self-supervised contrastive learning in its technique.
+tcl,self-supervised contrastive learning,TCL harnesses self-supervised contrastive learning as well.
+filip,token-to-token contrastive learning,"FILIP uses token-to-token contrastive learning, which differs from global contrastive learning used in CLIP."
+blip,pseudo captions,BLIP generates pseudo captions to diversify the language modality for each image.
+vision-language pre-training,approach,The approach seeks to improve training on image-caption data
+vision-language pre-training,unicl,UniCL and K-Lite unite the image-caption and image-label supervision by converting labels into text with pre-defined template sentences
+vision-language pre-training,k-lite,K-Lite and UniCL unite the image-caption and image-label supervision by converting labels into text with pre-defined template sentences
+unicl,supervised contrastive loss,UniCL leverages a supervised contrastive loss for image-label pairs
+k-lite,external knowledge,K-Lite utilizes external knowledge from WordNet and Wikitionary
+k-lite,input noun,The input noun is augmented with the class hierarchy and definition to enrich the supervision
+unicl,domain shift,UniCL and K-Lite do not consider the domain shift between datasets
+unicl,prefix conditioning,Our method is complementary to UniCL and K-Lite as both do not consider the domain shift between datasets
+training time,prefix conditioning,Preﬁx conditioning at training time involves adding a dataset-specific token to input tokens with a contrastive learning objective applied
+test time,prefix conditioning,Preﬁx conditioning at test time involves constructing a class prompt with pre-defined templates and adding a token used to condition real caption during training
+image-caption dataset,image classification dataset,Image-caption dataset covers a much wider range of image domains and vocabulary words than image classification datasets
+prompt tuning,large language model,Prompt tuning is a popular technique to adapt a large language model to a specific task with few training data and low computational cost
+image classification dataset,preﬁx embeddings,Preﬁx embeddings are added to the training input of the image classification dataset and are the only parameters optimized during ﬁne-tuning.
+preﬁx embeddings,downstream task,Preﬁx embeddings can be viewed as the knowledge of the downstream task.
+zero-shot classification,language embedding,The bias of the language embedding for zero-shot classification needs to be from a dataset covering a wide range of domains.
+preﬁx embedding,image-caption dataset,The preﬁx embedding learned for the image-caption dataset is used during test time.
+pre-trained vision-language model,few-shot classification,Pre-trained vision-language model can be adapted to few-shot classification by tuning prompts of the language encoder.
+pre-trained vision model,target task,Pre-trained vision model can be adapted to a target task through prompt-tuning.
+pre-training stage,image label and image caption data,"During the pre-training stage, a model is conditioned with the preﬁx to distinguish between image label and image caption data."
+large-scale image recognition dataset,imagenet,ImageNet dataset is known to be biased towards a specific image domain.
+imagenet,biased,ImageNet dataset is known to be biased towards a specific image domain
+imagenet,model,A model trained on ImageNet dataset shows vulnerability to distribution shift
+distribution shift,object pose,Distribution shift includes shift in object pose
+distribution shift,style of the images,Distribution shift includes shift in style of the images
+linear layer,pre-trained models,Adapting only a linear layer on pre-trained models can improve performance on downstream tasks with distribution shifts
+image encoders,linear classifiers,"Importance of having a good classifier on top of image encoders, such as linear classifiers"
+language encoders,linear classifiers,Language encoders can generate linear classifiers to improve performance on downstream tasks with distribution shifts
+domain generalization,image recognition models,Method for domain generalization conditions image recognition models with domain embedding
+domain embedding,input image domains,Domain embedding discriminates input image domains
+domain-specific image classifier,pre-fix conditioning,Importance of domain-specific image classifier demonstrated through pre-fix conditioning
+linear classifier,domain-specific classifier,"De-biasing linear classifier to obtain domain-specific classifier, adapted from classification to captioning domain"
+dataset bias,image classifications,Approach to dataset bias in image classification by de-biasing image representations
+dataset bias,vision-language learning,Tackling dataset bias in vision-language learning by disentangling the bias in language embedding
+caption domain,classifier,Utilizing classifier obtained by caption domain to tackle dataset bias in vision-language learning
+captioning datasets,data biases,Noting that captioning datasets can have data biases
+captioning datasets,more open-domain,Captioning datasets tend to be more open-domain than existing classification datasets
+preﬁx conditioning technique,deep learning model,Preﬁx Conditioning technique is used for pretraining a deep learning model on image-caption and image-label data.
+deep learning model,image-caption data,Deep learning model is pretrained on image-caption data using the Preﬁx Conditioning technique.
+deep learning model,image-label data,Deep learning model is pretrained on image-label (classiﬁcation) data using the Preﬁx Conditioning technique.
+image-caption data,problem setting,The background of contrastive learning with image-caption data is discussed in the problem setting.
+training approach,image-caption data,The details of the training approach are explained for image-caption data.
+inference procedure,training approach,Inference procedure is discussed in the context of the training approach.
+image label dataset,prompt-style language description,The image label dataset consists of image-label pairs with prompt-style language descriptions.
+image-caption pairs,caption,The image-caption pairs dataset consists of image-caption pairs where the caption is tokenized language description.
+image encoder model,visual representation,An image encoder model extracts a visual representation for each image.
+text encoder,language representation,A text encoder extracts a language representation for each caption or prompt.
+clip,image-caption pairs,CLIP is designed to match representations of images to their paired captions in image-caption pairs dataset.
+vi,uj,vi and uj are normalized using ˜vi(cid:107)˜vi(cid:107) and ˜uj(cid:107) ˜uj(cid:107)
+clip,multi-class n-pair loss,CLIP optimizes the symmetric multi-class N-pair loss which includes two contrastive terms
+contrastive terms,temperature hyper-parameter τ,contrastive terms involve a temperature hyper-parameter τ that controls the strength of penalties on hard negative samples
+unicl,mini-batch,UniCL composes each mini-batch with samples from both SL and SC
+sl,sc,"For pairs from SL, all samples from the same class are considered positive pairs while a sample from SC has a unique pair"
+embedding strategies,conditioning on the type of input dataset,The approach aims to enable the language encoder to learn embedding strategies conditioned on the type of input dataset
+preﬁx tokens,language model,preﬁx tokens are responsible for switching the context of a language model from the pre-trained task to the downstream task
+preﬁx-tuning,single task,Preﬁx-tuning shares the intuition that the preﬁx tokens are responsible for switching the context of a language model from the pre-trained task to the downstream task
+image-caption and image-prompt matching,contrastive learning,"In our problem setting, there is no task distinction between the image-caption and image-prompt matching since both are formulated as contrastive learning."
+datasets,biases in the image distributions and vocabulary words,"However, we focus on the fact that the two datasets have different biases in the image distributions and vocabulary words."
+label-prompt sentences,image classification data,"The label-prompt sentences are embedded closer to the image classification data, even though we may want to use them to match a new label to an image from the open-domain image distribution during zero-shot classification."
+preﬁx-conditioning,featuring extraction,"To solve this problem, we propose to inform the model of the type of dataset at the input level to switch the feature extraction."
+preﬁx-conditioning,preﬁx token,"Speciﬁcally, to make the model aware of the dataset type, preﬁx-conditioning prepends a preﬁx token to an input sentence."
+dataset-speciﬁc bias,bias in language representations,"In this way, we prepend the token to learn the dataset-specific bias, which enables us to disentangle the bias in language representations and utilize the embedding learned on the image-caption dataset at test time even without an input caption."
+prompt-tuning,performance of the model,"In prompt-tuning, the number of preﬁx tokens can affect the performance of the model. However, we do not see the performance difference by the number of preﬁx tokens."
+preﬁx tokens,domain of input sentences,Adding one token is enough to distinguish the domain of input sentences
+preﬁxes,training cost,"To avoid signiﬁcantly increasing the training cost, the number of preﬁxes is set to one in all experiments"
+language representations,data source,"Language representations for each data source are extracted as ˜uP , ˜uC = fφ(¯tP ), fφ(¯tC)"
+training objectives,input design,The input design is independent from the training objectives
+data sampling,learning from multiple data sources,Data sampling matters when learning from multiple data sources in a contrastive learning framework
+model,dataset bias,The model may learn to distinguish the samples by exploiting the dataset bias
+data sampling,problem setting,Data sampling needs to be taken into consideration in the problem setting when learning from two different data sources
+debiased sampling,mini batch construction,Debiased sampling constructs each mini batch to contain samples from a single data source
+unicl,mini batch composition,"In UniCL, each mini batch is composed with samples from both data sources (image-caption and image-label) with equal probability"
+sampling,performance,The choice of sampling does not significantly affect the performance
+inference,input image classification,"During inference, an input image is classified as one of K classes by embedding the cor"
+age,k classes,Age is classified as one of K classes by embedding the corresponding label-prompts and choosing the one most similar to the image embedding.
+class names,class prompts,We obtain class prompts by filling the default prompt templates with class names.
+prompt-style prefix,image classification dataset,Prompt-style prefix performs better on the image classification dataset used to train the model.
+caption-style prefix,downstream data,Caption-style prefix conditioning may work better to classify novel downstream data.
+caption-style prefix,zero-shot recognition,Caption-style prefix indeed outperforms the prompt-style prefix with a large margin in zero-shot recognition.
+prompt-style prefix,zero-shot recognition,Prompt-style prefix performs better on the image classification dataset used to train the model.
+datasets,imagenet-21k,The dataset mentions ImageNet-21K as one of the datasets used for training.
+datasets,clip,The dataset mentions CLIP as one of the datasets used for training.
+imagenet-21k,clip,Both ImageNet-21K and CLIP are mentioned in the same context as datasets used for training.
+object,image-caption datasets,The context mentions image-caption datasets as one of the datasets used for training.
+object,image-label datasets,The context mentions image-label datasets as one of the datasets used for training.
+cc3m,cc12m,The context mentions CC3M and CC12M as image-caption datasets utilized for training.
+imagenet21k,imagenet1k,The context mentions ImageNet21K and ImageNet1K as image classification datasets being used.
+imagenet1k,imagenet21k,The context highlights the contrast between ImageNet1K and ImageNet21K in terms of the number of classes.
+imagenet1k,imagenet21k,The context mentions running experiments on ImageNet21K while excluding classes of ImageNet1K.
+prompt strategy,prompt templates,"During training, the context explains the use of prompt strategy with 80 prompt templates."
+prompt templates,class names,The context mentions filling prompt templates with class names before feeding into the text encoder.
+class names,tokenization,Class names are tokenized before feeding into the text encoder.
+language embeddings,templates,Language embeddings are extracted from all 80 templates in validation.
+language encoder,vision encoder,The same language encoder used as CLIP and Swin-Tiny transformer as the vision encoder.
+models,adamw,All models are optimized with AdamW with a learning rate set to 0.001 and weight decay to 0.1.
+batch size,1024,All models are trained with a batch size of 1024.
+training data,models,"Considering the amount of training data, models are trained for 15 and 50 epochs in the experiments on ImageNet21K and ImageNet1K respectively."
+datasets,in21k,"When training a model on two different datasets, such as IN21K, the schedule includes a warm-up of 10,000 iterations."
+baselines,clip,CLIP and UniCL are trained as baselines.
+clip,image-caption,CLIP is trained only on image-caption or image classification data for comparison.
+clip,unicl,CLIP and UniCL are trained on both image-caption and IN21K data unless otherwise stated.
+sampling strategy,debiasing,Our prefix conditioning model is trained with debiased sampling while CLIP and UniCL are trained with equal sampling strategy.
+evaluation,learned representations,Learned representations are evaluated on supervised and zero-shot image classification on ImageNet1K and 11 chosen datasets.
+supervised image classification,zero-shot image classification,"In the context, the focus is on supervised and zero-shot image classification."
+zero-shot image classification,imagenet1k,Zero-shot image classification is explicitly excluding ImageNet1K from training.
+supervised image classification,unsupervised image classification,"The context mentions both supervised and zero-shot image classification, indicating the comparison between supervised and unsupervised approaches."
+cifar10,cifar100,The context mentions CIFAR10 and CIFAR100 datasets for object classification.
+oxford-iiit pets,oxford flowers 102,Oxford-IIIT Pets and Oxford Flowers 102 datasets are mentioned for fine-grained classification.
+eurosat,resisc45,The context includes aerial images datasets such as EuroSAT and Resisc45.
+imagenet-21k,cc12m,"ImageNet-21K and CC12M are both datasets used in the analysis, related to preﬁx conditioning and model training."
+cc12m,preﬁx conditioning,"CC12M is the dataset used for preﬁx conditioning, showing a relationship between the dataset and the conditioning technique."
+cifar10,cifar100,Cifar10 and Cifar100 are datasets mentioned in the context.
+caltech,food,Caltech and Food could be datasets or categories mentioned in the context.
+pet,patch,"Pet and Patch are mentioned together, possibly indicating a relationship between them."
+voc,dtd,VOC and DTD are datasets or categories mentioned in the context.
+imagenet-1k,preﬁx conditioning,"Preﬁx Conditioning is shown to improve performance on models trained with ImageNet-1K, indicating a direct relationship."
+imagenet-21k,imagenet-1k,"ImageNet-21K and ImageNet-1K are both datasets mentioned, with preﬁx conditioning showing improvement in performance for both."
+clip objectives,preﬁx conditioning,"Preﬁx Conditioning is effective in both UniCL and CLIP objectives, indicating a relationship between the conditioning technique and the objectives."
+imagenet-1k,imagenet-21k,"The classes of ImageNet-1K are excluded from ImageNet-21K, indicating a relationship of exclusion between the two categories."
+preﬁx conditioning,clip baseline model,"preﬁx conditioning outperforms a CLIP baseline model by a large margin, suggesting a superiority relationship between the two methods."
+data sampling scheme,mini-batch,"The data sampling scheme is used to construct a mini-batch, showing a dependency relationship between the two terms."
+debiased sampling (ds),equal probability,"debiased sampling involves sampling one data source with equal probability, indicating a method of selection between the two terms."
+preﬁx conditioning,data sampling,"preﬁx conditioning works well with ES sampling, showing compatibility between the two techniques."
+preﬁx conditioning,training,"Ablating preﬁx conditioning during training causes a drop in performance, indicating the importance of preﬁx conditioning during training."
+es sampling,performance,"ES sampling allows the model to differentiate sentences, impacting the performance of the model in zero-shot results."
+preﬁx information,performance,"Differentiating sentences by preﬁx information does not significantly degrade the performance, suggesting the utility of preﬁx information in the model."
+images,datasets,Distinguishing sentences enables the model to associate images from different datasets by recognizing differences in categories and object locations.
+images,categories,Images are different with respect to the categories
+images,locations,Images are different with respect to the locations
+images,object representations,Images do not harm the generalizability of object representations
+linear-probe evaluation,performance,Linear-probe Evaluation evaluates the performance
+representation,quality,The quality of learned image representations is evaluated in Table 3
+accuracy,model,Accuracy is better than the model trained without preﬁx conditioning
+improvements,zero-shot performance gain,The improvements are not substantial in zero-shot performance gain
+method,image representations,The zero-shot performance gain obtained by our method is not due to the image representations
+preﬁx-conditioning,detailed analysis,A detailed analysis of preﬁx conditioning is presented
+preﬁxes,zero-shot recognition performance,Different preﬁxes impact the zero-shot recognition performance
+preﬁxes,behaviors,Different preﬁxes impact the behaviors of the zero-shot recognition performance
+preﬁx conditioning,language encoder,Preﬁx conditioning enables the language encoder to switch its role during training
+preﬁx conditioning,role,Preﬁx conditioning enables the language encoder to switch its role during training
+dataset,image caption,"Datasets are commonly used for image captioning tasks, where images are paired with descriptive captions."
+preﬁx conditioning,test time,"The preﬁx conditioning plays a crucial role during test time, as it tailors the language encoder for specific tasks such as classification or caption extraction."
+model,attention weights,"Models, such as transformers, use attention weights to focus on different parts of input data, as seen in the example related to class prompts in the VOC 2007 dataset."
+caption preﬁx,in21k,The caption preﬁx shows better results when conditioned with the entire IN21K dataset.
+caption preﬁx,in-1k,"Caption preﬁx works better when the target comes from outside the image classification data, indicating that it is tailored for the image classification dataset."
+caption preﬁx,class-prompt preﬁx,"Caption-preﬁx performs better than prompt-style preﬁx in IN-1K for a model trained with IN21K, excluding IN1k classes."
+caption preﬁx,zero-shot recognition,The behavior does not mean that the prompt-preﬁx performs better in zero-shot recognition.
+class-prompt preﬁx,in-1k,Class-prompts preﬁx works better to categorize IN-1K data because the preﬁx is trained to specialize in classifying it.
+caption preﬁx,caption-style preﬁx,"Caption-style preﬁx performs better than prompt-style preﬁx in IN-1K for a model trained with IN21K, excluding IN1k classes."
+caption preﬁx,class name,Caption-style preﬁx works better when the vocabulary of the class name comes from outside the image classification data since caption data covers much more diverse words.
+caption preﬁx,attention weights,"Preﬁx controls attention, and Fig. 3 visualizes the attention weights for an end token in different preﬁx conditions."
+class name,caption preﬁx,"When a prompt preﬁx is employed, the language model pays attention to the class name at the first layer."
+noun,caption preﬁx,The only noun the encoder focuses on is airplane for caption preﬁx.
+sculpture,caption preﬁx,The model attends to both sculpture and airplane in the case of the caption preﬁx and uncon-ditional model.
+prompt-prefix,zero-shot recognition,The prompt-prefix does not perform better in zero-shot recognition as experiments show due to bias in image classification datasets.
+prompt-prefix,language encoder,"The prompt-prefix guides the language encoder to focus on a single word, such as a class name."
+prompt-prefix,baseline model,"The baseline model without prompt-prefix conditioning attends to multiple words, even though the input sentence is a class prompt."
+prompt-prefix,pre-train data,"The pre-Train Data includes variations like ImageNet-1K, ImageNet-1K + CC12M, ImageNet-21K, and ImageNet-21K + CC12M."
+promptinin-v2in-r in-s72.1,robustness,"Pre-Train Data with different prefixes achieve better robustness, as shown in Evaluation on the robustness to the image-level domain shift in Table 5."
+prefix conditioned training,robustness to image-level domain shift,Prefix conditioned training achieves better robustness to the image-level domain shift.
+caption prefix,prompt prefix,Caption prefix outperforms prompt prefix in images distinct from those used in training.
+prefix conditioned training,robustness to image-level domain shift,Prefix conditioned training is related to the evaluation on robustness to image-level domain shift.
+prompt condition,caption condition,Prompt condition and caption condition are different conditions.
+prompt condition,caption condition,Prompt condition and caption condition are conditions mentioned in the context.
+prompt condition,caption condition,Prompt condition and caption condition are related in the context.
+caption condition,no condition,Caption condition is related to no condition.
+caption condition,no condition,Caption condition and no condition are different conditions discussed.
+caption condition,no condition,Caption condition has a relationship with no condition as per the context.
+prompt prefix,caption prefix,Prompt prefix and caption prefix have different color language embeddings mentioned in the context.
+prompt prefix,caption prefix,Prompt prefix and caption prefix are compared in their performance on zero-shot recognition.
+prompt prefix,caption prefix,Prompt prefix and caption prefix represent language features extracted with different prefixes in the context.
+prompt prefix,caption prefix,Prompt prefix and caption prefix were observed in terms of their intra-class and inter-class variance.
+caption prefix,prompt prefix,Caption prefix and prompt prefix have different performance characteristics in the context.
+caption prefix,prompt prefix,"Caption prefix outperforms prompt prefix, as suggested by the results in the table."
+caption prefix,prompt prefix,Caption prefix conditioned language features result in better zero-shot recognition performance compared to those conditioned on prompt prefix.
+image classiﬁcation,data,Image classification data is the key focus of the context
+training distribution,class name,"The image is similar to the training distribution, but the class name is different"
+class label,image data,"Class label is the same, but the image data comes from a different distribution"
+zero-shot recognition,datasets,Datasets evaluated in the zero-shot recognition include vocabularies and images from different domains
+preﬁx-conditioned training,class embeddings,Preﬁx-conditioned training achieves class embeddings that are generalizable across image domains
+prompt-style preﬁx,"in, in-v2",Prompt-style preﬁx performs the best in image styles similar to ImageNet
+caption-style preﬁx,"in-r, in-s",Caption-style preﬁx performs the best in art-style and sketch-style images respectively
+test time preﬁx,results,The observation of more generalizable class embeddings is consistent with the results in the paragraph Test time Preﬁx
+pre-training,image-caption and image classification data,The proposed mechanism involves pre-training on image-caption and image classification data to enhance model performance.
+pre-fix tokens,training time,Pre-fix tokens are learned at training time to condition the language encoder for switching the input source.
+feature extraction,visual domain,The pre-fix allows control over feature extraction and projection of embedding to a specific visual domain.
+zero-shot recognition accuracy,contrastive learning models,The proposed approach improves the zero-shot recognition accuracy of contrastive learning models.
+language encoder,image-level domain shift,The trained language encoder offers robustness to the image-level domain shift.
+supervision,object detection or semantic segmentation,Future steps could involve incorporating other forms of supervision such as object detection or semantic segmentation.
+zizhao zhang,feedback,Acknowledgment is made to Zizhao Zhang for providing feedback on the manuscript.
+darpa lwll,support,The work was supported in part by DARPA LwLL.

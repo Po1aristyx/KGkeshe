@@ -1,0 +1,114 @@
+node_1,node_2,edge
+generative language models,distributions over sequences of tokens,Generative language models define the distributions
+generative language models,data modalities,These models can represent multiple modalities like images
+data modalities (e.g.,images,speech
+scaling properties,model sizes,We studied scaling from 8 million to 30 billion model parameters.
+model sizes,number of tokens (5-100 billion),Experiments were conducted with different model sizes trained on varying amounts of data.
+mixed-modal scaling laws,synergy and competition,The laws account for the optimal collaboration and competition between individual modalities.
+mixed-modal scaling laws,unified unimodal scaling laws,A new addition to existing unimodal laws
+training phenomena,emergent coordinate-ascent style,During training
+hyper-parameters,critical selection guidelines,Findings provide guidance on choosing appropriate hyperparameters for mixed-modal models.
+mixed-modal competition,training stability,Interactions between modalities affect the stability of the training process.
+30b speech-text model,unimodal models,The large-scale model significantly outperforms its unimodal counterparts.
+research insights,design and training of mixed-modal generative models,The study offers valuable understanding for designing and optimizing these unified models.
+speech and text modalities,mixed-modal models,The context discusses the relationship between these two concepts
+mixed-modal models,scaling laws,The passage explains that the study develops scaling laws specifically for mixed-modal models
+scaling laws,optimization of a single modality,During training
+multi-modal setting,hyperparameters selection,The authors provide guidelines for choosing hyperparameters in a multi-modal context based on the derived scaling laws.
+neural scaling laws,model size,dataset size
+scaling laws parameters,training phenomena,The proposed parameters are correlated with various training outcomes
+dataset size,compute budget,These two terms are related as they both influence the performance when training neural networks
+dataset size,performance,Dataset size affects the performance of neural networks
+compute budget,performance,The compute budget
+hestness et al. (2017),power law relationship,Hestness et al. introduced the concept of a power law relationship between dataset size and performance.
+kaplan et al. (2020),larger models,Kaplan et al. expanded upon this by scaling the models to even greater sizes.
+hoffmann et al. (2022),unified formula,Hoffmann et al. developed a unified formula for scaling laws
+compute-optimal training,data-dependent scaling terms,Hoffmann's work included data-dependent scaling terms that differ from previous power law parameterizations.
+mixture of experts (moe) models,clark et al. (2022),Clark et al. applied scaling laws to MoE models
+lower precision,dettmers et al. (2022),Dettmers and Zettlemoyer studied the relationship between scaling laws and using lower-precision data types.
+neural machine translation (nmt),gordon et al. (2021),Gordon et al. applied scaling laws principles to NMT.
+generative language models,henighan et al. (2020),Henighan et al. investigated scaling laws for generative models in different modalities.
+image generation,acoustic models,These are examples of modalities within generative language models
+interactions,competition,and interference between multiple modalities
+competition and scaling phenomenon,multi-lingual models,Conneau et al. observed a 'curse of multilinguality'
+curse of multilinguality,decreased performance,This refers to the negative impact of training in multiple languages on model performance.
+goyal et al. (2021),smaller model size,Goyal's work shows that interference can occur even with limited model capacity
+model size,synergy and alleviation of interference,Scaling up the model size improves the synergy and reduces interference between modalities.
+mixed-modal scenario,training on multiple modalities,The findings from the mixed-modal scenario suggest similarities with multi-lingual models
+modality,data source,domain
+neural scaling laws,cross-modalities,The study aims to understand the scaling laws that apply when extending neural networks to different modalities.
+neural scaling laws,modality definition,The context discusses neural scaling laws in the context of defining modalities based on perplexity.
+membership function,perplexity,The membership function uses perplexity as a measure to determine modality membership.
+data set,distinct modalities,Modalities are distinguished based on the condition where the perplexity of one set is significantly higher than the other's mean perplexity.
+σ,threshold for distinguishing modalities,σ (set to 3) acts as a threshold for deciding when two datasets belong to different modalities.
+seven modalities,text,image
+source modality,text,speech
+hoffmann et al. (2022) parameterization,uni-modal scaling laws,This parameterization is used to study scaling laws specifically for uni-modal models.
+functional approximation error,number of model parameters,The relationship between these two terms is that the error in functional approximation decreases as the number of model parameters increases.
+ln,dj,In equation (2)
+minimal achievable loss,convergence error,These terms are related to the minimum loss that a model can achieve and the error it incurs during convergence.
+dataset,common crawl,The dataset is scraped from Common Crawl.
+nsfw images,dataset,NSFW images are removed from the dataset.
+watermarked images,dataset,Watermarked images are also removed from the dataset.
+image dataset,614 billion tokens,The Image dataset consists of 614 billion tokens
+image-text dataset,690 billion tokens,The Image-Text dataset is aligned with captions
+web-mined speech dataset,unlabeled data,The speech dataset contains only unlabeled long podcasts or news.
+speech data,preprocessing steps,Preprocessing steps are applied to improve data quality and remove music and sensitive speech.
+english-only speech,langid model,The LangID model is used to select English speech in the dataset.
+speech dataset,rich diversity,The Speech dataset offers a diverse range of styles and topics.
+asr and tts data,speech-text dataset,Data from Multilingual LibriSpeech and VoxPopuli is combined for the Speech-Text dataset.
+incoder data,code,The InCoder data is utilized for the code.
+simplified molecular input line entry system (smiles),molecules,SMILES representation is used for molecular data in the Zinc dataset.
+unified tokenization,mixed-modal generative models,Mixed-modal models employ a unified tokenization method.
+zinc dataset,chilingaryan et al. (2022),The Zinc dataset was prepared by Chilingaryan et al.
+vector quantized variational autoencoder (vqgan),tokenizer for image data,The VQGAN is used to tokenize image data into discrete tokens for processing.
+vqgan model,image tokens,The VQGAN compresses images into a grid of tokens
+encoder,image tokens,The encoder encodes each image token into a vector.
+online clustering,codebook,Online clustering maps vectors to the nearest codebook entry.
+vqgan variant,gafni et al. (2022),The variant of VQGAN is from Gafni et al.
+spatial reduction rate (x),patch size,The spatial reduction rate is the factor by which the context size is reduced.
+language model stage,visual tokenizer,The visual tokenizer must effectively represent images for optimal performance in the language model stage.
+image pretokenizers,appendix 8.3.1,Image pretokenizers are benchmarked in Appendix 8.3.1 for their effectiveness.
+speech,custom web-mined,Speech preprocessing involves a combination of custom web-mined resources.
+image pretokenizers,appendix 8.3.1.speech,The context discusses benchmarking image pretokenizers specifically in Appendix 8.3.1.Speech.
+custom web-mined speech data,unlabeled speech in public datasets,These are the sources of speech data used for the experiment.
+hidden-unit bert (hubert),self-supervised learning model,HuBERT is a type of SSL model
+hubert model,mask language model objective,The model is trained using a mask language model objective for predicting masked speech signals.
+hubert model,acoustic and language model,It combines an acoustic model with a language model for continuous speech inputs.
+k-means clustering,third iteration feature,Clustering is applied to the third iteration features to generate discrete HuBERT units.
+hubert units,codebook size of 2000,The clustering process results in a specific codebook size for effective representation.
+hubert model,120-fold reduction in sampling rate,The model reduces the sampling rate of speech inputs while preserving speech information.
+bpe model,image and speech tokens,A BPE model is trained to combine image and speech tokens into a single token format.
+bpe model,vocab size of 216,The model uses a vocabulary size of 216 after additional digit splitting.
+experiments,high cost,The experiments are expensive due to their computational requirements.
+aim experiment tracker,training procedures,The Aim experiment tracker is used for a model restart policy to ensure consistent training strategies. If perplexities don't decrease
+model restart policy,learning rate reduction,This policy involves reducing the learning rate by a factor of 0.8 when perplexities do not improve after 500 million tokens.
+768 80gb a100 gpus,experiment cluster,Experiments were conducted on a cluster of these GPUs
+two-month time frame,experiment duration,All experiments took place within this time period.
+scaling laws,uni-modal scaling laws,The study aims to discover scaling laws for individual modalities
+model sizes (8m to 6.7b),scaling factors,Seven different model sizes are trained across various modalities.
+three different dataset sizes (5b,10b,100b)
+figure 12 (appended),training curves,Contains training curves for all modalities and model sizes on the largest dataset (100B tokens).
+figure 1,final performance,Shows the final performance of all models across different modalities
+modality competition,synergy,These terms are related because the context discusses the phenomenon of 'modality competition' where two modalities perform worse together compared to individual models
+scaling laws,competition barrier,Scaling laws are used to determine when the model surpasses the 'competition barrier
+compute cost,optimization,The context involves optimizing the compute cost to find the optimal model size and token count that breaks the competition barrier
+zhang et al. (2022),30b parameterization,The 30B parameterization from Zhang et al.'s work is selected to test the theory
+350m,2.7b,and 30b models
+data regime,approximation error,The data regime is designed to cover any error in the approximation process.
+models (a,350m,2.7b
+models (a,350m,2.7b
+models (a,350m,2.7b
+scaling laws,prediction,Predictions from the scaling laws are made about further improvements.
+model crossing the competition barrier,synergy improvement,Further scaling is expected to enhance the synergy between modalities.
+phenomenon 1,intermittent coordinate ascent,During training
+sub-perplexity,flatness,Some modalities show a period of flatness in their training progress.
+mixed-modal generative models,scaling laws,The context discusses the development of a scaling law to understand the contributions and interaction between individual modalities in mixed-modal generative models.
+individual modalities,interaction between them,The scaling law reflects the combined effect of these modalities and their mutual influence during training.
+training dynamics,newly proposed scaling law,The research provides insights into the training process and phenomena explained by the interaction terms in the scaling law.
+empirical phenomena,training process,During training
+hyper-parameters,guidelines for selection,The study offers guidelines for choosing critical hyper-parameters based on the scaling law's insights.
+mixed-modal generative models,knowledge and understanding advancement,The research advances the overall knowledge of these unified models capable of handling multiple modalities.
+multiple modalities,simultaneous handling,The goal is to develop models that can process different modalities at the same time.
+gradient spikes,training stability,The plot in Figure 8 shows a relationship between the number of gradient spikes and the stability of the training run
+gradient norm spikes,βi,j

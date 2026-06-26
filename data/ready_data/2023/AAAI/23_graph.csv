@@ -1,0 +1,115 @@
+node_1,node_2,edge
+sharpness aware minimization (sam) algorithm,training landscape curvature,SAM is designed to control curvature for better generalization
+sharpness aware minimization (sam),tractable first-order method,SAM is an efficient alternative to gradient descent
+sam,modified loss function ˜l(θ),SAM operates on a modified loss function that penalizes sharpness by maximizing over a small perturbation δ.
+sharpness aware minimization (sam),large eigenvalues of the loss hessian,Controlling large eigenvalues helps improve optimization and generalization.
+sam,empirical evidence,The effectiveness of SAM is supported by empirical observations.
+sam,open question,Understanding the mechanisms behind SAM's success is an unresolved issue.
+sam,gradient descent on ˜l directly,SAM performs comparably or better to gradient descent on the modified loss
+sam,small batch sizes,SAM tends to work better with smaller batch sizes compared to larger ones.
+sam,optimization,SAM improves optimization processes.
+sam,generalization,Better optimization often leads to improved generalization performance.
+sam,small batch sizes,SAM often works better with small batch sizes
+deterministic gradient flow dynamics,sam,Small batch size in SAM induces non-trivial differences from deterministic gradient flow on the full batch objective.
+sam,finite step size curvature control,SAM's curvature-controlling properties are similar to those of first-order methods
+largest hessian eigenvalues,eos,For intermediate learning rates
+eos,sam,SAM displays modified EOS behavior
+sam,non-linear feedback,The EOS effect in SAM can be explained by a non-linear feedback between large eigenvalues and parameter changes.
+large eigenvalue stabilization,sam,Non-linear discrete dynamics in SAM cause stabilization of large eigenvalues differently than in gradient flow.
+quadratic regression model,linear regression model,The quadratic regression model extends the linear regression model to second order in the parameters.
+quadratic regression model,parameter vector θ,The model has a parameter vector θ
+p-dimensional parameter vector θ,d-dimensional output,The model's output f(θ) is determined by a linear component (G(cid:62)θ)
+sam (stochastic average momentum),full batch training,SAM is contrasted with full batch training
+sam-eos (stability edge of sam),largest eigenvalue,SAM induces a modified stability edge where the largest eigenvalues stabilize at a smaller value compared to pure gradient descent.
+sam,dynamical effects,SAM can stabilize large curvatures of the loss function through non-linear
+wideresnet 28-10 on cifar10,sam-eos prediction,The SAM-EOS accurately predicts the largest eigenvalue for this specific model.
+sam radius,ntk,SAM dynamics are controlled by the modified NTK (1 + ρJJ(cid:62))JJ(cid:62)
+modified ntk,effective ntk,The term 'modified NTK' refers to the same concept as 'effective NTK'
+ntk,eigenvalues,The dynamics of SAM influence the eigenvalues of the NTK
+quadratic regression model,full batch gradient descent,In the context of randomly initialized quadratic regression models
+unnormalized sam,first step of dynamics,The change in J is analyzed for the first step of unnormalized SAM training.
+σα (alpha-th singular value),j0 (initial jacobian),The theorem relates the change in the αth singular value of J0 to the dynamics of SAM.
+αth singular value,left and right singular vectors,The αth singular value is associated with left and right singular vectors wα and vα.
+σα,jjt (jacobian transpose),wα is an eigenvector of JJT with eigenvalue σ2α.
+change in the singular value,negative,On average
+change in the singular value,(wα · z0)2,The change depends linearly on the square of the dot product between wα and z0.
+sam (stochastic average momentum),regularizing effect,SAM causes stabilization
+sgd (stochastic gradient descent),stronger regularization,SGD shows stronger regularization compared to SAM
+quadratic regression model,sgd dynamics,A full analysis of SGD's effects in the quadratic regression model is mentioned.
+β (batch size),dependence on sgd,The effects of SAM have a strong dependence on batch size
+quadratic regression model,sgd dynamics,The context discusses SGD dynamics in the context of a quadratic regression model.
+sgd,random projection matrix p_t,In SGD
+random projection matrix p_t,b/d,P_t represents the random sampling with exactly B non-zero entries (diagonal) per step
+second-order regression model,gradient descent,The theorem refers to a second-order regression model
+ntk (neural tangent kernel),regularization,The text suggests that for small learning rates
+sam,large ntk eigenvalues,SAM's behavior with respect to regularization of large NTK eigenvalues is contrasted when compared to gradient descent with a small learning rate.
+displacement x,minimum (in parameter space),x is the difference from the minimum in parameter space.
+xt+1,xt,The dynamics describe the update: xt+1 = xt - ηHxt.
+h,positive semi-definite hessian,H is the Hessian matrix at the minimum x = 0
+largest eigenvalue of h,edge of stability (eos),The condition for exponential convergence: ηλmax < 2
+normalized eigenvalue,ηλmax,A measure of stability
+previous work,range of learning rates,These show that for some models
+full batch training,sgd training,The EOS effect is more robust in full batch training but can also appear in stochastic gradient descent (SGD).
+sam (sharpness-aware minimization),gd (gradient descent),SAM induces EOS stabilization at a smaller eigenvalue compared to GD.
+ntk (neural tangent kernel),eos behavior,For MSE loss
+sam,loss 1,An analysis of un-normalized SAM is done on a specific loss function.
+sam normalized eigenvalue,gd case,The SAM normalized eigenvalue is smaller than that in the GD case
+sam,eos (edge of stability),SAM can cause a stabilization at the EOS due to its flatter region of the loss compared to GD.
+sam ntk,gd ntk,SAM NTK has a larger eigenvalue for larger ρ
+c∞ model,mse loss,The theorem applies to a C∞ model trained using Equation 6 with MSE loss.
+θ∗,z(θ∗) = 0,θ∗ is a point where the gradient-based representation z(θ) equals zero.
+η,λi,The condition (cid:15) < ηλi(1 + ρλi) relates the learning rate η to the eigenvalues λi of the Jacobian matrix.
+quadratic regression model,sam,Experiments are conducted on the quadratic regression model to analyze the effects of SAM and observe its behavior.
+small learning rates,large eigenvalues of j(θ*)j(θ*),For small learning rates
+larger learning rates,sam,At larger learning rates
+modified eos boundary,η(λ_max + ρλ^2_max) = 2,This modified boundary suggests nonlinear stabilization of eigenvalues when SAM is applied at higher learning rates.
+progressive sharpening phenomenology,primary dynamics of large eigenvalues,The primary dynamics driving the change in large eigenvalues are influenced by the progressive sharpening effect studied in (Agarwala et al.
+stability condition,edge of stability,The stability condition refers to the point where a system becomes unstable
+normalized eigenvalue,modified eos,The normalized eigenvalue is a transformed version of the eigenvalue
+ratio r,dimensionless parameter,Ratio r is a key dimensionless parameter in the quadratic regression model
+hessian eigenvalue,ntk,The Hessian eigenvalue is compared to the Neural Tangent Kernel (NTK)
+lanczos method,approximate computation of λmax,The Lanczos method is employed to compute the largest eigenvalue (λmax) approximately.
+cifar-10,dataset,CIFAR-10 is a popular computer vision dataset used for benchmarking machine learning models
+wideresnet 28-10,architecture,The WideResnet 28-10 is a specific neural network architecture employed for experiments on the CIFAR-10 dataset.
+mse loss,cross-entropy loss,Both MSE (mean squared error) and cross-entropy losses are used for training
+cross-entropy loss,mean squared error (mse) loss,The context discusses replacing softmax with Tanh and rescaling labels for cross-entropy
+mean squared error (mse) loss,softmax non-linearity,In the MSE loss
+cross-entropy,learning rate schedule,The experiment uses a cosine learning rate schedule for both cross-entropy and MSE.
+cosine learning rate schedule,sgd (stochastic gradient descent),Both cross-entropy and MSE experiments employ SGD
+sam regularization,test error,The test error remains reasonable (4.4% for MSE
+maximum eigenvalue,normalized curvature,Both increase during training
+gradient descent (gd),edge of stability,The stability of GD is determined by the normalized curvature
+wideresnet paper,default hyper-parameters,All other hyper-parameters are kept to the defaults specified in the original paper.
+figure 4,results,The figure presents the comparison of the discussed phenomena across different approaches.
+learning rate,0,learning rate is reduced to 0
+results,figure 4,results are averaged over 10 seeds for visual clarity
+sgd,gradient descent edge of stability,SAM controls eigenvalues below GD's stability boundary
+sam radius,largest eigenvalue,as SAM radius increases
+sam radius,sam-eos,altering SAM radius moves between GD-EOS and SAM-EOS
+eigenvalue,critical value of 2,SAM-normalized eigenvalues stay close to or above 2
+sam,modified eos stabilization,SAM's effect on large eigenvalues includes modified EOS stabilization
+sam schedule,early sam,model trained with early SAM for 2500 steps before switching to SGD
+sam schedule,late sam,model trained with late SAM for 2500 steps
+sam-normalized value,critical value of 2,The SAM-normalized value approaches the critical value of 2 during the intermediate part of training
+sam,cross-entropy loss,Both SAM and cross-entropy loss exhibit similar behavior
+mini-batch gradient magnitude,eigenvalues,The mini-batch gradient magnitude and eigenvalues vary more for networks with cross-entropy loss
+mini-batch gradient magnitude,sgd,For SGD
+mini-batch gradient magnitude,sam (normalized),SAM shows more stable gradient magnitudes
+sam,generalization,Previous work has shown that the generalization performance of both SAM variants is similar.
+sharpness dynamics near minima,insufficiency,The sharpness dynamics near minima are insufficient for certain aspects
+eos (end of simulation),optimization dynamics,The relationship between EOS and optimization dynamics is that EOS effects become harder to understand when multiple eigenvalues are close to it
+sam (stochastic average momentum),largest eigenvalues,SAM can cause largest eigenvalues to decrease even without it
+optimization trajectories,long-term dynamics,In the context of evolutionary dynamics
+cross-entropy loss,additional complications,For non-squared losses like cross-entropy
+minima,learning,Contrast is drawn between understanding learning by focusing on minima and the importance of analyzing optimization dynamics at early or intermediate times.
+cross-entropy,non-squared losses,These terms are contrasted
+eos dynamics,general conditions,The focus is on providing a detailed quantitative characterization of the EOS dynamics under these broader
+sam (stochastic average momentum),sgd (stochastic gradient descent),Both SAM and SGD are mentioned as subjects of analysis
+lee & jang (2023),alternative formulation of the eos for sgd,This refers to a separate approach that gives consistent results with experiments
+ep[(z · vi)2],quadratic loss function,The analysis of EP[(z · vi)2] is specifically mentioned for a quadratic loss
+cifar10 models,sgd gradient magnitude,The SGD gradient magnitude's stability over training is observed in the CIFAR10 models.
+sgd gradient statistics,understanding sam,Understanding the statistics of the SGD gradient is crucial for interpreting the interaction between SAM and SGD.
+sam algorithm,improvements in practice,Potential improvements to the SAM algorithm are suggested as a result of more detailed analysis.
+ρ-schedules,active research field,ρ-schedules are a topic of ongoing research that could benefit from a more detailed theoretical understanding.
+optimization,training dynamics,These two concepts are linked
+namics,generalization,Namics is related to generalization as it is mentioned as a focus or objective in the context of further research into SAM and optimization methods.

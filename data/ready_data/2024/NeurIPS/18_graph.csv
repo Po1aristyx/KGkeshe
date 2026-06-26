@@ -1,0 +1,197 @@
+node_1,node_2,edge
+mendelian randomization (mr),causal effects,Mendelian randomization (MR) is a method for estimating the causal effect of a risk factor on disease outcomes in observational studies.
+mendelian randomization (mr),observational data,Mendelian randomization (MR) is used to estimate causal effects from observational data.
+mendelian randomization (mr),bi-directional mr,The paper discusses the problem of estimating causal effects in the bi-directional Mendelian randomization.
+causal effects,observational data,Causal effects are estimated from observational data.
+cluster fusion-like method,valid iv sets,A cluster fusion-like method is developed to discover valid instrumental variable (IV) sets for estimating causal effects.
+modifiable risk factor,disease,modifiable risk factor (treatment) on disease (outcome) in observational studies
+modifiable risk factor,clinic,modifiable risk factor used in clinic contexts
+modifiable risk factor,socioeconomics,modifiable risk factor used in socioeconomics contexts
+modifiable risk factor,drug targets,modifiable risk factor used in drug targets contexts
+one-directional causal relationship,bi-directional relationships,existing MR methods assume one-directional causal relationships but bi-directional relationships are common in real-life scenarios
+obesity,vitamin d status,example of bi-directional relationships - obesity and vitamin D status
+body mass index (bmi),type 2 diabetes (t2d),example of bi-directional relationships - BMI and T2D
+mr,instrumental variables (ivs) analysis,MR can be implemented as IVs analysis where genetic variants serve as IVs
+obesity,vitamin d status,obesity as treatment and Vitamin D status as outcome in MR analysis
+obesity,genetic variants g,obesity being explored through genetic variants G in MR analysis
+genetic variants,exposure x,The genetic variants G are associated with the exposure X; [Relevance] as per the assumptions in the context.
+genetic variants,outcome y,The genetic variants G have no direct pathway to the outcome Y; [Exclusion Restriction] as per the assumptions in the context.
+genetic variants,unmeasured confounders u,The genetic variants G are uncorrelated with unmeasured confounders U; [Randomness] as per the assumptions in the context.
+genetic variant g,causal relationship x → y,G is a valid IV relative to the causal relationship X → Y; illustrated in Figure 1 in the context.
+genetic variants,risk factor x,"In most MR studies, the genetic variants may include some invalid IVs due to horizontal pleiotropy, where some genetic variants may have pleiotropic effects on both the treatment X and the outcome Y via different biological pathways; as per the context."
+x,outcome y,"X and the outcome Y are mentioned together as the primary focus of the context, indicating a direct relationship."
+genetic variants,valid ivs,"Valid IVs need to be chosen based on genetic variants, indicating a relationship between the two terms."
+valid ivs,mr study,"Selecting valid IVs becomes the major issue in the MR study, indicating a relationship between the two terms."
+ivs,effect of x on y,"An invalid IV may cause biased estimation of the effect of X on Y, indicating a relationship between the two terms."
+genetic variants,observed variables,"It is desirable to investigate ways of selecting genetic variants as valid IVs solely from observed variables, indicating a relationship between the two terms."
+genetic variants,pleiotropic effects on the outcome y,"The first strategy assumes the InSIDE assumption, stating genetic variants' pleiotropic effects on the outcome Y are uncorrelated with their effects on the exposure X, indicating a relationship between the two terms."
+candidate ivs,valid ivs,"The second strategy is based on the Majority rule assumption, which assumes that over 50% of the candidate IVs are valid, indicating a relationship between the two terms."
+plurality rule assumption,number of valid ivs,The Plurality rule assumption assumes that the number of valid instrumental variables (IVs) is larger than any number of invalid IVs with the same ratio estimator limit.
+two-valid ivs assumption,rank-faithfulness assumption,"The Two-Valid IVs assumption requires that the number of valid IVs is greater than or equal to 2, and the Rank-faithfulness assumption states that the probability distribution P is rank-faithful to a directed acyclic graph G."
+darrous et al. [2021],latent heritable confounder mr method,Darrous et al. proposed a latent heritable confounder MR method to estimate bi-directional causal effects with a hierarchical prior on the true parameters.
+li and ye [2022],focusing framework,Li and Ye introduced a focusing framework to test bi-directional causal effects under the noise distribution of the effect estimates assumption.
+bi-directional mr model,identifiability,The paper aims to investigate the identifiability of the bi-directional MR model and provide an estimation method for it.
+bi-directional mr model,causal effects,"The paper presents sufficient and necessary conditions for the identifiability of the bi-directional MR model, allowing for the correct identification of valid IV sets and causal effects of interests."
+bi-directional mr model,unbiased estimation,"The paper proposes a cluster fusion-like algorithm for unbiased estimation in the bi-directional MR model, which determines valid IVs, causal directions, and estimates causal effects."
+algorithm,mr models,The proposed algorithm demonstrates efficacy in MR models through extensive experiments.
+mr models,independent samples,"In the context of Bi-Directional MR Causal Models, the paper considers n independent samples (Xi, Yi, Gi) from the distribution of (X, Y, G) where X and Y are phenotypes of interest and G represents genetic variants."
+mr models,linear function,"In the Bi-Directional MR Causal Models, for each sample indexed by i, the phenotype Xi is taken as a linear function of the phenotype Yi."
+phenotype xi,phenotype yi,Xi is taken as a linear function of Yi
+phenotype xi,genetic variants gi,Xi is taken as a linear function of Gi
+phenotype xi,error term εxi,Xi is taken as a linear function of εXi
+phenotype yi,phenotype xi,Yi is modeled as a linear function of Xi
+phenotype yi,genetic variants gi,Yi is modeled as a linear function of Gi
+phenotype yi,error term εyi,Yi is modeled as a linear function of εYi
+genetic variants gi,phenotype xi,direct effects of genetic variants on Xi
+genetic variants gi,phenotype yi,direct effects of genetic variants on Yi
+genetic variants gi,error term εx,error terms that are correlated due to unmeasured confounders
+genetic variants gi,error term εy,error terms that are correlated due to unmeasured confounders
+genetic variants gi,genetic variant gi,Genetic variant Gi with both direct pathways to Xi and Yi
+genetic variant gi,outcome,direct pathway from Genetic variant Gi to the outcome
+genetic variants gi,genetic variants in g,independence between any two genetic variants in G
+genetic variants gi,unmeasured confounders,genetic variants causing unmeasured confounders
+phenotype xi,phemotype yi,Assumption A2 [Exclusion Restriction] is violated
+genetic variants in g,genetic variants in g,genetic variants are randomized
+genetic variants in g,unmeasured confounders,partially violating Assumption A3 [Randomness]
+phenotype xi,g⊺γx,Y = (G⊺γX + G
+y,genetic variant g,Y = (G⊺γX + G
+eq.(1),recursive formulations,Eq.(1) can be reorganized to avoid recursive formulations as follows
+y,g,"Y = (G⊺γX + G γX βX→Y + G γY βY →X + εX + εY βY →X )∆, γY + εX βX→Y + εY )∆"
+iv estimator,causal effects βx→y and βy →x,"If βX→Y βY →X = 1, the causal effects βX→Y and βY →X are not identiﬁable, even in the presence of a valid IV."
+goal,bi-directional mr model in eq.(1),"In this paper, we aim to address whether the bi-directional MR model in Eq.(1) is identiﬁable; that is, whether we can estimate the causal effects βX→Y and βY →X given inﬁnite data, even without prior knowledge about which candidate IVs are valid or invalid."
+iv estimator,two-stage least squares (tsls) estimator,"In this section, we brieﬂy describe the classical IV estimator, the two-stage least squares (TSLS) estimator, which is capable of consistently estimating the causal effects βX→Y and βY →X of interest in the above bi-directional MR causal model of Eq.(1) when the valid IVs are known"
+proposition 1 (two stage least square (tsls) estimator),linear bi-directional causal model,"Assume the system is a linear bi-directional causal model 1. For a given causal relationship X → Y in the system, the causal effect of X on Y can be identiﬁed"
+causal relationship x → y,causal effect of x on y,the causal effect of X on Y can be identified byand GY →XII.
+tsls estimator,causal effect,"When utilizing the TSLS estimator, the causal effect is biased if the candidate set G includes invalid IVs."
+x,y,"In the causal relationship X → Y, given an invalid IV set GX→Y is the projection matrix, the causal effect of X on Y is determined."
+x,y,"For causal relationship Y → X, one can also have the corresponding causal effect of Y on X given the set of IVs."
+"iv sets (g1, g3, g2, g4, g5)",causal relationship x → y,"In a motivating example, there are 2 valid IVs (G1, G3) and 3 invalid IVs (G2, G4, G5) relative to the causal relationship X → Y."
+causal relationship x → y,inverse relationship y → x,"For the inverse Y → X, identical conclusions can be derived."
+x and y,eq.(1),"The generating process of X and Y follows Eq.(1), according to the given example."
+x,y,"Follows Eq.(1) with specific parameters such as mean, variance, and coefficients"
+x,g1,"Has a relationship with X in the equation X = Y βY →X +G1γX,1+G2γX,2+G3γX,3+G4γX,4+ G5γX,5 + εX"
+y,g2,"Has a relationship with Y in the equation Y = XβX→Y + G2γY,2 + G4γY,4 + G5γY,5 + εY"
+g1,g2,Illustrative example showing valid and invalid IV sets inducing distinct constraints
+g1,g3,Correlation coefficients involving G1 in Observation 1
+y,x,Correlation coefficients mentioned in Observation 2
+g4,g5,Relationship in invalid IV sets causing non-zero correlation coefficients in Observation 2
+pseudo-residual,genetic variants,"A pseudo-residual is defined as Y - XωG, where ωG = TSLS(X, Y, G). This 'pseudo-residual' is applied to measure the uncorrelated relationship with some genetic variants."
+pseudo-residual,genetic variants,The uncorrelated property involving such pseudo-residuals reflects the validity of the IVs in the bi-directional MR causal model.
+concepts,pseudo-residual,"Concepts related to 'pseudo-residual' have been developed to address different tasks, but our formalization is different from theirs in terms of the parameter ωG."
+variable,valid iv,"Within the framework of linear models, a variable being a valid IV imposes no constraints on the joint marginal distribution of the observed variables."
+valid iv,causal relationship,"For a given causal relationship, if the relationship exists, there exists a valid IV Set according to Assumption 1."
+invalid iv sets,proposition 2,"The invalid IV sets are identified using Proposition 2, where the condition corr(PR(X,Y"
+proposition 2,valid iv sets,"Unfortunately, Assumption 1, while being an insufficient condition for identifying valid IV sets, does not cover all the valid IV sets as raised in the question."
+assumption 1,valid iv sets,"Assumption 1 is shown to be insufficient for identifying sets of valid IVs, as demonstrated in Example 2 where it fails to identify all the valid IV sets."
+valid and invalid iv sets,constraints in eq.(5) of proposition 2,"The example in Figure 3 shows that both valid and invalid IV sets can induce the same constraints in Eq.(5) of Proposition 2, demonstrating the limitation of using these constraints alone to determine the validity of IV sets."
+"{g1, g2}",invalid iv set,"In the case of {G1, G2}, it is determined to be an invalid IV set based on the conditions of Proposition 2, despite the equal proportions of effects of G1 and G2 on X and Y."
+x,y,"The proportion of the effects of G2 on X and Y is equal to γX,1γY,2 = γY,1γX,2."
+assumption 1,iv sets,One cannot identify valid IV sets under only Assumption 1.
+assumption 2,mr causal model,Generic Identifiability is introduced as Assumption 2 for a given MR causal model where parameters γ and β live in a set of non-zero Lebesgue measure.
+assumption 2,g/gj,"For a subset of candidate genetic variants G, there exists a Gj in G such that the correlation between conditional probability of X and Y given G\Gj and Gj is 0."
+assumption 2,gi,Assumption 2 specifically implies a condition where covariances between Gi and X are non-zero.
+assumption 2,set of conditions,Assumption 2 is generally satisfied because the set of conditions to violate it occupies a very small portion of the entire space.
+assumption 2,sufficient conditions,"With Assumption 2, we derive sufficient conditions for generic identifiability."
+proposition 3,identifying valid iv sets,Proposition 3 (Identifying Valid IV Sets) provides conditions for identifying a subset of valid instrumental variables for causal relationships.
+g,genetic variants,"G = {G1, . . . , Gp}, p ≥ 2 be a subset of candidate genetic variants G."
+g,valid iv set,"If each Gj ∈ G satisfies or G ⊆ GY →XV, then G is a proper valid IV set for one of the causal relationships, i.e., G ⊆ GX→YV."
+valid iv sets,direction,The estimated valid IV sets need conditions to determine the direction of causal relationship X → Y or Y → X.
+assumption 3,bi-directional mr model,Assumption 3 provides conditions for unique identifiability of valid IVs in a bi-directional MR model.
+ivs,bi-directional model,IVs are essential for the bi-directional model to function effectively as mentioned in the context
+ivs,mr models,IVs play a crucial role in MR models according to the context
+mr models,xue and pan [2020],"Xue and Pan [2020] discuss MR models, establishing a relationship between MR models and the authors"
+xue and pan [2020],pages 4∼5,Pages 4∼5 in Xue and Pan [2020] provide additional details related to the content
+proposition 4,identifying direction of causal inﬂuences,"Proposition 4 discusses the identification of the direction of causal influences, explaining the relationship between the two terms"
+iv set,causal relationship,IV set G is associated with determining the causal relationship between X and Y in the context
+directional orientation,iv sets,"The direction of the identified IV sets can be ascertained, indicating a relationship between the terms"
+theorem 1,identiﬁability of bi-directional mr model,"Theorem 1 establishes the identifiability of the bi-directional MR model, providing necessary conditions and outcomes"
+algorithm,pre-bim,"Algorithm PRe-BiM is proposed for estimating causal effects in the context, defining a relationship between the two terms"
+bim,pseudo-residual-based bi-directional mr,BiM is a method for estimating causal effects and Pseudo-Residual-based Bi-directional MR is specifically mentioned in the context as part of the algorithm
+step i,step ii,Step I and Step II are mentioned as the two key steps in the algorithm
+algorithm,valid iv sets,The algorithm is designed to find valid IV sets as part of the key steps
+propositions 2,proposition 3,Propositions 2 and 3 distinguish between invalid and valid IV sets
+cluster fusion-like method,valid iv sets,A cluster fusion-like method is used to discover valid IV sets
+genetic variants,parameter w,The parameter W represents the maximum number of instrumental variables (IVs) to consider in the collection of genetic variants. It aims to minimize the need for IV validity testing.
+iv validity testing,pearson correlation test,The Pearson Correlation Test using the Fisher transformation denoted by PCT is used to check for the valid IV test as per Eq.(10) in the algorithm execution process.
+genetic variants,measured genetic variants g,"The dataset of measured genetic variants G = (G1, ..., Gg)⊺ is used as input for the algorithm, along with other key parameters."
+v,v′,"If the combined set {V ∪ V′} passes the PCT, merge them; otherwise, discard V′"
+v,v′new,"If V is empty, add V′new"
+v,ivs,Stop the iteration when V contains two sets of IVs or when there is one or fewer genetic variants left in Gnew to V
+iv sets,x and y,Inferring causal direction and estimating the causal effects given the identified valid IV sets
+x and y,ˆβx→y and ˆβy →x,Calculate the final causal effects ˆβX→Y and ˆβY →X by TSLS(·)
+valid iv set v,proposition 4.4.3,Infer the causal direction corresponding to the valid IV set V based on Proposition 4.4.3
+x ↔ y,ˆβx→y and ˆβy →x,"Show that, in the large sample limit, the causal effects obtained through the proposed method are unbiased"
+prebim algorithm,ˆβx→y and ˆβy →x,Output the true causal effects correctly
+valid iv set vnew,length 2,The complexity of forming a valid IV set Vnew of length 2 is O
+prebim algorithm,computational complexity analysis,Complexity analysis provided for PReBiM algorithm
+computational complexity analysis,vnew,"Vnew is expanded to the length W, and the complexity of this expansion is O"
+computational complexity analysis,iv set,The maximum length of the IV set must satisfy the condition t ≤ g-4
+w,iv set,The length of W determines the complexity of finding the IV set
+iv set,g,The number of IV sets is related to the value of g
+iv set,cluster,"A cluster is considered a valid IV set, and the term ""fusion-like"" refers to the process of identifying and merging these clusters"
+genetic variants,iv set,A valid IV set can be identified based on the independence of genetic variants in G
+genetic variants,dependent,The applicability of Propositions 2 and 3 is explored based on the dependence of genetic variants in G
+propagation results,genetic variants,"The correlation between PR(X,Y"
+pr,"x,y,g2","PR is correlated with X, Y, and G2 in the context"
+pr,g1,PR is correlated with G1 in the context
+"{g1, g2}",iv set,"The pair {G1, G2} is identified as a valid IV set in the context"
+genetic variants,phenotype,There is mention of confounding between genetic variants and a phenotype in the context
+phenotype,"x, y",The phenotype causes X and Y in the context
+prebim method,"naive, mr-egger, sisvive algorithm, iv-tetrad algorithm, tsht algorithm","PReBiM method is compared against NAIVE, MR-Egger, sisVIVE algorithm, IV-TETRAD algorithm, TSHT algorithm in the context"
+confounders,source code,There is a relationship between unmeasured confounders and the source code as the source code is used to address the confounders in the research.
+genetic variants,single nucleotide polymorphisms (snps),Genetic variants are modeled as Single Nucleotide Polymorphisms (SNPs) in the experimental setup.
+minor allele frequency (maf j),binomial distribution,"The minor allele frequency (maf j) is drawn from a uniform distribution, which is modeled using a Binomial distribution."
+causal effects (βy →x and βx→y),uniform distribution,"The causal effects (βY →X and βX→Y) are generated from a uniform distribution between [-1, -0.5] ∪ [0.5, 1] in the data generation process."
+"error terms (ε1, ε2, ε3)",independent normal distribution,"The error terms (ε1, ε2, ε3) follow an independent normal distribution with mean 0 and unit variance."
+directional model,one directional model,The one directional model can be obtained by setting βY →X = 0 in the data generation process for the bi-directional model.
+experiments,tasks,Experiments were conducted with the following tasks as mentioned in the context.
+one directional model,obtained,The one directional model can be obtained.
+experiments,tasks,We conducted experiments with the following tasks.
+sisvive algorithm,implementations,"For sisVIVE algorithm, we used the implementations in the R sisVIVE package."
+iv-tetrad method,implementations,"For IV-TETRAD method, we used the implementations in the R package."
+tsht algorithm,implementations,"For the TSHT algorithm, we used the implementations in the R RobustIV package."
+sensitivity to sample size,impact,"We evaluated the impact of different sample sizes: n = 2k, 5k, and 10k, where k equals 1,000."
+number of valid ivs,explored,"We explored three distinct IV combination scenarios: S(2, 2, 6), S(3, 3, 8), and S(4, 4, 10)."
+bi-directional mr model,data,"For a comprehensive analysis, we examined the data from the Bi-directional MR model."
+one-directional mr model,data,"For a comprehensive analysis, we examined the data from the One-directional MR model."
+evaluation metrics,results,We adopted the following evaluation metrics to evaluate the results of all methods.
+evaluation metrics,ivs,Evaluation metrics are used to evaluate the results of all methods related to the identification of valid IVs.
+correct-selecting rate (csr),genetic variants,CSR measures the correct identification of valid IVs among the total number of genetic variants.
+mean squared error (mse),estimated causal effect,MSE quantifies the squared difference between the estimated causal effect and the true causal effect.
+algorithm,experimental settings,The algorithm is tested under various experimental settings to validate its effectiveness and practicality.
+experiment,scenarios,"Different scenarios are included in the experiment, such as small sample sizes and varying numbers of valid IVs."
+bi-directional mr data,methods,"Six methods are evaluated on bi-directional MR data, considering both directions X → Y and Y → X."
+prebim method,results,"The proposed PReBiM method outperforms other methods in all scenarios and sample sizes, indicating its effectiveness in identifying valid results."
+iv,valid ivs,IVs can be considered valid in the context of identifying causal effects from observational data
+iv,instrumental variables,IVs are used to estimate causal effects in bi-directional MR models
+iv,unobserved confounding,The estimated causal effect can be biased if unobserved confounding is not considered
+iv,instrumental variables,MR-Egger performance is affected by the instrumental variables used
+ivs,naive method,"MSE of the NAIVE method tends to stay non-zero, indicating bias in causal effect estimation when unobserved confounding is not considered"
+ivs,mr-egger,The performance of MR-Egger is affected by the IVs used in estimation
+ivs,bi-directional mr models,Performance comparison of various methods in estimating bi-directional MR models
+ivs,one-directional mr model,Evaluation of methods on one-directional MR data
+mr model,causal direction x → y,Evaluation of methods when the causal direction X → Y is known
+mr model,causal effect,MR models are used to estimate causal effects
+metrics csr,metrics mse,"Metrics CSR and MSE are compared for all methods in a one-directional MR model with different scenarios. As the sample size increases, the metrics approach the expected value. Our method and IV-TETRAD method require fewer valid IVs compared to sisVIVE algorithm and TSHT algorithm."
+our method,iv-tetrad algorithm,Our method is comparable to the IV-TETRAD algorithm in terms of results and both require fewer valid IVs in the system.
+our method,iv-tetrad method,"Under scenario S(2, 0, 6), the metrics CSR and MSE outperform our method because IV-TETRAD method requires a predetermined number of IV sets to be specified in advance."
+sisvive,iv-tetrad,"Performance comparison of sisVIVE, IV-TETRAD, TSHT, and PReBiM in estimating one-directional MR models"
+vimaleswaran et al.,gwas data,The bi-directional causal relationships between obesity and vitamin D status are analyzed using the GWAS data from Vimaleswaran et al. [2013]
+gwas data,snps,The data used comprises 16 related SNPs as candidate IVs
+obesity,vitamin d status,Analyzing the bi-directional causal relationships between obesity and vitamin D status
+fto,faim2,FTO and FAIM2 serve as valid IVs for the X → Y
+dhcr7,cyp24a1,DHCR7 and CYP24A1 are valid IVs for the Y → X
+institutions,economic development,Analyzing the causal effect of institutions on economic development
+institutions,economic development,The causal effect of institutions on economic development is analyzed using the method applied.
+colonial origins dataset,"acemoglu et al., 2001","The dataset used for analysis is the Colonial Origins dataset from Acemoglu et al., 2001."
+ivs,"absolute latitude, density of european settlements, level of democracy, constitutional constraints, timing of industrialization, democracy in 2000, constitutional constraints in 2000, log-transformed european settler mortality rates","The data includes eight candidate IVs: absolute latitude, density of European settlements... etc."
+euro1900,logem4,"euro1900 and logem4 are identified as valid IVs, with an estimated causal effect of 0.861."
+bi-directional mr model,observational data,Investigation of identifiability conditions for the bi-directional MR model is done using purely observational data.
+linear bi-directional mr model,nonlinear data,"The future research will generalize to address nonlinear or even more complex data, expanding from the linear bi-directional MR model."
+feng xie,national natural science foundation of china,Feng Xie acknowledges the support by the National Natural Science Foundation of China (62306019).
+feng xie,beijing technology and business university,Feng Xie acknowledges the support by the funding from the Disciplinary funding of Beijing Technology and Business University.
+yan zeng,beijing municipal education commission science and technology program general project,Yan Zeng acknowledges the support of the Beijing Municipal Education Commission Science and Technology Program General Project (KM202410011016).
+feng xie,beijing municipal education commission,"Feng Xie acknowledges the support by the funding from the Disciplinary funding of Beijing Technology and Business University, the Beijing Municipal Education Commission for the Emerging Interdisciplinary Platform for Digital Business at Beijing Technology and Business University."
+feng xie,beijing key laboratory of applied statistics and digital regulation,"Feng Xie acknowledges the support by the funding from the Disciplinary funding of Beijing Technology and Business University, the Beijing Key Laboratory of Applied Statistics and Digital Regulation."
+zhen yao,beijing technology and business university,Zhen Yao acknowledges the support of the Graduate Research Ability Enhancement Program Project Funding at Beijing Technology and Business University in 2024.
+anonymous reviewers,paper,The constructive comments from all anonymous reviewers greatly helped to improve this paper.

@@ -1,0 +1,238 @@
+node_1,node_2,edge
+ares,synthetic dataset,ARES is a synthetic dataset developed for benchmarking with paired egocentric videos and human motion.
+ares,egoego model,The EgoEgo model performs significantly better on both ARES and real data compared to state-of-the-art methods.
+egoego model,human motion,The EgoEgo model is used to estimate full-body human motions from egocentric video for diverse scenarios.
+egocentric video,full-body human motions,Modeling the relationship between egocentric videos and full-body human motions is challenging due to understanding motion from the first-person perspective.
+3d human motion,egocentric video,Estimating 3D human motion from an egocentric video is critical for applications in VR/AR.
+egoego model,head motion,The EgoEgo model uses head motion as an intermediate representation to estimate full-body human motions.
+data acquisition,dataset,"Meticulous instrumentation for data acquisition is needed to create a large-scale, diverse dataset containing paired egocentric videos and 3D human poses."
+motion,intermediate representation,Motion is used as an intermediate representation to decompose the problem into two stages
+motion,full-body motion,Head motion estimation is used as an excellent feature for full-body motion estimation
+head motion,full-body motion,Head motion is used as a feature for full-body motion estimation
+head motion,estimation,Head motion estimation is required for full-body motion estimation
+input egocentric video,head motion estimation,Head motion estimation is performed from the input egocentric video
+egocentric video,full-body motion,Head motion estimation is used as a feature for full-body motion estimation
+head motion,feature,Head motion is used as a feature for full-body motion estimation
+method,decomposition,The decomposition of the method removes the need to learn from paired egocentric videos and human poses
+method,learning,"The method enables learning from a combination of large-scale, single-modality datasets"
+head pose,localization,Estimating the head pose from an egocentric video resembles the localization problem
+monocular slam methods,head motion estimation,Directly applying monocular SLAM methods yields unsatisfactory results for head motion estimation
+solution,hybrid,The proposed hybrid solution leverages SLAM and learned transformer-based models
+model,head motion estimation,Transformer-based models are used to achieve more accurate head motion estimation
+full-body motion,diffusion model,The full-body motion is generated based on a diffusion model conditioned on the predicted head pose
+method,evaluation,"To evaluate the method and train other baselines, a large-scale evaluation is performed"
+baselines,training,Baselines are trained to evaluate the method
+method,train,The method is used to train other baselines.
+method,synthetic dataset,The method is used to build a large-scale synthetic dataset.
+synthetic dataset,paired egocentric videos,The synthetic dataset consists of paired egocentric videos.
+synthetic dataset,3d human motions,The synthetic dataset consists of 3D human motions.
+method,proposes,The method proposes EgoEgo paradigm for motion estimation.
+egoego,decouple,EgoEgo paradigm decouples the problem of motion estimation into two stages.
+method,develop,The method develops a hybrid approach for ego-head pose estimation.
+method,contribute,The method contributes a large-scale synthetic dataset.
+method,outperforms,The method outperforms the baselines by a large margin.
+approaches,benchmark,Different approaches are benchmarked using the synthetic dataset.
+approaches,showcase,Different approaches are showcased using the synthetic dataset.
+joint positions,images and videos,Joint positions are regressed directly from images and videos.
+parametric human body model,body model parameters,The parametric human body model is used to estimate body model parameters from images or videos.
+learned motion prior,"jitters, lack of global trajectory, missing joints or frames","Learned motion prior is applied to address issues like jitters, lack of global trajectory, and missing joints or frames."
+physical constraints,motion estimation from videos,Physical constraints are enforced in motion estimation from videos.
+body joints,egocentric video,Body joints are mostly not visible in an egocentric video.
+head pose,visual information of how the environment changes,Head pose is used as an intermediate representation to bridge the egocentric video and full-body motions using visual information of how the environment changes.
+motion estimation,egocentric video,Growing attention is received in pose estimation from egocentric videos.
+fisheye camera,full body pose,Special hardware like the fisheye camera is deployed to predict full body pose from captured images.
+images captured with fisheye camera,distortion of images,"Body joints are visible in images captured with a fisheye camera, but the distortion of images poses a significant challenge."
+standard camera,human chest,Jiang et al. deploy a standard camera to a human chest and propose an implicit motion graph.
+jiang et al.,standard camera,Jiang et al. deploy a standard camera in their approach for predicting full body motions.
+jiang et al.,human chest,Jiang et al. deploy a standard camera to a human chest in their approach for predicting full body motions.
+jiang et al.,implicit motion graph,Jiang et al. propose an implicit motion graph matching approach in their work.
+you2me,second-person,You2Me predicts full body motions by observing the interaction pose of the second-person in the camera view.
+egopose,head-mounted camera,EgoPose develops a Deep-RL framework to estimate and forecast physically plausible motions from a head-mounted camera.
+egopose,deep-rl framework,EgoPose develops a Deep-RL framework to estimate and forecast physically plausible motions.
+kinpoly,kinematics and dynamics,Kinpoly integrates kinematics and dynamics to predict physically plausible motions interacting with known objects.
+kinpoly,known objects,Kinpoly predicts physically plausible motions interacting with known objects.
+framework,generalized scenes,The work aims to establish a more generalized and robust framework to infer full-body motions in more generalized scenes.
+framework,egocentric video,The work aims to establish a framework to infer full-body motions from egocentric video only.
+approach,mocap data,An approach of synthesizing egocentric video corresponding to mocap data is introduced for quantitative evaluation.
+work,sparse sensor input,Some work explored reconstructing human motions from sparse sensor input instead of estimating motion from videos.
+transpose,imu sensors,TransPose predicts full body motions from 6 IMU sensors.
+pip,follow-up work,PIP is a follow-up work that further explores predicting full body motions from sparse sensor input.
+imu sensors,head,IMU sensors include sensors on head
+imu sensors,torso,IMU sensors include sensors on torso
+imu sensors,left arm,IMU sensors include sensors on left arm
+imu sensors,right arm,IMU sensors include sensors on right arm
+imu sensors,left lower leg,IMU sensors include sensors on left lower leg
+imu sensors,right lower leg,IMU sensors include sensors on right lower leg
+pd controller,kinematic estimator,PD controller is applied on top of the kinematic estimator to introduce physics constraints during reconstruction
+tip,sensor setting,TIP follows the same sensor setting
+tip,transformer-based model,TIP deploys a transformer-based model to leverage IMU sequential information effectively
+lobstr,tracker information,LoBSTr investigates fewer sensors and presents an RNN-based model using tracker information from 4 joints
+lobstr,joints,LoBSTr uses tracker information from 4 joints
+lobstr,rnn-based model,LoBSTr presents an RNN-based model to infer lower-body motions from past upper-body joint signals
+recent advances,input constraints,Recent advances relax the input constraints to head and hand signals only
+egoego,3d human motion,EgoEgo estimates 3D human motion from a monocular egocentric video sequence
+head motion,egocentric video,Head motion is estimated from egocentric video
+head motion,full body motion,Full body motion is estimated from head motion
+video dataset,head motion,"The video dataset includes head motion but no full body motion, representing a relationship between the two concepts in the dataset"
+3d human motion dataset,egocentric videos,"The 3D human motion dataset does not include egocentric videos, indicating a relationship between the two types of datasets"
+full body motion,x,"Full body motion is denoted as X in the context, showing a representation of full body motion"
+egocentric images,i,"Egocentric images captured from a front-facing, head-mounted camera are denoted as I in the context"
+head motion,intermediate representation,Head motion serves as an intermediate representation bridging between egocentric video input and human motions output
+head motion,head pose estimation,"Head motion is used in head pose estimation from egocentric video, indicating a relationship between head motion and the estimation process"
+egocentric video,camera localization problem,"Estimating head motion from egocentric video is viewed as a camera localization problem, suggesting a relationship between the video and the problem"
+monocular slam,head pose estimation,"Monocular SLAM method is observed to have issues when applied to head pose estimation, showing a relationship between the method and the estimation process"
+gravity direction,head pose,"The gravity direction of the estimated head pose is unknown, impacting how it can be used in the full-body motion estimator"
+translation,real world distance,"The estimated translation by monocular SLAM is not accurately scaled compared to distances in the real world, affecting the accuracy of the translation"
+monocular slam,head rotation estimation,"Monocular SLAM method tends to be less accurate in estimating relative head rotation than translation, highlighting the difference in accuracy for different types of estimates"
+hybrid method,slam and learned models,"A hybrid method is proposed that combines SLAM and learned models to achieve more accuracy, showing a relationship between the method and the models"
+gravity direction estimation,gravitynet,"GravityNet is introduced to predict gravity direction, represented by a unit vector, from a sequence of head poses."
+gravity direction estimation,head poses,The gravity direction estimation involves a sequence of head poses input that consists of various components like head translation and rotation.
+gravitynet,mlp,The output of the transformer in GravityNet is fed to an MLP to predict the gravity direction.
+gravitynet,l1 loss,L1 loss for the gravity vector is used during training in GravityNet.
+gravitynet,rotation matrix rg,"Based on the prediction of GravityNet, rotation matrix Rg is computed to align the prediction and the correct gravity direction."
+gravitynet,slam translation,Rotation matrix Rg is applied to the SLAM translation to align it with the predicted gravity direction.
+head pose estimation,headnet,HeadNet is proposed for head pose estimation.
+headnet,head pose estimation,HeadNet is a model proposed for predicting head rotations and distance in the context of head pose estimation.
+resnet-18,optical flow features,ResNet-18 is used to extract optical flow features in the context of the model architecture.
+gravitynet,model architecture,GravityNet is deployed using the same model architecture as HeadNet.
+monocular slam,head pose estimation,monocular SLAM is integrated with GravityNet and HeadNet for predicting head pose.
+predicted head pose,conditional diffusion model,The predicted head pose is input to a conditional diffusion model to generate full-body pose.
+head orientation,predicted head angular velocity,The predicted head angular velocity is used to estimate subsequent head orientations.
+training loss,headnet,"The training loss of HeadNet includes L1 loss for translation distance, angular velocity, and rotation loss."
+rotation loss,predicted rotation,"Rotation loss is calculated using the predicted rotation matrix, ground truth rotation matrix, and the identity matrix."
+full-body pose estimation,head pose estimation,Full-Body Pose Estimation is based on the head pose estimation approach.
+denoising network,model architecture,The denoising network is part of the model architecture.
+full-body pose estimation,head pose,"The process of estimating full-body pose from head pose involves using a denoising network to predict translation differences and angular velocities. It is mentioned that different full-body motions may have the same head pose, leading to a formulation using a conditional generative model."
+headnet,"d1, ..., dt","HeadNet is used to predict the vector norm of the translation difference between consecutive time steps denoted as d1, ..., dT in the 3D world where humans move."
+camera translation trajectory p,ds,"For each camera translation sequence produced by monocular SLAM, the distance ds is calculated as the mean value of the sequence of distances."
+head pose,conditional generative model,The task of predicting full-body pose from head pose is formulated using a conditional generative model to account for different full-body motions having the same head pose.
+diffusion model,full-body poses,"A diffusion model is deployed to generate full-body poses conditioned on head poses, following the success of diffusion models in image generation."
+denoising diffusion probabilistic model (ddpm),full-body poses,The formulation proposed in DDPM is used to generate full-body poses conditioned on head poses in the context of predicting full-body poses from head poses.
+head pose,formulation,The formulation proposed in the denoising diffusion probabilistic model (DDPM) has been used for motion generation tasks.
+head pose,diffusion model,The diffusion model is used to generate full-body motion conditioned on the head pose.
+data representation,diffusion model,Data representation is introduced before detailing the conditional diffusion model formulation.
+body pose,global joint position,A body pose consists of the global joint position.
+body pose,global joint rotations,A body pose consists of the global joint rotations.
+smpl model,number of joints,The SMPL model which is adopted has 22 joints.
+diffusion model,forward diffusion process,Diffusion models include a forward diffusion process that adds Gaussian noise to the original data.
+diffusion model,reverse diffusion process,Diffusion models also consist of a reverse diffusion process.
+n steps,variance schedule,The variance schedule decides each step in the diffusion process.
+full-body motion,head pose,Full-body motion is conditioned on the head pose.
+head pose,body pose,"The full-body motion is conditioned on the head pose, and the body pose is involved in the generation of the motion."
+diffusion process,reverse process,"The reverse process is needed to generate full-body motion conditioned on the head pose, which can be approximated as a Markov chain."
+neural network parameters,head conditions,The neural network parameters represent the learned mean for the head conditions in the Markov chain.
+training loss,reconstruction loss,"The training loss is defined as the reconstruction loss of the original data, aiming at learning to predict the original data."
+denoising step,transformer model,"In the denoising step, the head pose condition and body pose representation are concatenated and fed into a transformer model to estimate x0."
+paired training data,synthetic data generation,"Although the method does not require paired training data, a way to automatically synthesize a large-scale dataset is developed for benchmarking purposes."
+egocentric videos,human motions,The synthetic data generation involves generating a dataset with egocentric videos and ground truth human motions from motion capture and 3D scene datasets.
+amass,replica,AMASS and Replica are large-scale motion capture and 3D scene datasets respectively.
+replica,sdf,The scene mesh from Replica is converted to signed distance field (SDF) for penetration calculation.
+sub-sequence,replica,Each sequence from AMASS is divided into sub-sequences based on the semantic annotations provided by Replica.
+pose,penetration loss,"Penetration loss, following Wang et al., is calculated for each pose in a sequence."
+threshold,poses,Threshold of 2 is set and only poses with penetration loss less than the threshold are kept.
+human mesh,mt,Human mesh at time t is represented by parameterized human model.
+signed distance,penetration loss,Signed distance of vertex i is used to calculate penetration loss.
+3d scenes,penetration,3D scene penetration provides camera pose trajectories for rendering synthetic egocentric videos.
+ai habitat,embodied agent research,AI Habitat is a platform for embodied agent research.
+head pose,images,Head pose trajectories are fed to the platform to synthesize realistic images in an egocentric view.
+frames,scenes,"1,664,616 frames are generated in 18 scenes with a frame rate of 30 fps."
+synthetic dataset,amass-replica-ego-syn (ares),Synthetic dataset named AMASS-Replica-Ego-Syn (ARES) is created and examples are shown in Figure 4.
+amass-replica-ego-syn (ares),synthetic dataset,"The synthetic dataset AMASS-Replica-Ego-Syn (ARES) is specifically mentioned in the context, indicating a relationship between them."
+ares,egocentric videos,"The synthetic dataset ARES contains synthetic egocentric videos, showing a clear relationship between the two terms."
+ares,ground truth motions,"The synthetic dataset ARES also contains ground truth motions, indicating a direct relationship between the dataset and the motions."
+ares,15 hours of motion,"The synthetic dataset ARES contains about 15 hours of motion across 18 scenes, showing a quantifiable relationship between the terms."
+ares,"34,850 frames","The testing dataset of ARES contains 34,850 frames from 5 unseen scenes, indicating a specific number of frames related to the dataset."
+amass,large-scale motion capture dataset,"AMASS is described as a large-scale motion capture dataset in the context, showing a direct relationship between the two terms."
+kinpoly-mocap,egocentric videos,"Kinpoly-MoCap consists of egocentric videos captured using a head-mounted camera, directly relating the dataset to the videos."
+kinpoly-mocap,3d motions,"Kinpoly-MoCap also contains corresponding 3D motions captured with motion capture devices, showing a relationship between the videos and motions."
+kinpoly-realworld,iphone arkit,"Kinpoly-RealWorld provides paired egocentric videos and head poses captured using iPhone ARKit, indicating a relationship between the dataset and the technology."
+kinpoly-mocap,kinpoly-realworld,Kinpoly-MoCap captured in a lab scene and Kinpoly-RealWorld provides in-the-wild egocentric videos
+gimo,egocentric video,"GIMO consists of egocentric video, eye gaze, 3D motions, and scanned 3D scenes"
+gimo,3d scenes,"GIMO consists of egocentric video, eye gaze, 3D motions, and scanned 3D scenes"
+ares,ares dataset,Illustration of our ARES Dataset
+ares,synthetic egocentric images,Ego-View represents the synthetic egocentric images using our proposed data generation pipeline
+kinpoly-of,kinpoly-mocap,"Full-body motion estimation from egocentric video on ARES, Kinpoly-MoCap, and GIMO"
+gimo,kinpoly-mocap,"Full-body motion estimation from egocentric video on ARES, Kinpoly-MoCap, and GIMO"
+hololens,iphone 12,Hololens and iPhone 12 used to study motion prediction tasks guided by eye gaze
+iphone 12,imu-based motion capture suits,iPhone 12 and IMU-based motion capture suits used to study motion prediction tasks guided by eye gaze
+imu-based motion capture suits,motion prediction tasks,IMU-based motion capture suits used to study motion prediction tasks guided by eye gaze
+ohead,thead,Head Orientation Error (Ohead) and Head Translation Error (Thead) used as evaluation metrics
+euclidean distance,head joint translation errors,Euclidean distance is used to measure the head joint translation errors in millimeters.
+mpjpe,mean per-joint position errors,MPJPE represents mean per-joint position errors measured in millimeters.
+accel,difference of acceleration,Accel represents the difference of acceleration between predicted joint positions and ground truth joint positions measured in millimeters per second squared.
+fs,foot skating metric,FS represents foot skating metric computed following NeMF by accumulating horizontal translation values for steps with a height lower than a specified threshold H.
+body pose estimation,egocentric video training data,Body Pose Estimation from Egocentric Video Training Data involves training HeadNet using paired egocentric videos and head poses from various datasets.
+gravitynet,conditional diffusion model,GravityNet and the conditional diffusion model are both trained on AMASS.
+baselines,"posereg, kinpoly",Baselines include PoseReg and Kinpoly compared to the approach presented in the context.
+posereg,lstm model,PoseReg uses an LSTM model to predict pose state at each time step using optical flow features as input.
+optical flow features,lstm model,The LSTM model uses optical flow features as input to predict the pose state at each time step.
+pose state,root translation,"The pose state includes root translation, root orientation, joint rotations, and corresponding velocities."
+pose state,root orientation,"The pose state includes root translation, root orientation, joint rotations, and corresponding velocities."
+pose state,joint rotations,"The pose state includes root translation, root orientation, joint rotations, and corresponding velocities."
+pose state,root linear velocity,"The pose state includes root translation, root orientation, joint rotations, and corresponding velocities."
+pose state,angular velocities of all the joints,"The pose state includes root translation, root orientation, joint rotations, and corresponding velocities."
+kinpoly-of,per-step regression model,Kinpoly-OF proposes a per-step regression model to estimate full body motion from optical flow features.
+egoego,baseline methods posereg,"EgoEgo is compared with PoseReg as baseline methods on ARES, Kinpoly-MoCap, and GIMO datasets, outperforming them."
+egoego,kinpoly-of,EgoEgo is compared with Kinpoly-OF as a baseline method and outperforms it on all three datasets.
+egoego,generated motions,EgoEgo shows improved results in generating motions compared to baselines by preserving root trajectories and generating more dynamic and realistic motions.
+head pose estimation,hybrid approach,Head Pose Estimation is compared with DROID-SLAM prediction results as a hybrid approach.
+gravitynet,amass training split,GravityNet is trained on the AMASS training split for the hybrid approach.
+gravitynet,slam,GravityNet is trained on AMASS training split for head pose estimation with SLAM
+headnet,ares,HeadNet is trained on ARES for head pose estimation
+headnet,kinpoly-realworld,HeadNet is trained on Kinpoly-RealWorld for head pose estimation
+headnet,gimo,HeadNet is separately trained on GIMO for evaluation of different datasets
+qualitative results,egocentric videos,Qualitative results comparisons are shown for two egocentric videos from different scenes
+head pose estimation,datasets,Head pose estimation is evaluated on three datasets shown in Table 2
+kinpoly-realworld,head rotation prediction,Kinpoly-RealWorld contains 20 minutes of training videos impacting head rotation prediction
+gimo,head rotation prediction,GIMO contains 30 minutes of training videos impacting head rotation prediction
+hybrid approach,headnet,Hybrid approach combines accurate rotation prediction from HeadNet for more accurate head pose estimation results
+hybrid approach,gravity-aligned slam,Hybrid approach produces more accurate head pose estimation results by combining rotation prediction from HeadNet and gravity-aligned SLAM results
+body pose estimation,head pose,Conditional diffusion model for full-body pose estimation uses head pose as input
+avatar-poser,full body motion,Avatar-Poser takes head and hand pose as input to predict full body motion
+kinpoly-head,full body pose estimation,Kinpoly-Head is compared for full-body pose estimation
+gravitynet,oursohead,GravityNet is mentioned with OursOhead for context
+slam,droid-slam,SLAM compared with DROID-SLAM for context
+kinpoly-mocap,ohead,Kinpoly-MoCap is related to Ohead for context
+head pose,hand pose,Input to predict full body motion involves both head and hand poses
+head pose,full body motion,Head pose is used as input to predict full body motion
+hand pose,full body motion,Hand pose is used as input to predict full body motion
+droid-slam,head pose,DROID-SLAM involves head pose estimation
+kinpoly-mocap,head pose,Kinpoly-MoCap involves head pose estimation
+kinpoly-head,head pose,Kinpoly-Head model only takes head pose as input
+amaas,full body motion estimation,Baselines and our method are trained on AMASS data for full body motion estimation
+methodfsareskinpoly-mocapgimoohead thead mpjpe accel,full body motion estimation,Comparison of different methods for full body motion estimation
+avatarposer,full body motion estimation,AvatarPoser model is used for full body motion estimation
+diffusion model,full body motion estimation,Our Diffusion Model is used for full body motion estimation
+slam+s+g,head pose,Ablation study for head pose estimation components includes SLAM+S+G
+full model,head pose,Ablation study for head pose estimation components includes Full model
+s,head pose,HeadNet predicts the scale for head pose estimation
+g,head pose,GravityNet predicts the gravity for head pose estimation
+head pose,component,Head pose estimation involves studying the effects of each component in improving head translation results.
+rotation,gravity direction,Rotation is required for aligning gravity direction in head pose estimation.
+rotation,scale,Rotation and learned scale are both effective in improving head translation results.
+full-body pose estimation,head pose,Full-body pose estimation results can be improved by using predicted head poses.
+full-body pose estimation,ground truth head pose,Ground truth head poses significantly improve the full-body pose estimation results.
+predicted head pose,full-body pose estimation,Developing methods to predict more accurate head pose can further improve full-body pose estimation.
+human perceptual study,full-body motion,Two human perceptual studies evaluate the quality of predicted full-body motion from egocentric video and ground truth head poses.
+full-body motion,egocentric video,The quality of predicted full-body motion from egocentric video is evaluated in one of the human perceptual studies.
+full-body motion,ground truth head pose,The quality of predicted full-body motion from ground truth head poses is evaluated in one of the human perceptual studies.
+motions,sources,Motions can be from four sources.
+questions,study,60 questions for each study.
+question,workers,Each question was answered by 20 Amazon Mechanical Turk workers.
+results,workers,Results are preferred by 98% and 69% of workers.
+results,baselines,Results are preferred by workers when compared to the baselines.
+results,ground truth,34% of the responses prefer results compared with the ground truth.
+output,ground truth,People cannot easily distinguish output from ground truth motions.
+results,baselines,Results are preferred by 88% and 79% of workers when compared to the baselines.
+framework,full-body motions,Presented a generalized framework to estimate full-body motions from egocentric video.
+problem,stages,Decomposed the problem into two stages.
+head pose,egocentric video,Predicted the head pose from an egocentric video.
+output,head poses,Developed a hybrid solution to produce more accurate head poses.
+diffusion model,full-body motions,Proposed a conditional diffusion model to generate diverse high-quality full-body motions from predicted head poses.
+conditional diffusion model,generate diverse high-quality full-body motions,The conditional diffusion model is proposed to generate diverse high-quality full-body motions from predicted head poses.
+methods,large-scale dataset,Different methods are benchmarked in a large-scale dataset.
+data generation pipeline,synthesize large-scale dataset,A data generation pipeline is proposed to synthesize a large-scale dataset with paired egocentric videos and 3D human motions.
+results,synthetic dataset,Superior results are showcased on both the synthetic and the real-captured dataset compared to prior work.
+zhengfei kuang,visualizations,Acknowledgement for the help with visualizations from Zhengfei Kuang.
+jonathan tseng,discussions,Acknowledgement for discussions about the diffusion model from Jonathan Tseng.
+onr muri n00014-22-1-2740,support,"This work is in part supported by ONR MURI N00014-22-1-2740, NSF CCRI 2120095, Toyota Research Institute (TRI), the Stanford Institute for Human-Centered AI (HAI), Innopeak, Meta, and Samsung."

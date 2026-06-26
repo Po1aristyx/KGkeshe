@@ -1,0 +1,164 @@
+node_1,node_2,edge
+human shape recovery,monocular rgb image,The task is about accurately recovering human shape from a single color image.
+shapeboost,human shape recovery framework,ShapeBoost is a proposed solution for this challenging task.
+pixel-level alignment,shapeboost,ShapeBoost aims to achieve precise pixel-level alignment
+pca-based shape coefficients,previous approaches,Previous methods relied on PCA for shape representation
+bone lengths,new human shape parameterization,ShapeBoost parameterizes human shape with bone lengths and part slice mean widths.
+part-based parameterization technique,balance between flexibility and validity,This technique provides a balance by using a semi-analytical reconstruction algorithm.
+clothing-preserving data augmentation module,shapeboost,The module helps generate diverse body shapes and accurate annotations while preserving clothing.
+state-of-the-art methods,experimental results,ShapeBoost outperforms existing methods in handling diverse body shapes and clothing conditions.
+human pose estimation,application,High accuracy in human pose estimation is a foundation for applications like VR
+human pose estimation,human shape estimation,The context mentions that Li et al.'s methods excel at human pose estimation but struggle with human shape estimation
+overfitting issue,diverse body shapes,The lack of diverse image datasets contributes to the overfitting problem on body shape estimation.
+first kind of methods,synthetic data,These methods use synthetic data to reduce the domain gap
+first kind of methods,proxy representations,Proxy representations are used to address the domain gap
+second kind of methods,weak supervision,Shape cues are exploited as weak supervision
+synthetic images,unnatural,unrealistic texture and clothing
+2d clues (segmentations,silhouettes),human pose and clothing
+inaccurate proxy representations,thick garments,occlusions
+human pose,inaccurate pose estimation,relation: causes or issue
+thick clothing,wrong guidance of human shape,relation: also causes
+real-world images of extreme shapes,insufficient for training,relation: limitation
+shapy (choutas et al. 2022),uses linguistic attributes and body measurements,relation: method
+shapy (choutas et al. 2022),poor performance on extreme body shapes,relation: limitation
+first kind of methods,failure on occlusion or thick clothing,relation: scope
+second kind of methods,failure on extreme body shapes,relation: scope
+shape-boost,novel part-based shape parameterization,relation: introduced by
+bone lengths,calculated from human keypoints,relation: derived from
+part widths,regressed by neural network,relation: learned during training
+pca coefficients,original shape parameters,relation: comparison
+pca coefficients,part-based parameterization,The new parameterization is derived from PCA coefficients
+shapeboost,image-shape pairs,During training
+human body segmentation,image transformation,A clothing-preserving augmentation method involves segmenting the human body
+appearance consistency heatmap,human segmentation,The heatmap guides the process of pasting the transformed human segmentation back onto the image
+previous sota methods for human shape estimation,shapeboost,ShapeBoost improves upon previous state-of-the-art methods that struggle with thick clothes and extreme body shapes
+shapeboost,realistic images,ShapeBoost generates realistic images with diverse human shapes in natural clothing and accurate annotations.
+ex-,accurate description,The new parameterization provides an accurate description of human shapes.
+parameterized human model,optimization,Estimation methods for the parameterized human model involve optimizing parameters.
+parameterized human model,regression-based methods,Regression-based methods use neural networks to estimate parameters
+optimization,regression-based methods,Some approaches combine optimization and regression for parameter estimation.
+model-free methods,direct prediction,Model-free methods bypass the need for a parameterized model by predicting free-form representations of the human body.
+human pose estimation,human shape estimation,Model-free methods primarily focus on pose estimation
+inverse kinematics,human pose estimation,Our work uses inverse kinematics to estimate human pose within the model-based category.
+inverse kinematics,human pose estimation,The context discusses using inverse kinematics to estimate the human pose
+hybrik (li et al. 2021),inverse kinematics,HybrIK serves as a reference method for the approach being described
+flexible and interpretable parameterization,shape reconstruction pipeline,These are components used together to achieve more accurate and robust shape estimation
+3d body shape estimation,pose estimation,The context differentiates between pose estimation
+novel training datasets,accurate human body shape under clothing,Some methods target improving body shape estimation specifically for situations where clothing affects the shape
+training datasets for human shape estimation,2d human datasets (lin et al. 2014),These datasets are mentioned as sources for accurate annotations
+3d human datasets (von marcard et al. 2018; ionescu et al. 2013),training datasets,These are examples of commonly-used datasets for 3D human shape estimation
+shapeboost framework,image augmentation module,The ShapeBoost framework is composed of multiple modules
+shapeboost framework,shape parameter,The framework retrieves a final mesh based on the pose and shape parameter
+proxy representations (prs),part segmentation masks,Varol et al. (2017) used part segmentation masks as an example of PRs.
+part segmentation masks,silhouettes,Sengupta
+canny edge detection results,part segmentation masks,Sengupta
+2d keypoint heatmaps,part segmentation masks,Similar to part segmentation masks
+real-world data,2d shape cues,Dwivedi et al. (2021) and Omran et al. (2018) used real-world data with 2D shape cues for training.
+body-part segmentation masks,silhouettes,Both Dwivedi et al. (2021) and Omran et al. (2018) employed body-part segmentation masks and silhouettes.
+lvd (corona et al. 2022),image-aligned features,LVD learns vertex descent direction based on aligned image features.
+shapy (choutas et al. 2022),linguistic attributes,SHAPY uses linguistic attributes and body measurements as supervision.
+smpl model,human shape recovery,Our method addresses human shape recovery using the SMPL model.
+our method,diverse human body shapes,Our method generates diverse shapes without altering clothing
+our method,small domain gap,The diversity generated by our method has a small domain gap.
+our parameterization,ambiguity in thick clothing,Our parameterization reduces ambiguity even with thick clothing.
+our method,pose estimation accuracy,It maintains accuracy even when pose estimation is imprecise.
+smpl model,human body pose and shape representation,SMPL model is used to represent human body pose and shape
+pose parameters (θ),relative rotation of body joints,Pose parameters θ determine the relative rotation of joints in the SMPL model.
+shape parameters (β),pca body shape basis coefficients,Shape parameters β control the body shape
+rest-pose mesh (t),constructed using s(β),The rest-pose mesh is generated first
+target pose,driven by function p(θ,s(β))
+current methods,regression of shape parameters (β),Many existing methods directly predict shape parameters but may struggle with generalizing to diverse body shapes due to dataset limitations.
+diverse body shapes,lack in training datasets,The overfitting issue arises because current datasets don't have enough variety in body shapes.
+shapeboost,new human shape recovery framework,ShapeBoost is designed in Section 3.3 as an alternative approach to address these challenges.
+sec. 3.3,shapeboost framework introduction,This section introduces the framework
+part segmentation,definition of bone length,The figure illustrates the part segmentation first
+bone length,vertex width,Both bone length and vertex width are defined in the context
+part-based parameterization,smpl representation,The proposed parameterization is an alternative to the SMPL's global descriptor
+our parameterization,local image features,The network learns from local image features
+smpl mesh,24 segments,The SMPL mesh is divided into 24 segments based on linear blending weights.
+central bone,joints,Each segment has a central bone with two joints at its ends.
+vertices,mean widths,Widths are represented by the mean widths of vertices in n slices along the bone.
+slicing technique,smpl model formula,The technique converts the SMPL model formula to use bone lengths and mean widths.
+smpl model,t,T represents the model with bone lengths (l) and mean widths (w).
+smpl model,v,V represents the vertices of the model
+silhouette-based augmentation method,instaboost (fang et al. 2019),The proposed method is inspired by Instaboost
+human body segmentation,ground truth segmentation,The method involves segmenting the human body using the ground truth data to guide the augmentation process.
+affine transformation,rotation matrix,The transformation includes a rotation matrix
+affine transformation,scaling matrix,The transformation also has a scaling matrix
+appearance consistency heatmap,fang et al. (2019),The method uses the appearance consistency heatmap from Fang et al.'s work to ensure seamless pasting of the transformed body.
+image transformation,background stretching,By inpainting and transforming the segmented body
+part-based parameterization,pca-based shape parameters,With part-based parameterization
+bone lengths,2d joint projection,Bone lengths are adjusted post-transformation to maintain consistent 2D projection.
+camera parameters,pose parameters,Both camera and pose parameters are essential for calculating the transformed body's appearance.
+bone lengths,part slice widths,The transformation affects the derivation of part slice widths
+vertices,part j,Each vertex indexed by k belongs to a specific part
+distance on the 2d image plane (w2dk),transformation,The distance is affected by the transformation through scaling factors a and b.
+bone lengths (l2dk),scaling factors (a,b)
+3d part width (wj),2d projected width (wj),The 3D part width is scaled by the same factor as the 2D width after transformation.
+scale factor of orthogonal projection (s),scale factor after transformation (¯s),Due to scale ambiguity
+predicted part slice widths,supervision,During training
+cnn backbone,3d keypoints,The CNN backbone is used to process the augmented image and estimate the skeleton
+cnn backbone,twist angles,The CNN backbone also estimates twist angles along with 3D keypoints.
+cnn backbone,part slice widths,The backbone predicts part slice widths
+pose parameters,inverse kinematics,Pose parameters are obtained using inverse kinematics
+shape parameters,semi-analytical algorithm,Shape parameters are retrieved using a semi-analytical algorithm discussed in Section 3.2.
+pose parameters,final mesh,The final mesh is generated based on the pose and refined shape parameters.
+shape reconstruction module,mlp,An MLP is used in the shape reconstruction module
+shape-decompose loss,shape reconstruction module,The MLP in the shape reconstruction module is supervised by this loss
+data augmentation,cnn backbone,The CNN backbone is supervised by both shape and pose losses
+human mesh model,vertices,The context mentions that the human mesh model consists of K vertices.
+part slice widths,bone lengths,Both part slice widths and bone lengths are important features being preserved by the shape decomposition loss.
+cnn backbone,part slice widths and bone lengths,The CNN backbone predicts part slice widths and bone lengths which are then refined by the MLP in the shape reconstruction module.
+pose loss,predicted skeleton and twist angle,Pose loss supervises the prediction of the skeleton and twist angle
+shape-decompose loss,valid human mesh,This loss ensures the shape reconstruction module generates a valid human mesh.
+lbone,bone length,Lbone loss focuses on the preservation of bone lengths.
+lwidth,part slice widths,Lwidth loss addresses the preservation of part slice widths.
+lreg,˜β parameter,Lreg is a regularization term for the ˜β parameter in the shape reconstruction process.
+overall loss,lpose,ldecomp
+3dpw,training dataset,3DPW is one of the datasets used for training the model.
+human3.6m,training dataset,Human3.6M is another dataset used for training.
+coco,training dataset,COCO is also used as a training dataset.
+agora,training dataset,AGORA is a training dataset for the model.
+model agency dataset,training dataset,Model Agency Dataset contributes to the training set.
+agora,model agency dataset,The original Model Agency Dataset is used for training
+model agency dataset,94,620 images
+model agency dataset,4,419 models
+hmr,method,HMR (Kanazawa et al. 2018) is one of the methods mentioned.
+spin,method,SPIN (Kolotouros et al. 2019) is another method.
+sengupta et al. 2020,method,SHAPY (Sengupta et al. 2020) and SHAPY (Sengupta et al. 2021b) are methods.
+hybrik,method,HybrIK (Li et al. 2021) is a method.
+lvd,method,LVD (Corona et al. 2022) is a method.
+cliff,method,CLIFF (Li et al. 2022b) is a method.
+shapy,method,SHAPY (Choutas et al. 2022) and SHAPY (Sengupta et al. 2021a) are methods.
+shapeboost,method,ShapeBoost (Ours) is a method.
+ssp-3d test set,evaluation,Our model is evaluated on the SSP-3D test set.
+hbw dataset,evaluation,Performance is also tested on the HBW dataset.
+synthetic data,training assistance,Synthetic data is used to assist network training.
+rendering settings,identical to,The rendering settings match those of Sengupta
+unavailability of many images,data sampling reason,Due to unavailability
+previous work (choutas et al. 2022),sampling strategy,Image sampling follows the approach in Choutas et al. (2022) to avoid data bias.
+sengupta et al. 2020,sengupta et al. 2021a,These two papers are sequential references
+shapeboost (smpl),shapeboost (smpl-x),Both methods are variants
+69w hc p2p20k,49table 3,This could be a reference to a table comparing performance metrics
+hbw test set,hbw validation set,These are different evaluation sets used for benchmarking the methods.
+ma et al. 2023,sengupta et al. 2021a∗,Comparable methods
+previous methods,our method,Our method is compared to prior ones
+ssp-3d dataset,hbw validation set,Ablation studies conducted on these datasets showcase the effectiveness of different components.
+human shape parameterization,bone lengths,These are components used in shape reconstruction
+bone lengths,part slice widths,Both contribute to reconstructing body shapes under varying conditions.
+amass dataset,gaussian distributions,Data used for training
+hybrid algorithm,analytical algorithm,Different reconstruction approaches employed in the study.
+hybrid algorithm,nn algorithm,Comparison of hybrid approach with a neural network-based solution.
+human shape recovery,shapeboost,ShapeBoost is a new framework for accurate human shape recovery.
+shapeboost,state-of-the-art methods,ShapeBoost outperforms the current state-of-the-art methods.
+parameterization,novel parameterization,The paper uses a novel parameterization with n = 1 and n = 2.
+data augmentation,effectiveness,Data augmentation is found to be effective
+image augmentation,training,Image augmentation is employed during the training process.
+cnn backbone,accuracy,Using larger n in the parameterization reduces the accuracy of the CNN backbone.
+shape reconstruction error,small,The parameterization with n = 1 achieves a small shape reconstruction error.
+part slicing widths,predicting,The model predicts part slicing widths with a CNN backbone.
+hbw dataset,ssp-3d dataset,Experiments are conducted on both HBW and SSP-3D datasets.
+tab. 5,shape estimation from rgb images,Tab. 5 shows ablation experiments for shape estimation.
+tab. 6,data augmentation module,Tab. 6 presents the impact of the data augmentation module on performance.
+pve-t-sc,p2p20k,Performance metrics are provided for PVE-T-SC and P2P20K.
+conclusion,human shape recovery accuracy,The paper concludes with improved human shape recovery accuracy.

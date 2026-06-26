@@ -1,0 +1,259 @@
+node_1,node_2,edge
+fine-grained sketch-based image retrieval (fg-sbir),baseline,The paper presents a strong baseline for FG-SBIR that surpasses previous state-of-the-arts by approximately 11%.
+fine-grained sketch-based image retrieval (fg-sbir),triplet loss,The paper addresses issues with the gold standard triplet loss in the FG-SBIR context.
+triplet loss,model training,"A modification to the standard triplet loss is proposed to enforce separation amongst photo/sketch instances, improving model training."
+knowledge distillation module,photo data,A novel knowledge distillation module is introduced to leverage photo data for model training in FG-SBIR.
+knowledge distillation module,model training,The knowledge distillation module contributes to model training in the FG-SBIR context.
+intra-modal triplet loss,sketches,An intra-modal triplet loss is employed among sketches to bring sketches of the same instance closer.
+intra-modal triplet loss,photos,Another intra-modal triplet loss is used among photos to push away different photo instances while bringing closer a structurally augmented version of the same photo.
+pre-train a teacher,unlabelled photos,A teacher model is pre-trained on a large set of unlabelled photos using the intra-modal photo triplet loss.
+contextual similarity,teacher’s embedding space,The contextual similarity present in the teacher’s embedding space is distilled to the student’s embedding space for improved training.
+embedding space,student's embedding space,The distribution over inter-feature distances of respective samples in both embedding spaces is matched to achieve a further gain of ≈4-5%.
+embedding space,teacher's embedding space,The distribution over inter-feature distances of respective samples in both embedding spaces is matched to achieve a further gain of ≈4-5%.
+embedding space,distribution,The distribution over inter-feature distances of respective samples in both embedding spaces is matched to achieve a further gain of ≈4-5%.
+student's embedding space,distribution,The distribution over inter-feature distances of respective samples in both embedding spaces is matched to achieve a further gain of ≈4-5%.
+teacher's embedding space,distribution,The distribution over inter-feature distances of respective samples in both embedding spaces is matched to achieve a further gain of ≈4-5%.
+model,prior arts,The model outperforms prior arts significantly.
+model,new classes,The model yields satisfactory results on generalising to new classes.
+fg-sbir,sketch-based image retrieval,Fine-grained sketch-based image retrieval (FG-SBIR) emphasizes fully utilizing the faithful nature of sketches to conduct instance-level retrieval.
+fg-sbir,category-level retrieval task,"Sketch has long been established as a worthy query modality complementary to text, conceived as a category-level retrieval task."
+fg-sbir,photos,Photos are used to enrich the latent space of FG-SBIR models by distilling instance-wise discriminative knowledge of a teacher pre-trained on unlabelled photos.
+models,cross-modal triplet objective,Existing FG-SBIR models work around a cross-modal triplet objective to learn a discriminative embedding to conduct retrieval.
+sketch,photo,The general intuition is to make a sketch sit closer to its paired photo while pushing away non-matching ones.
+sketch,photo,"Sketch is paired with photo, and a sketch should sit closer to its paired photo while pushing away non-matching ones."
+triplet setup,separation,"Conventional triplet setup does not enforce sufficient separation amongst different photos or sketch instances, largely due to the failure of the conventional objective to retain the holistic latent space geometry."
+triplet objective,learning,Utilizing an intra-modal triplet objective along with the regular cross-modal triplet objective is important for learning within-triplet feature separation.
+morphological operations,visual attributes,"The best morphological operations are those that operate on visual attributes bearing relevance with information exclusive to sketches, such as shape."
+sketch data scarcity,performance gain,"One of the pressing problems is the scarcity of sketch data, which hinders extra performance gain."
+photo,pseudo sketch synthesis,"Instead of going for the more explicit route of photo to pseudo sketch synthesis, leveraging unlabelled photos is recommended."
+unlabelled photos,knowledge distillation setup,The knowledge distillation setup involves training a model on unlabelled photos only via an intra-modal triplet loss.
+knowledge distillation setup,fg-sbir model,The knowledge distillation setup distills instance-wise discriminative knowledge to a FG-SBIR model.
+cross-modal problem,instance-wise separation,"In a cross-modal problem like ours, it is essential to preserve the instance-wise separation amongst photos and sketches."
+photos,sketches,Contextual similarity needs to be preserved between instances and their nearest neighbors amongst photos and sketches.
+student,knowledge distillation setup,The student model distills contextual similarity from the pre-trained teacher photo model in the knowledge distillation setup.
+vision transformers,reshape operation,"Unlike other vision transformers like ViT, PVT employs a reshape operation to re-shape the resultant individual patch tokens at one level back to the feature map for input to the next level."
+feature map,input,The feature map is used as input to the next level.
+token,distillation token,The distillation token is used only during input to the transformer layer at each level.
+token,reshaping operation,The modified token is set aside before the reshaping operation.
+residual connection,modified token,A residual connection connects the modified token as input to the transformer layer at the next level.
+distillation token,pyramidal structure of pvt,Engaging the distillation token at every level helps it imbibe the inductive bias modelled by the pyramidal structure of PVT.
+triplet loss training,standard triplet loss training,"There is a widespread problem with standard triplet loss training as training is highly unstable, reflected in oscillating evaluation accuracies."
+stabilising gan training,exponential moving average,Inspiration is taken from literature on stabilising GAN training on Exponential Moving Average.
+model parameters,moving average,A moving average on model parameters is employed iteratively with a higher priority to recent iterations over earlier ones.
+baseline,fg-sbir,A strong baseline for FG-SBIR is proposed.
+designs,key problem,"Two simple designs are put forward, each tackling a key problem facing the community: inadequate latent space separation, and sketch data scarcity."
+triplet loss,standard triplet loss,A simple modification is introduced to the standard triplet loss.
+photos,sketch,The standard triplet loss modification enforces separation amongst photo/sketch instances.
+knowledge distillation token,pvt,The knowledge distillation token in PVT facilitates better knowledge distillation in training from unlabelled data.
+model,prior arts,The model surpasses prior arts significantly and shows encouraging results on generalising to new classes without paired sketches.
+fg-sbir,deep triplet-ranking based siamese network,FG-SBIR aims at retrieving one particular photo using a gallery of specific-category with a deep triplet-ranking based siamese network.
+fg-sbir,attention-based modules,FG-SBIR has progressively improved via attention-based modules.
+fg-sbir,hierarchical co-attention,FG-SBIR has progressively improved via hierarchical co-attention.
+triplet ranking loss,sketch,The triplet ranking loss aims to bring a sketch closer to its paired photo while distancing it from others.
+optimised target-photo rank,model,Some have optimised target-photo rank in the model.
+fusion,classification loss,Some have fused classification loss with ranking for efficiency.
+self-supervised pretext tasks,loss modules,Others used loss modules in self-supervised pretext tasks for efficiency.
+transformers,neural networks,Transformers are end-to-end neural networks that utilize self-attention mechanism for modeling sequential data.
+vision transformers,cnns,Vision transformers are preferred over traditional CNNs due to their ability to model long-range dependencies in sequential data.
+vit,image patches,The seminal work of ViT introduced the concept of utilizing image patches as input to transformer layers.
+transformers,image recognition,"Transformers have been used in fine-grained image recognition, but there is limited usage in encoding sketches."
+transformers,fg-sbir,"Transformers have not been used for FG-SBIR, but in this paper, they are adapted for the first time to propose a strong baseline for better performance."
+transformers,fg-sbir,Transformers are adapted for the first time in FG-SBIR to propose a strong baseline.
+transformers,baseline,Transformers are used to create a strong baseline that outperforms existing state-of-the-arts.
+fg-sbir,baseline,The baseline in FG-SBIR is considered as a standard baseline.
+self-supervised learning,semi-supervised learning,Two frontiers of research have emerged - self-supervised and semi-supervised learning.
+entropies minimization,pseudo-labeling,Common approaches in semi-supervised learning include entropy minimization and pseudo-labeling.
+pseudo-labeling,consistency regularization,Pseudo-labeling and consistency regularization are techniques used to improve model performance in semi-supervised learning.
+consistency regularization,pseudo-labeling,"Consistency regularization and pseudo-labeling are both techniques used in machine learning to handle unlabelled data. Pseudo-labeling creates artificial labels for unlabelled data based on confident predictions from trained classifiers, while consistency regularization promotes consistency in predictions between different views of unlabelled data."
+consistency regularization,knowledge distillation,"Consistency regularization and knowledge distillation are related paradigms in machine learning. Knowledge distillation involves transferring knowledge from a pre-trained teacher network to a student, while consistency regularization promotes consistency in predictions between different views of unlabelled data."
+knowledge distillation,self-distillation,"Knowledge distillation and self-distillation are both techniques used in machine learning to transfer knowledge from a teacher model to a student model. Self-distillation employs the same network for both student and teacher models, while knowledge distillation aims at transferring knowledge from a pre-trained teacher network to a student."
+knowledge distillation,multi-exit strategy,"Knowledge distillation and multi-exit strategy are techniques used in machine learning for adaptive inference. Knowledge distillation transfers knowledge from a pre-trained teacher network to a student, while multi-exit strategy optimizes compute via multiple exits at different depths for adaptive inference."
+fg-sbir model,photo space,"The FG-SBIR model is learned in photo space, indicating a relationship between the two concepts."
+fg-sbir model,student,"The FG-SBIR model is distilled to a student model to make it more discriminative, implying a relationship between the two concepts."
+fg-sbir model,stability,"The training of an FG-SBIR model is often found to be unstable, requiring frequent evaluation to capture the best accuracy, establishing a relationship between the two concepts."
+fg-sbir model,training data,"The FG-SBIR model suffers from a scarcity of training sketch-data, leading to a study on leveraging unlabelled photos for training, suggesting a relationship between the two concepts."
+fg-sbir model,dataset size,"The FG-SBIR model's performance is analyzed in relation to varying dataset sizes, exploring the impact on model performance, indicating a relationship between the two concepts."
+labelled training data,unlabelled photos,The use of unlabelled photos is explored as a boost to performance in scenarios with labelled training data.
+unlabelled photos,distillation strategy,"A distillation strategy is designed from unlabelled photos, contributing to method performance improvement."
+training data scarcity,generalisation to unseen classes,"Training data scarcity challenges generalisation to unseen classes, presenting a difficulty in multi-category FG-SBIR."
+sketch-photo pairs,classes,The availability of sketch-photo pairs for classes determines the generalisation and performance in FG-SBIR.
+model,classes lacking paired sketches,The model's performance is evaluated based on its training on classes with sketch-photo pairs and its performance on classes lacking paired sketches.
+unlabelled photos,model's accuracy,Leveraging knowledge of classes with unlabelled photos is essential to maintain the model's accuracy and performance.
+fg-sbir baseline,cnn-based existing fg-sbir baselines,The Stronger FG-SBIR baseline enhances the paradigm with three distinct modifications compared to the CNN-based existing baselines.
+fg-sbir baseline,pvt (privacy violating tendency),The Stronger FG-SBIR baseline uses PVT as the backbone for the model.
+pvt (privacy violating tendency),unlabelled photos,A teacher pre-trained on unlabelled photos distills the contextual similarity among features to a student in the PVT backbone.
+pvt (privacy violating tendency),labelled photos,The distillation process occurs by aligning sketches to their paired photos in the student-space by distilling contextual similarity of labelled photos in teacher-space.
+photo,triplet,Photos are used in the context of triplet loss for learning purposes.
+triplet,fg-loss,The FG-loss is mentioned in relation to the triplet loss for discriminative learning.
+gan-literature,training,The context mentions GAN-literature in relation to training instability.
+gan-literature,exponential moving average (ema),The use of EMA in the paradigm is inspired by GAN-literature for increased stability.
+pvt,feature maps,PVT is described as generating feature maps at different scales.
+image,random perspective transformation,Random perspective transformation affects the structure of an image in the context.
+anchor,positive,The terms anchor and positive are used in the context of computing intra-modal losses.
+patch-embedding layer,patch-wise features,Patch-wise features are extracted by the patch-embedding layer in the context.
+transformer layer,patch-tokens,Patch-tokens are obtained from the transformer layer in the context.
+feature map fl,down-scaled feature map fl,Feature map Fl is reshaped to down-scaled feature map Fl ∈ R Hl−1 × Cl as input for next level (Il+1)
+cross-modal triplet loss,sketch embedding (fs),Cross-modal Triplet Loss aims to minimise the distance between sketch embedding (fs) and photo embedding (fp) while maximising that from a non-matching one (fn) in a joint embedding space
+exponential moving average,gan-training or teacher-training in semi-supervised contrastive learning,"Exponential Moving Average is employed to increase training stability, following literature on instability of GAN-training or teacher-training in semi-supervised contrastive learning"
+moving average (ma) with exponential priority (ema),recent iterations over earlier ones,"A moving average (MA), with exponential priority (EMA) to recent iterations over earlier ones is preferred for stabilizing training and increasing stability"
+training loss,"weighting hyperparameters λ1,2","Training loss is determined by weighting hyperparameters λ1,2"
+intra-modal (im) triplet loss,sketch embedding (fs),Intra-modal Triplet Loss is aimed at maximising the distance between sketch embedding (fs) and photo embedding (fp) while minimising the distance from a non-matching one (fn)
+triplet loss,intra-modal feature,"Triplet Loss often pushes visually similar photos closer, resulting in sub-optimal latent space, hence the focus on intra-modal feature."
+training with unlabelled photos,knowledge distillation paradigm,The process aims to harness the learning potential of unlabeled photos through a knowledge distillation paradigm for cross-modal retrieval.
+teacher (ω),student (ϕ),Knowledge distillation transfers the photo instance discrimination potential from a pre-trained 'teacher' to our 'student' FG-SBIR model for cross-modal retrieval.
+features,teacher,features from a teacher
+features,student,features from a student
+teacher,student,relation between teacher and student
+embedding spaces,different,two embedding spaces are different
+teacher,student,teacher and student embedding dimensions are different
+feature transformation layer,needed,additional feature transformation layer is needed to match embedding dimensions
+pair-wise distance,distilling,distilling through pair-wise distance
+teacher,student,distilling knowledge of teacher’s entire latent space to the student
+distillation framework,design,aim to design a distillation framework
+contextual similarity,samples,considers the contextual similarity amongst samples in the teacher’s embedding space
+structural knowledge,distilling,preserves structural knowledge while distilling to the student
+network,involves,network involves two models
+teacher,pre-trained,teacher pre-trained large-scale photos
+teacher,backbone feature extractor,teacher uses PVT as backbone feature extractor
+recent transformer literature,introduce,follow recent transformer literature to introduce distillation token
+distillation token,allows,distillation token allows model to learn from output of the teacher
+vision transformers,pvt,PVT involves reshaping for down-scaling individual patch tokens
+pvt,transformer layer,"PVT involves reshaping a fixed number of individual patch tokens to the subsequent feature map, which would be imbalanced on adding one extra token. Therefore, we focus on the second step of PVT-block involving transformer layer involving transformer layer, which can accommodate a variable number of tokens."
+pvt,image patch,"Accordingly, at every level, ∆ is fed to the transformer layer concatenated with rest of the N image patch i=1 ∈ RN×d), to obtain the resultant set of tokens."
+pvt,pyramidal structure,"‘∆’ not only accommodates the output knowledge of the teacher network but also, imbibes the inductive bias contributed by the pyramidal structure of PVT."
+pvt,teacher network,"‘∆’ not only accommodates the output knowledge of the teacher network but also, imbibes the inductive bias contributed by the pyramidal structure of PVT."
+teacher ω(·),labelled and unlabelled sets,The teacher Ω(·) is trained on photos of both labelled and unlabelled sets G = DU ∪Dp following an intra-modal triplet loss.
+student,discriminative feature,"The student outputs two features: a discriminative (f ∈ Rd), and a distillation feature (µ ∈ Rd). The student's discriminative feature is used to train over a combination of cross-modal and intra-modal triplet losses on labelled data."
+student,intra-modal triplet loss,Training FG-SBIR Student: The student’s discriminative feature is used to train over a combination of cross-modal and intra-modal triplet losses on labelled data following Eqn. 4. Intra-modal triplet loss over unlabelled photos is leveraged to harness the potential of unlabelled.
+intra-modal triplet loss,unlabelled photos,Intra-modal triplet loss over unlabelled photos is leveraged with a weighting hyperparameter lambda3 to harness the potential of unlabelled photos.
+photo domain knowledge,pre-trained teacher model,Instance-discriminative knowledge of photo domain is transferred from the pre-trained teacher model to improve cross-modal instance level retrieval of student FG-SBIR model during knowledge distillation.
+unlabelled photos du,frozen teacher model features fωu,Features of all the unlabelled photos DU are pre-computed using the frozen teacher model as FΩU.
+distillation feature µϕu,student model ϕ(·),Feature µϕU is obtained through the student model ϕ(·) during knowledge distillation.
+pairwise distance calculation,embedding space preservation,Pairwise distance is calculated to preserve the structure of the embedding space of the teacher model while distillation to the student.
+embedding space,pairwise similarity,"The model represents pairwise similarity amongst K-nearest neighbours in the teacher’s embedding space, where pairwise similarity is calculated based on negative pairwise distances."
+embedding spaces,structural knowledge,"The obtained similarity values represent the structural knowledge of embedding spaces of student and teacher, ϕ(·) and Ω(·) respectively."
+constraint,kullback-leibler divergence,The consistency constraint is defined as the Kullback-Leibler (KL) divergence between the normalized softmax probability distributions of student and teacher embedding spaces.
+labelled dataset,sketch and photo,"The labelled dataset consists of sketches and photos, where the LpL loss can be calculated in a similar fashion using the photos."
+cross-modal nature,alignment,"Due to the cross-modal nature of the student’s embedding space, it is essential to align sketches with their paired photos while maintaining contextual similarity with neighbouring photos."
+teacher ω(·),sketch-features,Extracting sketch features using the teacher’s representation would be a flawed design choice as it may not accurately capture the essence of the sketch-photo pairs.
+pi,si,pi and si are related as pi is used to calculate si.
+dω,dϕ,DΩ and Dϕ are related as DΩ is obtained first and then used to calculate Dϕ.
+kl,contextual similarity,KL and contextual similarity are related as KL is calculated between resultant probabilities to maintain contextual similarity.
+"λ4,5",total distillation loss,"λ4,5 and total distillation loss are related as λ4,5 are respective weighting hyperparameters for the total distillation loss."
+student model,weighted combination of two losses,student model and weighted combination of two losses are related as the student model is trained from a combination of two losses.
+datasets,publicly available datasets,Datasets and publicly available datasets are related as the datasets used are publicly available.
+qmul-chair-v2,qmul-shoe-v2,QMUL-Chair-V2 and QMUL-Shoe-V2 are related as they are two datasets used in the experiments.
+sketches,photos,sketches and photos are related as they are used in the datasets with fine-grained associations.
+sketchy,labelled training data,Sketchy and labelled training data are related as Sketchy contains labelled data used for training.
+ut-zap50k,unlabelled photos,UT-Zap50K and unlabelled photos are related as UT-Zap50K contains unlabelled photos used for retrieval in the experiments.
+ikea,amazon,IKEA and Amazon are mentioned as unlabelled photos for shoe and chair retrieval
+ikea,taobao,IKEA and Taobao are mentioned as unlabelled photos for chair retrieval
+amazon,taobao,Amazon and Taobao are mentioned as unlabelled photos for shoe retrieval
+sketchy,imagenet,"Sketchy uses an extended version with additional photos introduced for training from unlabelled data, while ImageNet pre-trained PVT-Large model extracts features from resized images"
+sketchy,pytorch,Sketchy is implemented via PyTorch for model training
+imagenet,pvt-large,ImageNet pre-trained PVT-Large model extracts features from resized images
+pvt-large,pytorch,PVT-Large model is implemented via PyTorch
+pytorch,adam-w optimiser,Model training is done using PyTorch implementation and Adam-W optimiser
+adam-w optimiser,momentum,Adam-W optimiser is used with a momentum of 0.9
+adam-w optimiser,weight decay,Adam-W optimiser is used with a weight decay of 5e-2
+adam-w optimiser,batch size,Adam-W optimiser is used with a batch size of 16
+adam-w optimiser,epochs,Adam-W optimiser is used for training for 200 epochs
+adam-w optimiser,learning rate,Adam-W optimiser is used with an initial learning rate of 1e-3
+adam-w optimiser,cosine scheduling,Adam-W optimiser uses cosine scheduling for learning rate adjustment
+mcm,msim,"mCM is empirically determined, where msIM is set to 0.2"
+mcm,τ,"mCM is empirically determined, where τ is set to 0.3"
+mcm,λ1,"mCM is empirically determined, where λ1 is set to 0.8"
+msim,τ,"msIM is empirically determined, where τ is set to 0.3"
+msim,λ1,"msIM is empirically determined, where λ1 is set to 0.8"
+τ,λ1,"τ is empirically determined, where λ1 is set to 0.8"
+acc.@q,sketches,Acc.@q is based on the percentage of sketches having a true matched photo in the top-q list
+sketch-a-net,holef-sn,HOLEF-SN uses a spatial attention module over Sketch-a-Net backbone
+jigsaw-sn,sketch-a-net,Jigsaw-SN employs jigsaw-solving pre-training over mixed patches of photos and edge-maps followed by Sketch-a-Net backbone
+jigsaw-sn,holef-sn,Jigsaw-SN employs jigsaw-solving pre-training over mixed patches of photos and edge-maps followed by spatial attention module used by HOLEF-SN
+siamese network,cross-modal triplet loss,Triplet-SN trains a Siamese network on cross-modal triplet loss
+triplet-sn,holef-sn,Triplet-SN is compared against HOLEF-SN in the paper
+triplet-sn,jigsaw-sn,Triplet-SN is compared against Jigsaw-SN in the paper
+sn,jigsaw-solving pre-training,SN employs jigsaw-solving pre-training over mixed patches of photos and edge-maps for better retrieval.
+jigsaw-solving pre-training,mixed patches of photos and edge-maps,Jigsaw-solving pre-training involves mixed patches of photos and edge-maps.
+sn,triplet-based fine-tuning,SN employs triplet-based fine-tuning for better retrieval.
+triplet-rl,rl based fine-tuning,"Triplet-RL leverages triplet-loss based pre-training, followed by RL based fine-tuning for on-the-fly retrieval."
+sn,completed sketches,Results of SN are reported only on completed sketches.
+semi-sup-sn,sequential photo-to-sketch generation model,Semi-sup-SN trains a sequential photo-to-sketch generation model.
+sequential photo-to-sketch generation model,pseudo sketches,Sequential photo-to-sketch generation model outputs pseudo sketches as labels for unlabelled photos.
+sn,meta-learns a vae-based disentanglement module,SN meta-learns a VAE-based disentanglement module for a style-agnostic retrieval.
+sn,semi-supervise retrieval,SN semi-supervises retrieval by outputting pseudo sketches as labels for unlabelled photos.
+backbone feature extractors,fg-sbir,backbone feature extractors are explored in FG-SBIR against a strong baseline
+existing vision transformers,backbone feature extractors,existing vision transformers are explored as backbone feature extractors for the training paradigm
+b-vit,vit-b16 variant,B-ViT is referred to as the ViT-B16 variant
+b-deit,deit-b variant,B-DeiT is referred to as the DEiT-B variant
+b-swin,swin-b variant,B-SWIN is referred to as the SWIN-B variant
+b-cvt,cvt21 variant,B-CvT is referred to as the CvT21 variant
+b-coatnet,coatnet3 with 384-dim,B-CoAtNet is referred to as the CoAtNet3 with 384-dim variant
+training from unlabelled data,baselines,training from unlabelled data involves baselines used to leverage unlabelled photos for training
+b-edge-pretrain,edge-maps of unlabelled photos,B-Edge-Pretrain naively uses edge-maps of unlabelled photos to pre-train the retrieval model
+b-edge2sketch,edge-maps of photos,B-Edge2Sketch converts edge-maps of photos to pseudo-sketches as labels to harness potential of unlabelled photos
+kd for fg-sbir,baselines,KD for FG-SBIR involves baselines offering alternatives on the paradigm of KD
+b-regress,features computed by teacher and student,B-Regress directly regresses between features computed by teacher and student for both sketches and images
+b-rkd,knowledge of rel,B-RKD follows to distill the knowledge of rel
+additional feature transformation layer,l2 regression loss,The additional feature transformation layer is applied over a l2 regression loss.
+b-rkd,knowledge distillation of relative pairwise feature-distances,B-RKD follows [51] to distill the knowledge of relative pairwise feature-distances from the teacher’s embedding space to that of the student.
+b-rkd,unlabelled photos,B-RKD distills the knowledge of relative pairwise feature-distances of unlabelled photos.
+b-pkt,conditional probability density,B-PKT computes the conditional probability density of any two points in the teacher’s embedding space.
+b-pkt,pairwise interactions probability distribution,B-PKT obtains a probability distribution over pairwise interactions in the space of the teacher’s embedding.
+b-pkt,divergence minimization,B-PKT minimizes the divergence over a KL-divergence loss in student’s embedding space.
+fg-sbir pipelines,state-of-the-arts and curated baselines,Tables 1 and 2 compare FG-SBIR pipelines against state-of-the-arts and curated baselines.
+sketch-a-net,triplet-sn,Triplet-SN and HOLEF-SN score low due to weaker backbones of Sketch-A-Net.
+jigsaw-sn,performance improvement,Jigsaw-SN improves performance by implementing a self-supervised mixed-modal jigsaw solving strategy for learning structural information better.
+onthefly,performance surpassing other methods,"OnTheFly surpasses other methods but fails to exceed StyleMeUp, thanks to its complex meta-learned disentanglement module addressing style-diversity."
+semi-sup-sn,paired training data,Semi-sup-SN harnesses knowledge unlike others that are restricted to paired training data.
+semi-sup-sn,pseudo-sketch labels,Semi-sup-SN harnesses knowledge of unlabelled data with its additionally generated pseudo-sketch labels in achieving comparatively higher performance.
+knowledge distillation paradigm,transformer-based feature extractor,"our relatively simpler yet robust knowledge distillation paradigm, boosted with our better transformer-based feature extractor."
+existing sotas,top-1 performance,"when augmenting our ‘strong-baseline’ paradigm to existing SOTAs, we observe a relative rise in top-1 performance of all methods by ≈ 4 − 6% overall in SOTA++ section."
+memory overhead,training only,"Despite costing a minimal memory overhead (training only), these objectives reward a considerably high accuracy boost which verifies our method to be an easy-fit and quite generic."
+fg-sbir baseline,strong-baseline,generic to serve as a strong FG-SBIR baseline.
+sketchy dataset,quantitative comparison,Table 2 provides a quantitative comparison of pipelines on Sketchy dataset.
+cnns,backbone feature extractors,"CNNs are compared as backbone feature extractors for FG-SBIR, with B-VGG19 performing best."
+cnns,b-vgg19,B-VGG19 is slightly better than B-VGG16 and much better than B-ResNet18 in Top-1 accuracy on ShoeV2.
+transformers,"b-coatnet, b-cvt, b-swin","B-CoAtNet, B-CvT, and B-SWIN perform much better than B-ViT or B-DeIT due to their hierarchical design and mechanisms."
+pvt,our method,PVT fits optimally to our method with its unique pyramidal structure imbibing inductive bias.
+b-edge-pretrain,our stronger baseline (ours-strong),B-Edge-Pretrain offers little gain over our stronger baseline.
+b-edge2sketch,augmenting edge-maps,Augmenting edge-maps with B-Edge2Sketch by a selected subset of strokes increases accuracy reasonably.
+b-regress,metric-based regression,Lower scores of B-Regress are largely due to its metric-based regression causing misalignment across two different embedding spaces.
+b-rkd,structural knowledge,B-RKD fails to preserve the structural knowledge of the embedding space by attending to one pair at a time.
+b-rkd,b-pkt,"B-RKD fails to preserve structural knowledge of embedding space, scoring below B-PKT"
+b-pkt,our paradigm,"B-PKT is slightly similar to our paradigm of preserving latent space, but lacks cross-modal discrimination objective"
+b-pkt,our method,"B-PKT performs lower than our method, which leverages labelled sketch-photo pairs"
+cross-modal objective,intra-modal objectives,Performance against cross-modal objective alone (Type-I) increases with aid from intra-modal objectives
+photos,sketch,Intra-modal objectives encourage distancing of multiple photos visually close to the sketch
+ema optimisation,above objectives,Adding EMA optimisation ensures smoother convergence of above objectives with a slight increase in accuracy
+distillation paradigm,labelled photos,Performance using unlabelled data only (Type-III) rises with added knowledge from labelled photos
+sketches,lslkl,"Without aligning sketches using LsLKL, performance lags behind Ours-Full"
+photo augmentation techniques,limp,Experiments explore other photo augmentation techniques for LIMp
+photo augmentation techniques,limp,"The photo augmentation techniques, including colour distortion, partial blurring and random shift in sharpness, are explored for LIMp (Eqn. 2) in the context of outperforming certain scores."
+morphological augmentations,loss objective,Morphological augmentations are confirmed to better direct the loss objective by instilling discrimination based on sketch-exclusive information.
+distillation token,importance,"The importance of the Distillation Token is justified through the exploration of two designs, showing the need for a dedicated distillation token for knowledge distillation."
+residual connection,distillation token,"Engaging the distillation token at every level via residual connection instills the inductive bias modelled by the pyramidal downscaling into the distillation token via transformer layers, creating a better representation."
+ours,triplet-sn,"Although ours is a larger model than the earlier SOTA of Triplet-SN, it offers ≈20-25% gain while taking similar inference time (0.37ms/ShoeV2)."
+triplet-sn,sota,Triplet-SN is compared to the earlier SOTA in terms of gain and inference time
+our method,triplet-sn,Our method takes more hyperparameters than Triplet-SN but justifies itself with a boost in accuracy
+stylemeup,our method,StyleMeUP is compared to our method in terms of training step time
+jigsaw-sn,cc-gen,Jigsaw-SN and CC-Gen are mentioned in the context of FG-SBIR models and domain-generalisation approach
+cc-gen,[8],CC-Gen and [8] are mentioned in the context of modelling visual sketch traits and adapting trained models to new classes using sketch-photo pairs
+[8],our setup,[8] and our setup are compared in terms of access to sketch-photo pairs of novel classes
+classes,sketches,Classes have paired sketches in the context.
+photos,unseen classes,Photos of unseen classes can be collected easily.
+photos,distillation,The student trains via distillation from photos of 21 unseen classes for better retrieval accuracy.
+gallery,category,A separate gallery is maintained per category for retrieval.
+methods,data,"Methods leverage data of novel classes, besides labelled data for training."
+methods,jigsaw-sn,Jigsaw-SN method trains via an auxiliary jigsaw-solving task on unlabelled photos without any fine-tuning.
+methods,adaptive-sn,Adaptive-SN method trains on a few sketch-photo pairs of new classes.
+edge-maps,b-edgepretrain,B-EdgePretrain method trains on edge-maps of unlabelled photos.
+edge-maps,b-edge2sketch,B-Edge2Sketch method trains on synthetic sketches via edge-maps of unlabelled photos.
+methods,cc-gen,CC-Gen method evaluates in zero-shot setup with no data from novel classes.
+baseline,edge-maps,Baselines using edge-maps of unlabelled images as pseudo-sketches score relatively better.
+sketch-photo pairs,adaptive-sn,Using real sketch-photo pairs of the test-set for quick-adaptation like Adaptive-SN leads to competitive retrieval accuracy.
+fg-sbir,pvt,The paper introduces a strong baseline for FG-SBIR with PVT backbone and focuses on learning from unlabelled data in FG-SBIR by distilling knowledge from unlabelled photos.
+intra-modal triplet loss,feature separation,The proposed intra-modal triplet loss increases feature separation in the model's latent space.
+ema paradigm,training stabilization,An EMA paradigm stabilizes the training of the model.
+distillation token,pvt architecture,The paper introduces a distillation token in PVT architecture explicitly catering to knowledge distillation.
+method,existing frameworks and baselines,"Extensive experiments show that the method outperforms existing frameworks and various baselines, proving its significance."

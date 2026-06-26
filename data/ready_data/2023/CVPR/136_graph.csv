@@ -1,0 +1,262 @@
+node_1,node_2,edge
+vision-language pretraining,vlp,VLP represents Vision-language pretraining as an acronym
+vlp,exemplary performance,VLP has achieved exemplary performance in vision-language pretraining
+vlp,training costs,VLP suffers from high training costs
+training costs,slow convergence,high training costs result in slow convergence
+training costs,long training time,high training costs result in long training time
+prediction rate,corruption rate,Prediction rate and corruption rate are essential obstacles in VLP pretraining
+corruption rate,masked language modeling,Corruption rate is related to masked language modeling
+pre-training task,free language modeling,Free Language Modeling is a proposed pre-training task
+flm,100% prediction rate,FLM enables a 100% prediction rate
+flm,arbitrary corruption rates,FLM allows arbitrary corruption rates
+flm,flm-trained models,FLM-trained models learn better and faster
+flm,mlm-based methods,FLM achieves time reduction in comparison to MLM-based methods
+mlm-based methods,competitive performance,MLM-based methods keep competitive performance in vision-language understanding
+mlm-based methods,vision-language generation tasks,MLM-based methods keep competitive performance in vision-language generation tasks
+vision-language tasks,visual question answering,vision-language tasks include tasks like visual question answering
+vision-language tasks,cross-modal retrieval,vision-language tasks include tasks like cross-modal retrieval
+vision-language tasks,image captioning,vision-language tasks include tasks like image captioning
+large-scale image-text datasets,web,large-scale image-text datasets are collected from the web
+model architectures,trans-former,high-capacity model architectures like Trans-former contribute to the success
+mlm,masked language modeling,MLM refers to masked language modeling in vision-language areas
+mlm,reconstruct text tokens,MLM is a pretraining task designed to reconstruct masked text tokens
+mlm,remaining texts,MLM involves reasoning among the context of the remaining texts
+mlm,paired image,MLM involves reasoning between text tokens and paired image
+mlm-based methods,slow convergence,MLM-based methods suffer from slow convergence
+mlm-based methods,slow convergence and long training time,MLM-based methods suffer from slow convergence and long training time.
+tokens,corruption,A large portion of tokens accompanied by corruption are excluded from prediction loss.
+prediction rate,convergence speed of pretraining,Limited prediction rate in MLM impedes the convergence speed of pretraining.
+corruption rate,prediction rate for mlm,A larger prediction rate for MLM results in faster convergence of validation loss and downstream performance under the same corruption rate.
+prediction rate,text tokens,It is intuitive to set a prediction rate of 100% to fully exploit text tokens.
+prediction rate,corruption rate,A paradox emerges where a large prediction rate can only be achieved with a greater corruption rate in MLM.
+corruption rate,extremely tough pretraining task,An extremely large corruption rate leads to an extremely tough pretraining task that may cause training collapse.
+autoregressive language modeling (ar),100% prediction rate,AR provides a workable solution to enable a 100% prediction rate by predicting the next token given the observation of previous tokens.
+ar,mlm,"AR performs favorably in training efficiency against MLM, i.e., 6.1×speed-up for convergence, but the converged performance by AR is much inferior to MLM."
+unidirectional corruption pattern,downstream understanding tasks,Sub-optimal unidirectional corruption pattern in AR is insufficient for downstream understanding tasks that usually rely on bidirectional contexts.
+question,accelerate the conver,"A natural question arises, can we accelerate the convergence?"
+bidirectional contexts,vlp,bidirectional contexts are essential for VLP tasks
+vlp,ar,AR is mentioned as a method for VLP
+vlp,mlm,Is it possible to achieve competitive performance with MLM in VLP tasks?
+flm,pretraining task,FLM is introduced as a new pretraining task for VLP
+corruption,prediction rates,FLM breaks up the entanglement between corruption and prediction rates
+corruption,prediction rate,FLM allows for independent corrupted connections for each output token
+ar,prefixlm,Both AR and PrefixLM are mentioned as methods with suffix-like corruption patterns
+corruption span,flm,FLM has a corruption span distributed mainly in the middle of the sequence
+bidirectional contexts,vl understanding tasks,Flexible perception of bidirectional contexts in FLM leads to better adaptation to VL understanding tasks
+pretraining objectives,flm,"Comparison between different pretraining objectives, including FLM, is illustrated in Fig. 2"
+vlp,flm,VLP can be performed using the FLM method
+encode-corrupt-predict framework,feature encoding,The framework performs feature encoding once for multiple corrupted versions of the text sequence
+bidirectional representations,forward and reverse unidirectional representations,Bidirectional representations in the encoding step are achieved by learning both forward and reverse unidirectional representations
+reverse unidirectional representations,reverse casual masks,The order of reverse unidirectional representations is manipulated by reverse casual masks in the same text Transformer.
+reverse unidirectional representations,a100% prediction rate,The manipulation of reverse unidirectional representations results in a 100% prediction rate by customizing corruption-prediction tasks for predicting each input token.
+reverse casual masks,a100% prediction rate,The manipulation of reverse casual masks contributes to achieving a 100% prediction rate by customizing corruption-prediction tasks for predicting each input token.
+corruption-prediction tasks,prediction task,"In each corruption-prediction task, a prediction task is solved by reasoning among the remaining contexts after a span of corruption is randomly sampled and attached to the encoded sequence."
+corruption-prediction tasks,corruption patterns,"Unlike previous works, the corruption-prediction tasks encourage flexible corruption patterns by injecting corruptions after one-time feature encoding."
+encode-corrupt-predict framework,flm objective,"The encode-corrupt-predict framework is built upon the FLM objective, which allows efficient and effective learning of a set of prediction tasks by conducting feature encoding once."
+encode-corrupt-predict framework,prediction tasks,The encode-corrupt-predict framework enables efficient learning of a set of prediction tasks by conducting feature encoding once.
+flm,mlm,Extensive experiments demonstrate the effectiveness of FLM by achieving comparable performances to MLM with less than 50% pretraining time.
+vision-language pretraining,vision-language pretraining,Related work in Vision-Language Pretraining involves pretraining on vision and language tasks.
+vision-language pretraining,mlm,"Vision-Language Pretraining involves tasks like MLM, which aim to reconstruct corrupted text with visual modality."
+vision-language pretraining,autoregressive language modeling (ar),Vision-Language Pretraining also utilizes tasks like autoregressive language modeling (AR) for better representation ability in the vision-language domain.
+mlm,masked language modeling,Masked language modeling (MLM) is a type of generative task used in Vision-Language Pretraining.
+masked language modeling,image-text matching (itm),Masked language modeling (MLM) and image-text matching (ITM) are examples of generative and discriminative tasks in Vision-Language Pretraining.
+masked language modeling,autoregressive language modeling (ar),Masked language modeling (MLM) and autoregressive language modeling (AR) are both used in Vision-Language Pretraining for different objectives.
+autoregressive language modeling (ar),vision-language pretraining,Autoregressive language modeling (AR) plays a role in enhancing the representation ability of Vision-Language Pretraining methods.
+beit-3,mlm,"BEiT-3 shows that a single generative language modeling (e.g., MLM) could handle vision-language interactions and alignments well with the mixture-of-expert transformer."
+beit-3,generation language modeling,BEiT-3 shows a single generative language modeling could handle vision-language interactions and alignments well with the mixture-of-expert transformer.
+beit-3,vision-language interactions,BEiT-3 shows a single generative language modeling could handle vision-language interactions and alignments well with the mixture-of-expert transformer.
+beit-3,alignments,BEiT-3 shows a single generative language modeling could handle vision-language interactions and alignments well with the mixture-of-expert transformer.
+beit-3,mixture-of-expert transformer,BEiT-3 shows a single generative language modeling could handle vision-language interactions and alignments well with the mixture-of-expert transformer.
+flm,mlm,"FLM has distinct advantages compared with others: Different from MLM and PrefixLM that bind rpred and rcorr together by r, the unbound prediction rate in FLM could achieve 100% for accelerating training as much as possible."
+flm,prefixlm,"FLM has distinct advantages compared with others: Different from MLM and PrefixLM that bind rpred and rcorr together by r, the unbound prediction rate in FLM could achieve 100% for accelerating training as much as possible."
+flm,prediction rate,"Different from MLM and PrefixLM that bind rpred and rcorr together by r, the unbound prediction rate in FLM could achieve 100% for accelerating training as much as possible."
+flm,training,"Different from MLM and PrefixLM that bind rpred and rcorr together by r, the unbound prediction rate in FLM could achieve 100% for accelerating training as much as possible."
+flm,ar/prefixlm,"Without relying on a position-aware unidirectional corruption in AR/PrefixLM or fixed corruption across all positions in MLM, the corrupted span in FLM for each output token could be different, and the corrupted rate is independent of the position of the output token, enabling a more flexible corruption pattern for better exploiting the bidirectional context information."
+flm,position-aware unidirectional corruption,"Without relying on a position-aware unidirectional corruption in AR/PrefixLM or fixed corruption across all positions in MLM, the corrupted span in FLM for each output token could be different, and the corrupted rate is independent of the position of the output token, enabling a more flexible corruption pattern for better exploiting the bidirectional context information."
+flm,corruption pattern,"Without relying on a position-aware unidirectional corruption in AR/PrefixLM or fixed corruption across all positions in MLM, the corrupted span in FLM for each output token could be different, and the corrupted rate is independent of the position of the output token, enabling a more flexible corruption pattern for better exploiting the bidirectional context information."
+vlp,object detectors,Early VLP methods rely on time-consuming pretrained object detectors for visual representation.
+vlp,grid/patch-level visual features,PiexlBERT and ViLT directly apply grid/patch-level visual features to reduce computation complexity of the object-level visual encoder.
+vlp,data-efficient training,Research focuses on data-efficient training to improve VLP in low-resource settings.
+vlp,clip,DeCLIP enhances the CLIP by exploring more supervision signals for self-supervision within a single modality or multi-view supervision across different modalities.
+vlp,grit-vlp,GRIT-VLP assigns a larger mask rate for MLM and performs grouped in-batch negative sampling for ITC to accelerate the convergence.
+vlp,corruption rate,"Output tokens are assigned for the reconstruction task, where under-used output tokens impede a further speed-up of pretraining."
+vlp,reconstruction rate,Method decouples the corruption and reconstruction rate for a better combination between performance and efficiency.
+nlp,mlm,"In NLP, MLM has been one of the popular generative pretraining objectives."
+nlp,ar,"In NLP, AR aims to estimate the probability distribution of a given text sequence using the product rule."
+ar,auto-regressive model,AR aims to estimate the probability distribution of a given text sequence using the product rule by an auto-regressive model.
+ar,mlm,Some works unify MLM and AR for better performance on both language understanding and generation tasks.
+mlm,bidirectional contexts,MLM enables bidirectional contexts for language understanding tasks.
+mlm,ar,Unify MLM and AR for better performance on both language understanding and generation tasks.
+wettig et al.,mlm,Wettig et al. study the choice of the mask ratio in MLM from the perspective of both corruption and prediction.
+corruption,prediction,We propose the new language modeling method FLM to decouple the prediction rate from the corruption rate.
+flm,vlp,Introduce FLM into VLP and propose a novel framework for accelerating VLP.
+flm,corruption,Propose the new language modeling method FLM to decouple the prediction rate from the corruption rate.
+flm,prediction,Propose the new language modeling method FLM to decouple the prediction rate from the corruption rate.
+bidirectional representation,special mask token,The deep bidirectional representation is learned by randomly replacing part of input tokens with a special mask token.
+masked tokens,corrupted tokens,"The probability of reconstructing masked tokens is maximized, where corrupted tokens represent the observed data."
+ar,left-to-right autoregressive factorization,AR uses left-to-right autoregressive factorization to model the density distribution of the sequence.
+prefixlm,remaining sequence,PrefixLM enables bidirectional perception between prefix tokens and left-to-right autoregressive factorization for modeling density distribution.
+prefix length,corruption-prediction problem,The prefix length represents Lp and is used in interpreting the given methods as a corruption-prediction problem.
+dependency matrix,language modeling methods,The dependency matrix M represents the dependency between the input and the prediction target and it varies for different language modeling methods.
+mlm,binomial distribution,"For MLM, the dependency matrix follows a binomial distribution denoted by p~Binomial(rmask)."
+matrices,language modeling methods,Matrices M of different language modeling methods are discussed in the context.
+matrices,mlm,"Matrices M are related to MLM, a language modeling method mentioned in the context."
+matrices,lm,"Matrices M are related to LM, a language modeling method mentioned in the context."
+matrices,prefixlm,"Matrices M are related to PrefixLM, a language modeling method mentioned in the context."
+lm,corruption,LM is associated with the corruption rate depending on the position i of predicting xi.
+prefixlm,prefix length,"PrefixLM is related to prefix length Lp, which is calculated based on rspan."
+ar,unidirectional context modeling,"AR method disables bidirectional context modeling, which is important for downstream understanding tasks."
+ar,autoregressive prior,AR method utilizes autoregressive prior leading to an uneven distribution of corruption rate.
+flm,prediction and corruption,FLM aims to disentangle the prediction and corruption in language modeling methods.
+flm,pretraining tasks,FLM aims to disentangle the prediction and corruption rate for fully utilizing training signals in VLP
+flm,dependency matrix,"Introduction of the dependency matrix of FLM where mij = 1 if mij /∈ spani, otherwise 0"
+flm,vlp framework,FLM is a part of the VLP framework which benefits bidirectional contextual representation learning
+dependency matrix,random span corruption,The dependency matrix of FLM is related to random span corruption with length Li used in corruption
+dependency matrix,starting position and length,The dependency matrix of FLM involves the starting position and length of spani that can be customized or randomly sampled
+vlp framework,language modeling,The VLP framework involves free language modeling (FLM) for better representation learning
+vlp framework,vision tokens,The VLP framework includes encoding vision data into sequences of vision tokens for processing
+causal masks,text transformer,Causal masks are used in the same text transformer for encoding features.
+independent corruption-prediction tasks,random span corruption,"For each task, a random span corruption is injected into the multimodal representation to create independent corruption-prediction tasks."
+multimodal representation,reconstruction query,A reconstruction query gathers informative contexts from the corrupted features of multimodal representation for reconstructing a single target token.
+flexibility of post-encoding corruption,100% text tokens,The post-encoding corruption allows efficient parallel reconstruction of 100% text tokens.
+corrupted span in flm,bidirectional contextualized interactions,"The corrupted span in FLM can differ for different predictions, enhancing bidirectional contextualized interactions and improving optimization flexibility."
+corruption rate,minimal corruption rate,"The minimal corruption rate is 1/L, ensuring at least one token is corrupted to avoid information leakage during reconstruction."
+flm,vision-language pretraining,"FLM serves as the basis for a new pretraining framework called Vision-Language Pretraining, which focuses on encode-corrupt-predict tasks for efficient pretraining."
+task,learning objective,The learning objective for the i-th task is to maximize P(xi
+task,pipeline,Fig. 3 depicts the pipeline of the model for each task.
+task,flm,"Since FLM establishes a customized corruption span for each prediction task, a naive solution of repeating the MLM-style feature encoding becomes time-consuming."
+task,intermediate features,"To share the intermediate features of different tasks for efficient inference, the token representation is decomposed into two complementary views, left-to-right, and right-to-left features."
+task,image features,"Specifically, image features are first encoded by a CLIP image transformer for each task."
+task,bidirectional representation,"After encoding, the bidirectional representation in text transformer is obtained for each task."
+features,forward and reverse flow,features are extracted from forward and reverse flow at the n-th layer
+reconstructor,dependency matrix m,Reconstructor samples a dependency matrix M to construct several corruption-prediction tasks
+elements in en,corrupted inputs,uncorrupted elements in En that rely on corrupted inputs need to be neglected to avoid information leakage
+features,uncorrupted features in e,feature reconstruction xi gathers context from uncorrupted features in E through cross-attention
+concepts in en,position embedding,selection process from En to En is initialized with a learnable reconstruction query as the positional embedding
+reconstructor,mlp,output features of the last layer in the reconstructor are input into an MLP for final prediction
+reconstruction tasks,feature encoding,sharing feature encoding allows all reconstruction tasks to run in parallel with low computation consumption
+pretraining objectives,reconstruction objective,The reconstruction objective is to minimize the negative log-likelihood of predicted tokens
+pretraining objectives,intermediate prediction loss,"To enhance the model’s representability, an intermediate prediction loss is introduced upon the EN that improves the local temporal dependency between words"
+intermediate prediction loss,local temporal dependency,The intermediate prediction loss improves the local temporal dependency between words
+model's representability,supervised the forward/reverse sequence,The model's representability is enhanced by supervising the forward/reverse sequence
+pretraining data,four commonly used datasets,"The pretraining data comes from four commonly used datasets, including COCO, Visual Genome, SBU Captions, and Conceptual Captions 3M"
+pretraining data,enlarged version of images,An enlarged version of images is further used to boost performance in pretraining data
+enlarged version of images,boost performance,The enlarged version of images is used to boost performance
+downstream tasks,finetuning,"During finetuning, a special [CLS] token is appended into the reconstructor and its output features are used as the global cross-modal representation"
+finetuning,adapt the pre-trained model,The model is adapted to four downstream vision-language understanding tasks during finetuning
+vision-language understanding tasks,visual question answering (vqa),"Both terms are related to the field of computer vision and natural language processing, focusing on tasks that involve understanding the relationship between vision and language."
+visual question answering (vqa),natural language for visual reasoning (nlvr2),"Both terms are related to tasks that involve answering questions based on visual input and using natural language for visual reasoning, indicating a commonality in their applications."
+image-text retrieval (tr),text-image retrieval (ir),"Both terms are related to the process of retrieving information from a combination of images and text, highlighting the bidirectional nature of information retrieval in this context."
+image captioning,reconstructor,"The term 'reconstructor' is mentioned in the context in relation to the process of image captioning, indicating a role in reconstructing textual descriptions of images."
+visual transformer,clip-vit,"The visual transformer is initialized using CLIP-ViT pretrained on a large dataset of image-text pairs, suggesting a foundational relationship between the two concepts in the context of pretraining."
+robertabase,text transformer,"The bottom six layers of the text transformer are initialized by the bottom six layers of RoBERTaBASE, indicating a hierarchical relationship between the two models in the context of text processing."
+flm,corruption rate,The default corruption rate of FLM is mentioned in relation to the concept of corruption rate in the context of minimal corruption and performance evaluation.
+corruption,performance,Minimal corruption achieves decent performance.
+corruption rates,model,Choice of corruption rates is explored for pretraining the model.
+model,pretraining,Model is pretrained for a maximum of 30k steps.
+batch size,titan v100 gpus,Total batch size of 4096 is trained on 16 TITAN V100 GPUs.
+adamw optimizer,gradient accumulation,Model is trained with AdamW optimizer and gradient accumulation.
+mixed-precision training,memory consumption,Mixed-precision training is used to reduce memory consumption.
+mixed-precision training,training acceleration,Mixed-precision training is used to accelerate training.
+warm-up schedule,learning rate,5% warm-up schedule is used with a maximum learning rate of 4e-4.
+images,accessibility,Only 8.7M images of CC12M are accessible.
+expired urls,images accessibility,Only 8.7M images are accessible due to expired URLs.
+performance,language modeling methods,Performance of different language modeling methods is compared.
+models,image encoder,All models are based on CLIP-B/32 image encoder.
+models,text transformer,All models are based on a text transformer initialized by RoBERTa.
+pretraining objectives,data scale,The performance comparison is done with a larger data scale (from 4M to 13M) or a larger number of patches.
+pretraining objectives,patch size,The performance comparison is also done with different patch sizes (from 32 to 16).
+generative language modeling methods,mlm,MLM is one of the methods compared with generative language modeling methods.
+generative language modeling methods,ar,AR is another method compared with generative language modeling methods.
+generative language modeling methods,prefixlm,PrefixLM is also compared with other generative language modeling methods.
+ar,image captioning generation,AR achieves decent performance on image captioning generation.
+ar,image captioning generation,AR achieves decent performance on image captioning generation tasks.
+ar,vl understanding tasks,AR achieves inferior performance on VL understanding tasks due to the lack of ability to capture bidirectional interactions among sequences.
+prefixlm,bidirectional interactions,"PrefixLM enables bidirectional interactions between partial inputs, which is beneficial for VL classification tasks."
+prefixlm,ar,The performance of PrefixLM is similar to AR.
+prefixlm,right side of the sequence,"The reconstruction target of PrefixLM mainly falls on the right side of the sequence, where the uneven distribution may push the learned representation towards an unsatisfactory language prior."
+mlm,vqa performance,"A corruption rate of 40% achieves the best VQA performance among {10%, 20%, ..., 80%}, indicating an appropriate corruption rate is essential to control the task difficulty for MLM."
+mlm,convergence rate,"The convergence rate of MLM is slow, making larger training steps necessary to achieve decent performance."
+flm,mlm,FLM surpasses MLM on NLVR2 and image captioning.
+flm,training time,FLM shows an impressive 2.5×speed-up of training time compared to MLM.
+flm,text sequence encoding,FLM learns bidirectional context patterns by encoding the text sequence once and densely predicting the 100% input in parallel.
+flm,mlm,"FLM is a friendly pretext task for accelerating training under low-resource scenarios, and compared to MLM, FLM with span corruptions focuses more on local semantics favoring fine-grained tasks like VQA/captioning."
+flm,ar/prefixlm,FLM enjoys the high efficiency of AR/PrefixLM and the high performance of MLM in accelerating training under low-resource scenarios.
+flm,reconstruction loss lr,"With just reconstruction loss LR, the model achieves better performance compared to AR or PrefixLM. The introduction of left-to-right or right-to-left intermediate caption loss leads to consistent improvements."
+reconstruction loss lr,ar,The model achieves better performance with reconstruction loss LR compared to AR.
+reconstruction loss lr,prefixlm,The model achieves better performance with reconstruction loss LR compared to PrefixLM.
+caption loss,bidirectional caption loss,"The model gains consistent improvements when introducing bidirectional caption loss compared to reconstruction loss alone. Left-to-right loss shows superiority over right-to-left loss, confirming the effectiveness of causal relationships between words."
+bidirectional caption loss,reconstruction loss lr,"By combining bidirectional caption loss with reconstruction loss LR, the model achieves absolute gains over the model with reconstruction loss alone."
+intermediate losses,flm loss,Intermediate losses are effective and complementary to FLM loss
+sharing two unidirectional encoders,parameter sharing,Sharing two unidirectional encoders is effective and efficient due to parameter sharing
+flm,corruption rate,FLM enables a flexible choice of the corruption rate which benefits performance
+flm,number of reconstruction layers,FLM benefits from a deeper reconstructor which helps improve performance
+parameter sharing,shared text transformer,"Parameter sharing is used in the text transformer for two unimodal encodings with different attention masks. Shared text transformer surpasses the unshared one, indicating benefits of sharing feature space"
+number of reconstruction layers,deep structure of the reconstructor,A deep structure of the reconstructor helps downstream tasks by reconstructing corrupted information in parallel
+reconstructor,tasks,The deep structure of the reconstructor is shown to help the downstream tasks.
+reconstructor,text,The multi-layer reconstructor gathers text and multimodal features.
+reconstructor,features,The multi-layer reconstructor gathers text and multimodal features.
+prediction rate,model,The converged performance of the pretrained model is tested with different prediction rates.
+prediction rate,tokens,A lower prediction rate tends to achieve poor performance on VQA and NLVR2.
+corruption rate,context,The corruption rate determines how much context should be used for predicting the corrupted tokens.
+corruption rate,reconstruction problem,The corruption rate closely affects model performance by controlling the difficulty of the reconstruction problem.
+corruption rate,influence,We study the influence of corruption strategies in FLM related to the corruption rate.
+span corruption,feature encoding,The span corruption occurs after feature encoding in the method.
+pre-encoding corruption,token,We test the influence of pre-encoding corruption by assigning random corruptions to each token.
+encoding,pre-encoding,"The context mentions testing the influence of pre-encoding corruption, which suggests a direct relation between encoding and pre-encoding."
+input sequence,flm,"The input sequence undergoes random corruptions and FLM is used to reconstruct all input tokens, indicating a relationship between input sequence and FLM."
+corruption rate,optimal corruption rate,"Different corruption rates have different impacts on tasks like VQA and NLVR2, implying a relationship between corruption rate and optimal corruption rate."
+corruption methods,different types of corruption,"The context suggests that the optimal corruption rate may vary for different corruption methods, indicating a connection between corruption methods and different types of corruption."
+performance,pretraining time,"The method discussed in the context achieves competitive performance attributes regarding pretraining time, highlighting a relation between performance and pretraining time."
+flm,patch-level image features,"The method uses FLM and patch-level image features instead of heavy object detection, indicating a relationship between FLM and patch-level image features."
+flm-trained model,further fine-tuned on target downstream datasets,"The performance of the FLM-trained model is discussed in the context, suggesting a connection between the model and its fine-tuning on target downstream datasets."
+retrieval,cross-modal alignment learning,"The need for retrieval in cross-modal alignment learning is mentioned, indicating a relationship between retrieval and cross-modal alignment learning."
+retrieval,cross-modal alignment learning,retrieval is heavily required for cross-modal alignment learning
+cross-modal alignment learning,itm,cross-modal alignment learning involves ITM
+cross-modal alignment learning,itc,cross-modal alignment learning involves ITC
+vqav2,test-dev,VQAv2 is tested on test-dev
+vqav2,test-std,VQAv2 is tested on test-std
+itm,mvm,ITM and MVM are related
+itm,wra,ITM and WRA are related
+mlm,itm,MLM and ITM are related
+mlm,itc,MLM and ITC are related
+mlm,vqa,MLM and VQA are related
+itc,albef,ITC involves ALBEF
+albef,meter,ALBEF is related to METER
+albef,ourslarge,ALBEF and OursLARGE are related
+albef,blip,ALBEF is related to BLIP
+uniterlarge,unimolarge,UNITERLARGE and UNIMOLARGE are related
+vinvlbase,vinvllarge,VinVLBASE and VinVLLARGE are related
+pixelbert,clip-vil,PixelBERT and CLIP-ViL are related
+meter,ourslarge,METER is related to OursLARGE
+ar,itm,AR and ITM are related
+lemon,mlm,LEMON and MLM are related
+uniterlarge,mlm,UNITERLARGE is related to MLM as it is mentioned in the same context
+uniterlarge,itm,UNITERLARGE is related to ITM as it is mentioned in the same context
+uniterlarge,mvm,UNITERLARGE is related to MVM as it is mentioned in the same context
+uniterlarge,wra 152 (v100),UNITERLARGE is related to WRA 152 (V100) as it is mentioned in the same context
+unimolarge,mlm,UNIMOLARGE is related to MLM as it is mentioned in the same context
+unimolarge,mvm,UNIMOLARGE is related to MVM as it is mentioned in the same context
+unimolarge,itc,UNIMOLARGE is related to ITC as it is mentioned in the same context
+vinvllarge,mlm,VinVLLARGE is related to MLM as it is mentioned in the same context
+vinvllarge,itm,VinVLLARGE is related to ITM as it is mentioned in the same context
+pixelbert,mlm,PixelBERT is related to MLM as it is mentioned in the same context
+pixelbert,itm,PixelBERT is related to ITM as it is mentioned in the same context
+albef (4m),mlm,ALBEF (4M) is related to MLM as it is mentioned in the same context
+albef (4m),itm,ALBEF (4M) is related to ITM as it is mentioned in the same context
+albef (4m),itc,ALBEF (4M) is related to ITC as it is mentioned in the same context
+meterbase,mlm,METERBASE is related to MLM as it is mentioned in the same context
+meterbase,itm,METERBASE is related to ITM as it is mentioned in the same context
+flm,mlm,FLM is compared to MLM in terms of convergence speed and efficiency
+flm,accuracy,FLM is verified to be effective in accuracy
+flm,efficacy,FLM is verified to be effective in efficiency
+model,flm,"The proposed FLM model is compared to MLM in terms of convergence speed, efficiency, and accuracy"
+model,training time,The proposed FLM model has a decent reduction in training time compared to MLM
+model,performance,The proposed FLM model achieves comparable performance on multiple multimodal downstream tasks
+acknowledgement,national key r&d program of china,The paper is partially supported by the National Key R&D Program of China
+acknowledgement,general research fund of hk,The paper is partially supported by the General Research Fund of HK
+acknowledgement,national natural science foundation of china,The paper is partially supported by the National Natural Science Foundation of China
+acknowledgement,chengyue wu,The authors thank Chengyue Wu for technical assistance
+acknowledgement,jianhui xu,The authors thank Jianhui Xu for helpful comments
+acknowledgement,zhengxiao du,The authors thank Zhengxiao Du for helpful comments
+acknowledgement,zhichao lu,The authors thank Zhichao Lu for helpful comments

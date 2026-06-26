@@ -1,0 +1,238 @@
+node_1,node_2,edge
+supernet,weight-sharing mechanism,One-shot NAS methods train a supernet based on the weight-sharing mechanism.
+supernet,pre-trained weights,Inherit the pre-trained weights to evaluate sub-models on the supernet.
+shared weights,gradient descent directions,Several works have pointed out that shared weights suffer from different gradient descent directions during training.
+large gradient variance,supernet training,Large gradient variance occurs during supernet training.
+gradient variance,sampling distributions,We propose to minimize the gradient variance of the supernet training by jointly optimizing the sampling distributions of PAth and DAta (PA&DA).
+gradient variance,sampling distributions,The relationship between the gradient variance and sampling distributions is theoretically derived.
+sampling distributions,optimal sampling probability,The optimal sampling probability is proportional to the normalized gradient norm of path and training data.
+normalized gradient norm,importance indicator,The normalized gradient norm is used as the importance indicator for path and training data.
+importance indicator,supernet training,An importance sampling strategy is adopted for the supernet training based on the importance indicator.
+gradient variance,generalization performance,Lower gradient variance during supernet training results in better generalization performance for the supernet.
+methods,conventional nas,Conventional NAS separately train each sub-model to guide the controller for better architectures
+enas,one-shot nas,ENAS explores the weight-sharing mechanism across sub-models. One-Shot NAS proposes to train a supernet to share weights for sub-models to achieve higher efficiency
+weight-sharing mechanism,many works,The weight-sharing mechanism greatly improves NAS efficiency. Many works point out that the shared weights suffer from different gradient descent directions in different sub-models
+multi-copies of supernet weights,supernet training,They propose to maintain multi-copies of supernet weights to decrease the weight-sharing extent. This typically requires multiple computation burdens for the supernet training
+supernet training,computation burdens,Supernet training typically requires multiple computation burdens
+supernet training,unsatisfying results,"The supernet training often results in unsatisfying results, motivating the exploration of a better solution"
+efforts,stochastic gradient descent (sgd),Efforts have been dedicated to reducing the variance of SGD for minimizing finite sums
+works,data sampling distribution,Many works focus on optimizing the data sampling distribution to reduce gradient variance for training deep models
+methods,faster convergence and better generalization performance,Methods that reduce gradient variance generally enjoy faster convergence and better generalization performance
+experiment,gv for the supernet training,An experiment is conducted on NAS-Bench-201 using CIFAR-10 to investigate the gradient variance for supernet training
+algorithm,spos,The SPOS algorithm is used to train the supernet
+candidate operations,weight-sharing extent,Candidate operations on each edge are gradually increased to change the weight-sharing extent
+average gv,candidate operation weights,The average gradient variance of all candidate operation weights is recorded during training
+supernet performance,ranking results of sub-models,The performance of the supernet is evaluated by measuring the ranking results of the sub-models
+nas methods,training of each sub-model from scratch,Early NAS methods are time-consuming due to the training of each sub-model from scratch
+enas,weight-sharing mechanism,"ENAS leverages the weight-sharing mechanism to share weights across sub-models, speeding up the NAS process"
+one-shot nas,supernet,One-Shot NAS proposes to train the supernet using the path dropout technique and then conduct the architecture search by inheriting the pre-trained supernet weights to sub-models for fast evaluation.
+supernet,sub-models,One-Shot NAS proposes to train the supernet using the path dropout technique and then conduct the architecture search by inheriting the pre-trained supernet weights to sub-models for fast evaluation.
+gradient-based approaches,architectural parameters,Gradient-based approaches relax the architectural parameters to be continuous and jointly optimize the architectural parameters and supernet weights using gradient descent.
+sampling-based methods,supernet weights,Sampling-based methods train the supernet weights by sampling different paths (i.e. sub-models) and only optimize one path at each training step.
+supernet weights,sub-models,Sampling-based methods train the supernet weights by sampling different paths (i.e. sub-models) and only optimize one path at each training step.
+spos algorithm,supernet training,SPOS algorithm adopts a uniform sampling strategy to sample path and training data during the supernet training.
+one-shot nas methods,spos,"In this work, we focus on the sampling-based one-shot NAS methods and utilize SPOS as our baseline."
+supernet weights,multiple copies,Some works maintain multiple copies of supernet weights to decrease the weight-sharing extent.
+supernet,split,"The concept of splitting the supernet is discussed in the context, indicating a relationship between them."
+supernet,weights,"The context mentions selecting appropriate weights for a sampled sub-model, implying a relationship between weights and the supernet."
+supernet,gradient direction,"There is a discussion on seeking a reasonable gradient direction for better convergence in the context, linking gradient direction to the supernet."
+nsas,loss regularization,"NSAS utilizes loss regularization to prevent the performance degradation of other sub-models, establishing a relationship between NSAS and loss regularization."
+sumnas,reptile gradient,"SUMNAS computes the reptile gradient during supernet training, showing a connection between SUMNAS and reptile gradient."
+nsas,multi-model forgetting,"NSAS and SUMNAS are both motivated by multi-model forgetting, indicating a shared concept of multi-model forgetting between them."
+fairnas,path sampling strategy,"FairNAS elaborates a path sampling strategy to handle issues, demonstrating a relationship between FairNAS and path sampling strategy."
+magic-at,gradient similarity,"MAGIC-AT increases gradient similarity between sampled architectures, linking MAGIC-AT with gradient similarity."
+magic-at,alignment loss,"MAGIC-AT employs an alignment loss for supernet training, connecting MAGIC-AT with alignment loss."
+one-shot nas,sampling distributions,"The context mentions optimizing the sampling distributions for one-shot NAS, indicating a relationship between one-shot NAS and sampling distributions."
+sub-models,supernet,"Sub-models sharing weights from the supernet, where more sub-models lead to a larger Gradient Variance (GV) and worse ranking consistency."
+gv,training,"Larger GV during training harms the supernet ranking consistency, prompting the need to reduce GV to improve performance."
+supernet,training,Aim to reduce supernet GV during training to improve convergence rate and generalization performance by optimizing sampling distributions and using importance sampling strategy.
+path,data,"Relationship between supernet GV and sampling distributions of path and data, where the optimal sampling probability is proportional to the normalized gradient norm."
+path,training,Importance sampling strategy for path and data during supernet training to reduce GV and improve ranking consistency.
+weight-sharing mechanism,supernet training,"Validation that weight-sharing mechanism induces large GV during supernet training, which harms the supernet."
+pernet training,large gv,pernet training induces large GV
+pernet training,supernet performance,pernet training harming the supernet performance
+pernet training,ranking consistency,pernet training worsening its ranking consistency
+supernet gv,sampling distributions,relationship between the supernet GV and sampling distributions
+supernet gv,data sampling distributions,explicitly minimize the GV by jointly optimizing path and data sampling distributions during supernet training
+optimal sampling probability,normalized gradient norm,optimal sampling probability is proportional to the normalized gradient norm of path and data
+path sampling distributions,data sampling distributions,jointly optimizing path and data sampling distributions during supernet training
+method,importance sampling,"method only requires negligible computation to perform the importance sampling for path and data, and does not need tediously hyper-parameter tuning"
+kendall’s tau,nas-bench-201,obtain the highest Kendall’s Tau 0.713 on NAS-Bench-201
+approaches,linear convergence,many approaches achieve linear convergence on empirical risk minimization problems by reducing the variance of SGD
+approaches,faster convergence,approaches enjoy faster convergence and better generalization performance than vanilla SGD
+data sampling distribution,stochastic gradient variance,optimize the data sampling distribution during training to reduce the stochastic gradient variance
+sampling distribution,per-sample gradient norm,optimal sampling distribution is proportional to the per-sample gradient norm
+training data,importance sampling,use an importance sampling for the training data
+deep learning frameworks,average gradient,common deep learning frameworks only provide the average gradient of a
+deep learning frameworks,average gradient,"The context mentions how common deep learning frameworks only provide the average gradient of a mini-batch, highlighting a relationship between them."
+side information,sampling distribution,"The context states that [16] exploits side information to model the sampling distribution per class instead of per sample, indicating a relationship between them."
+[25],approximates upper bound,"[25] approximates the upper bound of the per-sample gradient norm efficiently, showcasing a relationship between them."
+supernet training,normalized gradient norm,"The context explains that the focus is on sampling different paths for supernet training using the normalized gradient norm, illustrating a relationship between them."
+approximation,importance sampling,"The context mentions utilizing the approximation from [25] to perform an importance sampling for training data during the supernet optimization, indicating a relationship between them."
+one-shot nas,supernet training,"One-Shot NAS has become mainstream due to its efficiency and simplicity, particularly in supernet training, showcasing a relationship between them."
+sub-model searching,supernet training,"The context mentions two stages of one-shot NAS approaches, supernet training and sub-model searching, indicating a relationship between them."
+supernet weights,iteratively sampling,"The context explains the process of obtaining optimal supernet weights by iteratively sampling sub-models, illustrating a relationship between them."
+sampling,sub-model,The sampled sub-models are obtained by iteratively sampling and training at each step.
+training loss,weights,The training loss is minimized to obtain optimal supernet weights.
+distribution,training dataset,The training dataset is sampled according to a distribution q(DT).
+optimal supernet weights,performance,The optimal supernet weights are inherited to evaluate the performance of each sub-model on the validation dataset.
+search algorithm,top-performing sub-model,A heuristic search algorithm is used to find the top-performing sub-model.
+performance,supernet weights,The performance of each sub-model is measured using the supernet weights.
+supernet ranking consistency,nas performance,The supernet ranking consistency is essential for the ultimate NAS performance.
+supernet gradient variance,supernet convergence,Reducing the supernet gradient variance during training improves the supernet convergence.
+sampling distributions,supernet training,The sampling distributions of p(A) and q(DT) are jointly optimized during supernet training.
+bi-level optimization problem,variable w,"The optimization problem is bi-level with W as the upper-level variable and p, q as the lower-level variables."
+gradient variance function,path and data sampling distributions,The gradient variance function is related to the path and data sampling distributions.
+relationship,sampling distributions,The relationship between sampling distributions is derived to optimize both.
+relationship,optimize,The context mentions about deriving the relationship and optimizing both sampling distributions.
+relationship,sampling distributions,The relationship mentioned involves optimizing both sampling distributions.
+optimal,sampling distributions,The context talks about seeking the optimal distribution with the sampling distribution fixed.
+training step,sub-model,The context explains about sampling a sub-model at each training step.
+probability,sampling,The context mentions about the sampling probability of a sub-model.
+gradient,variance,The context discusses minimizing the gradient variance by optimizing the sampling distribution.
+gradient,optimization problem,The context mentions about minimizing the gradient variance by optimizing the sampling distribution as an optimization problem.
+supernet training framework,path importance sampling,The context introduces the supernet training framework which includes path importance sampling.
+supernet training framework,data importance sampling,The context also involves data importance sampling in the supernet training framework.
+problem,reformulate,The problem in Eq.6 can be reformulated as a constrained optimization problem.
+optimal sampling probability,inequality constraint,The optimal sampling probability pi must satisfy the inequality constraint.
+lagrangian multiplier,lagrangian function,"By introducing the Lagrangian multiplier λ, the Lagrangian function Ψ(p, λ) is obtained."
+equality constraint,lagrangian function,"By considering the equality constraint, the Lagrangian function is derived."
+optimal sampling distribution,gradient norm,The optimal sampling distribution p⋆ is determined by the normalized gradient norm.
+sub-model,gradient norm,The gradient norm of the sub-model αi is measured to calculate the sampling probability.
+sampling probability,epoch,The sampling probability is updated after each epoch.
+gradient norm,sampling probability,"The gradient norm is calculated after backward and the sampling probability is updated after each epoch, showing a relationship in the optimization process for the path sampling distribution."
+sampling probability,computation,"The optimization for the path sampling distribution only requires negligible computation, indicating a relationship between the sampling probability and the level of computation needed."
+data sampling distribution,path distribution,"The optimal data sampling distribution q* is considered with the fixed path distribution p, highlighting a relationship between the two distributions in the context of data importance sampling."
+training data,normalized gradient norm,"Sampling training data according to their normalized gradient norm is helpful to reduce GV for deep models training, showing a relationship between training data and gradient norm in the context of model training."
+per-sample gradient norm,computation,"Computing the per-sample gradient norm is computationally prohibitive, especially in the context of training deep models, highlighting a relationship between the gradient norm calculation and the level of computation required."
+per-sample gradient norm,deep models,"The computation of per-sample gradient norm is particularly challenging in the context of training deep models, showing a relationship between the two concepts."
+loss function gradient,upper bound of gradient norm,"The gradient of the loss function regarding the pre-activation outputs of the last layer can be deemed an effective estimate of the upper bound of the gradient norm, indicating a relationship between the loss function gradient and the upper bound."
+gradient norm for training data,importance of training data,"Measuring the gradient norm for training data helps in determining the importance of each training data, showing a relationship between the gradient norm and the significance of training data."
+training data,upper bound,"Training data is bounded by its upper limit, which is accessed during the training process."
+training data,supernet,Training data is input to the supernet for training purposes.
+supernet,weights,The supernet has weights that are optimized during training.
+supernet,training epochs,The supernet is trained over multiple epochs to optimize its performance.
+training data,distribution,Training data is used to sample paths and mini-batches based on certain distributions.
+training data,gradient norm,The gradient norm of the sampled path and data is recorded during training.
+path,distribution,Paths are sampled based on a certain distribution.
+data,distribution,Training data is sampled based on a certain distribution.
+path,smoothing parameters,Smoothing parameters are linearly increased to update the path sampling distribution.
+path,uniform distribution,The path sampling distribution is updated and added to a uniform distribution.
+data,uniform distribution,The data sampling distribution is updated and added to a uniform distribution.
+pre-activation outputs,softmax layer,The pre-activation outputs are usually followed by a softmax layer.
+cross-entropy loss,gradient expression,The cross-entropy loss is used to derive the gradient expression.
+gradient expression,training,The gradient expression is computed during training.
+code,computation,The computation is efficiently executed in a mini-batch manner with just an additional line of code.
+training data,importance,The importance of training data is estimated and normalized to update the sampling distribution.
+training data,normalized results,training data is adopted to update the sampling distribution
+results,sampling distribution,normalized results are used to update the sampling distribution after each epoch
+method,supernet ranking consistency,the method aims to improve the supernet ranking consistency
+gradient variance,training,reducing the gradient variance during training
+sampling strategy,training the supernet,novel and effective importance-based sampling strategy for training the supernet
+sampling distribution,derivation,fixing one of the sampling distributions in the above derivation
+sampling distribution,optimization,jointly optimizing sampling distributions in practice
+supernet training algorithm,path importance sampling (pa),summarizing supernet training algorithm and introducing PAth Importance Sampling (PA)
+relationship,eq.10,recording and accumulating gradient norm for each sampled path following the derived relationship in Eq.10
+gradient norm,candidate operation,using the normalized gradient norm of each candidate operation as their importance
+smoothing parameter,training,employing a smoothing parameter δ to handle parameter-free operations and avoid meaningless gradient information at early epochs
+importance sampling distribution,uniform sampling distribution,linearly increasing δ to add importance sampling distribution and uniform sampling distribution during training
+data importance sampling (da),upper bound,using the upper bound as the importance indicator for training data in Data Importance Sampling (DA)
+training data,importance,utilizing normalized importance to update the data sampling distribution after each epoch
+epoch,data,The data is utilized after each epoch for updating the data sampling distribution.
+data,importance,The importance is normalized to update the data sampling distribution.
+importance,data,The normalized importance is used to update the data sampling distribution.
+data,sampling distribution,The data sampling distribution is updated with the importance for sampling training indices.
+sampling distribution,importance sampling strategy,An importance sampling strategy with replacement is adopted for sampling training indices.
+training indices,epoch,The training indices are sampled for the coming epoch.
+importance sampling distribution,uniform sampling distribution,The importance sampling distribution is combined with the uniform sampling distribution using a smoothing parameter τ.
+τ,importance sampling distribution,The importance sampling distribution is added with a smoothing parameter τ.
+τ,uniform sampling distribution,The smoothing parameter τ is added with the uniform sampling distribution.
+τ,training,The smoothing parameter τ is linearly increased during training.
+pa&da,gradient variance,PA&DA is effective in reducing gradient variance during supernet training.
+supernet training,pa&da,PA&DA helps in reducing gradient variance during supernet training.
+experiments,pa&da,Experiments are conducted to demonstrate the effectiveness of PA&DA in reducing gradient variance during supernet training.
+nas-bench-201,cifar-10 dataset,Evaluation is conducted on NAS-Bench-201 using the CIFAR-10 dataset.
+nas-bench-201,other methods,A ranking comparison with other methods is provided for NAS-Bench-201.
+search spaces,darts,The search space DARTS is used for the evaluation.
+search spaces,proxylessnas,The search space ProxylessNAS is used for the evaluation.
+cifar-10,imagenet,CIFAR-10 and ImageNet datasets are used for evaluations.
+architecture search,search spaces,An architecture search is conducted on the search spaces.
+search performance,other methods,The search performance is compared with other state-of-the-art methods.
+ablation studies,method,Extensive ablation studies are provided to analyze the method in depth.
+supernet ranking consistency,nas-bench-201,The evaluation of supernet ranking consistency is based on NAS-Bench-201.
+training performance,nas-bench-201,The training and test performance are evaluated using NAS-Bench-201.
+search space nas-bench-201,nas benchmark,Both terms are related as the search space NAS-Bench-201 is identified as a popular NAS benchmark in the given context
+search space nas-bench-201,"cifar-10, cifar-100, imagenet-16","The search space NAS-Bench-201 provides the training and test performance of CIFAR-10, CIFAR-100, and ImageNet-16, indicating a direct relation between these terms"
+sub-models,stacking cells,"Sub-models in the search space are composed of repeated stacking cells with the same structures, establishing a relationship between these two terms"
+edge,candidate operations,"Each edge in the cell has five candidate operations, implying a direct relationship between edges and candidate operations"
+settings,supernet,"The settings include the construction of the supernet with default settings as NAS-Bench-201, indicating a relationship between the two terms"
+supernet,cifar-10 dataset,"The supernet is trained on the CIFAR-10 dataset, showing a direct relation between the supernet and the dataset"
+supernet,sub-models,"After training the supernet, the performance of all sub-models is evaluated on the test dataset, connecting the supernet with the sub-models"
+supernet,pre-trained supernet weights,"The performance evaluation involves inheriting the pre-trained supernet weights for all sub-models, linking the supernet with the pre-trained weights"
+method,"fairnas, magic-at, sumnas, few-shot-25","Various methods like FairNAS, Magic-AT, SUMNAS, and Few-Shot-25 are mentioned in the context, indicating a relationship between methods and techniques"
+few-shot-25,gm-8,Both terms denote splitting the one-shot supernet into different numbers of sub-supernets.
+kendall’s tau (kt),precision@top5% (p@top5%),KT measures supernet overall ranking consistency while P@Top5% shows the ability to identify superb architectures.
+nsas,spos,NSAS obtains higher KT but lower P@Top5% and spends more training time than SPOS.
+few-shot-nas,gm,Splitting methods like Few-Shot-NAS and GM achieve better KT but generally need more cost than SPOS.
+pa&da,spos,PA&DA requires slightly more GPU hours than SPOS but reaches the highest KT and P@Top5% compared to others.
+cifar-10,darts,The CIFAR-10 dataset is used to search for superior cells in the DARTS search space.
+darts search space,supernet,"The DARTS search space contains superior cells, and the supernet is composed of normal and reduction cells within this space."
+normal cells,feature map,"Normal cells process the feature map without downsampling, which indicates a direct relation between them."
+reduction cells,feature map,"Reduction cells perform down-sampling on the feature map, demonstrating a close relationship between them."
+reduction cells,stride = 2,"Reduction cells perform down-sampling on the feature map with stride = 2, indicating a specific operation performed by them."
+supernet,total depth,"Reduction cells are located at the 1/3 and 2/3 of the total depth of the supernet, showing a positional relation between the two terms."
+cell,nodes,"Each cell consists of seven nodes with four intermediate nodes, suggesting a composition relation between cells and nodes."
+cell,edges,"Each cell consists of fourteen edges with eight candidate operations on each edge, indicating the presence of multiple operations in a cell."
+operations,edges,"We search for the most two powerful operations for each edge to get the final searched cell, highlighting the selection process of operations for edges."
+method,darts,"Our method achieves the highest average test accuracy 97.52 ± 0.07, surpassing the original DARTS and its advanced variants."
+method,"improved one-shot nas methods such as nsas, few-shot-nas, gm, and close","When compared with other improved one-shot NAS methods such as NSAS, Few-Shot-NAS, GM, and CLOSE, our method consistently outperforms them with the least search cost."
+cells,fig.3,Our best cells are shown in Fig.3.
+normal cell,reduction cell,"We can observe that both the normal cell and the reduction cell have the skip connect operation from the input nodes, leading to a residual link with other operations."
+residual link,state-of-the-art performance,"Such a ResNet-style residual link is helpful for achieving state-of-the-art performance, demonstrating that our method excels in identifying excellent architectures."
+search space,chain-like search space,"We use the chain-like search space as proposed in ProxylessNAS [4], including 21 searchable layers in the supernet."
+search space,21 searchable layers,"We use the chain-like search space as proposed in ProxylessNAS [4], including 21 searchable layers in the supernet."
+search space,supernet,We utilize our method to train the supernet on 8 GPU cards for 120 epochs.
+mobilenet blocks,"kernel sizes {3, 5, 7} and expansion rates {3, 6}","We search for lightweight MobileNet blocks by exploring the kernel sizes {3, 5, 7} and expansion rates {3, 6} for the searchable blocks."
+skip connect,blocks without downsampling,"A searchable skip connect is added for the blocks without downsampling, leading to 7 or 6 candidate operations per layer."
+momentum,learning rate,The initial learning rate is decayed to 5e-4
+learning rate,cosine strategy,The initial learning rate is decayed to 5e-4 by a cosine strategy
+supernet,evolutionary search algorithm,"After training the supernet, an evolutionary search algorithm is used to search for top-performing architectures"
+evolutionary search algorithm,flops constraint,An evolutionary search algorithm is used to search for top-performing architectures with the FLOPs constraint 400M
+evolutionary search algorithm,epochs,The evolutionary search lasts for 20 epochs
+epochs,population,"At each epoch, a population with 50 sub-models is maintained"
+sub-models,mutation,Including 25 sub-models from mutation
+sub-models,crossover,Including 25 sub-models from crossover
+searched architecture,imagenet training dataset,The searched architecture is retrained on the ImageNet training dataset
+searched architecture,validation dataset,The performance of the searched architecture is evaluated on the validation dataset
+agenet training dataset,validation dataset,ageNet training dataset is evaluated for performance on the validation dataset.
+retraining configuration,searched architecture,Detailed retraining configuration and searched architecture are provided in Supp.Results.
+pa&da,da-nas,PA&DA surpasses DA-NAS in performance with a bit more FLOPs.
+pa&da,fairnas-a,PA&DA surpasses FairNAS-A in performance with a bit more FLOPs.
+pa&da,spos,PA&DA's architecture is smaller when compared with SPOS.
+pa&da,proxyless-nas,PA&DA's architecture is smaller when compared with Proxyless-NAS.
+pa&da,magic-at,PA&DA's architecture is smaller when compared with MAGIC-AT.
+pa&da,few-shot nas,PA&DA's architecture is smaller when compared with Few-Shot NAS.
+pa&da,gm,PA&DA's architecture is smaller when compared with GM.
+our searched architecture,highest top-1 accuracy,Our searched architecture obtains the highest top-1 accuracy of 77.3.
+batch size,training of deep models,Larger batch sizes can stabilize the training of deep models with lower GV.
+bs 512,best kt 0.670,Batch size of 512 obtains the best KT of 0.670 ± 0.029.
+pa&da,higher kt,PA&DA gets higher KT compared to BS 512.
+schedules for smoothing parameters,efficiency,Changing styles for τ can update the sampling probability of DA after each epoch for efficiency.
+τ,distribution granularity,τ is evaluated in terms of distribution granularity by linearly decreasing and increasing it. Sample-wise or class-wise distribution granularity can be evaluated for τ.
+τ,smoothing parameters,It is shown that linearly increasing τ results in the best outcome when considering smoothing parameters.
+pa,da,"The ablation study conducted for DA and PA shows that when either one is applied, higher KT and P@Top5% are obtained. Using both modules together yields the best result."
+da,smoothing parameters,Results from the ablation study for DA show the ranking performance concerning the smoothing parameters and update schedules. It is indicated that a linearly increasing schedule for smoothing parameters is preferable.
+pa,contribution,Empirical observations suggest that PA contributes more compared to other factors when using PA and DA modules together.
+pa,da,Empirically observed that PA contributes more performance gains than DA
+pa&da,spos,"Comparison of PA&DA with the baseline method SPOS on CIFAR-10, CIFAR-100, and ImageNet-16-120 datasets"
+pa&da,te-nas,Adopting the trainability from TE-NAS to measure the sampled path at each training step
+pa,trainability,"PA constantly enjoys a higher trainability than the baseline, especially at the end of the training, which explains the faster convergence and better generalization performance from PA."
+baseline,trainability,"PA constantly enjoys a higher trainability than the baseline, especially at the end of the training, which explains the faster convergence and better generalization performance from PA."
+pa,convergence,"PA constantly enjoys a higher trainability than the baseline, especially at the end of the training, which explains the faster convergence and better generalization performance from PA."
+pa,generalization performance,"PA constantly enjoys a higher trainability than the baseline, especially at the end of the training, which explains the faster convergence and better generalization performance from PA."
+gradient variance,supernet training,"In this work, we reduce the gradient variance for the supernet training by jointly optimizing the path and data sampling distributions to improve the supernet ranking consistency."
+path,supernet training,"In this work, we reduce the gradient variance for the supernet training by jointly optimizing the path and data sampling distributions to improve the supernet ranking consistency."
+data sampling distributions,supernet training,"In this work, we reduce the gradient variance for the supernet training by jointly optimizing the path and data sampling distributions to improve the supernet ranking consistency."
+gradient variance,sampling distributions,We derive the relationship between the gradient variance and the sampling distributions and use the normalized gradient norm to update both distributions.
+sampling distributions,normalized gradient norm,We derive the relationship between the gradient variance and the sampling distributions and use the normalized gradient norm to update both distributions.
+methods,gradient variance,"In the future, we will further explore more effective methods to reduce gradient variance for supernet training."

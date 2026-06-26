@@ -1,0 +1,242 @@
+node_1,node_2,edge
+geometric scene representation,single image,The task of inferring a meaningful geometric scene representation from a single image is highlighted as a fundamental problem in computer vision.
+depth map prediction,visible areas,Traditional depth map prediction approaches mentioned can only reason about areas that are visible in the image.
+neural radiance fields (nerfs),3d representation including color,"Neural radiance fields are described as capable of capturing true 3D representations including color, but are mentioned as too complex to be generated from a single image."
+implicit density field,single image,"The proposed approach involves predicting an implicit density field from a single image, mapping every location in the frustum of the image to volumetric density."
+color sampling,density field,The scene representation complexity is reduced by directly sampling color from available views instead of storing it in the density field.
+neural network,scene representation prediction,A neural network is mentioned as capable of predicting the scene representation in a single forward pass.
+self-supervision,video data,The training of the network is mentioned to be through self-supervision from only video data.
+volume rendering,depth prediction and novel view synthesis,The formulation allows volume rendering to perform both depth prediction and novel view synthesis.
+geometric structure,single image,Inferring information about the geometric structure of a scene from a single image is highlighted as important for applications such as robotics and augmented reality.
+computer vision,deep learning,"Computer vision and deep learning are key concepts in the context, where traditional computer vision has evolved into deep learning age."
+3d scene,single image,"Inferring a 3D scene from a single image is a prominent challenge highlighted in the context, emphasizing the shift towards single-image depth prediction."
+depth maps,per-pixel depth values,"Depth maps are typically used to represent per-pixel depth values in computer vision tasks, showcasing how the problem has been traditionally formulated."
+neural networks,accurate single-image depth prediction,"Neural networks have shown the capability of accurate single-image depth prediction, indicating the advancements in self-supervised training using video sequences."
+depth prediction methods,true 3d scene modeling,"Depth prediction methods focus on modeling single depth values per pixel, limiting the ability to capture the true 3D representation of the scene."
+novel view synthesis,scene geometry,"In novel view synthesis, the goal is to infer a representation allowing rendering views from novel viewpoints, rather than directly reasoning about the scene geometry."
+neural radiance field,methods,Neural radiance field based methods achieve impressive results but require many training images per scene and do not generalize to new scenes.
+efforts,neural network,Efforts have been made to condition the neural network on global or local scene features to enable generalization.
+neural network,simple scenes,Conditioning the neural network on global or local scene features has only been shown to work well on simple scenes.
+neural radiance field,single image,Obtaining a neural radiance field from a single image has not been achieved before.
+problem,geometric representation,The problem tackled in this work is inferring a geometric representation from a single image.
+depth prediction formulation,continuous density field,The depth prediction formulation is generalized to a continuous density field in this work.
+architecture,encoder-decoder network,The architecture in this work contains an encoder-decoder network that predicts a dense feature map from the input image.
+feature map,density field,The feature map predicted from the input image locally conditions a density field inside the camera frustum in our method.
+camera frustum,spatial point,The density field inside the camera frustum can be evaluated at any spatial point through a multi-layer perceptron (MLP).
+mlp,coordinates,The multi-layer perceptron (MLP) is fed with the coordinates of the point and the feature sampled from the predicted feature map.
+image reconstruction losses,method,"To train the method, simple image reconstruction losses are relied upon."
+method,generalization,The method in this work achieves robust generalization and accuracy.
+image reconstruction losses,color sampling,Color sampling is a key novelty in achieving robust generalization and accurate geometry prediction. It involves sampling color values directly from input frames through reprojection instead of using MLP to predict color values.
+image reconstruction losses,geometry prediction,Accurate geometry prediction is achieved through image reconstruction losses by forcing the model to adhere to multi-view consistency assumption during training.
+color sampling,volume rendering,Color sampling is applied when performing volume rendering to sample color values directly from input frames through reprojection.
+volume rendering,geometry prediction,Volume rendering is essential for accurate geometry prediction as mentioned in the context.
+feature extractor,mlp,"The capacity is shifted to the feature extractor to reduce the complexity of MLP. The encoder-decoder captures the entire scene in the extracted features, and MLP evaluates those features locally."
+feature extractor,robust training,"To enable robust training, the capacity of MLP is significantly reduced, and a more powerful encoder-decoder is used to capture the entire scene in the extracted features."
+continuous nature of density fields,novel view reconstruction,The continuous nature of density fields allows reconstruction of a novel view from the colors of any frame by applying a reconstruction loss between two frames that observe areas occluded in the input frame.
+input frame,reconstruction loss,Applying a reconstruction loss between two frames that both observe areas occluded in the input frame
+input frame,visible areas,"Training the model to predict meaningful geometry everywhere in the camera frustum, not just the visible areas"
+reconstruction loss,model,Training the model to predict meaningful geometry everywhere in the camera frustum
+model,predict,Predicting meaningful geometry everywhere in the camera frustum
+depth estimation,3d,Achieving state-of-the-art depth estimation accuracy in true 3D capture
+model,depth estimation,Model achieving state-of-the-art depth estimation accuracy
+model,novel view synthesis,Achieving competitive novel view synthesis results even though the method is purely geometry-based
+realestate10k,novel view synthesis,Achieving competitive novel view synthesis results
+kitti,novel view synthesis,Achieves competitive novel view synthesis results
+method,design choices,Thorough ablation studies to highlight the impact of design choices
+method,single-image depth prediction,Method for single-image depth prediction by regressing per-pixel ground-truth depth
+training,method,Training methods are used for single-image depth prediction.
+training,regression,Training includes regression of per-pixel ground-truth depth values.
+training,reconstruction losses,Training can be supplemented with reconstruction losses.
+supervised training,reconstruction losses,Fully-supervised training can be supplemented with reconstruction losses.
+supervised training,architecture,Specialized architectures and loss formulations can be used in fully-supervised training.
+prediction networks,reconstruction losses,Reconstruction losses can be used exclusively to train prediction networks.
+temporal video frames,reconstruction target,Temporal video frames can be used as the reconstruction target.
+stereo frames,reconstruction target,Stereo frames can be used as the reconstruction target.
+neural radiance fields,scenes,Neural radiance fields are used to represent scenes.
+neural radiance fields,novel view synthesis,Neural radiance fields are used for novel view synthesis.
+mlp,color,The optimized MLP is evaluated along rays and integrates color over densities to render novel views.
+mlp,rays,The optimized MLP is evaluated along rays to render novel views.
+mlp,densities,The optimized MLP integrates color over densities to render novel views.
+images,sf,Images of the same scene from different viewpoints are computed using traditional SFM methods.
+images,slam,Images of the same scene from different viewpoints are computed using traditional SLAM methods.
+nerf,performance,NeRF's impressive performance inspired follow-up works that improve different parts of the architecture.
+scene,mlp,"In the traditional NeRF formulation, an entire scene is captured in a single, large MLP."
+mlp,network,The trained network in the NeRF formulation cannot be adapted to different settings or used for other scenes.
+mlp,adaptation,The trained MLP network in the NeRF formulation cannot be adapted to different settings or used for other scenes.
+capacity,inference,The MLP's high capacity results in slow inference.
+methods,mlp,Several methods propose to condition MLPs on feature grids or voxels to speed up inference.
+mlp,information,Conditioning MLPs on feature grids or voxels results in the MLP storing less information.
+method,scenes,The proposed method can generalize to highly complex outdoor scenes.
+generalization,scenes,The proposed method can generalize to highly complex outdoor scenes.
+generalization,category,Generalization is mostly limited to a single object category or simple synthetic data.
+method,generalization,The proposed method can improve generalization through depth supervision and improved ray sampling.
+nerf-based methods,impressive performance,NeRF-based methods achieve impressive performance when provided with enough images per scene.
+nerf-based methods,single image,Traditional NeRF-based methods do not work with only a single image of a scene available.
+methods for novel-view synthesis (nvs),single image,Several methods predict layered depth images and multiplane images from a single image.
+methods for novel-view synthesis (nvs),nvs results,"While some methods achieve impressive NVS results, the quality of predicted geometry usually falls short in others."
+a network,per-pixel depth and feature map,"A network predicts both a per-pixel depth and feature map, which are used in a neural rendering framework."
+network architecture,geometric structure,A neural network architecture predicts the geometric structure of a scene from a single image.
+scene,density field,A scene is represented as a continuous density field in the context.
+architecture,geometry,"The architecture learns geometry, even in occluded areas."
+point,image plane,A point in world coordinates can be projected onto the image plane.
+scene coordinates,density field,"The geometric structure of a scene is represented by a function mapping scene coordinates to volume density, known as a density field."
+image,encoder-decoder network,An encoder-decoder network predicts a pixel-aligned feature map from the input image to represent the distribution of local geometry.
+feature,pixel location,Each feature at a pixel location captures the distribution of local geometry along the ray from the camera origin through that pixel.
+density field,camera frustum,The density field is designed to lie inside the camera frustum.
+frustum,features,"For points outside the frustum, features are extrapolated from within the frustum."
+density value,3d coordinate,"To obtain a density value at a 3D coordinate, a process is described in the context."
+density value,3d coordinate,"To obtain a density value at a 3D coordinate x, we first project x onto the input image u′ I = πI(x) and bilinearly sample the feature fu′ = F(u′) at that position."
+feature,positional encoding,"This feature fu′, along with the positional encoding [32] γ(d) of the distance d between x and the camera origin, and the positional encoding γ(u′ I) of the pixel, is then passed to a multi-layer perceptron (MLP) ϕ."
+feature,density,"During training, ϕ and F learn to describe the density of the scene given the input view. We can interpret the feature representation fu′ as a descriptor of the density along a ray through the camera center and pixel u′."
+decoder,density prediction,"In turn, ϕ acts as a decoder, that given fu′ and a distance to the camera, predicts the density at the 3D location x."
+feature,density prediction,"σx = ϕ(fu′ I, γ(d), γ(u′ I))(1)"
+neural fields,color prediction,"Unlike most current works on neural fields, we do not use ϕ to also predict color."
+density distributions,color components,"This drastically reduces the complexity of the distribution along a ray as density distributions tend to be simple, while color often contains complex high-frequency components."
+rendering,color sampling,"When rendering the scene from a novel viewpoint, we do not retrieve color from our scene representation directly. Instead, we sample the color for a point in 3D space from the available images."
+color,point,Color is sampled for a point in 3D space from the available images
+point,frame,A point x is projected into a frame k
+color,volume rendering,Color and sigma can be combined to perform volume rendering
+novel views,color,Color ˆck is obtained for a pixel in a novel view by emitting a ray from the camera and integrating the color along the ray
+distance,image,Density and color are evaluated at S discrete steps xi along the ray to obtain the color
+method,feature map,Method first predicts a pixel-aligned feature map F from the input image II
+pixel,feature,"For every pixel u′, the feature fu′ implicitly describes the density distribution along the ray"
+ray,density,Density distribution along the ray can model density even in occluded regions
+point,view,"A point x is projected into one of the views, in this case, I1, to obtain the color c"
+probability,ray,"The probability Ti that the ray does not terminate before xi, i.e. the probability that xi is not occluded."
+ray,depth map,Expected ray termination depth corresponds to the depth in a depth map.
+color values,frame,"We can sample the color values from any frame, and it can be a different frame from the input frame."
+frames,ray,"It is possible to obtain multiple colors from multiple different frames for a single ray, enabling reasoning about occluded areas during training."
+training goal,encoder-decoder network,The training goal is to optimize both the encoder-decoder network and ϕ to predict a density field only from the input image.
+density field,input image,Optimizing to predict a density field from the input image allows the reconstruction of other views.
+image reconstruction loss,feature map,"For a single sample, the image reconstruction loss computes the feature map from the input image."
+frames,camera poses,Frames are reconstructed by sampling colors from camera poses and predicted densities
+nloss,nrender,"Nloss is used for reconstruction, sampling colors from Nrender"
+photometric consistency,supervision for density field,Photometric consistency between reconstructed frames and Nloss serves as supervision for the density field
+patches,patch-wise photometric measurement,Patches are sampled for patch-wise photometric measurement
+patch pi,"reconstructed patch ˆpi,k",Reconstructed patch from every frame in Nrender is obtained for every patch in Nloss
+frame k,surface,"For every patch, there is a frame in Nrender that 'sees' the same surface"
+predicted density,reconstruction,"If the predicted density is correct, it results in good reconstruction and low error"
+final loss formula,l1 and ssim,Combination of L1 and SSIM is used to compute photometric discrepancy in the final loss formula
+smoothness term,depth of patch pi,Edge-aware smoothness term is computed using the mean-normalized expected ray termination depth of patch Pi
+lph,leas,Lph and Leas are computed per element of the patch to result in 2D loss maps
+frames,ray reconstruction,Ray reconstruction occurs only if IV(k) is true for all frames
+iv(k),ray,"If IV(k) is true for all frames, the ray is ignored when computing the loss value"
+ray,loss value,"Non-invalid rays will still lead to the lowest error, therefore the min operation in Eq. (5) will ignore the invalid rays"
+model,pytorch,The model is implemented in PyTorch on a single Nvidia RTX A40 GPU with 48GB memory
+encoder-decoder network,resnet encoder,The encoder-decoder network follows using a ResNet encoder
+mlp ϕ,fully connected layers,MLP ϕ is made lightweight with only 2 fully connected layers and 64 hidden nodes each
+batch size,16,A batch size of 16 is used
+patches,images,32 patches of size 8× 8 are sampled from the images
+ray,locations,Every ray is sampled at 64 locations based on linear spacing in inverse depth
+experiments,method,"To demonstrate the abilities and advantages of our proposed method, a wide range of experiments is conducted"
+method,geometry representation,The method is uniquely able to capture a holistic geometry representation of the scene
+depth maps,scene representation,Depth maps are only a side product of the scene representation and achieve depth accuracy on par with other methods
+depth maps,scene representation,Depth maps are a side product of the scene representation
+depth accuracy,state-of-the-art self-supervised methods,Depth accuracy achieved by depth maps is on par with other self-supervised methods
+geometry,representation,The representation used is geometry-only
+novel view synthesis,single image,Method can perform high-quality novel view synthesis from a single image
+datasets,kitti,KITTI dataset used for experiments
+datasets,kitti-360,KITTI-360 dataset used for experiments
+datasets,realestate10k,RealEstate10K dataset used for experiments
+monocular sequences,realestate10k,RealEstate10K has monocular sequences
+stereo sequences,kitti,KITTI provides stereo sequences
+stereo sequences,kitti-360,KITTI-360 provides stereo sequences
+fisheye camera frames,kitti-360,KITTI-360 contains fisheye camera frames
+training epochs,kitti,Training performed for 50 epochs on KITTI
+training epochs,kitti-360,Training performed for 25 epochs on KITTI-360
+training iterations,realestate10k,Training performed for 360k iterations on RealEstate10K
+loss,occluded regions,Loss in occluded regions mentioned in Figure 3
+patch p,object 2,Patch P on Object 2 is mentioned in occluded regions
+object 1,object 2,Object 1 is occluding Object 2
+object 1,input frame ii,Object 1 is occluded in input frame II
+input frame ii,object 2,Network needs to predict density for Object 2 behind Object 1 in order to reconstruct P in I2 from I3
+loss formula,self-supervised depth prediction methods,Loss formula Eq. (7) is the same as for self-supervised depth prediction methods
+depth prediction methods,density field formulation,"Depth prediction methods can only densely reconstruct the input image, whereas density field formulation allows to reconstruct any frame from any other frame"
+input ii,"two other frames ik, ik+1","An area of the scene is occluded in the input II, but visible in two other frames Ik, Ik+1"
+training,occluded areas,"In order to learn geometry about occluded areas, we require at least two additional views besides the input during training"
+views overlap,invalid features,"While the frustums of the different views overlap for the most part, there is still a chance of a ray leaving the frustums, thus sampling invalid features"
+invalid samples,noise and instability,Invalid rays lead to noise and instability in the training process
+invalid rays,policy to detect and remove,Proposal of a policy to detect and remove invalid rays to address noise and instability in the training process
+policy,invalid rays,The policy is proposed to detect and remove invalid rays in the training process.
+ray,positions,"Consider a ray that is evaluated at positions xi, i ∈ [1, 2, . . . , S]"
+ray,frames,reconstructed from frames K
+iv(k),frames,We define IV(k) to be the function indicating that the rendered color based on frame k is invalid
+depth prediction methods,monodepth2,Depth prediction methods like MonoDepth2 do not predict a full 3D volume.
+objects,occupancy shadows,"Thus, objects cast 'occupancy shadows' behind them."
+methods,depth† [14],"Inference is from a single image with different methods like Depth† [14], PixelNeRF† [57], etc."
+methods,pixelnerf† [57],"Inference is from a single image with different methods like Depth† [14], PixelNeRF† [57], etc."
+depth,pixelnerf,Both are methods used for predicting occupancy and free space in occluded regions in 3D scenes
+depth,lidar,"Depth prediction method mentioned in the context cannot predict behind occlusions, which is a limitation addressed by Lidar scans used to compute ground truth occupancy maps"
+pixelnerf,geometry,"PixelNeRF can predict free space in occluded regions but produces poor overall geometry, indicating a relation between the method and geometric accuracy"
+network,train,"Through the proposed training scheme mentioned in the text, networks are able to learn to predict geometry in occluded areas"
+occupancy maps,lidar scans,"Lidar scans are used to build reference occupancy maps for the KITTI-360 dataset, suggesting a relationship between the two in data generation"
+kitti-360,occupancy prediction,KITTI-360 dataset is used to evaluate occupancy prediction based on Lidar scans captured by a forward-moving camera
+lidar scans,camera frustum,Lidar scans measure different areas within the camera frustum
+point,occupied,A point is considered occupied if it is in front of the measured surface for any of the Lidar scans
+lidar measurements,occluded areas,Lidar measurements can reach areas that are occluded in the input image
+lidar scans,occupancy measurement,"By accumulating enough Lidar scans, a reliable occupancy measurement of the entire camera frustum is obtained"
+point,visible,The visibility of a point in the input frame can be checked using the corresponding Lidar scan
+frame,cuboid area,"For every frame, points are sampled in a cuboid area in the camera frustum for metric computation"
+occupancy accuracy (oacc),whole scene volume,OAcc evaluates the occupancy predictions across the entire scene volume
+invisible and empty accuracy (ieacc),depth prediction,IEAcc evaluates performance beyond depth prediction specifically for invisible regions
+monodepth2 [14],ordinary depth prediction methods,MonoDepth2 model is used as a baseline for evaluating ordinary depth prediction methods
+pixelnerf,mine,PixelNeRF and MINE are compared in terms of volumetric scene understanding. MINE shows competitive performance compared to PixelNeRF.
+pixelnerf,devnet,PixelNeRF is compared to DevNet in terms of volumetric scene understanding. DevNet performs better but does not provide results on volume.
+pixelnerf,depthhint,PixelNeRF is compared to DepthHint in terms of depth prediction on KITTI dataset.
+mine,devnet,MINE is compared to DevNet in terms of volumetric scene understanding.
+pixelnerf,free space,PixelNeRF can predict free space in occluded areas but produces poor overall geometry.
+pixelnerf,geometry,PixelNeRF can predict free space in occluded areas but produces poor overall geometry.
+model,accuracy,Our model achieves strong overall accuracy.
+model,geometry,"Our model achieves strong overall accuracy, while it is also able to recover the geometry of the occluded parts of the scene."
+camera frustum,horizontal slices,To qualitatively visualize these results we sample the camera frustum in horizontal slices from the center of the image downwards and aggregate the density.
+model,scene,"This shows the layout of the scene, similar to the birds-eye perspective but for density."
+model,object boundaries,"In the Full variant, the strong signal lets our model learn sharp object boundaries."
+objects,occupancy shadows,"For depth prediction, all objects cast occupancy shadows along the viewing direction."
+pixelnerf,volumetric representation,PixelNeRF predicts a volumetric representation with free space in occluded regions.
+pixelnerf,geometry,"However, the results are noisy and the geometry is inaccurate."
+mine [23],volumetric representation,MINE [23] also specializes in predicting a volumetric representation from a single image.
+objects,occupancy shadows,"Instead, similar to depth prediction, all objects cast occupancy shadows along the viewing direction."
+depth maps,ray termination depth,Depth maps can be synthesized as a side product from the expected ray termination depth.
+depth prediction methods,volume reconstruction methods,Our model performs on par with the current state-of-the-art methods for self-supervised depth prediction and volume reconstruction.
+depth maps,neural radiance field-based methods,Our synthesized depth maps contain fewer artifacts compared to depth maps obtained from neural radiance field-based methods.
+volumetric representation,single image,We are able to obtain a volumetric representation of a scene from a single image.
+image,novel viewpoints,Images can be synthesized from novel viewpoints by sampling color from the input image.
+approach,variability,The variability of the approach is demonstrated by training two models on different datasets.
+method,realestate10k dataset,The method achieves strong performance on the RealEstate10K dataset as shown in Table 4.
+method,kitti dataset,The method achieves strong performance on the KITTI dataset as shown in Table 4.
+method,methods designed for task,The results are comparable with methods specifically designed for the task of novel view synthesis.
+mpi,mine,MINE achieves performance comparable to methods that use sparse depth supervision like MPI during training for RealEstate10K.
+method,mine,MINE achieves strong performance in the context of novel view synthesis.
+method,occupancy estimation,Ablation Studies show evaluation of different contributions in the context of Occupancy Estimation.
+method,depth prediction,Ablation Studies show evaluation of different contributions in the context of Depth Prediction.
+method,pixelnerf architecture,"The variant using only an encoder, big MLP, and color prediction corresponds to the PixelNeRF architecture."
+modelsynsin,tulsiani,Comparison between ModelSynSin and Tulsiani models.
+modelsynsin,pixelnerf,Comparison between ModelSynSin and PixelNeRF architectures.
+pixelnerf,ourskittirealestate10klpips,"PixelNeRF serves as a basis for the modified model OursKITTIRealEstate10KLPIPS, where changes are made step-by-step to reach the proposed model."
+pixelnerf,nvsablationstudies,"PixelNeRF is used as a basis for the ablation studies in the paper, helping to quantify the impact of different contributions on the performance of the method."
+ourskittirealestate10klpips,nvs,"OursKITTIRealEstate10KLPIPS is tested for Novel View Synthesis (NVS) ability on KITTI and RealEstate10K datasets, showing strong results even without predicting color."
+ourskittirealestate10klpips,ablationstudies,"Ablation studies are conducted to understand the architectural design choices in OursKITTIRealEstate10KLPIPS, highlighting the importance of different contributions for performance."
+nvsablationstudies,ablationstudies,The NVSAblationStudies combine the Novel View Synthesis (NVS) ability with the insights from ablation studies to evaluate the method's performance.
+feature extractor,geometry representation,The feature extractor outputs a geometry representation (i.e. the feature map) of the full scene in a single forward pass.
+feature extractor,scene,The feature extractor outputs a geometry representation (i.e. the feature map) of the full scene in a single forward pass.
+mlp,density,"On the other hand, the MLP outputs density based on the coordinates and is conditioned on a local feature."
+camera frustum,gradient information,"During training, the feature extractor receives gradient information from all points sampled in the camera frustum, conditioned on the input image."
+input image,conditioned,"During training, the feature extractor receives gradient information from all points sampled in the camera frustum, conditioned on the input image."
+color sampling,accuracy,"Introducing the sampling of color from the input frames further boosts accuracy, especially for occupancy estimation in occluded areas."
+mlp,training,"Consequently, noise will affect the MLP training significantly more."
+color sampling,multi-view consistency,"Additionally, color sampling enforces strict multi-view consistency."
+frustum,invalid rays,"Finally, the results show that our policy of discarding invalid rays during training improves accuracy by reducing noise in the training signal. This mainly affects the border regions of the frustum."
+3d geometric structure,scene,The method aims to estimate the 3D geometric structure of a scene from a single image.
+method,continuous density field,"The method predicts a continuous density field, which can be evaluated at any point in the camera frustum."
+method,color sampling,One of the key contributions in the paper is color sampling.
+method,architecture improvements,One of the key contributions in the paper is architecture improvements.
+method,self-supervised loss formulation,One of the key contributions in the paper is a new self-supervised loss formulation.
+method,depth maps,The method is able to evaluate depth maps synthesized from the predicted representation achieving comparable results to state-of-the-art methods.
+method,novel view synthesis,The model achieves high accuracy for novel view synthesis from a single image.
+model,geometry,"Despite only predicting geometry, the model achieves high accuracy for novel view synthesis from a single image."
+design choices,ablation studies,The authors justify all of their design choices through detailed ablation studies.
+work,erc advanced grant simulacron,The work was supported by the ERC Advanced Grant SIMULACRON.
+work,munich center for machine learning,The work was supported by the Munich Center for Machine Learning.
+work,epsrc programme grant visualai ep/t028572/1,The work was supported by the EPSRC Programme Grant VisualAI EP/T028572/1.
+c.,visualai ep/t028572/1,C. is supported by VisualAI EP/T028572/1.
+c.,erc-union-cog,C. is supported by ERC-UNION-CoG.

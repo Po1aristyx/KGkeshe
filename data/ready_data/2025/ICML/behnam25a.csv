@@ -1,0 +1,36 @@
+node_1,node_2,edge
+RocketKV,KV cache compression,is a strategy for
+RocketKV,two-stage compression,consists of
+First stage,coarse-grain permanent KV cache eviction,performs
+Second stage,hybrid sparse attention method,adopts
+hybrid sparse attention method,fine-grain top-k sparse attention,conducts
+fine-grain top-k sparse attention,attention scores,approximates
+RocketKV,compression ratio,provides up to 400x
+RocketKV,end-to-end speedup,provides up to 3.7x
+RocketKV,peak memory reduction,provides up to 32.6%
+RocketKV,NVIDIA A100 GPU,evaluated on
+RocketKV,full KV cache baseline,compared to
+RocketKV,negligible accuracy loss,achieves
+RocketKV,long-context tasks,applied to
+RocketKV,multi-turn scenarios,has a variant for
+RocketKV variant,oracle top-k attention scheme,achieves accuracy nearly on par with
+Transformer-based Large Language Models,KV cache,rely on
+KV cache,decode phase,used during
+KV cache,memory bandwidth and capacity,burdens
+RocketKV,oracle top-k attention scheme,achieves accuracy nearly on par with
+Transformer-based LLM inference,key-value cache (KV cache),uses
+key-value cache (KV cache),decode phase,becomes a major bottleneck during
+KV cache size,sequence length,scales linearly with
+KV cache size,batch size,scales linearly with
+Llama3.1-70B-Instruct,KV cache storage,requires around 320GB at FP16 precision
+KV tokens,accuracy,only a small subset is required to maintain
+dense attention operations,sparse attention,can be replaced with
+dense attention operations,sparse attention operations,can be replaced by
+permanent KV token eviction,memory bandwidth and storage savings,results in
+permanent KV token eviction,noticeable accuracy loss,could lead to
+dynamic KV token selection,memory bandwidth savings,results in
+dynamic KV token selection,extra memory storage overhead,requires
+existing KV token dropping methods,accuracy drop,shows
+oracle top-k attention scheme,negligible accuracy drop,achieves
+RocketKV,two-stage KV cache compression method,is a
+RocketKV,permanent KV token eviction,combines

@@ -1,0 +1,133 @@
+node_1,node_2,edge
+whole slide image (wsi) classification,automated pathology analysis,WSI classification is a crucial component in the broader process of automated pathology analysis.
+multiple instance learning (mil),wsi classification,Most proposed methods for WSI classification follow the MIL formulation due to high-resolution challenges and lack of patch-level labels.
+spurious associations,mil,MIL is prone to learn spurious associations that can negatively impact the model's performance.
+causal multiple instance learning (causal mil),wsi classification,The proposed method develops a causal MIL framework to address the issue of spurious associations in WSI classification.
+front-door adjustment,causal mil framework,The framework uses the front-door adjustment to block spurious associations between features and predictions.
+camelyon16,tcga-nsclc,The proposed method is evaluated on two publicly available WSI datasets: Camelyon16 and TCGA-NSCLC.
+camelyon16,wsi dataset,Camelyon16 is a dataset used for evaluating the performance of the causal MIL framework.
+tcga-nsclc,wsi dataset,TCGA-NSCLC is another dataset used for evaluating the proposed method
+feature extractors,aggregators,The framework is designed to seamlessly integrate with various feature extractors and aggregators.
+whole slide images (wsis),digital pathology,WSIs are an essential component of modern digital pathology's automated analysis.
+deep learning models,automated wsi diagnostics,Deep learning models hold immense potential for automated WSI diagnosis.
+wsi classification,weakly supervised methods,Weakly supervised methods have been proposed to address the challenges of WSI analysis.
+multiple instance learning (mil),wsi classification,Most methods for WSI classification follow the MIL formulation.
+wsi,patch-level annotations,WSIs lack patch-level annotations
+instance-level features,deep neural network,Features are extracted at the instance level using a deep neural network.
+bag (mil),positive instance,In MIL
+mil method,three stages,MIL method is divided into three stages: feature extraction
+feature extraction,deep neural network,Feature extraction uses a deep neural network to obtain instance-level features.
+aggregation,bag-level feature,Aggregation combines instance-level features into a single representation for the bag.
+aggregator,improving aggregators,Research focuses on enhancing aggregators to improve performance.
+instance-level weakly supervised signal,bag-level supervision,Signal enhancement aims to go beyond bag-level supervision for better learning.
+instance feature extractors,self-supervised learning,Some work enhances feature extractors using self-supervised learning techniques.
+instance feature extractors,multi-scale learning,Multi-scale learning is another approach to improve feature extraction.
+spurious association,model performance,Spurious associations can negatively impact the model's performance.
+wsi classification,instances,In WSI classification
+wsi classification,differences between slides,However
+figure 1,color difference example,Figure 1 illustrates the visual differences between samples.
+instance-level features,high-level bag features,These methods aggregate instance-level features to generate high-level bag features for bag-level classification.
+abmil,ilse,tomczak
+abmil,weight generation,ABMIL modifies weight generation
+transformers,vaswani et al. (2017),TransMIL relies on transformers for correlated multiple instance learning to capture interactive information.
+wsi,instance-based methods,Instance-based methods in WSI may suffer from spurious associations.
+spurious associations,wsi classification,Spurious associations can limit the efficacy of WSI classification.
+causal inference,machine learning,Causal inference combines machine learning for addressing challenges in WSI classification.
+causal inference,new research,It's a relatively new field that has gained interest recently.
+causal inference,improving wsi classification,Required to address the challenge and enhance WSI classification performance.
+mil,negative sample,MIL is explained
+mil,positive sample,Both positive and negative samples are part of the context
+cancer patches,red border,Cancer patches are marked with a red border
+causal graph,proposed,The causal graph is the proposed method or representation
+x,z,X → Z indicates that bag-level features are derived from instance-level features.
+z,y,Z → Y shows that the classifier uses bag-level features to predict the outcome (Y).
+confounding association,ubiquitous confounder,A confounding association exists due to the influence of the ubiquitous confounder on both X and Y.
+ibmil,backdoor adjustment,IBMIL employs backdoor adjustment using bag-level features as an approach.
+ibmil,instance-level features,IBMIL contrasts with the focus on instance-level features in front-door adjustment
+front-door adjustment,unobservable confounder,Front-door adjustment avoids modeling unobservable confounders by intervening on instance-level features directly.
+multiple instance learning (mil),cross-attention mechanism,The context describes a comparison between the conventional MIL process
+instance-level feature extractor,bag-level feature,These components are connected in the conventional MIL architecture where the instance-level features are extracted
+bag-level feature,classifier,The classifier takes the bag-level feature as input to predict the bag label.
+variable z,continuous updating of instance-level features,A cross-attention mechanism fuses the variable Z with the instance-level features
+bag-level labels,instance-level labels,The model aims to predict bag labels based on instance-level information
+camil,mil,CaMIL (Clustered Attention-based Multiple Instance Learning) is a variant or extension of the traditional MIL method.
+instance {(pi,1,yi
+clustering,instance-level features,Clusters are formed from the instances
+instance-level feature x,bag-level feature z,X → Z: The bag-level feature is aggregated from instance-level features.
+bag-level feature z,model prediction y,Z → Y: The classifier predicts the result from the bag-level features.
+instance-level feature x,unobserved confounder c,X ← C → Y: Unobserved confounder affects both feature extraction and prediction.
+confounding association,causal association,The confounding association can be harmful
+mediator z,causal effect of x → z,The causal effect of X on Z is calculated because the path X ← C → Y ← Z is a blocked back-door path and Y is a collider.
+causal effect of x → z,causal effect of z → y,To find the total causal effect of X → Y
+causal effect of z → y,confounding association (z ← x ← c → y),The causal effect of Z on Y includes both the direct effect (Z → Y) and the confounding association due to X and C.
+causal effect of z → y,bayesian network factorization,Using Bayesian network factorization
+x,blocked back-door path (x ← c → y ← z),X is involved in a blocked back-door path
+x,marginalizing x to block confounding,When calculating the causal effect of Z on Y
+multiple instance learning,causal graph,The entire context discusses the application of multiple instance learning using a causal graph to analyze the relationships among variables.
+random variable z,aggregation g(·),Z depends on x via aggregation g(·)
+instance-level features {xi,1,xi
+variable z,x',z is conditioned on x' in the equation P(y
+instance buffer,k clusters,Dividing instances into k clusters using K-means for computational efficiency in bag classification
+clusters,average features,Obtaining average features of each cluster through pooling operations
+instance-level features,clusters,The new set K is obtained after clustering and pooling
+number of bags (n),average number of instances per bag (m),The computational complexity is reduced from O(N * N * M) to O(N * K)
+cross-attention mechanism,average features of each cluster,A cross-attention mechanism is employed to fuse the cluster average features with the variable Z
+prior p(x′),1/k,The prior P(x′) is generally set to 1/K
+bag-level feature,fused feature,The concatenated bag-level feature and fused feature are merged
+feature extractor (f(·)),resnet or vit,The feature extractor is a neural network using fixed parameters
+aggregation function (g(·)),permutation-invariant operator,The aggregation function is a permutation-invariant operator
+nwgm (neural wasserstein gan),causal network,NWGM is used to approximate the expectation and avoid multiple forward passes within the causal network.
+camelyon16,dataset for metastases detection in breast cancer,Camelyon16 is a specific public dataset used for the detection of metastases in breast cancer.
+tcga-nsclc,non-small cell lung cancer dataset,TCGA-NSCLC is a dataset that includes lung squamous cell carcinoma (LUSC) and lung adenocarcinoma (LUAD)
+lung squamous cell carcinoma (lusc),lung adenocarcinoma (luad),LUSC and LUAD are two subtypes of non-small cell lung cancer within the TCGA-NSCLC dataset.
+wsi (whole slide images),patches,WSIs are divided into non-overlapping patches for analysis
+magnification (256x256,5x for camelyon16),magnification (20x for tcga-nsclc)
+training set,validation set,test set
+camelyon16 dataset,classification performance,The results on the Camelyon16 dataset are measured using four evaluation metrics
+camelyon16 dataset,resnet18,A CNN-based ResNet18 (He et al.
+camelyon16 dataset,vit-small,A transformer-based ViT-small (Dosovitskiy et al.
+resnet18,cnn-based,ResNet18 is a CNN architecture with 512-dimensional feature extraction.
+vit-small,transformer-based,ViT-small is a transformer architecture extracting tokens
+pre-trained parameters,resnet18,vit-small
+instance-level features,resnet18,vit-small
+adam optimizer,training,The Adam optimizer with an initial learning rate of 2e-4 and weight decay of 5e-4 is used for most experiments.
+lookahead optimizer,transmil experiments,The Lookahead optimizer is specifically used in experiments related to TransMIL (Shao et al.
+transmil (shao et al. 2021),sota mil models,TransMIL is integrated into state-of-the-art Multiple Instance Learning (MIL) models for WSI classification.
+sota mil models,ilse,tomczak
+sota mil models,li,li
+sota mil models,shao et al. (2021),Also part of the state-of-the-art methods tested on Camelyon16 dataset.
+sota mil models,lu et al. (2021),Included in the experimental results for performance evaluation.
+sota mil models,zhang et al. (2022),One more top model whose performance is enhanced by the causal method.
+camelyon16 dataset,wsi classification,Used for evaluating the performance of WSI classification tasks.
+resnet18,cnn-based architecture,A type of convolutional neural network used in the experiments.
+vit-small,transformer-based architecture,A different architecture
+dtfd method,original method,The performance of DTFD is compared and improved after the fusion of the causal method.
+tcga-nsclc dataset,performance evaluation,Additional dataset for testing the compatibility of the causal method with various features.
+causal,abmil method,The context discusses the relationship between 'causal' and the 'ABMIL method'
+abmil method,instance buffer,The instance buffer is an integral part of the ABMIL method
+instance buffer,feature,The instance buffer holds features that are updated during training
+update frequency,model performance,The update frequency of the instance buffer directly impacts the model's performance
+dimension of instance-level features,number of parameters,The dimension of these features affects the size of the model
+dimension of instance-level features,precision and accuracy,Changes in the feature dimension do not significantly affect precision and accuracy
+results,tcga-nsclc dataset,The results presented are based on the TCGA-NSCLC dataset
+clusters,max-pooling aggregators,The context contrasts the number of clusters obtained using max-pooling aggregators against the ABMIL method.
+clusters,mean-pooling aggregators,Similarly
+camiltable 3,comparison of results,The context describes a comparison in Table 3
+camil,ensemble learning,Ensemble learning is used to explore if aggregators can mitigate spurious associations in CaMIL.
+ensemble aggregators,spurious associations,The objective is to address the effect of spurious associations in ensemble models.
+dsmil,dtfd,These are different aggregation strategies integrated for experiments.
+camelyon16 dataset,experiments,Experiments are conducted on the Camelyon16 dataset to evaluate the methods.
+causal intervention,unfavorable phenomenon,Causal intervention improves the performance when compared to non-causal approaches.
+causal mil framework,spurious associations,The causal MIL framework addresses the challenge of spurious associations.
+causal method,improvement,Causal methods lead to significant improvement in performance
+best experimental performance,single aggregator,Combination of causal methods often surpasses the best performance of individual aggregators.
+causal effect,confounding associations,The context distinguishes between causal and confounding associations
+causal effect,causal intervention,The passage discusses deriving a causal intervention for unobserved confounders as a means to address the issue of spurious associations.
+bag-level feature,mediator,The bag-level feature acts as a mediator
+camil,sota methods,CaMIL is a method that
+camelyon16 dataset,tcga-nsclc dataset,Experiments are conducted on two publicly available Whole Slide Image (WSI) datasets
+nsfc projects,funding sources,This work is supported by National Natural Science Foundation of China (NSFC) Projects 62076096 and 62006078.
+stcsm project,funding sources,The Shanghai Science and Technology Commission (STCSM) Project 22ZR1421700 is another funding source.
+zf1213,funding sources,The Shanghai Knowledge Service Platform Project ZF1213 contributes to the funding.
+klatasds-moe,funding sources,The Open Research Fund of KLATASDS-MOE is a funding source.
+fundamental research funds,funding sources,The Fundamental Research Funds for the Central Universities support this work.

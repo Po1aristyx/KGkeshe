@@ -1,0 +1,187 @@
+node_1,node_2,edge
+deep image prior,regularization parameter (λ),Deep image prior (DIP) formulation includes the regularization parameter (λ) as a key component for handling image restoration (IR) and visual inverse problems.
+deep image prior,image restoration (ir),"Deep image prior (DIP) focuses on image restoration (IR) problems and has been successful in tackling various image restoration tasks, such as denoising, super-resolution, and inpainting."
+deep image prior,optimization process,"The optimization process of Deep image prior (DIP) is often slow, which has led to the need for modifications to speed it up for practical usage in time-sensitive applications."
+optimization process,image restoration (ir),"The optimization process of Deep image prior (DIP) is crucial for achieving high-quality image restoration results in tasks such as denoising, super-resolution, and inpainting."
+deep image prior,sparse gradient prior,"Deep image prior (DIP) benefits from reintroducing explicit priors, such as the sparse gradient prior encoded by total-variation regularization, to enhance its performance in image restoration tasks."
+deep image prior,metadip,"The proposed method outperforms MetaDIP, which uses meta-learning for good initializers with extra data, by achieving competitive restoration quality in a minimal amount of time."
+deep image prior,network depth,Reducing the network depth is one of the crucial modifications proposed for Deep image prior (DIP) to achieve a substantial speedup in the optimization process for image restoration tasks.
+image restoration,ir,"Image restoration (IR) involves tasks such as image denoising, super-resolution, and image inpainting."
+visual object,x,"A visual object of interest is parameterized as x = Gθ(z), where Gθ is a DNN and z is a seed."
+visual inverse problem,y ≈ f (x),"A visual inverse problem is represented as y ≈ f (x), where y is the observation and f models the observation process."
+observation process modeling,f,The observation process is modeled by function f in the context of a visual inverse problem.
+dip,training-free,"A salient feature of DIP for image restoration is that it is training-free, meaning no extra data is needed for problem-solving."
+dip,structured convolutional neural network,"In practice, the DNN Gθ in DIP is often a structured convolutional neural network."
+structured convolutional neural network,overparameterized,A structured convolutional neural network is significantly overparameterized.
+overparameterized,overfitting,"Due to heavy overparametrization, overfitting can occur leading to fitting noise in addition to desired visual content."
+overfitting,recovered(cid:98)x = gθ(z),"When overfitting occurs, the recovered image x accounts for potential noise in y along with desired visual content."
+learning process,desired visual content,The learning process primarily picks up the desired visual content before fitting the noise.
+overparametrization,convolutional structures in gθ,Overparametrization combined with convolutional structures in Gθ leads to an implicit regularization effect.
+convolutional structures in gθ,first-order optimization methods,Convolutional structures in Gθ along with first-order optimization methods contribute to the regularization effect.
+fitting process,peak-performance point,Locating the peak-performance point and stopping at the fitting sharp can provide a good estimate for x.
+empirical success of dip,solving irs,DIP has shown remarkable empirical success in solving image reconstructions.
+dip,drp-dip,Comparison between DIP and DRP-DIP for image denoising shows differences in immediate reconstructions and performance peak time.
+overfitting,dip,"Overfitting is a challenge faced in the practical deployment of DIP, where previous works have set the number of iterations directly based on visual inspection and trial-and-error. It shows the potential of DIP but does not provide an operational ES strategy."
+overfitting,visual inspection,"Visual inspection is mentioned as a method for setting the number of iterations in DIP, however, it precludes large-scale batch processing or deployment into unfamiliar scenarios."
+overfitting,trial-and-error,"Trial-and-error is mentioned as another method for setting the number of iterations in DIP, where tuning is performed with reference to the unknown groundtruth object."
+idea,mitigate overfitting,"Ideas to mitigate overfitting in DIP include controlling the capacity of Gθ, explicit regularization, and explicit noise modeling, which tend to prolong the iteration process and push peak performance to final iterations."
+slowness,dip,"The slowness of DIP in reaching the performance peak from random initialization is highlighted, where each step entails a forward and backward pass through Gθ and is much more expensive than typical iterative methods."
+slowness,gpu card,"The optimization slowness of DIP is mentioned as taking up to tens of minutes to hours on a state-of-the-art GPU card like Nvidia V100, hindering its applicability to time-sensitive tasks."
+dip,optimization slowness,The optimization slowness of DIP inevitably hinders its applicability to time-sensitive problems.
+dip,overfitting,Mitigating overfitting escalates the slowness of DIP.
+drp,dip,DRP is a variant proposed to tackle the slowness issue of DIP.
+drp,network weights,DRP optimizes the DIP seed while freezing randomly-initialized network weights.
+drp,network depth,DRP reduces the network depth compared to DIP.
+drp,total variation regularization,"DRP includes additional explicit prior(s) for regularization, such as total variation (TV) regularization."
+drp,meta-learning-based meta-dip,DRP is shown to be much more efficient than meta-learning-based meta-DIP for speedup.
+es method in [30],drp,"ES method in [30] can be directly integrated, without modification, to detect near-peak performance for DRP."
+es method in [30],overfitting,ES method in [30] can provide a complete solution to both overfitting and slowness issues in DIP.
+overfitting,slowness issues,The ES method in [30] provides a complete solution to both overfitting and slowness issues in DIP.
+meta-leaning,speedup,Meta-leaning has been used for speedup by learning good initializers and learning rates.
+drp,dip,"DRP needs zero extra data for speedup, inheriting DIP's advantages."
+drp,meta-learning,Meta-learning-based initializers do not have speed advantage overall compared to DRP.
+random projection,linear random projections,"Linear random projections have been extensively studied for randomized numerical methods, including dimension reduction and sketching."
+dnns with random weights,random-weight networks,DNNs with random weights can be effective random 'feature' extractors for image classification.
+data-driven deep generative priors,ir,Data-driven deep generative priors are important for information retrieval.
+random-weight networks,single-instance image generation,random-weight networks are used for single-instance image generation
+data-driven deep generative priors,ir,Data-driven deep generative priors are used for IR
+pretrained generators gθ,gans,pretrained generators Gθ are taken from GANs
+seed,network weights θ,"either only the seed, or both the seed and the network weights θ are optimized for IR"
+pretrained generators,complex real-world datasets,training effective generators on complex real-world datasets requires enormous amounts of data
+pretrained generators,target image,pretrained generators tend not to generalize well for target image outside its domain
+drp,dip,"DRP, similar to DIP, is a single-instance method"
+drp,no extra training data,DRP requires no extra training data
+drp,no generalizability issue,DRP faces no generalizability issue
+deep random projector,three key ingredients,Deep Random Projector describes the three key ingredients of the method
+faster than dip,spectral bias analysis,the method is faster than DIP by spectral bias analysis
+gθ,dip,Gθ in DIP is very deep
+input seed,inhomogeneity in learning,optimizing the input seed alleviates inhomogeneity in learning
+imbalanced gradients,slow optimization convergence and learning,imbalanced gradients lead to slow optimization convergence and learning
+adaptive gradient methods,adam,adaptive gradient methods such as ADAM ameliorate the issue
+freeze the network weights θ,optimize the input seed z,it seems natural to freeze the network weights θ and optimize the input seed z
+network weights,input seed,"Optimizing the input seed is much faster than optimizing the network weights for image regression. Therefore, freezing network weights and optimizing the input seed is a better choice."
+random-weight network,pretrained dnn,"While one may argue that directly taking a pretrained DNN for initialization can be another option, as we have discussed in Sec. 2, taking weights from a pretrained DNN has several foreseeable limitations."
+generator gθ,input seed z,Freezing network weights and merely optimizing the input seed z leads to better results in image regression.
+generator gθ,initial weights,Randomly setting the initial weights for Gθ is much better than directly taking weights from a pretrained model.
+input seed,gθ,The input seed z and freeze the weights of Gθ
+initial weights,gθ,Setting the initial weights for Gθ is much better than directly taking weights from a pretrained model
+image regression,input seed,The result of image regression when we optimize the input seed and freeze weights of Gθ
+dnn,batch normalization,A DNN has batch normalization and we allow its update in our experiments
+initial deep random projector (drp),"ℓ(y, f ◦ gθ(z)),min","We have our initial deep random projector (DRP): ℓ(y, f ◦ Gθ(z)),min where θBN represents the affine parameters for batch normalization."
+gθ,batch normalization,We make the first layer of Gθ as batch normalization to make the optimization function more smooth
+input seed,gθ,Using random-weight Gθ and optimizing the input seed z eliminate the inhomogeneity during the learning process
+θ,z,"After switching the role of θ and z, the per-iteration computation is almost identical to that of the original DIP"
+network depths,optimization loss,Cutting down the depth is expected to reduce the non-linearity of the final optimization loss
+depth,non-linearity,"Reducing the depth is expected to reduce the non-linearity of the final optimization loss, making it more smooth and potentially speeding up convergence."
+depth,restoration quality,"Different depths of the backbone neural network are explored for image denoising, affecting the restoration quality."
+depth,opt time,"The shallower the backbone neural network, the less the OPT time, which is a desirable property for the model."
+shallow backbone network,restoration quality,"Using a shallow backbone network has a detrimental impact on the restoration quality, while reducing the OPT time."
+shallow neural networks,restoration quality,A question arises on how to bring back restoration quality while still benefiting from shallow neural networks as backbone networks.
+restoration quality,opt time,"The trade-off between restoration quality and OPT time is discussed, as the shallow backbone network reduces OPT time but impacts restoration quality."
+restoration quality,explicit priors,"The degradation in restoration quality may be due to the optimization process suppressing implicit priors, which leads to a discussion on reintroducing explicit priors."
+frozen random-weight gθ,explicit priors,"Gθ dramatically suppresses the implicit prior induced by DIP’s implicit regularization. To bring back the restoration quality, additional explicit priors are proposed."
+total variation (tv),tv(x),"TV is employed due to its popularity for images, given by equation (4)."
+image,image denoising,"We use image denoising for illustration, as detailed in Section 4.2, to compare the performance of DRP with and without TV regularization."
+drp,tv regularization,"Adding TV to DRP significantly boosts restoration quality, as shown by higher PSNR. This observation holds across different noise types and levels."
+drp,dip,"Comparison of spectral bias between DRP and DIP models, showing DRP recovers frequency bands faster and more reliably than DIP"
+baboon,lena,Selection of images for spectral bias analysis during image recovery process
+fourier frequencies,five bands,Division of Fourier frequencies into five bands for spectral bias analysis
+drp,frequency bands,DRP model recovers all frequency bands faster and more reliably during image recovery process
+dip,frequency bands,DIP model shows slower and less reliable recovery of frequency bands compared to DRP during image recovery process
+noise-free scenario,fig. 5,Results of noise-free scenario shown in Fig. 5 for spectral bias analysis
+noise scenario,fig. 5,Results of noise scenario shown in Fig. 5 for spectral bias analysis
+impulse noise,restored images,Example of impulse noise shown in Fig. 6 with restored images by the methods
+impulse noise,restored images,"Impulse noise is shown in Fig. 6, and the restored images by our methods show almost no perceptual discrepancy."
+our methods,opt time advantage,"Our methods show OPT time advantage as demonstrated in Fig. 7, Fig. 22, Fig. 23, and Fig. 24."
+dip,drp,Comparison made between spectral bias of DIP and DRP under the noise scenario.
+gθ,hourglass architecture,Gθ can be a hourglass architecture like DIP or a decoder architecture like DD.
+dip,drp-dip,"DRP-DIP is a hourglass architecture choice for Gθ, as illustrated in Appendix A."
+state-of-the-art early-stopping methods,our methods,It is demonstrated that state-of-the-art early-stopping methods for DIP can be incorporated directly into our methods without modification.
+metadip,training data,"MetaDIP uses meta-learning to initialize DIP to speed up its training process, requiring additional training data."
+deep generative priors (dgp),pretrained models on imagenet,DGP uses pretrained models on ImageNet as its generator for faithful image reconstructions.
+training data,drp,The comparison was made between DRP and training data for additional training
+metadip,dgp,A comparison was made between MetaDIP and DGP in the context of the paper
+adam,optimizer,Adam was used as the optimizer for all experiments
+psnr,optimization time,PSNR and optimization time were used as quantitative metrics for evaluation
+model,restoration quality,An ideal model should achieve good restoration quality within the shortest optimization time
+image denoising,impulse noise,Image denoising was visualized on impulse noise with a certain corruption ratio
+drp-dd,drp-dip,DRP-DD and DRP-DIP methods produced restorations that were visually superior to DD-64 and comparable to DD-512 and DIP
+image denoising dataset,noises,Experiments were conducted on a standard image denoising dataset with 4 different noises
+dd,network width,DD's performance on different noises and noise levels may be sensitive to its network width
+hyper-parameters,learning rate,The learning rate was set as 0.1 for both DRP-DD and DRP-DIP
+hyper-parameters,λ,λ was set as 0.45 for both DRP-DD and DRP-DIP
+noise levels,network width,Different noises and noise levels may be sensitive to network width.
+network width,"{64, 128, 256, 512}","Different network width options are tested including 64, 128, 256, and 512."
+network width,"dd-64, dd-128, dd-256, dd-512","Different network width options are termed as DD-64, DD-128, DD-256, and DD-512 respectively."
+models,20k iterations,All models run for 20K iterations.
+psnr,peak point,The peak PSNR and its corresponding time to reach the peak point are reported.
+denoising performance,shot noise,Fig. 7 shows the denoising performance on shot noise.
+image restoration quality,"drp-dd, drp-dip, dd, dip",DRP-DD and DRP-DIP achieve competitive PSNR compared to DD and DIP for image restoration quality.
+opt time,"drp-dd, drp-dip, dd, dip",DRP-DD and DRP-DIP show a significant advantage over DD and DIP in terms of OPT time.
+observations,"different images, noises, and noise levels","The observations are consistent across different images, noises, and noise levels."
+image sr,4× factors,Figure 7 shows a quantitative comparison of image denoising on low- and high-level shot noise.
+low resolution image y,upsampling factor t,"With LR image y and an upsampling factor t, image super-resolution (SR) generates a corresponding HR image x."
+hr image x,"drp-dd, drp-dip, dd, dip","DRP-DD, DRP-DIP, DD, and DIP are supposed to generate HR image x."
+dip,hr image x,DIP is supposed to generate HR image x.
+hr image x,downsampling operation,Applying a downsampling operation to the generated HR image x.
+downsampling operation,low-resolution version,The goal is to find the low-resolution version of the generated HR image x.
+hr image x,lr image y,The low-resolution version of the HR image x should be exactly the given LR image y.
+optimization objective,eq. (5),The optimization objective is the same as Eq. (5) except for downsampling the restored image before calculating the ℓ2 distance in the fidelity term:min.
+optimization objective,d,The optimization objective involves the downsampling operator D and applies TV to the restored image directly without downsampling.
+d,lanczos filter,The downsampling operator D uses the Lanczos filter according to the experiments.
+image super-resolution datasets,set5,Consideration of the two popular image super-resolution datasets—Set5.
+image super-resolution datasets,set14,Consideration of the two popular image super-resolution datasets—Set14.
+methods,dd,Comparison of the performance of our methods with DD.
+methods,dip,Comparison of the performance of our methods with DIP.
+drp-dd,drp-dip,DRP-DD and DRP-DIP adopt the exact same hyper-parameters.
+dd,original settings,"For DD, following their original settings."
+dip,original settings,"For DIP, following their original settings."
+models,5k iterations,Running all models for 5K iterations.
+models,peak psnr,Reporting the peak PSNR along with the corresponding OPT time to reach the peak.
+visual comparison,4× sr,Showing the visual comparison of 4× SR.
+visual comparison,8× sr,The visual comparison of 8× SR is provided in Appendix G.
+our methods,bicubic upsampling,"In terms of visual comparison, our methods yield better HR images compared to Bicubic upsampling."
+drp-dd,dd,DRP-DD is on-par with DD.
+drp-dip,dd,DRP-DIP is on-par with DD.
+ip-10%,fig. 11,IP-10% are shown in Fig. 11
+fig. 11,results,we provide the results of IP-30% and IP-50% in Appendix G
+dd,dip,"Although DD and DIP eventually may catch up with our methods in terms of getting similar PSNR, our methods demonstrate strong advantages over DD and DIP regarding the optimization speed"
+our methods,dd,our methods demonstrate strong advantages over DD and DIP regarding the optimization speed
+our methods,dip,our methods demonstrate strong advantages over DD and DIP regarding the optimization speed
+methods,drp-dd,Our methods (DRP-DD and DRP-DIP) produce restorations that are visually comparable to DD and DIP
+methods,drp-dip,Our methods (DRP-DD and DRP-DIP) produce restorations that are visually comparable to DD and DIP
+ip,restorations,A visualization of IP with marks and texts. Our methods (DRP-DD and DRP-DIP) produce restorations that are visually comparable to DD and DIP
+ε,"gaussian distribution n (0, 10−3)","In our experiments, the ε is taken from a Gaussian distribution N (0, 10−3)"
+dd,settings,"For DD and DIP, we simply adopt their original settings including the network architecture and hyper-parameters"
+dip,settings,"For DD and DIP, we simply adopt their original settings including the network architecture and hyper-parameters"
+clean image,restorations,"the goal is to restore the clean image from it. Fig. 10 shows the qualitative comparison of our methods, DD, and DIP"
+methods,dd,"Fig. 10 shows the qualitative comparison of our methods, DD, and DIP"
+methods,dip,"Fig. 10 shows the qualitative comparison of our methods, DD, and DIP"
+methods,dd,implying that our methods have similar power to restore high-quality images as that of DD and DIP in the task of image inpainting
+methods,dip,implying that our methods have similar power to restore high-quality images as that of DD and DIP in the task of image inpainting
+opt time advantage,our methods,"we further show the OPT time advantage of our methods in Fig. 11, Fig. 26, and Fig. 27"
+methods,opt time,"we further show the OPT time advantage of our methods in Fig. 11, Fig. 26, and Fig. 27"
+advantages,opt time,"Now, to further investigate the advantages of our methods in terms of OPT time, we conduct image inpainting on the same inpainting dataset used in DIP [29] where the mask"
+advantages,our methods,"Now, to further investigate the advantages of our methods in terms of OPT time, we conduct image inpainting on the same inpainting dataset used in DIP [29] where the mask"
+image inpainting,dip,Both methods are mentioned in the context and compared in terms of performance by observing the PSNR of experimental models.
+image inpainting,ours,"Comparison is made between the image inpainting method and the method developed by the authors, indicating an improvement in PSNR."
+dip,early-stopping methods,Investigation is done to see if early-stopping methods used for DIP can be applied to combat overfitting in the author's methods.
+es-wmv,image denoising,ES-WMV method is used for image denoising and the settings for this process are adopted from Section 4.2 of the context.
+es-wmv,psnr gap,ES-WMV [30] is quite effective for our methods without any modifications. PSNR gap is less than 1 dB.
+metadip,dgp,Comparison of MetaDIP [34] and DGP [21]. MetaDIP [34] heavily relies on exterior training images.
+metadip,drp-dip,Comparison between MetaDIP [34] and DRP-DIP. MetaDIP [34] is compared with DRP-DIP on CelebA [18] and CBSD68 [19].
+dip,drp-dip,"DRP-DIP consistently outperforms DIP and DGP in other time checkpoints, suggesting the superiority of our methods."
+age denoising,mean psnr,"Age denoising results in the mean PSNR values, where higher mean PSNRs are highlighted in red indicating better performance."
+age denoising,opt time,"Age denoising results also show the optimization time, where lower OPT times are highlighted in blue suggesting faster processing."
+dip,dgp,"The comparison table demonstrates the performance of DIP and DGP in image inpainting, indicating the averaged PSNR values reported for each."
+dip,drp-dip,"A comparison is made between DIP and DRP-DIP in terms of image inpainting, showcasing their respective PSNR values in different scenarios."
+nsf cmmi 2038403,"hw, zz, js","Authors HW, ZZ, and JS are partially supported by NSF CMMI 2038403, acknowledging the contribution of the organization in their research."
+drp-dd,drp-dip,"Figure 12 compares the performance of existing early-stopping method applied to DRP-DD and DRP-DIP, illustrating the impact of the method in different noise types and levels."
+dip,meta-learning,"Despite having access to large-scale datasets, the use of meta-learning in DIP does not significantly improve restoration quality or reduce optimization time."
+datasets,restoration,Datasets are mentioned in the context as a key component and are related to the quality of restoration.
+datasets,optimization time,Datasets play a role in affecting optimization time in the context.
+drp-dip,performance,DRP-DIP is compared based on performance in the context.
+dgp,method,Method comparison is done between DGP and another method in the context.
+dgp,image inpainting,DGP is compared based on its performance in image inpainting.
+drp-dip,psnr,DRP-DIP's performance is evaluated in terms of PSNR in the context.
+dgp,data distribution shift,DGP's inability to generate high PSNR restorations is attributed to potential data distribution shift.

@@ -1,0 +1,132 @@
+node_1,node_2,edge
+customized text-to-image generation,overfitting issues,Existing methods suffer from overfitting
+detex (proposed approach),disentangled concept embedding,DETEX learns to separate the subject-related and unrelated information for flexible image generation.
+conventional methods,single concept embedding,DETEX contrasts with conventional methods that learn a single embedding from given images.
+learnable image-shared subject embedding,image-specific subject-unrelated embeddings,DETEX represents images with multiple embeddings to decouple irrelevant attributes.
+attribute mappers,irrelevant attributes (background,pose)
+joint training strategy,disentanglement of unrelated embeddings,The strategy helps in separating relevant and irrelevant information during training.
+subject embedding (inference),image-specific embeddings (retaining attributes),During inference
+experiments,performance demonstration,Extensive experiments show the superiority of DETEX in handling composition of concepts and avoiding overfitting.
+diffusion models,text-to-image generation,Diffusion models
+diffusion models,artistic and video creation,These models show great potential in various tasks
+customized image generation,user-specified concept,Customized image generation focuses on learning a user-specified concept from a small set of images
+customized image generation,limited training examples,The challenge in customized image generation lies in the limited number of training images
+existing methods,user-specified word alignment,Existing methods use finetuning on word embeddings or model parameters to align the target concept with a user-provided word.
+prototypenx/detex,method for customized image generation,The code for the DETEX method
+limited training examples,subject-unrelated information,The learned concept contains subject-unrelated information due to the limited training data.
+subject-unrelated information,image background,Irrelevant disturbances like the image background are part of the subject-unrelated information.
+subject-unrelated information,subject pose,Irrelevant disturbances like subject pose and position are part of the subject-unrelated information.
+subject mask,background information,Employed by some studies to filter out background information
+disenbooth (chen et al. 2023),subject embedding,Decomposes the target concept into a subject component to exclude irrelevant information.
+disenbooth (chen et al. 2023),irrelevant embedding,Also includes an additional irrelevant embedding to separate relevant and irrelevant parts.
+explicit supervision,decoupling between subject concept and irrelevant info,Lacks effective explicit supervision for better separation.
+detex,customized text-to-image generation,A proposed method to learn disentangled concept embeddings for flexible generation.
+custom diffusion (kumari et al. 2023),finetuning,Uses principles from Custom Diffusion to finetune the Stable Diffusion model for new concepts.
+stable diffusion (rombach et al. 2022),model parameters,Finetunes both model parameters and word embeddings.
+detex,image-shared subject embedding,Separates the target concept into a shared subject component across images.
+detex,image-specific subject-unrelated embeddings,Has separate embeddings for specific image-related irrelevant information.
+image-shared subject embedding,target concept,The learnable image-shared subject embedding represents the target concept.
+image-specific subject-unrelated embeddings,irrelevant information,These embeddings capture irrelevant information from pose and background.
+irrelevant information,pose (view),Irrelevant information includes pose/view aspect.
+irrelevant information,background,Irrelevant information also includes background aspect.
+joint training strategy,decoupling target concept and unrelated information,A joint training strategy is proposed to effectively separate the target concept from pose and background.
+image-specific subject-unrelated embeddings,attribute words (e.g.,[b] background
+detex,high-quality and diverse image generation,DETEX generates images with controllable composition of the learned concept into a new scene.
+subject masks,information reconstruction,Given images and subject masks
+sota methods,editing flexibility,SOTA methods forms the basis for discussing its strength in editing flexibility.
+editing potential,our method,Our method exhibits stronger editing potential
+number of input images,extremely limited,The context highlights the advantage when there are very few input images.
+work,customized generation,This work proposes a novel solution to customized generation in text-to-image models.
+challenges,overfitting and controllability,The work addresses the challenges faced in text-to-image models.
+text-to-image diffusion models,classifier-free guidance,Classifier-free guidance is a type of conditional generation used in diffusion models.
+classifier-free guidance,conditional probabilities,It directly optimizes conditional probabilities for reliable and detailed generation.
+language models,multi-modal models,Advancements in language models and multi-modal models like CLIP and BERT enhance text-to-image generation.
+clip,bert,Both CLIP and BERT contribute to the development of text-to-image generation techniques.
+text,control,Some work uses text to control image synthesis
+language models,classifier-free guidance techniques,Current approaches use language models for semantic alignment with classifier-free guidance
+latent diffusion models (ldm),computational complexity reduction,Latent diffusion models balance complexity and detail preservation by compressing data into a low-dimensional latent space.
+stable diffusion,ldm-based text-to-image model,Stable Diffusion is an example of a text-to-image model built on LDM
+existing large-scale text-to-image models,reliance on natural language prompts,These models solely depend on prompts for guidance
+customized image generation,challenging task,The ability to generate images tailored to specific needs is seen as a significant challenge for current text-to-image models.
+our detex,framework,DETEX consists of a framework that represents images with decoupled textual embeddings and learns target concepts through joint fine-tuning.
+image-sharing subject embedding,image-specific embeddings (pose and background),DETEX separates subject-related (v) from pose (vp_i) and background (vb) embeddings for better control over image generation.
+subject embedding (v),learnable vector,During training
+attribute mappers,pose and background projection,Attribute mappers are used to map input images into pose and background embeddings for targeted modification.
+stable diffusion (sd),text-to-image model,Stable Diffusion is employed as a pretrained model for text-to-image generation.
+pretrained stable diffusion,customized text-to-image generation,Adapted for customized text-to-image generation using techniques like Custom Diffusion.
+custom diffusion,baseline method,Used as a reference for the proposed method in achieving customized text-to-image generation.
+cross-attention layers,fine-tuning,SVDiff (Han et al. 2023) fine-tunes these layers
+svdiff (han et al. 2023),non-fine-tuning methods,Proposes a method that does not update all weights during customization.
+cones (liu et al. 2023),effective concept neurons,Focuses on identifying neurons relevant to the target concept for customized generation.
+vico (hao et al. 2023),image attention module,Introduces a module to adjust the diffusion process
+encoder-based approaches,additional module,These approaches add a pre-trained module to reduce generation time.
+disenbooth (chen et al. 2023),decoupling of identity-irrelevant information,Explores separating identity from the target concept during customization.
+pose,background information,Modeled as independent image-specific words for finer decoupling.
+custom diffusion,stable diffusion,Custom Diffusion adapts the pre-trained Stable Diffusion model for learning new concepts by finetuning parameters and image-shared subject embedding.
+decoupled textual embedding,irrelevant information,The decoupling aims to separate irrelevant information like pose and background from the subject embedding.
+pose,image-specific subject-unrelated embedding,For each input image
+background,image-specific subject-unrelated embedding,Similarly
+pseudo-[pi],image-specific subject-unrelated embedding (pose),Pseudo-[Pi] is a term used to clarify the representation of pose in the context.
+vb_i,image-specific subject-unrelated embedding (background),vb_i refers to the image-specific embedding for background
+clip-t,quantitative comparisons,CLIP-T is included in the quantitative comparison with other methods in Table 1.
+clip-i,quantitative comparisons,CLIP-I is another metric for subject fidelity
+dino-i,quantitative comparisons,DINO-I is also part of the comparison
+textual inversion,existing methods,Textual Inversion (Gal et al. 2022) is one of the competing methods mentioned in the context.
+vico,existing methods,ViCo (Hao et al. 2023) is another method in the comparison table.
+dreambooth,existing methods,Dreambooth (Ruiz et al. 2023) and Dreambooth+LoRA (Hu et al. 2021) are also listed as part of the comparison.
+attribute words,corresponding information,The attribute words capture the corresponding information within the context
+subject-unrelated embeddings,optimizing directly,Directly optimizing subject-unrelated embeddings can be non-trivial due to the variation in pose and background across images.
+embedding mapper,pose mapper,An embedding mapper
+embedding mapper,background mapper,Similarly
+pretrained clip image encoder,feature extraction,The CLIP image encoder is used to extract features from the input image.
+pose mapper,multilayer perceptron (mlp),The pose mapper is implemented as a small MLP.
+cross-attention loss,joint training strategy,A cross-attention loss is proposed alongside a joint training strategy to effectively separate the subject concept from unrelated information.
+pose embeddings,background embeddings,Well-disentangled pose and background embeddings imply they focus on their respective aspects.
+photo of a [v] class,subject image,The photo is a representation of a specific class
+subject mask,foreground subject images,The subject mask is used to isolate the subject from the background
+model input,blank background,The processed image with a subject mask results in an input with a removed background
+methodours,competing methods,MethodOurs is compared to other approaches such as CDOurs
+user study,percentage of volunteers' preference,The user study evaluates the preference of volunteers for MethodOurs against competitors based on subject fidelity and text alignment.
+detex,textual inversion,dreambooth
+subject fidelity,image details,Subject fidelity refers to the accuracy of capturing the target concept
+text alignment,flexible editability,Text alignment means the ability to create images that match the given prompt
+detex,state-of-the-art methods,Our DETEX outperforms state-of-the-art methods in text alignment (CLIP-T) due to its superior editability.
+detex,dreambooth,Dreambooth has higher image alignment scores (CLIP-I
+detex,custom diffusion,Custom Diffusion also exhibits high image alignment scores but includes subject-irrelevant details; DETEX's CLIP-I(FG) and DINO-I(FG) are better
+image alignment (clip-i),faithful capture of the target concept,DETEX's better CLIP-I(FG) shows its capability to accurately align with the main subject without unnecessary background elements.
+image alignment (dino-i),faithful capture of the target concept,Similar improvement for DINO-I(FG) highlights DETEX's strength in isolating the relevant concept for the generated image.
+subject,synthesized images,Users were presented with two synthesized images for comparison.
+our approach,existing methods,A user study was conducted to compare our approach with existing ones.
+attribute mappers,subject,pose
+subject embedding,target concept,The learned subject embedding allows generating images with various poses and backgrounds.
+subject-unrelated pose and background,well-editable subject concept,Our method separates these aspects for flexible customization.
+dreambench dataset,ruiz et al. 2023,Experiments were conducted on the DreamBench dataset
+dreambench dataset,30 subjects,The dataset contains 30 subjects with different categories.
+dreambench dataset,4 ∼ 7 images per subject,Each subject has 4 to 7 images for training.
+editing prompts,25 prompts per subject,There are 25 editing prompts available for each subject.
+evaluation,randomly generated 8 images,For evaluation
+testing,ddim steps,The context mentions that during testing
+ddim (song,meng,and ermon 2020)
+classifier-free guidance,scale,The scale of classifier-free guidance is specified as 6.
+cross-attention loss,effect,The cross-attention loss is crucial for improving the learned pose and preventing entanglement with background.
+attribute mapper,proposed,The attribute mapper is a proposed component in the method.
+joint training strategy,best performance,Joint training strategy contributes to achieving the best subject fidelity and comparable text alignment.
+text alignment,evaluation aspect,Text alignment is one of the two evaluation aspects for comparing methods.
+image alignment,evaluation aspect,Image alignment is the other evaluation aspect besides text alignment.
+table 2,user preferences,Table 2 shows the user preference results for different methods.
+ablation study,component evaluation,An ablation study is conducted to assess the impact of various components in the method.
+multiple textual word embeddings,ablation component,The study evaluates the effect of using multiple textual word embeddings.
+cross attention loss lca,ablation component,Cross attention loss LCA is one of the components being studied.
+detex method,target concept,Combines pose and background from different images
+attribute mappers,pose embeddings,Without mappers
+attribute mappers,background embeddings,Without mappers
+cross-attention loss (lca),subject-unrelated embeddings ([p],[b])
+cross-attention loss (lca),text and image alignment scores,LCA improves performance in both alignment metrics.
+joint training strategy,learned concept,Without joint training
+joint training strategy,decoupling between subject embedding and irrelevant embeddings,The proposed joint training strategy facilitates the separation of subject information from unrelated elements using a cross-attention loss.
+cross-attention loss,improving consistency between learned subject and target concept,The cross-attention loss contributes to enhancing the alignment between the subject representation and the desired concept.
+proposed method,sota methods,The method outperforms state-of-the-art (SOTA) approaches in terms of editing flexibility and subject fidelity.
+subject fidelity,editing flexibility,The method excels in providing both high-quality subject preservation and easy manipulation during image generation.
+investigate the ability,meaningful attributes,The aim is to explore the adaptive identification of relevant attributes for the given subject
+national key r&d program of china,grant no. 2020aaa0104500,This research is supported by a grant from the National Key R&D Program of China.
+national natural science foundation of china,grant nos. 62176249 and u19a2073,Additional support comes from grants from the National Natural Science Foundation of China with the mentioned grant numbers.

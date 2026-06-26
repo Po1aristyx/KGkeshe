@@ -1,0 +1,259 @@
+node_1,node_2,edge
+knowledge graph embedding models,"cp, rescal, tucker, complex","CP, RESCAL, TUCKER, COMPLEX are successful KGE models for link prediction and can be interpreted as energy-based models"
+energy-based models,"maximum-likelihood estimation, sampling, logical constraints","Energy-based models like CP, RESCAL, TUCKER, COMPLEX are not amenable for exact MLE, sampling and struggle to integrate logical constraints"
+score functions of kges,circuits,The score functions of KGEs are re-interpreted as circuits - constrained computational graphs allowing efficient marginalization
+efficient generative circuit models,"non-negative activations, squaring outputs",Two recipes are designed to obtain efficient generative circuit models by either restricting their activations to be non-negative or squaring their outputs
+interpretation,"performance for link prediction, learning by mle, sampling of new triples, guarantee of logical constraints","The re-interpretation comes with little or no loss of performance for link prediction, unlocks exact learning by MLE, efficient sampling of new triples, and guarantees that logical constraints are satisfied by design"
+models,scale,The models scale more gracefully than the original KGEs on graphs with millions of entities
+knowledge graphs,"structured domain information, triples, entities, edge labels",Knowledge graphs represent structured domain information as directed graphs encoded as collections of triples with entities as nodes and edge labels as predicates
+cox2,interacts,COX2 interacts with certain entities in the biomedical KG ogbl-biokg.
+link prediction,entities,Link prediction involves querying for the entities that are connected in a KG by an edge labelled with a certain predicate.
+kge models,link prediction,"KGE models are state-of-the-art models for link prediction, which map entities and predicates to sub-symbolic representations."
+kge models,triples,KGE models assign real-valued degree of existence to triples in order to rank them.
+complex,link prediction,"COMPLEX KGE model assigns scores to triples, ranking them for link prediction tasks."
+kge models,opportunities,KGE models miss some opportunities as triple scores cannot be directly compared across different queries and models.
+probabilities,triples,Establishing probabilities over triples is important for a sound probabilistic interpretation.
+probabilistic interpretation,scores,The concept of probabilistic interpretation is related to scores as we need to establish a sound interpretation using probabilities instead of scores.
+scores,probabilities,Scores need to be transformed into probabilities for easy interpretation and comparison.
+kge models,cp,CP is one of the KGE models mentioned.
+kge models,rescal,RESCAL is mentioned as one of the KGE models.
+kge models,tucker,TUCKER is listed as one of the KGE models.
+score functions,popular kge models,"The score functions of popular KGE models like COMPLEX, CP, RESCAL, and TUCKER are mentioned."
+kge models,complex,COMPLEX is mentioned in the context as one of the KGE models.
+complex,cp,Different KGE models like COMPLEX and CP are mentioned in the context.
+cp,rescal,CP and RESCAL are two of the KGE models listed.
+rescal,tucker,RESCAL and TUCKER are mentioned as KGE models.
+score functions,circuits,"Popular KGE models like COMPLEX, CP, RESCAL, and TUCKER have score functions that can be represented as circuits."
+probabilistic circuit,activations,"To retrieve a valid probabilistic circuit encoding a probability distribution, activations need to be either restricted to be non-negative or squared."
+generative model,triples,"Generative models of triples can be used efficiently with popular KGE models like COMPLEX, CP, RESCAL, and TUCKER."
+kge models,maximum-likelihood estimation,Learning KGE models through maximum-likelihood estimation is computationally infeasible.
+generative model,surrogate kg,Generative models enable sampling new triples efficiently to generate a surrogate KG consistent with the original one.
+generative model,data augmentation,Generative models can also be used for data augmentation purposes.
+surrogate kg,original kg,surrogate KG statistics are consistent with the original one
+surrogate kg,data augmentation,surrogate KG is used for data augmentation
+traditional kge models,hard constraints,traditional KGE models do not guarantee the satisfaction of hard constraints
+kge models,trustworthy predictions,hard constraints are crucial to ensure trustworthy predictions
+kge models,biomedical applications,KGE models are used in biomedical applications
+kge models,predictions,predictions of KGE models can violate simple constraints such as KG schema definitions
+complex,sota,COMPLEX ranks higher than SOTA
+complex,alternatives based on multilinear score functions,COMPLEX is one of the alternatives based on multilinear score functions
+complex,generative kge circuits,"COMPLEX can be represented as structured computational graphs, named circuits"
+discriminative objectives,large kgs,Discriminative objectives scale far better over large KGs with millions of entities.
+sample new triples,gekcs,We are able to efficiently sample new triples from GeKCs.
+metric,quality,A novel metric is proposed to measure the quality of new triples sampled from GeKCs.
+theoretical advances,representing circuits,Recent theoretical advances in representing circuits guarantee that predictions at test time will never violate logical constraints.
+predictions,test time,Predictions at test time will never violate logical constraints such as domain schema definitions.
+experimental results,link prediction accuracy,Experimental results show minimal or no loss in terms of link prediction accuracy.
+kgs,embedding models,KGs and embedding models are related in the context of constructing differentiable score functions for KGE models.
+kg g,directed multi-graph,KG G is defined as a directed multi-graph where nodes are entities and edges are labelled with predicates.
+kg embedding model,real scalar,A KG embedding model maps a triple to a real scalar via a score function.
+differentiable score functions,kge models,Common recipe to construct differentiable score functions for KGE models involves mapping entities and predicates to embeddings and combining them via multilinear maps.
+cp,rescal,Both CP and RESCAL are Knowledge Graph Embedding (KGE) models mentioned in the text.
+cp,tucker,Both CP and TUCKER are Knowledge Graph Embedding (KGE) models mentioned in the text.
+cp,complex,"CP and COMPLEX are both KGE models. The COMPLEX model has a score function defined as ϕCOMPLEX(s, r, o) = Re(⟨es, wr, eo⟩) where es, wr, eo ∈ Cd are the complex embeddings of subject, predicate, and object."
+rescal,tucker,RESCAL and TUCKER are both Knowledge Graph Embedding (KGE) models referred to in the text.
+rescal,complex,RESCAL and COMPLEX are both KGE models mentioned in the text.
+tucker,complex,TUCKER and COMPLEX are both KGE models discussed in the text.
+kge models,energy-based models (ebms),KGE models have been traditionally interpreted as energy-based models (EBMs) according to the text.
+kge models,discriminative classifiers,KGE models can also be treated as discriminative classifiers based on the text.
+energy-based models (ebms),distribution over possible kgs,EBMs induce a distribution over possible Knowledge Graphs by associating a Bernoulli variable to every triple.
+kge models,bernoulli variable,KGE models associate a Bernoulli variable to every triple according to the context.
+object prediction,"exp ϕ(s, r, o')","The concept of object prediction is related to the mathematical expression exp ϕ(s, r, o'), which is used for prediction."
+joint probability distribution p,"three variables s, r, o","The joint probability distribution p is related to the three variables S, R, O which respectively denote subjects, predicates, and objects."
+boltzmann distribution,partition function,The Boltzmann distribution relates to the partition function in the context of probability calculations.
+recently introduced discriminative objectives,weighted pseudo-log-likelihood (pll),"The recently introduced discriminative objectives can be interpreted and generalized as a weighted pseudo-log-likelihood (PLL), which involves different weights for terms in conditional log-probability calculations."
+optimisation,mini-batch gradient ascent,Optimization processes are usually carried out by mini-batch gradient ascent to improve efficiency.
+gpu parallelism,complexity of evaluating the ϕ,Utilizing GPU parallelism is mentioned in relation to the complexity of evaluating the function ϕ in the context of computational resources.
+pll objective,generative models,The PLL objective is a traditional proxy for learning generative models as discussed in the context.
+pll objective,generative models,The PLL objective is a traditional proxy for learning generative models.
+maximum-likelihood estimation (mle) objective,generative models,MLE objective is a proxy for learning generative models.
+generative models,infeasible to evaluate maximum-likelihood estimation (mle) objective,Evaluating the MLE objective is infeasible for generative models.
+gl,lpll,"GL is defined as (s,r,o)∈G and LPLL is defined as ∑(s,r,o)∈G log p(s, r, o)."
+gl,mle,GL is the set on which MLE is evaluated.
+z,generative models,Computing Z is prohibitive for generative models.
+three-variable interpretation,"evaluating log p(s, r, o) exactly","Evaluating log p(s, r, o) exactly can be done in polynomial time under the three-variable interpretation."
+fb15k-237,small fragment of freebase,FB15k-237 is a small fragment of Freebase.
+kge models,structured computational graphs,Popular and successful KGE models can be viewed as structured computational graphs.
+kge models,"cp, rescal, tucker, and complex","CP, RESCAL, TUCKER, and COMPLEX are popular KGE models."
+marginalisation,efficient summation,The concept of efficient summation is related to marginalisation in the context of calculating triple probabilities.
+computational graphs,circuits,"In the context, computational graphs are interpreted as circuits that output valid probabilities."
+circuits,parametrized computational graph,A circuit is defined as a parametrized computational graph over variables X in the given context.
+score functions,circuits,Some score functions can be represented as circuits according to the information provided.
+sum unit,input units,"In the context, a sum unit is defined based on its input units that depend all on the same variables."
+structural properties,efficient summation,There are two structural properties introduced that enable efficient summation in the given context.
+input units,variables,Input units depend on the same variables
+circuit,inputs,A circuit is decomposable if the inputs of every product unit depend on disjoint sets of variables
+input units,embedding entries,"The input units map subject, predicate, and object to their embedding entries"
+products,weighted sum,Products are evaluated before the weighted sum
+evaluation cost,number of edges,Evaluation cost is in proportion to the number of edges in the circuit
+circuit,size,"The size of the circuit, also called its size, is mentioned in the context as"
+size,cp,"The size of the circuit for CP is specified within the context, showing a specific connection between size and CP."
+circuit,cp,"Within the context, the circuit for CP is discussed, implying a direct association between the circuit and CP."
+circuit,score functions,"The context mentions the construction for the score functions of models and the circuit sizes, indicating a relationship between the circuit and score functions."
+circuit,embedding components,"The representation of circuits as units mapping entities and predicates into embedding components is explained in the context, establishing a connection between circuits and embedding components."
+circuit,sum unit,"The context discusses how sum units and product units make up circuits, demonstrating a relationship between circuits and sum units."
+input units,sum unit,"It is mentioned that the inputs of sum units are product units, indicating a direct relationship between input units and sum units."
+input units,"scope {s, r, o}","The context states that input units decompose the scope {S, R, O}, showing the association between input units and scope."
+circuits,summations,"The context discusses how reinterpreting score functions enables summations over circuits, revealing a relationship between circuits and summations."
+circuits,complexity,"The text mentions reducing complexity by pushing summations to input units of a circuit, indicating a relationship between circuits and complexity."
+sums,logarithm space,"The sums in this context are in logarithm space, indicating a relationship between the two concepts"
+sums,marginalising variables,"Summation in this context does not correspond to marginalising variables in probability space, implying a contrast between the two concepts"
+sums,semantics of circuit structures,"The sums drive us to reinterpret the semantics of circuit structures to operate directly in probability space, suggesting a connection between the two concepts"
+"{s, r, o}",score function,"{S, R, O} encodes the score function of a KGE model, illustrating a relationship between the two concepts"
+computational graphs,score functions,"The computational graphs of KGE score functions are reinterpreted to directly output non-negative values, indicating a link between the two concepts"
+computational graphs,probabilistic circuits,"The computational graphs are cast as probabilistic circuits, demonstrating the transformation of one concept into another"
+generative kge circuit,smoothness and decomposability,"Generative KGE circuits are defined as smooth and decomposable, indicating characteristics of the concept"
+generative kge circuit,probability distribution,"Generative KGE circuits encode a probability distribution over triples in a KG, highlighting the nature of the concept"
+score function,evaluation,"Existing KGE models require the evaluation of the whole score function on each possible triple, suggesting an action associated with the concept"
+cp,"s, r, o","CP(s, r, o) = ⟨es, wr, eo⟩ ∈ R+ for"
+cp,ϕ+,"Example of a non-negative CP score function ϕ+ with embeddings es, wr, eo ∈ Rd"
+cp,z,Computing Z by pushing the outer summations
+cp,gekcs,Proposing ways to turn the computational graphs of CP into GeKCs
+gekcs,"cp, rescal, tucker",Scaling better with GeKCs and converting existing KGE models to GeKCs
+cp,non-negative restriction,Natural way of converting existing KGE models to GeKCs by constraining the computational units to output non-negative values
+gekc,non-negative restriction,GeKC can be restricted to non-negative values to encode a function modeling an unnormalised categorical distribution over entities or predicates
+entity,embedding,Each entry of the embedding associated with an entity becomes a parameter of the unnormalised categorical distribution over entities
+complex embedding,imaginary part,The imaginary part of each complex embedding is re-parameterised to be greater than or equal to its real part to overcome subtraction in the score function
+embedding values,non-negativity,Deriving COMPLEX+ by restricting the embedding values of COMPLEX to be non-negative is not sufficient due to the subtraction operation in its score function
+score function,pc,"Squaring the score function of a KGE model results in a PC, as it always outputs non-negative values"
+ϕ2,pc,"The product of two circuits, ϕ2, would always output non-negative values, guaranteeing it to be a PC."
+product of two circuits,smooth and decomposable pc,The challenge is to represent the product of two circuits as a smooth and decomposable PC for efficient marginalisation.
+two circuits,compatible,The task of representing the product of two circuits efficiently can be achieved if the two circuits are compatible.
+circuit representations,score functions ϕ,"The simple circuit representations of score functions ϕ of CP, RESCAL, TUCKER, and COMPLEX enable easy multiplication with any other smooth and decomposable circuit."
+circuit representations,product unit,Every product unit in circuit representations is defined over the same scope and fully decomposes it on its input units.
+pcs,squared version,"The property of omni-compatibility allows building squared versions of KGE models, denoted as CP2, RESCAL2, TUCKER2, and COMPLEX2, as PCs that are still smooth and decomposable."
+squared gekcs,negative parameters,"Squared GeKCs allow for negative parameters, making them more expressive."
+summations on squared gekcs,time complexity,"Performing summations on CP2, RESCAL2, TUCKER2, and COMPLEX2 can be done in time O(("
+partition function z,cp2,The partition function Z of CP2 with embedding size d would require O((
+partition function z,embedding size d,The partition function Z of CP2 with embedding size d would require O((
+cp2,embedding size d,The partition function Z of CP2 with embedding size d would require O((
+marginalisation,increase in complexity,Marginalisation requires an increase in complexity that is quadratic in d
+brute force approach,compute z,The brute force approach to compute Z requires a high computational complexity
+ϕ2,product unit,ϕ2 can be easily built by introducing a product unit over two copies of ϕ as sub-circuits
+gekc,kges,Quickly distilling KGEs to squared GeKCs
+squared gekc,energy-based kge counterpart,Consider a squared GeKC obtained by initialising its parameters with those of its energy-based KGE counterpart
+score function,triples,If the score function of the original KGE model always assigns non-negative scores to triples
+heuristic,parameters,The heuristic is used to initialise the parameters of the model.
+parameters,fine-tune,The parameters are fine-tuned using MLE or PLL maximisation.
+kge model,gekc,The original KGE model can be converted into a GeKC for link prediction.
+kge model,probabilities,The GeKC provides comparable probabilities compared to the original KGE model.
+probabilities,"efficient marginalisation, sampling, and integration of logical constraints","The GeKC enables efficient marginalisation, sampling, and integration of logical constraints."
+gekcs,training efficiency,GeKCs offer an unexpected opportunity to better scale the computation of the PLL objective on large knowledge graphs.
+knowledge graphs,large,"Knowledge graphs can be scaled to be large, as shown in Fig. 3"
+models,kg,Time and GPU memory required to train models on a KG with millions of entities are highlighted in Fig. 3
+gekcs,"cp+, rescal+, tucker+","GeKCs only allowing non-negative parameters such as CP+, RESCAL+ and TUCKER+ support ancestral sampling"
+sum units,marginalised discrete latent variables,Sum units can be interpreted as marginalised discrete latent variables
+complex+,gekcs,Negative parameters break the interpretation of GeKCs obtained by squaring like COMPLEX+
+circuits,efficient marginalisation,"Circuits still support efficient marginalisation, hence inverse transform sampling is possible"
+"triple (s, r, o)",autoregressive fashion,"To generate a triple (s, r, o), sampling can be done in an autoregressive fashion"
+kge models,pcs,Converting KGE models to PCs provides the opportunity to embed logical constraints
+neural link predictor,logical constraints,Logical constraints can be embedded in the neural link predictor
+approaches for kges,relax the constraints or enforce them only at training time,These approaches for Knowledge Graph Embeddings relax the constraints or enforce them only during the training phase.
+approaches for kges,integrating the logical constraints induced by a schema of a kg,Approaches for Knowledge Graph Embeddings involve integrating logical constraints from the schema of a Knowledge Graph.
+logical constraints,domain constraint,Logical constraints in a Knowledge Graph are enforced by domain constraints.
+predicate,subject and objects,A predicate is related to the subject and objects and is used to define domain constraints in a Knowledge Graph.
+score function,probability distribution,A score function is used to represent a probability distribution that assigns probability mass to certain triples.
+gekcs,predictions always satisfy logical constraints,GeKCs are designed to ensure that their predictions always satisfy logical constraints.
+gekc,ck,GeKC and cK are related in the context of ensuring zero mass is assigned to triples violating K. GeKC ensures that the support of ϕpc is 'cut' by the indicator function cK. This relationship is illustrated in Fig. 4.6.
+triples,k,The indicator function cK ensures that zero mass is assigned to triples violating the logical constraint K.
+circuit,domain constraints,"The circuit cK encodes domain constraints and is used in conjunction with a GeKC ϕpc to assign probabilities. The circuit is constructed as a smooth and decomposable circuit, sometimes referred to as a constraint or logical circuit."
+gekc,constraint circuit ck,"GeKC ϕpc and constraint circuit cK are related as they enable efficient computation of ZK, as mentioned in Theorem 2. The partition function ZK of the product of GeKC ϕpc and cK can be computed efficiently."
+ck,logical constraint k,"Constraint circuit cK encodes logical constraint K over variables {S, R, O}, as described in Theorem 2. Computing the partition function ZK involves the product of GeKC ϕpc(s, r, o) · cK(s, r, o) ∝ pK(s, r, o)."
+ck,domain constraints k,"Constraint circuit cK is used for encoding domain constraints K, resulting in a compact size circuit, as demonstrated in Prop. A.1."
+ogbl-biokg,ck,The domain constraints encoding for ogbl-biokg results in a constraint circuit cK of size approximately 307 · 103.
+complex,ck,"Comparing the size of constraint circuit cK for ogbl-biokg with the one for COMPLEX with embedding size 1000, the latter is much larger at 375 · 106."
+gekc,logical constraints,"Efficiency argument suggests that integration of logical constraints with GeKCs has negligible overhead due to the compact size of the constraint circuit cK, as obtained via squaring (Section 4.3)."
+kges,cp and complex,"CP and COMPLEX are highlighted as popular choices for representing and learning KGEs in various applications, as mentioned in the context."
+works,density estimation,Works performing density estimation in embedding space can sample embeddings.
+works,sample triples,Works performing density estimation in embedding space would need to train a decoder to sample triples.
+training for kges,introduce a penalty,Several works try to modify training for KGEs as to introduce a penalty for triples that do not satisfy given logical constraints.
+training for kges,min-max game,Several works try to modify training for KGEs by casting it as a min-max game.
+approaches,guarantee test-time predictions,None of the approaches guarantee that test-time predictions satisfy the constraints.
+proposed heuristics,calibrate probabilistic predictions,Several heuristics have been proposed to calibrate the probabilistic predictions of KGE models ex-post.
+triple distribution,modelled autoregressively,"The triple distribution can be modelled autoregressively as p(S, R, O) = p(S) · p(O"
+integrate constraints,computing any marginal probability,Integrating constraints exactly or computing any marginal (thus conditional) probability is inefficient for GeKCs.
+kge models,non-negative tensor decompositions,KGE models based on non-negative tensor decompositions are equivalent to GeKCs obtained by non-negative restriction.
+kge models,trained by minimizing non-probabilistic losses,KGE models based on non-negative tensor decompositions are generally trained by minimizing different non-probabilistic losses.
+circuits,provide a unifying framework,Circuits provide a unifying framework for several tractable probabilistic models such as sum-product networks (SPNs) and hidden Markov models.
+unifying framework,sum-product networks (spns) and hidden markov models,Circuits provide a unifying framework for several tractable probabilistic models such as sum-product networks (SPNs) and hidden Markov models.
+gekcs,competitive with energy-based counterparts,GeKCs are competitive with their energy-based counterparts.
+complex,gekcs,"Best average test MRRs of CP, COMPLEX and GeKCs trained with the PLL and MLE objectives"
+cp,complex,"Best average test MRRs of CP, COMPLEX and GeKCs trained with the PLL and MLE objectives"
+cp,gekcs,"Best average test MRRs of CP, COMPLEX and GeKCs trained with the PLL and MLE objectives"
+pcs,negative parameters,PCs with negative parameters are also called non-monotonic
+pcs,monotonic counterparts,"PCs with negative parameters are also called non-monotonic, but are surprisingly not as well investigated as their monotonic counterparts"
+pcs,learning perspective,"PCs with negative parameters are also called non-monotonic, but are surprisingly not as well investigated as their monotonic counterparts, at least from the learning perspective"
+circuits,relational data,Circuits for relational data. Logical circuits to compile formulas in first-order logic (FOL) have been used to reason over relational data
+first-order logic (fol),compilation,Logical circuits to compile formulas in first-order logic (FOL)
+fol formulas,tractable fragment,FOL formulas are assumed to be a tractable fragment in the context
+atom,grounded formula,every atom in a grounded formula is associated with a random variable
+possible world semantics,probabilistic logic programs,possible world semantics is also called the possible world semantics in probabilistic logic programs
+possible world semantics,databases (pdbs),possible world semantics is also called the possible world semantics in databases (PDBs)
+tractor,inference in pdbs,TractOR relates to performing inference in PDBs
+gekcs,three variables,GeKCs are models defined over only three variables
+gekcs,kges,GeKCs are competitive with commonly used KGEs for link prediction
+gekcs,domain constraints,integrating domain constraints in GeKCs benefits training and prediction
+triples,gekcs,the triples sampled from GeKCs are assessed for their quality
+gekcs,cp,GeKCs are compared to CP as the go-to models for link prediction
+gekcs,complex,GeKCs are compared to COMPLEX as the go-to models for link prediction
+gekcs,cp+,GeKCs are compared to CP+ in terms of achieving competitive scores
+gekcs,complex+,GeKCs are compared to COMPLEX+ in terms of achieving competitive scores
+cp2,complex2,CP2 is compared to COMPLEX2 in terms of achieving competitive scores
+cp2,gekcs,CP2 is compared to GeKCs in terms of achieving competitive scores
+cp2,cp,CP2 is compared to CP in terms of achieving competitive scores
+complex2,gekcs,COMPLEX2 is compared to GeKCs in terms of achieving competitive scores
+complex2,cp,COMPLEX2 is compared to CP in terms of achieving competitive scores
+complex2,cp2,COMPLEX2 is compared to CP2 in terms of achieving competitive scores
+cp2,complex,CP2 is always outperforming COMPLEX in terms of model expressiveness
+complex2,ccomplex,COMPLEX2 is always outperforming COMPLEX in terms of model expressiveness
+cp2,ccp,CP2 is always outperforming CP in terms of model expressiveness
+cp,complex,CP is compared to COMPLEX in terms of models for link prediction
+cp2,complex2,CP2 is compared to COMPLEX2 in terms of models for link prediction
+cp2,ogbl-biokg,CP2's training time compared to CP on ogbl-biokg
+complex2,ogbl-biokg,COMPLEX2's training time compared to COMPLEX on ogbl-biokg
+cp2,complex2,CP2 is compared to COMPLEX2 in terms of training time on large KGs
+cp,complex,CP and COMPLEX are compared in terms of embedding size
+gekcs,domain constraints,GeKCs with domain constraints guarantee domain-consistent predictions.
+complex,triples,COMPLEX infers 200+ triples violating constraints as the highest scoring completions.
+complex2,pll,COMPLEX2 trained by PLL with a batch size of 104 and embedding size d = 100.
+complex,batch size,we could not fit in memory more than a batch size 500.
+cp2,complex2,reports the results achieved by CP2 and COMPLEX2 initialised with the parameters of learned CP and COMPLEX.
+ebm,gekc,"quickly turn an EBM into GeKC, thus inheriting all the perks of being a tractable generative model."
+predictions,kgs,GeKCs achieve lower empirical calibration errors on all KGs but WN18RR.
+gekcs,empirical calibration errors,GeKCs achieve lower empirical calibration errors
+gekcs,calibrated curves,GeKCs achieve better calibrated curves than their counterparts
+models,performance,worse performance of all models on WN18RR
+distribution shift,training and test split,distribution shift exists between the training and test split of WN18RR
+ogbl-biokg,domain metadata,ogbl-biokg contains the domain metadata for each entity
+entity,predicate,entity domains allowed for each predicate
+complex,complex2,"focus on COMPLEX and COMPLEX2, both achieve best results"
+complex2,d-complex2,introduce D-COMPLEX2 as the constraints-aware version of COMPLEX2
+test query,sem@k score,compute the Sem@k score for each test query
+score,99%,A score of 99% indicates a high level of accuracy in predicting test triples.
+score,3200,A score of 99% corresponds to approximately 3200 predicted test triples that violate domain constraints.
+complex,domain constraints,COMPLEX and COMPLEX2 do not guarantee consistent predictions with respect to domain constraints.
+d-complex2,consistent predictions,D-COMPLEX2 always guarantees consistent predictions by design.
+embedding sizes,mrr,There is a significant improvement in terms of MRR when integrating constraints for smaller embedding sizes.
+metrics,kernel inception distance,A metric similar to the kernel Inception distance is proposed to evaluate the quality of sampled triples with GeKCs.
+kernel triple distance,probability distributions,Kernel triple distance (KTD) is defined based on two probability distributions over triples using a positive definite kernel.
+complex,mrr,A smaller and tuned version of COMPLEX achieves 0.639 MRR.
+gekcs,triples,GeKCs trained by MLE can generate new likely triples.
+ktd scores,triples,"Empirical KTD scores compare test triples with those generated by different methods, lower scores indicate better performance."
+maximum mean discrepancy,triple latent representations,The maximum mean discrepancy is used to compare latent representations obtained via a mapping function for triples.
+ψ,e,ψ represents a function that projects triples to an h-dimensional embedding involving entities
+ψ,r,ψ involves the relation R in projecting triples to an h-dimensional embedding
+ψ,ktd,The function ψ is used in the calculation of the KTD score
+p,q,P and Q are triple distributions used in the computation of the KTD score
+circuit,product units,The L2-normed outputs of the product units of a circuit are chosen as the ψ function
+complex,sota,Complex learned by Chen et al. is considered state-of-the-art
+gekcs,non-negative restriction,Squared GeKCs achieve lower KTD scores with respect to non-negative restriction
+gekcs,competitors,GeKCs achieve far lower KTD scores than all competitors when learning by MLE
+wn18rr,distribution shift,"The distribution shift on WN18RR is confirmed, indicating a change in the pattern or distribution of data in this specific scenario."
+complex2,ktd values,"COMPLEX2 scores KTD values that are closer to the training ones in this challenging scenario, showing a relationship between the model and the KTD values."
+kge models,generative models,"The representation and learning of widely used KGE models like CP, RESCAL, TUCKER, and COMPLEX are re-interpreted as generative models, suggesting a different perspective on their functionality."
+gekc-variants,kge models,"GeKC-variants can be devised for other KGE models whose scores are multilinear maps, implying a relationship between the variants and the KGE models."
+distance-based semantics,gekcs,"KGE models defining score functions with distance-based semantics such as TransE and RotatE can be reinterpreted as GeKCs, indicating a shift in the interpretation of these models."
+learning the structure of circuits,kge circuit architectures,"The rich literature on learning the structure of circuits can be leveraged to devise smaller and sparser KGE circuit architectures, suggesting a potential improvement in capturing triple distribution or structural properties for efficient reasoning tasks."
+xiong bo,ricky zhu,Xiong Bo and Ricky Zhu are thanked for pointing out related works in the knowledge graphs literature
+av,unreal: unified reasoning layer for trustworthy ml project,AV was supported by the UNREAL: Unified Reasoning Layer for Trustworthy ML project selected by the ERC and funded by UKRI EPSRC
+rp,graz center for machine learning (graml),RP was supported by the Graz Center for Machine Learning (GraML)

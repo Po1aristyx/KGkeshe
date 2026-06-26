@@ -1,0 +1,224 @@
+node_1,node_2,edge
+referring expression segmentation,object,Referring expression segmentation aims to segment an object described by a language expression from an image.
+referring expression segmentation,language expression,Referring expression segmentation aims to segment an object described by a language expression from an image.
+object,image,Referring expression segmentation aims to segment an object described by a language expression from an image.
+models,task,"Despite the recent progress on this task, existing models tackling this task may not be able to fully capture semantics and visual representations of individual concepts."
+models,semantics,Existing models tackling this task may not be able to fully capture semantics and visual representations of individual concepts.
+models,visual representations,Existing models tackling this task may not be able to fully capture semantics and visual representations of individual concepts.
+models,generalization capability,"Existing models tackling this task may not be able to fully capture semantics and visual representations of individual concepts, which limits their generalization capability."
+framework,meta compositional referring expression segmentation (mcres),"In this work, through the lens of meta learning, we propose a Meta Compositional Referring Expression Segmentation (MCRES) framework to enhance model compositional generalization performance."
+framework,model,"In this work, through the lens of meta learning, we propose a Meta Compositional Referring Expression Segmentation (MCRES) framework to enhance model compositional generalization performance."
+model,compositional generalization performance,"In this work, through the lens of meta learning, we propose a Meta Compositional Referring Expression Segmentation (MCRES) framework to enhance model compositional generalization performance."
+framework,training data,"To handle various levels of novel compositions, our framework first uses training data to construct a virtual training set and multiple virtual testing sets."
+virtual testing sets,novel compositions,"To handle various levels of novel compositions, our framework first uses training data to construct a virtual training set and multiple virtual testing sets, where data samples in each virtual testing set contain a level of novel compositions w.r.t. the virtual training set."
+framework,meta optimization scheme,"Then, following a novel meta optimization scheme to optimize the model to obtain good testing performance on the virtual testing sets after training on the virtual training set, our framework can effectively drive the model to better capture semantics and visual representations of individual concepts."
+model,testing performance,"Then, following a novel meta optimization scheme to optimize the model to obtain good testing performance on the virtual testing sets after training on the virtual training set, our framework can effectively drive the model to better capture semantics and visual representations of individual concepts."
+model,generalization performance,"Our framework can effectively drive the model to better capture semantics and visual representations of individual concepts, and thus obtain robust generalization performance even when handling novel compositions."
+experiments,framework,Extensive experiments on three benchmark datasets demonstrate the effectiveness of our framework.
+referring expression segmentation,res,Referring expression segmentation (RES)
+referring expression segmentation,res,Referring expression segmentation (RES) aims to segment a visual entity in an image given a linguistic expression.
+referring expression segmentation,linguistic expression,Referring expression segmentation (RES) aims to segment a visual entity in an image given a linguistic expression.
+referring expression segmentation,image,Referring expression segmentation (RES) aims to segment a visual entity in an image given a linguistic expression.
+novel composition,dark coffee,An example of the testing sample containing the novel composition of “dark coffee” in RefCOCO dataset.
+novel composition,training data,"Such a novel composition itself does not exist in the training data, but its individual components (i.e., “dark” and “coffee”) exist in the training data."
+novel composition,individual components,"Such a novel composition itself does not exist in the training data, but its individual components (i.e., “dark” and “coffee”) exist in the training data."
+various levels of compositions,constituency parsing,"We perform constituency parsing of the expression using AllenNLP. Based on the obtained parsing tree, we can then obtain various levels of compositions (e.g., word-word level, word-phrase level) in this expression."
+various levels of compositions,word-word level,"We can then obtain various levels of compositions (e.g., word-word level, word-phrase level) in this expression."
+various levels of compositions,word-phrase level,"We can then obtain various levels of compositions (e.g., word-word level, word-phrase level) in this expression."
+position,composition,"Position refers to the composition of individual components such as words and phrases, as indicated in Fig. 1a."
+testing samples,novel compositions,"Testing samples often contain novel compositions of learned concepts found in various datasets [26, 28, 41]."
+res models,novel compositions,"Existing RES models may struggle to handle novel compositions during testing, impacting their performance."
+generalization capability,multiple state-of-the-art models,"The generalization capability of multiple models [25, 37, 42] is tested for handling novel compositions, as detailed in Table 2."
+testing set,refcoco dataset,Each testing set of the RefCOCO dataset is split to evaluate the models' performance on compositions seen and unseen during training.
+compositions,learned concepts,Novel compositions of learned concepts present a challenge for the models' generalization capability.
+performance,novel compositions,"The performance of models on subsets containing novel compositions drops significantly compared to those with compositions seen during training, with a performance gap of 14%−17%."
+performance gap,two subsets,"The performance gap between the two subsets can reach 14%-17%, measured by the metric of overall IoU."
+performance gap,existing models,Such a clear performance gap indicates that existing models struggle with generalizing to novel compositions of learned concepts.
+models,individual concepts,Existing models struggle with generalizing due to not effectively capturing the semantics and visual representations of individual concepts during training.
+models,novel compositions,"Trained models may fail to recognize a novel composition at testing time, composed of learned concepts."
+learning behavior,individual concepts,Guiding the model's learning behavior towards effectively capturing the semantics and visual representations of individual concepts is a challenging problem.
+model,meta compositional referring expression segmentation (mcres) framework,"From the perspective of meta learning, a Meta Compositional Referring Expression Segmentation (MCRES) framework is proposed to effectively handle the challenging problem by changing the model training scheme."
+model training,virtual testing,Meta learning proposes to perform virtual testing during model training for better performance.
+mcres framework,virtual training,"MCRES framework incorporates a meta optimization scheme that consists of three steps: virtual training, virtual testing, and meta update."
+virtual testing,meta update,Both virtual testing and meta update are activities related to data evaluation and modification in the context of virtual testing and training.
+virtual training set,virtual training,The virtual training set is used to construct a virtual training model in the context of virtual training and testing.
+virtual testing set,virtual training set,The virtual testing set is constructed by splitting the virtual training set and contains novel compositions not present in the training set.
+data samples,compositions,Data samples in the virtual testing set contain novel compositions compared to the virtual training set.
+model,virtual training set,The model is trained using the virtual training set and evaluated on the virtual testing set in the context of virtual training.
+compositions,individual concepts,"During virtual training, the model may learn the compositions of individual concepts as a whole without truly understanding their semantics."
+training samples,compositions,Training samples in the virtual training set contain compositions like 'yellow banana' which the model can superficially learn.
+compositions,virtual training set,"Compositions and virtual training set have a relationship in terms of model performance, where the model needs to effectively capture semantics and visual representations during virtual training to improve testing performance on the virtual testing set."
+compositions,virtual testing set,Compositions have a relationship with the virtual testing set in terms of containing novel compositions that may affect model performance.
+virtual training set,model,Virtual training set and model have a relationship where the virtual training process needs to capture semantics and visual representations of individual concepts to improve model performance.
+model,virtual testing set,"Model has a relationship with the virtual testing set, as model testing performance on the virtual testing set serves as a generalization feedback to the model virtual training process."
+model,framework,"Model and framework have a relationship where the framework is able to optimize the model for robust generalization performance, even tackling challenging testing samples with novel compositions."
+expressions,constituency parsing tool,Expressions and constituency parsing tool have a relationship where expressions can be parsed into a tree structure to identify meaningful compositions based on the tool.
+tree structure,constituency parsing tool,"The tree structure in the context is based on the constituency parsing tool, as shown in Fig.1b."
+child nodes,parent node,"In the parsing tree, under the same parent node, each pair of child nodes are closely semantically related."
+child nodes,meaningful composition,Each pair of child nodes can form a meaningful composition in the parsing tree.
+compositions,levels of comprehension complexity,Different levels of compositions correspond to different levels of comprehension complexity.
+model training scheme,model structure,The framework changes the model training scheme without the need to change the model structure.
+framework,generalization performance of res models,The framework (MCRES) is proposed to effectively improve generalization performance of RES models.
+framework,model,The framework can train the model to handle various levels of novel compositions.
+framework,res benchmarks,"When applied on various models on three RES benchmarks, the framework achieves consistent performance improvement."
+ref,target object,REF aims to segment a target object from an image based on an expression.
+vision and language transformers,performance,Vision and language transformers were employed to boost performance.
+large-scale pretrained models,clip,Large-scale pretrained models were proposed to leverage CLIP to improve cross-modal matching.
+mcres framework,model,We propose an MCRES framework to drive RES models to better capture semantics and visual representations of individual concepts.
+visual representations,individual concepts,Visual representations of individual concepts are mentioned as the key focus in the context.
+framework,model training scheme,The framework mentioned changes the model training scheme to improve generalization performance.
+meta learning,learning to learn,Meta Learning is described as the paradigm of learning to learn in the context.
+maml,network parameters,MAML and its following works aim to learn good initialization of network parameters for fast test-time update.
+meta learning,other areas,Meta learning is mentioned to have been explored in other areas to enhance model generalization performance.
+res models,data samples,Existing RES models may fail to generalize to data samples containing novel compositions of learned concepts.
+mcres framework,res models,MCRES framework is introduced to optimize RES models via a meta optimization scheme to improve generalization performance.
+training set,virtual training set,The original training set (Dtrain) is split to build a virtual training set (Dv tr) for virtual training.
+training set,virtual testing sets,A group of K virtual testing sets ({Dk k=1) are built for virtual testing.
+virtual testing sets,virtual training set,Each virtual testing set consists of data samples containing one level of novel compositions w.r.t. the virtual training set.
+virtual training set,model,The virtual training set is used to train the model (virtual training).
+model,virtual testing sets,Model testing is performed on the virtual testing sets (virtual testing).
+virtual testing sets,individual concepts,The virtual testing sets contain novel compositions of individual concepts from the virtual training set.
+model,semantics,"If the model can achieve robust testing performance on the virtual testing sets after training on the virtual training set, it indicates that the trained model has learned to capture more semantics."
+semantics,visual representations,The trained model has learned to capture more semantics and visual representations of individual concepts during the virtual training.
+virtual testing sets,model,"Guided by the principle of optimizing the model virtual testing performance, the model virtual training process is guided towards learning more semantics and representations of individual concepts."
+res model,virtual training set,"The RES model is trained using the virtual training set, i.e., virtual training."
+model parameters,loss function,"The model parameters are denoted as θ, and the loss function (e.g., cross-entropy loss) is used."
+model,parameters,The model parameters are denoted as θ in the context.
+loss function,cross-entropy loss,The cross-entropy loss function is used for training the RES model in the given context.
+loss function,model virtual training loss,The model virtual training loss is calculated based on the loss function in the context.
+model parameters,model virtual training loss,The model parameters are updated based on the model virtual training loss in the given context.
+virtual training set,model virtual training loss,The model virtual training loss is calculated over the virtual training set in the context.
+learning rate,model update,The learning rate α is utilized for the model update in the context.
+model update,updated parameters,The model is updated with intermediate parameters for model evaluation in the given context.
+trained model,generalization performance,The generalization performance of the trained model is evaluated on virtual testing sets in the context.
+virtual testing set,model loss,The model loss is computed on each virtual testing set after the virtual training in the context.
+trained model,virtual testing sets,The trained model aims to generalize well to virtual testing sets after training on the virtual training set in the context.
+meta update step,model parameters,The model parameters are actually updated during the meta update step for model generalization in the context.
+trained model,novel compositions,The trained model generalizes well to novel compositions after training on virtual training and testing sets in the context.
+updated model,updated parameters (θ′),The updated model is tested with the updated parameters on multiple virtual testing sets to optimize for better generalization capability.
+virtual testing sets,meta update,"Based on the virtual testing losses, a meta update is performed to optimize the model for better generalization capability."
+virtual training set,virtual testing sets,The original training set is split to construct a virtual training set and multiple virtual testing sets to handle various levels of novel compositions.
+virtual testing set,virtual training set,"Each virtual testing set is expected to contain one level of novel compositions with respect to the virtual training set, allowing for better evaluation of the model's generalization capability."
+virtual training set,compositions,"The virtual training set is used to handle one level of novel compositions, as discussed in the context."
+training set,virtual testing sets,The remaining training data is used as candidate samples to construct virtual testing sets.
+virtual testing sets,virtual training set,The model testing performance on virtual testing sets is evaluated after training on the virtual training set.
+model parameters,learning rate,"The model parameters are updated using the learning rate for meta update, as mentioned in the context."
+learning rate,meta update,The learning rate (β) is used for the meta update process in the optimization process.
+model,semantics and visual representations,The model is pushed to learn more about semantics and visual representations of individual concepts during training.
+model,virtual training set,The model is first trained on the virtual training set to learn compositions of individual concepts.
+compositions,individual concepts,The model may learn the compositions of individual concepts on the virtual training set.
+semantics and visual representations,individual concepts,The model captures the semantics and visual representations of individual concepts during the optimization process.
+compositions,training performance,The model without capturing the semantics and visual representations of individual concepts can still improve its training performance.
+testing performance,virtual testing data,The model is expected to achieve good testing performance on the virtual testing data containing novel compositions from the virtual training data.
+compositions,expression,"To learn compositions in an expression, the constituency parsing tool is used to parse an expression into a tree structure."
+child nodes,parent node,Each pair of child nodes under the same parent node are closely related and can form a meaningful composition.
+word-word level composition,phrase-phrase level composition,"Different levels of composition exist such as word-word, word-phrase, and phrase-phrase level compositions."
+phrase-phrase level compositions,novel compositions,The phrase-phrase level compositions can be considered as a type of novel compositions which exist at different levels of comprehension complexity.
+virtual testing sets,novel compositions,"The virtual testing sets are constructed based on the levels of novel compositions, with three virtual testing sets corresponding to the three levels of novel compositions."
+virtual testing sets,virtual training set,The virtual testing sets are constructed by selecting data samples that contain novel compositions corresponding to the virtual training set.
+data sample,expression,A data sample is defined as an expression paired with the corresponding image in the context.
+expressions,parsing tree,Each expression can be parsed into a parsing tree to extract the word-word level compositions.
+word-word level novel compositions,virtual training set,The virtual testing set for word-word level novel compositions includes candidate samples with such compositions corresponding to the virtual training set.
+candidate samples,word-word level compositions,Candidate samples are selected based on the presence of word-word level compositions for constructing virtual testing sets.
+virtual training set,candidate samples,Both terms are mentioned together as part of the process explained in the context for identifying word-word level compositions.
+virtual training set,word-word level compositions,The virtual training set is used to record word-word level compositions in a matrix Mv tr for further analysis.
+candidate samples,virtual testing set,Candidate samples containing identified word-word level novel compositions are used to construct the virtual testing set.
+word-word level compositions,matrix mv tr,Word-word level compositions are recorded in matrix Mv tr for efficient processing of identifying novel compositions.
+vocabulary set v,training set,The vocabulary set V is part of the original training set.
+word-word level compositions,virtual training set,The binary matrix represents word-word level compositions in the virtual training set.
+word-word level compositions,candidate samples,"Another matrix, Mcandi, records word-word level compositions in the candidate samples."
+difference matrix mdif f,candidate samples,"The difference matrix, Mdif f, helps identify word-word level novel compositions in the candidate samples."
+training epoch,training data,"At the beginning of each training epoch, a subset of training data is sampled to re-construct the virtual training set."
+training set,virtual training set,virtual training set is constructed from a subset of the training data to re-construct the virtual training set
+training set,virtual testing sets,remaining data is used to re-construct the virtual testing sets
+virtual testing sets,novel compositions,"to handle various levels of novel compositions, multiple virtual testing sets are constructed"
+virtual testing sets,curriculum learning strategy,constructing multiple virtual testing sets can facilitate the use of curriculum learning strategy
+model,novel compositions,each level of novel compositions in the virtual testing sets offer an explicit generalization feedback during model training
+framework,res models,framework only changes the model training scheme and can be flexibly applied to train various RES models
+virtual testing set,virtual training set,The model is optimized over the virtual training set and virtual testing sets via meta optimization.
+virtual testing set,meta optimization,The model is optimized over the virtual training set and virtual testing sets via meta optimization.
+virtual training set,meta optimization,The model is optimized over the virtual training set and virtual testing sets via meta optimization.
+method,framework,Our framework is applied on various models and obtains consistent performance improvement.
+data samples,batch of data,Two batches of data samples are used; one for virtual training and the other for virtual testing.
+data samples,composition,The batch of data for virtual testing must contain novel compositions compared to the batch of data for virtual training.
+virtual training,virtual testing,Virtual training involves sampling data from virtual testing sets and forming batches for testing. The preparation procedures are done before model training.
+virtual training,model training,Virtual training is done before model training to prepare the data. The trained model is then tested in the conventional way.
+novel compositions,comprehension complexity,Different levels of novel compositions correspond to different levels of comprehension complexity. Curriculum learning strategy is adopted for model training to handle various levels of novel compositions.
+model training,curriculum learning strategy,Curriculum learning strategy is adopted for model training to progressively handle various levels of novel compositions.
+virtual testing set,word-word level novel compositions,Virtual testing set is used for handling word-word level novel compositions for meta optimization in the first 1/3 of training epochs.
+virtual testing set,word-phrase level novel compositions,Virtual testing set is used for handling word-phrase level novel compositions in the middle 1/3 − 2/3 of training epochs.
+virtual testing set,novel compositions,Virtual testing set is used for handling different levels of novel compositions for model optimization.
+novel compositions,effectiveness,novel compositions are validated for their effectiveness in optimizing the model to better generalize
+novel compositions,overall iou,novel compositions are evaluated using the metric of Overall IoU
+effectiveness,model,effectiveness is used to optimize the model
+model,generalize,the model is optimized to better generalize
+performance gain,framework,the performance gain of the framework compared to the baseline model is shown
+framework,baseline model,the framework shows a performance gain compared to the baseline model
+res benchmarks,refcoco,"method is evaluated on three commonly used RES benchmarks: RefCOCO, RefCOCO+, and RefCOCOg"
+res benchmarks,cooc dataset,images in the RES benchmarks are from the COCO dataset
+refcoco,refcoco+,RefCOCO contains 19994 images and RefCOCO+ consists of 19992 images
+refcoco,visual entities,visual entities to be segmented in testA subset of RefCOCO are people
+refcoco+,expressions,RefCOCO+ has expressions with words not allowing absolute spatial locations
+visual entities,segmented,The visual entities mentioned in the context are to be segmented.
+subset,people,The subset in testA consists of people.
+subset,objects,The subset in testB consists of objects and not people.
+refcocog,26711 images,RefCOCOg includes a total of 26711 images.
+refcocog,54822 annotated objects,RefCOCOg includes 54822 annotated objects.
+expressions,average length of 8.4 words,The expressions in RefCOCOg have an average length of 8.4 words.
+partitions,umd split and google split,There are two different partitions for the RefCOCOg dataset: UMD split and Google split.
+evaluation metrics,overall iou and precision@x,Results are reported using two kinds of metrics: overall IoU and Precision@X.
+virtual training set,60% of the training data,"For each dataset, 60% of the training data is randomly sampled as the virtual training set."
+virtual training,learning rate (α) of 5e-5,The learning rate used for virtual training is 5e-5.
+meta update,learning rate (β) of 2e-5,The learning rate used for meta update is 2e-5.
+experimental results,state-of-the-art performance,The framework achieves state-of-the-art performance across all three datasets.
+meta optimization,our framework,The variant evaluated to test the effectiveness of meta optimization scheme in our framework.
+meta optimization,lv tr(θ) +(cid:80)kp@0.8,The training objective is to minimize Lv tr(θ) +(cid:80)KP@0.8
+novel compositions,our framework,"Our framework shows consistent performance improvement on all models and datasets, demonstrating the effectiveness of handling novel compositions."
+"transformer-based sota models [37,42] and a cnn-based model [25]",our framework,"Our framework brings performance improvement on all these models, showcasing its versatility."
+refcoco dataset,non-novel compositions,"The testing set of RefCOCO dataset is split into subsets, one of which includes all compositions seen in the training set (Non-novel)."
+refcoco dataset,novel compositions,The testing set of RefCOCO dataset also includes a subset with novel compositions not seen in the training set (Novel).
+novel compositions,training set,Novel compositions in the data samples contain any level of novel compositions with respect to the training set.
+novel compositions,baseline models,"Existing models struggle with handling novel compositions, as shown in the performance gap between the two subsets for each of the baseline models."
+novel compositions,framework,"Applying the framework on each baseline model results in a significant performance improvement on the subset of Novel, validating the general effectiveness of the framework to optimize the model to well generalize to novel compositions."
+framework,non-novel,The framework slightly improves the model performance on the subset of Non-novel by training the model to better capture semantics and visual representations of individual concepts.
+model,visual representations,"The framework helps the model to better understand the given expression and find its visual correspondence, which generally improves model performance."
+testing samples,novel compositions,"When handling the testing samples containing novel compositions, the framework achieves better performance than the baseline model."
+ablation experiments,framework,Ablation experiments are conducted to evaluate the framework on RefCOCO validation set.
+level of novel compositions,model performance,Investigating the impact of each level of novel compositions on model performance shows the impact of various levels on the performance.
+impact,level of novel compositions,Investigating the impact of each level of novel compositions on model performance.
+level of novel compositions,variants,Testing multiple variants to analyze the impact of novel compositions.
+variants,word-word novel compositions,One variant ignores word-word novel compositions.
+word-word novel compositions,word-phrase novel compositions,"Different novel compositions tested include word-word, word-phrase, and phrase-phrase compositions."
+novel compositions,level of model generalization performance,Novel compositions impact on model generalization performance.
+meta optimization scheme,effectiveness,Investigating the effectiveness of the meta optimization scheme in the framework.
+meta optimization scheme,model training,Evaluating the impact of meta optimization on model training.
+virtual training set,virtual testing sets,The constructed virtual training set and virtual testing sets are used in the same way as in the framework mentioned. The effectiveness of the meta optimization scheme in the framework is demonstrated by outperforming this variant.
+virtual testing sets,multiple virtual testing sets,Multiple virtual testing sets are constructed in the framework to handle various levels of novel compositions. The framework uses a curriculum learning strategy to facilitate model training based on the different levels of comprehension complexity.
+multiple virtual testing sets,curriculum learning,The framework uses a curriculum learning strategy to handle various levels of novel compositions in multiple virtual testing sets. This approach aims to improve model training efficiency by considering different levels of comprehension complexity.
+virtual testing set,data samples,One variant constructs one virtual testing set to handle all levels of novel compositions by including all data samples with any level of novel compositions compared to the virtual training set.
+multiple virtual testing sets,curriculum learning,"The original framework utilizes multiple virtual testing sets with a curriculum learning strategy, while a variant without curriculum learning only constructs multiple virtual testing sets. The effectiveness of the curriculum learning strategy is highlighted in improving model performance."
+performance,multiple virtual testing sets,The context emphasizes the superiority of using multiple virtual testing sets to handle various levels of novel compositions for better performance.
+multiple virtual testing sets,curriculum learning strategy,The framework performs better when employing the curriculum learning strategy with multiple virtual testing sets compared to not using curriculum learning strategy.
+virtual training set,virtual testing sets,"Different sizes of virtual training sets (60%, 50%, 70%) are tested along with virtual testing sets showing the impact of the size of virtual training set on performance."
+virtual training set,virtual testing sets,"Different construction strategies for virtual testing sets are discussed, along with the impact on the performance of the framework."
+virtual testing sets,data samples,Virtual testing sets consist of data samples containing novel compositions
+virtual testing sets,virtual training set,Virtual testing sets are constructed using training data from virtual training set
+strategy,testing sets construct strategy,The efficacy of the strategy is evaluated based on the performance of testing sets
+framework,training time,Performance of the framework is evaluated in terms of training time
+framework,model generalization performance,Virtual testing sets construct strategy helps improve model generalization performance of the framework
+framework,additional gradient updates,Framework involves more gradient updates to improve performance
+variant,baseline model,"The performance of the variant is compared to the baseline model, showing that the variant is very close to the baseline model and obviously worse than the framework."
+variant,framework,"The performance of the variant is compared to the framework, indicating that the variant is obviously worse than the framework."
+variant,multiple virtual testing sets,"The impact of using multiple virtual testing sets is tested as a variant, showing different performance metrics compared to other variants."
+multiple virtual testing sets,curriculum learning strategy,The impact of using multiple virtual testing sets with or without a curriculum learning strategy is evaluated to determine the effect on performance metrics.
+training data,virtual training set,Different variants of utilizing different proportions of the training data to construct the virtual training set are tested to determine the impact on performance metrics.
+training data,virtual testing sets,Different variants of utilizing different proportions of the training data to construct virtual testing sets are tested to determine the impact on performance metrics.
+virtual testing sets,construction strategy,The efficacy of the virtual testing sets construction strategy in the framework is evaluated to understand its impact on performance metrics.
+training time,baseline method,"The training time of the method is compared to the baseline method, highlighting the better performance achieved by the method."
+additional gradient updates,model performance,"A variant is tested to investigate the impact of additional gradient updates on model performance, indicating the effect of such updates."
+mcres framework,res models,"The MCRES framework is proposed to improve the generalization performance of RES models, especially when handling novel compositions of learned concepts."
+mcres framework,virtual training set,The MCRES framework constructs a virtual training set and multiple virtual testing sets to optimize the model via meta optimization.
+mcres framework,model generalization performance,The MCRES framework effectively improves model generalization performance through meta optimization.
+mcres framework,benchmarks,The MCRES framework achieves superior performance on widely used benchmarks.
+framework,improvement of model performance,The framework can effectively improve model generalization performance and enhance the performance of various models with different architectures.
+baseline model with additional gradient updates,obvious benefits,The baseline model with additional gradient updates does not bring obvious benefits as the model had already reached convergence under the original training strategy.

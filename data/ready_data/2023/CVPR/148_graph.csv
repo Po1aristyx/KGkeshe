@@ -1,0 +1,176 @@
+node_1,node_2,edge
+pre-trained models,masked autoencoders,Masked Autoencoders are pre-trained models that are studied for distilling knowledge in this paper
+pre-trained models,knowledge distillation framework,The pre-trained models are utilized in the design of a computationally efficient knowledge distillation framework
+mae pre-trained vit-l,vit-b,Knowledge is distilled from a pre-trained MAE ViT-L model into a ViT-B model resulting in improvement in ImageNet top-1 accuracy
+baseline model,fine-tuned vit-l,The baseline model is compared with the fine-tuned ViT-L model to evaluate performance improvement through knowledge distillation
+teacher models,vit-b,"Knowledge is robustly distilled from teacher models, even with extremely high masking ratios, into a ViT-B model"
+transformer architecture,computer vision,Transformer architecture is showing tremendous potentials in computer vision
+masked image modeling,feature pre-training,Masked image modeling trains models to predict masked signals for feature pre-training
+mae,vision transformers (vits),MAE allows pre-training high-capacity ViTs with strong feature representations
+knowledge distillation,model compression techniques,Knowledge distillation is a model compression technique
+vits,smaller models,Knowledge distillation transfers knowledge from ViTs to smaller models
+pre-trained model,categories,Pre-trained model's predictions do not reveal fine-grained relationship between categories
+predictions,relationship,Predictions do not necessarily reveal the fine-grained relationship between categories.
+solutions,aligning,Typical solutions like aligning the soft/hard logits between the teacher model and the student model may no longer remain effective.
+models,factors,These student models need an extra round of fine-tuning to adapt to downstream tasks. These factors turn distilling pretrained models seemingly a less favorable design choice in terms of both performance and computational cost.
+design choice,performance,Design choice in terms of both performance.
+mae,framework,"We find by building upon MAE, the whole distillation framework can efficiently yield high-performance student models."
+encoder,subset of patches,Follow MAE to let the encoder exclusively operate on a small visible subset of patches.
+decoder,reconstruction,Employ a lightweight decoder for pixel reconstruction.
+pre-training,epochs,Aggressively simplifying pre-training from 1600 epochs to 100 epochs.
+masking ratio,distill student models,Pushing masking ratio from 75% to 95% suffice to distill strong student models.
+logits,feature representation,"Aligning logits, we alternatively seek to match the intermediate feature representation."
+teacher model,forward propagate,"The cumbersome teacher model to only forward propagate inputs through the first few layers, therefore, reducing computations."
+l1 norm,measure,Applying L1 norm for distance measure is essential recipe for ensuring a successful intermediate feature alignment.
+distilling mae framework,dmae,DMAE framework is introduced as a more efficient and stronger alternative to traditional knowledge distillation framework
+teacher model,student model,Knowledge distillation is achieved by aligning the intermediate features between the teacher model and the student model
+vit-b,vit-l,Comparative analysis between ViT-B student model and fine-tuned ViT-L baseline model for ImageNet accuracy
+dmae,vit-b,DMAE substantially boosts the performance of ViT-B student model in terms of ImageNet accuracy
+masking ratio,vit-b,"DMAE allows for robust training with highly masked images, even with TEN visible patches, ViT-B maintains competitive accuracy"
+dmae,vit-b,DMAE helps ViT-B secure 82.4% top-1 ImageNet accuracy
+dmae,knowledge distillation (kd),DMAE belongs to the knowledge distillation (KD) branch
+knowledge distillation (kd),model compression technique,KD is a popular model compression technique
+fit-nets,logits distillation,Fit-Nets aligns logits
+fit-nets,intermediate representation,Fit-Nets requires the student model to learn an intermediate representation
+heo et al.,feature distillation,Heo et al. develops a novel KD method for feature distillation
+crd,contrastive learning,CRD incorporates contrastive learning
+crd,kd,CRD incorporates contrastive learning into KD to capture correlations and higher-order output dependencies
+dmae,kd,DMAE is the first to consider applying KD to extra information from self-supervised pre-trained models
+masked image modeling (mim),models,MIM helps models to acquire meaningful representations by reconstructing masked images
+bert,transformer,"Following the success of BERT in natural language and with the recent trend of adopting Transformer to computer vision, there have emerged a set of promising works"
+beit,mim,BEiT first successfully adopts MIM to Vision Transformer (ViT) pre-training by learning to predict visual tokens
+maskfeat,hog features,MaskFeat finds that learning to reconstruct HOG features enables effective visual representation learning
+simmim,pixel values,SimMIM proposes to directly reconstruct the pixel values of the masked image patches
+mae,pixel values,MAE enables the whole distillation framework to be efficient and effective
+mae,mae encoder,"Our method is built upon MAE, a powerful autoencoder-based MIM approach. Specifically, the MAE encoder first projects unmasked patches to a latent space"
+mae,mim approach,"MAE is based on the MIM approach, utilizing the MAE encoder and decoder to predict pixel values of masked patches."
+mae,masking,"The core element of MAE includes masking, where the image is divided into non-overlapping patches and a subset is kept for the MAE encoder while the rest is set as the predicting target for the MAE decoder."
+mae,mae encoder,The MAE encoder is a key component of MAE that operates on unmasked patches and reduces the computation cost of encoders.
+mae,mae decoder,"The MAE decoder, in addition to receiving features from the MAE encoder, also receives mask tokens as input for reconstruction of image pixel values."
+mae,reconstruction,"MAE directly reconstructs image pixel values using a simple mean squared error for calculating loss, differing from BEiT or MaskFeat."
+distillation,mae,Knowledge distillation is demonstrated to have extraordinary capabilities in learning high-capacity models efficiently and effectively in MAE.
+distillation,pre-training,"In this work, knowledge distillation is combined with the MAE framework to efficiently acquire small and fast models with similar performance as powerful yet cumbersome models, specifically by directly applying knowledge distillation at the pre-training stage."
+mae,pre-training,The whole pre-training and fine-tuning process in this paper exactly follow the default setup in MAE.
+mae,dmae,"DMAE enables a much more efficient pre-training setup compared to MAE, with 100 (vs. 1600) training epochs and 95% (vs. 75%) masking ratio."
+pre-training,logits,"Since there are no categorical labels in MAE pre-training, distilling logits can hardly help learn semantically meaningful representations."
+distilling logits,learn semantically meaningful representations,Distilling logits is stated to hardly help learn semantically meaningful representations.
+distilling logits,intermediate features,Resorting to distilling intermediate features is mentioned instead of distilling logits.
+fitnets,knowledge distillation followups,The idea of distilling intermediate features was first developed in FitNets and inspired followups for advancing knowledge distillation.
+student model,teacher model,The student model's features are asked to mimic the features from the corresponding layers of the teacher model.
+mae reconstruction loss,input pixel rgb values and predicted pixel values,The MAE reconstruction loss is written based on the difference between input pixel RGB values and predicted pixel values.
+masked pixels set,pixel index,"The set of masked pixels is denoted by M, with i representing the pixel index."
+projection network function,feature alignment distillation loss,The projection network function is used to align features in the feature alignment distillation loss.
+channel dimension,projection network function,The channel dimension is denoted using σ() as the projection network function.
+feature alignment distillation loss ldist,mae reconstruction loss lm ae,"LDist can be a weighted combination of LM AE and LDist, where the weight is controlled by the hyper-parameter α."
+dmae,teacher model,DMAE framework aligns features between the teacher model and the student model.
+dmae,knowledge distiller,DMAE is an effective knowledge distiller due to its operation on a small subset of visible patches and the alignment of intermediate layer features.
+dmae,visible patches,"DMAE operates on a tiny subset of visible patches, applying a high masking ratio."
+feature alignment distillation loss,original mae without distillation,Comparison between feature alignment distillation loss and original MAE without distillation is made in the supervised setting.
+feature alignment distillation loss,deit-style distillation,Comparison between feature alignment distillation loss and DeiT-style distillation is made in the supervised setting.
+feature alignment distillation loss,supervised setting,Feature alignment distillation is compared with other methods like DeiT-style distillation in the supervised setting.
+self-supervised pre-training,imagenet-1k,Self-supervised pre-training is performed on ImageNet-1k data.
+mae,imagenet-1k,MAE [13] mentions the pre-training on ImageNet-1k [9] as a key step in the process.
+teacher models,public checkpoints,teacher models are aligned with public checkpoints released from the official MAE implementations.
+feature alignment location,layer locations,"Table 1 shows the effects of different feature alignment locations, including top layers closer to network outputs."
+adamw optimizer,pre-training,Models are trained using the AdamW optimizer for pre-training.
+masking ratio,ablation study,Ablation study reveals the robustness of the method under different masking ratios.
+student model,teacher model,Alignment of features is done at the 4 depth of both student and teacher models.
+student model,teacher model,The student model and teacher model are related as the teacher model is used to train the student model in a distillation process to balance tradeoff between reconstruction loss and feature alignment distillation loss.
+vit-l,vit-b,ViT-L and ViT-B are related as they represent different versions/layers of Vision Transformer models used in the distillation process.
+α,eq. 3,The parameter α is set to 1 in Equation 3 to balance the tradeoff between MAE reconstruction loss and feature alignment distillation loss.
+feature alignment location,model performance,"The location of feature alignment affects model performance, with shallower features underperforming compared to features from deeper layers."
+vits,raw pixels,"Vision Transformers(ViTs) learn to group raw pixels in the bottom layers, closer to the input, which is harder to transfer due to the noisier and less semantic nature of images."
+depth,performance,"The deeper the depth of the model (i.e., the 9th layer in ViT-B), the better the performance"
+depth,model scales,The depth of a model fits all model scales in experiments
+depth,design choice,The design choice of adopting a certain depth in experiments is consistent across all models
+depth,efficiency,A specific depth setting is considered more efficient in experiments
+layer location,model performance,Aligning layers at specific locations in the student and teacher models impacts model performance
+masking ratio,masked image modeling,The masking ratio in masked image modeling can be surprisingly high (75%)
+masked image modeling,gestalt reasoning,Learning to reason about the gestalt of missing objects and scenes is crucial in masked image modeling
+model,gestalt,"The model learns to reason about the gestalt of missing objects and scenes, which leads to useful representations."
+mae,knowledge distillation,"Combining MAE and knowledge distillation allows for an even higher masking ratio, as depicted in Figure 2."
+masking ratio,imagenet accuracy,"Raising the masking ratio to 90% and even higher ratios like 98% do not result in a performance drop, as both achieve 84.0% top-1 ImageNet accuracy."
+dmae,masking ratio,DMAE achieves competitive ImageNet accuracy with extreme masking ratios of 95% and 98%.
+decoder depth,pre-trained representation quality,"A deeper decoder slightly improves the pre-trained representation quality, as shown in Table 4."
+loss function,imagenet accuracy,"Different loss choices and ratios impact ImageNet accuracy, as illustrated in Table 5."
+l1,α,The hyper-parameter α has little influence on the representation quality of DMAE.
+l1,l2,L1 distance yields significantly higher performance than L2 distance.
+student model,teacher model,The goal of the proposed feature alignment distillation is to encourage the student model to learn features that are predictive of features from a stronger teacher model.
+projection head,student model,"A small projection head is employed on features from the student model to project them onto a space of the same dimension as the hidden dimension of the teacher model, and provide extra flexibility for feature alignment."
+projection head,fully connected layer,Applying a simple fully connected layer already performs the best among other choices for projection network.
+decoder depth,mae,"Similar to MAE, the final performance gets slightly increased with a deeper decoder."
+mae,decoder depth,"Similar to MAE, the final performance gets (slightly) increased with a deeper decoder."
+l1 distance,l2 distance,"Sim-MIM shows that L1 distance and L2 distance lead to similar performance, but our results suggest that L1 distance exhibits a clear advantage over L2 distance."
+dmae,mae,"If MAE is asked to pre-train for only 100 epochs, DMAE can substantially outperform this baseline by 2.4%."
+dmae,mae,"When comparing to a much stronger but more computationally expensive MAE baseline with 1600 pre-training epochs, DMAE still beats it by 0.4%."
+supervised model,dmae,"DMAE shows stronger performance than all three kinds of baselines: MAE, supervised model, and other existing advanced distillation strategies."
+dmae,deit-b-soft distillation,"DMAE compared with DeiT-B-Soft Distillation is not explicitly mentioned, but they are both considered in the context of distillation strategies."
+dmae,deit-b-hard distillation,"DMAE compared with DeiT-B-Hard Distillation is not explicitly mentioned, but they are both considered in the context of distillation strategies."
+dmae,dear-kd,"DMAE compared with Dear-KD is not explicitly mentioned, but they are both considered in the context of distillation strategies."
+dmae,supervised feature alignment,"DMAE compared with Supervised Feature Alignment is not explicitly mentioned, but they are both considered in the context of distillation strategies."
+deit,300 epochs,DeiT 300 epochs supervised training requires a much longer training time compared to the DeiT-B
+deit,deit-style logit-based distillation,"DeiT compared with DeiT-style logit-based distillation is indirectly mentioned, suggesting a potential negative impact on student models' performance from the latter."
+deit,crd,"DeiT compared with CRD is not explicitly mentioned, but they are both considered in the context of distillation strategies."
+deit,srrl,"DeiT compared with SRRL is not explicitly mentioned, but they are both considered in the context of distillation strategies."
+deit,feature alignment distillation,"DeiT compared with feature alignment distillation is not directly stated, but they are both part of the comparison with other distillation methods."
+dmae,feature alignment distillation,"DMAE shows consistent improvement compared to MAE across different model sizes, with the feature alignment distillation performing the best."
+dmae,vit-b,DMAE brings an additional improvement of +2.4% with ViT-B in terms of knowledge distillation.
+dmae,vit-small,DMAE brings an additional improvement of +2.7% with ViT-Small in terms of knowledge distillation.
+dmae,vit-tiny,DMAE brings an additional improvement of +3.4% with ViT-Tiny in terms of knowledge distillation.
+vit-l,vit-b,"When using ViT-L as the teacher model, both ViT-B and ViT-S benefit from the distillation, demonstrating a clear advantage."
+vit-l,vit-s,"When using ViT-L as the teacher model, both ViT-B and ViT-S benefit from the distillation."
+vit-s,vit-b,"ViT-S is the student model and ViT-B is a teacher model, suggesting a relationship between these two models in terms of knowledge distillation."
+dmae,teacher models,"DMAE is able to effectively distill knowledge from teacher models, implying a knowledge extraction relationship between them."
+data,high data collection and labeling costs,"Data could be hard to acquire due to high costs of data collection and labeling, indicating a financial constraint related to data availability."
+models pre-trained on large-scale unlabeled datasets,fine-tuning on a small dataset of downstream tasks,"Models pre-trained on unlabeled datasets can be fine-tuned on small datasets for downstream tasks, suggesting a transfer learning relationship."
+dmae,baselines,"DMAE is compared with other baselines in terms of distillation strategies, showing a comparative evaluation relationship."
+supervised feature alignment,dmae-b,"DMAE-B demonstrates much stronger performance than all other baselines when training data is limited, showing the importance of supervised feature alignment"
+supervised feature alignment,deit-b,"DeiT-B baseline is unable to converge due to data insufficiency, highlighting the challenges faced during supervised feature alignment"
+dmae-b,deit-b-soft distillation,"Comparison between DMAE-B and DeiT-B-Soft Distillation shows the superior performance of DMAE-B, indicating the effectiveness of the supervised feature alignment in training"
+dmae-b,deit-b-hard distillation,"DMAE-B outperforms DeiT-B-Hard Distillation, indicating the advantage of supervised feature alignment in achieving better results"
+dmae-b,mae-b-100-epoch,"DMAE-B surpasses MAE-B-100-epoch model, showcasing the strength of supervised feature alignment in improving performance"
+supervised feature alignment,training cost (gpu hours) pre-training,"Comparison of the training cost between different models, including the importance of GPU hours in supervised feature alignment process"
+supervised feature alignment,fine-tuning overall,"Fine-tuning process is essential in supervised feature alignment to achieve higher accuracy rates, as demonstrated by DMAE in comparison to other baselines"
+dmae,data efficiency,DMAE demonstrates data efficiency with an improvement ranging from 5.8% to 7.0%
+dmae,self-supervised training frameworks,"DMAE is integrated into other self-supervised training frameworks like DINO and MoCo-V3, showing improvements on top of both"
+dino,moco-v3,DINO and MoCo-V3 are contrastive learning-based methods integrated with DMAE and show non-trivial improvements
+dmae,pre-trained models,DMAE demonstrates the potential of distilling pre-trained models rather than fine-tuned models
+dmae,self-supervised pre-training frameworks,DMAE effectively improves other self-supervised pre-training frameworks like DINO and MoCo-V3 on ImageNet classification top-1 accuracy
+vit-det,coco dataset,ViT-Det conducts downstream fine-tuning on the COCO dataset
+mae/dmae pre-trained vit-base model,mask-rcnn,The MAE/DMAE pre-trained ViT-Base model is adopted as the plain backbone of Mask-RCNN for downstream fine-tuning
+mentation (apmask),dmae,"DMAE demonstrates strong potential in downstream tasks like detection and segmentation, as shown in Table 11."
+dmae,object detection,"DMAE effectively improves the downstream tasks like object detection and segmentation, as indicated in Table 11."
+dmae,segmentation,"DMAE effectively improves the downstream tasks like object detection and segmentation, as highlighted in Table 11."
+dmae,computational cost,A quantitative evaluation of the computational cost of DMAE compared to baseline methods is presented in the discussion section.
+dmae,mae-100 baseline,"DMAE substantially outperforms the MAE-100 baseline by +2.4% on ImageNet, as shown in Table 9."
+dmae,mae-1600 baseline,"DMAE substantially outperforms the MAE-1600 baseline, which causes ∼7x GPU hours than MAE-100 baseline, as observed in the computational cost analysis."
+dmae,gpu hours,"DMAE stands as the most efficient one in terms of actual GPU hours compared to other baselines, as demonstrated in Table 9."
+dmae,imagenet accuracy,DMAE achieves the best top-1 ImageNet accuracy among the evaluated methods.
+mae,random seed,"For DMAE, a statistical analysis with changing random seeds is performed to assess stability and variance, as mentioned in the Standard Deviation Analysis section."
+dmae,random seeds,DMAE is influenced by changing the random seeds.
+table 12,aligning settings,Table 12 displays three aligning settings.
+table 12,results,Table 12 shows the results with different seeds.
+dmae,improvements,DMAE brings statistically stable improvements.
+vit-tiny,vit-small,ViT-Tiny and ViT-Small are compared in terms of performance.
+table 13,augmentation and regularization,Table 13 indicates that weaker augmentation and regularization helps smaller ViT models.
+dmae,mae,DMAE outperforms MAE in certain scenarios.
+dmae,deit,DMAE outperforms DeiT with a new recipe.
+mae,computer vision domain,"MAE has shown a rise in the computer vision domain, indicating a similar paradigm in both domains."
+vision models,mae,The development of vision models may embark on a similar trajectory as MAE in the language domain.
+model,performance and speed,It is desirable to have a well-balanced model between performance and speed in real-world applications.
+dmae,knowledge distillation,DMAE is a knowledge distillation method focusing on feature alignment during MAE pre-training.
+our dmae,effectiveness,Extensive experiments have demonstrated the effectiveness of Our DMAE approach.
+dmae,small-data regime,Our DMAE has been validated for effectiveness even in the small-data regime.
+knowledge distillation,pre-trained models,This work aims to benefit future research in knowledge distillation with pre-trained models.
+mae paper,vit-small and tiny,The original MAE paper does not offer specialized recipes for ViT-Small and Tiny models.
+vits,smaller vits,smaller ViTs are a modified version of ViTs to address the issue of size
+recipe,weaker augmentation,experimenting with modified recipe involves weaker augmentation
+recipe,regularization,experimenting with modified recipe involves regularization
+mixup,recipe,MixUp is removed from the modified recipe
+cutmix,recipe,CutMix is removed from the modified recipe
+stochastic depth,recipe,Stochastic Depth is removed from the modified recipe
+gift,open philanthropy,the work is supported by a gift from Open Philanthropy
+work,open philanthropy,the work is supported by a gift from Open Philanthropy
+work,tpu research cloud (trc) program,the work is supported by TPU Research Cloud (TRC) program
+work,google cloud research credits program,the work is supported by Google Cloud Research Credits program
+onr,work,ONR award N00014-21-1-2812 acknowledges the work

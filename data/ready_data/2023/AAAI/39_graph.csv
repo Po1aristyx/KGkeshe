@@ -1,0 +1,126 @@
+node_1,node_2,edge
+zero-shot classification,visual encoder,The visual encoder is used in VLMs for zero-shot classification
+text-based classifiers,clip [31],CLIP is mentioned as a reference for text-based classifiers in the context of zero-shot classification.
+clip [31],inmap [30],Both CLIP and concurrent InMaP are compared for zero-shot classification performance.
+unlabeled data,proximity graph,Unlabeled data is represented by a proximity graph
+label propagation (lp),geodesic distances,Label propagation is applied to derive geodesic distances between text-based classifiers and unlabeled images.
+zlap classiﬁer,transductive inference,ZLaP classifier improves performance for both transductive and inductive inference.
+zlap classiﬁer,inductive inference,ZLaP classifier also offers performance gains for inductive inference.
+label propagation,vision-language models,Our approach tailors label propagation specifically for VLMs
+zero-shot classification,improvement,Related works aim to improve zero-shot classification by refining distance metrics
+parameter-free attention mechanism,distance metric improvement,CALIP [8] employs a parameter-free attention mechanism to enhance the distance metric for better zero-shot classification.
+local patch representation,distance metric improvement,CALIP uses local patch representations instead of global ones
+vision-language models,state-of-the-art results,Our method
+class proxies,method complement,We propose class proxies alongside our method to further boost zero-shot performance.
+external knowledge,leveraged for improvement,Other works utilize external knowledge to learn more expressive textual prompts for enhanced zero-shot classification.
+synthetic and unlabeled data,leveraged for improvement,Some approaches leverage synthetic and unlabeled data to augment and improve zero-shot classification.
+pseudo-labels,unlabeled examples,Pseudo-labels are used for further processing
+svl-adapter,unlabeled data,SVL-Adapter first trains a model on unlabeled data and then an adapter module to align its outputs with pseudo-labels.
+reclip,pseudo-labels,ReCLIP performs transductive label propagation to obtain pseudo-labels and fine-tunes the VLM encoders.
+label propagation,inductive inference,Our method does not fine-tune the model and instead uses label propagation for both transductive and inductive inference.
+inmap,pseudo-labels,InMaP updates class representations using pseudo-labels to make them closer to image representations
+proximity graph,zero-shot classification,Our proposed approach captures interactions between unlabeled examples through a proximity graph for zero-shot classification.
+image encoder,text encoder,Vision-language models consist of separate image and text encoders
+image space,text space,These two concepts are related as they represent the different domains being considered
+outputs of encoders,ℓ2-normalization,The encoders' outputs are normalized to ensure they are compatible for further processing.
+set of known classes c,class names {l1,...
+prompt templates p,class representations wc,Prompt templates are used to create textual descriptions of classes
+test image u,representation u = f(u),A test image is processed to obtain its feature representation for zero-shot classification.
+set of m unlabeled images u,representations {u1,...
+inductive inference,transductive inference,These are two different inference setups where inductive uses labeled and unlabeled data to generalize
+underlying vlm,black box,The VLM is treated as a black box
+transductive setup,label propagation,Label propagation is originally proposed for the transductive inference setup.
+graph nodes,features,Each feature represents a graph node.
+adjacency matrix,k-nearest neighbors,sij is set to x⊤_i x_j if x_j is in the k-nearest neighbors of x_i.
+adjacency matrix,symmetric adjacency matrix,A symmetric adjacency matrix is obtained by S + Stranspose.
+symmetric adjacency matrix,normalized adjacency matrix,The symmetrically normalized version is ˆS = D^(-1/2)
+label propagation,transductive inference,The purpose of label propagation is to predict labels for unlabeled nodes in a transductive setup.
+iteration,convergence,Label propagation is an iterative process that stops when convergence is reached.
+α (propagation hyper-parameter),iterative process,α controls the propagation in the iterative process given by equation 1.
+one-hot vector,labels,yc is a one-hot vector representing the labels for the first C examples.
+unlabeled node,prediction,Prediction for an unlabeled node is made using equation 2.
+label propagation,graph laplacian,The iterative solution for predicting labels involves solving C linear systems
+conjugate-gradient (cg) method,solving c linear systems,For large datasets
+closed-form solution,inverse graph laplacian (linv),The closed-form solution computes class confidences by picking one column of Linv
+geodesic similarity,similarities between node pairs,Linv(j
+classification task,similarities between an unlabeled example and a class node,In a classification context
+equivalence,iterative solution vs dual solution,The iterative solution for all unlabeled nodes is shown to be equivalent to solving N - C linear systems instead.
+linear systems,unlabeled nodes,Solving linear systems is equivalent to predicting unlabeled nodes in the context of zero-shot classification.
+closed-form solution (4),cg solution (3),Both closed-form and CG solutions are theoretically equivalent
+dual solution (5),inductive inference,The dual solution is efficient for inductive inference
+l_inv (pseudo-inverse),pairwise similarity matrix,L_inv is viewed as a similarity matrix
+test examples,graph construction,Test examples are not known during graph construction
+transductive learning,labeled nodes,In transductive learning
+image nodes,text nodes,Text nodes get linked only if they appear in the kNN list of an image
+knn list,image nodes,kNN search is performed within image features to find relevant nodes.
+knn search,text nodes (cross-modal),Image-to-text similarities are transformed using a power function to balance their contribution in the graph.
+zero-shot classification,label propagation (zlap),ZLaP is the proposed method for zero-shot classification using label propagation.
+zlap,zlap* (sparse variant),ZLaP* refers to the sparse version of ZLaP for inductive inference.
+geodesic similarity,clip features,t-SNE visualization shows a comparison between the original CLIP features and the geodesic similarity
+features,pairwise similarity matrix,Features are used as input
+class representation,image representation,Both class representation and image representation are combined in a bi-modal feature space.
+describable textures dataset (dtd),eurosat,These are listed as datasets in the context
+fgvc-aircraft,oxford flowers 102,Similar to DTD and EuroSAT
+transductive inference,inductive inference,Two types of inference setups where unlabeled nodes have different roles: test images in transductive
+t-sne visualization,clip features,t-SNE is used to visualize the bi-modal feature space
+euclidean affinities,geodesic similarities,Two methods for measuring similarities in the feature space
+cifar10,cifar100,Both are mentioned as datasets with official splits
+cub-200-2011,coop,CUB-200-2011 uses official splits
+geodesic similarities,lin(v),Linv is used to obtain geodesic similarities
+euclidean affinities,geodesic affinities from linv,The comparison is made between Euclidean affinities and the geodesic affinities derived from Linv
+class representations,image nodes,Class representations are initially clustered far from image nodes when using Euclidean affinities but are more spread when using geodesic affinities.
+proposed method,zlap (zero-shot learning with label propagation),The proposed method is ZLaP
+datasets,imagenet ilsvrc2012,ZLaP is tested on 14 diverse datasets
+datasets,vlms (visual-language models),Evaluation includes VLMs and textual prompts
+clip,text encoder features,CLIP serves as a baseline
+tpt (test-time prompt tuning),baseline,TPT is a competitor method that performs test-time prompt tuning for improved consistency.
+clip-dn,baseline,CLIP-DN is another baseline that exploits unlabeled data and is compared in the context.
+transductive setup,zero-shot classification accuracy,The graph shows zero-shot classification accuracy for the transductive setup
+inductive inference setup,gains over clip baseline,In the inductive inference setup
+zlap,clip,ZLaP outperforms CLIP in both transductive and inductive setups
+inmap,zlap,Incorporating InMaP's class representations improves ZLaP's results
+inmap proxies,zlap using inmap,Using InMaP proxies with ZLaP leads to larger gains over CLIP compared to ZLaP alone.
+state-of-the-art performance,zlap*,ZLaP* maintains the state-of-the-art performance of the method.
+resnet50,vit-b/16,Both ResNet50 and ViT-B/16 backbones are used for comparison in the experiments.
+datasets,averaged over 14 datasets,Performance is evaluated across 14 datasets
+class representations,inmap's class representations,Combining InMaP's class representations enhances ZLaP's results.
+graph,zlap,ZLaP's performance is improved by incorporating class representations into its graph structure.
+zlap,state-of-the-art performance,ZLaP maintains the state-of-the-art performance of the method
+zlap,speed-up,sparsifying ˆY offers significant speed-up at inference time
+zlap,zero-shot classification,ZLaP improves zero-shot performance in zero-shot classiﬁcation
+zlap,cupl prompts,ZLaP uses prompts generated by LLMs from CuPL
+zlap,zero-shot classiﬁcation accuracy,Improvement in average accuracy on 12 datasets
+multi-label classification,ms-coco dataset,ZLaP applied for multi-label classification on MS-COCO
+zlap,clip,ZLaP improves zero-shot performance of CLIP by +6.0% mAP
+unlabeled images,target dataset,Previous experiments use web-crawled unlabeled images from the target
+inductive setup,transductive setup,Comparison of results for inductive and transductive inference
+imagenet,labels,ImageNet is a dataset where labels are discarded
+zlap,web-crawled images,ZLaP is evaluated on a more realistic setup using LAION-400M
+laion-400m,image-caption pairs,LAION-400M is a collection of paired images and captions
+random selection,caption-based neighbors,Randomly selecting images for the unlabeled set fails
+zlap,vlms (e.g.,blip
+blip,albef,Both are VLMs used in experiments
+eva-clip,official github repository,The EVA-CLIP implementation is sourced from the official Github repository.
+zlap,accuracy improvement,ZLaP consistently improves the accuracy of different VLMs in both transductive and inductive setups.
+transductive setup,inductive setup,ZLaP's performance is evaluated in two different learning paradigms - transductive (using labeled data) and inductive (generalizing to unseen data).
+conclusions,intuitive way of encoding global information,The paper concludes that label propagation
+vision-language models (vlms),zero-shot classification,VLMs are used for both transductive and inductive zero-shot classification
+transductive zero-shot classification,inductive zero-shot classification,The paper focuses on tailoring label propagation for both transductive and inductive setups
+label propagation,geodesic distances,Label propagation encodes global structure into geodesic distances in a locally Euclidean space
+locally euclidean space,graph construction,Careful consideration of the bi-modal nature of VLMs is crucial when constructing the graph for effective label propagation.
+vision-language models (vlms),billion-scale datasets,The success of VLMs is attributed to their training on large-scale datasets
+zlap (proposed method),black-box vlms,ZLaP is a training-free approach that enhances the generalization of pre-trained VLMs without additional annotations.
+unlabeled data,annotation-free classiﬁcation,ZLaP operates in an annotation-free paradigm
+zlap,open-world classification,ZLaP enables a text-based and open-world classification approach
+czech technical university in prague,sgs23/173/ohk3/3t/13 grant,The research was supported by a grant from the university.
+ahmet iscen,helpful comments,The authors express gratitude to Ahmet Iscen for providing valuable feedback on the work.
+university in prague,sgs23/173/ohk3/3t/13,The university received a grant with the reference number SGS23/173/OHK3/3T/13.
+ahmet iscen,helpful comments,Ahmet Iscen provided helpful comments related to the context.
+lavais,github repository,LaVAIS is a project on GitHub
+eccv,[2],[4]
+semantic image segmentation,[3],[5]
+deep gaussian crfs,[3],Siddhartha Chandra and Iasonas Kokkinos used deep Gaussian CRFs for inference in [3].
+contrastive language-image learning,[4],[9]
+food-101,[2],Lukas Bossard et al. describe Food-101 dataset in reference [2].
+generative visual models,[6],Li Fei-Fei et al. explore generative visual models with few examples in [6].
+random walks,[7],Leo Grady's work on random walks is related to image segmentation

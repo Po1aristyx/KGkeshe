@@ -1,0 +1,231 @@
+node_1,node_2,edge
+3d object tracking,object,"The context mentions 3D object tracking as the main focus, indicating that the object is being tracked in the given scenario."
+3d object tracking,transformer-based network,"The context introduces CXTrack as a novel transformer-based network for 3D object tracking, highlighting the relationship between tracking and network design."
+3d object tracking,contextual information,"Contextual information across frames is crucial for effective object tracking, emphasizing the importance of contextual knowledge in the tracking process."
+cxtrack,transformer-based network,"CXTrack is specifically mentioned as a novel transformer-based network for 3D object tracking, indicating that CXTrack utilizes transformer technology for tracking."
+object tracking,convolutional neural network,"The context refers to existing methods overlooking points containing useful information, highlighting the contrast with the proposed CXTrack, which uses a convolutional neural network to improve object tracking."
+contextual information,object tracking,"Contextual information is crucial for effective object tracking, suggesting a direct relationship between contextual information and the tracking process."
+transformer-based network,localization head,"The proposed transformer-based network utilizes a localization head for accurate localization of objects, showcasing the connection between network design and object localization."
+computer vision,task,Task in computer vision involves keeping track of a specific target across a video sequence
+computer vision,3d data acquisition devices,Recent years have seen increased attention in computer vision towards using point clouds from 3D data acquisition devices for various vision tasks
+object detection,3d data acquisition devices,Point clouds from 3D data acquisition devices are used for object detection
+object tracking,3d data acquisition devices,Point clouds from 3D data acquisition devices are used for object tracking
+point cloud-based object tracking,autonomous driving,Point cloud-based object tracking shows huge potential in applications like autonomous driving
+point cloud-based sot methods,"sc3d, p2b, motion-centric paradigms","Existing 3D point cloud-based SOT methods are categorized into three paradigms, namely SC3D, P2B, and motion-centric"
+sc3d,p2b,"SC3D is a pioneering work that crops the target from the previous frame, while P2B takes the cropped target template to address efficiency problems"
+p2b,contextual information,"P2B reaches a balance between performance and speed by adopting a 3D region proposal network to predict the current bounding box. However, P2B overlooks the contextual information across two consecutive frames. The lack of contextual information may degrade tracking performance due to large appearance variation."
+sc3d,contextual information,SC3D paradigm overlooks the contextual information across two consecutive frames. The lack of contextual information may cause appearance variation and drift towards intra-class distractors.
+p2d,contextual information,P2D paradigm overlooks the contextual information across two consecutive frames. The lack of contextual information may cause appearance variation and drift towards intra-class distractors.
+m2-track,contextual information,"M2-Track introduces a novel motion-centric paradigm that directly takes point clouds from two frames without cropping, segments target points from their surroundings, and estimates the current bounding box by explicitly modeling motion between the two frames. However, the motion-centric paradigm still works on cropped patches that lack contextual information in later localization."
+bounding box,tracking performance,The current bounding box may degrade tracking performance due to the existence of large appearance variation and widespread distractors.
+cxtrack,3d sot,CXTrack is a novel transformer-based tracker proposed to improve tracking performance specifically for 3D SOT.
+point clouds,bounding box,CXTrack directly takes point clouds from two consecutive frames as input and specifies the target of interest with the previous bounding box to predict the current bounding box.
+local geometric information,point features,Local geometric information of the two point clouds is embedded into point features using a shared backbone network.
+targetness information,point features,Targetness information is integrated into the point features based on the previous bounding box to propagate target cues into the current frame.
+target-centric transformer,current frame,A target-centric transformer is used to propagate the target cues into the current frame while exploring contextual information in the surroundings of the target.
+point features,localization head,Enhanced point features are fed into a novel localization head named X-RPN to obtain the final target proposals.
+local transformer,point feature interactions,"X-RPN adopts a local transformer to model point feature interactions within the target, achieving a better balance between handling small and large objects compared with other localization heads."
+handling small and large objects,other localization heads,The terms handling small and large objects and other localization heads are related in the context of comparing their effectiveness in distinguishing targets from distractors.
+novel center embedding module,x-rpn,The novel center embedding module is incorporated into X-RPN to embed the relative target motion between frames and perform explicit motion modeling.
+cxtrack,current state-of-the-art methods,CXTrack significantly outperforms the current state-of-the-art methods in real-time tracking tasks on popular tracking datasets.
+real-time 3d sot task,contextual information across consecutive frames,The new paradigm for the real-time 3D SOT task aims to exploit contextual information across consecutive frames to improve tracking accuracy.
+cxtrack,transformer-based tracker,CXTrack is a transformer-based tracker that utilizes a target-centric transformer architecture to propagate targetness information and exploit contextual details for tracking.
+x-rpn,intra-class distractors,X-RPN is a localization head that is robust to intra-class distractors and balances between handling small and large targets effectively.
+rgb-d information,2d siamese networks,"Early methods for the 3D SOT task focus on RGB-D information and tend to use 2D Siamese networks, but changes in illumination and appearance can impact the performance of these methods."
+sc3d,cosine similarity,"SC3D crops the target from the previous frame and computes the cosine similarity between targets, representing a pioneering work in the context of 3D object tracking."
+cosine similarity,target template,The pipeline computes the cosine similarity between the target template and a series of 3D target proposals sampled from the current frame using a Siamese backbone.
+pipeline,heuristic sampling,"The pipeline relies on heuristic sampling, which is very time-consuming."
+p2b [20],end-to-end framework,"P2B [20] develops an end-to-end framework, which first employs a shared backbone to embed local geometry into point features, and then propagates target cues from the target template to the search area in the current frame."
+p2b [20],performance and efficiency,"P2B [20] reaches a balance between performance and efficiency, and many works follow the same paradigm."
+mlvsnet [29],multi-level information aggregation,MLVSNet [29] aggregates information at multiple levels for more effective target localization.
+bat [31],box-aware feature fusion module,BAT [31] introduces a box-aware feature fusion module to enhance the correlation learning between the target template and the search area.
+v2b [8],voxel-to-bev target localization network,"V2B [8] proposes a voxel-to-BEV (Bird’s Eye View) target localization network, which projects the point features into a dense BEV feature map to tackle the sparsity of point clouds."
+lttr [3],transformer-based architecture,LTTR [3] adopts a transformer-based architecture to fuse features from two branches and propagate target cues.
+ptt [22],transformer module integration,PTT [22] integrates a transformer module into the P2B architecture to refine point features.
+ptt,transformer module,PTT integrates a transformer module into the P2B architecture to refine point features.
+pttr,point relation transformer,PTTR introduces Point Relation Transformer for feature fusion and a light-weight Prediction Refinement Module for coarse-to-fine localization.
+pttr,prediction refinement module,PTTR introduces Point Relation Transformer for feature fusion and a light-weight Prediction Refinement Module for coarse-to-fine localization.
+st-net,iterative coarse-to-fine correlation network,ST-Net develops an iterative coarse-to-fine correlation network for robust correlation learning.
+m2-track,appearance variations,M2-Track mentions appearance variations caused by commonly occurred occlusions and thus results tend to drift towards intra-class distractors.
+m2-track,3d sot problem,"M2-Track introduces a motion-centric paradigm to handle the 3D SOT problem, which directly takes the point clouds from two consecutive frames as input without cropping."
+m2-track,pointnet,M2-Track adopts PointNet to predict the relative target motion from the cropped target area that lacks contextual information.
+motion-centric paradigm,3d sot problem,M2-Track introduces a motion-centric paradigm to handle the 3D SOT problem.
+target segmentation,localizes the target,M2-Track first localizes the target in the two frames by target segmentation.
+target segmentation,adopts pointnet,M2-Track adopts PointNet to predict the relative target motion from the cropped target area that lacks contextual information.
+target segmentation,contextual information,"M2-Track could not fully utilize local geometric and contextual information for prediction, which may hinder precise bounding box regression."
+initial state,single object tracking,"Given the initial state of the target, single object tracking aims to localize the target in a dynamic scene frame by frame."
+localize,target,The aim of the network is to localize the target in a dynamic scene frame by frame.
+3d bounding box,target,The initial state in the first frame is given as the 3D bounding box of the target.
+translation offset,rotation angle,The tracking task is simplified by only regressing the translation offset and the rotation angle between two consecutive frames.
+3d bounding box,localize,"By applying the translation and rotation to the 3D bounding box in the previous frame, we can compute the 3D bounding box to localize the target in the current frame."
+point clouds,frames,"The point clouds in two consecutive frames are denoted as Pt−1 and Pt, respectively."
+3d bounding box,targetness mask,The 3D bounding box is encoded as a targetness mask to indicate the target position.
+3d sot task,mapping,"The 3D SOT task can be formalized as learning the mapping F(Pt−1,˙Mt−1,Pt) → (∆x, ∆y, ∆z, ∆θ)."
+network,cxtrack,"Following Eq. (2), a network named CX-Track is proposed."
+cxtrack,tracking accuracy,CXTrack is a network designed to improve tracking accuracy by fully utilizing contextual information across frames.
+cxtrack,point features,CXTrack utilizes hierarchical feature learning architecture to embed local geometric features of the point clouds into point features.
+mt,targetness mask,"Mt is the targetness mask filled with 0.5 as unknown, used to concatenate with point features of two frames."
+x,xt−1,"X is the concatenated point features of the two frames, Xt−1 and Xt."
+m,mt−1,"M is the concatenated masks of the two frames, for point features extracted from Mt−1 and Mt."
+target-centric transformer,targetness mask information,The target-centric transformer integrates targetness mask information into point features to explore contextual information across frames.
+x-rpn,target proposals,X-RPN is a novel localization network designed to obtain target proposals based on the highest targetness score.
+point features,contextual information,"Point features are enhanced using contextual information around the target, propagated from the previous frame."
+contextual information,target cues,contextual information around the target cues are used while propagating them from the previous frame to the current frame
+target cues,nl = 4 identical layers,target cues are propagated through NL = 4 identical layers stacked in series
+point features,targetness mask,point features and targetness mask are used as input for modeling interactions in each layer
+multi-layer-perceptrons (mlps),new point features,MLPs are used to compute the new point features in each layer
+new point features,refined targetness mask,new point features and refined targetness masks are computed in each layer
+predicted targetness mask,refined layer,predicted targetness mask is consistently refined layer by layer
+auxiliary loss,potential target center,auxiliary loss is added by predicting a potential target center for each point via Hough voting
+normalized point features,positional encodings (pe),positional encodings are added to normalized point features before feeding them into the self-attention operation
+local geometry,refined point feature,refined point features focus more on local geometry
+point features,local geometry,Point features are constrained to focus on local geometry instead of associated absolute position.
+point features,transformer layer,Point features are fed into a transformer layer employing a global self-attention operation.
+cxtrack,point clouds,CXTrack processes two consecutive point clouds and propagates target cues.
+cxtrack,3d bounding box,CXTrack embeds local geometry into point features and explores contextual information across frames with the 3D bounding box.
+cxtrack,x-rpn,CXTrack uses the enhanced features fed into X-RPN to obtain high-quality proposals for verification.
+transformer layers,targetness mask,Three types of transformer layers integrate the targetness mask information into point features.
+transformer layers,intra-frame and inter-frame feature relationships,Transformer layers fuse targetness mask with point features while modeling relationships within and across frames.
+attention (mha),multi-head attention,Multi-head attention is applied to model relationships between point features.
+attention,subspaces,Attention is applied in h subspaces before concatenation.
+projections,parameter matrices,The projections are implemented by parameter matrices.
+matrix,subspace,W K matrix.
+feature,feed-forward network,Each transformer layer also contains a fully connected feed-forward network to refine the point features.
+output,transformer layer,The final output of the k-th transformer layer.
+transformer layer,point features,To integrate the targetness mask information into point features.
+classic transformer layer,modified transformer layer,"To integrate the targetness mask information into point features, we need to modify the classic transformer layer."
+modified transformer layer,types,"We introduce three types of modified transformer layers in Fig. 3, namely Vanilla, Semi-Dropout and Gated layer."
+input,mask embedding,We project the input M(k−1) to mask embedding ME using a linear transformation.
+self-attention mechanism,feature branch,The self-attention mechanism is separated into a feature branch with shared attention weights.
+self-attention mechanism,mask branch,The self-attention mechanism is separated into a mask branch with shared attention weights.
+self-attention mechanism,re-formulated as,"The self-attention sublayer is re-formulated as a specific equation involving X, MHA, and ME."
+x-rpn,rpn,X-RPN extends RPN by using local transformer and center embedding.
+x-rpn,aggregates,X-RPN aggregates local clues from point features without downsampling or voxelization.
+point,same object,Our intuition is that each point should only interact with points belonging to the same object.
+point,irrelevant information,Points belonging to the same object should interact to suppress irrelevant information.
+point features,target center,Point features are split along the spatial dimension and only fed to X-RPN if they belong to the current frame's target center.
+neighborhood n (pi),point pi,X-RPN computes the neighborhood N (pi) for each point pi using its potential target center.
+r,size of the neighborhood,r is a hyperparameter indicating the size of the neighborhood used in X-RPN.
+transformer architecture,x-rpn,X-RPN adopts the transformer architecture mentioned in Sec. 3.3 to aggregate local information.
+local information,neighborhood points,each point only interacts with its neighborhood points to suppress noise.
+feed-forward network,transformer layer,we remove the feed-forward network in the transformer layer.
+intra-class distractors,scenes,To deal with intra-class distractors which are widespread in the scenes.
+potential center information,targetness mask,we propose to combine the potential center information with the targetness mask.
+tracking target,local geometry,the tracking target keeps similar local geometry across two frames.
+displacement,target,"if the duration between two consecutive frames is sufficiently short, the displacement of the target is small."
+gaussian proposal-wise mask,displacement,we construct a Gaussian proposal-wise mask Mc to indicate the magnitude of the displacement of each proposal.
+point pi,predicted target center ci,"Formally, for each point pi with the predicted target center ci, the mask value mci ∈ Mc isi = exp(−"
+target center mask mc,center embedding matrix ce,We embed the target center mask Mc into the center embedding matrix CE ∈ RN×C using a linear transformation.
+mask embedding,center embedding,we equally combine the mask embedding and the center embedding.
+prediction m(k),cross entropy loss l(i),"For the prediction M(k) given by the k-th transformer layer, we adopt a standard cross entropy loss L(i)."
+potential target centers,difficult,"For the potential target centers, we observe that it is difficult to."
+cross entropy loss,l2 loss,The predicted centers C(k) are supervised by L2 loss for non-rigid objects.
+cross entropy loss,huber loss,The predicted centers C(k) are supervised by Huber loss for non-rigid objects.
+x-rpn,local transformer,X-RPN adopts a local transformer to model point feature interaction within the target and aggregate local clues.
+x-rpn,center embedding mechanism,X-RPN incorporates a center embedding mechanism which embeds the relative target motion between two frames to distinguish the target from distractors.
+trdimp,gated mechanism,"Inspired by the design of TrDimp, a gated mechanism is introduced into the self-attention sublayer to integrate the mask information."
+mask transformation,feature transformation,"There are two parallel branches, namely mask transformation and feature transformation."
+feature activation,background areas,feature activation needs to be suppressed in background areas
+self-attention,residual connection,self-attention is employed with a residual connection to model relationships between features
+output features xm,output features xf,the output features Xm and Xf from the two branches are summed and normalized
+semi-dropout target-centric transformer layers,performance gain,significant performance gain observed from using Semi-Dropout target-centric transformer layers
+x-rpn,individual point features,previous works indicate that individual point features may not be sufficient for precise bounding box regression in X-RPN
+bounding box regression,loss terms,loss terms related to bounding box regression for rigid objects
+bounding box parameters,positive predictions,only the bounding box parameters of positive predictions are supervised
+huber (smooth-l1) loss lbox,dictions,Huber (Smooth-L1) loss Lbox is supervised by dictions
+dictions,overall loss,overall loss is the combination of dictions
+overall loss,weighted combination,weighted combination of overall loss
+weighted combination,"γ1, γ2, γ3","weighted combination is dependent on hyper-parameters γ1, γ2 and γ3"
+"γ1, γ2, γ3",rigid objects,"hyper-parameters γ1, γ2 and γ3 are set for rigid objects"
+rigid objects,non-rigid objects,hyper-parameters are set differently for rigid and non-rigid objects
+cxtrack,previous state of the arts,CXTrack is compared with previous state of the arts
+cxtrack,datasets,"CXTrack is compared on three datasets: KITTI, nuScenes, and Waymo Open Dataset"
+datasets,kitti,"Datasets include KITTI, nuScenes, and Waymo Open Dataset"
+kitti,training video sequences,KITTI contains training video sequences
+training video sequences,testing video sequences,"training video sequences are split into training, validation, and testing parts"
+testing video sequences,validation split,testing video sequences are validated using validation split
+testing video sequences,evaluation,testing video sequences are used for evaluation
+nuscenes,validation split,nuScenes is evaluated using validation split
+waymo open dataset (wod),lidar-sot,Waymo Open Dataset is evaluated using LiDAR-SOT method
+lidar-sot,evaluation,LiDAR-SOT method is used for evaluation
+evaluation metrics,success,Evaluation Metrics include Success and Precision
+success,precision,Success and Precision are defined in one pass evaluation
+x-rpn,scaling parameter σ2,X-RPN uses scaling parameter σ2 as an initialization
+scaling parameter σ2,car and vans,scaling parameter σ2 is fixed for cars and vans as they may have larger motions
+success,precision,Success and Precision are evaluation metrics used to measure the performance of a model based on AUC values under specific conditions.
+success,precision,"Both Success and Precision metrics are defined based on predetermined thresholds for the Intersection Over Union and distance between centers, respectively."
+success,auc,Success metric denotes the Area Under Curve (AUC) for the plot displaying the ratio of frames satisfying a specific IOU threshold.
+precision,auc,Precision is defined as the AUC for the plot showing the ratio of frames within a certain distance threshold.
+precision,distance,Precision metric considers the distance between centers of predicted and ground-truth bounding boxes as per the given threshold values.
+success,intersection over union (iou),Success is calculated based on the IOU ratio between predicted and ground-truth bounding boxes exceeding a certain threshold limit.
+auc,plot,Area Under Curve (AUC) is calculated from the plot depicting the relationship between predicted and ground-truth bounding box ratios.
+success,evaluation,Success metric is utilized for the evaluation of model performance under specific conditions.
+stnet,m2-track,"STNet and M2-Track are compared in Tab. 1, where CXTrack surpasses previous state-of-the-art methods with a significant improvement of average Success and Precision. However, STNet surpasses CXTrack in the Car category by a minor margin (72.1/84.0 v.s. 69.1/81.6)."
+stnet,voxelization,"STNet uses voxel-based approach which performs well for vehicles with simple shapes and limited rotation angles, providing a strong shape prior for performance gain in large objects."
+m2-track,pedestrian category,M2-Track shows a significant improvement (67.0/91.5 v.s. 49.9/77.2) in the Pedestrian category compared to previous methods.
+cxtrack,pedestrian,CXTrack shows significant improvement on the Pedestrian category by handling distractors and better preserving contextual information.
+cxtrack,m2-track,"CXTrack outperforms M2-Track in overall performance, especially in local geometry and contextual information."
+cxtrack,methods,CXTrack is compared to other methods for evaluating its generalization ability using KITTI pretrained model on nuScenes and WOD datasets.
+pedestrian,distractors,"M2-Track and CXTrack are both robust to distractors, but CXTrack makes more accurate predictions."
+cxtrack,waymo open dataset,"CXTrack's performance improvement is highlighted in the comparison with state of the arts on Waymo Open Dataset where it shows improvement in various metrics for different categories like Vehicle, Pedestrian, etc."
+pedestrian,cyclist,A comparison is made between Pedestrian and Cyclist categories in the nuScenes dataset.
+cxtrack,nuscenes,CXTrack shows comparable performance on the nuScenes dataset and achieves a good balance between small and large objects. Pretrained models on nuScenes dataset are more challenging to generalize due to different LiDAR configurations.
+cxtrack,kitti,"CXTrack outperforms other methods in terms of average success and precision, notably on KITTI and WOD datasets captured by 64-beam LiDARs."
+cxtrack,64-beam lidars,"CXTrack achieves good accuracy on datasets captured with 64-beam LiDARs, showing a clear margin of success and precision."
+cxtrack,32-beam lidars,"CXTrack is more challenging to generalize to the nuScenes dataset captured by 32-beam LiDARs, but still achieves comparable performance."
+cxtrack,pretrained model,CXTrack's performance is notable for its ability to generalize well even with differences in LiDAR configurations between datasets.
+cxtrack,tracking results,"CXTrack achieves good accuracy in scenes with both sparse and dense point clouds, showing high performance and generalization abilities."
+ods,intra-class distractors,ods drift towards intra-class distractors due to large appearance variations caused by occlusions
+ods,large appearance variations,ods drift towards intra-class distractors due to large appearance variations caused by occlusions
+intra-class distractors,large appearance variations,ods drift towards intra-class distractors due to large appearance variations caused by occlusions
+method,target,"only our method keeps track of the target, thanks to the sufficient use of contextual information"
+method,contextual information,"only our method keeps track of the target, thanks to the sufficient use of contextual information"
+method,dense cases,"In the dense cases (right), our method can track the target more accurately than M2-Track by leveraging local geometric information"
+target,contextual information,"only our method keeps track of the target, thanks to the sufficient use of contextual information"
+target,dense cases,"In the dense cases (right), our method can track the target more accurately than M2-Track by leveraging local geometric information"
+m2-track,dense cases,"In the dense cases (right), our method can track the target more accurately than M2-Track by leveraging local geometric information"
+method,m2-track,"In the dense cases (right), our method can track the target more accurately than M2-Track by leveraging local geometric information"
+components,tab. 5,We report the efficiency of different components in Tab. 5
+target-centric transformer,cxtrack,the target-centric transformer is the bottleneck of CXTrack during inference
+cxtrack,linear attention,we can replace the vanilla self-attention in CXTrack with linear attention such as linformer for further speedup
+cxtrack,design choices,"To validate the effectiveness of several design choices in CXTrack, we conduct ablation studies on the KITTI dataset"
+components,target-centric transformer,Ablation studies of different components of the target-centric transformer
+components,table 6,Ablation studies of different components of the target-centric transformer
+components,kitti dataset,we conduct ablation studies on the KITTI dataset
+transformer layers,kitti,Ablation studies of different transformer layers on KITTI
+transformer layers,v,Ablation studies of different transformer layers on KITTI. 'V' refers to the vanilla transformer layer
+transformer layers,g,Ablation studies of different transformer layers on KITTI. 'G' refers to the gated transformer layer
+transformer layers,s,Ablation studies of different transformer layers on KITTI. 'S' represents the semi-dropout transformer layer which is adopted in our proposed CXTrack
+target-centric transformer,cxtrack.carv,"The proposed CXTrack.CarV system uses a Target-Centric Transformer layer, highlighting the relationship between them."
+transformer layer,target-centric transformer layer,The Transformer Layer is a component of the Target-Centric Transformer Layer as mentioned in the context.
+contextual information,transformer,"The Transformer layer uses contextual information for better understanding of designs, showing a relationship between them."
+performance drop,contextual information,"Significant performance drop is observed when contextual information is not used, specifically for Car and Pedestrian."
+car,pedestrian,Both Car and Pedestrian show performance issues when significant contextual information is removed.
+model,supervised signals,"The lack of supervised signals may confuse the model, indicating a dependency between the model and supervised signals."
+cascaded targetness mask prediction,auxiliary target center regression,"Both components are essential for maintaining average metrics, suggesting a complementary relationship between them."
+auxiliary regression loss,feature similarities,"The auxiliary regression loss contributes to increasing feature similarities of points belonging to the same object, implying a cause and effect relationship."
+small objects,semi-dropout,"Applying Semi-Dropout performs better on small objects, indicating a specific performance benefit for small objects."
+object,pedestrian,"Objects are mentioned as small objects and pedestrians are referred to in the context, indicating a relationship as objects that can be pedestrians in this scenario."
+dropout,network,"Applying dropout directly on targetness information may confuse the network, suggesting a relationship between dropout and the network."
+gated,targetness,"Gated relies on the predicted targetness mask to modulate exposure for input features, showing a relation between gated and targetness."
+targetness,information loss,"When the targetness mask is inaccurate, it may lead to information loss, creating a relationship between targetness and information loss."
+localization heads,kitti,"Ablation studies of various localization heads are performed on KITTI, indicating a relationship between the localization heads and the dataset KITTI."
+transformer,attention maps,"The transformer generates attention maps that focus on objects with similar geometry, showing a relationship between the transformer and attention maps."
+ablation study,object tracking,"Center embedding in the ablation study can benefit object tracking, suggesting a connection between the ablation study and object tracking."
+voxelization,information loss,Voxelization brings in information loss.
+center embedding,pedestrian category,"Performance drop is observed without center embedding, especially on the Pedestrian category."
+transformer,attention map,"The transformer can attend to regions with similar geometry to the target, but fails to distinguish the target from distractors."
+center embedding,network,"With the help of the center embedding, the network precisely keeps track of the target."
+x-rpn,objects,X-RPN achieves a good balance between large and small objects.
+cxtrack,intra-class distractors,CXTrack is robust to intra-class distractors.
+center embedding,displacement of target center,Center embedding directly encodes the displacement of target center into features.
+model,performance degradation,The model may suffer from performance degradation if trained with 2Hz data and tested with 10Hz data.
+3d sot task,contextual information,A new paradigm is proposed to fully exploit contextual information across frames for the 3D SOT task.
+cxtrack,transformer-based network,CXTrack is a novel transformer-based network designed to explore contextual information and model intra-frame and inter-frame feature relationships.
+cxtrack,x-rpn,CXTrack includes a localization head named X-RPN to obtain high-quality proposals for objects of all sizes.
+cxtrack,center embedding module,CXTrack incorporates a center embedding module to distinguish the target from distractors.
+cxtrack,previous state-of-the-arts,"CXTrack significantly outperforms previous state-of-the-arts, showing its superiority."
+cxtrack,distractors,"CXTrack is robust to distractors, indicating its ability to handle distracting elements."
+authors,jiahui huang,"The authors thank Jiahui Huang for his discussions, indicating collaboration or support."
+work,natural science foundation of china,"This work was supported by the Natural Science Foundation of China, highlighting the source of funding."
+work,tsinghua-tencent joint laboratory for internet innovation technology,"This work was supported by Tsinghua-Tencent Joint Laboratory for Internet Innovation Technology, showcasing another source of support."

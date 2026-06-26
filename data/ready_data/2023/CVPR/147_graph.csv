@@ -1,0 +1,241 @@
+node_1,node_2,edge
+vision transformers,attention,Vision transformers are built upon attention as a core building block to capture long-range dependency.
+attention,long-range dependency,Attention is a powerful tool to capture long-range dependency.
+attention,computation burden,Attention incurs a huge computation burden.
+computation burden,memory footprint,High computation burden of attention leads to heavy memory footprint.
+attention,pairwise token interaction,Attention involves pairwise token interaction across all spatial locations.
+bi-level routing,sparse attention,Bi-level routing is proposed as a novel dynamic sparse attention technique with content awareness.
+query,key-value pairs,"For a query, irrelevant key-value pairs are filtered out at a coarse region level."
+query,token-to-token attention,Fine-grained token-to-token attention is applied for a query in the union of candidate regions.
+proposed bi-level routing attention,sparsity,The proposed bi-level routing attention utilizes sparsity to save computation and memory.
+proposed bi-level routing attention,dense matrix multiplications,The proposed bi-level routing attention involves GPU-friendly dense matrix multiplications.
+vision transformers,biformer,BiFormer is introduced as a new general vision transformer utilizing bi-level routing attention.
+biformer,relevant tokens,BiFormer attends to a small subset of relevant tokens adaptively.
+biformer,irrelevant tokens,BiFormer does not consider distraction from other irrelevant tokens.
+transformer,long-range dependency,Transformer is able to capture long-range dependency in the data.
+transformer,inductive-bias-free,Transformer is almost inductive-bias-free.
+transformer,flexible model,Transformer makes the model more flexible to fit tons of data.
+transformer,high parallelism,Transformer enjoys high parallelism which benefits training and inference of large models.
+transformer,natural language processing,Transformer has revolutionized natural language processing.
+transformer,computer vision,Transformer has shown promising progress in computer vision.
+vision transformers,attention,"Vision transformers focus on improving the core building block, attention."
+attention,global receptive field,Attention has a crucial property of the global receptive field which empowers vision transformers to capture long-range dependency.
+attention,pairwise token affinity,Attention computes pairwise token affinity across all spatial locations.
+attention,computational complexity,Attention has a high computational complexity and incurs heavy memory footprints.
+attention,sparse attention,A promising direction is to introduce sparse attention to vision transformers.
+sparse attention,vision transformers,Sparse attention is introduced to vision transformers.
+sparse attention,query,Each query attends to a small portion of key-value pairs instead of all.
+query,key-value pairs,Each query attends to a small portion of key-value pairs.
+tokens,query-agnostic,The tokens are query-agnostic shared by all queries.
+tokens,adaptive sparsity,Different strategies are used to merge or select key/value tokens.
+queries,semantic regions,Queries in different semantic regions actually attend to quite different key-value pairs.
+queries,tokens,Forcing all queries to attend to the same set of tokens may be suboptimal.
+attention mechanism,"dynamic, query-aware sparsity",The attention mechanism aims for each query to attend to a small portion of the most semantically relevant key-value pairs.
+problem,attention mechanism,"The first problem comes as how to seek an attention mechanism with dynamic, query-aware sparsity."
+vanilla attention,sparse attention,"Sparse attention is introduced as a variant of Vanilla attention to alleviate complexity by using different handcrafted patterns such as local window, axial stripe, dilated window, and deformable attention."
+sparse attention,local window,Local window is one of the handcrafted patterns used in sparse attention to reduce computational complexity.
+sparse attention,axial stripe,Axial stripe is another handcrafted pattern used in sparse attention to reduce computational complexity.
+sparse attention,dilated window,Dilated window is another handcrafted pattern used in sparse attention to reduce computational complexity.
+sparse attention,deformable attention,Deformable attention enables image-adaptive sparsity by deforming a regular grid.
+sparse attention,bi-level routing attention,"Bi-level routing attention achieves dynamic, query-aware sparsity by first searching top-k relevant regions and then attending to the union of them."
+bi-level routing attention,region-to-region routing approach,Region-to-region routing approach is proposed to filter out the most irrelevant key-value pairs at a coarse-grained region level for efficient global attention.
+attention offsets,local context,Attention offsets can be predicted based on local context to avoid pairwise affinity computation between all queries and keys.
+local context,long-range dependency,Modeling long-range dependency becomes problematic when attention offsets are predicted based on local context.
+key-value pairs,region level,key-value pairs are filtered at a coarse-grained region level instead of a fine-grained token level
+region-level afﬁnity graph,top-k connections,region-level afﬁnity graph is pruned to keep only top-k connections for each node
+region,token,attending regions are determined before applying token-to-token attention
+sparse matrix multiplication,hardware-friendly dense matrix multiplications,sparse matrix multiplication is replaced by hardware-friendly dense matrix multiplications for efficiency
+bi-level routing attention (bra),region-level routing step and token-level attention step,BRA contains a region-level routing step and a token-level attention step
+biformer,vision transformer backbone,BiFormer is a vision transformer backbone that uses BRA as a core building block
+biformer,"classiﬁcation, object detection, and semantic segmentation","BiFormer can be used for applications such as classiﬁcation, object detection, and semantic segmentation"
+biformer,key/value tokens,BiFormer attends to a small subset of the most relevant key/value tokens for each query in a content-aware manner
+biformer-t,computation-performance trade-off,"BiFormer-T achieves 83.8% top-1 accuracy on ImageNet-1K classification, which is the best under similar computation budgets without training with external data or distillation."
+biformer-t,imagenet-1k classification,BiFormer-T achieves 83.8% top-1 accuracy on ImageNet-1K classification.
+biformer-t,instance segmentation,Improvements are consistently shown in downstream tasks such as instance segmentation.
+biformer-t,semantic segmentation,Improvements are consistently shown in downstream tasks such as semantic segmentation.
+novel bi-level routing mechanism,vanilla attention,"A novel bi-level routing mechanism is introduced to vanilla attention, enabling content-aware sparse patterns in a query-adaptive manner."
+biformer,various computer vision tasks,Experimental results on various computer vision tasks show that the proposed BiFormer achieves significantly better performances over the baselines under similar model sizes.
+vision transformers,neural networks,Transformers are a family of neural networks that adopt channel-wise MLP blocks for per-location embedding and attention blocks for cross-location relation modeling.
+transformers,natural language processing,Transformers were originally proposed for natural language processing and then introduced to computer vision.
+transformers,cnns,"In comparison with CNNs, transformers have the biggest difference."
+detr,vit,DETR and ViT are pioneering works in the field of computer vision.
+transformers,cnns,The biggest difference between transformers and CNNs is that transformers use attention as an alternative to convolution for global context modeling.
+attention,convolution,Transformers use attention as an alternative to convolution for global context modeling.
+vanilla attention,pairwise feature affinity,Vanilla attention computes pairwise feature affinity across all spatial locations.
+attention mechanisms,computation and memory complexity,Efficient attention mechanisms are proposed to reduce the computation and memory complexity bottlenecks of vanilla attention.
+sparse connection patterns,low-rank approximations,Efficient attention mechanisms utilize sparse connection patterns and low-rank approximations to reduce computation and memory complexity.
+swint transformer,sparse attention,"Swin transformer restricts attention to non-overlapping local windows, contributing to the popularity of sparse attention."
+sparse patterns,dilated windows,"Various handcrafted sparse patterns, such as dilated windows, are introduced to enable larger receptive fields under a reasonable computation budget."
+sparse pattern,adaptive data,The works mentioned aim to make the sparse pattern adaptive to data.
+key/value tokens,queries,Key/value tokens are shared by all queries on an image.
+attentive region,different queries,The attentive region for different queries may differ significantly.
+visualization,pretrained vit,The visualization of pretrained ViT is a motivation for the process.
+goal,query-adaptive sparsity,The goal of the process is to achieve query-adaptive sparsity.
+quad-tree attention,bi-level routing attention,Quad-tree attention builds a token pyramid while bi-level routing attention locates relevant key-value pairs.
+quad-tree attention,parallelism,Deep recursion in quad-tree attention hurts parallelism.
+quad-tree transformer,biformer,BiFormer is much slower than quad-tree transformer.
+attention mechanism,bi-level routing attention,The attention mechanism is elaborated featuring bi-level routing attention.
+attention mechanism,sec-tion 3.1,attention mechanism is summarized in Section 3.1
+attention mechanism,bra mechanism,novel bi-level routing attention (BRA) mechanism introduced as part of the attention mechanism
+bra mechanism,dynamic and query-adaptive sparsity,BRA mechanism enables dynamic and query-adaptive sparsity
+bra mechanism,o((hw ) 4 3 ) complexity,BRA mechanism can achieve O((HW ) 4 3 ) complexity with a proper region partition size
+biformer,bra mechanism,BiFormer named as a new hierarchical vision transformer based on BRA mechanism
+attention,"q, k, v","Attention function transforms queries Q, keys K, and values V based on weighted sum"
+attention,softmax,Attention function is defined using softmax operation
+self-attention,"queries q, keys k and values v","self-attention involves deriving queries Q, keys K, and values V as linear projections of the same input"
+multi-head self-attention,mhsa,multi-head self-attention (MHSA) is the de facto building block used
+vision transformers,x,"For vision transformers, input X is a spatially flattened feature map"
+mhsa,splitting,MHSA implies splitting the output into h chunks along the channel dimension
+mhsa,concat,"MHSA involves concatenating multiple heads (head0, head1, ..., headh) using weight matrix Wo"
+headi,attention,headi is defined as Attention(XWq) in the context
+headi,xwq,headi is calculated based on XWq in the context
+mhsa,complexity,MHSA has a complexity of O(N^2) due to the number of queries attending to N key-value pairs
+bra,algorithm 1,Algorithm 1 presents the pseudocode of BRA in a PyTorch-like style
+features,hwc,"features input and output have the dimensions (H, W, C)"
+features,square root,features are patchified into regions based on the square root of the number of regions to attend
+input,patchify,input is patchified into regions with a defined patch size
+query,key,query and key are linearly projected in the context
+a_r,index matrix,A_r is the adjacency matrix used to compute the index matrix of routed regions
+key_g,value_g,key_g and value_g are gathered based on the index matrix I_r
+token-to-token attention,a,token-to-token attention is calculated using the softmax function on the query and gathered key-value pairs
+value_g,i_r,value_g is gathered using I_r in the function gather()
+value_g,query,value_g is multiplied by query using batch matrix multiplication (bmm)
+query,key_g,query is multiplied by the transpose of key_g using bmm
+a,value_g,output is calculated by multiplying A and value_g after applying softmax to A
+output,value,"output is processed to recover to the shape (H, W, C) before being unpatched"
+input feature map x,h,X is a 2D input feature map with dimensions H x W x C
+feature map,x,X is a feature map represented as RH×W×C that is divided into non-overlapped regions for further processing.
+feature map,s,"The feature map is divided into S×S non-overlapped regions, indicating a partitioning process."
+feature map,region-to-region routing,"The feature map is involved in region-to-region routing, highlighting its importance in the graph construction process."
+x,s,X is reshaped into S2 × C to facilitate further processing.
+x,s2 × hwhw,"Derivation of query, key, and value tensors involve the feature map X and linear projections, showcasing their interrelation."
+x,xr,"Xr is derived from X in the process involving query, key, and value computations."
+x,wq,Linear projection weight Wq is associated with X in the query derivation step.
+feature map,query,The feature map contributes to deriving query tensor in the linear projection process.
+feature map,key,The feature map is essential in the key derivation step in the linear projection process.
+feature map,value,"Value tensor is derived involving the feature map, highlighting its significance in the computation."
+query,key,"Region-level queries and keys are derived based on the feature map, showcasing a relationship between the two."
+query,region-to-region routing,Query tensors play a role in constructing the directed graph for region-to-region routing.
+key,qr,"Region-level keys Kr are derived by applying per-region average on key values, showcasing an interrelation between key and region representation."
+value,top-k connections,The relevance of value tensors is highlighted through the process of pruning the affinity graph to keep top-k connections.
+region-to-region routing,directed graph,"The process of constructing a directed graph is central to region-to-region routing, emphasizing the graphical representation."
+region-to-region routing,attending relationship,"Region-to-region routing involves determining the attending relationship among regions, showcasing its role in graph construction."
+routing index matrix,topk,"The routing index matrix, Ir ∈ NS2×k, with the row-wise topk operator: Ir = topkIndex(Ar).(5)"
+region,token-to-token attention,"With the region-to-region routing index matrix Ir, we can then apply fine-grained token-to-token attention."
+query token,key-value pairs,"For each query token in region i, it will attend to all key-value pairs residing in the union of k routed regions indexed with Ir."
+gpu,coalesced memory operations,"However, it is non-trivial to implement this step efficiently, as these routed regions are expected to be scattered over the whole feature map, while modern GPUs rely on coalesced memory operations that load blocks of dozens of contiguous bytes at once."
+key-value pairs,attention,"We can then apply attention on the gathered key-value pairs as: O = Attention(Q, Kg, Vg) + LCE(V)."
+local context enhancement,depth-wise convolution,"Here, we introduce a local context enhancement LCE((V) as in [35]. Function LCE(·) is parametrized with a depth-wise convolution, and we set the kernel size to 5."
+proposed bi-level routing attention,long-range dependency modeling,The proposed bi-level routing attention enables direct long-range dependency modeling similar to vanilla attention.
+bra,complexity,"However, we show here that BRA has a much lower complexity of O((HW)4/3) with a proper region partition factor S compared to vanilla attention, which has a complexity."
+complexity,vanilla attention,Complexity comparison between vanilla attention with O((HW)2) complexity and proper region partition factor S compared to O((HW)4) complexity.
+complexity,quasi-global axial attention,Complexity comparison between quasi-global axial attention with O((HW)32) complexity and proper region partition factor S compared to O((HW)4) complexity.
+bra,linear projection,BRA computation consists of linear projection as one of the three parts.
+bra,region-to-region routing,BRA computation consists of region-to-region routing as one of the three parts.
+bra,token-to-token attention,BRA computation consists of token-to-token attention as one of the three parts.
+biformer,network width,BiFormer instantiated with different model sizes by scaling the network width.
+biformer,depth,BiFormer instantiated with different model sizes by scaling the depth.
+biformer,attention head,Each attention head set to 32 channels for BiFormer.
+biformer,mlp expansion ratio,MLP expansion ratio set to 3 for BiFormer.
+biformer,topk value,Different topk values used for the 4 stages in BiFormer.
+biformer,region partition factor,"Region partition factor set to different values for classification, semantic segmentation, and object detection tasks in BiFormer."
+top-k,regions,The number of regions to attend is denoted by 'k' in 'top-k'.
+inequality,arithmetic and geometric means,Inequality between arithmetic and geometric means has been applied.
+bra,complexity,BRA achieves complexity if region partition factor is scaled w.r.t. input resolution.
+biformer,vision transformer,BiFormer is a new general vision transformer built using BRA as a basic building block.
+patch merging module,spatial resolution,Patch merging module is used in second to fourth stages to reduce input spatial resolution.
+patch merging module,channels,Patch merging module increases the number of channels.
+biformer blocks,features,BiFormer blocks are used to transform the features in each stage.
+depthwise convolution,relative position information,Depthwise convolution is used at the beginning to encode relative position information implicitly.
+bra module,relation modeling,BRA module is used for cross-location relation modeling.
+2-layer mlp module,per-location embedding,2-layer MLP module is used for per-location embedding.
+quadtree-b-b1,swin-t,QuadTree-B-b1 is related to Swin-T
+quadtree-b-b1,cswin-t,QuadTree-B-b1 is related to CSWin-T
+swin-t,cswin-t,Swin-T is related to CSWin-T
+crossformer-s,regionvit-s,CrossFormer-S is related to RegionViT-S
+quadtree-b-b2,maxvit-t,QuadTree-B-b2 is related to MaxViT-T
+swin-b,cswin-b,Swin-B is related to CSWin-B
+crossformer-l,scalablevit-b,CrossFormer-L is related to ScalableViT-B
+wave-vit-s,biformer-s,Wave-ViT-S is related to BiFormer-S
+uniformer-s*,wave-vit-b*,Uniformer-S* is related to Wave-ViT-B*
+biformer-s*,flops(g),BiFormer-S* is related to FLOPs(G)
+flops(g),params(m),FLOPs(G) is related to Params(M)
+params(m),top-1 acc.(%),Params(M) is related to Top-1 Acc.(%)
+level routing attention,architecture design choices,The architecture design choices of BiFormer in Sec. 4.4 include level routing attention as one of the key components.
+level routing attention,sparse patterns,Bi-level routing attention helps achieve sparse patterns as stated in Sec. 4.5.4.1.
+sparse patterns,attention map,The attention map is visualized to verify the achieved sparse patterns.
+image classification,imagenet-1k,Image Classification experiments are conducted on ImageNet-1K dataset for fair comparison.
+optimizer,adamw,AdamW is used as the optimizer with a weight decay of 0.05 in the training process.
+learning rate schedule,cosine decay,A cosine decay learning rate schedule is applied with an initial learning rate of 0.001.
+batch size,1024,The batch size is set to 1024 to avoid overfitting in the training process.
+regularization techniques,randaugment,RandAugment is one of the regularization techniques used to prevent overfitting.
+regularization techniques,mixup,MixUp is another regularization technique with a probability of 0.8.
+related methods,state-of-the-arts,Our method is compared with several closely related methods and recent state-of-the-arts to show its performance superiority.
+computations,flops,The amount of computations is measured in FLOPs.
+biformer-t,quadtree-b1,"BiFormer-T achieves 81.4% top-1 accuracy, 1.4% better than QuadTree-b1."
+biformer-s,distillation technique,"Using the distillation technique named token labeling, the accuracy of BiFormer-S can be further boosted to 84.3%."
+biformer-b,"existing models (swin-b, cswin-b, crossformer-l)","BiFormer-B achieves better performance compared to Swin-B, CSWin-B, and CrossFormer-L."
+object detection,instance segmentation,"RetinaNet and Mask R-CNN frameworks are used for object detection and instance segmentation, respectively."
+mmdetection,coco 2017 dataset,All experiments are conducted using the MMDetection toolbox for object detection and instance segmentation on the COCO 2017 dataset.
+imagenet-1k,backbone weights,The backbone is initialized with weights pretrained on ImageNet-1K before training on COCO.
+adamw optimizer,sgd optimizer,AdamW optimizer is used instead of the SGD optimizer for training the models.
+adamw optimizer,initial learning rate,The AdamW optimizer is used with an initial learning rate of 1e-4.
+adamw optimizer,weight decay,The weight decay for AdamW optimizer is set as 1e-4 for RetinaNet and 5e-2 for Mask R-CNN.
+retinanet,mask r-cnn,RetinaNet and Mask R-CNN are used for object detection with different settings.
+retinanet,object detection,Results for object detection with RetinaNet are listed in Table 3.
+biformer,existing methods,BiFormer is comparable to some competitive existing methods like WaveViT and QuadTree-B.
+biformer,wavevit,BiFormer performance is comparable to WaveViT in overall performance.
+biformer,small objects,BiFormer outperforms other methods significantly in handling small objects due to sparse sampling.
+wave-vit-b*,biformer-bretinanet,Both Wave-ViT-B* and BiFormer-BRetinaNet are mentioned in the context as different models used in object detection and instance segmentation tasks
+wave-vit-b*,r-cnn,Wave-ViT-B* is compared to Mask R-CNN in terms of performance in object detection and instance segmentation tasks
+biformer-bretinanet,r-cnn,BiFormer-BRetinaNet is compared to Mask R-CNN in terms of performance in object detection and instance segmentation tasks
+s-fpn,upernetsparse attentionin1kade20k,S-FPN and UpernetSparse AttentionIN1KADE20K are both mentioned in the context in relation to semantic segmentation tasks
+s-fpn,semantic fpn,S-FPN is mentioned in comparison with Semantic FPN in terms of semantic segmentation tasks
+s-fpn,upernet,S-FPN is mentioned in comparison with UperNet in terms of semantic segmentation tasks
+semantic fpn,upernet,Semantic FPN and UperNet are mentioned in comparison for semantic segmentation tasks
+semantic fpn,pvt,Semantic FPN experiments use the same setting as PVT for a fair comparison
+batch size,32,The batch size is set as 32
+semantic fpn,pvt [42],Our Semantic FPN experiments use the same setting as PVT [42] to train the model 80k steps
+upernet,sliding window,Our Upernet experiments use Sliding window
+upernet,shifted window,Our Upernet experiments use Shifted window
+upernet,spatially sep,Our Upernet experiments use Spatially Sep
+upernet,sequential axial,Our Upernet experiments use Sequential Axial
+upernet,criss-cross,Our Upernet experiments use Criss-Cross
+upernet,cross-shaped window,Our Upernet experiments use Cross-shaped window
+upernet,deformable,Our Upernet experiments use Deformable
+upernet,block-grid,Our Upernet experiments use Block-Grid
+bi-level routing,81.4,Bi-level Routing 81.4
+biformer-s/b,cswin-t/s,"With the Semantic FPN framework, our BiFormer-S/B achieves 48.9/49.9 mIoU, respectively, improving CSWin-T/S by 0.7 mIoU"
+bi-level routing,bra,The effectiveness of BRA is compared with several existing sparse attention mechanisms
+bra,swin-t,We align macro architecture designs with Swin-T for a fair comparison
+sparse attention mechanisms,image classification,sparse attention mechanisms outperforms existing mechanisms in both image classification and semantic segmentation
+sparse attention mechanisms,semantic segmentation,sparse attention mechanisms outperforms existing mechanisms in both image classification and semantic segmentation
+swin-t layout,architecture design,Swin-T layout is used as the baseline for architecture design choices
+architecture design,attention maps,architecture design choices influence the visualization of attention maps
+biformer-s model,modifications,modifications boost the performance of the BiFormer-S model to state-of-the-art levels on the ImageNet-1K dataset
+overlapped patch embedding,deeper layout,overlapped patch embedding is replaced by deeper layout in the modifications to the BiFormer-S model
+lay-figure 4,attention maps,lay-Figure 4 provides visualization of attention maps for two scenes
+deeper layout,performance improvement,using a deeper layout significantly improves performance
+deeper layout,existing works,the importance of using a deeper layout is usually overlooked in existing works
+regions,entities,regions cover the same or similar entities
+query position,mouse,"in the indoor scene, the query position is placed on the mouse"
+regions,entities,"Regions cover the same or similar entities, implying a relationship between them."
+regions,objects,"Routed regions contain part of the host, keyboard, and display, showing the relationship between regions and objects."
+regions,attention response,Visualization of routed regions and attention response with respect to query positions helps in understanding bi-level routing attention.
+gpu,kernel launch,The overheads of kernel launch and memory bottleneck on GPU affect the throughput of models.
+gpu,memory transactions,Memory transactions on GPU impact the throughput of models due to overheads.
+biformer,models,BiFormer has lower throughput compared to some existing models on GPU due to kernel launch and memory bottleneck.
+routed regions,attention response,routed regions and attention response are visualized together with respect to query positions
+routing indices,attention scores,routing indices and attention scores are extracted from the final BiFormer block of the 3rd stage
+routing indices,attention scores,routing indices and attention scores are used for visualization
+attention response,final biformer block,attention response is extracted from the final BiFormer block of the 3rd stage
+bi-level routing attention,computations,"Bi-level routing attention is proposed to enable efficient allocation of computations in a dynamic, query-aware manner"
+bi-level routing attention,region-level directed graph,Bi-level routing attention involves building and pruning a region-level directed graph
+bi-level routing attention,fine-grained token-to-token attention,Bi-level routing attention applies fine-grained token-to-token attention in the union of routed regions
+bi-level routing attention,computational complexity,Bi-level routing attention has been analyzed for computational complexity
+biformer,bi-level routing attention,BiFormer is proposed as a new vision transformer that utilizes Bi-level routing attention as a core building block
+biformer,superior performances,BiFormer has shown superior performances on four popular vision tasks
+vision transformer,image classification,vision transformer is proposed for image classification
+vision transformer,object detection,vision transformer is proposed for object detection
+vision transformer,instance segmentation,vision transformer is proposed for instance segmentation
+vision transformer,semantic segmentation,vision transformer is proposed for semantic segmentation

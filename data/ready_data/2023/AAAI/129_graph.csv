@@ -1,0 +1,136 @@
+node_1,node_2,edge
+3d scene stylization,vision and graphics,3D scene stylization is an important editing task within the broader field of vision and graphics.
+3d scene stylization,style image,The task involves transforming a 3D scene's appearance to match a given style image.
+3d scene stylization,3d consistency,The goal is to maintain consistency across different viewpoints while stylizing the scene.
+existing methods,sota (state-of-the-art) methods,These methods have achieved impressive results but require re-training for each new scene.
+proposed framework,arbitrary style,The proposed framework allows transferring an arbitrary style to any scene without re-training.
+proposed framework,arbitrary scene,It generalizes to any 3D scene
+2d style pattern space,geometry and appearance disentanglement,This space separates the two aspects
+2d stylization algorithm,styling in the 2d pattern space,Used to manipulate the appearance of the 3D scene in the 2D space.
+proposed framework,experimental results,Experimental results show the superiority in visual quality and generalization compared to state-of-the-art methods.
+3d scene disentanglement,uv mapping,UV mapping is a part of 3D scene disentanglement
+3d scene disentanglement,appearance mapping,Appearance mapping is another part of 3D scene disentanglement
+uv mapping,voxel-grid representation,The UV mapping uses voxel-grid representation for faster training compared to MLPs
+uv mapping,stylization network,A stylization network is employed instead of manual operations to change the appearance
+appearance mapping,mlp,An MLP is used to map the projected style pattern coordinates to radiance colors
+3d scene stylization,prompt-based stylization mapping,Prompt-based stylization mapping is the method used for actual scene stylization
+2d style patterns,3d scenes,2D style patterns are generated for arbitrary style images but need to consider geometry when applied to 3D scenes to avoid disorganized results.
+3d scene stylization,2d stylization network,The method integrates a visual prompt into the 2D network's bottleneck layer to adapt style patterns for 3D scene geometry.
+visual prompt,bottleneck layer,The prompt is integrated into the bottleneck layer of the pre-trained 2D stylization network for adaptation.
+scene-related adaptor,single 3d scene training,When trained on a single scene
+scene-agnostic adaptor,multiple 3d scenes training,For universal geometry awareness
+pnesm (proposed method),3d scene stylization framework,PNeSM is a novel framework that separates geometry and appearance for complete control over 3D scene stylization.
+geometry-disentangled representation,3d scenes,PNeSM maps the appearance of 3D scenes into a 2D space to separate their geometry and appearance.
+generalization to unseen scenes,few-shot scenes (e.g.,3)
+quality of stylization,experimental results,Experiments demonstrate the high-quality stylization achieved by the proposed method.
+effectiveness and superiority,proposed method,The method's effectiveness and superiority are shown through comprehensive experiments.
+arbitrary 3d scene stylization,scene-agnostic prompt,The ability to handle any 3D scene without prior knowledge of their geometry.
+3d scene stylization,2d style pattern space,The geometry and appearance of 3D scenes are mapped into a 2D style pattern space for stylization
+3d scene stylization,pre-trained 2d stylization network,Our method adapts the pre-trained 2D stylization network using prompt learning for 3D scene stylization
+image/video style transfer,3d scene stylization,Image style transfer is mentioned as a related field
+optimization-based style transfer,image style transfer,Gatys et al. (2016) introduced an optimization-based method
+feedforward networks,video style transfer,Several approaches
+prompt learning,3d scene stylization,Prompt learning is used in our method to adapt the pre-trained 2D stylization network
+stylizing-3d-scene (chiang et al. 2022),nerf,Stylizing-3D-Scene is the first to introduce NeRF for 3D scene style transfer.
+stylizednerf (huang et al. 2022),mutual learning,StylizedNeRF proposes a mutual learning strategy to reduce GPU memory requirements.
+stylizednerf (huang et al. 2022),alternate training,StylizedNeRF also employs an alternate training strategy for memory efficiency.
+arf (zhang et al. 2022),single style image,ARF focuses on improving style details using a single style image.
+arf (zhang et al. 2022),deferred back-propagation,ARF uses a deferred back-propagation strategy for optimizing full-resolution images.
+ins (fan et al. 2022),interpolation between styles,INS proposes interpolating between different styles for mixed styles generation.
+stylerf (liu et al. 2023),feature space of a radiance field,StyleRF performs stylization within the feature space of a radiance field.
+stylerf (liu et al. 2023),sampling-invariant content transformation,StyleRF maintains multi-view consistency with sampling-invariant content transformation.
+our method,arbitrary styles,Our method focuses on transferring arbitrary styles and stylizing arbitrary 3D scenes.
+our method,3d scene stylization,Our method aims to stylize scenes with only one stylized model
+prompt learning,natural language process (nlp),Prompt learning is a technique in NLP to adapt pre-trained models for downstream tasks.
+prompt learning,large language models,Prompt learning works by reformulating input text for frozen pre-trained large language models.
+downstream image recognition,prompt learning,VPT (Jia et al. 2022) and VP (Bahng et al. 2022) explore prompting with images
+vit (dosovitskiy et al. 2021),vpt,VPT prepends tunable parameters to ViT in each Transformer encoder layer
+vit (dosovitskiy et al. 2021),vp,VP adds prompts as image perturbations in pixel space
+visual prompt,style transfer field,Motivated by visual prompt
+prompt-based neural style mapping (pnesm),uv mapping,PNeSM consists of three main parts
+uv mapping,appearance mapping,Followed by an appearance mapping that maps UV style patterns to radiance colors
+uv mapping,stylization mapping,Lastly
+disentanglement stage,reconstruction,The training strategy first involves a disentanglement stage where UV and appearance mappings work together to reconstruct the scene.
+stylistization stage,stylistization mapping,The second stage focuses on training the stylization mapping specifically for scene stylization without reconstruction.
+nerf,3d scene representation,NeRF is a method that encodes a 3D scene as a function
+volume rendering,nerf,During NeRF's volume rendering
+3d coordinate,2d pixel,The cycle mapping process converts 3D coordinates to 2D pixel coordinates
+cycle loss,bijective mapping,The cycle loss encourages a one-to-one correspondence between real-world 3D coordinates and the corresponding 2D pixel space.
+disentanglement stage,appearance from geometry,This stage separates appearance from geometry in the scene representation.
+stylization stage,prompt-based stylization mapping,At this stage
+real-world 3d coordinate,2d style pattern coordinate,The UV mapping network projects real-world 3D coordinates into a 2D space to explicitly disentangle appearance from geometry.
+neural radiance fields (nerf),geometry,NeRF models radiance color using 3D coordinates and view directions
+neural radiance fields (nerf),appearance,The goal of 3D scene stylization is to stylize appearance while keeping the geometry intact; NeRF's black-box nature prevents direct editing of appearance.
+appearance mapping (mlp),radiance color (cr),During the disentanglement stage
+disentanglement stage,style pattern space,All scenes share a common style pattern space
+neutex (neural texture mapping),inspiration for appearance-geometry disentanglement,Inspiration for the approach comes from NeuTex
+uv style pattern coordinate,radiance color cr,The UV style pattern coordinate is mapped to the radiance color cr
+uv style pattern space,2d style pattern,Each UV style pattern coordinate in the space corresponds to a specific point in the 2D style pattern via sphere-to-cubemap retrieval.
+voxel-grid representation,uv mapping network,Used to model the UV mapping network
+voxel-grid representation,density,Models the modality of density to simplify the network.
+cycle loss,style pattern space,Employed to ensure the uniqueness of mapping
+inverse mapping network,reality space,Trains to project the style pattern coordinate back to the reality space
+neutex (xiang et al. 2021),appearance-geometry disentanglement,Our approach builds upon NeuTex but uses voxel-grid representation instead of MLP for the UV mapping network.
+voxel-grid representation,mlp,The context explains that voxel-grid representation is used by Sun
+disentanglement stage,2d style pattern space,Following the disentanglement
+2d style pattern space,style image,The 2D style patterns are learned from a reference style image
+2d stylization approaches,content input (noise image),Noise images are used as content inputs to separate style patterns from the style image content.
+pre-trained 2d stylization approaches,geometry information,These approaches
+prompt-based stylization,scene's geometry,The prompt-based stylization introduced in the text addresses this limitation by being aware of the geometry of the scene.
+scene's geometry,disorganized results,lack of consideration on scene's geometry leads to disorganized stylization outcomes
+satisfactory stylized scene,pleasant style patterns,scene geometry harmony
+3d scene stylization,geometric awareness,geometric awareness is crucial for achieving high-quality 3D stylization
+decoder of a 2d stylization network,geometry-aware stylization loss lgas,the decoder is fine-tuned with a loss function that integrates geometry information
+our method,stylizednerf,arf
+visual prompt,arbitrary image stylization network,our method is not tied to a specific network and can transfer any style
+parameter θ,p in our method,θ represents the trainable parameters for style integration during stylization stage
+stylerf,limited to a specific 2d stylization network,contrast
+arbitrary image stylization network,visual prompt,The visual prompt is embedded within the arbitrary image stylization network
+visual prompt,rendered image,Given the fine-tuned 2D stylization network
+rendered image,scene,The style patterns consider the geometry information of the scene as the network renders images based on the scene's information.
+fine-tuning,cumbersome and time-consuming,Fine-tuning the decoder of a pre-trained 2D stylization network is considered inconvenient due to its time and resource requirements.
+prompt learning,fast and flexible adaptation,Prompt learning is introduced to address the issue of inflexibility in adapting the network quickly and efficiently.
+visual prompt,style transformation module,The visual prompt is added to the output feature maps of the style transformation module in the 2D stylization network.
+lgas,training,Lgas is used to train the visual prompt for generating harmonious style patterns during stylization.
+parameters of image,image stylization network,The visual prompt learning does not affect the main network parameters
+lgas,harmonious style patterns,Lgas is used to generate more harmonious style patterns during stylization.
+image stylization network,frozen parameters,The parameters of the image stylization network are frozen.
+dvgo (sun,sun,and chen 2022)
+feature grid,grid designed for style pattern space,The feature grid is replaced with a new grid designed for style pattern space.
+adam optimizer,learning rate,Adam optimizer with a learning rate of 0.1 is used for all voxels.
+λrec,λcycle,λrec and λcycle are set to 1.
+sanet (park and lee 2019),image style transfer network,SANet is adopted for image style transfer during stylization.
+visual prompt,trained for 5k iterations,The visual prompt is trained using an Adam optimizer with a learning rate of 0.1 for 5k iterations.
+relu1 1,relu2 1,relu3 1
+appearance-geometry disentanglement,scene-related,Appearance-geometry disentanglement is specific to individual scenes.
+prompt-based appearance stylization,scene-agnostic,Prompt-based stylization is independent of the test scene.
+arbitrary test scenes,appearance and geometry disentanglement,Before stylization
+nvidia rtx a6000 (48g) gpu,experimental platform,All experiments are conducted on this GPU.
+wikiart (karayev et al. 2013),style dataset,WikiArt is used as the source of style images.
+a6000 (48g) gpu,datasets,A6000 GPU is used as a computational resource for processing datasets
+wikiart,style dataset,WikiArt is mentioned as a style dataset for image stylization methods.
+llff (mildenhall et al. 2019),training set,LLFF is a dataset with forward-facing scenes used for training in the context of NeRF-based methods.
+llff (mildenhall et al. 2019),evaluation set,LLFF is also used as an evaluation set
+tanks and temples dataset (knapitsch et al. 2017),training set,This dataset is used for training
+tanks and temples dataset (knapitsch et al. 2017),evaluation set,It is also used for evaluation
+lsnv (huang et al. 2021),baseline,LSNV is a baseline method compared in the context
+stylizing-3d-scene (chiang et al. 2022),baseline,Another baseline method for 3D scene stylization
+arf (zhang et al. 2022),baselines,ARF is a baseline method for both LLFF and Tanks and Temples dataset comparisons
+ins (fan et al. 2022),baseline,INS is another method compared on the LLFF dataset
+stylerf (liu et al. 2023),baseline,StyleRF is a baseline method on the LLFF dataset
+prompt-based neural style mapping (pnesm),3d scenes,PNeSM is designed to transfer arbitrary styles to 3D scenes.
+neural radiance fields (nerf),reconstruction capability,PNeSM leverages NeRF's powerful reconstruction capabilities.
+2d style pattern space,appearance,Appearance is mapped into a 2D style pattern space for disentanglement.
+2d stylization network,texture information extraction,PNeSM extracts texture information using a pre-trained 2D stylization network.
+visual prompt,geometry information,The visual prompt helps adapt style patterns to consider geometry
+visual prompt,disorganized results,Without a visual prompt
+visual prompt,improved visual quality,The visual prompt contributes to better visual quality.
+experimental results,effectiveness and superiority,Extensive experiments demonstrate the method's effectiveness and superiority over other approaches.
+scene,2d style pattern space,The context describes a scene within the context of a 2D style pattern space.
+method,effectiveness and superiority,The method is shown to be effective and superior
+work,acknowledgements,The acknowledgments section follows the description of the work.
+zhejiang province program,2022c01222,2023c03201
+national program of china,62172365,2021yff0900604
+ningbo program,2022z167,Another regional program supporting the research.
+moe frontier science center,for brain science & brain-machine integration,A center at Zhejiang University focused on brain science and integration.
+zhejiang university,moe frontier science center,The center is affiliated with Zhejiang University.

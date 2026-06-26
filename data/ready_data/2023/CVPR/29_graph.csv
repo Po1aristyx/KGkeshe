@@ -1,0 +1,254 @@
+node_1,node_2,edge
+continual test-time adaptation,memory consumption,The approach focuses on improving continual test-time adaptation in a memory-efficient manner by minimizing memory consumption.
+long-term adaptation,catastrophic forgetting,"Long-term adaptation often leads to catastrophic forgetting, which hinders applying TTA in real-world deployments."
+meta networks,original networks,"The approach includes lightweight meta networks that can adapt the frozen original networks to the target domain, minimizing memory consumption."
+self-distilled regularization,meta networks,"The novel self-distilled regularization controls the output of the meta networks not to deviate significantly from the output of the frozen original networks, preserving well-trained knowledge."
+error accumulation,catastrophic forgetting,"Without additional memory, the regularization prevents error accumulation and catastrophic forgetting, ensuring stable performance in long-term test-time adaptation."
+resnet-50,wideresnet-40,"The proposed method with ResNet-50 and WideResNet-40 takes significantly less memory compared to other methods, demonstrating its effectiveness."
+method,resnet-50,"Our proposed method with ResNet-50 takes 86% less memory than the recent state-of-the-art method, CoTTA."
+method,wideresnet-40,"Our proposed method with WideResNet-40 takes 80% less memory than the recent state-of-the-art method, CoTTA."
+deep learning,performance degradation,Deep neural networks often suffer from performance degradation when the source and target domains differ significantly.
+test-time adaptation (tta),significant amount of attention,TTA has recently received a significant amount of attention due to its practicality and wide applicability especially in on-device settings.
+qualcomm ai research,initiative,"Qualcomm AI Research is an initiative of Qualcomm Technologies, Inc."
+tta methods,improved tta,Existing TTA methods show improved TTA.
+tta methods,unlabeled online data,TTA methods are applied to unlabeled online data from the target domain
+tta methods,source data,TTA methods are designed without access to the source data
+tta methods,memory resources,The sizes of memory resources are crucial for the applicability of TTA in on-device settings
+tta methods,tta performances,Existing TTA methods show improved TTA performances
+tta methods,tta in on-device settings,The sizes of memory resources are crucial for the applicability of TTA in on-device settings
+tta methods,tent,TENT is one of the TTA methods illustrated in the architecture
+tta methods,eata,EATA is one of the TTA methods illustrated in the architecture
+tta methods,cotta,CoTTA is one of the TTA methods illustrated in the architecture
+tta methods,ours (ecotta),Ours (EcoTTA) is one of the TTA methods illustrated in the architecture
+tent,eata,TENT and EATA update multiple batch norm layers
+tent,batch norm layers,TENT updates multiple batch norm layers
+eata,batch norm layers,EATA updates multiple batch norm layers
+cotta,entire network,"In CoTTA, an entire network is trained with additional strategies for continual adaptation"
+cotta,memory,CoTTA requires a significant amount of both memory and time
+our approach,layers,Our approach requires a minimum size of activations by updating only a few layers
+our approach,long-term adaptation,Stable long-term adaptation is performed by our proposed regularization
+self-distilled regularization,large performance improvements,Self-distilled regularization aims to achieve large performance improvements
+tta approaches,batch normalization (bn) parameters,Several TTA approaches update only the batch normalization (BN) parameters
+bn parameters,optimization,Updating only BN parameters aims to make the optimization efficient and stable
+bn parameters,memory efficiency,Updating only BN parameters is not memory efficient enough
+training models,memory required,The amount of memory required for training models significantly depends on the size of intermediate activations
+size of intermediate activations,memory required for training models,The amount of memory required for training models significantly depends on the size of intermediate activations rather than the learnable parameters.
+activations,intermediate features,"Activations refer to the intermediate features stored during the forward propagation, which are used for gradient calculations during backpropagation."
+tta studies,stationary target domain,"A non-trivial number of TTA studies assume a stationary target domain, but the target domain may continuously change in the real world."
+tta studies,long-term tta,"Therefore, it is necessary to consider long-term TTA in an environment where the target domain constantly varies."
+catastrophic forgetting,degraded performance,Catastrophic forgetting refers to degraded performance on the source domain due to long-term adaptation to target domains.
+tta,noisy unsupervised losses,"Since target labels are unavailable, TTA relies on noisy unsupervised losses, such as entropy minimization, so long-term continual TTA may lead to error accumulation."
+memory-efficient continual test-time adaptation,challenges,"To address these challenges, the authors propose memory-Efficient continual Test-Time Adaptation (EcoTTA)."
+error accumulation,catastrophic forgetting,The proposed method aims to prevent catastrophic forgetting and error accumulation by introducing a memory-efficient architecture and self-distilled regularization method.
+memory efficiency,catastrophic forgetting,The proposed method focuses on enhancing memory efficiency to prevent catastrophic forgetting and error accumulation.
+memory efficiency,error accumulation,The method aims to enhance memory efficiency to address challenges related to error accumulation.
+memory efficiency,test time adaptation,Memory efficiency is crucial for the proposed test-time adaptation method EcoTTA.
+test time adaptation,error accumulation,EcoTTA is introduced as a solution to prevent error accumulation through memory-efficient continual test-time adaptation.
+test time adaptation,catastrophic forgetting,EcoTTA aims to prevent catastrophic forgetting through its test-time adaptation approach.
+memory-efficient architecture,original networks,The proposed architecture includes frozen original networks and meta networks attached to enhance memory efficiency and prevent error accumulation.
+meta networks,original networks,The meta networks are updated during test time while the original networks remain frozen to save memory and prevent catastrophic forgetting.
+meta networks,source knowledge,The regularization method leverages preserved source knowledge from the original networks to regulate the meta networks and prevent catastrophic forgetting.
+source knowledge,original networks,Preserved source knowledge from the frozen original networks is used to regularize and prevent catastrophic forgetting in the meta networks.
+output control,original networks,The method ensures the output of the meta networks does not deviate significantly from the original networks to prevent catastrophic forgetting.
+tta studies,source data,TTA studies require access to source data before model deployments.
+source data,model deployments,Source data is used to warm up meta networks before model deployment.
+pre-trained model,source data,Access to source data is feasible if the source dataset is publicly available or the owner of the pre-trained model tries to adapt the model to a target domain.
+pre-trained original networks,method,Method is applicable to any pre-trained model because it is agnostic to the architecture and pre-training method of the original networks.
+original networks,target domain,Novel meta networks help frozen original networks adapt to the target domain.
+architecture,memory consumption,Architecture significantly minimizes memory consumption up to 86% by reducing activation sizes of original networks.
+output of meta networks,output of original networks,Self-distilled regularization controls output of meta networks by leveraging output of frozen original networks to preserve source knowledge and prevent error accumulation.
+memory efficiency,tta performance,Improvement in memory efficiency and TTA performance compared to existing methods on image classification and semantic segmentation tasks.
+image classification task,cifar10/100-c,image classification task involves datasets like CIFAR10/100-C
+image classification task,imagenet-c,image classification task involves datasets like ImageNet-C
+semantic segmentation task,cityscapes,semantic segmentation task involves datasets like Cityscapes
+semantic segmentation task,weather corruption,semantic segmentation task involves scenarios like weather corruption
+unsupervised domain adaptation,domain generalization,unsupervised domain adaptation and domain generalization are approaches to mitigate domain shift
+domain generalization,learn invariant representation,domain generalization aims to learn invariant representation for test data
+domain generalization,simulate the possible shifts,domain generalization simulate possible shifts of test data
+tta,overcomes the domain shift,TTA overcomes the domain shift by directly adapting to the test data
+test-time adaptation,adapt to the test data,Test-time adaptation allows the model to adapt to the test data in a source-free and online manner
+tta performance,sophisticated designs of unsupervised loss,TTA performance is improved with sophisticated designs of unsupervised loss
+tta performance,enhance the usability of small batch sizes,TTA performance is enhanced by improving the usability of small batch sizes
+small batch sizes,streaming test data,small batch sizes are considered for streaming test data
+small batch sizes,streaming test data,Small batch sizes are considered for improving usability while considering streaming test data.
+adaptation performance,stationary target domain,The focus is on improving adaptation performance with a stationary target domain in a single domain TTA setup.
+model,target domain,The model that finishes adaptation to a given target domain is reset to the original model pre-trained with the source domain to adapt to the next target domain.
+cotta,continual tta setup,CoTTA proposed the continual TTA setup to address TTA under a continuously changing target domain.
+error accumulation,catastrophic forgetting,The continual TTA setup frequently suffers from error accumulation and catastrophic forgetting.
+long-term adaptation,unsupervised loss,Performing a long-term adaptation exposes the model to unsupervised loss from unlabeled test data for a long time.
+source knowledge,learning new knowledge,"The model focuses on learning new knowledge and forgets about the source knowledge, leading to issues in correct classification."
+source domain,target domain,The updated model parameters are restored to the source domain in order to address issues in adaptation.
+eata,weight regularization loss,EATA proposed a weight regularization loss as a solution for addressing issues in adaptation.
+edge device,memory constrained,Efficient on-device learning is required for memory-constrained devices like Raspberry Pi and iPhone 13.
+device,deploying the models,Memory usage needs to be considered when deploying models on memory-constrained devices like edge devices.
+tinytl,on-device learning,TinyTL is a seminal work in on-device learning.
+memory usage,deploying the models on the device,"Memory usage is a key concept when deploying models on a device, as it directly impacts the performance and efficiency of the models."
+tinytl,on-device learning,"TinyTL is a seminal work in on-device learning, showcasing the importance of activation size over learnable parameters in memory bottlenecks during training."
+on-device learning,training memory,"On-device learning studies aim to decrease the size of intermediate activations, targeting fine-tuning tasks to optimize memory efficiency."
+tta studies,learnable parameters,"Previous TTA studies have focused on reducing learnable parameters instead of activation sizes, displaying a difference in approach compared to recent on-device learning studies."
+method,activation sizes,"The proposed method reduces high activation sizes required for TTA tasks, enhancing adaptation performance and improving memory efficiency."
+newly added meta networks,target domain,"The simple yet effective approach updates meta networks in the target domain while regularizing them with knowledge distilled from the original network, promoting memory efficiency."
+memory efficiency,error accumulation and catastrophic forgetting,"A memory-efficient architecture prevents error accumulation and catastrophic forgetting commonly observed in long-term adaptation, ensuring stability and performance in the model."
+forward propagation,backward propagation,"The forward propagation and backward propagation processes are crucial in the linear layers of a model, defining the flow of data and weight updates during training."
+backward propagation,i+1th layer,Backward propagation from the i+1th layer to the ith layer involves formulating weight gradients and updating learnable layers.
+i+1th layer,weight gradient,The weight gradient with respect to the i+1th layer is calculated as the transposed weight W.
+learnable layers,weight w,Learnable layers whose weights need to be updated store intermediate activations to compute the weight gradient.
+activations,memory,Activations occupy a majority of the memory required for training models rather than learnable parameters.
+updating the entire model,memory,Updating the entire model requires a substantial amount of memory due to the large activations.
+parameters,batch normalization (bn) layers,Updating only parameters in batch normalization layers is not effective as it still requires saving large intermediate activations.
+model,pre-training method,A pre-trained model is used with any pre-training method before deployment.
+encoder,pre-trained model,The encoder of the pre-trained model can be divided into K parts with lightweight meta networks attached to each part.
+model,parts,"The model is divided into K parts to attach lightweight meta networks, as explained in the next section."
+model,k number of parts,The details of how to divide the model into K number of parts are explained in the next section.
+meta network,batch normalization layer,One group of meta network composes of one batch normalization layer
+meta network,convolution block,One group of meta network composes of one convolution block
+pre-trained model,source dataset ds,"Before deployment, we pre-train the meta networks on the source dataset Ds"
+pre-trained model,model partition factor k,"The encoder of the pre-trained model is divided into K parts (i.e., model partition factor K)"
+meta networks,original networks,"Before the model is deployed, only the meta networks are updated with unsupervised loss on target data Dt, while the original networks are frozen"
+output of meta networks,output of original network,"To avoid error accumulation and catastrophic forgetting, we regularize the output of each group of the meta networks leveraging the output of the frozen original network, which preserves the source knowledge"
+tta works,warm-up process,"Such a warm-up process is completed before the model deployment, similarly done in several TTA works"
+source knowledge,source dataset ds,We regularize the output of the meta networks with the source knowledge from the source dataset Ds
+dressing domain shifts,updating shallow layers,The dressing domain shifts indicate that updating shallow layers is more crucial for improving adaptation performance.
+dressing domain shifts,updating deep layers,"Updating shallow layers is more crucial for improving adaptation performance than updating deep layers, according to the findings."
+encoder,model partition factor k,The encoder of the pre-trained model is split into model partition factor K and the shallow parts are partitioned more densely compared to the deep parts.
+meta networks,target domains,"During test-time adaptation, meta networks are adapted to target domains while freezing the original networks."
+c p(ˆy) log p(ˆy),entropy threshold h0,The c p(ˆy) log p(ˆy) is used to samples achieving entropy less than the pre-defined entropy threshold H0.
+entropy minimization h(ˆy),h0,The main task loss for adaptation is defined as entropy minimization H(ˆy) where it is less than H0.
+regularization loss rk,catastrophic forgetting and error accumulation,Regularization loss Rk is applied to prevent catastrophic forgetting and error accumulation in the model.
+overall loss,method formulation,The overall loss of the method is formulated as a combination of main task loss and regularization loss.
+architecture,memory,The architecture of the model requires less memory than previous versions.
+architecture,memory,The architecture requires less memory than previous works since we use frozen original networks and discard its intermediate activations.
+architecture,cotta,Our architecture uses 82% less memory on average than CoTTA.
+architecture,tent/eata,Our architecture uses 60% less memory on average than TENT/EATA.
+regularization,unsupervised loss,Self-distilled regularization is proposed to address the false signal from unsupervised loss.
+regularization,overfitting,Long-term adaptation with unsupervised loss may lead to overfitting.
+regularization,catastrophic forgetting,Long-term adaptation with unsupervised loss may lead to catastrophic forgetting.
+regularization,self-distilled regularization,A self-distilled regularization is proposed to prevent critical issues like overfitting and catastrophic forgetting.
+original networks,model,The output of meta networks is regularized not to deviate significantly from the output of frozen original networks.
+meta networks,original networks,The output of meta networks is regularized with knowledge distilled from the original networks.
+adapted model,original model,"By preventing the adapted model to not significantly deviate from the original model, we can prevent."
+model,adapted model,The adapted model should not significantly deviate from the original model to prevent catastrophic forgetting and error accumulation.
+knowledge,source domain,Maintaining the source domain knowledge helps prevent catastrophic forgetting.
+class discriminability,model,Utilizing the class discriminability of the original model helps prevent error accumulation.
+regularization,saving additional original networks,"The regularization method discussed does not require saving additional original networks, unlike previous works."
+cotta,tent,Memory reduction rates compared to CoTTA and TENT are presented sequentially.
+wideresnet-40,augmix,WideResNet-40 was pre-trained with AugMix for data processing to increase model robustness.
+tent,domain labeles,"TENT resets the model when adapting to a new target domain, so the domain labels are required."
+resnet-50,augmix,ResNet-50 with AugMix method Source BN Stats Adapt is presented.
+resnet-50,total mem.,"Comparison of error rate (%) on ImageNet-C with severity level 5 is denoted in a table. Also, total memory refers to the sum of model parameters and activations for ResNet-50."
+cifar10-c,cifar100-c,Comparison of error rate (%) on CIFAR10-C and CIFAR100-C is presented in a table.
+mem. (mb),single do.,Memory (MB) for single domain and continual setups are compared.
+model parameters and activations,lent,Total memory usage needs a negligible amount of computational overhead as it is performed in parallel with the entropy minimization loss Lent.
+classification experiments,image classification tasks,The approach to image classification tasks based on the continual test-time adaptation setup with three is studied.
+cifar10-c,cifar100-c,"These two datasets are mentioned together in the context, indicating a relation between CIFAR10-C and CIFAR100-C as corrupted versions of CIFAR10 and CIFAR100 respectively."
+cifar10-c,imagenet-c,Both CIFAR10-C and ImageNet-C are datasets with corruptions highlighted in the context.
+cifar100-c,imagenet-c,"Similar to the relationship between CIFAR10-C and ImageNet-C, CIFAR100-C and ImageNet-C are datasets with corruptions."
+cifar10,cifar100,"These two datasets are mentioned together in the context, indicating a relation between CIFAR10 and CIFAR100 as the source and target domains for the experiments."
+cifar100,imagenet,Both CIFAR100 and ImageNet datasets are mentioned as source and target domains for the experiments in the context.
+cifar10,cifar100,"These two datasets are mentioned together in the context, indicating a relation between CIFAR10 and CIFAR100 as source and target domains in the experiments."
+cifar10,imagenet,Both CIFAR10 and ImageNet datasets are mentioned in the context as part of the experiments conducted.
+cifar100,cifar100-c,"A relationship between CIFAR100 and CIFAR100-C datasets is implied in the context, most likely as the original and corrupted versions."
+cifar10-c,cifar100,"CIFAR10-C and CIFAR100 are mentioned together, suggesting a relation between them in the context."
+cifar100-c,imagenet,Both CIFAR100-C and ImageNet datasets are part of the evaluation described in the context.
+imagenet-c,cifar100,"A connection between ImageNet-C and CIFAR100 datasets is present in the context, likely due to their roles in the experiments conducted."
+cifar100-c,cifar10,"The relationship between CIFAR100-C and CIFAR10 datasets is established in the context, potentially as corrupted and source domains respectively."
+resnet-50,ttt++,ResNet-50 is a model mentioned in the context along with TTT++
+meta networks,cross-entropy loss,The meta networks are pre-trained on the source dataset using a cross-entropy loss
+meta networks,sgd optimizer,The meta networks are pre-trained with the SGD optimizer
+meta networks,few layers,The meta networks contain only a few layers
+meta networks,small number of epochs,The meta networks are pre-trained with a small number of epochs
+meta networks,importance of regularization,The importance of regularization is balanced with the entropy minimization loss
+entropy threshold h0,number of task classes,The entropy threshold H0 is set based on the number of task classes denoted by C
+batch size,cifar dataset,The batch size is specified for CIFAR dataset
+batch size,imagenet dataset,The batch size is specified for ImageNet dataset
+regularization,entropy minimization loss,The regularization is balanced with the entropy minimization loss
+continual tta performance,memory-efficient designs,The comparison of continual TTA performance is done based on several memory-efficient designs.
+performance,designs of partitioning the model,The performance is reported based on different designs of partitioning the model.
+model parameter,activation storage,The memory efficiency of the work is demonstrated using model parameter and activation storage.
+approach,competing tta methods,The approach is compared to competing TTA methods on extensive benchmarks and various pre-trained models.
+memory usage,pre-trained models,Our approach outperforms existing TTA methods with the lowest memory usage in all pre-trained models.
+wideresnet-40 method,memory usage,"In WideResNet-40, our method achieves superior performance while requiring 80% and 58% less memory than CoTTA and EATA, respectively, which are also designed for continual TTA."
+eata method,error rates,"EATA method shows poor performance due to error accumulation and catastrophic forgetting, as observed in CoTTA. Error rates for each corruption type are provided in Appendix F."
+experiment,imagenet-c,The experiment for ImageNet-C is detailed in Table 2.
+resnet-50 backbones,robustbench,Two ResNet-50 backbones from RobustBench are leveraged for the experiment.
+evaluations,ten,"Following CoTTA, evaluations are conducted on ten."
+resnet-50,robustbench,ResNet-50 backbones from RobustBench are leveraged
+cotta,evaluations,evaluations are conducted following CoTTA
+approach,performance,our approach shows superior performance
+model,data augmentation methods,model pre-trained with strong data augmentation methods
+approach,on-device learning methods,our approach is compared with on-device learning methods
+tinytl,repnet,TinyTL and RepNet focus on supervised on-device learning
+supervised loss,unsupervised loss,supervised loss is replaced with unsupervised loss in TinyTL and RepNet
+model parameter size,activation size,memory size includes both model parameter size and activation size
+size,activation size,The terms 'size' and 'activation size' are related as they both represent measurements in the context of model parameters and error rate.
+proposed approach,single domain tta,The 'proposed approach' is compared to 'single domain TTA' indicating a comparison between different methods in the context of model modifications and performance improvement.
+auxadapt,resnet-18,'AuxAdapt' adds and updates a small network like 'ResNet-18' in the context of model modification for improved performance.
+auxadapt,prediction output,"'AuxAdapt' modifies a 'prediction output' unlike the proposed approach, focusing on final outputs rather than intermediate features."
+tinytl,repnet,"'TinyTL' and 'RepNet' are compared to the proposed approach, highlighting the difference in memory usage and performance."
+meta networks,bn layer,"In the architecture design, 'meta networks' incorporate a 'BN layer' showing the relationship between network structure and components."
+meta networks,conv layers,"The 'meta networks' utilize both 'BN parameters' and 'Conv layers' to process output, emphasizing the importance of different network components."
+layers,meta networks,Layers in meta networks serve to take the output of the original networks as inputs.
+layers,original networks,Layers in the meta networks take the output of the original networks as inputs.
+meta networks,original networks,Meta networks take the output of the original networks as inputs.
+performance,catastrophic forgetting effect,Performance is impacted by the catastrophic forgetting effect.
+catastrophic forgetting effect,error accumulation effect,The catastrophic forgetting effect is related to the error accumulation effect.
+wideresnet-40,cifar100-c,WideResNet-40 is used for experiments on CIFAR100-C.
+model,catastrophic forgetting,The model is made robust to catastrophic forgetting.
+error accumulation,model overfitting,Error accumulation can lead to overfitting of the model.
+bn stats adapt,wideresnet-40,BN Stats Adapt is evaluated with WideResNet-40.
+con. tent,wideresnet-40,Con. TENT is evaluated with WideResNet-40.
+residual connection,performance degradation,Removing the residual connection resulted in a significant performance degradation.
+attention mechanisms,classification accuracy,Attention mechanisms have generally improved classification accuracy.
+attention mechanisms,tta performance,Studying how attention mechanisms can boost TTA performance.
+attention module,tta setup,It is difficult for the attention module to train ideally in TTA setup using unsupervised learning.
+ablation study,meta networks,An ablation study on each element of meta networks can be found in Appendix D.
+resnet,residual blocks,ResNet consists of multiple residual blocks like BasicBlock and Bottleneck in Pytorch.
+wideresnet-28,residual blocks,WideResNet-28 has 12 residual blocks.
+encoder,performance gain,Splitting the shallow parts of the encoder densely brings more performance gain than splitting the deep layers densely.
+shallow layers,lower-level feature modification,Modifying the lower-level feature more as we split shallow layers densely.
+model partition k,memory requirement,Fig. 4 shows both memory requirement and adaptation performance according to the number of model partition K.
+deep layers,tta performance,"The deep layers have an impact on the TTA performance, suggesting that deeper layers improve TTA performance."
+model partition k,memory requirement,"The model partition factor K affects both memory requirement and adaptation performance, as shown in Fig. 4."
+model partition k,tta performance,The best TTA performance is achieved with model partition factors K of 4 or 5 as adjusting a greater number of intermediate features leads to improved performance.
+model partition k,error rate,"The average error rate remains consistent when K is set to large values (e.g. 6, 7, or 8), indicating a saturation point even with increased activations and learnable parameters."
+catastrophic forgetting,clean target data,"Catastrophic forgetting is observed when adapting to corruption, leading to increasing error rates for clean target data without model updates."
+regularization loss,catastrophic forgetting,"The regularization loss effectively prevents catastrophic forgetting, maintaining error rates for clean target data in contrast to approaches without regularization."
+regularization loss,method utilization,"The regularization loss in our approach allows for reliable utilization in various domains, including source and target domains, as indicated by the results."
+error accumulation,long-term adaptation,"Error accumulation is a phenomenon observed in long-term adaptation, affecting the overall adaptation process."
+tent,error accumulation,"TENT shows a gradual increase in error rates in later rounds, even with small learning rates. It achieves an error rate of 39.7%, reaching its lowest error rate of 36.5% after 8 rounds. However, it shows an increased error rate of 38.6% after 100 rounds due to overfitting."
+tent,long-term adaptation,"TENT requires domain labels for single domain adaptation, suggesting a relation between TENT and the concept of long-term adaptation in the domain of continual test-time adaptation tasks."
+tent,self-distilled regularization,"When self-distilled regularization is involved with TENT, the performance remains consistent, indicating a relationship between TENT and self-distilled regularization in the context of avoiding overfitting in long-term adaptation."
+self-distilled regularization,long-term adaptation,The performance remains consistent even in long-term adaptation when self-distilled regularization is involved.
+small batch size,scalability of approach,We examine the scalability of our approach with a TTA method designed for small batch size.
+small batch size,adaptbn statistics,The source and target statistics are calibrated for normalization of BN layers to alleviate domain shift and preserve discriminative structures.
+training models,small batch sizes,"Training models with small batch sizes generally increase error rates, which can be addressed by applying AdaptBN."
+source samples for meta networks,pre-training,Our approach requires access to the source data for pre-training our proposed meta networks before model deployment.
+source samples for meta networks,tta performance,We study the TTA performance of our method according to the number of accessible source samples for pre-training.
+wideresnet-40,baseline model,WideResNet-40 outperforms the baseline model even with small number of training samples
+wideresnet-40,memory usage,WideResNet-40 reduces the memory usage of about 51% compared to EATA
+cityscapes-c,weather corruptions,"Cityscapes-C is created by applying weather corruptions (brightness, fog, frost, and snow) to the validation set of Cityscapes"
+cityscapes-c,continual distribution shifts,Cityscapes-C repeats the four types of Cityscapes ten times to simulate continual distribution shifts
+resnet-50-based deeplabv3+,cityscapes,ResNet-50-based DeepLabV3+ is pre-trained on Cityscapes for domain generalization in segmentation
+cityscapes,semantic segmentation,Cityscapes is used as the dataset for semantic segmentation
+meta networks,source dataset,"The meta networks are pre-trained using only a subset of the source dataset (e.g., 20%, 10%, and 5%) before deployment"
+batch size,tta (test-time augmentation),A batch size of 2 was used for TTA in the segmentation task
+mean intersection over union (miou),results,Results are reported based on mean intersection over union (mIoU) in Table 6
+miou,memory consumption,mIoU in Table 6 demonstrates that the approach helps to minimize memory consumption.
+miou,long-term adaptation,mIoU in Table 6 demonstrates that the approach helps perform long-term adaptation stably for semantic segmentation.
+approach,memory consumption,The approach helps minimize memory consumption.
+approach,long-term adaptation,The approach helps perform long-term adaptation stably for semantic segmentation.
+method,catastrophic forgetting,Our method avoids catastrophic forgetting and error accumulation.
+method,memory usage,Using 66% less memory usage in a continual TTA setup allows us to achieve the highest mIoU score.
+architecture,tta methods,The memory-efficient architecture decreases memory size compared to previous TTA methods.
+architecture,gradient calculations,The architecture requires much less memory size by decreasing intermediate activations used for gradient calculations.
+knowledge,error accumulation,"To preserve the source knowledge and prevent error accumulation, we proposed self-distilled regularization."
+regularization,output control,Self-distilled regularization controls the output of meta networks not to deviate significantly from the output of the original networks.
+experiments,datasets,Extensive experiments on diverse datasets verified the memory efficiency and TTA performance of our approach.
+efforts,variety of studies,Our efforts will facilitate a variety of studies that make test-time adaptation for edge devices feasible in practice.
+edge devices,test-time adaptation,The efforts mentioned in the context aim to facilitate studies that make test-time adaptation for edge devices feasible in practice. This indicates a close relationship between edge devices and test-time adaptation.
+efforts,studies,"The efforts mentioned are expected to facilitate a variety of studies, indicating a relationship where efforts lead to studies."
+kywoong hwang,author,"Kywoong Hwang is mentioned as someone to thank in the acknowledgments, therefore indicating a relationship between Kywoong Hwang and the authors of the context."
+simyung chang,author,"Simyung Chang is mentioned as someone to thank in the acknowledgments, indicating a relationship between Simyung Chang and the authors of the context."
+kyuwoong hwang,simyung chang,"Kyuwoong Hwang and Simyung Chang are both mentioned as individuals to thank in the acknowledgments, suggesting a relationship between them as individuals who provided valuable feedback."
+byeonggeun kim,author,"Byeonggeun Kim is mentioned as someone to thank in the acknowledgments, indicating a relationship between Byeonggeun Kim and the authors of the context."
+qualcomm ai research teams,discussions,"The authors express gratitude for the helpful discussions from Qualcomm AI Research teams, suggesting a positive relationship between Qualcomm AI Research teams and the discussions held."

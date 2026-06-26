@@ -1,0 +1,227 @@
+node_1,node_2,edge
+instant volumetric head avatars,neural radiance field,INSTA models a dynamic neural radiance field based on neural graphics primitives embedded around a parametric face model.
+neural radiance field,parametric face model,INSTA models a dynamic neural radiance field based on neural graphics primitives embedded around a parametric face model.
+instant volumetric head avatars,monocular rgb portrait video,Our pipeline is trained on a single monocular RGB portrait video that observes the subject under different expressions and views.
+insta,previous solutions,"Our method can reconstruct a digital avatar in less than 10 minutes on modern GPU hardware, which is orders of magnitude faster than previous solutions."
+instant volumetric head avatars,geometry prior,"By leveraging the geometry prior of the underlying parametric face model, we demonstrate that INSTA extrapolates to unseen poses."
+instant volumetric head avatars,immersive telepresence,"For immersive telepresence in AR or VR, we aim for digital humans (avatars) that mimic the motions and facial expressions of the actual subjects participating in a meeting."
+digital humans,motions and facial expressions,"For immersive telepresence in AR or VR, we aim for digital humans (avatars) that mimic the motions and facial expressions of the actual subjects participating in a meeting."
+digital humans,shape and appearance,"Besides the motion, these avatars should reflect the human’s shape and appearance."
+old avatars,instantaneous reconstruction,"Instead of prerecorded, old avatars, we aim to instantaneously reconstruct the subject’s look to capture the actual appearance during a meeting."
+avatars,subject,Avatars aim to instantaneously reconstruct the subject's look
+avatars,instant volumetric head avatars (insta),Proposes a method for avatar reconstruction within a few minutes
+avatars,human avatar,Comparison with state-of-the-art methods for human avatar reconstruction
+avatars,ar/vr scenario,Ensuring avatar has metrical dimensions for viewing in AR/VR scenario
+instant volumetric head avatars (insta),reconstruction,Enables reconstruction of an avatar within a few minutes
+instant volumetric head avatars (insta),commodity hardware,Relies on commodity hardware for training and capturing the avatar
+commodity hardware,single rgb camera,Uses a single RGB camera to record input video for avatar reconstruction
+commodity hardware,training and capture of the avatar,Relies on commodity hardware for training and capturing the avatar
+human avatar,dynamic neural radiance fields,Uses dynamic neural radiance fields for human avatar reconstruction
+dynamic neural radiance fields,neural graphics primitives,Based on neural graphics primitives for constructing dynamic neural radiance fields
+dynamic neural radiance fields,parametric face model,Embedded around a parametric face model for low training times and fast evaluation
+parametric face model,motion estimation,Employed for motion estimation using FLAME model
+motion estimation,deformation field,Establishes a deformation field around the surface for motion estimation
+deformation field,canonical space,Mapping points from the deformed space into the canonical space for evaluation
+deformed space,canonical space,"In the information field, points are mapped from the deformed space into the canonical space where the neural radiance field is evaluated."
+surface deformation,neural radiance field,The neural radiance field is conditioned by the facial expression parameters to account for details not included in the surface deformation of the FLAME model.
+flame model,neural radiance field,The neural radiance field is conditioned by the FLAME model's surface deformation to incorporate facial expression parameters.
+flame-based face reconstruction,nerf,"During training of the Neural Radiance Field (NeRF), the FLAME-based face reconstruction provides a geometric prior in the form of rendered depth maps, improving extrapolation to novel views."
+nerf,state-of-the-art methods,"Compared to state-of-the-art methods like NeRFace, IMAvatar, and NHA, NeRF achieves higher rendering quality while being faster to train and evaluate."
+instant volumetric head avatars,contributions,Instant Volumetric Head Avatars are presented with contributions including a surface-embedded dynamic neural radiance field and a 3DMM-driven geometry regularization to improve pose extrapolation in AR/VR applications.
+insta,reconstructing animatable digital human avatars,INSTA is reconstructing animatable digital human avatars from monocular video data based on 3D neural rendering.
+current solutions,implicit representations,Current solutions for reconstructing digital human avatars are using implicit representations optimized via different methods.
+implicit representations,optimized via differentiable volumetric rendering,implicit representations are optimized via differentiable volumetric rendering
+explicit models,triangle or tetrahedral meshes,explicit models are based on triangle or tetrahedral meshes
+triangle or tetrahedral meshes,differentiable rasterization,triangle or tetrahedral meshes are used in differentiable rasterization
+neural rendering methods,face reconstruction,neural rendering methods are related to face reconstruction
+neural rendering methods,state-of-the-art reports,neural rendering methods are discussed in state-of-the-art reports
+neural rendering methods,zollh¨ofer et al.,neural rendering methods are reported by Zollh¨ofer et al.
+neural rendering methods,tewari et al.,neural rendering methods are reported by Tewari et al.
+static neural radiance fields,follow-up works,Static Neural Radiance Fields have follow-up works
+static neural radiance fields,differ-entiable volumetric rendering,Static Neural Radiance Fields use differentiable volumetric rendering
+training methods,acceleration methods,training methods can be improved by acceleration methods
+sparse voxel grid,dense and spherical harmon-ics coefficients,Sparse voxel grid stores density and spherical harmon-ics coefficients
+final color,composition of tri-linearly interpolated values of each voxel intersecting with the ray,final color is composed of tri-linearly interpolated values of voxels
+tensorrf,4d nerf scene,TensorRF factorizes the 4D NeRF scene
+tensor components,performance and compactness,tensor components achieve high performance and compactness
+coordinate-based mlp,voxel grid of features,coordinate-based MLP is replaced with a voxel grid of features
+final color,its vector-matrix outer product,final color is the vector-matrix outer product
+computer graphics primitive,tiny mlps,computer graphics primitive is in the form of tiny MLPs
+müller et al.,computer graphics primitive,Müller et al. introduced a new computer graphics primitive in the form of tiny MLPs.
+tiny mlps,multi-resolution hashing encoding,The tiny MLPs benefit from a multi-resolution hashing encoding.
+space,independent multi-level grid,The space is divided into an independent multi-level grid with feature vectors at the vertices of the grid.
+spatial hash function,voxel grid,A spatial hash function is used to store the voxel grid efficiently.
+point,ray,Each point sampled on the ray is encoded by the interpolated feature vector of the corresponding grid level.
+neural network,final color,The point sampled on the ray is passed to a tiny neural network to synthesize the final color.
+method,efficient architecture,Our method uses this efficient architecture to model the face in a canonical space.
+static nerf methods,depth maps,Some of the static NeRF methods use additional depth maps to improve alignment and quality for static scenes.
+depth priors,ray sampling,The depth priors help guide the ray sampling and better estimate the transmittance.
+geometry,color recovery,Improved geometry and color recovery result from better estimate of transmittance.
+rgb images,geometry prior,"While we are working with RGB images only, our method leverages the geometry prior of the 3DMM to guide the depth estimation."
+3dmm,depth estimation,Our method leverages the geometry prior of the 3DMM to guide the depth estimation during training.
+deformable neural radiance fields,nerf,Deformable Neural Radiance Fields is introduced after the introduction of NeRF for static scenes.
+reconstruction problem,deformed scene,"The reconstruction problem is divided into two different spaces, the deformed scene, and the canonical space."
+neural network,mapper,A neural network functions as the mapper for deformed scenes and canonical space.
+deformed scene,canonical space,Two different spaces divided in the context
+deformed scene,neural network,Neural network acts as the mapper between deformed scene and canonical space
+canonical space,neural network,Neural network acts as the mapper between deformed scene and canonical space
+human body modeling,kinematic chain,Kinematic chain of the SMPL body model leveraged for human body modeling
+blend weights,linear blend skinning-based warping field,Blend weights used to estimate the warping field between canonical and deformed space
+neural actor,3d body mesh proxy,Neural Actor uses a 3D body mesh proxy for pose-dependent geometric deformation
+neural actor,canonical space,Neural Actor defines effects in the canonical space
+lombardi et al.,surface-aligned neural volumes,Lombardi et al. defines surface-aligned neural volumes for improving rendering speed
+garbin et al.,tetrahedral deformation graph,Garbin et al. builds a tetrahedral deformation graph around a radiance field
+xu et al.,surface-aligned neural radiance fields,Xu et al. propose surface-aligned neural radiance fields based on body mesh
+insta,differentiable volumetric optimization,INSTA follows differentiable volumetric optimization
+deformed space,homogeneous coordinates,Deformed space is represented in homogeneous coordinates
+nearest neighbor triangle,mesh tdef,The nearest neighbor triangle is on the mesh Tdef
+topological corresponding twin,canonical space tcanon,There is a topological corresponding twin in the canonical space Tcanon
+deformation gradient,triangle,The deformation gradient defines the deformation field of the triangle
+point,canonical space,A point is transformed to the canonical space by a specific transformation
+feature,multi-resolution hashing,The point is encoded using a multi-resolution hashing feature
+fully fused multi-layer perceptrons,conditioning on facial expressions and encoded view direction,The feature is passed to fully fused multi-layer perceptrons with additional conditioning on facial expressions and encoded view direction
+gafni et al.,facial expressions,Gafni et al. implicitly model facial expressions
+nerf mlp,global expression code,The NeRF MLP is conditioned with the global expression code obtained from 3DMM tracking
+latent frame codes,increase network capacity,Latent frame codes are optimized to increase the network capacity
+dynamic neural radiance fields,mouth region's rendering,Dynamic neural radiance fields are used to improve the mouth region's rendering
+face model motion prior,mouth region,Face model motion prior does not represent the mouth region
+imavatar,subject-specific implicit representation of texture,IMAvatar learns the subject-specific implicit representation of texture
+expression blendshapes and blend skinning weights,implicit representation of texture,Expression blendshapes and blend skinning weights are incorporated in the implicit representation of texture
+implicit surface,ray marching and root-finding,An implicit surface is optimized by incorporating ray marching and root-finding
+training time,training results,The training time affects the training results
+canonical correspondence,deformed points,The occupancy function is used to locate the canonical correspondence of deformed points.
+training time,consume,The training time for creating personalized blendshapes using neural graphics primitives is found to be time-consuming.
+training time,unstable,The training time for creating personalized blendshapes using neural graphics primitives is also found to be unstable.
+blendshapes,multi-resolution grid,"For each blendshape, a multi-resolution grid is trained during the creation of personalized blendshapes using neural graphics primitives."
+instant digital avatars,learned,The goal is to create instant digital avatars that can be learned in a few minutes.
+instant digital avatars,rendered,The goal is to create instant digital avatars that can be rendered in interactive time.
+geometry-guided deformable neural radiance field,multi-resolution hashing grid,A geometry-guided deformable neural radiance field is embedded into a multi-resolution hashing grid for the purpose of creating instant digital avatars.
+monocular video,images,"For a given monocular video consisting of images, the goal is to build a controllable head-avatar represented by a neural radiance field."
+monocular video,intrinsic camera parameters,"For a given monocular video along with optimized intrinsic camera parameters, the goal is to build a controllable head-avatar represented by a neural radiance field."
+tracked flame meshes,facial expression coefficients,Tracked FLAME meshes with corresponding facial expression coefficients are used to build a controllable head-avatar represented by a neural radiance field.
+tracked flame meshes,poses,Tracked FLAME meshes with corresponding poses are used to build a controllable head-avatar represented by a neural radiance field.
+controllable head-avatar,neural radiance field,The goal is to build a controllable head-avatar represented by a neural radiance field in a canonical space.
+volumetric rendering,nerf optimization,The recent advances in interactive NeRF optimization are taken advantage of for volumetric rendering.
+volumetric rendering,neural graphic primitives,Neural graphic primitives are used to represent the radiance field in volumetric rendering.
+nerf optimization,neural graphic primitives,The advances in interactive NeRF optimization utilize neural graphic primitives to represent the radiance field.
+avatar representation,differen-tiable volumetric rendering equation,The representation of the avatar is optimized using the differentiable volumetric rendering equation.
+transmittance,density,The transmittance and density indicate the probability of a ray traveling without interaction with other particles.
+sample points,canonicalization,The sample points are canonicalized to access the actual radiance field through the mapping function.
+ray,3dmm facial expression code,Every sample point is conditioned on the ray with the 3DMM facial expression code of the video frame.
+viewing vector,spherical harmonics projection,The viewing vector is encoded using spherical harmonics projection on four basis functions for the final viewing vector encoding.
+facial expressions conditioning,mouth region,The conditioning on facial expressions is bounded to the dynamically changing mouth region.
+mapping function,point projection,The mapping function projects a point from the time-varying deformed space to the canonical space.
+deformed space,canonical space,Deformed space is mapped to the canonical space using a mapping function that leverages time-varying surface approximation and a predefined mesh.
+deformation gradient,point,The deformation gradient is used to map a point to its canonical counterpart.
+deformation gradient,frenet frames,The deformation gradient is computed based on the known Frenet frames of deformed and canonical triangles.
+frenet frames,rotation matrices,"Rotation matrices are computed based on the tangent, bitangent, and normal vectors of a triangle."
+translations,frenet coordinate system frames,Translations defined by a vertex of a triangle form Frenet coordinate system frames.
+bvh,gpu,BVH is implemented on GPU to utilize massively parallel nearest triangle search.
+highly tessellated flame regions,eyeballs and eye region,"To alleviate triangle search, the eyeballs and eye region are simplified for highly tessellated FLAME regions."
+mouth region,additional set of triangles,An additional set of triangles in the mouth region serves as a deformation proxy.
+neural radiance field,color reproduction objective and geometry prior,The optimization of the neural radiance field is based on color reproduction objective and a geometry prior.
+volumetric rendering equation,piece-wise constant den,The volumetric rendering Equation is redefined with piece-wise constant den based on NeRF.
+3dmm,nerf,"3DMM is mentioned in the context as a concept related to NeRF, which is a reference to prior work."
+volumetric rendering equation,alpha-compositing,"The volumetric rendering Equation is redefined in terms of alpha-compositing, indicating a relationship between the two concepts in the context."
+photometric error,huber loss,"To measure the photometric error, a Huber loss is used with a specific value, suggesting a relationship between the two concepts."
+isotropic scaling factor,surface area change,"An isotropic scaling factor is computed based on the relative surface area change, showing a relationship between the two concepts."
+deformation gradient,transformation discontinuity,"The deformation gradient is defined to avoid transformation discontinuity, indicating a relationship between the two concepts in the context."
+coordinate system,exponentially weighted averaging,"Exponentially weighted averaging is performed to address transformation discontinuity arising from the coordinate system, suggesting a relationship between the two concepts."
+metric space,flame,"The 3DMM FLAME model is used to reconstruct the face geometry based on the depth information, leveraging the geometry prior of the reconstructed face."
+bvh,nearest triangle search speed,A classical bounding volume hierarchy (BVH) is leveraged to significantly increase the nearest triangle search speed for the sampled points on the ray.
+bvh,mi,A BVH is built based on the corresponding deformed mesh Mi of frame i to establish the mapping function.
+depth loss,geometry prior,A depth loss is enforced to leverage the geometry prior of the reconstructed face based on the 3DMM FLAME model.
+depth loss,volumetric rendering,The depth loss is used to compare the depth of the tracking mesh Mi with the ray termination of the volumetric rendering.
+geometry prior,face region,The geometry prior is restricted to the face region as the FLAME model does not contain details like hair.
+1f ace function,face parsing information,The 1f ace function uses face parsing information to decide a given pixel membership for enabling the loss in the face region.
+total loss,lcolor(r),"The total loss L is defined as a combination of color loss and geometry loss, where lambda values control their contributions."
+color loss,face parsing mask,The color loss contribution is weighted based on a face parsing mask.
+dynamic radiance field,nvidia ngp c++ framework,The animatable dynamic radiance field is implemented using the Nvidia NGP C++ framework.
+mlps,neurons,Each MLP has 64 neurons.
+density mlp,feature values vector σ,The density MLP outputs feature values vector σ where the first value is the log-space density.
+vector σ,viewing vector d,The vector σ is later concatenated with the encoded viewing vector d as the input of the color network.
+adam,learning rate η,Adam optimization is used with a fixed learning rate η = 2.5e−3.
+network,optimization steps,The network is trained for 32k optimization steps.
+dataset,video,The method takes a single video as input to generate the volumetric avatar of the depicted subject.
+actors,nikon z6 ii camera,Multiple actors were recorded with a Nikon Z6 II Camera.
+rgb full hd videos,resized resolution,"The videos were cropped, sub-sampled to 25fps, and resized to 5122 resolution."
+background foreground segmentation,robust matting,Background foreground segmentation is done using robust matting.
+robust matting,foreground segmentation,relationship of using robust matting for foreground segmentation
+back-round segmentation,foreground segmentation,relationship of using background segmentation for foreground segmentation
+off-the-shelf face parsing framework,image segmentation,relationship of using off-the-shelf face parsing framework for image segmentation
+face tracking,monocular input data,relationship of temporally stable face tracking for monocular input data
+mica,face tracker,relationship of using MICA for face tracking
+face2face,differentiable rendering,relationship of using Face2Face for differentiable rendering
+face2face,iris tracking,relationship of using Face2Face for iris tracking
+medipiipe,eyelids tracking,relationship of using Mediapipe for eyelids tracking
+mica,shape parameters,relationship of optimizing for shape parameters towards MICA shape prediction
+pytorch,tracking,relationship of implementing tracking in PyTorch
+insta,digital human avatars,relationship of evaluating the quality of digital human avatars generated by INSTA
+test sequences,dataset,relationship of using test sequences from the dataset for evaluation
+nerface,image quality evaluation,relationship of making a comparison to NeRFace for image quality evaluation
+imavatar,image quality evaluation,relationship of making a comparison to IMAvatar for image quality evaluation
+neural head avatars,image quality evaluation,relationship of making a comparison to Neural Head Avatars for image quality evaluation
+nerface,imavatar,"NeRFace lacks high-frequency details for eyes and teeth, while IMAvatar shows silhouette artifacts at gracing angles."
+imavatar,flame,IMAvatar's most recent version contains additional semantic information for mouth interior and FLAME geometry supervision.
+imavatar,nha,IMAvatar produces sharp and photo-realistic images while NHA suffers from degenerated geometry with many artifacts at the ear region.
+nha,ear region,"NHA suffers from noticeable artifacts, especially for the ear regions."
+imavatar,convergence,IMAvatar had problems with convergence for some of the videos.
+nha,imavatar,"NHA and IMAvatar datasets were used for generating regions. IMAvatar had problems with convergence and stability, leading to diverging optimization and premature termination of the training."
+imavatar,nerface,IMAvatar and NeRFace were compared in terms of photometric errors and rendering time. NeRFace is on par with Gafni et al.'s method while IMAvatar is significantly faster in training and evaluation.
+nerface,gafni,NeRFace's method is on par with Gafni et al.'s method in terms of pixel-wise error metrics.
+our method,nerface,Our method achieves low perceptual error in comparison to all methods while being significantly faster to train and evaluate compared to NeRFace.
+our method,novel views,"Our approach can achieve the best image quality while being significantly faster to train, leading to extrapolation to novel views which is essential for 3D digital avatars used in AR or VR applications."
+3d digital avatars,ar or vr applications,3D digital avatars are used in AR or VR applications
+3d digital avatars,ner-face,NeR-Face produces blurry results in the area of eyes and teeth
+3d digital avatars,imavatar,IMAvatar exhibits artifacts at gracing angles at the silhouette
+3d digital avatars,nha,NHA suffers from degenerated geometry with strong artifacts at the ears
+3d digital avatars,our method,"Our method can robustly generate photo-realistic images under novel poses and achieves high visual quality, especially in the skin and mouth region"
+our method,localized expression conditioning,We are interested in the influence of localized expression conditioning for teeth quality
+our method,geometric prior,"We are interested in the effect of the geometric prior, especially for the novel view synthesis"
+our method,deformation field,We are interested in the importance of the deformation field
+deformation field,ner-face,"Deformation field helps to avoid overfitting to the short training sequences, similar to NeR-Face"
+geometric prior,3dmm flame,We leverage the geometric prior of the 3DMM FLAME to regularize the depth estimations
+nerface,learnable codes,NeRFace is associated with learnable codes as shown in the context.
+3dmm flame,geometric prior,The geometric prior is leveraged from 3DMM FLAME to regularize depth estimations.
+depth estimations,volumetric rendering method,Depth estimations are rendered using the volumetric rendering method.
+depth estimations,ray termination,A loss is measured between estimated ray termination and the depth of the rendered face model.
+digital avatar,geometric prior,The additional geometric prior improves the stability and quality of the digital avatar.
+deformation field,conditioning,The quality of renderings is impacted by the deformation field and conditioning.
+global conditioning,local conditioning,Comparison between global conditioning and local conditioning is conducted.
+global conditioning,per-frame learnable codes,Global conditioning is experimented with per-frame learnable codes.
+3dmms,teeth modeling,Most publicly available 3DMMs do not explicitly model teeth.
+3dmms,facial avatars,3DMMs are used for the reconstruction of 3D facial avatars.
+dynamic lips,teeth occlusion,Dynamic lips can occlude teeth depending on the expressions.
+insta,personalized volumetric avatars,INSTA allows training personalized volumetric avatars from RGB videos within seconds.
+optimization,results,The context mentions achieving good results through optimization.
+geometry,appearance,The context indicates that good results are achieved when the geometry and appearance match the input.
+reconstruction,high-frequency details,The method needs training to improve the reconstruction of high-frequency details like teeth.
+face tracking,misalignments,"Misalignments of the geometry and images can affect face tracking, propagating to the final avatar."
+mouth interior quality,lack of geometry,"The lack of geometry in the mouth interior region affects the quality, as mentioned in Figure 9."
+geometry misalignment,outline artifacts,"Misalignment of geometry can lead to outline artifacts, as shown in Figure 9(a) and 9(b)."
+expressions,artifacts,"Extreme expressions can cause artifacts in the mouth region, and extrapolation of expressions can also lead to artifacts, as stated in Figure 9."
+instant volumetric head avatars,approach,The context introduces 'INSTA' as a novel approach for optimizing geometry-guided 3D digital avatars.
+method,monocular rgb video,The method takes a monocular RGB video as input for optimizing a subject's dynamic neural radiance field.
+neural graphics primitives,3dmm,Neural graphics primitives are embedded around a 3DMM using the method described.
+paradigm change,adaptable online avatars,The context mentions a paradigm change towards adaptable online avatars with the introduction of 'INSTA'.
+paradigm change,adaptable online avatars,The paradigm change towards adaptable online avatars is a stepping stone towards immersive telepresence applications.
+telepresence applications,immersive,The paradigm change towards adaptable online avatars is a stepping stone towards immersive telepresence applications.
+imprs-is,wz,WZ is supported by the International Max Planck Research School for Intelligent Systems (IMPRS-IS).
+tb,amazon,TB is a part-time employee of Amazon.
+tb,research,TB's research was performed solely at and exclusively funded by MPI.
+jt,microsoft research,JT is supported by Microsoft Research gift funds.
+geometric prior,3dmm,The geometric prior of the 3DMM helps for extrapolation to extreme novel views.
+flame expression coefficients,missing geometry,"To compensate for the missing geometry, FLAME expression coefficients are used to condition the region."
+mouth region,color weight,A higher color term weight on the mouth region improves the visual quality.
+insta,rgb-video-based avatar generation techniques,INSTA shows better quality and speed compared to state-of-the-art RGB-video-based avatar generation techniques.
+facial expressions,changing hairs,Our model handles dynamically changing facial expressions but does not capture dynamically changing hairs.
+hair quality,face interior,The hair quality is not on par with the face interior and still needs improvements in the level of detail.
+3dmm,teeth geometry,The used 3DMM does not model teeth geometry.
+3dmm,teeth geometry,3DMM does not model teeth geometry
+mouth region,viewpoint extrapolation,A better approximation of the mouth region would increase the viewpoint extrapolation
+method,real-time frame rates,Our method achieves real-time frame rates for rendering
+rendering speed,video conferences,Rendering speed needs to be improved to enable high-quality video conferences in AR or VR
+resolution,video conferences,Especially when a higher resolution is required
+engineering,training process,"With additional engineering, the training process of our method could be improved"
+method,canonical avatar,The training process of our method could continuously refine our canonical avatar
+conversation,avatar,"Regions initially not visible could be captured during the conversation, and the avatar would be updated accordingly"

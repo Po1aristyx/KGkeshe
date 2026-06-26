@@ -1,0 +1,165 @@
+node_1,node_2,edge
+pre-trained models,machine learning research and practice,The context discusses how pre-trained models are transforming the landscape of ML research
+fine-tuning paradigm,training from scratch,The text contrasts the traditional approach of training models from scratch with the modern fine-tuning method.
+reward maximization (rm),distribution matching (dm),Two main approaches mentioned to address the challenge of steering pre-trained distributions are RM
+reinforcement learning (rl),policy gradients,RM employs RL techniques
+distribution matching (dm),explicit target distribution,DM requires making the target distribution explicit before fine-tuning the model to approximate it.
+kl-control,rm,KL-control
+distribution matching (dm),similar training difficulties,Both RM and DM face challenges like high gradient variance during training.
+baseline,distribution matching (dm),Connections between RM and DM are used to introduce the concept of baselines in DM methods.
+language model,controllable language generation tasks,The benefits of baselines are empirically tested on tasks like controlling topic
+language model,pre-trained language models,The context discusses pre-trained language models as a type of language model with strong generative capabilities.
+global preferences,nudging language models,These models are influenced by global preferences
+distribution matching (dm),reward maximization (rm),The study connects DM and RM as two paradigms for aligning language models to specific objectives.
+constraint satisfaction,stability,Both are mentioned as performance measures in the context of language model alignment.
+sample efficiency,evaluating language models,Sample efficiency is a factor considered when assessing the effectiveness of the alignment methods.
+topic and sentiment,generated sequences,Preferences can include controlling topics and sentiments in the sequences produced by the model.
+naver labs europe,work done at naver labs europe,The context mentions work done at Naver Labs Europe as part of an internship or independently.
+neurips 2022,36th conference on neural information processing systems,The findings were presented at NeurIPS 2022.
+alignment of language models,study's focus,The central theme of the study is the connection between aligning language models to various objectives.
+reward maximization (rm),distribution matching (dm),RM is a technique that influences pre-trained models towards specific preferences by providing global sequence-level rewards. It contrasts with DM
+reinforcement learning (rl),catastrophic forgetting,RL is used within RM to discourage undesirable behaviors
+fluency,hand-crafted general rewards,Fluency is a desirable feature often targeted in studies using hand-crafted rewards
+machine translation,overall effectiveness of rm,The effectiveness of RM for machine translation is a topic of discussion
+kl-control,catastrophic forgetting (mentioned in rm with kl-control),KL-Control
+jaques et al. (2017b,2019),ziegler et al. (2019)
+stiennon et al. (2020),ouyang et al. (2022),These authors also contribute to RM with distributional considerations
+bai et al. (2022),perez,Bai et al. and Perez are likely additional references related to RM with distribution control
+dpg algorithms,policy gradients,We compare the family of DPG algorithms to Policy Gradients
+rm (reinforcement learning),dm (distribution matching),We interpret KL-control techniques from a distribution matching perspective
+kl-control techniques,rm (reinforcement learning),These connections position KL-control techniques as intermediate between reinforcement learning (RM) and distribution matching (DM).
+kl-control techniques,dm (distribution matching),KL-control techniques bridge the gap between RM and DM.
+variance reduction technique from rl,dpg (deterministic policy gradients),We apply a variance reduction technique from reinforcement learning to DPG
+baselines,variance reduction technique from rl,Adding baselines from reinforcement learning improves performance
+language models,preferences,Adapting language models involves assigning reward scores to sequences to align with specific preferences.
+language models,controllable language generation experiments,Experiments involve evaluating the performance of language models on controlled tasks.
+constraint satisfaction,sample efficiency,Adding baselines enhances performance in constraint satisfaction and makes the model more efficient in terms of samples.
+small batch sizes,stability,Improved stability is observed when using baselines with smaller batch sizes.
+autoregressive language model (policy),reinforce algorithm,The REINFORCE algorithm is a simple policy gradient method that aims to find the policy that maximizes the reward assigned by the autoregressive language model.
+reward score r(x),policy gradient algorithm,Policy gradient algorithms
+reinforce (williams,1992a),gradient ascent algorithm
+log derivative trick,gradient ascent algorithm,The 'log derivative trick' is a technique used in REINFORCE to calculate gradients for updating the policy.
+kullback-leibler (kl) penalty term,pretrained model a(x),Jaques et al. and Ziegler et al. added a KL penalty to the reward function to prevent large deviations from the original pretrained model.
+kl penalty,trade-off,The KL penalty term controls a trade-off between maximizing the reward and maintaining similarity to the pretrained model.
+distributional policy gradients (dpg),ebm (energy-based model),DPG is a method that fits an autoregressive policy to the distribution induced by an Energy-Based Model (EBM)
+ebm p(x),partition function z,In DPG
+reward gradient term (rg-term),policy gradient term (pg-term),The equation (8) consists of two terms: the RG-term involving the gradient of the reward
+kl-control,parametric reward,KL-control adds a KL-penalty term to the reward
+maximization of reward with kl penalty,distributional matching,The objective of maximizing reward with the KL penalty is equivalent to distributional matching
+sequential ebm (underlying emergent ebm),dpg (deep policy gradient),The distributional matching with the sequential EBM shares some similarities with DPG
+equation (8),expected reward,In standard RL
+pz(x) (normalized distribution),a(x) and er(x) (ebm components),Equation (9) defines the EBM
+pz(x),z (partition function),The partition function Z normalizes the distribution
+arg max⇡✓ ex,theorem 1,Theorem 1 presents a relationship between the EBM and the optimization process
+reverse kl divergence,optimal policy,The optimal policy (pz) is found by minimizing the reverse KL divergence between the current policy distribution (⇡✓) and a target distribution (pz).
+arg max⇡✓,reward function,The arg max expression involves maximizing the expected reward (Ex⇡✓ R(x)) under the policy.
+policy gradient method,reward function,In Policy Gradients
+distributional policy gradients,policy gradients,Distributional Policy Gradients is a variant of Policy Gradients
+reverse kl divergence,connection to the optimal policy,The proof of the optimal policy reveals a connection to the reverse KL divergence
+kl divergence,reverse kl divergence,The KL divergence is mentioned to be minimized
+distributional term (kl-penalty),underlying distribution pz(x),The distributional term contributes to the definition of an emergent underlying distribution pz(x)
+distributional markov decision process (dm),explicit distributional objective,DPG methods are designed for DM
+kl-control,researcher's maxims (rm) paradigm,KL-control is associated with the RM paradigm
+dpg (deep policy gradients),policy gradients,DPG is mentioned to be a DM method that connects to Policy Gradients
+reward function,average 'reward' r✓(x),The reward function is used to calculate the average 'reward' R✓(x)
+reward function (r(x)),baseline (b),The idea is to subtract a value B from the reward function R(x) to reduce variance without introducing bias.
+dpg (deep deterministic policy gradient),gradient estimates,The subtraction of B from R(x) in DPG does not introduce bias into the gradient estimates.
+baseline for dpg (b),average of rewards for the policy (brl),In standard RL
+baseline (b),policy distribution (⇡✓(x),p(x))
+bias,gradient estimates,Subtracting B from R(x) maintains unbiased gradient estimates in both standard RL and DPG.
+re-estimation of brl,dependence on the policy (✓),BRL must be re-estimated after each gradient update due to its dependence on the current policy
+more accurate estimation,b (dpg's baseline),Estimating B by averaging over samples from different policies provides a more accurate estimation because it does not require frequent updates.
+off-policy dpg version,kl-adaptive variant,The off-policy DPG version introduced by Parshakova et al. (2019b) is compared to its KL-adaptive variant by Khalifa et al. (2021)
+proposal distribution q,policy,Both off-policy DPG and its KL-adaptive variant sample from q instead of directly using the policy.
+dkl(pz),q,The KL divergence between pZ and q is a component in the calculation of importance weights.
+importance weight,bias introduced by sampling from q,Importance weights are used to correct for the bias caused by not sampling directly from the true policy.
+baseline,advantage,A baseline is added to KL-adaptive DPG to center the advantage around zero
+advantage,dpg gradient estimates,Subtracting the baseline from R✓(x) does not bias DPG gradient estimates.
+constant baselines,dpg,This paper focuses on applying simple constant baselines to DPG
+female person,science,The context mentions that the language model is constrained to generate half of its sequences about females
+language model,moments,The moments (µi) control the features of the language model
+language model,constraints,The fine-tuning objective is to satisfy constraints while minimizing deviation from the original language model a(x).
+pointwise constraints,single-word constraints,These tasks involve constraints based on specific words appearing in generated sequences
+distributional constraints,mixed type constraints,Tasks with distributional constraints have a range of 0 < ¯µi < 1
+single-word constraints,frequent words,Single-word constraints involve checking if a given word appears in a sequence (task 1: 'amazing'
+wordlist constraints,politics wordlist,Wordlist constraints check if a sequence contains at least one word associated with politics (task 3).
+wordlist constraints,science wordlist,Similarly
+sentiment classifier constraints,positive sentiment,This constraint assigns a positive classification to a sequence (task 5).
+sentiment classifier constraints,negative sentiment,Contrastingly
+distributional constraint,female figure mention,A constraint checks for the presence of a female figure
+distributional constraints,science,art
+hybrid constraints,female pronouns,One hybrid constraint compares female and male pronouns
+hybrid constraints,sports wordlist,Another hybrid constraint involves sequences with at least one sports-related word (task 10).
+gdc framework,kl-dpg algorithm,GDC++ modifies the GDC framework
+gdc++,baseline,Algorithm 1 introduces a new baseline for comparison within GDC++.
+gdc++,reward maximization baselines,GDC++ is compared to Reinforce
+gdc++,gdc,Comparison between GDC++ and GDC is made as reward maximization baselines.
+reinforce,gdc++,Reinforce is one of the reward maximization baselines being compared alongside GDC++.
+ziegler,gdc++,Ziegler is another reward maximization baseline
+kl-control approach,ziegler,Ziegler's objective includes a KL penalty term for deviation from a certain distribution.
+hybrid and distributional constraints,tasks 8-10,These tasks specifically involve hybrid and distributional constraints in the evaluation.
+distinct-1,figure 3,Distinct-1 is an evaluation metric shown in Figure 3 for tasks 1-6.
+dkl(p,⇡✓),forward kl divergence
+dkl(⇡✓,a),reverse kl divergence
+ebm,(khalifa et al.,2021)
+gdc++,rm objective (ziegler and reinforce),Ziegler and Reinforce do not handle hybrid and distributional constraints
+pointwise constraints,tasks 1-6,Aggregated results for pointwise constraints are shown in Figure 6 for GDC++
+distributional constraints,aggregated experiments,Additional results for distributional constraints can be found in the appendix
+pre-trained language model a,reverse kl divergence dkl(⇡✓,a)
+distinct-n score,text diversity,Distinct-n score is a measure of diversity within a single sample
+self-bleu-n,text diversity,Self-BLEU-n assesses diversity across samples and prevents convergence to limited sequences
+gpt-2 small,original language model a,Used as the base model for tasks 1-6
+gpt-2 small,wikibio dataset,Fine-tuned on the WikiBio dataset for tasks 7-10
+reinforce,constraint satisfaction,Reinforce shows quick constraint satisfaction but sacrifices diversity
+self-bleu-5,diversity of generated samples,Indicates the diversity of samples produced by the model during training
+diversity of generated samples,self-bleu-5 and distinct-1,The diversity is measured using Self-BLEU-5 and Distinct-1 scores
+deviation from a,ziegler's objective,Ziegler's objective imposes an upper bound on the deviation
+ziegler's objective,very unstable training,Ziegler's objective leads to unstable training dynamics.
+constraint satisfaction,gdc and gdc++,GDC and GDC++ are the only fine-tuning methods addressing constraint satisfaction with a clear formal objective.
+divergence from p,gdc and gdc++,These methods aim to reduce the divergence from the target distribution p
+baseline,variance reduction,The addition of a baseline helps reduce variance during training.
+sample variance,lower batch sizes,Reduced gradient estimate variance allows for training with lower batch sizes without compromising performance.
+dkl(p,⇡✓),computational detail
+training stability,baseline,The baseline also contributes to a smoother training process.
+ziegler objective,gdc,The Ziegler objective exhibits large fluctuations compared to the more stable training curves of GDC.
+ziegler objective,gdc++,GDC++ has even more stable training curves than GDC.
+disaggregated curves,appendix,Disaggregated curves are found in the appendix.
+task 1,pointwise constraint,Task 1 involves a pointwise constraint.
+task 8,set of distributional constraints,Task 8 consists of a set of distributional constraints.
+constraint satisfaction,figure 4,Constraint satisfaction is shown as a function in Figure 4.
+sample efficiency,smaller batch sizes,Smaller batch sizes lead to better sample efficiency.
+task 1 (a pointwise constraint),task 8 (distributional constraints),Both tasks are compared for different batch sizes.
+batch size 256,gdc++,GDC++ with batch size 256 shows significant improvement in constraint satisfaction and sample efficiency.
+task 1,pointwise constraint,Task 1 refers to a specific task
+task 7,distribuational constraints,Task 7 is another task mentioned alongside task 1
+gdc++,batch size 256,GDC++ performance is compared with different batch sizes
+gdc++,batch size 2048,GDC++'s need for more samples (4M) with batch size 2048 highlights the impact of the baseline on larger batch sizes.
+gdc,batch size 256,GDC with batch size 256 is shown to not achieve certain performance (Ex⇡✓(x) = 0.5) without the baseline.
+baseline,variance reduction,The baseline is crucial for reducing variance in the gradient estimates and advantage computations.
+gradient variance,forward kl loss,Gradient variance is calculated using the gradient of the forward KL loss with respect to the parameters.
+advantage variance,mean of the advantage,Variance of the advantage is defined as the difference between the mean of the advantage and its expected value.
+expected absolute value of the advantage,standard measure of distributional discrepancy,This metric measures the discrepancy between distributions p and ⇡✓ using Total Variation Distance (TVD).
+tvd (total variation distance),p and ⇡✓,TVD is used to quantify the difference between probability distributions p and ⇡✓.
+total variation distance (tvd),trained policy ⇡✓,The edge represents the decreasing trend in the TVD distance between the trained policy and the optimal distribution p.
+gdc++,gradient estimates var(g✓),GDC++ has lower variance in gradient estimates compared to its non-baseline counterpart GDC.
+gdc++,variance of the advantage var(a),GDC++ also exhibits lower variance in the advantage compared to its non-baseline counterpart.
+kl-control,maximum entropy rl (maxent rl),KL-control can be seen as a generalization of MaxEnt RL
+kl-control,entropy bonus,If the KL penalty in KL-control is reduced to a uniform distribution
+control-as-inference framework,minimising kl from a certain target distribution,KL-control and MaxEnt RL are part of a broader framework that posits control as minimizing KL divergence to a target distribution.
+maxent rl,informed priors,MaxEnt RL involves informed priors
+maxent rl family,target policy,Most practical algorithms in the MaxEnt RL family minimize KL divergence from a target policy that changes during training.
+dpg,target distribution,DPG's target distribution p and KL-control's implicit target distribution pz are defined at the trajectory level and remain fixed throughout training.
+awr,off-policy target distribution,AWR (Peng et al.
+state marginal matching (smm),target state distribution,SMM aims to learn a policy that matches a target state distribution
+controllable language generation tasks,target distribution,In controllable language generation
+rm (reinforcement model fine-tuning),dm (discriminative model fine-tuning),This paper analyzes the relation between RM and DM
+large language models,task-level preferences,Fine-tuning large language models is important for adapting them to specific task preferences.
+large language models,social risks,Fine-tuning also addresses social risks like 'distributional' stereotyping.
+rm (reinforcement model fine-tuning),social risks,The paper delves into the connection between RM and mitigating social risks in fine-tuning.
+rm (fine-tuning paradigm),dm (fine-tuning paradigm),KL-control can be seen as a form of DM; RM and DM are distinct but connected.
+kl-control,dm,KL-control is a type of DM.
+dpg (rl algorithm),pg (rl algorithm),DPG and PG have different goals but share similar gradient estimates.
+dpg,rl (reinforcement learning),Despite differences
+variance reduction,baselines in dpg,We propose adding a baseline to DPG to reduce gradient estimate variance.
+trpo (rl algorithm),ppo (rl algorithm),Both TRPO and PPO are mentioned as examples of trust region methods that could be adapted to DPG.
+ebms (energy-based models),kl-control,Future work could analyze the connection between explicit EBMs in DPG and implicit ones in KL-control.

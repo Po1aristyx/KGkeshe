@@ -1,0 +1,233 @@
+node_1,node_2,edge
+transformer,language,The transformer extends its success from the language to the vision domain.
+transformer,vision domain,The transformer extends its success from the language to the vision domain.
+vision transformer,gpu hardware,"Because of the stacked self-attention and cross-attention blocks, the acceleration deployment of vision transformer on GPU hardware is challenging and also rarely studied."
+vision transformer,acceleration,"Because of the stacked self-attention and cross-attention blocks, the acceleration deployment of vision transformer on GPU hardware is challenging and also rarely studied."
+compression scheme,gpu-friendly 2:4 fine-grained structured sparsity,This paper thoroughly designs a compression scheme to maximally utilize the GPU-friendly 2:4 fine-grained structured sparsity and quantization.
+large model,dense weight parameters,"Specially, an original large model with dense weight parameters is first pruned into a sparse one by 2:4 structured pruning."
+fixed-point,floating-point sparse model,then the floating-point sparse model is further quantized into a fixed-point one by sparse-distillation-aware quantization aware training.
+pruning,quantization,A mixed-strategy knowledge distillation is used during the pruning and quantization process.
+gpusq-vit scheme,state-of-the-art compression,"Experiment results show GPUSQ-ViT scheme achieves state-of-the-art compression by reducing vision transformer models 6.4-12.7× on model size and 30.3-62× on FLOPs with negligible accuracy degradation on ImageNet classification, COCO detection and ADE20K segmentation benchmarking tasks."
+gpusq-vit scheme,actual deployment performance,"Moreover, GPUSQ-ViT can boost actual deployment performance by 1.39-1.79× and 3.22-3.43× of latency."
+gpusq-vit,actual deployment performance,"GPUSQ-ViT can boost actual deployment performance by 1.39-1.79× and 3.22-3.43× of latency and throughput on A100 GPU, and 1.57-1.69× and 2.11-2.51× improvement of latency and throughput on AGX Orin."
+gpusq-vit,latency,"GPUSQ-ViT can boost actual deployment performance by 1.39-1.79× and 3.22-3.43× of latency and throughput on A100 GPU, and 1.57-1.69× and 2.11-2.51× improvement of latency and throughput on AGX Orin."
+gpusq-vit,throughput,"GPUSQ-ViT can boost actual deployment performance by 1.39-1.79× and 3.22-3.43× of latency and throughput on A100 GPU, and 1.57-1.69× and 2.11-2.51× improvement of latency and throughput on AGX Orin."
+transformer-based neural models,interest,Transformer-based neural models have garnered immense interest recently due to their effectiveness and generalization across various applications.
+transformer-based neural models,effectiveness,Transformer-based neural models have garnered immense interest recently due to their effectiveness and generalization across various applications.
+attention mechanism,architecture,"Equipped with the attention mechanism as the core of its architecture, transformer-based models specialize in handling long-range dependencies."
+transformer-based models,dependencies,"Equipped with the attention mechanism as the core of its architecture, transformer-based models specialize in handling long-range dependencies."
+vision transformer models,accuracy,"More vision transformer models are invented and gradually replace the CNN with state-of-the-art performance on image classification, object detection, and segmentation tasks."
+vision transformer models,performance,"More vision transformer models are invented and gradually replace the CNN with state-of-the-art performance on image classification, object detection, and segmentation tasks."
+cnn,vision transformer models,"More vision transformer models are invented and gradually replace the CNN with state-of-the-art performance on image classification, object detection, and segmentation tasks."
+local visual inductive bias,transformer blocks,"Due to the vision transformer models having a generally weaker local visual inductive bias inherent in CNN counterparts, many transformer blocks are stacked for compensation."
+attention module,matrix-to-matrix calculations,"Moreover, the attention module in the transformer block contains several matrix-to-matrix calculations between key, query, and value parts."
+vision transformers,parameters,Such designs give the naive vision transformers more parameters and higher memory and computational resource require.
+designs,vision transformers,Designs provide parameters and resource requirement input to vision transformers.
+vision transformers,naive vision transformers,Naive version transformers have more parameters and higher resource requirements.
+vision transformers,model compression techniques,Model compression techniques aim to transfer large-scale vision transformer models to a lightweight version.
+model compression techniques,cnn compression methods,Previous studies inherit CNN compression methods for model compression.
+cnn compression methods,pruning,CNN compression methods include pruning as a technique.
+cnn compression methods,quantization,CNN compression methods include quantization as a technique.
+cnn compression methods,distillation,CNN compression methods include distillation as a technique.
+cnn compression methods,architecture search,CNN compression methods include architecture search as a technique.
+model compression techniques,compression patterns,Compression patterns do not match hardware characteristics in previous studies.
+compression patterns,unstructured sparse pattern,Unstructured sparse patterns in weight parameters affect the deployment efficiency.
+unstructured sparse pattern,hardware characteristics,Hardware characteristics lack support for unstructured sparsity in weight parameters.
+compression patterns,deployment efficiency,Compression patterns affect the efficiency on deployed hardware.
+multiple compression methods,accuracy,Maintaining accuracy while using multiple compression methods is a challenge.
+multiple compression methods,generalization,Generalizing the impact of multiple compression methods is a consideration.
+compression methods,generalize,Compression methods lack systematic investigation on how to generalize on multiple vision tasks.
+compression methods,gpusq-vit,GPUSQ-ViT is a proposed compression method that can achieve state-of-the-art deployment efficacy on GPU platforms.
+gpusq-vit,vision transformer models,"GPUSQ-ViT can generally apply to vision transformer models and benchmarking tasks, achieving state-of-the-art theoretical metrics."
+gpusq-vit,gpu-friendly patterns,"GPUSQ-ViT compresses with GPU-friendly patterns, leading to compressed models achieving state-of-the-art deployment efficacy on GPU platforms."
+compression methods,gpusq-vit,"GPUSQ-ViT is proposed as a compression method with GPU-friendly 2:4 sparse pattern and low-precision quantization, achieving 4 times GPU acceleration compared to prior arts."
+gpusq-vit,feature-based kd,GPUSQ-ViT combines feature-based KD with sparse pruning and QAT to best compensate for sparse and quantized models' accuracy.
+gpusq-vit,vision transformer models,"GPUSQ-ViT can apply to various vision transformer models and benchmarking tasks, achieving state-of-the-art efficacy on model size, FLOPs, and actual deployment performance."
+gpusq-vit,unsupervised learning style,GPUSQ-ViT can work without ground truth label annotations in an unsupervised learning style.
+sparsity,deep learning,Sparsity is a typical pattern in the deep learning paradigm that can save computational power and reduce memory bandwidth and storage burden.
+sparsity,granularities,"Sparsity has different granularities, such as the ability to save computational power and reduce memory bandwidth and storage burden."
+memory bandwidth,storage burden,Both terms are mentioned in the context as aspects that need to be reduced [33].
+coarse-grained sparsity,fine-grained sparsity,"These terms represent different granularities of sparsity [29], with one being a regular sparse pattern and the other leading to a more irregular sparse pattern [60][63]."
+coarse-grained sparsity,element-level sparsity,Both terms are examples of different granularities of sparsity [29].
+fine-grained sparsity,sparse ratio,Fine-grained sparsity can achieve a higher sparse ratio without harming model accuracy [60][63].
+sparse tokens,pruning less informative ones,Sparse tokens are generated by pruning the less informative ones [43].
+components inside basic structure in vision transformers,multi-head attention block (mha),"Efforts are explored on how to prune components inside the basic structure in vision transformers, specifically the multi-head attention block (MHA) [52]."
+matrix multiplication,sparse matrix multiplication,Sparse GEMM is a specific type of matrix multiplication that accelerates the traditional dense GEMM by skipping unnecessary multiplications of redundant zeros. It provides 2x acceleration compared to dense GEMM.
+sparse matrix multiplication,tensor core,Tensor Core is a hardware unit introduced in NVIDIA Volta GPU to accelerate matrix multiplication instructions. It has been enhanced to support sparse matrix multiplication in Ampere GPU.
+sparse matrix multiplication,2:4 fine-grained structured sparsity,"Sparse GEMM imposes a constraint named 2:4 fine-grained structured sparsity on the allowed sparsity pattern, which requires two values from every four contiguous elements on rows to be zero. This constraint makes GPU hardware efficient for sparse matrix multiplication."
+tensor core,gpu,Tensor Core is a hardware unit introduced in NVIDIA Volta GPU to accelerate matrix multiplication instructions. It has been further enhanced in Ampere GPU to support sparse matrix multiplication.
+sparse matrix multiplication,memory storage and bandwidth,Sparse GEMM can reduce memory storage and bandwidth by almost 2x compared to traditional dense GEMM. This reduction is achieved due to the 2:4 sparsity support on GPU Tensor Core hardware.
+tensor core hardware,sparse gemm,Tensor Core hardware supports sparse GEMM for reducing memory storage and bandwidth and providing increased math throughput.
+sparse gemm,dense gemm,sparse GEMM can provide 2× math throughput compared to dense GEMM by skipping redundant zero-value computation.
+ampere gpu,numeric precision,"Ampere GPU supports various numeric precision for 2:4 sparsity, including FP32, FP16, INT8, and INT4."
+gpusq-vit,gpu's acceleration characteristic,GPUSQ-ViT is designed to utilize GPU's acceleration characteristic for 2:4 fine-grained structured sparse pattern with low-precision operators.
+sparsity,quantization,The compression scheme GPUSQ-ViT utilizes Sparsity and Quantization to boost deployment efficacy for Vision Transformer models on GPU platforms.
+sparse pruning,knowledge distillation,2:4 sparse pruning with knowledge distillation is proposed in GPUSQ-ViT to compress specific structures in Vision Transformer architecture.
+quantization errors,feature-based distillation loss,"To measure the influence of quantization errors, feature-based distillation loss is used in the sparse pruning workflow as the weight factor."
+mha,sparsity,Strategies aim to sparsify attention heads and reduce sequence length in an MHA structure based on specific numerical metrics.
+mha structure,sequence length,The sequence length in an MHA structure can be reduced based on specific numerical metrics [54] or a searched optimal policy [15].
+mha structure,mha blocks,MHA blocks can be pruned to generate a sparse Mixture-of-Experts [16] vision transformer or an extremely compact version [66].
+prior arts,model sizes and flops,The prior arts use model sizes and FLOPs as compression targets without considering the characteristics of deployed hardware.
+compression scheme,gpu-friendly sparse pattern,The compression scheme is designed with a GPU-friendly sparse pattern to improve efficiency when deploying compressed models on GPUs.
+weight multiplexing,knowledge distillation,Weight multiplexing [66] or knowledge distillation [64] [61] are effective in compensating for accuracy loss in compressed models.
+quantization,model compression,"Quantization is another orthogonal technique in the model compression area, applying alternative formats other than standard 32-bit single-precision floating-point data type for weight parameters, inputs, and activations."
+quantization,low-precision formats,Quantization can significantly speed up model inference performance because low-precision formats have higher computational throughput support in many processors.
+quantization,memory bandwidth pressure,Low-precision representation in quantization helps to reduce the memory bandwidth pressure and can save memory-system operation time with cache utilization improvement.
+post training quantization (ptq),quantization,Post Training Quantization (PTQ) [18] is a specific technique within the broader concept of quantization in model compression.
+post training quantization (ptq),quantization aware training (qat),"PTQ and QAT are two main strategies in quantization. PTQ directly calibrates on limited sample inputs to find the optimal clipping threshold and the scale factor to minimize the quantization noise. QAT inserts the quantization and de-quantization nodes into the float-point model structure, then undergoes the fine-tuning process to learn the scale factor adjustment with minimal influence on accuracy."
+ptq,qat,"PTQ is preferred when without access to the whole training dataset. QAT inserts the quantization and de-quantization nodes into the float-point model structure, then undergoes the fine-tuning process to learn the scale factor adjustment with minimal influence on accuracy."
+ptq,relu,Some efforts are made to design the specific QAT for the vision transformers. Previous efforts to design the PTQ and QAT approaches for vision transformer mainly focused on the accuracy improvement.
+ptq,accuracy,It is a non-trivial effort to ensure the PTQ quantized vision transformer model without an apparent accuracy decrease.
+qat,activation structures like gelu and swish,"Considering some activation structures like GeLU and Swish are more sensitive than ReLU, some efforts are made to design the specific QAT for the vision transformers."
+model,weights,Models using 6 bits or float-point learnable bit-width like 3.7 bits to represent weights and activations.
+model,activations,Models using 6 bits or float-point learnable bit-width like 3.7 bits to represent weights and activations.
+weights,acceleration hardware,"Weights and activations representing models cannot get the expected speedup on general acceleration hardware, like GPU and TPU."
+activations,acceleration hardware,"Weights and activations representing models cannot get the expected speedup on general acceleration hardware, like GPU and TPU."
+8-bit quantization,specific bit-width quantization,"Supporting the specific bit-width quantization, like 6 bits, is a non-trivial effort."
+fpga hardware,end-users,End-users need to program the FPGA hardware for actual deployment.
+fpga hardware,specific bit-width libraries,End-users need to develop specific bit-width libraries like Basic Linear Algebra Subprograms (BLAS) for actual deployment.
+specific bit-width libraries,fpga hardware,End-users need to develop specific bit-width libraries like Basic Linear Algebra Subprograms (BLAS) for actual deployment.
+sq-vit,gpu,Boost vision transformer on GPU mainly contains 2:4 structured sparse pruning and sparse-distillation-aware QAT workflows.
+sparse pattern,vision transformer model,Section 3.1 further explain the 2:4 sparse pattern and how to compress each part of a vision transformer model according to the 2:4 sparse pattern.
+sparse gemm,dense gemm,The sparse GEMM performs the sparse matrix × dense matrix = dense matrix operation by skipping the redundant zero-value computation with sparse Tensor Core acceleration.
+matrix a,matrix b,The sparse GEMM performs the sparse matrix × dense matrix = dense matrix operation by skipping the redundant zero-value computation with sparse Tensor Core acceleration.
+zero values,matrix a,Matrix A contains both zero values and non-zero values during computation.
+m x n x k dense gemm,result matrix c,The dense GEMM operation calculates the result matrix C with size M x N in T GPU cycles.
+sparse gemm,non-zero elements,"Sparse GEMM only calculates the non-zero elements in each row of matrix A and the corresponding elements in matrix B, leading to faster computation."
+m x n x k sparse gemm,result matrix c,The sparse GEMM operation also calculates the result matrix C with size M x N but requires less GPU cycles (T/2) compared to dense GEMM.
+2:4 sparsity,non-zero elements,The 2:4 sparsity uses 2-bit metadata per non-zero element to indicate the position of two non-zero elements in every four adjacent elements in a row of matrix A.
+2:4 sparsity,int4 data format,The sparsity instruction for INT4 data format differs from FP16 and INT8 formats.
+matrix a,pair-wise structured sparse,"Matrix A is defined as pair-wise structured sparse at a granularity of 4:8, with clusters of zero and non-zero values."
+zero values,four non-zero values,"In the compressed matrix, only the four non-zero values are stored while the zero values are omitted."
+chunk,zeroes,The chunk must be either all zeroes or all non-zeroes in the context.
+chunk,non-zeroes,The chunk must be either all zeroes or all non-zeroes in the context.
+chunk,compressed matrix,"Four non-zero values are stored in the compressed matrix, and two 2-bit indices in the metadata indicate the position of the two two-wide sub-chunks with non-zero values in the eight-wide chunk of a row of matrix A."
+compressed matrix,sparse format,"The sparse format for FP16, INT8, and INT4 result in 43.75%, 37.5%, and 37.5% savings in storage."
+gpu,compress model,"GPUSQ-ViT will firstly compress model as 2:4 FP16 sparse, then further quantize to 2:4 INT8 or INT4 sparse for best deployment efficiency."
+fine-grained structured sparse pattern,nvidia gpu,The 2:4 fine-grained structured sparse pattern is well supported on NVIDIA GPU and corresponding libraries for math acceleration and memory saving.
+compression strategy,vision transformer models,The compression strategy is designed to meet the sparse pattern in vision transformer models.
+sparse gemm,low-precision formats,The 2:4 sparse GEMM supports low-precision formats like INT8 and INT4.
+structured sparsity,transformer block,Structured sparsity is applied in transformer block.
+transformer block,vision transformers,The transformer block is the fundamental building structure in various vision transformers.
+layers,patch embedding,The target layers include the patch embedding in vision transformers.
+layers,final linear projection,The target layers include the final linear projection in vision transformers.
+layers,feed forward,The target layers include the feed forward in vision transformers.
+vision transformers,transformer blocks,Vision transformers use transformer blocks which are crucial for the overall structure. The majority of weight parameters and execution time are dependent on these transformer blocks.
+transformer blocks,swim transformer,"Specifically, in Swin Transformer, about 96% of the weight parameters and 95% of the inference time come from these transformer blocks."
+transformer blocks,structured sparsity,"The application of 2:4 fine-grained structured sparsity in transformer blocks is discussed for accelerating GEMM operations, particularly targeting Q, K, V projection layers, linear projection layers, and other modules."
+transformer blocks,standard transformer block,Transformer blocks in vision transformer models are derived from or modified versions of the standard transformer block introduced in the naive attention mechanism.
+swim transformer,shifted windows attention module,"In the Swin Transformer model, the standard multi-head attention module is replaced by a shifted windows attention module within the transformer block."
+structured sparsity,patch embedding,"The concept of structured sparsity is also applied in patch embedding, where each image patch is considered a token similar to NLP."
+image patch,token,Each image patch is treated as a token in the NLP.
+patch embedding layer,convolution layer,The patch embedding layer can be implemented with a convolution layer.
+patch embedding layer,flops,The total Floating Point Operations (FLOPs) of the patch embedding layer is calculated.
+strided-convolution layer,implicit gemm,The strided-convolution layer is executed as an implicit GEMM.
+implicit gemm,weight matrix,The implicit GEMM transfers the weight matrix of strided-convolution.
+matrix a,2:4 sparsity,matrix A is the target dimension to apply the 2:4 sparsity
+sparsity,flops,applying 2:4 sparsity helps to save half of the total FLOPs
+gpusq-vit compression method,2:4 structured sparse pruning,GPUSQ-ViT mainly contains 2:4 structured sparse pruning as part of its compression method
+sparse-distillation-aware qat workflows,kd,sparse-distillation-aware QAT workflows apply KD for auxiliary accuracy compensation
+2:4 structured sparse pruning,dense floating-point model mdf,2:4 structured sparse pruning aims to compress the dense floating-point model MDF into the sparse floating-point model MSF
+kd,accuracy,KD can effectively transfer predicted labels or logits to ensure accuracy in the compression process
+student model,kd,KD is applied to transfer knowledge from a teacher model to a student model for learning
+2:4 fine-grained structured sparse pattern,vision transformer model,each part of a vision transformer model can be compressed according to the 2:4 fine-grained structured sparse pattern
+feature-based kd,teacher model's feature maps,feature-based KD is applied to mimic the feature maps of the teacher model in the student model
+kd strategies,3,three KD strategies are jointly used in the 2:4 structured sparse pruning workflow
+swin transformer blocks,stage,Swin Transformer blocks are organized into different stages with different feature map resolutions.
+swin transformer blocks,cam visualization results,The output of the last Swin Transformer block in each stage is used to generate CAM visualization results.
+feature-based kd,teacher model,Critical feature maps from the teacher model are found as learning targets for feature-based KD.
+swin transformer,pretrained models,Tiny- and base-sized Swin Transformer pretrained models are used as an example to apply CAM for feature map visualization.
+model size,cam results,Tiny-sized and base-sized models provide different CAM results for the same input image.
+cam results,classification result,CAM results influence the classification result of the input image.
+swin transformer models,cam results,It is more effective to mimic the feature maps from later stages of the vision transformer models based on the comparison of CAM results.
+model classification,input image,"Tiny-sized model classifies the input image as an Egyptian cat, while the base-sized model classifies it as a Border collie."
+border collie,cam,Border collie and CAM are related as different classified labels influence the CAM to pay attention to different features of a cat and a collie.
+teacher and student models,feature learning,The teacher and student models should have the same classification labels for mimic feature learning to occur.
+distillation losses,lprune,"Denoting distillation losses for the hard label, soft logits, and feature maps as Lprune respectively, with weight factors α, β, γ, the overall sparse pruning loss Lprune is calculated as a combination of these."
+sparse pruning workflow,msf model,The 2:4 structured sparse pruning workflow minimizes the Lprune loss with respect to weight parameters of the MSF model.
+sparse-distillation-aware qat,sparse floating-point model msf,"Sparse-distillation-aware QAT further compresses the sparse floating-point model MSF to the sparse quantized model MSQ on data format, by quantizing from floating-point formats to INT8 or INT4."
+qat strategy,deployment efficiency and accuracy,QAT can achieve the same deployment efficiency with the toolkit and learn scale factor adjustment during training for accuracy improvement.
+compression by 2:4 fine-grained structured sparsity,training set,Compression by 2:4 fine-grained structured sparsity requires access to the training set as a premise.
+compression,fine-grained structured sparsity,Compression by 2:4 fine-grained structured sparsity is mentioned as a method in the context.
+training set,fine-tuning process,The access to the training set and undergoing a fine-tuning process are necessary in the context.
+quantization scale factor,calibrate,The quantization scale factor calibration process is crucial for boosting the accuracy of the quantized model.
+kd idea,calibrate the quantization scale factor,The KD idea is utilized to jointly learn to calibrate the quantization scale factor from the teacher model's predictions and feature maps.
+sparse pruning workflow,qat process,"In the sparse pruning workflow, the MDF model is the teacher and the MSF model is the student, while in the QAT process, the MSF model is the teacher and the MSQ model is the student."
+critical layer,feature-based calibration,The feature-based calibration is done using the critical layers to improve the accuracy during the quantization process.
+distillation loss,feature map,The distillation loss between feature maps indicates the influence of specific layers on the final accuracy of the models.
+dense floating-point model,qat process,It is mentioned that using the dense floating-point model as a teacher in the QAT process is not recommended despite its better accuracy.
+gpusq-vit scheme,sub-workflows,"Figure 5 displays the GPUSQ-ViT scheme with two sub-workflows, highlighting their relationship in the context."
+dense floating-point model mdf,sparse floating-point model msf,"The dense floating-point model MDF is compressed to form the sparse floating-point model MSF, indicating a transformation relationship."
+distillation losses,sparse pruning loss,"Hard label, soft logits, and feature-based distillation losses contribute to the overall sparse pruning loss, suggesting a causal relationship."
+feature maps calibration result,weight factor,"Each feature maps calibration result is multiplied with a weight factor to indicate the layer's probability of influencing the MSQ model's final accuracy, indicating a dependency relationship."
+quantization compression,difference between msf and msq models,"The quantization compression leads to the difference between the MSF and MSQ models, suggesting a cause-effect relationship."
+gpusq-vit,quantized model,"GPUSQ-ViT is a specific workflow mentioned in the context, while the quantized model is a general term representing a model with reduced precision. The GPUSQ-ViT quantization workflow is discussed in relation to the quantized model's final accuracy."
+gpusq-vit,sparse-distillation-aware qat,The GPUSQ-ViT quantization workflow is also referred to as sparse-distillation-aware QAT in the context. Both terms are related in the description of a specific workflow method.
+gpusq-vit,calibration losses,"The GPUSQ-ViT workflow involves denoting calibration losses for hard label, soft logits, and feature maps. These calibration losses are related to the GPUSQ-ViT workflow."
+calibration losses,lcalibrate,The calibration losses mentioned in the context are specifically denoted as Lcalibrate. The relation between calibration losses and Lcalibrate is highlighted.
+sparse-distillation-aware qat,overall quantization calibration loss,The sparse-distillation-aware QAT workflow minimizes the overall quantization calibration loss Lcalibrate with respect to weight parameters of the MSQ model. This relation shows how the workflow relates to the quantization process.
+lcalibrate,hard label,"The calibration loss Lcalibrate is calculated based on components like hard label, soft logits, and feature maps. The relation between Lcalibrate and hard label is specified."
+lcalibrate,soft logits,The calibration loss Lcalibrate includes components such as soft logits in its calculation. The relation between Lcalibrate and soft logits is emphasized.
+lcalibrate,feature maps,"In the context, the calibration loss Lcalibrate is also calculated based on feature maps. The relation between Lcalibrate and feature maps is mentioned in the description."
+compression efficacy,gpusq-vit,The compression efficacy of GPUSQ-ViT is evaluated for the classification task mentioned in the context. The relation between compression efficacy and GPUSQ-ViT is discussed in the comparison with prior arts.
+compression efficacy,deit,The compression efficacy of GPUSQ-ViT is compared with DeiT for the image classification task. This relation highlights the comparison between compression efficacy of different methods.
+compression efficacy,swin transformer,"In the context, the compression efficacy of GPUSQ-ViT is also compared with Swin Transformer for image classification. This relation shows the comparison with another transformer model."
+deit,swin transformer,DeiT and Swin Transformer are chosen as the experiment target models for image classification.
+image classification task,deit,DeiT is chosen as one of the experiment target models for the image classification task.
+image classification task,swin transformer,Swin Transformer is chosen as one of the experiment target models for the image classification task.
+dyn-vit,sparse pruning category,Dyn-ViT is chosen as a reference method from the sparse pruning category.
+minivit,sparse pruning category,MiniViT is chosen as a reference method from the sparse pruning category.
+uvc,sparse pruning category,UVC is chosen as a reference method from the sparse pruning category.
+ps-vit,sparse pruning category,PS-ViT is chosen as a reference method from the sparse pruning category.
+ia-red2,sparse pruning category,IA-RED2 is chosen as a reference method from the sparse pruning category.
+multivit,sparse pruning category,MutliViT is chosen as a reference method from the sparse pruning category.
+svite,s2vite,SViTE and S2ViTE are chosen as reference methods from the sparse pruning category.
+pytorch,framework,PyTorch with version 1.12.0 is chosen as the framework to implement the experiments in this paper.
+pytorch,experiment,PyTorch is chosen to implement the experiments mentioned in this paper.
+gpusq-vit,fq-vit,Reference comparison method for GPUSQ-ViT on classification task
+gpusq-vit,q-vit,Reference comparison method for GPUSQ-ViT on classification task
+gpusq-vit,ptq-vit,Reference comparison method for GPUSQ-ViT on classification task
+gpusq-vit,ptq4vit,Reference comparison method for GPUSQ-ViT on classification task
+gpusq-vit,sparse pruning,Comparison between GPUSQ-ViT and sparse pruning for model size and FLOPs reduction
+gpusq-vit,quantization,Comparison between GPUSQ-ViT and quantization for model size and FLOPs reduction
+gpusq-vit,nvidia gpus,GPUSQ-ViT can greatly boost the compressed models' deployment efficiency on GPUs with TensorRT toolkit support of 2:4 sparsity.
+gpusq-vit,tensorrt toolkit,GPUSQ-ViT can greatly boost the compressed models' deployment efficiency on GPUs with TensorRT toolkit support of 2:4 sparsity.
+gpusq-vit,int8 compressed models,"For INT8 compressed models, GPUSQ-ViT can bring 1.26-1.47× improvement for various DeiT and Swin Transformer models of latency and throughput on A100 GPU."
+gpusq-vit,compressed models' deployment efficiency,GPUSQ-ViT can greatly boost the compressed models' deployment efficiency on GPUs with TensorRT toolkit support of 2:4 sparsity.
+deit,swin transformer,DeiT and Swin Transformer models show 2.4-2.6× improvement for latency and throughput on A100 GPU
+agx orin,gpusq-vit,AGX Orin sees 1.21-1.32× and 1.79-2.07× improvement of latency and throughput with GPUSQ-ViT
+gpusq-vit,a100 gpu,GPUSQ-ViT can bring 1.39-1.79× and 3.22-3.43× improvement of latency and throughput on A100 GPU
+agx orin,gpusq-vit,AGX Orin experiences 1.57-1.69× and 2.11-2.51× improvement of latency and throughput with GPUSQ-ViT
+dense models,gpusq-vit compressed models,Comparison is made between dense and GPUSQ-ViT compressed models in visualization
+tiny-sized swin transformer models,base-sized swin transformer models,CAM is applied for attention visualization on final norm layer of tiny-sized and base-sized Swin Transformer models
+gpusq-vit,object detection task,"GPUSQ-ViT compression efficacy is evaluated on Mask R-CNN, DETR, and Deformable-DETR for object detection task"
+gpusq-vit,coco dataset,GPUSQ-ViT compression results on COCO dataset are shown in Table 3
+gpusq-vit,object detection task,GPUSQ-ViT shows effectiveness on the object detection task as per Table 3
+gpusq-vit,semantic segmentation task,GPUSQ-ViT exhibits compression efficacy on the semantic segmentation task using UPerNet as the target model
+upernet,ade20k dataset,UPerNet is evaluated on the ADE20K dataset as per the segmentation task analysis
+gpusq-vit,compression effects,GPUSQ-ViT provides good compression effects on detection and segmentation tasks.
+gpusq-vit,unsupervised learningmodel,GPUSQ-ViT can still work well in unsupervised training when lacking ground-truth label annotations.
+gpusq-vit,ablation study,Ablation study to measure the influence of different adjustment factors for the hard label and soft logits.
+gpusq-vit method,loss adjustment factors,The ablation study of GPUSQ-ViT method focused on the loss adjustment factors and sparse-distillation-aware weight factors. Sparse-distillation-aware weight factor had an apparent boost for the compressed models' accuracy.
+gpusq-vit method,sparse-distillation-aware weight factor,Enabling sparse-distillation-aware weight factor had a significant boost for the compressed models' accuracy. This effect was more influential on INT4 compared to INT8 models.
+int4,sparse-distillation-aware weight factor,Disabling the weight factor for sparse distillation had a significant drop in INT4 compressed model accuracy. This suggests that the weight factor plays a crucial role in the quantization error from critical layers.
+aware weight factor,quantization error,The aware weight factor indicates how much influence the quantization error from each critical layer has on the final accuracy.
+aware weight factor,accuracy,the distillation process can focus on mimicking the layers with more accuracy influence
+distillation process,layers,the distillation process can focus on mimicking the layers with more accuracy influence
+distillation process,limited quantized bits,mimicking feature maps is very helpful for accuracy compensation in GPUSQ-ViT compression
+disabling feature-based distillation,influence,disabling the feature-based distillation will lead to a more severe influence than disabling the soft logits distillation
+feature maps,accuracy compensation,mimicking feature maps is very helpful for accuracy compensation in GPUSQ-ViT compression
+gpusq-vit,soft logits,GPUSQ-ViT is relatively robust to the soft logits and feature-based loss adjustment factors
+gpusq-vit,feature-based loss adjustment factors,GPUSQ-ViT is relatively robust to the soft logits and feature-based loss adjustment factors
+compressed models,accuracy,within the close range of β = 10 and γ = 5 the accuracy of compressed models are stable
+gpu’s acceleration characteristic,sparse pattern,This paper is inspired by GPU’s acceleration characteristic for 2:4 sparse pattern with various low-precision operators to design the GPUSQ-ViT compression method
+gpusq-vit compression method,efficiency,GPUSQ-ViT compression method can boost deployment efficiency for various vision transformer models
+gpusq-vit,benchmarking tasks,GPUSQ-ViT compression method can boost deployment efficiency for various vision transformer models of benchmarking tasks on NVIDIA GPUs
+structured sparse support,sparse patterns,"If the structured sparse support is changed or extended to support other patterns like 1:4 or 2:16, GPUSQ-ViT needs to make the according adjustments to fit the new or more sparse patterns"
+gpusq-vit,adjustments,GPUSQ-ViT needs to make the according adjustments to fit the new or more sparse patterns
+u1909207,shanghai municipal science and technology major project,U1909207 is funded by Shanghai Municipal Science and Technology Major Project
+u1909207,shanghai natural science foundation,U1909207 is also funded by Shanghai Natural Science Foundation
+u1909207,zhejiang lab project,U1909207 is part of Zhejiang Lab Project
+shanghai municipal science and technology major project,shanghai natural science foundation,Shanghai Municipal Science and Technology Major Project and Shanghai Natural Science Foundation both fund related projects
+shanghai municipal science and technology major project,zhejiang lab project,Shanghai Municipal Science and Technology Major Project collaborates with Zhejiang Lab Project
+shanghai natural science foundation,zhejiang lab project,Shanghai Natural Science Foundation is also involved in projects with Zhejiang Lab Project

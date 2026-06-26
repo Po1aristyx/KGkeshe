@@ -1,0 +1,287 @@
+node_1,node_2,edge
+deep reinforcement learning,environments,Deep reinforcement learning works impressively in some environments and fails catastrophically in others.
+rl theory,practical performance,"RL theory should be able to provide an understanding of why deep RL works well in some environments and fails in others, i.e. bounds predictive of practical performance."
+algorithms,sample complexity bounds,"We compare standard deep RL algorithms to prior sample complexity bounds by introducing a new dataset, BRIDGE."
+bridge,mdps,"BRIDGE consists of 155 deterministic MDPs from common deep RL benchmarks, along with their corresponding tabular representations."
+environments,properties,"Deterministic environments share many interesting properties of stochastic environments, but are easier to analyze."
+actions,q-values,"When actions with the highest Q-values under the random policy also have the highest Q-values under the optimal policy, deep RL tends to succeed; when they don’t, deep RL tends to fail."
+mdp,complexity measure,We generalize this property into a new complexity measure of an MDP that we call the effective horizon.
+effective horizon,steps of lookahead search,The effective horizon roughly corresponds to how many steps of lookahead search would be needed in that MDP in order to identify the next optimal action.
+leaf nodes,random rollouts,"When leaf nodes are evaluated with random rollouts, the effective horizon can be determined."
+bridge,effective horizon,BRIDGE is used to show that the effective horizon-based bounds are more reflective of the empirical performance of PPO and DQN than prior sample complexity bounds.
+effective horizon,ppo,The effective horizon is shown to be more reflective of the empirical performance of PPO.
+effective horizon,dqn,The effective horizon is shown to be more reflective of the empirical performance of DQN.
+effective horizon,reward shaping,It is found that the effective horizon can predict the effects of using reward shaping.
+effective horizon,pre-trained exploration policy,It is found that the effective horizon can predict the effects of using a pre-trained exploration policy.
+rl,deep rl algorithms,"Deep reinforcement learning has produced impressive results, but deep RL algorithms may fail to learn in some environments."
+rl,reward shaping,Using reward shaping can help RL in some cases.
+rl,pre-training,Pre-training can help RL in some cases.
+worst case,practical performance,The worst case is mentioned but it is not seen as predictive of practical performance.
+instance-dependent bounds,properties of mdps,"Theoretical research has explored instance-dependent bounds, identifying properties of MDPs."
+random exploration,worst case,Some theoretical research suggests that random exploration should perform better than the worst case.
+properties of mdps,rl algorithms,It is not clear whether the properties of MDPs correlate with when RL algorithms work vs. fail.
+rl algorithms,empirical performance,The current theory literature cannot explain the empirical performance of deep RL.
+theory of rl,deep rl,"Ideally, a theory of RL should show why deep RL succeeds while using random exploration."
+random exploration,predict environments,Random exploration should be able to predict which environments are harder or easier to solve empirically.
+predict environments,empirical,Prediction of environments should assist in empirically determining the difficulty level of solving them.
+predict environments,environments,The ability to predict environments plays a role in determining the difficulty level of solving them.
+reward shaping,initializing with a pre-trained policy,Tools like reward shaping or initializing with a pre-trained policy help make RL perform better.
+tools,rl,Tools such as reward shaping and initializing with a pre-trained policy aid in improving the performance of RL.
+rl,performance,The use of tools like reward shaping and initializing with a pre-trained policy impacts the performance of RL.
+theoretical complexity measure,mdps,"A new theoretical complexity measure for MDPs, called the effective horizon, is introduced that satisfies certain criteria."
+effective horizon,algorithm,The effective horizon measures approximately how far ahead an algorithm must plan in an environment before evaluating leaf nodes with random.
+algorithm,plan,"An algorithm must exhaustively plan in an environment before evaluating leaf nodes with random, as measured by the effective horizon."
+methodology,dataset bridge,"To assess previous bounds and arrive at certain properties, a new dataset named BRIDGE of deterministic MDPs from common deep RL benchmarks is created."
+dataset bridge,mdps,The dataset BRIDGE includes deterministic MDPs from common deep RL benchmarks for analysis.
+deterministic mdps,data representation,Deterministic MDPs from common deep RL benchmarks are used to compute their tabular representations.
+tabular representations,states,Tabular representations involve computing over 100 million states of deterministic MDPs for exhaustive exploration and storage.
+mdps,bridge,The focus is on deterministic MDPs in BRIDGE to connect theoretical and empirical results at a significant scale.
+deterministic mdps,analysis,Focus on deterministic MDPs in BRIDGE aids in their analysis with practical implications.
+mdps,stochastic,"MDPs described in the context have many interesting properties like reward sparsity and credit assignment challenges, similar to stochastic processes."
+mdps,reward sparsity,MDPs discussed in the context exhibit properties like reward sparsity.
+mdps,credit assignment challenges,MDPs mentioned in the context are associated with credit assignment challenges.
+deep rl benchmarks,deterministic,"Many deep RL benchmarks mentioned are nearly deterministic, affecting their relevance to practical RL."
+deep rl benchmarks,practical rl,The analysis of deep RL benchmarks is considered highly relevant to practical RL.
+deep rl benchmarks,environments,The environments in BRIDGE play a crucial role in the analysis of deep RL benchmarks.
+bridge,environments,BRIDGE represents a set of environments where a surprising property for learning optimally exists.
+bridge,random policy,The identification of a surprising property in many environments in BRIDGE indicates that learning to act optimally can occur by acting randomly.
+q-values,random policy,"Actions with the highest Q-values under a uniformly random policy also have the highest Q-values under the optimal policy, highlighting their significance."
+random policy,optimal policy,"Actions that have high Q-values under a random policy are aligned with the optimal policy, indicating a relationship between the two policies."
+ppo,environments,"PPO, a popular deep RL algorithm, efficiently solves environments where the identified property holds."
+ppo,q-function,PPO's success in solving environments is linked to its ability to efficiently use Q-function information.
+environments,ppo,Environments where the property of learning optimally by acting randomly exists are efficiently solved by the PPO algorithm.
+random policy,q-function,The Q-function associated with the random policy provides valuable information for successful applications in deep RL algorithms.
+modern algorithms,environments,Modern algorithms appear to simplify to acting greedily on the Q-values of the random policy within environments in BRIDGE.
+acting greedily,random policy q-values,Acting greedily on the random policy Q-values implies the property that it is optimal to act greedily with respect to the random policy’s Q-function.
+random policy q-values,optimal policy,Acting greedily with respect to the random policy’s Q-function implies that very simple algorithms designed to estimate the random policy’s Q-function could efficiently find an optimal policy.
+random policy q-values,q-function,The property that it is optimal to act greedily with respect to the random policy’s Q-function has important implications for RL theory and practice.
+algorithms,random policy q-function,"Practically, it suggests that very simple algorithms designed to estimate the random policy’s Q-function could efficiently find an optimal policy."
+algorithm,greedy over random policy (gorp),"We introduce such an algorithm, Greedy Over Random Policy (GORP), which also works in the case where one may need to apply a few steps of value iteration to the random policy’s Q-function before acting greedily."
+algorithm,dqn,"Empirically, GORP finds an optimal policy in fewer timesteps than DQN (another deep RL algorithm) in more than half the environments in BRIDGE."
+gorp,monte carlo planning algorithm,GORP is an adaptation of a Monte Carlo planning algorithm to the reinforcement learning setup.
+monte carlo planning algorithm,reinforcement learning setup,The Monte Carlo planning algorithm is applied to the reinforcement learning setup
+effective horizon,depth,The effective horizon combines the depth k in the planning algorithm
+effective horizon,number of rollouts,The effective horizon combines the number of rollouts m in the planning algorithm
+effective horizon,sample complexity bounds,The worse-case sample complexity bounds are exponential in the horizon T but only exponential in the effective horizon H
+bridge environments,effective horizon,"In most BRIDGE environments, effective horizon H is significantly less than horizon T"
+effective horizon-based sample complexity bounds,desiderata for a theory of rl,The effective horizon-based sample complexity bounds satisfy all the desiderata for a theory of reinforcement learning
+effective horizon,predictive of empirical sample complexities,The effective horizon is more predictive of the empirical sample complexities of PPO and DQN than other bounds in the literature
+effective horizon,reward shaping,The effective horizon can predict the effects of reward shaping in reinforcement learning
+effective horizon,pre-trained policy,The effective horizon can predict the effects of initializing using a pre-trained policy in reinforcement learning
+existing bounds,reward function,None of the existing bounds depend on both the reward function and initial policy
+existing bounds,initial policy,None of the existing bounds depend on both the reward function and initial policy
+reward shaping,human data,"Reward shaping, human data, and transfer learning can help in reinforcement learning according to the results"
+human data,transfer learning,Human data and transfer learning can help in reinforcement learning according to the results
+reinforcement learning (rl),deterministic mdps,"RL results focus on deterministic MDPs, setting the context for the study"
+deterministic mdps,stochastic environments,Plan to extend work from deterministic MDPs to stochastic environments in the future
+reinforcement learning (rl),mdp,"RL algorithm acts in a deterministic, tabular, episodic MDP with finite horizon"
+mdp,set of states s,MDP comprises a set of states S
+mdp,set of actions a,MDP comprises a set of actions A
+mdp,horizon t,MDP has a horizon T ∈ N
+mdp,discount factor γ,"MDP has an optional discount factor γ ∈ [0, 1]"
+mdp,start state s1,MDP has a start state s1
+set of states s,set of actions a,Set of states S related to set of actions A in an MDP
+set of states s,horizon t,Set of states S related to horizon T in an MDP
+set of states s,discount factor γ,Set of states S related to discount factor γ in an MDP
+set of states s,start state s1,Set of states S related to start state s1 in an MDP
+set of actions a,horizon t,Set of actions A related to horizon T in an MDP
+set of actions a,discount factor γ,Set of actions A related to discount factor γ in an MDP
+set of actions a,start state s1,Set of actions A related to start state s1 in an MDP
+q-function,policy,The Q-function Qπ is denoted for a policy in the context.
+q-function,action-sequence q-function,The Q-function is generalized to sequences of actions and defined as action-sequence Q-function ast in the context.
+q-function,value function,The Q-function is used to define the value function V πt in the context.
+q-function,objective,The objective of an RL algorithm is to find an optimal policy which maximizes the Q-function in the context.
+policy,policy π∗,The objective of an RL algorithm is to find an optimal policy π∗ in the context.
+policy,return,The expected discounted sum of rewards over an episode is known as the return of the policy in the context.
+rl algorithm,timesteps,An RL algorithm can be run for any number of timesteps n in the context.
+rl algorithm,sample complexity,The sample complexity N of an RL algorithm is defined as the minimum number of timesteps needed to return an optimal policy in the context.
+rl algorithm,empirical estimation,One can estimate the sample complexity N empirically by running an algorithm several times in the context.
+mdp,rl algorithm,There is an RL algorithm which can solve any deterministic MDP in the context.
+mdp,deterministic,"MDP is a concept mentioned in the context, while deterministic is a property of MDPs discussed"
+mdp,rl algorithm,"Both MDP and RL algorithm are concepts discussed in the context, with RL algorithm being able to solve deterministic MDPs"
+rl algorithm,sample complexity,RL algorithm can solve deterministic MDPs with sample complexity as mentioned in the context
+sequence of actions,reward,Specific sequence of actions leading to a reward is mentioned in the context
+rl algorithm,effective horizon,The concept of effective horizon is mentioned to motivate the idea of optimal policy in RL algorithms
+deterministic mdp,stochastic mdp,Comparison between deterministic and stochastic MDPs is discussed in the context
+stochastic mdp,neural-network based policies,Discussing the need for neural-network based policies in stochastic MDPs
+stochastic mdps,deterministic mdps,"Stochastic MDPs are discussed with a comparison to deterministic MDPs, emphasizing the properties and challenges associated with each type."
+deterministic mdps,worst case exponential sample complexity,"Deterministic MDPs are mentioned to have worst case exponential sample complexity when using naive exploration, highlighting a specific challenge associated with this type of MDP."
+dense rewards,sparse rewards,"Environments with dense rewards are stated to be easier to solve empirically than those with sparse rewards, indicating a contrast in the difficulty level based on reward density."
+tractable environments for deep rl,"horizons, state spaces, and action spaces","There exists a wide range in how tractable environments are for deep RL, even for environments with similar horizons, state spaces, and action spaces, emphasizing the variability in environment complexity."
+common rl benchmark environments,deterministic or nearly-deterministic,"Many common RL benchmark environments are either deterministic or nearly-deterministic, indicating a common property observed in benchmark settings."
+ale atari games,"dqn, rainbow, and muzero","The ALE Atari games used for evaluation are mentioned along with specific algorithms such as DQN, Rainbow, and MuZero, indicating the association between these games and algorithms in the evaluation process."
+deepmind control suite,mujoco simulator,"The widely used DeepMind Control Suite is based on the MuJoCo simulator, highlighting the relationship between these two components in the context of deep RL."
+minigrid environments,"exploration, environment design, and language understanding","MiniGrid environments, commonly used for evaluation, are associated with exploration, environment design, and language understanding, indicating the versatility of these environments in assessing different aspects of RL."
+deterministic environments,common deep rl practice,"Investigation of deterministic environments is deemed highly relevant to common deep RL practice, underlining the importance of studying such environments in the context of deep RL."
+theoretical rl,prior sample complexity bounds,"Existing work in theoretical RL and prior sample complexity bounds are briefly mentioned, suggesting a link between theoretical foundations and sample complexity considerations in RL."
+rl theoretical results,strategic exploration,RL theoretical results largely focus on strategic exploration using techniques like UCB exploration bonuses.
+strategic exploration,ucb exploration bonuses,Techniques like UCB exploration bonuses are used for strategic exploration.
+rl theoretical results,sample complexity,RL theoretical results suggest sample complexity bounds for RL in smaller or low-dimensional state spaces.
+sample complexity,ucb-based r-max algorithm,UCB-based R-MAX algorithm has sample complexity bounded by SAT.
+sample complexity,random exploration,Sample complexity bounds are given for random exploration in MDPs by different researchers.
+random exploration,liu and brunskill,Liu and Brunskill give bounds based on the covering length L of an MDP for random exploration.
+mdp,covering length l,The covering length L of an MDP is defined as the number of episodes needed to visit all state-action pairs.
+sample complexity,effective planning window,Effective planning window of W timesteps ahead must be considered for sample complexity bounds.
+effective planning window,myopic exploration gap,An effective planning window leads to the definition of a myopic exploration gap.
+myopic exploration gap,sample complexity,Myopic exploration gap controls the sample complexity of using ϵ-greedy exploration.
+rl theory-practice gap,bsuite,There have been attempts to bridge the RL theory-practice gap with projects like bsuite.
+rl theory-practice gap,mdp,There have been attempts to bridge the RL theory-practice gap with the use of MDPs.
+rl theory-practice gap,bsuite,"bsuite is a collection of environments that are designed to empirically evaluate deep RL algorithms, addressing the RL theory-practice gap."
+rl theory-practice gap,mdp playground,"MDP playground is a collection of environments that are designed to empirically evaluate deep RL algorithms, addressing the RL theory-practice gap."
+rl theory-practice gap,segar,"SEGAR is a collection of environments that are designed to empirically evaluate deep RL algorithms, addressing the RL theory-practice gap."
+environments,bsuite,bsuite is a collection of environments that are designed to empirically evaluate deep RL algorithms.
+environments,mdp playground,MDP playground is a collection of environments that are designed to empirically evaluate deep RL algorithms.
+environments,segar,SEGAR is a collection of environments that are designed to empirically evaluate deep RL algorithms.
+environments,real benchmark environments,real benchmark environments are the environments where the deep RL algorithms are experimented on.
+gorp algorithm,effective horizon,GORP algorithm and the effective horizon are inspired by rollout and Monte Carlo planning algorithms.
+rl,gorp,"RL (Reinforcement Learning) and GORP are related as GORP is a concept in reinforcement learning algorithms, specifically in the context of Monte Carlo rollout algorithms."
+rl,monte carlo rollout algorithms,"RL (Reinforcement Learning) and Monte Carlo rollout algorithms are related as both are algorithms used in reinforcement learning. Monte Carlo rollout algorithms are sometimes referred to as 'one-step' or 'multi-step' lookahead, which is a key concept in RL."
+one-step lookahead,multi-step lookahead,"One-step lookahead and multi-step lookahead are related terms used in the context of RL algorithms, specifically in the discussion of GORP and Monte Carlo rollout algorithms."
+one-step lookahead,value iteration,"One-step lookahead and value iteration are related as a few steps of value iteration often lead to fast convergence to optimal policies, which is equivalent to a step of Newton's method for finding a fixed-point of the Bellman equation."
+deep rl,grop,"Deep RL (Deep Reinforcement Learning) and GORP are related as the success of deep RL is attributed to similar properties found in GORP, which approximates a step of policy iteration in model-free RL."
+monte-carlo planning,theoretical contributions,"Monte-Carlo planning is related to theoretical contributions as in this context, the authors combine theoretical contributions with empirical analysis to verify assumptions in common environments."
+bridge dataset,mdps,The BRIDGE Dataset is related to MDPs (Markov Decision Processes) as the dataset is constructed for 155 popular deep RL benchmark environments with full tabular representations.
+section 3,dependent bounds,The term 'dependent bounds' is presented in Section 3.
+real environments,number of states,"In real environments, the number of states is often unknown and requires significant engineering effort to analyze."
+bridge,environments,"In BRIDGE, tabular representations are computed for all environments to analyze properties."
+bridge,mdps,BRIDGE focuses on Markov Decision Processes (MDPs) for analyzing environments.
+mdps,state space sizes,MDPs in BRIDGE have varying state space sizes ranging from tens to tens of millions.
+mdps,actions,Markov Decision Processes (MDPs) have 3 to 18 discrete actions.
+mdps,horizons t,MDPs have different horizons T ranging from 10 to 200.
+effective horizon,mdps in bridge,The effective horizon is introduced in the next section to describe a property found in many of the MDPs in BRIDGE.
+random policy πrand,dynamic programming,Dynamic programming can be used on a tabular MDP to calculate the random policy's Q-function Qπrand.
+q-function,policy,The Q-function is used by policies to make decisions in reinforcement learning.
+mdps,bridge dataset,The MDPs in the BRIDGE dataset are distributed according to specific criteria.
+ppo,optimal policy,PPO aims to converge to an optimal policy in a certain number of timesteps.
+environment,traversable for deep rl,Environments where policies behave optimally with respect to Q-function are more tractable for deep reinforcement learning.
+gorp,algorithm,GORP stands for Greedy Over Random Policy and is used to analyze the complexity of environments in model-free RL.
+gorp,algorithm 1,GORP is the algorithm described in Algorithm 1.
+gorp,policy,GORP constructs an optimal policy iteratively.
+algorithm 1,effective horizon,"Algorithm 1, GORP, is used to motivate the effective horizon."
+gorp,bridge,GORP can solve environments with properties observed in BRIDGE.
+gorp,exploration,"GORP explores randomly, like common deep RL algorithms."
+gorp,learning stages,GORP has cleanly separated exploration and learning stages.
+bridge,property,The surprising property found in BRIDGE is taken advantage of by GORP.
+gorp,mdps,GORP can solve Markov Decision Processes (MDPs).
+gorp,environments,GORP is extensible beyond environments satisfying the property we found in BRIDGE.
+gorp,mdps,GORP can solve MDPs where one may have to apply a few steps of value iteration to the random policy’s Q-function before acting randomly.
+mdps,q-function,A step of Q-value iteration transforms a Q-function Q to Q' = QVI(Q).
+q-function,qvi-solvable,An MDP is k-QVI-solvable for some k ∈ [T] if every policy in Π(Qk) is optimal.
+gorp,effective horizon,We now use GORP to define the effective horizon of an MDP.
+gorp,effective horizon,GORP is used to define the effective horizon of an MDP.
+total number of timesteps,gorp,The total number of timesteps sampled by GORP with parameters k and m is T 2Akm = T 2Ak+logA m.
+horizon t,exponent,The horizon T appears in the exponent of the worst-case sample complexity bound O(T AT ).
+effective horizon,exponent of a,The effective horizon is defined as the exponent of A in the sample complexity of GORP.
+hk,mk,"Let Hk = k + logA mk, where mk is the minimum value of m needed for Algorithm 1 with parameter k."
+effective horizon,sample complexity of gorp,The sample complexity of GORP can be given using the effective horizon.
+h,t,The effective horizon H is far better than the worst-case bound given in Theorem 2.1 which scales with AT when H ≪ T.
+effective horizon,generalized gap notion,We can bound the effective horizon using a generalized gap notion like those found throughout the RL theory literature.
+∆k∆kt (s),q-function,"∆k∆kt (s) = maxt the gap of the Q-function Qk from Definition 5.1, where a∈A Qkt (s, a′)."
+q-function,effective horizon,The following theorem gives bounds on the effective horizon in terms of the gap of the Q-function.
+mdp,k-qvi-solvable,MDP is k-QVI-solvable
+mdp,rewards,MDP is related to rewards
+rewards,sparse rewards,Sparse rewards have an effective horizon H of ˜O(T)
+rewards,dense rewards,Dense rewards have an effective horizon H of ˜O(1)
+rewards,delayed rewards,Delayed rewards have an effective horizon H of ˜O(1)
+atari game freeway,effective horizon h,"For the first 50 timesteps of Atari game Freeway, effective horizon H is bounded by 10.2, which is much lower than the horizon T = 50"
+optimal policy,set of states visited,The set of states visited by some optimal policy at timestep i
+optimal value function,optimal policy,The optimal value function is related to the optimal policy in determining the value of states
+q-values,optimal action,"In order to pick an optimal action, we must estimate the Q-values"
+gorp algorithm,theoretical analysis,The GORP algorithm is amenable to theoretical analysis as it reduces finding an optimal policy to estimating k-step Q-values
+grop algorithm,sample complexities,The GROP algorithm's sample complexities can be bounded with the effective horizon
+effective horizon,deep rl algorithms,"The effective horizon, defined in terms of the GORP algorithm, may explain the performance of deep RL algorithms like PPO and DQN"
+mdp,reward,"MDP has sparse rewards in case of (a), dense rewards in case of (b), and delayed rewards in case of (c)."
+mdp,qvi-solvable,"MDP (a) and MDP (b) are 1-QVI-solvable, and MDP (c) is similar but has delayed rewards."
+mdp,horizon,The effective horizon in cases (a) and (b) is shorter than the actual horizon.
+qvi-solvable,definition 5.1,MDPs in this context are 1-QVI-solvable as per Definition 5.1.
+qvi-solvable,theorem 5.4,The maximum in the bound is obtained at t=1 with the optimal action for 1-QVI-solvable MDPs.
+horizon,rl,"The effective horizon plays a role in finding the optimal policy via RL, making it easier in certain cases."
+mdp,epsiode,MDP (c) differs from MDP (b) by delaying rewards to the end of the episode.
+mdp,atari game freeway,"Atari game Freeway is a type of MDP, specifically mentioned in the context"
+mdp,bridge dataset,"MDP is included in the BRIDGE dataset, as mentioned in the context"
+mdp,ppo,"Both PPO and DQN are able to solve MDP mentioned in the context, with a sample complexity of less than 1.5 million timesteps"
+ppo,dqn,Both PPO and DQN are mentioned in relation to solving the MDP with a sample complexity of less than 1.5 million timesteps
+mdp,worst case bound,The worst case bound would suggest a sample complexity greater than 50 × 350/2 ≈ 1025 timesteps for the mentioned MDP
+mdp,effective horizon,"The low effective horizon reflects how the MDP is much easier than the worst case in practice, as mentioned in the context"
+effective horizon,sample complexity bounds,"The effective horizon gives better sample complexity bounds than previous works presented in Section 3, as mentioned in the context"
+mdp,state space size,"The effective horizon-based bounds show that the effective horizon can be much smaller than the state space size for the MDP, which is on the order of AT, as mentioned in the context"
+state space size,mdp,MDP (Markov Decision Process) refers to a mathematical framework used for modeling decision-making processes in an environment. The state space size is a key parameter in defining the complexity of the MDP.
+effective planning window (epw),effective horizon,"The effective planning window (EPW) and effective horizon are related concepts in MDPs. The EPW aims to capture the same intuition as the effective horizon, where W = 1 in one case and W = T in another case."
+rewards,planning window,Rewards beyond the planning window are ignored in the analysis based on the EPW. This limitation can affect the performance of RL algorithms.
+effective horizon-based bound,mdps,The effective horizon-based bound is compared between different MDPs (Markov Decision Processes) to show its ability to account for the rewards that are beyond the planning window.
+sample complexity bounds,deep rl algorithms,Sample complexity bounds based on the effective horizon can predict the empirical performance of deep RL (Reinforcement Learning) algorithms more accurately when compared to other bounds in the literature.
+bridge dataset,mdps,The BRIDGE dataset is used to run deep RL algorithms on each MDP (Markov Decision Process) to understand the empirical sample complexity and performance.
+ppo,dqn,"PPO (Proximal Policy Optimization) and DQN (Deep Q-Network) are two deep RL algorithms used to determine the optimal policy in MDPs. PPO converges in 95 of 155 MDPs, while DQN converges in 117 of 155."
+mdp,optimal policy,At least one of the two finds the optimal policy in 119 MDPs
+sample complexity bounds,mdp,We also compute sample complexity bounds for each MDP in BRIDGE
+bound,t at,These include the worst-case bound of T AT from Theorem 2.1
+bound,t 2ah,the effective-horizon-based bound of T 2AH from Lemma 5.3
+bound,ucb-based bound sat,"three other bounds from the literature, introduced in Section 3 and proved in Appendix D: the UCB-based bound SAT"
+bound,cover length-based bound t l,the covering-length-based bound T L
+bound,effective planning window (epw)-based bound t 2aw,the effective planning window (EPW)-based bound of T 2AW
+metrics,sample complexity bounds,we compute a few summary metrics for each bound
+spearman (rank) correlation,sample complexity bounds,measure the Spearman (rank) correlation between the sample complexity bounds and the empirical sample complexity over environments where the algorithm converged to the optimal policy
+median ratio,sample complexity bound,we compute the median ratio between the sample complexity bound and the empirical sample complexity for environments where the algorithm converged
+empirical sample complexity,sample complexity bounds,"The empirical sample complexity is related to the sample complexity bounds, which determine whether the bounds are vacuous or tight"
+binary classification task,algorithm convergence,The binary classification task is related to predicting whether the algorithm will converge within a specific number of steps
+sample complexity bounds,binary classification task,The sample complexity bounds are used in the binary classification task to predict algorithm convergence within a certain number of steps
+area under the roc curve (auroc),accuracy,Higher AUROC and accuracy both indicate a better bound
+effective horizon-based bounds,empirical sample complexity,Effective horizon-based bounds have a higher correlation with the empirical sample complexity than other bounds for PPO and DQN
+epw-based bounds,empirical sample complexity,EPW-based bounds are reasonably correlated with empirical sample complexity but significantly off in absolute terms compared to effective horizon-based bounds
+epw-based bounds,effective horizon-based bounds,The EPW-based bounds are significantly off compared to the effective horizon-based bounds
+deep rl algorithm,effective horizon-based bounds,Effective horizon-based sample complexity bounds are the most predictive of the real performance for deep RL algorithms like PPO and DQN
+effective horizon,sample complexity,Effective horizon-based sample complexity bounds are the most predictive of the real performance of PPO and DQN according to the four metrics we describe in Section 6.
+effective horizon,ppo,Effective horizon bounds are about as good at predicting the sample complexity of PPO and DQN as one algorithm’s sample complexity is at predicting the other’s.
+effective horizon,dqn,Effective horizon bounds are about as good at predicting the sample complexity of PPO and DQN as one algorithm’s sample complexity is at predicting the other’s.
+effective horizon,reward shaping,The effective horizon explains the effects of reward shaping and initializing with a pretrained policy by accurately predicting their effects on the empirical sample complexity of PPO and DQN.
+effective horizon,policy trained on human data,The effective horizon explains the effects of reward shaping and initializing with a pretrained policy by accurately predicting their effects on the empirical sample complexity of PPO and DQN.
+effective horizon,empirical sample complexity,The effective horizon explains the effects of reward shaping and initializing with a pretrained policy by accurately predicting their effects on the empirical sample complexity of PPO and DQN.
+effective horizon,auroc,"The effective horizon bounds are able to more accurately predict whether PPO or DQN will find an optimal policy, as evidenced by the AUROC and accuracy metrics."
+effective horizon,accuracy metrics,"The effective horizon bounds are able to more accurately predict whether PPO or DQN will find an optimal policy, as evidenced by the AUROC and accuracy metrics."
+sample complexity of ppo,sample complexity of dqn,The four evaluation metrics are calculated for the sample complexity of PPO and DQN. The effective horizon-based bounds correlate similarly with both PPO and DQN's sample complexities.
+sample complexity of ppo,gorp,The empirical performance of GORP is typically closer to that of PPO than the effective horizon-based bounds.
+sample complexity of dqn,gorp,The empirical performance of GORP is typically closer to that of DQN than the effective horizon-based bounds.
+rl theory,practitioners,RL theory should help practitioners make decisions about techniques to improve algorithms’ performance.
+rl theory,effective horizon,"The effective horizon can be used to explain the effect of reward shaping, using human data, and transfer learning techniques in RL."
+potential-based reward shaping,sparse-reward mdp,Potential-based reward shaping can transform a sparse-reward MDP into a dense-reward MDP without changing the optimal policy.
+effective horizon,difficulty of rl,"If the effective horizon is a good measure of the difficulty of RL in an environment, it should be able to predict certain outcomes."
+rl,difficulty,RL difficulty is a key measure in predicting sample complexity
+rl,environment,RL is applied in an environment to predict sample complexity
+rl,reward shaping,RL performance is affected by reward shaping
+sample complexity,practical algorithms,The sample complexity of practical algorithms changes with reward shaping
+minigrid environments,ppo,PPO algorithm is run on reward-shaped Minigrid environments
+minigrid environments,dqn,DQN algorithm is run on reward-shaped Minigrid environments
+effective horizon,sample complexity,Effective horizon accurately captures the change in sample complexity from reward shaping
+sample complexity,reward shaping,Sample complexity is affected by reward shaping
+bounds,reward function,Three out of five bounds don’t depend on the reward function
+epw,reward function,EPW depends on the reward function
+epw,dqn,EPW captures some effect of reward shaping on DQN
+effective horizon,rl performance,Effective horizon accurately captures how reward shaping affects RL performance
+ppo,dqn,Learning curves are provided for PPO and DQN on full-horizon Atari games
+ppo,gorp,Learning curves are provided for PPO and GORP on full-horizon Atari games
+atari games,algorithms,Algorithms are trained on full-horizon Atari games
+algorithms,rl,Algorithms mentioned in the context play a crucial role in reinforcement learning (RL) tasks
+rl,pre-trained policy,RL tasks can be expedited by initializing them with a pre-trained policy
+rl,sample complexity,"RL performance is evaluated based on sample complexity, influenced by pre-trained policies"
+sample complexity,pre-trained policy,The sample complexity bounds are calculated based on using pre-trained policies as exploration policies
+effective horizon,sample complexity,Effective horizon accurately predicts changes in sample complexities when using pre-trained policies
+long-horizon environments,atari games,Long-horizon environments are evaluated using full-length Atari games
+atari games,"ppo, dqn, and gorp","Empirical performance of PPO, DQN, and GORP is compared in the context of Atari games"
+ppo,dqn,PPO and DQN are compared in terms of performance with GORP. The comparison shows that GORP performs close to PPO and DQN in certain scenarios.
+gorp,effective horizon,The effective horizon is defined in terms of GORP and is suggested to explain the reinforcement learning performance in certain environments.
+gorp,rl performance,GORP's performance compared to other algorithms like PPO and DQN suggests that the effective horizon is predictive of reinforcement learning performance in long-horizon environments.
+ppo,atari games,"Learning curves of PPO, DQN, and GORP are compared in deterministic versions of Atari games. GORP performs better than PPO and DQN in certain games."
+dqn,atari games,"Learning curves of PPO, DQN, and GORP are compared in deterministic versions of Atari games. GORP performs better than at least one deep RL algorithm in certain games."
+gorp,atari games,"Learning curves of PPO, DQN, and GORP are compared in deterministic versions of Atari games. GORP performs better than PPO and DQN in two games."
+effective horizon,rl performance,The effective horizon is suggested to be a key measure of the difficulty of solving an MDP via reinforcement learning. It is important for better understanding of RL performance.
+effective horizon,importance for understanding rl,Both theoretical intuition and empirical evidence support the importance of effective horizon in better understanding reinforcement learning.
+effective horizon,limitations,"Despite the importance of effective horizon, there are limitations to its analysis. Calculating the effective horizon without full access to the MDP's tabular representation is challenging."
+mdps,discrete action spaces,The analysis focuses on deterministic MDPs with discrete action spaces. The extension to stochastic environments and continuous action spaces is considered an open question.
+mdp,tabular representation,"MDP is mentioned without full access to its tabular representation, indicating a dependence or relationship between the two concepts"
+rl,effective horizon,"The effective horizon is mentioned in the context of understanding RL's effectiveness and improvement areas, indicating a relationship between RL and the effective horizon"
+effective horizon,generalization,"The effective horizon is mentioned as not capturing the performance effects of generalization, indicating a relationship between the two concepts"
+rl,bridge dataset,"The context mentions the BRIDGE dataset as a tool for grounding investigations related to RL, indicating a relationship between RL and the BRIDGE dataset"
+empirical rl researchers,effective horizon,"The effective horizon is mentioned as a foundation for new algorithms that empirical RL researchers can use, indicating a relationship between empirical RL researchers and the effective horizon"
+cassidy laidlaw,open philanthropy ai fellowship,Cassidy Laidlaw is supported by an Open Philanthropy AI Fellowship
+cassidy laidlaw,national defense science and engineering graduate (ndseg) fellowship,Cassidy Laidlaw is supported by a National Defense Science and Engineering Graduate (NDSEG) Fellowship
+stuart russell,ai 2050 senior fellowship,Stuart Russell is supported by an AI 2050 Senior Fellowship from Schmidt Futures

@@ -1,0 +1,236 @@
+node_1,node_2,edge
+abstractcoordinate-based networks,mlps,MLPs are a form of AbstractCoordinate-based networks used for predicting high-frequency signals.
+high-frequency signals,low-dimensional signals,Both refer to types of signals that coordinate-based networks aim to predict.
+hybrid representations,coordinate-based network,Hybrid representations combine a coordinate-based network with a grid-based representation for scaling.
+grid-based representation,sparse voxels,Sparse voxels are an example of a grid-based representation used in hybrid models.
+levels-of-experts (loe) framework,novel coordinate-based representation,The LoE framework introduces a novel coordinate-based representation to overcome limitations of existing methods.
+mlp,linear layer,An MLP consists of linear layers
+position-dependent weights,hierarchical arrangement,Position-dependent weights in the LoE framework are organized hierarchically.
+candidate values of weight matrix,input space,Candidate weight matrices are tiled and replicated across the input space based on input.
+generative modeling,signal fitting,Both signal fitting and generative modeling are tasks where the new representation is applicable.
+novel view synthesis,tasks,Novel view synthesis is another task that the proposed representation can efficiently handle.
+fully-connected neural networks,coordinate-based multilayer perceptron (mlp),MLP is a type of fully-connected neural network used for coordinate-based tasks.
+coordinate positions,data value prediction,MLPs take coordinate positions as input to predict data values at specific locations.
+implicit neural representation (inr),point clouds,INR is memory efficient compared to explicit representations like point clouds and voxel grids.
+inr,voxel grids,INR is memory efficient compared to explicit representations like point clouds and voxel grids.
+inr,conditional synthesis tasks,INRs can model signal distributions for conditional synthesis tasks.
+increased width,increased depth,Both increasing width and depth of MLPs increase model capacity but also computation needs.
+representation power gain,width or depth increase,The representation power gain diminishes quickly with increased width or depth
+hybrid representation,scaling problem,Hybrid representations address the scaling problem in INRs by combining discrete data structures.
+sparse voxels,discrete data structure,Sparse voxels are an example of a discrete data structure used in hybrid representations.
+discrete data structure,sparse voxels,sparse voxels is an example of a discrete data structure used for decomposing space
+grid embedding,local detail,a lightweight MLP conditioned on the grid embedding generates local detail
+grid embeddings,smooth interpolation,methods rely on smooth interpolation of grid embeddings for continuity
+levels-of-experts (loe),position-dependent mlp,LoE framework uses a position-dependent MLP with 1D input
+weight matrices,hierarchical tiling patterns,LoE allows for hierarchical tiling patterns with multiple copies of weight matrices
+input location,selected weight copy,the input location determines which weight copy is selected for each layer
+grid boundaries,output-domain tiling and blending,output-domain tiling and blending is used to encourage continuity across grid boundaries
+neurips 2022,36th conference on neural information processing systems,NeurIPS 2022 refers to the 36th Conference on Neural Information Processing Systems
+computation efficiency,negative impact,The first issue mentioned can negatively affect computation efficiency.
+distributed features,grid,Features are stored in a grid and are associated with fixed locations.
+global,compact latent representation,grid embedding
+hybrid representation,mlp (multi-layer perceptron),The approach extends the idea of hybrid representation by storing MLP weights on a grid.
+tiled grid,weights of mlp,Weights of MLP are arranged in a tiling pattern on a multi-resolution grid.
+levels-of-experts (loe),position-dependent weights,LoE is a framework where MLP weights are position-dependent.
+experts,weight matrices,Each layer in LoE has experts with their own weight matrices.
+fourier features,grid resolutions,Different grid resolutions for each layer are inspired by Fourier features.
+combined parameterization,learnable,The weight arrangement allows for a learnable combined parameterization.
+layer,weight,Each layer has a repeating weight but the combined parameterization avoids repetition.
+combined model,input range of interest,The combined model's parameterization is tailored to the input range of interest.
+position-dependent weight,positional encoding,Position-dependent weight can function as a form of positional encoding.
+mlps,output discontinuities,Dividing space with different MLPs can cause output discontinuities.
+layer-level tiling approach,computationally expensive smooth interpolation or blending,Layer-level tiling reduces discontinuities without interpolation or blending.
+our approach,generalizeable mapping,Our approach encourages learning of generalizeable mappings.
+parameter efficiency,generative modeling tasks,Improved parameter efficiency benefits generative modeling tasks.
+computational cost,regular mlp,The model has a similar computational cost to a regular MLP.
+position-dependent weights,single copy of weights,Only one copy of weights is active despite using position-dependent weights.
+position-dependent weights,single copy of weights,active at each input
+fused gather-gemm-2scatter operator,implementation,efficiency in practice
+our method,drop-in replacement,no further modifications needed
+hybrid implicit neural representation,hierarchy of position-dependent and periodic weights,parameterized by
+periodicity,hierarchy of weights,design decisions studied
+weight interpolation methods,input encodings,design decisions studied
+architecture,efficiency,representation power demonstrated
+architecture,representation power,demonstrated on challenging tasks
+inrs,coordinate-based neural network,equivalent representation
+inrs,images,shapes
+images,representation,images are being represented
+shapes,representation,shapes are also represented
+scenes,representation,scenes are mentioned in the context of representation
+mlps,relu activations,earlier INRs were based on MLPs with ReLU activations
+high-frequency detail,representation,earlier models often failed to represent high-frequency detail
+recent works,addressed issues,recent advancements have addressed the issue of high-frequency detail representation
+input encoding designs,recent works,improved by leveraging better input encoding designs
+activation functions,recent works,activation functions are one aspect improved in recent approaches
+network architectures,recent works,new network architectures contribute to addressing the issue
+position dependent mlp architecture,approach,this is an orthogonal approach to existing ones
+hybrid representations,computation efficiency,hybrid approach improves computation and memory efficiency
+hybrid representations,memory efficiency,hybrid approach improves memory efficiency
+local parameterization,hybrid approach,hybrid approach involves local parameterization
+discrete structure representations,local parameterization,various discrete structures are used for local parameterization
+neural networks,predicting parameterization,another neural network can predict the parameterization for generalization
+hybrid approach,local feature,The hybrid approach involves obtaining a local feature with a discrete structure and coordinate.
+local feature,pointwise mlp,The local feature is inputted to the pointwise MLP to derive the data value.
+hybrid representation,smooth transitioning,The hybrid representation needs special designs to ensure smooth transitioning across subdivision boundaries.
+grid feature,mlp,Grid features are interpolated smoothly before being handed off to the MLP.
+mlp,sample,An MLP evaluation is performed per sample in this process.
+high-dimensional features,cost of interpolation,The cost of interpolation can be high for high-dimensional features on high-dimensional grids.
+approaches [4,19,28
+approaches [4,19,28
+hybrid representations [41],speedup,Some hybrid representations achieve considerable speedup without smooth interpolation.
+approach [41],larger,pretrained network
+our approach,computation and memory efficiency,Our approach is efficient in computation and memory without boundary interpolation issues.
+our method,multi-level tiled grid,Our method uses a multi-level tiled grid to parameterize the weights of the pointwise MLP.
+hybrid representation,multi-level tiled grid,uses a multi-level tiled grid to parameterize weights of the pointwise MLP
+reiser et al.,coordinate-dependent network weights,shares the idea of coordinate-dependent weights but learns disjoint networks
+our work,hierarchical and periodical structure,employs a hierarchical and periodical structure for smooth and expressive representation
+neural networks,data-dependent weights,used for 3D animation and solving differential equations
+coordinate-based multi-layer perceptron (mlp),stack of layers,typical MLP consists of stacked layers with input coordinate evaluation
+γ,input mapping,like sine-cosine positional encoding
+ϕ,non-linear activation function,applied in each layer after the input transformation
+gi,linear layer,performs affine transformation with weight matrix Wi and bias vector bi
+wi,bias vector bi,together parameterize the linear transformation in MLP layers
+wi and bi,gradient optimization,optimized during training via gradient descent
+weight matrix,wi,Wi is an abbreviation for the weight matrix.
+bias vector,bi,bi refers to the bias vector in the training process.
+gradient descent,optimization,Gradient descent is the method used to optimize Wi and bi.
+levels-of-experts (loe),dynamic-weight linear layer,LoE approach involves modeling Wi as a dynamic-weight linear layer.
+function,ψippq,ψippq is the function modeling the weight matrix depending on the input coordinate p.
+mlp,gi,gi represents the traditional linear layers in the Multilayer Perceptron (MLP).
+dynamic-weight layers,hi,hi replaces gi in the MLP to create input-dependent weights.
+position-dependent weight matrix,γqppq,γqppq is another term for the input-dependent weight matrix.
+weight generation functions,ψippq,ψippq generates weights expressively and efficiently for the position-dependent matrix.
+coordinate interpolation-based method,weight prediction,A coordinate interpolation-based method is used instead of complex weight prediction networks.
+grid,n matrices twi,The grid contains N matrices
+grid,matrices,contains N matrices
+n,layer depth,represents the layer depth
+n,nonnegative integer,is a nonnegative integer
+n,pointwise mlp formulation,reduces to when N equals 1
+wi,layer i,refers to the input-dependent weight for layer i
+p,1d coordinate,represents a 1D coordinate
+wi,ψippq,computed as a function of p
+hyperparameters,αi,βi
+bj,n,blending coefficient
+blinearj,n,linear interpolation
+bnearestj,n,nearest interpolation
+mod,positive remainder operation,denotes the positive remainder operation
+dynamic-weight linear layer computation,batched inputs,performed efficiently for each candidate weight matrix
+candidate weight matrix,input vectors,The candidate weight matrix is multiplied with input vectors that have non-zero values.
+matrix multiplication,scaling,Matrix multiplication is followed by scaling in the process.
+output matrix,scatter the results,The results of the multiplication and scaling are scattered to the output matrix.
+different layers,spatial frequencies,Each layer of the MLP has distinct spatial frequencies on the grid.
+inductive bias,mlp,Using different frequencies at different layers gives an inductive bias to the MLP to capture repetition patterns.
+weight sharing,regularization,Weight sharing at different locations acts as a form of regularization for smooth mapping learning.
+grid arrangements,potential configurations,Grid arrangements correspond to sets of parameters and can be non-exhaustive
+randomized tiling pattern,random affine transformation,A randomized tiling pattern can be created by applying a random affine transformation
+progressively growing fashion,grid arrangement,Grids are arranged progressively
+loe,experiments,LoE is validated through experiments.
+grid arrangements,supplementary material,A comparison of grid arrangements is in the supplementary material.
+experiments,high-resolution image,Experiments involve fitting the model to a high-resolution image.
+high-resolution image,8192ˆ8192 pixels,The high-resolution image has a size of 8192ˆ8192 pixels.
+model,input space,The model partitions the input space into grids.
+weight matrices,grids,Each grid has a unique combination of weight matrices.
+novel-view synthesis task,indirectly supervised,The model is evaluated on an indirectly supervised novel-view synthesis task.
+generative adversarial network (gan),generalization capability,The GAN demonstrates the model's generalization capability.
+model,loss,The model is fitted to data by minimizing the L2 loss.
+table 1,baseline methods,Table 1 compares the main method with baseline methods and ablations.
+our model,baseline methods,Our model significantly outperforms baseline methods without position-dependent weights.
+mlp with sine-cosine positional encoding (pe),our model,MLP with PE performs 12dB worse than our model despite similar architecture and cost.
+input coordinate embedding (ce) model,our model,Input CE model has lower fitting quality and higher computational cost compared to ours.
+hierarchical and periodic tiling pattern,our method's effectiveness,The hierarchical and periodic tiling pattern contributes to the effectiveness of our method.
+interleaved model,pe mlp baseline,Interleaved model shows slight improvement over the PE MLP baseline.
+chunked experiment,independent mlps,In the chunked experiment
+mlps,chunks,MLPs are used to handle individual chunks.
+chunk boundaries,continuity issues,Chunk boundaries are associated with visibility of continuity issues in the fitted image.
+our method,best performance,Our method achieves the highest level of performance.
+tiled weights,efficiency,Tiled weights allow for a more efficient data representation.
+periodicity,frequencies,Periodicity is exploited at a wide range of frequencies.
+piecewise constant weight parameterization,bilinear interpolation of weights,The piecewise constant weight parameterization is compared to the smooth variant implemented by bilinear interpolation.
+smooth variant,computational cost,The smooth variant has 4 times the computational cost.
+fitting quality,piecewise constant version,The fitting quality of the piecewise constant version is slightly better with less computational expense.
+input position encoding,tiled weight model,The tiled weight model works well even without input position encoding.
+constant input (no pe) experiment,coordinate encoding,In this experiment
+table 1,positional encoding,Table 1 compares models with and without positional encoding.
+positional encoding,coordinate encoding,Coordinate encoding is a form of positional encoding.
+input space,unique intervals,The input space can have a large number of unique intervals.
+discontinuous weights,low and uniformly distributed error,Discontinuous weights result in low and uniformly distributed error.
+bilinear interpolation,more expensive version,Bilinear interpolation of weights is a more expensive method.
+ensemble of networks,high error variation,discontinuities
+model size,comparable to acorn,The model size of the proposed method is compared to ACORN's size.
+coordinate embedding (ce) baseline,grid resolutions,The CE baseline is evaluated with multiple grid resolutions.
+psnr (db),ssim,Both PSNR and SSIM are metrics for fitting quality assessment.
+periodic multi-,random affine,These are different methods for positional encoding in coordinate-based networks.
+constant input (no pe),ours (bilinear),Constant input refers to a model without positional encoding
+mfn,periodical weights,MFN is an example where periodical weights are used in a coordinate-based network.
+bacon,periodical weights,BACON is another example where periodical weights are utilized in a network.
+video,3d coordinate,Each pixel in the video is associated with a 3D coordinate.
+pe mlp,fixed-weight models,PE MLP is an example of a fixed-weight model.
+siren,fixed-weight models,SIREN is also a fixed-weight model.
+our model,increased input dimensions,The capacity of our model grows with increased input dimensions.
+higher-dimensional problems,higher dimensional weight tiles,For higher-dimensional problems
+siren-l experiment,quadrupling the hidden channel count,In the SIREN-L experiment
+coordinate mlps,diminishing return phenomenon,The SIREN-L experiment confirms the diminishing return phenomenon associated with coordinate MLPs.
+coordinate-based network,weights,The context discusses the use of weights in a coordinate-based network.
+siren,extra computation,Using SIREN in a fully implicit model would require greatly increased computation.
+embedding-based hybrid representations,coordinate embedding,Coordinate embedding is an example of an embedding-based hybrid representation.
+mlps,embedding-based hybrid representations,MLPs are compared to embedding-based hybrid representations
+coordinate embedding (ce),dense 643 × 64 grid,CE includes a dense grid for position-dependent features storage
+trilinear interpolation,coordinate embedding (ce),CE uses trilinear interpolation for feature extraction
+our approach,coordinate embedding (ce),Our approach outperforms CE in terms of performance
+table 2,model size,computation
+siren-l,hidden channels,SIREN-L has 1024 hidden channels
+psnr (db),video fitting results,PSNR is used to measure the quality of video fitting results
+loe model,high-resolution signals,LoE model shows improved fitting quality for high-resolution signals
+novel view synthesis,indirect supervision,LoE model is evaluated for its performance in an under-constrained
+neural radiance fields (nerf),volumetric 3d representation,NeRF is a type of volumetric 3D representation used for novel view synthesis
+network,color c and opacity σ,The network models color and opacity for each 3D location and view direction
+ray,image pixels,Each pixel in an image is associated with a ray for color determination
+neural network,color,The neural network is queried at points to obtain color information.
+neural network,opacity,The neural network also provides opacity values (σi).
+volumetric rendering,numerical integration,Volumetric rendering is performed via numerical integration.
+rendered colors,ground truth pixel values,Training minimizes the photometric loss between rendered colors and ground truth pixels.
+tanks and temples dataset,training images,The dataset contains 133 training images used for comparison.
+pe mlp baseline,hierarchical,position-dependent weights
+free space artifacts,independent mlps,Independent MLPs for each grid location can cause free space artifacts.
+our model,position-dependent weights,Our model doesn't have free space artifacts despite having position-dependent weights.
+ablated model,hierarchical arrangement,An ablated model without hierarchical weight grids had more parameters but suffered from issues.
+ablated model,baseline pe mlp,compared in performance
+hierarchically tiled weights,good inductive bias,important for providing
+loe model,image generation task,demonstrates generalization capability on
+coordinate-based models,generators,used as for GANs
+f pp,zq,input coordinate
+gpzq,full image,generates from a fixed z and queried at every pixel location
+noise vector,z,fixed distribution
+discriminator network,d,training signal
+hinge loss,gan objective,used as
+our model,baseline model,produces sharper details while having the same computational cost
+novel view synthesis,quality,novel view synthesis quality is compared in the context
+family scene,comparison,comparison is done on the Family scene
+psnr,db,PSNR is represented in decibels (dB)
+pe mlp,315kmacs,PE MLP has a computational cost of 315KMACs
+ablated model,free-space artifacts,the ablated model exhibits free-space artifacts
+hierarchical weight tiling,model architecture,models differ in the use of hierarchical weight tiling in their architecture
+ffhq dataset,image generation,FFHQ dataset is used for image generation
+generator,residual connections,the generator includes residual connections
+discriminator,multi-resolution patch discriminator,the discriminator employs a multi-resolution patch discriminator
+spectral normalization,discriminator,spectral normalization is used in the discriminator
+loe model,baseline method,LoE model is compared with a baseline method
+coordinate embedding,resolution,coordinate embedding has a resolution of 256 ˆ 256
+loe model,levels-of-experts,LoE is an abbreviation for Levels-of-Experts
+ffhq dataset,image generation quality,FFHQ dataset is used for evaluating the image generation quality
+fid,fréchet inception distance,FID is an acronym for Fréchet inception distance
+pe + ce method,fixed noise pattern artifacts,The PE + CE method generates images with fixed noise pattern artifacts
+our method,loe model,Our method refers to the Levels-of-Experts (LoE) model
+model capacity,comparably low computational footprint,The LoE model offers greater model capacity while maintaining a low computational cost.
+grid-based hybrid representations,loe model,The LoE model is compared to previous grid-based hybrid representations in terms of parameter efficiency and generalization.
+nearest-interpolation variant,discontinuity,The nearest-interpolation variant of the LoE model has undefined derivatives and suffers from discontinuity issues.
+smooth interpolation variants,siren,SIREN has smooth
+siren,solving differential equations,SIREN is more suitable for solving differential equations due to its smooth derivatives.
+our method,prior knowledge of the underlying signal,Our method requires prior knowledge to choose suitable grid scales.
+implicit neural representations (inrs),activation functions,Both are aspects of improving INRs
+input encoding,inrs,Input encoding is another way to enhance INRs.
+hypernetworks,inrs,Hypernetworks can be used in conjunction with INRs for extension or improvement.
+pre- or post-processing cnns,inrs,CNNs can be combined with INRs for preprocessing or postprocessing tasks.
+our method,higher fidelity data synthesis,Our method enables higher fidelity data synthesis and representation.
+data,image,video
+our method,deepfakes,Our method

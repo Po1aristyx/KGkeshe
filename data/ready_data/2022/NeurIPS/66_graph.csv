@@ -1,0 +1,216 @@
+node_1,node_2,edge
+deep reinforcement learning (drl),evaluation,"DRL methods are evaluated to measure their performance, effectiveness, and applicability."
+designing task-specific methods,real-world applications,Task-specific methods are increasingly important for applications in real-world scenarios.
+markov decision processes (mdps),task representation,MDPs are used to represent tasks in standard evaluation practices.
+mdp instances,variations in tasks,Different tasks may have variations leading to a large family of MDPs.
+mdp family,evaluation method,Evaluating DRL methods on an MDP family provides a different ranking compared to select MDP instances.
+overfitting,evaluation bias,Select MDP instances may cause overfitting and bias in evaluating DRL methods.
+state-of-the-art methods,method evaluation,Evaluating on an MDP family challenges the notion of state-of-the-art methods.
+empirical rigor,reinforcement learning,Ensuring empirical rigor in reinforcement learning is highlighted as a challenge in the context.
+empirical rigor,reinforcement learning,"Empirical rigor is a key challenge in reinforcement learning research, especially as the outcomes of deep reinforcement learning impact decision-making."
+reinforcement learning,deep reinforcement learning,"Deep reinforcement learning research has achieved super-human level performance in many applications, emphasizing the need for rigorous experimental design."
+rigorous experimental design,drl research,"Rigorous experimental design is crucial for conducting evaluations in deep reinforcement learning research, as the lack of it could lead to misleading conclusions."
+drl research,method success,Research in deep reinforcement learning is focused on understanding what factors contribute to the success of a method and what makes the results reproducible.
+method reproducibility,empirical rigor,"Ensuring method reproducibility is essential for maintaining empirical rigor in research, allowing the community to assess the field's current state confidently."
+control tasks,real world complexities,"Control tasks in the real world face complexities, including multiple instances of the same task, which adds challenges to developing control strategies."
+traffic signal control task,drl method,"In the context of a traffic signal control task, applying a DRL method requires reliable methods to claim successful task resolution."
+signal control strategy,intersection,Signal control strategy is designed for an intersection
+drl method,trafﬁc signal control problem,DRL method is proposed to solve the trafﬁc signal control problem
+proposed method,signalized intersection instances,The proposed method needs to work for a considerable majority of the signalized intersection instances
+evaluating on a family of instances,emerging requirement,Evaluating on a family of instances is an emerging requirement in general
+evaluating algorithmic generalization of drl methods within a task,requirement,Evaluating algorithmic generalization of DRL methods within a task is a requirement
+studies,algorithmic generalization of drl methods within a task,Many studies evaluate algorithmic generalization of DRL methods within a task
+default mdp,mdp family,Default MDP and MDP Family are related as one is a single MDP representation while the other is a family of MDPs specified using environment parameters for traffic signal control.
+traff signal control task,single mdp,The traffic signal control task is typically represented as a single MDP as shown in Figure 1a.
+traffic signal control task,family of mdps,"The traffic signal control task is underspecified and could easily be represented by a family of MDPs specified using environment parameters such as number of lanes, turn configurations, and traffic inflow levels as shown in Figure 1b."
+point mdp,subset of mdps,Standard evaluation practice involves training and evaluating DRL methods on a point MDP or a subset of MDPs chosen from an implicit family of MDPs for assessing algorithmic generalization within traffic signal control task.
+point mdp-based evaluations,drl method performance,"Evaluation approaches using point MDP-based evaluations can lead to arbitrary selection of point MDPs for evaluation which can simplify the task, impacting the performance of DRL methods sensitive to underlying MDP."
+drl methods,implicit mdp family,"DRL methods may show substantial error in performance when applied to the implicit MDP family of a task, leading to harm in empirical rigor"
+task underspeciﬁcation problem,drl evaluations,The task underspeciﬁcation problem affects the empirical rigor in DRL evaluations
+point mdp,drl methods,"When a point MDP is used to evaluate DRL methods within a task, it may not have enough statistical power to draw conclusions about the corresponding MDP family, impacting the evaluation"
+real-world applications,rl,Emerging problems in real-world RL applications motivate the study on the evaluation of DRL methods using appropriately parameterized families of MDPs
+mdp family,drl methods,"Evaluating the MDP family instead of the point MDP can lead to a substantially different relative ranking of methods, potentially causing researchers to draw incorrect conclusions about method performance"
+drl methods,trafﬁc signal control,DRL methods that were reported to outperform traditional trafﬁc signal control methods may actually underperform when evaluated with a family of MDPs
+trafﬁc signal control methods,mdps,MDPs underperform when used for evaluation compared to traditional traffic signal control methods.
+mdps,mdp instances,The number of MDP instances included in the suite is determined by the domain in real-world applications.
+point mdps,partially observable mdps,Point MDP concept refers to all variants of MDP including partially observable MDPs.
+mdp instances,mdp family,"Sampling from the MDP family is used to evaluate DRL methods, presenting computational and reporting challenges."
+drl methods,mdp family,Evaluating DRL methods by sampling from the MDP family is a nontrivial problem due to the sensitivity of today’s DRL methods.
+drl practices,algorithmic generalization,The work does not address the evaluations of algorithmic generalization across task families within the context of standard DRL practices.
+drl practices,policy generalization,The work does not address the evaluations of policy generalization within a task family in the context of standard DRL practices.
+drl evaluations,task suites,DRL evaluations are conducted using task suites to evaluate policy generalization within a task family
+drl evaluations,algorithmic generalization,evaluation in DRL involves algorithmic generalization of DRL methods within a task
+drl evaluations,point mdp-based evaluation,illustration of shortcomings of point MDP-based evaluation through an experiment derived from popular DRL benchmarks
+task suites,policy generalization,evaluation using task suites involves assessing policy generalization within a task family
+policy generalization,multi-task learning,policy generalization can be related to multi-task learning as a parallel line of research
+multi-task learning,robotics,multi-task learning finds application in robotics for achieving better performance across multiple MDPs
+point mdp-based evaluation,experiment,point MDP-based evaluation is illustrated through an experiment derived from popular DRL benchmarks
+experiment,popular control tasks,"experiment involves popular control tasks such as Pendulum, Quad, and Swimmer for evaluation"
+popular control tasks,drl algorithms,"popular control tasks are used to evaluate different DRL algorithms like PPO, TRPO, and TD3"
+trpo,evaluation,TRPO is used for evaluation on the tasks.
+td3,evaluation,TD3 is used for evaluation on the tasks.
+trpo,td3,TRPO and TD3 are used for evaluation on the tasks.
+modiﬁed point mdp,under-actuated,A modified point MDP is not under-actuated.
+modiﬁed point mdp,actuator limits,"Given actuator limits, all modified point MDPs are solvable."
+2d quadcopter,obstacle course,2D quadcopter maneuver through an obstacle course using vertical acceleration as the control action.
+2d quadcopter,mdps,MDPs with varying obstacle course lengths.
+pendulum,swing,Goal is to swing the pendulum upright.
+pendulum,mdps,MDPs with varying masses and lengths of the pendulum.
+mujoco 3-link swimming robot,viscous fluid,Swimming robot in a viscous fluid environment.
+mujoco 3-link swimming robot,mdps,MDPs with varying capsule sizes for the segments of the robot swimmer.
+point mdps,misleading,Reporting evaluations based on point MDPs can be misleading.
+criteria,point mdps,Three criteria commonly used for selecting point MDPs for evaluations.
+cancer progression model,chemotherapy designing agent,The generic cancer progression model is used for training a chemotherapy designing agent.
+mdp,simplified mdp,A simplified MDP is an MDP that simplifies the modeling.
+mdp,drl methods,The DRL methods are evaluated on each point MDP.
+mdp,random mdps,All child MDPs are considered possible random MDPs for a given MDP family.
+quad,pendulum,Performance comparison of point MDP-based evaluations of the three control tasks includes Quad and Pendulum.
+quad,swimmer,Performance comparison of point MDP-based evaluations of the three control tasks includes Quad and Swimmer.
+pendulum,swimmer,Performance comparison of point MDP-based evaluations of the three control tasks includes Pendulum and Swimmer.
+point mdp,performance,Performance under different point MDPs impacts the overall performance of the tasks
+simplified mdps,better performance,Simplified MDPs generally achieve better performance than other point MDPs in the family
+drl methods,point mdps,Comparing DRL methods based on point MDPs can provide conflicting conclusions
+ppo,trpo,"Under point MDP (0.5,3), PPO outperforms TRPO with approximately 0.75 point difference"
+drl training,selected point mdp properties,DRL training can be sensitive to the selected point MDP properties
+drl training,underlying mdp,DRL training is sensitive to the underlying MDP
+performance,drl method,The performance of the DRL method could be overestimated or underestimated based on the point MDP selected
+quad,pendulum,Comparison between Quad and Pendulum in training progress for different point MDPs
+quad,performance,Training progress for Quad involves a normalized score indicating distance travelled before crashing or reaching
+normalized score,distance,The normalized score indicates the distance the quadcopter traveled before crashing or reaching the goal with respect to the total distance required to travel.
+quadcopter,goal,Reaching the goal in Quad means achieving a normalized score of 1.
+pendulum,training performance,The training performance for the pendulum is measured as the time to swing the pendulum upright (lower the better).
+swimmer,training performance,The training performance for the swimmer is measured as the time to reach the goal (lower the better).
+ppo algorithm,control tasks,The PPO algorithm is used for training in the three control tasks mentioned.
+quad,goal,"In Quad, reaching the goal means achieving a normalized score of 1."
+point mdps,parallel runs,"Under some point MDPs, not all parallel runs succeed."
+local minimum,obstacle,"In some settings, the agent converges to a local minimum, crashing on the same obstacle during training progress."
+pendulum,goal,"Under one of the MDPs for the pendulum, the agent does not achieve the goal, while under the other four, the agent achieves it."
+swimmer task,point mdp,"In the Swimmer task, under one point MDP, a certain behavior is observed."
+swimmer task,mdp,Swimmer task in Figure 3c where under one point MDP the agent fails to achieve the goal (stuck at the 5000 steps) during training and succeeds under others.
+drl algorithms,training complications,Examples of training complications under other DRL algorithms are given in Appendix B.3.
+quad,obstacle-free course,"In Quad, making the obstacle-free course narrower requires the DRL agent to explore some specific actions different from what it would otherwise need to explore when the course is wider."
+point mdps,complexity differences,One of the root causes of this phenomenon is the complexity differences in point MDPs.
+point mdps,over-fitting,Another potential cause is MDP designers' over-fitting MDP design to point MDPs.
+pendulum,reward function,"In the pendulum, the default reward function penalizes higher torque values while encouraging reaching the goal with a weighted composite reward."
+mdps,sequential decision-making task,"Given a sequential decision-making task T and a reinforcement learning method R to be evaluated, we consider the setting where there are M possible point MDPs in the family of MDPs."
+m,n,M can be quite large and N is used to denote a computational budget in terms of the number of models that can be trained.
+m,mn,"Assumption that MN is true, meaning that the given RL method cannot be evaluated on all MDPs in the family."
+r,mdp,The performance of a DRL method R can significantly depend on the choice of the point MDP.
+xr,"sr,i","XR is a random variable and sR,i is a realization of XR as a normalized performance score for a given R and a point MDP i."
+mdp,i,A point MDP i may be more important or common than another point MDP j in a family of MDPs.
+t,"pt,i","Importance score pT,i of a point MDP i on task T is a realization of a real-valued random variable YT."
+valued random variable yt,importance scores,YT is dependent on the importance scores of each point MDP
+point mdp,point mdp distribution,A distribution can be generated for the MDP family based on point MDPs
+point mdp distribution,f (⌧ ) = p (yt ),The point MDP distribution is defined as F (⌧ ) = P (YT )
+method r,overall performance,The overall performance of a DRL method R on task T is defined as ETR = E[XR]
+drl method r,method performance score,The method performance score incurs a computational cost to evaluate
+mdp family,subset v of point mdps,A subset V of point MDPs can be selected from the MDP family to perform an evaluation
+subset v of point mdps,estimated performance,The estimated performance of the method R on task T is calculated based on subset V of point MDPs
+contribution ci,importance scores and performance scores,Contribution ci depends on both importance scores and performance scores
+point mdps,contributions to overall evaluation,The set of point MDPs with the highest contributions to the overall evaluation needs to be found
+cloud service providers,pricing model based on usage time,Most cloud service providers charge users based on the time they use the services
+pricing budget,trained models,The average number of models that can be trained given a pricing budget can be done with rough estimates.
+pricing budget,rough estimates,Rough estimates are used to determine the average number of models that can be trained given a pricing budget.
+trained models,mdp,How long it takes to train one model on a single point MDP is considered when assessing the overall performance.
+mdp,approximation techniques,Approximation techniques are proposed to identify a subset V based on approximated contributions.
+mdp,trafﬁc signal control,The evaluations of DRL methods on the trafﬁc signal control task are considered based on the MDP.
+trafﬁc signal control,intersection geometries,Traffic signal control should be considered on multiple intersection geometries.
+trafﬁc signal control,vehicle flow levels,Traffic signal control should be considered on multiple vehicle flow levels.
+intersection,importance score,The importance score of each intersection is based on frequency of occurrence within a geographic region.
+intersection,performance score,The performance score of each intersection is calculated as the normalized per vehicle average delay.
+performance score,fixed time controller,Scores are normalized based on an untuned yet sufﬁciently performant ﬁxed time controller baseline.
+intersections,mdp distribution,Intersections were used to build the point MDP distribution
+salt lake city,utah,The intersections used in the MDP distribution were taken from Salt Lake City in Utah
+point mdps,performance,The performance of trafﬁc signal control methods is demonstrated based on 164 unique point MDPs
+drl methods,non-drl methods,"DRL methods show significant variations in performance, while non-DRL methods show comparatively lower variations"
+"idqn, ippo, mplight performances",performance bias,"The performances of IDQN, IPPO, and MPLight are overestimated, indicating bias in reported performances"
+method performance,mdp family,The performance of each method is denoted over the entire MDP family
+fixed time controller,performance,The Fixed time controller method is regarded as an underperforming method as per reported performances
+fixed time controller,underperforming method,The Fixed time controller is regarded as an underperforming method as per reported performance.
+fixed time controller,non-rl fixed time controller,"Under the MDP family-based evaluations, the non-RL Fixed time controller performs significantly better than the Fixed time controller."
+fixed time controller,max pressure controller,"Under the MDP family-based evaluations, the non-RL Fixed time controller and Max pressure controller perform significantly better than all the four DRL controllers."
+fixed time controller,ippo,"IPPO is ranked as a well-performing model with a normalized score of 0.84, but it is actually the lowest-performing method."
+fixed time controller,mdp-based evaluations,It is clear that point MDP-based evaluations can be misleading and may pose performance benefits that do not generalize to the MDP family.
+point mdp-based evaluations,drl control tasks,"Further Evidence on Shortcomings of Point MDP-based Evaluations shows the impact on popular DRL control tasks such as cartpole, pendulum, and half cheetah."
+pendulum,half cheetah,Both mentioned as key concepts in the context related to the performance analysis of DRL methods on point-MDP tasks. They are compared in terms of algorithmic generalization within the task.
+cartpole,drl methods,Cartpole is a benchmark suite used for evaluating DRL methods. The performance of DRL methods is assessed on this task.
+pendulum,reported performance,Pendulum's reported performance is compared with its overall performance in the analysis. It shows discrepancies in the evaluation.
+half cheetah,performance variations,Half cheetah is mentioned in the context along with performance variations. It is part of the analysis comparing reported vs. overall performance.
+mdp family-based evaluations,challenges,"MDP family-based evaluations present challenges, as discussed in the section. These challenges need to be addressed for effective evaluations."
+mdp family-based evaluations,recommendations,MDP family-based evaluations require recommendations for improvement. These recommendations are summarized in Table 2.
+mdp family-based evaluations,drl (deep reinforcement learning),MDP family-based evaluations raise the issue of using DRL for traffic signal control. Recommendations are given to improve the evaluation process using DRL.
+lack of benchmarks,mdps (markov decision processes),One of the challenges identified is the lack of benchmarks depicting MDP families. Recommendations suggest creating benchmarks for MDP families.
+large families of mdps with limited computational budgets,mdp families,The challenge of dealing with large families of MDPs within limited computational budgets highlights the need for performance approximations and standardizations to manage the evaluation process effectively.
+lack of emphasize on all point-mdp performances,performance proﬁles,The lack of emphasis on all point-MDP performances can be addressed by using performance profiles to show a detailed view of performance changes. This helps in understanding the overall performance better.
+create data sets of mdp families to benchmark rl methods in evaluations,benchmark datasets,"Creating data sets of MDP families is essential to benchmark RL methods in evaluations, similar to the established practice in supervised learning. This practice improves the evaluation process and helps in comparing different methods effectively."
+deep learning methods,standard datasets,Deep learning methods are being evaluated using standard datasets.
+drl methods,resoc benchmark suites,DRL methods are assessed using benchmark suites like RESOC for traffic signal control.
+drl methods,vinitsky et al.,DRL methods use the benchmark suite provided by Vinitsky et al. for mixed autonomy traffic.
+current state-of-the-art benchmarks,mdps,Current benchmarks only cover select point MDPs and do not consider the family of possible MDPs.
+real-world applications,mdps,"Real-world applications demonstrate a family of MDPs, which current benchmarks do not consider."
+drl standardization of evaluations,research community,The current standardization of DRL evaluations may lead the research community in a vacuum.
+drl benchmark suites,mdps,DRL benchmark suites should incorporate a family of MDPs in evaluations.
+mdps,task-dependent,The selection of MDPs should be task-dependent according to domain expertise.
+mdp families,control tasks,Creating MDP families for control tasks like different signalized intersections is recommended.
+signalized intersections,traffic signal control mdp,Signalized intersections are related to traffic signal control MDP as a method of control.
+traffic signal control mdp,families of mdps,Encouraging the use of families of MDPs instead of point MDPs in DRL evaluations is recommended.
+families of mdps,point mdp-based evaluations,Using families of MDPs instead of point MDPs can address the shortcomings of point MDP-based evaluations.
+performance approximations,conducting performance approximations,Conducting performance approximations can help address the computational expense of evaluating performance over an entire family of MDPs.
+m1,random sampling with replacements,M1 technique involves random sampling with replacements from the point MDP distribution.
+m2,random sampling without replacements,M2 technique involves random sampling without replacements as part of evaluating techniques on families of MDPs.
+m3,clustering point mdps using k-means,M3 technique involves clustering point MDPs using k-means algorithm to assign probability mass to MDPs in the same cluster.
+k-means,mdps,"k-means clustering is used to assign probability mass of all point MDPs that belong to the same cluster to its centroid, indicating a relationship between k-means and MDPs"
+k-means,clustering,"k-means clustering-based approximation produces better estimates compared to other techniques, showing a relationship between k-means and clustering"
+mdps,point mdps,"selection of point MDPs as data sets can enable reproducibility and standardization of the evaluations of the tasks, indicating a relationship between MDPs and point MDPs"
+mdps,performance estimates,"k-means clustering demonstrates reasonably accurate performance estimates when the budget size is half the total MDP family size, showing a relationship between MDPs and performance estimates"
+point mdps,data sets,"publishing the selection of point MDPs as data sets can enable reproducibility and standardization of the evaluations of the tasks, indicating a relationship between point MDPs and data sets"
+hyperparameter tuning,training,Hyperparameter tuning and training are both essential steps in machine learning model optimization
+mdp,point mdp,"The focus is on the computational budget allotted for the task underspecification issue, involving multiple random seeds within each point MDP"
+drl method,point mdp,The recommendation is to report the performance of a DRL method over a family of MDPs instead of a point MDP for more reliable evaluations
+performance proﬁle,point mdp,"By representing the performance of a method as a performance proﬁle, a more detailed visualization of the performance over the point MDPs can be illustrated"
+k-means clustering-based performance approximation,trafﬁc signal control task,An example performance proﬁle for k-means clustering-based performance approximation with a budget size of 80 models in the trafﬁc signal control task is presented in Figure 8
+performance proﬁle,point mdps,A performance proﬁle illustrates what point MDPs are most probable in the distribution and how each of the point MDP contributes to the final estimate of the performance
+method a,method b,"If the cumulative performance curve of method A is strictly below method B, method A is said to stochastically dominate method B, suggesting a lower score is better"
+method a,method b,"Method A is said to stochastically dominate Method B, with lower score indicating better performance."
+point mdps,method,"In some cases, a method seemingly underperforms is easily visible in point MDPs, providing a clear overview of the origins of limitations and strengths."
+deep reinforcement learning algorithms,reliability and reproducibility issues,Deep reinforcement learning algorithms have high variance leading to reliability and reproducibility issues when applied to real-world applications.
+performance evaluations,designing methodologies,Designing sound methodologies for performance evaluations is critical for addressing reliability and reproducibility issues in deep reinforcement learning algorithms.
+overfitting,design,Falkenauer first identified overfitting a design to a selected problem instance as a cause for concern.
+overfitting,reinforcement learning,Whiteson et al. argued that overfitting can also occur in reinforcement learning.
+drl methods,algorithmic generalization,The algorithmic generalization of DRL methods within a task differs from previous works.
+problem instances,family of problem instances,The use of a family of problem instances has been beneficial for achieving better generalization in DRL.
+generalization in drl,problem formalization,Generalization in DRL is hindered by factors related to a lack of problem formalization.
+benchmarks suites,carl,Benchmark suites like CARL have been used to address generalization issues in DRL.
+problem formalization,benchmarks suites,"benchmarks suites such as CARL are proposed to use MDP families to study generalization, stemming from a lack of problem formalization."
+mdp families,generalization,benchmarks suites such as CARL are proposed to use MDP families to study generalization.
+drl problems,challenges,Eimer et al. further show that such DRL problems demonstrate challenges that the DRL community has not looked at carefully.
+mdps,formal modeling,The family of MDPs has been formally modeled in multiple ways in the literature.
+cmdp,family of mdps,The most recent and general method is to model the problem as a Contextual Markov Decision Processes where all MDPs in the family share the same MDP configuration except for the transition function and the reward function.
+hidden parameter mdps,reward function,"In Hidden Parameter MDPs, only the transition function changes but keep the reward function fixed over the family of MDPs."
+epistemic pomdps,context,Epistemic POMDPs introduced by Ghosh et al. are a special case of a cMDP where the context is assumed to be unobservable.
+partial observability,generalization,They show that there is implicit partial observability under generalization to unseen test conditions from a limited number of training conditions.
+mdp,pomdp,This phenomenon translates even a fully observed MDP into POMDP.
+evaluations,components of an mdp,"In comparison to these formulations, we do not restrict what components of an MDP can or should change in evaluations. We let that be defined by the domain of the task."
+task underspecification,reliance of reporting outcomes,"In this work, we identify an important yet overlooked issue of task underspecification in DRL evaluations—the reliance of reporting outcomes on select point MDPs."
+evaluation,reporting outcomes,Evaluations in the context rely on reporting outcomes from select point MDPs.
+evaluation,mdp family,Evaluating on a family of MDPs yields a different relative ranking of methods compared to evaluating on select MDPs.
+evaluation,challenges,Evaluating on a family of MDPs is faced with multiple challenges.
+method,ranking,Evaluating on a family of MDPs results in a different relative ranking of methods.
+evaluation,algorithmic generalization of drl methods,Similar shortcomings may occur when evaluating the algorithmic generalization of DRL methods across tasks.
+evaluations,reliable evaluations with a family of mdps,Recommendations are provided for conducting reliable evaluations with a family of MDPs.
+future work,task underspecification,An exciting avenue for future work is to explore if similar shortcomings occur when evaluating the algorithmic generalization of DRL methods across tasks.
+future research,designing efficient methods,Future research can focus on designing efficient yet effective methods for producing good approximate performance estimates.
+findings,awareness of task underspecification,The findings aim to raise awareness of task underspecification that impacts the empirical rigor of DRL.
+findings,disciplined science,The findings aim to help move towards a more disciplined science overall.
+institute for ethical ai & machine learning,responsible machine learning,The Institute for Ethical AI & Machine Learning has developed principles to guide the responsible development of machine learning systems.
+practical accuracy,accuracy and cost metric functions,Practical accuracy principle emphasizes that accuracy and cost metric functions should be aligned to domain-specific applications.
+accuracy,cost metric functions,Accuracy and cost metric functions are aligned to the domain-specific applications.
+accuracy,rl,This article contributes to bolstering the practical accuracy of RL.
+rl,complex decision,The article proposes to explicitly consider a family of MDPs that constitutes the complex decision.
+ml practices,subjective aspects of the task distribution,"Even with more empirically rigorous ML practices, there are still subjective aspects of the task distribution analogous to the family of MDPs in RL."
+rl,evaluation,It remains important to not over-index on RL-based evaluations.
+work,mit amazon science hub,This work was supported by the MIT Amazon Science Hub.
+work,us dot’s federal highway administration,This work was supported by the US DOT’s Federal Highway Administration and Utah Department of Transportation under project number F-ST99(783).
+work,mit-ibm watson ai lab,"This work was supported by the MIT-IBM Watson AI Lab, a gift from Mathworks, and the National Science Foundation (NSF) under grant number 2149548."
+authors,mit supercloud,The authors acknowledge MIT SuperCloud for providing computational resources supporting the research results.
+authors,lincoln laboratory supercomputing center,The authors are also grateful for insightful discussions with Jiaqi Zhang and the constructive suggestions from the anonymous reviewers.

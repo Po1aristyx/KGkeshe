@@ -1,0 +1,111 @@
+node_1,node_2,edge
+physical laws,image acquisition,Physical laws are applied to achieve image acquisition.
+moment captured,slightest changes,Changes in the moment captured include illumination
+modern text-to-image diffusion,high-level descriptions,Text-to-image diffusion generates 2-D images based on high-level prompts but lacks detailed controls.
+training dataset,exact object movements,The scarcity of descriptions about exact details in the training dataset limits text-to-image synthesis.
+3d rendering engines,3d controls,3D rendering engines offer fine-grained control over camera
+detailed 3d worlds,laborious creation,Detailed 3D worlds are difficult to create due to the amount of effort required.
+text-to-image diffusion,more accessible technology,Text-to-image diffusion is more accessible for non-experts compared to precise 3D scene control.
+our work,best of two worlds,Our work aims to combine the accessibility of text-to-image diffusion with the control of 3D rendering.
+object identity,mesh,The context discusses learning the object identity of the underlying mesh used for rendering.
+mesh,attribute values,The model learns to disentangle various attribute values from the object identity to prevent encoding each attribute as a new object.
+attribute values,degenerate solution,By avoiding this degenerate solution
+controlnet,additional images,ControlNet is applied with conditioned images to generate images with varying backgrounds and object textures
+lower rank adaptation (lora),training,The entire training process is conducted in a lightweight LoRA manner for speed and accessibility with single GPUs.
+continuous vocabulary,text-to-image generation,The method presents a continuous vocabulary for 3D-aware attribute control in text-to-image synthesis.
+continuous 3d words,attribute controls,Continuous 3D Words offers tailored control over various conditions.
+training strategies,disentanglement from object identity,These strategies enhance attribute control by separating them from object identity.
+user studies,quantitative evaluation,Quantitative user studies are conducted to assess the method's performance.
+qualitative comparisons,competitive baselines,Qualitative comparisons demonstrate the superiority of the method over existing approaches.
+image aesthetics,proper reflection of attributes,The method maintains image aesthetics while reflecting diverse attribute variations.
+conditional diffusion models,gans,conditional diffusion models
+dalle,imagen,Both DALLE and Imagen utilize large-scale text-image datasets and pretrained LLMs for guided image generation.
+stable diffusion,latent-space diffusion,Stable Diffusion popularized memory-efficient models by using latent-space diffusion techniques.
+controlnet,text conditioning,ControlNet proposes a pipeline for conditioning on text and image data
+controlnet,image editing,ControlNet enables editing of generated images using textual instructions
+textual instructions,image edits,These models allow for editing specific attributes of an image based on provided textual guidance.
+text-generated image,editing,These approaches demonstrate editing by allowing users to amend the prompt while preserving some original image aspects.
+editing,fine-grained control,The limitation is that these methods do not provide fine-grained control over image elements.
+text-generated image,amending the prompt,Users can modify the prompt to change the image
+depth controlnet,lineart controlnet,relation: 'used for' - Depth ControlNet is employed for direct shape changes
+continuous concepts,illumination,relation: 'example of' - Continuous Concepts include illumination
+zero-1-to-3,diffusion models,relation: 'trained on' - Zero-1-to-3 is a diffusion model trained on various viewpoints of 3D renderings.
+dreamsparse,diffusion models,relation: 'employs' - DreamSparse uses diffusion models to synthesize novel views on open-set categories.
+continuous words,text prompts,relation: 'used on' - Continuous Words are directly applied to text prompts
+object orientation,3d shape datasets,relation: 'relied on' - Techniques like Zero-1-to-3 and DreamSparse focus on object orientation and require large 3D shape datasets.
+dolly zoom,learning new concepts,relation: 'part of' - Learning new concepts
+text-to-image diffusion models,viewpoints,ViewNETI [5] focuses on learning viewpoints as a concept within text-to-image models
+text-to-image diffusion models,illumination,The 3D awareness of large text-to-image models extends to illumination
+text-to-image diffusion models,pose,These models are capable of handling 3D poses
+text-to-image diffusion models,camera parameters,They can also incorporate camera parameters into generated images
+personalized entities,general concepts,While there are works on adding personalized entities
+dreambooth [25],repurposed token,Dreambooth uses a repurposed token that is not commonly used in text and fine-tunes the diffusion model with additional constraints.
+neti [1],time-space conditioned neural mapper,NETI improves upon word embeddings with a neural mapper that conditions on time and space for better image generation quality.
+finetuning,different layers/weights,Subsequent works show improvements by finetuning specific layers or weights and refining the training strategy.
+text-to-image diffusion model,objective,Previous methods aim to minimize the objective involving a Text-to-Image diffusion model.
+dreambooth,objective,Dreambooth is a method mentioned in the context of minimizing the objective.
+custom difusion,objective,Custom Difusion is another method that aims to minimize the same objective.
+textual-inversion,objective,Textual-Inversion is also part of the context
+s✓ (text-to-image diffusion model),attributes,S✓ is a finetuned network that generates images with controlled attributes.
+object o,prompt condition,The prompt condition contains a token embedding for identifying object O.
+p(to),token embedding,P(TO) is the text encoder from CLIP
+our goal,disentanglement,Our goal is to learn to disentangle attributes using as few objects as possible.
+continuous control,naive approach,We propose a continuous function to control attributes instead of a naive rendering engine approach.
+g(a) (continuous function),attribute control,g(a) is the proposed continuous function for controlling attributes with fine-grained precision.
+continuous function g(a),token embedding domain,g(a) maps attributes a from a set to the token embedding domain using positional encoding and a 2-layer MLP.
+continuous 3d word,continuous function g(a),Continuous 3D Word is the output of the network that allows controlling continuous attributes from text prompts
+training objective,learning identity and attributes,The objective involves optimizing both the transformation function (TO) and g(a) simultaneously to prevent treating same object with different attribute values as distinct.
+degenerate solution,object identity and attributes,During optimization
+strategy during training,disentangling object identity and attributes,A regularization is introduced to force the model to use the same identifier for images of the same object
+strategy during inference,disentangling object identity and attributes,An additional approach is proposed during inference to further separate object identity from individual attributes for improved generalization.
+continuous 3d words,controlnet,Comparisons are made between Continuous 3D Words trained under different settings and ControlNet of varying strengths.
+dollyzoom setup,controlnet,The dollyzoom setup was augmented with a manually selected chair mesh to match the prompt.
+fine-tuning process,overfitting,Preventing overfitting to simple backgrounds and object textures is the objective of ControlNet augmentation.
+simulation engines,time-consuming,Directly augmenting backgrounds and textures in simulation engines is a challenge due to time constraints.
+automated solution,controlnet augmentation,A proposed solution to address the time-consuming issue involves utilizing pre-trained ControlNets.
+controlnet augmentations,attributes,Shape changes can be directly influenced by certain attribute control
+single/multiple attributes,learning steps,The context mentions that the learning process involves a specific range of attributes and steps
+controlnet augmentation,official implementation,The official implementation of ControlNet v1.1 is used for the augmentation.
+continuous 3d words,attribute settings,Continuous 3D words are trained under five different attribute settings
+illumination,single attribute setting,One single attribute setting involves controlling illumination using a dog mesh.
+wing,single attribute setting,Another single attribute setting uses an animated dove mesh for wing pose control.
+dolly,pix3d chairs,For multi-concept training
+illumination and object orientation,multi-concept setting,A multi-concept setting combines illumination and object orientation
+wing pose and orientation,multi-concept setting,Another multi-concept setting involves wing pose and orientation
+lineart images,image type,Settings 1 and 4 use lineart images for rendering.
+depth map,image type,Other settings use depth maps for ControlNet background augmentation.
+mesh training data,baseline design,The baseline design incorporates the mesh training data for fine-grained attribute control.
+text prompt,input for baseline,A text prompt is used to select the corresponding condition map with intended attributes.
+eagle,example prompt,An example prompt like 'eagle flying in a forest' is mentioned.
+wing pose,user-prescribed,The baseline selects a frame based on the user-prescribed wing pose for the mesh.
+controlnet baseline,half strength guidance,ControlNet is compared with half strength guidance
+controlnet baseline,full strength guidance,The second-best performance alternates between full and half strength
+null-text embedding baseline,omitted from analysis,The null-text embedding baseline was not effective and was excluded from the study due to poor performance in capturing attributes.
+quantitative results,user study,A user study is conducted to evaluate the quality of generated images
+3d conditions,prompts,Both 3D conditions and prompts are used as constraints in the user study to assess the generated images.
+user study,participant rankings,Participants rank the images based on the given constraints
+continuous 3d words,majority of votes,Continuous 3D Words performs the best
+wing-pose based controls,weaker guidance,For wing-pose control
+ablation study,two-stage training,The ablation study compares the effect of not using two-stage training in the model's performance.
+two-stage training,controlnet augmentation,Both components are part of the same training method used for learning the model.
+ablation study,prompt deviation,The study shows the model's inability to follow a prompt when it significantly differs from the training data.
+prompt,negative prompt,A component in the ablation study where using a specific object as a negative prompt affects the generated results.
+generated results,wing pose attributes,The model generates outputs with different wing pose values
+training method,controlnet augmentation,This refers to the technique used for both models with different variations in the study.
+controlnet augmentation,generated results,ControlNet augmentation is used to generate the presented results.
+continuous 3d words mlp,intermediate value input,The Continuous 3D Words MLP receives the interpolated value for generating outputs.
+discrete tokens,interpolation difficulty,Discrete tokens struggle with interpolation and learning the concept simultaneously.
+eagle wings,pose generation,The model's difficulty in interpolating leads to inconsistent poses
+two-stage training,generalization capability,Without two-stage training
+prompt,training strategy,The ablation study compares the full pipeline with variations that exclude components like ControlNet augmentation or using [obj] as a negative prompt.
+a colorful bird,photo of a colorful bird,The context mentions 'Left is ours
+our model,failure cases,The passage states that 'we present in Figure 10 two examples of typical failure cases in our results'
+head of the bird,more physically probable image,Users preferred images that more strictly follow the exact conditions
+style,more difficult scenarios,The model fails on 'more difficult scenarios where the style is given'
+user study,condition v.s. generated accuracy,During the 'user study'
+difficult scenarios,text prompt style,The model fails when the image doesn't fully capture the 'Monet painting' style specified in the text prompt.
+overfitting,training set,Generated objects can sometimes retain characteristics of the training set
+continuous 3d words framework,3d-aware attributes,This framework learns 3D-aware attributes represented as special words that can be incorporated into text prompts for fine-grained image generation.
+text-to-image generation,fine-grained control,Continuous 3D Words enables fine-grained control over various attributes in the generated images.
+lightweight design,promising results,The framework's simplicity and effectiveness suggest potential for interesting applications in the vision community.
+work,epsrc ace-ops grant ep/s030832/1,This research is supported by the EPSRC ACE-OPS grant.

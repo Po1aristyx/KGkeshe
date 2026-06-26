@@ -1,0 +1,222 @@
+node_1,node_2,edge
+local optimization,"expensive, high-dimensional black-box optimization","Local optimization presents a promising approach to expensive, high-dimensional black-box optimization"
+local optimization,bayesian optimization,Local optimization offers one solution for objective functions whose gradient cannot be evaluated directly
+bayesian optimization,probabilistic model,Bayesian optimization involves constructing a probabilistic model of the objective
+bayesian optimization,policy,Bayesian optimization involves designing a policy to learn about the gradient at the current location
+objective functions,gradient,Objective functions whose gradient cannot be evaluated directly need solutions like Bayesian optimization
+optimization scheme,direction maximizing the probability of descent,Observation that the direction maximizing the probability of descent is not always the expected value of the gradient leads to an optimization scheme
+optimization scheme,probability of descent,Optimization scheme seeks to maximize the probability of descent while moving in the direction of most-probable descent
+method,previous realizations of this optimization scheme,Experiments show that the method outperforms previous realizations of this optimization scheme
+machine learning,science,Machine learning is a field that encompasses various techniques and algorithms from science.
+machine learning,engineering,Machine learning is a discipline that can be applied in the field of engineering to optimize objective functions.
+hyperparameter tuning,machine learning,Hyperparameter tuning is an example within the realm of machine learning.
+policy search,reinforcement learning,Policy search is a technique used in reinforcement learning.
+physics simulations,configuring,Physics simulations can involve the configuration or tuning of parameters.
+global optimization,dimensionality,High-dimensional global optimization faces challenges due to the curse of dimensionality.
+objective functions,high-dimensional search space,Objective functions need to be optimized within the high-dimensional search space.
+bayesian optimization,gradient of the objective,Bayesian optimization can be used to learn about the gradient of the objective through noisy observations.
+gaussian process,objective function,A Gaussian process is used to model the objective function in the proposal by Müller et al.
+observations,minimizing variance,Observations in the proposal involve minimizing the variance of the Gaussian process's estimate of the gradient of the objective.
+gradient,direction,The proposal suggests moving in the direction of the expected gradient by minimizing variance.
+distribution,directional derivative,Nuances in the distribution can impact the directional derivative induced by the Gaussian process.
+beliefs,identical uncertainty,Beliefs about the gradient with identical uncertainty can have nuances.
+beliefs,gradient,Beliefs about the gradient with identical uncertainty may have different probabilities of descent along the expected gradient.
+expected gradient,direction maximizing probability of descent,"Expected gradient is not necessarily the direction maximizing the probability of descent, they can be nearly orthogonal."
+direction of most probable descent,local bayesian optimization,Scheme for local Bayesian optimization alternates between identifying the direction of most probable descent and moving in that direction.
+direction of most probable descent,gp belief about objective function,Derivation of the direction of most probable descent at a given location in the input space under a GP belief about the objective function.
+closed-form acquisition function,one-step maximum descent probability,Design of a closed-form acquisition function that optimizes an upper bound of the one-step maximum descent probability.
+optimization scheme,components,Components such as direction of most probable descent and closed-form acquisition function form an elegant and efficient optimization scheme.
+method,real-world functions,The method outperforms the aforementioned prior realization of the framework and is competitive against other baselines
+method,bayesian optimization,Bayesian optimization is mentioned as one potential approach to the optimization problem
+method,local bayesian optimization,The problem setting and local Bayesian optimization framework are introduced first in the document
+method,gaussian process,BO constructs a probabilistic model of the objective function using a Gaussian process
+local bayesian optimization,optimization problems,The aim is to numerically solve optimization problems using local Bayesian optimization framework
+objective function,gp,Objective function is modeled as a black box and is typically a Gaussian process in Bayesian optimization
+objective function,querying,"Querying the objective function is relatively expensive, limiting the number of times it may be evaluated"
+objective function,sample efficiency,BO offers unparalleled sample efficiency in optimizing the objective function
+objective function,noisy function evaluations,The function evaluations are potentially noisy in Bayesian optimization
+gp,objective,"The Gaussian Process (GP) is used to design the next point(s) to evaluate the objective. The GP is updated after each observation to reflect the current belief about the objective, which informs future decisions."
+gp,local optimization,"The BO framework, based on a GP belief on the objective function, is conducive to local optimization. By probing the objective function in nearby regions, we can descend from the current location and learn about its gradient."
+objective,local optimization,"By using a GP belief on the objective function to guide local optimization, the joint distribution of noisy function evaluations and the gradient of f at some point x may be utilized."
+k,x,K is conditioned on X in the equation. K is used with X to calculate the posterior distribution.
+µ,x,µ is used with X to calculate the posterior distribution in the equation. It is added with the gradient.
+µ,f,µ is used with the derivative of f in the equation. It plays a role in calculating the posterior distribution.
+µ,k,µ is used with K to calculate the posterior distribution in the equation.
+f,x,"The gradient of f, ∇f(x), is mentioned in the context. It is used for Bayesian local optimization."
+x,policy,"From a current location x, a policy is devised to optimize the objective function gradient."
+x,location,The policy involves moving to a new location within the search space to optimize the objective.
+algorithm,gibo,GIBO is a realization of a local BO scheme investigated by Müller et al. It involves minimizing uncertainty about the gradient.
+authors,study,The authors in the study choose to learn about the gradient of the objective function.
+study,gradient,The authors choose to learn about the gradient in the study. They minimize uncertainty about the gradient.
+algorithm,gradient descent,"The algorithm described in the context is related to the concept of gradient descent, as it simulates gradient descent by actively building and following a noisy estimate of the gradient."
+algorithm,gibo,"The algorithm mentioned in the context is compared to GIBO, which fails to account for nuances in belief about the objective function gradient."
+gibo,müller et al.,"The work of Müller et al. proposing the use of local BO is related to GIBO, as GIBO alternates between minimizing the variance of the estimate of the gradient and moving in the direction of the expected gradient."
+gibo,a-optimality,GIBO's goal of minimizing the variance of the estimate of the gradient is analogous to the goal of A-optimality in optimal design.
+gibo,expected improvement,GIBO was shown to outperform baselines such as global BO using expected improvement on several problems.
+gibo,cma-es,GIBO was shown to outperform the evolutionary algorithm CMA-ES on several problems.
+mania et al.,local black-box optimization,"Mania et al. noted that local black-box optimization is a promising approach for RL, which is related to their development of the algorithm Augmented Random Search (ARS)."
+mania et al.,augmented random search (ars),"Mania et al. developed the algorithm Augmented Random Search (ARS) for estimating the gradient of the objective via finite differencing and random perturbations, which was competitive in their experiments on RL."
+differencing,random perturbations,"Both terms are mentioned together in the context, indicating a relationship in the context of the simple method being competitive in experiments on RL tasks."
+gibo,ars,Both terms are mentioned together as the two main baselines being compared in the context.
+scaling,high-dimensional problems,"The enduring challenge in the BO community mentioned concerns scaling to high-dimensional problems, indicating a relationship."
+bo,curse of dimensionality,"The burden of the curse of dimensionality is mentioned in context in relation to BO, indicating a connection between the two terms."
+proposals,make bo 'more local',"Several proposals have been suggested to make BO 'more local', indicating a direct relationship between them."
+lines of research,restricting the search space,"Several lines of research have proposed restricting the search space, indicating a relationship between them."
+belief,local optimum,"Maintaining a belief about the local optimum is mentioned in context, indicating a relationship."
+trust regions,queries to stay close to past observations,"Using trust regions is mentioned in relation to queries staying close to past observations, indicating a connection between them."
+trust regions,size,"The trust regions in the TuRBO algorithm expand and shrink based on the optimization history within each region, indicating a relationship between the trust regions and their size."
+turbo algorithm,strong performance,"TuRBO algorithm has been shown to achieve strong performance across many tasks, indicating a relationship between the two terms."
+other approaches,dynamically switching from global and gradient-based local optimization,"Other approaches have considered dynamic switching from global and gradient-based local optimization, indicating a relationship between the two terms."
+global bo,bfgs for local optimization,"Alternating between global BO and using BFGS for local optimization is mentioned in context, indicating a relationship."
+local region,global optimum,"When a local region is believed to contain the global optimum, there is a relationship described in the context."
+diouane et al.,trust region-based policy,"Diouane et al. leveraged a scheme using trust region-based policy for its local phase, establishing a relationship between them."
+trust region-based policy,local phase,The trust region-based policy is used for the local phase.
+wang et al.,monte carlo tree search,Wang et al. proposed learning about subregions of the search space using Monte Carlo tree search.
+wang et al.,turbo,Wang et al.'s algorithm achieves state-of-the-art performance when combined with TuRBO.
+algorithm,local optimizer,The algorithm can replace the local optimizer in approaches using TuRBO and Wang et al.'s method.
+method,probabilistic numerical methods,Our method belongs to the larger class of probabilistic numerical methods.
+le roux et al.,algorithm,Le Roux et al. arrived at a similar update expression as our algorithm.
+optimization algorithms,generalization error,Optimization algorithms aim to develop fast algorithms for good generalization by justifying the natural gradient descent and maximizing the probability of not increasing generalization error.
+optimization algorithms,natural gradient descent,Optimization algorithms are devoted to justifying the natural gradient descent as a derivation for developing fast algorithms for good generalization.
+natural gradient descent,descent direction,The descent direction maximizing the probability of not increasing generalization error is precisely the natural gradient direction.
+local optimization routine,sample efficiency,"For a local optimization routine that values sample efficiency, it is desirable to quickly identify directions that will yield progress on the objective function with high probability."
+unit vector,objective function,The directional derivative of the objective function with respect to a unit vector quantifies the rate of change of the objective function along that direction.
+multivariate normal distribution,directional derivative,"The directional derivative of the objective function follows a multivariate normal distribution, where the mean and covariance matrix allow us to reason about the probability of descending on the objective."
+direction,location,The descent probability of the direction v at the location x is given by Pr (∇vf (x) < 0
+direction,probabilty,If v∗ achieves the maximum descent probability v∗ ∈ arg maxv Pr (∇vf (x) < 0
+direction,gradient,"Moreover, we note that descent probability depends on both the expected gradient µx and the gradient uncertainty Σx."
+gradient,uncertainty,"Therefore, learning about the gradient by minimizing uncertainty via the trace of the posterior covariance matrix may lead to suboptimal behavior."
+direction,negative direction,"Moreover, we note that descent probability only depends on the direction of v∗."
+descent probability,negative expected gradient,"The negative expected gradient in some cases maximizes the descent probability, leading downhill."
+covariance matrix,expected gradient,"The covariance matrix affects the expected gradient by permuting it, leading to changes in descent probability."
+uncertainty,covariance matrix,"The uncertainty in the gradient, as measured by the covariance matrix, is identical for all three examples."
+descent direction,negative expected gradient,"The negative expected gradient maximizes the descent probability, but there is a non-negligible probability that the descent direction may be opposite."
+uncertainty,first element of µx,"Most of the uncertainty about the gradient concentrates on the first element of µx, determining its direction."
+left panel,middle panel,The situation in the left panel is inarguably preferable to that in the middle panel.
+left panel,middle panel,Distinguishing between these two panels is impossible from the uncertainty in ∇f(x) alone.
+right panel,first two panels,The direction of the expected gradient in the right panel has rotated with respect to that in the first two panels.
+expected gradient,most probable descent direction,Now the (negative) expected gradient is entirely different from the most probable descent direction.
+first coordinate,second coordinate,The variance in the first coordinate is much smaller than in the second coordinate.
+negative expected gradient,descent direction,Using negative expected gradient as a descent direction entirely ignores the uncertainty estimate in the gradient.
+mean vector µx,covariance matrix σx,"When reasoning about the descent of a function, the mean vector µx and the covariance matrix Σx need to be jointly considered."
+probability of descent,mean vector µx,The probability of descent depends on both the mean vector µx and the covariance matrix Σx.
+probability of descent,covariance matrix σx,The probability of descent depends on both the mean vector µx and the covariance matrix Σx.
+descent probability,gradient,"The descent probability is computed based on the gradient, as shown in the formula arg maxv Pr (∇vf (x) < 0"
+descent direction,location,The most probable descent direction v* is calculated at a given location x
+descent direction,data,The most probable descent direction v* is computed given data
+belief,gradient,The belief about the gradient is p(∇f (x)
+cholesky decomposition,σx,The Cholesky decomposition of Σx is denoted by Σx = LL⊤ where L has to be nonsingular.
+cholesky decomposition,l,L is part of the Cholesky decomposition of Σx.
+cholesky decomposition,w,A change of variable v = L−⊤w in the context.
+l,w,The change of variable v = L−⊤w involves L and w.
+w∗,σ−1,The maximizer w∗ is given by Σ−1 in the context.
+x,σ−1,The direction along −Σ−1x µx mentioned.
+most probable descent direction,linear system,The most probable descent direction can be computed by solving a linear system.
+most probable descent direction,objective value,Moving in the direction that most likely improves the objective value.
+most probable descent direction,update,Iteratively moving in the most probable descent direction for updating the location in the local BO algorithm.
+x,v∗,Iteratively updating x with x + δv∗ in the context.
+small steps,most probable descent direction,small steps are taken in the most probable descent direction at the current point
+objective function,value,value of the objective function is not observed at any of the steps
+iterative procedure,uncertain descent,the iterative procedure stops when it becomes uncertain whether we can continue to descend
+new location,decreases the value,we aim to move to a new location that decreases the value of the objective function
+location,objective function,"the location determines the value of the objective function, thus the movement is based on this relation"
+maximum descent probability,theorem 3.1,maximum descent probability can be computed using Theorem 3.1
+iterative update,descent probability,iterative update stops when the descent probability falls below a prespecified threshold
+step size,delta,step size is set to delta = 0.001 in the experiments
+descent probability threshold,65%,descent probability threshold is set to 65% in the experiments
+maximum descent probability,threshold p*,maximum descent probability falls below the threshold p*
+acquisition function,look-ahead maximum descent probability,acquisition function is derived seeking data that will improve the highest descent probability
+gradient,current location,we select queries to learn about the gradient in the current location to maximize the probability of descent
+batch setting,multiple measurements,"In the context, the batch setting allows for gathering multiple measurements simultaneously."
+acquisition function,query points z,The acquisition function is used for a batch of potential query points Z.
+acquisition function,expectation of an upper bound,Another acquisition function is used to approximate the expectation of an upper bound.
+expectation,upper bound,The expectation of an upper bound is approximated by the acquisition function.
+transformation,normal cdf,The transformation given by the normal CDF is discarded in the optimization process.
+transformation,square root,The transformation given by the square root is discarded in the optimization process.
+µx,σz,The term µx has a mathematical relation with ΣZ as defined by the equation: µx
+a,σz,The term A has a mathematical relation with ΣZ as defined by the equation: A = ΣxZL−⊤. This relation helps in the computation of the acquisition function.
+α(z),ζ,"The function α(Z) has a relationship with ζ as defined by the equation: α(Z) = Eζ∼N (0,I)(cid:104)(µx + Aζ)⊤ Σ−1x"
+α(z),µx,The function α(Z) is related to µx through the equation µ⊤x Σ−1x
+a,σ−1,The term A has a mathematical relation with Σ−1 as defined by the equation ζ⊤A⊤Σ−1x
+v,x,The variable v has a relation with x in the context of computing the most probable descent direction v∗ ← arg maxv Pr (∇vf (x) < 0
+descent direction,v∗,The descent direction v∗ is computed as the argument that maximizes the probability of the gradient of the objective function being less than 0 at a given point x.
+v∗,x,Move in the most probable descent direction by updating the position x with a small step size δ along the direction v∗.
+x,δv∗,The position x is updated by adding the product of a small step size δ and the most probable descent direction v∗.
+acquisition function,automatic differentiation,"The acquisition function can be easily differentiated via automatic differentiation, allowing for optimization with gradient-based optimizers such as L-BFGS."
+local bo,most-probable descent,"The algorithm described in the context is referred to as local BO via most-probable descent, or MPD, as summarized in Algorithm 1."
+gradient of the objective function,acquisition function,The learning process alternates between evaluating the gradient of the objective function through the acquisition function and moving in the most probable descent direction iteratively.
+method mpd,baselines,"The method MPD is evaluated against three baselines - GIBO, ARS, and TuRBO - in extensive experiments to compare performance."
+gibo,trust region-based bayesian optimization (turbo),"Both GIBO and TuRBO are Bayesian optimization methods, but GIBO is implemented with code provided by Müller et al. and could be related to TuRBO through their optimization approach."
+gibo,ars,GIBO and ARS are both optimization methods implemented with code provided by Müller et al.
+gibo,mpd,"GIBO codebase is extended to implement MPD, indicating a relationship between these optimization methods."
+mpd,objectives,MPD is implemented for specific objectives in the numerical experiments conducted.
+synthetic objectives,reinforcement learning objectives,The context mentions both Synthetic objectives (Sect. 4.1) and Reinforcement Learning objectives (Sect. 4.2) as types of objectives being worked on.
+synthetic objectives,objective functions,Synthetic Objectives involve maximizing objective functions over a unit hypercube as described in the context.
+reinforcement learning objectives,number of samples,"For Reinforcement Learning Objectives, the context sets the number of samples per iteration to M = 1."
+intel xeon cpu cores,ram,The small cluster mentioned in the context is built from hardware components including Intel Xeon CPU cores and approximately 10 GB of RAM available to each core.
+objective functions,gp with an rbf kernel,Objective functions are generated by drawing samples from a Gaussian Process (GP) with a Radial Basis Function (RBF) kernel.
+gp with an rbf kernel,samples,Samples are drawn from the Gaussian Process (GP) with an RBF kernel.
+gp with an rbf kernel,dimensionality,"The performance difference increases with higher dimensional objectives, indicating scalability of the method to high dimensions."
+mpd,baseline optimization methods,MPD optimizes objective functions at a faster rate than other baselines.
+objective functions,mpd,MPD consistently finds higher objective values faster than other baselines.
+mpd,synthetic functions,MPD optimizes objective values on high-dimensional synthetic functions.
+mpd,mujoco tasks,MPD shows competitiveness on CartPole and Swimmer in MuJoCo tasks.
+mujoco locomotion tasks,reinforcement learning,MuJoCo locomotion tasks involve reinforcement learning to learn a linear policy maximizing rewards.
+mujoco locomotion tasks,environments,MuJoCo locomotion tasks involve learning in different environments as described in Müller et al. [18].
+learning environment,müller et al.,Müller et al. refer to the learning environment in their work as they use three specific environments for evaluation
+learning environment,cartpole-v1,CartPole-v1 is one of the environments used to evaluate methods in the learning environment
+learning environment,swimmer-v1,Swimmer-v1 is one of the environments used to evaluate methods in the learning environment
+learning environment,hopper-v1,Hopper-v1 is one of the environments used to evaluate methods in the learning environment
+hopper-v1,mpd,MPD is a method evaluated in the Hopper-v1 environment
+hopper-v1,gibo,There are differences in behavior of GIBO and MPD in the Hopper-v1 environment due to state normalization scheme
+gibo,mpd,The performance of GIBO and MPD are statistically comparable when controlling for state normalization
+objective functions,physics,"Some of the objective functions evaluated in the context are related to physics, such as the electrical engineering problem"
+objective functions,engineering,"Some of the objective functions evaluated in the context are related to engineering, such as the electrical engineering problem"
+electrical engineering,electronics circuit,"In the context, in the problem from electrical engineering, the objective is to maximize the fit of a theoretical physical model of an electronic circuit"
+cosmology,universe,"In the context, the cosmological model aims to fit data observed from the Universe"
+physical model,parameterized by various physics-related constants,The physical model is parameterized by various physics-related constants to maximize the log likelihood.
+physical model,tuned,The physical model needs to be tuned to achieve the objective of maximizing the log likelihood.
+rover trajectory planning problem,100 points on a two-dimensional space,The rover trajectory planning problem involves tuning the locations of 100 points on a two-dimensional space.
+rover trajectory planning problem,minimize a cost,The objective of the rover trajectory planning problem is to minimize a cost associated with mapping the trajectory of a rover.
+mpd,p*,MPD is a proposed policy that is consistently competitive against GIBO and TuRBO. The optimization performance on three objective functions is visualized in Fig. 4. The descent probability threshold p* is mentioned in the context.
+mpd,gibo,MPD outperforms its closest spiritual competitor GIBO in the cosmological constant learning problem.
+mpd,descent direction,The update phase of MPD moves in the most probable descent direction to improve performance compared to GIBO. This is highlighted in the ablation study.
+mpd,trace + mpd,trace + MPD variant learns about gradient by minimizing trace of posterior covariance matrix and moves in most probable descent direction
+mpd,mpd + expected gradient,MPD + expected gradient variant uses scheme to identify most probable descent direction and then moves in direction of negative expected gradient
+mpd,gibo,"MPD outperforms GIBO in tasks such as Swimmer-v1, cosmological constant learning, and rover trajectory planning"
+mpd,components of mpd,two components of MPD work in tandem and both are needed for successful realization of local BO scheme
+expected gradient,most probable descent direction,"expected gradient and most probable descent direction are coupled, spending evaluation budget to learn one and using other to move may not work well"
+gibo,acquisition function,GIBO's acquisition function minimizes trace of posterior covariance to make expected gradient estimate more accurate
+gibo,most probable descent direction,unclear whether GIBO's acquisition function will necessarily estimate most probable descent direction accurately
+acquisition function,one-step maximum descent,acquisition function focuses on one-step maximum descent
+acquisition function,gibo,"The acquisition function focuses on the one-step maximum descent probability directly, while GIBO's 'moving' policy differs by moving in the direction of the (negative) expected gradient."
+acquisition function,acquisition function,"Our acquisition function may not benefit from having a descent direction with a high descent probability, as demonstrated by the incompatibility with GIBO's 'moving' policy."
+acquisition function,mpd,"The more conservative variants of MPD are not as competitive, indicating a difference in approach compared to our acquisition function."
+mpd,swimmer task,"MPD with minimum descent probability threshold p∗ = 85% sees a drop in performance on the Swimmer task, highlighting a specific scenario where performance is affected."
+mpd,mujoco tasks,"MPD with p∗ = 50% shows a decrease in performance on the two Mujoco tasks but an increase in performance in the rover trajectory planning problem, indicating varying outcomes in different task settings."
+rover objective function,mpd,"The rover objective function, being piecewise linear within most of its domain, shows different performance outcomes in conjunction with MPD, suggesting a relationship between optimization function and performance."
+rover,objective function,"The rover objective function is piecewise linear within most of its domain, making finding a descent direction “easier”."
+rover,threshold p∗,The interpretation of the threshold p∗ is quite natural: it sets a threshold of the minimum probability that we would make progress by moving to a new location.
+threshold p∗,probability,"Higher thresholds spending more budget before moving, but being more confident in their moves."
+threshold p∗,hyperparameter,"Intuitively, this hyperparameter trades off robustness versus optimism."
+mpd,threshold p∗,"If there are structures within the objective function that make it “easy” to find a descent direction, MPD may benefit from a lower threshold."
+optimization progress,p∗,We might consider dynamically setting the value of p∗ based on recent optimization progress.
+variants of mpd,step sizes,"The lower section of Tab. 1 shows the performance of the variants of MPD with two additional step sizes, 10−4 and 10−2."
+step sizes,gibo,"MPD with δ = 10−2 occasionally fails to perform better than GIBO, illustrating the potentially detrimental effect of a step size that is too large."
+gibo,step size parameter δ,"The step size parameter δ plays a crucial role in the performance of GIBO, highlighting the balance between faster convergence and the potential detrimental effect of a step size that is too large."
+gibo,gradient descent,"GIBO's step size parameter δ is analogous to the step sizes in gradient descent, emphasizing the importance of balancing convergence speed with step size."
+step size parameter δ,gradient descent,"The step size parameter δ in GIBO is akin to the step sizes in gradient descent, indicating the significance of balancing convergence speed with step size."
+step size parameter δ,length scale of the gp,"It would be interesting to explore 'rules of thumb' for setting the step size parameter δ based on the length scale of the GP, considering that smoother functions can potentially accommodate larger step sizes."
+bayesian optimization,applications,"Bayesian optimization has diverse applications in science, engineering, and other fields, as evidenced by the extensive annotated bibliography compiled by Garnett."
+bayesian optimization,adversarial attacks on machine learning models,"Bayesian optimization can be exploited for malicious purposes, such as generating adversarial attacks on machine learning models, showcasing the dual nature of this optimization technique."
+adversarial attacks,machine learning models,Adversarial attacks are being constructed on machine learning models.
+bo,human expertise,BO requires human expertise in many important applications.
+bo,ethical considerations,BO requires ethical considerations in many important applications.
+fully automated optimization systems,misaligned goals,Fully automated optimization systems may run the risk of perpetuating misaligned goals in machine learning.
+local optimization,methods,"Better methods for local optimization are judged to have potential positive impacts on society, outweighing the potential negative impacts."
+natalie maus,contribution,Natalie Maus contributed to the initial stage of this work.
+anonymous reviewers,feedback,Anonymous reviewers provided feedback during the review stage.
+qn,nsf award numbers,"QN was supported by the National Science Foundation (NSF) under award numbers OAC–1940224, IIS–1845434, and OAC-2118201."
+rg,nsf award numbers,"RG was supported by the National Science Foundation (NSF) under award numbers OAC–1940224, IIS–1845434, and OAC-2118201."
+kw,nsf award number,KW was supported by NSF award number IIS-2145644.
+jrg,nsf award number,JRG was supported by NSF award number IIS-2145644.

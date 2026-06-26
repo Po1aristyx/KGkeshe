@@ -1,0 +1,173 @@
+node_1,node_2,edge
+elman-type recurrent neural networks (rnns),mean-field regime,The context discusses the convergence of gradient descent training dynamics of RNNs to the mean-field formulation in the large width limit.
+mean-field regime,large width limit,These two concepts are related as they both describe the same condition under which RNN training is analyzed.
+gradient descent training dynamics,optimality,The text states that the fixed points of the infinite-width dynamics are globally optimal under certain weight initialization assumptions.
+feature-learning,wide rnns,Optimality is established for feature-learning with wide RNNs within the mean-field regime.
+deep neural networks,time series analysis,Deep neural networks
+time series,revolutionized disciplines,Time series analysis is one of the disciplines that has been profoundly altered by the use of deep learning models.
+mean-field framework,feature-learning,The mean-field framework is better at accurately capturing the highly nonlinear dynamics
+mean-field framework,training process,The mean-field framework's training process is typically harder to analyze.
+fixed points of the training dynamics,optimality,We aim to establish the optimality of the fixed points for wide RNNs trained with classical gradient descent.
+elman-type rnns,mean-field regime,This paper extends the mean-field framework to Elman-type RNNs
+previous results,mean-field infinite width limit,The series of papers initiated the study of training dynamics in the mean-field infinite width limit for single-layer neural networks.
+training dynamics,global optimizers,The limiting points of the training dynamics were shown to be global optimizers of the network's objective.
+wide rnns,classical gradient descent,These models are trained using classical gradient descent.
+training dynamics,global optimizers of the loss function,The limiting points of the training dynamics are proven to be global optimizers in the given context.
+reinforcement learning setting,sirignano & spiliopoulos,2022; agazzi & lu
+relu,non-differeniable network nonlinearities,ReLU is an example of a non-differentiable network nonlinearity.
+deep resnet architecture,lu et al.,2020
+neuronal embedding framework,nguyen & pham,2020; pham & nguyen
+rnn (recurrent neural network),weight-sharing,input interaction
+neural tangent kernel (ntk) regime,performance of rnns in the infinite width limit,The NTK regime refers to the network's behavior in the infinite width limit
+feature learning,not possible in ntk regime,In the NTK regime
+fully-connected feedforward networks,rnn framework,The context discusses extending the fully-connected feedforward networks to the RNN framework
+gradient descent,optimal fixed points,Gradient descent is used to train these networks to reach optimal fixed points
+feature-learning regime,ntk regime,The optimality result holds in the feature-learning regime
+deep neural networks,uniformly bounded hidden weights,Universal approximation for deep neural networks is shown with hidden weights having uniform bounds
+standard initialization,3-layer feedforward networks,In feedforward networks
+feedback in rnn,comparable level of expressivity,Feedback in RNNs necessitates stronger weight assumptions at initialization to match the expressivity of a 3-layer feedforward network.
+section 2,notation and model,Section 2 introduces the notation
+section 2,mean-field limit,Section 2 covers the model's mean-field limit alongside the notation.
+section 3,main results,Section 3 outlines the main theoretical findings of the paper.
+section 4,numerical experiments,Section 4 provides examples through numerical experiments.
+section 5,conclusions,Section 5 summarizes the paper's conclusions.
+elman-type rnn,neuronal embedding formalism,The context discusses using the neuronal embedding formalism to study the convergence properties of Elman-type RNNs.
+fixed,finite memory l,length-l trajectories
+population risk l(w),empirical risk lm(f ∗,ˆf )
+minimizer ˆf,parametric family of estimators {f ( · ; w )},ˆF aims to approximate the target function F ∗ within the parametric family indexed by W.
+activation function σh,neurons,The activation function is applied component-wise to the neuron activations in the network.
+structure of the network,hidden state hhh,input-hidden state hxh
+xk,input sequence,The network processes a sequence of inputs xk with xk ∈ Rd.
+rnn parameters,wxh,why
+ism from nguyen & pham,2020; pham & nguyen,2020
+abstract probability space (ωh,fh,ph)
+network weights,function of the estimator parameters,In the formalism
+elman-type recurrent neural networks,hidden width n,These networks have a specified hidden width n
+elman-type recurrent neural networks,neuronal embedding,The networks are of the Elman type
+neuronal embedding,infinite width limit of the network (2.2),The coupling procedure identifies the neuronal embedding with the network's infinite width limit.
+loss functions,mse (mean squared error),The analysis extends to more general loss functions
+mean-field representation,network,The mean-field representation is the continuous version of the network
+finite-width rnn,mean-field representation,Any finite-width RNN can be embedded into the mean-field representation
+width-n network,finite-width rnn,For n < ∞
+parameters w,finite-width rnn,Parameters W include Wxh
+mean-field limit,finite-width rnn,The coupling procedure connects the initial weights of the finite-width network (W0) to the mean-field limit (W0) at the start of training.
+coupling procedure,initialization,The coupling procedure is performed during initialization
+weights w0,coupling procedure,Weights W0 are those of the finite-width network at the beginning of the coupling procedure.
+weights w0,mean-field limit w0,Both the finite-width network and the mean-field limit have initial weights denoted by W0.
+neuronal embedding,finite-width neural network,A neuronal embedding is a concept used to describe the relationship between the weights of a finite-width network and the initialization laws
+finite-width neural network,width-n network,A finite-width neural network refers to a neural network with a specific
+initialization laws,ϱn,Initialization laws are indexed by the width 'n' and represent the probability distributions for the weights (W0) of a network with a given width.
+neuronal embedding,mean-field weights,The mean-field weights (Wxh
+sampling rule,¯pn,A sampling rule
+random map,ϑ,The random map ϑ is a transformation that takes the index (i) to a random argument for the weight function W
+weights,time evolution,The weights of the network evolve over time
+neuronal embedding,probability space,The neuronal embedding construction decomposes the probability space into a product space
+finite-width network,sampling rule,In the finite-width network discussed
+sampling rule,neuron indices,The sampling rule ensures that different permutations of neuron indices
+neural network,weights,The weights W are determined by the sampling rule and the initialization law I.
+initialization laws,neuronal embedding,Initialization laws I guide the choice of (Ωh
+θ (θ),finite-width network,The variable θ or ϑ(i) represents the input to the network and is sampled according to the given rule.
+weight functions,hadamard product,The weight functions
+smooth indicator function,truncation,The smooth indicator function
+dependence of ϑ(i) and ϑ(j),weak,Assumption 4 assumes a weak dependence between ϑ(i) and ϑ(j) for i ≠ j
+mse,minimization,Gradient descent is a popular algorithm for minimizing the mean squared error (MSE) as expressed in equation (2.1).
+gradient descent,parameter update,The update rule for gradient descent involves the Fréchet derivative (DWr) and a constant step-size (β)
+continuum limit,asymptotically small step-sizes,The analysis focuses on the regime where the step-size (β) approaches zero
+parametric update,deterministic,In this limit
+mean-field limits of neural networks,technical conditions,These conditions are formulated in (Chizat & Bach
+nonlinearities,regularity,Assumption 3a provides technical conditions on the regularity of nonlinearities to maintain well-behaved dynamics.
+preimage of 0,nonvanishing derivative,The nonvanishing derivative at the preimage of 0
+activation function,expressivity,Assumption 3b requires sufficient expressivity
+initial condition,expressivity preservation,Assumption 3c guarantees that the initial condition allows the network to exploit its expressivity throughout training.
+network expressivity,argument variation,This property ensures that the argument of the nonlinearity varies enough
+chizat & bach,2018a,convexity assumption
+nguyen & pham,2020,initial condition property
+nonlinearity,nguyen & pham,2020
+information bottleneck,depth of the unrolled network,Assumption 3b ensures no information bottleneck occurs as the network deepens during training.
+well-posedness of the training dynamics,assumption 3d,This assumption guarantees the stability of the training process.
+boundedness of whh weights at initialization,technical assumption,Made for simplicity
+assumption 3c,sufficient support assumption from chizat & bach,2018a
+iid initialization,expressivity of the untrained network,Relaxing Assumption 3c would reduce expressivity for predictors at earlier stages of the untrained network.
+untrained infinite-width network,predictors xk,The network's hidden state is degenerate due to the IID initialization and the intrinsic depth of RNNs
+hidden state of the network,distant past predictors,The lack of information propagation from distant past predictors is a consequence of the network's depth and weight-sharing structure.
+weight-sharing rnns,non-lipschitz rhs,Without the truncation of the hidden layer weights
+finite-width network trajectories,mean-field limit,This paper's main result in Section 3.1 shows convergence of the finite-width network dynamics to the mean-field limit
+finite-width network,existence and uniqueness of the solution,Truncation of weight trajectories is necessary to ensure the existence and uniqueness of the solution
+mean-field equations,standard analytical tools,The lack of regularity in the mean-field equations prevents guaranteeing existence using traditional analytical methods.
+finite-width network trajectories,mean-field limit,analogous to Thm. 18 in (Nguyen & Pham
+neuronal ensemble (ω,p),sample w from p
+distance metric dτ (w,w),frobenius norm
+distance metric dτ (w,w),classical ℓ2 norm
+theorem 3.3,assumptions 1,2
+δ,l,τ
+probability bound,1 - δ - kn exp(-c'n),The probability that Dτ (W
+dτ (w,w),kn^(-c) log(n^2/δ + e)
+particle system,mean-field dynamics,The proof involves comparing the differences in differential updates for both systems and applying Grönwall's inequality.
+gradient dynamics,solution to (2.7),The proof starts by ensuring the sufficient regularity of gradient dynamics and establishing the existence and uniqueness of the solution.
+grönwall's inequality,proof conclusion,Grönwall's inequality is used to finalize the proof
+optimality,elman-type rnns,Section 3.2 discusses the global optimality of Elman-type recurrent neural networks in the mean-field regime.
+field dynamics,distance dt(w,w)
+grönwall’s inequality,optimality result,Grönwall’s inequality is used in the proof of the main optimality theorem.
+theorem 3.4,global minimizer,The theorem states that if gradient descent dynamics converge to a stationary point
+population risk,underlying function,A global minimizer approximates the underlying function to arbitrary accuracy.
+weights at initialization,expressivity,The network's expressivity is inherited from the properties of σh at initialization.
+mean-field vector fields,suboptimal fixed point,Mean-field vector fields evaluated at a suboptimal fixed point do not vanish everywhere due to the network's expressivity.
+gradient descent dynamics,stationary point,The dynamics (2.7) converges to a stationary point
+fixed point of the dynamics,neuronal embedding space,The fixed point cannot vanish everywhere in the neuronal embedding space.
+network,suboptimal stationary point,A network with sufficient support cannot be a suboptimal stationary point of gradient dynamics.
+sufficient notion of support,assumption 3c,This property is preserved by the gradient descent dynamics throughout training (Assumption 3c).
+gradient descent dynamics,continuous vector field,The full support property is not altered by the continuous vector field during the gradient descent process.
+time derivative of why(t),vanish almost everywhere,As t approaches infinity
+approximator,target function f ∗,The difference between the approximator and the target function vanishes almost everywhere in the limit.
+convergence of why(t),nondegeneracy of why-jacobian,The combination of convergence and nondegeneracy implies the limiting point is optimal.
+input structure,standard feedforward network,Technical challenges arise due to the distinct input structure compared to a standard feedforward network.
+input structure of the unrolled network,standard feedforward network or resnet,The input structure is different from these networks.
+additive combination,hidden state of the previous layer,These elements interact in the network through weight sharing.
+degeneracies of the dynamics,proof,Degeneracies need to be accounted for in the proof process.
+risk minimization problem,equation (2.1),Equation (2.1) describes the risk minimization problem.
+dynamics of why,equation (2.8),Why's dynamics are analyzed in equation (2.8) to avoid degeneracies.
+ode rhs,l terms,The ODE has L terms due to weight sharing
+time differentials of whh and wxh,feedforward analysis,The absence of sum structure in feedforward analysis contrasts with these terms.
+set of fixed points,odes,Characterizing fixed points is challenging in the presence of sum structure.
+differential of why terms,absence of sum structure,Considering Why terms helps bypass degeneracy issues.
+mean-field ode,empirical risk,The empirical risk converges to 0 given sufficient training time
+mean-field odes,dynamics of the network,Over finite time intervals
+rnn (student),mean-field regime,The student RNN operates in the mean-field regime
+rnn (student),rnn (teacher),A student RNN learns from a teacher RNN
+rnn (student),hidden layer width (ns),The student RNN's hidden layer width
+width (ns),convergence,Increasing the width (ns) leads to the convergence of the empirical risk to a limiting curve as the number of samples increases.
+shift map t(x) = x + 1,simulated data,The simulated data is generated from stationary trajectories of the shift map
+s1 = [0,2π),shift map t(x)
+shift map t (x),sphere x = s1,T acts on the sphere
+initial state of t,x = s1,The initial state is sampled from the sphere X = S1.
+invariant measure ν0(dx),x = s1,ν0 is the invariant measure for T
+input sequence x(j),x = s1,x(j) is sampled from the invariant measure ν0 on the sphere X = S1.
+student rnn,training,The student RNN is trained using the nn package in PyTorch.
+parameters ˆw,student rnn,ˆW represents the trainable parameters of the student RNN.
+empirical mean squared error ˜lm( ˆw),student rnn,This error is minimized during the training of the student RNN.
+database,empirical mean squared error,The database is used to compute the empirical error ˜Lm( ˆW).
+invariant measure ν(x),t,The training results in samples from the invariant measure ν(x) of the shift map T.
+population risk (2.1),empirical mean squared error,The finite-sample equivalent of the population risk is the empirical error.
+stochastic gradient descent,optimization,Optimization uses stochastic gradient descent
+stepsize γ,stochastic gradient descent,The optimization has a stepsize γ = 3 · 10^(-3).
+batch size,optimization,The batch size is set to the full database size (m).
+mse ˜l( ˆw),deterministic dynamical system,Results in Figure 2a show the MSE for predictors generated by a deterministic system.
+teacher,student,The teacher and the student are related as they are both neural network components in the context of weight initialization.
+mse (mean squared error),network size,The evolution of MSE is shown for a network of growing size
+timesteps k ∈ [100,150],inset
+weights,reference student network,Weights are drawn without replacement from a reference network for consistency in initializing the student networks.
+width 300,reference student network,The reference network has a width of 300
+elman-type rnns,global optimality,Elman-type RNNs exhibit global optimality under certain conditions
+gradient descent training dynamics,optimality properties,Gradient descent is used for training
+previous results,shallow and deep neural networks,The work extends previous findings on optimality to new network architectures.
+deep learning,understanding,This work contributes to the broader understanding of deep learning.
+mean-field dynamics of neural networks,single-layer,supervised setting
+mean-field dynamics,recent results,The connection is that mean-field dynamics is being contrasted with recent findings
+chizat,2022,specific settings
+acknowledgments,anonymous referee,The referee is thanked for their contributions
+nsf grant ccf-1934964,partial support,This grant provides financial backing to one or more authors.
+pra 2022 85,university of pisa,A project funded by the university
+pnrr - m4c2,european commission,These entities are connected through the European Union's NextGeneration EU programme and the funding initiative.
+hfsp rgp005,nsf dms 17-13012,Both are grants supporting the research
+max planck institute for mathematics in the sciences,scads institute,Institutional partners where AA and SM had discussions during the project.
+technical university of dresden,university of leipzig,Partners involved in the ScaDS institute

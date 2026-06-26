@@ -1,0 +1,280 @@
+node_1,node_2,edge
+clip,zero-shot sketch based image retrieval (zs-sbir),CLIP is leveraged for zero-shot sketch based image retrieval (ZS-SBIR) in this paper.
+clip,foundation models,The paper is inspired by recent advances on foundation models in leveraging CLIP for ZS-SBIR.
+sketch,clip,"Prompt learning setup is at the core of the solution, which factors in sketch-specific prompts."
+sketch,image retrieval,The synergy of CLIP and ZS-SBIR is studied with a focus on sketch-specific prompts.
+sketch,photos,An additional regularisation loss is proposed to ensure separation between sketches and photos for fine-grained matching.
+photos,sketch,A patch shuffling technique is introduced to establish structural correspondences at an instance level between sketch-photo pairs.
+clip,prompt learning paradigm,CLIP and prompt learning paradigm carries great promise in tackling other sketch-related tasks
+zs-sbir,zero-shot setup,late research on sketch-based image retrieval fixated on the zero-shot setup
+zs-sbir,data scarcity,shift to zero-shot SBIR became inevitable because of data-scarcity problem
+zs-sbir,semantic transfer,key behind a successful ZS-SBIR model lies with how best it conducts semantic transfer
+clip,zs-sbir,adapt CLIP model for ZS-SBIR
+zs-sbir,fg-zs-sbir,extend to a more practical yet challenging setup of FG-ZS-SBIR via a novel prompt-based design
+zs-sbir,semantic transfer,"semantic transfer for ZS-SBIR had remained rather rudimentary, mostly using standard word embeddings"
+zs-sbir,research,ZS-SBIR research is the focus of the paper
+clip,foundation models,CLIP is mentioned as a foundation model in the paper
+clip,cross-modal problem,A synergy is proposed between CLIP and the cross-modal problem of ZS-SBIR
+clip,vision-language pre-training,CLIP is being adapted to vision-language pre-training in the latest research
+clip,image and action recognition,CLIP is being used for image and action recognition in the latest research
+clip,zero-shot tasks,CLIP is being used for zero-shot tasks in the latest research
+zs-sbir,prompt learning,Prompt learning is at the heart of the synergy between CLIP and ZS-SBIR
+clip,visual prompts,CLIP is being adapted with visual prompts for ZS-SBIR
+clip,visual prompts,Visual prompts designed for CLIP are injected into the initial layer insider the transformer of CLIP for training.
+visual prompts,modality,"Two sets of visual prompts are designed, one for each modality (sketch, photo)."
+clip,transformer,Visual prompts are injected into the initial layer insider the transformer of CLIP for training.
+prompts,training,The visual prompts are trained over the gold standard triplet loss paradigm on extracted sketch-photo features.
+training,clip,"While keeping the rest of CLIP frozen, the prompts are trained over the gold standard triplet loss paradigm on extracted sketch-photo features."
+batch normalisation,image recognition,Training batch normalisation for image recognition is mentioned as an inspiration for the fine-tuning process.
+trainable parameters,layer normalisation layer,A small subset of trainable parameters of every Layer Normalisation (LN) layer is fine-tuned for additional performance gain.
+clip,text encoder,"To enhance cross-category semantic transfer, CLIP's text encoder is further cultivated for its zero-shot potential."
+visual prompts,training,Handcrafted text prompts via templates like 'photo of a [category]' are used for training.
+fine-grained setting,category-level setup,The new fine-grained setting is mentioned to be more tricky than the previous category-level setup.
+category-level setup,challenges,The new fine-grained setting poses two additional challenges compared to the previous category-level setup.
+instance-level matching,fine-grained zs-sbir,Fine-grained ZS-SBIR requires instance-level matching to be conducted for additional performance.
+fine-grained zs-sbir,semantic consistency,"Apart from semantic consistency, fine-grained ZS-SBIR requires instance-level matching to be conducted."
+consistency,fine-grained zs-sbir,"Fine-grained ZS-SBIR requires consistency in instance-level matching, introducing additional constraints such as structural correspondences."
+fine-grained zs-sbir,instance-level matching,"In fine-grained ZS-SBIR, instance-level matching is essential for conducting matching to be conducted, which dictates additional constraints."
+constraints,structural correspondences,Additional constraints such as structural correspondences are dictated by the need for instance-level matching in fine-grained ZS-SBIR.
+challenge,regularisation term,"For the first challenge, a new regularisation term is proposed to make relative sketch-photo feature-distances uniform across categories, enabling a single global margin parameter to work across all categories."
+category,relative distances,"The proposed regularisation term aims to minimize the KL-divergence between every pair of distributions of relative distances for sketch-positive-negative hard-triplets in a category, training the model to make relative sketch-photo distances uniform across categories."
+patch shuffling technique,permutation-invariance,"The clever patch shuffling technique involves shuffling equally divided patches of a sketch and its corresponding photo then ensuring a shuffled sketch is closer to a shuffled photo with the same permutation order, while training for permutation-invariance to improve structural correspondences."
+clip,zs-sbir,"For the first time, CLIP is adapted for ZS-SBIR, showcasing a novel approach to facilitate synergy between the two."
+challenge,fine-grained zs-sbir,"Different challenges are addressed in ZS-SBIR, including both conventional and fine-grained ZS-SBIR settings to provide a comprehensive solution."
+zs-sbir,fine-grained zs-sbir,"The conventional ZS-SBIR setting and a new, more challenging fine-grained ZS-SBIR problem are mentioned together, suggesting a relationship between the two."
+regularisation term,clever patch shuffling technique,"A regularisation term and a clever patch shuffling technique are introduced to address the fine-grained challenges, indicating their relationship in solving a common issue."
+zs-sbir,clip-adapted model,"The CLIP-adapted model surpasses all prior arts in the ZS-SBIR setting, indicating a significant relationship between ZS-SBIR and the model."
+foundation models,sketch-related tasks,"The synergy between foundation models and sketch-related tasks is highlighted for the sketch community, suggesting a relationship in improving task performance."
+category-level sbir,zero-shot sbir (zs-sbir),"Zero-Shot SBIR (ZS-SBIR) is explored for cross-category generalization as an extension of Category-level SBIR, indicating a relationship between the two approaches."
+fine-grained sbir,fg-sbir,"Fine-grained SBIR (FG-SBIR) is introduced as a specialized task focusing on fine-grained details, indicating a relationship between the two concepts."
+deep triplet-ranking based siamese network,joint sketch-photo manifold,"A deep triplet-ranking based siamese network is introduced for learning a joint sketch-photo manifold in the context of Fine-grained SBIR, suggesting a relationship between the two."
+higher order retrieval loss,textual tags,These terms are related in the context of modules addressing retrieval and text-based tags.
+hybrid cross-domain generation,hierarchical co-attention,Both terms are mentioned in context of new generation techniques with cross-domain and co-attention aspects.
+reinforcement learning,sketch-traits like style-diversity,The relation between reinforcement learning and sketch-traits is mentioned for addressing style diversity in sketch generation.
+data-scarcity,redundancy of sketch-strokes,These terms are related as factors addressed for optimizing sketch generation towards favor of retrieval.
+universal manifold of prototypical visual sketch traits,supporting sketch-photo pairs,The universal manifold concept is related to the supporting sketch-photo pairs for adapting to new classes.
+zero-shot cross-category fg-sbir,clip,The relationship exists to leverage zero-shot potential in addressing the problem of cross-category FG-SBIR using CLIP as a foundation model.
+zs-sbir,sketch-photo domain gap,"ZS-SBIR aims to reduce the domain gap by approximating photo features from sketch, as mentioned in the context."
+semantic representations,adversarial training,Semantic representations are aligned with adversarial training for sketch-photo domain adaptation in the context.
+graph convolution networks,distilled contrastive relationships,Both terms are related as techniques used for improving sketch-photo domain relationship and learning.
+imagenet-pretrained teacher,sketch/photo encoders with shared conv layers,The teacher model and the sketch/photo encoders with shared layers are related as methods employed for knowledge distillation and domain adaptation.
+shared conv layers,independent batchnorm-layer,These terms are related as they are both components of neural networks used for parameter optimization.
+shared vit,minimise domain gap,"The shared ViT is used specifically to minimize the domain gap, highlighting a purposeful relationship between the two terms."
+prototype-based selective knowledge distillation,learned correlation matrix,"The prototype-based selective knowledge distillation technique relies on the learned correlation matrix, showcasing a dependency between the two."
+test-time training paradigm,reconstruction on test-set sketches,"The test-time training paradigm involves the reconstruction on test-set sketches, indicating a methodological connection between the two."
+semantic transfer,zs-sbir,"Semantic transfer techniques have been applied to ZS-SBIR tasks, indicating a direct application of semantic knowledge to this specific task."
+word embeddings,clip,"Word embeddings have been directly or indirectly used in semantic transfer, while CLIP is explored for exploiting its generalisability for further semantic transfer."
+clip,vision tasks,"CLIP is utilized in various vision tasks, showcasing its versatility and applicability across different domains."
+contrastive language-image pre-training (clip),cross-modal data,"CLIP involves training on cross-modal data, merging textual information with image data for enhanced learning."
+image-text pairs,clip,"CLIP benefits from a large scale availability of ∼ 400M image-text pairs for training, showcasing the reliance on such data for representation learning."
+image-text pairs,zero-shot,"The availability of image-text pairs enables zero-shot learning in CLIP, highlighting the importance of such data for downstream tasks."
+prompt engineering,nlp literature,Prompt engineering has been investigated using NLP literature
+prompt engineering,retrieval,Prompt engineering includes retrieval
+prompt engineering,image generation,Prompt engineering includes image generation
+prompt engineering,continual learning,Prompt engineering includes continual learning
+prompt engineering,object detection,Prompt engineering includes object detection
+prompt engineering,few-shot recognition,Prompt engineering includes few-shot recognition
+prompt engineering,semantic segmentation,Prompt engineering includes semantic segmentation
+clip,image/text encoders,CLIP's image/text encoders are leveraged with StyleGAN for intuitive text-based semantic image manipulation
+clip,zero-shot fg-sbir,CLIP is adapted for zero-shot FG-SBIR in a cross-category setting
+prompt learning,vision tasks,Prompt Learning for Vision Tasks originates from the NLP domain
+prompt learning,prompting,Prompting imparts context to the model regarding the task at hand
+prompt learning,large-scale pretrained text models,Large-scale pretrained text models like GPT and BERT are utilized for benefiting downstream tasks
+prompting,task-specific template,Prompting involves constructing a task specific template
+prompting,label words,Prompting involves label words to fill up the task specific template
+prompting,prompt tuning,Prompt tuning is urged as domain-expertise is necessary for hand-crafted prompt-engineering
+prompt tuning,recent works,Prompt tuning entails modelling the prompt as task-specific learnable continuous vectors in recent works
+prompt tuning,fine-tuning,Prompt tuning involves optimising the prompt vectors via gradient descent during fine-tuning
+prompt tuning,task-specific learnable continuous vectors,Prompt tuning involves modelling the prompt as learnable continuous vectors
+prompt tuning,vision community,Prompt tuning for learning context vectors has taken root in the vision community
+prompt learning,fg-sbir,Prompt learning is focused on learning a single prompt for sketch and photo branches in the context of FG-SBIR
+prompt learning,fg-sbir,The concept of prompt learning is discussed in the context of FG-SBIR.
+prompt learning,clip,Prompt learning is used in conjunction with CLIP to generalize onto unseen novel classes.
+prompt learning,zero-shot potential,Prompt learning leverages the zero-shot potential of CLIP for multi-category FG-ZS-SBIR.
+clip,contrastive language-image pre-training,CLIP is known as Contrastive Language-Image Pre-training and is popular for visual understanding tasks.
+clip,encoders,"CLIP consists of two separate encoders, one for image and another for text."
+clip,transformer,CLIP uses a transformer matrix to process input features.
+clip,cosine similarity,CLIP is trained via a contrastive loss that maximizes cosine similarity.
+textual feature,t,T is used to extract textual features
+t,cosine similarity,The model is trained via a contrastive loss maximizing cosine similarity
+text-photo pairs,cosine similarity,A contrastive loss maximizes cosine similarity for matched text-photo pairs
+classification,textual prompts,Textual prompts like 'a photo of a [category]' are fed to T for classification tasks
+text features,category-specific features,Text prompt is used to obtain category-specific text features
+prediction probability,input photo feature,Prediction probability for input photo feature is calculated
+nlp literature,prompt learning,Prompt learning has been adopted based on NLP literature
+clip,prompt learning,Prompt learning has been adopted on foundation models like CLIP
+prompt learning,shallow vs deep prompt,Variations of prompt learning include shallow vs deep prompt based on the layers at which prompts are inserted
+prompt learning,patch embeddings,"In the context, prompt learning is used along with patch embeddings for the task at hand"
+prompt learning,model,The model at hand is related to prompt learning as mentioned in the context
+categorical sbir,query-sketch,Categorical SBIR aims to retrieve a photo of the same category given a query-sketch according to the context
+categorical sbir,gallery,Categorical SBIR operates on a gallery holding photos from multiple categories as per the context
+categorical sbir,photo,Categorical SBIR aims to retrieve a photo of the same category from a gallery according to the context
+categorical sbir,embedding function,Categorical SBIR uses an embedding function to extract features from sketch and photo as mentioned in the context
+categorical sbir,triplet loss,Categorical SBIR is trained using a triplet loss to bring sketches and photos of the same category closer while distancing other categories' photos
+zero-shot sbir,novel categories,Zero-Shot SBIR evaluates on novel categories that were unseen during training according to the context
+zs-sbir,clip,ZS-SBIR is adapted for zero-shot semantic-based image retrieval (ZS-SBIR) using CLIP for enhancing performance.
+sbir baseline,zero-shot transfer,The SBIR baseline can be extended to a zero-shot setting for ZS-SBIR but lacks sufficient zero-shot transfer of semantic knowledge.
+vgg-16,clip,VGG-16 pretrained on ImageNet can be replaced by CLIP's visual encoder to introduce semantic-rich information into the system for zero-shot semantic-based image retrieval.
+triplet loss,clip knowledge,"Naively training CLIP's image encoder on SBIR dataset using triplet loss may lead to catastrophic forgetting of learned CLIP knowledge, impacting performance."
+mlp layer,clip's embedding space,"Training via an additional MLP layer at the end transfers the encoded feature from CLIP's embedding space to a subsequent space, affecting generalization potential."
+prompt learning approach,clip,"A prompt learning approach is selected to adapt CLIP for ZS-SBIR, ensuring stable optimization and desired generalization of CLIP's capabilities."
+clip,desired generalisation,"CLIP needs to be adapted for category-level SBIR, which involves learning two sets of prompts to guide sketch and photo features. The prompts help induce CLIP to learn the downstream sketch and photo distribution respectively."
+prompt,sketch,The prompts guide the sketch feature extraction process
+prompt,photo,The prompts guide the photo feature extraction process
+prompt,clip,Knowledge learned by CLIP is distilled into a prompt's weights via backpropagation to improve CLIP.
+prompt,θ,"Instead of fine-tuning the entire visual encoder's weights, a small subset of layer normalization parameters across θ is tuned to improve training stability."
+sketch/photo branch specific layer-norm layers,param-θ,"The trainable parameter set {vs, vp, ls} is related to the sketch/photo branch specific layer-norm layers’s param-θ"
+sketch/photo branch specific layer-norm layers,classification loss,A classification loss is imposed on the sketch/photo joint-embedding space
+clip’s text encoder,clip’s image encoder,CLIP’s text encoder is used in conjunction with CLIP’s image encoder for zero-shot utility
+clip’s text encoder,classification head,CLIP’s text encoder is used instead of the usual auxiliary Ns-class FC-layer based classification head
+prompt templates,classification weight vectors,Handcrafted prompt templates like ‘a photo of a [category]’ are used to obtain a list of classification weight vectors {tj}Ns
+clip adapted zs-sbir paradigm,weighted combination of losses,The CLIP adapted Zero-Shot Sketch-Based Image Retrieval paradigm is trained using a weighted combination of losses
+clip,zero-shot image retrieval potential,Off-the-shelf CLIP itself has zero-shot image retrieval potential
+category level query,photo of a [query],Someone can feed the category level query as ‘a photo of a [query]’ for zero-shot image retrieval potential
+category-level query,sketch,"A category-level query sketch can be fed as 'a photo of a [query]', indicating the interest in fine-grained details modeled by the sketch"
+sketch,category-level zs-sbir,Sketched specialize in modeling fine-grained details leading to the transition to a more practical and long-standing research problem of cross-category fine-grained ZS-SBIR
+fg-sbir,fine-grained sbir,Fine-grained SBIR aims at instance-level sketch-photo matching at intra-category level compared to category-level SBIR.
+fg-sbir,single-category setup,Existing FG-SBIR works remain restricted to a single-category setup where training and evaluation are done in the same category.
+fg-sbir,multi-category setup,Some works have extended FG-SBIR to a multi-category setup aiming at instance-level matching from multiple categories.
+multi-category fg-sbir,sketchy dataset,Multi-category FG-SBIR setup involves training a single model with instance-level matching from multiple categories like the Sketchy dataset.
+dataset,sketch/photo pairs,The dataset consists of sketch/photo pairs from multiple categories
+categories,design considerations,"On top of baseline for single-category FG-SBIR, it involves two additional design considerations"
+photo,sketch-anchor,"The negative photo is from the same jth class of sketch-anchor and positive-photo, but of different instances"
+training,testing categories,"Cross-category zero-shot FG-SBIR is analogous to category-level ZS-SBIR, in that the training and testing categories are disjoint"
+instance-level photos,unseen categories,The former needs to fetch instance-level photos from unseen categories
+clip-based zs-sbir,fg-zs-sbir,We therefore aim to answer the question: how can we extend our CLIP-based ZS-SBIR to FG-ZS-SBIR?
+visual prompt,categories,A common learnable visual prompt shared across categories is trained using CLIP's image encoder
+clip image-encoder,backbone,The key components of CLIP-based ZS-SBIR include CLIP image-encoder as backbone with separate sketch/photo branches
+clip image-encoder,backbone,The CLIP image-encoder is used as the backbone in the design
+sketch/photo branches,"individual prompts {vs, vp}",There are separate sketch/photo branches with individual prompts for comparison
+clip text-encoder,classification loss,CLIP text-encoder is used for classification loss within the model
+fine tuning layer-norms,sketch/photo branches,Fine tuning layer-norms are applied to sketch/photo branches for optimization
+category-level triplets,hard-triplets,Category-level triplets are replaced by hard-triplets for intra-category instance-level matching
+common prompt,shared backbone,A common prompt and a shared backbone between sketch/photo branches improve fine-grained matching
+trainable parameter set,common prompt v and layer-norm parameters lθ,The only trainable parameter set consists of a common prompt and layer-norm parameters
+category-specific margin-parameter,triplet loss,Category-specific margin-parameters affect the triplet loss for training a FG-ZS-SBIR model
+instance level matching,categories,Instance level matching across categories poses challenges due to diverse shape morphology
+training signal,structural correspondences in a sketch-photo pair,A training signal is required to learn the structural correspondences in a sketch-photo pair
+stabilising margin (µ),categories,"The stabilizing margin (µ) is shown to vary across different categories, indicating a relationship between the margin value and the categories."
+triplet loss,l,"Triplet loss function L is defined as the difference between positive ((s, p+)) and negative distances ((s, p−)), where L = max(0, µ + d(s, p+) − d(s, p−))"
+relative distance,negative distances,"The relative distance δ(s, p+, p−) represents the difference between positive and negative distances used in the triplet loss function."
+relative distance,triplet loss,The average relative distance representing the difference between positive and negative distances is influenced by the margin parameter µ in the triplet loss function.
+margin value,cross-category generalisation of triplet loss,The variation in margin value across different categories affects the cross-category generalization of the triplet loss function.
+categories,margin value,A varying margin value across different categories indicates that the average relative distance is not uniform across categories.
+margin value,triplet loss,Training with a single margin value across all categories may not be optimal and could impact the cross-category generalization of triplet loss.
+categories,relative distance,The distribution of relative distances across categories plays a role in making the relative distance uniform across different categories.
+categories,triplet loss,Making the relative distance uniform across categories allows the same triplet loss with a global margin parameter to work for all categories.
+distance,triplets,Distances are calculated for all triplets in a category
+distances,softmax,Distance values are passed through a softmax function
+softmax,sketch-photo pairs,Softmax function applied to the distances with sketch-photo pairs
+relative distance,kl-divergence,KL-divergence is minimized to make the relative distance uniform across categories
+distribution,relative distances,Distribution of relative distances between categories is calculated
+category-pair,f-divergence,KL-divergence is minimized between distribution of relative distances for each category-pair
+relative entropy,information radius,Relative entropy and information radius should be similar for stabilizing training
+data-augmentation,fine-grained shape-matching transfer,Data-augmentation trick designed for better fine-grained shape-matching transfer
+shape-matching transfer,novel classes,The design of a data-augmentation trick for better fine-grained shape-matching transfer to novel classes is mentioned.
+data-augmentation trick,patch-shuffling,The simple data-augmentation trick is designed through patch-shuffling to create augmented triplets.
+patch-shuffling,triplets,Patch-shuffling is used to create augmented triplets.
+triplets,permute,Augmented triplets are created by permuting n x n patches of sketch and photo.
+sketch-photo pair,category training,"Training should decrease feature-distance of the sketch-permutation from the same permutation of its paired photo, while increasing it from a different permutation."
+triplet training objective,patch-order prediction,"The triplet objective is compared to auxiliary patch-order prediction, showing better fine-grained shape transfer."
+triplet training objective,similar and dissimilar permuted instances,The triplet objective between similar and dissimilar permuted instances provides better fine-grained shape transfer.
+training objective,clip adapted fg-zs-sbir paradigm,"The overall training objective for the CLIP adapted FG-ZS-SBIR paradigm is described with hyperparameters λ2,3,4."
+datasets,evaluation on zs-sbir,"Three popular datasets are used for evaluation on ZS-SBIR, including Sketchy (extended) and its extended version."
+imagenet,extended version,"The extended version of ImageNet contains extra 60,502 images, which are used for specific purposes as mentioned in the context."
+imagenet,tuberlin,ImageNet is connected to TUBerlin as the former is used as a reference or source for the latter in the context.
+tuberlin,zs-sbir,"TUBerlin is mentioned in relation to ZS-SBIR, which implies some form of interaction or utilization of TUBerlin for ZS-SBIR purposes."
+quickdraw extended,sketchy,QuickDraw Extended is related to Sketchy in terms of containing sketches and photos for specific evaluations as mentioned in the context.
+sketchy,sketch-photo association,"A key relationship exists between Sketchy and the concept of sketch-photo association, which is elaborated in the context for evaluation purposes."
+pytorch,nvidia rtx 2080-ti gpu,The implementation of the method in PyTorch specifically mentions the utilization of Nvidia RTX 2080-Ti GPU for processing purposes.
+clip,vit backbone,CLIP is connected to ViT backbone as the former utilizes the latter as a backbone for specific functionalities as described in the context.
+adam optimiser,learning rate,Adam optimiser is used with a learning rate of 1e−5 for 60 epochs.
+adam optimiser,batch size,Adam optimiser is used with a batch size of 64.
+adam optimiser,clip model,Adam optimiser is used while keeping the CLIP model fixed except its LayerNorm layers.
+prompt,zs-sbir,Two prompts (sketch and photo) are used from ZS-SBIR.
+prompt,fg-zs-sbir,One common prompt is used for FG-ZS-SBIR.
+dimension,prompt,Each prompt has a dimension of (3 × 768).
+prompt,transformer,Prompts are injected in the first layer of the transformer.
+fg-zs-sbir,patch shuffling-objective,"For FG-ZS-SBIR, n=2 patches are used for patch shuffling-objective."
+"values λ1,2,3,4",empirically,"Values of λ1,2,3,4 are set empirically to 0.5, 0.5, 0.1, and 1."
+evaluation metric,zs-sbir,"In the evaluation metric, ZS-SBIR literature is followed considering top 200 retrieved samples and reporting mAP score and precision."
+evaluation metric,tuberlin,"Consistency with recent ZS-SBIR works, P@100 and map@200 are reported specifically for TUBerlin."
+evaluation metric,sketchy-ext,Precision at 200 and mAP at 200 are reported specifically for Sketchy-ext.
+cross-category fg-zs-sbir,accuracy,"For cross-category FG-ZS-SBIR, accuracy is measured taking only a single category at a time."
+sketchy,percentage of sketches,"For Sketchy, percentage of sketches having true matched photos in the top-q list is reflected."
+competitors,state-of-the-arts,"First, a comparison is made against the State-of-the-arts for ZS-SBIR and FG-ZS-SBIR."
+zs-sota,semantic transfer,ZS-SOTA involves different approaches including sketch-to-image translation and semantic transfer using word2vec embeddings.
+zs-sake,knowledge-distillation (kd),ZS-SAKE utilizes knowledge-distillation (KD).
+knowledge-distillation (kd),zs-sake,Relationship between knowledge-distillation (KD) and ZS-SAKE as mentioned in the context.
+graph convolution network (zs-gcn),zs-pskd,Relationship between graph convolution network (ZS-GCN) and ZS-PSKD as mentioned in the context.
+zs-gcn,zs-tcn,Relationship between ZS-GCN and ZS-TCN as mentioned in the context.
+zs-tcn,zs-tvt,Relationship between ZS-TCN and ZS-TVT as mentioned in the context.
+zs-iiae,zs-sketch3t,Relationship between ZS-IIAE and ZS-Sketch3T as mentioned in the context.
+fg-zs-sbir,crossgrad,Relationship between FG-ZS-SBIR and CrossGrad as mentioned in the context.
+fg-zs-sbir,cc-dg,Relationship between FG-ZS-SBIR and CC-DG as mentioned in the context.
+clip,zs-sbir,Relationship between CLIP and ZS-SBIR as mentioned in the context.
+clip,fg-sbir,Relationship between CLIP and FG-SBIR as mentioned in the context.
+zs-tcn,zs-tvt,Relation between ZS-TCN and ZS-TVT
+zs-tcn,zs-pskd[vit],Relation between ZS-TCN and ZS-PSKD[ViT]
+zs-tcn,zs-sketch3t,Relation between ZS-TCN and ZS-Sketch3T
+zs-tvt,zs-pskd[vit],Relation between ZS-TVT and ZS-PSKD[ViT]
+zs-pskd[vit],zs-sketch3t,Relation between ZS-PSKD[ViT] and ZS-Sketch3T
+ours,zero-shot sbir,Relation between Ours and Zero-Shot SBIR
+ours,sketchy,Relation between Ours and Sketchy
+sbir,sketchy,Relation between SBIR and Sketchy
+sbir,tu-berlin,Relation between SBIR and TU-Berlin
+map,quickdraw,Relation between mAP and QuickDraw
+vit,layer,ViT layer following relationship
+b-mm,b-fg-mm,Multi-modal prompt learning relationship
+photo,sketch,Photo-to-sketch projection relationship
+b-deep,b-fg-deep,Deep prompting learning relationship
+paradigms,method,Comparison between paradigms and method
+state-of-the-arts,performance,State-of-the-arts performance analysis
+clip,sotas,CLIP as sketch/photo encoders for future sketch research
+clip,sketch/photo encoders,CLIP is motivated as the default sketch/photo encoders for future sketch research.
+clip,linear probing,"CLIP surpassed by prompt-based learning, providing insights on a better adaptation choice compared to linear probing."
+clip,b-lin,Linear probing secures higher results than SOTAs but is surpassed by prompt-based learning compared to CLIP in B-Lin.
+clip,b-ip,"Marginal difference in performance between simple adaptation of CLIP in B-IP and complicated versions in B-Deep, B-MM, and B-Cond motivates the use of a simple shallow prompt without added 'bells and whistles' for ZS-SBIR."
+clip,zs-sbir,"High accuracy on ZS-SBIR establishes CLIP as a robust choice for sketch-based systems, motivating consequent focus on the more challenging task of cross-category FG-ZS-SBIR."
+clip,cross-category fg-zs-sbir,"Our CLIP adapted paradigm easily surpasses the two existing SOTAs on cross-category FG-ZS-SBIR, showing impressive performance in category-level ZS-SBIR and suggesting scope for improvement in FG-ZS-SBIR."
+b-lin,sotas,Linear probing in B-Lin secures higher results than SOTAs.
+b-lin,prompt-based learning,B-Lin is surpassed by prompt-based learning compared to CLIP.
+sotas,prompt-based learning,SOTAs are surpassed by prompt-based learning.
+b-ip,b-deep,"Marginal difference in performance between simple adaptation of CLIP in B-IP and more complicated versions in B-Deep, B-MM, and B-Cond motivates the use of a simple shallow prompt without added 'bells and whistles' for ZS-SBIR."
+b-ip,b-mm,"Relatively higher improvement of B-FG-MM over B-FG-IP than its category-level counterpart, B-MM over B-IP, suggests the efficacy of multi-modal prompts over independent sketch/photo prompts in FG-SBIR."
+b-ip,b-cond,Learning a conditional prompt in B-FG-Cond offers marginal gain.
+b-ip,simple shallow prompt,"The marginal difference in performance between a simple adaptation of CLIP in B-IP and more complicated versions in B-Deep, B-MM, B-Cond motivates the use of a simple shallow prompt without the added 'bells and whistles' for ZS-SBIR."
+zs-sbir,cross-category fg-zs-sbir,"High accuracy on ZS-SBIR establishes CLIP as a robust choice for sketch-based systems, motivating consequent focus on the more challenging task of cross-category FG-ZS-SBIR."
+fg-zs-sbir,structural matching,Reasonable scope for improvement in FG-ZS-SBIR requires structural matching.
+b-fg-mm,b-fg-ip,"Relatively higher improvement of B-FG-MM over B-FG-IP than its category-level counterpart, B-MM over B-IP, suggests the efficacy of multi-modal prompts over independent sketch/photo prompts in FG-SBIR."
+b-fg-cond,marginal gain,Learning a conditional prompt in B-FG-Cond offers marginal gain.
+b-fg-mm,b-fg-ip,"Relatively higher improvement of B-FG-MM over B-FG-IP than its category-level counterpart, B-MM over B-IP, suggests the efficacy of multi-modal prompts over independent sketch/photo prompts in FG-SBIR."
+weights,category-level,Weights work best at category-level.
+conditional prompt,b-fg-cond,Learning a conditional prompt in B-FG-Cond offers marginal gain due to its sensitivity to training strategies.
+clip,out-of-distribution performance,A strong motivation for using CLIP is its out-of-distribution performance that promises to enable large-scale real-world deployment of sketch applications.
+generalisation potential,training data per-class,"Scrutinising this generalisation potential further, we experiment in two paradigms: (i) we vary training data per-class as 10%, 30%, 50%, 70% and 100%"
+generalisation potential,number of seen classes,"Scrutinising this generalisation potential further, we experiment in two paradigms: (ii) we vary number of seen classes as 20, 40, 60, 80 and 104 from Sketchy respectively."
+zs-sbir performance,remain relativelyb-lin,Fig. 4 shows our ZS-SBIR and FG-ZS-SBIR performance to remain relatively B-Lin
+zs-grlb-deep,oursb-fg-lin,Comparison of ZS-GRLB-Deep and OursB-FG-Lin.
+zs-grlb-deep,oursb-fg-lin,Comparing ZS-GRLB-Deep and OursB-FG-Lin.
+cc-dgb-fg-deep,zs-grlb-deep,Comparison of CC-DGB-FG-Deep with ZS-GRLB-Deep.
+ours,b-fg-lin,Comparison of Ours with B-FG-Lin.
+zero-shot potential,clip,Justifying the zero-shot potential of CLIP for both ZS-SBIR and FG-ZS-SBIR tasks.
+design components,models,"Justifying design components: We evaluate our models, dropping one component at a time (Table 2) for both ZS-."
+zs-sbir,fg-zs-sbir,"Both ZS-SBIR and FG-ZS-SBIR models are evaluated in the context mentioned, indicating a relationship in terms of evaluation and comparison."
+f-divergence,fg-zs-sbir,"The absence of f-Divergence affects FG-ZS-SBIR, leading to a severe impact on its class-discrimination ability, highlighting a critical relationship between the two terms."
+lps,fg-zs-sbir,"Removing LPS (Patch-Shuffling) results in a significant decrease in FG-ZS-SBIR accuracy by 3.15%, underlining the importance of LPS in maintaining accuracy."
+lδ,fg-zs-sbir,"The absence of Lδ (f-Divergence) leads to a decrease in FG-ZS-SBIR accuracy by 3.75%, indicating the role of Lδ in preserving the structural correspondence and relative distances in sketch-photo relationships."
+2 × 2 patches,3 × 3,"Using 2 × 2 patches instead of 3 × 3 for FG-ZS-SBIR results in a 1.2% gain in Acc.@1 (Sketchy), highlighting the impact of patch size on the model's accuracy."
+clip text encoder,word2vec,"CLIP text encoder from the method mentioned replaces Word2vec in obtaining category semantics, with CLIP text encoder leveraging large-scale image-text pairs for training compared to Word2vec trained on text-only data, showcasing a shift in methodology."
+word2vec,clip,"Using word2vec embeddings instead of CLIP drops performance by 4.57%/0.172 for ZS-SBIR/FG-ZS-SBIR on Sketchy, justifying the choice of CLIP's text encoder for capturing visual-semantic association."
+handcrafted prompt templates,learnable prompts,"Learning text prompts drops performance by 2.36%/0.078 in Sketchy for ZS-SBIR/ZS-SBIR, possibly due to the higher generalisation ability of handcrafted prompts rooted in natural language vocabulary."
+visual prompt,information capacity,"To ensure the visual prompt has sufficient information capacity, the experiment is conducted with varying K values. The accuracy improves from 26.15%/0.675 at K = 1 to 28.68%/0.723 at K = 3 but saturates at K = 4, with optimal K being 3."
+clip,prompt,"In this context, a high capacity prompt might lead to over-fitting of CLIP, resulting in lower zero-shot performance."
+keyword-based retrieval,zs-sbir framework,"Comparing keyword-based retrieval against ZS-SBIR framework, the ZS-SBIR framework outperforms the keyword-based retrieval significantly."
+text,sketch,The well-accepted superiority of sketch in modelling fine-grained details over text is proven in this context.
+clip,sbir,CLIP's open-vocab generalisation potential is leveraged in this work to enhance zero-shot performance of SBIR.
+relative sketch-photo feature distances,categories,Two novel strategies are put forth in this work to make relative sketch-photo feature distances across categories more uniform.
+structural sketch-photo correspondences,patch-shuffling technique,Learning structural sketch-photo correspondences is achieved via a patch-shuffling technique in this context.
+patch-shuffling technique,spondences,The patch-shuffling technique is used to generate correspondences in the context.
+sketch community,clip,The sketch community is informed about the potential of synergizing foundation models like CLIP for sketch-related tasks.

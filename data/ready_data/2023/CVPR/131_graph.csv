@@ -1,0 +1,214 @@
+node_1,node_2,edge
+text-to-image generation algorithm,deep neural networks,The text-to-image generation algorithm is based on deep neural networks when text captions for images are unavailable during training.
+text-to-image generation algorithm,clip model,"Instead of generating pseudo-ground-truth sentences of training images using existing image captioning methods, the text-to-image generation algorithm employs a pretrained CLIP model."
+clip model,embeddings of images and corresponding texts,"The CLIP model is capable of aligning embeddings of images and corresponding texts in a joint space, enabling proper alignment for zero-shot recognition tasks."
+text-to-image generation model,data log-likelihood,The text-to-image generation model is optimized by maximizing the data log-likelihood conditioned on pairs of image-text CLIP embeddings.
+two domains,principled way of variational inference,"To better align data in the two domains, a principled way based on variational inference is employed, efficiently estimating an approximate posterior of the hidden text embedding given an image and its CLIP feature."
+framework,existing approaches,Experimental results validate that the proposed framework outperforms existing approaches by large margins under unsupervised and semi-supervised text-to-image generation settings.
+paired dataset,images,Paired dataset consists of images and their corresponding text captions.
+paired dataset,text captions,Paired dataset consists of images and their corresponding text captions.
+unsupervised learning methods,t2i generation,Unsupervised learning methods focus on generating images without paired text captions.
+t2i models,unsupervised learning,T2I models based on unsupervised learning exploit Contrastive Language-Image Pretraining.
+clip,image and text embeddings,Contrastive Language-Image Pretraining helps in aligning image and text embeddings.
+approaches,text embeddings,Existing approaches make assumptions about the alignment of image and text embeddings.
+algorithms,text embeddings,Algorithms may suffer from large discrepancies between true and estimated text embeddings.
+variational distribution learning technique,unsupervised t2i generation,The technique is proposed for unsupervised T2I generation to maximize the lower-bound of the data log-likelihood.
+t2i generation,unsupervised learning technique,T2I generation is achieved through an unsupervised learning technique
+data log-likelihood,lower-bound,The lower-bound of the data log-likelihood is maximized in a principled way
+text embedding,hidden random variable,A text embedding is regarded as a hidden random variable in the context
+image,clip embedding,An image and its CLIP embedding are observable random variables
+variational lower-bound,three parts,The variational lower-bound is decomposed into three parts in the context
+matching,prior and posterior distributions,The lower-bound formulation enforces matching between the prior and posterior distributions
+embedding,discrepancy reduction,Method achieves a more accurate estimation of the embedding and reduces the discrepancy between true and estimated embeddings
+variational objective optimization,two-stage training strategy,A two-stage training strategy is employed for the optimization of the variational objective in T2I models
+encode-decoder architecture,image embedding,An encode-decoder architecture is used that takes the image embedding as input
+text embedding,conditional distributions,Two conditional distributions of CLIP embeddings are estimated based on the text embedding
+image embedding,text embedding,The image embedding and text embedding are related in the context of obtaining parameters for two distributions in the variational lower-bound objective.
+kl divergence,jensen-shannon divergence,"The training objective in the first stage involves relaxing the KL divergence term to an adversarial training loss, specifically the Jensen-Shannon divergence, to allow more flexibility in choices for distributions."
+kl divergence,distributions,"The KL divergence is only tractable for a confined family of distributions, leading to the relaxation of this term to allow more flexible choices for the distributions."
+text embeddings,conditional and prior distributions,The relaxation of the KL divergence term enables more flexible choices for conditional and prior distributions when considering text embeddings.
+t2i model,conditional distribution of images,"In the second stage, a T2I model learns the conditional distribution of images based on the estimated text embeddings and image features."
+conditional distribution of images,text embeddings,The conditional distribution of images is learned based on the estimated text embeddings and image features in the context of the T2I model.
+conditional distribution of images,image features,The conditional distribution of images is learned based on the estimated text embeddings and image features in the context of the T2I model.
+proposed method,outstanding performance,"The proposed method achieves outstanding performance on widely adopted datasets, indicating the success of the method."
+proposed method,unsupervised and semi-supervised text-to-image generation tasks,The proposed method offers a principled approach for unsupervised and semi-supervised text-to-image generation tasks based on variational inference technique.
+proposed method,existing methods,"Empirical confirmation shows that the proposed algorithm outperforms existing methods by large margins, demonstrating its superiority."
+text-to-image generation,methods,The context mentions methods in the field of text-to-image generation.
+approach,main idea,The main idea of the approach is described in Section 3.
+procedures,training stages,Sections 4 and 5 discuss the procedures of the first and second training stages.
+experimental results,section 6,The experimental results are presented in Section 6.
+paper,section 7.2,The conclusion of the paper is discussed in Section 7.2.
+generative models,text-to-image,Text-to-image generative models have shown performance via learning with large-scale datasets composed of image-text pairs.
+algorithms,existing algorithms,Existing algorithms represent each image with a sequence of discrete tokens and learn autoregressive or bidirectional transformers to generate high-resolution images given text inputs.
+diffusion models,introduction,The introduction of diffusion models has paved the way to learn large-scale T2I models and generate high-quality images conditioned on text.
+approaches,training t2i models,"For training T2I models without captions, previous approaches typically exploit pretrained CLIP to approximate missing text captions."
+clip-gen,clip image embedding,CLIP-GEN assumes that a CLIP image embedding is perfectly aligned with the corresponding text embedding for T2I generation.
+lafite,gaussian random noise,LAFITE adds a Gaussian random noise to the image embedding for estimating the unknown true text embedding.
+algorithms,structure,Existing algorithms fail to consider the underlying structure of the text embeddings.
+algorithms,text embeddings,Algorithms fail to consider the underlying structure of text embeddings
+algorithms,imprecise approximation,Algorithms result in the imprecise approximation of text embeddings
+retrieval-based approaches,image features,Retrieval-based approaches use image features for text conditions
+retrieval-based approaches,k-nearest image embeddings,Retrieval-based approaches additionally utilize k-nearest image embeddings for conditions
+retrieval-based approaches,clip-gen,Retrieval-based approaches employ image features similar to CLIP-GEN for text conditions
+retrieval-based approaches,orthogonal to our method,Retrieval-based approaches are orthogonal to the proposed method
+retrieval-based approaches,combined with proposed method,Retrieval-based approaches can be combined with the proposed method to enhance generation performance
+framework,variational inference,A principled framework relying on variational inference is proposed to reduce the discrepancy between true embedding and approximated one
+true embedding,approximated embedding,Variational inference framework effectively reduces the discrepancy between true embedding and approximated one
+unsupervised training,t2i models,Unsupervised training of T2I models learns to generate images without textual annotations
+unsupervised training,variational inference framework,Variational inference framework for unsupervised training reduces the discrepancy between true and estimated text embeddings
+images,textual annotations,Images without textual annotations are used by the model to generate high-quality images based on given captions. The presence or absence of textual annotations directly affects the quality of the generated images.
+t2i models,image,"Conventional supervised training of T2I models utilizes both an image and its textual caption to estimate a conditional distribution, implying a direct relationship between T2I models and images in the training process."
+t2i models,textual caption,"T2I models are formulated as a task to derive the conditional distribution based on the input of a text sentence, suggesting a relationship between T2I models and textual captions."
+t2i models,latent text representation,"Existing approaches for unsupervised training of T2I models estimate a latent text representation to derive the conditional distribution, indicating a relationship between T2I models and latent text representations."
+encoder,text condition,"An encoder approximates the text condition during training, implying a direct relation between encoders and the text condition input."
+clip model,images,"The pre-trained CLIP model incorporates two separated encoders for images and texts, indicating a relation between the CLIP model and images used for training."
+clip model,texts,"The CLIP model is designed to make image and text embeddings have a high cosine similarity, indicating a relation between the CLIP model and text representations."
+clip-gen,text condition,"CLIP-GEN approximates the text condition using the CLIP image embedding during training, suggesting a relationship between CLIP-GEN and the text condition."
+lafite,clip image embedding,"LAFITE adds a perturbation to the CLIP image embedding to approximate the text condition, indicating a direct relation between LAFITE and the CLIP image embedding."
+fimg,ximg,fimg is applied to ximg in equation (1) to generate zimg
+normalize,input,Normalize operator divides the input by its magnitude
+ξ,ϵ,ξ is a hyperparameter in equation (1) while ϵ is random noise drawn from the Gaussian distribution
+t2i models,inference environments,Discrepancy exists between training and inference environments of T2I models
+variational inference,training t2i models,Variational inference framework is formulated for unsupervised training of T2I models
+clip image,text embeddings,"Given CLIP image and text embeddings, zimg = fimg(ximg) and ztxt = ftxt(xtxt)"
+t2i generation model,parameters,T2I generation model is defined as pθximg (ximg
+zimg,ztxt,text representation ztxt is unavailable during training while the image embedding zimg is absent for inference
+training,inference,Challenges lie in approximating text embedding ˆztxt based on zimg during training and approximating ˆzimg given ztxt at inference
+log-likelihood,marginal log-likelihood,Our approach naturally maximizes the marginal log-likelihood log pθ(ximg) with respect to θ
+data generating process,text embedding,The observation of the data generating process without the text embedding ztxt during training.
+log-likelihood,pθ(ximg),"The log-likelihood log pθ(ximg) is computed by marginalizing out ztxt as log pθ(ximg) = log pθ(ximg, zimg) = log pθ(ximg, zimg, ztxt)dztxt."
+true posterior distribution,variational posterior,"To learn the true posterior distribution via the variational posterior, we equivalently maximize the lower bound on the log-likelihood."
+variational distribution,true posterior,We employ a variational inference technique that approximates the true posterior pθ(ztxt
+lower bound,log-likelihood,We achieve the tight lower bound when the variational distribution is exactly same as the true posterior.
+"pθ(ximg, zimg, ztxt)",probabilistic graphical model,"ELBO By factorizing pθ(ximg, zimg, ztxt) into the product of pθximg (ximg"
+task maximization,lelbo,We reformulate our task as the maximization of LELBO.
+lelbo,t2i model,The maximization of LELBO involves the optimization of the T2I model in (2) under the unsupervised setting.
+ztxt,qϕztxt,The first term in (5) encourages the estimated sample ˆztxt drawn from qϕztxt (ztxt
+zimg,pθzimg,The second term learns pθzimg (zimg
+t2i models,text captions,"The third term implies training T2I models without text captions, where qϕztxt (ztxt"
+{θximg},"{θzimg, ϕztxt}","To maximize LELBO of (5) in practice, we employ the following two-stage optimization procedure: 1. Fix {θximg} and optimize θzimg and ϕztxt. 2. Fix {θzimg, ϕztxt} and optimize θximg."
+t2i model,unsupervised setting,"The T2I model operates under the unsupervised setting, implying that it does not require labeled data for training."
+t2i model,algorithm,The T2I model is associated with an algorithm that involves variational distribution learning (VDL) which approximates the posterior of text features given image embeddings.
+vdl,text features,VDL is the technique used to approximate the posterior of text features given image embeddings
+vdl,image embeddings,VDL involves the reconstruction of image embeddings given the text features as well as adversarial training.
+text features,image embeddings,Text features and image embeddings are interrelated as the text features are used to reconstruct the image embeddings.
+sampling procedure,vdl,The sampling procedure in VDL involves the process of generating samples for text and image embeddings.
+encoder,multilayer perceptron,The encoder is implemented with a multilayer perceptron for generating samples in the VDL process.
+sample,variantional distribution,Samples are drawn from an implicitly defined variational distribution to estimate text embeddings.
+cosine similarity,text sample,"The high cosine similarity between the estimated text sample and the image feature indicates that they have a similar representation, thus demonstrating a strong relationship."
+text sample,image feature,"The text sample ˆztxt is obtained from the image feature zimg, indicating a clear dependency between the two."
+image feature,unknown text embedding,"The image feature zimg has a similar representation to the unknown text embedding ztxt, suggesting a correlation between them."
+sample,proposed sampling strategy svdl,"The sample ˆztxt is obtained by the proposed sampling strategy SVDL, showing a direct relationship between them."
+sample,sample obtained by sampling strategy svdl,"The sample ˆztxt is drawn based on zimg by the sampling strategy SVDL, indicating a connection between the two samples."
+sample obtained by sampling strategy svdl,image embedding,"The sample ˆztxt obtained by the sampling strategy SVDL is in close proximity to the image embedding, highlighting their association."
+sample obtained by sampling strategy svdl,optimization procedure,"The sample ˆztxt obtained by the sampling strategy SVDL accelerates the optimization procedure by constraining the search space, showcasing a link between them."
+image embedding,text feature,"The image embedding is reconstructed based on the text feature ztxt, depicting a relationship between the two."
+ˆzimg,svdl,ˆzimg is given by SVDL function with θzimg
+ˆzimg,ztxt,ˆzimg is expected to have a high cosine similarity with ztxt
+ˆzimg,ztxt,ˆzimg is also expected to have a high cosine similarity with ztxt
+sample,prior,we draw a sample z′txt from the prior distribution for training purposes
+zipg,ztxt,log pθzimg (zimg
+distributions,families of probability distributions,The two distributions belong to specific families of probability distributions.
+distributions,true distributions of the clip features,The restricted distributions are different from the true distributions of the CLIP features.
+restricted distributions,true distributions of the clip features,Restricted distributions are different from the true distributions of the CLIP features.
+true distributions of the clip features,non-zero densities at the surface of the unit hypersphere in the feature space,The true distributions of the CLIP features only have non-zero densities at the surface of the unit hypersphere in the feature space.
+restricted distributions,modeling the variational and prior distributions,The use of the restricted distributions for modeling the variational and prior distributions would cause high approximation errors.
+von mises-fisher distribution,bessel function,"The von Mises-Fisher distribution involves the Bessel function, leading to the intractable KL divergence."
+von mises-fisher distribution,intractable kl divergence,"The von Mises-Fisher distribution involves the Bessel function, which leads to the intractable KL divergence."
+jensen-shannon (js) divergence,kl divergence,"Contrary to the KL divergence, the JS divergence is always bounded and free from density assumption."
+jensen-shannon (js) divergence,two distributions,The JS divergence enforces the two distributions to become identical via its minimization.
+kl divergence,js divergence,Replacing the KL divergence with the JS divergence is more effective.
+section 6.6.1,empirically validated,The concept of being empirically validated is discussed in Section 6.6.1.
+objective,minimax game,"The objective is reformulated as a minimax game based on the discussed property in [9,22]."
+discriminator,parametrized by ρd,The discriminator function D(·) is parametrized by ρD.
+relational representation transfer,encourage the approximate text samples ˆztxt,The process of Relational Representation Transfer encourages the approximate text samples to mimic the correlation of the observed image embedding.
+relational knowledge distillation framework [23],student mimic the relations among data embeddings given by a teacher,The relational knowledge distillation framework [23] allows the student to mimic the relations among data embeddings provided by the teacher.
+text embeddings,student ones,Text embeddings are regarded as student ones.
+text embeddings,relational distillation loss,Minimization of relational distillation loss is an additional step.
+relational distillation loss,triplet image embeddings,Relational distillation loss involves triplet image embeddings and corresponding samples.
+triplet image embeddings,variational distribution,Triplet image embeddings are sampled by the variational distribution.
+variational distribution,equation,Samples are drawn by the variational distribution in the equation.
+concept,ontology,Concepts are extracted to form the ontology.
+optimization procedure,semi-supervised setting,Optimization procedure is adapted in the case of the semi-supervised setting.
+reconstruction loss,labeled examples,Reconstruction loss is employed for labeled examples.
+variational text samples,true ones,Variational text samples are enforced to mimic the true ones.
+text-to-image generation,datasets,Results of unsupervised text-to-image generation are presented on specific datasets.
+gan2,captioning,Captioning is a text-to-image generation baseline method relying on GAN2
+gan2,image captioning algorithm,Captioning method uses a state-of-the-art image captioning algorithm
+captioning,results,Results of the baselines are retrieved from Captioning method
+methods,asterisks *,Methods with asterisks * report the results of our reproduction
+number,performance,Bold-faced number denotes the best performance in each column
+number,'–','–' indicates that the number is unavailable
+t2i model,dataset,"T2I Model is associated with datasets like MS-COCO, StyleGAN2, and Conceptual Captions 3M"
+methods,captioning,Method 'Captioning' is associated with methods like CLIP-GEN* and LAFITE
+methods,best performance,Method VDL (Ours) reports best performance in each column
+vdl (ours),is (↑),VDL (Ours) is associated with an increase in IS
+vdl (ours),fid (↓),VDL (Ours) is associated with a decrease in FID
+vdl (ours),simtxt (↑),VDL (Ours) is associated with an increase in Simtxt
+vdl (ours),simimg (↑),VDL (Ours) is associated with an increase in Simimg
+t2i generation model,trainable parameters,T2I generation model with trainable parameters is maximized with respect to trainable parameters
+t2i generation model,generation model,T2I generation model is a generative model for image generation
+methods,clip-gen and lafite,Existing methods like CLIP-GEN and LAFITE rely on ztxt for conditional image generation
+approach,generalization performance,"Approach utilizes zimg as well as ztxt for conditioning, resulting in improved generalization performance"
+ztxt,pθzimg,ztxt is used for conditioning to reconstruct ˆzimg by pθzimg (zimg
+pθzimg,zimg,ˆzimg is reconstructed by the learned model pθzimg during inference to obtain the final image ximg
+ztxt,zimg,ztxt and zimg are used together for conditioning in the process of image generation
+stylegan2,latent diffusion model (ldm),StyleGAN2 is adopted along with Latent Diffusion Model (LDM) for the T2I model
+stylegan2,su,"When StyleGAN2 synthesizes images conditioned on text, each style vector su is replaced with its conditional counterpart sc"
+su,sc,Each style vector su is replaced by its conditional counterpart sc following a specific formula
+g([ztxt; zimg]),sc,g([ztxt; zimg]) contributes to the calculation of the conditional counterpart sc as part of the process
+cc3m dataset,3.3m images,CC3M dataset consists of 3.3M images
+cc3m dataset,16k examples,CC3M dataset consists of 16k examples
+t2i network,256x256 pixels,T2I network is trained on images resized to 256x256 pixels
+clip image encoder,224x224 pixels,Images are resized to 224x224 pixels before being fed into the CLIP image encoder
+cc3m,text captions,Text corpora in CC3M consist of text captions
+ms-coco,cc3m,Text captions in CC3M are used for MS-COCO
+conceptual 12m,3 million randomly sampled texts,3 million randomly sampled texts are from Conceptual 12M
+image-text pairs,proposed algorithm,Image-text pairs are not utilized for the proposed algorithm like CLIP-GEN and LAFITE
+fid,inception score (is),FID and Inception Score are used to evaluate and compare the visual quality of generated images
+simtxt,simimg,Simtxt and Simimg are evaluated using the validation dataset
+pytorch,official code of lafite1,The proposed method is implemented with the official code of LAFITE1 based on PyTorch.
+ms-coco dataset,stylegan2,Results of semi-supervised text-to-image generation on the MS-COCO dataset using StyleGAN2.
+lafite,ms-coco dataset,ModelDatasetMethodRatioStyleGAN2 [14] MS-COCO [19]LAFITE [38]
+vl (ours),"fid, simtxt, simimg","Ratio shows fractions of the labeled text captions in each dataset. Results show improvements in FID, Simtxt, and Simimg metrics."
+"g(·), decoder f (·), and discriminator d(·)",networks consisting of 10 fully-connected layers,"Networks consisting of 10 fully-connected layers with the leaky ReLU activations are adopted for G(·), decoder F (·), and discriminator D(·)."
+r1 regularization,training stability,R1 regularization is used for training stability to suppress the magnitudes of gradients.
+adam optimizer,three networks,Adam optimizer is used for the three networks with an initial learning rate of 0.001 and a batch size of 512.
+batch size,64,A batch size of 64 is set for the second training stage.
+initial learning rate,0.001 to 2.5 × 10−3,Initial learning rate is set from 0.001 to 2.5 × 10−3 for different stages of training.
+unsupervised setting,text-to-image generation results,Table 1 shows the text-to-image generation results in the unsupervised setting.
+text-to-image generation,ms-coco dataset,"The results of text-to-image generation on MS-COCO dataset are shown, with VDL achieving the best performance in terms of Simtxt, FID, and IS."
+text-to-image generation,cc3m dataset,The results of text-to-image generation on CC3M dataset under unsupervised setting are discussed.
+lafite,clip-gen,LAFITE achieves better T2I performance in terms of FID and IS than CLIP-GEN due to larger regions corresponding to noisy text features.
+lafite,vdl,"LAFITE is outperformed by VDL in semi-supervised learning scenarios on the MS-COCO dataset, showing large margins in terms of FID and IS."
+vdl,unsupervised setting,"VDL outperforms LAFITE even in the unsupervised setting with a ratio of 0.3, indicating more annotation-efficiency."
+kl divergence,js divergence,Comparison between KL divergence and JS divergence is presented in Table 3.
+proposed method,annotation,The proposed method is more annotation-efficient. This implies a relationship between the method and the process of annotation.
+kl divergence,js divergence,Comparison between the KL divergence and JS divergence is presented under the unsupervised setting on the MS-COCO dataset using StyleGAN2. This comparison indicates a relationship between the two types of divergences.
+kld,variational distribution,KLD optimizes with the assumption that the variational distribution follows the Gaussian distribution with Gaussian mixture models for the prior. This shows the relationship between optimization and the variational distribution.
+dualkld,kl objective,DualKLD optimizes the dual representation of the KL objective. This relationship indicates how the DualKLD method is related to optimizing the KL objective.
+text captions,vdl,"When more text captions become available, VDL obtains higher IS, Simtxt, and Simimg while FID is unfortunately saturated at an early stage. This shows a relationship between text captions and the VDL metric."
+simtxt,lafite,"In terms of Simtxt under semi-supervised settings, LAFITE outperforms VDL. This indicates a relationship between the Simtxt metric and the performance of the LAFITE method."
+strategy,fid,The strategy of training a learnable network on paired data by making the predicted text embeddings close to the true ones turns out to be ineffective for improving FID and even degrades the IS score. This relationship highlights the impact of the strategy on the FID metric.
+jensen-shannon divergence,kl divergence,We study the effect of using the JS divergence instead of KL divergence under the unsupervised setting with the StyleGAN2 architecture on MS-COCO. The comparison presented in Table 3 indicates a relationship between the two types of divergences.
+variational autoencoders,kld,"Variational autoencoders motivated the model of variational and prior distributions with a Gaussian distribution and its mixture, referred to as KLD."
+dualkld,kl divergence,"DualKLD method replaces the KL divergence with its dual form, the Donsker-Varadhan representation."
+gaussian distribution,non-zero density,Gaussian distribution has a non-zero density outside the unit-hypersphere.
+vdl,lafite,VDL generates visually higher-quality images than LAFITE.
+vdl w/o svdl,text feature,VDL w/o SVDL directly predicts a text feature and then normalizes it to locate at the unit-hypersphere without using SVDL.
+vdl w/o lrkd,lrkd,VDL w/o Lrkd does not employ Lrkd.
+dualkld,distribution restriction,"DualKLD, free from the distribution restriction, outperforms KLD."
+dualkld,js divergence,"DualKLD is sensitive to hyperparameters due to its unbounded property, unlike JS divergence."
+svdl,"simtxt, simimg, t2i","SVDL helps in improving Simtxt, Simimg, and T2I performance in unsupervised settings."
+lrkd,text features,Lrkd is conceptually irrelevant to reduce the discrepancy between true and predicted text features but improves generation performance by learning relational embeddings between two modalities.
+"clip-gen, lafite, vdl","ms-coco, cc3m datasets","Figure 3 visualizes generation results on the MS-COCO and CC3M datasets using CLIP-GEN, LAFITE, and VDL methods."
+proposed method,"images, text captions",The proposed method successfully generates images based on given sentences with enhanced visual quality while others sometimes fail to understand the overall meaning of text captions.
+clip model,hidden text features,"CLIP model is used to estimate hidden text features given observable images, relying on CLIP's multi-modal joint embedding quality."
+text embedding,true posterior probability,"To improve text embedding quality, the intractable true posterior probability is approximated by exploiting variational inference techniques."
+text embedding,variational inference technique,The intractable true posterior probability of text embedding is approximated by exploiting the variational inference technique.
+variational inference technique,image embeddings,"Given the inferred features and their image embeddings, a conditional generative model is learned to reconstruct images."
+conditional generative model,images,A conditional generative model is learned to reconstruct images.
+unsupervised learning,semi-supervised learning,The proposed method achieves outstanding performance on both unsupervised and semi-supervised learning environments.
+institute of information & communications technology planning & evaluation (iitp),korea government (msit),The work was partly supported by the Institute of Information & communications Technology Planning & Evaluation (IITP) grants funded by the Korea government (MSIT).
+few-shot learning of causal inference in vision and language for decision making,artificial intelligence graduate school program (seoul national university),The work was supported by grants related to Few-Shot Learning of Causal Inference in Vision and Language for Decision Making and Artificial Intelligence Graduate School Program (Seoul National University).
+ai innovation hub,work support,The work was partly supported by AI Innovation Hub.

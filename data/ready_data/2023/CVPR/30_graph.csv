@@ -1,0 +1,331 @@
+node_1,node_2,edge
+objectnav,embodied ai,ObjectNav navigation is a fundamental task for Embodied AI.
+objectnav,agents,Agents in existing works learn ObjectNav policies.
+objectnav,2d maps,Existing works learn ObjectNav policies based on 2D maps.
+objectnav,scene graphs,Existing works learn ObjectNav policies based on scene graphs.
+objectnav,image sequences,Existing works learn ObjectNav policies based on image sequences.
+3d-aware agent,objectnav,A 3D-aware agent can advance its ObjectNav capability via learning from fine-grained spatial information.
+3d-aware agent,3d scene representation,Leveraging 3D scene representation can improve ObjectNav capability.
+3d-aware agent,framework,"In this work, a framework for 3D-aware ObjectNav is proposed."
+sub-polices,corner-guided exploration policy,One of the sub-policies is the corner-guided exploration policy.
+sub-polices,category-aware identification policy,One of the sub-policies is the category-aware identification policy.
+sub-polices,3d points,The sub-policies utilize online fused 3D points as observation.
+framework,performance,"Through extensive experiments, the framework shows improved performance in ObjectNav."
+framework,modular-based methods,The framework achieves the best performance among all modular-based methods on Matterport3D and Gibson datasets.
+object,category,Objects are categorized into different categories.
+object,scene,Objects are found in unseen and unmapped scenes.
+end-to-end reinforcement learning (rl),image sequences,End-to-end RL methods use image sequences as input to output navigation actions.
+rl,low-level navigation actions,RL methods directly output low-level navigation actions.
+end-to-end rl based methods,competitive performance,End-to-end RL methods achieve competitive performance in navigation tasks.
+modular-based methods,semantic scene mapping module,Modular-based methods utilize a semantic scene mapping module for scene representation.
+goal policy module,semantic scene map,Goal policy module uses the semantic scene map for learning goal locations.
+goal,object,The goal of the agent is to identify a target object.
+goal,location,The agent learns to update a goal location online.
+local path planning module,goal,Local path planning module drives the agent towards the goal location.
+scene map,semantic accuracy,Semantic accuracy of the scene map affects the success of object goal navigation.
+scene map,geometric structure,Geometric structure of the scene map is crucial to navigation success.
+2d maps,scene graphs,2D maps and scene graphs are constructed using existing modular-based methods for scene maps
+2d maps,neural fields,2D maps and neural fields are constructed using existing modular-based methods for scene maps
+scene graphs,neural fields,scene graphs and neural fields are constructed using existing modular-based methods for scene maps
+3d scene representation,2d counterpart,"3D scene representation is more accurate, spatially dense, and consistent than its 2D counterpart as proved by previous research"
+3d scene understanding,objectnav,"If the agent could leverage 3D scene understanding to form a 3D semantic scene map, it is expected to advance the performance of ObjectNav"
+3d scene representation,objectnav,Leveraging 3D scene representation would bring challenges to ObjectNav policy learning
+3d scene representation,rl,Building and querying fine-grained 3D representation across a floor-level scene requires extensive computational cost which can slow down the training of RL
+3d scene representation,goal policy,"3D scene representation induces more complex and high-dimensional observations to the goal policy than its 2D counterpart, leading to a lower sample efficiency and hampering the navigation policy learning"
+3d scene representation,objectnav,It is demanding to design a framework to efficiently and effectively leverage powerful 3D information for ObjectNav
+objectnav,3d information,ObjectNav involves the utilization of powerful 3D information for its operation
+objectnav,framework,"The proposed framework aims to support ObjectNav by incorporating different modules for 3D semantic scene mapping, scene exploration, object identification, and local path planning"
+3d information,object identification,3D information plays a crucial role in object identification within the framework
+point fusion module,3d semantic scene mapping,The online semantic point fusion module is designed to assist in 3D semantic scene mapping within the framework
+point fusion module,spatial semantic consistency computation,The point fusion module enables spatial semantic consistency computation to enhance 3D scene understanding
+3d scene construction,comprehensive 3d scene understanding,The 3D scene construction process leads to a comprehensive understanding of the 3D scene for ObjectNav
+point-based fusion algorithm,memory-efficient,The point-based fusion algorithm is more memory-efficient compared to dense voxel-based methods
+navigation policy,exploration,"The navigation policy is divided into two sub-policies, exploration being one of them"
+navigation policy,identification,The navigation policy consists of sub-policies for both exploration and identification tasks
+local path planning module,exploration goal,The local path planning module receives input related to exploration goals for navigation
+local path planning module,identified object goal,The local path planning module switches between inputs related to identified object goals for navigation
+corner-guided exploration policy,long-term discrete goal,The corner-guided exploration policy aims to predict long-term discrete goals at the corners for navigation
+corner-guided exploration policy,long-term discrete goal,The corner-guided exploration policy aims to predict a long-term discrete goal at one of the four corners of the bounding box of the scene to efficiently drive the agent towards exploring regions where the target object may be located.
+corner goals,agent,The corner goals efficiently drive the agent to perceive the surroundings and explore regions where the target object is possibly settled.
+category-aware identification policy,discrete confidence threshold,The category-aware identification policy dynamically learns a discrete confidence threshold to identify the semantic predictions for each category.
+policies,rl,"Both of these policies, including the corner-guided exploration policy and category-aware identification policy, are trained by Reinforcement Learning (RL) in a low-dimensional discrete action space."
+two-policy mechanism,discrete action space design,The simultaneous two-policy mechanism and discrete action space design dramatically reduce the learning difficulty for 3D-aware ObjectNav and achieve better performance compared to existing modular-based navigation strategies.
+method,online 3d-aware objectnav,"Through extensive evaluation on public benchmarks, the method performs online 3D-aware ObjectNav at 15 FPS while achieving state-of-the-art performance in navigation efficiency."
+method,modular-based methods,The method outperforms all other modular-based methods in both efficiency and success rate with up to 30x times less computational cost.
+contributions,3d-aware framework for object-nav task,The main contributions of the work include presenting the first 3D-aware framework for the Object-Nav task.
+contributions,point-based construction and fusion algorithm,The main contributions also involve building an online point-based construction and fusion algorithm for efficient and comprehensive understanding of floor-level 3D scene representation.
+two-policy mechanism,policies,A simultaneous two-policy mechanism is proposed in the work involving corner-guided exploration policy and category-aware identification policy.
+3d scene representation,algorithm,The algorithm proposed in the context aims at efficient and comprehensive understanding of floor-level 3D scene representation.
+3d-aware objectnav policy learning,problem of low sample efficiency,The simultaneous two-policy mechanism proposed in the context mitigates the problem of low sample efficiency in 3D-aware ObjectNav policy learning.
+object goal navigation,rgbd sequences,"Recent works in the context leverage RGBD sequences for object goal navigation, using end-to-end RL methods which encode the environment and predict low-level actions."
+visual representation,auxiliary task,"Works in the context benefit from visual representation, auxiliary tasks, and data augmentation, demonstrating strong results in object goal navigation benchmarks."
+end-to-end rl methods,environment,End-to-end RL methods tend to implicitly encode the environment and predict low-level actions in the context.
+end-to-end rl methods,low sampling efficiency,It's mentioned in the context that end-to-end RL methods suffer from low sampling efficiency for training and limited generalizability when transferred to the real world.
+modular-based paradigm,sample efficiency,"The work in the context uses explicit map to represent the environment, ensuring sample efficiency and more generalizability through a modular-based paradigm."
+explicit scene representations,robot observations,"Methods in the context use explicit scene representations as a proxy for robot observations, easing the burden of learning directly from visual sequences."
+ods,explicit representations,The term 'ods' is related to 'explicit representations' as it mentions the use of ods as a proxy for robot observations.
+scene graph,2d top-down map,The terms 'scene graph' and '2D top-down map' are related as they are mentioned together in the context as explicit scene representations.
+modular-based methods,modularity and shorter time horizons,The terms 'modular-based methods' and 'modularity and shorter time horizons' are related as the former benefits from the latter and shorter time horizons.
+modular-based methods,more sample efficient and generalizable,The terms 'modular-based methods' and 'more sample efficient and generalizable' are related as the former is considered to be more sample efficient and generalizable.
+frontier-based exploration strategy,hallucinate-driven semantic mapping method,The terms 'frontier-based exploration strategy' and 'hallucinate-driven semantic mapping method' are related as they are both mentioned in the context as recent progress in modular-based methods.
+verification stage,modular-based methods,The terms 'verification stage' and 'modular-based methods' are related as the former is described as a novel stage in the recent progress of modular-based methods.
+3d spatial knowledge,3d point semantic prediction and consistency,The terms '3D spatial knowledge' and '3D point semantic prediction and consistency' are related as the former includes the latter in the context for a more comprehensive understanding of the environment.
+embodied ai tasks,3d scene representation,The terms 'embodied AI tasks' and '3D Scene Representation' are related as the latter is mentioned as a scene representation in embodied AI tasks.
+rgb-d image,point-based construction algorithm,The terms 'RGB-D image' and 'point-based construction algorithm' are related as the former is used to input for the latter in the context of constructing a 3D scene representation.
+corner-guided exploration policy,category-aware identification policy,The terms 'corner-guided exploration policy' and 'category-aware identification policy' are related as they are both leveraged as policies in the context for predicting goals.
+target goal,m(t),The terms 'target goal' and 'M(t)' are related as the former is predicted as a priority or for certain cases as mentioned in the context.
+embodied ai tasks,object grasp,The embodied AI tasks mentioned in the context include object grasp as one of the tasks.
+embodied ai tasks,drawer opening,The embodied AI tasks include drawer opening as another task.
+embodied ai tasks,3d scene representation,"These tasks leverage 3D scene representation, such as mesh and dense grids."
+reinforcement learning,embodied ai tasks,Reinforcement learning is one of the routes leveraged in embodied AI tasks.
+imitation learning,embodied ai tasks,Imitation learning is another route leveraged in embodied AI tasks.
+supervised learning,embodied ai tasks,Supervised learning with 3D scene representation is used in embodied AI tasks.
+objectnav,large scale environments,Existing methods in ObjectNav suffer in large scale environments like floor-level scenes due to complex 3D observation and large computational costs.
+framework,point-based construction module,The framework proposed leverages a point-based construction module.
+framework,exploration policy,The framework includes a specifically designed exploration policy.
+framework,identification policy,The framework also includes a specifically designed identification policy.
+object goal navigation task,object goal navigation task,The Object Goal Navigation Task requires the agent to navigate to an instance of the specified target category.
+object goal navigation task,unknown environment,The task is performed in an unknown environment.
+object goal navigation task,target category id,The agent is provided with a target category ID for the task.
+egocentric rgb-d image,3-dof pose,The egocentric RGB-D image and the 3-DoF pose are used together to determine the agent's position and orientation relative to the starting point of the episode.
+agent,action,The agent estimates its action at ∈ A for movement in a discrete action space.
+agent,time budget,The agent has a limited time budget of 500 steps within which it terminates its movement.
+agent,object,The agent terminates the movement once it is within 1 meter of an object of the specified category.
+method overview,3d-aware objectnav method,Figure 2 provides an overview of the proposed 3D-aware ObjectNav method.
+method,rgbd frames,Our method takes RGBD frames as input to construct a point-based scene representation M3D.
+method,pose sensor readings,Our method takes pose sensor readings as input to construct a 2D semantic map M2D.
+framework,policies,"Our framework simultaneously performs two complementary policies, the exploration policy and identification policy."
+exploration policy,corner goal,The exploration policy predicts a long-term discrete corner goal ge to drive the agent to explore the surrounding environment.
+identification policy,3d points m3d,The identification policy evaluates the 3D points M3D at each step and outputs a target object goal gf if its semantic prediction is confident and consistent.
+goal,agent,"The gf will be set as the approaching target for the agent once it exists, otherwise the agent will navigate to the long-term corner goal ge."
+local planning module,agent,An underlying local planning module will navigate the agent towards the goal using analytical path.
+local planning module,goal,The local planning module will navigate the agent towards the goal using analytical path planning.
+3d-aware agent,3d scene representation,The 3D-aware agent will constantly obtain new observations and build a fine-grained 3D scene representation integrating spatial and semantic information.
+3d scene representation,spatial and semantic information,The 3D scene representation integrates spatial and semantic information to drive the agent.
+3d scene representation,online point-based construction algorithm,An online point-based construction algorithm is extended to organize the 3D points and empower semantic fusion and consistency estimation for the 3D scene representation.
+objectnav agent,comprehensive scene understanding,The design is tailored for a comprehensive scene understanding of the ObjectNav agent.
+3d scene representation,point clouds,The 3D scene representation is represented as point clouds at time step t.
+image,point position,"At time step t, the agent can obtain the point position P (t) by back-projecting all the depth images into the 3D world space via their corresponding poses."
+point position,depth images,The agent can obtain the point position P (t) by back-projecting all the depth images into the 3D world space via their corresponding poses.
+depth images,3d world space,The agent can obtain the point position P (t) by back-projecting all the depth images into the 3D world space via their corresponding poses.
+construction algorithm,occupied 3d blocks,The construction algorithm dynamically allocates occupied 3D blocks {Bk} along with their index k maintained by a tree-based method.
+3d blocks,boundary of constant length,"Each block Bk is defined by the boundary of constant length (10cm) along the X, Y and Z axes."
+construction algorithm,"points pl,x","The points pl,x ∈ [Xmin(Bk), Xmax(Bk)] be recorded by the block Bk."
+3d point pi,efficient neighborhood retrieval,"Given any 3D point pi, the algorithm can achieve efficient neighborhood retrieval with the corresponding block index k."
+3d point pi,one-level octree oi,"Furthermore, a one-level octree Oi for each point pi is constructed to obtain the fine-grained spatial information among points."
+point,eight quadrants,"Specifically, we connect each point with its nearest points in the eight quadrants of the Cartesian coordinate system."
+point,neighbor points,"Powered by this point-based construction strategy, give any point, we can efficiently querying this point with its neighbor points by blocks retrieval and octree."
+algorithm,3d points,This algorithm for organizing 3D points can run at 15 FPS while requiring reasonable memory resources (about ∼ 500 MB for one entire scene).
+online semantic fusion,reconstruction algorithm,The reconstruction algorithm is used in conjunction with Online Semantic Fusion to directly fuse temporal information and achieve more accurate and consistent scene understanding.
+online semantic fusion,temporal information,Online Semantic Fusion directly fuses temporal information such as multi-view semantic predictions to achieve more accurate and consistent scene understanding.
+online semantic fusion,multi-view semantic predictions,Online Semantic Fusion aggregates multi-view 2D semantic predictions to obtain the final 3D semantic prediction by using a max-fusion mechanism.
+online semantic fusion,3d semantic prediction,Online Semantic Fusion proposes online aggregation of multi-view 2D semantic predictions to obtain the final 3D semantic prediction.
+online semantic fusion,2d semantic prediction,Online Semantic Fusion performs max-fusion on multi-view 2D semantic predictions to obtain the final 3D semantic prediction.
+online semantic fusion,3d convolution,"Alternatives to fuse semantic predictions exist, such as 3D convolution which is mentioned in the context."
+online semantic fusion,bayesian updating,Bayesian updating is mentioned as an alternative to fuse semantic predictions in the context where Online Semantic Fusion is discussed.
+online semantic fusion,computational cost,"Maximizing the 2D semantic prediction within Online Semantic Fusion is noted to already achieve improvements, avoiding the huge rise of computational cost."
+reconstruction algorithm,scene understanding,The reconstruction algorithm is used to achieve more accurate and consistent scene understanding within the context.
+reconstruction algorithm,temporal information,The reconstruction algorithm incorporates temporal information to achieve more accurate and consistent scene understanding as mentioned in the context.
+temporal information,multi-view semantic predictions,Temporal information such as multi-view semantic predictions is fused within Online Semantic Fusion for more accurate and consistent scene understanding.
+temporal information,scene understanding,Temporal information is essential for achieving more accurate and consistent scene understanding as discussed in the context.
+learning-based policy,2d semantic prediction,Maximizing the 2D semantic prediction can achieve impressive improvement on semantic accuracy.
+2d semantic prediction,semantic accuracy,Maximizing the 2D semantic prediction leads to improvement in semantic accuracy.
+semantic label,object,Semantic labels should remain consistent for all points in a single object.
+spatial semantic consistency,semantic label,Spatial semantic consistency information is calculated as part of the 3D scene representation based on the fact that semantic labels should remain consistent for all points in a single object.
+point,octree,Spatial semantic consistency is calculated based on the maximum semantic KL-divergence between a point and its octree.
+octree,point,Pre-built octree is used to retrieve nearest points in the Cartesian coordinate system.
+3d information,3d-aware agent,Aggregated 3D information is expected to empower a 3D-aware agent for the ObjectNav task.
+agent,objectnav task,The agent is designed to be 3D-aware for the ObjectNav task.
+agent,3d scene representation,"Despite having efficient 3D scene representation, the agent still faces challenges due to complex and high-dimensional observations."
+agent,rl,The agent's lower sample efficiency in RL is a result of complex observations.
+agent,navigation policy learning,The agent's sample efficiency in RL hampers navigation policy learning.
+agent,sub-policies,The agent leverages two sub-policies: corner-guided exploration policy and category-aware identification policy.
+sub-policies,corner-guided exploration policy,The sub-policies include corner-guided exploration policy for efficient navigation.
+sub-policies,category-aware identification policy,The sub-policies include category-aware identification policy for improved agent performance.
+exploration policy,global goal,The exploration policy involves learning-based continuous global goal prediction.
+exploration policy,corner goal prediction,The exploration policy utilizes learning-based corner goal prediction for navigation.
+observations,3d observation,Both policies rely on fine-grained 3D observation at each time step.
+3d observation,3d scene representation,The 3D observation is based on the 3D scene representation.
+3d observation,discrete actions,The 3D observation helps predict low-dimensional discrete actions for navigation.
+3d observation,goal location,The 3D observation outputs a goal location for effective agent navigation.
+2d map,exploration policy,The 2D map is used for the exploration policy and local path planning.
+2d map,local path planning module,The 2D map is directly utilized by the local path planning module for navigation.
+2d,m,"2D observation x(t) is obtained from 2D map M2D, where the first two channels represent obstacles and explored area, and the rest of the channels correspond to an object category."
+2d,m2d,2D map M2D is constructed with a resolution of M = 240 with 20cm grids to provide a large perception view of the scene.
+2d,3d,"2D observation x(t) is used for a large perception view of the scene, while 3D points perform as a fine-grained observation of objects."
+2d,m2d,2D observation x(t) is directly obtained from 2D map M2D.
+2d,x3d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+2d,x2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) from 2D map M2D."
+2d,oid,Goal object category index oID is passed as a side input to policies in addition to the scene representations.
+m,m2d,2D map M2D is constructed with a resolution of M = 240 with 20cm grids.
+m,m2d,2D map M2D gives a large perception view of the scene.
+m,2d,"2D observation x(t) is obtained from 2D map M2D, where the first two channels represent obstacles and explored area, and the rest of the channels correspond to an object category."
+m,m2d,2D map M2D is constructed with a resolution of M = 240 with 20cm grids to provide a large perception view of the scene.
+m,3d,"2D observation x(t) is used for a large perception view of the scene, while 3D points perform as a fine-grained observation of objects."
+m,m2d,2D observation x(t) is directly obtained from 2D map M2D.
+m,x3d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+m,x2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) from 2D map M2D."
+m,oid,Goal object category index oID is passed as a side input to policies in addition to the scene representations.
+m2d,2d,"2D observation x(t) is obtained from 2D map M2D, where the first two channels represent obstacles and explored area, and the rest of the channels correspond to an object category."
+m2d,m,2D map M2D is constructed with a resolution of M = 240 with 20cm grids.
+m2d,m,2D map M2D gives a large perception view of the scene.
+m2d,2d,2D observation x(t) is directly obtained from 2D map M2D.
+m2d,m,"2D observation x(t) is obtained from 2D map M2D, where the first two channels represent obstacles and explored area, and the rest of the channels correspond to an object category."
+m2d,3d,"2D observation x(t) is used for a large perception view of the scene, while 3D points perform as a fine-grained observation of objects."
+m2d,x3d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+m2d,x2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) from 2D map M2D."
+m2d,oid,Goal object category index oID is passed as a side input to policies in addition to the scene representations.
+3d,2d,"2D observation x(t) is used for a large perception view of the scene, while 3D points perform as a fine-grained observation of objects."
+3d,m,"2D observation x(t) is used for a large perception view of the scene, while 3D points perform as a fine-grained observation of objects."
+3d,m2d,"2D observation x(t) is used for a large perception view of the scene, while 3D points perform as a fine-grained observation of objects."
+3d,x3d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+3d,x2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) from 2D map M2D."
+3d,oid,Goal object category index oID is passed as a side input to policies in addition to the scene representations.
+x3d,2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+x3d,m,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+x3d,m2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+x3d,3d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+x3d,x2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+x3d,oid,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+x2d,2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) from 2D map M2D."
+x2d,m,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) from 2D map M2D."
+x2d,m2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) from 2D map M2D."
+x2d,3d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) from 2D map M2D."
+x2d,x3d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) along with 3D points."
+x2d,oid,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses 2D observations x(t) from 2D map M2D."
+oid,2d,Goal object category index oID is passed as a side input to policies in addition to the scene representations.
+oid,m,Goal object category index oID is passed as a side input to policies in addition to the scene representations.
+oid,m2d,Goal object category index oID is passed as a side input to policies in addition to the scene representations.
+oid,3d,Goal object category index oID is passed as a side input to policies in addition to the scene representations.
+oid,x3d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses goal object category index oID."
+oid,x2d,"Exploration policy ge = πe(x3D, x2D, oID; θe) uses goal object category index oID."
+dimensional action space,learning,Learning to predict the four corner goals significantly reduces the learning difficulty
+four corner goals,learning,Learning to predict the four corner goals significantly reduces the learning difficulty
+learning,predicition,Learning to predict the four corner goals significantly reduces the learning difficulty
+four corner goals,learning,Learning to predict the four corner goals significantly reduces the learning difficulty
+category-aware predicted threshold,policy,"From A → B, fused points are filtered by the category-aware predicted threshold τ"
+policy,spatial label consistency,"From B → C, the policy further checks the spatial label consistency of the points and identifies the target goal"
+corner-goal-based exploration strategy,efficient exploration,The corner-goal-based exploration strategy exhibits the capacity to achieve efficient exploration through avoiding back-and-forth pacing
+exploration strategies,agent,"Superior to using other heuristic corner goal exploration strategies, our agent can learn from the 3D scene priors to behave more intelligently"
+agent,3d scene priors,Our agent can learn from the 3D scene priors to behave more intelligently
+semantic predictions,instance of target object category,"During navigation, the agent consistently makes semantic predictions to identify an instance of target object category"
+preset hard confidence threshold,target identification,Most works simply use a preset hard confidence threshold for target identification
+semantic prediction,3d space,It ignores to consider the consistency of the semantic prediction in 3D space
+3d space,semantic prediction,3D space and semantic prediction are related as the context mentions the inconsistency of semantic prediction in 3D space
+dynamic confidence threshold,spatial semantic label consistency,dynamic confidence threshold and spatial semantic label consistency are related as they are both proposed to tackle the issues of target identification
+policy,3d observation,The policy mentioned takes 3D observation and target category index as input to output a threshold-indicating action
+threshold,action space,threshold and action space are related as the dynamic threshold mentioned is used to identify points belonging to the target object
+target object,goal,The final target goal is obtained by checking the spatial semantic label consistency for identifying the points on the target object
+3d surface,points,The points connected by the per-point octree are used to represent the 3D surface of the target object
+local planning module,goals ge and gf,The Local Planning Module updates goals ge and gf from two polices consistently during navigation.
+local planning module,agent location,The agent location is used by the Local Planning Module to plan the shortest path analytically using the Fast Marching Method.
+local planning module,agent,The Local Planning Module guides the agent to take deterministic actions to follow the shortest path planned analytically.
+rewards,exploration policy,"The exploration policy shares a similar reward design with [1, 51], including sparse success reward, slack reward, and exploration reward."
+rewards,identification policy,The identification policy combines success reward and slack reward borrowed from the exploration policy.
+experiment setup,matterport3d (mp3d),Experiments are performed on the Matterport3D (MP3D) datasets using the Habitat simulator.
+experiment setup,gibson,Experiments are performed on the Gibson datasets using the Habitat simulator.
+matterport3d (mp3d),gibson,Both Matterport3D (MP3D) and Gibson datasets are used for experiments.
+gibson,tiny split,Gibson uses 25 train / 5 val scenes from the Gibson tiny split.
+gibson,chair,"Gibson includes 6 goal categories, including chair."
+gibson,couch,"Gibson includes 6 goal categories, including couch."
+gibson,potted plant,"Gibson includes 6 goal categories, including potted plant."
+gibson,bed,"Gibson includes 6 goal categories, including bed."
+gibson,toilet,"Gibson includes 6 goal categories, including toilet."
+gibson,tv,"Gibson includes 6 goal categories, including TV."
+mp3d,habitat objectnav dataset,"MP3D uses the standard split with Habitat ObjectNav dataset, which consists of 21 goal categories."
+mp3d,rednet,"On MP3D, RedNet is used as a pre-trained 2D semantic model."
+mp3d,pointnet,PointNet is used to obtain the feature of 3D points on MP3D.
+mp3d,ppo,PPO is used for both experiments on MP3D during training.
+mask r-cnn,coco dataset,Mask R-CNN is trained with COCO dataset.
+frame,512 points,"For each frame, 512 points are randomly sampled for point-based construction."
+frame,pointnet,PointNet is used to obtain the feature of 3D points for each frame.
+frame,fully convolutional networks,Fully convolutional networks are used to obtain the feature of 2D map for each frame.
+action,25 steps,Actions are sampled every 25 steps during training.
+pose,noisy sensor readings,The estimation of pose from noisy sensor readings is out of the scope of this work.
+pose,off-the-shelf robust odometry,Estimation of pose from noisy sensor readings can be addressed by incorporating off-the-shelf robust odometry if necessary.
+mask r-cnn,trained,Mask R-CNN is trained with COCO dataset.
+object,entity,ObjectNav validation results on MP3D-L2M [14]
+entity,organization,Habitat Challenge [49] evaluates the efficiency of the agent over oracle path length
+entity,object,SPL: success weighted by path length - primary evaluation metric for Habitat Challenge [49]
+entity,condition,Success rate: percentage of successful episodes
+entity,condition,Soft SPL measures the progress towards the goal
+entity,condition,DTS is geodesic distance (in m) to the success at the end of the episode
+entity,acronym,DD-PPO is an end-to-end RL method
+entity,organization,Red-Rabiit [51] is a baseline considered in the ObjectNav task
+organization,organization,Habitat-Web [36] leverages additional data to improve performance
+organization,entity,Habitat-Web [36] is considered in the modular based methods
+organization,entity,Habitat-Web [36] is a mainstream baseline in the ObjectNav task
+organization,entity,Habitat-Web [36] is a modular based method
+organization,acronym,Habitat-Web [36] is considered in the ObjectNav task
+organization,service,Habitat-Challenge [49] is a service providing evaluation metrics for agents
+document,organization,Supplemental material provides more implementation details
+method,organization,DD-PPO [47] is an end-to-end RL method
+method,organization,Red-Rabiit [51] is a baseline considered in the ObjectNav task
+method,organization,THDA [27] is a baseline considered in the ObjectNav task
+method,organization,Habit-Web [36] is a baseline considered in the ObjectNav task
+method,organization,FBE [37] is a modular based method
+method,organization,ANS [8] is a modular based method
+method,organization,L2M [14] is a modular based method
+method,organization,SemExp [9] is a modular based method
+method,organization,Stubborn [26] is a modular based method
+method,organization,PONI [35] is a modular based method
+service,acronym,Habit-Web [36] leverages human input for improving performance
+habitat-web,human demonstration trajectories,Habitat-web leverages human demonstration trajectories to improve performance.
+thda,data augmentation,THDA utilizes data augmentation to enhance its performance.
+semexp,stubborn,SemExp and Stubborn are two of the three most relevant baselines.
+semexp,poni,SemExp and PONI are two of the three most relevant baselines.
+stubborn,poni,Stubborn and PONI are two of the three most relevant baselines.
+semexp,stubborn,"SemExp, Stubborn, and PONI share the same 2D semantic predictors."
+stubborn,poni,"SemExp, Stubborn, and PONI share the same 2D semantic predictors."
+semexp,poni,"SemExp, Stubborn, and PONI share the same 2D semantic predictors."
+gibson,mp3d,Evaluation is done on MP3D (val) and Gibson (val) along with other baselines.
+end-to-end rl,modular-figure 6,Comparison of approaches include end-to-end RL and modular-Figure 6.
+semexp,stubborn,SemExp and Stubborn did not report results on MP3D validation.
+l2m,mp3d-l2m,L2M uses a self-made dataset MP3D-L2M based on MP3D for comparison.
+mp3d validation,l2m,L2M uses a self-made dataset MP3D-L2M based on MP3D
+mp3d validation,results,"born did not report the results on MP3D validation, while L2M uses a self-made dataset MP3D-L2M based on MP3D"
+results,mp3d-l2m,We also provide the results validated on MP3D-L2M in Table 2
+method,objcetnav efficiency,"On both datasets, our method achieves the state-of-the-art ObjcetNav efficiency (SPL) among all methods"
+method,success rate,"For the success rate, our method achieves the best results among all modular-based methods"
+modular-based methods,results,the results fairly demonstrate the superiority of our framework on both efficiency and success rate
+framework,efficient,the results fairly demonstrate the superiority of our framework on both efficiency and success rate
+framework,success rate,the results fairly demonstrate the superiority of our framework on both efficiency and success rate
+method,results,We also provide the results validated on MP3D-L2M in Table 2
+methods,modular-based methods,our method achieves the best results among all modular-based methods
+exploration policy,corner-guided exploration policy,"The experiment conducted verifies the efficiency of the corner-guided exploration policy on MP3D, outperforming other existing methods."
+exploration policy,semantic predictor,"To remove the effect of the 2D semantic predictor, all competitors share the same semantic predictor."
+exploration policy,identification policy,The efficiency of the corner-guided exploration policy is evaluated with a heuristic identification policy proposed in SemExp.
+exploration policy,learning to predict discrete corner goals,"The best performance is achieved through learning to predict discrete corner goals, indicating the importance of a small, discrete action space."
+identification policy,objectnav,A critical challenge in ObjectNav is properly identifying an object.
+identification policy,main components,"An ablation study of main components is conducted in the method, including semantic predictions, spatial semantic consistency, and identification policy."
+identification policy,category-aware policy,A comparison of predicted threshold distribution is made between different categories using the category-aware policy.
+threshold distribution,comparison,The distribution of predicted semantic confidence thresholds is compared between different categories by the category-aware policy.
+threshold distribution,identification policy,The effect of the identification policy is further investigated by plotting the distribution of predicted semantic confidence thresholds.
+threshold distribution,table,"For the category of table with 52.6% SR, a broad threshold distribution is predicted by the policy."
+threshold distribution,cushion,"For the category of cushion with 36.9% SR, the policy tends to be more conservative through setting a higher threshold in the predicted distribution."
+threshold distribution,plant,"For the category of plant with 16.1% SR, the policy tends to be more conservative through setting a higher threshold in the predicted distribution."
+object category,identification policy,The evaluation of the identification policy is done on MP3D along with other identifying strategies for target object category.
+object category,2d frame-based policy,The evaluation of the identification policy involves comparing it with a 2D frame-based policy adopted in [9].
+object category,3d point-based methods,The evaluation of the identification policy involves comparing it with 3D point-based methods proposed by the approach.
+semantic prediction,multi-view observations,The multi-view observations provide more accurate semantic prediction.
+semantic prediction,false positive prediction,The more accurate semantic prediction effectively reduces false positive prediction.
+identification policy,dynamic threshold,The category-aware identification policy predicts dynamic threshold for better performance.
+identification policy,category,The results demonstrate the category-aware characteristic of our identification policy which adapts well to different difficulty levels across categories.
+ablation study,method components,We also perform an ablation study to verify the effectiveness of different components of our method.
+2d top-down map and 3d points,scene perception and object perception,The cooperation of the 2D top-down map and 3D points shows significant improvement by incorporating extensive scene perception (in 2D) and fine-grained object perception (in 3D).
+rows,consistency information and identification policy,"Moreover, rows (3-4) and (4-5) proved the effectiveness of leveraging consistency information and the identification policy, respectively."
+computational cost analysis,framework efficiency and memory requirement,"Analysis of Computational Cost. Our framework is extremely memory efficient, which requires about 0.5GB for one scene."
+framework efficiency,online construction and semantic fusion,"Our framework is extremely memory efficient, which requires about 0.5GB for one scene, and can perform online construction and semantic fusion at a frame rate of 15 FPS."
+method training,gpu hours requirement,"Moreover, our method requires only 48 GPU hours to train a 3D-aware agent on MP3D dataset to achieve the SOTA performance."
+learning methods,reinforcement learning vs. supervised learning,"This is significantly faster (30x) than other existing reinforcement learning based methods, and is comparable to supervised learning modular-based methods."
+3d-aware framework,object goal navigation,"In this work, we present a 3D-aware framework for object goal navigation."
+3d point-based construction algorithm,3d scenes,The method is based on a 3D point-based construction algorithm to observe the 3D scenes.
+3d point-based construction algorithm,exploration and identification policies,The method performs exploration and identification policies to navigate the agent.
+3d point-based construction algorithm,agent,The method navigates the agent using exploration and identification policies.
+method,sota performance,Our method achieves SOTA performance among all modular-based methods.
+method,training time,Our method requires less training time compared to other methods.
+3d-aware framework,embodied ai tasks,"In the future, the 3D-aware framework may be exploited in other embodied AI tasks."
+3d-aware framework,mobile manipulation,The 3D-aware framework may be used in mobile manipulation tasks in the future.
+3d-aware framework,robotic nurses,The 3D-aware framework may be applied in tasks related to robotic nurses in the future.
+anonymous reviewers,valuable suggestions,We thank anonymous reviewers for their valuable suggestions.
+work,support,"This work was supported by the National Key Research and Development Program of China, NSFC, and BAAI."

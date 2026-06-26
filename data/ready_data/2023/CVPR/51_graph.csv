@@ -1,0 +1,203 @@
+node_1,node_2,edge
+event-based vision problems,constant temporal decay or fixed time window,The need to select the most recent events in event-based vision problems leads to the application of strategies such as constant temporal decay or fixed time windows.
+constant temporal decay or fixed time window,constant number of events,Constant temporal decay or fixed time window and constant number of events are two of the main strategies applied in event-based vision problems.
+constant temporal decay or fixed time window,flow-based lifetime of events,Event-based vision problems can also involve strategies like constant temporal decay or fixed time window and flow-based lifetime of events.
+event cameras,pixel-wise brightness changes,Event cameras respond asynchronously to pixel-wise brightness changes.
+event cameras,scene dynamics,Event cameras react to the scene dynamics by generating events.
+event cameras,methods,Event cameras pose the challenge of developing new methods that fully unlock their capabilities.
+scene dynamics,spatio-temporal changes,"By 'scene dynamics', we mean the spatio-temporal changes of the visual inputs due to the relative motion of the scene w.r.t. the camera."
+event processing,paradigms,"There are two paradigms for event processing, namely event-based and batch-based."
+event-based,batch-based,"In both paradigms, there is the intuitive notion that more recent events should be assigned more relevancy."
+event,lifespan,"Thus, each event should have a certain lifespan, based on which each one is considered active and whose contribution is considered meaningful to the computation."
+contribution,computation,Contribution is considered meaningful to the computation.
+contribution,fundamental question,Raises the fundamental question on what kind of decay strategy should be employed to quantify each event’s lifespan.
+decay strategy,fundamental question,Raises the fundamental question on what kind of decay strategy should be employed to quantify each event’s lifespan.
+decay strategy,lifespan,Raise on what kind of decay strategy should be employed to quantify each event’s lifespan.
+decay strategy,three main decay strategies,"Currently, there exist three main decay strategies."
+three main decay strategies,first decay strategy,The first decay strategy is to consider the events generated within a fixed time window or by applying some constant temporal decay.
+three main decay strategies,second decay strategy,The second decay strategy considers instead a constant number of events which preserves better the data-driven nature of event cameras.
+three main decay strategies,third decay strategy,The third decay strategy explicitly models the set of active events by estimating each event’s lifetime from the corresponding velocity.
+decay strategy,accumulated events,"As illustrated, when the motion is fast, the accumulated events generate a blurry frame."
+decay strategy,variations in motion magnitude,Strategy does not account for variations in motion magnitude.
+decay strategy,slow and fast motions,A single constant temporal decay can not handle slow and fast motions simultaneously.
+decay strategy,visual information source,"Imposes an arbitrary finite temporal support in practice, which generally has no relation to the visual information source."
+decay strategy,data-driven paradigm,Does not preserve the data-driven paradigm of event cameras.
+decay strategy,constant temporal decay,This strategy does not preserve the data-driven paradigm of event cameras since it imposes an arbitrary fi-nite temporal support in practice.
+decay strategy,events generated within a fixed time window,The first decay strategy is to consider the events generated within a fixed time window.
+decay strategy,constant number of events,The second decay strategy considers instead a constant number of events.
+decay strategy,scene texture,Breaks for variations in the scene texture.
+scene texture,variations in the scene texture,Breaks for variations in the scene texture.
+scene texture,blurry frame,"When the texture is sparse, the accumulated events also generate a blurry frame."
+constant number of events,data-driven nature,Preserves better the data-driven nature of event cameras.
+constat number of events,accumulated events,Preserves better the data-driven nature of event cameras as argued.
+set of active events,estimated event's lifetime,The third strategy explicitly models the set of active events by estimating each event’s lifetime from the corresponding velocity.
+third strategy,explicitly models,Explicitly models the set of active events by estimating each event’s lifetime from the corresponding velocity.
+strategy,decay parameter,"Although this strategy does not require any explicit decay parameter, it still requires tuning param."
+strategy,decay parameter,"The strategy mentioned does not require an explicit decay parameter, but it still requires tuning parameters for flow estimation."
+strategy,latency,"Although the strategy introduces negligible latency, tuning parameters for flow estimation may still bring in non-negligible latency."
+global scene dynamics,decay process,The new decay process posed in the context adapts to global scene dynamics while introducing negligible latency.
+decay process,event activity,"The decay process proposed depends on an adaptive quantity called event activity, which encodes the scene dynamics."
+events,event camera,The output of an event camera consists of an asynchronous stream of temporal contrast events.
+events,brightness change,Each event represents a spatio-temporal asynchronous brightness change.
+pixel coordinates,timestamp,An event includes pixel coordinates and a timestamp at which the event occurred.
+brightness change,log-brightness,An event is generated based on a change in log-brightness being above a threshold.
+log-brightness,threshold,The generation of an event is determined by the change in log-brightness surpassing a specified threshold.
+log-brightness,log-illumination,"The change in log-brightness (¯Ixi,yi(ti)) can be approximated by a multiplicative process of the global illumination ¯L, by the scene reflectance ¯R, where d¯L(t)/dt represents the log-illumination change."
+log-brightness,scene reflectance,"The change in log-brightness (¯Ixi,yi(ti)) can be approximated by a multiplicative process of the global illumination ¯L, by the scene reflectance ¯R."
+scene reflectance,spatial contrast,"The terms ∂ ¯R(t)/∂x, ∂ ¯R(t)/∂y represent the spatial contrast or the log-reflectance at location (xi, yi)."
+scene reflectance,scene texture,The terms ∂ ¯R(t)/∂t represent the scene texture.
+scene reflectance,optical flow,"The terms (dx/dt, dy/dt) correspond to the optical flow associated with scene reflectance."
+optical flow,motion dynamics,The contribution from optical flow is denoted as the motion dynamics in the event stream.
+spatial contrast,spatial dynamics,"The rate of change of spatial contrast contribution is with respect to space, denoted as spatial dynamics."
+scene texture,temporal dynamics,"The rate of change of scene texture is with respect to time, denoted as temporal dynamics."
+event stream,global decay process,The global decay process implicitly encodes the event stream dynamics.
+event stream,decay strategies,The decay strategies are applied to process event-based data.
+constant decay,decay strategies,Constant decay is one of the main temporal decay strategies applied to process event-based data.
+event stream,decay strategies,Decay strategies are applied to process event-based data that include the event stream.
+event stream dynamics,global decay process,The global decay process implicitly encodes the dynamics of the event stream.
+spatial convolution operator,constant temporal decay,The spatial convolution operator applies a constant temporal decay derived from designing a high-pass filter.
+asynchronous recursive event processing,fixed time windows,Fixed time windows have been applied to asynchronous recursive event processing.
+shapes rotation,boxes rotation,"The context mentions the comparison of applying constant vs. adaptive global decay on event rate and motion dynamics of sequences, including boxes rotation and shapes rotation. It highlights the spatial dynamics and event density differences between the two sequences, with boxes rotation exhibiting higher spatial dynamics."
+constant decay process,adaptive decay process,"The context describes how the accuracy of the constant decay process significantly depends on the sequence's event rate, while the accuracy of an adaptive decay process should not significantly depend on the event stream dynamics."
+time constants,event rates,"The context explains that smaller time constants can reliably capture higher event rates but not lower ones, while larger time constants can accurately capture lower event rates but not higher ones. It contrasts the behavior of time constants in capturing event rates in the context of adaptive decay processes."
+optical-flow estimation,feature tracking,The context mentions optical-flow estimation and feature tracking as related processes in the field of computer vision. These processes are typically used for analyzing motion and tracking features in visual data.
+optical-flow estimation,feature tracking,Both optical-flow estimation and feature tracking are techniques used in computer vision for motion analysis.
+optical-flow estimation,global motion estimation,Global motion estimation is one of the applications where optical-flow estimation is used.
+feature tracking,depth estimation,Depth estimation is another application where feature tracking is used.
+optical-flow estimation,image intensity reconstruction,Both optical-flow estimation and image intensity reconstruction are techniques used in computer vision.
+number of events,scene texture,Adjusting the number of events is proposed based on the scene texture.
+constant number of events,fixed time window,An ensemble method combines constant number of events and fixed time window strategies for visual place recognition.
+ensemble method,visual place recognition,Ensemble methods are proposed in the context of visual place recognition to increase accuracy.
+ensemble method,costs,Ensemble methods increase accuracy but also increase computational costs.
+ensemble method,ensemble size,A trade-off must be reached regarding the ensemble size in ensemble methods.
+sboxes rotation,event stream dynamics,Sboxes rotation adapts to the event stream dynamics by selecting the most suitable component(s) dynamically.
+lifetime of events,event,"The lifetime of an event quantifies how long an event is considered active, being defined as the duration until a new event is generated in the event’s neighborhood."
+lifetime of events,"velocity, i.e., optical-flow","To compute each event’s lifetime, the corresponding velocity, i.e., optical-flow, must be estimated"
+"velocity, i.e., optical-flow",robust plane-fitting,"Velocity, i.e., optical-flow is estimated by robust plane-fitting"
+"velocity, i.e., optical-flow",converting events into frames and applying the classic lucas-kanade estimation method,"Velocity, i.e., optical-flow, must be estimated by converting events into frames and applying the classic Lucas-Kanade estimation method"
+robust plane-fitting,converting events into frames and applying the classic lucas-kanade estimation method,Robust plane-fitting is related to converting events into frames and applying the classic Lucas-Kanade estimation method in estimating velocity
+methods,"velocity, i.e., optical-flow","By design, these methods do not rely on explicit decay parameters, but they require estimating velocity, i.e., optical-flow"
+methods,thresholds for inlier/outlier separation,Methods require additional thresholds for inlier/outlier separation
+latency,widespread adoption,The latency introduced may hinder the widespread adoption of these methods
+proposed method,baseline methods,The proposed method consistently improves the corresponding baseline methods’ performance
+adaptive decay process,constant decay strategy,The constant decay strategy is a method of decay in which an exponential decay kernel with a time constant is applied. This method applies a decrease rate proportional to its current value.
+constant decay strategy,exponential decay kernel,An exponential decay kernel with a time constant is applied in the constant decay strategy to achieve decay.
+decay rate,proportionality constant,The proportionality constant λ = 1/τ in the decay rate directly influences the behavior of the decay process. It must be empirically set for each sequence.
+event activity,number of events,"Event activity involves defining the number of events as a counting process. It is represented by the function n(t) :=J(ti ≤ t), where ti is the timestamp of the i-th event."
+event activity,event stream dynamics,"Event activity encodes the event stream dynamics since it considers all events, described by Eq. (4)."
+event activity,scenes with more texture,"Scenes with more texture will have higher event activity than scenes with less texture, given the remaining dynamics are the same."
+event rate,event activity,"Event rate is defined in terms of event activity as r(t, s) := a(t, s)/(t − s)."
+decay rate,event stream dynamics,The adaptive decay rate varies in time according to the event stream dynamics.
+adaptive decay rate,event activity,"The adaptive decay rate is proportional to the event activity, implying a relationship between them in the context of Eq. (5)."
+adaptive decay rate,event stream dynamics,"Since the event activity implicitly encodes the event stream dynamics, the adaptive decay rate will also encode the event stream dynamics, as discussed in the context."
+adaptive decay rate,event stream dynamics,"The decay rate should scale with the event stream dynamics, showing a direct relationship between them in the context of Eq. (5)."
+adaptive decay rate,decay term,"Considering the adaptive decay rate and only the decay term from Eq. (9), a specific equation can be derived, showing a connection between the adaptive decay rate and the decay term."
+event activity,event stream dynamics,"The event activity implicitly encodes the event stream dynamics, indicating a relationship between them as discussed in the context."
+event activity,event stream dynamics,"The adaptive decay rate implicitly encodes the event stream dynamics, showing a relationship between the event activity and the event stream dynamics in the context."
+event activity,event activity definition,"The event activity definition involves applying a temporal decay strategy, indicating a connection between the event activity and its definition in practice."
+event activity,event activity,"By abusing notation, a more useful event activity definition can be considered in practice, implying a relationship between different representations of event activity."
+event activity,adaptive decay,"Consequently, the adaptive decay rate is dependent on the event activity, as shown in the context of Eq. (5), implying a relationship between them."
+decay term,event activity,"Substituting the considered adaptive decay rate and only considering the decay term, a relationship between the decay term and the event activity can be observed in the context of Eq. (5)."
+adaptive decay,previous timestamp,"A recursive expression with respect to a previous timestamp can be obtained, indicating a relationship between adaptive decay and the previous timestamp in the context."
+constant decay process,adaptive decay process,"The context compares the constant and adaptive global decay processes, highlighting how the adaptive process exhibits a sharper decrease with higher event activity but a smoother decrease with lower event activity."
+adaptive decay process,event activity,The algorithm presented in the context estimates the adaptive decay and event activity by computing the current adaptive decay based on the previous event activity and computing the current event activity based on the current adaptive decay.
+event activity,initial event activity,"The context mentions the need to set the initial event activity value, which can be set to 0 for typical sequences."
+initial event activity,initial timestamp,"The context explains that two additional values need to be set, including the initial event activity and the initial timestamp, both of which can be set to 0 for typical sequences."
+event,timestamp,Events are typically associated with a timestamp for tracking purposes.
+events,adaptive decay process,"A few hundred events are needed for the adaptive decay process to converge, showing a relationship between the number of events and the convergence of the process."
+initial conditions,typical sequences,Initial conditions are considered close to irrelevant for typical sequences that have millions of events.
+event,event weight,"Each event can be augmented with an event weight, indicating a relationship between events and their weights."
+event weight,temporally adaptive event weight,"The event weight can be temporally adaptive, as shown in the construction of the temporally adaptive event weight formula."
+event,event activity,"Event activity at a timestamp can influence event weights, demonstrating a relationship between event activity and events."
+temporally adaptive event weight,event activity,"The temporally adaptive event weight is defined based on event activity, indicating a relationship between the two terms."
+event,event stream dynamics,"Event weight varies according to the global event stream dynamics, connecting events with the dynamics of event streams."
+event,contribution,"An event is considered active based on its contribution, where the weight of the event determines its activity."
+event,weight,"An event is active if its weight is higher than a threshold, as defined by Eq. (17)."
+event,event-based processing,"Events can be used in event-based processing paradigms, where utilities such as event weight play a role."
+event,batch-based processing,"Events can be used in batch-based processing paradigms, where utilities such as event weight play a role."
+event,adaptive event batches,Events can be adaptively gathered into batches based on their weight for later processing.
+event,event stream,Events in the event stream are augmented with temporally adaptive weight for processing.
+event,event weight,Events' weights are compared to determine the formation of event batches.
+event,incoming events,Incoming events are continuously gathered until the weight of the first event in a batch is considered inactive.
+event,event batches,"Event batches are formed by gathering events until a certain weight threshold is reached, and the process continues sequentially."
+event,adaptive decay process,The proposed adaptive decay process is evaluated in event-based vision problems.
+event,asynchronous spatial convolution,The proposed adaptive decay process is evaluated in the context of asynchronous spatial convolution.
+event,global motion estimation,The proposed adaptive decay process is evaluated in the context of global motion estimation.
+asynchronous spatial convolution,global motion estimation,The proposed method is evaluated in both asynchronous spatial convolution and global motion estimation.
+asynchronous spatial convolution,image intensity reconstruction,The proposed method is also evaluated in asynchronous spatial convolution and image intensity reconstruction.
+global motion estimation,image intensity reconstruction,"Furthermore, global motion estimation is evaluated along with image intensity reconstruction."
+davis 240c dataset,real sequences,The DAVIS 240C Dataset consists of real sequences captured by a camera.
+poker dvs dataset,n-mnist dataset,The Poker DVS Dataset and N-MNIST Dataset are both used for classification tasks.
+n-mnist dataset,mnist dataset,The N-MNIST dataset is a conversion of the MNIST dataset to event-based data.
+mnist dataset,event-based data,The N-MNIST dataset is converted to event-based data.
+uzh-fpv drone racing dataset,mini davis346 camera,The UZH-FPV Drone Racing Dataset consists of sequences captured by a mini DAVIS346 camera onboard a flying racing quadrotor.
+mini davis346 camera,deep neural-network architecture,The mini DAVIS346 camera is used to capture sequences for training a deep neural-network architecture for image intensity reconstruction from events.
+event-based convolution method,baseline,The event-based convolution method is considered as the baseline.
+high-pass filter,frequency domain,A high-pass filter in the frequency domain is proposed to attenuate low-frequency noise.
+adaptive decay process,baseline,The proposed adaptive decay process is compared with the baseline.
+asynchronous spatial convolution,identity kernel,Asynchronous spatial convolution is applied with an identity kernel.
+deep neural-network architecture,image intensity reconstruction,A deep neural-network architecture is used for image intensity reconstruction.
+image similarity,structural similarity index (ssim),The image similarity is measured in terms of Structural Similarity Index (SSIM).
+rotation,translation,"Rotation and translation sequences are key concepts mentioned together in the context, indicating a relationship between the two terms."
+rotation,time constant,"The time constant plays a role in handling event streams with varying dynamics, including rotation processes."
+translation,time constant,The time constant is important for capturing event rates in translation processes as well.
+time constant,event streams,"The time constant is discussed in relation to handling event streams with varying dynamics, showing a connection between the terms."
+time constant,performance,"The choice of time constant influences the performance of capturing higher event rates, leading to better results in later sub-intervals."
+performance,event rates,Performance is linked to the ability to capture higher event rates reliably in different sub-intervals.
+image,similarity,"Image similarity is discussed in the context, showing a relationship between the two concepts."
+image similarity,box plots,Image similarity box plots by intervals of 15 seconds averaged over all the rotation and translation sequences.
+time constants,milliseconds,"The time constants τ are in milliseconds. A time constant in the order of tens of milliseconds (e.g., τ = 10) represents a compromise between the previous two, being a common choice in works that rely on time constants."
+decay process,performance,The proposed decay process achieves an almost constant performance across the sub-intervals since it adapts to the event stream dynamics.
+global motion estimation,baseline method,We compare each baseline method with two adaptive variants that use the proposed decay method.
+adaptive variant,event inactivity,Variant that also detects event inactivity based on the event weight.
+weighted variant,event contribution,Variant that additionally weighs each event contribution.
+evaluation metrics,"velocity error, standard deviation (σ), rms error","Evaluation metrics are: velocity error (ex, ey, ez), respective standard deviation (σ), Root-Mean Squared (RMS) error, and RMS."
+method,baseline,Methodology comparison between different baselines for angular velocity estimation
+accuracy,event-based,Evaluation of angular velocity and linear velocity estimates in sequences
+event-based,incremental potential (incp),Comparison of accuracy performance with baseline method
+sequential,rotation sequences,Presentation of accuracy performance for rotation sequences and comparison with the best adaptive variant
+baseline,contrast maximization (cmax),Comparison of batch-based methodology with baselines
+baseline,approximate potential (approxp),Comparison of batch-based methodology with baselines
+cmax method,approxp method,CMax method and ApproxP method are mentioned as baselines in the context.
+cmax method,approxp method,CMax method and ApproxP method have average accuracy performance mentioned in the context.
+cmax method,approxp method,CMax method and ApproxP method are compared with adaptive variants in terms of RMS error in the context.
+cmax method,approxp method,CMax method and ApproxP method are outperformed by the best adaptive variants in the context.
+cmax method,approxp method,CMax method and ApproxP method are baselines outperformed by adaptive variants in the context.
+cmax method,approxp method,CMax method and ApproxP method are outperformed by the best adaptive variants by certain percentages in the context.
+cmax method,approxp method,CMax method and ApproxP method are mentioned under Batch-based angular and linear velocity estimation in the context.
+cmax method,approxp method,CMax method and ApproxP method are used for average accuracy comparison on rotation and translation sequences in the context.
+cmax method,approxp method,CMax method and ApproxP method are baselines mentioned in relation to the rotation and translation sequences in the context.
+cmax method,approxp method,CMax method and ApproxP method are outperformed by the best adaptive variants in terms of RMS error in the context.
+cmax method,approxp method,CMax method and ApproxP method are baselines in function of homeostasis mentioned in the context.
+cmax method,approxp method,CMax method and ApproxP method are outperformed by the best adaptive variants in different datasets mentioned in the context.
+cmax method,approxp method,CMax method and ApproxP method are considered in relation to pattern classification as baseline feature extractor in the context.
+approxp method,cmax method,"Same as above relationships, just with reversed order - ApproxP method and CMax method."
+tractor,k-nearest neighbours classifier,The baseline model is compared with an adaptive variant that utilizes time-surfaces around an event given by the adaptive decay.
+baseline,adaptive variant,"The proposed adaptive variant outperforms the baseline model, with an absolute increase in accuracy performance of 9% and 0.5% on different datasets."
+adaptive variant,time-surfaces,"The time-surfaces around an event are given by the adaptive decay, contributing to the improved performance of the adaptive variant."
+adaptive variant,homeostatic parameter,"The accuracy performance of the adaptive variant is influenced by the homeostatic parameter, which balances the activity among the time-surfaces in a layer."
+adaptive variant,pokerdvs,"The adaptive variant outperforms the baseline on datasets like PokerDVS, showing a significant increase in maximum accuracy performance."
+adaptive variant,n-mnist,"The adaptive variant outperforms the baseline on datasets like N-MNIST, with a notable increase in maximum accuracy performance."
+event-based processing,batch-based processing,"The accuracy performance comparison is presented for both event-based and batch-based processing, showing differences based on the weight threshold."
+weight threshold,rotation and translation sequences,"The estimation of angular and linear velocities is shown as a function of the weight threshold on rotation and translation sequences, highlighting the differences in processing methods."
+baseline,proposed,"Comparison of image intensity reconstruction evaluation between the baseline and proposed methods is presented, showing differences in MSE, SSIM, and MSSIM."
+weight threshold,image reconstruction evaluation,"The evaluation of image reconstruction is based on the weight threshold, impacting the MSE, SSIM, and MSSIM values on DAVIS sequences."
+adaptive variant,hyper-parameters,"The requirement of fewer hyper-parameters, specifically the time constants for each layer, is achieved by the adaptive variant, showcasing its efficiency."
+hyper-parameters,time constants,Hyper-parameters in a neural network architecture typically include time constants for each layer.
+adaptive method,hyper-parameters,The adaptive method proposed requires fewer hyper-parameters compared to the original implementation in HOTS architecture.
+ssl-e2v,image intensity reconstruction,SSL-E2V serves as the baseline image reconstruction method to compare with other methods trained with different input event streams.
+adaptive-size training,baseline image reconstruction method,The proposed adaptive-size training achieves slightly better performance in terms of Mean Squared Error and MSSIM compared to the baseline method.
+event weight influence,weight threshold,The influence of the weight threshold is empirically assessed in terms of event weight influence.
+global motion estimation,weight threshold,Performance on global motion estimation is shown in relation to the weight threshold.
+event cameras,adaptive decay process,"The proposed adaptive decay process for event cameras is presented in the context, highlighting its runtime per event and usefulness across event-based vision problems. The method removes a parameter usually tuned according to prior assumptions while introducing negligible latency."
+runtime per event,adaptive decay process,"Tab. 7 presents the runtime per event of the proposed adaptive decay process, estimating the runtime on a PC with specific hardware. The runtime per event is significantly lower than typical temporal resolution of event cameras."
+pixel resolution,camera,"The latency introduced by the adaptive decay process does not depend on the camera resolution, i.e., the number of pixels of the camera. This indicates that the method's performance is not impacted by the camera's resolution."
+baseline methods,adaptive decay process,"By considering the proposed adaptive decay process, the performances of baseline methods are consistently improved. This enhancement is seen across several event-based vision problems, leading to better results."
+parameter tuning,adaptive decay process,"The proposed method removes the need for parameter tuning based on prior assumptions, leading to improved performance and introducing negligible latency. This feature makes the method more efficient and user-friendly in event-based applications."
+future research,adaptive decay process,Future research avenues include additional empirical evaluation regarding the weight threshold value and exploring other forms of temporally varying decay rates in the context of the proposed adaptive decay process for event cameras.
+weight threshold value,temporally varying decay rates,The evaluation involves considering the weight threshold value and other forms of temporally varying decay rates.
+proposed method,single motion,The proposed method assumes events come from a single motion.
+proposed method,objects,The proposed method could fail in scenarios where objects are independently moving.
+multi-scale approaches,explicitly modeling more than one motion,Considering multi-scale approaches or explicitly modeling more than one motion are possible avenues for future research.
+research,french national research agency (anr),This research received funding from the French National Research Agency (ANR).
+research,grant agreement,The research was conducted under grant agreement N° ANR-20-CE23-0021.

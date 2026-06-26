@@ -1,0 +1,166 @@
+node_1,node_2,edge
+diffusion-based methods,monocular 3d human pose estimation,These methods achieve state-of-the-art performance by estimating 3D joint coordinates from 2D pose sequences.
+state-of-the-art (sota) performance,diffusion-based methods,Some methods have lower performance than SOTA
+human anatomical skeleton,bone length and bone direction prediction,These methods use the skeleton's tree structure to incorporate human body prior constraints.
+tree structure of the human skeleton,direct application of disentangled methods,The tree structure can lead to hierarchical errors amplification in disentangled approaches.
+disentangled diffusion-based 3d human pose estimation (ddhpose),proposed solution,Intended to address the limitations of existing methods by disentangling pose and using a hierarchical denoiser.
+forward process of the diffusion model,bone length and bone direction diffusion,Models human pose prior by separating the diffusion of these elements.
+disentanglement loss,diffusion model learning,Supervises the model to learn effectively by enforcing disentanglement.
+reverse process,hierarchical spatial and temporal denoiser (hstdenoiser),Proposed to enhance hierarchical modeling of joint positions.
+hierarchical-related spatial component,hstdenoiser,One part of the HSTDenoiser responsible for spatial denoising at different hierarchical levels.
+hrnet (wang et al. 2020),2d joint predictions,HRNet is used for deriving predictions of 2D joints.
+cpn (chen et al. 2018),2d joint predictions,CPN is another estimator used for generating 2D joint estimates.
+open-pose (cao et al. 2017),2d joint predictions,Open-Pose contributes to predicting 2D joints in the process.
+alphapose (fang et al. 2017),2d joint predictions,AlphaPose is also involved in estimating 2D joints.
+2d-to-3d lifting,final estimation results,2D-to-3D lifting is the step that converts 2D joint predictions to 3D.
+pavllo et al. (2019),temporal information exploration,Pavllo's method uses convolutional networks to leverage temporal context.
+transformer-based methods (zheng et al. 2021; zhang et al. 2022a),spatial-temporal information,These methods utilize transformers to combine spatial and temporal data for improved estimation.
+depth ambiguity,issue,Depth ambiguity is a challenge in monocular 3D human pose estimation.
+shan et al. (2023),pose distribution prior,Shan's method introduces a pose distribution prior during training.
+ci et al. (2023),pose distribution prior,Ci's work also employs a pose distribution prior for better estimation.
+gong et al. (2023),pose distribution prior,Gong's approach uses a pose distribution prior to mitigate depth ambiguity.
+xu et al. (2020),disentangle-based methods,Xu's method is a type of disentangled approach for 3D pose estimation.
+chen et al. (2021),disentangle-based methods,Chen's work is another disentangled method that contributes to 3D pose estimation.
+wang et al. (2022),disentangle-based methods,Wang's contribution is also part of the disentangle-based category.
+mixste (zhang et al. 2022a),3d joint regression,MixSTE is a method that directly regresses 3D joint locations.
+d3dp (shan et al. 2023),3d joint regression,D3DP is another method focusing on 3D joint regression.
+our method,3d joint regression,Our method
+bone length,bone direction,These terms are related as they 'subsequently compose' 3D joints locations using the forward kinematics of the human skeleton.
+explicit pose constraints,symmetry loss,Both are components of the methods that address the human pose
+joint angle limits,human pose priors,They are related because joint angle limits are part of the human pose priors employed by disentangle-based techniques.
+disentangle-based techniques,error accumulation,Disentangle-based techniques have the drawback of error accumulation
+diffusion-based 3d hpe methods,noise addition,These methods directly add noise to the original 3D pose
+bone length,joint angle variations,The disentangled model focuses on temporal consistency of these two aspects separately.
+transformer-based methods,spatial-temporal context information,These models explore context but lack attention to fine-grained hierarchical information.
+hierarchical information,joints,Joints are grouped into hierarchies based on their kinesiological tree depth for capturing fine-grained structure.
+left side of figure 1,six hierarchies,This refers to the visual representation of grouping joints into different levels of hierarchy.
+right side of figure 1,hierarchical accuracy,The experiment results show an improvement in accuracy as the model attends to hierarchical information.
+diffusion model,3d human pose estimation,The context describes a method that integrates a disentangled diffusion model for 3D human pose estimation.
+disentangled method,diffusion model (forward process),The disentangled method is applied in the forward process of the diffusion model to simplify learning the human pose prior.
+3d human pose estimation,bone length and bone direction prediction,The task of 3D HPE is decomposed into separate prediction of bone length and direction
+hierarchical spatial transformer (hrst),hierarchical-related spatial transformer (hrst),HRST is a component of the proposed HSTDenoiser
+hierarchical-related temporal transformer (hrtt),hierarchical temporal denoiser,HRTT is another module in HSTDenoiser
+hrst,parent joint's information,HRST incorporates spatial information from parent joints to guide the attention mechanism.
+hrtt,cross-attention,HRTT involves cross-attention between joints to learn temporal connections.
+ddhpose,hierarchical spatial and temporal denoiser,DDHPose stands for the proposed Disentangled Diffusion-based method with both spatial and temporal denoisers.
+proposed contributions,improvement on higher-hierarchy joints,The method improves performance
+proposed contributions,overall better performance,The proposed approach leads to an overall improvement in 3D human pose estimation accuracy.
+spatial-temporal transformer,hierarchical relation of spatial position information,The spatial-temporal transformer uses HSP embedding to model the hierarchical relationship between spatial and temporal position information.
+temporal position information,hierarchical relation of spatial position information,The transformer models the hierarchical relation of both spatial and temporal position data.
+feature extracted by the spatial-temporal transformer,child joint feature,The feature 'f' extracted by the spatial-temporal transformer is separated into a child joint feature 'fc'.
+2d pose,3d pose,The input to the framework includes both 2D and 3D poses
+diffusion model,explicit human pose prior,The proposed method integrates an explicit human body prior into the diffusion model for 3D HPE.
+ddhpose,3d human pose estimation,DDHPose is a proposed approach for 3D Human Pose Estimation (3D HPE).
+3d joint location,bone length,The 3D joint location is decomposed into bone length and bone direction in the proposed method.
+3d joint location,bone direction,In the method
+hstdenoiser,hrst,HSTDenoiser contains HRST and HRTT components
+hstdenoiser,hrtt,HRTT is part of HSTDenoiser
+error accumulation,chen et al. (2021),Xu et al. (2020)
+error accumulation,bone length prediction,These works have a tendency to accumulate errors in the prediction of bone length.
+error accumulation,bone direction prediction,Error accumulation also affects the prediction of bone direction.
+3d pose disentanglement strategy,diffusion-based methods,The strategy is a contrast to non-disentangled diffusion-based methods
+3d pose disentanglement strategy,dense and high-dimensional problem,The strategy decomposes the complex problem into sparse and low-dimensional sub-problems for easier optimization.
+bone length,bone direction,The strategy represents 3D pose as bone length and direction
+bone length,temporal consistency,Adding bone length loss as a constraint promotes temporal consistency in the representation.
+ground truth 3d pose,bone length and direction,The disentangled representation is derived from the original 3D pose
+forward kinematic structure,child joint,The structure defines the relationship between joints
+forward kinematic structure,parent joint,In the forward kinematic structure
+disentanglement strategy,bone length ˜l0 and bone direction ˜d0,These terms are related as they are being decomposed for supervision during training.
+gaussian distribution,initial noisy bone length and direction,The distribution is used to generate initial hypotheses for denoising.
+ddim (song,meng,and ermon 2020)
+diffusion process,noise ϵtl and σt,The diffusion process controls the stochasticity of generating noisy samples.
+hypothesis number h,iteration times w,Both are controllable parameters that affect the final prediction of bone length and direction.
+hstdenoiser,noisy bone length and bone direction,This denoiser is used for reconstructing original data in both training and inference phases.
+hrst,hrtt,Components of HSTDenoiser that explore hierarchical information.
+training phase,inference phase,Both phases involve the use of HSTDenoiser for denoising and reconstruction.
+mpjpe,p-mpjpe,Performance metrics for evaluating the effectiveness of the bone length and direction prediction.
+hstdenoiser,hrst and hrtt,HSTDenoiser consists of HRST and HRTT
+hrst,hrtt,Both HRST and HRTT are part of the HSTDenoiser and are used for exploring hierarchical information.
+joint,parent joint,The context refers to the relation among joints
+joint,child joint,Each joint is related to a child joint
+linear layer,input feature,A linear layer is used to enhance the input feature of the model.
+spatial-temporal transformer block,mixste (zhang et al. 2022a),The spatial-temporal transformer block comes from MixSTE and is utilized for extracting joint features.
+hierarchical spatial position embedding (hsp),temporal embedding t p,HSP and T P are introduced for better spatial and temporal position modeling
+hsp,joint hierarchy information,HSP embedding incorporates both spatial position and joint hierarchy details.
+joints,six hierarchies,Joints are split into six hierarchies based on their depth in the human body's tree-like structure.
+hierarchical embedding,hierarchical-related information,Hierarchical embedding facilitates learning of hierarchical-related information within the model.
+hrst,spatio-temporal correlations of joints,HRST models spatial correlations
+hierarchical-related spatial transformer (hrst),transformer model,HRST is introduced in the subsequent section as an enhancement to model spatio-temporal correlations of joints
+hierarchical-related joints triplets,human body,HRST defines hierarchical-related joints triplets in the context of the human body's forward kinematics structure.
+forward kinematics structure,hrst,The forward kinematics structure provides the basis for defining hierarchical-related joints in HRST.
+parent joint feature,hrst,HRST enhances spatial information modeling by incorporating parent joint features.
+query,key,and value (qkv) mechanism
+noisy bone length and direction,input to transformer module,The noisy data serves as the input for the Transformer module
+2d pose sequence,condition for transformer module,The 2D pose sequence is added as a conditioning input to improve the denoising process in the Transformer.
+joint feature,q,k
+algorithm 1: hierarchical-related spatial transformer,hrst implementation,Algorithm 1 outlines the steps for implementing the HRST
+hierarchical-related spatial attention map,joint,The hierarchical-related spatial attention map computes the joint attention based on the forward kinematic structure
+hierarchical-related spatial attention map (hrst),algorithm 1,HRST involves Algorithm 1
+joint,parent joint,Each joint's position is influenced by the position of its parent joint
+joint,child joint,In the forward kinematic structure
+temporal dimension,hierarchical adjacent joints,HRTT introduces temporal relationships between a joint
+human skeleton,tree-like structure,The human skeleton has a tree-like structure
+hierarchical adjacent joints,attentionhrt,AttentionHRT is related to the relationships between hierarchical adjacent joints.
+attentionhrt,softmax,AttentionHRT uses Softmax to compute its output.
+3d disentanglement loss,forward diffusion process,3D Disentanglement Loss aids in learning explicit priors during the forward diffusion process.
+3d ground truth pose sequence,predicted 3d pose sequence,Both are used for calculating the disentanglement loss.
+bone length,bone direction,Decomposition involves separating bone length and bone direction.
+child joint,parent joint,ci and pi define the relationship between child and parent joints in a bone.
+disentangled bone length prediction,disentangled bone direction prediction,These predictions are components of the disentanglement loss calculation.
+3d pose loss,denoised 3d pose regression,The model's training includes a constraint on the accuracy of regressed 3D poses.
+human3.6m dataset,3d human pose estimation task,Human3.6M is a popular dataset for this task
+s1-s9,human3.6m,S1-S9 are subsets of the Human3.6M dataset used in the experiments.
+previous work,pavllo et al. (2019),zheng et al. (2021)
+mpi-inf-3dhp,8 actors,The MPI-INF-3DHP dataset records 8 actors who perform activities.
+8 actors,4 males,The 8 actors are composed of 4 males and 4 females.
+8 actors,4 females,See the '8 actors' node for the composition
+activities,8 different sets,Each actor undertakes 8 different sets of activities for the dataset.
+train dataset,eight activities,The model is trained using eight activities performed by eight actors.
+test dataset,seven different activities,The test dataset consists of seven different activities
+metrics,mpjpe,p-mpjpe
+mpjpe,euclidean distance,MPJPE measures the Euclidean distance between predicted and ground truth joint positions.
+p-mpjpe,procrustes analysis,P-MPJPE involves aligning the predicted pose with the ground truth for a fairer comparison.
+d3dp,j-agg based mpjpe,p-mpjpe
+deterministic methods,disentangle-based model,This context discusses deterministic methods
+deterministic methods,non-disentangle based model,Another category is non-disentangle based models
+dka,xu et al. (2020),DKA is a method by Xu et al.
+anatomy3d,chen et al. (2021),Anatomy3D is another method by Chen et al.
+virtual bones,wang et al. (2022),Virtual Bones is a method by Wang et al.
+mpi-inf-3dhp,pck,Results on MPI-INF-3DHP are evaluated under PCK metric.
+mpi-inf-3dhp,auc,Results on MPI-INF-3DHP are also evaluated under AUC metric.
+mpi-inf-3dhp,mpjpe,Performance is measured using MPJPE metric on MPI-INF-3DHP.
+diffpose,stand-diff,The implementation of Stand-Diff by DiffPose uses 2D pose sequences
+ddhpose,disentangle strategy,Our method
+our method,sota method,Our approach outperforms the state-of-the-art (SOTA) method by 0.8 in PCK
+disentangled input,disentangled output,An ablation study shows that disentanglement with both disentangled input and output leads to the best results.
+human3.6m dataset,2d pose sequence,Experiments for ablation study are conducted on Human3.6M using 2D pose sequences extracted by CPN.
+cpn,2d pose extraction,CPN is used for extracting 2D pose sequences for the ablation study.
+human3.6m dataset,2d pose sequence,The context mentions that the ablation experiments are conducted on the Human3.6M dataset
+disentangle input strategy,low-dimensional sub-problems,This strategy divides the optimization problem into two low-dimensional parts
+disentangle input strategy,faster convergence,Employing this strategy leads to faster convergence during training.
+disentangle input strategy,lower training 3d pose loss,It results in lower loss compared to not using it initially.
+disentangle input strategy,improved quantitative results,This strategy improves quantitative results
+disentangle output,denoiser,The denoiser regresses bone length and direction in the reverse process.
+disentangle output,c = cp + l × d,This equation explains the relationship between joint coordinates and bone properties.
+disentangled output,lower errors,Hierarchy 1 shows lower errors when using Disentangled Output.
+disentangled output,higher hierarchical levels,Higher hierarchical levels accumulate errors more without Disentangled Output.
+hierarchical information,disentangle strategy,The Disentangle Strategy is a part of the Hierarchical Information
+forward diffusion process,hierarchical information,Hierarchical Information guides the Forward Diffusion Process
+disentangle strategy,bone length,The Disentangle Strategy decomposes the 3D pose into bone length and direction.
+disentangle strategy,direction,The Disentangle Strategy also decomposes the 3D pose into bone length and direction.
+hierarchical joints,hstdenoiser,HSTDenoiser strengthens the relation among hierarchical joints during the reverse diffusion process.
+reverse diffusion process,hstdenoiser,HSTDenoiser enhances attention weights for adjacent joints in the Reverse Diffusion Process.
+3d pose loss,model performance,The 3D Pose Loss constrains the denoised 3D pose
+3d disentanglement loss,model performance,The 3D Disentanglement Loss improves performance
+ddhpose,hierarchical information,DDHPose incorporates hierarchical information for 3D HPE.
+ddhpose,disentangle strategy,Proposed in DDHPose
+ddhpose,hstdenoiser,Also part of DDHPose
+human3.6m,dataset,Extensive results on Human3.6M demonstrate the effectiveness of DDHPose.
+mpi-inf-3dhp,dataset,Additional evaluation is done on MPI-INF-3DHP
+fusion process,human3.6m dataset,The fusion process is compared on Human3.6M
+fusion process,mpi-inf-3dhp dataset,The fusion process also surpasses competitors on the MPI-INF-3DHP benchmark.
+disentangle-based method,non-disentangle based method,The fusion process outperforms both disentangled and non-disentangled approaches.
+fusion process,probabilistic approaches,It is more effective than probabilistic methods for 3D human pose estimation.
+work,national natural science foundation of china,Financial support comes from the Chinese funding agency.
+work,beijing municipal science & technology commission,Additional support is provided by Beijing's municipal science program.
+work,shenzhen technology plan program,Funding also includes the Shenzhen technology plan program.

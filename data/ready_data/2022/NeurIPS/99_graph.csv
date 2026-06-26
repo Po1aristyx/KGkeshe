@@ -1,0 +1,282 @@
+node_1,node_2,edge
+bayes-adaptive markov decision process (bamdp),exploration-exploitation trade-off,BAMDP formalism pursues the Bayes-optimal solution to the exploration-exploitation trade-off in reinforcement learning.
+exploration-exploitation trade-off,reinforcement learning,BAMDP formalism pursues the Bayes-optimal solution to the exploration-exploitation trade-off in reinforcement learning.
+computation,exact solutions,The computation of exact solutions to Bayesian reinforcement-learning problems is intractable.
+bayesian reinforcement-learning problems,approximation algorithms,Much of the literature has focused on developing suitable approximation algorithms for Bayesian reinforcement-learning problems.
+bamdp planning,complexity measure,"Before diving into algorithm design, a complexity measure for BAMDP planning is defined under mild structural assumptions."
+efficient exploration,judicious acquisition of information,Efficient exploration in BAMDPs hinges upon the judicious acquisition of information.
+complexity measure,worst-case difficulty of gathering information,Complexity measure highlights the worst-case difficulty of gathering information and exhausting epistemic uncertainty.
+"computationally-intractable, exact planning algorithm",complexity measure,"Establish a computationally-intractable, exact planning algorithm that takes advantage of the complexity measure to show more efficient planning."
+state abstraction,bamdp complexity reduction,"Specific form of state abstraction with the potential to reduce BAMDP complexity and gives rise to a computationally-tractable, approximate planning algorithm."
+reinforcement-learning agent,exploration-exploitation trade-off,The reinforcement-learning agent is involved in the optimal treatment of the exploration-exploitation trade-off
+reinforcement-learning agent,prior beliefs,The reinforcement-learning agent's treatment of the exploration-exploitation trade-off is with respect to prior beliefs over an uncertain environment
+reinforcement-learning agent,environment states,The reinforcement-learning agent's treatment involves the joint collection of environment states coupled with its current state of knowledge
+prior beliefs,uncertain environment,The prior beliefs are related to an uncertain environment in the context of reinforcement-learning
+algorithmic concept,bamdps,There is an algorithmic concept outlined in the context of BAMDPs planning to mitigate problem difficulty and facilitate near-optimal solutions
+information horizon,bamdp planning,The notion of information horizon is introduced as a complexity measure on BAMDP planning to identify the underlying uncertain environment
+epistemic uncertainty,agent,"The agent accumulates data to exhaust uncertainty and identify the true environment, where the posterior concentrates."
+posterior,uncertainty,The posterior concentrates to exhaust uncertainty as the agent accumulates data.
+bayes-optimal policy,optimal policy,"After exhausting uncertainty and reaching a certain point, the Bayes-optimal policy coincides with the optimal policy of the underlying Markov Decision Process."
+information horizon,number of timesteps,The information horizon quantifies the worst-case number of timesteps needed for the agent to gather all possible information about the uncertain environment.
+epistemic state abstraction,algorithmic tool,Epistemic state abstraction is considered as an effective algorithmic tool for balancing between reduced information horizon (complexity) and near-Bayes-optimality of the planning solution.
+knowledge states,hyperstate space,The total number of knowledge states an agent may take on affects the intractable size of the hyperstate space.
+state abstraction,epistemic state space,State abstraction compresses the epistemic state space to create a smaller and more tractable BAMDP for planning.
+state aggregation,efficiency,State aggregation improves efficiency in traditional MDP planning.
+belief state aggregation,partially-observable mdp (pomdp),Belief state aggregation is effective in partially-observable MDP (POMDP) as shown in similar findings.
+belief state aggregation,mdp,"Belief state aggregation's effectiveness in partially-observable Markov Decision Processes (POMDP) planning was studied by et al., 2012. This work provides an answer to the question about the complexity of BAMDPs."
+mdp,pomdp,"Belief state aggregation's effectiveness in partially-observable Markov Decision Processes (POMDP) planning was studied by et al., 2012."
+mdp,bamdp,"The complexity of BAMDPs was discussed in the context of MDPs by Bartlett and Tewari, 2009, Jaksch et al., 2010, Farahmand, 2011, Maillard et al., 2014, Bellemare et al., 2016, Arumugam et al., 2021, Abel et al., 2021."
+bamdp,planning algorithm,Efficient planning algorithms are discussed in the context of BAMDPs.
+bamdp,taxonomy,The work can serve as a starting point for building a broader taxonomy of BAMDPs.
+bamdp,structural classes,The taxonomy of BAMDPs can parallel existing structural classes of MDPs.
+standard mdp formalism,reinforcement-learning literature,"Standard MDP formalism used throughout the reinforcement-learning literature is presented by Sutton and Barto, 1998."
+markov decision processes,sequential decision-making problem,Markov Decision Processes represent a sequential decision-making problem in the form of a traditional finite-horizon Markov Decision Process.
+markov decision processes,finite set of states,Markov Decision Processes include a finite set of states denoted as S within the MDP framework.
+markov decision processes,finite set of actions,Markov Decision Processes involve a finite set of actions denoted as A within the MDP framework.
+markov decision processes,reward function,"Markov Decision Processes utilize a deterministic reward function, R: S × A → [0, 1], to evaluate actions."
+markov decision processes,transition function,"Markov Decision Processes use a transition function, T: S × A → ∆(S), to describe state transitions based on actions."
+markov decision processes,horizon,"The horizon parameter in Markov Decision Processes, denoted by H, signifies the total number of steps or interactions an agent takes within the environment."
+markov decision processes,policy,"Markov Decision Processes involve policy π consisting of a collection of stationary, deterministic policies that govern action selection at each timestep."
+policy,value function,"The performance of a policy π at a specific timestep is measured by its induced value function V π, which represents the expected sum of future rewards."
+value function,policy,The value function V π is induced by policy π and denotes the expected future sum of rewards.
+value function,bellman equation,The value functions obey the Bellman equation.
+value function,bellman optimality equation,The value functions obey the Bellman optimality equation.
+policy,optimal policy,There exists an optimal policy π⋆ that achieves supremal value.
+policy,deterministic policies,The policy class contains all deterministic policies.
+value function,bamdp formalism,The value function is related to the BAMDP formalism.
+policy,bamdp formalism,The policy interacts within the Bayesian-Adaptive Markov Decision Processes formalism.
+latent parameter θ,unknown transition function tθ,"The uncertainty in θ is reflected by the distribution p(θ), which in turn reflects an agent's uncertainty in the unknown transition function Tθ."
+bamdps,finite state-action spaces,"In classic work on BAMDPs, parameters θ denote visitation counts and p(θ) is a Dirichlet distribution, leveraging the convenience of Dirichlet-multinomial conjugacy for exact posterior updates."
+parameters θ,visitation counts,Parameters θ denote visitation counts in classic BAMDPs.
+parameters θ,dirichlet distribution,"In classic BAMDPs, p(θ) is a Dirichlet distribution for exact posterior updates."
+parameters θ,posterior distribution,Parameters θ may be updated via Bayes' rule to recover a corresponding posterior distribution in light of observed data from the environment.
+agent,prior uncertainty,An agent's prior uncertainty in Tθ is reflected by the distribution p(θ) which can be updated via Bayes' rule with observed data.
+hyperstate space x,s × ∆(θ),The corresponding BAMDP for M is defined around the hyperstate space X = S × ∆(Θ).
+hyperstate,agent's original state,"hyperstate x = ⟨s, p⟩ ∈ X denotes the agent’s original or physical state s ∈ S"
+hyperstate,agent's information state,p ∈ ∆(Θ) denotes the agent’s information state or epistemic state about the uncertain environment
+epistemic state,agent's knowledge,"intuitively, the epistemic state represents the agent’s knowledge of the environment based on all previously observed data"
+bamdp,mdp,"this gives rise to the BAMDP ⟨X , A, R, T , β, H⟩ where A is the same action set as the original MDP M"
+bamdp,bamdp policy,"the associated BAMDP policy π = (π1, π2, . . . , πH ), πh : X → A, ∀h ∈ [H] selects actions based on the current state of the MDP as well as the agents accumulated knowledge of the environment thus far"
+bamdp,bamdp value functions,"with these components, we may define the associated BAMDP value functions with x′ = ⟨s′, B(p, s, a, s′)⟩"
+functions,x′,x′ is the result of applying functions with respect to the context.
+bamdp,bayes-optimal policy,The optimal policy of a BAMDP is the Bayes-optimal policy that balances exploration-exploitation trade-off in reinforcement learning.
+bayes-optimal policy,lower value optimal policy of mdp m,The Bayes-optimal policy tends to achieve lower value than the optimal policy of MDP M as the agent takes more informative actions.
+bayesian reinforcement learning,bellman and kalaba,Bellman and Kalaba offered the earliest formulation of Bayesian reinforcement learning.
+dayan and sejnowski,implicit exploration bonuses,Dayan and Sejnowski derived implicit exploration bonuses based on how an agent performs posterior updates.
+kolter and ng,implicit exploration bonuses,Kolter and Ng made the incorporation of implicit exploration bonuses more explicit.
+agent,posterior updates,The agent performs posterior updates to incorporate explicit and visitation-based bonus that decays with the concentration of the agent's Dirichlet posterior.
+posterior updates,visitation-based bonus,The posterior updates incorporate a specific visitation-based bonus.
+kolter and ng [2009],explicit and visitation-based bonus,Kolter and Ng [2009] make the visitation-based bonus more explicit.
+specific visitation-based bonus,decay with concentration of agent's dirichlet posterior,The visitation-based bonus decays with the concentration of the agent's Dirichlet posterior.
+sorg et al. [2010],exploration bonus based on variance of agent's posterior,Sorg et al. [2010] incorporate an exploration bonus based on the variance of the agent's posterior.
+araya-lópez et al. [2012],optimistic exploration boosting transition probabilities,Araya-López et al. [2012] achieve optimistic exploration by boosting transition probabilities.
+duff and barto [1997],multi-armed bandits,"Duff and Barto [1997] identify multi-armed bandits as a unique setting where the Bayes-optimal solution is computationally tractable through the use of Gittins indices [Gittins, 1979]."
+bayes-optimal solution,gittins indices,The Bayes-optimal solution for multi-armed bandits is computationally tractable through the use of Gittins indices.
+the vast space of more complicated bamdps,computationally intractable,The vast space of more complicated BAMDPs are computationally intractable.
+pac-bamdp framework,algorithmic efficiency characterization,"The PAC-BAMDP framework introduced by Kolter and Ng [2009] serves as a characterization of algorithmic efficiency, rather than problem hardness."
+uncertainty,optimal value function,Representing uncertainty in the optimal value function rather than the environment transition function.
+dearden et al. [1998],practical bayesian q-learning algorithm,Dearden et al. [1998] derive a practical Bayesian Q-learning algorithm by resampling Q⋆-values at each timestep.
+epistemic state,q⋆-values,The practical Bayesian Q-learning algorithm resamples Q⋆-values at each timestep.
+strens [2000],tractable solution,"Strens [2000] finds an alternate, tractable solution by lazily updating the epistemic state at the frequency of whole episodes."
+epistemic state,whole episodes,The epistemic state can be lazily updated at the frequency of whole episodes.
+epistemic state,individual timesteps,The epistemic state can be updated either at the frequency of whole episodes or individual timesteps.
+epistemic state,bayesian reinforcement-learning problem,The epistemic state is related to the Bayesian reinforcement-learning problem in terms of approximation.
+long line of work,"agrawal and jia, 2017","Multiple works, including Agrawal and Jia, 2017, analyze the approximation to the Bayesian reinforcement-learning problem."
+long line of work,"osband et al., 2016a,b","Multiple works, including Osband et al., 2016a,b, analyze the approximation to the Bayesian reinforcement-learning problem."
+long line of work,"osband and van roy, 2017","Multiple works, including Osband and Van Roy, 2017, analyze the approximation to the Bayesian reinforcement-learning problem."
+long line of work,"o’donoghue et al., 2018","Multiple works, including O’Donoghue et al., 2018, analyze the approximation to the Bayesian reinforcement-learning problem."
+long line of work,"osband et al., 2019","Multiple works, including Osband et al., 2019, analyze the approximation to the Bayesian reinforcement-learning problem."
+duff,policies,Duff represents policies as finite-state stochastic automata.
+bamdps,partially-observable mdps (pomdps),There are structural similarities between BAMDPs and partially-observable MDPs (POMDPs).
+pomdps,optimal value functions,Poupart et al. exploit similar structure between the optimal value functions of BAMDPs and POMDPs.
+actor-critic algorithms,bamdps,Actor-critic algorithms can be applied to BAMDPs to improve memory requirements.
+duff,stochastic process,Duff considers how to approximately model the stochastic process of the evolving epistemic state.
+epistemic state,diffusion models,The evolving epistemic state can be approximately modeled via diffusion models.
+sparse-sampling approach,computational efficiency,The sparse-sampling approach balances computational efficiency against fidelity to Bayes-optimal action selection.
+sparse-sampling approach,"kearns et al., 2002","Wang et al. introduce a sparse-sampling approach based on Kearns et al., 2002."
+sparse-sampling approach,bayes-optimal action selection,The sparse-sampling approach aims to balance computational efficiency against fidelity to Bayes-optimal action selection.
+sparse-sampling approach,fidelity,The sparse-sampling approach aims to balance computational efficiency against fidelity to Bayes-optimal action selection.
+sparse-sampling approach,castro and precup,An analogous sparse-sampling approach is developed by Castro and Precup using a linear-programming methodology for value-function approximation.
+linear-programming methodology,value-function approximation,linear-programming methodology is used for value-function approximation
+work,"scalable, sparse-sampling lookahead approaches","the work develops scalable, sparse-sampling lookahead approaches"
+monte-carlo tree search,algorithms,Monte-Carlo tree search is used as a base for the algorithms
+asmuth et al.,multiple posterior samples,Asmuth et al. merge multiple posterior samples into a single model
+guez et al.,posterior randomness,Guez et al. integrate out the posterior randomness
+bayesian reinforcement learning,survey,there is a detailed survey of Bayesian reinforcement learning
+epistemic state,lossy compression,lossy compression of the epistemic state may naturally reduce BAMDP hardness
+lee et al.,approximate-planning approach,Lee et al. introduce a practical approximate-planning approach
+epistemic state space,quantization,the epistemic state space is quantized
+value iteration,mdp setting,value iteration is analyzed in the MDP setting
+work,sample complexity bounds,more recent work has managed to recover improved sample complexity bounds
+approximate value iteration,sample complexity bounds,Approximate value iteration is bounded by sample complexity measures in the given context.
+algorithms,exact value iteration,The algorithms in the context utilize exact value iteration as a black box.
+approximate variants,value iteration,The question of whether similar ideas and proof techniques from exact value iteration can be leveraged in the setting of approximate variants is raised.
+value iteration,complexity measure,Value iteration serves as a backdrop for illustrating the utility of the complexity measure in the given context.
+complexity measure,underlying information structure,The complexity measure and underlying information structure play a crucial role in illustrating the utility of the value iteration in the context.
+epistemic state abstraction,covering number,The class of epistemic state abstraction studied focuses on the covering number of the epistemic state space in the context.
+bamdps,pomdps,An existing connection between BAMDPs and POMDPs is deepened in the context.
+belief state space,covering number,The covering number of the belief state space is identified as a complexity measure for POMDPs in both theory and practice in the given context.
+reinforcement-learning algorithm,mdp state space,Efficient reinforcement-learning algorithms are established when the MDP state space is a metric space in the context.
+sample complexity guarantee,covering number,The sample complexity guarantee in the context depends on the covering number of the state space under the associated metric.
+planning complexity result,abstract bamdps,The planning complexity result for abstract BAMDPs aligns with the results demonstrated in the context.
+planning complexity,abstract bamdps,The planning complexity result for abstract BAMDPs is influenced by the covering number of the epistemic state space.
+planning complexity,value iteration,"The difficulty of solving BAMDPs through the lens of a classic planning algorithm, value iteration, is examined within the context of planning complexity."
+value iteration,bamdps,Value iteration is presented as a planning algorithm for solving BAMDPs.
+value iteration,information horizon,The information horizon is introduced as a complexity measure for BAMDPs within the context of value iteration.
+bamdps,hyperstate space,Analysis of planning complexity in BAMDPs through value iteration requires a finite hyperstate space X.
+bamdps,algorithm 1,"Algorithm 1 iterates backwards through H timesteps, computing h across every hyperstate-action pair, impacting the planning complexity of O("
+algorithm 1,provision,Algorithm 1 has a provision of a posterior update oracle B that avoids a square dependence on the hyperstate space and only requires O(
+algorithm 1,planning complexity,The resulting planning complexity of Algorithm 1 is O(
+algorithm 1,information horizon,Algorithm 1 leverages a new notion of information horizon to mitigate the impact of H and reduce the planning complexity burden.
+information horizon,planning complexity,"The planning complexity suffers from its dependence on the BAMDP horizon H, but leveraging the information horizon helps mitigate this impact."
+information horizon,optimal policy,"Once an agent has completely resolved its uncertainty and identified one of the environments, all that remains is to deploy the optimal policy for that particular MDP."
+bamdp,uncertainty,"BAMDP planning complexity suffers from the dependence on the horizon H, but once the agent resolves its uncertainty and identifies an environment, the complexity is reduced."
+action,environment,Actions executed at the first timestep completely identify the true environment.
+action,policy,"With no residual epistemic uncertainty left, the Bayes-optimal policy would now completely coincide with the optimal policy."
+policy,environment,Take actions without changing the epistemic state since the agent has acquired all the requisite information about the previously unknown environment.
+environment,horizon,"Even if the problem horizon H is substantially large, a simple BAMDP like the one described should be fairly easy to solve."
+policy,hyperstate,"For any hyperstate x in X, we denote by Pπ(xh = x) the probability that policy π visits hyperstate x at timestep h."
+hyperstate,space,"In hyperstate space of policy π at timestep h, the reachable hyperstate space of a policy π at a particular timestep is simply the set of all possible hyperstates that may be reached by π at that timestep with non-zero probability."
+hyperstate,epistemic state,"Recall that for any hyperstate x = ⟨s, p⟩ ∈ X, the epistemic state p is a (discrete) probability distribution."
+information,policy,"Given a BAMDP, we define the information horizon of a policy π as I(π) = inf{h ∈ [H]"
+information horizon,policy,"The information horizon of a policy, if it exists, identifies the first timestep in [H] where, regardless of precisely which hyperstate is reached by following π at this timestep, the agent has fully resolved all of its epistemic uncertainty over the environment θ."
+information horizon,environment,"The information horizon of a policy, if it exists, identifies the first timestep in [H] where, regardless of precisely which hyperstate is reached by following π at this timestep, the agent has fully resolved all of its epistemic uncertainty over the environment θ."
+information horizon,bamdp,how to compute the information horizon of the BAMDP
+environment,epistemic uncertainty,"At this point, we call attention back to our structural Assumption 1 for BAMDPs and note that, under the standard parameterization of epistemic state via count parameters for Dirichlet priors/posteriors, we would only be able to assess residual epistemic uncertainty through differential entropy which, unlike the traditional (Shannon) entropy H(·), is potentially negative and has no constant lower bound [Cover and Thomas, 2012]."
+bamdp,non-stationary policy class,"to compute the information horizon of the BAMDP, we need only take the supremum across the non-stationary policy class"
+information horizon,policy,"Clearly, when it exists, we have that 1 ≤ I ≤ H; the case where I = 1 corresponds to having a prior p(θ) that is itself a Dirac delta δθ centered around the true environment, in which case, θ is known completely and the agent may simply compute and deploy the optimal policy for the MDP ⟨S, A, R, Tθ, β, H⟩."
+agent,environment,An agent may need all H steps of behavior to fully identify the environment.
+non-stationary policy,i,"If there exists any single non-stationary policy for which the infimum of I(π) does not exist, then I = ∞."
+policy,i,"If there exists any single non-stationary policy for which the infimum of I(π) does not exist, then clearly I = ∞; representing a worst-case scenario."
+policy,algorithm,Creating computational intractability for understanding the information horizon algorithmically.
+policy,class,"For certain scenarios, the supremum taken over the entire non-stationary policy class may be exceedingly strict."
+neural network architecture,policy classes,It may be natural to consider smaller or regularized policy classes (such as the collection of expressible policies under a chosen neural network architecture) for more actionable notions of BAMDP complexity.
+information horizon,bamdp planning algorithm,The information horizon can be used to design a more efficient BAMDP planning algorithm.
+previous section,bayes-optimal policy,The key insight from the previous section is that the Bayes-optimal policy necessarily falls back to the optimal policy associated with the true environment once an agent has acted for I timesteps.
+mdp,agent,An agent can backup their optimal values starting from the Ith timestep if the solutions to all possible underlying MDPs are computed up front.
+mdp,algorithm 2,Algorithm 2 assumes access to a sub-routine mdp_value_iteration that consumes a MDP and produces the associated optimal value function for the initial timestep.
+mdp,bamdps,The remainder of the algorithm proceeds with standard value iteration for BAMDPs after identifying the true MDP in I steps.
+i,horizon,"The horizon of each MDP is reduced to H - I acknowledging that after identifying the true MDP in I steps, an agent has only H - I steps of interaction remaining with the environment."
+agent,(cid:98)θ,"In Line 9, we could also compute the corresponding (cid:98)θ in question by taking the mean of the next epistemic state p', however, we use this calculation to make explicit the fact that, by definition of the information horizon, the agent has no uncertainty in θ at this point."
+information horizon,agent,The information horizon is a concept related to the agent in the context of no uncertainty in θ.
+information horizon,complexity,The information horizon affects the complexity of planning as the gap between information and problem horizons impacts performance.
+agent,θ,The agent has no uncertainty in θ at a certain information horizon.
+hyperstate space,size,Planning complexity scales the hyperstate space size by a potentially large problem horizon.
+algorithm 1,algorithm 2,Algorithm 2 performs better than Algorithm 1 when there is a gap between the information and problem horizons.
+information horizon,bamdp,The information horizon of a BAMDP has the potential to reduce computational complexity in planning.
+algorithms,computational complexity,Algorithms 1 and 2 are computationally intractable due to the size of the hyperstate space X.
+epistemic state updates,state-action pair visitations,Epistemic state updates cease after a certain number of state-action pair visitations for the Dirichlet parameterization.
+state abstraction,mdps,State Abstraction is discussed in the context of MDPs for sample-efficiency guarantees in reinforcement learning.
+mdp,size,"The size of the MDP state space,"
+state abstraction,ϕ : s → sϕ,State abstraction ϕ : S → Sϕ maps original or ground states of the MDP into abstract states in Sϕ.
+abstract states,complexity,Abstract states are typically defined with respect to an abstract state space Sϕ with smaller complexity.
+state abstractions,approximation error,Specific classes of state abstractions ϕ can yield no approximation error and perfectly preserve the optimal policy of the original MDP.
+state abstractions,behavior,Conditions have been identified under which specific classes of state abstractions ϕ preserve near-optimal behavior.
+epistemic state abstraction,guarantees,The proposed notion of epistemic state abstraction aims to lift guarantees for MDPs.
+epistemic state abstraction,guarantees for mdps,The proposed notion of epistemic state abstraction aims to extend guarantees for Markov Decision Processes (MDPs).
+epistemic state abstraction,bamdps,The goal is to extend guarantees for MDPs to Binary Abstract MDPs (BAMDPs).
+bamdps,intractably large hyperstate space,The problem of intractably large hyperstate space needs to be addressed when dealing with BAMDPs.
+state abstraction,mdp,State abstraction impacts the traditional Markov Decision Process (MDP).
+state abstraction,bamdp setting,State abstraction is compared with respect to its impact on the traditional MDP and the BAMDP setting.
+mdp,state abstraction,MDP is transformed into an abstract MDP through the process of state abstraction.
+mdp,state abstraction,The transition probabilities and rewards in the abstract MDP are determined based on the original MDP and the state abstraction function.
+mdp,weighted function,The efficiency of learning and planning in MDPs is influenced by the weighting function as discussed by Van Roy.
+abstract policy,original mdp m,Behavior in the original MDP is influenced by the optimal abstract policy derived from the abstract MDP.
+abstract policy,abstract value function,Abstract policy or abstract value function of Mϕ
+ϕ,mdp mϕ,Conditions under which ϕ will induce a MDP Mϕ that preserves optimal or near-optimal behavior are studied
+epistemic state abstraction,state abstraction in mdps,Introduce epistemic state abstraction for BAMDPs with the goal of paralleling the benefits of state abstraction in MDPs
+epistemic state space,probability simplex,Epistemic state space ∆(Θ) = ∆
+δ-covers,"set {z1, z2, . . . , zk}",Consider δ-covers with arbitrary parameter δ > 0 defined on the simplex ∆
+epistemic state abstraction,projection,Define an epistemic state abstraction with parameter δ > 0 as the projection from ∆(Θ) onto the smallest δ-cover of ∆(Θ) with respect to total variation distance metric
+state-abstraction literature,mdps,The state-abstraction literature in MDPs is referenced in the context.
+mdps,epistemic state abstraction,MDPs involve the use of epistemic state abstraction denoted by ϕ.
+δ-covers,np-hard problem,Computing exact δ-covers is mentioned to be a NP-hard problem.
+approximation algorithms,exact δ-covers,Approximation algorithms are mentioned to exist for computing exact δ-covers.
+statistical results,dudley’s theorem,There are numerous statistical results expressed in terms of covering numbers such as Dudley’s Theorem.
+cover numbers,standard basis vectors,The definition of covering number in the context includes the standard basis vectors.
+epistemic states,epistemic uncertainty,Abstract epistemic states are mentioned to address epistemic uncertainty in the environment.
+information horizon,well-defined quantity,The information horizon is described as a well-defined quantity under the abstraction.
+epistemic state space,standard basis vector,"As δ increases, portions of the epistemic state space will be mapped to the nearest standard basis vector."
+lossy compression,agent's beliefs,Lossy compression of information may prematurely converge the agent's beliefs over the environment.
+bamdp,hyperstate space,"BAMDP value function can be dramatically reduced across a much smaller, finite hyperstate space."
+bamdp,state abstraction,"Given an epistemic state abstraction, an induced abstract BAMDP can be recovered."
+abstract bamdp,mdp setting,Model of the abstract BAMDP depends on a fixed weighting function similar to MDP setting.
+abstract bamdp,abstract rewards,Abstract rewards for current and next abstract hyperstates are given by certain constraints.
+abstract bamdp,transition probabilities,Transition probabilities for current and next abstract hyperstates are defined using certain projections.
+hyperstate distribution,dirac delta,Initial abstract hyperstate distribution is defined using a Dirac delta centered around the agent's original prior.
+agent,prior,"The agent's original prior, p(θ), projected by ϕ into the abstract epistemic state space."
+abstract bamdp transition function,stochastic,The abstract BAMDP transition function is stochastic with respect to the next abstract epistemic state p′ unlike the original BAMDP transition function.
+abstract bamdp value functions,stochasticity,The corresponding abstract BAMDP value functions must acknowledge the stochasticity for any abstract policy π.
+hyperstate space,information horizon,"The abstract BAMDP enjoys a reduced hyperstate space, and the information horizon of this new BAMDP, Iϕ, has the potential to be smaller than that of the original BAMDP."
+epistemic uncertainty,compressing epistemic state space,"By compressing the epistemic state space via ϕ, we may find epistemic uncertainty exhausted in fewer timesteps within the abstract BAMDP."
+δ parameter,i value,"For a suitably large setting of the δ parameter, we also have cases where the original BAMDP has I = ∞."
+bamdp,i = ∞,"In a suitably large setting of the δ parameter, we have cases where the original BAMDP has I = ∞ while Iϕ < ∞."
+epistemic uncertainty,h timesteps,It may not have been possible to resolve all epistemic uncertainty within H timesteps.
+epistemic state space,difficulty,Compression of the epistemic state space reduces the difficulty in the abstract problem.
+knowledge states,vertex of the probability simplex,Knowledge states near (in the total-variation sense) each vertex of the probability simplex are immediately aggregated.
+information horizon,original information horizon,Further discussion of the abstract information horizon and its relationship with the original information horizon is deferred to Appendix C.3.
+constant γ,information horizon,It would be possible to introduce an additional constant γ ∈ R+ and define the information horizon based on H(p) ≤ γ; our construction avoids carrying this cumbersome additional parameter dependence in the results.
+abstracting,mdp state space s,"One could imagine abstracting over the original MDP state space S which, for clarity, we do not consider in this work."
+agent’s prior distribution,abstract hyperstate,"As a toy illustration of the last scenario, consider a ϕ with δ sufficiently large such that any step from the agent’s prior distribution immediately maps to a next abstract hyperstate with no epistemic uncertainty."
+abstract bamdp,approximation error,"Under such aggressive abstraction, we should expect to garner an unfavorable degree of approximation error between the solutions of the abstract and original BAMDPs."
+error,solutions,The error analysis in the context is between the solutions of the abstract and original BAMDPs.
+error,performance loss,The error analysis in the context is related to the performance loss mentioned alongside an approximate planning algorithm.
+abstract bamdps,original bamdp,The context discusses the error between the solutions of the abstract and original BAMDPs.
+reduced complexity,abstract bamdps,The context mentions leveraging the reduced complexity of abstract BAMDPs to recover a near-optimal solution to the original BAMDP.
+informed abstract value iteration,abstract bamdp,Informed Abstract Value Iteration is discussed in the context to run Algorithm 2 on the abstract BAMDP.
+abstract bamdp,algorithm 2,The abstract BAMDP is used in the context for running Algorithm 2.
+abstract bamdp,algorithm 3,"An approximate planning procedure, Algorithm 3, uses the solution to the abstract BAMDP in hand."
+algorithm 2,algorithm 3,"Algorithm 3 inherits the planning complexity guarantee of Algorithm 2, specialized to the abstract BAMDP input."
+result,dependence,The key feature of this result is that we entirely forego a (direct) dependence on the hyperstate space of the original BAMDP.
+result,abstract hyperstate space,"we take on dependencies with the size of the abstract hyperstate space,"
+terms,balance,there is a delicate balance to be maintained between the ease with which one may solve the abstract BAMDP and the quality of the resulting solution when deployed in the original BAMDP of interest.
+section,balance,We dedicate the remainder of this section to making this balance mathematically precise.
+section,proofs,"Due to space constraints, all proofs are relegated to Appendix B."
+analysis,approximation error bound,A natural first step in our analysis is to establish an approximation error bound.
+optimal bamdp value functions,epistemic state abstraction,"Let V ⋆ ϕ,h denote the optimal original and abstract BAMDP value functions, respectively, for any timestep h ∈ [H]. Let ϕ be an epistemic state abstraction as defined above."
+v,bamdp value function,"Let V = {V1, V2, . . . , VH } be an arbitrary BAMDP value function."
+result,greedy policy,"To establish a complimentary performance-loss bound, we require an intermediate result characterizing performance shortfall of a BAMDP value function induced by a greedy policy with respect to another near-optimal BAMDP value function."
+proof,bamdps,"The analogue of this result for MDPs is proven by Singh and Yee [1994], and the proof for BAMDPs follows similarly."
+bamdp,value function,"The value function V = {V1, V2, . . . , VH } is an arbitrary BAMDP value function"
+"πh,v",greedy policy,"Denoted by πh,V, the greedy policy is defined with respect to V"
+x,s,"πh,V is defined for x = ⟨s, p⟩ ∈ X"
+p,q,"For any p, q ∈ ∆(Θ), a condition is stated on V"
+optimal bamdp value function,timestep,V ⋆h+1 denotes the optimal BAMDP value function at timestep h + 1
+optimal policy,greedy policy,"π⋆h denote the Bayes-optimal policy, while π⋆4δ(H − h)(H − h + 1)2.ϕ,h denote the greedy policy"
+state aggregation,mdps,A performance-loss bound similar to state aggregation in MDPs is mentioned
+complexity,bamdp,The complexity of a BAMDP is characterized in the beginning of the work
+agent,information horizon,"An agent needs interactions to resolve its epistemic uncertainty over the environment, facilitated by the information horizon"
+uncertainty,mdp transition function,A deviation from the traditional parameterization of uncertainty in the MDP transition function is recognized
+parameterization,uncertainty,Parameterization of uncertainty is discussed in the context of the MDP transition function via the Dirichlet distribution.
+uncertainty,mdp transition function,The uncertainty in the MDP transition function is being parameterized.
+uncertainty,dirichlet distribution,Uncertainty is being parameterized via the Dirichlet distribution in the context.
+dirichlet distribution,flat dirichlet-multinomial,The Dirichlet distribution is sometimes known as the flat Dirichlet-Multinomial or FDM model.
+dirichlet distribution,information theory,The Dirichlet distribution is used in the context of information theory for the analysis.
+dirichlet distribution,rate-distortion theory,The Dirichlet distribution is related to rate-distortion theory in the context.
+epistemic state,entropy,The (residual) uncertainty in epistemic state is avoided by parameterizing it in the context by not dealing with differential entropy.
+epistemic state,compression,Each epistemic state is considered for lossy compression in the context.
+epistemic state,random variable,Each epistemic state is being compressed into a discrete random variable in the context.
+information theory,rate-distortion theory,Information theory and rate-distortion theory are related tools used for the analysis in the context.
+rate-distortion theory,bamdp parameterization,Rate-distortion theory allows for arbitrary BAMDP parameterization in the context.
+shannon entropy,information horizon,The use of Shannon entropy is mentioned in relation to defining the information horizon in the context.
+epistemic state,rate-distortion function,The approximation error of each epistemic state relative to the true state is accounted for via the rate-distortion function in the context.
+bamdp hyperstate space,epistemic state abstraction,The BAMDP hyperstate space is discussed in relation to epistemic state abstraction.
+epistemic state abstraction,information horizon,Epistemic state abstraction has the potential to reduce the information horizon in the abstract problem as discussed in the context.
+approximation error,performance loss,"Both approximation error and performance loss are mentioned in the analysis, showing a relationship between them in the context of the problem."
+epistemic state abstraction,original bamdp,"The epistemic state abstraction is computed for an original BAMDP, indicating a direct relationship between them."
+timestep h = 1,value-loss bound,"The value-loss bound is maximized at timestep h = 1, establishing a connection between the timestep value and the bound."
+epistemic state abstraction,efficient utilization,"The cover size could impact the efficiency of utilizing an epistemic state abstraction, implying a relationship between the two."
+abstractions formed by a sequence of exactly h δh-covers,value preservation,"Considering abstractions formed by a sequence of covers may lead to better preservation of value across timesteps, indicating a correlation between the two."
+information horizon,agent designer,"The information horizon is mentioned as a limitation for planning algorithms, highlighting the role of the agent designer in understanding this limitation."
+information horizon,agent designer,"An agent designer may seldom have the prescience of knowing the underlying BAMDP information structure or, even with suitable regularity assumptions on the policy class, be able to compute it."
+information horizon,bamdp,"An observation is that many sampling-based algorithms for approximately solving BAMDPs, like BAMCP [Guez et al., 2012], implicitly hypothesize a small information horizon (typically, a value of 1) through their use of posterior sampling and choice of rollout policy."
+bamdp,bamcp,"An observation is that many sampling-based algorithms for approximately solving BAMDPs, like BAMCP [Guez et al., 2012], implicitly hypothesize a small information horizon (typically, a value of 1) through their use of posterior sampling and choice of rollout policy."
+reinforcement-learning agent,environment,"Meanwhile, recent work has demonstrated strong performance guarantees for a reinforcement-learning agent acting in an arbitrary environment [Dong et al., 2022] through the use of an incrementally increasing discount factor [Jiang et al., 2015b, Arumugam et al., 2018], gradually expanding the effective range over which the agent is expected to demonstrate competent behavior."
+incrementally increasing discount factor,effective range,"Meanwhile, recent work has demonstrated strong performance guarantees for a reinforcement-learning agent acting in an arbitrary environment [Dong et al., 2022] through the use of an incrementally increasing discount factor [Jiang et al., 2015b, Arumugam et al., 2018], gradually expanding the effective range over which the agent is expected to demonstrate competent behavior."
+bamdp,planning algorithms,"Taking inspiration from this idea, future work might consider designing more-efficient planning algorithms that, while ignorant of the true information horizon, instead hypothesize a sequence of increasing information horizons, eventually building up to the complexity of the full BAMDP."
+bamdp,bamdp planners,"Of course, prior to development of novel algorithms, the notion that existing BAMDP planners may already make implicit use of the information horizon is in and of itself a task for future work to tease apart and make mathematically rigorous."
+simulation lemma,principled,"Moreover, similar to how the simulation lemma [Kearns and Singh, 2002] provides a principled"
+simulation lemma,model-based reinforcement learning,"The simulation lemma [Kearns and Singh, 2002] provides a principled foundation for model-based reinforcement learning."
+analysis,bayes-optimal exploration strategies,The analysis might also be seen as offering theoretical underpinnings to the Bayes-optimal exploration strategies learned by meta reinforcement-learning agents.
+agents,approximate representations of epistemic state,Meta reinforcement-learning agents already rely upon approximate representations of epistemic state.
+anonymous reviewers,"insightful comments, questions, and discussions","The authors gratefully acknowledge the anonymous reviewers for their insightful comments, questions, and discussions."

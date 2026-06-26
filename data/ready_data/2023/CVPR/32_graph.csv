@@ -1,0 +1,251 @@
+node_1,node_2,edge
+vision transformers,convolutional neural networks,Vision Transformers (ViTs) compared to convolutional neural networks (CNNs) in terms of computation cost and attention measures.
+vision transformers,vits,Relationship between Vision Transformers (ViTs) and ViTs' attention.
+convolutional neural networks,vits,Comparison of computation cost and attention mechanisms between convolutional neural networks (CNNs) and Vision Transformers (ViTs).
+castling-vit,vits,Introduction of a framework called Castling-ViT that modifies ViTs' attention mechanisms.
+castling-vit,angular kernels,Utilization of angular kernels in the Castling-ViT framework to measure similarities between queries and keys.
+linear-angular attention,angular kernels,Decomposition of angular kernels into linear terms and high-order residuals in the context of linear-angular attention.
+linear-angular attention,high-order residuals,Decomposition of angular kernels in linear-angular attention into linear terms and high-order residuals.
+high-order residuals,depthwise convolution,Approximation of high-order residuals using a depthwise convolution.
+high-order residuals,masked softmax attention,Utilization of two parameterized modules to approximate high-order residuals: depthwise convolution and masked softmax attention.
+castling-vit,softmax attention masks,"Castling-ViT uses masks for softmax attention which are regularized to gradually become zeros, incurring no overhead during inference"
+castling-vit,vits,Castling-ViT is compared to ViTs with vanilla softmax-based attentions in terms of accuracy and MACs reduction
+vits,self-attention modules,The superior performance of ViTs is largely attributed to their self-attention modules that can better capture global context
+vits,quadratic complexity,"ViTs' powerful self-attention module comes at the cost of quadratic complexity with the number of input tokens, causing a major efficiency bottleneck"
+quadratic complexity,linear attention designs,Linear attention designs have been developed to alleviate the quadratic complexity of ViTs' attention mechanism
+vits,local attention,"ViTs can be categorized into two clusters, one of which includes ViTs with local attention. Local attention is achieved by restricting the attention window size, sharing attention queries, or using low rank matrices to represent attention queries/keys."
+vits,kernel-based linear attention,"The other cluster of ViTs includes ViTs with kernel-based linear attention, where the non-linearity softmax function is approximated by separate kernel embeddings. This approach enables a change in the matrix computation order for reduced computational complexity."
+local attention,lack of capabilities to capture global or local context,"Despite the promise in alleviating complexity and inference runtime, local attention compromises ViTs' performance due to the lack of capabilities to capture global or local context."
+kernel-based linear attention,complexityand thus inference runtime,Kernel-based linear attention aims to reduce computational complexity and inference runtime compared to local attention methods.
+latter,high-order residuals at the early training stage,The latter strategy involves using powerful yet costly softmax-based masked attention to approximate high-order residuals at the early training stage.
+linear attention modules,underperform,"Existing linear attention modules still underperform compared to expectations, presenting a challenge in achieving the desired balance in ViTs training."
+linear attention modules,vanilla softmax-based counterparts,"Existing linear attention modules are compared to their vanilla softmax-based counterparts, highlighting the need for better linear attention for improved performance."
+angular kernels,softmax-based attentions,"Angular kernels are compared to softmax-based attentions in terms of similarity measurements, showing that they perform equally. However, they still suffer from quadratic complexity."
+angular kernels,linear terms and high-order residuals,"Angular kernels can be divided into linear terms and high-order residuals, indicating a potential connection between the two concepts."
+vits,linear terms,"The challenge discussed is how to construct ViTs using only the linear terms, showcasing a relationship between ViTs and linear terms."
+vits,high-order residuals,"Trained ViTs should primarily rely on linear terms towards the end of training, leading to the need for approximating high-order residuals, emphasizing the importance of this relationship."
+modules,high-order residuals,"Costly but powerful modules are required to approximate high-order residuals during training without incurring extra inference costs, highlighting the challenge faced in the context."
+castling-vit,vits,"Castling-ViT is a framework proposed to address the challenges mentioned in ViTs, impacting the training and inference processes of ViTs."
+linear-angular attention,masked softmax-based quadratic attention,"The framework proposes training ViTs using both types of attention mechanisms but switching to only linear-angular attentions during inference to reduce computational costs, showcasing the relationship between these attention mechanisms."
+linear-angular attention,accuracy gap,"A new linear-angular attention is developed to close the accuracy gap between linear attention and softmax-based attention, indicating a link between these concepts."
+angular kernels,linear terms,"Angular kernels are used to leverage angular attention while keeping linear terms intact, suggesting a connection between angular kernels and linear terms."
+castling-vit,high-order residuals,"Castling-ViT uses two parameterized modules, including a depthwise convolution and an auxiliary masked softmax-based attention, to approximate the high-order residuals"
+castling-vit,proposed castling-vit,"Extensive experiments validate the effectiveness of the proposed Castling-ViT, demonstrating superior performance in classification, detection, and segmentation tasks"
+castling-vit,vits,Results show that Castling-ViT outperforms state-of-the-art CNNs and ViTs in terms of top-1 accuracy and efficiency
+vits,cnns,Vision Transformers (ViTs) have improved accuracy-efficiency trade-offs compared to Convolutional Neural Networks (CNNs)
+vits,deit,"DeiT and T2T-ViT leverage improved training recipes or tokenization mechanisms to achieve comparable accuracy without costly pretraining, further enhancing ViTs' performance"
+vits,crossvit,"CrossViT, PiT, PVT, MViT, and Swin-Transformer propose a pyramid-like architecture for ViTs, similar to CNNs, to improve accuracy and efficiency trade-offs"
+cnns,dynamicvit,DynamicViT is a proposed adaptation for CNNs that aims to identify and remove unnecessary input tokens for computational cost savings.
+cnns,a-vit,A-ViT is another proposed adaptation for CNNs that aims to identify and remove unnecessary input tokens for computational cost savings.
+cnns,tome,ToME is a proposed adaptation for CNNs that aims to identify and remove unnecessary input tokens for computational cost savings.
+cnns,mia-former,MIA-Former is a proposed adaptation for CNNs that aims to identify and remove unnecessary input tokens for computational cost savings.
+vits,levit,LeViT is an example of a ViT architecture that adopts more efficient self-attention implementation.
+vits,cvt,CvT is an example of a ViT architecture that adopts more efficient self-attention implementation.
+vits,mobilevit,MobileViT is an example of a ViT architecture that adopts more efficient self-attention implementation.
+vits,efficientformer,EfficientFormer further enables pure ViTs to run as fast as MobileNets.
+vits,castling-vit,Castling-ViT explores whether ViTs can learn both global and local features while still being efficient at runtime.
+vits,linear-angular attention,Linear-angular attention is a target for ViT architectures to serve as a drop-in replacement for existing designs.
+self-attention module,linear attention works,Linear attention works are proposed as efficient alternatives to the costly self-attention module used in ViT architectures.
+linear attention,kernel-based linear attention,"Kernel-based linear attention is a common design that approximates the softmax function or the full self-attention matrix with orthogonal features or kernel embeddings, allowing a change in computation order. Despite its decent performance, kernel-based linear attention generally underperforms compared to softmax-based attention."
+kernel-based linear attention,softmax-based attention,"Kernel-based linear attention underperforms compared to softmax-based attention, despite efforts to improve its performance through decomposition and computation order changes."
+kernel-based linear attention,vits,"Kernel-based linear attention is related to ViTs through the mention of efficient ViT variants being supplied in the Appendix, showcasing its use as the backbones for downstream tasks."
+self-attention,transformer,"Self-attention is a core component of the Transformer model, consisting of multiple heads to capture global-context information."
+transformer,head,"The Transformer consists of multiple heads, each capturing global-context information by measuring pairwise correlations among all tokens."
+head,attention matrix,"Each head's attention matrix H captures information related to the query, key, and value vectors obtained by linearly projecting the input."
+query,key,The attention head first computes the inner product between the query-key pairs to obtain attention scores.
+query,value,The attention head computes the inner product between the query and key vectors and then computes a weighted sum over all value vectors.
+attention heads,concatenated output,Outputs from all attention heads are concatenated together before the final linear projection with learnable weights.
+linear attention,similarity measurement function,The core idea of linear attention is to decompose the similarity measurement function into separate kernel embeddings for efficient computation.
+kernel embeddings,computation order,Kernel embeddings allow changing the computation order based on the associative property of matrix multiplication for efficient attention complexity.
+attention complexity,feature dimension d,The attention complexity is quadratic to the feature dimension d.
+linear attention,gaussian rbf kernels,One straightforward implementation of linear attention is to use Gaussian RBF kernels to measure the similarity.
+linear attention,unbiased estimation,"Linear attention can serve as an unbiased estimation of exp(⟨·,·⟩)."
+gaussian rbf kernels,similarity,Gaussian RBF kernels are used to measure the similarity.
+gaussian rbf kernels,"exp(⟨·,·⟩)","Gaussian RBF kernels can serve as an unbiased estimation of exp(⟨·,·⟩)."
+inner product operator,gaussian rbf kernel,"⟨·,·⟩ denotes the inner product operator in the Gaussian RBF Kernel."
+function ϕ(·),gaussian rbf kernel,"A function ϕ(·) can approximate the Gaussian RBF kernel, mapping the input space to the feature space."
+q,k,Assuming that both Q and K are normalized as unit row vectors along the feature dimension.
+attention formula,approximated,The attention formula can be approximated by ϕ(Qt) · ... ϕ(KTj )Hkt.
+vits,linear attention complexity,ViTs with linear attention complexity often cause a nontrivial accuracy drop compared to ViTs with vanilla softmax-based attention.
+vits,model efficiency,There is a tradeoff between the model efficiency and generalizability in ViTs.
+levit,model efficiency and generalizability,LeViT is more efficient on low-resolution tasks but cannot be well generalized to downstream tasks due to feature bottlenecks and fixed attention biases.
+levit,mvitv2,LeViT has feature bottlenecks while MViTv2 has token bottlenecks.
+mvitv2,token pooling,MViTv2 performs token pooling for better fitting high-resolution tasks.
+mvitv2,low-resolution tasks,MViTv2 is less effective for low-resolution tasks due to token bottlenecks.
+vits,token and feature pooling,"For ImageNet classification, both token and feature pooling can lead to accuracy drops in ViTs."
+mvitv2,post-q pooling,Post-Q pooling together with residual connections in MViTv2 performs better than pre-Q pooling in LeViT for downsampling layers.
+castling-levits,attention,Castling-LeViTs is developed on top of attention with post-Q pooling and residual connections.
+castling-vit framework,linear attention,The proposed Castling-ViT uses a novel kernel-based linear-angular attention from the spectral angle perspective.
+angular kernel,spectral angle,"The angular kernel is proposed as an alternative to existing softmax-based attentions, and it involves measuring spectral similarity, taking into consideration the nature of spectral characteristics. The spectral angle, defined as the arccosine of the inner product of two vectors divided by the product of their Euclidean distances, is used as a distance in this context."
+angular kernel,queries q and keys k,"The angular kernel is used as a similarity measurement function between the queries Q and keys K, indicating a relationship in the context of attention design."
+spectral angle,queries q and keys k,"The spectral angle is used as a distance measurement function between the queries Q and keys K, indicating a relationship in the context of attention design."
+angular kernel,similarity measurement,"The angular kernel is used as a similarity measurement function between queries Q and keys K, where the output range is between 0 and 1. The angular kernel helps in determining the similarity between Qi and Kj based on their alignment and features."
+angular kernel,feature space,The angular kernel when used in self-attention provides an efficient way to map input data to a high-dimensional feature space where distances and angles are calculated based on a rich feature structure. The angular kernel implicitly maps the input data to a high dimensional feature space after expansion.
+similarity measurement,self-attention,Replacing the similarity measurement in self-attention with the angular kernel allows for an efficient mapping of input data to a high-dimensional feature space. The angular kernel is used in self-attention to compute similarities between different data points.
+similarity measurement,input data,The similarity measurement function is applied to input data to determine the similarity between different data points. The similarity measurement function helps in comparing the features of input data.
+feature space,input space,"The angular kernel maps the input data from the input space to a high or even infinite dimensional feature space. The feature space is where distances and angles are calculated based on a rich feature structure, leading to a more efficient representation of the input data."
+feature space,distance,"The distance between two input features in the feature space is calculated based on the norm of the mapped input data. The distance between two input features is represented as the norm of the mapped input data, which is influenced by the similarity measurement function."
+2d input space,3d feature space,The 2D input space transforms into the 3D feature space after applying the angular kernel.
+square (euclid) distance,spectral angle,The square (Euclid) distance and the spectral angle are positively correlated and have a distance range between 0 and 2.
+angles in the input space,feature distance,The angles in the input space are correlated to the feature distance after applying the angular kernel.
+angular kernel,designing linear attention,The question arises on how to incorporate the angular kernel for designing linear attention given its quadratic complexity.
+trigonometric identities,expansion of the arccos function,Recalling trigonometric identities leads to the expansion of the arccos function into an infinite series.
+first linear-angular terms,similarity measurement,The first linear-angular terms can be directly used as the similarity measurement in linear attention.
+higher-order terms,infinite series,The higher-order terms of an infinite series introduce a much higher complexity.
+relaxation,approximation,A relaxation is proposed to approximate the higher-order terms.
+linear-angular attention,parametrized dnn modules,Parametrized DNN modules are leveraged to construct linear-angular attention.
+linear-angular attention,dnn modules,Linear-angular attention is constructed by leveraging parametrized DNN modules to approximate the expectation of high-order residuals.
+dnn modules,expectation,DNN modules are used to approximate the expectation of high-order residuals.
+attention weights,vit models,ViT models show a strong inductive bias to attend to neighboring tokens based on the analysis of attention weights.
+dwconv module,value tokens,DWConv module is applied on all the value tokens to ensure attention to nearby tokens.
+sparse attention,linear-angular attention,Sparse attention complements linear-angular attention by capturing higher attention scores and potentially supplementing missing higher-order terms.
+low-rank and sparse approximations,complement each other,"The relationship between low-rank and sparse approximations is that they complement each other, as shown in recent findings."
+linear attention,lacks local feature extraction capabilities over its softmax-based counterpart,"Linear attention is described as lacking local feature extraction capabilities compared to its softmax-based counterpart, as stated in the context."
+vit inference,castling,"In the context of ViT inference, it is desired to reduce or remove softmax-based attentions while keeping the linear-angular attention, known as castling."
+sparsity regularization,softmax attention,"The sparsity regularization mentioned leads to softmax attention naturally converging to all zeros during training, according to the context."
+mask threshold,auxiliary branch removal,"With a fixed mask threshold, such as ϵ = 0.02 in image classification experiments, the masks become all zeros, allowing for the removal of the auxiliary branch without impacting model accuracy."
+visualization,mask-evolving trajectory,"The visualization of the mask-evolving trajectory is mentioned in the context, providing insight into the phenomenon discussed."
+experiments,"settingstasks, datasets, and models","When discussing experiments, settings, tasks, datasets, and models are important components to consider, as outlined in the context."
+vision tasks,superiority of castling-vit,"The superiority of Castling-ViT is demonstrated across three benchmark datasets and three representative vision tasks, including image classification on the ImageNet dataset."
+castling-vit,image classification,Castling-ViT involves image classification on ImageNet dataset
+image classification,imagenet dataset,Image classification is performed using 1.2 million training and 50K validation images from the ImageNet dataset
+object detection,coco dataset,Object detection is carried out on the COCO dataset with 118K training and 5K validation images
+semantic segmentation,ade20k dataset,"Semantic segmentation occurs on the ADE20K dataset with 20K training, 2K validation, and 3K testing images"
+models,castling-vit idea,The proposed Castling-ViT idea is applied on various models for different tasks
+models,levit,"Models considered for classification task include LeViT, MViTv2, and DeiT"
+models,mvitv2,"Models considered for classification task include LeViT, MViTv2, and DeiT"
+models,deit,"Models considered for classification task include LeViT, MViTv2, and DeiT"
+detection task,models with efficient vit backbones,Detection task involves models with efficient ViT backbones like PicoDet with modified ESNet and LCNet backbones with transformer blocks
+segmentation task,mask2former,Segmentation task considers Mask2former with ViT-Base backbone
+classification task,sgd optimizer,"For the classification task, SGD optimizer with specific settings is used for training ViTs"
+classification task,v100 gpus,Classification task training involves 64 V100 GPUs with batch sizes for different models
+attention module,linear-angular attention,Our attention module includes linear-angular attention
+attention module,auxiliary softmax-based self-attention,Attention module incorporates auxiliary softmax-based self-attention
+h,sim,"H has a similarity relation with Sim according to the equation H = Sim(Q, K) · V"
+h,q,"H is calculated based on Q in the equation H = Sim(Q, K) · V"
+h,k,"H is calculated based on K in the equation H = Sim(Q, K) · V"
+h,v,"H is calculated based on V in the equation H = Sim(Q, K) · V"
+mdw,v,MDW · V is represented as the matrix form of DWConv
+msparseattn,q,MSparseAttn involves sparse softmax attention with Q according to the equation MDW · V + MSparseAttn · Q · (K · V)
+q,kt,Q has a relation with KT in the term Q · (K · V)
+kt,v,KT is combined with V in the term Q · (K · V)
+castling-vit,sota baselines,Castling-ViT is compared to state-of-the-art baselines on ImageNet to showcase its performance
+mobilenetv2-1.4,efficientnet-b0,Comparison between MobileNetV2-1.4 and EfficientNet-B0 in terms of performance
+mobilevit-xs,levit-128,Comparison and evaluation of MobileViT-XS and LeViT-128 models
+hrformer-t,deit-t,Usage of HRFormer-T and DeiT-T models for a particular task
+efficientnet-b4,efficientnet-b5,Relation between EfficientNet-B4 and EfficientNet-B5 models
+swin-s,cswin-s,Comparison of Swin-S and CSWin-S models in terms of specifications
+autoformer-s,pvtv2-v2,Usage of AutoFormer-S and PVTv2-V2 models for specific purposes
+mvitv2-t,mvitv2-s,Comparison between MViTv2-T and MViTv2-S models based on their characteristics
+swin-b,cswin-b,Comparison and contrast between Swin-B and CSWin-B models
+mvitv2-b,deit-b,Relation between MViTv2-B and DeiT-B models as part of the analysis
+distillation,teacher model,Utilization of distillation approach based on a teacher model to improve accuracy
+sgd optimizer,momentum 0.9,Usage of SGD optimizer with momentum 0.9 for training models
+castling-vit,vit,"Castling-ViT is compared with ViT backbones in various tasks like image classification, detection, and segmentation"
+castling-vit,levit,Castling-ViT is compared with LeViT in the image classification task
+castling-vit,mvitv2,Castling-ViT is compared with MviTv2 in the image classification task
+castling-vit,deit,Castling-ViT is compared with DeiT in the image classification task
+castling-vit,swin,Castling-ViT is compared with Swin in the classification task
+castling-vit,cswin,Castling-ViT is compared with CSWin in the classification task
+castling-vit,pvt,Castling-ViT is compared with PVT in the classification task
+castling-vit,fbnetv5,Castling-ViT is compared with FBNetV5 in the detection task
+castling-vit,yolox,Castling-ViT is compared with YOLOX in the detection task
+castling-vit,yolov5,Castling-ViT is compared with YOLOv5 in the detection task
+castling-vit,mobiledet,Castling-ViT is compared with MobileDet in the detection task
+castling-vit,efficientdet,Castling-ViT is compared with EfficientDet in the detection task
+castling-vit,mask2former,Castling-ViT is compared with Mask2former in the segmentation task
+castling-vit,deit,Castling-ViT is compared with DeiT in the image classification task
+castling-vit,levit,Castling-ViT is compared with LeViT in the image classification task
+castling-vit,mvitv2,Castling-ViT is compared with MViTv2 in the image classification task
+castling-vit,baselines,Castling-ViT consistently performs better than all baselines across various MACs ranges in terms of the accuracy-efficiency tradeoff.
+castling-levit,levit,"Castling-LeViT achieves 82.6% top-1 accuracy with only 1.40G MACs while LeViT requires 2.35G FLOPs instead, i.e., ↓40% MACs."
+castling-mvitv2,mvitv2,"Under comparable MACs, Castling-MViTv2 achieves 84.1% accuracy vs. MViTv2 with 82.3% accuracy instead, i.e., ↑1.8% top-1 accuracy."
+castling-vit,baselines,"Castling-ViT achieves an improved accuracy of ↑0.5% ∼ ↑6.6%, ↑1.0% ∼ ↑8.1%, ↑1.0% ∼ ↑4.1%, and ↑0.6% ∼ ↑2.6% over baselines under <1G MACs, 1∼3G MACs, 3∼10G MACs, and >10G MACs, respectively."
+castling-levit,levit,Castling-LeViT/MViTv2 achieves ↓25.7% ∼ ↓55.3% MACs reductions under comparable accuracies or offers a comparable or better accuracy (↑0.6% ∼ ↑1.8%) under comparable MACs.
+castling-vit,levit/mvitv2 baselines,Castling-ViT is compared with LeViT/MViTv2 baselines in terms of accuracy and MACs
+esnet,lcnet,ESNet and LCNet are used as backbones in the object detection task
+castling-vit†,modified esnet,Castling-ViT† adopts modified ESNet as a backbone in the detection model
+castling-vit⋆,modified lcnet,Castling-ViT⋆ adopts modified LCNet as a backbone in the detection model
+esnet-vit,lcnet-vit,ESNet-ViT and LCNet-ViT are variants with transformer blocks as backbones
+modelsmobiledet-dsp,castling-vit-s-320†,MobileDet-DSP and Castling-ViT-S-320† are models compared in the detection task
+modelsmobiledet-dsp,castling-vit-m-416†,MobileDet-DSP and Castling-ViT-M-416† are models compared in the detection task
+modelsmobiledet-dsp,castling-vit-l-416†,MobileDet-DSP and Castling-ViT-L-416† are models compared in the detection task
+modelsmobiledet-dsp,castling-vit-l-416⋆,MobileDet-DSP and Castling-ViT-L-416⋆ are models compared in the detection task
+macs,backbone macs,"Backbone MACs represents a subset of MACs, specifically focusing on the MAC operations within the backbone of a neural network architecture."
+castling-vit-base,castling-vit-basen,Castling-ViT-BaseN is an extension or variation of the Castling-ViT-Base architecture.
+castling-vit,castling-vit with various kernel-based linear attentions,Ablation studies are conducted on Castling-ViT with different kernel-based linear attentions to evaluate performance variations based on the type of attention mechanism used.
+mc,linear attn lcnet,The mean-centering kernel function (MC) is compared with Linear Attention of LCNet to study the impact on performance metrics.
+lcnet,lcnet-vitmc,LCNet and LCNet-ViTMC architectures are compared to assess the performance difference between them.
+softmax,relu-s and relu-e,ReLU-S and ReLU-E represent different ways of applying ReLU activation functions as kernels for decomposing softmax or exponential terms in the context of attention mechanisms.
+castling-vit,"yolov5, yolox, mobiledet, fbnetv5","Comparison is made between Castling-ViT and YOLOv5, YOLOX, MobileDet, and FBNetv5 in terms of performance metrics such as mAP improvements and MACs efficiency."
+castling-vit,efficientdet,Performance trade-offs of Castling-ViT are compared with EfficientDet to analyze the similarity in accuracy-efficiency aspects.
+castling-vit,detectors with softmax-based attention,A comparison is done between Castling-ViT and detectors using softmax-based attention mechanisms to highlight performance differences based on attention mechanisms.
+castling-vit,detectors,"The comparison results and breakdown analysis of Castling-ViT are related to detectors in the object detection task, demonstrating the effectiveness of Castling-ViT as efficient detector backbones."
+castling-vit,semantic segmentation,"Castling-ViT is extended to the semantic segmentation task, with experiments showing reductions in MACs and improved mIoU, validating its effectiveness in downstream tasks."
+castling-vit,mask2former,"Castling-ViT backbone is used in Mask2former framework for semantic segmentation, resulting in MACs reductions and improved backbone performance."
+castling-vit,linear-angular attention,"Castling-ViT is compared with other attention mechanisms, demonstrating the superiority of linear-angular attention in the ablation studies."
+mask2former,vit-base,ViT-Base is used as the backbone in Mask2former framework for baseline evaluation in semantic segmentation.
+mask2former,ade20k dataset,"Mask2former with Castling-ViT backbone is benchmarked on ADE20K dataset, showing reductions in MACs and improved performance, validating the effectiveness in different datasets."
+angular kernel,map,The proposed angular kernel helps achieve better mAP results.
+linear-angular kernels,superiority,Experiments validate the superiority of the proposed linear-angular kernels.
+castling-vit,linear-angular attention,Ablation studies show that linear-angular attention contributes to the final performance of Castling-ViT.
+dwconv,map improvements,Adding DWConv leads to mAP improvements in Castling-ViT.
+auxiliary masked softmax-based attention,performance,Experiments demonstrate that adding auxiliary masked softmax-based attention contributes to the final performance.
+lcnet-vit backbone,lin.,+ linear-angular attention
+lcnet-vit backbone,dwconv,+ linear-angular attention
+lcnet-vit backbone,sparseattn.,+ auxiliary softmax-based attention
+paramscastling-vit-s-320,lin.,+DW.+SparseAttn.
+paramscastling-vit-s-320,dwconv,+SparseAttn.
+paramscastling-vit-s-320,sparseattn,mAP AP50 AP7525.5 28.0
+castling-vit-m-416,lcnet back-bone,+ Lin. + DW. + SparseAttn.
+castling-vit-m-416,lin.,+DW.+SparseAttn.
+castling-vit-m-416,dwconv,+SparseAttn.
+castling-vit-m-416,sparseattn,Params(M) 3.15mAP AP50 AP7534.3 37.3iliary masked softmax-based attention
+lcnet-vit backbone,transformer blocks,replaces the CNN backbones
+lcnet backbones,accuracy-efficiency trade-offs,slightly underperforms in terms of accuracy-efficiency trade-offs
+lcnet-vit backbone,macs,introduces more MACs
+vit based models,convnet models,open problem to build models that achieve higher accuracy-efficiency trade-off
+auxiliary branchinthe6,trajectory of nonze-ros in masks,relationship
+auxiliary branchinthe6,effect of the auxiliary branch,relationship
+visualize,nonzeros in masks,trajectory of nonzeros in masks
+castling-vit-s-416,softmax-based attention,attention layer’s masks throughout the training
+castling-vit-m-416,lcnet-vit backbone,with the LCNet-ViT backbone
+attention layer's masks,castling-vit-s-416,Attention layer's masks are observed throughout the training of Castling-ViT-S-416 with the LCNet-ViT backbone on COCO.
+attention layer's masks,castling-vit-m-416,Attention layer's masks are observed throughout the training of Castling-ViT-M-416 with the LCNet-ViT backbone on COCO.
+castling-vit-s-416,lcnet-vit backbone,Castling-ViT-S-416 is trained with the LCNet-ViT backbone on COCO.
+auxiliary attention,training,The introduced auxiliary attention assists training in the early or middle training stages and vanishes towards all zeros in the later training stage.
+auxiliary attention,castling-vit,The introduced auxiliary attention aligns with the assumption in Castling-ViT.
+castling,vits,The idea of performing 'castling' in ViTs involves dropping the auxiliary branch without sacrificing performance.
+figure 6,auxiliary masks,Figure 6 visualizes the trajectories of nonzeros in auxiliary masks during training.
+figure 7,target similarity function,"Figure 7 left visualizes the target similarity function, linear-angular terms, and DNNs' fitting curve."
+figure 7,loss trajectory,Figure 7 middle visualizes the loss trajectory during DNN training.
+figure 7,frequency components,Figure 7 right visualizes the learning trajectory of both low and high-frequency components.
+conjecture of castling,synthetic experiment,A synthetic experiment is conducted to give an analogy for explaining the castling phenomenon in the Conjecture of Castling.
+figure 7,angular similarity function,"Figure 7 left visualizes the curve of the angular similarity function, linear-angular terms, and two-layer DNN's approximation."
+figure 7,linear-angular terms,"Figure 7 left visualizes the curve of the angular similarity function, linear-angular terms, and two-layer DNN's approximation."
+dnn,high-frequency parts,DNN is capable of learning the missing high-frequency parts.
+fig. 7,middle,Fig. 7 is shown in the middle in the context
+learning trajectory,frequency components,The learning trajectory of frequency components is visualized in the context
+learning trajectory,visualized,The learning trajectory of frequency components is visualized in the context
+f-principle,training steps,F-Principle follows training steps according to the context
+x-axis,training steps,x-axis represents training steps in the context
+y-axis,categorizes,y-axis categorizes both low and high frequency components in the context
+blue,red,Blue and red colors refer to large/small difference between learned frequency components and target frequency components respectively in the context
+learned frequency components,target frequency components,Learned frequency components compared to target frequency components in the context
+dnns,target functions,DNNs fit target functions in the context
+dwconv,high-order residual,DWConv is not sufficient for approximating the high-order residual at early training stages in the context
+costly attention,high-order residuals,Costly attention contains high-order residuals in the context
+networks,high-frequency components,Remaining networks can gradually learn the high-frequency components at later training stages in the context
+castling-vit,vits,Castling-ViT trains ViTs in the context
+linear-angular,softmax-based quadratic attention,Castling-ViT uses both linear-angular and softmax-based quadratic attention in the context
+angular kernels,queries and keys,Angular kernels measure the similarities between queries and keys in the context
+angular kernels,spectral angles,Angular kernels measure the similarities via spectral angles in the context
+linear-angular attention mechanism,angular kernels,A new linear-angular attention mechanism decomposes angular kernels to linear terms in the context
+high-order residuals,depthwise convolution,High-order residuals are approximated using a depthwise convolution in the context
+auxiliary masked softmax attention,masks,Auxiliary masked softmax attention uses masks gradually become zeros during train in the context
+depthwise convolution,auxiliary masked softmax attention,Both depthwise convolution and auxiliary masked softmax attention are components of the model described in the context
+depthwise convolution,castling-vit,Depthwise convolution is validated to have advantages in the experiments conducted with Castling-ViT
+auxiliary masked softmax attention,castling-vit,Auxiliary masked softmax attention is validated to have advantages in the experiments conducted with Castling-ViT
+national science foundation (nsf) rtml program,cocosys,"The work is supported in part by both the National Science Foundation (NSF) RTML program and CoCoSys, which is one of the seven centers in JUMP 2.0"
+national science foundation (nsf) rtml program,darpa,"The work is supported in part by the National Science Foundation (NSF) RTML program, which is sponsored by DARPA"
+cocosys,darpa,"CoCoSys, one of the seven centers in JUMP 2.0, is sponsored by DARPA"

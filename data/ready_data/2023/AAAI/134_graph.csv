@@ -1,0 +1,138 @@
+node_1,node_2,edge
+scene graph generation,common-sense representation,In the context of scene graph generation
+scene graph generation,visual appearance of predicates,The challenge lies in the large intra-class variations of visual appearance
+predicate space clustering,rough clustering,The rough clustering in the predicate space contributes to the misclassification issue.
+multi-prototype representations,cognitive science inspiration,Inspired by cognitive science
+multi-prototype learning framework,triple-level optimal transport,This framework includes a triple-level optimal transport step for matching predicate features to specific prototypes.
+prototype-predicate matching,prototype updating,The framework involves matching followed by prototype updating using momentum to find class centers.
+prototype space optimization,inter-class separability loss,The approach enhances separation between classes and maintains intra-class compactness through inter-class and intra-class loss functions.
+visual genome dataset,state-of-the-art methods,Extensive evaluations on the Visual Genome dataset show that the proposed method outperforms existing approaches.
+commonsense-based methods,external knowledge bases,Commonsense-based methods utilize external knowledge bases for refining object and predicate features.
+class center of each predicate,prototype,Each predicate's class center is represented as a single prototype in commonsense-based methods.
+visual features of predicate instances,prototype space,Visual features are mapped into the prototype space for classification.
+man-riding-board,man-lying on-board,Misclassification occurs because man-riding-board is visually similar to man-lying on-board
+predicates with large intra-class diversity,misclassification,Predicates like riding
+large intra-class variation,single-prototype setting,The large intra-class variation is a challenge in the single-prototype setting
+visual appearance,bicycle riding,horseback riding
+predicate category,subclass,The intra-class variation leads to the existence of subclasses within each predicate category.
+prototype category theory,modern,Modern prototype category theory suggests categories have a polycentric structure with multiple prototypes
+polycentric view of categories,multiple prototypes,Each predicate category has multiple class centers represented by multiple prototypes.
+multi-prototype learning (mpl) framework,solution to misclassification,MPL is proposed to address the problem of misclassifying diverse predicates in C-SGG by accounting for intra-class diversity.
+pre-trained model,zareian 2020,Used for extracting unclassified features to support the MPL framework.
+multi-prototype learning (mpl) framework,pre-trained model (zareian 2020),The MPL framework uses the pre-trained model for extracting unseen predicate features and initial prototypes.
+pre-trained model (zareian 2020),unclassified predicate features,The pre-trained model is responsible for extracting these features.
+pre-trained model (zareian 2020),initial prototypes of common sense,Initial prototypes are generated from the pre-trained model for each class.
+triple-level optimal transport (tot),initial prototypes,TOT is applied to match unclassified predicate features within their respective classes to these initial prototypes.
+multi-prototypes,class centers of predicates,Momentum updating updates the multi-prototypes to accurately represent multiple class centers.
+intra-class compactness loss,prototype space,This loss promotes compact clusters within the same class during prototype formation.
+inter-class separability loss,prototype space,This loss pushes prototypes from different classes apart to maintain separation.
+testing phase,nearest prototype,During testing
+c-sgg,mpl framework,The framework is specifically designed for Commonsense Scene Graph Generation (C-SGG).
+mpl framework,c-sgg,The proposed MPL framework is designed specifically for Commonsense Scene Graph Generation (C-SGG).
+mpl framework,predicate inference,MPL enhances the accuracy of predicate inference
+multi-prototype modeling,predicate inference,This is the first exploration to use multi-prototype modeling for improved predicate inference.
+triple-level optimal transport method (tot),predicates and prototypes,TOT aims to avoid incorrect matching between predicates and prototypes
+single-prototype methods,multi-prototype method,The proposed method contrasts with previous approaches that used a single prototype
+inter-class separability,intra-class compactness,Both losses optimize the multi-prototype space
+prototype-prototype distance,prototype-predicate distance,These distances are directly optimized to encourage diversity and prevent overlapping features.
+class features,large intra-class variance,Single prototype methods suffer from large intra-class variance
+class variance,classification errors,class variance causes inaccurate representation
+single prototype setting,class variance,inaccurate representation occurs specifically in the single prototype setting
+our model,graph-based approaches,our model is compared to graph-based approaches for commonsense modeling
+graph-based approaches,commonsense knowledge graphs,graph-based approaches rely on incomplete knowledge graphs for commonsense
+natural language text-based approaches,commonsense representations,these approaches extract commonsense from large text corpora
+multi-prototype,sgg (scene graph generation),our approach uses multi-prototype for finding multiple class centers in SGG
+optimal transport (ot),object detection,OT is used to improve prediction accuracy in crowded scenarios by addressing assigning procedure
+optimal transport (ot),image segmentation,OT has applications in the field of image segmentation
+crowded scenarios,prediction accuracy issue,low prediction accuracy is a problem in crowded scenes
+deep quadruplet networks,prototype representation,Kim et al. (2018) proposed end-to-end deep quadruplet networks to map prototype and real image embeddings into a common space for image classification.
+variational multi-prototype encoder,object recognition,Kang et al. (2022) proposed a variational multi-prototype encoder specifically for object recognition
+prototype representation,existence,These methods (Kim and Kang et al.) do not provide concrete evidence of the existence of multiple prototypes; this is the focus of the current work.
+scene graph generation (sgg),input image i,The task of SGG parses an input image into an unclassified scene graph
+scene graph gs,nodes,Gs consists of object nodes (Vo) and predicate nodes (Vp)
+prediction stage,class labels,In the prediction stage
+commonsense,node set vc,Vc includes both object and predicate nodes
+object nodes,predicate nodes,In Vc
+scene graph (gs),prototype vc,Gs is the input to the framework
+prototype vc,commonsense nodes (vi),Each vi represents a commonsense node
+single prototype representation (vi),predicate class (p),Each predicate embedding vi is used for Cp-way classification
+problems with eqn. (1),intra-class diversity,Eqn. (1) neglects intra-class diversity by defining each class with a single prototype.
+problems with eqn. (1),inter-class overlaps,The optimization through cross-entropy loss does not account for absolute distances between predicates and prototypes
+optimal transport,best matching,Optimal transport is employed to find the best mapping between the unclassified scene graph and the prototype vectors.
+multi-prototype learning,scene graph,Multi-Prototype Learning is a component used to generate the final scene graph.
+optimal transport,matching results,Optimal transport is performed to obtain the best matching results between prototype and predicate features.
+prototype features,training iteration,Prototype features are momentum updated in each training iteration.
+inter-class separability loss,intra-class compactness loss,Both losses are utilized to optimize the prototype space.
+object detector,bounding box proposals,The object detector extracts bounding box proposals and region object feature vectors.
+object detector,visual features vp,Object detector generates visual features for predicates
+predicate word vector,prototypes,A predicate word vector is diversified into K prototypes to differentiate the predicate class.
+hyper-sphere,prototype vc,A small hyper-sphere with radius r is defined around the prototype Vc for generating multi-prototypes.
+multi-prototypes c,testing stage,In the testing stage
+batch size,training,During the training process
+initial learning rate,backbone,The backbone has an initial learning rate of 0.0001
+initial learning rate,mpl framework,This learning rate decays by a factor of 10 every 5 epochs.
+weight decay,set as,The weight decay value is set to 0.0001.
+training time,approximately 15-16 hours,The full method's training duration is around 15-16 hours.
+prototype number k,set to,K
+λ1 and λ2,set by cross-validation,These hyperparameters λ1 and λ2 are tuned to 0.1 and 0.1 respectively.
+τ and δ,set to,τ and δ are both set to 0.1.
+ε,set to,ε is set to 0.05.
+radius r,set to,The radius r is set to 0.0001.
+trade-off hyperparameter β,set to,β
+initial prototype features,generated from,Initial prototype features are derived from commonsense.
+pre-trained graph convolution network (gcn),used to generate,A GCN in Zareian (2020) is employed to provide context information for the initial prototypes.
+experiments,dataset and evaluation settings,The following experiments utilize the Visual Genome (VG) dataset.
+visual genome (vg) dataset,used for,The dataset contains 70% images for training
+validation subset,5k images,This subset constitutes 5K images from the training set.
+testing set,30% of images,The remaining 30% of images make up the testing set.
+evaluation modes,sgdet,sgcls
+image-wise recall (r),mr,Image-wise Recall (R) and Mean Recall (mR) are used as evaluation metrics.
+metrics,sgdet,sgcls
+visual genome (vg) dataset,standard evaluation,Experiment results are presented using the large-scale Visual Genome dataset.
+state-of-the-art methods,comparisons with,Comparison of the proposed method with existing state-of-the-art approaches is included.
+open images v6 dataset,kuznetsova et al. (2020),The Open Images V6 dataset is used for training MPL
+mpl (multi-prototype learning),state-of-the-art methods,MPL outperforms other commonsense-based methods on three tasks
+mpl (multi-prototype learning),sota (state-of-the-art),MPL achieves SOTA performance across all settings
+exp 1,full method,Exp 1 represents the complete MPL framework
+exp 2,single prototype state,Exp 2 removes multi-prototype evolution
+exp 3,traditional ot (optimal transport),Exp 3 shows the advantage of using optimal transport over traditional clustering for predicate inference.
+exp 4-6,overall training objective (eqn. 7),These experiments investigate the impact of the combined objective function on MPL's performance.
+traditional clustering algorithm,tot (triple output transformer),The TOT is compared to the traditional algorithm
+training objective in eqn. (7),lics (inter-class separability loss),LICS is added individually to the training objective
+lics,licc (intra-class compactness loss),LICS and LICC are both components of the training objective
+predicate-wise distance,triple distance (object-predicate,subject-predicate)
+many-to-one matching,tot,Traditional OT algorithm performs many-to-one matching
+prototype diversity,separability in predicate classes,Prototype diversity helps improve separability
+prototype space optimization,eqn. (5) (lics formula),Eqn. (5) guides prototype optimization to enforce proximity and dissimilarity.
+intra-class compactness,licc,In addition to LICS
+sgtr,li,zhang
+reltr,cong,yang
+open images v6,kuznetsova et al. (2020),Open Images V6 is the dataset used for comparison
+expmodule,our full method,ExpModule is part of the authors' proposed method
+mr@50,mr@100,mR@50 and mR@100 are evaluation metrics for comparing performance.
+wmap,rel wmap,wmAP and rel wmAP are additional performance metrics.
+score,-43.98,A score indicating the performance of a model (-43.98)
+wtd40.84,44.43,Two contrasting scores
+mpl,proposed mpl,MPL stands for the main proposed method
+prototype number k,1 to 3,3 to 5
+lics,licc1,LICS and LICC1 seem to be components or variants within the model.
+traditional ot,step 2,Traditional OT refers to a different approach used as a comparison.
+figure 4,qualitative results,Figure 4 showcases qualitative results of the model's performance.
+pre-trained commonsense,multi-prototype representation,The model improves upon pre-trained commonsense by using a multi-prototype representation.
+commonsense based on multi-prototype representation,riding,The context explains that the commonsense model is built upon a multi-prototype representation specifically for the action of riding.
+visual posture of the dog,sitting on,The dog's posture is deceptive
+lying on prototype,dog sitting on bench,The lying on prototype helps differentiate between different postures
+image (f),subject being a face,In image (f)
+mpl framework,recall of diverse predicates,The MPL framework aims to enhance the recall of various predicates by using clear prototypes for scene understanding.
+prototypes,scene graph generation,Scene graph generation involves matching prototypes to each scene for accurate classification.
+k = 3 prototypes,riding category,In Figure 5
+latent data structure,embedding space,The context discusses coding the latent data structure into the embedding space.
+inter-class separability loss,intra-class compactness loss,These losses work together to improve class separation and instance compactness in the embeddings.
+single-prototype model,multi-prototype model,The work highlights the inadequacy of single prototypes and introduces a multi-prototype approach for better capturing diversity.
+c-sgg methods,mpl (multi-prototype learning),Current C-SGG methods are improved by the proposed MPL to address misclassification due to intra-class diversity.
+predicate space,prototype space optimization,The approach includes optimizing the predicate-prototype matching
+vg dataset,benefits of multiple prototypes,Experiments on the VG dataset confirm the advantages of maintaining multiple prototypes over a single prototype.
+natural science foundation of chongqing,financial support,This work was partially funded by the mentioned foundation.
+national natural science foundation of china,financial support,Additional funding came from this Chinese national research foundation.
+shanghai science and technology commission,financial support,The project also received support from the local science and technology commission.
+open,funding source,The conclusion mentions open support

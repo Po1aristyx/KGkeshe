@@ -1,0 +1,239 @@
+node_1,node_2,edge
+prototypical patches,components,Prototypical patches are used to recognize various components in an image in order to explain their reasoning to humans.
+prototype-based methods,prototypes,"Prototype-based methods can learn prototypes that may not align with human visual perception, as the same prototype can refer to different concepts in the real world."
+pip-net,image classification model,PIP-Net is introduced as an interpretable image classification model that learns prototypical parts in a self-supervised fashion which correlate better with human vision.
+pip-net,sparse scoring sheet,PIP-Net can be interpreted as a sparse scoring sheet where the presence of a prototypical part in an image adds evidence for a class.
+pip-net,decision making process,"PIP-Net with interpretable prototypes enables users to interpret the decision-making process in an intuitive, faithful, and semantically meaningful way."
+latent space,pixel space,"Our prototypes correlate with ground-truth object parts, indicating that PIP-Net closes the 'semantic gap' between latent space and pixel space."
+deep neural networks,computer vision,Deep neural networks are dominant in computer vision.
+interpretability,explainability,Interpretability and explainability have grown in importance.
+interpretability,reasoning,Interpretability is important for understanding the reasoning of complex models.
+recognition-by-components theory,humans,Recognition-by-components theory describes how humans recognize objects.
+components,objects,Humans recognize objects by segmenting them into multiple components.
+prototypical parts,image patches,Prototypical parts are visualized as image patches.
+natural images,synthetic images,Exemplary natural images are more informative to humans than generated synthetic images.
+pip-net,decision,PIP-Net abstains from a decision when no relevant prototypes are present in the image.
+pip-net,interpretation,"The reasoning of PIP-Net is separated into multiple steps, following the principle of isolation of functional properties for aligning human and machine vision."
+pip-net,misclassification,The reasoning of PIP-Net simplifies human identification of reasons for (mis)classification.
+part-prototype models,protop-net,ProtoP-Net is a recent interpretable part-prototype model.
+part-prototype models,prototree,ProtoTree is a recent interpretable part-prototype model.
+part-prototype models,protopshare,ProtoPShare is a recent interpretable part-prototype model.
+part-prototype models,protopool,ProtoPool is a recent interpretable part-prototype model.
+part-prototype models,fine-grained image recognition tasks,These part-prototype models are only designed for fine-grained image recognition tasks such as birds and car types.
+part-prototype models,semantic correspondence,Part-prototype models lack 'semantic correspondence' between learned prototypes and human concepts.
+part-prototype models,semantic gap,The 'semantic gap' in prototype-based methods between similarity in latent space and input space is a common issue.
+part-prototype models,regularization of interpretability,Existing part-prototype models only regularize interpretability on class-level.
+similarly,prototypes,Learn prototypes that represent concepts similar to humans.
+latent space,perceived similarity,Similarity in latent space may not correspond to visually perceived similarity.
+sun,dog,Two classes are 'sun OR dog' and 'NOT (sun OR dog)'.
+sun,dog,An easy-to-interpret model should learn prototypes for sun and dog.
+prototypes,images,Models optimize images of the same class to have the same prototypes.
+prototypes,sun,Existing models may learn a single prototype for both sun and dog.
+prototypes,dog,Models may learn a single prototype for both sun and dog.
+patch similarity,human visual perception,Model's perception of patch similarity may not align with human visual perception.
+gap,latent and pixel space,There is a gap between latent and pixel space.
+pip-net,interpretable model,PIP-Net is an interpretable model designed to correlate with human vision.
+sparse linear layer,interpretable parts,A sparse linear layer connects learned interpretable part-prototypes to classes.
+sparse linear layer,proto-typical parts,The sparse linear layer connects learned interpretable proto-typical parts to classes.
+user,prototypes,A user only needs to inspect the prototypes and their relation to the classes in order to interpret the model.
+weights,class-relevant prototype,"The weights of the linear layer are restricted to be non-negative, such that the presence of a class-relevant prototype increases the evidence for a class."
+linear layer,scoring sheet,"The linear layer can be interpreted as a scoring sheet, where the score for a class is the sum of all present prototypes multiplied by their weights."
+local explanation,specific prediction,A local explanation explains a specific prediction and shows which prototypes were found at which locations in the image.
+global explanation,model’s decision layer,"The global explanation provides an overall view of the model’s decision layer, consisting of the sparse weights between classes and their relevant prototypes."
+interpretable linear layer,prototypes,"Due to the interpretable linear layer, there is a direct relation between the prototypes and the classification, preventing unfaithful explanations that can arise from other methods."
+patch-based intuitive prototypes network (pip-net),image classifier,"PIP-Net is an intrinsically interpretable image classifier driven by explainability requirements of being intuitive, compact, and able to handle out-of-distribution data."
+model architecture,novel regularization,PIP-Net has a surprisingly simple architecture and is trained with novel regularization for learning prototype similarity that better correlates with human visual perception.
+prototype,regularization,Prototypes are trained with novel regularization for learning in PIP-Net.
+prototype,image,Similarity between a prototype and an image patch is calculated in ProtoPNet.
+prototype,similarity score,Latent encoding of a prototype and an image patch's similarity score are calculated in ProtoPNet.
+prototype,explanation,Prototypes in ProtoPNet are visualized together with weighted similarity scores to explain the reasoning process.
+protopnet,latent space,Similarity between prototype and image measures the distance in latent space in ProtoPNet.
+protopnet,classification accuracy,ProtoPNet aims for good classification accuracy with compact explanations.
+protopnet,explanation,ProtoPNet's explanation serves as a scoring sheet with class-specific prototypes for visualizing the reasoning process.
+prototypes,explanations,"Prototypes are used to build explanations, with the goal of minimizing the size of the explanation."
+prototypes,classes,"Prototypes can be shared between classes, allowing for more efficient use and reducing redundancy."
+prototypes,parts,"Prototypes are used to identify prototypical parts in an image, aiding in classification."
+prototypes,models,"Different models like ProtoPNet, ProtoPShare, and ProtoPFormer are based on prototypes, each offering improvements in explanation size or structure."
+explanations,user,"An overwhelming number of prototypes in an explanation, such as 2000 prototypes in CUB-200-2011 dataset, can be challenging for a user to interpret."
+protopnet,protopshare,ProtoPShare is a pruning mechanism for ProtoPNet aimed at reducing the size of explanations.
+protopnet,protopool,"ProtoPool is an improvement of ProtoPNet, focusing on sharing prototypes between classes without pruning."
+prototree,prototypes,ProtoTree reduces the number of prototypes by learning prototypical parts in a decision tree structure.
+prototypes,classes,Prototypes are shared between classes without pruning
+prototypes,number,The number of prototypes is fixed and has to be defined beforehand
+models,fine-grained image recognition tasks,Models are designed for fine-grained image recognition tasks
+loss functions,latent prototypes,Loss functions optimize latent prototypes to be near images from the same class
+pip-net,prototypes,PIP-Net has a node per prototype indicating the extent to which the prototype is present
+prototypical parts,concepts,Prototypical parts are related to concepts
+xai methods,tcav,"Some XAI methods, like TCAV, are supervised by relying on training data for specific concepts"
+pip-net,prototypical parts,PIP-Net discovers prototypical parts in a self-supervised way
+post-hoc xai methods,faithfully explain model's reasoning,Post-hoc XAI methods are not guaranteed to faithfully explain the model's reasoning
+sparse explainer,cnn,Sparse explainer fits a sparse linear classification layer to a trained CNN and explains the resulting sparse nodes
+sparse interpretability,easy debugging of the network,Sparse interpretability contributes to easy debugging of the network
+pip-net,sparse linear decision layer,PIP-Net contains a sparse linear decision layer to adopt advantages of sparse interpretability
+pip-net,linear decision layer,The PIP-Net contains a sparse linear decision layer to adopt certain advantages in the model.
+pip-net,cnn features,The CNN features are optimized together with the linear layer in the intrinsically interpretable model of PIP-Net.
+cnn features,linear layer,The CNN features are optimized together with the linear layer in the model.
+node,semantically meaningful prototype,Each node can be visualized as a semantically meaningful prototype in the model.
+self-supervised representation learning,discriminative features,Extra regularization on the prototypes is needed when there is a high variety between discriminative features for a class.
+self-supervised representation learning,prototypes,Self-supervised learning of prototypes is used in representation learning.
+patch similarity,triplet loss,Patch similarity is learned with a triplet loss based on spatial proximity in the model.
+two neighboring patches,similar encoding,The intuition is that two neighboring patches should have a similar encoding or prototype in the model.
+two neighboring patches,distant patch,"Two neighboring patches should have a similar encoding, while a distant patch should have a different encoding in the model."
+triplet losses,false negatives,Triplet losses can lead to false negatives when using them in the model.
+negatives,hard-negative mining,Using triplet losses usually require complex hard-negative mining to prevent false negatives in the model.
+contrastive representation learning,alignment,Alignment enforces two similar images to be mapped to nearby latent feature vectors in contrastive representation learning.
+contrastive representation learning,uniformity,Uniformity induces a uniform distribution of feature vectors on a unit hypersphere in contrastive representation learning.
+full images,underlying concept,"Although applied to full images only, the underlying concept can be applied to images in the model."
+unit hypersphere,images,Unit hypersphere applied to full images and image patches
+unit hypersphere,prototypes,Modeling the presence or absence of prototypes with image encodings
+images,patches,Images and patches are visualized in the context of local explanation of PIP-Net
+carl,prototypes,Comparison between CARL's learning of latent anchors and PIP-Net's learning of prototypes
+latent anchors,prototypes,CARL learns a predetermined number of latent anchors that are similar to prototypes learned by PIP-Net
+image,anchors,Softmax distribution of an image over all anchors in the context of CARL's method
+model architecture,classification problem,Model architecture and reasoning for a classification problem with interpretable prototypes
+convolutional neural network,model architecture,Core of the model architecture is a convolutional neural network
+input features,interpretable model,Input features are used for any interpretable model.
+model architecture,convolutional neural network (cnn),The core of the model architecture is a convolutional neural network (CNN) backbone.
+cnn,1-dimensional image encoding,CNN backbone learns a 1-dimensional image encoding.
+image encoding,presence or absence of prototypical parts,Image encoding indicates the presence or absence of prototypical parts in an image.
+latent map,spatial information,CNN's latent map preserves spatial information.
+sparse linear layer,prototypical parts,Sparse linear layer connects prototypical parts to classes.
+input image,cnn,Input image is forwarded through CNN.
+convolutional output,two-dimensional feature maps,Convolutional output consists of two-dimensional feature maps.
+softmax,patch belonging to prototype,Softmax operation forces a patch to belong to exactly one prototype.
+probability,patch corresponding to prototype,Value represents the probability that the patch corresponds to a prototype.
+max-pooling operation,feature map,Max-pooling operation is applied per feature map.
+presence score,prototypes,Presence score represents the presence of all prototypes in the image.
+prototype,image,"Prototypes represent different features or elements present in an image, with each prototype indicating to what extent it is present in the image."
+prototype,linar classification layer,"Prototypes are connected to classes through a linear classification layer with weights, where the relevance of a prototype to a class is indicated by the learned weight."
+linear classification layer,prototype,"The linear classification layer connects prototypes to classes, with the relevance of a prototype to a class indicated by the learned weight."
+image,prototype,"The encoding of an image is represented by the presence scores of different prototypes, indicating which prototypes are present in the image."
+image,linear classification layer,"The encoding of an image is used as input to the linear classification layer, where the prototype presence scores are multiplied by incoming class weights to determine the output score per class."
+linear classification layer,class,"The linear classification layer connects prototypes to classes, with the output score per class being determined by multiplying prototype presence scores by incoming class weights."
+linear layer,non-negative weights,The linear layer is restricted to have non-negative weights to improve interpretability.
+linear layer,sparsity,The linear layer is optimized for sparsity by learning many zero weights.
+self-supervised pre-training,prototypes,Self-Supervised Pre-Training is used specially designed loss functions to generate semantically meaningful Prototypes.
+self-supervised pre-training,semantically meaningful prototypes,Self-Supervised Pre-Training generates semantically meaningful prototypes using specially designed loss functions.
+self-supervised learning methods,"positive pair x', x''","Self-supervised learning methods create a positive pair x', x'' by applying different data augmentations to input image x."
+self-supervised learning methods,training process,Self-supervised learning methods incorporate human perception into the training process by selecting data augmentations that make two views similar to humans.
+contrastive learning approach,alignment and uniformity of representations,The contrastive learning approach optimizes for alignment and uniformity of representations.
+contrastive learning approach,patch alignment,The contrastive learning approach optimizes for patch alignment by assigning the same prototype to two views of an augmented image patch.
+prototype,view,Prototypes are assigned to views of an augmented image patch in the model.
+loss term,alignment loss,The alignment loss optimizes two views of the same image patch to belong to the same prototype in the model.
+latent patch,image patch,The similarity between the latent patches of two views of an image patch is computed using their dot product in the model.
+patch encoding,one-hot encoded tensors,Normalization with softmax ensures that two identical one-hot encoded tensors result in an alignment loss of 0 in the model.
+pip-net,cnn backbone,PIP-Net consists of a CNN backbone to learn prototypical representations in the model.
+feature representations,prototype presence scores,Feature representations are pooled to a vector of prototype presence scores in the model.
+contrastive learning,objective,Contrastive learning implements the objective that two representations of patches for an image pair should be assigned the same prototype in the latent feature space in the model.
+tanh-loss,trivial solutions,The tanh-loss prevents trivial solutions and regularizes the model to make use of all available prototypes in the model.
+pip-net,latent space,PIP-Net disentangles the latent space into neurons that relate to specific object parts in the model.
+part-prototypes,classes,Learned part-prototypes and classes are connected via a sparse linear layer in the model.
+prototype,class,Prototypes and classes are connected via a sparse linear layer.
+model output,test time,Model outputs during test time are not normalized.
+model output,simple scoring sheets,Model outputs allow the outputs to be interpreted as simple scoring sheets.
+image patch,prototype,An image patch corresponds to exactly one prototype.
+binary presence scores,soft scores,Binary presence scores are easier to interpret than soft scores.
+trivial solution,diverse image representations,"To prevent a trivial solution, diverse image representations that make use of the whole space of prototypes are learned."
+tanh-loss,prototype,Tanh-loss regulates that every prototype should be present in a mini-batch.
+prototype node,image patch,One solution for the model is to let one prototype node be activated on all image patches.
+model,pib-net,"After pretraining the prototypes, the model is trained as a whole in PIB-Net."
+linear layer,train the model,"Both linear layer and training the model are essential components of the model optimization process. The linear layer influences the weights and prototypes, while training the model involves optimizing for classification performance."
+classification loss term lc,linear layer,"The classification loss term LC affects the weights of the linear layer, thereby influencing the overall model performance."
+classification loss term lc,prototypes,The classification loss term LC not only influences the linear layer weights but also finetunes the prototypes for the downstream classification task.
+classifier,explainable,"One of the requirements for the interpretable classifier is that it should be explainable, which implies that the classifier's decision-making process should be transparent."
+classifier,compact explanations,"Another requirement for the interpretable classifier is that the explanations it provides should be compact, making the reasoning behind the predictions concise."
+classifier,out-of-distribution data,The interpretable classifier should be able to handle out-of-distribution data by either providing accurate predictions or abstaining from making a decision if the data is unfamiliar.
+activation function,objective,"The custom activation function is designed to capture the objectives of the interpretable classifier, including explainability, compactness, and handling out-of-distribution data."
+linear classification layer,scoring sheet reasoning,"The linear classification layer is implemented as an interpretable scoring sheet that facilitates scoring-sheet reasoning, allowing the model to find evidence for multiple classes or none at all."
+neural networks,scoring-sheet inference results,Neural networks involve scoring-sheet inference results as part of their output.
+scoring-sheet inference results,unnormalized output scores,Scoring-sheet inference results are based on unnormalized output scores.
+unnormalized output scores,softmax activation function,"To convert unnormalized output scores to class confidence scores, a softmax activation function is applied during training."
+softmax activation function,compactness and decision abstaining,Applying softmax activation function may conflict with the goals of compactness and decision abstaining in scoring-sheet reasoning.
+softmax activation function,scale-invariant,"Softmax is not scale-invariant, as it does not satisfy σ(z) ̸= σ(c · z) for scalar c."
+class scores,softmax output,"The softmax output distribution depends on the class scores, resulting in skewed distributions for different scenarios."
+softmax output,uniform distribution,"When class scores are low, the softmax output tends towards a uniform distribution."
+softmax output,model susceptibility,Having very high or very low softmax output scores can make the model susceptible to weight initialization issues and hinder effective training.
+softmax activation function,training,Softmax activation function is only applied during training to convert unnormalized logits to class confidence scores.
+interpretable scoring,inference,"Softmax is only applied during training for interpretable scoring, not during inference."
+weight initialization,training stability,Weight initialization plays a role in training stability and effectiveness.
+sections 5.2 and 5.3,challenge,Sections 5.2 and 5.3 discuss the challenge of softmax overconfidence in more detail.
+sections,final solution,Sections 5.4 present the final solution after discussing the challenges in 5.2 and 5.3.
+softmax,compact explanations,Softmax's overconfidence can compete with the goal of compact explanations in the context.
+compactness goal,proposed function,The proposed function optimizes classification performance and compactness simultaneously
+activations,3-class scenario,Example activations in a 3-class scenario
+confidence score,second class,The confidence score of the second class is close to one
+irrelevant prototypes,positive weight,"Prototypes which are irrelevant for a class might keep a positive weight, resulting in unnecessary explanations"
+sparse weights,prototypes and classes,Sparse weights between prototypes and classes would improve interpretability
+sparcity and pruning methods,reducing memory and computation costs,Existing sparcity and pruning methods are developed for reducing memory and computation costs
+normalize,softmax,Normalize before softmax to address scale-invariance issue
+batch normalization,instance normalization,Established normalization layers like batch normalization and instance normalization impede interpretability
+prototype absence,value of zero,Prototypes with a value of zero become non-zero
+i haven't seen this before,near-zero scores for all classes,Scoring systems should be able to output 'I haven't seen this before' by giving near-zero scores for all classes
+zero,lp normalization,"In Lp normalization, zero remains zero"
+near-zero score,ood detection possibilities,"A near-zero score could still be significantly increased, limiting the out-of-distribution detection possibilities"
+prototypes,scores,The presence score of one prototypical part would then influence the encoding of other prototypes
+cnns,occluding objects,Normal CNNs can be easily fooled by adding occluding objects
+guitar partly occludes the monkey,prediction of a monkey changes to a human,A prediction of a monkey changes to a human when a guitar partly occludes the monkey
+prototype presence scores,independence of each other,We want the prototype presence scores to behave independently of each other
+score of zero,stays zero,A score of zero stays zero when normalizing the logits
+prototree,86.6±0.2,ProtoTree has a value of 86.6±0.2
+protopshare,86.4,ProtoPShare has a value of 86.4
+protopool,88.9±0.1,ProtoPool has a value of 88.9±0.1
+cs pip-net-c,731±19 12 (5),CS PIP-Net-C has a value of 731±19 12 (5)
+cs pip-net-c,669±13 11 (4),CS PIP-Net-C has a value of 669±13 11 (4)
+cs pip-net-c,346±12 8 (5),CS PIP-Net-C has a value of 346±12 8 (5)
+sparsity,smaller explanations,Both terms are mentioned in the context as factors that are considered during inference (test time). They are related in the sense that they contribute to the calculation of output scores.
+output scores,pωc,"Output scores are calculated as pωc during inference (test time), indicating a direct relationship between the two terms."
+architecture,convolutional backbone,"In the context of the implementation details, it is mentioned that any convolutional backbone can be used in the architecture. This implies a direct relationship between the two terms."
+resnet50,convnext-tiny,Both ResNet50 and ConvNeXt-tiny are specified as convolutional backbones that can be applied in the architecture. They are related as options for the backbone of the model.
+strides,last layers,"The strides of the last layers are changed from 2 to 1, affecting the width and height of the output feature maps. This indicates a relationship between strides and last layers."
+pretrained versions,adam,Pretrained versions of the convolutional backbones are used and fine-tuned with Adam optimizer. This suggests a relationship between the pretrained versions and the optimizer.
+learning rate,cosine annealing schedule,The learning rate is specified as 0.0001 for certain models and 0.0005 for others in a cosine annealing schedule. This indicates a relationship between learning rate and the scheduling technique.
+linear layer,training,"The linear layer is trained with a certain learning rate as part of the model training process, establishing a relationship between the two terms."
+losses,λc,"Weights for the losses are set to specific values, including λC. This implies a direct relationship between losses and the weight λC."
+epochs,training,Prototypes are pretrained for 10 epochs before training PIP-Net for 60 more epochs. This establishes a relationship between epochs and the process of training the model.
+images,augmented,Images are resized and augmented with TrivialAugment technique as part of the model training. This indicates a relationship between images and the augmentation process.
+trivialaug,224 × 224,TrivialAug is used to augment images resized to 224 × 224.
+performance,explanation size,"The performance of models is evaluated based on their explanation size, as shown in Table 1."
+prototypical-parts-based models,compactness of explanations,Table 1 compares the accuracy and compactness of explanations of prototypical-parts-based models.
+pip-net,prototypes,"PIP-Net is characterized by a low number of prototypes, especially in local explanation."
+pip-net,accuracy,"PIP-Net shows competitive accuracy with a low number of prototypes, as seen in Table 1."
+pip-net,ood input,PIP-Net is specifically designed for open set recognition to detect OoD input.
+classifying,in-distribution input,PIP-Net can classify in-distribution input while detecting OoD input.
+pip-net,fpr95-metric,PIP-Net is associated with FPR95-metric in the context of detecting OOD samples.
+ood samples,pip-net,"PIP-Net can detect most of the OoD samples, contributing to intuitive reasoning."
+prototypes,semantic quality,"Accuracy and number of prototypes are not sufficient for indicating interpretability, indicating a relationship between prototypes and semantic quality."
+pip-net r,object part annotations,Purity of CUB-prototypes w.r.t. object part annotations is quantified for different models including PIP-Net R.
+cub-prototypes,object part annotations,The purity of CUB-prototypes is evaluated with respect to object part annotations. It calculates how often the same object part is present in the top-10 image patches per prototype.
+prototypes,image patches,The purity of prototypes is evaluated by selecting the top-10 image patches for each prototype and analyzing their encoding of the same object part.
+pip-net,pretraining the prototypes,The purity of PIP-Net prototypes after pretraining (without classification loss LC) is indicated. It refers to the prototypes before classification loss is applied.
+part-prototype model,images with highest similarity score,"For each part-prototype model, the 10 images with the highest similarity score for a particular prototype are selected to evaluate the encoding of object parts."
+explanation size,purity of prototypes,"There is a correlation between the size of the explanation and the purity of prototypes for existing models. Larger explanations tend to have higher purity, in line with the 'sun OR dog' issue."
+pip-net,"compact and pure, interpretable prototypes","PIP-Net is described as compact and having pure, interpretable prototypes. It contrasts with existing models that may have issues with explanation size and purity."
+pip-net,convnext-tiny backbone,PIP-Net with a ConvNeXt-tiny backbone achieves a substantially higher purity than other models.
+pip-net,resnet-backbone,"PIP-Net with a ResNet-backbone achieves a higher purity than ProtoPNet, ProtoPShare, ProtoPool, and ProtoTree."
+pip-net,self-supervised prototypes,Even the self-supervised prototypes of PIP-Net-C have a higher purity score than the prototypes learned by other models with classification loss.
+convnext,patchify stem,We hypothesize that the 'patchify stem' of ConvNeXt is beneficial for learning part prototypes.
+resnet,larger number of prototypes,ResNet might perform worse due to its larger number of prototypes (D = 2048 ResNet vs D = 768 for ConvNeXt).
+resnet,weak spatial localization discriminativeness,ResNets have weak spatial localization discriminativeness in the last layers.
+spatial localization,discriminativeness,"Spatial localization and discriminativeness are key concepts in the context, suggesting a relationship between understanding the spatial location of objects and their ability to be distinguished from one another."
+prototypes,lower part purity,"Some prototypes exhibit lower part purity as indicated by a relatively high standard deviation, possibly due to semantically meaningful but non-specific prototypes that do not correspond to a single object part."
+prototypes,semantic meaning,"Prototypes may have semantic meanings for humans, such as specific colors or non-part-related concepts, indicating a relationship between prototypes and human interpretation."
+pip-net,image data,"PIP-Net is applicable to non-fine-grained image data, showcasing its versatility in processing different types of images."
+pip-net,convnext backbone,"PIP-Net is trained with a ConvNeXt backbone for improved performance, highlighting the relationship between the network architecture and its training procedure."
+pip-net,prototype purity,"Evaluation of prototype purity is a key focus for PIP-Net, demonstrating the importance of identifying and maintaining the quality of prototypes in image analysis."
+pin,prototype purity,"The dataset PartImageNet (PIN) with part segmentation annotations is used to evaluate prototype purity, emphasizing the relationship between dataset characteristics and prototype quality."
+pip-net,image classifier,PIP-Net is presented as an image classifier optimized to be aligned with human perception
+pip-net,loss terms,The model learns high-quality prototypical parts through carefully crafted loss terms
+pip-net,activation functions,PIP-Net is optimized through activation functions
+pip-net,sparse linear decision layer,"PIP-Net is described to have a sparse linear decision layer, making it intuitive but with limitations"
+pip-net,interpretability,"The model is globally interpretable, confirming it with visual evidence"
+pip-net,prototypes,PIP-Net learns whether a prototype is present or absent but does not count the number of prototypes in an image
+pip-net,image labels,The model only relies on image labels and no other annotations to learn an interpretable part-prototype model
+image labels,prototypes,The part-prototype model is learned with a combination of supervised and self-supervised loss terms
+unlabeled data,future work,"The partly unlabeled data mentioned in the context can be utilized for future work, indicating a relationship between them."
+future work,pip-net,"The future work mentioned in the context presents research opportunities to use PIP-Net for adapting the model's reasoning, indicating a relationship between them."
+pip-net,interpretability-by-design,"The context suggests that interpreting decisions in an intuitive, faithful, and semantically meaningful way should be the new standard for interpretable and explainable AI, where PIP-Net is mentioned as an example of this approach."
+pip-net,explanations,"The context highlights that PIP-Net provides compact explanations aligned with human perception, showing a relationship between them."
+pip-net,human perception,"It is mentioned in the context that PIP-Net provides compact explanations aligned well with human perception, indicating a relationship between PIP-Net and human perception."
+decisions,interpret,"The context emphasizes the importance of interpreting decisions in an intuitive, faithful, and semantically meaningful way, showing a relationship between them."

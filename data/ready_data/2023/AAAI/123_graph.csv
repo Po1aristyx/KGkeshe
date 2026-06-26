@@ -1,0 +1,95 @@
+node_1,node_2,edge
+self-supervised learning (ssl),dino,DINO is a specific SSL framework within the broader category of self-supervised learning methods.
+self-supervised learning (ssl),moco,MoCo is another SSL framework
+self-supervised learning (ssl),beit,BEiT is a separate SSL method in computer vision
+masked image modeling (mim),bert (in nlp),MIM is inspired by BERT's approach in natural language processing
+vision transformers (vits),mim,MIM enables ViTs to learn visual representations
+mim frameworks,equivalent recovery of patches,All MIM frameworks currently treat patch recovery equally
+distance map,mask ratio,The distance map shows the effect of varying mask ratios on the reconstruction challenge for masked patches.
+reconstruction difficulty,visible patches,The reconstruction difficulty is determined by the distance between masked patches and visible ones. Patches with more visible patches around are generally easier to reconstruct.
+local perception ability,model,Recovering patches with visible patches helps the model improve its local perception ability.
+semantic reasoning ability,model,Reconstruction with few visible patches requires the model to have strong semantic reasoning ability due to limited neighboring information.
+dynamic supervision,re-weighting patches,The proposed deep dynamic supervision re-weights patches based on their difficulty
+distance map,dynamic supervision,A distance map is generated to calculate loss masks adaptively
+learnable parameters,distance map,Parameters β are used to calculate the loss mask based on the distance map
+representation ability,model,By focusing on diverse patch difficulties
+novel deep dynamic supervision,objective with diverse characteristics,The proposed method aims to address the limitations of traditional approaches by training on objectives with varying characteristics.
+dynamic loss,feature self-distillation,The model's dynamic loss is coupled with feature self-distillation
+intermediate layers,diversification of the model,The learnable parameters β for intermediate layers are set independently
+deep dynamic supervision,deep dynamic autoencoder (ddae),Built upon deep dynamic supervision
+pixel regression,feature self-distillation,DDAE performs raw pixel regression and feature self-distillation simultaneously.
+momentum encoder,feature self-distillation,Intermediate features are aligned with the momentum encoder's features using EMA for self-distillation.
+deep dynamic autoencoder (ddae),strong performance,DDAE demonstrates strong performance in SSL tasks.
+tokenizer-free framework,ddae,DDAE is designed to be tokenizer-free
+tokenizer-free framework,pre-training,The context discusses a tokenizer-free framework that demonstrates strong performance when trained from scratch
+base-size ddae,83.6% top-1 accuracy,With only 100 epochs of pre-training
+mae,imagenet performance,The approach outperforms MAE by +0.8% top-1 accuracy on ImageNet.
+longer pretraining schedule,miou gains on ade20k,For longer pre-training
+longer pretraining schedule,apbox gains on coco,There are also +1.7% APbox gains on COCO with a shorter pre-training time.
+deep dynamic supervision,vits performance enhancement,Deep dynamic supervision improves ViT performance
+deep dynamic supervision,mim frameworks,This technique can enhance other MIM frameworks without introducing additional structure.
+masking image modeling (mim),bert inspiration,MIM is inspired by BERT's approach in natural language processing
+mim (w/ extra tokenizer),reproduction with mae and beit-v2,Deep dynamic supervision is applied to MAE and BEiT-v2
+beit (bao,dong,and wei 2021)
+beit (bao,dong,and wei 2021)
+mae (he et al. 2022),asymmetric encoder-decoder structure,MAE constructs an encoder-decoder structure where the decoder directly regresses raw pixel values.
+simmim (xie et al. 2022),hierarchical transformers (swin),SimMIM allows hierarchical transformers like Swin to be used without needing a separate tokenizer.
+maskfeat (wei et al. 2022a),reconstruction targets,MaskFeat explores various choices for reconstruction targets in the MIM approach.
+data2vec (baevski et al. 2022),reconstruction targets,Data2vec also investigates reconstruction targets in its MIM method.
+bootmae (dong et al. 2022),reconstruction targets,BootMAE is another method that focuses on different reconstruction targets in MIM.
+sdae (chen et al. 2022b),reconstruction targets,SdAE explores the impact of different reconstruction targets on representation ability.
+existing mim methods,equivalent patch reconstruction,These methods reconstruct all patches uniformly
+existing mim methods,representation ability,The uniform patch reconstruction hinders the model's ability to capture varying patch properties.
+dynamic loss,pytorch-like style,Algorithm 1 presents the pseudo-code for Dynamic Loss in a PyTorch-like implementation.
+reconstruction of patches,diverse degrees of recovery difficulty,The algorithm addresses the need for distinct characteristics in reconstructing patches with varying levels of difficulty.
+vit (vision transformer),encoder,The standard ViT with B blocks serves as the encoder for feature extraction.
+blocks (b),k groups,Blocks are divided into K groups for feature extraction at different depths.
+k (supervisory number),number of supervisory signals,K corresponds to the number of supervisory signals applied to different levels of the model.
+output features of block-i,regressor (dϕp),These features are fed into the regression decoder dϕp for patch reconstruction.
+loss function (lpixel),pixel reconstruction,Lpixel measures the pixel-level difference between reconstructed and original masked patches.
+mim (masked image modeling),universality,Dynamic supervision can be easily integrated into existing MIM structures without adding extra complexity.
+vit-s/16,vit-b/16,Both ViT-S/16 and ViT-B/16 are pre-trained architectures mentioned in the context
+vit-b/16,vit-l/16,ViT-B/16 and ViT-L/16 are also mentioned as pre-trained architectures
+pixel regression decoder,feature distillation decoder,Both decoders consist of 2 transformer blocks and have different dimensions; they work together in the model architecture.
+block-wise masking,data augmentation,Block-wise masking is a type of data augmentation used in the training process
+mae,beit,Both MAE and BEiT are mentioned in the context as state-of-the-art MIM-based methods
+100 epochs pre-training,1600 epochs pre-training,The context contrasts the performance of DDAE with different pre-training lengths
+ddae,imagenet-1k,DDAE is evaluated for fine-tuning and linear probing accuracy on ImageNet-1k
+pre-training,beit,DDAE surpasses 800 epochs pre-trained BEiT with a longer pre-training schedule.
+pre-training schedule,84.4% top-1 mae,DDAE achieves 84.4% top-1 accuracy after a longer pre-training schedule.
+vit-b,attention distance,Figure 3 shows the averaged attention distance in different attention heads w.r.t. layer number for MAE and DDS-MAE
+finetuning,imagenet-1k,The models are finetuned on ImageNet-1K for 100 epochs.
+vit-s,supervisory signals,Table 4 shows that the additional benefits of more than four supervisory signals are saturated
+mim (masked image modeling),local information,Fine-grained tasks built by MIM enable ViT to focus more on local information
+vanilla mae,dds-mae,Comparison of vanilla MAE and DDS-MAE shows DDS' effectiveness in providing more local priors in deep layers.
+average attention distance,dosovitskiy et al. (2020),Computed in each attention head of each layer
+mae,mim framework,MAE is a simple MIM framework
+dds,average attention distance,DDS reduces the average attention distance in deep layers
+dds,deep dynamic supervision,Deep dynamic supervision is a key aspect of DDS
+dds,diversity in different heads,Deeper layers in DDS exhibit more diverse head behavior
+dynamic coefficients β,training process,β values change dynamically during training
+shallow layers,simple patches,Shallow layers focus on simpler patches
+deep layers,difficult patches,Reconstruction targets sharply differ across layers
+inconsistent signals,guidance for network components,Inconsistent signals from different layers lead to diversification of network components.
+final output,reconstruction targets,The reconstruction targets are set the same as the final output.
+dynamic loss weight,section 3.2,Loss weights for intermediate layers are multiplied by their corresponding dynamic loss weight
+ddae,mae,DDAE is compared to MAE in terms of pre-training efficiency. Although DDAE has a higher per-epoch cost
+100-epoch ddae,1600-epoch mae,100-epoch DDAE performs on par with 1600-epoch MAE
+800-epoch ddae,1600-epoch mae,800-epoch DDAE significantly outperforms 1600-epoch MAE with a smaller training time.
+attention map,vit-b encoder,Attention maps are depicted for the shallow layer (Block 3) of the ViT-B encoder.
+mae,ddae,MAE's attention map is compared to DDAE's
+downstream tasks,ade20k benchmark,The learned representation of DDAE is evaluated on the ADE20K benchmark for semantic segmentation.
+semantic segmentation,ade20k benchmark,The learned representation of DDAE is evaluated on ADE20K
+ade20k benchmark,upernet,UperNet is used as the task layer for semantic segmentation
+semantic segmentation,miou,Performance is measured using mean Intersection of Union (mIoU)
+object detection,coco,Fine-tuning is done on COCO using the Mask R-CNN framework.
+mask r-cnn,object detection,Box AP is reported for object detection
+mask r-cnn,instance segmentation,Mask AP is reported for instance segmentation
+sdae,ddae,DDAE consistently outperforms SdAE in both tasks.
+dynamic mim,deep dynamic supervision (dds),Proposed by the paper
+deep dynamic supervision (dds),ddae (dynamic deep attention encoder),Built upon DDS
+ddae (dynamic deep attention encoder),vits (vision transformers),The paper suggests that DDAE injects local priors into ViTs
+performance of ddae,strong baselines,Experiments show that DDAE consistently outperforms these strong baseline models.
+national key r&d program of china,national natural science foundation of china,Both are acknowledged as funding sources for the research.
+national key r&d program of china,strategic priority research program of chinese academy of sciences,These are acknowledged as funding sources
+national natural science foundation of china,youth innovation promotion association cas,Another funding organization supporting the project.

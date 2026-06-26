@@ -1,0 +1,200 @@
+node_1,node_2,edge
+neural networks,catastrophic forgetting,"Neural networks are known to suffer from catastrophic forgetting, where the model’s performances on old tasks drop dramatically after being optimized for a new task."
+continual learning,proposed solutions,The continual learning community has proposed several solutions aiming to equip the neural network with the ability to learn the current task (plasticity) while still achieving high accuracy on the previous tasks (stability).
+auxiliary network continual learning (ancl),method,"In this work, we propose Auxiliary Network Continual Learning (ANCL), a novel method that applies an additional auxiliary network which promotes plasticity to the continually learned model which mainly focuses on stability."
+framework,regularizer,"The proposed framework materializes in a regularizer that naturally interpolates between plasticity and stability, surpassing strong baselines on task incremental and class incremental scenarios."
+ancl solutions,essential principles,"Through extensive analyses on ANCL solutions, we identify some essential principles beneath the stability-plasticity trade-off."
+continual learning model,information maintenance,The continual learning (CL) model aims to learn from current data while still maintaining the information from previous training data.
+current data,training data,current data is being compared with training data for maintaining information
+naive approach,catastrophic forgetting,naive approach leads to catastrophic forgetting due to continuous fine-tuning
+catastrophic forgetting,gradient-based neural network,catastrophic forgetting happens in gradient-based neural networks due to updates from current tasks overriding model weights from old tasks
+catastrophic forgetting,stability-plasticity dilemma,catastrophic forgetting is related to the stability-plasticity dilemma in terms of continual learning challenges
+stability,plasticity,model needs to balance stability (generalizing well on past data) and plasticity (learning new concepts) to avoid catastrophic forgetting
+class incremental learning,task incremental learning,"class incremental learning, task incremental learning, and domain incremental learning are categories of continual learning"
+class incremental learning,domain incremental learning,class incremental learning and domain incremental learning are different scenarios in continual learning
+task incremental learning,domain incremental learning,task incremental learning involves being informed about the task identity while domain incremental learning doesn't require task identity
+model,task,The model is required to solve only one task at hands without the task identity.
+model,cil,"In CIL, the model should solve the task itself and infer the task identity."
+cil,concepts,The model in CIL should discriminate all classes that have been seen so far.
+study,evaluations,Our study performs extensive evaluations on TIL and CIL setting.
+papers,network,Several papers proposed the usage of an auxiliary network or an extra module.
+module,current dataset,An extra module that is solely trained on the current dataset is proposed.
+parameters,weight regularization methods,A new set of network parameters called the expanded parameters based on weight regularization methods is introduced in AFEC.
+afec,stability-plasticity balance,The stability-plasticity balance in AFEC is adjusted via hyperparameters.
+authors,stability-plasticity dilemma,The authors propose to mitigate the stability-plasticity dilemma through infusing plasticity.
+stability-plasticity dilemma,plasticity,Plasticity is infused through the auxiliary network or module to address the stability-plasticity dilemma.
+stability-plasticity dilemma,auxiliary network,The stability-plasticity dilemma is tackled by incorporating the auxiliary network.
+auxiliary network,module,The auxiliary network or module is utilized to address the stability-plasticity dilemma.
+model,auxiliary model,The interactive mechanism between the previous model and the auxiliary model is an area that lacks a precise characterization in the literature.
+framework,cl (continual learning),The framework of CL adopts the auxiliary network called ANCL (Auxiliary Network Continual Learning) to investigate the stability-plasticity trade-off.
+ancl (auxiliary network continual learning),existing cl baselines,ANCL is empirically shown to outperform existing CL baselines on CIFAR-100 and Tiny ImageNet.
+ancl (auxiliary network continual learning),stability-plasticity trade-off,"Three analyses are performed within ANCL to investigate the stability-plasticity trade-off: Weight Distance, Centered Kernel Alignment, and Mean Accuracy Landscape."
+continual learning approaches,weight regularization,"Continual learning approaches can be categorized into weight regularization, knowledge distillation, memory replay, bias correction, and dynamic structure."
+weight regularization method,elastic weight consolidation (ewc),Elastic Weight Consolidation (EWC) is a method that calculates the regularizer through the approximation of Fisher Information Matrix (FIM) in the context of Weight Regularization Method.
+weight regularization method,memory aware synapses (mas),Memory Aware Synapses (MAS) is a method that proposes the regularizer which accumulates the changes of each parameter throughout the update history in the context of Weight Regularization Method.
+weight regularization method,active forgetting with synaptic expansion-convergence (afec),Active Forgetting with synaptic Expansion-Convergence (AFEC) is a method that suggests a biologically inspired argument to propose an additional regularization term associated with expanded parameters in the context of Weight Regularization Method.
+knowledge distillation method,learning without forgetting (lwf),Learning without Forgetting (LwF) is a method that proposes to learn the soft target generated by the old network while learning a new task in the context of Knowledge Distillation Method.
+knowledge distillation method,learning without memorizing (lwm),Learning without Memorizing (LwM) is a method that is based on Learning without Forgetting (LwF) and regularizes the difference between the activations of the main network and the old network in the context of Knowledge Distillation Method.
+learning without memorizing (lwm),lwf,LwM takes advantage of the attention of the previous network trained by LwF to train the current network.
+learning without memorizing (lwm),deep model conolidation (dmc),DMC proposes double distillation loss to resolve the asymmetric property of training between old and new classes.
+deep model conolidation (dmc),network,DMC proposes a new network (or auxiliary network) to resolve the asymmetric property of training between old and new classes.
+deep model conolidation (dmc),unlabeled auxiliary dataset,DMC proposes the usage of an unlabeled auxiliary dataset to resolve the asymmetric property of training between old and new classes.
+memory replay method,replay-based methods,Memory replay methods are focused on keeping a part of the previous data (exemplars) in a memory buffer.
+memory replay method,previous data,Memory replay methods keep a part of the previous data (exemplars) in a memory buffer.
+incremental classifier and representation learning (icarl),learning without memorizing (lwf),iCaRL proposes the usage of the memory buffer derived from LwF.
+incremental classifier and representation learning (icarl),mean feature representations,iCaRL calculates the mean feature representations for each class based on the exemplars.
+end-to-end incremental learning (eeil),balanced dataset,EEIL introduces an additional stage called balanced training to fine-tune the model on a balanced dataset.
+balanced dataset,exemplars,The balanced dataset consists of the equal number of exemplars from each class that have been seen so far.
+bias correction method,in memory replay methods,"In memory replay methods involve training the network on a dataset composed of exemplars from previous tasks and new samples, leading to task-recency bias. Bias Correction Method aims to mitigate this bias through a two-stage training process."
+bias correction method,weight aligning,Bias Correction Method and Weight Aligning both propose two-stage training processes to reduce bias in neural networks. They differ in the specific methods used for bias correction.
+bias correction method,learning a unified classifier incrementally via rebalancing (lucir),"Bias Correction Method contrasts with LUCIR by introducing a different approach to alleviating task-recency bias in machine learning models. LUCIR incorporates cosine normalization, less-forget constraint, and inter-class into its training."
+learning a unified classifier incrementally via rebalancing (lucir),pooled outputs distillation network (pod-net),POD-Net builds upon the principles of LUCIR by applying pooled out distillation loss and local similarity classifier in its training process to address task-recency bias.
+dynamic structure method,conditional chan,"Dynamic Structure Method involves using masking or model expansion to prevent forgetting and enhance model capacity for learning new tasks, as seen in the case of Conditional Chan."
+conditional channel gated networks (ccgn),model capacity,CCGN dynamically adds an extra convolutional layer to prevent forgetting and increase the model capacity.
+adaptive aggregation networks (aanets),residual network (resnet),AANets expands ResNet to have two types of residual block at each residual level to balance stability and plasticity.
+model,feature extractor,Feature extractor is expanded to extract new features trained solely on the current dataset.
+auxiliary network continual learning (ancl),original continual learning (cl) approaches,ANCL combines CL approaches with an auxiliary network to achieve a balance between stability and plasticity.
+continual learning method,regularizer,A continual learning method includes a regularizer that depends on the old network.
+dataset,task,"Before training on dataset Dt of task t, CL freezes and copies the previous continual model θCL t−1."
+old network,regularizes the main training,The old network regularizes the main training through the regularization strength λ.
+loss,task-specific loss,"We can formally define the loss of CL on task t as LCL = Lt(θ) + Ω(θ; θ∗1:t−1, λ)"
+network parameters,old network parameters,The second term represents the regularizer that binds the dynamic of the network 1:t−1 to the old network parameters θ∗.
+regularization strength,grid search procedure,λ ∈ R is the regularization strength which is usually selected by a grid search procedure.
+loss terms,dataset,These two loss terms can be calculated on the current dataset Dt or on the combined dataset D+ t (current dataset Dt + previous exemplars P1:t−1) depending on the method to which it is applied.
+classification problems,task-specific loss,"In classification problems, the task-specific loss becomes cross-entropy loss."
+old knowledge,previous tasks,The original CL approaches mainly focus on retaining the old knowledge obtained from the previous tasks.
+large updates,old weights,The old CL approaches prevent large updates that would depart significantly from the old weights θ∗1:t−1.
+model's ability to learn,new knowledge,Harmfully restricting the model's ability to learn the new knowledge might hinder the right balance between stability and plasticity.
+model,ability,The model's ability to learn new knowledge might be harmfully restricted.
+knowledge,balance,Learning new knowledge may hinder the balance between stability and plasticity.
+network,balance,ANCL maintains balance by keeping two types of networks: an auxiliary network optimized for the current task and an old network trained until the previous task.
+network,task,"The auxiliary network is optimized for the current task, allowing for forgetting, while the old network has been sequentially trained until the previous task."
+model,objective,Both models (auxiliary network and old network) are used to construct regularizers in the objective of promoting the learning of new tasks.
+term,learning,The concept of 'term' is related to 'learning' as it promotes the learning of the new task based on certain parameters and processes mentioned in the context.
+term,task,The concept of 'term' is related to 'task' as it promotes the learning of the new task based on certain parameters and processes mentioned in the context.
+term,auxiliary network,The concept of 'term' is related to 'auxiliary network' as the parameters of the auxiliary network play a crucial role in the learning process described in the context.
+task,learning,The concept of 'task' is related to 'learning' as different tasks are being learned and analyzed in the context provided.
+task,model,The concept of 'task' is related to 'model' as the learning process is expected to merge old and new feature representations within the model as described in the context.
+model,feature representation,The concept of 'model' is related to 'feature representation' as the model is expected to merge the old and new feature representations according to the context.
+old network,auxiliary model,The concept of 'old network' is related to 'auxiliary model' as the auxiliary model is initialized with the old network parameters facilitating integration of the two models as mentioned in the context.
+cl,ancl,"The concepts of 'CL' and 'ANCL' are compared in the context of Continual Learning, with ANCL referring to the Auxiliary Network Continual Learning as described in the context."
+cl,weights,The concept of 'CL' is related to 'weights' as CL involves previous weights in the training process as explained in the context.
+ancl,network initialized,The concept of 'ANCL' is related to 'network initialized' as ANCL involves initializing the auxiliary network with certain parameters according to the context.
+θcl,ancl,"θCL refers to the previous weights while ANCL is the auxiliary network initialized by θAN CL, indicating a relationship between the previous weights and the auxiliary network"
+ancl,ewc (a-ewc),"ANCL is applied to EWC to build the loss of the Auxiliary Network EWC (A-EWC), showcasing the relationship between ANCL and the loss function"
+θi,θ∗,"The regularization term calculates the difference between the network parameter θi and the corresponding old network parameter θ∗, indicating a relationship between the network parameters"
+θi,"θ∗t,i","The new regularizer built upon the auxiliary network parameter θ∗t,i adds to the relationship between the network parameters and the auxiliary network parameter"
+ancl,cl,"ANCL accounts for plasticity while CL stands for stability, showcasing a contrast in roles between the networks"
+ancl,λ and λa,"ANCL adjusts both regularizers via λ and λa to achieve a stability-plasticity balance, highlighting the relationship between ANCL and the regularization parameters"
+gradient,cl,The gradient of CL is compared with ANCL losses in terms of stability-plasticity trade-off.
+gradient,ancl,The gradient of ANCL is compared with CL losses in terms of stability-plasticity trade-off.
+cl,ancl,CL and ANCL losses are compared in terms of the stability-plasticity trade-off.
+afec,ancl,The auxiliary network of ANCL works similarly to the expanded parameter of AFEC with respect to adding an additional loss term.
+afec,ancl,"ANCL generates the loss term from the auxiliary network in the same way as the original CL where ANCL is applied, while AFEC plugs in the same loss term calculated on the expanded parameter to every method."
+afec,ancl,ANCL uses a method-dependent regularizer compared to the fixed and independent regularizer of AFEC based on Fisher Information Matrix.
+ancl,scaling hyperparameters,"ANCL adopts two regularizers of the same type to equally represent stability and plasticity, which is controlled by the scaling hyperparameters."
+afec,different types,"If the two regularizers are of different types like in AFEC, each regularizer will change in different magnitude at every epoch."
+ancl,outperforms,ANCL outperforms in the empirical comparison with AFEC as shown in Appendix D.
+ancl,ancl framework,"Detailed training steps of the ANCL framework are summarized in Alg. 1, applicable to all ANCL methods if an appropriate ANCL loss is substituted in the algorithm."
+task 1,optimal weight θ∗,task 1 is saved as the old weight θ∗ 1:1 in Line 5.
+task t(> 1),auxiliary weight θt,the auxiliary weight θt is initialized by the previous old weight θ∗ 1:t−1 and trained with task-specific loss Lt (Lines 7-9).
+auxiliary weight θ∗ t,main network,the main network is trained with ANCL loss explained in Eq. (2) (Lines 11-12).
+main network,task t,the optimal main network on task t is frozen and saved as an old weight 1:t−1 for the next loop (Line 13).
+ancl algorithm,"main network weight θ, auxiliary network weight θ∗",Input to the ANCL Algorithm
+ancl algorithm,"hyperparameters λ, λat , old network weight θ∗",Input to the ANCL Algorithm
+main network weight,auxiliary network weight,Main network weight θ and Auxiliary network weight θ∗ are the initial input hyperparameters in the context for optimization
+hyperparameters,λ,Hyperparameters λ are defined in the context along with other hyperparameters
+λ,λat,Relation between hyperparameters λ and λat is described in the context
+old network weight,θ∗,Old network weight θ∗ is utilized as part of the input for optimization
+main network weight,"θ∗1:t−1,1","Optimal main network weight θ∗1:t−1,1 is the output for each task t, as mentioned in the context"
+main network weight,θ,Main network weight θ is trained with task-specific loss Lt as per the context
+main network weight,θ∗1:1,Main network weight is saved as old network weight θ∗1:1 after training
+auxiliary network,θt,Auxiliary network θt is initialized in the context as part of the training process
+auxiliary network weight,θ∗,Auxiliary network weight θ∗ is saved as part of the training process described in the context
+main network weight,θ∗1:t−13,Optimal main network weight θ∗1:t−13 is saved after training on task t in the context
+tiny im-agenet,10 tasks,Tiny ImageNet is equally divided into 10 tasks as per the context
+tiny im-agenet,20 tasks,Tiny ImageNet is equally divided into 20 tasks as described in the context
+tiny im-agenet,100 classes,"Model is trained on 100 classes in the initial phase, mentioned in the context"
+resnet32,multi-head layer,Resnet32 architecture employs a multi-head layer for task incremental scenario in the context
+incremental learning,multi-head layer,The multi-head layer is deployed instead of the last layer in Resnet32 to generate an output with a task identity in the incremental learning scenario.
+incremental learning,class incremental scenario,"In the class incremental scenario, single-head evaluation is adopted due to the absence of task identity during inference in incremental learning."
+model,training,The model is trained from scratch in the implementation section.
+experiment,sgd optimizer,Every experiment is carried out 3 times with different seeds using SGD optimizer with momentum 0.9 and batch size 128.
+task incremental learning,continual learning,"In task incremental learning, the methods are evaluated on a strict setting of continual learning where the previous data is not visited again."
+class incremental learning,regularization,"In class incremental learning, the regularization of accessing previous data is relaxed."
+exemplars,memory buffer,20 exemplars per class of the old training data are selected by herding sampling strategy and stored in the memory buffer.
+hyperparameter search,methods,A comprehensive hyperparameter search is conducted for all methods to report the best scores for a fair comparison.
+grid search,lambda,Grid search is performed on lambda using the original CL loss and lambda is fixed afterward.
+lambda,ancl loss,ANCL loss is used to conduct the grid search of lambda for all benchmarks.
+evaluation metrics,task incremental scenario,"In the task incremental scenario, averaged accuracy (AAC) for T task is calculated."
+appendix f.4,benchmarks,Appendix F.4 contains benchmarks for evaluation.
+task incremental scenario,av-eraged accuracy (aac),"In task incremental scenario, AAC for T task is calculated after the training of all tasks."
+class incremental scenario,averaged incremental accuracy (aiac),"In class incremental scenario, AIAC is used instead of AAC."
+aac,t,"AAC is calculated using the formula AAC = 1 / T * ∑AT,i."
+aiac,ai,AIAC is calculated using the formula AIAC = Ai.
+aac,"aj,k","AAC uses Aj,k as the test accuracy of task k after the continual learning of task j."
+aiac,ai,AIAC uses Ai as the test accuracy of the classes seen so far at the ith phase.
+fine-tuning,naive approach,Fine-tuning is considered a naive approach in this context.
+joint,whole dataset,Joint uses the whole dataset to train the model.
+task incremental setting,"ewc, mas, lwf, lfl, lwm, dmc","In task incremental setting, EWC, MAS, LwF, LFL, LwM, and DMC are evaluated."
+dmc,original dataset,DMC is modified to only use the original dataset for fair comparison.
+ancl,original cl approaches,ANCL is applied to the original CL approaches.
+class incremental setting,"eeil, icarl, bic, lucir, podnet","In class incremental setting, EEIL, iCaRL, BiC, LUCIR, and PODNet are tested."
+ancl,benchmarks,ANCL achieves the best accuracy in all benchmarks
+ancl,methods,ANCL can be more compatible with specific methods than others
+ancl,mas baseline,Applying ANCL outperforms MAS baseline by 3.87 %
+ancl,lfl baseline,ANCL improves LFL baseline only by 0.73 %
+ancl,regularizers,ANCL is more effective when the two regularizers in Eq. (2) are well suited to each other
+ancl,plasticity,CL has less plasticity at the beginning
+ancl,appendix f.2,The detail accuracy for all tasks can be found in Appendix F.2
+ancl,cl baselines,ANCL surpasses CL baselines in all methods by 1-3 %
+ancl,sota methods,"ANCL is more compatible with state-of-the-art (SOTA) methods such as BiC, LUCIR, and PODNet"
+ancl,lucir,ANCL is more compatible with LUCIR
+benchmark (1),methods,"In Tab. 3, we can clearly see that ANCL surpasses CL baselines in all methods by 1-3 %"
+icarl,podnet,A-iCaRL is able to compete with or even outperform the stronger baseline of PODNet
+parameters,forgetting,"If the parameters change less, it is reasonable to expect that less forgetting will occur"
+task 1,taylor expansion,Forgetting F1 on task 1 is bounded using Taylor expansion of the loss
+cifar-100/10,ancl,"ANCL is used to study how the stability-plasticity dilemma is solved through Weight Distance, Centered Kernel Alignment, and Mean Accuracy Landscape on CIFAR-100/10"
+empirical loss,task,L1 is the empirical loss on task 1 which implies that the bound of forgetting F1 is determined by the norm of the difference between two weights near the minima of task 1 loss.
+weight distance,ancl models,The weights of the ANCL models θANCL are compared with the weight distance (WD) from the old model θold and the auxiliary model θaux.
+wd,lambda,We calculate WD with different λa (lambda) which directly adjusts the stability-plasticity trade-off while λ is fixed.
+model parameters,old parameters,The model parameters remain close to the old parameters when λa is small.
+wdaux,w dold,"For A-EWC and A-MAS, W Daux decreases and W Dold increases as λa becomes larger, implying a direct interpolation between the old and auxiliary networks."
+ancl gradient,direct interpolation,ANCL gradient implies a direct interpolation between the old and auxiliary networks
+a-lwf,a-lfl,"For A-LwF and A-LFL, W Daux becomes relatively smaller than W Dold with increasing λa"
+ewc,mas,"Unlike EWC and MAS, LwF and LFL have more flexibility to remember previous knowledge"
+regularization and distillation cl methods,effect of λa on stability-plasticity trade-off,The difference between the regularization and distillation CL methods and the effect of λa on the stability-plasticity trade-off is studied further in the following analyses
+centered kernel alignment,linear hsic,We use linear HSIC to implement CKA method for measuring the similarity of two-layer representations
+lower layers,deeper layers,It is well known that lower layers have relatively higher CKA scores than deeper layers
+lower layers,deeper layers,Lower layers have relatively higher CKA scores than deeper layers and deeper layers generally contribute to forgetting according to the context.
+cka,layers,CKA is calculated and averaged over the set of layers in Resnet32 as mentioned in the context.
+resnet32,convolution layers,Resnet32 consists of 1 initial convolution layer and 3 residual blocks. 10 convolution layers in the last residual block of Resnet32 are selected to measure the output similarity of two networks.
+activation matrices,networks,"Activation matrices of the ANCL network, the old network, and the auxiliary network are mentioned in relation to each other in the context."
+ckamulti,model performance,"If CKAmulti is high, the model generates layer activations similar to those of the multitask model and is highly likely to perform well on all tasks like the multitask model, as mentioned in the context."
+cka similarities,lambda,"Increasing lambda results in higher CKAaux and lower CKAold, indicating that the representations of the ANCL network become more similar to that of the auxiliary network and less similar to that of the old network, according to the context."
+stability-plasticity trade-off,λa,The stability-plasticity trade-off is controlled by λa through the interaction between the old and auxiliary networks.
+ckamulti,λa,"If CKAmulti reaches the highest score at specific λa, that model is highly likely to have the best trade-off."
+distillation methods,regularization methods,"CKAmulti of the distillation methods is higher than that of the regularization methods, corresponding to the higher averaged accuracy achieved by the distillation methods compared to the regularization methods."
+ancl,distillation methods,ANCL with distillation methods can deviate from the interpolation line and climb to the higher contour of mean accuracy due to its flexibility.
+mean accuracy landscape figures,weight in the two-dimensional subspace,The mean accuracy landscape figures show the projection of weight in the two-dimensional subspace built by three weights.
+cl,ancl,The relative positions of CL and ANCL weights are approximated. ANCL is able to achieve a better stability-plasticity trade-off compared to CKAmulti and mean accuracy.
+ancl,ckamulti,ANCL is able to achieve a better stability-plasticity trade-off compared to CKAmulti and mean accuracy.
+ancl,λ,"The trade-off between stability and plasticity is mainly adjusted by the ratio between λ and λa. ANCL with high λa infuses more plasticity into the model, while ANCL with low λa seeks more stability."
+λa,stability,"ANCL with high λa infuses more plasticity into the model, while ANCL with low λa seeks more stability."
+a-ewc,a-mas,The solutions of A-EWC and A-MAS indicate the explicit interpolation between the old and auxiliary weights.
+a-lwf,a-lfl,The gradients of A-LwF and A-LFL derive the activation of the main network toward the interpolated activation between the old and auxiliary networks.
+task 1,task 2,"The mean accuracy landscape is visualized for task 1 and 2 in weight vector space. θmulti denotes the multitask network trained on the whole dataset, located in the highest contour indicating the highest mean accuracy."
+task 2,θmulti,The multitask network is located in the highest contour indicating the highest mean accuracy.
+ancl,cl,"ANCL parameters are shifted on the accuracy landscape with different λa, and ANCL weights drift towards CL weights θCL"
+ancl,θaux,ANCL weights drift towards the auxiliary weights θaux when λa is large
+ancl,θold,ANCL weight achieves higher mean accuracy at the interpolation of old weights θold and auxiliary weights
+ancl,sota methods,ANCL outperforms original baselines including SOTA methods on CIFAR-100 and Tiny ImageNet
+ancl,old network,"ANCL balances between stability and plasticity via the interpolation between old and auxiliary weights, providing a deeper understanding of the interaction between networks"
+network,interaction,The key concept of the context is the interaction between the old network and the auxiliary network.
+interaction,understanding,Understanding the interaction between networks is essential for recent research on continual learning.
+ancl,cl,ANCL is compared to CL based on stability-plasticity trade-off in the context.
+ancl,hyperparameter search,ANCL requires enough hyperparameter search of λ and λa for achieving better stability-plasticity trade-off.
+hyperparameter search,computational burdens,Extra computational burdens are needed for searching appropriate hyperparameters for ANCL.
+results,grid search,Results can vary based on the scope of grid search in the context.
+hyperparameters,data-driven fashion,Finding hyperparameters in a data-driven fashion is a potential research direction mentioned in the context.
+hyperparameters,optimization process,Another approach mentioned is finding hyperparameters inside the optimization process.

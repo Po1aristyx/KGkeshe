@@ -1,0 +1,141 @@
+node_1,node_2,edge
+bird's-eye-view (bev) approach,autonomous driving,The context explains that the BEV approach is a method used in the field of autonomous driving.
+existing models,bird's-eye-view (bev) models,These models are part of the existing solutions for BEV perception in autonomous driving.
+realistic scenario,driving procedure,The context highlights that the models ignore the realistic scenario during the actual driving process.
+one or more view cameras may be failed,realistic scenario,This failure condition is an example of the realistic scenario not considered by the existing models.
+masked bev (m-bev) perception framework,existing models,M-BEV is proposed as a solution to address the issue of model robustness to camera failures.
+m-bev,view reconstruction,M-BEV includes a Masked View Reconstruction module for handling missing camera views.
+nuscenes benchmark,performance evaluation,NuScenes is a popular platform used for evaluating the performance of 3D perception models
+state-of-the-art models,m-bev,M-BEV improves the performance of these models by handling missing views.
+bird's-eye-view (bev) based methods,3d perception,BEV methods are a part of 3D perception techniques used for autonomous driving.
+camera-based approaches,autonomous driving,Camera-based approaches
+lidar-based methods,3d perception,LiDAR methods are alternatives to camera-based approaches in providing 3D perception for autonomous vehicles.
+m-bev (our proposed method),petrv2 model,M-BEV enhances the PETRv2 model
+bird's-eye-view (bev) representation,multi-camera images,BEV representation is learned from integrated 2D image information from multiple camera views.
+random view masking (rvm),self-supervised mvr module,RVM is a component of the self-supervised MVR module designed to improve model performance in scenarios with missing camera views.
+existing bev-based approaches,deterioration,In case of camera failure
+decoder,random view masking,The context describes a decoder being used in the M-BEV perception framework
+unified 3d representation,visible scenes,The decoder is designed to create a unified 3D representation based on the visible scenes captured by multiple cameras.
+existing bev-based approaches,autonomous driving system,These approaches are relevant to the broader context of autonomous driving
+nds (normalized detection score),map (mean average precision),NDS and mAP are evaluation metrics mentioned
+back camera view,missing camera views,The context highlights the back camera view as an example of a missing camera view that significantly impacts the system's reliability.
+m-bev (masked bev) perception framework,self-supervised masked view reconstruction (mvr) module,M-BEV incorporates an MVR module for end-to-end training
+mvr,mae,MVR is different from MAE in terms of design and purpose. MAE focuses on learning scalable image representation
+masking goal,mae,MAE's masking goal is to reconstruct image patches
+masking goal,mvr,MVR's masking goal is specifically to reconstruct images from missing camera views in the context of autonomous driving.
+reconstruction,mvr,In MVR
+training stage,mvr,During training
+testing stage,mae,In the testing phase
+mvr,decoder,MVR uses the decoder for reconstructing missing camera views.
+m-bev framework,petrv2,M-BEV is implemented on PETRv2 for 3D object detection.
+m-bev framework,bevstereo,M-BEV is also implemented on BEVStereo for 3D object detection.
+nuscenes dataset,caesar et al. (2020),Experiments are performed on the popular NuScenes dataset
+3d object detection,autonomous driving,3D object detection is a key technology for autonomous driving.
+lidar,camera,Both LiDAR and camera are used for 3D object detection.
+cameras-based methods,li et al. (2022d),liu et al. (2023)
+multi-view 3d object detection,related work,Multi-View 3D object detection is a relevant research area.
+3d space,camera-based methods,3D space is the context in which camera-based methods
+camera-based methods,conversion between 2d and 3d space,The key problem of camera-based methods is converting 2D visual data into 3D space
+bev (bird's eye view),oft (roddick,kendall
+oft (roddick,kendall,and cipolla
+depth supervision,3d performance enhancement,Depth supervision is used to enhance the accuracy of 3D object detection.
+robobev (zhu et al.,2023),comprehensive driving benchmark
+metabev (ge et al.,2023),cross-modal data fusion
+m-bev,camera-only solution for view failure,M-BEV is the first method specifically designed to handle camera view failures with strong robustness.
+camera-only solution,view failure,The context discusses a camera-only solution specifically designed to handle the issue of view failure with great robustness.
+masked visual modeling,nlp (radford et al. 2019),The masked modeling pipeline
+masking operation,denoising encoders,In the context of vision
+vit (dosovitskiy et al. 2020),masked token prediction,ViT introduced the use of masked token prediction for self-supervised pre-training in computer vision.
+mae (he et al. 2022),asymmetric transformer-based encoder-decoder architecture,MAE presents an asymmetric architecture for reconstructing masked images
+beit (bao et al. 2021),reconstruction based on token-level,BEiT shares a similar reconstruction approach but focuses on token-level information.
+um-mae (li et al. 2022b),distinctive masking strategies,UM-MAE introduces unique masking strategies in its method.
+semmae (li et al. 2022a),distinctive masking strategies,SemMAE also employs distinctive masking strategies
+video-mae (tong et al. 2022; wang et al. 2023),temporal dimension of videos,Video-MAE extends masking to the temporal domain of video data
+mvr,m-bev,MVR is a part of the M-BEV architecture
+overall architecture,m-bev,The figure 2 illustrates the overall structure of the M-BEV method.
+overall architecture,m-bev,The overall architecture is shown in Figure 2
+3d object detector,m-bev,M-BEV consists of a 3D object detector
+visual encoder,3d object detector,The visual encoder is part of the 3D object detector
+translator,3d object detector,The translator is another component of the 3D object detector
+decoder,3d object detector,The decoder is the final transformation stage in the 3D object detector
+random view masking (rvm),m-bev,RVM is introduced to address missing features when some cameras fail
+masked view reconstruction (mvr),m-bev,MVR
+attention mechanism,translator,The translator uses attention mechanisms to process information in the feature transformation process.
+masked view reconstruction module,bev-based approaches,The MVR module is a part of BEV-based methods
+bev-based approaches,li et al. (2022d),huang and huang (2022)
+previous step t-1,current step t,In the context
+rvm module,mvr module,RVM is a component that masks features before the MVR step is applied.
+images of six camera views,overlapped regions,The six camera views share overlapped regions
+global mvr module,rest views,Global MVR uses all other views as context to reconstruct the masked ones.
+masked views,distinct spatio-temporal clues,Recovering masked views relies on the shared regions across views for temporal and spatial information.
+mae style,exploiting relations within an image,Unlike MAE
+concatenation of features,missing views,The process involves padding missing views with shared and learned masked tokens (Vmask).
+shared and learned masked tokens (vmask),2d features from encoder (frest),For complete views
+3d position embedding (p3d),features (c[vmask,frest])
+feature decoder,masked features (umask),Reconstructs the masked features using transformer blocks
+global mvr module,local mvr module,Global MVR considers all views
+camera view,adjacent views,Camera view is correlated with its neighboring views based on relevance.
+front view,front left view,front right view
+masked views,left and/or right parts,The masked views lack left and/or right context; corresponding masked features are used from those sides.
+masked features (vmask),left (vmask(left)),Vmask is used for the left part of the view.
+masked features (vmask),right (vmask(right)),Vmask is used for the right part of the view.
+vmask,2d positional embedding (p2d),Vmask combines with P2D using sine-cosine embedding for decoding.
+decoder,reconstructed features (umask),The decoder generates Umask by combining Vmask and P2D.
+mvr (masked view reconstruction),local mvr,Local MVR has a smaller computational cost due to processing a single image size compared to Global MVR.
+mvr,global mvr,Global MVR processes features from all six images.
+pretraining,self-supervised,MVR is used for self-supervised pretraining of M-BEV.
+m-bev,encoder,The encoder is frozen during pretraining.
+m-bev,3d detection supervision,Fine-tuning involves 3D detection loss for perception.
+l2 loss,reconstructed features (umask),The L2 loss measures the difference between original and reconstructed features.
+3d detection loss (ldet),object classification,Ldet includes focal loss for classifying objects.
+3d detection loss (ldet),3d bounding box regression,Ldet also handles regression of 3D bounding boxes.
+loss (lin et al. 2017),object classification,loss is used for object classification
+loss (lin et al. 2017),l1 loss,L1 loss is for 3D bounding box regression
+detection loss,major loss,detection loss should be the primary focus
+reconstruction loss,fine-tuning,a weight coefficient α = 0.05 for reconstruction loss during fine-tuning
+random number of camera views,training epochs,views are randomly selected for masking in different epochs
+mae (he et al. 2022),same masking proportion,contrast to MAE
+mvr (our method),testing process,view decoder in MVR predicts missing views for emergencies
+mvr (our method),camera failure emergency,tackles camera failures during driving
+m-bev (our method),regular case,works well without missing views
+m-bev (our method),baseline model,M-BEV performs better than the baseline without view masking/recovering
+mvr training,baseline model,MVR training is better for the regular case compared to the baseline model
+nuscenes dataset,autonomous driving benchmark,NuScenes is a large-scale benchmark for autonomous driving
+nuscenes dataset,training set (700 scenes),The dataset is divided into 700 scenes for training
+validation set (150 scenes),testing set (150 scenes),Both the validation and testing sets consist of 150 scenes each.
+3d object detection,bev-based research,Metrics like mAP and True Positive metrics are used in BEV-based 3D object detection research.
+map (mean average precision),mate (mean average translation error),These are official metrics for performance evaluation in NuScenes
+nds (nuscenes detection score),performance evaluation metric,NDS is the most comprehensive metric reflecting multiple performance aspects.
+rvm module,random view masking,RVM module is used to create a challenging setting by randomly discarding images in the real-world driving scenes.
+m-bev paradigm,original bev paradigm,relation: comparison
+m-bev,performance,relation: improvement
+back-view camera failure,map growth,relation: cause-effect
+global mvr,local mvr,relation: comparison
+local mvr,exploits spatio-temporal context,relation: feature
+number of missing camera views,robustness evaluation,relation: goal
+nds (normalized detection score),map (mean average precision),relation: evaluation metrics
+m-bev,nds,M-BEV's performance is evaluated using NDS
+m-bev,map,M-BEV also achieves better mAP
+local mvr,global mvr,Local MVR consistently outperforms Global MVR
+mvr module,ablation experiments,Experiments are conducted to validate the strategies within the MVR module for its contribution to the final results.
+local mvr,fine-tuning process,The ablation includes examining the impact of fine-tuning during the MVR method.
+position embedding (pe),contribution to results,The effect of position embeddings on the overall performance is analyzed in the ablation study.
+masking ratio,validation,The study varies the masking ratio to understand its influence on the MVR module's performance.
+baseline petrv2,performance comparison,M-BEV outperforms PETRv2
+missing cameras,impact on performance,The number of missing cameras affects the performance of both M-BEV and MVR methods.
+masking ratio,optimal masking ratio,The optimal masking ratio for good reconstruction is 76%
+masking ratio,60% to 80%,Different masking ratios were tested
+m-bev,petrv2 (liu et al. 2023),M-BEV is evaluated for map segmentation tasks using the PETRv2 baseline on nuScenes.
+m-bev,iou scores,When one camera view is missing
+camera failure case,one view missing setting,The evaluation considers a scenario where one camera view is not available.
+generalization,computational cost,M-BEV shows better generalization for 3D object detection while having minimal additional computational cost.
+mvr (model view representation),local mvr,Local MVR provides better performance in the camera failure case with little extra computational expense.
+local mvr,response time,Local MVR takes approximately 6ms for a detection response
+computation cost,response time,The context mentions that the computation cost is negligible
+local mvr,response time,Local MVR has a response time of about 6ms
+practical application,potential,The text suggests that the local MVR's performance proves its potential for practical application.
+reconstructed features,missing cameras,The MVR reconstructs features for missing cameras
+m-bev,feature reconstruction,M-BEV stands for Multi-View Bird's-Eye View
+detection results,mvr,MVR contributes to improved detection results
+m-bev reconstructed features,detection accuracy,The reconstructed features help maintain detection accuracy even with a missing view.
+generalization,computation,The model using MVR demonstrates better generalization with minimal additional computational cost.

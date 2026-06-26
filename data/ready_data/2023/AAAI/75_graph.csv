@@ -1,0 +1,142 @@
+node_1,node_2,edge
+electroencephalography (eeg),emotion analysis,EEG is used for emotion analysis
+current methods,individual variations,Current methods face challenges due to individual variations
+denoising mixed mutual reconstruction (dmmr) model,two-stage pre-training,DMMR employs a two-stage approach for learning
+pre-training phase,self-supervised learning,In pre-training
+multi-decoder autoencoder,subject-invariant features,Autoencoder aims to generate subject-independent features
+hidden-layer mixed data augmentation,source data scarcity,Data augmentation addresses the issue of limited source data
+time steps shuffling,noise injection method,Noise injection
+fine-tuning phase,emotion classifier,Fine-tuning includes integration of an emotion classifier
+seed dataset,seed-iv dataset,Performance is evaluated on both SEED and SEED-IV datasets
+dmmr,state-of-the-art performance,DMMR achieves state-of-the-art accuracy on SEED (88.27%) and comparable on SEED-IV (72.70%)
+performance of dmmr,data augmentation and noise injection methods,The proposed methods complementarily enhance accuracy and stability.
+data augmentation and noise injection methods,issues,These methods alleviate the previously mentioned issues.
+human emotions,health conditions,Emotions are closely related to health conditions
+human emotions,malicious behaviors,Negative emotions can lead to malicious behaviors.
+real-time monitoring of individuals' emotional states,objective health assessments,Real-time monitoring contributes to objective assessments.
+wearable devices,emotion-related physiological signals,Wearable devices
+eeg-based emotion recognition,high temporal resolution and accuracy,EEG signals offer these advantages for emotion identification.
+eeg signals,emotional stimuli,Different EEG responses indicate different emotional tendencies.
+individuals,fine-grained emotional tendencies,EEG signals from specific channels and frequency bands reveal fine-grained emotions.
+cranial structure,emotional experiences,These terms are related because individual differences in cranial structure and emotional experiences result in varying sensitivity to the same emotion.
+subject,data,The context mentions distributional differences among data from different subjects
+source subject data,target subjects,Transfer learning aims to bridge the gap between source and target subjects by transferring emotional knowledge from source data to target subjects.
+unsupervised domain adaptation,semi-supervised domain adaptation,Both are methods that assume availability of labeled or unlabeled data from the target subjects to adapt models.
+domain generalization,training process,Domain generalization is a task where the model is trained solely on source subjects' data without any target subject data
+large amount of unlabeled data,small amount of labeled data,Early works in domain adaptation assumed the availability of either type of data to narrow the distribution gap.
+model,subject-invariant and robust model,The goal is to create a model that performs well on unseen target subjects
+eeg-based cross-subject emotion recognition,mutual reconstruction method,The 'mutual reconstruction' method is introduced for EEG-based emotion recognition as a novel approach.
+dmmr (denoising mutual reconstruction model),joint training mode,DMMR contrasts with the joint training mode by combining two-stage pretraining with mutual reconstruction self-supervised learning.
+dmmr,data augmentation strategy,DMMR proposes a mixed data augmentation strategy
+mixup technique,mixed data augmentation,The mixup technique serves as the foundation for the proposed mixed data augmentation strategy.
+dmmr,denoising task,DMMR incorporates a denoising task to improve model stability by relearning clean samples from noisy features.
+noise injection method,time steps shuffling,The proposed noise injection method enhances denoising and preserves essential information
+main contributions,dmmr model,The main contribution includes the DMMR model with pre-training-fine-tuning
+dmmr model,seed dataset,Experimental results are demonstrated on the SEED dataset (Zheng and Lu)
+data augmentation,noise injection,The proposed methods complement each other
+dmmr,state-of-the-art performance,DMMR achieved 88.27% accuracy on SEED and 72.70% on SEED-IV
+dmmr,comparable performance,DMMR's performance was comparable to existing methods on the datasets.
+si-sife,cross-subject invariance,SI-SIFE assumes channel correlations are invariant across subjects
+si-sife,lstm-based method,Some SI-SIFE strategies use LSTM for high-dimensional emotional feature extraction by manually constructing inter-channel sequences.
+si-sife,graph neural networks,Others employ distance metrics or trainable parameters for creating adjacency matrices
+gmss,self-supervised learning,GMSS enhances data using jigsaw tasks
+proposed approach,related work,The paper compares the proposed approach with SI-SIFE and CS-SIFE
+gmss,self-supervised learning,GMSS enhances data using self-supervised learning
+gmss,intrinsic feature extraction,GMSS uses jigsaw tasks for robust intrinsic feature extraction.
+gmss,unsupervised contrastive learning,GMSS manipulates distances using unsupervised contrastive learning methods.
+cs-sife,different domain,CS-SIFE treats each subject as a different domain.
+dg-dann,gradient reversal,DG-DANN employs gradient reversal to yield subject-invariant features.
+dg-dann,jensen-shannon divergence,DG-DANN implicitly aligns marginal probability distributions using Jensen-Shannon divergence.
+dresnet,subject-specific encoder,DResNet combines residuals from subject-specific and subject-shared encoders.
+dresnet,subject-shared encoder,DResNet combines residuals from subject-specific and subject-shared encoders.
+clisa,contrastive learning,Clisa uses contrastive learning for consistent representations of identical emotional stimuli.
+previous methods,critical issues,The aforementioned methods did not address three critical issues.
+mtae,multiple decoders,MTAE in image processing uses multiple decoders for mutual reconstruction.
+image processing,mtae,MTAE is a method proposed by Ghifary et al. (2015) within the context of image processing.
+mtae,multiple decoders,MTAE uses multiple decoders for mutual reconstruction.
+pre-training process,single domain's feature,During pre-training
+dimae,mtae,Yang et al. (2022) extended MTAE into DiMAE.
+dimae,cp-stylemix,DiMAE incorporates CP-styleMix for data augmentation.
+dimae,mask mechanism,It also uses a mask mechanism for visible parts.
+this paper,hidden layer output mixing,This paper proposes hidden layer output mixing for data augmentation.
+this paper,custom noise injection method,A custom noise injection method is introduced specifically for EEG signals.
+dmmr,noise injection process,DMMR has a pre-training phase involving a noise injection process.
+dmmr,abp module,DMMR consists of the ABP module
+dmmr,mmr module,MMR module is part of the DMMR architecture.
+dmmr,dg-dann module,DG-DANN module is another component of DMMR.
+pre-training phase of dmmr,subject-invariant features,The goal is to extract subject-invariant features during self-supervised pre-training.
+fine-tuning phase of dmmr,emotion class prediction,The fine-tuning phase involves using the model to predict emotions for unseen target subjects.
+scarcity of source data,two-stage mixed mutual reconstruction approach,The context proposes a solution to address the scarcity of source data by implementing a two-stage method.
+first stage,mix-subject data,In the first stage
+second stage,multi-decoder autoencoder,The mixed output from the first stage is fed back into the multi-decoder autoencoder for further processing.
+abp module,weighted features,The ABP module generates weighted features representing the same category features across different subjects.
+dg-dann module,subject discriminator (𝑆𝐷),DG-DANN
+dg-dann module,emotion classifier 𝐶,An emotion classifier is added to the DG-DANN to leverage emotion category labels for supervised learning.
+algorithm 1,pseudo-code of dmmr,Algorithm 1 outlines the steps of the proposed DMMR method.
+testing process,fine-tuned model,The fine-tuned model is used for evaluation during the testing phase.
+fine-tuning phase,abp,ABP is optimized during the Fine-Tuning Phase in lines 8 and 10.
+fine-tuning phase,𝐄!,ABP and 𝐸! are both optimized together in the Fine-Tuning Phase
+pre-trained abp,abp,Line 8 mentions obtaining the pre-trained ABP before optimizing it.
+random initialization,𝐶,In line 7
+trainable weights and bias,linear layer,A linear layer is used in the method
+softmax function,attention weights,Attention weights are obtained by normalizing the mapped features using the Softmax function (Formula 1).
+weighted features,original features,Weighted features are calculated by multiplying the normalized weights with the original features (Formula 2).
+mmr module,shared encoder,The MMR module has a shared encoder for extracting high-dimensional features across subjects.
+mmr module,decoder,The module has different decoders for reconstructing features specific to each subject.
+reconstruction loss,subject-invariant representations,The reconstruction loss encourages the encoder to learn representations that are invariant to the subject identity within a category.
+self-supervised learning approach,reconstruction loss,The reconstruction loss is a component of the self-supervised learning method
+abp module,encoder and decoders,Both the encoder and multiple decoders use the weighted features from the ABP module's output as input and supervision.
+encoder,single-layer lstm model,The encoder in this paper is a single-layer LSTM model
+decoders,linear layer,Each decoder generates features for each time step in reverse order and uses a linear layer to map them to the same dimension as the encoder's input.
+mixup technique,data augmentation,The mixup technique is used to address the scarcity of source data by creating new samples.
+two-stage mixed mutual reconstruction method,first stage,The method consists of a two-stage process
+leave-one-subject-out cross-validation,evaluation approach,The method used for assessing model performance
+accuracy,standard deviation,Computed metrics for evaluating model performance across all subjects after the subject rotation in cross-validation.
+hyperparameters,input data,The model's settings
+adam optimizer,learning rate,An optimization algorithm used in training
+batch size,dataset size,Adjusted based on the size of SEED and SEED-IV datasets
+random seed,reproducibility,Fixed at 3 to ensure consistent results across experiments.
+dmmr,baseline models,Compared with state-of-the-art SIFE methods
+table 1,experiment results,Displays the performance comparison of DMMR with these baselines.
+sife methods,categories,SI-SIFE stands for semi-supervised interactive few-shot learning methods
+dgcnn,bihdm,Both are SI-SIFE methods
+rgnn,gmss,Competitors in the semi-supervised interactive few-shot learning domain.
+pytorch,implementation platform,All experiments were conducted using this open-source machine learning library.
+nvidia tesla v-100 gpu,computational resource,Used for running the DMMR code.
+ppda_nc model,dg tasks,The PPDA_NC model is designed for achieving DG tasks.
+dmmr model,ppda model,The DMMR model outperforms the PPDA model
+dmmr model,seed dataset,DMMR achieves the highest accuracy of 88.27% on the SEED dataset.
+seed dataset,seed-iv dataset,There are almost no reports on the performance of CSSIFE methods on the SEED-IV dataset.
+dmmr model,si-sife methods,Our method's performance (72.70%) is slightly inferior to the GMSS model on the SEED-IV dataset.
+gmss model,state-of-the-art si-sife methods,The GMSS model is considered the current state-of-the-art in SI-SIFE methods.
+noise injection method,data augmentation technique,Ablation experiments analyze the effectiveness of both noise injection and mixed data augmentation.
+time steps shuffling,dmmr's noise injection method,Time Steps Shuffling is the specific noise injection method employed in the DMMR model.
+table 2,ablation experiments results,Comparison of different noise injection methods
+channels shuffling,mask channels,These two methods are related as they both belong to 'noise injection techniques' for manipulating the channel dimension in EEG data. They are described as ways to inject noise along the channel dimension.
+time steps,channels,The context explains that each time step has C-dimensional channels
+frequency bands,channels,The features of each time step are composed of B-dimensional frequency bands
+noise injection method,dropout,Dropout is mentioned as a noise augmentation technique alongside noise injection methods
+proposed noise injection method,other four noise injection methods,The proposed method outperforms the others
+baseline (w/o noise),negative impact of information loss,The performance of the 'w/o noise' baseline suggests that noise injection can have a negative impact when dealing with limited dataset sizes.
+information loss,small dataset size,The negative impact of information loss is more pronounced due to the small dataset
+small size of the dataset,impact of information loss,The small size makes the negative impact of information loss more noticeable.
+channels shuffling method,boundaries among dimensions,Channels Shuffling confuses the boundaries
+time steps shuffling (dmmr),information loss,Time Steps Shuffling does not cause any information loss and maintains feature clarity at individual time steps.
+dmmr,better performance,DMMR outperforms other methods because it preserves information without affecting individual time steps.
+t-sne algorithm,subject-invariant features,T-SNE is used to assess if the model can extract features invariant to subjects and clearly separate emotion categories.
+randomly selected 50 samples,seed dataset,These samples are from each source subject of the SEED dataset for visualization.
+subject distribution,emotion distribution,Subject distribution and emotion distribution are visualized using T-SNE to analyze the model's performance.
+original features,features extracted by pre-trained model,Comparison is made between original and extracted features after self-supervised pre-training.
+self-supervised pretraining,improved subject distribution,Pre-training helps to organize subject data more coherently.
+dmmr model,eeg-based emotion recognition,The DMMR model is a novel approach for EEG-based emotion recognition.
+two-stage pre-training,fine-tuning approach,The model uses a two-stage pre-training followed by fine-tuning for improved performance.
+self-supervised learning,mutual reconstruction,Self-supervised learning involves mutual reconstruction to extract subject-invariant features.
+scarcity of source data,mixed data augmentation,To address the scarcity of source data
+potential noise in the data,noise injection method,Time Steps Shuffling is a noise injection method introduced to handle potential noise in the data.
+seed dataset,seed-iv dataset,Experimental results are reported on SEED and SEED-IV datasets
+accuracy,performance,The model reaches 88.27% (±5.62) accuracy on SEED and 72.70% (±8.01) on SEED-IV
+data augmentation,noise injection,The methods for data augmentation and noise injection are related as they both contribute to enhancing accuracy and stability
+accuracy,stability,Enhancing accuracy and stability are mentioned together
+deep generative (dg) methods,limited annotated eeg data,The future exploration aims to apply DG methods under the condition of limited annotated EEG data for source subjects
+key research and development program of shaanxi,national key projects of china,Both are acknowledged sources of funding for the work
+program no.2022gy-075,program no.2021xjtu0016,These are specific program numbers that reference separate but related funding initiatives.

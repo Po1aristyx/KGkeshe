@@ -1,0 +1,263 @@
+node_1,node_2,edge
+self-driving vehicle (sdv),surroundings,A self-driving vehicle (SDV) must be able to perceive its surroundings.
+self-driving vehicle (sdv),future behavior,A self-driving vehicle (SDV) must be able to predict the future behavior of other traffic participants.
+sdv,object detection,Existing works either perform object detection followed by trajectory forecasting of the detected objects.
+object detection,trajectory forecasting,Existing works either perform object detection followed by trajectory forecasting of the detected objects.
+dense occupancy,flow grids,Existing works predict dense occupancy and flow grids for the whole scene.
+dense occupancy,scene,Existing works predict dense occupancy and flow grids for the whole scene.
+object detection,efficiency,The safety concern with object detection is the need to keep the number of detections low for efficiency reasons.
+object detection,object recall,Object detection sacrifices object recall for efficiency reasons.
+object detection,safety concern,Object detection poses a safety concern as the number of detections needs to be kept low.
+dense occupancy,computationally expensive,Predicting dense occupancy and flow grids is computationally expensive.
+dense occupancy,high-dimensionality,Predicting dense occupancy and flow grids is computationally expensive due to the high-dimensionality of the output grid.
+dense occupancy,receptive field,Predicting dense occupancy and flow grids suffers from the limited receptive field inherent to fully convolutional networks.
+approaches,computational resources,Both approaches employ many computational resources predicting areas or objects that might never be queried by the motion planner.
+approaches,efficiency,The safety concern with object detection is the need to keep the number of detections low for efficiency reasons.
+method,unnecessary computation,"Our method avoids unnecessary computation, as it can be directly queried by the motion planner at continuous spatio-temporal locations."
+method,occupancy and flow,Our method implicitly represents occupancy and flow over time with a single neural network.
+architecture,receptive field,Our architecture overcomes the limited receptive field of previous explicit occupancy prediction methods by adding an efficient yet effective global attention mechanism.
+experiments,urban settings,"Through extensive experiments in both urban and highway settings, we demonstrate that our implicit model outperforms the current state-of-the-art."
+experiments,highway settings,"Through extensive experiments in both urban and highway settings, we demonstrate that our implicit model outperforms the current state-of-the-art."
+implicit model,state-of-the-art,The implicit model is demonstrated to outperform the current state-of-the-art.
+implicit model,project website,"For more information about the implicit model, visit the project website."
+self-driving vehicle,sensor observations,The goal of a self-driving vehicle is to take sensor observations of the environment.
+self-driving vehicle,high-definition maps,The goal of a self-driving vehicle is to utilize high-definition maps for executing safe and comfortable plans.
+self-driving vehicle,interpretable representations,It is important for a self-driving vehicle to produce interpretable representations that explain its maneuvers.
+autonomy stacks,tasks,"Traditional autonomy stacks break down the problem into 3 tasks: perception, motion forecasting, and motion planning."
+perception,sensor data,Perception leverages sensor data to localize the traffic participants in the scene.
+motion forecasting,future motion,Motion forecasting outputs the distribution of future motion of traffic participants.
+motion planning,maneuver,Motion planning is tasked with deciding which maneuver the self-driving vehicle should execute.
+autonomy systems,object-based,"Most autonomy systems are object-based, involving detecting the objects of interest in the scene."
+object detectors,confidence scores,Object detectors use predicted confidence scores to detect objects of interest in the scene.
+object detectors,predicted confidence scores,"Object detectors threshold predicted confidence scores to determine which objects in the scene, a trade off between precision and recall."
+object-based motion forecasting methods,closed-form likelihood,Object-based motion forecasting methods are limited to predict only a handful of sample trajectories or parametric distributions with closed-form likelihood for tractability.
+object-based motion forecasting methods,linearly with the number of objects,Object-based motion forecasting methods scale linearly with the number of objects and must run online in the vehicle.
+object-free approaches,object-based models,Object-free approaches have emerged to address the shortcomings of object-based models.
+spatio-temporal grid,3-dimensional dense grid,"The spatio-temporal grid is a 3-dimensional dense grid with two spatial dimensions representing the bird’s-eye view, and a temporal dimension from the current observation time to a future horizon of choice."
+implicito,implicit representation,IMPLICITO utilizes an implicit representation to predict both occupancy probability and flow over time directly from raw sensor data and HD maps.
+implicito,motion planning,IMPLICITO enables downstream tasks such as motion planning to efficiently evaluate a large collection of spatio-temporal query points in parallel.
+implicito,self-driving vehicle,IMPLICITO focuses on areas of interest where there are potential interactions with the self-driving vehicle.
+implicito,architecture,IMPLICITO is designed with an architecture that overcomes the limited receptive field of fully convolutional explicit architectures by adding an efficient yet effective global attention mechanism.
+dynamic objects,high speeds,"Dynamic objects can move at very high speeds, particularly on the highway."
+in-lane occupancy,speed limit,"When predicting in-lane occupancy 3 seconds into the future on a road where the speed limit is 30 m/s, the attention can look approximately 90 meters back along the lane to find the corresponding sensor evidence."
+object-free implicit approach,object-based methods,Extensive experiments show that the object-free implicit approach outperforms the object-based methods in the literature on the task of occupancy-flow prediction.
+object-free implicit approach,object-free explicit methods,The object-free implicit approach outperforms the object-free explicit methods in the literature on the task of occupancy-flow prediction.
+implicit geometric reconstruction,approach,Literature in implicit geometric reconstruction inspired our approach.
+object-based perception,motion forecasting,Previous works have adopted object-based reasoning with a 2-stage pipeline for motion forecasting.
+trajectory prediction,past tracks,The trajectory prediction is based on past tracks.
+trajectory prediction,future distributions,The trajectory prediction involves generating future distributions in different modes with probabilities.
+future distributions,occupancy probability,The predicted future distributions encompass occupancy probability predictions.
+future distributions,flow vectors,The predicted future distributions also involve predicting flow vectors at spatio-temporal points.
+occupancy probability,lidar,The occupancy probability predictions are based on sensor data like LiDAR.
+occupancy probability,camera,The occupancy probability predictions are based on sensor data from cameras.
+occupancy probability,individual actors,The occupancy probability predictions are made without considering individual actors.
+lidar,future occupancy grid,LiDAR data is used to predict future occupancy grids.
+future occupancy grid,spatio-temporal grid,Future occupancy grids are warped into the future using a spatio-temporal grid.
+initial occupancy grid,spatio-temporal grid,The initial occupany grid is warped into the future with a spatio-temporal grid of multi-modal flow predictions.
+forward flow,dispersing occupancy over time,Forward flow struggles with dispersing occupancy over time when uncertainty increases.
+fiery,instance reasoning,"FIERY added instance reasoning to the object-free paradigm as a postprocessing, improving interpretability."
+occflow,backwards flow,OCCFLOW introduced backwards flow as a representation that can capture multi-modal forward motions with just one flow vector prediction per grid cell.
+occflow,occupancy and flow forecasting,"OCCFLOW isolates the occupancy and flow forecasting problem by assuming input features from a detection and tracking module, instead of raw sensor data."
+model,predicts occupancy-flow,Our model only predicts occupancy-flow at select query points instead of outputting spatio-temporal occupancy-flow grids with fully convolutional networks.
+model,global attention mechanism,"Our model achieves efficient and effective global attention mechanism, making it more expressive while improving efficiency by reducing computation to only that which matters to downstream tasks."
+geometric reconstruction,predicting the 3d shape,Geometric reconstruction refers to the task of predicting the 3D shape.
+geometric reconstruction,3d shape,Geometric reconstruction refers to predicting the 3D shape of an object given some incomplete representation of it.
+geometric reconstruction,implicit neural geometric reconstruction methods,Implicit neural geometric reconstruction methods have been shown to outperform explicit counterparts in predicting the 3D shape.
+implicit neural geometric reconstruction methods,neural network,Implicit methods train a neural network to predict a continuous field that assigns a value to each point in 3D space.
+implicit neural geometric reconstruction methods,continuous field,Implicit methods train a neural network to predict a continuous field that assigns a value to each point in 3D space.
+implicit neural geometric reconstruction methods,iso-surface,A shape can be extracted as an iso-surface based on the continuous field predicted by the neural network in implicit methods.
+implicit neural geometric reconstruction methods,non-linear binary occupancy,Implicit methods can predict non-linear binary occupancy over 3D space.
+implicit neural geometric reconstruction methods,signed distance function,An implicit neural geometric reconstruction method can predict a signed distance function to the surface.
+implicit neural geometric reconstruction methods,occupancy and flow prediction,The work explores the application of implicit methods to the task of occupancy and flow prediction for self-driving.
+implicit prediction decoder,convolutional occupancy networks,"The architecture of the implicit prediction decoder is inspired by Convolutional Occupancy Networks, which proposed a translation equivariant approach to accurately reconstruct large scale scenes."
+implicit perception,future prediction,Understanding the temporal occupancy and motion of traffic participants is critical for motion planning and future prediction in self-driving vehicles.
+methods,occupancy,Methods represent occupancy explicitly with a discrete spatio-temporal grid.
+methods,motion,Methods represent motion explicitly with a discrete spatio-temporal grid.
+methods,bird’s-eye view (bev),Methods represent occupancy and motion in bird’s-eye view (BEV).
+methods,implicito,"Methods introduce IMPLICITO, an implicit neural network."
+occupancy,motion,Occupancy and motion are related in the context of predicting in regions that are relevant to the SDV.
+implicito,scene occupancy,IMPLICITO can be queried for both scene occupancy and motion at any 3-dimensional continuous point.
+implicito,"motion at any 3-dimensional continuous point (x, y, t)",IMPLICITO can be queried for motion at any 3-dimensional continuous point.
+spatial coordinates in bev,time into the future,"Spatial coordinates in BEV (x, y) and time into the future (t) are defined."
+time into the future,motion planner,Time into the future enables the motion planner to request computation only at points around candidate trajectories.
+time into the future,computation only at points around candidate trajectories,Time into the future enables requesting computation only at relevant points around candidate trajectories.
+task parametrization,inputs and outputs,Task parametrization is discussed by defining its inputs and outputs.
+lidar,hd map (m),The LiDAR and the HD map (M) are used as input parameterization.
+lidar,voxelized lidar representation (l),The model takes voxelized LiDAR representation (L) as input.
+lidar,raster,"The model takes a raster as input, involving recent sweeps."
+pt′ points,features,"Each Pt′ point is described by three features: px, py, and ph."
+px,py,px and py represent the location of the point relative to the SDV’s reference frame.
+px,ph,px represents the x-axis location of the point relative to the SDV’s reference frame.
+py,ph,py represents the y-axis location of the point relative to the SDV’s reference frame.
+ph,l,"ph corresponds to the height of the point above the ground, which is used in the voxelization process to generate L."
+v oxelize(st),rthistoryd×h×w,"Voxelize(St) generates a voxelization result, L, in the shape of RThistoryD×H×W."
+st,h,"St is the input for voxelization, and H represents the height dimension in the voxelization result."
+st,w,"St is the input for voxelization, and W represents the width dimension in the voxelization result."
+bev voxelization,discretization,"The BEV voxelization process is proposed with a discretization of D depth channels, H height, and W width pixels."
+raster map,lane centerlines,Lane centerlines from the high-definition map are rasterized to create the raster map.
+c,m,Lane centerlines C are represented as polylines and rasterized onto a single channel M.
+q,spatio-temporal point,The spatio-temporal point q represents a point in BEV space at a future time.
+q,o,The task is to predict the probability of occupancy o at the spatio-temporal point q.
+q,f,The task is to predict the flow vector f for any agent occupying the spatio-temporal point q.
+backwards flow,flow vector,The backwards flow is modeled to capture multi-modal forward motions using a single reverse flow vector per grid cell.
+f,t,"The flow vector f at location (x, y, t) represents the motion at time t."
+occupancy,flow,"Occupancy and flow are parameterized in the context with a multi-head neural network ψ, which takes LiDAR, raster map, and a spatio-temporal query points batch Q as input and estimates the occupancy and flow for the mini-batch in parallel."
+bev location,point,"The BEV location at time t-1 of the point occupying (x, y) at time t is represented in the context as part of the equation describing the occupancy."
+network architecture,predicted occupancy,"The network architecture involves parameterizing the predicted occupancy and flow with a multi-head neural network, where the occupancy and flow estimates are computed for a mini-batch in parallel."
+neural network,lidar,The neural network ψ in the context takes LiDAR as input among other elements to estimate occupancy and flow for a mini-batch in parallel.
+lidar,raster map,The LiDAR data is used along with the raster map in the context for estimating occupancy and flow through a neural network.
+feature pyramid network (fpn),scene features,"The Feature Pyramid Network processes the multi-resolution feature planes generated by the ResNet encoder to extract contextual features capturing the geometry, semantics, and motion of the scene."
+encoder,receptive field,The size of the receptive field of the encoder determines the neighborhood information captured by the encoder.
+encoder,temporal information,The encoder captures temporal information over the past Thistory seconds in order to understand the context.
+feature vector,motion,The feature vector in Z contains important cues regarding the motion related to the feature map Z.
+feature vector,local road geometry,The feature vector in Z contains important cues regarding the local road geometry related to the feature map Z.
+feature vector,neighboring agents,The feature vector in Z contains important cues regarding the neighboring agents related to the feature map Z.
+occupancy,spatio-temporal query location,"The occupancy at query point q might be caused by a distant object moving at a fast speed prior to time t, which is why we use the local features around the spatio-temporal query location to predict occupancy."
+query points q,relevant features,The resulting feature map Z is used by the decoder to obtain relevant features for the query points Q to make predictions.
+object,lidar evidence,There are more expressive features about an object around its original position where the LiDAR evidence is captured.
+neighboring traffic participants,interact,Neighboring traffic participants that might interact with the object occupying the query point at time t are also relevant to look for in order to understand the interaction.
+lead vehicle,merging point,A lead vehicle and another vehicle arriving at a merging point at a similar time are relevant neighboring traffic participants to consider.
+vehicle,merging point,Vehicles arriving at a merging point at a similar time.
+feature map z,query bev location,The feature map Z is interpolated at the query BEV location to obtain the feature vector zq.
+feature vector zq,k reference points,"The feature vector zq is used to predict K reference points {r1, ..., rK}."
+query point,offsets ∆q,The initial query point is offset by the computed offsets ∆q to obtain the reference points.
+deformable convolution,2d offsets,Deformable convolution predicts and adds 2D offsets to the regular grid sampling locations.
+aggregated feature vector z,deformed sample locations,Information from the deformed sample locations is aggregated to obtain the aggregated feature vector z.
+linear projections of zq,zr,Cross attention is used between the linear projections of zq and Zr to aggregate information.
+feature aggregation,deformed sample locations,Feature aggregation is done by using cross attention between zq and Zr.
+z and zq,concatenated,The feature vectors z and zq are concatenated along with q to be processed by another architecture.
+linear layer heads,occupancy logits and flow,The linear layer heads predict occupancy logits and flow based on the concatenated feature vectors.
+implicit network,occupancy loss,"The implicit network is trained by minimizing a linear combination of an occupancy loss, which is calculated using binary cross entropy loss between predicted and ground truth occupancy."
+flow loss,predictive motion,"The flow loss is supervised to predict the motion of a query location when it is occupied, using ℓ2 error and backwards flow targets computed as rigid transformations between consecutive object box annotations."
+query points,spatio-temporal volume,"The batch of continuous query points Q is sampled uniformly across the spatio-temporal volume [0, H] × [0, W ] × [0, T ] for training."
+rectangular region of interest (roi),height,The height of a rectangular region of interest (RoI) is a key measurement in the given context.
+rectangular region of interest (roi),width,The width of a rectangular region of interest (RoI) is crucial for defining the shape and area within the context.
+rectangular region of interest (roi),bev,"The rectangular region of interest (RoI) in BEV plays a significant role in the context, possibly in the context of sensor data or perception."
+bev,sdv,"The BEV (Bird's Eye View) surrounding the SDV (Self-Driving Vehicle) is mentioned, indicating a spatial relationship for navigation or perception in the context."
+t,future horizon,The future horizon represented by T is a parameter used for forecasting within the given context.
+experiments,datasets,Experiments conducted in the context involve the usage of specific datasets for benchmarking occupancy-flow perception and prediction.
+experiments,metrics,Metrics are an essential component of the experiments conducted to evaluate the performance of the proposed model in the context.
+implicito,state-of-the-art,IMPLICITO is shown to outperform the state-of-the-art approaches in both urban and highway settings as per the experiments conducted.
+implicito,contributions to the decoder architecture,The contributions of IMPLICITO to the decoder architecture are analyzed in ablation studies to understand their impact within the context.
+implicit decoder,explicit alternatives,The inference time of the implicit decoder is compared to explicit alternatives to evaluate its efficiency in the given context.
+datasets,argoverse 2 sensor,"The Argoverse 2 Sensor dataset is used for experiments in urban settings, providing sensor data and annotations for training and validation within the context."
+datasets,highwaysim,"The HighwaySim dataset is utilized for experiments in highway settings, contributing to the evaluation of occupancy and flow of vehicles in the given context."
+argoverse 2 sensor,u.s. cities,"The Argoverse 2 Sensor dataset is collected from U.S. cities, indicating the geographical source of the data used for experiments."
+argoverse 2 sensor,lidars,"The Argoverse 2 Sensor dataset involves sensor data from LiDARs, specifying the technology used for data collection in the given context."
+vehicle,wheeled device,A vehicle is a type of wheeled device.
+vehicle,box truck,A box truck is a type of vehicle designed for transporting cargos.
+vehicle,truck,A truck is a type of vehicle used for transporting goods or materials.
+vehicle,vehicular trailer,A vehicular trailer is an attachment to a vehicle used for transporting goods.
+vehicle,truck cab,A truck cab is the compartment where the driver sits in a truck.
+vehicle,school bus,A school bus is a type of vehicle designed to transport students to and from school.
+vehicle,articulated bus,An articulated bus is a type of bus with a flexible section to accommodate more passengers.
+vehicle,message-board trailer,A message-board trailer is a trailer with a display board for showing messages.
+vehicle,railed vehicle,A railed vehicle is a vehicle designed to run on rails like a train.
+query points,occupancy,Query points are labeled with occupancy to determine if they are in use or not.
+query points,flow vectors,Occupied query points are labeled with flow vectors to represent the movement at that point.
+missing annotations,constant turn rate and acceleration (ctra) motion model,Missing annotations are filled-in using the CTRA motion model to predict the movement of the object.
+highwaysim (hwysim),dataset,HighwaySim is a dataset generated with a simulator containing realistic highway traffic scenarios.
+highwaysim (hwysim),pandar64 lidar,HighwaySim includes a Pandar64 LiDAR for realistic simulation.
+highwaysim (hwysim),maps,HighwaySim provides maps with lane-graph and ground-height for navigation.
+sequences,training/validation,Sequences are split into training/validation sets for model evaluation.
+sequences,lidar frames,Sequences are cut into examples with a history of LiDAR frames for prediction.
+metrics,baselines,Metrics are evaluated to be fair with the baselines in the study.
+av2,rectangular roi,"In AV2, a rectangular RoI is used for evaluation with specific spatial and temporal resolutions."
+hwysim,asymmetric roi,"In HwySim, an asymmetric ROI is used for evaluation."
+sdv,spatial grid,"The descriptions highlight the use of a spatial grid around the SDV position for evaluation, indicating a direct relationship between the SDV and the spatial grid."
+hwysim,asymmetric roi,"The text mentions the use of an asymmetric ROI in HwySim, suggesting a relationship between HwySim and the asymmetric ROI."
+models,ground-truth occupancy-flow,"The models are evaluated based on their ability to recover the ground-truth occupancy-flow, indicating a direct relationship between the models and the ground-truth occupancy-flow."
+map,"precision, recall, accuracy, calibration","The text explains that mAP is used to capture the precision, recall, accuracy, and calibration of the occupancy, establishing a relationship between mAP and these evaluation metrics."
+soft-iou,occupancy predictions,"Soft-IoU is used for assessing occupancy predictions, indicating a direct relationship between Soft-IoU and the occupancy predictions."
+ece,"model confidence, accuracy","ECE measures the expected difference between model confidence and accuracy, implying a relationship between ECE, model confidence, and accuracy."
+expected calibration error (ece),model confidence,ECE measures the expected difference between model confidence and accuracy.
+expected calibration error (ece),occupancy outputs,ECE measures the expected difference between model confidence and accuracy because the occupancy outputs may be used by downstream planners in a probabilistic way.
+expected calibration error (ece),predicted probabilities,ECE measures the expected difference between model confidence and accuracy because it is important to understand if the predicted probabilities are poorly calibrated.
+foreground mean end-point-error (epe),l2 flow error,EPE measures the average L2 flow error at each occupied query point.
+flow grounded metrics,occupancy labels,"Flow Grounded Metrics involve occupancy labels, predicted occupancy, and predicted flow on a spatio-temporal grid at different time points."
+flow grounded metrics,predicted flow field,Flow Grounded Metrics involve predicting the flow field to obtain the flow-grounded occupancy grid.
+flow grounded metrics,occupancy ground truth,Flow Grounded Metrics compare the flow-grounded occupancy to the occupancy ground truth to evaluate consistency between predictions.
+inference time,measuring inference time,Inference Time is the process of measuring the time taken for inference.
+truth occupancy,predicted occupancy,Both terms align with each other in the context of occupancy predictions for the next time step.
+inference time,methods,"The inference time metric is impacted by the implementation details of methods such as vanilla PyTorch code, hardware specifications, and optimization techniques."
+methods,nvidia geforce gtx 1080 ti,All methods were run on a single Nvidia GeForce GTX 1080 Ti for measuring inference time.
+baselines,perception and prediction paradigms,The baselines being compared cover different perception and prediction paradigms as outlined in Section 1.
+multipath,object-based trajectory prediction models,MULTIPATH is one of the compared baselines and belongs to object-based trajectory prediction models category.
+lanegcn,object-based trajectory prediction models,LANEGCN is one of the compared baselines and belongs to object-based trajectory prediction models category.
+gorela,object-based trajectory prediction models,GORELA is one of the compared baselines and belongs to object-based trajectory prediction models category.
+map,soft-iou,mAP and Soft-IoU are metrics being compared across different models with variations in their values.
+map,ece,mAP and ECE are metrics being compared across different models with variations in their values.
+soft-iou,epe,Soft-IoU and EPE metrics have variations in their values across different models.
+av2hwysim,implicito,Comparing the proposed model IMPLICITO with state-of-the-art perception and prediction models on AV2 and HwySim datasets.
+object-based models,object-free models,The comparison involves object-based models in the first three rows and object-free models in the subsequent rows.
+ground truth,gorela,GORELA is compared against the ground truth indicating its performance.
+ground truth,occflow,OCCFLOW is compared against the ground truth indicating its performance.
+ground truth,mp3,MP3 is compared against the ground truth indicating its performance.
+ground truth,implicito,IMPLICITO is compared against the ground truth indicating its performance.
+occupancy predictions,various models,Presentation of occupancy predictions from various models across different scenes.
+models,scenes,Models are compared across different scenes to assess their occupancy predictions.
+models,occupancy probability,Models' opacity denotes occupancy probability for assessing predictions.
+models,prediction time ∆t,Models' colormap indicates prediction time ∆t from the current to future horizon.
+failure modes,occupancy hallucination,Failure modes such as occupancy hallucination are highlighted with colored boxes for reference.
+failure modes,inconsistent with actors,Failure modes such as inconsistency with actors are highlighted with colored boxes for reference.
+failure modes,miss-detection,Failure modes such as miss-detection are highlighted with colored boxes for reference.
+object-based models,evaluation,"The evaluation process is done based on object-based models as discussed in references [16, 22]."
+occupancy-flow prediction,rasterize,The task of occupancy-flow prediction involves the process of rasterizing trajectory predictions to generate occupancy and flow fields.
+occupancy-flow prediction,flow-traced loss,OCCFLOW utilizes the occupancy-flow prediction architecture and flow-traced loss from Mahjourian et al. [24] in its process.
+occupancy-flow prediction,mp3,Occupancy-flow prediction method MP3 is an end-to-end trained perception and prediction method that predicts multi-modal forward-flow vectors.
+rasterize,multi-modal trajectory predictions,The process of rasterization involves the multi-modal trajectory predictions weighted by mode probabilities.
+mp3,forward-flow vectors,MP3 predicts multi-modal forward-flow vectors and associated probabilities to warp a predicted initial occupancy grid forward in time.
+mp3,epe,"When evaluating MP3, the Expected Point of Error is computed on the expected motion vector which is the probability-weighted sum of modes."
+occflow,occupancy,"OCCFLOW hallucinates occupancy at the initial timestep, indicating a relationship where OCCFLOW is related to occupancy."
+occflow,training,The artifacts of training with input from a pre-trained detection model are related to OCCFLOW.
+reverse flow vectors,attention offsets,"Fig. 4 plots the reverse flow vectors as well as the attention offsets, indicating a relationship between these two concepts."
+model,backward flow vectors,"The model has learned to 'look backwards' along the lanes to gather relevant features despite the offsets being unsupervised, showing a relationship between the model and backward flow vectors."
+implicito,mp3,"IMPLICITO outperforms MP3, with IMPLICITO maintaining occupancy into the future more accurately than MP3."
+attention offsets,general and expressive mechanism,"The attention offsets are a more general and expressive mechanism compared to MP3’s forward flow warping, showing a relationship between attention offsets and a general mechanism."
+decoder architecture,occupancy-flow decoders,"The influence of the decoder architecture is discussed in the context of various occupancy-flow decoders, indicating a relationship between the decoder architecture and occupancy-flow decoders."
+lidar,input,LiDAR is used as an input for the process
+implicito,implicit decoder architecture design,IMPLICITO uses an implicit decoder architecture design
+convnet,encoder,CONVNET implements the decoder but takes input from an encoder
+feature map,encoder,feature map is used as input from the encoder
+decoder architecture,feature map,decoder architecture is related to the feature map used as input
+implicito,implicito,IMPLICITO is used as a reference point for the ablation study
+implicito,decoders,IMPLICITO outperforms all other decoders in most metrics
+implicito,backwards flow field predictions,IMPLICITO provides visualizations of backwards flow field predictions
+implicito,attention offset predictions,IMPLICITO also provides visualizations of attention offset predictions
+av2,hwysim,Results are presented for both AV2 and HwySim datasets
+implicito,attention offset,IMPLICITO predicts attention offset and outperforms other models
+implicito,urban and highway settings,"IMPLICITO outperforms all others across all metrics and both datasets, showing the suitability of IMPLICITO in both urban and highway settings."
+object-based models,object-free approaches,"The object-based models generally under-perform relative to the object-free approaches, likely because the object-based models are not optimized for occupancy-flow directly."
+gorela,thresholding to produce instances,The qualitative results of GORELA show that thresholding to produce instances can result in missed detections.
+trajectory parameterization,rasterized occupancy,"The trajectory parameterization results in rasterized occupancy that is more often inconsistent with the map, or inconsistent due to apparent collisions with other actors."
+object-based approaches,soft-iou,"Interestingly, on AV2, the object-based approaches have a high Soft-IoU despite their inaccurate occupancy ranking, due to being overconfident."
+easy examples in av2 with stationary vehicles,64.4% of actors are static within the prediction horizon,"In the evaluation set, 64.4% of actors are static within the prediction horizon in AV2 with stationary vehicles."
+object-based models,hwysim,"The object-based models have worse relative Soft-IoU on HwySim, which has a much higher proportion of dynamic actors."
+object-based models,hwysim,object-based models are implemented on HwySim
+mp3,occflow,MP3 outperforms OCCFLOW in joint perception and prediction
+mp3,implicito,"MP3 is trained end-to-end in the object-free paradigm, while IMPLICITO uses offset mechanism to increase the effective receptive field"
+implicito,convnet,IMPLICITO outperforms CONVNET in occupancy-flow prediction
+mp3,convnet,MP3 and CONVNET fail to match IMPLICITO in performance
+occupancy-flow prediction,number of offsets,The number of offsets (K) influences the occupancy-flow prediction. The attention offset visualizations suggest that the predicted attention offsets play a role in achieving state-of-the-art performance.
+attention offsets,implicit decoder,The predicted attention offsets of the implicit decoder contribute to its state-of-the-art performance.
+k = 0,occupancy-flow prediction,Ablating the number of predicted offsets (K) affects the occupancy-flow prediction. K = 0 predicts occupancy-flow from zq alone without cross-attention.
+k = 1,hwysim,"K = 1 outperforms K = 0, especially on HwySim. The attention offsets expand the receptive field of a query point, leading to improved predictions."
+k = 1,occupancy prediction metrics,K = 1 exhibits the best occupancy prediction metrics compared to other numbers of attention offsets.
+k = 4,flow metrics,K = 4 performs the best in some flow metrics. Having more attention offsets improves performance when occupancy could come from multiple past locations.
+pancy,location,pancy could come from more than one past location
+location,complex intersections,"e.g., complex intersections"
+location,scene 2 of fig. 3,Scene 2 of Fig. 3
+examples,rare,These examples are rare in the training and evaluation datasets
+offsets,one offset,simple cases where one offset suffices could introduce noise
+k = 4,k = 1,explaining why K = 4 does not outperform K = 1
+decoder inference time,object-free decoders,Inference Time Comparison: comparing the decoder inference time of explicit object-free methods in the literature against the decoder of IMPLICITO with K = 1
+decoder inference time,fig. 5,Fig. 5 presents the inference time as a function of the number of query points
+object-free decoders,tab. 1,object-free decoders presented in Tab. 1 on HwySim
+implicito,k = 1,IMPLICITO uses K = 1
+implicito,query points,"IMPLICITO has a constant inference time for ≲ 20,000 query points because it is batched over query points."
+gpu,operations,"Once the GPU is saturated, the operations are run sequentially so inference time increases approximately linearly."
+explicit decoders,inference times,The explicit decoders have approximately constant inference times and are significantly slower than IMPLICITO in this “planner-relevant” range.
+neural network,implicit architecture,We have proposed a unified approach to joint perception and prediction using a neural network that implic- itly represents occupancy and flow over time with a neural network.
+implicit architecture,prediction,Our implicit architecture predicts occupancy and flow more accurately than contemporary explicit approaches in both urban and highway settings.
+implicit architecture,object-based perception,Our implicit architecture outperforms more traditional object-based perception and prediction paradigms.
+future,improvements,"In the future, we plan to assess the impact of our improvements on the downstream task of motion planning."

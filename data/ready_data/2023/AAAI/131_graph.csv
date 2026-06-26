@@ -1,0 +1,138 @@
+node_1,node_2,edge
+timodal representation,vision-language downstream tasks,Timodal representation is related to downstream tasks such as understanding and image-text retrieval.
+vision-language foundation model,excellent performance,A foundation model aims to have high performance while being easy to train and scalable.
+model architecture,pre-training tasks,The architecture and pre-training tasks contribute to the model's effectiveness and scalability.
+dual-encoder architecture,unified architecture,Recent methods are divided into two categories: dual-encoder and unified
+dual-encoder methods,bert (devlin et al. 2019),Dual-encoders use modality-specific models like BERT for separate encoding.
+vit (dosovitskiy et al. 2021),modality-specific models,ViT is another example of a modality-specific model used in dual-encoder methods.
+fusion module,dot product fusion (radford et al. 2021),Some dual-encoder methods use a shallow fusion method like dot product for modality interaction.
+transformer encoder,deep fusion (zeng,zhang
+scaling up,efficiency,Deep fusion methods face challenges in scaling up and can be less efficient.
+internship at bytedance,authorship note,The work was done during a Junyi intern period at ByteDance
+aaai copyright,all rights reserved,Copyright information belongs to the Association for the Advancement of Artificial Intelligence (AAAI).
+performance on vqa test-dev,training hours,The figure shows performance of models on VQA test-dev based on different training hours.
+pre-training objectives,model's scalability,Excessive pre-training objectives can lead to a reduction in model scalability
+model scalability,designing pre-training models,Model scalability is crucial in designing pre-training models
+efficient vision-language foundation model (eve),unified modality-aware transformer,EVE proposes a unified modality-aware Transformer for pre-training.
+unified modality-aware transformer,mixture-of-experts,The Transformer uses a shared Multi-Head Self-Attention module and a Modality-Aware MoE module for cross-modal encoding and fusion.
+modality-aware moe,modality-specific information,MoE helps capture modality-specific information by considering the differences between modalities.
+modality routing technique,moe,The introduced modality routing technique improves the router's ability to select suitable experts for each modality.
+pre-training task,masked signal modeling,EVE employs a single unified pre-training task
+recent success,large language models,The recent success refers to the achievements demonstrated by large language models like Ouyang et al. (2022)
+pre-training tasks,masked signal modeling technique,We propose a unified masked signal modeling that combines masked pixel and language modeling
+generative pre-training paradigm,wang et al. (2023),Some methods apply this paradigm
+generative pre-training,kwon et al. (2023),Kwon et al. also use generative objectives with complex targets like visual tokens.
+generative pre-training,zhao et al. (2023a),Zhao et al. utilize visual tokens and momentum features
+raw signals from image-text pairs,eve,EVE utilizes these signals directly
+pre-training speed,eve,EVE is 3.5x faster than incorporating ITC and ITM.
+eve,visual question answering,EVE demonstrates effectiveness on VQA tasks.
+eve,visual reasoning,EVE performs well on visual reasoning tasks.
+eve,image-text retrieval,EVE achieves SOTA on image-text retrieval and VQA/NLVR2 tasks.
+davinci (diao et al. 2023),prefix language modeling,DAVINCI extends prefix language modeling to vision.
+mamo (zhao et al. 2023a),multimodal representation,MAMO enriches representation by using momentum features in masked representation modeling.
+mamo (zhao et al. 2023a),momentum teacher model,MAMO relies heavily on a momentum teacher model to avoid divergence.
+methods using masked pixel modeling,itc (radford et al. 2021),Some methods require additional pre-training tasks like ITC.
+methods using masked pixel modeling,itm (li et al. 2019),Some methods require additional pre-training tasks like ITM.
+vl-mae (he et al. 2022b),masked pixel modeling,VL-MAE applies masked pixel modeling only to the image encoder.
+m3ae (geng et al. 2022),unified image-language masking,M3AE leverages a unified approach to mask and reconstruct images and text.
+eve,masked signal modeling,EVE unifies masked pixel and language modeling into masked signal modeling.
+eve,random masking,EVE employs random masking on both image and text.
+eve,better performance and scalability,EVE simplifies and accelerates training
+mixture-of-experts (moe),computer vision,MoE has been extensively explored in computer vision.
+mixture-of-experts (moe),natural language processing,MoE has also been applied in natural language processing.
+limoe,multimodal learning,LIMoE is a method designed for balancing different modalities.
+uni-perceiver-moe,conditional moe,uni-perceiver-moe employs conditional MoE for multimodal learning.
+vlmo,vl-moe,Both VLMO and VL-MoE use shared experts in deep layers for multimodal tasks.
+modality-aware moe,multimodal learning,Proposed by the author
+backbone network,unified multimodal transformer,The backbone network consists of a unified Transformer with shared attention and MoE.
+multimodal learning,unimodal learning,differences
+feed-forward network,inappropriate fusion,resulting from using the same FFN for all modalities
+modality-specific moe,alignment of different modalities,may not benefit
+modality-aware mixture-of-experts (moe),modality routing technique,incorporates the technique on top of the network
+modality-aware moe,soft router (deep layers),uses a soft router with top-k=2 in deeper layers
+modality-aware moe,hard router (shallow layers),uses a hard router in shallower layers
+pre-training tasks,masked signal modeling,includes tasks like MLM
+vision mask tokens,encoder,added during masked token modeling
+hyperparameter α,avoid overwhelming other objectives,set at 0.001 by default
+efficiency,soft router (top-k=2),considered for computational efficiency in deep layers
+modality-aware routing approach,router,The proposed method enhances the router by incorporating modality-specific embeddings and a best-effort strategy.
+modality-specific embeddings,images (bi),Modality-specific embeddings are used for images
+modality-specific embeddings,text (bt),Modality-specific embeddings are also used for text
+softmax function,routing function,The new routing function uses softmax to compute probabilities based on input加上modality embeddings.
+load-balancing loss,auxiliary loss,An additional loss to balance routing and prevent careful weight tuning
+encoder (h(·)),decoder (θ(·)),h(·) and θ(·) are used for encoding and decoding
+masked image (ˆi),mlm (masked language modeling),ˆI is used in the MLM objective
+masked text (ˆt),mlm (masked language modeling),ˆT is the corrupted text input for the MLM objective.
+encoder (h(·)),masked language modeling (mlm),The encoder is used in conjunction with MLM for predicting masked text tokens.
+nfi,load-balancing loss (laux),NfI is a factor in the calculation of the load-balancing loss.
+performance,previous methods,NXi approach competes favorably with existing methods.
+scalability,nxi approach,The NXi approach is designed to be easily scalable.
+masked language modeling (mlm),bert (devlin et al. 2019),Inspiration from BERT's MLM objective in the text processing.
+cross-entropy loss,masked token prediction,The cross-entropy loss is computed between the predicted probability (Pmlm) from the text decoder and the ground truth on each masked token.
+text decoder,mlp with softmax layer,A two-layer MLP with a softmax layer serves as the text decoder in the model.
+masked image modeling (mim),semantically rich visual features,Previous MIM methods used visual features from the model or discrete visual tokens as targets
+mim,visual tokenizers,Training visual tokenizers is challenging due to varying impacts on performance and potential error propagation.
+mim,visual features (e.g.,from zhao et al. 2023a
+mim,rgb pixels,scene depth
+visual self-supervised learning,rgb pixels,scene depth
+momentum distillation,preventing model divergence,Employed to stabilize training when using visual features as MIM targets.
+scene depth,hog,scene depth and HOG are additional techniques mentioned together
+training process,complexity,The complexity of the training process is increased due to scene depth and HOG
+image pixels,reconstruction target,Image pixels are chosen as the reconstruction target to maintain simplicity and effectiveness.
+mae (he et al. 2022a),asymmetric design,MAE adopts an asymmetric design for MIM
+image decoder,mim (masked image modeling),The image decoder is used to reconstruct raw pixels based on partial image representation and masked text tokens
+loss function (lmim),mean square error,Lmim computes the mean square error between raw pixels and the reconstructed image.
+pre-training datasets,mscoco captions,visual genome
+coco,downstream tasks,Some downstream tasks are based on COCO
+eve-large,larger dataset,EVE-Large is pre-trained on a larger dataset than the base model.
+pre-training data,downstream tasks,The context discusses how the pre-trained model is evaluated on various downstream tasks
+eve-base,eve-large,EVE-Base has 12 Transformer blocks
+eve-base,pre-training steps,EVE-Base is pre-trained for 480k steps
+soft router,blocks,A soft router is employed with 32 experts on specific blocks in EVE-Base and EVE-Large.
+image resolution,224 × 224,Both models use images at a resolution of 224 × 224 during pre-training.
+mim,masking,In MIM
+mlm,text masking,50% of the text is masked in MLM (Masked Language Modeling).
+beitv2,initialization,EVE is initialized with BEiTv2
+visual question answering (vqa),vqa2.0 dataset,VQA2.0 is used as the evaluation dataset for this task.
+natural language for visual reasoning (nlvr2),sentence and two images,The task involves answering questions based on a sentence and two accompanying images.
+coco image retrieval,performance,COCO image retrieval has a performance metric of R@1
+eve-large,coco,EVE-Large demonstrates better performance on COCO compared to other Large or Huge models.
+eve-large,flickr30k,EVE-Large also shows better performance on Flickr30K.
+image-text contrastive learning,pre-training of eve,Image-Text Contrastive Learning is not part of the pre-training process for EVE.
+image-text matching,pre-training of eve,Image-Text Matching is also not included in the pre-training of EVE.
+nlvr2,accuracy,Ablation studies report accuracy on NLVR2 after pre-training.
+vqa dev set,accuracy,Ablation studies measure accuracy on the VQA dev set.
+flickr30k,recall,Top-1 recall is reported on Flickr30K during ablation studies.
+soft router,default,The soft router with top-k = 2 is used as the default method.
+mim target,comparison,Table 3 compares different MIM targets
+image token,pixel reconstruction,Reconstructing pixels is found to be superior to reconstructing image tokens for all tasks.
+masking ratio,impact,Figure 4 investigates the impact of different masking ratios on vision and language performance.
+higher vision masking ratio,improved performance,A higher masking ratio for vision leads to improved representation learning.
+previous work,difference,The study differs from prior work in the assumption that raw image signals are highly redundant.
+number of experts,performance,The number of experts and the selection of top-k are crucial; performance deteriorates as the number of selected experts decreases.
+top-k,performance,Performance improves when the number of experts increases with a fixed k value
+moe design,computational complexity,MoE design affects the model's computational complexity.
+moe design,parameters,The number of experts determines the model's parameters.
+figure 5,deterioration in performance,This figure shows a clear demonstration of performance degradation as the number of selected experts decreases.
+k = 1,decrease in performance,When k = 1
+k = 2,improvement in performance,For k = 2
+deep ffn,impact on performance,Ablation study on deep FFN design investigates its effect on task performance.
+shared ffn,performance,Shared FFN indicates that using the same FFN for different modalities can influence performance.
+hard router,soft router,Comparison between hard and soft router methods for routing information.
+transformer block,impact of parameters per token,The context discusses the investigation of the effect of parameters per token on the performance
+laux = 0,modality routing,The setting 'Laux = 0' is mentioned as a comparison point for the proposed modality routing
+frequency distribution of tokens,experts in the last layer of eve-base,This refers to the visualization of how different modal tokens are routed to specific experts
+modality gap,shared ffn,The modality gap is contrasted with the performance of Shared FFN
+modality-aware moe,proposed method,The paper introduces a modality-aware Mixture of Experts (MoE) as a proposed solution for improving performance.
+performance,multimodal foundation model (eve),The paper's main focus is on evaluating the performance of the EVE model
+masked signal modeling,pre-training method for eve,EVE is pre-trained using Masked Signal Modeling
+visual attention maps,grad-cam (visualization),Grad-CAM is used for visualizing the self-attention maps in tasks like masked signal modeling and VQA.
+vqa task,visualization (grad-cam),The VQA Task is one of the tasks where Grad-CAM heatmaps are employed for analysis.
+conclusion,multimodal foundation model (eve),The conclusion summarizes the paper's findings
+model eve,pre-training method (maksed signal modeling),EVE is pre-trained using Maksed Signal Modeling
+modality-aware moe,eve's component,EVE incorporates Modality-Aware MoE for flexible multi-modal encoding.
+pre-training speed,itc and itm,EVE pre-trains 3.5 times faster than with ITC and ITM
+scaling,larger model,more pre-training data
+vision language downstream tasks,performance comparison,Experiments show EVE outperforms existing methods in tasks like VQA and NLVR2.
+modality routing,ablation study,An examination of modality routing technique is conducted
+national natural science foundation of china (nsfc),funding source,The work is financially supported by NSFC Grant No. 61876224.

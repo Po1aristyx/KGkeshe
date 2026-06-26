@@ -1,0 +1,182 @@
+node_1,node_2,edge
+deepfake technology,applications,The context discusses how deepfake technology gives rise to various applications.
+widespread proliferation of high-fidelity fake videos,confusion and deception,The proliferation leads to confusion and shattered trust in the reliability of visual information.
+current deepfake detection approaches,overfitting,Detection methods risk overfitting to specific forgery clues within local regions.
+existing works,neural networks,These works heavily rely on neural networks for feature extraction.
+deficiencies in current approaches,unsatisfactory accuracy,limited generalizability
+our paper's approach,three designs,We propose a framework with three main components to address these challenges.
+broader forgery clues,global semantic-rich feature,Our first design involves capturing broader clues through non-overlapping local representations and fusion.
+local information loss,guaranteeing orthogonality,Derived from information bottleneck theory
+global information loss,fusing local representations,removing task-irrelevant info
+deepfake technology,forgery clues,The context highlights the risk of deepfake technology
+blending ghosts,forgery clues,Blending ghosts is an example of a forgery clue that distinguishes real and synthetic images.
+consistent and symmetrical skin tones,forgery clues,These are also mentioned as specific forgery clues that help identify deepfakes.
+tooth details,forgery clues,Tooth details contribute to the detection of forged content.
+stitching seams,forgery clues,Stitching seams are another aspect of forgery that can be detected.
+deepfake detection,mitigating risks,Accurate deepfake detection is essential for addressing the risks posed by deepfake technology.
+cnn networks,deepfake detection,One approach uses CNN networks to automatically learn forgery clues in manipulated images.
+human observation and understanding,deepfake detection,Another approach incorporates human insights to focus on high-level semantic and artifact-based differences.
+high-level semantic imperfections,counterfeit detection,Studies concentrate on identifying the imperfections in fake images.
+underlying imperceptible patterns,deepfake detection,Some methods target anomalies like blending ghosts and frequency domain issues for detection.
+state-of-the-art approaches,empirical insights,After examining these methods
+auc (area under the curve),performance metric,Current methods face a decrease in AUC when applied to unseen datasets
+faceforensics++ (rossler et al. 2019),benchmark dataset,FaceForensics++ is a widely used benchmark dataset for deepfake detection.
+celeb-df (li et al. 2020b),benchmark dataset,Celeb-DF is another dataset
+dfdc (dolhansky et al. 2020),benchmark dataset,DFDC is a third dataset contributing to the evaluation of the proposed method's performance.
+deepfake detection method,proposed framework,The paper proposes a novel framework specifically designed for detecting deepfakes.
+mutual information objective,disentangled task-relevant local features,The method uses mutual information to extract task-specific and independent features.
+local feature aggregation,eliminating superfluous information,The method includes an objective to aggregate local features while removing irrelevant details.
+state-of-the-art performance,method,The proposed method achieves the best results compared to existing approaches.
+in-dataset setting,cross-dataset setting,The study evaluates performance in both scenarios where training and testing data come from the same or different domains.
+deepfake detection approaches,focus on specific regions,The paper reveals that many existing methods concentrate on face swap boundary areas.
+deep learning,various fields,deep learning has found applications in
+deepfake,serious risks,the ease of access and misuse of deepfake technology leads to
+deepfake detection,counteraction against threats,developing deepfake detection is pertinent and urgent
+sophistication of deepfake technology,challenge for detection,faces a significant challenge due to highly realistic content
+semantic facial feature clues,focus of literature,a large body of literature focuses on
+ict models,identity differences,models identity differences in inner and outer facial regions
+face x-ray,blending boundaries detection,finds blending boundaries of face swap
+sbis,private augmented datasets,build private augmented datasets
+chen et al. (2022a),blending-based forgeries,expands upon blending-based forgeries
+lipforensics,mouth movement irregularities,observes irregularities in mouth movements
+mouth movements,forgery videos,The context discusses irregularities in mouth movements as a characteristic of forgery videos.
+face swaps,semantic-guided forgery detection,These methods are mentioned as distinct types of forgery detection
+human understanding differences,frequency domain,Works like Qian et al. (2020) utilize frequency domain analysis to account for human perception disparities.
+frequency clues,compression errors,Qian et al. (2020) use frequency as evidence to detect forgeries
+ghost artifacts,up-sampling operations,Frank et al. (2020) and SPSL (Liu et al. 2021) focus on detecting ghost artifacts caused by upsampling in generative networks.
+multi-headed attention modules,low-level textural features,high-level semantics
+task-relevance,independence of attention regions,There is a challenge in ensuring that attention regions are relevant and unrelated to the task
+attention-based models,cross-dataset scenarios,The performance of attention-based models may not generalize well across different datasets.
+attention-based models,data scarcity,The performance of attention-based models is greatly influenced by the lack of available data.
+deepfake detection,binary classification problem,Deepfake detection is considered a binary classification task where the goal is to differentiate genuine from synthetic images.
+early methods,automatic learning,Early deepfake detection methods used deep neural networks to automatically learn differences between real and fake images.
+recent works,human understanding,Recent approaches draw inspiration from human perception
+current approaches,unintentional learning,Current deepfake detection methods inadvertently learn certain aspects
+method overview,facial bounding boxes,In the data preparation phase
+local information blocks,disentangled local features,Local information blocks extract multiple features specific to different forgery regions
+global feature g,classification module,The global feature is fused and passed to a classification module for the final prediction.
+global information loss,information bottleneck theory,The Local and Global Information Loss is designed based on information bottleneck theory
+limited generalizability,state-of-the-art methods,The overfitting issue leads to limited generalizability
+trivial features,neural networks of current methods,Current methods risk converging to trivial features due to the lack of theoretical constraints.
+adaptive extraction of local features,extraction of forgery clues,The proposed approach broadens the extraction of forgery clues by adaptively extracting non-overlapping local features.
+local disentanglement module,non-overlapping local features,This module is responsible for extracting non-overlapping local features from the input.
+global aggregation module,global representation,The global aggregation module combines the extracted local features into a comprehensive global representation.
+image preprocessing,face regions,Preprocessing involves extracting face regions using a pre-trained backbone network.
+pipeline,proposed approach,The overall pipeline includes image preprocessing
+preprocessed image,input to local disentanglement module,The preprocessed image serves as the input for the local feature extraction process.
+local disentanglement module,feature extraction backbone networks,The local disentanglement module consists of n local information blocks
+resnet (he et al. 2016),feature extraction backbone networks,Feature extraction backbone networks
+local features,task,Local features are designed to contain comprehensive information related to the task.
+local features,zi (local feature),Each local information block extracts a unique local feature
+joint local representation z,local features (zi),The joint local representation Z is obtained by concatenating all local features
+local information loss (llil),local features,LLIL guides the extraction process to ensure that local features are orthogonal to each other.
+global aggregation module,local features,The global aggregation module fuses local features for the final global representation G.
+global representation g,classification,The global representation G is used for classification purposes.
+global information loss (lgil),global representation g,LGIL helps retain task-related information and eliminate superfluous information in the fused joint local representation Z.
+local information loss,input image x,Local Information Loss is applied to an input image x with multiple local feature representations (zi).
+local feature representations (zi),input image x,Each zi is associated with the input image x.
+comprehensiveness,local feature representations (zi),The objective is to ensure that local features contain maximal task-relevant information (Z).
+orthogonality,local feature representations (zi),Individual local features should be non-overlapping
+mutual information (i(y;z)),labels (y),I(y;Z) measures the amount of task-related information in Z and is related to the entropy of y.
+interaction information (i(zi; zj)),local feature representations (zi,zj)
+interaction information,definition,The context defines interaction information as per McGill (1954)
+label information,target information,The primary concern is label-related (target) information
+global information loss,objective,An objective inspired by the information bottleneck is formulated to eliminate superfluous information.
+eq. 4,maximization,The optimization objective in Eq. 4 focuses on maximizing the target term.
+eq. 5,comprehensiveness and orthogonality constraints,Eq. 5 and Eq. 4 together ensure the comprehensiveness and orthogonality of local features.
+local objective,red regions,The local objective
+dkl,objective,DKL is transformed into the objective for maximization to minimization.
+objective,maximization,The original objective is transformed from maximization to minimization.
+objective,minimization,After transformation
+local features,orthogonal,Local features become mutually orthogonal during optimization.
+local features,covering,Local features maximize the covering of task-related information.
+forgery clues,disentangled,Our method discovers more forgery clues and disentangles forgery regions.
+local features,richer task-related information,Disentangled local features provide richer task-related information.
+global aggregation module,information bottleneck,This module acts as an information bottleneck to eliminate superfluous information.
+information bottleneck,h(g),H(G) represents the total information content in the global representation G.
+information bottleneck,i(y; g),I(y; G) refers to the mutual information between y and G
+global representation,g,G is obtained after eliminating superfluous information through the global aggregation.
+global representation,robustness,The global representation contributes to the robustness of the machine learning model.
+information bottleneck,tishby,pereira
+lib,curse of dimensionality,LIB is an intractable problem due to the curse of dimensionality.
+superfluous information,network operations,Minimizing superfluous information is delegated to network operations.
+label information,z,The task-relevant information in G is upper-bounded by that in Z.
+label information,g,The goal is to minimize the difference between I(y;Z) and I(y;G).
+variational approach,minimizing label information difference,Employed to optimize G for the sufficiency of label information.
+global information loss,dkl[pz∥pg],Computed as the expectation of DKL between PZ and PG.
+model parameters,ϕ,Represents the model's global aggregation module.
+overall objective,cross-entropy classification loss,Consists of classification loss
+overall objective,local information loss,Weighted by α in the overall objective function.
+overall objective,global information loss,Weighted by β in the overall objective function.
+experiments,large-scale deepfake datasets,Conducted on five large-scale datasets for method evaluation.
+experimental setup,state-of-the-art methods,Comparison with existing methods in the evaluation.
+experimental setup,ablation study,Includes an analysis of different components.
+experimental setup,visualization results,Visual representations of the findings.
+experimental setup,datasets,The first part discusses the setup
+datasets,faceforensics++ (ff++),FF++ is mentioned as the primary dataset
+datasets,celeb-df (li et al. 2020b),Celeb-DF has two versions
+datasets,deepfake detection challenge (dfdc) (dolhansky et al. 2020),DFDC includes DFDC-Preview and DFDC
+implementation details,data preprocessing,This involves using RetinaFace for face extraction and balancing the training set.
+implementation details,model architecture,Employed is a specific model
+retinaface (deng et al. 2020),face extractor,A state-of-the-art technology used for extracting faces in the data preprocessing stage.
+pre-trained resnet-34,model architecture,The model architecture employs four local information blocks (LIBs) using pre-trained ResNet-34 as its backbone.
+liebel and körner (2018) method,training method,For training
+accuracy (acc),evaluation metric,We utilize the accuracy rate as one of the metrics in our evaluations
+area under receiver operating characteristic curve (auc),evaluation metric,Considering the imbalance of pristine and manipulated videos
+log-loss score,evaluation metric,We evaluate the log-loss score
+frame-level metrics,comparison method,Since our method uses a single frame as input
+ff++ (c23),in-dataset,In-dataset performance includes training and testing on FF++ (C23).
+cd2,in-dataset,In-dataset evaluations also consider CD2.
+dfdc,in-dataset,DFDC is another dataset for in-dataset evaluations.
+cross-dataset setting,comparison scenario,We benchmark our method against state-of-the-art methods in a cross-dataset setting.
+in-dataset performance,ff++ (c23),The context discusses in-dataset performance using FF++ (C23) as one of the evaluation datasets.
+in-dataset performance,cd2,FF++ (C23) and CD2 are both used for in-dataset evaluations.
+in-dataset performance,dfdc,DFDC is another in-dataset where the method is compared.
+auc,our method,Our method achieves an AUC of 0.939 on DFDC
+logloss,our method,Our method's Logloss is better than the champion team's in DFDC.
+cross-dataset performance,ff++ (c23),FF++ (C23) is used for training and then tested on unseen datasets in the cross-dataset setting.
+cross-dataset performance,cd1,CD1 is one of the unseen datasets for testing cross-dataset performance.
+cross-dataset performance,cd2,CD2 is another unseen dataset for cross-dataset evaluation.
+cross-dataset performance,dfdc-p,DFDC-P is part of the unseen datasets in the cross-dataset setting.
+video-level auc,our method,Our method computes video-level AUC for comparison with video-level methods.
+local information loss (llil),global information loss (lgil),Both LLIL and LGIL play key roles in performance improvement
+our method,aunet,Our method surpasses AUNet in terms of AUC with scores of 0.936
+our approach,models trained on private augmented datasets (aunet,sbis
+methodxception (rossler et al. 2019),f3-net (qian et al. 2020),These are mentioned as competitors
+methodxception,rossler et al. (2019),MethodXception is a concept from the field of computer vision
+f3-net,qian et al. (2020),F3-Net is another approach introduced by Qian et al. in 2020
+pcl+i2g,zhao et al. (2021b),PCL+I2G is a technique developed by Zhao et al. in 2021b
+fst-matching,dong et al. (2022a),FST-Matching is a contribution by Dong et al. in 2022a
+lipforensics,haliassos et al. (2021),LipForensics is a dataset or methodology created by Haliassos et al. in 2021 for detecting lip synchronization manipulation.
+ftcn,zheng et al. (2021),FTCN refers to a model or technique developed by Zheng et al. in 2021
+luo.et al.,luo et al. (2021),Luo.et al. is a research team or publication by Luo et al. in 2021
+resnet-34+ sbis,shiohara and yamasaki (2022),ResNet-34+ SBIs is a model architecture or approach employed by Shiohara and Yamasaki in their 2022 work.
+efnb4+ sbis,shiohara and yamasaki (2022),EFNB4+ SBIs is another model or technique developed by Shiohara and Yamasaki in their 2022 study.
+ratf,gu et al. (2022b),RATF is a proposed method or algorithm by Gu et al. in 2022b
+li.et al.,li et al. (2022),Li.et al. is a research team or publication by Li et al. in 2022
+altfreezing,wang et al. (2023),AltFreezing is a technique introduced by Wang et al. in 2023
+aunet,bai et al. (2023),AUNet is a neural network architecture developed by Bai et al. in 2023
+ours (resnet-34),training,Our method
+0.869-0.870,cross-dataset comparison,These numbers represent the video-level AUC scores achieved by the method on different datasets.
+0.936dfdc-p,-0.7440.740,Performance metrics on DFDC-Preview (DFDC-P)
+0.785-0.862,other benchmark datasets,The method's performance on multiple benchmark datasets.
+0.710∗,private data (pd),Results collected from private datasets
+table 3,celeb-df-v2 (cd2),dfdc-preview (dfdc-p)
+figure 4,various types of forgery methods,Visual examples showcasing the method's performance on Deepfakes
+llil,lgil,Both LLIL and LGIL are components of the proposed method
+table 4,ablation study,An examination of the impact of LLIL and LGIL on the overall method's performance.
+acc↑,auc↑,Frame-level accuracy (ACC) and area under the curve (AUC) metrics for evaluation.
+model's generalization performance,model overfitting,As the number of LIBs increases
+local information loss (llil),model interpretability,LLIL is used for visualization to assess interpretability
+grad-cam,representation visualization technique,Grad-CAM is applied to visualize the model's focus on different forgery regions.
+forgery regions (nose,cheek,forehead
+local representations (z1-z4),orthogonality,Our method shows that LLIL promotes orthogonal extraction of local representations.
+local representations (z′1-z′4),imbalance in forgery-related clues,Without LLIL
+information bottleneck based framework,deepfake detection,The method is designed for detecting deepfakes
+local information losses,task-related independent local features,Derived from the information bottleneck
+global information objective,sufficient and purified global representation,The global objective combines local features to create a comprehensive representation for accurate classification.
+state-of-the-art performance,cross-dataset performance,Experiments show that the method performs well not only within the dataset but also across different datasets.
+zhejiang provincial natural science foundation of china,funding support,The work receives partial funding from this provincial research foundation.
+national natural science foundation of china,funding support,Additional funding comes from various national science foundation grants.
+key r&d program of zhejiang province,funding support,The project also benefits from the provincial key research and development program.
+deepfake detection,reliable solution,The proposed method has the potential to be a dependable solution for real-world deepfake detection.

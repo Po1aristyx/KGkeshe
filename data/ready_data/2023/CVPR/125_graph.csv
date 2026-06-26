@@ -1,0 +1,232 @@
+node_1,node_2,edge
+detr-like segmentors,semantic segmentation,The DETR-like segmentors have underpinned breakthroughs in semantic segmentation by training queries representing class prototypes or target segments.
+masked attention,queries,Masked attention is proposed to restrict each query to attend only to foreground regions predicted by the decoder block.
+masked attention,preceding decoder block,Masked attention relies on the preceding decoder block to predict foreground regions for easier optimization.
+dataset statistics,localization,Learnable parameterized positional queries encode dataset statistics leading to inaccurate localization for individual queries.
+dynamic focus-aware positional queries (dfpq),semantic segmentation,"DFPQ design dynamically generates positional queries conditioned on cross-attention scores and positional encodings for image features, preserving rich localization information for target segments."
+high-resolution cross-attention,local relation aggregation,Efficiently dealing with high-resolution cross-attention involves aggregating contextual tokens based on low-resolution cross-attention scores for local relation aggregation.
+mask2former framework,sota performance,"With modifications, the framework achieves SOTA performance and outperforms Mask2former."
+mask2former,framework,Mask2former is a modification on our framework that achieves SOTA performance
+mask2former,performance,Mask2former outperforms Mask2former by clear margins in single-scale mIoU
+mask2former,resnet-50,Mask2former achieves SOTA performance with ResNet-50 backbone
+mask2former,swin-t,Mask2former outperforms Mask2former by clear margins with Swin-T backbone
+mask2former,swin-b,Mask2former outperforms Mask2former by clear margins with Swin-B backbone
+mask2former,ade20k,Mask2former achieves better performance on ADE20K validation set
+semantic segmentation,pixel,Semantic segmentation assigns each pixel in an image with a semantic class label
+detection transformer (detr),object detection task,DETR revolutionizes the paradigm of the object detection task
+queries,semantic segmentation performance,Recent segmentors follow DETR to learn a set of queries representing the class prototypes or target segments and achieve SOTA performance on semantic segmentation
+queries,positional priors,Providing the queries with meaningful positional priors is essential to learn representative queries
+queries,regions,Encouraging each query to concentrate on specific regions is essential to learn representative queries
+masked attention,query,Masked attention restricts each query to only attend to a foreground region predicted by the previous decoder block with binary masks
+positional priors,performance,Inaccurate positional priors in masked attention may deteriorate performance for two reasons
+content query,semantic information,Each query comprises a content query that contains semantic information
+positional query,positional information,Each query comprises a positional query that provides positional information for the likely locations of the target segments
+masked attention,positional queries,masked attention relies on positional queries that are randomly initialized learnable parameters
+masked attention,segment,masked attention tends to encode the average statistics across the dataset and cannot reflect the segments with large location variances
+query,predicted foreground regions,each query only attends to the predicted foreground regions
+anchor points,positional queries,recent detectors propose to encode the anchor points into the positional queries to guide queries concentrating around the anchor positions
+anchor-based query design,positional queries,anchor-based query design mitigates the mentioned issues as the positional queries are dynamically generated for each target object
+anchor-based query design,foreground regions,anchor-based query design avoids restricting the queries to only attend to the foreground regions with binary masks to mitigate the error accumulation issue
+anchor-based query design,fine-grained positional priors,"anchor-based queries cannot describe the fine-grained positional priors for semantic segmentation, which has details, edges, and boundaries"
+attention scores,salient regions,"attention scores imply the salient regions for token pruning, self-supervised learning, and semantic segmentation"
+salient regions,token pruning,The salient regions play a role in token pruning by providing the areas for pruning based on certain criteria.
+salient regions,self-supervised learning,The salient regions are utilized in self-supervised learning to extract features for learning without human annotation.
+salient regions,semantic segmentation,The salient regions are essential for semantic segmentation as they are the areas of interest in the image to be segmented.
+token pruning,self-supervised learning,Token pruning is related to self-supervised learning as it can be used to optimize the training process in an unsupervised manner.
+token pruning,semantic segmentation,Token pruning may impact semantic segmentation by removing unnecessary tokens and focusing on relevant information for segmentation.
+self-supervised learning,semantic segmentation,Self-supervised learning can contribute to semantic segmentation by providing a learning framework without manual labeling.
+dynamic focus-aware positional queries,semantic segmentation,Dynamic Focus-aware Positional Queries are proposed for semantic segmentation to improve the accuracy and precision of segmentation tasks.
+positional queries,transformer decoder blocks,The positional queries are shared among Transformer decoder blocks to maintain consistency in encoding dataset statistics.
+positional queries,anchor-based positional queries,"Compared to anchor-based positional queries, the positional queries aim to model likely positions for semantic regions without being conditional on bounding box coordinates."
+positional queries,dynamic focus-aware queries,The positional queries are transformed into dynamic focus-aware queries to provide accurate and fine-grained positional priors for semantic segmentation.
+localization information,target segments,"Localization information is extracted for the target segments, providing accurate positional priors and facilitating their location and refinement."
+dfpq,positional encodings,DFPQ benefits from more powerful positional encodings to encode neighborhood information for target segments.
+dfpq,anchor-based positional queries,"DFPQ is compared to anchor-based positional queries, showcasing its ability to cover fine-grained locations for segmentation details, edges, and boundaries."
+dfpq,fine-grained locations,"DFPQ can cover fine-grained locations for segmentation details, edges, and boundaries, including rich segmentation cues."
+hrca,segmenting small regions,"HRCA is a method proposed for segmenting small regions from high-resolution feature maps, contributing to detail mining."
+high-resolution feature maps,cross-attention,Performing cross-attention on high-resolution feature maps requires significant memory and computational resources.
+token affinity,informative areas,"Token affinity is encoded only on informative areas of high-resolution feature maps, indicating their importance in low-resolution counterparts."
+details,memory and computations,Fine-grained details are learned efficiently with affordable memory and computational resources.
+semantic segmentation,query formulation,A simple yet effective query formulation is presented for semantic segmentation in this context.
+query formulation,semantic segmentation,The query formulation improves the accuracy of semantic segmentation by providing accurate and fine-grained positional priors to localize target segments.
+positioning priors,target segments,Positioning priors help in accurately localizing the target segments in semantic segmentation.
+high-resolution cross-attention layer,segmentation details,The high-resolution cross-attention layer enriches segmentation details by discarding semantically unimportant regions for target segments.
+dfpq,hrca,Incorporating DFPQ and HRCA into Mask2former results in a significant performance gain in semantic segmentation.
+faseg,sota methods,"FASeg outperforms SOTA methods in terms of single-scale mIoU on validation sets with different backbones like ResNet-50, Swin-T, and Swin-B."
+segmentors with transformers,semantic segmentation,"Segmentors with Transformers have advanced semantic segmentation by improving representative features through modules like backbone, neck, and head."
+self-attention mechanism,backbone improvement,Improving the self-attention mechanism in Transformers enhances the backbone for better feature representation in semantic segmentation.
+self-attention mechanism,backbone,The self-attention mechanism in Transformers is improved by enhancing the backbone.
+focal self-attention,backbone,Focal self-attention combines fine-grained and coarse-grained features in a backbone self-attention layer.
+feature pyramid network (fpn),pyramid scene parsing (psp),Improvements in the feature pyramid network or pyramid scene parsing structure provide better multi-scale features with neck.
+segformer,backbone,SegFormer simplifies the feature pyramid network under the Transformer backbone for an accuracy-efficiency trade-off.
+segdeformer,external memory tokens,SegDeformer adds external memory tokens to preserve global information.
+head with transformer,detr-like end-to-end framework,The head with Transformer implements set prediction following the DETR-like end-to-end framework.
+target segments,queries,Target segments are represented by a set of queries in the DETR-like framework.
+masked attention,local features,Masked attention is proposed to restrict cross-attention only to the local features in Transformers.
+dfpq,positional priors,"DFPQ provides fine-grained positional priors that cover locations for fine segmentation details, edges, and boundaries."
+positional priors,locations,"Positon offers priors for various locations in the context for fine segmentation details, edges, and boundaries."
+positional encodings,transformers,Positonal encoding is essential for introducing the order of sequences in Transformers.
+pe,positional encodings,"PE is critical for generating positional encodings, including absolute PE and relative PE, for the input tokens."
+dfpq,pe,"DFPQ is conditional on the PE for the image features, and implementing it with more powerful PEs can enhance its representational capability."
+dfpq,conditional encoding,"DFPQ is dynamically generated based on the idea of conditional encoding, resulting in higher segmentation accuracy."
+pe strategies,transformer backbones,The effect of different PE strategies when solely pre-training Transformer backbones is investigated.
+pe strategies,positional encodings,positional encodings are generally seen as a part of the feature embeddings and directly combined with patch features after patchifying the image when solely pre-training Transformer backbones.
+positional encodings,patch features,positional encodings are combined with patch features after patchifying the image when solely pre-training Transformer backbones.
+cross-attention layers,detr-like frameworks,"In DETR-like frameworks, both the image features and the object queries require additional positional information in the cross-attention layers to provide positional priors for aggregating the query-specific context."
+image features,object queries,Both the image features and the object queries require additional positional information in the cross-attention layers of DETR-like frameworks.
+anchor positions,positional queries,Recent detectors encode anchor positions into positional queries for preserving fine segmentation details in contrast to the novel positional query formulation for semantic segmentation.
+cross-attention,detr,Cross-attention layers in DETR-like frameworks are revisited before introducing the DFPQ.
+cross-attention,object queries,Cross-attention layers in DETR-like frameworks update object queries by aggregating the image context.
+queries,keys,Both queries and keys require positional information in the cross-attention layer to introduce the order and provide positional priors encouraging high attention scores for positionally important regions.
+queries,dimensions,"The number of queries, denoted by N, is related to the hidden dimensions denoted by D."
+queries,image features,The queries Q are related to the image features Kc and Kp through the cross-attention operation.
+image features,positional encodings,The image features Kc and their positional encodings Kp are combined to get keys K in the cross-attention operation.
+queries,cross-attention,The cross-attention operation relates the queries Q with keys K and values V to aggregate image context based on the dot-product similarity.
+content query,positional query,Each query consists of a content query Qc and a positional query Qp which are used in the cross-attention operation.
+content similarity,positional similarity,Both content similarity and positional similarity contribute to calculating the attention scores in the cross-attention operation.
+positional queries,cross-attention scores,positional queries play a key role in generating cross-attention scores as discussed in the context
+cross-attention scores,localization information,cross-attention scores directly reflect the localization information for the target segments
+localization information,target segments,localization information aids in locating the target segments in DETR-like frameworks
+cross-attention scores,dynamic focus-aware positional queries,cross-attention scores are used in generating dynamic focus-aware positional queries for better understanding the context
+dynamic focus-aware positional queries,positional encodings,dynamic focus-aware positional queries involve multiplying positional encodings for image features with cross-attention scores
+cross-attention scores,fine-grained segmentation details,"cross-attention scores contribute to covering fine-grained segmentation details, edges, and boundaries"
+dfpq,positional encodings,DFPQ is calculated by multiplying the positional encodings with the cross-attention scores of the preceding decoder block
+dfpq,projection function h,DFPQ involves a projection function h after multiplying the positional encodings and cross-attention scores
+dfpq,mask2former,DFPQ is applied in each decoder block of the framework built upon Mask2former
+dfpq,backbone,DFPQ is used to provide more accurate positional priors in the Backbone part of the framework
+dfpq,pixel decoder,DFPQ is applied in each decoder block to fuse features under different resolutions using the Pixel Decoder
+dfpq,transformer decoder,DFPQ is used in each decoder block of the framework to learn representation for each target segment with the Transformer Decoder
+high-resolution cross-attention (hrca) layers,queries,HRCA layers are used to model the cross-attention between the queries and the high-resolution feature maps
+high-resolution cross-attention (hrca) layers,cross-attention scores,HRCA layers incorporate cross-attention scores to model attention between queries and high-resolution feature maps
+high-resolution cross-attention (hrca) layers,red arrows,HRCA layers mark the high-resolution cross-attention with red arrows in the framework
+top-k,pixels,Top-k selects the top-k pixels based on the cross-attention scores of the previous Transformer decoder block
+cross-attention scores,cross-attention layer,The cross-attention scores are used in the cross-attention layer of the decoder block to formulate the relation between them.
+tfpq,learnable network parameters,TFPQ generates DFPQ by dynamically providing positional priors for the target segments based on the learnable network parameters.
+dfpq,positional information,"DFPQ directly aggregates positional information, leading to different behaviors based on the implementation of different positional encodings like absolute sinusoidal function or conditional positional encodings."
+kp,conditional positional encodings,Kp is implemented with conditional positional encodings to encode neighborhood information and preserve implicit positional priors for localizing the target segments.
+efficient high-resolution cross-attention,high-resolution image features,Efficient high-resolution Cross-attention is important for segmenting high-resolution image features as established in prior arts.
+resolution image features,segmenting small regions,resolution image features are important for segmenting small regions
+resolution image features,modelling cross-attention,resolution image features are important for modelling cross-attention between object queries and high-resolution image features
+modelling cross-attention,object queries,modelling cross-attention between object queries and high-resolution image features
+modelling cross-attention,high-resolution image features,modelling cross-attention between object queries and high-resolution image features
+object queries,high-resolution image features,cross-attention between object queries and high-resolution image features
+high-resolution cross-attention layer,mining details from high-resolution feature maps,proposing an efficient High-Resolution Cross-Attention (HRCA) layer to mine details from high-resolution feature maps
+low-resolution image features,high-resolution feature map positions,selecting top-k pixels from low-resolution image features and mapping them to high-resolution feature map positions
+low-resolution cross-attention scores,high-resolution counterpart,deriving high-resolution counterpart from low-resolution cross-attention scores
+top-k pixels,high-resolution feature map scores,including top-k pixels with highest scores into the set of efficient HRCA
+efficient hrca,resource consumption,efficient HRCA saves considerable resource consumption by attending only to informative areas for high-resolution feature maps
+sparse attention methods,entire sequence,"sparse attention methods only attend to parts of the entire sequence, different from HRCA specialized for high-resolution feature maps"
+hrca,detr-like frameworks,"HRCA is specialized to DETR-like frameworks, determining the informative pixels based on their contribution to the target segments."
+hrca,rcda module,"HRCA is similar to RCDA module, both being representative sparse cross-attention methods."
+hrca,faseg,FASeg is developed upon Mask2former framework by incorporating DFPQ and HRCA.
+rcda module,rcda,Comparison between HRCA and RCDA is included in Section 4.2.
+detr-like frameworks,rcda module,Both HRCA specialized to DETR-like frameworks and RCDA module decouples cross-attention to reduce memory and computation cost.
+mask2former,pixel decoder,Pixel Decoder fuses features at multiple scales in Mask2former.
+mask2former,transformer decoder,Transformer Decoder cascades three blocks modeling cross-attention between object queries and image features of different resolutions in Mask2former.
+pixel decoder,transformer decoder,Pixel Decoder and Transformer Decoder are part of Mask2former framework.
+dfpq,faseg,DFPQ is incorporated into FASeg to provide more accurate and fine-grained positional priors for Mask2former.
+mask2former,dfpq,DFPQ is used in the cross-attention layers for each decoder block in Mask2former to provide positional priors for aggregating contextual image features.
+mask2former,hrca,HRCA is added to the fourth decoder block in Mask2former to model cross-attention on high-resolution feature maps in a top-down manner.
+dfpq,first transformer decoder block,"Since there are no cross-attention scores before the first Transformer decoder block, DFPQ is obtained for the first block by performing average pooling on the predicted foreground mask."
+hrca,segmentation details,HRCA is employed to enrich segmentation details with affordable peak-time memory footprints and computational complexity.
+faseg,mask2former,"With the modifications, FASeg achieves solid performance gain over the original Mask2former."
+hrca,implementation details,Efficient HRCA is adopted with the same training settings and implementation details as in Mask2former.
+faseg,performance comparisons,Performance comparisons with state-of-the-art semantic segmentation methods are shown in Section 4.1.
+semantic segmentation methods,ade20k,ADE20K dataset is used to evaluate the performance of semantic segmentation methods
+semantic segmentation methods,cityscapes,Cityscapes dataset is used to evaluate the performance of semantic segmentation methods
+semantic segmentation methods,upernet,UperNet is one of the semantic segmentation methods compared for performance
+semantic segmentation methods,senformer,SenFormer is one of the semantic segmentation methods compared for performance
+semantic segmentation methods,maskformer,Maskformer is one of the semantic segmentation methods compared for performance
+semantic segmentation methods,pfd,PFD is one of the semantic segmentation methods compared for performance
+semantic segmentation methods,mask2former,Mask2former is one of the semantic segmentation methods compared for performance
+semantic segmentation methods,faseg,FASeg is one of the semantic segmentation methods compared for performance
+semantic segmentation methods,deeplab v3+,DeepLab V3+ is one of the semantic segmentation methods compared for performance
+semantic segmentation methods,r50,R50 is used as a backbone for the semantic segmentation methods
+semantic segmentation methods,resnet,ResNet is used as a backbone for the semantic segmentation methods
+resnet,r50,ResNet-50 variant is used as a backbone for the semantic segmentation methods
+semantic segmentation methods,swin transformer,Swin Transformer is used as a backbone for the semantic segmentation methods
+swin transformer,swin-t,Swin-T variant of Swin Transformer is used as a backbone for the semantic segmentation methods
+swin transformer,swin-b,Swin-B variant of Swin Transformer is used as a backbone for the semantic segmentation methods
+swin transformer,swin-l,Swin-L variant of Swin Transformer is used as a backbone for the semantic segmentation methods
+imagenet-22k,faseg,ImageNet-22k is adopted as the default settings of FASeg for training.
+imagenet-22k,r50,ImageNet-22k is mentioned in relation to R50 for backbone.
+imagenet-22k,ade20k,ImageNet-22k is used for ablation experiments on ADE20K val with 150 categories.
+imagenet-22k,cityscapes,ImageNet-22k is mentioned in the context of ADE20K and Cityscapes datasets for experiments.
+ade20k,cityscapes,ADE20K and Cityscapes datasets are used for experiments and evaluation in the context.
+ade20k,miou,ADE20K is used as a dataset for evaluation metrics with mean Intersection over Union (mIoU).
+cityscapes,evaluation metrics,Cityscapes dataset is used for evaluation metrics.
+cityscapes,sota semantic segmentation methods,Cityscapes dataset is compared with SOTA semantic segmentation methods.
+evaluation metrics,model size,Evaluation metrics are used to compare models in terms of their model size.
+evaluation metrics,computational complexity,Evaluation metrics are used to compare models in terms of their computational complexity.
+deeplab v3+,upernet,Comparison between DeepLab V3+ and UperNet is made in the context of semantic segmentation methods
+deeplab v3+,maskformer,DeepLab V3+ is compared with Maskformer in the context of semantic segmentation methods
+deeplab v3+,senformer,DeepLab V3+ is compared with SenFormer in the context of semantic segmentation methods
+deeplab v3+,pfd,DeepLab V3+ is compared with PFD in the context of semantic segmentation methods
+deeplab v3+,mask2former,DeepLab V3+ is compared with Mask2former in the context of semantic segmentation methods
+senformer,pfd,"SenFormer is compared with PFD, both being recent Transformer-based segmentors"
+senformer,mask2former,SenFormer is compared with Mask2former in the context of Transformer-based segmentors
+pfd,mask2former,PFD is compared with Mask2former in the context of Transformer-based segmentors
+faseg,sota methods,FASeg is compared with state-of-the-art semantic segmentation methods and consistently outperforms them
+faseg,"r50, swin-t, swin-b, swin-l backbones","FASeg achieves better mIoU with smaller backbones like R50, Swin-T, Swin-B, Swin-L, demonstrating its superiority"
+dfpq,positional priors,DFPQ provides accurate positional priors which ease the localization difficulty and lead to better results
+dfpq,positional priors,DFPQ provides more accurate positional priors
+dfpq,localization difficulty,DFPQ eases the localization difficulty
+faseg,sota methods,FASeg outperforms all the SOTA methods
+faseg,parameters and flops,FASeg outperforms all the SOTA methods under desirable numbers of parameters and FLOPs
+faseg,image features,Effect of the positional encodings K p for the image features on ADE20K val
+faseg,ablation study,Ablation study for FASeg on ADE20K val and Cityscapes val
+dfpq,parameters and flops,DFPQ achieves a certain mIoU s.s. (%) with a particular number of parameters and FLOPs
+dfpq,sota methods,DFPQoutperforms the SOTA methods employing the R101 backbone
+dfpq,instance segmentation,DFPQ shows more experiments on instance segmentation
+faseg,predictions,FASeg provides more accurate predictions
+faseg,dfpq,FASeg provides more accurate predictions with finer details showing the superiority of DFPQ
+dfpq,kp,More powerful Kp leads to higher performance for FASeg as it aggregates Kp to get DFPQ
+mask2former,kp,"Different Kp have similar performance for Mask2former, but more powerful Kp leads to higher performance for FASeg"
+faseg,conditional positional encodings,FASeg with conditional positional encodings outperforms Mask2former counterpart and FASeg with sinusoidal positional encodings
+dfpq,positional encodings,DFPQ gains higher representational capability from more powerful Kp which boosts the performance
+faseg,sinusoidal positional encodings,FASeg with sinusoidal positional encodings has lower performance than Mask2former due to single anchor point representation
+dfpq,hrca,Investigating the effectiveness of DFPQ and HRCA on segmentation tasks
+hrca,resnet-50,DFPQ and HRCA gain clear margins using ResNet-50 backbone
+dfpq,hrca,"DFPQ and HRCA gain clear margins from the vanilla Mask2former [8]. Integrating DFPQ on Mask2former boosts performance by 0.5% and 0.6% mIoU on ADE20k val and Cityscapes val, respectively. Employing HRCA on Mask2former leads to 0.4% mIoU gain on both datasets."
+dfpq,miou,"Integrating DFPQ on Mask2former boosts performance by 0.5% and 0.6% mIoU on ADE20k val and Cityscapes val, respectively."
+hrca,miou,Employing HRCA on Mask2former leads to 0.4% mIoU gain on both datasets.
+hrca,flops,HRCA on Mask2former has 6M more parameters and 1G higher FLOPs due to the extra decoder layers handling high-resolution image features.
+dfpq,faseg,"Our FASeg with both DFPQ and HRCA improves 1.1% mIoU for both ADE20k val and Cityscapes val, demonstrating the superiority of our FASeg."
+hrca,faseg,"Our FASeg with both DFPQ and HRCA improves 1.1% mIoU for both ADE20k val and Cityscapes val, demonstrating the superiority of our FASeg."
+dfpq,positional queries,Investigating the effectiveness of our DFPQ and comparing it with other learnable query variants on ADE20K val. Results are presented in Table 5.
+positional queries,learnable parameterized positional queries,Comparing DFPQ with learnable parameterized positional queries that are randomly initialized.
+positional queries,pre-defined grid anchor points,Comparing DFPQ with positional queries as the pre-defined grid anchor points.
+positional queries,positional queries dynamically generated,Comparing DFPQ with positional queries dynamically generated from the center of the foreground masks predicted.
+dfpq,competitors,DFPQ outperforms all competitors by large margins.
+dfpq,pre-defined grid and dynamic anchor positional queries,DFPQ achieves 1.7% and 1.3% higher mIoU than the pre-defined grid and dynamic anchor positional queries.
+dfpq,semantic segmentation,DFPQ better suits semantic segmentation than the other positional query variants.
+dfpq,cross-attention maps,DFPQ helps generate more compact and consistent cross-attention maps focusing on the target segments.
+hrca,other cross-attention methods,effectiveness of HRCA compared with other cross-attention methods is investigated.
+hrca,ade20k val,HRCA compared with other cross-attention methods on ADE20k val results are reported in Table 6.
+hrca,faseg,HRCA is replaced with other efficient cross-attention methods on FASeg with the R50 backbone for a fair comparison.
+hrca,high-resolution features,"HRCA models the entire high-resolution features, demonstrating its capability to identify and utilize contextual tokens efficiently."
+hrca,faseg,HRCA outperforms FASeg in predicting masks with finer details and accurate predictions.
+hrca,rcda,HRCA achieves a 1.0% mIoU gain over RCDA and exhibits lower training-time GPU memory and FLOPs.
+rcda,cross-attention,"RCDA decouples cross-attention into row-wise and column-wise attention, leading to improved performance compared to vanilla cross-attention."
+hrca,contextual tokens,HRCA demonstrates superiority in identifying and utilizing contextual tokens in high-resolution features.
+hrca,vanilla cross-attention,"HRCA outperforms the vanilla cross-attention by a significant margin. In the vanilla cross-attention layers, cross-attention attends to the entire feature maps from the encoder."
+hrca,dfpq,HRCA is compared with DFPQ for visualizations of the cross-attention maps. The cross-attention maps with DFPQ are more compact and consistent to reflect the target segments.
+hrca,high-resolution feature scales,HRCA is applied to other high-resolution feature scales for FASeg with Swin-B Backbone on ADE20K val. The effect of applying HRCA is shown in Table 8.
+faseg,swin-b backbone,FASeg uses Swin-B Backbone for segmentation.
+feature scale,hrca,HRCA is applied to various feature scales for FASeg.
+hrca,training-time memory,Using HRCA on certain feature scales reduces training-time memory consumption.
+positional queries,detr-style semantic segmentation,Positional queries are used for DETR-style semantic segmentation.
+positional queries,cross-attention scores,Positonal queries are conditioned on the cross-attention scores of the preceding decoder block.
+positional queries,positional encodings,Positonal queries are conditioned on the positional encodings for the corresponding image features.
+query design,positional priors,Novel query design delivers more accurate and fine-grained positional priors for localizing target segments.
+contextual tokens,high-resolution feature maps,Contextual tokens are aggregated only from high-resolution feature maps to learn low-level details efficiently.
+modeling cross-attention,high-resolution feature maps,Efficient approach to aggregate contextual tokens from high-resolution feature maps reduces training-time memory cost.
+framework,semantic segmentation task,Proposed framework demonstrated effectiveness in semantic segmentation task and potential for other segmentation tasks.
+segmentation details,memory and computations,HRCA enriches segmentation details with affordable memory and computations.
+training data,negative societal impacts,Unstable or biased predictions may occur with training data not reviewed properly.
+trained model,unstable predictions,The trained model may deliver unstable predictions if the training data is not reviewed properly.
+trained model,biased predictions,The trained model may deliver biased predictions if the training data is not reviewed properly.
+training data,not reviewed properly,Unreviewed training data can lead to unstable or biased predictions from the trained model.
+dr jing zhang,australian research council projects,Dr Jing Zhang was supported by Australian Research Council Projects.
+australian research council projects,fl170100117,The Australian Research Council Projects mentioned is partially supported by FL170100117.
+australian research council projects,ih180100002,The Australian Research Council Projects mentioned is partially supported by IH180100002.

@@ -1,0 +1,143 @@
+node_1,node_2,edge
+density estimation problem,finite setting,The context introduces the density estimation problem as a fundamental task in statistics and machine learning
+k distributions,discrete domain,The problem involves k distributions over a discrete domain of size n.
+distributions v1,. . .,vk
+proper case,improper case,The problem differentiates between a proper case where p is known to be one of the vk and an improper case where p can be any distribution.
+distance metric,∥p − vi∥1,The algorithms aim to find a vi with a specified distance (e.g.
+acharya et al. (2018),algorithm,The context mentions an improved version of an algorithm by Acharya et al.
+discrete set,approximate nearest neighbor search,The problem can be considered a variant of approximate nearest neighbor search when the domain is a discrete set.
+l1 norm,approximate nearest neighbor search,Approximate nearest neighbor search is studied under the L1 norm.
+c-approximate nearest neighbor search,l1 norm,The goal is to build a data structure for C-approximate nearest neighbor search under the L1 norm.
+density estimation problem,approximate nearest neighbor search,In the density estimation problem
+query distribution,density estimation problem,The algorithm is given samples from the query distribution in the density estimation problem.
+computational resources,data structure space,query time
+statistical resources,number of samples from p,Trade-offs also involve statistical resources
+kamath et al.,2015,computational efficiency
+andoni & razenshteyn,c-approximate nearest neighbor algorithm,These algorithms serve as a reference for optimizing computational efficiency in the context.
+nearest neighbor algorithm,l1 norm,The context discusses a nearest neighbor algorithm specifically designed for the L1 norm.
+andoni & razenshteyn (2015) algorithm,space complexity,This algorithm provides roughly O(nk + k^(1+1/(2c-1))) space complexity.
+andoni & razenshteyn (2015) algorithm,query time,It has a query time of approximately O(nk^(1/(2c-1))).
+acharya et al. (2018) result,data structure,Their work offers a data structure with logarithmic sample size but near-linear query time.
+statistical efficiency,computational efficiency,The paper explores the tradeoff between statistical and computational efficiency in density estimation.
+our main theoretical contributions,data structure,We present a data structure that achieves polynomial space
+improper version of the problem,proper version of the problem,The paper differentiates between the proper and improper versions of the density estimation problem.
+sampling complexity,query time,The improved version reduces query time from O(k log(k)/ε²) to O(k/ε²)
+data structure (acharya et al.,2018),improper case
+linear-time algorithm,acharya et al.,2018 algorithm
+density estimation,statistical/computational tradeoffs,This paper initiates the study of trade-offs between statistical accuracy and computational efficiency in data structures for density estimation.
+polynomial space,sublinear query complexity,The data structure designed has these properties
+proper case,improper case,There is a need to extend the results to cover the improper case
+discrete distributions,unknown distribution p,The context discusses the assumption that there are k known discrete distributions v1
+number of distributions k,dataset size,k is assumed to be polynomially related to n
+poissonization trick,sampling process,This technique involves taking a random number of samples (s') using a Poisson distribution
+sample complexity,ε,The sample complexity is related to the parameter ε
+ℓ∞ data structure,approximate nearest neighbor search,Theorem 1.1 refers to an ℓ∞ data structure by Indyk (2001) that provides a Cδ log log n-approximation for the nearest neighbor problem.
+ℓ2 nns data structure,approximate nearest neighbor search,A separate data structure for ℓ2 norm is also mentioned
+dataset x,dimensionality reduction theorem,The theorem relies on a combination of randomized dimensionality reduction by Johnson-Lindenstrauss and locality-sensitive hashing (Har-Peled et al.
+c-approximate nearest neighbor problem,ℓ2 distance,The theorem states that the c-approximate nearest neighbor problem can be solved on X in ℓ2 using a specific space and query time complexity.
+empirical sample distribution ˆp,poisson distribution,The algorithm uses the empirical distribution derived from the sample data
+ℓ1 distance,finding a close distribution,The algorithm aims to find a close distribution in ℓ1 distance
+algorithm,ℓ2 and ℓ∞ distance,The algorithm combines nearest neighbor search data structures for both ℓ2 and ℓ∞ distances to achieve its goal.
+approximate ℓ1 nearest neighbor data structure,known distributions,The lemma suggests that constructing an approximate ℓ1 nearest neighbor data structure on the known distributions fails to find a close match to the empirical distribution.
+exact nearest neighbor data structure,empirical distribution,The exact nearest neighbor data structure
+uniformly random known distribution,querying the data structure,A uniformly random known distribution would succeed with probability 1/k if used as a simple fallback.
+light elements,issue for ℓ1 distance,The problem with using an ℓ1 nearest neighbor approach lies in the light elements of the distributions.
+ℓ2 nearest neighbor data structure,heavy elements,In contrast to ℓ1
+lemma 2.1,probability of success,This lemma shows that for certain distributions
+lemma 2.2,specific example with two distributions,It provides a counterexample demonstrating failure for the ℓ2 nearest neighbor approach when sample size is limited.
+probability distributions,sample size,The context discusses the relationship between probability distributions (p and q) and the sample size (s) needed for accurate estimation
+ℓ∞ nearest neighbor search,empirical distribution ˆp,The text highlights that ℓ∞ nearest neighbor search on the empirical distribution ˆp does not work with sample sizes less than n.
+heavy elements,light elements,The algorithm distinguishes between heavy and light elements in a distribution
+fixed distributions,heavy/light partitioning,A motivation for seeking an unambiguous definition of heavy and light elements comes from using fixed distributions as a reference for partitioning the domain.
+probability mass,threshold γ,The threshold γ is used to determine whether a domain element is considered heavy based on the probability mass assigned to it by the distribution.
+sampling from p,estimating probabilities,Due to the limited sample access to p
+probability distribution p,algorithm 1,Algorithm 1 is used to partition the domain [n] based on p's fixed threshold γ.
+threshold γ,probability mass of vi,The partitioning is determined by comparing the probability masses of the vi distributions.
+empirical distribution ˆp,distribution p,ˆp is the empirical distribution obtained after sampling from p
+closest distribution v*,distribution p,v* is O(1/n) close to both p and ˆp in ℓ∞ distance
+algorithm 2,known distributions {vi},Algorithm 2 groups the distributions based on their ℓ∞ distance similarity to vi.
+algorithm 2,v∞ (closest to ˆp),v∞'s group
+heavy/light partitioning,probability mass of elements,Elements with mass at least γ - O(1/n) are considered heavy
+heavy/light partitioning,definition of heavy/light for p,The heavy/light partitioning is used as the definition for categorizing elements based on v∞.
+v∞,group of distributions,All distributions in v∞'s group share the same heavy/light partitioning.
+v∗,s∞,v∗ is included in v∞'s group
+s∞,distributions to consider,The algorithm focuses on distributions in S∞ for further analysis.
+heavy elements,disregarded,Heavy elements can be disregarded due to p's proximity to distributions in S∞.
+light domain elements,suitable for ℓ2 metric,The algorithm uses ℓ2 on light elements for finding the nearest neighbor.
+ℓ2 nearest neighbor search,algorithm step,The main algorithm involves finding the closest distribution in S∞ based on ℓ2 distance.
+query ˆp,search target,The algorithm searches for the nearest distribution to ˆp among light elements.
+total ℓ1 error,small,The total ℓ1 error is guaranteed to be small due to closeness on both heavy and light elements.
+preprocessing step,ℓ∞ data structure,A data structure is created on known distributions using ℓ∞.
+known distributions,groups based on vi,Distributions are grouped into k groups
+known distributions,k groups,The known distributions are grouped into k groups based on their ℓ∞ distance.
+ℓ∞ nearest neighbor data structure,each group,An ℓ2 nearest neighbor data structure is instantiated within each group
+unknown distribution p,empirical distribution ˆp,s samples from the unknown distribution p are used to create the empirical distribution ˆp.
+algorithm 3,ell_∞ nearest neighbor search,Algorithm 3 queries the ℓ∞ nearest neighbor search on ˆp to identify a group of similar heavy elements.
+algorithm 3,ell_2 nns (nearest neighbor search),Then
+algorithm 3,output distribution ˜v,The output of Algorithm 3 is the closest distribution ˜v to the original distribution p.
+theorem 3.1,guarantee,The theorem provides bounds on the runtime
+s,ε,The value of s (samples) is set such that with high probability
+n,o(n),Various quantities like s and γ are set to o(n) for efficient computation.
+scheffe test,pair of distributions,The Scheffe test is applied to each pair of distributions.
+scheffe tournament,scheffe test,The term 'Scheffe tournament' refers to using the Scheffe test to determine the best distribution.
+running time,scheffe tournament,The running time for the Scheffe tournament scales with O(k^2).
+knockout tournament style algorithm,scheffe tournament,(Suresh et al.
+quick-select,algorithm,Quick-Select
+total variation distance,pair of distributions,The preprocessing step involves computing the total variation distance between each pair of distributions.
+preprocessing step,running time improvement,This step allows for a runtime reduction to O(k) with a slight increase in C.
+classic scheffe test,hypothesis selection problem,The classic Scheffe test is a specific algorithm for the hypothesis selection problem with k = 2.
+unknown distribution p,scheffe test,The context mentions that the algorithm compares samples from an unknown distribution p with the Scheffe test to determine a suitable output.
+s = {i ∈ [n] : v1(i) > v2(i)},v1,v2
+scheffe test,total variation distance,The Scheffe test's accuracy is related to the total variation distance between the distributions.
+k = 2,power of two,The context assumes k to be a power of two for simplicity.
+δi = δ/4i,δ,δi is derived from the overall confidence parameter δ
+vi,c,Vi is initially V
+vi+1,vi,Vi+1 is formed by the 'winners' of the pairs in Vi.
+c,final output ˆv,The algorithm outputs the distribution ˆv from C that has the most wins after the final round of the test.
+half-uniform dataset,domain of size n = 250,Each distribution in the half-uniform dataset is a random permutation of a domain with size 250.
+domain size,n = 250,The domain for the half-uniform distribution has a fixed size of 250.
+zipfian dataset,k = 4096 distributions,The Zipfian dataset consists of 4096 distributions over a certain domain.
+number of samples,s ∈ {20,30
+samples,queries,Queries are formed by taking samples from the distributions in the dataset.
+performance metric,accuracy,Performance is measured by the accuracy
+runtime,decreased by not using all samples,Runtime can be reduced by using fewer than the specified number of samples.
+fastconst,grid search parameter,FastConst is one of the parameters grid searched over
+nallpairs,another grid search parameter,nAllPairs is another parameter grid searched over
+results,averaged over 5 random sets,Results are averaged over 5 runs with 20 queries each for consistency.
+conclusions,similar for zipfian dataset,The conclusions drawn from the half-uniform dataset apply similarly to the Zipfian dataset
+internet traffic dataset,caida anonymized internet trace,The CAIDA dataset is a specific instance of the broader internet traffic dataset used for networking experiments.
+tier1 isp,data center in nyc,The network data is collected at a Tier1 ISP's data center located in New York City.
+ip traffic data,packets,Each minute of IP data contains approximately 3.5 million packets.
+chunks,170ms,Chunks are created by splitting 7 minutes of data into smaller units of approximately 170 milliseconds.
+chunks,105 packets,Each chunk consists of approximately 105 packets.
+distributions,source ip addresses,Distributions are derived from the empirical distribution of source IP addresses in each data chunk.
+support sizes,45,000
+goal,density estimation,The ultimate objective of the experiments is to perform density estimation using the collected network data.
+fast tournament,base tournament,The fast tournament uses fewer operations (5x when nAllPairs = 0
+fast tournament,number of operations,The fast tournament saves on the number of operations by using a more efficient approach.
+all-pairs comparison,tournaments,Neither the fast nor the base tournament performs better with an all-pairs comparison added.
+sampling rate,distance to nearest neighbor,With a low sampling rate
+sample size,variance reduction,Increasing sample size improves the accuracy and reduces the variance in the recovered distributions.
+synthetic experiments,real-world experiments,Both types of experiments show the tournament algorithms' effectiveness in recovering close distributions with limited samples.
+total samples,algorithms' performance,The primary factor affecting the algorithms' performance is the number of total samples they receive.
+earlier rounds,limited sample sizes,The fast tournament can use smaller sample sizes early on to optimize its efficiency.
+tournament,sample sizes,The tournament uses limited sample sizes in earlier rounds to reduce computational cost.
+earlier rounds of the tournament,computational cost,These rounds are used to save computational resources.
+computational cost,performance,The limited sampling approach retains essentially the same performance as the full tournament.
+sublinear time density estimation,generalization of nearest neighbor search,This is a natural extension of nearest neighbor search to discrete distributions.
+algorithm,sublinear sample complexity,Our work provides the first algorithm with this property.
+preprocessing,polynomial,The algorithm has polynomial preprocessing time.
+improper case,linear time algorithm,In the improper case
+query complexity,sample complexity,The paper explores the trade-offs between these two measures.
+total variation distance,efficient retrieval algorithms,Efficiency is sought for retrieval based on this distance metric.
+acknowledgements,anders aamand,Supported by DFF-International Postdoc Grant and various research grants.
+nsf (ccf-2008733),onr (n00014-22-1-2713),Research is supported by both NSF and ONR grants.
+justin y. chen,mathworks engineering fellowship,Justin Chen is supported by this fellowship.
+justin y. chen,gist-mit research collaboration grant,Justin Chen is also supported by a GIST-MIT collaboration grant.
+justin y. chen,nsf award ccf-2006798,He receives funding from an NSF award.
+justin y. chen,simons investigator award,Justin Chen holds a Simons Investigator Award.
+justin y. chen,shyam narayanan,and sandeep silwal
+piotr indyk,nsf tripods program (dms-2022448),Piotr Indyk is supported by the NSF TRIPODS program.
+piotr indyk,simons investigator award,He also holds a Simons Investigator Award.
+piotr indyk,mit-ibm watson ai lab,Piotr Indyk is associated with the MIT-IBM Watson AI Lab.
+shyam narayanan,google phd fellowship,Shyam Narayanan is a recipient of a Google PhD fellowship.

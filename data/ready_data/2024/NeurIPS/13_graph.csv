@@ -1,0 +1,225 @@
+node_1,node_2,edge
+neural networks,loss,Neural networks are optimized with loss functions containing high-dimensional and high-order differential operators.
+neural networks,back-propagation,"Back-propagation is used to evaluate neural networks with high-dimensional and high-order differential operators, but it is expensive due to the scaling of the derivative tensor size and computation graph."
+computation graph,derivative tensor,"The computation graph has O(2k−1L) scaling, while the derivative tensor size scales with O(dk), where d is the dimension of the domain, L is the number of ops in the forward computation graph, and k is the derivative order."
+derivative tensor,domain,The size of the derivative tensor scales with the dimension of the domain in the computation graph.
+polynomial scaling,amortizing computation,Polynomial scaling in domain was addressed by amortizing the computation over the optimization process via randomization.
+derivative order,high-order auto-differentiation,The exponential scaling in derivative order for univariate functions was addressed with high-order auto-differentiation.
+derivative tensor,multivariate functions,Efficient contraction of the derivative tensor of arbitrary order for multivariate functions is achieved by constructing input tangents to univariate high-order auto-differentiation.
+physics-informed neural networks,method,The method provides >1000× speed-up and >30× memory reduction over randomization with first-order auto-differentiation when applied to Physics-Informed Neural Networks (PINNs).
+method,pdes,"The method can solve 1-million-dimensional PDEs in 8 minutes on a single NVIDIA A100 GPU, opening the possibility of using high-order differential operators in large-scale problems."
+problems,physics-informed machine learning,"In many problems, especially in Physics-informed machine learning, there is a need to solve various issues."
+physics-informed machine learning,optimization problems,"The context mentions that in Physics-informed machine learning, one needs to solve optimization problems where the loss contains differential operators."
+differential operators,neural network,The context states that the loss function involves differential operators applied on a neural network parameterized by θ.
+cost function,objective function,"The context mentions that f is some cost function and when the differentiation order k or the dimensionality d is high, the objective function becomes expensive to evaluate."
+computation,memory,Back-propagation is mentioned to be expensive in both memory and computation due to the size of the derivative tensor and the computation graph.
+memory,computation,The size of the derivative tensor and computation graph contribute to the high memory and computation costs of evaluating the objective function.
+dimensionality,dimension gradient descent,Efforts have been made to tackle the curse of dimensionality including using Stochastic Dimension Gradient Descent to randomize over input dimensions.
+partial derivatives,minibatch,partial derivatives are calculated for a minibatch of sampled dimensions with back-propagation.
+technique,hutchinson trace estimator (hte),classical technique of Hutchinson Trace Estimator (HTE) is used to estimate the trace of Hessian or Jacobian to inputs.
+hutchinson trace estimator (hte),hessian or jacobian,Hutchinson Trace Estimator (HTE) is used to estimate the trace of Hessian or Jacobian to inputs.
+others,ad,Others choose to bypass AD completely to reduce the complexity of computation.
+finite difference method,hessian trace,finite difference method is used for estimating the Hessian trace.
+randomized smoothing,expectation over gaussian random variable,Randomized smoothing uses the expectation over Gaussian random variable as ansatz.
+expectation over gaussian random variable,stein’s identity,its derivatives can be expressed as another expectation Gaussian random variable via Stein’s identity.
+methods,accuracy,the accuracy of these methods is highly dependent on the choice of discretization.
+scaling issue,optimization problem,we address the scaling issue in both d and k for the optimization problem in Eq. 1 at the same time.
+amortization scheme,stochastic taylor derivative estimator (stde),we call Stochastic Taylor Derivative Estimator (STDE) our main contributions are.
+taylor mode ad,optimization problem,"Taylor mode AD, a high-order AD method, can be used to amortize the optimization problem in Eq. 1."
+univariate taylor mode,multivariate functions' derivative tensor,univariate Taylor mode can be used to contract multivariate functions’ derivative tensor of arbitrary order.
+comprehensive procedure,randomizing arbitrary differential operators,We provide a comprehensive procedure for randomizing arbitrary differential operators.
+stde,differential operators,STDE is a comprehensive procedure for randomizing differential operators with abundant examples constructed for operators in common PDEs.
+stde,sdgd,STDE encompasses and generalizes previous methods like SDGD.
+stde,hte,STDE encompasses and generalizes previous methods like HTE.
+hte,sdgd,HTE-type estimator cannot be generalized beyond fourth order differential operator. HTE provides significant speed-up compared to SDGD in solving PDE.
+pinn,stde,STDE's low memory requirements and reduced computation complexity enable PINNs to solve 1-million-dimensional PDEs on a single NVIDIA A100 40GB GPU within 8 minutes.
+pinn,sdgd,PINNs with STDE provide a significant speed-up compared to the baseline method SDGD.
+ad,high-order derivatives,High-order and forward mode AD generalizes forward mode AD to high-order derivatives and exists in the AD community.
+ad,machine learning,"Access implementation for machine learning was made available in JAX, which implemented the Taylor mode AD for accelerating ODE solver."
+taylor mode ad,accelerating ode solver,Taylor mode AD was implemented to accelerate the ODE solver.
+forward rule,specific operator like the laplacian,Efforts were made to create a forward rule for specific operators such as the Laplacian.
+forward mode ad,neural network parameter gradient,Forward mode AD was used to compute neural network parameter gradients.
+randomized gradient estimation randomization,curse of dimensionality for numerical linear algebra computation,Randomized Gradient Estimation Randomization is a common technique used to address the curse of dimensionality in numerical linear algebra computation.
+hutchinson trace estimator,diffusion model and pinns,The Hutchinson trace estimator technique has been applied to diffusion models and PINNs.
+zeroth-order optimization,evaluating the function at arbitrary input,Zeroth-order optimization method can be utilized when only evaluating the function at arbitrary inputs is required.
+neural network fθ : rd → rd′,first-order auto-differentiation (ad),"In an AD framework, a neural network denoted as Fθ : Rd → Rd′ is constructed for first-order auto-differentiation."
+neural network,primitives,"A neural network in an AD framework is constructed as the composition of primitives, which are parameterized by certain parameters."
+primitives,fi,"Each primitives Fi is linearized as the Fréchet derivative, which computes the Jacobian-vector-product."
+primitives,linearized computation graph,Each primitives Fi form a linearized computation graph that computes the JVP of the composition.
+linearized computation graph,jacobian,"The linearized computation graph computes the JVP calls, which in turn computes one column of the Jacobian DF."
+primal,tangent,a is referred to as the primal and v the tangent in the Fi primitives.
+tangent,standard basis,"By setting the tangent to v as one of the standard basis of Rd, JVP computes one column of the Jacobian DF."
+mlp,linearized graph,"In the case of MLP, both the forward and the linearized graph have a complexity of O(dh + (L - 1)h^2)."
+primitives,adjoint,Each primitives Fi is linearized as the adjoint of the Fréchet derivative.
+vjp,jacobian,"VJP computes the vector-Jacobian-product, which is used to compute the Jacobian matrix in reverse order"
+forward pass,evaluation trace,A forward pass is needed to obtain the evaluation trace before invoking the VJPs for further computations
+memory requirement,evaluation trace,The memory requirement is O(d + (L − 1)h) due to the need to store the entire evaluation trace
+backward mode,memory,Backward mode efficiently trades off memory with computation complexity in optimizing scalar cost functions of network parameters
+backward mode,vjp,"In backward mode, only 1 VJP is needed to get the full Jacobian, reducing computation complexity"
+backward mode,tangent,"In backward mode, all parameters can use the same cotangent, whereas in forward mode, separate tangent for each parameter is needed"
+first-order ad,high-order derivative,First-order AD is inefficient for high-order derivatives on inputs
+backward mode ad,function f,Backward mode AD is used for a function F (·) with 4 primitives (L = 4) which computes the Hessian-vector-product.
+backward mode ad,cotangent nodes,"In repeated applications of VJP, backward mode AD includes cotangent nodes in the second backward pass."
+backward mode ad,input derivatives ∂kuθ ∂xk,High-order input derivatives ∂kuθ ∂xk for scalar uθ can be implemented as repeated applications of backward mode AD where the size of the cotangent grows.
+backward mode ad,efficiency,Repeated applications of backward mode AD exhibit fundamental inefficiency that cannot be remedied by randomization.
+backward mode ad,memory cost,Applying backward mode AD has additional memory cost of O(d + (L − 1)h) and additional computation cost.
+backward mode ad,computation cost,"Applying backward mode AD has additional computation cost of O(2dh + 2(L − 1)h2), which grows exponentially with repeated applications."
+backward mode ad,derivative order k,Memory and compute scale exponentially in derivative order k when applying backward mode AD.
+forward mode ad,function uθ,Forward mode AD is considered for a function uθ : Rd → R.
+forward mode ad,input tangent dimension,"In the context of forward mode AD, the input tangent dimension is d."
+forward mode ad,uθ,forward mode AD is applied to uθ in the context
+second application,forward mode ad,"On the second application, the size of the input tangent becomes d x d as forward mode AD is computed for ∇uθ : Rd → Rd"
+mixed mode ad schemes,inefficient,Mixed mode AD schemes are likely inefficient as stated in the context
+stochastic dimension gradient descent,high-dimensional differential operators,SDGD amortizes high-dimensional differential operators by computing only a minibatch of derivatives in each iteration
+sdgd,d,SDGD replaces a differential operator D with a randomly sampled subset of additive terms
+dj,∂2,The additive terms Dj are defined as ∂2 in the context
+dj,˜dj,Each term Dj is approximated by ˜DJ in the SDGD operator
+j,batch size,The index set J and the batch size
+reduction,dimensionality,Reduction in memory requirements and computation complexity is significant when d ≫ h due to the dimensionality reduction
+˜dj,d,˜DJ is cheaper to compute than D due to reduced dimensionality
+univariate taylor mode ad,high-order ad,The concept of high-order AD can be defined by analyzing how the high-order Taylor expansion of a univariate function changes when mapped by primitives.
+fréchet derivative,univariate chain rule,The Fréchet derivative and the univariate chain rule are closely related as shown through their operations on space curves passing through certain points.
+tangent bundle of f,first order expansion of g,"The tangent bundle of F can be associated with the first-order expansion of g, which resides in that bundle when considering F as a smooth map between manifolds."
+input curve g,kth order expansion,"The kth order expansion of the input curve g involves considering multiple derivatives up to the kth order, forming the k-jet of g in the kth order tangent bundle of F."
+kth order tangent bundle,f,"kth order tangent bundle is defined as the kth-order pushforward of F, represented as dkF :dkF. It pushes the kth order expansion of g to the kth order expansion of F ◦ g."
+kth order tangent bundle,g,kth order tangent bundle contains all information needed to evaluate ∂j∂tj [F ◦ g](t) for any j ≤ k. The map dkF is well-defined. dk defines a high-order automatic differentiation.
+kth order pushforward,f ◦ g,kth order pushforward pushes the kth order expansion of g to the kth order expansion of F ◦ g. It is represented as ∂tk [F ◦ g](t) and is the k-th order Fréchet derivative.
+high-order univariate chain rule,faa di bruno’s formula,"The high-order univariate chain rule, represented by ∂kF, is known as Faa di Bruno’s formula (Eq. 43). It is used to push the Kth order expansion of g to the kth order expansion of F ◦ g."
+primitive,ad,"We can compute dkF of arbitrary composition F from the kth-order pushforward of the primitives dkFi, since dk is an homomorphism of the group ({Fi},◦). This approach of composing dk of primitives is also known as the Taylor mode AD."
+taylor mode ad,univariate functions,"Although high-order AD methods like Taylor mode AD can address the scaling issue in k described in Eq. 1, it is only defined for univariate functions."
+univariate functions,scaling issue,"AD [6] can address the scaling issue, it is only defined for univariate functions."
+method,scaling issue,describe a method that addresses the scaling issue in k and d simultaneously when amortizing Eq. 1
+method,univariate taylor mode ad,describes a method that sees univariate Taylor mode AD as contractions of multivariate derivative tensor
+f,jacobian,dF projects the Jacobian of F to Rd′ tensors to Rd′
+f,jvp,"For example, ∂F is JVP"
+f,quadratic form,∂2F contains a quadratic form of the Hessian D2 with a 1-jet Jg(t)
+dkf,derivative,dkF contracts a set of derivative
+dkf,contractions,to see the form of the contractions
+derivative tensor,contraction,arbitrary derivative tensor contraction is contained within a Fréchet derivative of high-order
+l,operator,How large l should be depends on how off-diagonal the operator is
+derivative,partial derivative,The partial derivative is a specific type of derivative where all dimensions to be differentiated are distinct.
+minimum l,(1 + k)k/2,The minimum l needed can be calculated using the formula (1 + k)k/2.
+appendix f,jet structure,Appendix F contains details on determining the jet structure.
+computation graph,d2f,The computation graph represents d2F for a function F with 4 primitives.
+parameters,θi,Parameters θi are omitted in the computation graph.
+input 2-jet j 2,j 2 1,The input 2-jet J 2 is pushed forward to the 2-jet J 2 1 in the computation graph.
+derivative operator,stochastic estimator,A stochastic estimator can be constructed using differential operators for evaluating arbitrary operators through derivative tensor contraction.
+derivative tensor,linear combination,Derivative tensor can be used to represent the linear combination of derivatives in a differential operator.
+scalar u,differential operator l,"The scalar function u corresponds to the differential operator L, which can be defined by a linear combination of derivatives."
+u : rd → r,differential operator l,The function u mapping from Rd to R is associated with the differential operator L.
+kth order differential operator,tensor dot product,The kth order differential operator can be identified with the tensor dot product as defined by the equation in the context.
+tensor index,coefficient tensor,The tensor index on the ith axis is related to the coefficient tensor C(L) which matches the multi-index α in the context.
+laplacian,coefficient tensor,The coefficient tensor of the Laplacian ∇2 is given as the d-dimensional identity matrix I.
+derivative tensor contractions,random contraction,Any derivative tensor contractions Dk can be estimated through random contraction according to the context.
+unbiased estimator,kth order operator lu,Eq. 11 provides an unbiased estimator of the kth order operator Lu = Dk as mentioned in the context.
+tangent,di dimension,The di dimension of the vith order tangent is related to the tangent mentioned in the context in the equation.
+unbiasedness,laplacian,The condition for unbiasedness for the Laplacian ∇2 is represented by the equation E[v(a)v(b)⊤] = I in the context.
+laplacian,unbiasedness,The Laplacian ∇2 being unbiased is defined by the equation E[v(a)v(b)⊤] = I
+j l i=1v(vi),distribution p,The distribution p over the input l-jet J lg must satisfy the unbiasedness condition
+c(l),lu(a),C(L) = Lu(a) signifies a relationship between C(L) and the approximation of Lu(a)
+stde,differential operators,"STDE, the Stochastic Taylor Derivative Estimator, can be applied to differential operators of arbitrary order and dimensionality"
+stde,scalability,STDE addresses the scaling issue in dimensionality and derivative order simultaneously
+dk,randomization,The derivative tensor Dk combined with randomization addresses the scaling in dimensionality
+dk,parallelization,Derivative tensor Dk allows for parallelization of computations as shown in Fig. 2
+computation,vectorized,The computation discussed in Fig. 2 can be easily vectorized and parallelized.
+sample jets,pushforward,Pushing forward of sample jets can be computed independently.
+computation graph,stde,The computation graph (dku) is used for constructing STDE for high-order differential operators with sparse random jets.
+coefficient tensor,additive decomposition,The coefficient tensor has an additive decomposition as shown in Eq. 14.
+standard basis,k-jet,The k-jet consists of only standard basis vectors.
+pushforward,contracting,The pushforward of a jet under ∂lu is equivalent to contracting Dk.
+discrete distribution,sparse k-jets,The discrete distribution p over the sparse k-jets satisfies the unbiasedness condition.
+partial derivatives,easy to remove,Constructing differential operators with sparse random jets involves removing mixed partial derivatives.
+quadratic form,hessian,The quadratic form of Hessian can be computed through ∂2.
+laplacian operator,stde,The STDE of the Laplacian operator is calculated according to the given formula.
+stde,laplacian operator,The STDE of the Laplacian operator is given by ∇2J uθ(a) =
+stde,diagonal elements,The combination of diagonal elements from the derivative tensor results in L =(cid:80)d
+j,derivative tensor,J is the sampled index set for the derivative tensor
+high-order diagonal differential operators,differential operator,A differential operator is called diagonal if it is a linear
+high-order diagonal differential operators,desired high-order diagonal element,Setting the first-order tangent v(1) to ej and all other tangents v(i) to the zero vector gives the desired high-order diagonal element: ∂k jj=1˜LJ uθ(a) =
+second-order parabolic pdes,class of pdes,Second-order parabolic PDEs are a large class of PDEs
+second-order parabolic pdes,fokker-planck equation,It includes the Fokker-Planck equation in statistical mechanics to describe the evolution of the state variables in stochastic differential equations (SDEs)
+second-order parabolic pdes,black-scholes equation,It includes the Black-Scholes equation in mathematical finance for option pricing
+second-order parabolic pdes,hamilton-jacobi-bellman equation,It includes the Hamilton-Jacobi-Bellman equation in optimal control
+second-order parabolic pdes,schrödinger equation,It includes the Schrödinger equation in quantum physics and chemistry
+off-diagonals,change of variable,The off-diagonals can be easily removed via a change of variable
+off-diagonals,off-diagonal term,with off-diagonal term
+change of variable,off-diagonals,The off-diagonals can be easily removed via a change of variable
+off-diagonals,off-diagonal term,with off-diagonal term
+derivative terms,pushforward,All the derivative terms can be found in the pushforward
+derivative terms,jet,where the subscript [i] means selecting the ith order tangent from the jet
+pushforward,derivative terms,All the derivative terms can be found in the pushforward
+jet,derivative terms,where the subscript [i] means selecting the ith order tangent from the jet
+pushforward,terms,The terms can be computed with just one pushforward.
+pushforward,jets,These terms can be computed with pushforwards of different jets of lower order (Appendix I.4).
+randomization via stde,speed up,"When the input dimension is high, randomization via STDE will provide a significant speed up."
+high-order pdes,mixed partial derivatives,We tested a few more high-order PDEs with irremovable mixed partial derivatives.
+dense random jet,hte,We show how to construct STDE with the pushforward of sparse random jets in section 4.3. The classical method of Hutchinson trace estimator (HTE) [16] can be implemented in the STDE framework as the pushforward of isotropic dense random jets.
+stde,dense random jets,"It is possible to construct STDE with dense random jets, i.e. jets with tangents that are not the standard basis."
+second-order differential operators,multivariate gaussian distribution,We generalize the dense construction to arbitrary second-order differential operators using a multivariate Gaussian distribution.
+stde,dense jets,"STDE can be constructed with dense jets in the case of specific high-order operators like the Biharmonic operator, as shown in Appendix J."
+sparse stde,dense stde,"The main differences between sparse and dense versions of STDE are: 1. sparse STDE is universally applicable while dense STDE can only be applied to certain operators, 2. the source of variance is different as mentioned in Appendix K.3."
+sparse stde,computation costs,Both sparse and dense versions of STDE would have similar computation costs if the batch size of random jets were the same.
+sparse stde,excess variance,"In general, it is suggested to use sparse STDE unless it is known a priori that the sparse version would suffer from excess variance and the dense STDE is applicable."
+stde,training of pinns,STDE was applied to amortize the training of Physics-Informed Neural Networks (PINNs) on a set of real-world PDEs.
+pinns,pdes,PINNs were trained on a set of real-world Partial Differential Equations (PDEs) in the context of amortization.
+pinn,neural pde solver,PINN is a class of neural PDE solver where the ansatz uθ(x) is parameterized by a neural network with parameter θ.
+stde,computation and memory costs,"In all our experiments, STDE drastically reduces computation and memory costs in training PINNs."
+luθ,f,Luθ(x(i)) − f (x(i)) is the residual term in the equation Nr(24)
+luθ,uθ,Luθ is reparameterized such that the boundary/initial condition Bu(x) = g(x) are satisfied exactly
+luθ,l,Lu is the operator L in the Amortized PINNs approach
+lu,∇2u,"In the example of Allen-Cahn equation, Lu = ∇2u + u − u3"
+∇2u,u,The Laplacian ∇2 is the differential part of the operator L in the Allen-Cahn equation
+u,u3,"In the Allen-Cahn equation, u - u3 is a term involved"
+ω,{x(i)}nr,The residual points {x(i)}Nr are sampled from the domain Ω
+ω,∂ω,The boundary condition is applied for all x ∈ ∂Ω
+ω,∂θ,The gradient of ℓresidualis with respect to θ is calculated in the formulation
+ω,∂ ˜ℓresidual,∂ ˜ℓresidual is an estimator for the gradient of ℓresidual in Eq. 24
+θ,{x(i)}nri=1,The residual loss is calculated with respect to the sampled points {x(i)}Nri=1 and the parameter θ
+˜lj,f,˜LJ uθ(x(i)) − f(x(i)) is part of the loss function in Eq. 25
+˜lk,f,˜LKuθ(x(i)) − f(x(i)) is part of the loss function in Eq. 25
+˜lj,˜lk,J and K are used in the calculation of the loss function in Eq. 25
+˜ℓresidual,∂θ,∂ ˜ℓresidual is an unbiased estimator for the gradient of ℓresidual with respect to θ
+˜ℓresidual,e[ ∂ ˜ℓresidual,E[ ∂ ˜ℓresidual is a modification of the original PINN residual loss
+˜ℓresidual,ℓresidual,The gradient ∂ ˜ℓresidual is then an estimator to the gradient of ℓresidual in the original formulation
+˜ℓresidual,ω,The loss term depends on the domain Ω in the calculation of ℓresidual
+ablation study,performance gain,The ablation study is conducted to ascertain the source of performance gain
+ablation study,allen-cahn equation,The study is conducted on the Allen-Cahn equation to analyze the performance
+ablation study,exact solution,The ablation study is based on a two-body exact solution in Appendix I.1
+allen-cahn equation,dimensionality,The results of the ablation study are presented based on the dimensionality in Table 1 and 2
+allen-cahn equation,l2 error,The relative L2 error is computed based on the changes in how derivatives are computed
+derivative,error,The relative L2 error is expected to be of the same order among different randomization methods.
+forward laplacian,exact method,Forward Laplacian is an exact method.
+forward laplacian,l2 error,Forward Laplacian is expected to perform better in terms of L2 error.
+dimension,l2 error,"The L2 error is of the same order, at least in the case where the dimension is more than 1000."
+speed,ablation,Table 1 shows the ablation results for the two-body Allen-Cahn equation in terms of speed.
+memory,ablation,Table 2 shows the ablation results for the two-body Allen-Cahn equation in terms of memory.
+pytorch,jax,JAX implementation provides speed-up and memory reduction compared to PyTorch.
+sdgd,implementation,The original SDGD with stacked backward mode AD was implemented in PyTorch.
+parallelization,speed up,Parallelization provides speed up in the implementation.
+parallelization,speed up,Parallelization provides ∼15× speed up
+parallelization,memory reduction,Parallelization provides reduction in peak memory for the JIT compilation phase
+mixed mode ad,forward-over-backward sdgd,Mixed mode AD gives roughly the same performance as parallelized stacked backward mode
+forward laplacian,calculation of laplacian operator,Forward Laplacian provides a constant-level optimization for the calculation of Laplacian operator
+forward laplacian,best method,It is the best method in both speed and memory when the dimension is 100
+scaling,input dimension,"Naturally, with a high enough input dimension d, the difference in the constant prefactor is trumped by scaling"
+stde,parallelized stacked backward mode ad,STDE provides up to 10× speed up and memory reduction of at least 4× compared to parallelized stacked backward mode AD
+stde,stde provides,"We introduce STDE, a general method for constructing stochastic estimators for arbitrary differential operators that can be evaluated efficiently via Taylor mode AD. When the dimension is larger than 1000, it becomes worse than even parallelized stacked backward mode"
+stde,optmization problem,"We evaluated STDE on PINNs, an instance of the optimization problem where the loss contains differential operators"
+stde,baseline methods,STDE outperforms the baseline methods
+stde,pinns,STDE can be applied besides PINNs
+stde,deep ritz method,STDE is more applicable than deep ritz method
+stde,weak adversarial network (wan),STDE is more applicable than weak adversarial network (WAN)
+stde,backward sde-based solvers,STDE is more applicable than backward SDE-based solvers
+stde,deep galerkin method,STDE is more applicable than deep Galerkin method
+stde,forward laplacian,STDE is more applicable than forward Laplacian
+stde,optimization possibilities,STDE forgoes the optimization possibilities that apply to specific operators
+stde,variance reduction techniques,STDE did not consider variance reduction techniques that could be applied
+stde,randomization batch size,lowering the randomization batch size improves speed and memory profile
+stde,high order derivative of neural network parameter,STDE is not suited for computing the high order derivative of neural network parameter
+high order derivative,neural network parameter,The high order derivative of neural network parameter is discussed as explained in Section 3.
+stde construction,univariate taylor mode ad,The key insight of the STDE construction involves utilizing univariate Taylor mode AD.
+derivative tensor,derivative operators,Derivative operators are derivative tensor contractions.
+ad,randomized numerical linear algebra,There is a connection between the fields of AD and randomized numerical linear algebra.
+ad,neural networks,The connection between fields of AD and randomized numerical linear algebra points towards significant progress in large-scale scientific modeling with neural networks.
+many-body schrödinger equations,high-dimensional laplacian,"In the context of many-body Schrödinger equations, one needs to compute a high-dimensional Laplacian."
+high-dimensional black-scholes equation,mathematical finance,The high-dimensional Black-Scholes equation has numerous uses in mathematical finance.

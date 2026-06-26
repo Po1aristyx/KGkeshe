@@ -1,0 +1,202 @@
+node_1,node_2,edge
+overparameterized neural networks,generalize,"Overparameterized neural networks can generalize, but the underlying reason is elusive"
+stochastic optimizers,flatter minimizers,Common stochastic optimizers prefer flatter minimizers of the training loss
+flatness,generalization,Flatness of minimizers of the training loss implies generalization
+sharpness minimization algorithms,generalize poorly,Sharpness minimization algorithms fail to generalize poorly for certain flattest models
+data distributions,model architectures,The relationship between sharpness and generalization depends on data distributions and model architectures
+sharpness minimization algorithms,minimize sharpness,Sharpness minimization algorithms do not only minimize sharpness to achieve better generalization
+stochastic optimization methods,generalizable models,Stochastic optimization methods can find generalizable models in overparameterized architectures
+generalization,flatness of the loss landscape,Many empirical and theoretical studies suggest that generalization is correlated with or guaranteed by the flatness of the loss landscape at the learned model.
+flatness of the minimizers,generalization capability,The answer to Question 0 is false as the flatness of the minimizers does not always correlate with the generalization capability.
+sharp networks,good generalization,Dinh et al. theoretically construct very sharp networks with good generalization.
+sharpness,test accuracy,Recent empirical results find that sharpness may not have a strong correlation with test accuracy for a collection of modern architectures and settings.
+sharp models,good generalization,There exist sharp models with good generalization.
+models,correlation,Models are evaluated based on correlation.
+models,cause,Models are the main cause of non-correlation.
+models,sharpness,Models that are sharp but generalizable are the main cause for non-correlation.
+algorithms,generalize,Sharpness minimization algorithms can generalize well.
+architecture,overview,Each row in the table corresponds to one architecture in the overview of results.
+architecture,flattest minimizers,The overview of results indicates whether all flattest minimizers of training loss generalize well.
+architecture,sharpness minimization algorithms,The overview of results indicates whether the sharpness minimization algorithms generalize well.
+neural network minimizers,generalize,Theoretical works answer whether all flattest neural network minimizers generalize well.
+question 1,theoretical works,"Question 1 is answered affirmatively for simplified linear models in some theoretical works mentioned by Li et al., Ding et al., Nacson et al., and Gatmiry et al."
+generalization,sharpness,"Theoretical results linking generalization to sharpness for more general architectures typically involve terms such as parameter dimension or norm discussed by Neyshabur et al., Foret et al., Wei & Ma, and Norton & Royset."
+question 1,neural networks,The answer to Question 1 for standard neural networks remains unclear according to the context.
+neural networks,architectures,The answer to Question 1 subtly depends on the architectures of neural networks as discussed in the context.
+2-layer relu networks,bias,"Simply removing the bias in the first layer of 2-layer ReLU networks can turn a negative result into a positive result, as demonstrated in Theorem 4.3 of Wu & Su."
+theorem 4.3,authors,"The authors of the mentioned theorem were only made aware of it after putting their work online, as indicated in the context."
+data distribution,layer bias,"When bias is added to a data distribution, there exists a flattest minimizer that fails to generalize for every unseen data, as described in the context."
+flattest minimizer,generalize,The flattest minimizer fails to generalize for every unseen data.
+adding bias,appending constant input feature,Adding bias in the first layer can be interpreted as appending a constant input feature.
+generalization,network architectures,The generalization of the flattest minimizer is sensitive to both network architectures and data distributions.
+optimizers,sgd with large learning rates,Recent theoretical studies show that optimizers including SGD with large learning rates implicitly regularize the sharpness of the training loss landscape.
+optimizers,sharpness-aware minimization,Recent theoretical studies show that optimizers including Sharpness-Aware Minimization may implicitly regularize the sharpness of the training loss landscape.
+sharpness-aware minimization,sharpness minimization algorithms,Optimizers like Sharpness-Aware Minimization are referred to as sharpness minimization algorithms in this paper.
+question 1,natural hypothesis,"Because Question 1 is not always true, it is natural to hypothesize that sharpness- minimization algorithms will fail for architectures and data distributions where Question 1 is not Question 2."
+question 1,certain architecture and data distribution,"The sharpness minimization algorithm works if and only if for certain architecture and data distribution, Question 1 is true."
+question 1,architecture,"Question 1 is true for some architectures and data distributions, suggesting a relationship between the question and the architecture"
+architecture,data distribution,"The architectures and data distributions are mentioned together, indicating a relationship between them"
+sharpness-minimization algorithms,generalization,"Sharpness-minimization algorithms can still generalize well, even when the answer to Question 1 is false, showing a relationship between the algorithms and generalization"
+architectures,non-generalizing and generalizing flattest minimizers,"For many architectures, there exist both non-generalizing and generalizing flattest minimizers of the training loss, suggesting a relationship between architectures and minimizers"
+sharpness-minimization algorithms,different types of minimizers,"Sharpness-minimization algorithms can find different types of minimizers for different architectures, indicating a relationship between the algorithms and minimizers"
+sharpness,generalization,"The relationship between sharpness and generalization falls into three different regimes depending on architectures and distributions, suggesting a relationship between sharpness and generalization"
+flattest minimizers,training loss,"Flattest minimizers of training loss provably generalize and sharpness minimization algorithms find generalizable models, indicating a relationship between minimizers and training loss"
+scenario 1,flattest minimizers,"In Scenario 1, Flattest minimizers of training loss provably generalize and sharpness minimization algorithms find generalizable models, suggesting a relationship between the scenario and minimizers"
+scenario 1,question 1 and question 2,"Both Question 1 and Question 2 are answered affirmatively in Scenario 1, showing a relationship between the scenarios and the questions"
+flattest minimizers,worst generalization,"There exists a flattest minimizer that has the worst generalization over all minimizers, indicating a relationship between minimizers and generalization"
+sharpness minimization algorithms,generalizable models,"Sharpness minimization algorithms fail to find generalizable models in some regimes, suggesting a relationship between the algorithms and models"
+sharpness minimization algorithms,generalizable models,Sharpness minimization algorithms fail to find generalizable models.
+sharpness minimization algorithms,unknown mechanisms,The sharpness minimization algorithm relies on other unknown mechanisms beyond minimizing sharpness to find a generalizable model.
+empirical rademacher complexity,function class f,The empirical Rademacher complexity of function class F is defined based on the data S.
+network architectures,relationship between sharpness and generalization,The relationship between sharpness and generalization is influenced by different network architectures.
+w2sbnγ,w1,"W2SBNγ is a function that takes relu(W1x + b1) and relu(W1xi + b1) as inputs and applies a specified operation involving gamma parameter and weight matrices W1, W2. It involves a simplified BatchNorm (SBN) operation that helps in the normalization of the data."
+w2sbnγ,relu,W2SBNγ uses relu activation function to transform the input before performing BatchNorm operation. The relu function introduces non-linearity in the network.
+w2sbnγ,w1xi,"W2SBNγ considers relu(W1xi + b1) as part of its operation, indicating that the weight matrix W1 is applied to the input features xi for processing."
+w1xi,relu,W1xi undergoes a relu activation function to introduce non-linearity in the computation process. This step plays a role in transforming the input features before further processing.
+w2-mlp-sim-bn,f sbn,W2-MLP-Sim-BN is represented as a function f sbn in the expression. It involves a multi-layer perceptron (MLP) with a simplified BatchNorm operation. This architecture is designed to perform specific computations efficiently.
+w2-mlp-sim-bn,w2,"W2-MLP-Sim-BN includes the weight matrix W2 in its calculations, indicating that the matrix is crucial for the operations performed by this architecture."
+w1,w2,The weight matrices W1 and W2 are used in conjunction with other parameters such as biases and activation functions to build the neural network. These matrices play a significant role in defining the architecture of the network.
+θ,w1,"The parameter θ, which comprises the weight matrices W1, plays a pivotal role in the operations involved in processing the input data. The values of θ influence the behavior of the network during training and inference."
+θ,b1,The parameter θ consists of biases represented by b1. Biases are essential components in neural networks as they help in adjusting the output along with the weighted inputs. The values of biases impact the overall performance of the model.
+model,fθ,"Model fθ interpolates the dataset {(xi, yi)}n ∀i, fθ(xi) = yi."
+model,sharpness,Our theoretical analysis focuses on understanding the sharpness of the trained models.
+model,loss function,"Precisely, for a model fθ parameterized by θ, a dataset {(xi, yi)}n i=1 and loss function ℓ, we will use the trace of Hessian of loss function, Tr(∇2L(θ)) to measure how sharp the loss is at θ."
+model,gradient descent,We train a 2-layer MLP with ReLU activation without bias using gradient descent with weight decay and 1-SAM on Pxor with dimension d = 30 and training set size n = 100.
+model,generalization,"In both cases, the model reaches perfect generalization."
+model,weight,"Although weight decay doesn’t explicitly regularize model sharpness, the flatness of the model decreases through training, which is consistent with our Lemma 3.1 relating sharpness to the norm of the weight."
+lemma 3.1,sharpness,The Lemma 3.1 relates sharpness to the norm of the weight.
+minimizer,training loss,The minimizer of the training loss forms a smooth manifold according to Cooper (2018).
+sam,sharpness minimization algorithm,Sharpness-Aware Minimization (SAM) is used as a sharpness minimization algorithm in the experiments.
+label noise sgd,learning rate η,Label Noise SGD works with a sufficiently small learning rate η according to Blanc et al. (2019) and Damian et al. (2021) and Li et al. (2021).
+trace of hessian,loss,We analyze the trace of Hessian of the loss to use SAM with batch size 1 for sharpness minimization.
+tr,trace of a matrix,The symbol Tr is used to denote the trace of a matrix.
+x[i],value of i-th coordinate,The notation x[i] denotes the value of the i-th coordinate of vector x.
+⊙,element-wise product,The symbol ⊙ represents element-wise product.
+indicator function,vector,The indicator function 1 [x > 0] is used as a vector of the same length as x whose j-th entry is 1 if x[j] > 0 and 0 otherwise.
+˜o(x),logarithmic multiplicative factors,The notation ˜O(x) is used to hide logarithmic multiplicative factors.
+flattest models,generalize,"Flattest models provably generalize, as shown for the architecture 2-MLP-No-Bias and data distribution Pxor."
+theorem 3.1,input dimension d,Theorem 3.1 discusses the relationship between probability and the input dimension d in the context of training set and model parameters.
+theorem 3.1,training loss,Theorem 3.1 states the relationship between the training loss of a 2-MLP-No-Bias model and the sample complexity with respect to the input dimension.
+training loss,model parameters,The training loss of the model is related to the model parameters in terms of classification accuracy and input generalization.
+theorem 3.1,flat models,Theorem 3.1 demonstrates that flat models can generalize well with respect to the input dimension in the context of the XOR problem.
+theorem 3.1,proof step,"A major proof step in Theorem 3.1 relates the sharpness of the model to the norm of the weight, showing the model's ability to classify inputs accurately."
+theorem 3.1,absolute constant c,"Theorem 3.1 establishes the existence of an absolute constant C, independent of input dimension and probability, ensuring certain properties hold with high probability."
+lemma 3.1,theorem 3.1,"Lemma 3.1 defines a set ΘC based on the results of Theorem 3.1, connecting the conclusions of both theorems in the context of model optimization."
+theorem 3.1,prior work wu & su (2023),"The authors acknowledge similar results from a prior work by Wu & Su (2023), indicating awareness of existing literature in the field."
+wu & su,prior work,mention in the text suggesting Wu & Su as a previous work that the authors were not aware of before the first version of this work was online
+theorem 3.1,almost linear complexity,mention in the text showing almost linear complexity in Theorem 3.1 which is not trivial
+wei et al.,ntk,Wei et al. shown that learning the distribution will require Ω(d2) samples for Neural Tangent Kernel (NTK)
+wei et al.,learning distribution,Wei et al. shown that learning the distribution will require Ω(d2) samples for Neural Tangent Kernel (NTK)
+wei et al.,samples,Wei et al. shown that learning the distribution will require Ω(d2) samples for Neural Tangent Kernel (NTK)
+wei et al.,features,"In Figure 2b inspection, it is observed that the four neurons approximately extract features ±x[1] ± x[2]"
+model complexity,flatness,mention in the text about reducing model complexity and how flatness may encourage the model to find a more interpretable solution
+flatness,interpretable solution,mention in the text showing that flatness may encourage the model to find a more interpretable solution
+interpolating model,generalize,"mention in the text proving that under a stronger than i.i.d condition over the training set, the near flattest interpolating model with architecture 2-MLP-Sim-BN will provably generalize"
+interpolating model,weight first layer,"mention in the text proving that under a stronger than i.i.d condition over the training set, the weight of the first layer will be centered on the first two coordinates of the input"
+training set,condition,The training set must satisfy Condition 1 which involves the existence of a specific set S and the linear space spanned by it having a particular rank.
+training set,theorem,"Theorem 3.2 states that given a training set satisfying Condition 1, there exists a constant κ such that certain conditions are met for width-m 2-MLP-Sim-BN."
+training set,sharpness minimization,Theorem 3.2 shows that sharpness minimization plays a role in guiding the model to find an interpretable and low-rank representation.
+sharpness minimization,model,Sharpness minimization may guide the model to find an interpretable and low-rank representation according to Theorem 3.2.
+implicit bias,sam,There is a similar implicit bias of Sharpness-Aware Minimization (SAM) as discussed in Andriushchenko et al. (2023a).
+generalizable solution,hypothesis,"In practice, it is found that it is not necessary for 1-SAM to find a generalizable solution. A hypothesis is presented suggesting that the condition for generalization is mainly technical."
+implicit bias,sam,SAM is associated with the concept of implicit bias as discussed in Andriushchenko et al. (2023a)
+sam,appendix b.13.2,Proof related to SAM is deferred to Appendix B.13.2
+1-sam,2-mlp-no-bias,1-SAM is used to train 2-MLP-No-Bias on data distribution Pxor
+2-mlp-no-bias,data distribution pxor,2-MLP-No-Bias is trained on the data distribution Pxor
+model,test set,The model that interpolates the training set reaches a flat minimum that generalizes perfectly to the test set
+model,training set,The model interpolates the training set and reaches a flat minimum
+theorem 3.1,figure 1,Theorem 3.1 is verified by training 2-MLP-No-Bias on data distribution Pxor as shown in Figure 1
+condition,theorem 3.2,The strong theoretical Condition 1 is not enforced in Theorem 3.2
+2-layer mlp,simplified bn,2-layer MLP is trained with simplified BN on data distribution Pxor
+model,interpretability,The model is found to be interpretable after a detailed analysis
+features,neurons,The four largest neurons in the first layer extract features {relu(c1x[1] + c2x[2])
+neurons,features,The four largest neurons in the first layer extract features {relu(c1x[1] + c2x[2])
+weight matrix,features,The first 2 columns of the weight matrix of the first layer correspond to the useful features {relu(c1x[1] + c2x[2])
+weight matrix,norms,The norms of the weight matrix are highlighted with specific values
+non-generalizing models,flattest generalizing models,"Both generalizing and non-generalizing solutions can be flattest, and SAM finds the former"
+sharpness,generalization,Sharpness benefits generalization as shown in the previous section
+general architectures,bound,Generalization benefit depends on model architectures.
+general architectures,benefit,Generalization benefit depends on model architectures.
+model architectures,adding bias,Simply adding bias to the first layer of 2-MLP-No-Bias makes non-vacuous generalization bound impossible for distribution Pxor.
+bound,distribution pxor,Simply adding bias to the first layer of 2-MLP-No-Bias makes non-vacuous generalization bound impossible for distribution Pxor.
+set of extreme points,finite set s,"A finite set S ⊂ Rd is a set of extreme points if and only if for any x ∈ S, x is a vertex of the convex hull of S."
+d-layer network,memorizing solution,"A D-layer network is a memorizing solution for a training dataset if (1) the network interpolates the training dataset, and (2) for any depth k ∈ [D − 1], there is an injection from the input data to the neurons on depth k, such that the activations in layer k for each input data is a one-hot vector with the non-zero entry being the corresponding neuron."
+d-layer network,training dataset,"A D-layer network is a memorizing solution for a training dataset if (1) the network interpolates the training dataset, and (2) for any depth k ∈ [D − 1], there is an injection from the input data to the neurons on depth k, such that the activations in layer k for each input data is a one-hot vector with the non-zero entry being the corresponding neuron."
+input data points,set of extreme points,"For any D ≥ 2, if the input data points {xi} of the training set form a set of extreme points (Definition 4.1), then there exists a width n layer D MLP-Bias that is a memorizing solution (Definition 4.2) for the training dataset and has minimal sharpness over all the interpolating solutions."
+data distribution pxor,width-n 2-,"For data distribution Pxor, for any number of samples n, there exists a width-n 2-"
+proposition 4.1,theorem 4.1,Proposition 4.1 states the existence of a MLP-Bias that memorizes the training set as in Theorem 4.1
+proposition 4.1,a flat model,Proposition 4.1 indicates that a flat model can generalize poorly
+theorem 3.1,theorem 4.1,There is a surprising difference between Theorem 3.1 and Theorem 4.1 due to slight architectural modifications like adding bias or removing BatchNorm
+sharpness,generalization,There is a complex relationship between sharpness and generalization as shown in the following theorem
+proposition 4.2,theorem 4.1,"Proposition 4.2 states the existence of a MLP-Bias that interpolates the training dataset, reaching minimal sharpness as Theorem 4.1"
+proposition 4.2,a flattest model,Proposition 4.2 indicates the existence of a flattest model that can generalize well despite the presence of memorizing solutions
+2-mlp-bias,training dataset,A width-n 2-MLP-Bias interpolates the training dataset and achieves minimal sharpness over all interpolating models
+theorem 4.1,figure 3,The solution in Theorem 4.1 is visualized in Figure 3.
+extreme points,input data points,"The input data points form a set of extreme points, as defined in Definition 4.1."
+input data point,vector,"For each input data point xi, there exists a vector wi in Rd, such that it satisfies the stated condition."
+ri,yi,The relationship between ri and yi is defined as stated in the context.
+model,training dataset,"The model interpolates the training dataset, as mentioned in the context."
+pxor,input data points,"For Pxor and sufficiently small ϵ, the model behaves as explained for any input data point not in the set {xi}i∈[n]."
+sharpness,jacobian of the model,"The lemma relates the sharpness and the Jacobian of the model, as defined in Lemma 4.1."
+solutions,theorem 4.1,Theorem 4.1 discusses solutions constructed within its context.
+input data points,unit circle,The input data points come from a unit circle as mentioned in the context.
+input data points,dots,The input data points are marked as dots within the context.
+region,corresponding color,The shady area with the corresponding color represents the region as explained in the context.
+neuron,weight vector,The weight vector on the corresponding neuron is important for proper functioning of the network.
+network,correct label,The network can output the correct label for each input data point as mentioned in the context.
+network,training set,The network can output correct label as long as weight vector on corresponding neuron is properly chosen for each input data point in the training set.
+prediction,input data points outside shady area,The network predicts 0 for all the input data points outside the shady area.
+training set,support,The volume of input data points outside shady area can be almost as large as the support of the training set.
+weight vector,epsilon,The volume outside shady area can be made almost as large as the support of the training set by choosing epsilon (epsilon) sufficiently small.
+model,training set,The model can interpolate the training set while generalizing poorly.
+proof of lemma 4.1,standard calculus,The proof of Lemma 4.1 is done using standard calculus.
+first equation,equation (1),"The first equation in Equation (1) is explained with respect to all i, f theta(xi) equals yi."
+bias term,weight matrix,The bias term is considered as a part of the weight matrix by appending 1 to the input data point.
+transformed input,weight matrix,The transformed input is denoted by the weight matrix in the context.
+weight matrix,chain rule,The weight matrix is denoted as transformed weight matrix according to the chain rule.
+chain rule,gradient,"Using the chain rule, the gradient in the equation is calculated."
+weight matrix,f,The weight matrix is part of the equation involving F.
+f,relu,The equation further involves relu function applied on F.
+cauchy-schwarz inequality,gradient,The Cauchy-Schwarz inequality is used to find the gradient in the equation.
+condition,equation,The condition fθ(xi) = yi is used in Equation (3).
+memorization construction,lower bound,The memorization construction leads to reaching the lower bound in the equation.
+memorization network,parameter,The memorization network is one parameter that can reach the lower bound.
+parameter θ,distribution pxor,"For parameter θ to satisfy distribution Pxor, specific conditions need to be met."
+baseline,1-sam,A comparison is made between Baseline and 1-SAM in Scenario II.
+mlp,relu activation,A 2-layer MLP with ReLU activation is used in the scenario.
+gradient descent,weight decay,Gradient descent with weight decay is utilized in the training process.
+training set size,dimension,The training set size and dimension parameters are specified in the scenario.
+1-sam,model,1-SAM is mentioned as a model that fails to generalize and shows a difference in generalization performance
+1-sam,pxor,1-SAM is mentioned as being used on Pxor dataset with specific dimensions and training set size
+pxor,softplus activation,Pxor dataset is trained with Softplus activation function
+equation (5),model,Equation (5) is mentioned as holding while the model shows perfect generalization performance
+sam,non-generalizing solutions,SAM is mentioned as finding solutions that have low sharpness but fail to generalize
+flat minimization,generalization performance,Flat minimization is mentioned as potentially hurting generalization performance
+converged models,generalize,Converged models found by SAM fail to generalize.
+experiments,data distribution,We perform experiments on data distribution Pxor in Figure 4.
+small learning rate gradient descent,weight decay,We apply small learning rate gradient descent with weight decay as our baseline.
+sharpness,model,the converged model found by SAM has a much lower sharpness than the baseline.
+generalization performance,sam,the generalization performance of SAM is much worse than the baseline.
+generalization performance,epochs,the generalization performance even starts to degenerate after 4000 epochs.
+sharpness minimization,generalization performance,sharpness minimization can empirically hurt generalization performance.
+1-sam,activation functions,SAM may fail to generalize with other activation functions.
+1-sam,relu activation,1-SAM fails to generalize is limited to ReLU activation.
+1-sam,2-layer networks,empirically that 1-SAM fails to generalize for 2-layer networks with softplus activation trained on the same dataset.
+memorizing solutions,1-sam,although there is no known guarantee for the existence of memorizing solutions.
+layernorm,data distribution,We train two-layer ReLU networks with simplified LayerNorm on data distribution Pxor with dimension d = 30 and sample complexity n = 100 using 1-SAM.
+weight,bias,"we restricted the norm of the weight and the bias of the first layer as 10, to avoid minimizing the sharpness by simply increasing the norm."
+models,generalize,the models almost perfectly generalize.
+model,generalize,Models in the context have the ability to generalize their predictions based on the given data.
+solution,memorize,There are solutions in the context that are able to memorize the training dataset.
+counterexample,section,The context mentions providing a counterexample in a specific section to illustrate a point.
+dataset,generalization error,The generalization error of a model is related to the dataset used for training.
+proposition 5.2,data distribution pxor,Proposition 5.2 discusses the behavior of data distribution Pxor in relation to the training dataset and generalization error
+proposition 5.2,width-n 2-mlp-sim-ln,Proposition 5.2 mentions the existence of width-n 2-MLP-Sim-LN models with hyperparameter ϵ that interpolate the training dataset
+proposition 5.2,generalization error,Proposition 5.2 states that the width-n 2-MLP-Sim-LN models have zero generalization error
+construction and intuition behind theorem 5.1,propositions 5.1 and 5.2,The construction and intuition behind Theorem 5.1 are similar to that of propositions 5.1 and 5.2
+theoretical and empirical evidence,sharpness minimization algorithms including sam,Theoretical and empirical evidence suggest that sharpness minimization algorithms like SAM may still improve generalization
+sharpness minimization algorithms including sam,flattest models,Sharpness minimization algorithms such as SAM may improve generalization even in the presence of flattest models that generalize poorly
+flattest models,generalize poorly,flattest models that generalize poorly
+generalization benefit,sharpness minimization algorithms,generalization benefit of sharpness minimization algorithms
+sharpness,generalization benefit,sharpness may not be the only cause of the generalization benefit
+authors,nsf iis 2045685,support from NSF IIS 2045685

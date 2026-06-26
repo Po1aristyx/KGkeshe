@@ -1,0 +1,225 @@
+node_1,node_2,edge
+video recognition algorithms,training pipelines,Video recognition algorithms conduct different training pipelines for inputs with different frame numbers.
+training pipelines,repetitive training operations,Different training pipelines require repetitive training operations.
+training pipelines,multiplying storage costs,Different training pipelines lead to multiplying storage costs.
+model,performance,Evaluating the model using other frames not used in training leads to a significant drop in performance.
+temporal frequency deviation phenomenon,general framework,The Temporal Frequency Deviation phenomenon is addressed by a general framework named Frame Flexible Network (FFN).
+frame flexible network (ffn),model,FFN enables the model to be evaluated at different frames to adjust its computation and reduces memory costs of storing multiple models.
+frame flexible network (ffn),training sequences,FFN integrates several sets of training sequences.
+frame flexible network (ffn),multi-frequency alignment (mfal),FFN involves Multi-Frequency Alignment (MFAL) to learn temporal frequency invariant representations.
+frame flexible network (ffn),multi-frequency adaptation (mfad),FFN leverages Multi-Frequency Adaptation (MFAD) to further strengthen representation abilities.
+comprehensive empirical validations,effectiveness and generalization of ffn,Empirical validations using various architectures and popular benchmarks solidly demonstrate the effectiveness and generalization of FFN.
+code,https://github.com/bespontaneous/ffn,Code for FFN is available at the specified GitHub link.
+video recognition,deep learning,"Video recognition lays a solid foundation for deep learning, which requires massive data."
+video recognition,image classification,"Video recognition methods need a series of frames to represent the video, as opposed to image classification."
+video recognition,efficiency,The efficiency of video recognition methods has always been an essential factor in evaluating these approaches.
+video recognition,lightweight networks,Efficiency in video recognition can be explored through designing lightweight networks which are hardware-friendly.
+lightweight networks,efficiency,Designing lightweight networks increases efficiency with an acceptable performance trade-off.
+networks,depths,Temporal Frequency Deviation phenomenon exists in different depths of deep networks.
+temporal frequency deviation phenomenon,video recognition architectures,Temporal Frequency Deviation phenomenon exists in various video recognition architectures.
+temporal frequency deviation phenomenon,video recognition,Temporal Frequency Deviation phenomenon widely exists in video recognition.
+methods,high frame number,All methods are trained with high frame number and evaluated at other frames.
+methods,separated training,Methods are evaluated to compare with Separated Training.
+research,networks,One line of research focuses on designing networks that can execute at various depths or widths.
+research,input data,The other line of research considers modifying the resolutions of input data.
+2d cnns,video recognition,"2D CNNs are carefully designed methods primarily used for image-related tasks, which can hinder their applications on video recognition where 3D CNNs and Transformer methods are crucial components."
+video recognition,3d cnns,"3D CNNs are mentioned as crucial components for video recognition tasks, indicating their importance in this context."
+video recognition,transformer methods,"Transformer methods are also mentioned as crucial components for video recognition tasks, showing their relevance in this context."
+video,multiple frames,"In video-related tasks, multiple frames need to be sampled to represent the video effectively."
+computational costs,number of sampled frames,"The computational costs will grow proportionally to the number of sampled frames in video tasks, showing a direct relationship between these two concepts."
+models,network,Standard protocol involves training the same network with different frames separately to obtain multiple models with different performances and computations.
+models,edge devices,"Challenges arise when applying these networks on edge devices due to the multiplication of parameters if all models are stored, and the time cost of downloading and offloading models to switch them."
+model,frame number,"Employing a single network that is trained at a certain frame number for inference cannot resist the variance of frame numbers in real scenarios, showing the importance of considering frame numbers in model design."
+high frame number,low temporal frequency,Training the model with a high frame number (high temporal frequency) and directly evaluating it at fewer frames (low temporal frequency) is mentioned as a naive and straightforward solution to adjust the cost.
+training,separated training (st),A comparison is made between training the model with a high frame number and evaluating it at fewer frames versus using Separated Training (ST) which trains the model at different temporal frequencies individually to address the cost adjustment.
+separated training (st),temporal frequency deviation,"Separated Training (ST) is compared to Temporal Frequency Deviation, showing performance gaps between the two methods which are affected by the frame number used in training."
+temporal frequency deviation,frame flexible network (ffn),The existing phenomenon of Temporal Frequency Deviation leads to the proposal of a general framework called Frame Flexible Network (FFN) to address the issue with flexibility in evaluation.
+frame flexible network (ffn),multi-frequency alignment (mfal),Frame Flexible Network (FFN) utilizes Multi-Frequency Alignment (MFAL) during training to learn temporal frequency invariant representations for robustness towards frame change.
+frame flexible network (ffn),multi-frequency adaptation (mfad),"Multi-Frequency Adaptation (MFAD) is presented to strengthen the representation abilities of the sub-networks in Frame Flexible Network (FFN), contributing to the overall performance improvement."
+adaptation (mfad),sub-networks,Adaptation (MFAD) strengthens the representation abilities of the sub-networks
+adaptation (mfad),ffn,Adaptation (MFAD) helps FFN exhibit strong performance at different frames during inference
+sub-networks,ffn,Sub-networks help FFN to exhibit strong performance at different frames during inference
+"normalization shifting problem [36, 37]","resolution-adaptive networks [15, 34]",Normalization shifting problem and resolution-adaptive networks have been studied
+2d convolutions,spatial-temporal modeling components,Prior works carefully analyzed the detailed structure of 2D convolutions to privatize the weights for different scale images
+2d convolutions,weights,The weights of 2D convolutions are privatized for different scale images
+method,spatial-temporal modeling components,The method does not touch the specific design of the spatial-temporal modeling components and shares their weights for inputs with different frames
+method,architectures,The method can be easily applied to various architectures (2D/3D/Transformer models)
+method,ffn,The method enforces FFN to learn temporal frequency invariant representations
+separated training (st),video recognition,Separated Training (ST) is a common practice in video recognition
+variance,temporal frequency,Models are hard to resist the variance in temporal frequency
+ffn,memory costs,FFN significantly reduces the memory costs of storing multiple models
+ffn,frames,FFN can be evaluated at different frames to adjust
+memory costs,storing multiple models,The framework proposed in the context significantly reduces the memory costs of storing multiple models.
+resource budget,different frames,The proposed framework enables methods to adjust their computation based on the current resource budget by sampling different frames.
+frame flexible network (ffn),temporal frequency deviation,FFN is designed to resolve Temporal Frequency Deviation as detailedly analyzed in the context.
+temporal frequency deviation,video recognition,Temporal Frequency Deviation phenomenon widely exists in video recognition as revealed in the context.
+video recognition,2d networks,2D networks utilize 2D CNNs as the backbone and specifically design temporal modeling module for spatial-temporal modeling in video recognition.
+video recognition,3d networks,3D networks utilize 3D convolutions which naturally consider the temporal information in frame sequences for video recognition.
+video recognition,transformer networks,"Transformer networks, based on Vision Transformers, have been proposed for spatial-temporal learning and shown powerful performance in video recognition."
+training-testing discrepancy,deep learning,Training-testing Discrepancy widely exists in many scenarios of deep learning where FixRes discovers the deviation of image resolutions between training and testing.
+fixres,deep learning,FixRes discovers the deviation of image resolutions between training and testing in the context of deep learning.
+slimmable neural networks,inference,Slimmable Neural Networks train a shared network which can adjust its width to meet the resource constraints during inference.
+temporal frequency deviation,video recognition,"The work is motivated by Temporal Frequency Deviation in video recognition, highlighting the importance of frame sampling."
+temporal frequency deviation,video recognition,Temporal Frequency Deviation is the key concept motivating the work in video recognition.
+frame sampling,methods,Frame sampling is a necessary step for all methods mentioned in the context.
+network training,frames,"Former procedures train the network with different frames individually, which is parameter-inefficient and memory-consuming."
+tsm model,training,TSM model is trained at 8 Frame and 12 Frame separately on Something-Something V1 dataset.
+parameter-efficient transfer learning,nlp,Parameter-efficient Transfer Learning has aroused researchers’ attention in NLP due to large-scale pre-trained language models.
+adapters,performance,Task-specific adapters have been designed to achieve parameter-efficient performance.
+multi-frequency adaptation (mfad),sub-networks,MFAD is presented to increase the representation abilities of sub-networks.
+dynamic networks,video recognition,Dynamic Networks have been widely studied for efficient video recognition.
+methods,salient frames,Some methods dynamically sample salient frames to reduce temporal redundancy.
+methods,spatial redundancy,Others mainly focus on reducing spatial redundancy by adaptively processing frames with different resolutions or cropping the most salient regions for each frame.
+different resolutions,cropping the most salient regions,These methods are designed to adaptively process every video for efficiency by adjusting resolutions or cropping salient regions.
+adaptively process every video,skip frames,Methods like skipping frames are used for efficiency in processing videos.
+model,evaluated at different frames,The work aims to train a model that can be evaluated at various frames to adjust costs and reduce parameter storage.
+dynamic networks,temporal frequency deviation,Dynamic networks do not solve the problem of temporal frequency deviation.
+temporal frequency deviation,nearby alleviation,Nearby alleviation phenomenon is observed when models are trained with high frame numbers but evaluated at fewer frames.
+tsm,8/12 frame,TSM is trained at 8/12 frames and evaluated at other frames to observe performance gaps.
+inference frame,training frame number,Performance gaps exist for models when evaluated with different frame numbers used in training.
+discrepancies,value,Discrepancies vary in terms of value.
+performance gap,inference frame close to training frame number,Performance gap is smaller when the inference frame is close to the training frame number.
+temporal frequency deviation,nearby alleviation,Nearby alleviation occurs when temporal frequency deviation is less severe at nearby frames.
+prior works,normalization shifting,Studies have been conducted on normalization shifting in image classification when switching network widths.
+batch normalization statistics,various layers,Batch normalization statistics at different layers are shown in Figure 3.
+batch normalization,statistics,"Batch Normalization calculates statistics such as means and variances of the aggregated features, which can vary based on the number of channels and frame numbers."
+model,structure,"The adjustment in model structure is not considered in the context, but the focus is on the impact of different frame numbers on normalization shifting."
+frame numbers,normalization shifting,"The question arises whether differing frame numbers will cause normalization shifting in the model, especially when trained with high temporal frequency and evaluated with low temporal frequency."
+batch normalization,input,The input of Batch Normalization (BN) can be the intermediate feature xL when training the model with high temporal frequency vH and evaluating it with low temporal frequency vL.
+bn statistics,frame numbers,"There is a discrepancy in Batch Normalization (BN) statistics observed at different frame numbers, indicating a potential impact on feature aggregation."
+statistics,data distribution,"Statistics such as means and variances (µH, σH 2) are calculated from the data distribution of a particular temporal frequency vH."
+statistics,model training,"Statistics are calculated separately for models trained with different temporal frequencies (vL and vH), showcasing the impact of data-dependent factors on the model."
+bn statistics,frame discrepancy,"The discrepancy in BN statistics at different frame numbers is attributed to data inherent divergence, leading to Temporal Frequency Deviation."
+layer normalization,transformer-based models,"Layer Normalization (LN) has been commonly used in Transformer-based models, highlighting its significance in model optimization."
+ln statistics,calculation,"The statistics of Layer Normalization (LN) are calculated based on the data distribution, contributing to model optimization in Transformer-based architectures."
+layer normalization (ln),transformer-based models,LN has been widely used in Transformer-based models and its statistics are calculated in a similar way with BN which is related to the data distribution.
+ln statistics,temporal frequency deviation,The discrepancy of LN statistics is considered one of the reasons for Temporal Frequency Deviation on Transformer-based models.
+frame flexible network (ffn),multi-frequency alignment,Proposed Multi-Frequency Alignment involves Weight Sharing and Temporal Distillation to learn temporal frequency invariant representations.
+multi-frequency alignment,weight sharing and temporal distillation,Multi-Frequency Alignment involves Weight Sharing and Temporal Distillation for temporal frequency invariant learning.
+multi-frequency alignment,multi-frequency adaptation,Multi-Frequency Adaptation fits the frequency invariant features to different sub-networks and further increases their representation abilities.
+ffn,cnn based method,FFN is a general framework which can be built on different architectures and is exemplified with a CNN-based method in this part for easier description.
+ffn,multi-frequency alignment,"During training, given inputs with different temporal frequency values, Multi-Frequency Alignment involves Weight Sharing and Temporal Distillation for temporal frequency invariant learning."
+multi-frequency alignment,weight sharing,Multi-Frequency Alignment involves Weight Sharing for temporal frequency invariant learning.
+multi-frequency alignment,temporal distillation,Multi-Frequency Alignment involves Temporal Distillation for temporal frequency invariant learning.
+multi-frequency adaptation,sub-networks,Multi-Frequency Adaptation fits the frequency invariant features to different sub-networks to increase their representation abilities.
+multi-frequency adaptation,temporal invariant features,Multi-Frequency Adaptation is presented to fit the temporal invariant features to different sub-networks to increase representation abilities.
+multi-frequency adaptation,sub-networks,Multi-Frequency Adaptation activates the sub-network with the corresponding frame number during inference.
+temporal frequency invariant representations,weight sharing,Weight Sharing identifies temporal frequency invariant representations by sharing weights across different sub-networks.
+temporal frequency invariant representations,weight sharing,Weight Sharing uses shared weights to model spatial-temporal relationships for inputs with different temporal frequencies.
+temporal frequency invariant representations,weight sharing,Weight Sharing learns temporal frequency invariant representations through parameter-efficient weight sharing.
+temporal frequency invariant representations,weight sharing,Weight Sharing enforces the model to learn temporal frequency invariant representations which make the model robust to temporal frequency variance.
+weight sharing,specialized convolutions,"Compared to specialized convolutions, Weight Sharing is parameter-efficient and exhibits potential for better performance."
+weight sharing,specialized convolutions,"Weight Sharing stores one set of weights and applies them to different input frames, in contrast to specialized convolutions."
+weight sharing,specialized convolutions,Weight Sharing's approach of sharing weights is shown to be more efficient in Tab. 4 compared to specialized convolutions.
+temporal distillation,video recognition models,"In most cases, video recognition models trained with higher temporal frequency have better performance due to access to more information."
+video recognition models,vh,video recognition models trained with vH have better performance
+video recognition models,ph,Consider pH to be the most 'accurate' prediction among the three
+video recognition models,f h(·),Parameters of F H(·) can be updated using Cross-Entropy loss on pH
+video recognition models,ffn,Video sequences with different sampled frames are imported to FFN
+method,separated training (st),Method presented aims to exhibit similar or better performance compared to Separated Training (ST)
+temporal frequency deviation,model,Temporal Frequency Deviation will be less severe if the model is evaluated at nearby frames used in training
+sequences,f l(·),"Sequences vL, vM, and vH utilized at training phase to construct sub-networks F L(·), F M(·), and F H(·) respectively"
+inference paradigm,sub-network,Sub-network activated based on corresponding frame number with the input in the inference paradigm
+computational stream,ffn,Computational stream enables FFN to be evaluated with different frames during inference
+ffn,computational stream,The computational stream enables FFN to be evaluated with different frames during inference.
+ffn,multi-frequency alignment,MFAL is proposed to expand the network and enforce the model.
+resolution-adaptive networks,2d convolutions,Weights for 2D convolutions are privatized to learn scale-aware representations for inputs with different resolutions.
+video recognition,multi-frequency alignment,MFAL leverages Weight Sharing and Temporal Distillation for efficient expansion of the network.
+contrastive learning,multi-frequency alignment,MFAL is proposed for contrastive learning in video recognition to maximize the mutual information of the same video at different temporal frequencies.
+model,mfal,MFAL is proposed to expand the network and enforce the model.
+ce loss,parameters,Directly calculating CE loss on pL and pM is a straightforward solution to update the parameters.
+weight alteration,ffn,Weight Alteration is a layer inserted into each Convolution Block and Transformer Block in FFN.
+weights of convolutions,sub-networks,"The weights of convolutions are shared across three sub-networks, and the optimal parameters for vL after optimization may not fit well to vM and vH."
+ce loss,convolutions,Optimizing CE loss of pL and pM will lead to less favorable parameters of convolutions compared to only calculating Eq. 3 as their inputs contain less information compared to vH.
+normaliation shifting,temporal frequency deviation,"According to our analysis in Sec. 3, normalization shifting is one of the reasons which leads to Temporal Frequency Deviation."
+intermediate features,input sequences,"Formally, we denote the intermediate features for vL, vM, and vH as xL, xM, and xH, respectively, and provide specialized normalization for different input sequences."
+kl divergence loss,computational graph,"Consequently, we utilize KL divergence loss to involve pL and pM in the computational graph and update the parameters of FL (·) and FM (·)."
+predictions,knowledge transfer,Optimizing Eq. 4 will enforce the predictions of student (pL and pM ) and teacher (pH) networks to be as similar as possible and transfer the good knowledge from FH (·) to FL (·) and FM (·).
+losses,parameter update,"Considering the two losses in a uniform manner, we update the parameters of FFN by L = LCE + λ · LKL, where λ is an introduced hyperparameter to balance the two."
+ffn,lce,FFN parameters are updated by balancing the cross-entropy loss with the Kullback-Leibler divergence. LCE provides inter-class supervisory information.
+ffn,lkl,FFN parameters are updated by balancing the cross-entropy loss with the Kullback-Leibler divergence. LKL adds intra-instance knowledge to the network training.
+lce,lkl,LCE provides inter-class supervisory information while LKL adds intra-instance knowledge to the network training.
+pl,pm,"Temporal frequency variance will not change the class of the video, therefore pL and pM should share high similarity with each other."
+pl,ph,"Temporal frequency variance will not change the class of the video, therefore pL and pH should share high similarity with each other."
+pm,ph,"Temporal frequency variance will not change the class of the video, therefore pM and pH should share high similarity with each other."
+ffn,mfal,Multi-Frequency Adaptation Layer (MFAL) is proposed to enforce FFN to learn temporal frequency invariant representations.
+ffn,mfad,Multi-Frequency Adaptation (MFAD) is presented to better fit the frequency invariant features to different sub-networks.
+weight sharing,mfal,"Weight Sharing is necessary for MFAL, indicating a dependency relationship where Weight Sharing is a requirement for MFAL."
+weight sharing,set of parameters,"While Weight Sharing is important, it may be difficult to find a set of parameters to display strong representation ability at all frames without further adaptation, highlighting the challenge in finding the right parameters."
+weight sharing,shared convolution,"Weight Sharing is considered in the context of a shared convolution with weights W, showing an association between Weight Sharing and the concept of shared convolution."
+weight sharing,shared weights,"The shared weights of each sub-network are altered to diversify the parameters and strengthen their representation abilities, illustrating a direct link between Weight Sharing and the concept of shared weights."
+weight sharing,ffn,"By increasing the representation ability of FFN through a simple and efficient transformation, Weight Sharing plays a role in enhancing the performance of FFN."
+shared weights,ffn,"The shared weights convert into diversified weights to increase the representation ability of FFN, indicating a relationship between shared weights and FFN."
+video recognition methods,pre-trained models,"Video recognition methods often use pre-trained models, suggesting that video recognition methods have a reliance on pre-trained models."
+residual structure,pre-trained models,"The inclusion of the residual structure is to avoid the added module breaking the original computational graph of pre-trained models, showing a protective relationship between the residual structure and pre-trained models."
+weight alteration,transformer block,"Weight Alteration is included in the Transformer Block, indicating that Weight Alteration is a part of the operations performed within the Transformer Block."
+transformer block,weight alteration,Weight Alteration is included in the Transformer Block
+depth-wise convolution,transformer block,Depth-Wise convolution is lightweight and can be added to the Transformer Block with negligible parameters and computation
+methodtsm [18]tsm-mixed,tsm-proportional,MethodTSM [18]TSM-Mixed is related to TSM-Proportional
+methodtsm [18]tsm-mixed,tsm-proportional,There are multiple methods like TSM-Proportional related to MethodTSM [18]TSM-Mixed
+methodtsm [18]tsm-mixed,tsm-fine-tuning,MethodTSM [18]TSM-Mixed is related to TSM-Fine-tuning
+methodtsm [18]tsm-mixed,tsm-ensemble,MethodTSM [18]TSM-Mixed is related to TSM-Ensemble
+tsm-proportional,parameters,TSM-Proportional is associated with different specifications like Parameters
+something-something v1 dataset,comparison with baseline methods,There is a comparison made with baseline methods on the Something-Something V1 dataset
+gflops,top-1 acc. (%),GFLOPs represents the computational cost associated with achieving Top-1 accuracy
+frame flexible network (ffn),experimental validation,FFN is validated experimentally on different architectures and benchmarks
+experiment settings,datasets,The experiment settings involve conducting experiments on various datasets
+something-something v1&v2,videos,Something-Something V1&V2 datasets include a large number of videos
+something-something v1&v2,98k and 194k videos,"Something-Something V1&V2 includes 98k and 194k videos, showing a strong temporal dependency and significant Temporal Frequency Deviation phenomenon."
+kinetics400,large-scale dataset with 400 classes,Kinetics400 is a large-scale dataset categorized into 400 classes.
+hmdb51,"6,766 videos categorized into 51 classes","HMDB51 is composed of 6,766 videos categorized into 51 classes."
+implementation details,"uniformly sample 4/8/16 frames for vl, vm and vh in all methods","In Implementation Details, methods uniformly sample 4/8/16 frames for vL, vM and vH for training and evaluation."
+slow-fast,samples 16/32/64 frames for fast pathway,Slow-Fast samples 16/32/64 frames for the fast pathway.
+separated training,"training the network at vl, vm, and vh individually","Separated Training involves training the network at vL, vM, and vH individually and evaluating them at the frame used in training."
+mixed sampling,sampling 4 and 16 frames for vli and randomly choosing 4 consecutive frames vh'i,Mixed Sampling involves sampling 4 and 16 frames for vLi and randomly choosing 4 consecutive frames vH'i for integration using mixup.
+proportional sampling,network randomly samples 4 frames or 16 frames at each iteration,Proportional Sampling involves the network randomly sampling 4 frames or 16 frames at each iteration.
+temporal frequency deviation,proportional sampling and mixed sampling,Proportional Sampling and Mixed Sampling help alleviate Temporal Frequency Deviation as the performance at Frame 4/8 is better than the inference results of the model trained with standard protocol.
+proportional sampling and mixed sampling,fine-tuning,"Fine-tuning helps the baseline method to exhibit comparable performance with ST at 4 Frame, but at a loss of forgetting the knowledge at 16 Frame."
+proportional sampling and mixed sampling,ensemble,Ensemble outperforms ST at Frame 8 with the cost of multiplying computation.
+fine-tuning,temporal frequency deviation,"Fine-tuning helps the baseline method to exhibit comparable performance with ST at 4 Frame, but at a loss of forgetting the knowledge at 16 Frame."
+ensemble,temporal frequency deviation,Its performance at 4/16 Frame is worse than ST which means that it still cannot effectively resolve Temporal Frequency Deviation problem.
+st,temporal frequency deviation problem,ST cannot effectively resolve the Temporal Frequency Deviation problem.
+ffn,st,FFN shows stronger results compared to ST at all frames with negligible added computation.
+ffn,ensemble,FFN shows stronger results compared to Ensemble at all frames with negligible added computation.
+method,st,"Our method is trained for only one time, but can be evaluated at multiple frames, reducing the parameters of saving multiple models significantly compared to ST."
+ffn,tsm,FFN exhibits advantages in performance compared to baseline TSM at all frames.
+ffn,tea,FFN results surpass ST at all frames when implemented on TEA.
+ffn,st,The improvements of FFN over ST are listed in the table. Results exhibit similar improvements at all frame numbers compared to ST which validates the flexibility and generalization ability of our method.
+ffn,slow-fast,"Moreover, we extend FFN to 3D-network: Slow-Fast. The results exhibit similar improvements at all frame numbers compared to ST which validates the flexibility and generalization ability of our method."
+ffn,uniformer,"Moreover, we extend FFN to Transformer-network: Uniformer. The results exhibit similar improvements at all frame numbers compared to ST which validates the flexibility and generalization ability of our method."
+ffn,temporal frequency deviation,"The first observation is that Temporal Frequency Deviation phenomenon is less obvious on Kinetics400 and HMDB51 datasets. Nevertheless, FFN continuously improves the accuracy of ST on these datasets as well."
+ffn,inference at any frame,"We have proved that FFN can outperform ST at the frame numbers used in training, but the evaluation at other frames."
+ffn,st,"FFN outperforms ST at all frames within the range of 4-16 which are utilized in training. Moreover, we evaluate FFN at frames that are out of the bound of 4-16. One can observe that FFN even exhibits better performance compared to ST at Frame 2/18/20 which further demonstrates its generalization capacity at non-seen frames."
+frame,ffn,"Given a frame number n at inference phase, we will calculate the frame difference with L, M and H, and activate the sub-network with the minimal difference for validation. If the frame difference is the same for two sub-networks, we will choose the one which corresponds higher frame number by default. In this manner, we can evaluate at other frame numbers which are not used in training."
+frame,st,"FFN outperforms ST at all frames within the range of 4-16 which are utilized in training. Moreover, we evaluate FFN at frames that are out of the bound of 4-16. One can observe that FFN even exhibits better performance compared to ST at Frame 2/18/20 which further demonstrates its generalization capacity at non-seen frames."
+frame,tab. 2,"Shown in Tab. 2, we import different numbers of sequences to FFN and evaluate their performance at various frames."
+ffn(2),st,FFN(2) outperforms ST at 4/16 Frame but its performance at 8/12 Frame is worse than ST
+ffn(3),st,FFN(3) obtains higher accuracy at all frames compared to ST
+ffn(4),st,FFN(4) obtain higher accuracy at all frames compared to ST
+ffn,ffn(w/o wa),Both FFN and FFN(w/o WA) outperform specialized convolutions at all frames with fewer parameters
+ffn,mfal,Demonstrates the effectiveness of MFAL to learn temporal frequency invariant representations
+temporal frequency deviation,frame flexible network (ffn),The phenomenon revealed in the paper and FFN proposed to address it
+multi-frequency alignment,temporal frequency invariant representations,Multi-Frequency Alignment is proposed to learn temporal frequency invariant representations
+multi-frequency adaptation,temporal frequency invariant representations,Multi-Frequency Adaptation is presented to further learn temporal frequency invariant representations
+alignment,temporal frequency invariant representations,Alignment is used to learn temporal frequency invariant representations in order to further strengthen the representation ability.
+alignment,multi-frequency adaptation,Alignment is aligned with Multi-Frequency Adaptation to further enhance the representation ability.
+experiments,ffn,"Experiments demonstrate that FFN, which only requires one-shot training, outperforms Separated Training with significantly fewer parameters."
+ffn,gpu memory,FFN requires more GPU memory during training due to the import of several input sequences.
+ffn,weight alteration,FFN introduces slightly extra computation due to Weight Alteration.
+ffn,training efficiency,"In future work, there is interest in improving the training efficiency of FFN."
+research,devcom analysis center,Research was sponsored by the DEVCOM Analysis Center.
+research,cooperative agreement number w911nf-22-2-0001,Research was accomplished under Cooperative Agreement Number W911NF-22-2-0001.
+validation results,ffn,Validation results of FFN at various frame numbers on Something-Something V1 show improvements over ST.
+tsm-st,tsm-ffn(4)-4/16,TSM-ST and TSM-FFN(4)-4/16 are related as different methods of sequences in the context of training and achieving better results.
+tsm-ffn(4)-4/16,ffn(4),TSM-FFN(4)-4/16 and FFN(4) are related in terms of obtaining better results at certain frame numbers and the trade-off in time and resources during training.
+ffn(4),frame numbers,FFN(4) and Frame Numbers are related in terms of sampling more frames and importing sequences with different frame numbers for analysis.
+tsm-st (24f),tsm-st (16f),TSM-ST (24F) and TSM-ST (16F) are related in terms of performance comparison and the impact of temporal modeling measure on the results.
+ffn,temporal distillation,FFN and Temporal Distillation are related in terms of achieving the highest accuracy at a specific frame number through design choices.
+design choices,ffn,Design Choices and FFN are related in terms of conducting ablation experiments to verify the effectiveness of specific design choices in the context of performance improvement.
+weight alteration,multi-frequency adap,"Weight Alteration and Multi-Frequency Adap are related in terms of the impact on performance when Weight Alteration is removed from the convolution block, highlighting the importance of Multi-Frequency Adap."
+mfad,sub-networks,MFAD increases the representation abilities of the sub-networks at corresponding frames.
+ffn,ce loss,FFN is optimized by calculating CE loss on the predictions of all sub-networks respectively.
+ffn,kl divergence loss,FFN is not optimized using KL divergence loss.
+st,results,The results are clearly worse than ST.
+st,temporal distillation,Temporal Distillation is a necessary component for Multi-Frequency Alignment.
+convolutions,ws,Convolution block specialized without WS.

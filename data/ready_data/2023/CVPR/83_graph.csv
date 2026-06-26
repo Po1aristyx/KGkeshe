@@ -1,0 +1,198 @@
+node_1,node_2,edge
+panoptic lifting,3d volumetric representations,Panoptic Lifting is a novel approach for learning 3D volumetric representations from images.
+panoptic lifting,color images,Panoptic Lifting model can render color images with 3D-consistent panoptic segmentation.
+panoptic lifting,2d panoptic segmentation masks,Panoptic Lifting scheme requires machine-generated 2D panoptic segmentation masks as input.
+2d panoptic segmentation masks,pre-trained network,2D panoptic segmentation masks are inferred from a pre-trained network.
+panoptic lifting,neural field representation,Panoptic Lifting scheme is based on a neural field representation for generating a unified 3D panoptic representation.
+2d instance identifiers,3d,Linear assignment is used to lift 2D instances to 3D in a consistent way.
+machine-generated labels,noisy,"Method is robust to noisy, machine-generated labels through proposed contributions."
+panoptic lifting,"hypersim, replica, and scannet datasets","Experimental results validate the approach on challenging datasets such as Hypersim, Replica, and ScanNet."
+scene understanding models,"vr, robot navigation",Robust panoptic 3D scene understanding models enable applications like VR and robot navigation.
+panoptic image understanding,vr,Panoptic image understanding enables applications such as VR
+panoptic image understanding,robot navigation,Panoptic image understanding enables applications such as robot navigation
+panoptic image understanding,self-driving,Panoptic image understanding enables applications such as self-driving
+panoptic image understanding,2d image,Panoptic image understanding involves segmenting a 2D image
+panoptic image understanding,state-of-the-art 2d panoptic segmentation models,The continuous improvement in model architectures and availability of large-scale labeled 2D datasets has led to state-of-the-art 2D panoptic segmentation models
+panoptic image understanding,unseen images captured in the wild,State-of-the-art 2D panoptic segmentation models generalize well to unseen images captured in the wild
+panoptic image understanding,single-image panoptic segmentation,Panoptic image understanding discusses the insufficiency of single-image panoptic segmentation for tasks requiring coherency and consistency across multiple views
+panoptic image understanding,coherent 3d panoptic scene representation,Lifting machine-generated 2D panoptic segmentations into a coherent 3D panoptic scene representation remains a challenging task
+2d images,neural radiance fields (nerfs),Recent works have addressed panoptic 3D scene understanding from 2D images by leveraging Neural Radiance Fields (NeRFs)
+2d images,semantic scene data,Recent works have gathered semantic scene data from multiple sources for panoptic 3D scene understanding from 2D images
+ground truth 2d and 3d labels,expensive,"Some works rely on ground truth 2D and 3D labels, which are expensive"
+ground truth 2d and 3d labels,expensive and time-consuming,Ground truth 2D and 3D labels are mentioned in the context as expensive and time-consuming to acquire.
+kundu et al.,machine-generated 3d bounding box detection,Kundu et al. works on machine-generated 3D bounding box detection.
+kundu et al.,tracking,Kundu et al. works on tracking.
+2d semantic segmentation,off-the-shelf models,2D semantic segmentation is computed using off-the-shelf models.
+3d detection models,2d panoptic segmentation,3D detection models struggle to generalize beyond the data they were trained on compared to 2D panoptic segmentation ones.
+pre-trained models,complexity and potentially compounding sources of error,Dependence on multiple pre-trained models increases the complexity and potentially introduces compounding sources of error.
+panoptic lifting,a novel formulation,Panoptic Lifting is introduced as a novel formulation in this work.
+panoptic lifting,3d scene as a panoptic radiance field,Panoptic Lifting represents a static 3D scene as a panoptic radiance field in this work.
+panoptic view synthesis,scene editing,Panoptic Lifting supports applications like novel panoptic view synthesis and scene editing.
+model,trained from only 2d posed images and corresponding machine-generated panoptic segmentation masks,The model is trained from only 2D posed images and corresponding machine-generated panoptic segmentation masks.
+model,"renders color, depth, semantics, and 3d-consistent instance information for novel views of the scene","The model can render color, depth, semantics, and 3D-consistent instance information for novel views of the scene."
+tensorf,architecture,Starting from a TensoRF architecture that encodes density and view-dependent color information.
+output heads,learning semantic and instance fields,Output heads are introduced for learning semantic and instance fields.
+semantic field,instance fields,"The semantic field, represented as a small MLP, is directly supervised with the machine-generated 2D labels. The 3D instance field is modelled by a separate MLP."
+semantic field,segment consistency loss,An additional segment consistency loss guides supervision to avoid optima that fragment objects in the presence of label inconsistencies.
+semantic field,bounded segmentation fields,"Specific techniques, like bounded segmentation fields, are discussed to further limit inconsistent segmentations."
+instance fields,segment consistency loss,An additional segment consistency loss guides supervision to avoid optima that fragment objects in the presence of label inconsistencies.
+instance fields,confidence estimates,Losses for both the fields are weighted by confidence estimates obtained by test-time augmentation on the 2D panoptic segmentation model.
+instance fields,bounded segmentation fields,"Specific techniques, like bounded segmentation fields, are discussed to further limit inconsistent segmentations."
+segment consistency loss,bounded segmentation fields,"Specific techniques, like bounded segmentation fields, are discussed to further limit inconsistent segmentations."
+segment consistency loss,stopping semantics-to-geometry gradients,"Specific techniques, like stopping semantics-to-geometry gradients, are discussed to further limit inconsistent segmentations."
+confidence estimates,test-time augmentation,Losses for both the fields are weighted by confidence estimates obtained by test-time augmentation on the 2D panoptic segmentation model.
+mask2former,object,Mask2Former is mentioned as a method which is typically noisy and inconsistent when compared across views of the same scene.
+conflicting labels,segmentations,"Typical failure modes include conflicting labels and segmentations, indicating inconsistency in predictions."
+instance identities,frames,"Instance identities are not preserved across frames, represented as different colors, implying inconsistency in representations."
+neural radiance fields (nerfs),scene,"Neural Radiance Fields (NeRFs) offer a unified representation to model a scene’s photo-realistic appearance, geometry, and other spatially-varying properties."
+nerf methods,macro-categories,NeRF methods can be broadly divided into two macro-categories based on their encoding techniques.
+coordinate-based neural network,explicit 3d structure,"NeRF methods encompass two encoding approaches: one being a coordinate-based neural network, and the other attaching parameters to an explicit 3D structure."
+voxel grid,model,"Certain NeRF methods encode the entire scene into a voxel grid, which impacts the compactness and efficiency of the model."
+point cloud,model,"Some NeRF methods utilize a point cloud as an explicit 3D structure, suggesting different approaches in modeling scenes."
+speed-memory trade,models,"There exists a trade-off between speed and memory in models based on their encoding techniques, influencing their performance in training and inference."
+appearance,geometry,The hybrid approach adopted in the work models appearance and geometry with a neural field derived from TensoRF.
+semantics,instances,"Semantics and instances are modeled in the work using a pair of small implicit MLPs, indicating a specific approach for representation."
+zhi et al.,nerf,"The work of Zhi et al. first explored encoding semantics into a NeRF, suggesting a novel method for integrating semantics into volumetric models."
+nerf,2d semantic segmentations,"NeRF demonstrates how noisy 2D semantic segmentations can be fused into a consistent volumetric model, improving their accuracy and enabling novel view synthesis of semantic masks."
+nerf,panoptic radiance fields,"Panoptic NeRF and DM-NeRF describe panoptic radiance fields, focusing on the tasks of label transfer and scene editing, respectively."
+nerf,panoptic neural fields (pnf),"Panoptic Neural Fields (PNF) relies purely on RGB images and exploits a much larger set of predictions from pre-trained networks, including per-image semantic segmentation, 3D object bounding boxes, and object tracking across frames."
+nerf,2d and 3d panoptic segmentation,NeRF is related to the task of 2D and 3D panoptic segmentation as described by Kirillov et al.
+semantic segmentation network,instance segmentation network,"Semantic segmentation networks and instance segmentation networks are proposed solutions often combined, with a common backbone."
+works,detr object detector,Recent works are inspired by the DETR object detector and adopt a more unified approach.
+transformer-based network,panoptic output,Transformer-based networks are used to directly produce panoptic output as a set of image segments for both 'things' and 'stuff'.
+mask2former,swin-l backbone,Mask2Former is adopted with a Swin-L backbone as a pre-trained 2D panoptic segmenter due to its state-of-the-art performance on the COCO Panoptic dataset.
+panoptic segmentation,3d context,"Panoptic segmentation has also been explored in a 3D context, both as segmentation of pre-computed 3D structures and as simultaneous 3D segmentation and reconstruction from 2D images."
+panoptic lifting,3d-consistent,Panoptic Lifting enables generating 2D panoptic segmentations from novel views in a 3D-consistent fashion.
+panoptic lifting,2d panoptic segmentations,Panoptic Lifting enables generating 2D panoptic segmentations from novel views in a 3D-consistent fashion.
+panoptic lifting,3d object,Panoptic Lifting ensures that the rendered 2D instance ID of the same 3D object is preserved across views.
+input posed images,viewing rays,Input posed images {I} are abstracted as sets of viewing rays expressed in world coordinates.
+ray,color,Rays belonging to a training image have an associated RGB color.
+ray,semantic class,Rays belonging to a training image have an associated semantic class.
+ray,2d instance id,Rays belonging to a training image have an associated 2D instance ID.
+2d instance id,thing classes,The 2D instance ID is defined only for thing classes.
+thing classes,semantic and instance labels,Thing classes are associated with semantic and instance labels.
+2d segmentation network,semantic and instance labels,Semantic and instance labels are generated using a pre-trained 2D segmentation network.
+2d networks,class probabilities and confidences,2D networks provide a probabilistic distribution over the predicted classes and a confidence per pixel.
+test-time augmentations,input images,"To better estimate class probabilities and confidences, test-time augmentations are run on the input images."
+resulting segmentations,segment clustering,The resulting segmentations are fused by segment clustering.
+pixel,semantic class distribution,"For each pixel in the training images, a semantic class distribution over the classes is obtained."
+pixel,confidence estimate,"For each pixel in the training images, a confidence estimate of the prediction is obtained."
+panoptic radiance field,semantic class distribution,A panoptic radiance field is modeled as a function assigning semantic class distribution to 3D points and viewing directions.
+panoptic radiance field,density,A panoptic radiance field assigns density values to each 3D point.
+panoptic radiance field,distribution,A panoptic radiance field assigns a distribution over surrogate identifiers.
+panoptic radiance field,rgb color,A panoptic radiance field assigns an RGB color to each 3D point.
+3d object ids,probability,3D object IDs are assigned probabilities based on semantic class distribution and surrogate identifiers.
+3d object ids,3d instances,3D object IDs are part of the set of all possible 3D instances the model can produce.
+density field,rendering equation,The rendering equation uses the density field to render vector fields over 3D points along a ray.
+rendering,field,The term 'field' is a component of the broader concept of 'rendering'.
+semantic class distribution,rendered,The term 'rendered' is an action performed on the 'semantic class distribution'.
+neural field representation,color,The 'neural field representation' includes the concept of 'color' as a component.
+neural field representation,density,The 'neural field representation' includes the concept of 'density' as a component.
+neural field representation,semantics,The 'neural field representation' includes the concept of 'semantics' as a component.
+neural field representation,instances,The 'neural field representation' includes the concept of 'instances' as a component.
+radiance field,supervised,The 'radiance field' is supervised by the loss functions mentioned.
+semantic field,supervised,The 'semantic field' is likewise supervised by the mentioned loss functions.
+instances,machine-generated,The 'instances' are generated by the machine according to the context.
+instances,surrogate identifier,The 'surrogate identifier' is derived from the 'instances' using a linear assignment.
+linear assignment,3d instance predictions,"The identifier is determined using linear assignment, where the cost depends on the current 3D instance predictions."
+2d instances,rendered instance field,The mapped 2D instances are used to supervise the rendered instance field with an NCE loss.
+segmentation losses,test-time augmentation confidences,All segmentation losses are weighted by test-time augmentation confidences.
+ray,semantic classes,Each ray has an associated probability distribution over the semantic classes and a prediction confidence obtained as test-time augmented predictions.
+semantic distribution field,semantic loss,"Given the semantic distribution field rendered along a ray, the semantic loss at that ray is computed."
+confidences,mask2former prediction,"Confidences from a single Mask2Former prediction are often spuriously high, even for incorrectly labeled segments."
+segmentations,test-time augmentations,Merging segmentations from test-time augmentations results in more reliable confidence estimates.
+surrogate identifier,3d instance,The most probable surrogate identifier is computed and used to form a unique 3D instance.
+multi-view consistent panoptic segmentations,novel views,By enabling generating multi-view consistent panoptic segmentations for novel views.
+appearance loss,squared euclidean distance,The appearance loss for a batch of rays is given as a standard squared Euclidean distance.
+loss,euclidean distance,Loss is defined as the squared Euclidean distance between rendered color field and the ground-truth color
+semantic fields,class logits,"Semantic fields render class logits instead of class distributions, causing potential inconsistencies"
+semantic fields,probabilities,"Rendered logits are converted into probabilities via softmax, resolving potential semantic inconsistencies"
+density,logits,The unbounded nature of logits can lead to significant signals even in low density areas
+probability distribution,logits,"To prevent inconsistent signals, bounded probability distribution is rendered instead of unbounded logits"
+rays,image,Rays are denoted as a batch from an image in the context of instance loss
+ray,3d surrogate identifier,Each ray is assigned the most compatible 3D surrogate identifier based on its 2D instance
+predicted probability,log-loss,The loss minimizes the log-loss of predicted probability averaged over all rays
+prediction confidence,optimal injective mapping,prediction confidence (wr) is used in the computation of the optimal injective mapping Π⋆R as shown in equations (5) and (6)
+rays,panoptic segment,"rays are partitioned into groups based on the panoptic segment each ray belongs to, forming clusters as described in the context"
+segment consistency loss,predicted semantic class,"segment consistency loss equation (7) is calculated based on the predicted semantic class within each ray group, using prediction confidence wr"
+training objective,batch of rays,the total loss over network parameters includes terms related to randomly sampled rays (RS) and rays sampled from a single image (RI) as part of the batch R
+2d machine labels,supervision for segmentation,the importance of not letting supervision for segmentation with noisy 2D machine labels influence the geometry is highlighted in the context
+model implementation,pytorch,Our model is implemented with Pytorch as detailed in the implementation details section
+training method,adam,Our model is trained using Adam optimization algorithm with specified learning rates
+model,pytorch,The model is implemented using PyTorch.
+adam,learning rates,The model is trained using Adam with specific learning rates.
+mlps,tensorf lines and planes,Different learning rates are used for MLPs and TensoRF lines and planes.
+ltot,"λcon, λins, λsem, λrgb",Specific values are used for Ltot and corresponding lambda values for various aspects.
+nvidia a6000,450k iterations,The model is trained on 1 NVIDIA A6000 for 450k iterations.
+tasks,"novel view synthesis, novel view panoptic segmentation, scene editing","The model is evaluated on the tasks of novel view synthesis, novel view panoptic segmentation, and scene editing."
+public datasets,"hypersim, replica, scannet","Results are shown on scenes from three public datasets: Hypersim, Replica, and ScanNet."
+ground-truth poses,ground-truth semantic and instance labels,Ground-truth poses and labels are used for evaluation purposes.
+pixel3a android smartphone,colmap-computed poses,In-the-wild scenes are captured using a Pixel3a Android smartphone with COLMAP-computed poses.
+machine-generated 2d panoptic segmentations,pre-trained model,A pre-trained model is used for generating machine-generated 2D panoptic segmentations.
+coco panoptic classes,21 scannet classes,COCO panoptic classes are mapped to 21 ScanNet classes for evaluation.
+"hypersim, replica labels",same class set,Hypersim and Replica labels are mapped to the same class set for evaluation.
+net classes,hypersim,Both Net classes and Hypersim labels are mapped to the same class set for evaluation.
+net classes,replica,Both Net classes and Replica labels are mapped to the same class set for evaluation.
+hypersim,replica,Hypersim labels and Replica labels are mapped to the same class set for evaluation.
+scannet classes,novel views,In-the-wild captures use 31 ScanNet classes and measure the visual fidelity of the synthesized novel views.
+scannet classes,predicted semantic labels,In-the-wild captures use 31 ScanNet classes and measure the accuracy of their predicted semantic labels.
+panoptic predictions,panoptic quality (pq),Recent NeRF-based semantic scene modeling works evaluate their panoptic predictions using the Panoptic Quality (PQ) metric.
+standard pq,instance identities,Standard PQ does not measure whether instance identities are consistently preserved across views.
+predicted segments,ground truth segments,The PQ metric is defined by comparing all possible pairs of segments belonging to an image.
+pqscene,"p,and ground truth segments g","In PQscene, the matching process is modified to work on a scene level by comparing all pairs of subsets for each scene."
+mask2former,2d panoptic segmentation,Mask2Former [6] predicts 2D panoptic segmentation
+semanticnerf,3d semantic segmentation,SemanticNeRF [45] is a 3D semantic segmentation method
+panoptic liftinghypersim,miou,Panoptic LiftingHyperSim [29] shows an increase in mIoU
+pqscene,standardpq,PQscene can be evaluated by standardPQ after tiling together the predictions and ground truths
+pnf + gt bounding boxes,ground-truth 3d detections,PNF + GT Bounding Boxes has the advantage of using ground-truth 3D detections
+consistency,tta,Consistency and TTA are both design choices that contribute to the robustness against real-world noisy labels.
+consistency,blocking miou,Consistency is related to Blocking mIoU as they both contribute to robustness against real-world noisy labels.
+blocking miou,pqscene,Blocking mIoU contributes to the increase in PQscene.
+pqscene,psnr,PQscene and PSNR both increase by 47.9 and 28.5 respectively.
+method,nerf [45],The method predicts 3D semantic segmentation along with NeRF [45].
+method,panoptic neural fields (pnf) [18],The method also predicts 3D panoptic segmentation along with Panoptic Neural Fields (PNF) [18].
+method,dm-nerf [40],The method is related to DM-NeRF [40] as they both predict 3D panoptic segmentation.
+method,neural field baselines,"The method is trained using the same set of images, poses and Mask2Former generated 2D labels as Neural field baselines."
+pnf,gt bounding boxes,PNF uses bounding boxes from a state-of-the-art multi-view 3D object detector pre-trained on ScanNet or taken from the ground truth (PNF + GT Bounding Boxes).
+baselines,datasets,Baselines outperform across all datasets on both semantic and panoptic segmentation tasks.
+baselines,method,Baselines are outperformed by the method across all datasets on both semantic and panoptic segmentation tasks.
+baselines,view synthesis quality,Baselines outperform across all datasets on both semantic and panoptic segmentation tasks without sacrificing view synthesis quality.
+method,panoptic lifting,The method significantly improves over Mask2Former and Panoptic Lifting by harmonizing inconsistent and noisy outputs by lifting them to 3D.
+method,iou scores,The method reflects the IoU scores by evaluating standard PQ on ScanNet.
+panoptic lifting,mask2former,"Comparison of performance scores, with Mask2Former scoring 43.6% and our method scoring 60.4%."
+semanticnerf,synthetic pixel noise,Robustness of SemanticNeRF to synthetic pixel noise.
+dm-nerf,segment fragmentation,Struggle of DM-NeRF with segment fragmentation in real-world scenes and machine-generated panoptic labels.
+pnf,errors from the 3d bounding box detector,PNF's sensitivity to errors from the 3D bounding box detector and the impact on Panoptic Lifting performance.
+pnf,g.t. boxes,"Comparison of PNF performance with and without ground truth boxes, highlighting the impact on PQscene gap."
+scannet data,ablations,"Set of ablations on ScanNet data, showing the impact on performance metrics."
+segment consistency loss,inconsistent 2d segmentations,Effect of segment consistency loss on handling inconsistent 2D segmentations and its impact on performance metrics.
+mask2former predictions,confident predictions,"Observation of highly confident predictions by Mask2Former, even for incorrectly predicted classes."
+mask2former predictions,confident predictions,"The Mask2Former predictions tend to be highly confident, even for incorrectly predicted classes."
+mask2former predictions,test-time augmentation,"Test-time augmentation provides smoother confidence estimates and improved masks, boosting both semantic metrics."
+unbounded segmentation field,predicting unbounded logits,Predicting unbounded logits from the segmentation branch allows the model to predict inconsistent labels even with accurate geometry.
+predicting unbounded logits,switching to bounded segmentation fields,Switching to bounded segmentation fields drastically improves consistency in predictions.
+model,wrong geometry,"The model can learn wrong geometry in an attempt to satisfy inconsistent 2D labels, leading to a degradation in view synthesis PSNR."
+panoptic lifting,scene editing,Panoptic Lifting can be used for scene editing in addition to generating novel views and panoptic masks.
+panoptic lifting,novel views,Panoptic Lifting can generate novel views and their corresponding semantics and instances on various datasets.
+3d methods,rgb images,Both 3D methods mentioned in the context use the same posed RGB images for training.
+affine transformations,object instances,Novel views of a scene with object instances can be manipulated under affine transformations.
+instance label,deletion,Deletion of an instance is achieved by setting the density of points where a predicted instance is equal to the instance to be deleted to be zero.
+instance label,duplication,"For duplication, manipulation of the rays passing through the resulting region is done to query the new position and rotation for an object to be duplicated."
+instances,semantics,Novel views have corresponding semantics and instances on in-the-wild room capture.
+2d machine-generated labels,inconsistency,Inconsistency in 2D machine-generated labels is illustrated with the example of a chair being labeled as 'chair' and 'cabinet' in different views.
+segmentation field outputs,inconsistent predictions,"Unbounded segmentation field outputs can lead to inconsistent predictions even with good results, such as when an MLP predicts logits."
+segmentation field outputs,mlp predicts logits,"The segmentation field outputs, such as MLP predicts logits, can lead to inconsistent predictions due to improper distribution along the ray."
+class probability outputs,model,Models with class probability outputs can change the density and rendering weights to better fit noisy 2D labels.
+segmentation gradients,bounding field output,"Blocking segmentation gradients along with bounding field output can produce a mix of 2 classes for the same chair instance, optimizing the NCE loss on segmentations."
+panoptic lifting,3d scene understanding,"Panoptic Lifting is considered an important step towards enabling more robust, holistic 3D scene understanding while posing minimal input requirements."
+panoptic lifting,2d machine-generated panoptic labels,"Panoptic Lifting is a novel approach to lift 2D machine-generated panoptic labels to an implicit 3D volumetric representation, resulting in clean, coherent, and 3D-consistent panoptic segmentation masks."
+labels,noise,"labels are often affected by noise, making it important to be robust to noise in machine-generated labels"
+improvements,datasets,robustness to noise in machine-generated labels leads to significant improvements across datasets
+improvements,ability,significant improvements across datasets enable the ability to work on in-the-wild
+yawar,internships,Yawar did the work during his internships at Meta Reality Labs Zurich and TUM
+norman,internships,Norman did the work during his internships at Meta Reality Labs Zurich and TUM
+matthias nießner,support,Matthias Nießner was supported by the ERC Starting Grant Scan2CAD
+angela dai,support,Angela Dai was supported by the Bavarian State Ministry of Science and the Arts coordinated by the Bavarian Research Institute for Digital Transformation (BIDT)
+justus thies,discussions,Justus Thies had helpful discussions with Artem Sevastopolsky and Guy Gafni
+artem sevastopolsky,discussions,Artem Sevastopolsky had helpful discussions with Justus Thies and Guy Gafni
+guy gafni,feedback,Guy Gafni provided helpful feedback to Justus Thies and Artem Sevastopolsky

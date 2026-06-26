@@ -1,0 +1,195 @@
+node_1,node_2,edge
+classiﬁcation datasets,labelling process,classiﬁcation datasets are obtained through a labelling process
+labelling process,humans,labelling process is usually done by humans
+labels,noisy,Labels can be noisy
+labels,aggregating,Labels are obtained by aggregating the different individual labels
+aggregating,individual labels,Labels are obtained by aggregating the different individual labels
+individual labels,sample,different individual labels assigned to the same sample by multiple annotators
+sample,multiple annotators,different individual labels assigned to the same sample by multiple annotators
+inter-rater agreement,datasets,inter-rater agreement on datasets
+noise distribution,labels,noise distribution to which labels are subject
+methods,noisy dataset,methods that use the estimate of the noise distribution to learn from the noisy dataset
+generalization bounds,empirical risk minimization framework,generalization bounds in the empirical risk minimization framework
+training data,performance,"The presence of incorrect labels in the training dataset violates the assumption that training data is sampled from the true feature-label joint distribution, leading to the lack of performance guarantees based on generalization bounds."
+incorrect labels,training dataset,"The presence of incorrect labels in the training dataset violates the assumption that training data is sampled from the true feature-label joint distribution, leading to the lack of performance guarantees based on generalization bounds."
+incorrect labels,generalization bounds,Learning algorithms have been introduced that can cope with datasets with incorrect labels while guaranteeing desirable performance through provable generalization bounds.
+error rate,labels,Solutions to learning from datasets with noisy labels rely on precise knowledge of the error rate associated with the labels.
+error rate,labels,"The error rate is a crucial factor in the accuracy of labels, influencing the reliability of the data and the effectiveness of learning algorithms."
+error rate,human raters,"The error rate is associated with the human raters, indicating the potential for estimating errors and modifying learning algorithms to be robust to label noise."
+labels,learning algorithms,"Labels play a significant role in the design and performance of learning algorithms, as they affect the quality and reliability of the training data."
+labels,error rate,"The quality and accuracy of labels are directly related to the error rate, emphasizing the need for reliable labeling techniques."
+labels,iaa (inter-annotator agreement),"The quality of labels is assessed through IAA scores, which measure the agreement among annotators and contribute to reducing errors in the dataset."
+learning algorithms,noise,"Learning algorithms need to be modified to be robust to noise present in labels, ensuring better performance in the presence of errors."
+label noise distribution,iaa statistics,The methodology to estimate the label noise distribution is based on the IAA statistics.
+label noise distribution,noisy dataset,The estimate of label noise distribution is used to learn from the noisy dataset.
+label noise distribution,generalization bounds,"Generalization bounds for the methods provided depend on known quantities, including the label noise distribution."
+iaa statistics,label noise distribution,IAA statistics is used to estimate the label noise distribution in the methodology.
+iaa statistics,noisy dataset,The estimate based on IAA statistics is used to learn from the noisy dataset.
+noisy dataset,label noise distribution,Learning from the noisy dataset is influenced by the estimate of the label noise distribution.
+noisy dataset,iaa statistics,Learning from the noisy dataset involves the use of estimate based on IAA statistics.
+generalization bounds,label noise distribution,"The generalization bounds provided for the methods depend on known quantities, such as the label noise distribution."
+generalization bounds,iaa statistics,The generalization bounds for the methods are influenced by known quantities like IAA statistics.
+generalization bounds,noisy dataset,The generalization bounds for the methods play a role in learning from the noisy dataset.
+robust loss function,classiﬁcation error,The goal of obtaining the lowest probability of classification error is related to robust loss function design.
+robust loss function,dataset,The 0-1 loss function used for evaluation of the classifier is related to the dataset.
+robust loss function,optimization procedures,Many learning strategies use convex surrogates of the 0-1 loss function to overcome issues in optimization procedures.
+classiﬁer,errors,The 0-1 loss counts how many errors a classifier makes on a given dataset.
+learning strategies,convex surrogates,Learning strategies use convex surrogates of the 0-1 loss function.
+symmetric loss functions,robust to label noise,It was proved that symmetric loss functions are robust to label noise.
+mae,noise tolerant,Mean Absolute Error (MAE) is noise tolerant.
+mae,performs poorly,MAE can perform poorly when used to train DNN in challenging domains.
+mae,generalization of cce,There is a loss function that can be seen as a generalization of Mean Absolute Error (MAE) and Categorical Cross Entropy (CCE).
+methods,modify the surrogate loss,Two methods are presented to modify the surrogate loss in the presence of class-conditional random label noise.
+datasets,not labeled by a single,"When constructing datasets for supervised learning, data is often not labeled by a single entity."
+datasets,supervised learning,"Datasets are constructed for supervised learning, where multiple annotators assign labels to documents."
+labels aggregation,datasets,"When constructing datasets for supervised learning, labels are aggregated from multiple annotators."
+labels aggregation,noise,Labels are aggregated to calculate the noise of the dataset.
+authors,letor models,Authors explore training LETOR models with relevance judgments distributions in [19].
+authors,loss functions,Authors define different KL divergence-based loss functions to train a model in [19].
+authors,annotations,Authors do not directly estimate the noise rates in the annotations in their study.
+label aggregation,non-aggregation approaches,Performance of label aggregation and non-aggregation approaches are analyzed in the context of empirical risk minimization.
+noisy labels,generalization error,Learning from noisy labels affects the generalization error of models.
+empirical risk minimization,popular loss functions,empirical risk minimization is applied for popular loss functions
+empirical risk minimization,noisy label learning problem,empirical risk minimization is designed for the noisy label learning problem
+label separation,label aggregation,label separation is preferable to label aggregation when noise rates are high or the number of labelers/annotations is insufficient
+multiple human annotations,soft labels,multiple human annotations are used to construct soft labels
+soft labels,generalization to out-of-training-distribution test datasets,constructing soft labels increases performance in terms of generalization to out-of-training-distribution test datasets
+soft labels,robustness to adversarial attacks,soft labels increase robustness to adversarial attacks
+individual annotators,soft labels,soft labels are elicited from individual annotators
+noise rate estimation,noise transition matrix,approaches have been proposed for estimating the noise transition matrix
+noise rate estimation,anchor points,approaches for estimating noise rate estimation use a small number of anchor points
+anchor points,noise estimation method,anchor points are used in the noise estimation method
+real data,anchor points,lack of anchor points in real data leads to the focus on detecting anchor points in noisy data
+iterative noise estimation heuristic,correcting the error,iterative noise estimation heuristic aims to partly correct the error
+noise estimation heuristic,iterative noise estimation heuristic,The iterative noise estimation heuristic proposed by [28] attempts to partly correct the error in noise estimation heuristics. They pointed out errors in computing anchor points in methods introduced by [16] and [27].
+noise estimation heuristic,noise estimation methods,The noise estimation heuristic proposed in [28] identifies errors in noise estimation methods and provides conditions under which these methods work or fail.
+anchor points,error in computing anchor points,The methods introduced by [16] and [27] were found to have errors in computing anchor points as pointed out in the context.
+transition matrix,anchor points,"In their solution, [26] proposes inferring the transition matrix without needing anchor points. They use instances with the highest class posterior probabilities for noisy data as anchor points."
+generalization properties,models,"While most mentioned works do not study the generalization properties of their proposed models, the work in the context addresses this problem and establishes bounds that depend on the estimated noise transition matrix."
+clusterability condition,nearest-neighbors,"The method presented in [30] relies on statistics of high-order consensuses among the 2 nearest-neighbors noisy labels, based on the clusterability condition where an example belongs to the same true class of its nearest-neighbors representations."
+dimensional feature vectors,x,The space of d-dimensional feature vectors denoted by X⇢ Rd.
+c,number of classes,C represents the number of classes in the context.
+j-th standard canonical vector,rc,The j-th standard canonical vector in RC is denoted by ej.
+label set,y,"Y = {e1, . . . , eC}⇢{ 0, 1}C represents the label set in the context."
+feature vectors,x,Feature vectors are denoted by x in the context.
+labels,y,Labels are denoted by y in the context.
+joint distribution,d,D represents the joint distribution of the feature vectors and labels.
+sampled dataset,bd,"The sampled dataset of size n is denoted by bD = {(xi, yi)}n i=1 in the context."
+classifier output,f(x),f(x) denotes the output of the classifier for feature vector x.
+loss function,"`(t, y)","`(t, y) is a generic loss function for the classification task in the context."
+risk,"r`,d(f)","R`,D(f) represents the ` -risk in the context."
+empirical risk,an(f),an(f) represents the empirical risk over some sampled dataset bD.
+empirical risk,sampled dataset,empirical risk is calculated over a sampled dataset
+labels,annotators,labels are provided by annotators in the scenario
+noise transition matrix,symmetric matrix,noise transition matrix is symmetric
+diagonal elements,larger than 0.5,diagonal elements of the noise transition matrix are larger than 0.5
+positive definite,eigenvalues,the noise transition matrix is positive definite based on eigenvalues
+eigenvalues,range,"eigenvalues lie in the range (0, 1]"
+eigenvalues,t,"eigenvalues lie in the range (0, 1] and hence T is positive definite"
+t,positive definite,hence T is positive definite
+assumptions,annotators,Assumption 2. We assume that the annotators are conditionally independent on the true label y
+class probabilities,known,We assume that the class probabilities (and hence D) are known
+noise transition matrix,mab,Since T is invertible and D diagonal and positive definite it follows that Mab is also positive definite
+m,t,Since T is invertible and D diagonal and positive definite it follows that M is also positive definite
+labels,h annotators,Since we have access to all the labels provided by the H annotators for all the samples we can obtain an estimate of M which we denote as cM
+cm,consistent estimator,We assume that cM is a consistent estimator
+two annotators,consistent estimator,"For the case of two annotators, one possible consistent estimator Ma,b is given by equation ([Ma,b)i,j = nXk=1 1(ya,k=i, yb,k=j) + 1(ya,k=j, yb,k=i)2n"
+annotators,transition matrix,"If the annotators have the same transition matrix, M will..."
+matrix,convex function,"The optimization problem mentioned in the context involves a convex function of the matrix. This is because the constraints are linear and for symmetric matrices, it holds true that the optimization problem is convex."
+estimate,metric,"The estimate of the metric is obtained as bT := ⇡(bUb⇤, where the estimate of bT is obtained. This estimate is based on the assumption of the label aggregating policy."
+agreement matrix,estimators,"The agreement matrix Ma,b for annotators a and b is defined in Eq. (4) and the estimators for the agreement matrix are defined in Eq. (8). The matrix norm induced by the p vector norm is also mentioned in this context."
+cm,dmab,cM is an average of dMab
+t,bt,Let T be the noise transition matrix and bT its estimate
+t,bt,The error in estimation of T decays as 1/pn as a function of n
+error rates,models,Leverage the estimates of the error rates to train the models
+posterior probabilities,true labels,"If we have access to the labels, posterior probabilities of the true labels can be calculated leveraging T and Bayes’ Theorem"
+posterior distribution,true t,"For infinite annotators, the posterior distribution over every sample calculated using the true T converges to the dirac delta distribution centered on the true"
+sample,calculated,Samples are used to calculate various values and parameters in the given context.
+sample,label,Samples are associated with true labels in the context.
+sample,matrix,Samples are used in conjunction with matrices such as T matrix in the context.
+t matrix,dirac delta distribution,The T matrix is used in a way that leads to the convergence of distributions like dirac delta distribution.
+soft-labels,posterior distributions,Soft-labels are derived from posterior distributions in the context.
+soft-labels,loss function,Soft-labels are used to define the loss function for samples in the context.
+loss function,weight,Loss functions are weighted using posterior distributions in the context.
+loss function,possible labels,Loss functions are evaluated at each possible label for samples in the context.
+t matrix,information,The T matrix is used to extract more information in the context.
+t matrix,loss functions,The T matrix is involved in the usage of robust loss functions in the context.
+robust loss functions,forward and backward loss functions,The concept of robust loss functions includes specific types like forward and backward loss functions in the context.
+generic loss function,t matrix,Generic loss functions are related to the estimation of T matrix in the context.
+rademacher complexity,lipschitz constant,"The bounds found depend on the Rademacher complexity of the function space and the Lipschitz constant of the loss function, which allow us to obtain performance bounds for a model trained with noisy data"
+noise transition matrix,training data,"There is no dependence on the true noise transition matrix of the annotators, as we only have access to the training data for estimating performance bounds"
+estimate noise transition matrix,number of classes,"The bound depends on the estimate noise transition matrix and the number of classes in the dataset, among other factors"
+distribution of ground truth,uniform,"The bound also depends on the distribution of ground truth, with a common assumption being that it is uniform"
+inter-annotator agreement,cohen’s ,"In the case where an estimate of the inter-annotator agreement matrix M is not available, Cohen’s  can be used as a scalar representation for estimation"
+matrix t,single parameter,The matrix T has to be parameterized by a single parameter when only a scalar representation of the inter-annotator agreement is available for estimation
+matrix t,parameter,The matrix T has to be parameterized by a single parameter that can be estimated.
+noise,class,One particular example is the case where the noise is uniform among classes.
+t,matrix c,T is a matrix with all values 1-p on the diagonal and C-1 off the matrix
+noise rate p,annotators,In the case of classification with uniform noise for two homogeneous annotators with noise rate p
+annotator,distribution of ground-truth labels,"If the distribution of the ground-truth labels is uniform, it holds that"
+distribution of ground-truth labels,pp,pp = (1 - C-1)(1 - p)(22)
+cohen’s kappa coefficient,two annotators,with the Cohen’s kappa coefficient of the two annotators
+t,eigenvalue,"If T is assumed to be of the form described above, it has one eigenvalue equal to 1 and all the rest are equal to 1-pC(C-1)-1"
+t,identity,T can be written as a weighted summation of the identity and a rank-one matrix.
+backward loss,generalization gap,This allows us to obtain bound for the generalization gap of a classifier trained with backward loss
+classiﬁer,backward loss,The classiﬁer is trained with backward loss.
+classiﬁer,annotators,The classiﬁer's performance is measured based on the agreement between annotators.
+method,bt,The method proposed is used to estimate bT.
+method,estimating bt,The method is validated by studying the error in the estimation as a function of the number of samples.
+t,classiﬁers,The distribution of posteriors obtained from the estimation of T is used as soft-labels for training classiﬁers.
+experiments,validation,Experiments are performed to validate the theoretical results.
+matrices t,prediction,"For each annotator, their prediction is done according to the matrix T."
+appendix d.1,fig. 4,"Appendix D.1 contains plots, while Fig. 4 also shows plots related to estimation error."
+fig. 4,estimation error,Fig. 4 shows plots related to estimation error.
+estimation error,error,"Estimation error decreases as 1pn with n number of samples, according to Theorem 4.3."
+estimation error,bound,Estimation error is in agreement with the bound provided in Theorem 4.3.
+number of annotators,accuracy of estimation,Estimation becomes more accurate as the number of annotators increases.
+error,t,Error in the estimation of T for 4 classes and 10 annotators is shown in Figure 1.
+features,labels (y),"Features in the synthetic dataset generated uniformly in [0, 1]2 lead to labels being assigned based on established label distribution for each experiment."
+noise transition matrix t,annotations,Annotations for each dataset are generated according to the noise transition matrix T.
+combinations of t,"symmetry, stochasticity, diagonally dominance, commutative with d","Various combinations of T are tested that respect symmetry, stochasticity, diagonally dominance, and being commutative with D."
+number of annotators,"{3, 5}","The number of annotators is variable in the set {3, 5}, as mentioned in Appendix D.2."
+losses,categorical cross entropy,Categorical cross entropy is used as the loss function.
+categorical cross entropy,loss function,Categorical cross entropy is used as the loss function.
+hard labels,models,Both hard labels and soft labels are used to train the models.
+aggregation,hard labels,An aggregation method is needed to obtain one final label from the annotators to train the models with hard labels.
+aggregation,soft labels,An aggregation method is also used for soft labels.
+random aggregation,final label,"In random aggregation, the final label is randomly picked from the labels of the annotators."
+majority vote,final label,"In majority vote, the final label is the one with the most amount of votes."
+soft-labels,relative frequency,Soft-labels include relative frequency among annotators.
+soft-labels,posterior distribution,Soft-labels also include the posterior distribution.
+frequency,one-hot encoded annotations,"For frequency soft labels, the one-hot encoded annotations are averaged for each sample."
+cross entropy loss,majority vote,Comparison between performance of Cross Entropy Loss using majority vote
+cross entropy loss,random aggregation method,Comparison between performance of Cross Entropy Loss using random aggregation method
+cross entropy loss,posteriors,Comparison between performance of Cross Entropy Loss using posteriors
+cross entropy loss,relative frequency,Comparison between performance of Cross Entropy Loss using relative frequency
+dataset,noisy,"Datasets with minimum diagonal value are considered noisy, while noise-free cases have a minimum diagonal value of 1."
+annotators,classes,"Results are obtained for 3 annotators and 4 classes, by averaging on different matrices."
+accuracy,performance metric,Accuracy with respect to a clean dataset is used as a performance metric.
+posterior distribution,soft labels,"Using the posterior distribution as soft labels allows for better performance compared to other methods like average of labels, majority vote, or random aggregation."
+matrix,classiﬁcation accuracy,Leveraging the matrix better improves classification accuracy.
+dataset,cifar10-n,"Experiments are conducted on the CIFAR10-N dataset, which contains CIFAR-10 train images with noisy labels."
+resnet34,pre-training,Experiments using Resnet34 were performed both with and without pre-training.
+approach,best performance,The approach of aggregation achieves the best performance in the experiments.
+assumptions,t,T is the variable for which assumptions are made in the context
+method,applicable,The method mentioned is applicable with positive results
+method,random,Random aggregation method is mentioned
+method,majority vote,Majority vote aggregation method is mentioned
+method,average posteriors (ours) pretrained,An aggregation method involving average posteriors mentioned for Pretrained models
+table 1,test accuracy,Table 1 shows Test Accuracy on CIFAR10-N with Resnet347
+problem,learning from noisy labels,The context addresses the problem of learning from noisy labels
+methodology,estimate noise transition matrix t,A methodology is introduced to estimate the noise transition matrix T given the IAA
+techniques,leverage estimate to learn from noisy dataset,Different techniques are shown to leverage the estimate to learn from the noisy dataset in a robust manner
+methods,sound,Theoretically shown that the methods introduced are sound
+methodology,experiments,Methodology is supported with experiments confirming the estimation of the noise transition matrix
+limitations,current approach to estimate t,The main limitation is the current approach only considers symmetric T
+limitations,future research direction,Future research direction is to extend the results to cases where T might not be symmetric
+acknowledgements,nrrp mur project pe0000013-fair,Acknowledgement of financial support from NRRP MUR project PE0000013-FAIR
+nrrp mur project pe0000013-fair,financial support,NRRP MUR project PE0000013-FAIR provided financial support
+research,financial support,The research was partially supported by various grants and projects
+miur,grant,MIUR provided grants under the grant “Dipartimenti di eccellenza 2018–2022”
+department of computer science,sapienza university of rome,Both departments at Sapienza University of Rome received support
+erc advanced grant 788893 “amdroma”,research,The ERC Advanced Grant 788893 “AMDROMA” supported the research
+ec h2020ria project “sobigdata++” (871042),research,The EC H2020RIA project “SoBigData++” (871042) contributed to the research
+miur prin project “algadimar”,research,The MIUR PRIN project “ALGADIMAR” supported the research
+project serics (pe00000014),nrrp mur program,Project SERICS (PE00000014) was funded by the NRRP MUR program under EU-NGEU

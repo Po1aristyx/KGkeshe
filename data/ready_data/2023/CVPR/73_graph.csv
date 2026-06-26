@@ -1,0 +1,270 @@
+node_1,node_2,edge
+multi-class cell detection,pathological diagnoses,Multi-class cell detection is essential for pathological diagnoses.
+manual counting,inter-observer variations among pathologists,Manual counting often leads to inter-observer variations among pathologists.
+general-purpose deep learning-based object detection,object detection and counting in medical images,General-purpose deep learning-based object detection methods may not transfer readily to medical images.
+proposed guided posterior regularization (degpr),object detector,DEGPR assists the object detector by guiding it to exploit discriminative features among cells.
+model-agnostic,consistently improves baselines,DEGPR is model-agnostic and consistently improves baselines.
+muced dataset,biopsy images of the human duodenum for predicting celiac disease,MuCeD dataset consists of biopsy images of the human duodenum for predicting celiac disease.
+extensive experimentation,object detection baselines on three datasets,Extensive experimentation with object detection baselines on three datasets shows DEGPR consistently improves performance.
+multi-class multi-cell detection and counting (mc2dc),identifying and localizing bounding boxes for different cells,MC2DC involves identifying and localizing bounding boxes for different cells.
+mc2dc,diagnosis of clinical conditions,MC2DC aids in the diagnosis of clinical conditions.
+mc2dc,diagnosis,MC2DC aids diagnosis of many clinical conditions
+cbc blood test,red blood cells,"CBC blood test counts red blood cells, white blood cells, and platelets"
+cbc blood test,white blood cells,"CBC blood test counts red blood cells, white blood cells, and platelets"
+cbc blood test,platelets,"CBC blood test counts red blood cells, white blood cells, and platelets"
+mc2dc,malignant tumor,MC2DC over malignant tumor images helps assess the resistance and sensitivity of cancer treatments
+mc2dc,duodenum biopsies,MC2DC over duodenum biopsies is needed to compute the ratio of counts of two cell types for diagnosing celiac disease
+mc2dc,ai system,This motivates the need for an AI system that can provide robust and reproducible predictions
+object detection models,yolo,Standard object detection models such as Yolo have achieved state-of-the-art performance on various object detection settings
+object detection models,faster-rcnn,Standard object detection models such as Faster-RCNN have achieved state-of-the-art performance on various object detection settings
+object detection models,efficientdet,Standard object detection models such as EfficientDet have achieved state-of-the-art performance on various object detection settings
+mc2dc models,trained pathologists,MC2DC models may benefit from insights from trained pathologists
+duodenum biopsies,intraepithelial lymphocytes (iels),"For instance, in duodenum biopsies, intraepithelial lymphocytes (IELs) are structurally smaller, circular, and darker stained"
+intraepithelial lymphocytes (iels),epithelial nuclei (ens),"Intraepithelial lymphocytes are described as structurally smaller, circular, and darker stained, whereas epithelial nuclei are depicted as bigger, elongated, and lighter."
+expert-insights,detection model,A key challenge mentioned is incorporating expert-insights within a detection model.
+insights,data-driven features,Expert insights are translated into data-driven features in the proposed model.
+posterior regularization (pr),predictor,PR is described as an auxiliary loss that enforces the posterior distribution of a predictor to mimic the data distribution for the given features.
+deep guided pr,deep neural models,Deep guided PR is applied to deep neural models and formalizes clinical guidance provided by pathologists.
+pr,features,PR is applied to enforce that the posterior distribution of a predictor mimics the data distribution for the given features.
+features,explicit features,Explicit features are introduced through direct guidance by expert pathologists.
+features,implicit features,"Implicit features are learned feature embeddings for each class, trained through a supervised contrastive loss."
+gaussian mixture model (gmm),predicted features,DEGPR feeds both explicit and implicit features into a Gaussian Mixture Model to constrain the distributions over the predicted features.
+degpr,object detection models,Benefits of DEGPR are tested over three base object detection models.
+iels,ens,Visual dissimilarities between intrapithelial lymphocytes (IELs) and epithelial nuclei (ENs) are shown in Figure 1.
+detection models,yolov5,Yolov5 is a specific type of detection model mentioned in the context.
+detection models,faster-rcnn,Faster-RCNN is another specific type of detection model mentioned in the context.
+detection models,efficientdet,EfficientDet is a third type of detection model mentioned in the context.
+iels,ens,"Comparison between ENs and IELs in terms of staining, size, and shape."
+mc2dc datasets,consep,CoNSeP is one of the publicly available datasets mentioned.
+mc2dc datasets,monusac,MoNuSAC is another publicly available dataset mentioned.
+mc2dc datasets,muced,MuCeD is a novel dataset contributed for the detection of celiac disease.
+muced,degpr,DEGPR consistently improves detection and counting performance on the MuCeD dataset.
+muced,detection models,DEGPR improves detection performance over all base models on the MuCeD dataset.
+muced,degpr,DEGPR also achieves a gain in mean average precision and a reduction in mean absolute error on the MuCeD dataset.
+degpr,object detection models,DEGPR is proposed to guide object detection models by exploiting visual features between different cell classes.
+degpr,supervised contrastive learning,DEGPR uses supervised contrastive learning to learn robust embeddings for different cell classes.
+object detection,localization,"Object detection is the problem of localizing and classifying objects of interest from an image, where localization is crucial for determining the exact location of an object in cases where it is required."
+object detection,classification,"Object detection involves both localization and classification of objects of interest in an image, where classification helps in identifying the type or class of the detected objects."
+object detection,r-cnn,R-CNN is a type of object detection approach mentioned in the literature for localization and classification of objects in images.
+object detection,yolo,"Yolo is another object detection approach discussed in the context, known for its localization and classification capabilities in images."
+object detection,retinanet,RetinaNet is a specific object detection model referenced for its localization and classification functions in image analysis.
+localization,medical images,Localization is essential for determining the exact position of objects of interest within medical images for accurate analysis and diagnosis.
+localization,fine-tuning,Fine-tuning standard object detection models on medical datasets is important for improving the localization accuracy of objects in medical images.
+cell detection,object segmentation,"One approach for cell detection involves first performing object segmentation, a key step that helps in isolating individual cells for further analysis."
+cell detection,classification,Classification is often utilized in cell detection after object segmentation to identify the type or characteristics of the segmented cells accurately.
+cell detection,segmentation mask,"A segmentation mask is used in cell detection to outline the boundaries of individual cells, which aids in the accurate identification and analysis of cell structures."
+spatial priors,geometric priors,Spatial priors and geometric priors are both used as priors over an explicit cell segmentation mask.
+pathologist's annotation effort,labeling segmentation masks,The annotation effort required for labeling segmentation masks is significantly higher than annotating bounding boxes.
+cell detection,annotated bounding boxes,Cell detection is focused on using annotated bounding boxes to save annotation effort.
+annotation strategy,bounding boxes,An alternate annotation strategy to bounding boxes is to annotate centroids or use attention over feature maps.
+cell counting,density-based methods,Cell counting in the literature is proposed using two main approaches: density-based methods and counting as a by-product of cell detection.
+density-based methods,density maps,Density-based methods use density maps instead of bounding boxes as labels to handle cell counting.
+density-based methods,multiple cell types,Existing density-based approaches cannot handle multiple cell types directly for multi-class cell counting task.
+cell counting,predicted bounding boxes,Counting is generally done as a by product of predicted bounding boxes for cell counting.
+cell counting,predicted segmentation masks,"Counting can also be done over predicted segmentation masks, but the challenge of data annotation for segmentation arises."
+degpr,density based models,DEGPR uses counting over predicted bounding boxes and outperforms natural extensions of density-based models.
+density based models,natural extensions,density based models outperform natural extensions
+multi-class multi-cell detection and counting,histopathology image,Problem involves detecting and counting different cell classes in histopathology images
+bounding box sets,cell classes,Bounding boxes are associated with different cell classes for counting
+object detector dθ,bounding box detection,Object detector Dθ performs bounding box detection as part of the solution
+object detectors,training data,Object detectors are trained using ground-truth training data
+classification loss,predicted class,Classification loss is computed based on the comparison between predicted and ground truth classes
+localization loss,predicted bounding box coordinates,Localization loss is the error in predicted coordinates of bounding boxes
+object detectors,total detection loss,"Total detection loss involves objectness, classification, and localization losses"
+object detectors,feasible for mc2dc,Object detectors are a feasible solution for multi-class multi-cell detection and counting
+pre-training stage,cell patches,Cell patches are used for pre-training the contrastive encoder
+object detection model,ground truth images,The cell patches are computed based on the predicted image from the object detection model and ground truth images.
+average size,intensity,The patches are used to compute the average size (Afs) and intensity (AfI) as feature vectors.
+average size,contrastive embedding,The patches are also used to compute contrastive embedding which becomes a feature vector to train the GMM model (Gψ).
+object detection model,ground truth images,The predicted bounding boxes of each cell type are compared with the ground truth using explicit cell discriminative features.
+bounding box,embedding vector,An encoder Eϕ trains on image patches of each bounding box to generate an embedding vector Eϕ(b).
+explicit features,implicit features,DEGPR uses both hand-crafted explicit features and data-driven implicit features to fit a Gaussian.
+features,gaussian mixture model (gmm),Both types of features (explicit and implicit) are used to fit a Gaussian mixture model (GMM) defined by Gψ.
+gaussian mixture model (gmm),ground truth and predicted bounding boxes,The Gaussian mixture model (GMM) defined by Gψ is used for both ground truth and predicted bounding boxes.
+degpr loss,ldet,DEGPR loss is added to Ldet and backpropagated to update the parameters θ.
+degpr loss,eϕ,"DEGPR loss is added to Eϕ, which is pretrained using SupCon over gold bounding boxes."
+degpr,cell classes,DEGPR encourages discrimination between cell classes via differences in (explicit or implicit) features.
+degpr,gmms,DEGPR computes feature differences and fits GMMs over the concatenated vectors.
+feature,bounding box,"The value of the jth feature computed from a bounding box is denoted as fj(b). For a class c, the average feature value of fj is computed as 1 divided by the number of bounding boxes for class c multiplied by the fj(b) values."
+class,image,"For a given image, the discriminative feature value Dfj(ci, ck) for two classes ci and ck is defined as the difference between their average fj values."
+bounding box,class,"Bc is restricted to the bounding boxes for class c in a given image. The discriminative feature value Dfj(ci, ck) for two classes ci and ck is defined as the difference of their average fj values."
+discriminative feature vector,class,"DEGPR concatenates the discriminative feature values corresponding to different features to form a discriminative feature vector denoted by DF(ci, ck). Each image in the dataset will have a discriminative feature vector corresponding to it."
+density estimator,gaussian mixture models (gmm),DEGPR learns the underlying feature distribution using a density estimator. Gaussian Mixture Models (GMM) are used for estimating the densities as they are known to be universal density approximators.
+gaussian mixture models (gmm),ground truth bounding boxes,"Two separate GMMs are learned for each of the ground truth and predicted bounding boxes/classes. For every pair of classes ci, ck, there is a GMM Pgt, which models the discriminative feature vector DF of the ground truth bounding boxes."
+ground truth bounding boxes,predicted bounding boxes,"For every pair of classes ci, ck, there is a GMM Pgt, which models the discriminative feature vector DF of the ground truth bounding boxes and another GMM Qpd for predicted bounding boxes. The goal is to 'align' these two feature vector distributions."
+predicted bounding boxes,feature vector distributions,The goal is to 'align' these two feature vector distributions in DEGPR.
+feature vector distributions,kl divergence measure,DEGPR does this via a minimization of the KL divergence measure.
+feature vectors,monte carlo estimates,DEGPR uses Monte Carlo estimates to approximate the integral for estimating the KL divergence.
+feature vectors,ground truth,It treats the feature vectors obtained from ground truth as samples of distributions.
+feature vectors,predicted bounding boxes,It treats the feature vectors obtained from predicted bounding boxes as samples of distributions.
+degpr loss,pair of classes,DEGPR computes a loss term for each pair of classes and normalizes them in the DEGPR loss calculation.
+feature extraction process,explicit features in degpr,Feature extraction process involves using explicit features in DEGPR such as size and intensity.
+explicit features in degpr,hand-crafted features,Explicit features in DEGPR are hand-crafted to help discriminate between cell classes.
+feature,explicit,"Explicit features are modeled as scalars, with each feature having a specific scalar value."
+bounding box,size,The size of a bounding box is defined as the product of the differences in the coordinates of the top left and bottom right pixels.
+pixel intensity,intensity feature,The intensity feature is defined in terms of the pixel intensity at specific coordinates.
+size,intensity feature,The size and intensity features are calculated to obtain discriminative feature vectors.
+gmms,discriminative feature vectors,Gaussian Mixture Models (GMMs) are fitted for discriminative feature vectors.
+predicted bounding boxes,ground truth bounding boxes,KL divergence is computed between predicted and ground truth bounding boxes.
+implicit features,degpr,DEGPR deals with implicit features that may not be complete or easy to compute as explicit features.
+degpr,implicit feature learning,"DEGPR adopts implicit feature learning to deal with the hard modeling of gated segmentation, using an encoder to convert image patches to implicit feature vectors."
+resnet18,encoder eϕ,DEGPR trains a ResNet18 encoder Eϕ to convert image patches to implicit feature vectors.
+image patch,implicit feature vector,"Each image patch corresponds to a predicted or ground truth bounding box, which is then converted to an implicit feature vector by the encoder."
+zv,feature embedding,"DEGPR reduces the ResNet18's 512-dimensional feature embedding zv to a smaller size using PCA, resulting in denoted features Fimp."
+dfimp,implicit feature vectors,"DEGPR computes implicit feature discriminative vectors DFimp based on implicit features, using specific equations."
+ground truth,predicted gmm fits,KL divergence is calculated between the ground truth and predicted GMM fits of the implicit features to determine the total implicit feature loss for all class pairs.
+feature encoder,pre-training,"The encoder is pre-trained using a supervised contrastive loss, which penalizes the encoder based on the distances of vectors for patches of the same class."
+supcon,hard negative,SupCon is made hardness-aware by controlling the strength of penalties on hard negative patches through a temperature τ.
+supcon,temperature τ,SupCon is made hardness-aware by a temperature τ controlling the strength of penalties on hard negative patches.
+supcon,penalties,SupCon is made hardness-aware by controlling the strength of penalties on hard negative patches.
+supcon,image patches,LSupCon is computed as a sum over the set of all gold image patches V.
+image patches,gold label c,"For every patch v with a gold label c, a set of positive and negative pairs are defined."
+positive patch,gold label c,"p is a positive patch of v when it comes from a set P(v), denoting other patches from class c."
+positive patch,set p,"The positive patch v is denoted from a set P(v), where other patches from class c are also included."
+positive patch,representation space,"The objective of LSupCon is to induce a representation space where similar (positive) sample pairs are close, while dissimilar (negative) pairs are far apart."
+positive patch,negative samples,The patches apart from positive patch form the negative samples in LSupCon.
+degpr,lsupcon,"DEGPR applies LSupCon on the supervised data, implying that the features learned help in discriminating between different cell-classes in the dataset."
+decoder,negative patches,"The predicted bounding boxes do not exactly overlap with the ground truth bounding boxes, so for decoder robustness, augmentation of the gold patches is done by randomly shifting and resizing the bounding boxes."
+method,exposure bias,"Inspired by the idea of exposure bias methods, augmented bounding boxes are gradually introduced while training the encoder in an annealing manner."
+detector,encoder,The detector Dθ is trained using a combination of object detection and posterior regularization losses where the encoder Eϕ remains frozen during training.
+regularization,feature losses,"The regularization term in the loss function is the sum of losses due to explicit and implicit features, controlled by λreg."
+encoder,training the detector,The encoder Eϕ is frozen when training the detector.
+ltotal,ldet,The total loss Ltotal is composed of Ldet and regularization terms.
+ltotal,lexp,The term Lexp is included as part of the Ltotal loss with a regularization parameter λreg.
+ltotal,limp,The term Limp is included as part of the Ltotal loss with a regularization parameter λreg.
+muced,dataset,MuCeD is a dataset that is released and curated by expert pathologists.
+human duodenum,histopathology images,The histopathology images of the human duodenum are captured in the MuCeD dataset.
+human duodenum,olympus bx50 microscope,Images from the human duodenum are captured using an Olympus BX50 microscope in the MuCeD dataset.
+muced,dimensions,Images in the MuCeD dataset have dimensions of 1920x2148.
+bounding boxes,iels and ens,Bounding boxes in the dataset are annotated for IELs and ENs.
+epithelial area,continuous villi,The epithelial area represents a region of interest with continuous villi.
+subimages,re-scaled to 640x640,Each subimage is re-scaled to a size of 640x640.
+55 images,folds,The 55 images are divided into five folds for cross-validation.
+validation images,training images,Validation images are distinct from training images in the cross-validation process.
+degpr,effectiveness,The effectiveness of DEGPR is demonstrated on publicly available datasets.
+colorectal nuclear segmentation,classification dataset,CoNSeP is a dataset that involves nuclear segmentation and classification of H&E stained images.
+consep,nuclear segmentation,CoNSeP is a nuclear segmentation dataset of H&E stained histology images.
+consep,classification dataset,CoNSeP is a segmentation and classification dataset of H&E stained histology images.
+consep,h&e stained histology images,CoNSeP is a nuclear segmentation and classification dataset of H&E stained histology images.
+consep,cra,"CoNSeP deals with single cancer, colorectal adenocarcinoma (CRA), images."
+consep,wsi,CoNSeP consists of a total of 41 whole slide images (WSI).
+cra,coloractal adenocarcinoma,CRA is the abbreviation for colorectal adenocarcinoma.
+wsi,annotated cells,"WSI have a total of 24,319 annotated cells of 3 classes."
+mc2dc,consep,"To use CoNSeP for MC2DC, the dataset is preprocessed by converting each segmentation mask into a bounding box."
+mc2dc,images,MC2DC dataset results in 108 train and 56 test images.
+monusac,multi-organ nuclei segmentation,MoNuSAC is a multi-organ nuclei segmentation and classification dataset.
+monusac,classification dataset,MoNuSAC is a multi-organ nuclei segmentation and classification dataset.
+monusac,nucleus boundary annotations,MoNuSAC is a large dataset of nucleus boundary annotations and class labels.
+monusac,class labels,MoNuSAC is a large dataset of nucleus boundary annotations and class labels.
+phocytes,neutrophils,Phocytes and neutrophils are different types of cells involved in the immune system.
+phocytes,macrophages,Phocytes and macrophages are different types of cells involved in the immune system.
+neutrophils,macrophages,Neutrophils and macrophages are different types of cells involved in the immune system.
+dataset,images,Images in the dataset are resized to 640x640 for uniformity.
+ambiguous cells,evaluation,Cells marked as ambiguous are filtered out from evaluation.
+degpr model,object detection models,DEGPR model's agnosticity is evaluated with multiple object detection models.
+degpr model,cell detection,DEGPR model's performance in cell detection is analyzed.
+degpr model,cell counting,DEGPR model's impact on cell counting performance is studied.
+degpr model,model components,The contributions of DEGPR model's various components are investigated.
+precision,cell detection,Precision is used as a metric for cell detection.
+recall,cell detection,Recall is used as a metric for cell detection.
+mean average precision (map),cell detection,Mean average precision (mAP) is used as a metric for cell detection.
+mae (mean absolute error),cell counting,Mean Absolute Error (MAE) is used as an evaluation metric for cell counting.
+mre (mean relative error),cell counting,Mean Relative Error (MRE) is used as an evaluation metric for cell counting.
+q-histology parameter,duodenum biopsy images,Q-histology parameter is used for quantitative classification of duodenum biopsy images.
+q-histology ratio,celiac disease,Q-histology ratio is used to determine if the patient suffers from celiac disease.
+iels,ens,Q-histology ratio is defined as the ratio of the number of intraepithelial lymphocytes (IELs) per 100 epithelial cells (ENs).
+iels,ens,defined as the ratio of the number of IELs per 100 ENs
+ratio,patient,"If the ratio is ≥ 25, then the patient suffers from celiac disease"
+muced,yolov5,"For MuCeD, we pretrain Yolov5 on the Kaggle data science bowl 2018 dataset"
+yolov5,kaggle data science bowl 2018 dataset,we pretrain Yolov5 on the Kaggle data science bowl 2018 dataset
+segmentation masks,bounding boxes,after converting the segmentation masks into bounding boxes
+yolov5,faster-rcnn,"Yolov5 is trained for 300 epochs using SGD optimizer with a learning rate (lr) of 0.003, early stopping with patience 100 and batch size 32. We use Faster-RCNN with a Resnet50 backbone"
+faster-rcnn,resnet50,We use Faster-RCNN with a Resnet50 backbone
+efficientdet,pretrained efficientdet-d0,"for EfficientDet, we use the pretrained Efficientdet-d0 as the base model"
+efficientdet,muced,We train EfficientDet for MuCeD with a lr of 0.001 for 2000 epochs with patience 100 and is trained with momentum optimizer
+degpr,105 samples,"While training DEGPR, we use 105 samples to approximate KL divergence in Eq 5 to get Eq 6"
+kl divergence,eq 6,The KL divergence is used in Eq 5 to derive Eq 6.
+grid search,regularization factor,"A grid search is done to find the best regularization factor, λreg, with values of 0.01 for MuCeD and CoNSep datasets, and 0.001 for MoNuSac."
+eϕ,bounding boxes,All cell patches input to Eϕ are cropped out from bounding boxes.
+resnet18 encoder,pre-training,Pre-training of ResNet18 encoder is done for 300 epochs with a learning rate of 0.001 and momentum as an optimizer.
+map,iou threshold,"For MuCeD dataset, the model performs the best when the IoU threshold is kept at 0.3, hence experiments are performed for mAP:0.3."
+augmentation methods,"horizontal flip, vertical flip, scaling, shifting","Horizontal flip, vertical flip, scaling, and shifting are used as augmentation methods."
+yolov5,faster-rcnn,Comparison of detection and counting results between Yolov5 and Faster-RCNN models.
+faster-rcnn,efficientdet,Comparison of detection and counting results between Faster-RCNN and EfficientDet models.
+faster-rcnn,degpr,Faster-RCNN is associated with DeGPR with a score of 0.643
+efficientdet,degpr,EfficientDet is associated with DeGPR with a score of 0.497
+degpr,object detection models,DEGPR is compared with object detection models in terms of quantitative performance on the MuCeD dataset
+degpr,explicit and implicit features,DEGPR provides guidance through explicit and implicit features to help detection models learn discriminating attributes for cells
+degpr,relative error for iel counts,"DEGPR leads to a drastic reduction of 18-43% points in RELATIVE error for IEL counts, showing effectiveness"
+degpr,consep dataset,"DEGPR performs stronger than baselines on the CoNSep dataset, but counting results are generally weak due to high cell density"
+degpr,model predictions,DEGPR is qualitatively illustrated in model predictions
+image,bounding boxes,Bounding boxes are annotations that define the boundaries of objects in an image
+image,predictions,Predictions are the output of a model that attempts to classify or detect objects in an image
+yolov5,baseline model,Yolov5 is compared to a baseline model in terms of predictions and performance
+predictions,baseline model,Both predictions and baseline model are used to evaluate the performance of the models
+q-ratiomeasure,accuracy,Accuracy is a key metric based on Q-RatioMeasure for evaluating the performance of a model
+muced,consep,MuCeD and CoNSeP are datasets used for counting and localization
+unet,countception,UNet and Countception are counting models used for detection
+yolov5,degpr,Yolov5 with DEGPR is a model used for counting and localization
+degpr,patient samples,DEGPR is used to improve prediction accuracy and F1-score for patient samples
+cells,misclassification,Improvement in predicting missing cells results in a reduction in misclassification errors
+patient samples,q-histology ratio,Patient samples in MuCeD are classified based on the Q-histology ratio
+counting,detection,Performance comparison between counting via detection (Yolov5+DEGPR) vs density map based methods
+models,class,Models are trained separately for each class.
+approach,methods,The approach outperforms all other methods by vast margins.
+detection,setting,Detection in a multi-class setting is computationally convenient.
+counts,cell types,Counts of all cell types are obtained from a single object detector.
+mcspatnet,performance,Comparison with MCSpatNet shows improved performance with DEGPR.
+ablation analysis,components,Ablation analysis is performed to understand the relative contributions of different components in the final performance.
+study,muced,Study on MuCeD is run using Yolov5 and the results are reported in Table 4.
+features,performance metrics,"Introduction of explicit features improves precision and mAP, while implicit features improve mAP and reduce MAE."
+features,information,Implicit and explicit features capture complementary information.
+encoder,pre-training,Class imbalance is mitigated during contrastive pre-training of the encoder.
+batches,data augmentations,"Class-balanced sampling is performed while creating batches, along with additional data augmentations for robustness."
+error analysis,model,"Error analysis is performed for the best model on MuCeD, identifying common failure modes."
+error analysis,best model,Error analysis was performed for the best model on MuCeD.
+error analysis,common failure modes,Error analysis revealed common failure modes associated with misclassifying IELs as ENs.
+best model,error analysis,The best model was analyzed for errors in error analysis.
+best model,muced,The best model was tested on the MuCeD dataset.
+common failure modes,more errors in misclassifying iels as ens,Common failure modes highlighted more errors in misclassifying IELs as ENs.
+common failure modes,reverse,More errors were observed in misclassifying IELs as ENs rather than in reverse.
+common failure modes,iels,Common failure modes mentioned that more errors occurred in misclassifying IELs as ENs.
+common failure modes,ens,Common failure modes mentioned that more errors occurred due to misclassification of IELs as ENs.
+iels,ens,Misclassification of IELs as ENs was highlighted in the error analysis.
+iels,ens,The error analysis pointed out that more errors happened when classifying IELs as ENs.
+iels,ens,Misclassifying IELs as ENs was more frequent than vice versa according to the error analysis.
+iels,ens,Misclassification of IELs as ENs was more common in the error analysis.
+iels,circular,"When an IEL overlaps an elongated EN, errors may occur due to the shape appearing elongated."
+en,circular,The overall shape may appear elongated when an IEL (circular) overlaps an EN (elongated).
+darker stained images,more errors,"Darker stained images generally lead to more errors, possibly due to diminished intensity differences between cell types."
+image,more errors,Images with darker stains tend to have more errors in the predictions.
+intensity differences,cell types,Intensity differences between cell types may influence the errors in prediction.
+cell types,diminished intensity differences,Errors may be more prevalent when there are diminished intensity differences between cell types.
+en cells,lightly stained,EN cells may be missed when they are very lightly stained.
+mc2dc,multi-class cell detection and counting,The study focused on multi-class cell detection and counting problems (MC2DC) over medical histopathological images.
+mc2dc,limited data setting,The study investigated multi-class cell detection and counting problems in a limited data setting.
+degpr,deep guided posterior regularization,The solution utilized by the study was Deep Guided Posterior Regularization (DEGPR).
+degpr,additional regularization terms,DEGPR imposed additional regularization terms to incentivize the model for outputting posterior distribution of features over predicted bounding boxes.
+model,posterior distribution,The model outputted a posterior distribution of features over predicted bounding boxes as guided by DEGPR.
+degpr,ground truth,DEGPR aimed to output posterior distribution of features similar to that of ground truth for each cell class.
+degpr,features,DEGPR utilized two types of features: explicit and implicit.
+degpr,explicit features,DEGPR included explicit features generally provided by a domain expert.
+degpr,implicit features,DEGPR used implicit features trained automatically using supervised contrastive loss over labeled data.
+dataset,55 duodenum biopsies,The study contributed a novel dataset of 55 duodenum biopsies for predicting celiac disease.
+dataset,improvements,The novel dataset led to improvements in the performance of object detection backbones.
+dataset,predicted celiac disease,The dataset was useful for predicting celiac disease.
+dataset,experimenting,The dataset was used for experimenting on two publicly available datasets.
+degpr,effective,DEGPR was effective in enhancing the performance of object detection backbones.
+degpr,detection and counting metrics,DEGPR showed substantial improvements in both detection and counting metrics.
+model,f-score,The F-score of the model in predicting celiac was improved as a consequence of using DEGPR.
+model,predicting celiac,The model's F-score in predicting celiac disease was enhanced by implementing DEGPR.
+detection metrics,counting metrics,"Both detection and counting metrics are mentioned in the context, indicating a relationship in terms of metrics evaluation."
+f-score,model,"The F-score of the model in predicting celiac disease is mentioned, indicating a relationship between the F-score and the model."
+f-score,celiac disease,"The F-score of the model in predicting celiac disease is highlighted, indicating a relationship between the F-score and celiac disease."
+model,prediction,"The model is involved in predicting celiac disease, indicating a relationship between the model and prediction."
+code,data,"The code and data are released for further research, indicating a relationship between code and data."
+iitd-aiims multi-institutional faculty interdisciplinary research project,icmr grant,"The support for the work is mentioned to be primarily from the IITD-AIIMS Multi-Institutional Faculty Interdisciplinary Research Project and an ICMR grant, indicating a relationship between the two sources of support."
+icmr grant,automated grading of duodenal mucosal biopsies,"The ICMR grant is mentioned in the context of automated grading of duodenal mucosal biopsies, indicating a relationship between the grant and the process."
+jai gupta chair fellowship,iit delhi,"The Jai Gupta chair fellowship from IIT Delhi is mentioned, indicating a relationship between the fellowship and the institution."
+yardi school of ai,travel and honorarium grants,"The Yardi School of AI is mentioned to provide travel and honorarium grants, indicating a relationship between the school and the grants."
+iit delhi,hpc facility,"The IIT Delhi HPC facility is thanked for computational resources, indicating a relationship between the institution and the computational resources."

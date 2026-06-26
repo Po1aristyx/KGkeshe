@@ -1,0 +1,161 @@
+node_1,node_2,edge
+abstractlane detection,autonomous driving,AbstractLane detection is a task within the broader context of autonomous driving.
+lane detection,complex topology of lanes,The task involves understanding the intricate structure of lanes.
+previous methods of lane detection,challenges,Previous methods have shown success but face challenges
+global and local features,accurate detection of lanes,Global and local features contribute differently to precise lane identification.
+hybrid global-local perception network (hglnet),global and local features,HGLNet is designed to leverage both types of features for improved lane detection.
+global extraction head,global semantic context,The global extraction head captures context for efficient lane information aggregation.
+multi-hierarchy feature aggregator (mfa),local features,MFA enhances local feature representation across regional and local scales.
+hybrid architecture,global presence of lanes,The hybrid design focuses on global and local features at different depths for comprehensive lane sensing.
+proposed method,detection accuracy,Experimental results show improvements in detection accuracy in challenging scenarios.
+proposed method,existing methods,Our method outperforms existing approaches in handling scenarios with absent lane markings.
+proposed method,detection accuracy,The proposed method aims to improve detection accuracy.
+proposed method,state-of-the-art lane detection methods,The proposed method outperforms existing state-of-the-art techniques.
+lane detection,fundamental component,Lane detection is a crucial aspect for autonomous driving systems.
+deep-learning-based methods,promising results,Deep-learning methods have shown improved performance in lane detection.
+challenges,faded lane lines,One challenge is detecting lanes with faded lines.
+challenges,adverse illumination or weather situations,Another challenge is dealing with poor lighting or weather conditions.
+challenges,occlusion of lane markings,Occlusions by objects like cars make lane detection difficult.
+challenges,absence of lane markings,Detecting lanes without visible markings is a challenge.
+contemporary approaches,extensive analysis,An in-depth analysis of current lane detection methods is conducted.
+hard cases,lane almost occupied by cars,Illustration (a) showcases lanes heavily obstructed by cars.
+hard cases,roads without lane marking,Illustration (b) shows lanes without clear markings.
+hard cases,blurred lane lines (night conditions),Illustration (c) demonstrates lanes that are difficult to detect at night due to blur.
+multi-hierarchical characteristics,local features,The context discusses the investigation of local features
+local features,accuracy of lane detection,Local features are crucial for enhancing the accuracy in challenging scenarios.
+robustness of the model,effective integration of local and global features,The model's robustness benefits from combining both types of features.
+clrnet (zheng et al. 2022),roigather model,CLRNet introduces the ROIGather model for simultaneous gathering of global and local features during parameter refinement.
+global features,high-level semantics,Global features are typically associated with abstract
+local features,low-level features,Local features are generally represented at a more basic
+hglnet (proposed in this paper),hybrid global-local perception network,HGLNet is a novel network designed to handle global and local features independently and integrate them effectively.
+global extraction head,higher-level global semantic context,The global extraction head focuses on capturing the essential context for lane detection in an efficient manner.
+global extraction head,sampling points around a lane,It selectively attends to key points for global context extraction.
+self-attention layers,efficient global context,Self-attention layers are used to process the sampling sequence and provide a global understanding.
+issue,accurately detecting lanes,The paper addresses the challenge of ensuring precise lane detection.
+multi-hierarchy feature aggregator (mfa),lane detection,MFA is introduced to address the issue of accurately detecting occluded and blurred lane lines in lane detection.
+hybrid global-local perception network (hglnet),lane detection,HGLNet is a proposed method that effectively extracts global semantic context and local features for improved lane detection.
+global extraction head,hglnet,The global extraction head is a part of HGLNet
+object hierarchy,mfa,MFA explicitly models object hierarchies at regional and local ranges
+deep-learning-based lane detection methods,promising prospects,These methods show great potential
+cu-lane (pan et al. 2018),lane detection benchmark,CU-Lane is one of the benchmarks where the proposed method achieves state-of-the-art results.
+tusimple (tusimple 2020),lane detection benchmark,Another benchmark where the proposed method excels
+llamas (behrendt and soussan 2019),lane detection benchmark,LLAMAS is a third benchmark where the proposed approach sets new performance standards.
+deep-learning-based lane detection methods,categories,These methods can be divided into five categories.
+segmentation-based methods,category,Segmentation-based methods belong to the first category.
+per-pixel classification,approach used by segmentation-based methods,Segmentation-based methods treat lane detection as a per-pixel classification problem.
+scnn,example of segmentation-based method,SCNN (Pan et al. 2018) uses a message-passing mechanism.
+global features,obtained by scnn,SCNN obtains global features from a message-passing mechanism.
+lanenet,example of segmentation-based method,LaneNet (Neven et al. 2018) represents lanes as instance segmentation.
+instance segmentation,approach adopted by lanenet,LaneNet casts lane detection as an instance segmentation problem.
+resa,example of segmentation-based method,RESA (Zheng et al. 2021) improves efficiency and accuracy of message-passing.
+keypoint-based methods,category,Next category is keypoint-based methods.
+human pose estimation,inspiration for keypoint-based methods,Inspiration comes from human pose estimation.
+fololane,example of keypoint-based method,FOLOLane estimates lane keypoints and generates final lines.
+bottom-up approach,methodology of fololane,FOLOLane is a bottom-up lane detection method.
+global extraction head,sparse space samples,The global extraction head uses sparse space samples as input.
+global semantic features,global extraction head,Global semantic features are obtained from the global extraction head.
+global semantic features,ffn layers,Concatenated global and local features are passed through FFN layers.
+lanes,predicted,Predicts the presence and regresses positions of lanes.
+lane line continuity prior,methods,Methods like row-anchor-based and line-anchor-based utilize this property.
+row-anchor-based methods,identification and classification,Row-anchor-based methods involve identifying and classifying specific on-row positions.
+ufld,first row-anchor-based method,UFLD is an example of the first row-anchor-based method.
+condlanenet,row-anchor-based formulation,CondLaneNet integrates conditional convolution and a row-anchor-based approach.
+complex topology lane concerns,addressed by rim,RIM helps address issues with complex lane topologies in CondLaneNet.
+line-anchor-based methods,region anchors,Line-anchor-based methods build on region anchors from Faster R-CNN.
+line-cnn,novel line anchor representation,Line-CNN introduces a specialized line anchor representation for lane detection.
+laneatt,local features,LaneATT combines local features with global features for improved accuracy.
+accuracy,lane prediction,These methods achieve high accuracy in predicting lanes.
+laneatt (tabelini et al. 2021a),accuracy,proposed to improve lane prediction accuracy.
+clrnet (zheng et al. 2022),accuracy,also contributes to high accuracy through a cross-layer refinement mechanism.
+hglnet,accuracy,addresses the limitations of previous methods
+line anchors,accuracy,performance heavily relies on their position for accurate predictions.
+global information,accuracy,methods lack global information
+deformable attention module,global nature,provides a global instead of local focus compared to CNNs.
+transformer,deformable detr (zhu et al. 2020),DETR is a pioneer in applying Transformers for object detection.
+multi-head attention module,computational complexities,causes slow convergence and high computational costs.
+deformable detr,multi-head attention module,proposes deformable attention to overcome quadratic complexity issue.
+deformable detr,deformable attention module,Deformable DETR proposes the deformable attention module as a solution to handle large feature map sizes.
+deformable attention module,sparse spatial sampling,The deformable attention module combines the advantages of sparse sampling from deformable convolution with transformer's relation modeling.
+deformable attention module,multi-scale feature maps,It can be extended naturally for multi-scale feature maps
+persformer,adaptive sampling strategy,PersFormer employs adaptive sampling for global feature extraction
+global extraction head,multi-scale feature maps,The global extraction head uses resized multi-scale feature maps for effective feature aggregation.
+global extraction head,attention mechanism,This head employs an attention mechanism to acquire global features.
+lane line,line anchor,A lane line is represented using a line anchor
+line anchor,shape priors,The line anchor has predefined shape priors to better localize lanes.
+lane prior,2d points,The lane is represented by a sequence of 2D points
+slender lane structure,computational costs,Adaptive sampling restricts feature aggregation to the region near the slender lane structure
+reference points,input feature map,The sampling offset of each reference point is computed relative to the input feature map at each layer.
+normalized coordinates,reference point,pq represents the normalized coordinates of the reference point for each query element.
+sampling offset,lth feature level,△pmlqk indexes the sampling offset of the kth sampling point in the lth feature level.
+global features,normalized coordinates,The function ϕ calculates the interpolated feature for each reference point using its normalized coordinates.
+global feature vectors,attention weight,Amlqk denotes the attention weight of each reference point
+lane priors,global extraction head,The global extraction head focuses on a limited number of reference points around lane lines
+lanes,multiple hierarchies,Lanes have multiple levels of characteristics
+recent studies,multi-hierarchy feature aggregator motivation,The motivation for the multi-hierarchy feature aggregator comes from recent research in lane detection.
+lane markings,local hierarchy range,The local hierarchy range refers to characteristic features of lane markings
+local hierarchy range,regional range,The regional range is distinguished from the local hierarchy range by using a larger window size
+lane detector,detection window size,To handle partial occlusion
+partial occlusion,blurred lane markings,In cases of blurred lane markings
+multi-hierarchy feature lane,predicted lane,The Multi-hierarchy feature lane is a representation that combines a lane prior and N offsets to form the final predicted lane as a sequence of points.
+lane prior,parts,A lane prior consists of front and rear background probabilities
+object detection,classification,Object detection typically includes both classification (identifying object categories) and localization (determining object positions) within an image.
+object detection,localization,As mentioned
+object detection,classification,Object detection includes both classification and localization tasks.
+object detection,localization,Localization aims to accurately regress bounding boxes
+bounding box regression,local features,Local features are crucial for precise bounding box localization.
+object classification,global semantic context,Global context is preferred for accurate object classification
+lane detection,global and local feature integration,Previous studies emphasize the importance of combining global and local features
+laneatt,attention mechanism,LaneATT calculates attention between feature vectors to gather global and local information.
+multi-head mechanism,global and local features,The multi-head mechanism focuses on global and local features separately.
+lane prior head,feature pyramid network (fpn),Inspired by CLRNet
+feature pyramid network (fpn),cross-layer refinement,FPN refines lane priors across different levels of feature maps.
+mfa (multi-scale feature aggregation),feature enhancement,MFA strengthens feature associations within local ranges at each FPN level.
+mfa,cp channels,MFA outputs feature maps with Cp channels after enhancing each layer.
+lane detection,culane,CULane is a large-scale lane detection dataset with 88k training images and 34k testing images.
+lane detection,llamas,LLAMAS is a large-scale highway lane detection dataset with over 100k images.
+lane detection,tusimple,We conduct experiments on three widely used benchmarks: CULane
+training phase,auxiliary segmentation loss,Laux is an auxiliary segmentation loss used only in the training phase.
+evaluation metrics,f1-measure,F1-measure
+evaluation metrics,mf1,mF1
+coco,metric,mF1 follows the COCO metric for better comparison.
+resnet,dla,Both ResNet and DLA are used as pre-trained backbones for the model.
+input images,training and testing phases,Input images are resized to 320 × 800 for both training and testing.
+random affine transformation,data augmentation,Data augmentation techniques include random affine transformation (like translation
+random horizontal flips,data augmentation,Horizontal flips are another method of data augmentation.
+adamw optimizer,training process,The model uses AdamW optimizer with a learning rate of 1e-3.
+cosine decay learning rate strategy,training process,Cosine decay learning rate strategy with power set to 0.9 is employed.
+lane prior head,number of lane prior proposals,Np = 192 lane prior proposals are used.
+lane prior head,proposals' feature dimension,Cp = 64 is the feature dimension for each proposal.
+lane prior head,number of points per lane prior,Each lane prior has N = 72 points.
+global extraction head,resized dimensions,Hg = 10
+global extraction head,channel size,Cg = 192 is the channel size.
+global extraction head,reference points,K = 4 reference points are used.
+mha (multi-head attention),global extraction head,Dilation rate in MHA is set to d = 2.
+culane,training epochs,CULane is trained for 15 epochs.
+tusimple,training epochs,Tusimple is trained for 80 epochs.
+llama,training epochs,LLAMA is trained for 20 epochs.
+culane,tusimple,Performance comparison on CULane and TuSimple is shown in the text.
+culane,popular lane detection methods,The proposed method is compared with other popular lane detection methods on CULane.
+culane test set,our method,Our method achieves state-of-the-art results on the CULane test set.
+hglnet,dla34 version of clrnet,HGLNet delivers better performance with a higher efficiency trade-off (104 FPS vs 94 FPS).
+shadow,no line,and night
+dazzle scenario,clrnet (resnet101),ResNet18 version of our method outperforms CLRNet (ResNet101) with a significant improvement in F1 measure.
+resnet18 version of our method,condlanenet (resnet18),Our method's ResNet18 version has higher F1 on the Dazzle scenario
+backbone,clrnet,Our method improves mF1 metrics even when using the same backbone as CLRNet.
+qualitative results,culane dataset,Qualitative results for four scenarios on the CULane dataset are shown.
+hybrid global-local perception network (hglnet),global context,HGLNet proposes a global extraction head to extract global context from multi-layer feature maps to address the absence of visual evidence for lane presence.
+global context,local feature modeling,HGLNet efficiently extracts global context and local feature modeling simultaneously for lane detection.
+hybrid architecture,improves performance,The introduction of the hybrid architecture significantly improves the network's performance
+proposed hybrid architecture,difficult scenarios,The hybrid architecture is advantageous in handling challenging situations where accurate localization is crucial.
+global presence of lane lines,location regression,The network aims to sense the global presence and accurately regress the positions of lane lines.
+local features,existence of lane lines,Local features help judge the existence of lane lines.
+local features,position correction,Local features are also used to refine the positions of detected lane lines.
+culane,dataset for evaluation,Results are reported on the CULane dataset
+global extraction head,multi-layer feature maps,The global extraction head is used to extract context from the multi-layer feature maps.
+global extraction head,lane detection accuracy,The global extraction head contributes to improving lane detection accuracy.
+mfa (proposed method),hierarchy of local feature ranges,MFA is proposed to enhance the hierarchy of local feature ranges for better lane detection.
+mfa (proposed method),lane detection,MFA improves the performance of lane detection.
+proposed method,state-of-the-art methods,The proposed method outperforms existing state-of-the-art methods.
+key r&d program of jiangsu province,financial support,The research was financially supported by this program.
+key r&d program of jiangsu province,be2023352,Specific grant number for the project.
+acknowledgments,gratitude,The authors express gratitude for the financial support received.

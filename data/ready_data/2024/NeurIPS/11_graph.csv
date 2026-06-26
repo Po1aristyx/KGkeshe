@@ -1,0 +1,224 @@
+node_1,node_2,edge
+large language models (llms),alignment method,LLMs require an alignment method for efficient and effective operation.
+alignment method,complexity,There is tension between the complexity of current alignment methods and the need for rapid iteration in deployment scenarios.
+alignment method,model-agnostic alignment approach,There is a need for a model-agnostic alignment approach due to the tension between complexity and rapid iteration in deployment scenarios.
+model-agnostic alignment approach,aligner,Aligner is introduced as a novel and simple alignment paradigm that learns correctional residuals between preferred and dispreferred answers using a small model.
+aligner,open-source and api-based models,"Aligner can be directly applied to various open-source and API-based models with only one-off training, making it suitable for rapid iteration."
+aligner,upstream models,"Aligner can be applied to any powerful, large-scale upstream models, and can even bootstrap the upstream models using corrected responses for performance improvement."
+aligner,llms,"The same Aligner model deployed across 11 different LLMs resulted in performance improvements in helpfulness, harmlessness, and reduced hallucination."
+aligner-7b,llms,"Specifically, Aligner-7B achieved an average improvement of 68.9% in helpfulness and 22.8% in harmlessness across the tested LLMs."
+llms,hallucination,LLMs were tested while reducing hallucination
+aligner-2b,gpt-4 turbo,Aligner-2B stacking on GPT-4 Turbo improved LC Win Rate
+gpt-4 turbo,gpt-4 omni,GPT-4 Turbo surpassed GPT-4 Omni in Win Rate
+llms,human intentions and values,Alignment of LLMs with human intentions and values gaining attention
+supervised fine-tuning (sft),reinforcement learning from human feedback (rlhf),SFT and RLHF emerged as practical approaches for aligning LLMs with human intentions and values
+sft,human demonstrations,SFT leverages human demonstrations to fine-tune LLMs
+rlhf,reward model (rm),RLHF trains a reward model based on human preferences
+rlhf,feedback signals,RLHF fine-tunes LLMs using feedback signals from the RM through reinforcement learning methods
+llms,3h standards,"LLMs meet 3H standards of helpfulness, harmlessness, and honesty"
+llms,challenges,LLMs face challenges such as high training resource consumption and difficulty in ensuring consistent performance
+llms,alignment requirements,Alignment requirements for LLMs are dynamically changing in real-world scenarios
+models,cases outside of alignment training,Models may encounter cases outside of alignment training and exhibit undesirable behaviors
+sft,rlhf,Both SFT and RLHF are time-consuming methods that are used to address undesirable behaviors in training.
+aligner,llm,"The Aligner module is stacked upon an upstream LLM, redistributing answers to align with human intentions."
+aligner,residual learning,"The Aligner is inspired by residual learning and employs a copy and correct method to improve answers, similar to how residual blocks enhance structural modifications."
+aligner,alignment method,"The Aligner introduces a new alignment paradigm by focusing on copy and correction operations, without involving RL processes."
+aligner,preference dataset,The Aligner is fine-tuned on a preference dataset for efficient alignment.
+aligner,preference dataset,Aligner is fine-tuned on a preference dataset to learn the correctional residuals between preferred and non-preferred responses
+aligner,upstream model,Aligner is stacked on the upstream model to achieve corrected alignment
+upstream model,llm,upstream LLM refers to models targeted for alignment
+aligner,rlhf methods,"Aligner requires only an extra module stacked onto the upstream LLM, unlike RLHF methods that need to train and load multiple models"
+aligner,aligner,Aligner decides the degree of reference to the original response and the extent of additional correction based on the quality of the original answers
+aligner,input queries,Aligner learns complex correction patterns simpler than directly learning the mapping from input queries to aligned answers
+aligner,powerful models,"small Aligner can also learn complex correction patterns, demonstrating their capability to steer powerful models"
+aligner,resource,The Aligner model is described as resource-efficient as it does not require extra models to be trained.
+aligner,plug and play,"The Aligner model is plug-and-play, allowing it to be easily integrated into API-based models without parameter adjustments."
+aligner,open source,"The Aligner model is open source, with all training codes and models released to empower the community in exploring correction paradigms."
+aligner,api-based models,"The Aligner model is specifically mentioned as beneficial for API-based models, enhancing helpfulness and harmlessness across various models."
+aligner-7b,dpo,Aligner-7B is stated to be 11.25 times smaller than DPO regarding training parameters.
+aligner-7b,rlhf2,Aligner-7B is mentioned to be 22.5 times smaller than RLHF2 regarding training parameters.
+aligner-7b,gpt-4,Aligner-7B is shown to increase GPT-4's helpfulness by 17.5% and harmlessness by 26.9% in experiment results.
+api-based models,safety-aligned/safety-unaligned models,"API-based models, including safety-aligned/safety-unaligned models, are mentioned in the context as being improved by the Aligner model."
+training codes,alignertails,"All training codes and the Q-A-C dataset, AlignerTails, are released along with the Aligner models to support the community in advancing correction paradigms."
+supervised fine-tuning (sft),pretrained llm,"SFT aims to fine-tune the pretrained LLM, aligning with the context of correctional residuals learning."
+target answers,supervised learning,Target answers are obtained using supervised learning
+supervised learning,maximum likelihood estimation,Supervised learning specifically involves maximum likelihood estimation
+curated dataset dsft,"{x(i), y(i)}n",The curated dataset DSFT consists of pairs of x(i) and y(i)
+training objective,model πsft,The training objective is to obtain a model πSFT that minimizes the specified loss function
+aligner,alignment improvement,The Aligner improves alignment by redistributing model's answers through conditional generation
+model alignment,human intentions,Alignment between model and human intentions is improved by Aligner
+pipeline of aligner training,preference dataset,The pipeline of Aligner training involves fine-tuning the model based on a preference dataset
+model training,dataset m,Model training involves dataset M which consists of pairs of x(i) and y(i)
+conditional seq2seq model µϕ,aligner,The conditional seq2seq model µϕ is used in the training of Aligner
+aligner,user's query,"Aligner takes the user's query x and the initial answer yo generated by the upstream LLM πθ, then generates the answer yc."
+aligner,human values,Aligner generates the answer yc which is better aligned with human values.
+upstream llm πθ,user's query,The user's query x is used by the upstream LLM πθ to generate the initial answer yo.
+upstream llm πθ,composed answer generation process,The composed answer generation process for aligned answers is based on the upstream LLM πθ.
+aligner,model capacity,"Improving existing answers yo allows Aligner to focus on how to align with human values rather than how to answer the given query directly, reducing the requirements on model capacity."
+model capacity,requirements,model capacity significantly reduces the requirements
+model capacity,alignment performance,model capacity allows achieving expected alignment performance
+model,aligner,Aligner is a small model used in the resource analysis
+residual correction,training strategy,Residual Correction is an optimized training strategy
+residual correction,semantic correctional residuals,Residual Correction leverages semantic correctional residuals
+q-a-a dataset,training data,Q-A-A dataset is constructed using partial training data
+identity aligner,q-a-c dataset,identity Aligner is built upon using Q-A-C dataset
+training resources,resource requirements,training resources show notable advantages in Aligner
+aligner-7b,methods,Aligner-7B is more efficient than other methods
+aligner,performance,Aligner achieves significant performances
+models,aligners,Various models are integrated with Aligners
+aligner,original models,The Aligner is compared with the original models to quantify the percentage increase in the 3H standard.
+aligner,upstream models,"When assessed in conjunction with various upstream models, the Aligner requires only a single training session and can operate in a zero-shot manner to enhance the performance of all upstream models."
+aligner,dpo,"For a 7B source model, DPO requires 1.125 times, and RLHF 2.25 times more resources than Aligner."
+aligner,rlhf,"For a 7B source model, DPO requires 1.125 times, and RLHF 2.25 times more resources than Aligner."
+aligner,alignment paradigm,"Regardless of the source model’s scale, the training resource requirements of Aligner remain constant, indicating that Aligner is an efficient and lightweight alignment paradigm."
+aligner,aligner modules,The effectiveness of Aligner modules is assessed in the 3H evaluation metrics and configurations.
+aligner,preference datasets,"In the Experiment Setup section, Aligner modules are evaluated using two open-source preference datasets, HH-RLHF and PKU."
+saferlhf,pku-saferlhf,"SafeRLHF dataset is mentioned along with PKU-SafeRLHF dataset, indicating a relation in the context of preference datasets"
+saferlhf,alpaca-7b,"SafeRLHF dataset is generated solely by Alpaca-7B, showing a direct relation between the two"
+saferlhf,hh-rlhf,"SafeRLHF dataset is sourced along with HH-RLHF dataset, indicating a relation in the context of dataset creation"
+alpaca-7b,aligner-7b,"Aligner-7B corrects answers provided by Alpaca-7B, showing a correction relationship between the two models"
+gpt-4,aligner-7b,"GPT-4 created a pattern of overcorrected answers which Aligner-7B improved upon, indicating a correction relationship"
+alpaca-7b,aligner-7b,"Aligner-7B significantly corrects answers from Alpaca-7B, showing a correction relationship between the two models"
+llama2-70b-chat,aligner-7b,"Llama2-70B-Chat model benefits from corrections by Aligner-7B, enhancing helpfulness while maintaining harmless score, showing a correction relationship"
+helpfulness,harmlessness,"The principles of the revision process focus on the 3H dimensions of LLMs, which include helpfulness and harmlessness."
+helpfulness,honesty,"The principles of the revision process focus on the 3H dimensions of LLMs, which include helpfulness and honesty."
+helpfulness,llms,"The principles of the revision process aim to extend the characteristics of LLMs, including helpfulness."
+harmlessness,honesty,"The principles of the revision process focus on the 3H dimensions of LLMs, which include harmlessness and honesty."
+original answers,generated,"The original answers are generated using various open-source models, including Alpaca-7B, Vicuna-(7B,13B,33B), Llama2-(7B,13B)-Chat, and Alpaca2-(7B,13B)3."
+original answers,answering generation,"The original answers are generated using various open-source models, including Alpaca-7B, Vicuna-(7B,13B,33B), Llama2-(7B,13B)-Chat, and Alpaca2-(7B,13B)3."
+answers,revisions,"We use GPT-4, Llama2-70B-Chat, and human annotators to revise the answers in the Q-A dataset."
+revisions,principles,"The revisions are based on well-defined principles, establishing constraints for training the seq2seq model."
+data correction,impact,The distribution shift before and after the data correction demonstrates the impact of the revision process on the dataset.
+construction,q-a-c datasets,More details about the construction of Q-A-C Datasets can be found in Appendix D.1.
+aligner,module,"To assess the Aligner module, we utilize datasets such as E-Dialogue, DialogSum, BeaverTails, HarmfulQA, and TruthfulQA."
+evaluation,model categories,Our evaluation focuses on two model categories: API-based models and open-source models.
+open-source models,"llama2-(7b, 13b, 70b)-chat","open-source models include Llama2-(7B, 13B, 70B)-Chat."
+models,gpt-4,GPT-4 is an example of models mentioned in the context
+models,claude 2,Claude 2 is another example of models mentioned in the context
+open-source models,"llama2-(7b, 13b, 70b)-chat","Llama2-(7B, 13B, 70B)-Chat is a specific type of open-source model"
+open-source models,"vicuna-(7b, 13b, 33b)","Vicuna-(7B, 13B, 33B) is another specific type of open-source model"
+open-source models,alpaca-7b,Alpaca-7B is also a type of open-source model
+open-source models,beaver-7b,Beaver-7B is mentioned as a type of open-source model
+llama2,beaver models,"Llama2 and Beaver models undergo safety alignment processing, implying they have a similar safety-related characteristic"
+evaluation metrics,helpfulness,These metrics are used to evaluate dimensions like helpfulness
+evaluation metrics,harmlessness,These metrics are used to evaluate dimensions like harmlessness
+evaluation metrics,honesty,These metrics are used to evaluate dimensions like honesty
+initial answers,open-source and upstream models,Initial answers are generated by open-source and upstream models before being refined by the Aligner
+aligners,upstream models,The Aligners significantly improve the performance of upstream models
+aligner-7b,gpt-4,Aligner-7B boosts GPT-4's helpfulness and harmlessness
+aligner-7b,harmlessness,Aligner-7B enhances the harmlessness of the models
+aligners,upstream model,"Aligner keeps the upstream model unchanged, showcasing its adaptability in model sizing"
+aligner,effectiveness,The effectiveness of the Aligner model is evaluated
+aligner model sizing,available resources,The ability in Aligner model sizing is based on the available resources.
+aligner model sizing,effectiveness,We evaluate the effectiveness of Aligner using five datasets according to the 3H standard.
+aligner model sizing,upstream model’s performance,Experiment results show that Aligner significantly enhances the upstream model’s performance across various parameter scales.
+aligner-7b,gpt-4 model’s performance,Aligner-7B markedly enhances the GPT-4 model’s performance across all five dimensions.
+aligner,parameters,"In the reasoning dimension, with an increase in parameters, Aligner boosts the upstream model’s capability."
+aligner,scaling laws,Aligner showcases the Scaling Laws characteristics in boosting the upstream model’s capability.
+aligner,empathy dimension,"Aligner excelled in the empathy dimension, evidencing its efficiency in redistributing the upstream model’s pattern distribution."
+aligner,false content,"To detect whether Aligner would generate known false content due to misunderstandings, we use TruthfulQA to measure the reliability of the outputs generated by Aligner."
+aligner,hallucination information,The results demonstrate that Aligner does not add extra hallucination information while correcting the upstream model.
+aligner,models,Assessing Aligner’s Stack on Safety-Aligned Models Llama2-Chat models shows modest safety improvements with Aligner.
+aligner,risky responses,"The primary achievement of Aligner is its ability to amplify helpfulness, especially in models predisposed to avoid risky responses."
+aligner,helpfulness,Aligner significantly boosts overall helpfulness.
+aligner,safety foundation,indicating improved helpfulness on a strong safety foundation.
+identity mapping,warm-up proportions,"To verify the effectiveness of different warm-up proportions, experiments were conducted."
+identity mapping,final performance,improving the final performance through learning identity mapping.
+warm-up step,aligner,The warm-up step aids the Aligner by initially helping it learn identity mapping.
+warm-up phase,training resources,Determining the specific data proportion for warm-up requires more training resources.
+warm-up phase,proportion,The effectiveness of the warm-up phase peaks when the proportion is between 10k to 50k.
+aligner,llms,Aligner uses the self-critiquing and refining capabilities of LLMs to enhance performance.
+aligner,cai prompts,CAI prompts are used solely during the inference time of LLMs to encourage self-revision of answers by Aligner.
+aligner,baseline methods,Aligner outperforms baseline methods in terms of helpfulness and harmlessness dimensions.
+aligner,dialogue iterations,"Baseline methods typically require multiple dialogue iterations and extended context windows for prompt insertion and self-correction, which Aligner improves upon."
+aligner,inference times,Aligner's method could result in shorter inference times compared to baseline methods.
+aligner,context window length,Aligner's method may lead to less consumption of context window length compared to baseline methods.
+aligner,cai,"Aligner shows effectiveness against CAI in terms of helpfulness and harmlessness metrics, surpassing the baselines."
+aligner,self-critique,Aligner performance in comparison to Self-Critique shows improvement in helpfulness and harmlessness metrics.
+aligner,modelgpt-4,Aligner's performance surpasses GPT-4 in the ablation study.
+aligner,alpaca2-7b,"Aligner shows effectiveness on Alpaca2-7B dataset, surpassing SFT, RLHF, and DPO."
+aligner,sft,Aligner is compared with SFT in terms of performance enhancement in the original model.
+aligner,rlhf,Aligner is compared with RLHF in terms of performance enhancement in the original model.
+aligner,dpo,Aligner is compared with DPO in terms of performance enhancement in the original model.
+aligner,alpaca-7b,"After fine-tuning, we compare Aligner with Alpaca-7B corrected by Aligner, showing enhancement of capabilities."
+rlhf,dpo,Models fine-tuned with RLHF or DPO tend to generate conservative answers or fail to recognize dangers while adding helpful information explicitly.
+dpo,rlhf,Training with RLHF or DPO methods requires optimizing significantly more models and consuming more training resources than just training an Aligner.
+aligner,preference datasets,Aligner trained on different preference datasets enhances the original model's capabilities.
+experiment,aligner,"The experiments observed the correction paradigm of Aligner, which is not a binary decision between correction and copying. Instead, it follows a conditional generation paradigm, where the degree of reference to the original response and the extent of additional correction depends on the quality of the original answers."
+experiment,representation engineering,The experiment is conducted based on representation engineering to demonstrate that Aligner has learned the correction paradigm as a representation.
+experiment,activation steering,The experiment is also based on activation steering to control the Aligner's generation using the extracted representation.
+representation engineering,activation steering,Representation engineering and activation steering are used in the experiment to conduct control over Aligner's generation.
+representation engineering,aligner,The representation extracted using representation engineering is utilized to control the Aligner's generation.
+activation steering,aligner,The extracted representation from activation steering is used to control the Aligner's generation.
+representation control experiment,ratio,The results from the representation control experiment indicate that the ratio of adding or subtracting the representation vector in the Aligner activation significantly affects the magnitude of correction.
+representation control experiment,original response,The representation control experiment shows that the ratio of adding or subtracting the representation vector in the Aligner activation is based on the quality of the original response.
+lat scan,aligner,The LAT scan further shows that Aligner decides the degree of correction in its early layers based on the quality of the original response.
+original response,quality,The quality of the original response is a key factor in the early layers of the system.
+correction,middle and late layers,The completion of correction occurs in the middle and late layers of the system.
+appendix b.6.7figure 4,interpretability experiment results,Appendix B.6.7Figure 4 provides details of the interpretability experiment results.
+aligner,lat scan graph,The LAT scan graph of Aligner's layers show the correction representation activity.
+original response,correction,There are distinct differences between raised activity of correction and copying of original response in the layers.
+decision,early layers,The decision on the degree of correction is mainly made in the early layers of Aligner.
+control experiment,effectiveness,The control experiment demonstrates the effectiveness of the extracted correction representation vector.
+levenshtein ratio,representation vector coefficients,There is a linear relationship between average levenshtein ratio and representation vector coefficients with an R2 value of approximately 0.93.
+aligner,rlhf/dpo pipeline,Aligner plays a crucial role in the multi-round RLHF/DPO pipeline due to its efficient and plug-and-play features.
+figure 5,multi-round,The illustration in Figure 5 shows the application of Aligner in the multi-round RLHF/DPO pipeline.
+multi-round rlhf/dpo pipeline,reward collapse,"The multi-round RLHF/DPO pipeline is crucial in preventing reward collapse, which often occurs due to deviation of preference dataset from actual answer distribution"
+reward collapse,preference dataset,"Reward collapse occurs when the preference dataset used for reward modeling deviates from the actual answer distribution, leading to significant deviations in the model’s final results"
+reward collapse,error accumulation,Error accumulation due to reward collapse can lead to significant deviations in the model’s final results
+error accumulation,reward over-optimization,"Error accumulation may cause reward over-optimization in certain directions, such as generating longer responses irrespective of safety"
+reward over-optimization,response length,Reward over-optimization can lead to generating longer responses irrespective of safety
+aligner,problem mitigation,The involvement of Aligner can help mitigate the problem of error accumulation and reward over-optimization in multi-round RLHF/DPO pipeline
+aligner,data augmentation,"As a data augmentation and synthetic tool, Aligner can enhance the upstream model’s response"
+aligner,preference dataset generation,Aligner can form a synthetic preference dataset to further train the upstream model via RLHF/DPO
+response refinement,preference dataset update,Using Aligner to refine the upstream model response can update the preference dataset for training in the next round of RLHF or DPO
+preference dataset,training,"The (Q, A, A∗) pairs can be a new preference dataset for training in the next round of RLHF or DPO."
+aligner,feature transfer,The Aligner inherits the feature of transferring from the dispreferred distribution to the preferred distribution in the preference dataset.
+aligner,upstream model modification,"Aligner modifies the upstream model to produce better answers, bringing the distribution of the resulting preference dataset closer to the answer distribution of the upstream model."
+aligner,data generation,"The Aligner serves as a synthetic data generator, providing an efficient and repeatable method for constructing preference datasets."
+rlhf,training rounds,We conducted three rounds of RLHF and DPO on Alpaca2-7B using the three-round preference dataset from PKU-SafeRLHF.
+aligner,model refinement,"Following this, we trained three rounds of Aligners with the same three-round preference datasets, which were then employed to refine the upstream model and generate new preference datasets."
+aligner,dataset enhancement,"By aggregating Aligner, Aligner-corrected new preference datasets can effectively enhance two key metrics: improving the model’s safety while ensuring a monotonic increase in helpfulness with each round."
+rlhf/dpo,comparison,"In contrast, a typical multi-round RLHF/DPO."
+reinforcement learning from human feedback rlhf,llms,"RLHF aims to align LLMs with human preferences utilizing RL algorithms to train policy models, specifically LLMs, to maximize cumulative rewards from RMs."
+rlhf,multimodal scenarios,Recent research efforts have also been exploring the extension of RLHF to multimodal scenarios.
+rlhf,distributed training,"The RLHF approach involves the distributed training of various models and the annotations by human experts, presenting operational challenges."
+rlhf,reliance on rms,"Recent research has focused on reducing or eliminating reliance on RMs, aiming to simplify the RLHF process."
+rlhf,ai models for data annotation,"Leverage advanced AI models for data annotation, effectively streamlining the RLHF process and reducing associated costs."
+rlhf,safe reinforcement learning techniques,Incorporates safe reinforcement learning techniques to improve the helpfulness of fine-tuned models while ensuring their safety.
+rlhf,specific models and parameters,"Aligner is distinguished by its indifference to specific models and parameters, making it different from other RLHF methods."
+aligner,seq2seq model,Aligner only requires a constrained seq2seq model to meet the alignment objective.
+api-based models,inference-time methods,API-based models are mentioned to be ideal for Inference-time Methods without requiring access to their internal parameters.
+inference-time methods,llms,Inference-time Methods customize LLMs without requiring access to their internal parameters.
+ipa,llms,IPA uses a lightweight adapter policy to multiply the next-token probabilities based on the upstream model during the decoding time.
+ipa,upstream model,IPA uses a lightweight adapter policy to multiply the next-token probabilities based on the upstream model during the decoding time.
+icl,user prompts,"ICL enhances and refines user prompts to better suit the model, facilitating more comprehensive contextual understanding for inference."
+icl,inference,"ICL enhances and refines user prompts to better suit the model, facilitating more comprehensive contextual understanding for inference."
+aligner,upstream models,Aligner is a model-agnostic alignment module designed for seamless integration to enhance the performance of upstream models.
+aligner,training session,Aligner requires only a single training session to align 11 types of upstream models.
+llms,self-refinement,"LLMs do not always generate the coherent output on their first try, hence requiring Self-Refinement methods for iteratively improving outputs through self-generated feedback."
+methods,self-generated feedback,methods address the improvement of outputs through self-generated feedback
+self-debugging,llms,SELF-DEBUGGING enables LLMs to debug their predictions
+self-critiquing,output weaknesses,self-critiquing can expose output weaknesses that aid in fine-tuning
+aligner,models,Aligner can refine outputs from other models
+smaller models,computational resources,limitations of smaller models bypassed and computational resources saved by using Aligner
+aligner,external critique model,Aligner combined with an external critique model could enhance performance
+aligner,llms,Aligner is an approach to align LLMs efficiently
+aligner,components,"Aligner does not require additional components like the actor, critic, reward models"
+aligner-7b,gpt-4,Aligner-7B enhances GPT-4's helpfulness and harmlessness
+aligner-7b,models,Aligner-7B shows an average enhancement in helpfulness and harmlessness across models
+aligner-2b,gpt-4 turbo,Aligner-2B can boost GPT-4 Turbo's helpfulness and harmlessness according to Alpaca-Eval leaderboard
+aligner-2b,gpt-4 turbo,Aligner-2B stacked on GPT-4 Turbo improved LC Win Rate on Alpaca-Eval leaderboard
+aligner-2b,gpt-4 omni,Aligner-2B surpassed GPT-4 Omni's Win Rate on Alpaca-Eval leaderboard
+aligner,llms,"Aligner module aims to enhance LLM alignment for increased conciseness, efficiency, and interpretability"
+aligner,future research,Future research will focus on enhancing Aligner's versatility in challenging contexts like multi-turn dialogues
+rlhf,segmented approach,RLHF's end-to-end structure provides insights into the alignment process for LLMs unlike its segmented approach
+aligner dataset,cc by-nc 4.0 license,Aligner dataset will be released under CC BY-NC 4.0 license
+aligner dataset,ai assistants,Aligner dataset offers significant potential to develop AI assistants that are aligned with human intentions and social values
+dataset,ai assistants,The dataset mentioned could train AI assistants for harmful or malicious purposes.
+dataset,creators,The creators of the Aligner dataset are dedicated to fostering beneficial and safe AI technology.
+dataset,misuse,There is concern about any potential misuse of the dataset that could hinder human progress.
+dataset,malicious use,The Aligner dataset creators strongly condemn any malicious use of the dataset.
+dataset,advocate,The creators advocate for the responsible and ethical use of the Aligner dataset.
+creators,ai technology,The creators are dedicated to fostering beneficial and safe AI technology.
+dataset,acknowledgments and disclosure of funding,The work sponsored by various organizations is related to the Aligner dataset.

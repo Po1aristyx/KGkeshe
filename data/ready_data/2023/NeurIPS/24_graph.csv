@@ -1,0 +1,247 @@
+node_1,node_2,edge
+latent variables identification,out-of-support image generation,Both latent variables identification and out-of-support image generation are tackled in representation learning.
+latent variables identification,decoders,Additive decoders are used for latent variables identification.
+latent variables identification,blocks of latent variables,Additive decoders are guaranteed to identify the blocks of latent variables up to permutation and block-wise invertible transformations.
+additive decoders,object-centric representation learning (ocrl),Additive decoders used for latent variables identification are reminiscent of decoders used for object-centric representation learning.
+additive decoders,nonlinear independent component analysis (ica),Additive decoders provide a setting where nonlinear ICA is possible.
+additive decoders,novel images generation,Additive decoders can generate novel images by recombining observed factors of variations in novel ways.
+novel images generation,cartesian-product extrapolation,The ability of additive decoders to generate novel images by recombining observed factors in novel ways is referred to as Cartesian-product extrapolation.
+additive decoders,additivity,Additivity is crucial for both identifiability and extrapolation on simulated data.
+object-centric representation learning (ocrl),latent variables,"Decoders used in OCRL are suitable for images decomposed as a sum of object-specific images, which are related to latent variables identification."
+representation learning,latent variables identification,Problems related to latent variables identification are tackled in representation learning.
+representation learning,out-of-support image generation,Problems related to out-of-support image generation are tackled in representation learning.
+deep learning algorithms,"lack of robustness, transferability, systematic generalization and interpretability","Deep learning algorithms are being addressed to overcome the shortcomings of lack of robustness, transferability, systematic generalization, and interpretability."
+deep learning algorithms,justifications rooted in cognitive sciences and causality,Deep learning algorithms are being justified with references from cognitive sciences and causality.
+problem of extracting meaningful symbols,low-level observations,The challenge of extracting meaningful symbols from low-level observations like images is still unresolved.
+disentanglement,causal representation learning,The problem of extracting meaningful symbols from low-level observations is sometimes referred to as disentanglement or causal representation learning.
+representation learning,identifiability,The question of identifiability in representation learning has been the focus of recent efforts.
+representation learning,nonlinear independent component analysis (ica),Representation learning and nonlinear independent component analysis (ICA) are related topics with respect to identifiability.
+object-centric representation learning (ocrl),information about different objects,Object-centric representation learning aims to encode information about different objects separately in the representation.
+object-centric representation learning (ocrl),segmentation without any supervision,The reason why Object-centric representation learning can perform segmentation without any supervision is poorly understood.
+additive decoders,novel images,Additive decoders allow to generate novel images never seen during training via Cartesian-product extrapolation.
+purple regions,latents/observations,Purple regions correspond to latents/observations seen during training.
+blue regions,cartesian-product extension,The blue regions correspond to the Cartesian-product extension.
+learner,balls,"In this example, the learner never saw both balls high, but these can be generated nevertheless thanks to the additive nature of the scene."
+decoder,latent vector,"Essentially, a decoder f (z) acting on a latent vector z ∈ Rdz to produce an observation B∈B f (B)(zB) where B is a partition of {1, . . . , dz}."
+decoder,block-specific,f (B)(zB) are “block-specific” decoders and the zB are non-overlapping subvectors of z.
+decoder,sum of images,This class of decoder is particularly well suited for images x that can be expressed as a sum of images corresponding to different objects.
+decoder,decoding architectures,"Unsurprisingly, this class of decoder bears similarity with the decoding architectures used in OCRL (Section 2)."
+identifiability results,reconstruction problem,Our identifiability results provide conditions under which exactly solving the reconstruction problem with an additive decoder.
+latent blocks zb,latent variables identification,"The conditions provided in the context explain how solving the reconstruction problem with an additive decoder helps identify the latent blocks zB, which in turn validate the identification of latent variables as per the context."
+latent blocks zb,cartesian-product extrapolation,"The additive decoders can generate images never seen during training by recombining observed factors of variations in novel ways, leading to the term 'Cartesian-product extrapolation'. The latent blocks zB play a role in this process as mentioned in the context."
+cartesian-product extrapolation,latent variables identification,"The ability of additive decoders to generate images through recombining observed factors of variations, termed as 'Cartesian-product extrapolation', is connected to the identification of latent variables. This connection is highlighted in the context."
+latent variables identification,cartesian-product extrapolation,Both latent variables identification and Cartesian-product extrapolation are validated experimentally on simulated data
+additivity,non-additive decoder,Additivity is crucial for both by comparing against a non-additive decoder which fails to disentangle and extrapolate
+scalars,vectors,Scalars are denoted in lower-case and vectors in lower-case bold
+function f,vector x,"Given a function f (xS) ∈ Rm with input xS, the derivative of f w.r.t. xi is denoted by Dif (xS) ∈ Rm"
+coordinate,vector x,The ith coordinate of the vector x is denoted by xi
+indices,subset of indices,"Given a subset of indices S ⊆ [n], xS denotes the subvector consisting of entries xi for i ∈ S"
+function f,s,"Given a function f (xS) ∈ Rm with input xS, the derivative of f w.r.t. xi is denoted by Dif (xS) ∈ Rm"
+f,xs,"Given a function f (xS) ∈ Rm with input xS, the derivative of f w.r.t. xi is denoted by Dif (xS) ∈ Rm"
+f,xi,"Given a function f (xS) ∈ Rm with input xS, the derivative of f w.r.t. xi is denoted by Dif (xS) ∈ Rm"
+f,dif (xs),"Given a function f (xS) ∈ Rm with input xS, the derivative of f w.r.t. xi is denoted by Dif (xS) ∈ Rm"
+bijective transformation,distributions,The distributions of ˆx = ˆf ( ˆz) and x are the same since ˆf ( ˆz) = f ◦ v(v−1(z)) = f (z).
+distribution,identifiability,"The problem of identifiability is that, given only the distribution over x, it is impossible to distinguish between the two models (f , z) and ( ˆf , ˆz)."
+identifiability,models,"The problem of identifiability is that, given only the distribution over x, it is impossible to distinguish between the two models (f , z) and ( ˆf , ˆz)."
+models,interpetable factors of variations,This is problematic when one wants to discover interpretable factors of variations since z and ˆz could be drastically different.
+factors of variations,strategies,There are essentially two strategies to go around this problem: (i) restricting the hypothesis class of decoders ˆf and/or (ii) restricting/adding structure to the distribution of ˆz.
+decoders,hypothesis class,"By doing so, the hope is that the only bijective mappings v keeping ˆf and ˆz into their respective hypothesis classes will be trivial indeterminacies such as permutations and element-wise rescalings."
+decoder function,additive,"Our contribution, which is to restrict the decoder function ˆf to be additive (Definition 1), falls into the first category."
+function classes,restrictions,"Other restricted function classes for f proposed in the literature include post-nonlinear mixtures, local isometries, conformal and orthogonal maps as well as various restrictions on the sparsity of f."
+decoder,methods,"Methods that do not restrict the decoder must instead restrict/structure the distribution of the latent factors by assuming, e.g., sparse temporal dependencies, conditionally independent latent."
+sparse temporal dependencies,conditionally independent latent variables,"The concept of sparse temporal dependencies is related to the concept of conditionally independent latent variables, as they both involve temporal dependencies and latent variables with certain conditions."
+interventions targeting the latent factors,support of the latents,"The interventions targeting the latent factors are related to the support of the latents, as both concepts involve observations and manipulation of latent factors."
+mild assumptions about the distribution of the latent factors,statistical dependencies of the latent factors,"The concept of mild assumptions about the distribution of the latent factors is related to the concept of statistical dependencies of the latent factors, as they both pertain to the characteristics and properties of latent factors in a given context."
+extrapolation guarantees,nonlinear ica,"The concept of extrapolation guarantees is related to the concept of nonlinear Independent Component Analysis (ICA), as the extrapolation guarantees provided in Section 3.2 are specific to the context of nonlinear ICA."
+standard nonlinear ica problem,various extensions of nonlinear ica,"The concept of the standard nonlinear ICA problem is related to the concept of various extensions of nonlinear ICA, as they both involve different aspects and approaches to nonlinear ICA problem solving."
+additive mixing function,identifying blocks zb,"The concept of an additive mixing function is related to the concept of identifying blocks zB, as the restricted mixing function and block identification are key components of the proposed approach."
+object-centric representation learning (ocrl),ocrl methods,"The concept of Object-centric representation learning (OCRL) is related to the concept of OCRL methods, as the former represents a broader framework or concept which is then classified into specific methods as discussed in the context."
+object-centric representation learning,ocrl methods,OCRL methods are classified in two categories: scene mixture models & spatial-attention models
+object-centric representation learning,additive decoders,Additive decoders can be seen as an approximation to the decoding architectures used in OCRL
+additive decoders,decoding architectures,"Additive decoders are an approximation to the decoding architectures used in OCRL, consisting of object-specific decoder f (obj), object-specific latent blocks zB, and masking mechanism m(B)(z)"
+additive decoders,f (obj),Additive decoders consist of an object-specific decoder f (obj)
+additive decoders,zb,Additive decoders consist of object-specific latent blocks zB
+additive decoders,m(b)(z),Additive decoders consist of a masking mechanism m(B)(z) which selects which pixel belongs to which object
+additive decoders,m(b),Additive decoders consist of a masking mechanism m(B)(z) using a partition of [dz] made of equal-size blocks B
+additive decoders,m(b)(z) ⊙ f (obj)(zb),Additive decoders have a mathematical representation f (z) = m(B)(z) ⊙ f (obj)(zB)
+additive decoders,b,Additive decoders partition the equal-size blocks B
+additive decoders,softmax operation,Additive decoders normalize the output score via a softmax operation to obtain the masks m(B)(z)
+additive decoders,scene mixture models,Additive decoders are related to scene mixture models in terms of the decoder architecture
+additive decoders,individual objects,Additive decoders yield latent blocks zB that represent the information of individual objects separately
+additive decoders,form of disentanglement,Additive decoders can perform a form of disentanglement without supervision
+additive decoders,reconstruction objective,"Additive decoders are trained based on some form of reconstruction objective, probabilistic or not"
+additive decoders,theorems 1 & 2,Additive decoders are related to providing a mathematically grounded explanation for disentanglement without supervision in Theorems 1 & 2
+scene mixture models,architectural innovations,Many architectural innovations in scene mixture models concern the encoder
+scene mixture models,ocrl,Scene mixture models are one of the categories of OCRL methods
+architectural innovations,encoder,Architectural innovations in scene mixture models concern the encoder.
+architectural innovations,decoder,Our analysis focuses solely on the structure of the decoder.
+decoder,shared aspect,The structure of the decoder f(z) is a shared aspect across multiple methods.
+object-centric representations,generalization capabilities,Generalization capabilities of object-centric representations were studied empirically.
+object-centric representations,cartesian-product extrapolation,The focus of the study was on Cartesian-product extrapolation.
+diagonal hessian penalty,additive decoders,Additive decoders are closely related to the diagonal Hessian penalty.
+diagonal hessian penalty,regularizing the hessian,Regularizing the Hessian of the decoder to be diagonal is part of the diagonal Hessian penalty.
+additivity,diagonal hessian,Additivity and diagonal Hessian are shown to be equivalent properties.
+penalty,disentanglement,This penalty can induce disentanglement on datasets such as CLEVR.
+diagonal hessian penalty,ocrl,The link between the diagonal Hessian penalty and OCRL is highlighted.
+compositional decoders,brady et al.,Compositional decoders were introduced by Brady et al. as a model for OCRL methods.
+compositional decoders,identifiability guarantees,Compositional decoders provide identifiability guarantees for OCRL methods.
+decoder,jacobian,A decoder is said to be compositional when its Jacobian satisfies certain property.
+block zb,compositional c 2 decoders,"Block zB is the key component that differentiates the behavior of compositional C 2 decoders, as shown in Appendix A.3."
+compositional c 2 decoders,additive c 2 decoders,"Additive C 2 decoders are shown to be more expressive than compositional C 2 decoders, as demonstrated in Example 3."
+compositional c 2 decoders,energy-based models,"Du and Mordatch [17] empirically studied how energy-based models relate to compositional generalization, similar to the Cartesian-product extrapolation concept."
+extrapolation,cartesian-product extrapolation,"Webb et al. [70] proposed a novel benchmark that explores extrapolation, specifically focusing on Cartesian-product extrapolation rather than an additive structure."
+out-of-distribution samples,transformation to a single hidden layer,Besserve et al. [5] introduced a theoretical framework where out-of-distribution samples are obtained by transforming a single hidden layer in the decoder network.
+domain generalization method,tasks outside the convex hull of training distributions,Krueger et al. [39] proposed a domain generalization method that aims to be robust to tasks that fall outside the convex hull of training distributions.
+method,trained,The method mentioned is trained to be robust to tasks falling outside the convex hull of training distributions.
+extrapolation,text-conditioned image generation,Extrapolation in text-conditioned image generation was recently discussed by Wang et al.
+decoders,disentanglement & extrapolation,Additive decoders are used for disentanglement & extrapolation.
+observations,x,The observations x are generated by a data-generating process.
+ztest,rdz,Ztest is an open set of Rdz.
+f,ground-truth decoder,The map f is referred to as the ground-truth decoder.
+observations,i.i.d. samples,The observations are i.i.d. samples given by x = f (z).
+observations,natural factors of variations,The ground-truth decoder f is effectively relating the 'natural factors of variations' z to the observations x in a one-to-one fashion.
+f,c 2-diffeomorphism,The map f is a C 2-diffeomorphism onto its image.
+f,injectivity,The injectivity of f is violated according to Mansouri et al.
+injectivity,f,The injectivity of f is violated when images show two objects that are indistinguishable.
+ztrain,observations,Ztrain corresponds to the observations seen during training.
+ztest,images,Ztest corresponds to the set of all possible images.
+ztrain,ztest,The case where Ztrain ̸= Ztest will be of particular interest when discussing extrapolation.
+ztrain,distribution,"The 'regularly closed' condition on Ztrain is mild, as it is satisfied as soon as the distribution of z has a density w.r.t. the Lebesgue measure on Rdz."
+z,discrete random vector,The 'regularly closed' condition on Ztrain is violated when z is a discrete random vector.
+latent codes,encoder,The set of latent codes is defined as the encoder can output when evaluated on the training distribution.
+images,decoders,"When the images of the ground-truth and learned decoders match, one can define the map v."
+reconstruction task,map v : ˆztrain → ztrain,The map v : ˆZtrain → Ztrain is defined when the reconstruction task is solved exactly.
+map v : ˆztrain → ztrain,b-disentanglement,The map v : ˆZtrain → Ztrain is crucial to define B-disentanglement especially.
+ground-truth representation,learned representation,The map v : ˆZtrain → Ztrain relates the learned representation to the ground-truth representation.
+additive decoders,output,A decoder is additive when its output is the summation of the outputs of 'object-specific' decoders.
+image,juxtaposition of multiple images,An image can be seen as the juxtaposition of multiple images which individually correspond to objects in the scene or natural factors of variations.
+additive functions,partition b of [dz],"A function f : Z → Rdx is said to be additive if there exist functions f (B) : ZB → Rdx for all B ∈ B such that ∀z ∈ Z, f (z) =f (B)(zB)."
+additivity property,analysis,The additivity property will be central to the analysis as it will be the driving force of identifiability and Cartesian-product extrapolation.
+theorem 1 & 2,cartesian-product extrapolation,Theorem 1 & 2 is related to Cartesian-product extrapolation through Cartesian-product extrapolation (Corollary 3)
+decoder,additive form,The decoder is related to additive form through the relationship of applying a known bijective function σ to data
+additive form,σ,Additive form is related to σ through the transformation of data using σ−1(x)
+additive decoders,masked decoders,"Additive decoders are contrasted with masked decoders in terms of expressiveness for OCRL, with masked decoders typically being more common in practice"
+normalization,masks,The lack of additivity in decoders is attributed to normalization in the masks m(B)(z)
+additive decoders,disentanglement,Additive decoders are studied for their identifiability and potential to yield disentanglement in the data
+partition-respecting permutations,disentanglement,The definition of disentanglement relies on partition-respecting permutations
+partition,permutation,Partition B is respected by permutation π when π can permute blocks and elements within blocks without mixing them.
+decoder,b-disentanglement,A decoder ˆf is considered B-disentangled w.r.t. ground-truth decoder f when certain conditions related to permutation and diffeomorphism are satisfied.
+mapping,diffeomorphism,"The mapping v := f−1 ◦ ˆf is a diffeomorphism from ˆZtrain to Ztrain, indicating certain properties satisfied by B-disentanglement."
+variables,blocks,Variables within a block might remain entangled while the blocks of latent dimensions are disentangled from one another.
+scene,representation,"In the example, scene with moving balls can be represented by z = (x1, y1, x2, y2) where specific block representation zB1 = (x1, y1) is highlighted."
+2d,ground-truth,"In the context, the representation in the 2D space is referred to as the 'ground-truth' representation, denoted by z = (x1, y1, x2, y2)."
+ball,coordinates,"The coordinates of each ball are represented as zB1 = (x1, y1) and zB2 = (x2, y2)."
+representation,b-disentangled,A learned representation is considered B-disentangled when the balls are disentangled from each other.
+basis,position,The basis in which the position of each ball is represented may differ in different representations.
+theorem 1,local b-disentanglement,"The first result, Theorem 1, introduces a weaker form of disentanglement termed as local B-disentanglement."
+v,dv,"The Jacobian matrix of v, denoted by Dv, exhibits a 'block-permutation' structure everywhere."
+decoder,local b-disentanglement,A learned decoder is considered locally B-disentangled with respect to the ground-truth decoder when certain conditions are met.
+support,permutation,"Having a disconnected support allows for a permutation π, as illustrated in one of the examples provided."
+disconnected support,permutation π,The first example illustrates how a disconnected support can allow for a permutation π that changes between disconnected regions of the support.
+permutation,disconnected regions,The first example shows how a permutation can change between disconnected regions of the support.
+local disentanglement,additive decoders,"Theorem 1 states that if the data-generating process satisfies certain conditions regarding the encoder and decoder being additive and nonlinear, local disentanglement can be achieved via additive decoders."
+decoder,additive,Theorem 1 highlights that the learned decoder should be additive in order to achieve local disentanglement.
+conditional log-density,z,The essential differences in the proof of Theorem 1 involve leveraging the additivity of the conditional log-density of z.
+conditional log-density,auxiliary variable,The essential differences are that they leverage the additivity of the conditional log-density of z given an auxiliary variable u (i.e. conditional independence)
+decoder function f,additivity,The essential differences are that they leverage the additivity of the conditional log-density of z given an auxiliary variable u instead of the additivity of the decoder function f
+identifiability,expressivity,The level of granularity of the partition B controls the trade-off between identifiability and expressivity
+partition b,identifiability,"The finer the partition, the tighter the identifiability guarantee but the less expressive is the function class"
+partition b,expressivity,"The finer the partition, the tighter the identifiability guarantee but the less expressive is the function class"
+granularity,application,The optimal level of granularity is going to dependent on the application at hand
+b,data,Whether B could be learned from data is left for future work
+assumption,decoder,"The following assumption is key in proving Theorem 2, as it requires that the ground-truth decoder is 'sufficiently nonlinear'"
+assumption,nonlinear ica litterature,"This is reminiscent of the 'sufficient variability' assumptions found in the nonlinear ICA litterature, which usually concerns the distribution"
+ica,nonlinear assumptions,"Nonlinear ICA literature often discusses assumptions related to the distribution of latent variables, z, rather than the decoder function, f."
+dx,dz,"The assumption states that the nonlinearity of the decoder, f, is sufficient when the dimension of x, dx, is greater than or equal to the newly defined term, q."
+theorem 1,linear ground-truth decoder,"The theorem does not hold true when dealing with a linear ground-truth decoder, as it contradicts the fact that linear ICA with independent Gaussian factors is unidentifiable."
+f,ˆf,"The relationship between the original decoder function, f, and the estimated decoder function, ˆf, is analyzed in Example 2 to showcase the importance of Assumption 2."
+z,v,"The composition v(z) = f^-1 ◦ ˆf(z) demonstrates that V does not necessarily exhibit a block-permutation structure when relating to z, leading to no disentanglement."
+theorem 1,assumption 2,The reason we cannot apply Theorem 1 here is because Assumption 2 is not satisfied.
+f (b)(zb),"a·,bzb","The second derivatives of f (B)(zB) := A·,BzB are all zero and hence W (z) cannot have full column-rank."
+f,appendix a.7,"In Appendix A.7 we show numerically that the functionf (z) := [z1, z21, z31, z41]⊤ + [(z2 + 1), (z2 + 1)2, (z2 + 1)3, (z2 + 1)4]⊤ is a diffeomorphism from the square [−1, 0] × [0, 1] to its image that satisfies Assumption 2."
+f,appendix a.7,In Appendix A.7 we present a simple synthetic dataset consisting of images of two colored balls moving up and down. We also verify numerically that its underlying ground-truth decoder f is sufficiently nonlinear.
+theorem 1,theorem 2,"Theorem 2 (From local to global disentanglement). Suppose that all the assumptions of Theorem 1 hold. Additionally, assume Ztrain is path-connected (Definition 8) and that the block-specific decoders f (B) and ˆf (B) are injective for all blocks B ∈ B. Then, if ˆf and ˆg solve the reconstruction problem on the training distribution, i.e. Etrain"
+ˆf,ˆg,ˆf is globally B-disentangled with respect to f and g in the given problem setting
+¯vπ(b),c(b),function ¯vπ(B) is defined in terms of constants c(B) in the context
+f π(b),ˆf (b),block-specific ground-truth decoder f π(B) and block-specific learned decoder ˆf (B) have a relationship in the problem scenario
+f (b),ˆf (b),decoder ˆf (B) imitates ground-truth decoder f (B) in the given context
+f π(b),¯vπ(b),function ¯vπ(B) is essentially the learned block-specific decoder composed with the inverse of the ground-truth block-specific decoder f π(B)
+permutation,definition 4,The permutation π of Definition 4 discusses changing between two disconnected regions of ˆZtrain.
+changing,two disconnected regions,Changing between two disconnected regions is mentioned in the context.
+ˆztrain,figure 2,The context refers to ˆZtrain with an illustration provided in Figure 2.
+f (b),injective,Each f (B) must be injective according to the context.
+z(cid:80)b∈b f (b),injective,It is discussed that z(cid:80)B∈B f (B) being injective is not equivalent to the assumption that each f (B) is injective.
+cartesian-product extrapolation,figure 2,The concept of Cartesian-product extrapolation is illustrated in Figure 2.
+definition 6,path-connected sets (definition 8),Regularly closed sets (Definition 6) and path-connected sets (Definition 8) are discussed together.
+theorem 2,ztrain,Theorem 2 requires Ztrain to satisfy certain properties as discussed in the context.
+learned additive decoder,images x,A learned additive decoder can be used to generate images x that are 'out of support' but still on the manifold of 'reasonable' images as discussed.
+cartesian-product extension,set z,The Cartesian-product extension of set Z is defined in the context.
+cpeb(z),zb,CPEB(Z) and ZB are related concepts as discussed in the context.
+ˆztrain,b,"It is mentioned that for all z ∈ CPEB( ˆZtrain), (cid:88)B∈B(cid:88)B∈B¯v(z)⊤ := [¯vB1(zπ−1(B1))⊤ ··· ¯vBℓ(zπ−1(Bℓ))⊤]."
+¯v : cpeb( ˆztrain),cpeb(ztrain),The function ¯v from CPEB( ˆZtrain) to CPEB(Ztrain) is defined in the context.
+ˆztrain,ˆf,ˆZtrain is a set that ˆf is defined over. The equation ˆf (z) = f ◦ ¯v(z) shows the relationship between them.
+ˆztrain,cpeb(ˆztrain),"CPEB(ˆZtrain) is described as the Cartesian-product extension of ˆZtrain, showing a relationship between the two terms."
+ˆf,cpeb(ˆztrain),"CPEB(ˆZtrain) is the set over which the learned decoder ˆf imitates the ground-truth f, as shown in Equation (11)."
+f,cpeb(ztrain),"CPEB(Ztrain) is a set related to the ground-truth decoder f, as mentioned in the context."
+decoder,f,The decoder f is applied on the point ¯v(znew) ∈ CPEB(Ztrain)
+decoder,xnew,"The decoder generates xnew, which has never been seen during training"
+¯v(znew),cpeb(ztrain),The point ¯v(znew) belongs to CPEB(Ztrain)
+ztrain,¯v( ˆztrain),Ztrain and ¯v( ˆZtrain) are related due to ¯v(znew) ̸∈ ¯v( ˆZtrain)
+ztest,f,"Ztest is interpreted as the set of reasonable values, and f (Ztest) is related to f (Ztrain)"
+ztest,ztrain,"Ztest contains reasonable observations, of which only a subset is observed in Ztrain"
+cpeb(ztrain),ztest,The assumption CPEB(Ztrain) ⊆ Ztest requires the Cartesian-product extension of Ztrain to consist only of reasonable values
+cpeb( ˆztrain),f (ztest),The extrapolation of novel observations xnew via Cartesian-product is related to f (Ztest)
+extrapolation,disentanglement,"Disentanglement alone is not enough for extrapolation, as illustrated by Corollary 3"
+disentanglement,extrapolation,"Disentanglement alone is not sufficient to enable extrapolation, further restriction is needed for decoders"
+additivity,extrapolation,"The work has focused on 'additivity' as a restriction for extrapolation, other restrictions could lead to different types of extrapolation"
+decoder,disentangled,"Given a learned decoder disentangled w.r.t., one cannot guarantee both decoders will 'agree' outside the training domain without further restricting decoders"
+decoder,reconstruction task,Comparing the ability of decoders to identify ground-truth latent factors and extrapolate when trained to solve the reconstruction task
+images,balls,Simple images consisting of two balls moving in space were used for the experiments
+reconstruction mean squared error,latent matching score,Reporting reconstruction mean squared error and the Latent Matching Score for the datasets considered
+rmseoos,lmsoos,RMSEOOS and LMSOOS are the same metric but evaluated out of support
+metric,support,"The metric is evaluated out of support, as detailed in Appendix B.3."
+standard error,differences,"The standard error is high, but the differences are still clear as seen in the box plot version in Appendix B.4."
+datasets,ball positions,"Two datasets are considered, one where the two ball positions can only vary along the y-axis and one where the positions can vary along both the x and y axes."
+scalarlatents,ground-truth latent vector z,"In ScalarLatents, the ground-truth latent vector z corresponds to the height of the first and second ball along the y-axis."
+latent space,dz,The low dimensionality of the latent space (dz = 2) allows for exhaustive visualizations like in Figure 4.
+cartesian-product extrapolation,distribution,"To study Cartesian-product extrapolation, z is sampled from a distribution with a L-shaped support given by Ztrain."
+training set,images,"The training set does not contain images where both balls appear in the upper half of the image, as mentioned in Appendix B.2."
+blocklatents,ground-truth latent vector z,"In BlockLatents, the ground-truth latent vector z corresponds to the x, y position of the first and second ball."
+latent factors,objects,Each object has two latent factors in BlockLatents.
+setting,block,The more challenging setting in BlockLatents illustrates 'block'.
+latent factors,objects,"The latent factors of each object are represented in this context, illustrating the concept of 'block-disentanglement'."
+latent z,"hypercube [0, 1]^4","The latent z is sampled uniformly from the hypercube [0, 1]^4 in this setting."
+images,occlusion,"Images presenting occlusion, where a ball is behind another, are discussed to be rejected from the dataset in this context."
+additive decoders,images presenting occlusion,It is mentioned in Appendix A.12 that additive decoders cannot model images presenting occlusion.
+dataset,"hypercube [0, 1]^4 with dependencies","An additional version of the dataset is presented where sampling is done from the hypercube [0, 1]^4 with dependencies."
+latent matching score (lms),"matrix of scores (sb,b') ∈ rℓ×ℓ",The final Latent Matching Score (LMS) is computed based on the matrix of scores to evaluate disentanglement.
+prediction,ground-truth block zb,"A score sB,B' measures how well the ground-truth block zB can be predicted from the learned latent block ˆzB' outputted by the encoder."
+score,correlation,The score used to measure disentanglement is based on the correlation between the ground-truth block and the learned latent block.
+nonlinear relationships,spearman correlation,"Spearman correlation is utilized in this context to capture nonlinear relationships, unlike the Pearson correlation."
+spearman correlation,nonlinear relationships,"Spearman correlation is used to capture nonlinear relationships, unlike Pearson correlation"
+spearman correlation,lmsspear,The score denoted by LMSSpear is derived from Spearman correlation and is used in the dataset ScalarLatents
+blocklatents dataset,spearman correlation,Spearman correlation is not used in the BlockLatents dataset due to the two-dimensional nature of zB
+blocklatents dataset,regression tree,"The score sB,B′ in the BlockLatents dataset is derived from the R2 score of a regression tree"
+lmstree,blocklatents dataset,The score denoted by LMStree is used in the BlockLatents dataset taking into account subtleties of non-additive models
+disentanglement,additivity,Additivity is important for disentanglement as shown in Table 1
+additive decoder,non-additive decoder,Additive decoder achieves higher LMSSpear & LMSTree scores compared to its non-additive counterpart on all datasets
+latent factors,dependencies,Disentanglement is possible even when latent factors are dependent or causally related
+blocklatents dataset,dependencies,"The BlockLatents dataset is associated with dependencies, as mentioned in Table 1."
+prior works,interventions,"Prior works have relied on interventions to deal with dependencies, as referenced in [3, 2, 8]."
+prior works,cartesian-product supports,"Prior works have also used Cartesian-product supports to handle dependencies, as indicated by references [68, 62]."
+additive decoder,non-additive decoder,There are two types of decoders: Additive decoder and Non-additive decoder. They are illustrated in Figure 4 and Figure 5.
+encoder ˆg(x),training dataset,"The encoder ˆg(x) generates latent representation output over the training dataset, mentioned in Figure 4."
+additive decoder,images,"The additive decoder can reconstruct images, as demonstrated in Figure 4."
+non-additive decoder,images,The non-additive decoder also reconstructs images as shown in Figure 4.
+additivity,cartesian-product extrapolation,"Additivity is crucial for Cartesian-product extrapolation, supported by the information provided in the context."
+additive counterpart,non-additive counterpart,The additive counterpart is shown to have better performance compared to the non-additive counterpart in terms of reconstruction MSE and LMSSpear.
+support,latent factors,The support of the latent factors Ztrain needs to be path-connected according to Theorem 2.
+extrapolation,cartesian-product extrapolation,"The architecture can generate images never seen during training through 'Cartesian-product extrapolation', highlighting the importance of this mechanism."
+decoder,masked decoders,"The study suggests that identifiability analysis of decoders can lead to a better understanding of creativity in generative models, paving the way for exploration in function classes like masked decoders used in OCRL."
+creativity,generative models,Creativity in generative models can result in representations that generalize better.
+creativity,understanding,Expanding our understanding of creativity may lead to better generalization.
+research,canada cifar ai chair program,The research was partially supported by the Canada CIFAR AI Chair Program.
+research,ivado excellence phd scholarship,The research was partially supported by an IVADO excellence PhD scholarship.
+research,"samsung electronics co., ldt","The research was partially supported by Samsung Electronics Co., Ldt."
+experiments,computational resources,The experiments were enabled by computational resources provided by Calcul Qu´ebec and the Digital Research Alliance of Canada.
+simon lacoste-julien,cifar associate fellow,Simon Lacoste-Julien is a CIFAR Associate Fellow in the Learning in Machines & Brains program.

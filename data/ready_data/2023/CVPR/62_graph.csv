@@ -1,0 +1,206 @@
+node_1,node_2,edge
+vision-language models (vlms),align vision and language representations,VLMs learn to align vision and language representations on large-scale datasets
+image-text pair,contains a bag of semantic concepts,each image-text pair usually contains a bag of semantic concepts
+object detectors,align region embeddings with vlm features,existing object detectors align region embeddings individually with VLM features
+semantic concepts,compositional structure,composition structure of semantic concepts in a scene underexploited
+embedding of bag of regions,words in a sentence,embeddings of regions in a bag treated as embeddings of words in a sentence
+faster r-cnn,surpasses previous best results,approach surpasses previous best results on novel categories of COCO and LVIS benchmarks
+object detector,recognize categories,traditional object detector can only recognize categories learned in the training phase
+open-vocabulary object detection (ovd),detect objects in nearly unbounded concept pool,OVD is a task to detect objects in a nearly unbounded concept pool
+open-vocabulary object detection (ovd),distillation-based approach,"The distillation-based approach is a typical solution to OVD, where the knowledge of rich and unseen categories is distilled from pre-trained vision-language models (VLMs)."
+distillation-based approach,pre-trained vision-language models (vlms),The distillation-based approach involves distilling knowledge from pre-trained VLMs to address the task of Open-vocabulary object detection.
+distillation-based approach,object detectors,"Existing distillation-based object detectors align individual region embeddings to features extracted by the frozen image encoder of VLMs, using carefully designed strategies."
+pre-trained vision-language models (vlms),image-text pairs,VLMs learn aligned image and text representations on large-scale image-text pairs to distill general knowledge that is beneficial for Open-vocabulary object detection.
+individual region embedding,features extracted by the frozen image encoder of vlms,Existing distillation-based object detectors align each individual region embedding to features extracted by the frozen image encoder of VLMs with carefully designed strategies.
+vlms,compositional structure of multiple semantic concepts,VLMs have implicitly learned the inherent compositional structure of multiple semantic concepts.
+vlms,co-existence of stuff and things,VLMs have implicitly learned the inherent co-existence of stuff and things from a colossal amount of image-text pairs.
+maskclip,zero-shot segmentation,MaskCLIP leverages the notion for zero-shot segmentation.
+ovd approaches,compositional structures encapsulated in vlms,Existing distillation-based OVD approaches have yet to fully exploit the compositional structures encapsulated in VLMs.
+embedding of bag of regions (baron),co-existence of visual concepts,Explicitly learning the co-existence of visual concepts encourages the model to understand the scene beyond just recognizing isolated individual objects.
+baron,contextually interrelated regions,BARON first samples contextually interrelated regions to form a ‘bag’.
+region proposal network (rpn),potential novel objects,The region proposal network (RPN) is proven to cover potential novel objects.
+neighborhood sampling strategy,co-occurrence of a bag of visual concepts,We explore a neighborhood sampling strategy that samples boxes around region proposals to help model the co-occurrence of a bag of visual concepts.
+baron,bag-of-regions embeddings,BARON obtains the bag-of-regions embeddings by projecting the regional features into the word embedding space and encoding these pseudo words with the text encoder (TE) of a frozen VLM.
+baron,co-occurring semantic concepts,"By projecting region features to pseudo words, BARON naturally allows TE to effectively represent the co-occurring semantic concepts and understand the whole scene."
+baron,te,BARON projects box shape and box center position into embeddings and adds to pseudo words before feeding them to TE. BARON is trained by aligning bag-of-regions embeddings to teacher embeddings.
+baron,vlm,"BARON is aligned with VLM in the training process. Consistent with VLMs' pre-training, BARON uses contrastive learning approach to learn pseudo words and bag-of-regions embeddings."
+baron,faster r-cnn,"Combined with Faster R-CNN, BARON achieves performance improvements in box AP50 and mask mAP on OV-COCO and OV-LVIS."
+baron,coco,"BARON can distill knowledge from caption supervision, outperforming previous approaches that use COCO caption."
+vlm,ie,The teacher embeddings are obtained by feeding image crops enclosing the bag of regions to the image encoder (IE) of the VLM.
+coco caption,image,COCO caption is used in reference to images
+vision-language pre-training,aligned image and text representations,Vision-language pretraining aims to learn aligned image and text representations
+studies,pre-train vision-language models (vlms),Studies focus on pre-training vision-language models
+vision-language models (vlms),improve performance of downstream recognition and generation tasks,VLMs are used to improve recognition and generation performance
+studies,aligned vision-language representation,Studies focus on learning aligned vision-language representation
+images,classified with arbitrary texts,Images can be classified with arbitrary texts
+models,contrastive learning in vlms on billion-scale image-text pairs,Models conduct contrastive learning on billion-scale image-text pairs
+vlms,zero-shot performance,VLMs show impressive zero-shot performance when transferred to image classification tasks
+success of vlms,exploit alignment of vision-language representations for dense prediction tasks,Success of VLMs leads to the exploitation of alignment for dense prediction tasks
+detection,maskclip captures stuff and things in a complex scene,MaskCLIP captures stuff and things in complex scenes for detection
+image encoder in vlms,captures stuff and things in a complex scene,Image encoder in VLMs captures stuff and things in complex scenes
+pixel embeddings,corresponding text representations,Pixel embeddings are aligned with corresponding text representations
+vlms,implicitly learned compositional structure of multiple semantic concepts,VLMs implicitly learned the compositional structure of multiple semantic concepts
+massive amount of image-text pairs,implicitly learned compositional structure of multiple semantic concepts,"After training on massive image-text pairs, VLMs implicitly learned the compositional structure of multiple semantic concepts"
+image-text pairs,compositional structure,The compositional structure of multiple semantic concepts naturally exists in image-text pairs.
+representation alignment,bag of regions,"Exploring representation alignment between bag of regions and bag of words, different from previous works."
+object detectors,pre-defined object categories,Traditional object detectors are limited to pre-defined object categories.
+zero-shot object detection,individual region embeddings,Zero-shot object detection aligns individual region embeddings with text embeddings of categories through different strategies.
+open-vocabulary object detection,zero-shot object detection,Open-vocabulary object detection is a more general form of zero-shot object detection.
+vlms,zero-shot recognition ability,Large-scale pre-trained VLMs are exploited for their remarkable zero-shot recognition ability.
+conditional queries,vlms,VLMs can generate conditional queries for knowledge distillation.
+baron,individual regions,BARON attempts to lift the learning from individual regions to the bag.
+vlms,baron,BARON is the first attempt to lift the learning from individual regions to the bag of regions for OVD. BARON is general that it can align the bag-of-regions embeddings to not only image representations but also text representations.
+baron,faster r-cnn,BARON is based on a Faster R-CNN whose classifier is replaced by a linear layer to map region features into pseudo words. BARON takes region proposals and its surrounding boxes to form bags of regions. BARON obtains student and teacher embeddings for the bag of regions from the pre-trained VLMs. BARON learns the alignment by the InfoNCE loss and maintains queues of embeddings to provide sufficient negative pairs for InfoNCE loss.
+words,regions,The bag of regions is treated as a bag of words to obtain the bag-of-regions embedding.
+regions,features,The bag of regions from the region proposals are aligned with the corresponding features from VLMs.
+embeeddings,loss,BARON learns the alignment by the InfoNCE loss and maintains queues of embeddings to provide sufficient negative pairs for InfoNCE loss.
+faster r-cnn,architecture,The idea can also be used for other architectures applicable for OVD.
+faster r-cnn,objects,Faster R-CNN is used to detect objects from arbitrary vocabularies by replacing the original classifier with a linear layer that projects region features into the word embedding space.
+pseudo words,region features,The linear layer maps region features to multiple pseudo words to represent the rich semantic information of each object.
+pseudo words,text encoder,Pseudo words are fed into the text encoder to calculate the similarity with category embeddings for obtaining final classification results.
+category names,multiple words,"Category names, such as 'horse-driven trolley', consist of multiple words."
+region,pseudo words,The probability of the region being classified as a category is calculated based on the pseudo words associated with it.
+text encoder,category embeddings,Text encoder is used to calculate the similarity between pseudo words and category embeddings for classification results.
+faster r-cnn,regression and classification losses,Faster R-CNN convention is followed with regression and classification losses
+novel categories,box annotations,Learning to detect novel categories involves previous distillation-based approaches aligning region embeddings to features obtained from VLMs
+approaches,vlms,Existing OVD approaches distill knowledge from the image encoder of VLMs
+image encoder,vlms,Image encoder of VLMs is chosen as the teacher to teach the detector
+detector,multiple concepts,The detector is expected to learn the co-existence of multiple concepts
+knowledge,vlms,Effective and efficient learning of knowledge from VLMs is considered by two properties of regions inside a bag
+region,size ratio,An imbalanced size ratio among regions will dominate the image representations dominated by the largest region.
+region,region proposals,The bag of regions is formed based on the region proposals predicted by the region proposal network (RPN).
+candidates,region proposal,"The candidates are spatially close to the region proposal, taken from its surrounding eight boxes."
+region features,word embedding space,The region features are projected to word embedding space and learned to be aligned with the text embedding of category.
+spatial information,regions,"The spatial information of the regions is lost if the spatial relationship among the regions in a bag, including relative box center positions and relative box shapes, is not encoded."
+center position,shape,The center position and shape indicate the spatial relationship among the regions in a bag.
+baron,positional embeddings,"BARON encodes the spatial information into positional embeddings with the same dimension as wi j, following the practices of Transformers."
+positional embeddings,wi j,"The positional embeddings have the same dimension as wi j, following the practices of Transformers."
+transformers,positional embeddings,Positional embeddings are added to the pseudo words following the practices of Transformers.
+transformers,group size,The representation can be formulated as Teacher Bag-of-Regions Embedding assuming the group size is N i.
+bag-of-regions,teacher,BARON aligns the bag-of-regions embeddings from student and teacher for the student to learn to encode the co-existence of multiple regions.
+regions,concepts,The regions potentially contain multiple concepts.
+student,teacher,BARON aligns the bag-of-regions embeddings from student and teacher for the student to learn to encode the co-existence of multiple regions.
+alignment infonce loss,bag-of-regions embeddings,The alignment InfoNCE loss between bag-of-regions embeddings is calculated as part of the contrastive learning approach used in vision-language pre-training.
+positive pairs,negative pairs,The loss pulls positive pairs towards each other and pushes away negative pairs
+image,text,Two queues are maintained to save the image and text embeddings in previous iterations during training to provide negative pairs
+region proposals,sampled neighbors,Green boxes denote the region proposals and blue boxes are sampled neighbors (candidates)
+regions,candicates,"To balance the sizes of regions inside the bag, we let the eight candidate boxes have the same shape as the region proposal"
+region proposals,bag of regions,"The sampled boxes, together with the region proposal, form a bag of regions"
+base probability,scaling factor,The probability to sample the left and right candidates is adjusted using a base probability and a scaling factor
+probability,sampling,"Probability is used to determine the sampling factor, impacting the selection of left, right, upper, and bottom candidates based on region proposal box dimensions."
+object,region proposal,"The region proposal box contains objects, and the grouped regions in a bag cover objects co-occurring with objects in the region proposal."
+baron,scene-level understanding,The context of co-occurring objects leads BARON to gain a scene-level understanding by analyzing bags of regions.
+novel object categories,bag of regions,"Novel object categories occasionally appear in bags of regions, such as 'carriage' and 'cup', showcasing the diversity of objects."
+baron,bag-of-regions embeddings,"BARON obtains bag-of-regions embeddings from both student and teacher, using them to represent the sampled bags of regions for analysis."
+vlms,object detector,VLMs serve as the teacher and the open-vocabulary object detector acts as the student in generating bag-of-regions embeddings for analysis.
+clip,coco caption,"Both CLIP and COCO caption are mentioned together in the context, indicating a relationship between them in the context of knowledge extraction."
+mavl,proposals,"MAVL is mentioned in relation to using proposals produced by it, suggesting a dependency between the two."
+resnet50backbone,supervision,"ResNet50Backbone is associated with Supervision in the context, indicating a connection between them in the approach."
+baron (ours),resnet50-c4,"BARON (Ours) is linked to ResNet50-C4 multiple times in the context, showcasing a recurring relationship between them."
+regionclip,resnet50-c4,"RegionCLIP is mentioned together with ResNet50-C4, suggesting a potential method or model association between them."
+fasterrcnn,deformabledetr,"FasterRCNN is compared with DeformableDETR in terms of their AP values, showcasing a performance evaluation relationship between them."
+ov-coco,ov-lvis,"The datasets OV-COCO and OV-LVIS are described together, highlighting their commonality and potential shared characteristics."
+mask,box,mentioned together as object detection concepts
+mask,ap,mAP calculated for mask in object detection evaluation
+box,ap,mAP calculated for box in object detection evaluation
+ap,iou,AP is averaged based on IoUs from 0.5 to 0.95
+ap50,apnovel,AP50 for novel categories is a main metric for open-vocabulary detection performance
+ap,apnovel,APnovel is a metric related to AP for novel categories
+apr,ap,APr is a metric related to AP for rare categories
+baron,faster r-cnn,BARON is built on Faster R-CNN with ResNet50-FPN
+faster r-cnn,resnet50-fpn,Backbone network initialized with weights pre-trained by SOCO
+faster r-cnn,detpro,Synchronized Batch Normalization applied following DetPro
+vlm,clip,VLM pre-trained with CLIP model based on ViT-B/32
+baron,vild,Hand-crafted prompts in ViLD used for category names in caption supervision
+baron,bag of regions,Embeddings of bag of regions aligned with caption embeddings
+individual regions,bag of regions,Individual regions' embeddings aligned as part of distillation process
+individual-level distillation,implementation,The individual-level distillation is part of the implementation process.
+teacher embeddings,feature map,The teacher embeddings are obtained from the feature map of the image encoder's last attention layer.
+student embeddings,text encoder,The student embeddings are extracted from the text encoder's last attention layer.
+infonce loss,queues of embeddings,The InfoNCE loss is used to keep queues of embeddings for calculating the individual-level loss Lindividual.
+caption supervision,baron,BARON can accept caption supervision as mentioned in the context.
+image embedding,image captions,The core idea is to replace the image embedding with embedding obtained by feeding the image captions to the text encoder.
+region groups,region proposals,The region groups are obtained from randomly sampling region proposals generated by the RPN.
+image,multiple captions,An image can have multiple captions as mentioned in the context.
+alignment,bag-of-regions embedding,BARON learns to align the bag-of-regions embedding with captions and multiple caption embeddings.
+comparison,state-of-the-art methods,A comparison with state-of-the-art methods is shown in the context.
+ov-detr,deformable detr,"OV-DETR is based on the Deformable DETR, which is stronger than the Faster R-CNN with higher performance on base categories"
+baron,ov-detr,BARON still outperforms OV-DETR by 4.6 AP50 on novel categories
+baron,pb-ovd,"When using caption supervision, BARON even outperforms PB-OVD that uses sophisticated pseudo-labeling"
+baron,rasheed et al.,"Combining CLIP image features, COCO captions, and MAVL proposals, BARON outperforms Rasheed et al. by a large margin"
+ov-lvis benchmark,vild,"ViLD benchmark is trained using large-scale jittering and a prohibitive 32× schedule, while DetPro re-implemented it with backbone weights pre-trained by SOCO and a regular 2× schedule"
+vild,detpro,"DetPro also proposes learned prompts for category names, an ensembling strategy for classification scores is adopted in ViLD and DetPro"
+detpro,baron,BARON achieves the best performance in all scenarios as compared to other methods
+ov-lvis,coco,Open-vocabulary detector trained on OV-LVIS is transferred to COCO validation set
+ov-lvis,objects365,Open-vocabulary detector trained on OV-LVIS is transferred to Objects365 v2 validation set
+pascal voc 2007,object detector,Models are based on the same object detector and training schedule for fair comparison
+baron,ov-coco benchmark,Effectiveness of components in BARON on OV-COCO benchmark is evaluated through an ablation study
+individual-level loss lindividual,loss for bag of regions lbag,Comparison of effectiveness in achieving mAP50 on novel categories between Lindividual and Lbag
+performance,novel categories,The performance on novel categories is compatible with aligning individual regions.
+positional embedding,spatial information,Adding the positional embedding of the region boxes’ spatial information dramatically increases performance on novel categories by 7.1 mAP50.
+spatial information,compositional structure,Spatial information is essential to effectively exploit the compositional structure of co-occurring visual concepts in a bag of regions.
+individual-level loss,bag-of-regions alignment,"The individual-level loss is complementary to the bag-of-regions alignment, which brings 1.2 mAP50 performance gain on novel categories."
+sampling strategies,bags of regions,Two baselines are explored to sample bags of regions to support the rationale of the neighborhood sampling strategy.
+sampling probability,ablation study,The ablation study on the sampling probability shows the impact of different sampling probabilities on the overall performance.
+sampled bags,region proposal,The number of sampled bags per region proposal indicates the sampling strategy used for selecting region proposals.
+overlap,apnovel50,The overlap between regions and the APnovel50 score indicate the correlation between region proposals and novel category performance.
+pseudo wordpb,apnovel,The pseudo wordpb and APnovel metrics are analyzed to understand the impact of pseudo words on novel category performance.
+#bags apnovel50,apbase,The number of bags for APnovel50 compared to APbase reveals the difference in performance based on the number of bags used in the sampling strategy.
+#words apnovel50,apbase,The number of words for APnovel50 compared to APbase highlights the impact of the text features on the performance.
+sampling strategy,sampled regions,"The sampling strategy influences the number of sampled regions, reflecting variations in the region selection process."
+grid sampling strategy,random sampling strategy,Comparison between the grid sampling strategy and random sampling strategy showcases the differences in region selection approach.
+average number of regions,neighborhood sampling strategy,The average number of regions in a bag affects the neighborhood sampling strategy to ensure a balanced representation of regions.
+image encoder,random sampling strategy,The image encoder performance can be impacted by the region selection method in the random sampling strategy.
+bag,sizes,"Different sizes of the bags are mentioned in the context, indicating a direct relationship between the two terms."
+bag,shapes,"The context talks about bags having different shapes, showing a direct relation between the two terms."
+regions,distance,"The distance between the regions is highlighted in the context, suggesting a direct relationship between the two terms."
+image encoder,representation,"The text mentions that the distance between regions hinders the image encoder from representing the bag of regions exactly, indicating a direct relationship between image encoder and representation."
+neighborhood sampling strategy,regions,"The neighborhood sampling strategy utilizes a certain number of regions, implying a direct relationship between the two terms."
+objects,region proposals,"The neighborhood sampling strategy captures potential objects in the vicinity of region proposals, indicating a direct relationship between objects and region proposals."
+teacher embedding,regions,"The teacher embedding ensures that it represents the bag of regions by sampling the neighboring boxes of region proposals, establishing a direct relationship between teacher embedding and regions."
+result,table 5(#2),"The result achieved in the context is linked to Table 5(#2), indicating a direct relationship between the two terms."
+groups per region proposal,region proposals,"The result achieved in the context is with 3 groups per region proposal and no limitations on the number of region proposals, showcasing a direct relationship between the number of groups and region proposals."
+box overlap,regions in a bag,"The context mentions the overlap between sampled regions in a group, highlighting a direct relationship between Box Overlap and Regions in a Bag."
+overlap,performance,"The overlap between boxes affects the performance, indicating a direct relationship between overlap and performance."
+regions,image contents,"The regions need to cover diverse image contents, indicating a direct relationship between regions and image contents."
+sampling probability,candidate boxes,"The context discusses the effect of the sampling probability on sampling candidate boxes, indicating a direct relationship between Sampling Probability and candidate boxes."
+sampling probability,number of bags per proposal,Sampling Probability is related to the Number of Bags Per Proposal as they both involve the process of sampling bags for region proposals and adjusting parameters like the sampling probability and number of bags.
+sampling probability,number of pseudo words per region,Sampling Probability is related to the Number of Pseudo Words Per Region as they both involve studying different aspects of object categories and entail adjusting parameters like sampling probability and number of pseudo words.
+number of bags per proposal,number of pseudo words per region,Number of Bags Per Proposal is related to the Number of Pseudo Words Per Region as they both involve studying different aspects of region proposals for object categories and entail adjusting parameters like the number of bags and number of pseudo words.
+words,performance gain,"Words are mentioned as not bringing performance gain, indicating a negative relationship between the two concepts"
+words,harm,"Words are stated to potentially harm performance, suggesting a negative relationship between the two concepts"
+vlm,co-occurrence of objects,"A pretrained VLM is used to capture the co-occurrence of objects, indicating a methodological relationship between the two concepts"
+image-text similarity,clip-vit-b/32 model,"The image-text similarity is compared using the CLIP-ViT-B/32 model, implying a comparison relationship between the two concepts"
+image-text similarity,image and text embeddings,"The image-text similarity is derived from the image and text embeddings, suggesting a dependency relationship between the two concepts"
+object categories,text description,"The object categories are added incrementally to the text description, implying a sequential relationship between the two concepts"
+image-text embeddings,similarity score,"The image-text embeddings lead to an increase in the similarity score, indicating a direct impact relationship between the two concepts"
+baron,individual-level baseline,"BARON is qualitatively compared to the individual-level baseline, suggesting a comparison relationship between the two concepts"
+novel object categories,baseline misses,"BARON detects novel object categories that are missed by the baseline, implying a contrasting relationship between the two concepts"
+learned concepts,generalization ability of human language,"Learned concepts exhibit a generalization ability similar to human language, suggesting a similarity relationship between the two concepts"
+human language,learned concepts,"Human language has the ability to generalize concepts, allowing learned concepts to be applied to describe or recognize new things."
+bag of regions,compositional structure,The paper explores the ability of large-scale VLMs to represent the compositional structure of multiple concepts through grouping contextually related regions into a bag.
+bag of regions,detector and pre-trained vlms,"A contrastive learning approach is used to align the bag-of-regions representations of the detector and pre-trained VLMs, achieving state-of-the-art performance on multiple benchmarks."
+objects,bag of words,"The compositional structure explored in the paper focuses on the co-occurrence of objects, which behaves similar to a bag of words."
+vlms,compositional representation,The goal is to endow VLMs with human-like compositional representation to achieve more generalized intelligence.
+projects (iaf-icp) funding initiative,industry partner,"Funding Initiative, as well as cash and in-kind contribution from the industry partner(s)"
+projects (iaf-icp) funding initiative,singapore moe acrf tier 2 (moe-t2ep20120-0001),Supported by Singapore MOE AcRF Tier 2 (MOE-T2EP20120-0001)
+projects (iaf-icp) funding initiative,ntu nap grant,Supported by NTU NAP Grant
+projects (iaf-icp) funding initiative,lumin xu,Thanks to Lumin Xu for valuable discussions
+projects (iaf-icp) funding initiative,yuanhan zhang,Thanks to Yuanhan Zhang for valuable discussions
+image,object categories,Incrementally adding the object categories that appear in the image to the text description
+image,text embeddings,Similarity score between the image and text embeddings increases as the text description becomes more complete and precise
+large-scale vlms,multiple concepts in an image,Large-scale VLMs could capture the co-occurrence of multiple concepts in an image
+image-text pair,multiple concepts,Each image-text pair naturally contains multiple concepts
+image-text pair,underlying connections,VLMs could implicitly learn the underlying connections when training on massive-scale image-text pairs
+objects,vlms,A simple relationship between objects can also be captured by the VLMs
+relation 'in front of',text description,The similarity increases when the relation 'in front of' is added to the text description
+detectors learned through baron,individual-level baseline,Visualizing the predictions of detectors learned through BARON and the individual-level baseline
+images,coco's validation set,The images are from COCO's validation set
+feature map's response,novel categories,Visualizing the feature map's response to the novel categories using Grad-CAM++
+model,predictions,Finding that the model visualizes the predictions of detectors learned through BARON and the individual-level baseline
+feature map,response,The feature map's response to the novel categories is visualized using the Grad-CAM++.
+model,baron,The model learned through BARON generates responses at locations of novel categories.
+individual-level baseline,responses,"The individual-level baseline induces weaker, incomplete or diffused responses."
+objects,respond,Semantically related objects can respond to the queried object category.
+flock of sheep,dog,"In Fig 5(c), the location of a flock of sheep chased by a dog responds to the queried object 'dog'."
+dog,flock of sheep,Note the 'dog' and the 'flock of sheep' are semantically related in this context.

@@ -1,0 +1,171 @@
+node_1,node_2,edge
+3d objects,point clouds,3D objects refer to the main subject
+raw point clouds,sparsity,Raw point clouds suffer from sparsity
+raw point clouds,incompleteness,Incompleteness is another issue faced by raw point clouds
+autonomous driving,downstream applications,Autonomous driving is one of the downstream applications where point cloud completeness is crucial.
+object detection,downstream applications,Object detection is another application where point cloud completion is needed.
+segmentation,downstream applications,Segmentation is a third application where the complete point cloud is essential for accurate results.
+point cloud completion,3d computer vision,Point cloud completion is an important task within 3D computer vision for dealing with incomplete data.
+high-level semantic understanding,reconstruction of correct shapes,High-level understanding helps in reconstructing the correct shape in the missing parts.
+low-level spatial and geometric relationships,reconstruction of correct shapes,Low-level details contribute to the accurate reconstruction of shapes.
+ill-posed inverse problem,point cloud completion,The completion task is considered ill-posed because multiple plausible outputs can result from a single incomplete input.
+ill-posed problem,shape priors,Previous methods used shape priors as a solution.
+traditional methods,shape priors or hand-crafted geometric regularities,Traditional methods employed shape priors and specific geometric rules.
+deep learning-based methods,traditional methods,Deep learning methods have overshadowed earlier traditional approaches.
+two-stage completion framework,previous state-of-the-art deep learning solutions,Current SOTA deep learning follows a two-step process.
+encoder-decoder network,coarse but complete seed point clouds,First stage generates seed point clouds using an encoder-decoder network.
+upsampling network,seed point clouds,Second stage refines seed points with an upsampling network.
+encoded features,incomplete inputs,Encoded features are based on incomplete input data.
+seed points,representation capability,Limited representation capability affects seed points' quality.
+upsampling network complexity,final performance,Increasing network complexity may not significantly improve performance without good seed points.
+snowflakenet,previous works,SnowFlakeNet exemplifies previous efforts to enhance upsampling.
+figure 1,limited benefit from increased complexity,Figure 1 illustrates the point where increased complexity has minimal impact if seed points are insufficient.
+final performance,previous techniques,The context contrasts the 'final performance' with the 'bottleneck observed in previous techniques'
+odgnet,shape information loss,ODGNet aims to mitigate 'shape information loss' by introducing learnable shape dictionaries and orthogonal constraints.
+seed generation u-net,representation capability,The Seed Generation U-Net enhances the 'representation capability' of generated seed points through multi-level feature extraction.
+seed generation u-net,local seed feature,It utilizes a 'local seed feature' to capture the geometry around each seed point
+dictionary guidance module,shape priors,The Dictionary Guidance Module learns 'orthogonal shape priors' from complete point clouds during training.
+dictionary guidance module,recovery of better shapes,During inference
+shape dictionaries,feature space,Shape dictionaries are learned in the 'feature space' to capture distinguishable prior features.
+up-sampling transformers,target resolution,These transformers are used to 'upsample the seed points to the target resolution'
+transformers (zhou et al. 2022),upsampling,The context mentions using Transformers to upsample seed points for refining completion results.
+pcn (yuan et al. 2018),shapenet-55/34 (yu et al. 2021),These are three standard datasets used for evaluating the proposed method; they are related as benchmark sets.
+pcn (yuan et al. 2018),kitti (geiger et al. 2013),Both are mentioned as datasets for evaluation
+shapenet-55/34 (yu et al. 2021),kitti (geiger et al. 2013),Similar to PCN
+proposed method,ill-posed completion task,The method addresses the challenge of an ill-posed shape completion task.
+dictionary guidance module,learnable shape priors,The Dictionary Guidance Module introduces learnable shape priors to address the completion task.
+seed generation u-net,proposed shape completion network,The network combines Seed Generation U-Net with the Dictionary Guidance Module for improved performance.
+previous sota counterparts,proposed algorithm,The method outperforms previous state-of-the-art (SOTA) methods
+voxelization-based methods,point-based methods,These categories classify previous point cloud completion methods based on their network architecture.
+voxelization-based methods,solutions,Voxelization-based methods aim to adapt existing solution strategies to point cloud data.
+point-based methods,network architecture,These methods focus on working directly with point clouds without voxelizing them.
+voxelization-based methods,2d completion tasks,Voxelization-based methods attempt to adapt solutions from 2D tasks to 3D point clouds.
+voxelization-based methods,3d occupancy grid,Wu et al. (2015) introduced the 3D occupancy grid
+3d occupancy grid,convolutional deep belief networks,Used to hallucinate missing regions in 3D shapes
+3d-epn,implicit distance field functions,3D-EPN encodes distance field functions into voxels to enhance representation capability.
+3d-epn,classification network,Uses high-level semantic features from a classification network to guide shape completion.
+grnet,novel gridding process,Proposed by Xie et al. (2020)
+voxelization-based methods,information loss,Suffer from information loss during voxelization
+point-based methods,network architectures for point clouds,Recent advancements focus on designing networks specifically for handling unordered point clouds.
+point-based methods,advancements,Benefit from progress in network architectures for efficient processing of point clouds.
+network architectures,point cloud completion tasks,Advanced network architectures have evolved into mainstream solutions for point cloud completion tasks.
+pointnet (qi et al. 2017a),global feature vector,PointNet is used in PCN for extracting global feature vectors in the two-stage point completion framework.
+topnet (tchapmi et al. 2019),rooted tree model,TopNet introduced a one-stage framework modeling point cloud generation as the growth of a rooted tree.
+one-stage framework,lack accurate shape information,One-stage frameworks
+two-stage framework,better performance,Two-stage frameworks
+pcn (yuan et al. 2018),folding-based upsampling block,PCN uses a folding-based upsampling block in the second stage for dense and complete point cloud generation.
+coarse-to-fine point cloud generation,constraints,The two-stage framework imposes constraints on this process
+folding-based upsampling block,mlps,The second stage employs MLPs to generate a dense point cloud
+mlps,intrinsic geometric shapes,MLPs struggle to fully exploit and preserve intricate geometric shapes
+snowflake,novel snowflake point deconvolution block,SnowFlake introduces this block to improve upsampling in the feature space
+snowflake,xiang et al. (2021,2022)
+fbnet,feedback-aware completion block,FBNet focuses on the upsampling stage with this block to refine and upsample low-quality point clouds.
+fbnet,yan et al. (2022),FBNet is another method introduced by Yan et al. that emphasizes upsampling.
+seedformer,upsample transformers,SeedFormer uses Upsample Transformers to enhance upsampling of the low-quality point cloud.
+seedformer,zhou et al. (2022),Zhou et al. propose the Upsample Transformers in the context of SeedFormer.
+two-stage shape completion methods,seed generation stage,These methods overlook the importance of generating high-quality seeds before upsampling.
+proposed method,seed generation u-net,The method consists of a seed generation U-Net to produce coarse but complete seed points.
+seed generation u-net,upsample transformers,The U-Net generates seeds which are then upsampled using Upsample Transformers.
+incomplete and sparse point cloud,complete and dense point cloud,The goal is to transform the input into a denser
+proposed network,figure 2,The overall architecture is depicted in Figure 2
+set abstraction module,point transformer,The set abstraction module (SA) and point transformer (PT) are used together in Equation (1) to model the transformation of point coordinates and features.
+initial input,f0,For the initial input
+global shape feature,input point cloud,The global shape feature captures the general shape information of the incomplete input point cloud.
+topnet,decoder module,The decoder module draws inspiration from TopNet to generate the complete seed point cloud.
+multi-branch mlps,approach in topnet,Unlike TopNet
+child features,global shape code,The global shape code is progressively split into multiple child features
+1d deconvolution layers,method for generating child features,These layers with different kernel sizes and strides enable generation of varying numbers of child features.
+dictionary guidance module,shape information,The Dictionary Guidance Module addresses the issue of information loss by reconstructing detailed geometry and providing guidance to generate refined features from coarse child features.
+incomplete input,missing shape information,The seed generation process has a flaw due to the lack of shape information in the incomplete input
+network,ambiguous shapes,Without additional knowledge and guidance
+prior knowledge,reconstruction process,Our solution incorporates prior knowledge
+common shape features,ground truth point clouds,During supervised training
+mlp layer,refined point coordinates,An MLP layer is employed to convert refined point features into the final point cloud by regressing the coordinates.
+refined point features,complete shape features,These refined features are combined with multi-level encoder features to create a complete set of shape features.
+multi-level features,encoder,Features extracted from the encoder contribute to the complete shape features by capturing hierarchical information.
+seed point cloud generation process,point cloud completion task,The overall process aims to address the seed point cloud generation and point cloud completion tasks.
+supervised training,shape completion,During the supervised training
+detection transformer (detr),inspiration,The authors draw inspiration from DETR
+learnable query,benefit,The learnable query in DETR is leveraged to improve object detection and bounding box generation.
+dictionary guidance module,network architecture,This module has a learnable dictionary and a Refine Unit for automatically learning shape priors and guiding the shape completion process.
+learnable dictionary,shape priors,The learnable dictionary learns shape priors directly from training samples.
+refine unit,coarse point features,The Refine Unit takes coarse point features as input and refines them using information from the learnable dictionary.
+coarse point features,refined point features,The goal is to generate refined point features that incorporate additional shape information.
+feature tensors,cross-attention mechanism,The similarity score calculation borrows the solution from the cross-attention mechanism
+feature vectors in the dictionary,predicted similarity scores,The feature vectors are aggregated using the predicted similarity scores to refine the original ones.
+coarse features,refined features,Refined features are obtained by combining the aggregated dictionary features with the original coarse features.
+learnable dictionary,orthogonal constraints,To maintain representation ability
+prior feature,identity matrix (i),The orthogonal constraint enforces that the normalized dictionary (ˆD) after normalization is orthogonal to its transpose
+seed generation,upsampling processes,Both processes in the loss function are guided by the Chamfer Distance
+chamfer distance (cd),loss function,The loss function for the model is the Chamfer Distance
+shapenet-55/34,training shapes,ShapeNet-55 consists of 41
+shapenet-55/34,testing shapes,ShapeNet-55 has 10
+shapenet-34,training shapes,ShapeNet-34 contains 46
+shapenet-34,testing shapes,The testing set of ShapeNet-34 has 3
+pointr (yu et al. 2021),shapenet-55/34,PoinTr is the source of the ShapeNet-55/34 datasets.
+cad models or meshes,synthetic data,The KITTI dataset is real-world data unlike synthetic data generated from CAD models or meshes.
+kitti dataset,real scanned point clouds,KITTI is collected from an autonomous driving platform and represents real-world computer vision data.
+kitti dataset,car points,We focus on points within the object bounding boxes labeled as cars in the KITTI dataset.
+velodyne scans,kitti dataset,Velodyne scans are extracted from the KITTI dataset for point cloud analysis.
+kitti dataset,point clouds,The context discusses point clouds within object bounding boxes labeled as cars
+object bounding boxes,cars,These are related because they both pertain to the objects being studied in the context of the KITTI dataset.
+partial point clouds,complete point clouds,The context contrasts partial point clouds
+point cloud completion,algorithms,Various methods
+foldingnet,yang et al. (2018),This is the author and year reference for the method
+topnet,tchapmi et al. (2019),Similar to FoldingNet
+pcn,yuan et al. (2018),A competing method introduced by Yuan and colleagues in 2018.
+gr-net,xie et al. (2020),An additional method developed by Xie and others in 2020.
+pmp,wen et al. (2021),Method proposed by Wen and co-authors in 2021.
+pointr,yu et al. (2021),Work by Yu and collaborators in 2021.
+nsfa,wenxiao zhang (2020),Method introduced by Wenxiao Zhang in 2020.
+snowflake,xiang et al. (2021),Proposed by Xiang and others in 2021.
+fbnet,yan et al. (2022),Method developed by Yan and co-authors in 2022.
+proxyformer,li et al. (2023),Introduced by Li and their team in 2023.
+adapointr,yu et al. (2023),Another recent work by Yu and collaborators in 2023.
+seedformer,zhou et al. (2022),Proposed by Zhou and others in 2022.
+evaluation metrics,cd-l1,cd-l2
+fidelity,minimal matching distance (mmd),Both are metrics employed for evaluating the KITTI dataset without ground truth.
+chamfer distance,shapenet,Used to calculate similarity between output point clouds and car point clouds from ShapeNet.
+pcn dataset,previous algorithms,Comparison of performance is done on the PCN dataset against existing methods.
+shapenet,output point cloud,ShapeNet is a reference for finding the closest point cloud that is relevant to the output.
+pcn dataset,performance evaluation,The proposed network is evaluated on the PCN dataset to assess its performance.
+upsampling ratios,upsampling module,The upsampling ratios are set to specific values to match the required output resolution of 16
+total epochs,training process,The network is trained for 400 epochs using Adam optimizer with a decreasing learning rate schedule.
+learning rate,optimization function,The initial learning rate is 0.0004
+cd-l1 score,quantitative results,The CD-L1 score is used as a metric to measure the network's performance
+seedformer (zhou et al. 2022),comparison,Our method outperforms SeedFormer by a significant margin
+visual representation,completion results,Figure 3 illustrates the PCN completion results
+noise points,artifact of other algorithms,Other algorithms tend to generate results with more ambiguous shapes and noise points.
+noise points,ambiguous shapes,In contrast
+methods,foldingnet,The sentence discusses 'MethodFoldingNet' as a specific algorithm among others.
+methods,proxyformer,ProxyFormer is another algorithm mentioned in the context.
+methods,ours (proposed method),Our proposed method
+shapenet-55 benchmark dataset,shapenet-55/34 dataset,These are two datasets used for evaluating the method's performance.
+shapenet-55,output resolution of 8,192
+optimization settings,learning rate schedule,The network is trained with a learning rate that is gradually decreased over time.
+shapenet-55 dataset,cd-l2 score,The performance is measured using the CD-L2 score
+shapenet-34,shapenet-21 unseen dataset,Both are datasets used to demonstrate the method's generalization capability.
+proposed method,robustness,The robustness of the proposed method is evaluated on the KITTI dataset.
+kitti dataset,robustness test,This dataset serves as a final evaluation for the method's resilience.
+proposed algorithm,kitti dataset,The algorithm's robustness is examined on the KITTI dataset for evaluation.
+previous method,pointr (yu et al. 2021),Our method outperforms PoinTr in generating cleaner point clouds
+proxyformer,shape completion,ProxyFormer is compared in shape completion results on the Seen ShapeNet-34 and Unseen ShapeNet-21 test sets.
+shapenet-34,unseen shapenet-21,Results are shown for both seen and unseen ShapeNet subsets.
+seed generation method,point cloud completion system,The seed generation method is crucial for improving the overall system's performance.
+u-net,proposed seed generation method,Ablation study highlights the effectiveness of the U-Net component in the seed generation process.
+lidar point clouds,ground-truth point clouds,The model is trained on PCN car dataset and tested on KITTI without ground-truth data.
+fidelity,mmd,Metrics used for measuring the model's performance on the KITTI dataset
+testing stage,learned dictionary,The learned dictionary is used in the testing stage for reconstructing missing components.
+shape priors,training samples,Shape priors are extracted from the training samples and stored in the learned dictionary.
+point clouds,categories,Different categories of point clouds
+pcn dataset,three categories,The density distribution of three categories in the PCN dataset shows distinct patterns.
+odgnet,point cloud completion network,The ODGNet is a proposed point cloud completion network that addresses the limitations of the two-stage framework.
+first stage,bottlenecks,The ODGNet specifically focuses on mitigating the bottlenecks in the first stage of point cloud completion.
+shape dictionaries,recovery of fine-detailed shape information,Shape dictionaries are used to recover detailed shape information for missing portions.
+seed points,multi-level feature extraction and concatenation,Multi-level feature extraction and concatenation enhance the representation ability of seed points.
+algorithm,missing portion reconstruction,The algorithm efficiently reconstructs the missing portion with rich details without ornamentation.
+algorithm,previous state-of-the-art counterparts,The algorithm outperforms previous methods in reconstructing the missing portion with rich details.
+experiment results,our algorithm,The experiment results demonstrate the efficiency of the algorithm.
+senior program committee members,reviewers,Both committee members and reviewers provided comments and contributed to the community.
+neh pr-284350-22,financial support,This work received financial support from NEH grant PR-284350-22.
+nsf mri-2018966,gpu,The GPU used for this work was provided by an NSF MRI grant (MRI-2018966).

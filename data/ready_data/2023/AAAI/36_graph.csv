@@ -1,0 +1,87 @@
+node_1,node_2,edge
+modern text-to-image generation models,computational cost,The modern models have significant computational cost due to their iterative nature and large models.
+significant computational cost,iterative process,The need for an iterative process arises to ensure image alignment and compatibility.
+iterative process,image regions compatibility,The iterative process ensures different image regions align with the text prompt and are compatible with each other.
+lightweight approach,markov random field (mrf) model,The paper proposes a light-weight method using an MRF model to address compatibility.
+markov random field (mrf) model,latent token-based muse text-to-image model,The MRF is applied on top of Muse for improved image quality.
+mrf model,compatibility among image tokens,The MRF encodes compatibility between image tokens at different spatial locations.
+differentiability,learning mrf parameters,The MRF parameters can be learned through back-propagation as a differentiable layer.
+proposed mrf model,markovgen,MarkovGen integrates the MRF model to speed up Muse and enhance image quality.
+markovgen,speedup,MarkovGen accelerates Muse by 1.5 times.
+markovgen,image artifact reduction,It decreases image artifacts
+image-to-text models,recent advances,Recent image-to-text models
+muse,state-of-the-art image generation models,Muse is faster than other state-of-the-art models like DALL-E
+muse,quality,Muse produces similar or better quality images compared to competitors.
+muse,latency,Reducing latency is a focus for practical implications in real-world deployments.
+muse,progressive parallel decoding,Muse's approach involves incremental
+mrf model,compatibility,MRF inference helps in token compatibility
+mrf model,long-range connections,MRF supports connections between distant tokens in the image.
+full iterative approach,limited number of sampling steps,Muse's efficiency gain comes from applying MRF after fewer iterations.
+mrf model,probabilistic graphical model,The MRF model is a type of probabilistic graphical model that explicitly models spatial and token label relationships.
+markovgen model,muse model,MarkovGen replaces the last few steps of Muse with a learned MRF layer
+markovgen model,speedup,MarkovGen provides a 1.5× speedup compared to Muse.
+markovgen model,quality improvements,Human evaluation and FID distances demonstrate improved quality results with MarkovGen.
+mrf model parameters,training,The MRF model parameters can be trained in a few hours
+text-to-image generation,diverse variety of methods,Recent years have seen a wide range of text-to-image generation approaches
+ddpm (denoising diffusion probabilistic models),text-to-image generation,DDPMs are a popular approach used by many text-to-image models.
+text-to-image models,image prompt,These models generate high-quality images based on input text prompts.
+muse,text-to-image models,Muse is a specific text-to-image model among the discussed works.
+references [34] and [11],parti and discrete-diffusion models,These are other token-based methods that could potentially benefit from MRF refinement.
+text-to-image models,denoising diffusion probabilistic models (ddpm),Many text-to-image models use DDPM for image generation
+denoising diffusion probabilistic models (ddpm),image generation,DDPM is theoretically used for infinitely small denoising steps
+progressive distillation algorithms,reducing the number of denoising steps,These algorithms aim to decrease the computational requirements by cutting down the steps needed in DDPM.
+pixel intensities,direct operation,Most text-to-image models operate directly on pixel intensities
+latent representation,lower-dimensional,Models like Parti and DALL-E operate on a lower-dimensional latent space instead of pixels.
+vqgan,discrete token representation,VQGAN
+parti,dall-e,Both Parti and DALL-E use auto-regressive modeling for token generation
+muse,bert-inspired,Muse is a BERT-like model that takes text prompt and generated tokens as input for simultaneous prediction of remaining image tokens.
+auto-regressive modeling,token generation,Models like Parti and DALL-E use this technique
+bert,muse,Muse employs BERT-like architecture for its simultaneous token prediction.
+structured prediction approach,compatibility between token values,The structured prediction approach takes into account compatibility between token values
+text-to-image algorithms,conditional inputs,These algorithms are being extended to handle various conditional inputs
+structured prediction,markov and conditional random fields (mrf) / crfs,Structured prediction has a history in computer vision
+mrfs and crfs,smoothness constraints,These models enforce that semantic labels
+early mrf/crf models,immediate pixel neighbors,In early models
+fully-connected crfs,far longer range connections,[14] introduced fully-connected CRFs with connections across a larger area
+mean-field inference,back-propagation through mean-field,[36] proposed using mean-field inference for minimizing the fully-connected CRF model's energy and incorporating it into the learning process.
+mean-field inference,crf model,Proposed by [36] to jointly train a CRF model with a CNN network for better semantic image segmentation.
+mrf formulation,text-to-image generation,Used in this work to achieve consistency in predicted image tokens.
+fully connected mrf model,parameter learning,Learned by back-propagation in both [36] and this work.
+mrf,tokenized patches,Defined over tokenized patches in the proposed method
+label space,vocabulary of a vqgan,Corresponds to the vocabulary used in the image generation process.
+crfs,recent applications,Recently proposed to improve text generation
+transformer model,generating 'unaries',Used in text generation methods for unary predictions.
+edges,two-dimensional mrf model,Proposed method uses a MRF with edges between all pairs of patches
+chain decoding techniques,neighboring tokens,Typical for text-based CRF models
+structured token prediction,mrf introduction,Described in this section for the purpose of image generation.
+neural network,transformer model,A neural network is often a type of Transformer model.
+token image,detokenizer,A token image is generated and then sent through a detokenizer to produce an RGB image.
+underlying transformer-based image generation backbone,mrf (markov random field),The MRF improves image quality by utilizing learned spatial and label compatibility relations in the latent token space
+structured prediction mechanism,massive search space of token arrangements,The structured prediction mechanism reduces the vast number of garbage token arrangements
+mrf model,maximum a posteriori (map) inference,Finding the optimal token arrangement is formulated as MAP inference in the MRF model.
+age generation model,text-to-image generation algorithms,MarkovGen is a type of age generation model that falls under the broader category of text-to-image generation algorithms.
+muse model,base model,Muse generates images using a series of inference steps starting with the base model
+muse model,super-resolution (sr) model,After the base model
+mrf inference,muse transformer models,MRF inference significantly speeds up Muse's inference process
+mrf inference,image resolutions,MRF inference is resolution-independent
+markovgen,muse,MarkovGen improves upon Muse by replacing the final stages with MRF inference
+markovgen,muse model,MarkovGen aims to fast-forward the later part of the Muse model
+mrf (markov random field),muse model,The MRF is trained to match the final predictions of the Muse model at an intermediate step
+base model,sr model,The multi-scale approach uses more steps in the base model followed by fewer steps in the SR model to speed up inference efficiency.
+inference time,mrf vs muse steps,The MRF's inference time is negligible compared to the Muse model's
+vqgan,image rendering,After generating SR tokens
+intermediate step (k),overall inference time,Fast-forwarding after step k reduces the Muse model's inference time by (n - k)/n.
+image quality,human raters,Raters evaluate image quality by comparing two generated images side-by-side and prefer MarkovGen over other models.
+markovgen,muse (early exit),Human raters prefer MarkovGen's generated images over early exit Muse
+markovgen,muse (full model),Even when compared to the full Muse model
+markovgen,speed-up,MarkovGen provides a 1.5x speed-up compared to the full Muse model.
+markovgen,fid scores,Single-shot FID scores on MS-COCO dataset show that MarkovGen has better performance than the base Muse model.
+human evaluation,ms-coco dataset,Evaluation is conducted using the MS-COCO dataset
+markovgen,full muse,MarkovGen performs better than full Muse
+markovgen,early exit muse,MarkovGen outperforms early exit Muse
+markovgen,muse model,MarkovGen is a faster version of Muse
+mrf model,discrete vqgan token space,MRF learns spatial and token label compatibility in the VQGAN space.
+mrf model,pre-trained muse models,MRF can be used with pre-trained Muse
+current mrf model,text prompt,Current MRF does not utilize text prompt
+future work,spatial and token compatibility weights,Making weights dependent on text prompts could enhance adaptation.
+future work,muse model,Joint training of Muse with MRF layers could optimize unaries for text input.

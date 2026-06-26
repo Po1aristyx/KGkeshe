@@ -1,0 +1,148 @@
+node_1,node_2,edge
+bnns (bayesian neural networks),adversarial robustness,BNNs are the main focus
+bnn-dp,scalability,BNN-DP is designed to be scalable
+posterior distributions,bounded/unbounded support,The algorithm handles posterior distributions with both bounded and unbounded support
+regression setting,classification setting,BNN-DP is applicable to both regression and classification tasks.
+input points (t),robustness of decision,The paper studies the robustness of BNN decisions for a compact set of input points
+exact computation of robustness,infeasible,Due to computational complexity
+piecewise affine (pwa) upper and lower bounds,computation of robustness,The authors focus on computationally tractable PWA bounds for estimating adversarial robustness.
+dynamic program (dp),bnns as stochastic dynamical systems,The problem of robustness is connected to viewing BNNs through the lens of dynamic programming
+deterministic neural networks (nns),bayesian neural networks (bnns),These methods are contrasted
+certification methods for nns,bayesian neural network (bnn) certification,The context highlights that traditional NN certification methods cannot be applied to BNNs due to the difference in weight distribution.
+wicker et al. (2020),robustness notion,Wicker et al.'s work deals with a different type of robustness not directly related to adversarial attacks on BNN decisions.
+berrada et al.,2021,dual optimization
+lechner et al.,2021,intrinsic safe bnn
+cardelli et al. (2019a),wicker et al. (2021),statistical approaches to quantify robustness
+adversarial attacks,bnn decision,The context implies that adversarial attacks are a concern for BNNs
+bayesian neural networks (bnns),adversarial examples,BNNs are mentioned in the context of using uncertainty to flag adversarial examples
+empirical methods,point-wise uncertainty estimates,These methods use uncertainty estimates specific to individual test points
+point-wise uncertainty estimates,worst-case adversarial perturbations,The context contrasts point-wise estimates with worst-case perturbations
+gaussian processes (gps),adversarial robustness,Recent works like Cardelli et al. (2019b)
+gaussian processes (gps),bnns,The techniques for GPs cannot be used in BNNs due to the non-Gaussian nature of the function distribution in BNNs.
+robust certification of bnns,bnns,This section specifically addresses the challenge of certifying robustness in BNN architectures
+bayesian neural network (bnn),weights (wk),BNN has matrices of weights (Wk) corresponding to each layer
+weights (wk),biases,Wk includes both weights and biases for the kth layer.
+layer k,input (ζk1),Layer k processes the input from the previous layer
+final output (ζk+1),neural network,ζK+1 represents the final output
+parameters (w),prior distribution (p(w)),In the Bayesian setting
+convolutional neural networks (cnns),neural networks (eqn. 1),Eqn. 1 encompasses CNNs
+convolutional neural networks (cnns),linear transformation,CNNs can be interpreted as a linear transformation into a larger space.
+chapter 3.4.1 in (gal & ghahramani,2016),interpretation of convolutional operation
+convolutional layers,fully connected layers,Convolutional layers are represented as fully connected layers for verification purposes.
+bnn-dp: robustness certification of bayesian neural networks via dynamic programming,verification method,BNN-DP is a technique for robustness certification of Bayesian Neural Networks.
+regression,classification problems,The paper discusses both regression and classification tasks.
+l2 loss,classification,For classification
+predictive posterior distribution,ˆy(x∗),ˆy(x∗) is computed as the mean of the predictive posterior distribution.
+neural network architecture,analytical computation of posterior,Non-linearity due to the architecture makes analytical computation impossible.
+approximate inference methods,mean-field gaussian variational inference (vi),Approximate inference methods
+mean-field gaussian variational inference (vi),multivariate gaussian q(w),A multivariate Gaussian distribution
+variational inference (vi),approximate inference methods,The techniques presented in the paper can be applied to other methods like Hamiltonian Monte Carlo (HMC) and Dropout
+bayesian neural network (bnn),dataset d,A BNN is trained on a given dataset D for making predictions.
+test point x*,adversarial perturbations,The paper focuses on representing adversarial perturbations in a neighborhood T around x*
+adversarial perturbations,compact neighbourhood t,These perturbations are constrained to lie within a defined neighborhood T.
+dynamic programming problem,computing piecewise linear relaxations,For inference methods beyond VI
+literature (madry et al.,2017),common practice
+classification case,softmax,In the context
+softmax,adversarial robustness,These quantities in Eqns. (3) are relevant for checking if a function f_w is adversarially robust when x is within a set T.
+f_w,adversarially robust,The robustness of f_w is determined by the supremum of the difference between the softmax outputs for x and its adversarial example x*.
+bnns,stochastic dynamical systems,BNNs are viewed as stochastic systems evolving through the layers of the neural network in the approach.
+stochastic dynamical systems,dynamic programming problem,Adversarial robustness is characterized as a dynamic programming problem when considering the evolution of BNNs.
+dynamic programming problem,optimization problems,The problem is broken down into K simpler optimization problems
+convex relaxations,non-convex nature of bnn layers,Convex relaxations are used to overcome intractability in solving these optimization problems due to the non-convexity of BNN layers.
+pwa relaxations,efficient computation,Piecewise-affine relaxations are obtained recursively to make the computation more feasible.
+interval arithmetic,linear mapping m,interval arithmetic is performed using a linear mapping M
+dynamic programming (dp),backward recursion,Theorem 1 connects BNNs to a dynamic programming problem
+fully connected bnn,hidden layers,A fully connected BNN consists of multiple hidden layers
+bnn,weights and biases,In a BNN
+non-linear stochastic process,layers of the nn,The dynamics of a BNN can be seen as a non-linear stochastic process evolving over its layers
+theorem 1,solution to a dp problem,The theorem provides a way to compute the expected output of a BNN as the solution to a backward recursion DP problem
+initial condition,zk+1,The evolution starts with an initial condition z0 = x
+function h,ew∼q(·) [h(f w (x))],Function h is applied to the final layer output of the BNN
+backward-iteration scheme,theorem 1,The backward-iteration scheme illustrates the central piece of the framework
+two-hidden-layer bnn,value functions vk,Value functions Vk are constructed for each layer of the two-hidden-layer BNN
+problem 1,efficient methods,Theorem 1 enables the derivation of efficient methods to solve Problem 1
+law of total expectation,independence of parameters distribution,The theorem relies on the law of total expectation and the independence of parameter distributions across different layers.
+weights of layer k − 1,uncertainty in vk−1,The uncertainty in Vk−1 depends solely on the weights of the previous layer (k-1)
+latent and input spaces,value functions vk,Vk maps the latent and input spaces to the mean of the output distribution
+output distribution,mean,Vk computes the mean of the output distribution for a given latent and input space.
+bnn,non-convexity,Although Vk is computed layer-wise
+vk(z),non-convex function,Vk(z) is a non-convex function
+problem 1,optimization of vk(z),Solving Problem 1 requires recursively bounding Vk(z) using Eqns. (5a) and (5b).
+vi algorithms,assumption of independence,The majority of VI algorithms assume independence between layers
+corollary 1.1,relaxations of vk(zk),This corollary provides a method for recursively bounding Vk(zk) using relaxations ˇVk and ˆVk.
+pwa relaxations,ˇvk and ˆvk,The goal is to find Piecewise Affine (PWA) relaxations for Vk(zk) through initialization and backward propagation.
+section 5,details on pwa relaxation process,In this section
+backward propagation of ˇvk,ˆvk,hidden layer of the bnn
+efficient method,section 5,The efficient method for step (ii) is discussed in Section 5 of the text.
+pwa relaxation,dynamic programming,The main objective in Section 5 is to find Piecewise Affine (PWA) relaxations for dynamic programming problems.
+affine relaxations,value function,Affine relaxations are used to propagate upper and lower bounds on the value function through the BNN.
+ˆvk,ek,The notation ˆVk refers to an affine upper bound on Vk
+gaussian distribution,linear transformations,Gaussian random variables are closed under linear transformations
+rk(z),sk(z),rk(z) is defined as the positive part of sk(z)
+compact set z,rk(z),Z is a subset of Rnk−1
+piecewise affine value functions,relu activation functions,Piecewise Affine Value Functions generalize to ReLU activation functions as shown in Proposition 2.
+piecewise affine relaxation,zk,j (support of f_w)
+zk,j,gaussian random variable (ζ)
+vk-1(z),vk(zk),Vk-1(z) is related to Vk(zk) in the context of function approximation and upper bounds.
+affine relaxation parameters,ˆvk,j (upper bound)
+mean (mk(z)),covariance (sk(z)),These quantities define the distribution of the Gaussian random variable ζ in the computation of ˆVk
+unbounded regions,vector ˇz,Similar results hold for regions defined by vector ˇz
+identity function,ϕk,A similar relation can be obtained when ϕk represents the identity function
+last layer of bnn,interval relaxation,The last layer of a Bayesian Neural Network (BNN) requires relaxation for classification tasks due to the non-affine nature of the softmax function.
+regression case (h=i),affine function,In the regression case
+softmax,output distribution of the bnn,For classification
+dirac delta functions,relaxation of the distribution of wk(zt,1)t
+partition of supp(f_w(x)),zn,A partition of the support of f_w(x) is used to define the sets Z1
+algorithm,region obtained via proposition 7,The algorithm denotes the region as Zk
+zk,main,supp(f_w0:k)
+interval splitting,refinement of zk,main
+computational complexity,bounding procedures for deterministic neural networks,The cost of computing piecewise-affine relaxations for BNNs is polynomial in K and n
+computational complexity,exponential cost,Refinement procedure has an exponential cost in n
+posterior variance,influence on the refining procedure,In BNNs
+bnn-dp,experimental evaluation,BNN-DP is empirically evaluated for various regression and classification tasks.
+bnns,noisy adam,Training BNNs uses Noisy Adam optimization algorithm.
+bnns,variational online gauss-newton,Variational online Gauss-Newton is another training method employed for BNNs.
+1d noisy sine,benchmark for bnns,The 1D Noisy Sine dataset is used for validating BNN-DP's bounds.
+2d dimensional equivalent,classification benchmarks,BNNs with various architectures are tested on 2D classification tasks.
+noisy sine,2d dimensional equivalent of 1d noisy sine,The context discusses analyzing BNNs trained on the 2D version of the 1D Noisy Sine dataset.
+2d dimensional equivalent of 1d noisy sine,kin8nm dataset,These datasets are both used for regression tasks to benchmark BNNs.
+kin8nm dataset,state-space readings for the dynamics of an 8 link robot arm,The Kin8nm dataset contains data related to the physical dynamics of a robot arm.
+bnn-dp,fl (state-of-the-art approach),BNN-DP is compared to FL
+bnn-dp,bayesian neural networks (bnns),BNN-DP focuses on providing robustness certification specifically for BNNs.
+bnn-dp,mnist,fashion mnist
+mnist,fashion mnist,Both are popular image classification datasets.
+mnist,cifar-10,CIFAR-10 is another well-known image classification dataset
+fl,berrada et al. (2021),FL is the work by Berrada et al.
+fully connected bnn architectures,k (number of hidden layers),K represents the architecture complexity
+fully connected bnn architectures,nhid (number of neurons per layer),nhid determines the width of the network
+γ-robustness regression tasks,ε-robustness classification tasks,Comparison of robustness in different tasks
+2d noisy sine,kin8nm,Both are mentioned as noisy datasets for evaluation
+mnist,fashion mnist,Both are mentioned as classification datasets for evaluation
+bnn-dpfl (5 std),fl (3 std),Comparison of two methods for uncertainty quantification
+bnn-dpfl,fl,BNN-DPFL is a formal method providing tighter bounds compared to FL
+two hidden layer bnn,48 neurons per layer,Describing the complexity of the neural networks used for FL's evaluation
+fl,subset of bnn posterior,FL's bounds are optimistic as they only account for a portion of the BNN's full posterior distribution
+bnn-dp,whole posterior,BNN-DP provides formal bounds that cover the entire posterior distribution
+bound validation,bnn-dp and fl,The section where the validation and comparison of the bounds occur
+bnn-dp,bayesian neural networks (bnns),BNN-DP is a method specifically applied to BNNs.
+bnn-dp,fluctuation (fl) learning,BNN-DP is compared to FL
+1 hidden layer bnn,2 hidden layer bnn,There's a comparison between BNNs with different number of hidden layers.
+bnn-dp,guaranteed output intervals,BNN-DP provides tighter output intervals compared to FL
+fl,posterior distribution truncation,FL uses truncated distributions
+1 std,3 std,FL intervals widen as the standard deviation increases from 1 to 3.
+variance,one-hidden layer bnn,The higher variance in the one-hidden layer BNN contributes to looser FL bounds.
+two-hidden layers bnn,lower variance,The two-hidden layer BNN has lower variance
+higher variance,former bnn,The first sentence contrasts the higher variance of the former BNN with the second
+complex deep learning benchmarks,analogous observations,The context suggests that similar observations apply to more complex benchmarks
+bnns with various architectures,2d noisy sine and kin8nm regression datasets,These are the specific regression benchmarks used to evaluate the performance of BNNs.
+γ-robustness,upper and lower bounds on the expectation,γ-robustness refers to the difference between these bounds
+bnn-dp,fl-baseline,BNN-DP significantly improves the γ-robustness compared to the FL-baseline.
+model size,impact on γ-robustness,The larger the model size
+uncertainty,fl's performance,FL is negatively affected by the amount of uncertainty in the posterior distribution
+bnn-dp,adversarial robustness of bnns,BNN-DP is a method specifically designed to certify the adversarial robustness of Bayesian Neural Networks.
+bnn-dp,dynamic program,BNN-DP is based on a reformulation of adversarial robustness as a dynamic programming problem.
+dynamic program,efficient relaxations,Efficient relaxations can be derived for the dynamic program to make it computationally feasible.
+experiments,multiple datasets,Experiments were conducted on various datasets for both regression and classification tasks.
+experiments,state-of-the-art competitive methods,BNN-DP outperforms existing methods in the experiments
+bnns,safety-critical applications,The success of BNN-DP suggests its potential for use in applications where robustness is essential.
+work,nsf grant 2039062,This research was partially funded by the National Science Foundation (NSF) grant.

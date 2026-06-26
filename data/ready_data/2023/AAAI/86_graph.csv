@@ -1,0 +1,147 @@
+node_1,node_2,edge
+large pre-trained visual-language models (vlms),unsupervised domain adaptation (uda),VLMs are discussed in the context of addressing the real-world unsupervised domain adaptation problem.
+unsupervised-trained vlms,distribution discrepancy,These models are shown to reduce the distribution discrepancy between source and target domains.
+domain adaptation,prompt engineering,Deploying VLMs on UDA tasks faces a challenge in prompt engineering
+prompt-based distribution alignment (pda) method,prompt learning,PDA is proposed to incorporate domain knowledge into prompt learning
+base branch,alignment branch,PDA consists of a base branch focusing on class-related representation and an alignment branch for minimizing domain discrepancy.
+image-guided feature tuning (ift),cross-domain features,IFT is used in the alignment branch to integrate self-enhanced and cross-domain features into the model.
+base branch,enhancement,The base and alignment branches promote each other for enhanced adaptation.
+unsupervised domain adaptation (uda),pre-trained model,UDA aims to improve the generalization performance in the target domain by leveraging labeled source data and unlabeled target data.
+adversarial training,domain alignment,Methods like adversarial training mitigate distribution differences between domains to adapt the model.
+metric learning,domain discrepancy,Metric learning techniques address UDA by reducing the distance between samples from the same class and separating those from different classes.
+pda (proposed distribution alignment),state-of-the-art performance,PDA is proposed to achieve superior results compared to existing UDA methods.
+prompt-based distribution alignment,code availability,The code for PDA is made publicly available on GitHub.
+labeled source domain,unlabeled target domain,UDA uses both labeled and unlabeled data for model adaptation.
+semantic information,entangled nature,Alignment methods can lose semantic information due to the inherent complexity of the domains.
+r (compactness of features),l2 distance,r measures the separation between intra-class and inter-class distances in feature space.
+mmd (maximum mean discrepancy),kl divergence,Both MMD and KL divergence are used to quantify the difference between source and target domain distributions.
+office-home benchmark,performance comparison,Experiments are conducted on the Office-Home dataset to showcase the effectiveness of PDA.
+prompt tuning,class-related representations,Prompt tuning focuses on integrating class-related representations into prompts to ensure discrimination among different classes.
+uda,distribution shift of image representations,The principal objective of UDA is to minimize the distribution shift in image representations.
+alignment branch,domain knowledge,The alignment branch uses image representations to introduce domain knowledge to reduce domain discrepancy.
+feature bank,image-guided feature tuning (ift),IFT involves constructing a source- and target-domain feature bank to enhance feature integration.
+pda (prompt-based distribution alignment),discriminability of image and text representations,PDA improves discriminability and mitigates domain discrepancy.
+pda,target domain adaptation,PDA allows the model to adapt better to the target domain by capturing features from both domains.
+vlm (visual-language model),uda downstream tasks,The paper experimentally verifies the effectiveness of VLM on UDA tasks.
+unsupervised domain adaptation,uda,The term 'Unsupervised Domain Adaptation' refers to the broader concept
+maximum mean discrepancy (mmd),divergence measure,MMD is an example of a divergence measure used in UDA to minimize the difference between domains.
+correlation alignment (coral),divergence measure,Similar to MMD
+maximum density divergence (mdd),divergence measure,MDD is also a divergence measure
+adversarial learning,minimax problem,Adversarial learning involves a minimax optimization process where a domain discriminator is used to create domain-invariant features.
+ganin and lempitsky (2015),adversarial learning reference,This is a reference to a paper that popularized adversarial domain adaptation using a similar approach.
+long et al. (2018),adversarial learning reference,This is another reference to a paper demonstrating the use of adversarial learning in domain adaptation.
+rangwani et al. (2022),adversarial learning reference,This is a more recent work that contributes to the field of adversarial domain adaptation.
+xiao et al. (2021),adversarial learning reference,This is yet another study illustrating the application of adversarial learning in UDA.
+proposed pda (pda method),domain adaptation technique,The proposed PDA is a novel method introduced in the context
+base branch,pda component,The base branch is one of the two parts of the PDA method responsible for class discrimination.
+aligned branch,pda component,The aligned branch focuses on obtaining domain-invariant information through image-guided feature tuning.
+office-home,dataset,Office-Home is a benchmark dataset used for evaluating the effectiveness of the proposed PDA method.
+office-31,dataset,Another dataset where the PDA method demonstrates its performance
+visda-2017,dataset,VisDA-2017 is a third dataset that showcases the state-of-the-art results achieved by the PDA method.
+prompt learning paradigm,natural language processing (nlp),The prompt learning paradigm was initially employed in the field of NLP.
+prompt learning,vision language models (vlms),Prompt learning has been integrated into VLMs
+parameter-efficient tuning,prompt tuning,Prompt tuning is a part of parameter-efficient tuning that learns a small number of parameters with input composition.
+soft prompt,vision-language models (vlms) (coop),CoOp introduced soft prompts in VLMs
+cocoop,coop,CoCoOp extends CoOp by dynamically generating prompts to address overfitting.
+visual prompts,transformer models (vpt),VPT uses visual prompts in transformer models to achieve impressive results.
+maple,clip,MaPLe combines text and visual prompts in CLIP to improve text-image representation alignment.
+uda problem,transferability of clip,The paper focuses on improving the transferability of CLIP for addressing the UDA problem.
+unsupervised domain adaptation,clip model,The context discusses UDA as a technique to improve the generalization performance of the CLIP model
+prompt tuning,base branch,The base branch employs prompt tuning to enhance the discriminability of the CLIP model
+image-guided feature tuning,alignment branch,The alignment branch introduces image-guided feature tuning to address domain discrepancy
+labeled dataset (ds),source domain,Ds consists of labeled data from the source domain
+unlabeled dataset (dt),target domain,Dt contains unlabeled data from the target domain
+prompts (v),mapping (m),Prompts are incorporated into the input
+generalized prompt (p),knowledge transfer,The goal is to learn a generalized prompt P that facilitates the transfer of knowledge from the source to the target domain.
+pre-trained clip model,inference,The context mentions that the pre-trained CLIP model is revisited for this adaptation technique during inference.
+contrastive language-image pre-training (clip) model,image encoder,The CLIP model consists of an image encoder and a text encoder for encoding images and corresponding descriptions.
+contrastive language-image pre-training (clip) model,text encoder,The CLIP model has separate encoders for images and text
+hand-crafted prompts,fine-tuning,CLIP is adapted to downstream tasks using hand-crafted prompts instead of fine-tuning the entire model.
+text prompt tuning,coop (zhou et al. 2022b),CoOp introduces a method to automatically learn continuous context vectors for text prompts
+learnable context vectors,text prompt,In CoOp
+probability of image classification,temperature parameter (τ),The probability of an image belonging to a class is calculated using a temperature parameter to control the model's confidence.
+cosine similarity ⟨wi,z⟩,image representation (z)
+cosine similarity ⟨wi,z⟩,text representation (wi)
+multi-modal prompt,text prompt,The method employs a multi-modal prompt where for early image encoder layers
+early layers of image encoder,visual prompt,In the early layers
+visual prompt,image encoder,The visual prompt influences the encoding of images in the early layers of the image encoder.
+later layers of image encoder,independent prompt,Each layer has an independent prompt to capture different visual and semantic features.
+independent prompt,layer-specific features,These prompts allow each layer to extract unique visual and semantic aspects of the image.
+loss function,contrastive loss,The method uses a contrastive loss function to align image and text representations.
+contrastive loss,image-text representation alignment,It helps to match the representations of source domain data in both modalities.
+prompt-based distribution alignment (pda),proposed method,PDA is the overall approach described
+clip (cross-modal pre-trained model),text features,CLIP is used to obtain text features from the source domain by producing confidence scores in a zero-shot setting.
+clip (cross-modal pre-trained model),image features,CLIP also generates image features from both source and target domains
+source domain,feature bank (source),The source domain's feature bank consists of visual features from top-C confident images per class
+target domain,feature bank (target),Similarly
+weight-shared projector layer (fpre),image feature (ˆz),fpre is applied to transform the image feature into a query for further processing.
+weight-shared projector layer (fpre),source-domain feature bank (zsc),fpre converts the source-domain feature bank into keys (Ksc) for interaction.
+weight-shared projector layer (fpre),target-domain feature bank (ztc),fpre also converts the target-domain feature bank into values (Vsc) for interaction.
+feature banks (source and target),image-guided feature tuning (ift),IFT uses these feature banks to enhance image features across domains.
+domain feature bank,target-domain feature bank,The context discusses the relationship between 'domain feature bank' and 'target-domain feature bank'
+query,key,In the equation (4)
+value,query,Similarly
+image feature,source-domain feature bank,The image feature attends to both 'source-domain feature bank' and 'target-domain feature bank'
+image feature,target-domain feature bank,This relationship also exists between the image feature and 'target-domain feature bank'.
+softmax,feature transformation,Softmax is used for transforming the attended features into 'feature banks'
+projector,image representation,Both 'projector' (fpost) and 'image representation' (zsa
+add and norm module,visual feature,The 'add and norm module' combines with the original visual feature
+contrastive loss function,image representations,The 'contrastive loss function' is used to align the image representations
+image representations,feature banks,Image representations are aligned with both source- and target-domain feature banks
+prompt tuning,methods,The text compares various 'prompt tuning methods' (like zero-shot CLIP
+office-home dataset,vit-b/16 backbone,Performance is evaluated on the 'Office-Home dataset' using a 'ViT-B/16' model as the backbone.
+office-31 dataset,vit-b/16 backbone,Similar comparison is done for the 'Office-31 dataset' with the same backbone.
+contrastive loss function,image representations,The contrastive loss function is used to align the image representations of source and target domains.
+image representations,feature banks,Both image representations and feature banks are aligned using the contrastive loss.
+ift module,augmented image representations (source domain),The IFT module generates augmented representations for the source domain.
+augmented image representations (target domain),alignment branch,Augmented representations from the target domain are used in the alignment branch for contrastive learning.
+pda method,total contrastive loss,PDA method is trained end-to-end with a total contrastive loss
+base branch,final prediction,During testing
+source domain,target domain,Experiments involve unsupervised domain adaptation between source and target domains.
+office-home dataset,office-31 dataset,Experiments are conducted on benchmark datasets Office-Home and Office-31.
+baselines,experimental setup,The paper compares its method with baselines and provides an experimental setup.
+office-home,venkateswara et al. (2017),dataset
+office-31,saenko et al. (2010),dataset
+visda-2017,peng et al. (2018),dataset
+coop,zhou et al. (2022b),baseline method
+cocoop,zhou et al. (2022a),baseline method
+vpt,jia et al. (2022),baseline method
+vp,bahng et al. (2022),baseline method
+ivlp,khattak et al. (2023),baseline method
+maple,khattak et al. (2023),baseline method
+dapl,ge et al. (2022),baseline method
+dann,ganin and lempitsky (2015),method (ResNet-based)
+jan,long et al. (2017),method (ResNet-based)
+mcd,saito et al. (2018),method (ResNet-based)
+mdd,zhang et al. (2019),method (ResNet-based)
+mcc,jin et al. (2020),method (ResNet-based)
+shot,liang,hu
+shotpda,(ours),method (ours)
+tvt,(ours),method (ours)
+ssrt,sun et al. (2022),method (ViT-based)
+deit,touvron et al. (2021),method (ViT-based)
+cdtrans,xu et al. (2022),method (ViT-based)
+sdat,rangwani et al. (2022),method (ViT-based)
+vit-b/16,dosovitskiy et al. (2021),backbone
+resnet101,vit-b/16,Both are used as backbones in the context
+resnet-based backbone,text prompt,The context mentions that a text prompt is adopted specifically for ResNet-based backbones
+vit-based backbone,multi-modal prompt,A multi-modal prompt is used for the ViT-based backbone
+clip encoder,fixed parameters,The parameters in the CLIP encoder are kept frozen during the training process.
+prompt and ift module,sgd optimizer,These components are trained using the SGD optimizer for a specified number of epochs.
+office-home dataset,visda-2017 dataset,Both datasets are used for training with different epochs (10 for Office-Home
+office-31 dataset,batch size,Training is conducted with a batch size of 32 on the Office-31 dataset.
+learning rate,cosine annealing rule,The learning rate is decayed using a cosine annealing schedule.
+maple,pda method,PDA method outperforms MaPLe on Office-Home and shows improvement in accuracy.
+pda method,zero-shot clip,PDA method achieves better performance than zero-shot CLIP
+pda method,coop,PDA method outperforms CoOp
+pda method,maple (specific tasks),On tasks like C-A and P-A
+multi-modal prompt tuning methods,single-modal prompt tuning methods,Multi-modal methods generally perform better than single-modal ones.
+prompt tuning,pda (prompt data augmentation),PDA is a type of prompt tuning method that improves the transferability of zero-shot CLIP
+pda (prompt data augmentation),zero-shot clip,PDA significantly outperforms zero-shot CLIP
+pda (prompt data augmentation),resnet50,PDA
+pda (prompt data augmentation),vit (vision transformer),With ViT as the backbone
+pda (prompt data augmentation),sota (state-of-the-art) methods,PDA consistently achieves state-of-the-art performance on Office-Home and VisDA-2017 datasets
+office-home,visda-2017,Both are benchmark datasets used for evaluating cross-domain image classification
+multi-modal interaction,pda (prompt data augmentation),PDA demonstrates superior performance due to its ability to leverage multi-modal interaction compared to unimodal methods.
+constraint losses,ablation study,Table 5 presents an ablation study on different constraint losses
+lx,lxa,lu

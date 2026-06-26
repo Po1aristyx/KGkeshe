@@ -1,0 +1,194 @@
+node_1,node_2,edge
+computer vision,ai,Computer vision and AI are key advancements enabling the growth in demand for cloud-based visual analytics.
+cloud-based visual analytics,images,"In cloud-based visual analytics, images from a low-powered edge device are transmitted to the cloud for analysis."
+"conventional codecs (jpeg, mpeg, hevc, etc.)",compression artifacts,The use of conventional codecs for compression introduces artifacts that degrade downstream analytic tasks.
+dnn,split-dnn computing,Split-DNN computing partitions a DNN into client-side and server-side portions to address the challenges of cloud-based visual analytics.
+neural networks,bottleneck units,"Bottleneck units, as low-complexity neural networks, are introduced at the split point to transform intermediate layer features for compression and transmission."
+compression,task-performance optimization,Optimizing the pipeline for compression and task-performance requires high-quality estimates of the information-theoretic rate of intermediate features.
+image analytics,heuristic approaches,"Most works on compression for image analytics use heuristic approaches to estimate the rate, resulting in suboptimal performance."
+neural rate-estimator,information-theoretic rate,A high-quality neural rate-estimator is proposed to provide accurate estimates of the information-theoretic rate for compression in image analytics.
+bottleneck output,latent representation,"The lower-dimensional bottleneck output is interpreted as a latent representation of the intermediate features, optimizing the rate-distortion problem."
+rate-distortion optimization,variational auto-encoder,The rate-distortion optimization problem is addressed through training an equivalent variational auto-encoder with an appropriate loss function.
+variational auto-encoder,loss function,The training of a variational auto-encoder involves an appropriate loss function to improve rate-distortion outcomes.
+supervised loss terms,distillation-based losses,Replacing supervised loss terms with distillation-based losses in a teacher-student framework allows for unsupervised training of bottleneck units without explicit training labels.
+method,state-of-the-art methods,The demonstrated method outperforms several state-of-the-art methods by obtaining improved task accuracy at lower bitrates on image classification and semantic segmentation tasks.
+visual analytics,computer-vision,"Visual analytics powered by computer-vision and AI are increasingly being deployed in various domains like retail, industry 4.0, security, and smart-cities."
+deep-neural networks (dnn),mobile devices,Deep-neural networks that are too complex to be implemented on low-powered mobile or client devices are being used for visual analytics.
+visual data,data-compression techniques,"Visual data captured by a mobile device is transmitted over the network to a server or the cloud, and data-compression techniques are applied to manage the data-rate."
+data compression techniques,"jpeg, bpg, h.264, h.265","Standard data compression techniques like JPEG, BPG, H.264, H.265, etc. are suboptimal for visual analytics since they optimize rate-distortion performance for human perception."
+visual analytics,rate-distortion performance,"Visual analytics is known to be suboptimal for optimizing rate-distortion performance, which is more focused on human perception rather than semantics-based analytics."
+visual analytics,semantics-based analytics,Visual analytics is suboptimal for semantics-based analytics since it optimizes rate-distortion performance based on human perception.
+task performance,compression artifacts,Task performance can degrade severely in the presence of even mild compression artifacts.
+dnn-computing,collaborative intelligence,"DNN-computing, also known as collaborative intelligence, has emerged as a recent paradigm."
+dnn-computing,neural networks,"DNN-computing involves partitioning a DNN into front-end and back-end, with specially designed neural networks like bottleneck layers introduced."
+dnn-computing,bottleneck layers,DNN-computing involves the use of bottleneck layers to transform high-dimensional intermediate features into a lower-dimensional space for greater compression.
+compression techniques,intermediate features,Early approaches to split-computing explored the use of simple lossless and lossy compression techniques to compress the intermediate features.
+intermediate features,lossless techniques,Interactions between intermediate features and lossless techniques resulted in only mild reduction in bandwidth.
+intermediate features,naively quantizing,Naively quantizing the intermediate features during inference to reduce bitrate leads to a drop in the task performance.
+ml-based image compression approaches,subsequent approaches,"Inspired by the impressive results of ML-based image compression approaches, subsequent approaches include the quantization operation in the end-to-end training of the model, yielding significantly better rate-distortion performance."
+subsequent approaches,rate-distortion performance,Approaches yield significantly better rate-distortion performance than that obtained by traditional image compression methods.
+subsequent approaches,traditional image compression methods,Approaches yield significantly better rate-distortion performance than that obtained by traditional image compression methods.
+subsequent approaches,jpeg,Approaches yield significantly better rate-distortion performance than that obtained by traditional image compression methods such as JPEG.
+subsequent approaches,heic,Approaches yield significantly better rate-distortion performance than that obtained by traditional image compression methods such as the more recent HEIC.
+parameters,dnn model,The parameters of the trained DNN model are valid only for a particular split-point and for a particular compression level.
+split-point,compression level,"Changing either the split point or the compression level requires a complete retraining of the entire model, increasing training complexity significantly."
+training data,real-world situations,Large volumes of labeled training data may not be available in real-world situations.
+large volumes,labeled training data,Key terms related to the availability of labeled training data in large volumes.
+design,train,Related terms in the context of designing and training bottleneck layers at various split points.
+method,sub-optimal formulation,Relationship between method used and its sub-optimal formulation for estimating the rate of transmitted data at the bottleneck.
+method,state-of-the-art results,Connection between the method and its achievement of state-of-the-art results despite simplifications.
+method,unsupervised training,Linking the method with exploring unsupervised training and distillation-based approaches.
+approach,split dnn computing,Revealing the approach of splitting DNN computing for image analytics and addressing challenges.
+bottleneck layers,weights,Relationship between bottleneck layers and training only the weights of the bottleneck layer.
+rate-loss,neural rate-estimator,Connection between rate-loss and using a neural rate-estimator with variational inference methods.
+rate-loss,neural rate-estimator,"The rate-loss is reduced by using a neural rate-estimator with methods of variational inference, resulting in large reductions in bit-rate without sacrificing task accuracy."
+rate-loss,large re-ductions in bit-rate,The use of a neural rate-estimator with variational inference methods leads to large reductions in bit-rate for the task accuracy.
+neural rate-estimator,variational inference,The neural rate-estimator utilizes variational inference methods to achieve reductions in bit-rate without compromising task accuracy.
+rate-loss,unsupervised training,A distillation-based approach allows for unsupervised training of the bottleneck layers to address the lack of a supervisory signal and potential drop in rate-distortion performance.
+supervised training,rate-distortion performance,"While lack of a supervisory signal may impact rate-distortion performance, the method still outperforms other published methods through supervised training."
+rate-distortion performance,methods,The method outperforms other published methods in rate-distortion performance even without a supervisory signal.
+rate-distortion optimization,compression,Connecting rate-distortion optimization for compression with training an equivalent VAE shows the relationship between the two concepts.
+rate-distortion optimization,vae,The connection between rate-distortion optimization for compression and variational autoencoders (VAE) is explored in multiple works.
+rate-distortion objective,loss function,The rate-distortion objective of lossy compression is related to the loss function of variational autoencoders (VAE) in various works.
+convolutional encoder network,image vector,The convolutional encoder network ga(x; ϕg) transforms the image vector x into a continuous latent representation y.
+continuous latent representation,discrete variable,The continuous latent representation y is quantized to a discrete variable ˆy.
+discrete variable,entropy-coded,The discrete variable ˆy is entropy-coded and transmitted.
+decoder,discrete variable,"The decoder recovers ˆy, and obtains a lossy image reconstruction via a deconvolutional neural network gs(ˆy; θg)."
+weights,dnns,θg and ϕg are the weights of the corresponding DNNs.
+quantization,non-differentiable operation,Quantization involved in the process is a non-differentiable operation.
+optimization problem,variational autoencoder,The relaxed optimization problem is represented as a variational autoencoder.
+dependencies,observed,In order to capture the dependencies that were observed.
+hyperprior network,bottleneck module,Architecture of the hyperprior-network used at the output of the bottleneck module for estimation of the rate-loss term Lr.
+hyperprior network,not used during inference,"Hyperprior network is not used during inference, only bottleneck module is present."
+hyperprior network,present only during training,Note that the hyperprior network is present only during training.
+hyperlatents,elements of y,There exists dependencies between hyperlatents and elements of y as hyperlatents were introduced to capture the dependencies observed to exist between elements of y.
+z,ha(y;ϕh),The inference model was extended using a DNN ha with weights ϕh such that z = ha(y; ϕh).
+relaxed rate-distortion objective,rate and distortion,"The relaxed rate-distortion objective is given by the sum of the rate of hyper-latents and latents, and the distortion."
+bottleneck units,datta et al.,The design and training of bottleneck units follow the approach of Datta et al.
+neural architecture search (nas),architectural hyper-parameters and training hyper-parameters,"Inspired by methods in NAS, the procedure involves exploring architectural hyper-parameters and training hyper-parameters."
+neck encoder,hyper-parameters,"The neck encoder mentioned in the context is associated with hyper-parameters, particularly the number of channels and stride of convolutional kernels used. These hyper-parameters are crucial in the bottleneck encoder design."
+training hyper-parameter space,weight (lagrange multipliers),The training hyper-parameter space includes variables such as weight (Lagrange multipliers) λ in the training loss function. This weight parameter plays a significant role in training the bottleneck unit.
+training hyper-parameter space,quantization step size,"Within the training hyper-parameter space, the quantization step size, Q, is utilized to discretize the latent space. This step size affects the training process of the bottleneck unit."
+training,bottleneck unit,"During training, a bottleneck unit is utilized with fixed topology and specific hyper-parameters for training. This training process focuses on adjusting the weights of the bottleneck unit without impacting the original network weights."
+bottleneck layer,accuracy and bit-rate,The bottleneck layer is evaluated based on its accuracy and the bit-rate required to transmit compressed features. This evaluation helps in determining the effectiveness of the bottleneck layer in achieving desired performance metrics.
+pareto optimal set of points,trained bottleneck,"The Pareto optimal set of points is derived from the trained bottleneck candidates. These points represent the solutions that achieve the best trade-off between accuracy and bit-rate, making them highly efficient in the context of bottleneck design."
+pareto frontier,trained bottleneck layers,The points lying on the Pareto frontier correspond to the set of trained bottleneck layers that yield the optimal accuracy vs compression performance.
+bottleneck layers,compression performance,The trained bottleneck layers yield the optimal accuracy vs compression performance.
+split dnn architecture,intermediate features,"In the split DNN architecture, the intermediate features from the final layer at the front-end are compressed and transmitted to the back-end."
+bottleneck unit,split point,A specially designed bottleneck unit is introduced at the split point.
+bottleneck encoder,bottleneck decoder,"The bottleneck encoder transforms the output of the front-end into a lower-dimensional space more suited for compression, and the bottleneck decoder restores the lower-dimensional features into the original higher dimensional space."
+output,front-end,The output of the front-end is transformed by the bottleneck encoder.
+output,lower-dimensional space,The output of the front-end is transformed by the bottleneck encoder into a lower-dimensional space more suited for compression.
+front-end,client,The front-end resides at the client.
+client,bottleneck encoder,The bottleneck encoder resides at the client.
+output,encoder,The output of the front-end is transformed by the bottleneck encoder.
+quantizer,transmitted,"The outputs of this encoder are discretized (quantized) by a uniform quantizer of step-size Q, entropy-coded, and transmitted to the server or cloud where the back-end resides."
+back-end,server,The outputs are transmitted to the server or cloud where the back-end resides.
+entropy decoding,inverse quantization,"Following entropy decoding and inverse quantization, the lower-dimensional features are restored into the original higher dimensional space."
+bottleneck layers,task-performance,The objective is to design and train the bottleneck layers to jointly optimize for task-performance and compression.
+task-performance,compression,The bottleneck layers are designed and trained to jointly optimize for task-performance and compression.
+bottleneck layers,procedure,The procedure outlined in section 2.2 is followed to design and train the bottleneck layers.
+architectural hyper-parameters,bottleneck encoder,The bottleneck encoder is defined in the joint space of architectural and training hyper-parameters.
+training loss function,training hyper-parameters,An appropriate training loss function is defined in the joint space of architectural and training hyper-parameters.
+bottleneck encoder,neural network layer,The bottleneck encoder is modeled as a single neural network layer to keep computational complexity low.
+bottleneck encoder,depthwise-separable topology,"For the bottleneck encoder, a depthwise-separable topology was selected as it has the fewest parameters and lowest computational complexity."
+training loss,task-loss,The model is trained with a loss function where the task-loss term is used to maximize task performance.
+training loss,rate-loss term,The training loss function includes a rate-loss term to minimize the bit-rate of the encoded data.
+task-loss,rate-loss term,Equation (2) represents a form of rate-distortion objective with the distortion-term being replaced by the task-loss and rate-loss term.
+loss functions,quantization,Loss functions such as cross-entropy are used for classification and segmentation tasks after quantization of feature values. The rate for quantized alphabet is lower-bounded by the entropy of the probability distribution.
+loss functions,variational inference,"An approach based on variational inference is presented as a way to train the bottleneck and learn a neural rate-estimator from training data, instead of using proxies like ℓ2-norm or ℓ1-norm."
+rate-estimator,variational formulation,"Variational methods are used to learn an entropy model from data, primarily explored in the context of image compression for reconstruction."
+image compression,reconstruction,The approach presented in the context is based on image compression for reconstruction
+latent representations,image analytics,The approach aims to compress latent representations for image analytics
+varational model,fig. 1,The varational model shown in Fig. 1 is considered for the compression
+x,intermediate layer,x represents the tensor output of the intermediate layer
+y,bottleneck encoder,y is the latent representation at the output of the bottleneck encoder
+quantization,entropy-coding,"y is quantized to ˆy, which is then entropy-coded and transmitted"
+decoder,lossy reconstruction,The decoder recovers ˆy and obtains a lossy reconstruction
+parameter range,search space exploration,Table 1 shows Parameters and their ranges for search space exploration
+classification,resnet50,Classification parameters are provided for Resnet50
+segmentation,deeplab v3,Segmentation provided for DeepLab v3
+hyperlatent,hyperprior encoder,The model is extended by adding hyperlatent with a corresponding hyperprior encoder
+rate measurement,rate-loss term,Rate is measured by the rate-loss term in Eq. (2)
+hyperprior encoder,eq. 1,The architecture of the hyperprior encoder is related to Eq. 1
+architecture,hyperprior encoder,The architecture of the hyperprior encoder comprises two convolutional layers with ReLu activations.
+hyperprior encoder,convolutional layers,The hyperprior encoder comprises two convolutional layers with ReLu activations.
+hyperprior encoder,decoder,The hyperprior decoder is the mirror of the encoder using transpose convolutions.
+hyperprior models,rate estimation,These hyperprior models help improve the rate estimation.
+separate set,hyperprior encoder,"However, a separate set of hyperprior encoder and decoder has to be trained for each separate compression level."
+pipeline,hyperprior models,Including them in the overall pipeline would lead to the same limitations of other methods.
+network weights,bit-rate,Having to reload a large set of network weights everytime the bit-rate is to be changed can be cumbersome.
+training,complexity,This increases training complexity somewhat compared to training only the bottleneck layers.
+training,inference,No overhead is introduced during inference.
+variable bit-rate operation,adaptive splitting,The benefits of being able to efficiently support variable bit-rate operation and adaptive splitting are retained.
+unsupervised training,bottleneck units,A method to train the bottleneck units in an unsupervised manner when access to only unlabeled training data is available is presented.
+bottleneck units,unsupervised manner,Bottleneck units are trained in an unsupervised manner
+unsupervised manner,unlabeled training data,Training of bottleneck units is done in an unsupervised manner when only unlabeled training data is available
+student-teacher paradigm,knowledge-distillation,Adoption of student-teacher paradigm from literature on knowledge-distillation framework
+knowledge-distillation,kd framework,Knowledge distillation is part of the KD framework
+teacher network,original task network,The teacher network in this scenario is the original task network without any split points or bottleneck units
+supervisory task-loss,distillation-loss,"Instead of using a supervisory task-loss, a distillation-loss is used obtained by matching features from the same layer in both teacher and student networks"
+downstream layer,feature matching,Features from the same layer in both teacher and student networks are matched downstream from the split point
+layer choice,effects,Effects of layer choice are explored in recent work
+matching features,deeper layers,Matching features from deeper layers is preferable in the sense of rate-distortion
+rate-distortion,empirical verification,The result of matching features from deeper layers and its relation to rate-distortion is empirically verified
+accuracy,compression level,"Accuracy vs compression level plots show how the performance of the model changes with different levels of compression, measured in bits-per-pixel. There is a clear trend of improved accuracy as downstream layers are selected."
+features,layers,"Features are matched from different layers of the neural network. The fully-connected layer is the final layer, followed by the avg-pool layer, layer 4.2, layer 4.1, and layer 4.0 in sequence."
+experimental approach,analytic tasks,"The experimental approach is tested on two analytic tasks: image classification and semantic segmentation. Image classification is tested on the ImageNet dataset using a Resnet50 model, while semantic segmentation is tested on the MS-COCO 2017 dataset using a DeepLab v3 model."
+dnn models,image resolution,"Different DNN models are used for image classification and semantic segmentation tasks. The images are scaled to different resolutions for each task, 224x224 for classification and 513x513 for segmentation."
+training parameters,supplementary material,Details about the training parameters such as learning rates and schedulers are provided in the supplementary material for further reference by the interested reader.
+hyper-parameter search-space procedure,bottleneck units,The hyper-parameter search-space procedure outlined in section 2.2 is followed to train the bottleneck units for various compression levels and derive the Pareto optimal curve of the task at the given split point.
+bottleneck units,compression levels,The bottleneck units are trained for various compression levels to derive the Pareto optimal curve of the task-accuracy metric against the compression level.
+bottleneck units,task-accuracy metric,The bottleneck units are trained to derive the Pareto optimal curve of the task-accuracy metric against the compression level.
+compression levels,task-accuracy metric,The bottleneck units are trained for various compression levels to derive the Pareto optimal curve of the task-accuracy metric against the compression level.
+hyper-2code,results,The hyper-2Code is used to reproduce the results available at https://github.com/intellabs/spic
+results,https://github.com/intellabs/spic,The results can be reproduced using the hyper-2Code provided at the given GitHub link.
+method,bit-rates,Our method achieves significantly lower bit-rates compared to other methods at similar accuracy levels for all splits.
+bit-rates,accuracy levels,Our method achieves significantly lower bit-rates compared to other methods at similar accuracy levels for all splits.
+method,miou levels,"Our method achieves significantly lower bit-rates compared to other methods at similar mIOU levels for all splits (S1 to S3), and also slightly higher peak mIOU."
+miou levels,peak miou,"Our method achieves significantly lower bit-rates compared to other methods at similar mIOU levels for all splits, and also slightly higher peak mIOU."
+method,imagenet classification,Improvement on ImageNet classification is achieved by using neural compression for three different split points.
+neural compression,split points,Improvement on ImageNet classification is achieved by using neural compression for three different split points.
+parameters,search,"The parameters involved in our search are (S, Cr, λ, Q) as described in Section 3."
+parameters,ranges,"The ranges of values used for the parameters (S, Cr, λ, Q) are described in Table 1."
+table 1,supervised training,The table describes the ranges used for supervised training as indicated by 'S'.
+table 1,unsupervised training,The table describes the ranges used for unsupervised training as indicated by 'US'.
+classification,metric,"For classification, the metric is simply the classification accuracy."
+segmentation,metric,"For segmentation, the metric is the Jaccard index as measured by the mean intersection-over-union (mIOU)."
+compression level,bits-per-pixel,The compression level is represented by bits-per-pixel (bpp).
+bits-per-pixel,information,The bits-per-pixel is the number of bits of information that needs to be transmitted divided by.
+pixel,bpp,"Pixels (bpp) in an input image are related to the concept of pixel, as bpp indicates the number of bits of information that needs to be transmitted divided by the number of pixels."
+neural compression,bottleneck layers,"Neural compression uses bottleneck layers, either with a supervised task-loss term or an unsupervised distillation loss."
+neural compression,jpeg,Neural compression is compared against standard image compression algorithms like JPEG and HEIC.
+neural compression,entropic student,Neural compression is benchmarked against ML-based image compression methods like the Entropic Student and variational image compression.
+neural compression,variable bit-rate split-dnn method,Neural compression method is compared against the variable bit-rate split-DNN method.
+neural compression,neural rate-estimator,"Neural compression approach involves using a neural rate-estimator, which outperforms the ℓ1-norm rate estimator, as shown in the results for classification and segmentation tasks."
+estimator,ℓ1-norm rate estimator,estimator outperforms the ℓ1-norm rate estimator across the entire curve for all split points
+estimator,higher peak accuracy,it also achieves higher peak accuracy in the classification task
+estimator,peak miou,it achieve higher peak mIOU than original pretrained Deeplab-v3 model
+estimator,split points,our method outperforms these baselines by large margins at all split points
+estimator,task accuracy level,"for a given task accuracy level, the bit-rate of our method is often orders of magnitude"
+accuracy-bpp curve,supervised (s) loss,Accuracy-BPP curve using supervised (S) loss
+accuracy-bpp curve,unsupervised (us) loss,Accuracy-BPP curve using unsupervised (US) loss
+miou-bpp curve,supervised (s) loss,mIOU-BPP curve using supervised (S) loss
+miou-bpp curve,unsupervised (us) loss,mIOU-BPP curve using unsupervised (US) loss
+bpp curve,unsuperivsed (us) training,Accuracy-BPP curves using unsuperivsed (US) training for our method
+bottleneck layers,unsupervised manner,results when the bottleneck layers are trained in an unsupervised manner
+downstream layer,last layer,"use the most downstream layer, i.e. the last layer in the model for performing feature matching"
+mae loss,feature matching,using MAE loss for distil
+mse,performance,found no difference in performance
+mae loss,distillation,MAE loss was used for distillation in the network with no difference in performance.
+unsupervised loss,supervised method,Using an unsupervised loss resulted in a drop in performance compared to the supervised method.
+our method,unsupervised training,The method with unsupervised training still outperforms state-of-the-art methods.
+bottleneck unit,split-dnn pipeline,Introduction of the bottleneck unit into the split-DNN pipeline increased the total compute involved.
+overhead,bottleneck layers,The overhead of bottleneck layers was considered in relation to the computational performance.
+bottleneck encoder,bottleneck decoder,"The bottleneck decoder is a mirror image of the encoder, forming an essential part of the overall architecture."
+bottleneck encoder,topologies,Different topologies of varying computational complexities are explored for the bottleneck encoder.
+bottleneck encoder,accuracy,Table 3 shows the best accuracy attained by different bottleneck encoder topologies.
+bottleneck encoder,bottleneck topologies,"Despite significant differences in computational capabilities, the task performance does not vary significantly between various bottleneck topologies."
+bottleneck encoder,complexity,Table 4 shows the complexity of the bottleneck unit introduced relative to the complexity of different options considered.
+complexity,bottleneck unit,"The table shows the complexity of the bottleneck unit introduced relative to the complexity of the original DNN, demonstrating the efficiency of the approach."
+approach,split-computing models,The approach presented enhances the performance of split-computing models for image analytics.
+rate-function,neural rate-estimator,Improved modeling of the rate-function via a neural rate-estimator improves the rate-distortion performance.
+framework,unsupervised training,The framework can easily be extended for unsupervised training of bottleneck layers by replacing a supervisory loss with a distillation-based loss.
+models,custom data,Training bottleneck layers with different unlabeled datasets can be useful when deploying models pretrained on standard image datasets in scenarios involving application-specific custom data.

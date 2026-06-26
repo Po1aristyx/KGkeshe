@@ -1,0 +1,184 @@
+node_1,node_2,edge
+neural preset technique,limitations of existing color style transfer methods,"Neural Preset technique is introduced to address the limitations of existing color style transfer methods, including visual artifacts, vast memory requirement, and slow style switching speed."
+neural preset technique,deterministic neural color mapping (dncm),"Neural Preset technique is based on Deterministic Neural Color Mapping (DNCM) to consistently operate on each pixel via an image-adaptive color mapping matrix, avoiding artifacts and supporting high-resolution inputs with a small memory footprint."
+neural preset technique,two-stage pipeline,"Neural Preset technique has a two-stage pipeline dividing the task into color normalization and stylization, allowing efficient style switching by extracting color styles as presets and reusing them on normalized input images."
+neural preset technique,pairwise datasets,Neural Preset technique describes training via a self-supervised strategy due to the unavailability of pairwise datasets.
+neural preset technique,various advantages over existing methods,Neural Preset technique demonstrates various advantages over existing methods through comprehensive evaluations.
+neural preset technique,trained model,"Neural Preset technique shows that the trained model can naturally support multiple applications without fine-tuning, including low-light image enhancement, underwater image correction, image dehazing, and image harmonization."
+color retouching,sharing photos,Color retouching becomes an indispensable operation before sharing photos in public to help express the story captured on social media platforms like Instagram and Facebook.
+color retouching,image filters,"Color retouching is an operation that enhances the visual appearance of images, while image filters are presets provided by photo editing tools to alter the colors in images."
+image filters,look-up tables (luts),Image filters and Look-Up Tables (LUTs) are both color style presets provided by photo editing tools to assist users in exploring different color styles efficiently.
+color style transfer techniques,color style,"Color style transfer techniques aim to automatically transfer the color style from one retouched image to another image, enhancing the visual appeal of the latter."
+color style transfer techniques,well-retouched image,"Color style transfer techniques utilize a well-retouched image as the style image to map the color style to another input image, ensuring consistent color styles across diverse images."
+color style transfer methods,low-level feature statistics,"Earlier color style transfer methods focus on retouching images based on low-level feature statistics from the style image, which sometimes results in unexpected color changes due to neglecting high-level information."
+deep learning based models,color mapping,Deep learning based models for color style transfer often suffer from producing unrealistic artifacts in the stylized image due to color mapping based on convolutional models.
+convolutional models,color mapping,"Convolutional models perform color mapping based on an image patch, which may lead to inconsistent outputs for pixels with the same value"
+convolutional models,artifacts,Convolutional models still fail to prevent artifacts robustly despite the proposal of auxiliary constraints and post-processing strategies
+convolutional models,high-resolution images,Convolutional models cannot handle high-resolution images like 8K due to their huge runtime memory footprint
+gpu,models,"Even using a GPU with 24GB of memory, most recent models suffer from the out-of-memory problem when processing 4K images"
+color style transfer,single-stage process,"Color style transfer carried out as a single-stage process in most models requires running the whole model every time, making it inefficient in switching styles"
+neural preset technique,limitations,Neural Preset technique is presented with two core designs to overcome the limitations related to convolutional models and high-resolution images
+neural preset technique,deterministic neural color mapping (dncm),Neural Preset leverages Deterministic Neural Color Mapping (DNCM) as an alternative to the color mapping process based on convolutional models for more effective color conversion
+deterministic neural color mapping (dncm),unrealistic artifacts,"DNCM converts pixels of the same color to a specific color, avoiding unrealistic artifacts effectively"
+deterministic neural color mapping (dncm),high-resolution inputs,"DNCM operates on each pixel independently with a small memory footprint, supporting very high-resolution inputs"
+deterministic neural color mapping (dncm),arbitrary color map,"Unlike adaptive 3D LUTs or automatic filters, DNCM can model arbitrary color mapping"
+dncm,color mappings,DNCM can model arbitrary color mappings with only a few hundred learnable parameters.
+color style transfer,style switching,Neural Preset carries out color style transfer in two stages to enable fast style switching.
+ndncm,color normalization,The first stage builds a nDNCM from the input image for color normalization.
+sdncm,color stylization,The second stage builds a sDNCM from the style image for color stylization.
+color style presets,input images,The parameters of sDNCM can be stored as color style presets and reused by different input images.
+neural preset,self-supervised strategy,"Since there are no pairwise datasets available, we propose a new self-supervised strategy for Neural Preset to be trainable."
+neural preset,state-of-the-art methods,Our comprehensive evaluations demonstrate that Neural Preset outperforms state-of-the-art methods significantly in various aspects.
+neural preset,8k images,Neural Preset can produce faithful results for 8K images and can provide consistent color style transfer results across video frames without post-processing.
+neural preset,nvidia rtx3090 gpu,"Neural Preset achieves ∼28× speedup on a Nvidia RTX3090 GPU, supporting real-time performances at 4K resolution."
+nvidia rtx3090 gpu,real-time performances at 4k resolution,"The Nvidia RTX3090 GPU provides a 28x speedup, enabling real-time performances at 4K resolution."
+trained model,color mapping tasks,"The trained model can be applied to various color mapping tasks without the need for fine-tuning, such as low-light image enhancement, underwater image correction, image dehazing, and image harmonization."
+color style transfer,artistic style transfer,"Color Style Transfer differs from artistic style transfer, as it focuses on shifting colors only between images instead of altering both textures and colors."
+traditional methods,match statistics of low-level features,"Traditional methods typically match the statistics of low-level features, such as mean and variance of images or histograms of filter responses."
+methods exploiting convolutional neural networks (cnns),proposed for color style transfer,Many methods that utilize convolutional neural networks have been proposed for color style transfer to improve the process.
+yoo et al.,model with wavelet pooling/unpooling,Yoo et al. introduced a model featuring wavelet pooling/unpooling to minimize distortions during the color style transfer process.
+an et al.,network architecture search,An et al. utilized network architecture search to explore a more effective asymmetric model for color style transfer.
+chiu et al.,block-wise training with a coarse-to-fine transformation,Chiu et al. proposed a method that involves block-wise training with a coarse-to-fine transformation to achieve a more compact model for color style transfer.
+neural preset,limitation,"Neural Preset is presented to address the limitations of visual artifacts, huge memory consumption, and inefficient style switching mentioned in Sec. 1."
+neural preset,artifact-free color style transfer,Neural Preset supports artifact-free color style transfer with only a small memory footprint.
+neural preset,dncm,Neural Preset enables fast style switching via a two-stage pipeline with DNCM.
+deterministic color mapping with cnns,filters and luts,Filters and LUTs perform deterministic color mapping to produce consistent outputs for the same input pixel values.
+filters and luts,image filters,Filter-based methods integrate a finite number of image filters for basic color adjustments such as brightness and contrast.
+filters and luts,luts,LUT-based methods merge several template LUTs using predicted coefficients due to the large number of learnable parameters.
+filters and luts,cnns,Recent image enhancement methods have used filters/LUTs combined with CNNs for color mapping with some drawbacks.
+cnns,filters/luts,Combining filters/LUTs with CNNs for color mapping has clear drawbacks according to the mentioned methods.
+affine bilateral grid,color style transfer,"The affine bilateral grid may model complex color mapping with fewer learnable parameters but cannot provide deterministic color mapping, potentially leading to inharmonious colors in different image regions."
+dncm,proposed schemes,DNCM is proposed as an alternative to the aforementioned schemes for color style transfer.
+dncm,self-supervised learning (ssl),"DNCM is proposed instead of adopting other schemes, and it is used for color mapping which is related to SSL as SSL has been widely explored for pre-training and some works solve vision tasks via SSL."
+dncmap color mapping,image features,DNCM is used for color mapping and matches the statistics of image features.
+self-supervised learning (ssl),neural preset,A new SSL strategy is presented for Neural Preset which learns from reconstructing perturbed images and enables trained models to transfer color styles between arbitrary images.
+neural preset,color style transfer,Neural Preset performs color style transfer
+neural preset,dncm,Both stages of the color style transfer pipeline employ DNCM for color mapping
+color mapping,dncm,DNCM is used for color mapping
+color style transfer,dncm,DNCM is used for color style transfer
+dncm,neural preset,DNCM is described as a model for arbitrary deterministic color mapping with fewer learnable parameters compared to Neural Preset
+neural preset,self-supervised learning strategy,Neural Preset is mentioned in the context as part of the description of the self-supervised learning strategy
+image filter,finite number of filters,The integration of a finite number of image filters can cover only a limited range of color mappings
+32-level 3d lut,image-specific 3d luts,Common 32-level 3D LUTs have around 10K parameters making it infeasible to regress image-specific 3D LUTs
+template luts,coefficients,The approach based on predicting coefficients to merge template LUTs requires optimization of tens of thousands of parameters
+input image,encoder e,The input image is downsampled to obtain a thumbnail image ˜I which is fed into encoder E to predict the color mapping matrix T for DNCM
+dncm,colors,"DNCM is a method that alters the colors of an image, as described in the context."
+i,2d matrix,"I is unfolded as a 2D matrix of size (h × w, 3) in the process described."
+pixel,k-dimensional vector,Each pixel in I is embedded into a k-dimensional vector by a projection.
+dncm,input image,"DNCM maps the input image I to output image Y by multiplying I with color projection matrices P, T, and Q sequentially."
+image-adaptive parameters,t,Image-adaptive parameters T are predicted by an encoder E and used in the mapping process described.
+dncm,non-linear transformation,"DNCM is defined as a non-linear transformation in the context, involving matrix multiplications and tanh functions."
+matrix multiplications,efficient,Matrix multiplications are mentioned in the context as being efficient.
+matrix multiplications,e(),Matrix multiplications are related to the optimization process of E().
+image-adaptive parameters,k × k,Image-adaptive parameters are related to the k × k matrix.
+methods,cnns,Recent methods embed the color style transfer into Convolutional Neural Networks (CNNs).
+color style transfer,cnns,Color style transfer is implicitly embedded into CNNs according to recent methods.
+pipeline,image color style,The pipeline is designed to separate the color style of an image from its 'image content'.
+pipeline,dncm,The pipeline is based on DNCM.
+color style parameters,style image,Color style parameters are extracted from the style image according to the pipeline design.
+image,color style parameters,The image is converted to an image in the normalized color style space using color style parameters.
+color style parameters,style switching,Color style parameters support fast style switching.
+ndncm,sdncm,"nDNCM and sDNCM are proposed to be used together in the context to achieve the tasks of converting input images to a space containing 'image content' and transferring 'image content' to target color style, respectively."
+image content,normalized color style space,"The concept of 'image content' is proposed to be represented in a normalized color style space by learning through back-propagation, where images with the same content but different color styles should have a consistent appearance."
+encoder e,ndncm and sdncm,"The encoder E is modified to output parameters d and r, which are used in nDNCM and sDNCM, respectively, for converting input images to 'image content' space and transferring 'image content' to target color style."
+style image is,input image ic,The color style of a style image Is is transferred to an input image Ic through the stages of converting Ic to Zc in a normalized color space via nDNCM and then transferring Zc to a stylized image Ys via sDNCM.
+projection matrices p and q,ndncm and sdncm,"nDNCM and sDNCM are associated with different projection matrices P and Q, respectively, indicating separate functionalities in the context."
+"color style parameters (e.g., rs)",sdncm,"Color style parameters like rs are stored as presets and reused for constructing sDNCM, enabling the pipeline to support efficient processing."
+pipeline,sdncm,sDNCM is used in the pipeline to support fast style switching using color style presets
+pipeline,style switching,The pipeline supports fast style switching
+pipeline,normalize,The pipeline aims to normalize the color style of input images
+pipeline,self-supervised training strategy,The pipeline involves a Self-Supervised Training Strategy for Neural Preset
+pipeline,presets,Presets are stored in the pipeline for quick retouching to diverse color styles
+sdncm,color style presets,sDNCM uses color style presets for fast style switching
+self-supervised training strategy,neural preset,A self-supervised strategy is developed to train Neural Preset
+self-supervised training strategy,pseudo stylized images,Pseudo stylized images are created from the input image in the Self-Supervised Training Strategy
+neural preset,ground truth stylized images,No ground truth stylized images are available for training Neural Preset
+ground truth stylized images,pseudo stylized images,Pseudo stylized images are created from the input image instead of using ground truth stylized images
+color style,consistent,Input images with different color styles should be consistent in the normalized color style space
+l2 consistency loss,ndncm parameters,The L2 consistency loss is applied between the outputs of the stage to predict the nDNCM parameters di/dj to transfer Ii/Ij to Zi/Zj.
+sdncm parameters,predicted parameters r,"The predicted sDNCM parameters r are swapped to stylize the normalized images, with Zi being stylized by rj and Zj by ri."
+l1 reconstruction loss,color style transfer,A L1 reconstruction loss is applied between the input images and the stylized images Y to learn color style transfer.
+final loss,combination of lrec and lcon,The final loss is a combination of the L1 reconstruction loss (Lrec) and the L2 consistency loss (Lcon) with a controllable weight λ.
+neural preset,color style transfer methods,Neural Preset is compared with existing color style transfer methods in terms of performance.
+ms coco dataset,lut files,"The model is trained on images from the MS COCO dataset using about 5,000 LUT files."
+ms coco dataset,lut files,"MS COCO dataset utilizes about 5,000 LUT files for processing."
+ms coco dataset,color perturbations,MS COCO dataset involves using color perturbations as input during training.
+images,color styles,Images with diverse color styles are paired together to build a validation set.
+efficientnet-b0,neural preset,EfficientNet-B0 is adopted as the encoder E in Neural Preset.
+neural preset,adam optimizer,Neural Preset is trained using the Adam optimizer for 32 epochs.
+quantitative metrics,color style transfer quality,Quantitative metrics are used to evaluate color style transfer quality in terms of style and content similarity.
+vgg features,gram metric,VGG features are utilized to compute the Gram metric for style similarity measure.
+vgg features,imagenet,VGG features are learned from ImageNet to compute the Gram metric.
+style similarity,semantic bias,The accuracy of style similarity may be affected by semantic bias.
+disriminator model,annotated dataset,The discriminator model is trained on the annotated dataset to predict color style similarity score.
+color style categories,human experts,The annotated dataset contains color style categories retouched by human experts.
+ssim metric,edge detection model hed,Prior works use the SSIM metric based on edges extracted by the HED model.
+hed model,ldc model,The HED model is replaced by the LDC model for more accurate edge prediction.
+neural preset,deep learning based methods,"Neural Preset is compared with deep learning based methods such as PhotoWCT, WCT2, etc."
+neural preset,traditional method ct,Neural Preset is also compared with the traditional method CT.
+pre-trained models,authors,The pre-trained models are evaluated based on the authors' releases.
+neural preset,natual stylized images,Neural Preset produces more natural stylized images as shown in Figure 5.
+neural preset,fine textures,Neural Preset can preserve fine textures in the stylized images.
+neural preset,fine textures,Neural Preset can preserve fine textures with target color styles.
+neural preset,inherent object colors,Neural Preset is better at maintaining the inherent object colors.
+neural preset,consistency with style images,The outputs of Neural Preset have more consistent color properties with the style images.
+photowct2,color styles of reference images,PhotoWCT2 tends to overfit the color styles of the reference images.
+deep preset,color style of input images,Deep Preset often fails to alter the color style of input images.
+object,color,Objects in the context are associated with maintaining their inherent colors
+color,style images,Color properties are provided more consistent with style images
+method,user study,Results from the method are largely preferred by users according to the user study
+wct2,images,WCT2 can only handle images of FHD resolution
+neural preset,speedup,Neural Preset achieves nearly 28× speedup compared to PhotoWCT2 on 2K images
+neural preset,inference time,Neural Preset enables real-time inference at 4K resolution and can handle 8K resolution images at over 16 fps
+neural preset,memory,"Neural Preset requires only 1.96GB of memory, irrespective of the image resolution"
+preset,neural preset,Preset and Neural Preset are different types of presets used for editing images. Neural Preset is highlighted as having the lowest number of parameters.
+neural preset,filters and luts,Neural Preset is compared with Filters and LUTs in the context of image processing after manual retouching. Filters and LUTs are mentioned as formats for storing editing parameters.
+neural preset,deep preset,Neural Preset and Deep Preset are different types of presets used for image processing. Deep Preset is listed alongside other methods like PhotoWCT and PhotoNAS.
+filters and luts,methodphotowct [34],Filters and LUTs are compared with the method called MethodPhotoWCT [34] in the context of processing image sets automatically.
+photowct,photonas,"PhotoWCT and PhotoNAS are methods compared in terms of their ranking. PhotoWCT has an average ranking of 34, while PhotoNAS has a ranking of 1."
+photowct,photowct2,PhotoWCT and PhotoWCT2 are different versions or iterations of the same method or algorithm.
+photowct,deep preset,PhotoWCT and Deep Preset are related concepts in the context of image processing or editing.
+photowct,table 2,"PhotoWCT is mentioned in Table 2 in the comparison of GPU inference time, memory, and model size."
+photowct,neural preset,PhotoWCT and Neural Preset are related in terms of inference time and memory cost with different DNCM input patch sizes.
+photonas,deep preset,PhotoNAS is related to Deep Preset as both are mentioned in the context of image processing or editing.
+photonas,table 2,"PhotoNAS is mentioned in Table 2 in the comparison of GPU inference time, memory, and model size."
+photonas,neural preset,PhotoNAS and Neural Preset are related in terms of inference time and memory cost with different DNCM input patch sizes.
+deep preset,table 2,"Deep Preset is mentioned in Table 2 in the comparison of GPU inference time, memory, and model size."
+deep preset,neural preset,Deep Preset and Neural Preset are related concepts in the context of image processing or editing.
+stage pipeline,two cnns,"The stage pipeline is constructed via two CNNs, specifically two autoencoders [44]."
+stage pipeline,ssl training,"The stage pipeline affects our SSL training, causing it to converge to a trivial solution."
+stage pipeline,dncm,Applying DNCM can help avoid the trivial solution that the stage pipeline could converge to.
+dncm,cnn color mapping,DNCM is compared with CNN for color mapping and is found to prevent the training strategy from converging to a trivial solution.
+dncm,parameter dimension k,"The parameter dimension k in DNCM is discussed, showing the impact of different settings on style and content similarity."
+neural preset,filters/luts,"Neural Preset is compared with Filters/LUTs for color style transformation, highlighting the consistency achieved by Neural Preset over Filters/LUTs."
+neural preset,color style parameters,Neural Preset provides results with more consistent color styles extracted from the retouched image
+input patch size,inference time and memory footprint of neural preset,The input patch size used for DNCM can affect the inference time and memory footprint of Neural Preset
+patch size,inference time and memory footprint of neural preset,Setting a patch size > 512 brings a limited speed improvement on a Nvidia RTX3090 GPU but a significant increase in memory usage for Neural Preset
+hyper-parameter k,style similarity,The hyper-parameter k has a huge impact on style similarity
+lcon,rgb color histogram,Applying Lcon can provide a more consistent representation of the 'image content' for two images with the same content but different color styles
+images,color styles,Images with the same content but different color styles are mentioned in the context.
+images,infer-ence time,The performance of images with different color styles is impacted by the inference time.
+k,speed and performance,The value of k has a significant impact on the speed and performance in the context.
+z,image content,Z is used to represent the image content in the context.
+neural preset,lcon,Learning Neural Preset with Lcon can lead to better results and help the pipeline converge better.
+neural preset,color style transfer,Neural Preset is used to learn general knowledge of color style transfer from large-scale data.
+neural preset,reference image,The trained model of Neural Preset can be applied to other color mapping tasks without fine-tuning when given a reference image.
+neural preset,universal color style transfer models,Neural Preset outperforms prior color style transfer methods on challenging tasks compared to universal color style transfer models.
+color style transfer methods,tasks,Color style transfer methods are employed on all four tasks discussed in the context.
+jpeg artifacts,red arrows,JPEG artifacts may be amplified and highlighted by red arrows when the input image has a high compression ratio.
+results,unsatisfactory,The results of style transfer may be unsatisfactory if some colors in the input image do not exist in the style image.
+methods,visual artifacts,Prior methods may cause heavy artifacts while handling blue sky/water separately.
+dncm,visual artifacts,Our DNCM effectively avoids heavy visual artifacts produced by other methods.
+color styles,degraded input images,Our color normalization stage successfully decouples color styles from degraded input images.
+training dncm,color mapping tasks,Training DNCM for color mapping tasks using pairwise data is straightforward.
+pairwise datasets,image harmonization,DNCM is experimented on pairwise datasets of image harmonization and image color enhancement.
+top-level performances,tasks,"Without additional features, DNCM achieves top-level performances on both image harmonization and image color enhancement tasks."
+neural preset technique,color style transfer,A simple but effective Neural Preset technique is presented for color style transfer.
+dncm,two-stage pipeline,"By benefiting from DNCM and a two-stage pipeline, Neural Preset shows significant improvements over existing methods."
+applications,method,Several applications of the Neural Preset method are explored.
+neural preset,color mapping tasks,Neural Preset is directly applied to other color mapping tasks without fine-tuning.
+neural preset,jpeg artifacts,JPEG artifacts may be amplified in the output if the input is compressed by JPEG with a high compression ratio.
+neural preset,color styles,Neural Preset may fail to transfer color styles between images with very different inherent colors.
+neural preset,local-adaptive color mapping,Neural Preset cannot perform local-adaptive color mapping to transfer the same color in an image to different colors.
+jpeg artifacts,effects of jpeg artifacts,Developing auxiliary regularization is a possible future work to alleviate the effects of JPEG artifacts.
+user interactions,complex cases,Incorporating appropriate user interactions is a possible future work for complex cases involving changing image inherent colors.

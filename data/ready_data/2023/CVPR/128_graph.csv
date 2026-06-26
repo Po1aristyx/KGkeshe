@@ -1,0 +1,221 @@
+node_1,node_2,edge
+point cloud,deep network architectures,PointConvFormer is a building block for point cloud-based deep network architectures.
+pointconvformer,point convolution,PointConvFormer combines ideas from point convolution and Transformers.
+pointconvformer,attention,"In PointConvFormer, attention computed from feature difference between points in the neighborhood is used to modify the convolutional weights at each point."
+neighborhood,convolution,Attention helps to select relevant points in the neighborhood for convolution.
+pointconvformer,segmentation,PointConvFormer is suitable for tasks like segmentation at the point level.
+pointconvformer,scene flow estimation,PointConvFormer is suitable for tasks like scene flow estimation at the point level.
+pointconvformer,accuracy-speed tradeoff,"Results show that PointConvFormer offers a better accuracy-speed tradeoff than classic convolutions, regular transformers, and voxelized sparse convolution approaches."
+pointconvformer,visualization,"Visualizations show that PointConvFormer performs similarly to convolution on flat areas, whereas the neighborhood selection effect is stronger on object boundaries."
+depth sensors,indoor and outdoor 3d scanning,Depth sensors have significantly improved in terms of performance and affordability for indoor and outdoor 3D scanning.
+3d point cloud,common data format,"3D point cloud is mentioned to have a common data format, which draws significant attention from academia and industry"
+3d point cloud,application domains,"Understanding the 3D real world from point clouds can be applied to many application domains such as robotics, autonomous driving, CAD, and AR/VR"
+3d point cloud,3d points,"3D point clouds are mentioned to be unstructured, unlike image pixels arranged in regular grids, which makes applying grid-based CNNs difficult"
+3d point cloud,2d image space,Various approaches have been proposed to project 3D point clouds back to 2D image space
+3d point cloud,voxelizes 3d space,"Another line of research directly voxelizes the 3D space and applies 3D discrete convolution, but it induces massive computation and memory overhead"
+3d point cloud,sparse 3d convolution operations,Sparse 3D convolution operations save a significant amount of computation by computing convolution only on occupied voxels for 3D point clouds
+point clouds,operate on point clouds,Some approaches directly operate on point clouds as mentioned in the context
+3d point cloud,performance vs. running time on scannet,"Figure 1 shows the performance vs. running time of PointConvFormer on ScanNet, achieving state-of-the-art results"
+point clouds,convolution,"Point clouds are directly operated on using convolutional operations, and convolution helps in aggregating information on point clouds."
+max-pooling layers,"[57,58]","Max-pooling layers are used to aggregate information on point clouds, and [57,58] are pioneers in this approach."
+point clouds,local neighborhood,"Point clouds utilize k-nearest neighbors (kNN) to find the local neighborhood, helping in adapting to variable sampling densities in different 3D locations."
+rotation/scale invariance/equivariance,convolution weights,Direct manipulation of point coordinates allows for encoding rotation/scale invariance/equivariance directly into the convolution weights.
+point-based approaches,less parameters,Point-based approaches require less parameters compared to voxel-based ones.
+voxel-based approach,3 × 3 × 3 convolution kernels,Voxel-based approaches need to keep 3 × 3 × 3 convolution kernels on all input and output channels.
+sparse voxel-based approaches,point-based models,Methods with the best accuracy-speed tradeoff have been sparse voxel-based approaches or a fusion between sparse voxel and point-based models.
+voxel-based model,point-based model,"Both are representations of the input data, but voxel-based and point-based models have different approaches. The need for fusion between sparse voxel and point-based models is questioned due to the same information input. Fusion adds complexity and memory usage to the model."
+point-based model,knn neighborhood,"The shape of the kNN neighborhood varies in different parts of the point cloud. Including irrelevant points, noise, and background in the neighborhood, especially around object boundaries, can negatively impact the performance and robustness of point-based models."
+knn neighborhood,cnns,The generalization theory of CNNs suggests that including points with significant feature correlation in the same neighborhood can improve the robustness of models with kNN neighborhoods.
+feature correlation,knn neighborhood,Filtering out irrelevant neighbors in a kNN neighborhood can be achieved by using feature correlation. This filtering process makes subsequent convolutions more generalizable.
+pointconvformer,point-based convolutional model,PointConvFormer introduces a method to compute attention weights based on feature differences and use them to reweight points in the neighborhood of a point-based convolutional model.
+pointconvformer,neighborhood,"PointConvFormer combines features in the neighborhood with point-wise convolution, which indirectly improves the neighborhood for generalization."
+pointconvformer,transformer attention models,"PointConvFormer combines features in the neighborhood with point-wise convolution, whereas Transformer attention models usually adopt softmax attention in this step."
+neighborhood,point-wise convolution,PointConvFormer combines features in the neighborhood with point-wise convolution.
+pointconvformer,positional information,"In PointConvFormer formulation, the positional information is outside the attention, introducing viewpoint-invariance into the convolutional weights."
+pointconvformer,training/testing sets,"PointConvFormer helps in generalizing across neighborhood (size/rotation) differences between training/testing sets, especially with a kNN neighborhood."
+pointconvformer,semantic segmentation,"PointConvFormer is evaluated on two point cloud tasks, semantic segmentation being one of them."
+pointconvformer,scene flow estimation,"PointConvFormer is evaluated on two point cloud tasks, scene flow estimation being one of them."
+semantic segmentation,scene flow estimation,PointConvFormer is evaluated on both semantic segmentation and scene flow estimation tasks.
+pointpwc-net,scene flow esti-mation,PointPWC-Net is used as the backbone for scene flow estimation.
+pointpwc-net,distant clouds,PointPWC-Net could potentially compete with sparse convolution as the backbone choice for dense prediction tasks on 3D point clouds.
+scene flow esti-mation,improvements,Significant improvements are observed on FlyingThings3D and KITTI scene flow 2015 datasets.
+3d point clouds,unordered and scattered,3D point clouds are mentioned to be unordered and scattered in 3D space.
+voxelize,3d voxels,A standard approach to process 3D point clouds is to voxelize them into regular 3D voxels.
+3d convolution,3d voxels,Directly applying dense 3D convolution onto the 3D voxels can incur massive computation and memory overhead.
+sparse convolution,non-empty voxels,Sparse convolution reduces the convolutional overhead by only working on the non-empty voxels.
+sparse convolution,massive computation,Sparse convolution helps in reducing massive computation and memory overhead.
+dense prediction tasks,3d point clouds,Sparse convolution can be a good choice for dense prediction tasks on 3D point clouds.
+scene flow 2015,datasets,Significant improvements are observed on FlyingThings3D and KITTI scene flow 2015 datasets.
+k-nearest neighbourhoods,query ball method,The hierarchical structure improves by gradually downsampling and grouping the point cloud with either k-nearest neighbourhoods or a query ball method.
+works,knn graph,A number of works build a kNN graph from the point cloud.
+knn graph,message passing,Message passing using graph convolution is conducted on the kNN graph.
+mlps,conventional weights,Convolutional weights are represented by MLPs.
+spidercnn,polynomial functions,SpiderCNN uses a family of polynomial functions to approximate the convolution kernels.
+whole point cloud,high-dimensional grid,The whole point cloud is projected into a high-dimensional grid for rasterized convolution.
+convolutional weights,relative position,The convolutional weights are formulated to be a function of relative position in a local neighbourhood.
+input point clouds,convolutional weights,The convolutional weights can be constructed according to input point clouds.
+hand-crafted viewpoint-invariant coordinate transforms,relative position,Hand-crafted viewpoint-invariant coordinate transforms on the relative position increase the robustness of the model.
+dynamic convolutional filters,methods,"The design of dynamic convolutional filters has drawn more attention, and methods are introduced to predict convolutional filters."
+dynamic convolutional filters,whole input,The dynamic convolutional filters are shared across the whole input.
+pixel,complete convolutional filters,Complete convolutional filters are predicted for each pixel by some methods.
+runtime,applications,The applications of some methods are constrained by their significant runtime and high.
+convolutional filters,pixel,Convolutional filters are applied for each pixel to process the input features.
+applications,runtime,Applications of convolutional filters are constrained by their significant runtime and high memory usage.
+applications,memory usage,Applications of convolutional filters are constrained by their significant runtime and high memory usage.
+[97],decoupled dynamic filters,[97] introduces decoupled dynamic filters for 2D classification and upsampling tasks.
+"[63, 66]",re-weight 2d convolutional kernels,"[63, 66] propose to re-weight 2D convolutional kernels with a fixed Gaussian or Gaussian mixture model for pixel-adaptive convolution."
+pointconvformer,point convolution,PointConvFormer can be seen as a point convolution modulated by a scalar attention weight for each point in the neighborhood.
+neighboring points,point convolution,Neighboring points are selectively chosen to perform convolution in PointConvFormer.
+dynamic filtering,transformers,"Dynamic filtering share some similarities with transformers, whose weights are functions of feature correlations."
+dynamic filters,images,Dynamic filters are mainly designed for images and focus on regular grid-based convolutions.
+images,point clouds,Dynamic filters are mainly designed for images instead of point clouds.
+success,natural language processing,Recent success in natural language processing has been noted.
+success,2d images analysis,Recent success in 2D images analysis has been noted.
+transformers,3d scene understanding,Transformers have drawn more attention in the field of 3D scene understanding.
+transformers,pointconvformer,"Compared to transformers, the attention of the PointConvFormer modulates convolution kernels instead of softmax aggregation."
+3d scene understanding,pointconvformer,"The work introduces PointConvFormer with local attention to reduce the computation overhead, which could be applied to large scenes."
+pointconvformer,3d point clouds,"Given a continuous input signal, Point ConvFormer and transformers are related concepts in the context of 3D point clouds."
+pointconvformer,continuous convolution,"PointConvFormer introduces point transformer with local attention to reduce the computation overhead, in comparison with continuous convolution."
+continuous convolution,point clouds,The continuous convolution on a neighborhood of point cloud is written as a discretized convolution.
+k-nearest neighbor,neighborhood,The neighborhood N(p) is conventionally chosen as the k-nearest neighbor or ϵ-ball neighborhood of the center point p.
+function w(pi - p),mlp,The function w(pi - p) can be approximated as an MLP and learned from data.
+pi - p,invariant coordinate transforms,"One can concatenate invariant coordinate transforms on pi - p as input to w(·), e.g. ∥pi - p∥ would be rotation invariant."
+rotation and scale-invariant coordinate transforms,pi - p,Concatenating a set of rotation and scale-invariant coordinate transforms with pi - p significantly improves the performance of point convolutions.
+pointconv,formulation,"In PointConv, an efficient formulation was derived when w(pi - p) has a linear final layer."
+final linear layer,mlp,"The final linear layer is Wl.h(pi - p), where h(pi - p) is the output of the penultimate layer of the MLP."
+eq. (2),equivalently written,Eq. (2) can be equivalently written as [81].
+parameters,pi,Wl represents parameters of a linear layer and hence independent of pi.
+convolution kernels,training examples,"When there are cout convolution kernels, n training examples with a neighborhood size of k each, there is no longer a need to store the original convolution weights w(pi - p) for each point in each neighborhood."
+cmid,k,"cmid is significantly smaller than cout × cin, and its size can be as small as 4 for reasonable performance"
+cmid,cin,"cmid is significantly smaller than cout × cin, and its size can be as small as 4 for reasonable performance"
+cmid,cout,"cmid is significantly smaller than cout × cin, and its size can be as small as 4 for reasonable performance"
+pointconv,applications,PointConv enables applications to large-scale networks on 3D point cloud processing
+pointconv,sparse 3d convolutions,PointConv model size is significantly smaller than sparse 3D convolutions
+pointconv,linear layer wl(·),PointConv requires smaller number of parameters compared to sparse 3D convolutions. PointConv only requires cmid × cin × cout for its most costly linear layer Wl(·)
+transformer architectures,2d images,Transformer architectures are popular with 2D images
+transformer architectures,3d point cloud-based transformers,3D point cloud-based transformers have also been proposed as transformer architectures
+transformers,attention model,Transformers compute an attention model between points based on the features of both points and the positional encodings of them
+positional encodings,relative positional encoding,"Relative positional encoding encodes w(pi − p), and has been shown to outperform absolute positional encodings"
+softmax attention model,transformers,"Softmax attention model used in transformers involves query, key, and value matrices implemented with MLPs"
+query,key,"In the context, both query and key matrices are mentioned. The query matrix directly interacts with the key matrix in the context of PointConv and attention models."
+query,value,"The query matrix also interacts with the value matrix in the context of MLPs, forming the basis of the query, key, and value matrices used in the implementation."
+key,pointconv,The key matrix is a key component in the PointConv method as it forms the convolutional kernel in a translation-invariant manner.
+key,attention,The key matrix has a role in attention models where it transforms the features along with the query matrix to perform attention-based operations.
+pointconv,attention,"Comparison is made between PointConv and attention in terms of their utilization of w(pi - p) and the convolutional kernel, highlighting differences in their approach."
+query,query transform,"In the context of attention models, the query matrix undergoes a transformation to q(x(pi)) to match with the key transform."
+key,key transform,"Similar to the query transform, the key matrix is transformed to k(x(p)) in attention models to facilitate matching with the query transform."
+query,transformers,"Transformers utilize fully connected layers after the attention module, which relate to the concept of the query matrix and its transformations."
+transformers,pointconv,"A comparison between transformers and PointConv is made in the context, highlighting similarities in the fully connected layers and the role of features in weight generation."
+transformers,pointconv block,The entire transformer block is likened to a PointConv block with similarities in the processing of features x(p) and weight generation.
+query transform,key transform,The interaction between the query transform and key transform is essential for the matching and processing of features in attention models.
+pointconv,invariant coordinate transform,"PointConv utilizes an invariant coordinate transform to enhance robustness, which is related to the translation-invariant convolutional kernel."
+transformers,h(·) layer,"Transformers incorporate fully connected layers analogous to the h(·) layer, highlighting a similarity in their structural composition."
+transformers,w(·) layer,"Similarly, transformers utilize fully connected layers similar to the W(·) layer, indicating a commonality in the network architecture."
+transformers,dimensionality expansion,"In transformers, a dimensionality expansion of 4x is adopted following the attention module, sharing similarities with the performant cmid expansion in PointConv."
+pointconv,dimensionality expansion,"The minimal cmid expansion in PointConv corresponds to the dimensionality expansion in transformers, suggesting a common approach to dealing with feature dimensionality."
+query,process of generating weights,"The query matrix is involved in the process of generating weights in both transformers and PointConv, contributing to the weight generation mechanism."
+pointconv,invariant coordinate transform,"The invariant coordinate transform in PointConv plays a role in utilizing an invariant transformation for robustness, distinguishing it from traditional convolutional methods."
+transformers,multi-head design,"Transformers adopt a multi-head design to enable diverse v(·) transformations across different heads, allowing for negative combinations of features as opposed to single-headed designs."
+multi-head design,v(·) transformations,"The multi-head design enables the usage of various v(·) transformations, contributing to the diversity and flexibility in feature combination and transformation."
+multi-head design,different heads,The multi-head design allows different heads to use different v(·)s to enable negative contributions of neighbors.
+pointconv,different h(·) combined with wl,"In PointConv, different h(·) combined with Wl enables both positive and negative contributions of each neighbor."
+cnn generalization theory,the point-convformer layer,The study explores adopting the strengths of attention-based models while preserving benefits of convolution and examining the possibility of negative weights.
+gaussian complexity,better generalization,A smaller Gaussian complexity leads to better generalization according to theoretical insights.
+feature correlation,same neighborhood,"To minimize the bound, points with high feature correlation should belong to the same neighborhood."
+pixel color correlation,neighborhood selection,"Nearby pixels in images usually have the highest color correlation, leading to better generalization with a small local neighborhood in conventional CNNs."
+attention,exclude less correlated neighbors,The concept of using attention to exclude less correlated neighbors could improve generalization in transformer models.
+attention,exclude less correlated neighbors,Using attention to exclude less correlated neighbors could directly improve the generalization bound for CNNs
+3d point clouds,noisy points,Noisy points can be included in the kNN neighborhood in 3D point clouds
+neighbourhood,relevant points,"Filtering out noisy points by explicitly checking their x(p)− x(p′), keeping only the relevant points in the neighborhood"
+pointconvformer,novel convolution operation,"Inspired by the discussion above, we define a novel convolution operation, PointConvFormer, which takes into account both the relative position pi− p and the feature difference x(pi)− x(p)"
+pointconvformer layer,neighbourhood n (p),"The PointConvFormer layer of a point p with its neighbourhood N (p) can be written as: p =w(pi − p) ⊤ψ([x(pi) − x(p), pi − p])x(pi)"
+weights,relative positions,The function w(pi − p) learns the weights respect to the relative positions
+useful points,neighborhood,"The function ψ(·) learns to select useful points in the neighborhood, which works similarly to the attention in transformer"
+transformer,convolutional filter,"The output of ψ(·) modifies the convolutional filter w(pi − p), allowing each neighborhood point to have both positive and negative contributions."
+pointconv,efficient version of the pointconvformer layer,"Leaving w(pi − p) outside ψ allows us to create an efficient version of the PointConvFormer layer, following Eq. (3)."
+weight function ψ(·),relationship between center point feature x(p) and its neighboring features x(pi),The weight function ψ(·) learns the relationship between the center point feature x(p) and its neighborhood features x(pi) to increase the representation power of the PointConvFormer.
+multi-head mechanism,"set of functions ψi : rcin (cid:55)→ r with i ∈ {1, ..., z}","To increase the representation power of the PointConvFormer, we use the multi-head mechanism to learn different types of neighborhood filtering mechanisms, resulting in a set of functions ψi : Rcin (cid:55)→ R with i ∈ {1, ..., z}."
+bottleneck residual blocks,pointconvformer layer,"To build deep neural networks for computer vision tasks, bottleneck residual blocks are constructed with PointConvFormer layer as its main component."
+pointconvformer layer,residual blocks,The PointConvFormer layer is a main component of the residual blocks as illustrated in Fig. 3.
+residual blocks,input point features,The input of the residual block consists of input point features X along with coordinates p.
+residual blocks,bottleneck structure,"The residual block uses a bottleneck structure, which consists of two branches."
+bottleneck structure,main branch,"The main branch of the bottleneck structure includes a linear layer, followed by PointConvFormer layer, followed by another linear layer."
+linear layer,pointconvformer layer,The linear layer is followed by the PointConvFormer layer within the bottleneck structure.
+pointconvformer layer,result size,"Following ResNet and KPConv, PointConvFormer results in a reduction in model size and computational cost while maintaining high accuracy."
+pointconvformer,pointconv,The strategy used significantly reduces model size and computational cost while maintaining high accuracy for both PointConv and PointConvFormer.
+residual blocks,channels and points,Number of channels and points for the residual blocks are shown in parentheses in Figure 3.
+grid-subsampling method,downsampling,The grid-subsampling method is used to downsample the point clouds.
+downsampling,2 × 2 downsampling in 3d convolutions,The downsampling technique is similar to the 2 × 2 downsampling in 3D convolutions.
+pointconvformer,3d convolution back-bones,"PointConvFormer is compared with 3D convolution back-bones at the same voxelization levels, suggesting a relationship based on performance comparison."
+pointconvformer,pointconv,"PointConvFormer and PointConv are mentioned together, indicating a relationship in terms of layers and functionality."
+pointconvformer,experiments,"Experiments are conducted to demonstrate the effectiveness of PointConvFormer in various domains and tasks, showing a relationship between the concept and practical validation."
+pointconvformer,pytorch,"PointConvFormer is implemented in PyTorch, indicating a relationship in terms of implementation platform."
+pointconvformer,pytorch,PointConvFormer is implemented in PyTorch.
+viewpoint-invariant coordinate transform,relative coordinates,The viewpoint-invariant coordinate transform is concatenated with the relative coordinates as the input to the h(·) function.
+adamw optimizer,betas,"The AdamW optimizer uses (0.9, 0.999) betas."
+adamw optimizer,weight decay,The AdamW optimizer uses 0.05 weight decay.
+scannet dataset,model,The model is trained with the ScanNet dataset for 300 epochs with specific learning rate adjustments.
+semantickitti dataset,model,The model is trained with the SemanticKitti dataset for 40 epochs with specific learning rate adjustments.
+weighted cross entropy loss,approaches,A weighted cross entropy loss is used to ensure fair comparison with published approaches.
+mix3d augmentations,approaches,The recent Mix3D augmentations are not employed unless specified for fair comparison with published approaches.
+scene flow estimation,training pipeline,"For scene flow estimation, the exact same training pipeline as [82] is followed for fair comparison."
+indoor scene semantic segmentation,scannet dataset,Indoor Scene Semantic Segmentation is conducted on the ScanNet dataset with specific scene splits for training and validation.
+minkowskinet42,sparseconvnet,Comparison is made against voxel-based methods such as MinkowskiNet42 and SparseConvNet.
+point-based approaches,transformer,"There are works adopting transformer to point clouds, such as the Point Transformer and the Fast Point Transformer."
+point transformer,scannet,The Point Transformer is chosen as a representative transformer based method for Indoor Scene Semantic Segmentation on the ScanNet dataset.
+point transformer,scannet dataset,"The Point Transformer method does not report results on the ScanNet dataset, but their point transformer layer is adopted with the same network structure for direct comparison between PointConvFormer and multi-head attention."
+2d images,imagenet,Some approaches use additional inputs like 2D images which benefit from ImageNet pre-training that is not used in this context.
+u-net structure,residual blocks,A general U-Net structure with residual blocks in the encoding layers is adopted as the backbone model in this context.
+cmid,decoder,"CMID is set to be 1 in the decoder throughout the experiments, and consecutive PointConv upsampling layers are used without any residual blocks."
+pointconv,bottleneck architecture,PointConv is re-implemented using the bottleneck architecture which resulted in significantly better performance than the original paper.
+pointconvformer,minkowskinet42,"PointConvFormer outperforms MinkowskiNet42 by a significant 10.1% with 10cm input grid, 7.3% with 5cm input grid, and 2.3% with 2cm input grid, while being faster than it in the first two cases."
+pointconvformer,mix3d,"mix3D could further improve results at 10cm and 5cm resolutions. On 2cm, although mix3D did not improve results on our model with 9.4M parameters, it helped to propel a much smaller model with 5.8M parameters to a similar accuracy."
+pointconvformer,pointconv,PointConvFormer is able to achieve better predictions with fine details comparing with PointConv.
+pointconvformer,point transformer,PointConvFormer is usually able to find the better prediction out of PointConv and Point Transformer.
+convformer,pointconv,"ConvFormer is able to find the better prediction out of PointConv, showing that its novel design brings the best out of both operations."
+convformer,point transformer,"ConvFormer is able to find the better prediction out of Point Transformer, showing that its novel design brings the best out of both operations."
+semantickitti,kitti vision odometry benchmark,SemanticKitti is a large-scale street view point cloud dataset built upon the KITTI Vision Odometry Benchmark.
+semantickitti,scannet,Results on the ScanNet validation set are compared with different input voxel size in SemanticKitti.
+voxel/grid size,params,"Comparison with different input voxel size is shown in Table 1, including Voxel/grid size and Params."
+pointconvformer,mix3d,PointConvFormer is implemented with a mix3D feature to improve performance.
+pointconvformer,minkowskinet42,PointConvFormer has similarities with MinkowskiNet42 in terms of architecture or design.
+pointconvformer,fast point transformer,PointConvFormer and Fast Point Transformer are compared for performance evaluation.
+pointconvformer,pointconvformer-lite,PointConvFormer is compared with a Lite version for efficiency or resource optimization.
+pointconvformer,mix3d,"PointConvFormer (ours) + mix3D are mentioned together in the context, indicating a relationship between them"
+pointconvformer,pointconvformer-lite,"Both PointConvFormer (ours) and PointConvFormer-Lite (ours) are variations of the PointConvFormer, suggesting a similarity between them"
+minkowskinet42,fast point transformer,Both MinkowskiNet42 and Fast Point Transformer are mentioned as methods or models related to 3D point cloud data
+pointconvformer,semantickitti dataset,"Results on the semanticKitti dataset are reported with the use of PointConvFormer, implying a connection between them"
+pointconvformer,spvnas,"Our PointConvFormer method outperforms SPVNAS, indicating a performance comparison between PointConvFormer and SPVNAS"
+nas,performance improvement,"It is mentioned that utilizing NAS would further improve performance, highlighting the potential role of NAS in enhancing system performance"
+scene flow estimation,3d applications,"Scene flow estimation is stated to be applicable in many 3D applications, showing the relevance of scene flow estimation in various contexts"
+scene flow,3d applications,scene flow can be used in many 3D applications
+scene flow,rgb data,scene flow was estimated directly from RGB data
+scene flow,3d point clouds,scene flow estimation from 3D point clouds
+point-convformer,pointpwc-net,Point-ConvFormer into the PointPWC-Net
+pointconv,feature pyramid layers,replacing the PointConv in the feature pyramid layers
+scannet,pointconvformer,visualize the ScanNet prediction results from PointConvFormer
+scannet,pointconv*,visualize the ScanNet prediction results from PointConv*
+scannet,point transformer,visualize the ScanNet prediction results from Point Transformer
+scannet,point cloud segmentation results,Semantic segmentation results on ScanNet dataset
+baseline methods,test set,Numbers for test set are from the official ScanNet benchmark
+pointtransformer,fast point transformer,"Both PointTransformer and Fast Point Transformer are variants of PointTransformer, with Fast Point Transformer being a faster version."
+pointtransformer,stratified transformer,PointTransformer and Stratified Transformer are different types of transformers used in point cloud processing.
+pointtransformer,pointtransformerv2,PointTransformerV2 is an improved version of PointTransformer.
+pointconvformer,pointpwc-net,"PointConvFormer is a modified version of PointPWC-Net, with changes in certain structures."
+pointconvformer,pcfpwc-net,PCFPWC-Net is a new network based on PointConvFormer.
+pointconvformer,pcfpwc-net,"PCFPWC-Net stands for PointConvFormer, indicating a relation of being a specific implementation or variant of PointConvFormer."
+pointconvformer,attention score,"The difference of attention scores is visualized, indicating a relation where PointConvFormer uses attention scores to conduct neighborhood filtering."
+object boundaries,smooth surfaces and points from the same class,"The visualization shows that larger differences in attention scores happen mostly in object boundaries, while smooth surfaces and points from the same class have low differences, indicating a relation between how PointConvFormer treats different types of features."
+attention types,pointconvformer,"Ablation studies on different attention types in PointConvFormer are performed, suggesting a relation of importance of attention types in the functionality of PointConvFormer."
+pointconvformer,point transformer,"PointConvFormer compared with Point Transformer attention types, showing that PointConvFormer is significantly better than Point Transformer attention"
+pointconvformer,dot-product attention,"PointConvFormer compared with Dot-Product Attention, showing that PointConvFormer is significantly better than using only Dot-Product Attention"
+pointconvformer,subtravtive attention,The computational cost and memory usage of the dot product version of attention is shown to be slightly smaller than the subtravtive attention used in PointConvFormer
+pointconvformer,feature difference,Experimental results show that the feature difference in PointConvFormer achieves better results than dot-product attention
+dot-product attention,point transformer,Experimental results show that Dot-Product Attention has more parameters than Point Transformer due to the use of two MLPs for Q and K
+eq.(6),memory,The equation mentioned in the context has a relation with the concept of memory as it discusses the memory usage during inference.
+eq.(6),computation,The equation mentioned in the context has a relation with the concept of computation as it discusses the computation during inference.
+neighborhood size,savings,"The size of the neighborhood is related to the savings mentioned in the context, as the small neighborhood size impacts the savings significantly."
+table 5,attention types,Table 5 discusses different attention types related to the model architecture and training parameters.
+pointconvformer,point cloud data,"PointConvFormer is a layer proposed for tasks on point cloud data, which indicates a direct relation between the two concepts."
+point-based model,accuracy-speed tradeoff,The point-based model mentioned in the context provides a better accuracy-speed tradeoff compared to sparse 3D convolutional networks.
+dr. shuangfei zhai,acknowledgements,Dr. Shuangfei Zhai is thanked in the Acknowledgements section for helpful discussions.

@@ -1,0 +1,229 @@
+node_1,node_2,edge
+visual recognition datasets,bias groups b,Visual Recognition datasets frequently underrepresent bias groups B
+bias groups b,class labels y,Bias groups B are underrepresented within class labels Y
+bias groups b,"age, gender, or race","Bias groups B can lead to models learning spurious correlations with age, gender, or race"
+datasets bias,models,Dataset bias can lead to models learning spurious correlations between class labels and bias groups
+methods,architectural changes or additional loss functions,Most recent methods require significant architectural changes or additional loss functions
+data sampling baselines,class imbalance literature,Data sampling baselines are derived from the class imbalance literature
+data sampling baselines,"under sampling, upweighting",Data sampling baselines such as Undersampling and Upweighting can be implemented in a single line of code
+undersampling,input distribution,Undersampling drops a significant part of the input distribution per epoch
+oversampling,samples,"Oversampling repeats samples, causing overfitting"
+class-conditioned sampling method,bias mimicking,A new class-conditioned sampling method called Bias Mimicking is introduced
+class c bias distribution,y and b,"If a class c bias distribution is mimicked across every c′ ̸= c, then Y and B are statistically independent"
+bias mimicking,underrepresented groups' accuracy of sampling methods,Bias Mimicking improves underrepresented groups' accuracy of sampling methods by 3% over four
+bias mimicking,underrepresented groups' accuracy,Bias Mimicking improves underrepresented groups' accuracy by 3% over four benchmarks while maintaining and sometimes improving performance over nonsampling methods.
+bias mimicking,sampling methods,Bias Mimicking is a sampling approach for mitigating bias towards sensitive group labels.
+sampling methods,class labels y (hair color),Sampling methods are used to mitigate bias of class labels Y (Hair Color) towards sensitive group labels.
+bias mimicking,bias group labels b,Bias Mimicking approach subsamples dataset D and ensures that PD(Y
+bias mimicking,spurious predictive correlations,Bias Mimicking addresses spurious predictive correlations within the Deep Learning literature.
+spurious predictive correlations,deep learning literature,Spurious predictive correlations have been frequently documented within the Deep Learning literature.
+class labels y (hair color),sensitive group labels b,Class labels Y (Hair Color) are biased towards sensitive group labels B.
+group labels b,sensitive group labels b,Group labels B may refer to the sensitive group labels B in the context of bias mitigation.
+blonde hair,bias group,"blonde hair belongs to a bias group, as mentioned in the context"
+based solutions,ensemble-based methods,"ensemble-based methods are one category of model-based solutions, as stated in the context"
+based solutions,methods,"methods are another category of model-based solutions, as described in the context"
+ensemble-based methods,samples,"ensemble-based methods introduce separate prediction heads for samples from different bias groups, as highlighted in the context"
+methods,bias regularizing loss functions,"methods introduce additional bias regularizing loss functions, according to the context"
+methods,hyper-parameter tuning,"methods require additional hyper-parameter tuning, as noted in the context"
+dataset resampling methods,class imbalance literature,"Dataset resampling methods are popular within the class imbalance literature, as mentioned in the context"
+dataset resampling methods,simpler and cheaper alternative,"Dataset resampling methods present a simpler and cheaper alternative compared to model-based solutions, as highlighted in the context"
+undersampling,class imbalance,"Undersampling mitigates class imbalance by altering the dataset distribution, as explained in the context"
+oversampling,class imbalance,"Oversampling mitigates class imbalance by altering the dataset distribution, as described in the context"
+upweighting,sample contribution to the loss,"Upweighting levels each sample contribution to the loss, as mentioned in the context"
+undersampling,dataset,"Undersampling drops a significant portion of the dataset per epoch, which could harm the models’ predictive capacity."
+upweighting,stochastic gradient descent,Upweighting can be unstable when used with stochastic gradient descent.
+oversampling,models,models trained with Oversampling are likely to overfit due to being exposed to repetitive sample copies.
+bias mimicking,prior work,Bias Mimicking is a class-conditioned sampling method that mitigates the shortcomings of prior work.
+dataset,classes,"given a dataset D with a set of three classes C, BM subsamples D and produces three different variants."
+b,y,B and Y are now statistically independent as proven in Section 3.1.
+b,pdc,Pdc (Y
+b,dc,dc retains class c samples and ensures Pdc (Y
+dc,d,"Each dc retains class c samples, so the model is exposed to the entirety of D"
+dc,c,dc retains class c samples
+undersampling,oversampling,"Undersampling ensures statistical independence at dataset level by subsampling every subgroup, while Oversampling repeats samples"
+bias mimicking,bias mitigation sampling methods,Bias Mimicking is a proposed method and extensive analysis of sampling methods for bias mitigation is provided as another contribution
+undersampling and upweighting,bias mitigation,"Undersampling and Upweighting are competitive on many bias mitigation benchmarks, emphasizing their importance"
+bias mimicking,simple sampling methods,"Bias Mimicking is introduced as a novel resampling method that bridges the performance gap between sampling and nonsampling methods, showing competitive results on benchmarks compared to non-sampling state-of-the-art approaches."
+bias mimicking,average under-represented subgroups accuracy,"Bias Mimicking improves the average under-represented subgroups accuracy by more than 3% compared to other sampling methods, showcasing its effectiveness in mitigating bias."
+bias mimicking,mimicking condition,"An extensive empirical analysis of Bias Mimicking details the method's sensitivity to the Mimicking condition, providing insights into its behavior and effectiveness in mitigating bias."
+bias in machine learning,"class imbalance, historical human biases, evaluation bias","Bias in Machine Learning can manifest in various ways, including class imbalance, historical human biases, and evaluation bias. These are examples of manifestations of bias discussed in the context."
+model bias,spurious correlation,Model bias that arises from spurious correlations leads the model to learn false relationships between classes and over-represented groups.
+model bias,underrepresenting,Model bias can result from underrepresenting certain groups of samples within a certain class.
+spurious correlation,underrepresenting,Spurious correlations can result from underrepresentation of certain groups of samples within a certain class.
+underrepresenting,certain group of samples,Underrepresenting a certain group of samples within a class can lead to spurious correlations.
+model bias,object recognition models,Model bias can lead to bias in object recognition models towards backgrounds or textures associated with the object class.
+spurious correlation,vqa,Spurious correlations have been shown in VQA.
+correlations,image-captioning datasets,Concerning correlations have been noted between captions and attributes like skin color in Image-Captioning datasets.
+synthetic bias datasets,bias effect on model performance,Synthetic bias datasets have been introduced to systematically assess bias effects on model performance.
+bias toward gender,coco and openimages datasets,Biases toward gender have been found to be ubiquitous in the COCO and OpenImages datasets.
+bias distribution,class c samples,dc ⊂ D retains class c samples while subsampling each c′.
+image classification model,binary prediction head,"To train an image classification model on the resulting distributions, we binarize each and feed it through a dedicated binary prediction head."
+image classification model,multi-class prediction head,"Alternatively, we could dedicate a multi-class prediction head for each distribution. However, this alternative will introduce significantly more parameters."
+binary prediction heads,multi-class prediction head,"Put together, the binary prediction heads are equivalent #parameters wise to a model that uses one multi-class prediction head."
+binary predictors,multi-class prediction head,"To perform inference, we can not use the scores from the binary predictors because they may not be calibrated with respect to each other. Therefore, we train a multi-class prediction head using the debiased feature encoder from Bias Mimicking and freeze the gradient from flowing back to ensure the bias is not relearned."
+documenta-tion of dataset spurious correlations,model-focused methods,"In response to the documentation of dataset spurious correlations, several model-focused methods have been proposed [12,15,25,27,32,34]."
+model feature space,regularized,[32] presents a metric learning-based method where model feature space is regularized against learning harmful correlations.
+target classes and bias groups,feature space,"[34] surveys several existing methods, such as adversarial training, that randomize the relationship between target classes and bias groups in the feature space."
+different prediction heads,domain independence,"They also present a new approach, domain independence, where different prediction heads are allocated for each sub-"
+groupdro,distributionally robust neural networks for group shifts,GroupDRO presents Distributionally Robust Neural Networks for Group Shifts as a regularization procedure that adapts the model optimization according to the worst-performing group.
+contrastive learning frameworks,self-supervised learning,Contrastive learning frameworks on self-supervised learning are extended to mitigate bias by [12].
+over-sampling minority classes,undersampling majority ones,Spurious correlations can be mitigated by fixing the training dataset distribution through over-sampling minority classes and under-sampling majority ones.
+bias mitigation methods,visual bias mitigation benchmarks,Some bias mitigation methods have been missing in recent visual Bias Mitigation Benchmarks according to the introduction.
+new dataset,face recognition balanced among several race groups,A new dataset is introduced for face recognition balanced among several race groups in [18].
+face recognition,dataset,Face recognition dataset introduced for balanced representation among race groups.
+gans,training data,GANs used to generate training data and balance the sizes of dataset subgroups.
+sampling methods,repair,Sampling method REPAIR prioritizes specific samples to learn more robust representations in bias mitigation.
+dataset classes,bias groups,"In bias mitigation, the goal is to prevent spurious correlations between predictions of samples and their memberships in bias groups."
+target class,bias group,Spurious correlations occur when samples of a target class are over-represented by one bias group rather than distributed equally among dataset bias groups.
+training data distribution,bias group,The distribution of training data can lead to spurious correlations if one bias group is significantly over-represented for a target class.
+method,spurious correlations,Our work addresses methods that fix spurious correlations by ensuring statistical independence between Y and B on the dataset level.
+sampling method,bias mimicking,"In that spirit, we introduce a new sampling method: Bias Mimicking in Section 3.1."
+popular sampling solutions,class imbalance literature,Some of the popular sampling solutions in class imbalance literature that could also be applied to Bias Mitigation are missing from benchmarks used in prior work.
+sampling solutions,bias mimicking,"Therefore, we briefly review the missing methods in Section 3.2 and describe how Bias Mimicking addresses their shortcomings in Bias Mitigation."
+method,bias mimicking,The goal in our method is to decorrelate a model’s predictions of samples ˆY from their bias group membership B.
+sampling methods,"oversampling, undersampling, upweighting","Simple sampling methods like Oversampling, Undersampling, and Upweighting need to be improved as discussed in the introduction."
+sampling algorithm,bias mimicking,We address these shortcomings in our proposed sampling algorithm: Bias Mimicking.
+observation,distribution of bias groups,The key to our algorithm is the observation that if the distribution of bias groups with re-
+bias mimicking,distributions,Bias Mimicking involves observing distributions and their relationships as highlighted in the context
+distributions,algorithm,The key to the algorithm mentioned is the observation of distributions and bias groups with respect to classes
+bias mimicking,dataset,The process of Bias Mimicking is applied to a dataset to analyze relationships between bias groups and target classes
+gender,hair color,The distribution of bias group 'Gender' across every class 'Hair Color' ensures statistical independence between the two on the dataset level
+dataset,proposition 1,"Proposition 1 discusses the implications of dataset characteristics on target classes, bias groups, and their relationships"
+bias groups,law of total probability,The relationship between bias groups and the law of total probability is elucidated in the context
+bayesian probability,novel way of subsampling,The context discusses the use of Bayesian probability to derive a novel way of subsampling the input distribution for a model.
+class,subsampled dataset,"For every class in C, a subsampled version of the dataset is produced which preserves the respective class samples."
+subset of samples,class bias,"Each subsampled dataset denoted as dc contains a subset of samples where the bias within the subset, while subsampling every c', mimics the distribution in class c."
+linear program,optimizing number of samples,The context mentions the use of a linear program to optimize the number of samples that belong to class c' as well as the bias group s.
+dc,bias group s,Dc and Bias group s are related in the context through the number of samples that belong to both class c and bias group s. The linear program aims to find the distribution with the most retained samples while ensuring the mimicking condition holds.
+dc,model,Dc is used to train the model. The model is trained such that it sees each dc through a different prediction head to prevent the loss function from taking gradients of repetitive copies and risking overfitting.
+dc,multi-class prediction head,"Dc can be dedicated to a multi-class prediction head for each dc. However, this choice introduces additional prediction heads compared to a model that uses only one. To avoid this, each dc is binarised and then used to train a one-vs-all binary classifier BPc for each c."
+model,prediction head,The model uses different prediction heads to see each dc. Each head is trained on image-target pairs from its corresponding distribution dc as demonstrated in Figure 2.
+binary predictor,multi-class head,"Binary predictors are used instead of a multi-class head since each binary predictor is one output node, thus introducing no extra parameters compared to a multi-class head."
+prediction head,gradients,"Gradients of each prediction head are accumulated across iterations, and they are only backpropagated once the classifier batch is full. This helps mitigate the issue of a prediction head seeing only a small number of samples at certain iterations."
+classifier,batch,Classifiers batch is mentioned as a key concept in the context
+inference,bias mimicking,Inference and Bias Mimicking are related as Bias Mimicking minimizes the correlation between Y and B within the feature space
+bias mimicking,y,Bias Mimicking and Y are related within the feature space
+bias mimicking,b,Bias Mimicking and B are related within the feature space
+bias mimicking,multi-class prediction head,Bias Mimicking is connected to the multi-class prediction head over the feature space
+original dataset distribution,multi-class prediction head,Training a multi-class prediction head over the feature space using the original dataset distribution
+bias,model backbone,Ensuring that the bias is not learned again in the feature space by stopping gradients from flowing into the model backbone
+"[12, 32]",bias mimicking,"Cost Analysis states that unlike prior work [12, 32], bias mimicking involves no extra hyper-parameters"
+hyper-parameter,bias mitigation methods,Hyper-parameters and bias mitigation methods are connected as the hyper-parameter search space of the model is smaller than other bias mitigation methods
+datasets,method,Generalizing to more datasets is mentioned in relation to the method
+"[12, 27]",bias mitigation methods,"Cost Analysis indicates that the hyper-parameter search space of the model is smaller than other bias mitigation methods like [12, 27]"
+input distributions,epochs,Additional input distributions do not result in longer epochs according to the context
+sample x,epochs,Making one pass over each sample x during an epoch
+contribution,bpy(s),Applying the contribution to the relevant BPy(s)
+linear program p.1,multi-class prediction head,Solving the linear program P.1 and training the multi-class prediction head
+linear layer,simple,Training the linear layer is mentioned as simple in the context
+linear layer,fast,Training the linear layer is mentioned as fast in the context
+linear layer,cheap,Training the linear layer is mentioned as cheap in the context
+multi-class prediction head,linear layer,"The linear layer is used in training the multi-class prediction head. It is simple, fast, and cheap since it is only one linear layer."
+dataset sampling solutions,class imbalance literature,Dataset sampling solutions discussed address the class imbalance presented in the literature.
+bias mitigation,groupings of classes and bias groups,"Bias Mitigation involves balancing groupings of classes and bias groups, such as group male-black hair."
+visual bias mitigation,oversampling,Visual Bias Mitigation explores oversampling as one of the solutions for addressing bias.
+undersampling,upweighting,Undersampling and Upweighting are popular alternatives to oversampling for addressing class imbalance.
+undersampling,bias mitigation,Undersampling can be extended to bias mitigation by dropping samples to balance dataset subgroups.
+d,y,Both represent parameters or variables in the context that are compared or equated in the equation mentioned in the text
+d,b,Both represent parameters or variables in the context that are compared or equated in the equation mentioned in the text
+d,c,Parameter 'c' is mentioned in relation to 'D' indicating some kind of connection or impact
+b,s,Parameter 's' is mentioned in relation to 'B' indicating some kind of connection or impact
+model,subgroup,"The model is influenced by the size of the subgroup, as mentioned in the context"
+model,subgroups,"The model's behavior is based on the characteristics of subgroups, as mentioned in the text"
+model,minority subgroup,"The model is impacted by the repeated exposure to the minority subgroup, affecting its predictive capacity"
+bias mimcking,minority subgroup,"Bias Mimcking addresses the problem of repeated exposure to the minority subgroup, optimizing the model's performance"
+d,dc,"Both represent data subsets or distributions, with 'dc' being a subset of 'D' as mentioned in the context"
+oversampling,class imbalance,"Oversampling is mentioned as a method to solve class imbalance, indicating a relationship between the two concepts"
+undersampling,bias mitigation,"Undersampling is mentioned as a method that can be extended to Bias Mitigation, implying a connection between the two concepts"
+samples,loss function,"The contribution of samples to the loss function is mentioned, indicating their impact on the overall model evaluation"
+upweighting,bias mitigation,Upweighting levels the contribution of different samples to the loss function by multiplying its loss value by the inverse of the sample’s class frequency. We can extend this process to Bias Mitigation by simply considering subgroups instead of classes.
+bias mitigation,model weights,"Assuming model weights w, sample x, class c, bias s, and subgroup Dc,s = {(x, y, s) ∈ D s.t Y = c, B = s}, then the model optimizes"
+upweighting,instability,"A key shortcoming of Upweighting is its instability Indeed, when used with stochastic gradient descent."
+adversarial training (adv),groupdro (g-dro),Adversarial training and GroupDRO are compared methods in the context of Bias Mitigation
+"bias mimicking (bm, ours)",upweighting (uw),Bias Mimicking and Upweighting are methods discussed in the context of addressing a problem in Bias Mitigation
+binary classification,multi-class classification,The context mentions benchmark performance in both binary and multi-class classification
+bias mitigation,"sampling methods (undersampling, upweighting, oversampling)","Bias Mitigation work includes discussing various sampling methods like Undersampling, Upweighting, and Oversampling"
+bias mitigation work,performance benchmarks,Bias Mitigation work is related to Performance benchmarks as the work aims to highlight methods that generalize well to all datasets.
+benchmark datasets,performance,"Benchmark datasets are related to Performance as the performance is reported on the three main datasets: CelebA dataset, UTKFace dataset, and CIFAR-S benchmark."
+binary classification model,attribute attributes,Binary classification model is related to Attribute attributes as the model uses Blond-Hair as a target attribute and Gender as a bias attribute in the CelebA dataset.
+gender bias,binary classification model,Gender bias is related to Binary classification model as the model amplifies the bias of Gender in the CelebA dataset.
+model details,benchmark problems,Model details are related to Benchmark problems as the experiments found serious problems with the benchmark.
+race/age attribute,gender attribute,Race/Age attribute is related to Gender attribute as the binary classification in UTKFace dataset is done with Race/Age as the sensitive attribute and Gender as the target attribute.
+bias introduction,dataset,Bias Introduction is related to Dataset as the benchmark synthetically introduces bias into the CIFAR-10 dataset.
+dataset,images,The dataset is created by converting a subsample of images from each target class to gray-scale.
+classes,color,Half of the classes are biased toward color.
+classes,gray,The other half of the classes is biased toward gray.
+sensitive group,samples,The dominant sensitive group in each target represents 95% of the samples.
+metrics,average accuracy,Using Average accuracy on each sample is a misleading metric.
+metrics,subgroups,The test set could be biased toward some subgroups more than others.
+methods,accuracy,Methods are evaluated in terms of Unbiased Accuracy which computes the accuracy of each subgroup separately and then returns the mean of accuracies.
+methods,bias-conflict,Methods are evaluated in terms of Bias-Conflict which measures the accuracy on the minority subgroups.
+baselines,bias-contrastive and bias-balanced learning,First baseline is 'Bias-Contrastive and Bias-Balanced Learning' which uses a contrastive learning framework to mitigate bias.
+baselines,domain-independent,Second baseline is 'Domain-independent' which uses an additional prediction head for each bias group.
+baselines,groupdro,Third baseline is 'GroupDRO' which optimizes a worst-group training loss combined with group-balanced.
+dc1,dc2,Bias Mimicking results in two subsampled distributions dc1 and dc2.
+dc1,uauac1,We use the Unbiased Accuracy metric (UA) on dc1
+dc2,uauac2,We use the Unbiased Accuracy metric (UA) on dc2
+uauac1,uauac2,UA on class 1: UA1 and class 2: UA2 separately by averaging the accuracy over the class’s relevant subgroups.
+bias mimicking,adv,Adversarial Learning (Adv) introduces an adversarial loss that seeks to randomize the model’s feature representation
+training process,methods,The training process involves various methods as mentioned in the experiment.
+methods,supplementary,Methods are further detailed in the Supplementary section.
+methods,vanilla model,All reported methods are compared to a 'vanilla' model trained on the original dataset distribution.
+cross-entropy loss,vanilla model,A 'vanilla' model is trained using Cross-Entropy loss.
+baselines,encoder,All baselines are trained using the same encoder.
+bm,robust sampling method,BM is identified as the most robust sampling method in the results.
+sampling methods,datasets,Different sampling methods have varying performance on different datasets.
+undersampling,celeba,Undersampling performs well on CelebA dataset due to the easy task of predicting hair color.
+undersampling,other datasets,Undersampling performs considerably worse on every other dataset.
+oversampling,method,Oversampling performs consistently worse than the mentioned method.
+neural nets,oversampled distributions,Neural nets tend to overfit when trained on oversampled distributions.
+upweighting,celeba,Upweighting maintains strong performance on CelebA dataset.
+upweighting,utk-face,Upweighting maintains strong performance on UTK-Face dataset.
+upweighting,cifar-s,Upweighting falls behind on CIFAR-S due to struggling to optimize.
+bm,upweighting,BM improves over Upweighting on CIFAR-S by over %10 on the Bias Conflict metric.
+sampling method,datasets,The mentioned sampling method shows consistently strong performance on various datasets.
+vanilla sampling methods,some datasets,Vanilla sampling methods are surprisingly effective on some datasets.
+upweighting,utk-face,Upweighting is effective on UTK-Face dataset.
+upweighting,celeba,Upweighting is effective on CelebA dataset.
+undersampling,non-sampling methods,Undersampling is more effective compared to non-sampling methods.
+celeba,undersampling,CelebA is mentioned in comparison to undersampling as a method more effective than non-sampling methods.
+undersampling,non-sampling methods,"Undersampling is compared to non-sampling methods as being more effective, especially when enough data is available and the task is considered easy."
+undersampling,sampling methods,"It is mentioned that fixing the dataset distribution through undersampling could be a strong baseline, encouraging future work to include sampling methods as part of their baselines."
+non-sampling methods,(bm) maintains strong comparable performance,"The method (BM) is compared to non-sampling methods, highlighting its strong comparable performance without additional loss functions or model modification."
+bc+bb [12],a scalar parameter to optimize an additional loss,"BC+BB [12] requires a scalar parameter to optimize an additional loss, unlike models like (BM)."
+groupdro [27],careful l2 regularization and tuning their group adjustment hyper parameter,"GroupDRO [27] requires careful L2 regularization and tuning of their group adjustment hyper parameter, which is not a requirement for the method (BM)."
+bm,faster and cheaper to train,BM is highlighted as faster and cheaper to train compared to models like BC+BB [12] and GroupDRO [27].
+bias mimicking,subsampling of the dataset dc ⊂ d preserving class c samples and mimicking bias in other classes,Bias Mimicking is explained as providing a subsampled version of the dataset dc ⊂ D where class c samples are preserved and its bias is mimicked in other classes.
+c,classes,c is mimicked in the other classes
+dc,performance,investigate the effect of each dc on performance
+dc1,model (1),model (1) trained on only dc1
+dc2,model (2),model (2) trained on only dc2
+dc1,dc2,"model (3) trained on both (dc1, dc2)"
+ua,accuracy,use the Unbiased Accuracy Metric (UA) where accuracy is averaged over class 1 subgroups and class 2 subgroups
+dc1,c1,predicted c1 but worse at predicting c2
+dc2,c2,predicted c2 but worse at predicting c1
+dc1,dc2,balances both accuracies and achieves the best total Unbiased Accuracy (UA)
+model,bias mimicking condition,sensitivity to the Bias Mimicking condition
+bias mimicking,model sensitivity,"Model sensitivity is tested to the mimicking condition, where different levels of bias mimicking are performed according to a percentage value."
+model sensitivity,binary classification benchmarks,Binary classification benchmarks are considered in testing the model sensitivity towards the mimicking condition.
+bias mimicking,binary classification benchmarks,Bias mimicking is applied to the binary classification benchmarks to create biased classes towards specific groups.
+bias mimicking,mimicking process,The mimicking process varies according to a percentage value to mimic bias towards certain groups.
+model sensitivity,percentage value,Model sensitivity is tested with different percentage values for mimicking bias.
+bias mimicking,full mimicking process,"100% represents the full mimicking process as outlined in Eq. 7, where bias is entirely mimicked."
+model sensitivity,bias conflict,"The Bias Conflict, which is the accuracy over the minority subgroups, decreases as the percentage of bias mimicked decreases."
+bias conflict,minority subgroups,"The Bias Conflict refers to the accuracy over the minority subgroups, and it is observed that this accuracy decreases much faster."
+bias conflict,bias mimicking condition,"It is concluded that the Bias Mimicking condition is critical for good performance, which is related to the Bias Conflict."
+bias mimicking condition,good performance,The Bias Mimicking condition is deemed critical for achieving good performance in bias mitigation.
+sampling methods,bias mitigation,"Sampling methods such as Undersampling and Upweighting are effective tools for bias mitigation, as highlighted in the context."
+undersampling,upweighting,Both Undersampling and Upweighting are mentioned as missing from recent benchmarks but are later benchmarked for bias mitigation effectiveness.
+non sampling methods,sampling methods,"The performance comparison between non sampling methods and sampling methods, including Bias Mimicking, is discussed in the context."
+current studies,mutually exclusive sensitive groups,Current studies only consider mutually exclusive sensitive groups.
+sample,sensitive group,A sample can belong to only one sensitive group at a time.
+relaxing,assumption,Relaxing the assumption of intersectionality impacts bias.
+dataset re-sampling methods,bias,Dataset re-sampling methods presented in this work are effective at mitigating bias when enough samples from all dataset subgroups are available.
+class,sensitive group,Bias scenarios occur when one class is completely biased by one sensitive group.
+sampling methods,bias groups labels,Sampling methods require full knowledge of the bias groups labels at training time.
+annotations,bias groups labels,Collecting annotations for bias groups labels could be expensive.
+future work,models,Future work could benefit from building more robust models independently of bias groups labels.
+this material,darpa,This material is based upon work supported in part by DARPA under agreement number HR00112020054.
+this material,national science foundation,This material is based upon work supported in part by the National Science Foundation including under Grant No. DBI-2134696.

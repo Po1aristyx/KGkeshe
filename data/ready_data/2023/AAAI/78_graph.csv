@@ -1,0 +1,174 @@
+node_1,node_2,edge
+large language models,gpt-4,GPT-4 is an example of a large language model.
+large language models,internet-scale text data,These models are trained on internet-scale text data with human feedback.
+large language models,capabilities,They exhibit emerging capabilities in various applications.
+cognitive architectures,newell's architecture (1994),Cognitive architectures aim to model human cognition computationally
+cognitive architectures,central components,Most cognitive architectures share common components
+cognitive architectures,interpretability,They offer excellent interpretability
+cognitive architectures,flexibility,They are flexible for updating
+proposed framework,cognitive-based model,The framework combines a cognitive model with noisy knowledge from LLMs.
+embodied agent,kitchen tasks,The agent demonstrates efficiency in kitchen tasks using the proposed framework.
+proposed framework,generalization,The cognitive agent can generalize to new environments and handle complex tasks.
+scaling,diminishing returns,Large language models face diminishing returns for increased scale
+declarative memory,knowledge of the world,declarative memory is a component of the agent's architecture that reflects knowledge of the world
+procedural memory,production rules,procedural memory consists of production rules with preconditions and effects
+production rules,contextual knowledge,production rules represent different contextual knowledge
+working memory,reasoning and planning,short-term working memory aids reasoning and planning in the agent's decision-making process
+perceive-plan-act cycle,agent's behavior,agents operate in a perceive-plan-act cycle
+agent framework,learning process,rules can be reinforced and modified throughout the agent's learning process
+task stack,goal-oriented actions,the task stack manages the sequence of subtasks
+attention,subtask: find a tomato,attention shifts to a new subtask
+llm,cognitive architecture,The LLM needs to generate knowledge that the cognitive architecture then matches dynamically to the environment.
+llms,plans,LLMs are used to generate task-specific plans that are grounded to the specific instance and non-trivial to generalize.
+agent framework,llms,The proposed agent framework combines LLMs with a customized cognitive architecture.
+agent framework,cognitive architecture,The framework integrates LLMs within a cognitive architecture for learning and adapting to tasks.
+learning through program synthesis,interactive task learning (itl),Learning Through Program Synthesis
+soar cognitive architecture,board games,SOAR has shown effective transferability in domains like board games and embodied agents.
+soar cognitive architecture,embodied agents,SOAR has demonstrated adaptability to new environments in embodied agents.
+human input,yes/no questions,Recent work reduces human input by using LLMs as a knowledge source
+llm,action queries,Applying the agent to new environments shows fewer action queries needed compared to directly querying LLMs.
+human labor,goal conditions,Shifting involves moving human labor from specifying the goal conditions to answering yes/no questions.
+our approach,strategic prompting,Our work uses strategic prompting and self-reflection mechanisms to eliminate human supervision.
+our approach,dreamcoder,Our work shares high-level ideas with DreamCoder
+dreamcoder,informed search problem,DreamCoder addresses informed search
+madaan et al. (2022),common-sense knowledge extraction,Their work extracts knowledge from LLMs into code
+llms,procedural memory,Some studies use LLMs to generate code for robotics tasks and game environments
+our approach,procedural memory,Our approach contrasts with LLM-generated procedural memory by producing abstract productions with learnable weights.
+our approach,pddl specifications,Unlike methods that generate PDDL specifications
+llms,action selection,Some works let LLMs select actions directly
+di palo et al. (2023),vemprala et al. (2023),Both studies involve LLM-assisted action selection in a similar context.
+language model (llms),auxiliary components,LLMs are used by other components like affordance evaluation
+affordance evaluation,llms,LLMs assist in selecting actions with the help of affordance evaluation.
+memory stream,llms,LLMs are used in conjunction with memory stream for decision-making.
+visual summarization,llms,LLMs are employed for processing visual information in some approaches.
+knowledge base,llms,LLMs interact with knowledge bases to gather information.
+multi-modal foundation models,embodied agents,Some research focuses on specialized models for embodied agents
+production systems,llms,Our approach uses explicit production systems instead of solely relying on LLMs for improved interpretability and update efficiency.
+working memory,production rules,In our work
+world knowledge base,general knowledge,The agent's world knowledge includes facts like 'Tomatoes are stored in the Fridge'.
+environment knowledge,past observations,This knowledge consists of agent-related (gripper
+production rules,working memory,Integrated into each production using Python class structure
+working memory,procedural memory,Working memory is part of the agent's procedural memory
+procedural memory,task stack,The agent manages a task stack
+task stack,action suggestion,When no applicable production
+action suggestion,execution,An applicable production rule is sampled and executed
+bootstrapping process,curriculum,Bootstrapping starts with a manually specified curriculum
+curriculum,minecraft,Previous work used LLM-generated curricula for Minecraft
+simulator,constraints,The simulator has specific constraints
+curriculum,task families,The curriculum consists of families of tasks
+task families,specific instances,In contrast to previous work
+manual specification,curriculum,We find it better to specify the curriculum manually
+human input,previous work,Previous work required human input on task steps and goal conditions.
+soar syntax,curriculum,Tasks follow the SOAR syntax
+action selection,llm,When there's no production rule or a cycle
+production generation,action,Generated production rules correspond to the actions suggested by the LLM.
+production improvement,critic,A critic is used to improve the generated productions based on task end conditions.
+agent,task performance,The agent learns to perform tasks through repetition and rule improvement.
+action selection process,english description,The first step of the process involves summarizing the action selection process and results in generating an English description of the production rule.
+production rules,decision-making principles,Production rules are represented as underlying decision-making principles applicable to similar scenarios
+current task,novel environments,Production rules can be applied to novel environments with different layouts and receptacle types
+exploring every cabinet,unexplored places,The example given suggests that when searching for an object
+side-effects,preconditions,In the `GeneratedProduction` class
+variable bindings,effect,The `apply` method returns the effect of the production
+english description,executable,After the first step of generating an English description
+generation of production rules,listing 1: production interface,The process described takes place within the context of Listing 1
+english description generation,code generation,The context describes a separation in the process where the first step generates English descriptions and the second step converts them into executable Python code.
+chain-of-thought prompting technique,english description generation,This technique is applied to the English description generation step
+chain-of-thought prompting technique,code generation,The technique is also used for code generation
+production rule,generalized production description,During code generation
+precondition,code generation,In the code generation process
+variable bindings,assignment of values,Thought 1: In the first part of the context
+predicates in the precondition,relevant variables,Thought 2: The second step involves associating predicates with the appropriate variables in the precondition.
+planning,function interfaces,Thought 3: The third step entails planning how to test each predicate using available function interfaces.
+code snippet,parsed into agent's production,Thought 3: The code snippet is taken from the response and incorporated into the agent's production process.
+iterative prompting,voyager (wang et al. 2023),Thought 3: The agent uses an iterative prompting approach similar to Voyager for monitoring and improvement.
+agent's productions,precondition check,Thought 3: The agent checks if the precondition still holds after replaying the production.
+function interface mismatch,over-constraining problem,Thought 3: Over-constraining occurs when the LLM includes unnecessary conditions in the production.
+critic llm,end condition of the task,Thought 3: The critic LLM evaluates the end goal and suggests improvements to the production.
+task family name,input to the critic llm,Thought 3: The task family name is provided to the critic LLM during the improvement process.
+task family,english descriptions,The critic LLM receives task family names and existing production rules' descriptions to analyze and summarize the end conditions.
+end conditions,behavior of previously learned tasks,End conditions summarize the behavior to guide action selection for future tasks.
+production rules,english descriptions (modifications),The LLM modifies or keeps production rules based on the critic's analysis.
+over-generalization,important features left out,Over-generalization occurs when a production rule lacks crucial preconditions
+pick and place task,production rule example,An example shows a production rule that misses the condition where the object is not already in the target receptacle.
+state,agent's internal state,The agent maintains a state to avoid infinite loops by preventing redundant actions.
+production rules,utility update,The context explains that the utility update process is related to the production rules
+agent,task,The agent is performing tasks
+done action,termination condition,The done action represents the end of a task
+hallucination,llms,Hallucination refers to incorrect or inappropriate suggestions made by the LLM
+sub-task,exploration of countertops,Exploring countertops is an example of a sub-task that may be part of a larger task.
+pgood (production),pbad (production),Pgood and Pbad are contrasting examples of productions
+confidence in done action,llm's certainty,The LLM is instructed to propose the done action only when it is absolutely certain
+explored,environment,The term 'explored' refers to the state of the environment
+pgood,pbad,Pgood and Pbad are contrasting options
+llm,task generation,LLM is used to generate plans for tasks
+sink,countertops,The LLM might provide different plans for the sink and countertops
+noisy-optimal,conflict resolution,Noisy-optimal is a principle used to resolve conflicts among applicable productions
+world knowledge,agent's knowledge base,World knowledge is represented as a dictionary within the agent's knowledge base
+natural language statements,knowledge base,Statements in natural language are mapped to the knowledge base
+unexplored,retrieval of information,When an egg task is bootstrapped
+bootstrapping,task of finding an egg,The task of finding an egg serves as an example for the bootstrapping process.
+agent,production rule,The agent learns a production rule to locate objects based on common storage places.
+egg,common storage place (fridge),Eggs are commonly stored in the fridge according to the rule.
+knowledge base,llm,The agent queries the LLM to gather information and stores it in its knowledge base.
+knowledge transfer,new tasks,The learned knowledge can be transferred to adapt to new tasks.
+knowledge base,new environments,The knowledge can be applied to different environments
+experiments,embodied agents,Experiments are conducted with embodied agents in kitchen environments.
+ai2thor simulator,kitchen environments,AI2THOR provides the platform for evaluating the agent's performance in simulated kitchens.
+agent,classification labels,The agent has access to object attributes and classification labels for nearby objects.
+objects,large receptacles,Large receptacles like cabinets and fridges are known to the agent but their contents are unknown initially.
+large receptacles,objects,The context mentions that the robot does not know the objects inside the large receptacles until exploration.
+objects,robot's field of view,The 'find a/an object' task requires the specified object to be in the robot's field of view.
+刀 (knife),slicing,The 'slice a/an object' task involves using a knife to slice an object.
+objects,countertops,The 'clear the countertops' task requires moving all objects from the countertops to suitable storage places.
+training floor plan,testing floor plan,Both floor plans are mentioned as part of the environment setup for the AI2THOR simulator.
+ai2thor simulator,evaluation,The AI2THOR simulator is used for evaluating the framework
+llm,training,During training
+composite actions,fundamental skill,The framework aims to demonstrate its ability to learn basic skills like composite actions.
+subtasks,repeating tasks,Tasks like clearing countertops involve repeating similar subtasks.
+goal conditions,evaluation purposes,The goal conditions are used specifically for evaluating performance
+find and slice task,5 target objects,For the find and slice task
+clear the countertops task,5 objects,In clear the countertops task
+gpt4-0613,openai 2023,GPT4-0613 is used in experiments
+gpt3.5,insufficient for code generation,Previous works show GPT3.5's inadequacy in code generation tasks.
+training floor plan,curriculum,The agent is bootstrapped with a curriculum consisting of specific actions.
+production rules,27,The training resulted in 27 production rules for the agent.
+test time,immediate action,During test
+test time,agent,During test time
+llm,action selection process,The LLM is used to select actions within the agent's framework
+affordance error,failure,If the LLM's suggested action causes an affordance error
+rearrangement task,appropriateness,Previous works on rearrangement tasks are not appropriate baselines because their architectures already incorporate pre-defined strategies.
+human experts,hand-coded cognitive agent,A hand-coded agent by humans would likely perform better
+code generation works,handling multiple instances,Some code generation approaches struggle with multiple object instances or understanding slicing preconditions.
+table 1,quantitative results,Table 1 presents the quantitative comparison of different agent types for kitchen tasks.
+kitchen task,performance,The table showcases the performance of various agents in executing kitchen tasks.
+target receptacle,empty,relation: precondition or requirement
+slice task,countertops,relation: location
+bootstrapped agent,motor action,relation: action
+current task,find a/an object,relation: part of
+current task,slice a/an sliceable,relation: part of
+robot,spatial knowledge,relation: has
+task,find a/an tool,relation: subtask
+action-only agent,bootstrapped (ours),relation: comparison
+success,completion steps,relation: metric
+success,tokens,relation: metric
+training points,learned policy,The training points influence the learned policy; it is part of the learning process.
+production application process,verifiable decision tree,The production application process can be converted to a decision tree by merging precondition checks of productions
+production rules,black-box llm models,Production rules are more preferable in safety-critical situations because they are formally verifiable
+low-level actions,well-defined interface,The decision-making process relies on a well-defined interface for tasks like navigation and object manipulation.
+sim-to-real gap,physical agents,A challenge when applying this to physical agents is bridging the gap between simulation and reality.
+english description generation,production rules,This process requires the decision-making to be expressible in language
+cognitive architectures,preconditions of productions,Potential future work includes updating the preconditions of productions for enhanced learning.
+cognitive architectures,conflict resolutions,Separate productions could be used for managing conflicts within the decision-making.
+large vision models,production rules,Using large vision models could eliminate the need for separate perception modules in generating production rules.
+human values and preferences,reward functions,Representing human values and preferences in reward functions is a recognized challenge in AI research.
+cognitive architecture,noisy knowledge in llms,The framework is based on extracting cognitive architecture from the existing noisy knowledge within large language models.
+bootstrapping process,minimal human inputs,The paper demonstrates a method where the agent learns with minimal human guidance.
+production rules,individual preferences,Production rules can be modified to suit each individual's preference without affecting the overall system.
+human-ai collaboration tasks,personalization,The framework is expected to facilitate personalization in tasks involving human interaction with AI.
+learning to perform kitchen tasks,efficient learning,The agent efficiently learns tasks by utilizing the generated plans from LLMs.
+foundation models,alternative approach,The work offers an alternative to purely data-driven foundation models.
+future benefits,personalized agents,The framework has potential to contribute to the development of more personalized AI agents.
+cmu surf grant,funding support,The research was partially funded by a CMU SURF grant.
+nsf iis-2112633,funding support,Additional funding was provided by the AI-CARING Institute (NSF grant).
+figure 1,icons,Icons used in Figure 1 were distributed by the Noun Project under a Creative Commons License.

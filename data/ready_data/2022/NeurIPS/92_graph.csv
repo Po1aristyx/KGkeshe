@@ -1,0 +1,280 @@
+node_1,node_2,edge
+zero-shot coordination,algorithm,Zero-shot coordination evaluates an algorithm by the performance of a team of agents that were trained independently under that algorithm.
+zero-shot coordination,team of agents,Zero-shot coordination evaluates an algorithm by the performance of a team of agents that were trained independently under that algorithm.
+algorithm,team of agents,Zero-shot coordination evaluates an algorithm by the performance of a team of agents that were trained independently under that algorithm.
+off-belief learning,recent method,Off-belief learning is a recent method that achieves state-of-the-art results in ZSC in the game Hanabi.
+off-belief learning,state-of-the-art results,Off-belief learning is a recent method that achieves state-of-the-art results in ZSC in the game Hanabi.
+off-belief learning,game hanabi,Off-belief learning is a recent method that achieves state-of-the-art results in ZSC in the game Hanabi.
+implementation,off-belief learning,"However, the implementation of OBL relies on a belief model that experiences covariate shift."
+belief model,covariate shift,"Moreover, during ad-hoc coordination, OBL or any other neural policy may experience test-time covariate shift."
+off-team belief learning,accuracy,Off-team belief learning attempts to improve the accuracy of the belief model of a target policy πT on a broader range of inputs.
+belief model,target policy,Off-team belief learning attempts to improve the accuracy of the belief model of a target policy πT on a broader range of inputs.
+belief model,distribution,Off-team belief learning attempts to improve the accuracy of the belief model of a target policy πT on a broader range of inputs by weighting trajectories approximately according to the distribution induced by a different policy πb.
+off-team off-belief learning,obl equilibrium,"Off-team off-belief learning attempts to compute an OBL equilibrium, where fixed point error is weighted according to the distribution induced by cross-play between the training policy π and a different fixed policy πb instead of self-play of π."
+obl equilibrium,fixed point error,"Off-team off-belief learning attempts to compute an OBL equilibrium, where fixed point error is weighted according to the distribution induced by cross-play between the training policy π and a different fixed policy πb instead of self-play of π."
+obl equilibrium,cross-play,"Off-team off-belief learning attempts to compute an OBL equilibrium, where fixed point error is weighted according to the distribution induced by cross-play between the training policy π and a different fixed policy πb instead of self-play of π."
+training policy,fixed policy,"Off-team off-belief learning attempts to compute an OBL equilibrium, where fixed point error is weighted according to the distribution induced by cross-play between the training policy π and a different fixed policy πb instead of self-play of π."
+methods,variants of hanabi,We investigate these methods in variants of Hanabi.
+agents,marl,A core objective of multi-agent reinforcement learning (MARL) is to develop methods for coordinating with previously unseen partners such as other artificial agents or humans.
+policies,learned through self play,Policies that were learned through self-play develop efficient but opaque arbitrary conventions.
+policies,zero-shot coordination (zsc) setting,Hu et al. introduced zero-shot coordination (ZSC) setting to study the issue of policies learned through self-play.
+policies,off-belief learning (obl),Off-belief learning (OBL) is a recent MARL algorithm designed to produce high intra-AXP based on policies learned through self-play.
+zero-shot coordination (zsc) setting,off-belief learning (obl),"Zero-shot coordination (ZSC) setting evaluates algorithms under intra-AXP, and Off-belief learning (OBL) is a recent MARL algorithm designed to produce high intra-AXP."
+zero-shot coordination (zsc) setting,intra-axp,Zero-shot coordination (ZSC) evaluates algorithms under intra-AXP to maximize the intra-algorithm cross-play.
+off-belief learning (obl),input policy π0,Off-belief learning (OBL) takes in an input policy π0 to produce a uniquely defined output policy π1.
+input policy π0,output policy π1,"When π0 is a fully random policy, Off-belief learning forces π1 to only take actions based on grounded information."
+π1,grounded information,π1 takes actions based on grounded information
+π1,private information,π1 has no incentive to communicate private information
+π1,π0,behavior of π1 will be reinterpreted as having come from π0
+π1,hierarchy,OBL iterates upon π1 by training a hierarchy
+π1,belief model,OBL trains a belief model for π1 through supervised learning
+π1,obl,OBL iterates upon π1
+π1,supervised learning,belief model for π1 is trained via supervised learning
+π1,distribution,belief model for π1 is evaluated on the distribution of trajectories
+φ1,π1,belief model ˆBπℓ is trained via supervised learning on the distribution of trajectories induced by self-play between πℓ
+ˆbπℓ,supervised learning,belief model ˆBπℓ is trained via supervised learning
+ˆbπℓ,off-distribution,training of ˆBπℓ may bring it off-distribution
+ˆbπℓ,unreliable outcomes,off-distribution of ˆBπℓ may cause it to produce unreliable outcomes
+obl,zsc,OBL achieves strong results in ZSC on Hanabi
+obl,problems,there are two problems with the current formulation of OBL
+obl,ot-bl,OBL proposes off-team belief learning (OT-BL) to mitigate covariate shift
+ot-bl,covariate shift,off-team belief learning (OT-BL) is proposed to mitigate covariate shift
+ot-bl,distribution,ˆBπℓ is trained not only on the distribution induced by πℓ
+ot-bl,belief-bootstrapping,introduction of belief-bootstrapping in off-team belief learning
+bπℓ,belief model,Bπℓ is trained on the distribution induced by πℓ and πℓ+1
+covariate shift,belief models,covariate shift experienced by belief models is ameliorated by OT-BL and OT-OBL
+πℓ,unseen agent,πℓ experiences test time covariate shift when paired with an unseen agent
+obl,off team,OBL can be applied off team as seen in OT-OBL
+obl,test time covariate shift,OBL is trained on broader distributions to reduce side effects of the test time covariate shift
+zero-shot coordination,zsc,ZSC is the abbreviation for Zero-shot coordination
+hu et al.,treutlein et al.,Prior work on Zero-Shot Coordination was first introduced by Hu et al. and further analyzed by Treutlein et al.
+symmetries,game,Symmetries of the game are mentioned in the context.
+conventions,arbitrary symmetry breaking,Conventions that rely on arbitrary symmetry breaking are discussed in the context.
+policies,zsc,Hierarchies of policies for ZSC are trained in other works.
+populations,common best response,Diverse populations are leveraged to train a robust common best response.
+architectures,action features,Different architectures for leveraging action features are investigated in the context.
+zsc,off-belief learning (obl),"One of the most significant breakthroughs in ZSC is off-belief learning (OBL), detailed in section 3.3."
+obl,scaling,One crucial requirement for scaling off-belief learning (OBL) to large settings is learning beliefs about the private information of other players.
+belief states,tracked,Belief states can be explicitly tracked in modern approaches.
+models,monte carlo sampling,Standard training setup for models involves Monte Carlo sampling.
+ot-bl,approximate dynamic programming,OT-BL trains belief models via approximate dynamic programming.
+sokota et al.,belief fine-tuning,Sokota et al. propose a framework for belief fine-tuning.
+quality of belief models,adapt them to new policies,The quality of belief models can be adapted to new policies at inference time.
+belief fine-tuning,ot-bl,"Belief fine-tuning and OT-BL both use bootstrapping to learn beliefs, with Sokota et al. examining belief fine-tuning in an inference-time context while OT-BL is presented as a mechanism for off-team train-time learning."
+belief fine-tuning,inference-time context,Belief fine-tuning is examined in an inference-time context.
+ot-bl,mechanism,OT-BL is presented as a mechanism for off-team train-time learning.
+ot-bl,performing,OT-BL is presented as a mechanism for performing off-team train-time learning.
+background3.1 turn-based dec-pomdps,public actions,This work considers turn-based decentralized partially observable Markov decision processes with public actions.
+dec-pomdp,state space,Dec-POMDPs have a state space.
+dec-pomdp,observation functions,Dec-POMDPs have observation functions for each agent.
+dec-pomdp,action space,Dec-POMDPs have an action space.
+dec-pomdp,reward function,Dec-POMDPs have a reward function.
+dec-pomdp,transition function,Dec-POMDPs have a transition function that defines the distribution of the next state given the current state and joint action.
+n players,action,"At each time step, exactly one of N players takes an action."
+n players,observable,The action taken by one of N players is observable to all players.
+trajectory,simplified,"When t equals terminal T, the subscript is dropped and the two notations are simplified."
+agent,policy,Each agent acts according to their policy.
+dec-pomdps,belief function,An important quantity in Dec-POMDPs is the belief function that returns.
+dec-pomdps,belief function,Dec-POMDPs involve the belief function Bπ(τt
+belief function,agent,The belief function returns an agent’s belief over the distribution of the state given their AOH and the group’s joint policy.
+belief function,state,The belief function returns an agent’s belief over the distribution of the state given their AOH and the group’s joint policy.
+ad-hoc team play setting,cooperation,The goal of the ad-hoc team play setting is to cooperate effectively with unknown teammates.
+ad-hoc team play setting,unknown teammates,The goal of the ad-hoc team play setting is to cooperate effectively with unknown teammates.
+ad-hoc team play setting,contribute meaningfully,"The goal of the ad-hoc team play setting is to cooperate effectively with unknown teammates, where each teammate can contribute meaningfully to the task."
+team play setting,environment,"The ad-hoc team play setting has been used in numerous environments including Overcooked, RoboCup 2D, and Hanabi."
+ad-hoc team play,policies,"For all experiments involving ad-hoc team play, policies are chosen that are amenable to meaningful coordination."
+zero-shot coordination,intra-algorithm cross play training,Zero-Shot Coordination and Intra-Algorithm Cross Play Training in self play has been shown to give rise to policies that employ 'arbitrary' conventions.
+zero-shot coordination,policies,Zero-Shot Coordination and Intra-Algorithm Cross Play Training in self play has been shown to give rise to policies that employ 'arbitrary' conventions.
+zero-shot coordination,intra-algorithm cross play (intra-axp),Hu et al. proposed a zero-shot coordination (ZSC) in which the goal is to maximize intra-algorithm cross play (intra-AXP).
+human-ai coordination,ai agents,"Many studies have evaluated AI agents in coordinating with humans, including in Hanabi and Overcooked."
+human-ai coordination,coordinating with humans,"Many studies have evaluated AI agents in coordinating with humans, including in Hanabi and Overcooked."
+hanabi,overcooked,Games mentioned including Hanabi and Overcooked
+hanabi,overcooked,Games mentioned including Hanabi and Overcooked
+human-ai coordination,proxy setting,Proxy setting used for evaluating human-AI coordination
+obl,aoh,OBL reinterprets AOH as if generated by playing with a fixed policy
+obl,π0,OBL starts with a policy π0 as reference
+obl,neural network belief model,OBL is implemented by training a neural network belief model
+obl,supervised learning,OBL uses supervised learning to train the belief model
+obl,fictitious trajectories,OBL generates fictitious trajectories for training
+π0,random policy,Policy π0 used as a random policy
+neural network belief model,π0,Belief model is trained on policy π0
+neural network belief model,fictitious trajectories,Belief model is used to sample fictitious trajectories
+neural network belief model,supervised learning,Belief model trained using supervised learning
+fictitious trajectories,τ,Fictitious trajectories are sampled for training
+fictitious trajectories,π1,Policy π1 used to produce actions on fictitious trajectories
+fictitious trajectories,fictitious transition,Fictitious transition calculated using fictitious trajectories
+fictitious transition,target value,Target value calculated using fictitious transition
+ot-bl,bπt,Definition of off-team belief learning involving BπT
+ot-bl,hypothesis class,Off-team belief learning defined based on hypothesis class of belief models
+belief model,policy,"The problem setting is to learn an accurate belief model ˆB for the policy πT, where accuracy is weighted by the distribution over AOHs induced by a different policy πb."
+belief model,belief training,Figure 1 shows Visualization of belief training schemas by vanilla OBL and OT-BL. Belief models are trained on trajectories sampled from different policies.
+belief model,conditional distribution,Left: Vanilla OBL trains ˆBπT to approximate the true conditional distribution P (τt
+ot-obl problem setting,action value function,"The general OT-OBL problem setting aims to learn an action value function ˆq with low OBL TD-error, assuming that teammates played according to joint policy πT in the past."
+joint policy,teammates,"The goal of the off-team off-belief problem setting learning is to learn an action value function ˆq with low OBL TD-error, assuming that teammates played according to joint policy πT in the past."
+joint policy πt,error,The error is weighted by the distribution over AOHs for agent i induced by the joint policy πT
+agent i,"joint policy (πit , π−i b)","The joint policy (πiT , π−i b ) induces error for agent i"
+team learning,problem,Off-team learning is a difficult problem
+team learning,loss values,Off-team learning requires weighting the loss values by the reach probabilities induced by the behavior policy
+solution,problem,Approximating solutions for off-team learning problems can be done through off-team belief learning (OT-BL) and off-team off-belief learning (OT-OBL)
+off-team belief learning (ot-bl),beliefs,OT-BL uses bootstrapping to perform forward induction on the beliefs
+beliefs,trajectories,"Generating data for time t involves sampling trajectories according to the behavior policy, weighted by the behavior distribution"
+belief model,time t-1,The belief model is learned using the trajectory up to time t-1.
+trajectory,action,The trajectory is propagated forward in time by sampling an action.
+trajectory,target policy,The trajectory is sampled for the next time step using the target policy.
+action,bπt,The sampled action is distributed approximately according to BπT.
+action,πb,The last action is generated with a probability dictated by πb.
+ˆb,likelihood,ˆB is trained to maximize the likelihood of the trajectory.
+τ,action,There is a TD-update between the trajectory and the action.
+policy training schemas,obl,The visualization shows policy training schemas for vanilla OBL and OT-OBL.
+ot-obl,πb,OT-OBL allows the partner to use a different policy πb.
+player,partner,Superscript i indicates the active player while -i refers to their partner.
+ot-bl,belief model,OT-BL is a procedure to train a belief model for a target policy that is robust when evaluated on a behavioral policy.
+ot-bl,target policy,OT-BL is defined to train a belief model for the target policy.
+ot-bl,behavioral policy,OT-BL is a procedure to train a belief model for the target policy that is robust when evaluated on a behavioral policy.
+belief model,dataset,The belief model is initialized with an empty dataset.
+belief model,environment,The belief model is initialized within an environment.
+environment,trajectory,The environment generates trajectories which are used in the training process.
+trajectory,fictitious trajectory,Fictitious trajectories are sampled in the training process.
+trajectory,training data,Training data is generated from trajectories for the belief model.
+trajectory,real trajectory,Real trajectories are unrolled with the behavioral policy.
+real trajectory,dataset,Data from the unrolled real trajectory is added to the dataset.
+belief model,loss,The belief model is trained with a loss function based on the data.
+belief model,convergence,The belief model training process continues until convergence.
+hanabi,dec-pomdp research,Hanabi is a benchmark for research on Dec-POMDP.
+hanabi,cooperative game,Hanabi is described as a cooperative game for 2-5 players.
+hanabi,hint tokens,"In Hanabi, 8 hint tokens are used."
+hanabi,life tokens,"In Hanabi, 3 life tokens are used."
+hanabi,deck of cards,Hanabi is played with a deck of 50 cards.
+deck of cards,rank,Each card in the deck has a rank between 1 and 5.
+hint tokens,life tokens,"Both hint tokens and life tokens are essential resources in the game, with players having 8 hint tokens and 3 life tokens at their disposal."
+deck,cards,"The deck consists of 50 cards, each with a rank between 1 and 5 and belonging to one of five colors."
+player,cards,"In the 2-player variant, each player holds 5 cards, which they can see the partner's hands but not their own."
+player,turn,"On their turn, a player can choose to play, discard, or give a hint."
+card,rank order,"The goal of the game is to play cards in the rank order for each color, earning points for correctly played cards."
+team,life tokens,"The team loses a life token each time they make a mistake, highlighting the importance of managing life tokens."
+q-function,obl setting,"The OT-OBL algorithm trains a Q-function under the OBL setting, making it less prone to out-of-distribution errors when evaluated with different partners."
+policy,q-function,"The algorithm involves training a Q-function with an associated policy and belief model, representing the decision-making process."
+player i,player -i,"The algorithm assumes there are two players, labeled as i (current) and -i (next), each following a specific policy."
+ot-obl,obl,"The main difference between OT-OBL and normal OBL is highlighted in red, indicating a specific modification in the training process."
+trajectory,fictitious trajectory,The term 'fictitious trajectory' is related to 'trajectory' as it represents a sample trajectory generated in a fictitious scenario.
+trajectory,q-function,The 'Q-function' is updated based on the trajectory followed by the player in the game.
+player,card,A player interacts with the game by playing cards.
+card,hinting,The action of hinting in the game involves using a card to provide information to the partner.
+team,hint token,The team gains or consumes hint tokens during gameplay.
+stack,color,Completing a stack in the game is based on playing cards of the corresponding color.
+stack,5 of the corresponding color,A stack can be completed by successfully playing the 5 of the corresponding color.
+game,termination conditions,"The game ends based on specific termination conditions like completing all stacks, empty deck, or losing all lives."
+team,points,The team earns and loses points based on their gameplay and completion of objectives.
+algorithm,open-sourced code,The algorithms are developed based on and extended from open-sourced code.
+obl,synchronous training,The OBL model is enhanced with ideas from synchronous training to improve effectiveness.
+models,update dependencies,The models are updated by querying and updating all dependencies at regular intervals.
+policy,belief model,Each policy and belief model is trained separately following practices mentioned in the original OBL paper.
+r2d2,distributed recurrent q-learning method,"The backbone of the training is R2D2, a distributed recurrent Q-learning method."
+environment workers,parallel training,Multiple environment workers work in parallel to facilitate training of the models.
+backbone,r2d2,"R2D2 is described as a distributed recurrent Q-learning method with parallel environment workers and centralized replay buffer and trainer, making it part of the backbone system."
+backbone,q-network,"The backbone system involves the Q-network, which is trained to minimize the TD-error between its Q-value and targets from fictitious transitions."
+q-network,belief models,"Both the Q-network and belief models are described in the context, with the Q-network being trained on TD-error and targets, while the belief models are trained to predict the player's hand."
+belief models,obl models,"The belief models are part of the OBL models, which are referred to as recurrent models trained via supervised learning to optimize predictions based on input data."
+obl models,lstm rollouts,"The OBL models involve LSTM rollouts into fictitious transitions at training time, showcasing a sequential relationship between the concepts."
+xp,sp,"In the evaluation section, both XP and SP are mentioned, where every team is evaluated on 5000 games for SP and XP scores and averaged over five seeds."
+intra-axp,self-play cross-play gap (sxg),The self-play cross-play gap (SXG) metric is introduced to better reflect improvement in intra-AXP. It is computed as SXG = 100 · (SP −XP)
+self-play cross-play gap (sxg),sp,SXG is computed as SXG = 100 · (SP −XP) where SP is one of the components
+self-play cross-play gap (sxg),xp,SXG is computed as SXG = 100 · (SP −XP) where XP is one of the components
+sxg,covariate shift,"SXG acts as a proxy for the covariate shift as it compares the evaluated training distribution (SP) with the test distribution (XP). The higher the SXG, the larger the covariate shift."
+covariate shift,ot-bl,"OT-BL is able to consistently gather a valid sample during training (> 99.5% of the time), regardless of penalty. OT-BL mitigates the covariate shift experienced during OBL training."
+ot-bl,normal belief learning,Experimental design is focused on emphasizing the advantage of OT-BL over normal belief learning
+obl,belief model,"The belief model in the context is trained in OBL on trajectories from πℓ but utilized on trajectories from πℓ+1, showing a relation between OBL and the belief model."
+ot-bl,environments,"OT-BL is used to train ˆBπℓ off-team on environments with a larger covariate shift, linking OT-BL with environments."
+hanabi environment,modifications,"The Hanabi environment undergoes modifications to exacerbate the covariate shift, tying together the Hanabi environment and modifications."
+trajectory length,average score,"The reduction of life tokens in the Hanabi environment from 3 to 2 affects the trajectory length along with the average score, creating a relationship between trajectory length and average score."
+valid hands,checker,"Sampling valid hands is discussed in the context with reference to a checker used in the Hanabi challenge, connecting valid hands and a checker."
+observation encoder,card knowledge,"The observation encoder encodes the card knowledge, which is utilized for encoding the knowledge of a specific card."
+card knowledge,invalid card penalty,The invalid card penalty is applied when the card knowledge is encoded as all zero instead of rejecting the sampled hand.
+belief improvements,percentage of valid samples,"The belief improvements are measured through the percentage of valid samples for fictitious transitions, indicating the effectiveness of the belief model."
+level 1 policy,obl hierarchy,"The level 1 policy training process focuses on the OBL hierarchy, which experiences the largest covariate shift."
+belief model,trajectories,"A belief model is unrolled on trajectories generated by the learning policy, illustrating the training process."
+pi1,convergence,"At convergence, pi1 can achieve 20 points, showing the successful convergence of the learning policy."
+belief model,covariate shift,The belief model's deterioration due to covariate shift is measured by the percentage of timesteps where it can produce a valid sample when training pi1.
+xp scores,invalid card penalty,"XP scores for OBL and OT-BL in 2-life Hanabi are compared with and without the invalid card penalty, showing the impact of the penalty on performance."
+ot-bl,xp scores,OT-BL always achieves higher XP scores compared to other models mentioned in the context.
+ot-bl,sxg,"OT-BL has a very small SXG, less than 1%, which is considerably lower than vanilla OBL."
+vanilla obl,xp scores,Vanilla OBL overfits leading to a drop in XP scores.
+ot-obl,xp scores,OT-OBL prevents overfitting and continues to improve its XP score. It almost always has higher XP scores than vanilla OBL.
+ot-obl,sxg,"OT-OBL has a very small SXG, less than 1%, up to 10 times lower than vanilla OBL."
+belief models,broader distributions,"By training belief models on broader distributions, XP scores are further increased while maintaining a low SXG."
+ot-obl,experimental design,Experimental design for OT-OBL includes variants like OT-OBL + robust belief and experiments to evaluate its performance in intra-AXP.
+policy,trajectories,Normal OBL has a policy trained on trajectories from specific distributions.
+normal obl,policy,"The policy, πℓ, is trained on trajectories from Pπℓ(τ i. For normal OBL, the policy, πℓ, is trained on trajectories from Pπℓ(τ i."
+policy,trajectories,"The policy, πℓ, is trained on trajectories from Pπℓ(τ i. For normal OBL, the policy, πℓ, is trained on trajectories from Pπℓ(τ i."
+policy,covariate shift,This means πℓ experiences test time covariate shift.
+ot-obl,ad-hoc teamplay,OT-OBL for ad-hoc teamplay and human-AI coordination. This set of experiments aims to demonstrate the ability for OT-OBL to improve test time performance with only a small amount of data from test time agents.
+ot-obl,human-ai coordination,OT-OBL for ad-hoc teamplay and human-AI coordination. This set of experiments aims to demonstrate the ability for OT-OBL to improve test time performance with only a small amount of data from test time agents.
+ot-obl,data,"These experiments address the ad-hoc teamplay and human-AI coordination settings where there are large covariate shifts. We utilize rank bot for the ad-hoc teamplay setting and clone bot, a bot trained via supervised learning on human data, as a proxy for human-AI coordination."
+ot-obl,test time agents,OT-OBL for ad-hoc teamplay and human-AI coordination. This set of experiments aims to demonstrate the ability for OT-OBL to improve test time performance with only a small amount of data from test time agents.
+obl,training procedure,OBL is sequentially trained with the typical OBL training procedure
+games,distributed rl environment,half of the games in the distributed RL environment are the real target trajectories
+π,target trajectories,π is trained in an off-policy manner with OT-OBL on the target trajectories
+covariate shift,π,covariate shift is experienced when π is evaluated
+results,vanilla sequentially trained obl,results are compared with a vanilla sequentially trained OBL
+ot-bl,xp,XP and SXG results of OT-BL on 2-life Hanabi is shown in Table 1
+invalid card penalty,obl,"without the invalid card penalty, both OBL with vanilla belief learning and OT-BL achieve reasonably high XP scores in 2-life Hanabi"
+ot-bl,xp,OT-BL consistently achieves higher XP scores in 2-life Hanabi across all levels
+ot-bl,sxg,SXG for OT-BL is always lower than that of vanilla OBL (8-16x lower)
+training type,xp & sxg,"evaluating OT-OBL in ad-hoc teamplay (w/ rank bot), proxy human-AI coordination, and w/ vanilla OBL"
+target trajectories,ad-hoc teamplay scores,training on a small number of target trajectories can improve ad-hoc teamplay scores with rank bot
+ot-obl,ad-hoc teamplay,Training with OT-OBL improves ad-hoc teamplay scores.
+ot-obl,human-ai coordination,Training with OT-OBL improves proxy human-AI coordination scores.
+ot-obl,xp scores,Training with OT-OBL doesn't significantly hurt XP scores.
+ot-obl,sxg,Training with OT-OBL doesn't significantly hurt the SXG.
+ot-obl,policies,Training with OT-OBL broadens the policy support.
+ot-bl,2-life hanabi,Performance of OT-BL on 2-life Hanabi with invalid card penalty is shown in Table 1.
+ot-bl,xp scores,OT-BL consistently achieves higher XP scores across all levels.
+ot-bl,sxg,OT-BL achieves a small SXG and this gap is significantly lower than vanilla OBL.
+obl,penalty,"Vanilla OBL suffers significantly from the penalty, especially for level 1."
+ot-bl,belief model,"OT-BL belief model focuses more on distribution, thus samples mostly valid samples."
+ot-bl,covariate shift,The test time covariate shift is lower for OT-BL compared to vanilla OBL.
+ot-bl,training results,Reduced covariate shift in OT-BL improves training and leads to better test time results.
+timesteps,percentage,The percentage of timesteps producing valid samples is plotted in Figure 3
+timesteps,valid sample,The percentage of timesteps producing valid samples is mentioned in the context
+timesteps,belief model,The belief model is trained with respect to timesteps
+obl,vanilla obl,Vanilla OBL without penalty steadily decreases in the percentage of timesteps producing valid samples
+obl,ot-obl,OT-BL mitigates the belief model’s training covariate shift
+obl,penalty,Vanilla OBL with penalty is unable to produce a high percentage of valid samples
+ot-bl,belief model,OT-BL mitigates the belief model training covariate shift
+ot-bl,valid states,OT-BL consistently samples valid states over 99.5% of the time
+ot-obl,xp scores,All variants achieve high XP scores in table 2
+ot-obl,sxg results,XP and SXG results of OT-OBL are presented in table 2
+vanilla obl,overfitting,"At level 4, Vanilla OBL starts to overfit"
+vanilla obl,sxg,"As Vanilla OBL overfits, the SXG increases, indicating an increase in the test time covariate shift"
+ot-obl,level 5,"By level 5, SXG of OT-OBL is almost 0"
+ot-obl + robust belief,xp score,OT-OBL robust belief achieves a XP score of 24.30 ± 0.01
+ot-obl + robust belief,sxg,OT-OBL + robust belief always have a SXG < 1% and at level 5 the SXG is almost 0
+sxg,ot-obl,"In the context, by level 5, the SXG of OT-OBL is almost 0, and the SXG of OT-OBL and OT-OBL + robust belief are at least 8 times lower than that of vanilla OBL."
+ot-obl,obl,OT-OBL is compared to vanilla OBL in terms of SXG and policy training in the context.
+teamplay,human-ai coordination,"Ad-Hoc Teamplay and Proxy Human-AI Coordination Results are mentioned together in the context, indicating a relationship."
+ot-obl,target policy trajectories,OT-OBL is applied with only 3200 target policy trajectories to increase rank bot and clone bot scores in the context.
+vanilla obl,xp,Vanilla OBL in XP achieves near identical scores to OT-OBL trained on additional trajectories in the context.
+ot-obl,training policies,Training on broader distributions with OT-OBL reduces test time covariate shift and improves OBL in off-team evaluation in the context.
+failure case,bombing out,Bombing out is mentioned as an important failure case in the context of Hanabi.
+hanabi,agent,"In Hanabi, an agent always has alternatives to playing a card, such as discarding or hinting, which can lead to a bomb out."
+hanabi,agent,Hanabi is a game where an agent is involved in playing cards and making decisions.
+agent,alternatives,"An agent in the context always has alternatives to playing a card, such as discarding or hinting."
+alternatives,playing a card,Alternatives to playing a card include discarding or hinting.
+bombout,misunderstood hints,A bombout occurs when an agent misunderstood the hints given by a partner.
+bombout,q-value predictions,A bombout occurs if an agent's Q-value predictions are inaccurate.
+q-value predictions,inaccurate,A bombout is caused by inaccurate Q-value predictions.
+bombout,covariate shifts,Covariate shifts can cause a bombout in the game.
+covariate shifts,bombout,Covariate shifts can lead to a bombout in the game.
+bombout,partner,Misunderstanding hints from a partner can result in a bombout.
+partner,misunderstood hints,"A partner's hints can be misunderstood, leading to a bombout."
+training,ot-obl,"By training with OT-OBL, instances of bombouts caused by the trained agent are significantly reduced."
+ot-obl,reduce bombouts,OT-OBL reduces the instances of bombouts where the agent causes errors.
+ot-bl,covariate shift,"OT-BL assumes π is also on distribution when produced fictitious moves, which might not mitigate covariate shift if π is too off distribution"
+covariate shift,belief models,Belief models in POMDPs and Dec-POMDPs can experience covariate shift when deployed on unseen distributions
+belief models,covariate shift,"Standard belief model training can suffer from covariate shift, but OT-BL reduces it"
+ot-bl,obl,"By training OBL with OT-BL, strong results in intra-AXP in Hanabi and minimizing the gap between SP and XP can be achieved"
+ot-bl,ot-obl,"By training OBL with OT-BL, near-optimal intra-AXP performance and improved ad-hoc teamplay can be achieved"
+ot-obl,train action values functions,OT-OBL allows us to approximate train action values functions off-team to improve performance with unseen teams
+ot-obl,intra-axp,OT-OBL was able to achieve near-optimal intra-AXP performance.
+ot-obl,ad-hoc teamplay,OT-OBL was able to improve ad-hoc teamplay.
+ot-obl,proxy human-ai coordination,OT-OBL was able to improve proxy human-AI coordination.

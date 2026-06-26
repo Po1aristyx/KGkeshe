@@ -1,0 +1,287 @@
+node_1,node_2,edge
+lidar,camera,LiDAR and camera are two modalities available for 3D semantic segmentation in autonomous driving
+lidar-only methods,inferior segmentation on small and distant objects,popular LiDAR-only methods severely suffer from inferior segmentation on small and distant objects due to insufficient laser points
+modality heterogeneity,limited sensor field of view intersection,"we investigate three crucial inherent difficulties: modality heterogeneity, limited sensor field of view intersection, and multi-modal data augmentation"
+multi-modal 3d semantic segmentation model (mseg3d),joint intra-modal feature extraction and inter-modal feature fusion,We propose a multi-modal 3D semantic segmentation model (MSeg3D) with joint intra-modal feature extraction and inter-modal feature fusion to mitigate the modality heterogeneity
+lidar point cloud,multi-camera images,multi-modal data augmentation is reinvigorated by applying asymmetric transformations on LiDAR point cloud and multi-camera images individually
+mseg3d,"state-of-the-art results on nuscenes, waymo, and semantickitti datasets","MSeg3D achieves state-of-the-art results on nuScenes, Waymo, and SemanticKITTI datasets"
+mseg3d,malfunctioning multi-camera input and the multi-frame point clouds input,"Under the malfunctioning multi-camera input and the multi-frame point clouds input, MSeg3D still shows robustness and improves the LiDAR-only baseline"
+mseg3d,https://github.com/jialeli1/lidarseg3d,Our code is publicly available at https://github.com/jialeli1/lidarseg3d
+scene understanding for safe autonomous driving,semantic segmentation using camera,Scene understanding for safe autonomous driving can be achieved through semantic segmentation using camera
+2d images,semantic segmentation,2D images are used for semantic segmentation through semantic segmentation using camera 2D images and LiDAR 3D point clouds.
+lidar 3d point clouds,semantic segmentation,LiDAR 3D point clouds are used for semantic segmentation through semantic segmentation using camera 2D images and LiDAR 3D point clouds.
+camera image,object,"camera image provides rich appearance information about the object but suffers from illumination, varying object scales, and indirect applications in the 3D world."
+lidar point cloud,3d semantic segmentation,LiDAR point cloud is used to drive 3D semantic segmentation with laser points.
+multi-modal data,increased robustness and accuracy,multi-modal data is used to increase both the robustness and accuracy in 3D semantic segmentation.
+multi-modal segmentation model,single-modal methods,multi-modal segmentation model is lagging behind the single-modal methods in terms of development.
+heterogeneity between modalities,sparse points and dense pixels,"heterogeneity between modalities is due to sparse points and dense pixels, leading to the development of distinct point cloud and image feature extractors."
+lack,joint optimization,The lack of joint optimization leads to suboptimal performance.
+limited features,irrelevant network parameters,Limited features are extracted from irrelevant network parameters.
+intersection,field of view (fov),Limited features are from irrelevant network parameters.
+fov,sensors,The field of view (FOV) is between sensors.
+points,intersected fov,Only the points falling into the intersected FOV are geometrically associated with multi-modal data.
+performance,segmentation,Performing fusion solely in the limited FOV intersection like results in unsatisfactory overall segmentation performance.
+pmf,2d augmentations,PMF uses only several 2D augmentations.
+multi-modal data,augmentation transformations,The multi-modal segmentation works discard many useful and critical point cloud augmentation transformations.
+pmf,spatially aligned point cloud projection image,PMF uses several 2D augmentations for spatially aligned point cloud projection image.
+mseg3d,3d semantic segmentation method,We propose a top-performing multi-modal 3D semantic segmentation method termed MSeg3D.
+existing methods,modal features,"Unlike separately extracting modal features in existing methods, we jointly optimize intra-modal feature extraction and inter-modal feature fusion."
+point cloud,multi-modal fusion,The multi-modal segmentation works discard many useful and critical point cloud augmentation transformations with sacrificed perception performance.
+performance,multi-modal fusion,The multi-modal segmentation works discard many useful and critical point cloud augmentation transformations with sacrificed perception performance.
+mseg3d,technical difficulties,"We propose a top-performing multi-modal 3D semantic segmentation method termed MSeg3D, inherently motivated by addressing the aforementioned three technical difficulties."
+feature,fusion,We jointly optimize intra-modal feature extraction and inter-modal feature fusion to drive maximum correlation and complementarity between heterogeneous modalities.
+feature,fusion,"To overcome the disregarded multi-modal fusion outside FOV intersection, we propose a cross-modal feature."
+multi-modal fusion,cross-modal feature completion,The cross-modal feature completion phase collaborates with the geometry-based feature fusion phase to overcome the disregarded multi-modal fusion outside FOVintersection.
+intersection,camera features,The former completes the missing camera intersection features using predicted pseudo-camera features.
+sf-phase,gf-phase,The SF-Phase collaborates with the GF-Phase for feature fusion.
+multi-head attention,semantic relation,The SF-Phase leverages multi-head attention to model the semantic relation between points and interested categories for attentive fusion of semantic embeddings.
+multi-modal data augmentation,asymmetric transformations,"The challenging multi-modal data augmentation is decomposed as asymmetric transformations in the LiDAR, camera worlds, and local cameras for flexible permutation to enrich training samples."
+mseg3d,intra-modal feature extraction,The segmentation model MSeg3D includes joint intra-modal feature extraction and inter-modal feature fusion for achieving state-of-the-art 3D segmentation performance.
+mseg3d,"competitive datasets (nuscenes, waymo, semantickitti)","MSeg3D achieves state-of-the-art performance on competitive datasets such as nuScenes, Waymo, and SemanticKITTI for autonomous driving."
+nuscenes,waymo,"Both nuScenes and Waymo datasets are mentioned together in the context as related datasets used for autonomous driving, indicating a relationship between them."
+nuscenes,semantickitti,"Both nuScenes and SemanticKITTI datasets are mentioned together in the context as datasets used for autonomous driving, indicating a relationship between them."
+waymo,semantickitti,"Both Waymo and SemanticKITTI datasets are mentioned together in the context as datasets used for autonomous driving, indicating a relationship between them."
+waymo,cvpr 2022,"Waymo is mentioned in the context as winning 2nd place in the Waymo 3D semantic segmentation challenge and proposing a cross-modal feature at CVPR 2022, indicating a relationship between Waymo and CVPR 2022."
+proposed framework,waymo,"The proposed framework is mentioned in context as winning 2nd place in the Waymo 3D semantic segmentation challenge, indicating a relationship between the proposed framework and Waymo."
+proposed framework,cvpr 2022,"The proposed framework is mentioned in context as proposing a cross-modal feature at CVPR 2022, indicating a relationship between the proposed framework and CVPR 2022."
+cross-modal feature,cvpr 2022,"A cross-modal feature is mentioned in context as being proposed at CVPR 2022, indicating a relationship between the cross-modal feature and CVPR 2022."
+sensor fov intersection,augmentation transformations,"Sensor FOV intersection and augmentation transformations are mentioned together in context as being applied asymmetrically on point cloud and images for multi-modal data augmentation, indicating a relationship between them."
+miou1,fov intersection,mIoU1 denotes the segmentation performance evaluated on only the points inside FOV intersection
+pmf,fov intersection,PMF and other methods are evaluated on only the points inside FOV intersection
+segmentation,fov intersection,Segmentation performance is evaluated on only the points inside FOV intersection
+component,performance,Cumulatively add the proposed components to enhance performance
+3d voxel.cloud,2d images,3D Voxel.cloud is projected as 2D images in bird’s-eye-view and range-view
+spvnas,cylinder3d,SPVNAS and Cylinder3D explore 3D structure information efficiently
+cylinder3d,sdseg3d,Cylinder3D and SDSeg3D explore 3D structure information efficiently
+voxel features,rpvnet,Image representations facilitate voxel features in RPVNet
+voxel features,af2-s3net,Image representations potentially facilitate voxel features in AF2-S3Net
+rgb value,point cloud range image,RGB value is warped into point cloud range image as additional input features
+cnn feature,point cloud range image,Separately learned CNN feature is warped into point cloud range image as additional input features
+point cloud,range image,point cloud is warped into a range image as additional input
+pmf,point cloud,PMF projects point cloud onto the image plane for fusion with image data
+pmf,camera fov,PMF fusion is limited by camera FOV
+lidar model,remaining area,LiDAR model is required to handle the remaining area after segmentation within FOV
+multi-modal 3d semantic segmentation,researchers,inequity and inconvenience have prevented researchers from focusing on multi-modal 3D semantic segmentation
+point cloud augmentation,3d segmentation network,necessity of point cloud augmentation for the 3D segmentation network
+multi-modal 3d semantic segmentation model,gf-phase,GF-Phase includes the Geometry-based Feature Fusion Module for multi-modal feature fusion
+multi-modal 3d semantic segmentation model,sf-phase,"SF-Phase consists of LiDAR Semantic Feature Aggregation Module, camera SFAM, and Semantic-based Feature Fusion Module"
+2d3dnet,3d model,2D3DNet aims to train a 3D model using reduced 3D annotations and additional manual 2D annotations
+3d model,3d annotations,The 3D model is trained using reduced 3D annotations.
+3d model,unlabeled data,The 3D model is trained using more unlabeled data.
+3d model,additional manual 2d annotations,The 3D model is trained using additional manual 2D annotations.
+2d model,2d segmentation,The 2D model is trained for obtaining 2D segmentation.
+2d segmentation,3d model,The 2D segmentation is also used as additional input for the 3D model.
+phased training approach,joint 2d-3d optimization,The phased training approach lacks joint 2D-3D optimization.
+"{pin, xin}",multi-modal sample,"{Pin, Xin} represents a multi-modal sample."
+"{pin, xin}",rnpoint,Pin ∈ RNpoint×Cin denotes the LiDAR point cloud.
+"{pin, xin}",rncam,Xin ∈ RNcam×3×Hin×Win denotes multi-camera RGB images.
+lidar point cloud,ncls semantic categories,There are Ncls semantic categories for each point in the LiDAR point cloud.
+"{pin, xin}",fig. 2,"{Pin, Xin} is used as input in Fig. 2 for LiDAR feature extraction."
+lidar point cloud,intra-modal feature extraction,Intra-modal feature extraction is performed on the LiDAR point cloud.
+3d voxel,voxel-based lidar feature extraction,Voxel-based LiDAR feature extraction is performed using 3D voxel.
+point-wise initial features,local points,"The point-wise initial features are averaged over the local points inside a voxel, representing the relationship between them."
+sparse tensor input,point cloud backbone,"The non-empty voxels constitute the sparse tensor input to the point cloud backbone for learning the expressive voxel features, indicating a dependency relationship."
+camera features,lidar features,"The LiDAR features are enhanced with jointly-optimized camera features, highlighting the relationship between camera and LiDAR features."
+point cloud backbone,image backbone,"Both the point cloud and image backbones can be flexibly selected from various mature networks, implying a potential selection relationship between them."
+point features,image features,"The expressive voxel features and image features guarantee the inter-modal feature fusion, suggesting a fusion relationship between point and image features."
+voxel features,image feature maps,"Voxel features and image feature maps are warped to points for point-centric segmentation, demonstrating a transformation relationship between them."
+lidar,features,LiDAR features are used as point-wise features for augmenting fusion and segmentation
+point,lidar features,"For each point, its features are interpolated from the nearest neighboring LiDAR features"
+point,image,Bilinear interpolation is performed for the points using the image feature maps
+point,camera,Each point is associated with image feature maps from the local camera
+point,binary mask,A binary mask is created to distinguish points inside and outside the camera field of view
+feature fusion module,lidar features,Features from LiDAR and camera are projected and concatenated for fusion
+feature fusion module,fused features,The fusion module combines the features from LiDAR and camera through learnable fusion
+feature fusion module,geometry,The fusion module focuses on geometry based feature fusion
+feature fusion module,geometry,The fusion module combines multi-modal features mainly based on geometry clues
+sf-phase,feature fusion module,The Semantic-based Feature Fusion Phase builds on top of the Geometry-based Feature Fusion Module
+fov intersection,modalities,Focus on achieving performance gains inside FOV intersection by considering both modalities.
+points,camera features,Points outside FOV cannot retrieve their realistic camera features.
+relative importance,modalities,"The relative importance between modalities varies in different areas, which is overlooked in GF-Phase."
+relational modeling,semantic representations,Explicit relational modeling for category-wise semantic representations is not available.
+sf-phase,gf-phase,The SF-Phase is proposed after GF-Phase.
+lidar features,camera features,Aggregating LiDAR features and camera features into category-wise semantic embeddings for multi-modal fusion in hidden semantic space.
+lidar sfam,ncls lidar semantic embeddings,LiDAR SFAM module starts from voxel features and ends with aggregated Ncls LiDAR semantic embeddings in Elidar.
+distribution matrix dlidar,voxel features v,The distribution matrix Dlidar is used to compute Elidar by matrix product with voxel features V.
+lidar,voxel features segmentation d'v,An intermediate lidar prediction is made on the voxel features segmentation D'V using an MLP-based auxiliary voxel segmentation head.
+lidar,rnvoxel,lidar is defined in the context as being in the space RNvoxel
+lidar,ncls,lidar has a relation with Ncls where it is divided into Ncls categories
+segmentation d′,v,D' segmentation is performed on the voxel features V
+mlp-based auxiliary voxel segmentation head hvoxel,lidar,Hvoxel is used to process the lidar data
+camera sfam,ecam,Camera SFAM is used to aggregate semantic features Ecam from images
+image feature maps x,ncam,X is related to Ncam when aggregating semantic features
+npixel,ncam,"Npixel is determined by the size of Ncam, H, and W"
+auxiliary image segmentation head himg,img,Himg is used to predict intermediate segmentation img from image feature maps
+dcam,x',Dcam and X' are multiplied to calculate the final camera semantic embeddings Ecam
+spatial softmax,dcam,Dcam is normalized using spatial softmax in the calculation of camera semantic embeddings
+3d semantic segmentation datasets,guiding the d′img,The 3D semantic segmentation datasets are available for guiding the D′img
+multi-modal semantic embeddings,point-wise geometry-based fused features,The multi-modal semantic embeddings are concatenated together with point-wise geometry-based fused features
+category-wise semantic embeddings,point-wise geometry-based fused features,The category-wise semantic embeddings are concatenated together with point-wise geometry-based fused features
+sffm,category-wise semantic embeddings,SFFM models the semantic relations among all the category-wise semantic embeddings
+sffm,gray blocks,"Before stacking K gray blocks in SFFM, the projected multi-modal semantic embeddings are concatenated together"
+elidar,ecam,"There are two relations mentioned here, 'Elidar -> Ecam' and 'Ecam -> Elidar', indicating a bidirectional relationship between Elidar and Ecam in the context."
+emhsa,fsfused,"Emhsa is used to update E as Emhsa, which is further fused with the semantic embeddings to create Fsfused. This indicates a direct relationship between Emhsa and Fsfused."
+fproj,emhsa,"Fproj is combined with Emhsa using Multi-Head Cross-Attention for semantic relation modeling, indicating a relationship between Fproj and Emhsa."
+fproj,fmhca,"Fproj is used to compute Fmhca through normalization and multi-head cross-attention, establishing a relationship between Fproj and Fmhca."
+fmhca,fsfused,"Fmhca is used to compute Fsfused through normalization, indicating a direct relationship between Fmhca and Fsfused."
+fproj,m hca,"Fproj is used as input to the Multi-Head Cross-Attention (M HCA) for semantic relation modeling, demonstrating a relationship between Fproj and M HCA."
+fproj,emhsa,"Fproj is used as input to compute an attention matrix with shape Npoint × 2Ncls to aggregate important semantic embeddings, establishing a relationship between Fproj and Emhsa."
+multi-head attention,multi-modal feature fusion,"Multi-head attention is mentioned as a technique tailored to multi-modal feature fusion with different motivations and designs, indicating a relationship between multi-head attention and multi-modal feature fusion."
+m hca,point-wise feature,"The Multi-Head Cross-Attention (M HCA) in Eq. 12 enables the point-wise feature to attend to multi-modal semantic embeddings, indicating a relationship between M HCA and point-wise feature."
+expressive multi-modal semantic embeddings,points inside,expressive multi-modal semantic embeddings can be consistently supported by points inside
+expressive multi-modal semantic embeddings,m hca attention matrix,expressive multi-modal semantic embeddings are improved by the relative importance computed by M HCA attention matrix
+m hca attention matrix,points,M HCA attention matrix computes the relative importance of two modalities to each point
+m hsa,category-wise intra-modal and inter-modal semantic relations,M HSA explicitly models the category-wise intra-modal and inter-modal semantic relations
+lidar sfam and camera sfam,category-wise intra-modal and inter-modal semantic relations,LiDAR SFAM and Camera SFAM aggregate the long sequences of voxel features V and image features X′ into short sequences
+lidar sfam and camera sfam,commonality learning,LiDAR SFAM and Camera SFAM enable commonality learning
+lidar sfam and camera sfam,cross-modal feature completion,LiDAR SFAM and Camera SFAM are part of the cross-modal feature completion module
+elidar and ecam,lidar sfam and camera sfam,Elidar and Ecam are short sequences derived from LiDAR SFAM and Camera SFAM
+cross-modal feature completion,pixel-to-point loss lpixel2point,Cross-modal Feature Completion includes pixel-to-point loss Lpixel2point
+pixel-to-point loss lpixel2point,lidar features flidar,pixel-to-point loss Lpixel2point is mapped from LiDAR features Flidar
+fpcam,point-wise pseudo-camera feature,Fpcam is mapped from the point-wise LiDAR features Flidar to represent pseudo-camera feature
+fpcam,fcam,Fpcam and Fcam are compared for learning the correctly paired cross-modal features relationship
+fpcam,points inside,Fpcam is compared with points inside for learning from correctly paired cross-modal features relationship
+cross-modal feature completion,lpixel2point,cross-modal feature completion involves optimizing Lpixel2point
+lpixel2point,lmse,Lpixel2point is optimized by computing mean square error loss Lmse
+lpixel2point,flidar,Lpixel2point module optimizes LiDAR features to imitate camera features Flidar.
+flidar,fcam,Forces LiDAR features Flidar to imitate camera features Fcam.
+fcam,hpcam,The learned pseudo-image features Fcam can be switched with Hpcam to enhance feature learning.
+fpcam,fcam,Pseudo-image features Fpcam can be used to replace the padded zeros in Fcam in the inference stage as per Eq. 14.
+hpcam,lidar branch,Hpcam transfers appearance priors from the camera branch to the LiDAR branch for enhancing intra-modal feature learning.
+lidar features,camera features,Optimizing LiDAR features to imitate camera features.
+appearance priors,lidar branch,Rich appearance priors are transferred from the camera branch to the LiDAR branch.
+rich appearance priors,consistency constraint,Rich appearance priors are transferred with an effective consistency constraint to enhance intra-modal feature learning.
+3d semantic segmentation labels,mlp based point segmentation head,3D semantic segmentation labels are used for the point-wise segmentation prediction by MLP based point segmentation head.
+d'lidar,voxel labels,Voxel loss Lp2v guides D'lidar using voxel labels determined from the labels of points in the voxel.
+point,voxel,Points in the voxel are used for determining labels to avoid ambiguity in Lp2v.
+point,pixel,Point labels are used to guide the image segmentation label within the training samples.
+point,pixel,Points are projected onto the down-sampled image planes to retrieve the point label for the nearest pixel.
+point,pixel,Sparse point-to-pixel supervisions can guide D′ correctly by propagating to other regions with similar appearance.
+point,image,Points are used to generate the image label Ypoint2pixel for supervision.
+voxel,category,Voxel containing points of multiple categories has the label set to zero as the ignored category in Lp2v.
+image,segmentation,The image label Ypoint2pixel is used for image segmentation within the model.
+segmentation,model,Loss terms are combined to optimize all modules in the proposed segmentation model.
+model,loss function,Total loss function combines loss terms across different modalities in the model.
+point,pixel,Basic cross-entropy loss is computed between D′img and Ypoint2pixel.
+segmentation,data augmentation,The segmentation output and multi-modal fusion mechanism are point-centered.
+segmentation output,multi-modal fusion mechanism,both are point-centered in the context of asymmetric multi-modal data augmentation
+"coordinate pair (xi, yi, zi)","coordinate pair (ci, ui, vi)",the point and pixel can be bridged by these coordinate pairs as per Eq. 1 and Eq. 16
+random flipping,naive symmetric transformation,random flipping is considered as a naive symmetric transformation in the data augmentation process
+global rotation around the z axis,random angle,global rotation is performed with a random angle in the range of -π/4 to +π/4
+global translation,random vector,global translation is applied with a random vector sampled from a Gaussian distribution
+global scaling,random scaling factor,"global scaling is done with a random scaling factor in the range of [0.95, 1.05]"
+random ratio,scaling,"scaling is performed with a random ratio in the range of [1.0, 1.5]"
+horizontal rotation,random angle,"horizontal rotation is done with a random angle in the range of [-1°, 1°]"
+random cropping,"size (hin, win)","random cropping is applied with a specific size indicated by (Hin, Win)"
+color jitter,"brightness, contrast, saturation, hue","color jitter is performed with random parameters for brightness, contrast, saturation, and hue"
+jpeg compression,random compression ratio,"JPEG compression is done with a random compression ratio in the range of [30, 70] with a probability of 0.5"
+lidar transformations,multi-modal data augmentation,LiDAR transformations listed in Table 1 are preserved to decouple multi-modal data augmentation
+lidar transformations,images,"LiDAR transformations are preserved with images, and the coordinates (c, u, v) remain unchanged during the process."
+images,"coordinates (c, u, v)","The coordinates (c, u, v) are synchronously transformed with the images."
+images,camera-only transformations,"Camera-only transformations from Tab. 1 are applied to images, which are asymmetric to the LiDAR transformations."
+lidar transformations,camera-only transformations,The introduced camera transformations are used alongside preserved LiDAR transformations to diversify multi-modal data augmentation.
+images,local cameras,Local cameras slice the image view naturally which leads to independent transformations between the images of local cameras.
+lidar,camera world,Asymmetry exists between the LiDAR and camera world.
+lidar,local cameras,Asymmetry is also observed between the LiDAR and local cameras.
+camera world,local cameras,Local cameras exhibit asymmetry similar to that between the LiDAR and camera world.
+lidar transformations,camera transformations,Camera transformations enable significant diversification of multi-modal data augmentation along with preserved LiDAR transformations.
+nuscenes dataset,waymo dataset,"Both datasets are used for 3D semantic segmentation, with different training, validation, and testing sample counts."
+nuscenes dataset,ncls,The nuScenes Dataset has 17 classes for semantic segmentation annotations.
+waymo dataset,3d semantic segmentation,Waymo Dataset specifically addresses 3D semantic segmentation with a different sample count compared to nuScenes Dataset.
+training samples,validation samples,relates to the division of data for training and validation purposes
+training samples,testing samples,relates to the division of data for testing purposes
+point cloud,rgb images,relates to the data captured by cameras
+rgb images,cameras,relates to the images captured by the different cameras
+ncls,semantic segmentation annotations,relates to the number of classes and the available semantic segmentation annotations
+semantic segmentation annotations,point clouds,relates to the data used for semantic segmentation
+semantickitti dataset,lidar,relates to the method of data collection
+evaluation metric,mean intersection-over-union (miou),relates to the evaluation method used for measuring performance
+"tpc, fpc, fnc","tpc, fpc, fnc","relates to the evaluation metrics true positive, false positive, and false negative predictions"
+fwiou,point frequency,relates to the computation of the weighted category-wise Intersection-over-Union
+settings,lidra-only baseline models,relates to the model training settings and variations
+samples,16 tesla v100 gpus,Samples are distributed on 16 Tesla V100 GPUs for processing.
+16 tesla v100 gpus,network architecture,The network architecture utilizes the processing power of 16 Tesla V100 GPUs for model training.
+network architecture,model training,The model training process is based on the specified network architecture.
+model training,inference,Inference is performed based on the learning from model training.
+network architecture,sm.4.2,The details of network architecture are further discussed in section SM.4.2.
+sm.4.2,comparison with state-of-the-art methods,Section SM.4.2 includes a comparison with state-of-the-art methods.
+comparison with state-of-the-art methods,results on nuscenes,The comparison with state-of-the-art methods provides insights into results on nuScenes.
+comparison with state-of-the-art methods,tab. 2,The comparison with state-of-the-art methods involves information from Table 2.
+multi-modal methods,lidar-only methods,"Multi-modal methods are compared to LiDAR-only methods, showing a performance lag."
+multi-modal methods,top-20 submissions on nuscenes benchmark,Multi-modal methods are observed in the top-20 submissions on the nuScenes benchmark.
+top-20 submissions on nuscenes benchmark,four multi-modal methods,"Out of the top-20 submissions, only four utilize multi-modal methods."
+four multi-modal methods,"cylinder3d++, spvcnn++, lifusion, and cpfusion","Specific multi-modal methods include Cylinder3D++, SPVCNN++, LIFusion, and CPFusion."
+results on waymo,lidar sensor,The results on Waymo involve evaluation based on data from the LiDAR sensor.
+lidar sensor,denser laser points,The LiDAR sensor provides denser laser points for analysis.
+lidar sensor,multi-camera,The LiDAR sensor is part of the multi-camera setup for data collection.
+multi-camera,rearview,The multi-camera setup excludes the rearview in its data collection process.
+denser point cloud,incomplete camera fov,"The denser point cloud is due to the LiDAR sensor, while the incomplete camera FOV affects the dataset."
+general point cloud backbone network,performance,The performance of the model is based on the general point cloud backbone network.
+network,point cloud backbone networks,The performance can be improved by incorporating stronger point cloud backbone networks from other state-of-the-art LiDAR-only methods.
+network,lidar-only methods,Our method not only shows improvements to the LiDAR-only methods but also outperforms other multi-modal methods.
+network,multi-modal methods,Our method not only shows improvements to the LiDAR-only methods but also outperforms other multi-modal methods.
+semantickitti,pmf,"SemanticKITTI provides only front-view images, PMF evaluates the multi-modal segmentation performance on points inside the FOV intersection."
+pmf,miou1,We follow PMF to report mIoU1 on points inside in Tab. 4.
+nuscenes,lidar,"The modalities available on nuScenes include LiDAR (L), Camera (C), and Radar (R)."
+nuscenes,camera,"The modalities available on nuScenes include LiDAR (L), Camera (C), and Radar (R)."
+nuscenes,radar,"The modalities available on nuScenes include LiDAR (L), Camera (C), and Radar (R)."
+cylinder3d++,spvcnn++,"Cylinder3D++ and SPVCNN++ are both mentioned as models in the context, suggesting they are related in the field of computer vision or machine learning."
+lidarmultinet∗,spvcnn++,"LiDARMultiNet∗ and SPVCNN++ are mentioned in a list of methods, indicating they are potentially related in the context of computer vision tasks."
+horizonsegexpert∗,spvcnn++,"HorizonSegExpert∗ and SPVCNN++ are both listed among other models, suggesting they have some relation in the context of computer vision applications."
+spvcnn++,polarfuse∗,"SPVCNN++ and PolarFuse∗ are both mentioned in a list of models, implying a potential relationship in the context of computer vision or machine learning."
+spvcnn++,salsanext,"SPVCNN++ and SalsaNext are part of a list of models, indicating a possible relation in the domain of computer vision or related tasks."
+mseg3dmiou,spvcnn++,"MSeg3DmIoU and SPVCNN++ are both mentioned as models, suggesting they may have a connection in the context of computer vision or machine learning tasks."
+salsanext,methodlidar,SalsaNext is compared with MethodLiDAR in terms of performance on SemanticKITTI validation set.
+salsanext,spvnas,SalsaNext is compared with SPVNAS in terms of performance on SemanticKITTI validation set.
+salsanext,cylinder3d,SalsaNext is compared with Cylinder3D in terms of performance on SemanticKITTI validation set.
+salsanext,pointpainting,SalsaNext is compared with PointPainting in terms of performance on SemanticKITTI validation set.
+salsanext,rgbal,SalsaNext is compared with RGBAL in terms of performance on SemanticKITTI validation set.
+salsanext,pmf,SalsaNext is compared with PMF in terms of performance on SemanticKITTI validation set.
+cylinder3d,pointpainting,Cylinder3D is compared with PointPainting in terms of performance on SemanticKITTI validation set.
+pmf,mseg3d,PMF results are used in the analysis of MSeg3D performance.
+gf-phase,sf-phase,Comparison is made between GF-Phase and SF-Phase in terms of multi-modal feature fusion and feature completion.
+lidar,cm feature completion,LiDAR modality and cross-modal feature completion are compared in terms of multi-modal feature fusion.
+multi-modal data augmentation,multi-modal model,"The multi-modal data augmentation is an essential component of the multi-modal model, enhancing its performance by closing gaps between mIoU and mIoU1."
+multi-modal data augmentation,cross-modal feature completion,"The asymmetric multi-modal data augmentation technique allows for the accumulation of transformations on both point cloud and image data, leading to improved performance when combined with cross-modal feature completion."
+multi-modal data augmentation,image,"The asymmetric multi-modal data augmentation facilitates the accumulation of transformations on both point cloud and image datasets, contributing to the best performance on both datasets."
+cross-modal feature completion,sf-phase,"The supervised cross-modal feature completion combined with SF-Phase benefits both mIoU and mIoU1, with gradually narrowed performance gaps."
+lpixel2point,appearance information,"Lpixel2point can transfer appearance information from dense images to sparse point clouds, leading to improved joint feature learning."
+camera features,pseudo-camera features,"Completing camera features with pseudo-camera features helps in reducing the feature gap between points inside and outside, facilitating better segmentation performance."
+sf-phase,miou,"SF-Phase narrows the gaps between mIoU and mIoU1 to the smallest values, addressing the limitation of geometric associations by semantic-based feature fusion."
+sf-phase,miou1,"SF-Phase narrows the gaps between mIoU and mIoU1 to the smallest values, addressing the limitation of geometric associations by semantic-based feature fusion."
+model,final framework,The model in the last row is set as the final framework.
+model,miou breakdown over distance,The model corresponds to the mIoU breakdown over distance.
+point,sparse points,The model deals with sparse points due to more sparse points.
+lidar-only model,mseg3d,"Even with all cameras removed, MSeg3D still outperforms the LiDAR-only baseline, providing effective cross-modal information transfer in training."
+lidar-only model,lidar-only 3d perception,Collapsing laser points from neighboring frames usually boosts LiDAR-only 3D perception.
+lidar-only model,long-term contextual information,"Considering the provided ego-vehicle motion information, long-term contextual information is collapsed from multiple previous frames to the current frame."
+lidar-only model,improvements,The improvements of the LiDAR-only model are saturated with 25 and 10 frames on nuScenes and Waymo.
+mseg3d,multi-frame point clouds input,"MSeg3D achieves further improvements in the last column, showing that multi-frame point clouds input can be an optional extension."
+image backbone,performance gains,A lightweight image backbone delivers significant performance gains due to multi-modal input.
+hrnet-w48,default image backbone,HRNet-w48 is the default image backbone.
+multi-camera image input,efficiency bottleneck,"The efficiency bottleneck lies in the image backbone due to multi-camera image input, which deserves in-depth study for autonomous driving."
+mseg3d,complexity scalability,"MSeg3D can adapt to complexity scalability among various backbones, flexibly trading off performance and efficiency."
+mseg3d,3d semantic segmentation method,"MSeg3D is a novel multi-modal 3D semantic segmentation method for autonomous driving, based on LiDAR and multi-camera sensors."
+mseg3d,cross-modal feature completion,"MSeg3D's cross-modal feature completion and semantic-based feature fusion solve the overlooked problem, enabling multi-modal fusion beyond the sensor FOV intersection."
+mseg3d,asymmetric multi-modal data augmentation,MSeg3D's asymmetric multi-modal data augmentation enables effective training of the multi-modal segmentation model with reliable performance.
+method,state-of-the-art performance,"The proposed method achieves state-of-the-art performance on nuScenes, Waymo, and other platforms."
+method,performance,"The method achieved state-of-the-art performance on nuScenes, Waymo, and SemanticKITTI."
+method,achievement,"The method achieved state-of-the-art performance on nuScenes, Waymo, and SemanticKITTI."
+experiments,validation,Comprehensive experiments validate improvements and robustness.
+investigation,multi-modal fusion,Inspiring further investigation into multi-modal fusion for 3D semantic segmentation in autonomous driving.
+work,support,This work was supported by the National Key Research and Development Program of China (2018YFE0183900) and YUNJI Technology Co. Ltd.
+evaluation,models,Distance-based mIoU evaluation on nuScenes and Waymo validation (Val.) sets using the models in Tab. 6.
+analysis,cameras,Robustness analysis on MSeg3D by removing some cameras as malfunction.
+point clouds,input,Robustness analysis on MSeg3D with multi-frame point clouds input.
+lidar,frame number,#L-Frame is the frame number for LiDAR.
+improvements,sparsity,Improvements between the multi-modal model and the LiDAR-only model are increased along the distance due to increased sparsity.
+points,denseness,The Waymo point cloud has denser points.
+nuscenes,fig. 3,nuScenes data is further analyzed in Figure 3 (c) and (d)
+waymo,point cloud,Waymo has denser points in its point cloud compared to other sources
+waymo,image,Waymo's point cloud reduces its dependence on images
+points outside,distances,More points outside on Waymo are distributed along different distances
+points outside,rear cameras,More points outside are present on Waymo due to the absence of rear cameras
+points outside,multi-modal fusion,The presence of more points outside on Waymo hinders the applicability of multi-modal fusion
+multi-modal model,performance gap,The multi-modal model performs with a low-performance gap of 0.56 mIoU on Waymo in row 5
+camera malfunction,mseg3d,MSeg3D performs properly under the unfavorable condition of camera malfunction
+mseg3d,practical situation,MSeg3D can easily deal with practical situations without the need to switch the model

@@ -1,0 +1,206 @@
+node_1,node_2,edge
+zero-shot quantization,deep neural networks,"Zero-shot quantization (ZSQ) is a method for compressing and accelerating deep neural networks, particularly when full-precision models are inaccessible."
+network quantization,synthetic samples,"In Zero-shot quantization (ZSQ), network quantization is performed using synthetic samples, and the quality of synthetic samples heavily influences the performance of quantized models."
+quantized models,synthetic samples,Quantized models obtained using existing ZSQ methods suffer from performance degradation on hard samples due to the easy fit of synthetic samples by the models.
+hast,existing zsq methods,The proposed HArd sample Synthesizing and Training (HAST) method seeks to address the issue of performance degradation in quantized models compared to existing ZSQ methods.
+full-precision models,quantized models,HAST aligns features extracted by full-precision and quantized models in order to ensure similarity between the features extracted by these two models.
+dnns,image classification,Deep neural networks (DNNs) have achieved success in various domains including image classification.
+dnns,object detection,Deep neural networks (DNNs) have achieved success in various domains including object detection.
+dnns,semantic segmentation,Deep neural networks (DNNs) have achieved success in various domains including semantic segmentation.
+dnns,resource-constrained edge devices,DNNs are challenging to deploy on resource-constrained edge devices due to rapid growth of parameters and computational complexity
+network quantization,full-precision models,Network quantization aims to represent full-precision models with low-bit integers for high compression rate and inference-acceleration rate
+network quantization,training data,"Training data is assumed to be available for network quantization process, but it may be inaccessible due to privacy and security issues"
+zero-shot quantization (zsq),training data,ZSQ is developed to quantize networks without accessing the training data
+zsq,network quantization,"ZSQ is an approach to quantize networks without having access to training data, different from the traditional network quantization methods"
+network quantization,weight equalization,"In ZSQ, some works perform network quantization by weight equalization."
+network quantization,bias correction,"In ZSQ, some works perform network quantization by bias correction."
+network quantization,weight rounding strategy,"In ZSQ, some works perform network quantization by weight rounding strategy."
+network quantization,synthetic data,"To promote the performance of quantized models, advanced works propose to leverage synthetic data for network quantization."
+synthetic data,quantized models,"Specifically, they fine-tune quantized models with data synthesized using full-precision models, achieving promising improvement in performance."
+synthetic data,synthetic sample generation,"Much attention has been paid to the generation of synthetic sample, since high-quality synthetic samples lead to high-performance quantized models."
+synthetic data,generative models,Recent works employ generative models to synthesize data with fruitful approaches.
+synthetic data,sample difficulty,Variation of error rate with sample difficulty.
+synthetic data,sample difficulty,Distribution visualization of sample difficulty using GHM [30].
+test samples,different difficulties,"Test samples have different difficulties, which affects the error rate."
+distribution visualization,sample difficulty,Distribution visualization is used to show the difficulty level of samples.
+synthetic samples,quality,The quality of synthetic samples is limited by the generator.
+noise distribution,optimization,The noise distribution is optimized for synthesizing samples.
+synthetic samples,intraq,IntraQ focuses on the property of synthetic samples.
+zsq methods,synthetic samples,ZSQ methods leverage synthetic samples for performance gains.
+real data,synthetic data,There is a performance gap between models trained with real data and those trained with synthetic data.
+generalization error,real data,The difference in generalization error between models trained with real data and synthetic data is studied.
+models,generalization error,Models trained with synthetic data lead to larger generalization errors than those trained with real data.
+synthetic data,generalization errors,Synthetic data lead to a more significant gap between training and test accuracy than real data.
+models,data,Models trained with synthetic data perform worse on difficult samples than those trained with real data.
+synthetic samples,inception loss,"Synthetic samples are easy to fit, consistent with the observation on inception loss of synthetic data."
+synthetic data,models,Quantized models fine-tuned with synthetic data may fail to generalize well on hard samples in the test set.
+samples,models,Samples synthesized for fine-tuning quantized models may fail to generalize well on hard samples in the test set.
+quantized models,fine-tuning,quantized models are fine-tuned using the samples synthesized by the proposed HAST scheme to ensure the samples are hard to fit for the models
+hast,samples,"HAST scheme synthesizes samples for fine-tuning models, with a focus on hard samples to improve model performance"
+quantized model,full-precision model,HAST aims to make the features extracted by both the quantized and full-precision models similar during the sample synthesis process
+hast,weights,"HAST assigns weights to samples based on their difficulty, following the approach introduced in GHM"
+features,fine-tuning,HAST aligns the features between the full-precision and quantized models during the fine-tuning process
+hast,effectiveness,Experimental results demonstrate the effectiveness of HAST in improving model performance compared to state-of-the-art methods
+hast,synthetic samples,"HAST utilizes synthetic samples, focusing on hard samples, to outperform existing methods and achieve performance comparable with quantization using real data"
+zsq,performance degradation,Observation is made that performance degradation in zero-shot quantization is due to the lack of hard samples used in existing ZSQ methods
+zsq methods,quantized models,ZSQ methods are easily fitted by quantized models
+zsq methods,real data,distinguishing models trained on synthetic samples from those trained on real data
+hast,empirical observation,"Built upon our empirical observation, we propose a novel HArd sample Synthesizing and Training (HAST) scheme"
+hast,hard samples,HAST generates hard samples
+hast,sample difficulty,promotes the sample difficulty on the fly when training models
+hast,feature alignment constraint,paired with a feature alignment constraint to ensure the similarity of features extracted by these two models
+hast,extensive experiments,Extensive experiments demonstrate the superiority of HAST over existing ZSQ methods
+hast,synthetic samples,"HAST using merely 5,120 synthetic samples outperforms the previous state-of-the-art method"
+hast,real training data,achieves performance comparable to models fine-tuned using real training data
+related work,network quantization,"In this section, we briefly review the most relevant works in network quantization"
+data-driven quantization,compression rates,Network quantization is proposed to promote the compression rates
+quantization aware training (qat),designing quantizers,QAT methods focus on designing quantizers
+quantization aware training (qat),training strategies,QAT methods focus on training strategies
+quantization aware training (qat),binary networks,QAT methods focus on binary networks
+post-training quantization (ptq),network quantization,PTQ methods perform network quantization
+post-training quantization (ptq),training data,PTQ methods perform network quantization with limited training data
+post-training quantization (ptq),optimal clipping value,PTQ methods approximate an optimal clipping value in the feature space using limited training samples
+post-training quantization (ptq),allocation policy,PTQ methods introduce an allocation policy to quantize both activations and weights to 4-bit
+zero-shot quantization,privacy or security issue,ZSQ methods propose to perform network quantization without accessing the training data of full-precision models to relax the privacy or security issue
+zero-shot quantization,calibrating model parameters,ZSQ methods propose to perform network quantization by calibrating model parameters without training data
+dfq,weight ranges,DFQ equalizes the weight ranges in the network
+squant,data-free quantification,SQuant performs data-free quantification
+squant,diagonal hessian approximation layer,SQuant performs data-free quantification using the diagonal Hessian approximation layer by layer
+synthetic samples,model performance,Synthetic samples are generated for fine-tuning quantized models which results in promoted model performance.
+gdfq,generative models,GDFQ adopts generative models guided by batch normalization statistics and extra category label information to synthesize samples.
+gdfq,variants,"Many variants of GDFQ improve performance by adopting better generator, adversarial training, boundary-supporting samples generation, and using an ensemble of compressed models."
+data synthesis,random noise,Data synthesis can be realized by optimizing random noise sampled from a pre-defined distribution.
+noise optimization scheme,data synthesis,"The noise optimization scheme is improved by designing an appropriate mechanism for synthesizing data, such as enhancing the diversity of samples and increasing the intra-class heterogeneity of synthetic samples."
+methods,performance gain,"Although these methods achieve considerable performance gain compared to data-driven quantization, there is still a performance gap."
+data-driven quantization,performance gain,There is a considerable performance gain compared to data-driven quantization.
+performance gap,fine-tuning,There is still a performance gap between fine-tuning with synthetic and real data.
+zero-shot quantization (zsq),hard sample synthesizing and training (hast),The methodology section introduces the process of zero-shot quantization (ZSQ) and details the proposed HArd sample Synthesizing and Training (HAST) scheme.
+hard sample synthesizing and training (hast),parts,"The HArd sample Synthesizing and Training (HAST) scheme contains three parts: hard sample synthesis, sample difficulty promotion, and feature alignment ensuring the similarity of representations from quantized models and full precision models."
+overview,hast,The overview of HAST is illustrated in Figure 3.3.1.
+quantizer,asymmetric uniform quantizer,The focus is on the asymmetric uniform quantizer to implement network quantization.
+quantizer produces,quantized integerθq,The quantizer produces the quantized integer θq according to specific calculations.
+quantized integerθq,quantized value zero,The quantized integer θq is mapped to a quantized value zero.
+dequantized value calculation,quantized integerθq,The corresponding dequantized value can be calculated based on the quantized integer θq.
+full-precision models,low-bit integers,The weights of full-precision models can be represented using low-bit integers.
+quantized model,inference,The quantized model performs inference using the dequantized parameter.
+parameter θ′,considerable performance,"The quantized model performs inference using the dequantized parameter θ′, which is typically paired with considerable performance."
+quantized model,inference,The quantized model performs inference using the dequantized parameter θ′.
+quantized model,parameter θ′,The quantized model performs inference using the dequantized parameter θ′.
+parameter θ′,performance degradation,The dequantized parameter θ′ is typically paired with considerable performance degradation.
+zero-shot quantization,performance degradation,"To mitigate the performance degradation, a widely adopted approach is to optimize θ such that its dequantized parameter θ′ can perform well on test sets."
+zero-shot quantization,θ,"This is typically achieved by optimizing θ using the data for training full-precision models, since θ′ is inherently the function of θ."
+zero-shot quantization,zsq,Zero-Shot Quantization (ZSQ) takes a step further to quantize models when data for training full-precision models are inaccessible.
+zsq,synthetic samples,"In ZSQ, synthetic samples are usually employed for optimizing quantized models."
+synthetic samples,noise optimization,"The synthetic samples can be derived by noise optimization, typically instantiated by distribution approximation."
+noise optimization,distribution approximation,Noise optimization is typically instantiated by distribution approximation.
+noise optimization,synthetic samples,The synthetic samples can be derived by noise optimization.
+noise optimization,{xi}n i=1,"Given a set of noise {xi}N i=1, synthetic samples are obtained by optimizing these noise to match the batch normalization statistics."
+synthetic samples,batch normalization statistics,Synthetic samples are obtained by optimizing noise to match the batch normalization statistics.
+batch normalization statistics,bns,Synthetic samples are obtained by optimizing noise to match the batch normalization statistics.
+bns,mean/variance parameters,The batch normalization statistics involve mean/variance parameters.
+mean/variance parameters,full-precision model,Mean/variance parameters are stored in the l-th BN layer of the full-precision model.
+θ,calculated,The mean/variance parameters are calculated on the sampled noise using θ.
+inception loss,sampled noise,An inception loss is also employed for optimizing sampled noise.
+synthetic data,optimizing,Synthetic data is obtained by optimizing the final objective function composed of these two terms
+objective function lfnl,zsq,"Built upon the objective function LFNL, ZSQ can fine-tune the model parameter θ"
+model parameter θ,synthetic samples,The model parameter θ is fine-tuned such that its dequantized parameter θ′ can perform well on synthetic samples
+quantized network,teacher-student framework,The quantized network is usually fine-tuned by a teacher-student framework with the cross-entropy loss CE and the Kullback-Leibler loss KL
+quantized models,optimizing,"We use θ′ to represent the parameter of quantized models and optimize θ′, equal to optimizing θ, as θ′ is a function of θ"
+sample synthesis,batch,The process of sample synthesis starts with a batch of random input xi sampled from a standard Gaussian distribution.
+sample synthesis,hard sample synthesis,The proposed hard sample synthesis optimizes xi to increase the sample difficulty measured with full-precision models.
+hard sample synthesis,bns alignment loss,The hard sample synthesis optimizes xi by computing the BNS alignment loss.
+hard sample synthesis,inception loss,The hard sample synthesis optimizes xi by computing the hard-sample-enhanced inception loss.
+network fine-tuning,sample difficulty,"In the process of network fine-tuning, the sample difficulty is increased on the fly using Eq. (10)."
+network fine-tuning,feature alignment,"In the process of network fine-tuning, feature alignment is performed to ensure the similarity between full-precision and quantized models."
+hard sample synthesis,experimental results,"Inspired by experimental results, Hard Sample Synthesis proposes to reconsider the difficulty of synthetic samples."
+sample difficulty,ghm,"To measure the sample difficulty, GHM is introduced in [30]."
+sample difficulty,model components,"By focusing more on transferable components, models aim to mitigate sample difficulty."
+sample difficulty,inception loss,"The inception loss LHIL is proposed to be enhanced with hard-sample components, focusing more on hard samples in the synthesis process."
+sample difficulty,synthesis process,The hard-sample-enhanced inception loss LHIL pays more attention to hard samples in the synthesis process than the original inception loss LIL.
+hard samples,synthesis process,The hard-sample-enhanced inception loss LHIL pays more attention to hard samples in the synthesis process than the original inception loss LIL.
+sample difficulty,fraction of hard samples,"As sample difficulty decreases, loss drops and finally converges to zero. However, samples optimized using LHIL (0.7) are more difficult than those using LIL (0.2), resulting in an increase in the fraction of hard samples."
+lhil,lil,"LHIL is compared to LIL, with LHIL being considered more difficult to use than LIL."
+fraction of hard samples,samples,"Increase in the fraction of hard samples is depicted in Figure 2c, where samples are synthesized by optimizing the hard-sample-enhanced loss."
+samples synthesized using eq. (9),full-precision model parameterized with θ,Samples synthesized using Eq. (9) are hard to fit for the full-precision model parameterized with θ.
+full-precision model parameterized with θ,quantized model θ',The difficulties for the quantized model θ' in fitting the samples synthesized using Eq. (9) are lacking since the difficulty measurement is based on θ.
+sample difficulty promotion,hard sample synthesis,Sample difficulty promotion process is explained to be different from hard sample synthesis process.
+full-precision models,quantized models,Full-precision models are used to synthesize samples for training quantized models.
+quantized models,sample difficulty promotion,Quantized models are used to enhance the sample difficulty for training themselves in the sample difficulty promotion process.
+synthetic samples,quantized models,"If synthetic samples are changed in the process of sample difficulty promotion, they would be both easy and difficult for quantized models."
+adversarial training,samples,"Inspiration is drawn from adversarial training, where samples are modified to be hard to fit on the fly."
+sample difficulty,synthetic samples,"Sample difficulty d(xi, θ') is increased on the fly to make synthetic samples hard to fit by introducing a perturbation δi for xi in each training iteration."
+perturbation,training iteration,"A perturbation δi is introduced for xi in each training iteration, with the perturbation attached to find nearby difficult samples with larger difficulty in each iteration."
+perturbation,sample,The perturbation δi is attached to find nearby difficult samples with larger sample difficulty in each iteration.
+sample,difficulty,The nearby difficult samples with larger sample difficulty are found using the perturbation δi in each iteration.
+hard sample synthesis,sample difficulty promotion,"The proposed hard sample synthesis and sample difficulty promotion are built upon, to train quantized models using hard samples."
+quantized model,full-precision model,"To ensure the quantized model performs the same as its full-precision model, the outputs and intermediate features of both models are kept exactly the same, aligning the features of the full-precision and quantized models."
+quantized model,full-precision model,The quantized models may not be able to match the outputs of full-precision models due to limited model capacity.
+quantized model,feature,The features of the quantized model are aligned with the features of the full-precision model to minimize the quantization gap.
+dsg,+il,"DSG is related to +IL in the context as they both appear together multiple times such as DSG [48]+IL [20], and DSG [48]+IL [20]IntraQ [50], indicating a connection between them."
++il,intraq,"+IL is related to IntraQ in the context as they both appear together in the sequence DSG [48]+IL [20]IntraQ [50], suggesting a relationship or dependency between them."
+hast(ours),squant,"HAST(Ours) and SQuant are related in the context by being mentioned together in the sequence HAST(Ours)Real Data SQuant [19], hinting at some association between them."
+hast(ours),gdfq,"HAST(Ours) and GDFQ seem to be related as they are both mentioned together in the context in the sequences HAST(Ours)Real Data GDFQ [46]AIT [7] and HAST(Ours)Real Data SQuant [19]GDFQ [46], indicating a connection between them."
+gdfq,ait,"GDFQ is related to AIT in the context as they are mentioned together in the sequences GDFQ [46]AIT [7]ZeroQ [2]+IL [20]DSG [48]+IL [20]IntraQ [50] and HAST(Ours)Real Data GDFQ [46]AIT [7], suggesting some form of relationship or association."
+w4a4w3a3,sw,"W4A4W3A3 and SW have a relationship in the context as they are linked together through the term i,l∈SW(cid:88)H(cid:88)ˆLF A =λ θ′(ϕ(f l(xi + δi; θ), f l(xi + δi; θ′)) +αKL(p(xi; θ)"
+s,n,S and N are related in the context through the term z = N
+s,"(c, w , h)","S is related to (C, W, H) as they appear together in the context when discussing the intermediate feature f l(·; θ) ∈ RC×W×H, suggesting their connection in the context."
+hast scheme,effectiveness,The proposed HAST scheme aims to demonstrate its effectiveness.
+section,experiment setting,"The experimental setup is organized in different sections, starting with the experiment setting in Sec. 4.1."
+proposed method,existing zsq methods,The proposed method is compared with existing ZSQ methods in Sec. 4.2 and Sec. 4.3.
+hyperparameters,proposed component,The effect of hyperparameters and the proposed component in the HAST scheme is investigated in Sec. 4.4.
+code,results,The code to reproduce the results is available at the provided link.
+datasets,"cifar-10, cifar-100, imagenet","The method is evaluated on three datasets including CIFAR-10, CIFAR-100, and ImageNet."
+network architectures,"resnet-20, resnet-18, mobilenetv1, mobilenetv2","Different network architectures like ResNet-20, ResNet-18, MobileNetV1, and MobileNetV2 are chosen for evaluation purposes."
+baselines,"zeroq, dsg, intraq","The compared methods in terms of noise optimization include ZeroQ, DSG, and IntraQ."
+zeroq,dsg,ZeroQ and DSG are compared in terms of results with the inception loss (IL) [20]
+zeroq,gdfq,ZeroQ is also compared with GDFQ
+zeroq,ait,ZeroQ is compared with AIT
+zeroq,squant,"ZeroQ is also involved with SQuant, an recent on-the-fly ZSQ method without synthesizing data"
+dsg,gdfq,DSG and GDFQ are compared
+dsg,ait,DSG is compared with AIT
+dsg,squant,"DSG is also involved with SQuant, an recent on-the-fly ZSQ method without synthesizing data"
+gdfq,ait,GDFQ is compared with AIT
+squant,ait,SQuant is also involved with AIT
+gdfq,zeroq,GDFQ and ZeroQ are compared
+zeroq,intraq,ZeroQ and IntraQ are compared
+gdfq,intraq,GDFQ and IntraQ are compared
+ait,intraq,AIT is compared with IntraQ
+eq. (9),eq. (12),The loss function Eq. (12) is used for fine-tuning the quantized models by SGD with Nesterov. Both equations involve hyper-parameters β and α for fair comparison.
+intraq,cifar-10/100,5120 images are synthesized following the settings of IntraQ for dataset preparation. Comparison results show significant improvements on CIFAR-10/100 with our method achieving higher accuracy.
+ait,cifar-10/cifar-100,Our method increases the top-1 accuracy of 3-bit quantized models by 7.85% on CIFAR-10 and 7.03% on CIFAR-100 compared to AIT.
+intraq,3-bit quantized models,IntraQ achieved 3-bit accuracy of 77.07% and 48.25% on CIFAR-10 and CIFAR-100 respectively.
+cifar-10,cifar-100,"CIFAR-10 and CIFAR-100 are datasets compared in terms of difficulty, with CIFAR-10 being relatively easy compared to CIFAR-100 and ImageNet."
+intraq,cifar-10,IntraQ obtains 3-bit accuracy on CIFAR-10.
+intraq,cifar-100,IntraQ obtains 48.25% accuracy on CIFAR-100.
+proposed method,cifar-10,The proposed method reaches 88.34% performance on CIFAR-10.
+proposed method,cifar-100,The proposed method reaches 55.67% performance on CIFAR-100.
+proposed method,synthetic images,The proposed method achieves higher performance using the same number of synthetic images compared to IntraQ.
+gap,real data,The gap in performance between the proposed method and fine-tuning with real data is discussed.
+imagenet,mobilenetv1,Results of MobileNetV1 on ImageNet are presented.
+imagenet,mobilenetv2,Results of MobileNetV2 on ImageNet are presented.
+imagenet,resnet,Results of ResNet on ImageNet are compared with competitors.
+imagenet,competitors,"ImageNet is compared with competitors on a large scale, indicating a relationship in terms of performance evaluation."
+quantized networks,resnet-18,ResNet-18 is one of the quantized networks compared in the experimental results.
+quantized networks,mobilenetv1/v2,MobileNetV1/V2 are lightweight models compared with other quantized networks in terms of performance under ultra-low precision quantization.
+mobilenetv1/v2,4-bit and 3-bit,"MobileNetV1/V2 is quantized to 5-bit and 4-bit, unlike other quantized networks."
+mobilenetv2,fine-tuning process,The fine-tuning process of MobileNetV2 is unstable and shows that the training process has a greater impact on performance recovery than the sample difficulty.
+ait,hast,AIT performs better than HAST on MobileNetV2 due to the dynamic learning rate for each convolution kernel.
+ait,hast,AIT can be used in combination with HAST as long as memory and time overheads allow.
+proposed hsat scheme,synthetic data,Experiments show that the synthetic data generated by the proposed HSAT scheme significantly improves the performance of the quantized model.
+hard samples,quantized model,"Synthesizing and learning hard samples is important for improving the quantized model, especially when the model is quantized to lower bit-width."
+proposed components,hard sample synthesis,The effectiveness of the proposed hard sample synthesis is studied to improve performance.
+hard sample synthesis,sample difficulty promotion,"These two concepts are discussed in Section 3.3 and Section 3.4 respectively, highlighting the importance of synthesizing hard samples and promoting sample difficulty in the experimental process."
+sample difficulty promotion,feature alignment,"In Section 3.4 and Section 3.5, the relationship between sample difficulty promotion and feature alignment is discussed, showcasing their interdependency in improving accuracy."
+hard samples,adversarial augmentation,"The addition of adversarial augmentation as a component for synthesizing hard samples results in a high accuracy improvement of 3.79%, emphasizing the effectiveness of this technique."
+attention transfer,quantized model,"Attention transfer aids the quantized model in acquiring informative knowledge from the intermediate features of the full-precision model, leading to performance enhancement by 1.39% in the absence of hard samples."
+hard samples,quantized models,"The significance of hard samples in enhancing the training of quantized models is highlighted, as evidenced by the performance improvement obtained when using them during synthesis and learning."
+hard sample synthesis,feature alignment,"The combination of hard sample synthesis and feature alignment, as discussed in Section 3.3 and Section 3.5 respectively, contributes to achieving the best performance of 51.15% when both components are applied."
+hard sample synthesis,sample difficulty promotion,"Through the ablations performed on different components, such as hard sample synthesis and sample difficulty promotion, the experimental results demonstrate the impact of these techniques on accuracy improvement."
+federated learning,communication bandwidth,"federated learning is mentioned with limited communication bandwidth, indicating a relationship between the two concepts"
+vision transformer,large-scale model parameters,"vision transformer is discussed in the context of large-scale model parameters, suggesting a relationship between the two concepts"
+quantized models,out-of-distribution scenarios,"the performance of quantized models over out-of-distribution scenarios is highlighted, indicating a correlation between the two concepts"
+noise optimization,zero-shot quantization,"state-of-the-art solutions based on noise optimization are investigated for zero-shot quantization, implying a connection between the two concepts"
+synthetic samples,quantized model,"synthetic samples are discussed in relation to the quantized model's ability to fit them, suggesting an association between the two concepts"
+hard samples,zero-shot quantization,"the importance of hard samples for zero-shot quantization is emphasized, indicating a relationship between the two concepts"
+feature alignment,fine-tuning process,"feature alignment is applied in the fine-tuning process to help the quantized model learn hard samples better, suggesting a connection between the two concepts"
+method,comparable performance,"the method described can achieve comparable performance with those fine-tuned using real data, implying a relationship between the two concepts"

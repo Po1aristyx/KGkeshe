@@ -1,0 +1,186 @@
+node_1,node_2,edge
+large-scale pre-trained vision models,downstream tasks,Large-scale pre-trained vision models are fine-tuned for downstream tasks to achieve state-of-the-art performance in computer vision benchmarks.
+fine-tuning,whole model with millions of parameters,Fine-tuning the whole model with millions of parameters is inefficient as it requires storing a same-sized new model copy for each task.
+lorand,large-scale vision models,LoRand is a method for fine-tuning large-scale vision models with a better trade-off between task performance and the number of trainable parameters.
+lorand,tiny adapter structures,"LoRand generates tiny adapter structures with low-rank synthesis while keeping the original backbone parameters fixed, resulting in high parameter sharing."
+lorand,pre-trained backbone parameters,LoRand achieves comparable performance to standard fine-tuning on COCO and ADE20K and outperforms fine-tuning in low-resource PASCAL VOC dataset by only training a small percentage (1% to 3%) of the pre-trained backbone parameters.
+computer vision,parameters in deep models,"With the rapid development of computer vision, parameters in deep models are surging, requiring giant models to be trained with massive resources for superior performance."
+pretrain & finetuning paradigm,enormous datasets,The 'Pretrain & Finetuning' paradigm is widely used to alleviate the dilemma of training giant models with massive resources by teams with sufficient computation resources utilizing enormous datasets to train superior backbones.
+teams,computation resources,Teams with sufficient computation resources utilize enormous datasets to train superior backbones and optimize models.
+backbones,models,Backbones are trained with enormous datasets to optimize the models for ideal performances.
+backbones,models,Models pretrained in this way usually have superior understanding of homogeneous data.
+researchers,computational resources,Researchers with limited computational resources can transfer the understanding capabilities of pre-trained models to downstream tasks.
+pre-trained models,downstream tasks,Pre-trained models' understanding capabilities can be transferred to downstream tasks with promising performances through fine-tuning.
+fine-tuned model,pre-trained model,Fine-tuned model produces a new set of parameters independent of the pre-trained model.
+performances,backbones,Performance comparison of backbones and their performances on the COCO dataset is shown in Figure 1.
+hardware intensive,cloud service providers,New parameters are very hardware intensive for cloud service providers due to the large size of fine-tuned models.
+advances,natural language processing (nlp),Recent advances in NLP show the impact of large models in various tasks.
+adapter tuning,low-rank adapter (lorand),LoRand is proposed as a method to improve the performance of Adapter Tuning by reducing the adapter parameters through sparsely parameterizing matrices with low-rank synthesis.
+adapter tuning,lorand-tuning,"Experimental results show that LoRand-Tuning is comparable to fine-tuning on multiple tasks with a small number of new backbone parameters, suggesting that pre-trained backbone parameters can be fully shared, indicating the effectiveness of this approach."
+adapter tuning,fine-tuning,"Comparison between LoRand-Tuning and fine-tuning techniques reveal that LoRand-Tuning outperforms fine-tuning on the PASCAL VOC dataset, indicating reduced impairment on pre-trained models in low-resource configurations."
+lorand-tuning,fine-tuning,"Comparison between LoRand-Tuning and fine-tuning techniques reveal that LoRand-Tuning outperforms fine-tuning on the PASCAL VOC dataset, illustrating the efficiency of the former in reducing impairment on pre-trained models in low-resource configurations."
+lorand-tuning,dense prediction tasks,"The method of LoRand-Tuning is shown to substantially save storage resources and achieve competitive performances on most dense prediction tasks, highlighting its effectiveness in resource optimization."
+visual pre-trained models,training methods,Visual pre-trained models are shown to be highly generalisable and shareable with the proposed training methods
+lorand structure,sparser adapters,The LoRand structure is proposed for sparser adapters based on low-rank synthesis
+backbone parameters,fine-tuning,"Demonstration that backbone parameters in fine-tuning are redundant, leading to the possibility of replacing them with additional parameters in LoRand"
+"object detection, semantic segmentation, and instance segmentation",lorand-tuning,Extensive experiments show that LoRand-Tuning can achieve remarkable performances in these tasks
+nlp,computer vision,"Computer vision has been inspired by NLP in recent years, leading to new training trends mentioned in the context"
+fine-tuning,prompt tuning,"Comparison between Fine-tuning and Prompt Tuning is mentioned, highlighting different training paradigms"
+fine-tuning,adapter tuning,"Comparison between Fine-tuning and Adapter Tuning is mentioned, showing different approaches to fix parameters for new tasks"
+backbone,parameters,The parameters of the backbone are fixed in the architecture.
+transformer,adapter module,The architecture of the adapter module is integrated with the Transformer.
+lorand structures,swinblock,Two LoRand structures are added to each SwinBlock.
+lorand,multi-branch low-rank projections,LoRand contains two Multi-branch low-rank projections.
+nlp researchers,two new training paradigms,NLP researchers propose two new training paradigms called Adapter Tuning and Prompt Tuning.
+pre-trained models,new tasks,Most parameters in pre-trained models can be shared with new tasks.
+nlp,computer vision,Advances in NLP also shed new light on computer vision.
+visual prompt tuning (vpt),fine-tuning,VPT can outperform fine-tuning on image classification tasks.
+vpt,semantic segmentation,VPT shows weakness on more challenging dense predictions like semantic segmentation compared with fine-tuning.
+adapter tuning,visual dense predictions,"To find a parameter-efficient paradigm with promising performance in computer vision, we explore the potential of Adapter Tuning for visual dense predictions."
+adapter tuning,swin transformer,We employ the advanced Swin Transformer trained with ImageNet-22K as the pre-trained model for Adapter Tuning.
+adapter tuning,bottleneck adapter structures,"After that, we add bottleneck adapter structures behind each Swin-Block for Adapter Tuning."
+fine-tuning,adapter tuning,This approach cannot achieve comparable performance to fine-tuning as mentioned in a reference.
+fine-tuning,adapter tuning,Fine-tuning is mentioned to compare the performance with Adapter Tuning.
+fine-tuning,visual prompt tuning,"Visual Prompt Tuning (VPT) is proposed for image classification and semantic segmentation, but the performance on semantic segmentation is still far from fine-tuning."
+adapter tuning,coexistence,"Adapter and prompt demonstrate the coexistence of parameter efficiency and high performances in NLP, stimulating studies in CV."
+adapter tuning,nlp,"Adapters have been widely studied in NLP. Houlsby et al. first add a bottleneck adapter structure to the transformer blocks and fix the original backbone, which achieves comparable performances to fine-tuning."
+adapter tuning,computer vision,"In computer vision, add convolutional adapters to the ResNet and obtain competitive results in image classification."
+adapter concept,multimodal,Adapter concept has also been applied in multimodal.
+adapter concept,vision-and-language,Adapter concept has also been applied in vision-and-language.
+adapter concept,domain adaptation,Adapter concept has also been applied in domain adaptation.
+adapter-tuning,visual classification,"[7, 21, 25, 31] investigate the potential of adapter-tuning for visual classification."
+adapter structure,visual dense predictions,"[8] apply the adapter structure to visual dense predictions without fixing any original parameters, which trades more parameters for better performances."
+adapter tuning,low-rank approximation,Adapter tuning explores whether it can bring a new paradigm in computer vision with fewer parameters and better performances. It aims to explore parameter-efficient and high-performance adapter structures.
+low-rank approximation,tensor dimensions,Low-rank approximation uses multiple low-dimensional tensors to approximate a larger tensor with higher dimensions.
+low-rank approximation,face recognition,low-rank approximations are widely used in face recognition.
+low-rank approximation,distributed training,low-rank approximations are widely used in distributed training.
+low-rank approximation,transfer learning,low-rank approximations are widely used in transfer learning.
+low-rank approximation,cross-domain,low-rank approximations are widely used in cross-domain.
+low-rank approximation,adapter matrices,implement low-rank approximation of the adapter matrices by heuristic learning.
+adapter-tuning,fine-tuning,Fine-Tuning tunes the pre-trained model.
+adapter-tuning,adapter-tuning,Adapter-Tuning freezes all structures and parameters in the pre-trained model and only trains additional parameters in adapters.
+adapter-tuning,decoder,Parameters in the decoder are trainable in both paradigms.
+adapter-tuning,head,Parameters in the head are trainable in both paradigms.
+fine-tuning,inference results,fine-tuning calculates the loss between inference results and labels according to the formula.
+fine-tuning,labels,fine-tuning calculates the loss between inference results and labels according to the formula.
+loss function,loss,loss represents the loss function.
+loss function,optimization formula,"The loss function and optimization formula are key components in the adapter tuning paradigm which involve minimizing the loss function L(D, θ) with respect to the optimized parameter θ."
+parameters,adapter,"In the adapter tuning paradigm, parameters are divided into two parts, parameters in the adapter θA and parameters in the original architecture θ, indicating a relationship between parameters and the adapter in the context."
+θ,frozen part θf,"The parameter θ is further divided into frozen part θF, illustrating a division within the parameter θ."
+θ,trainable part θt,"The parameter θ is also divided into a trainable part θT, indicating another division within the parameter θ."
+ω,"{θa, θt}","All the trainable parameters Ω consist of parameters in the adapter θA and the trainable part of θ denoted as θT, showing the composition of Ω."
+loss function,optimization formula,"The loss function and optimization formula in the adapter can be written as Mb×c = Qri×si and L(D, θF , Ω) = loss(fθF ,Ω (xi) , yi) respectively, representing the relationship between the loss function and optimization formula."
+"p, q, k",w matrices,"In the context of multi-branch projection in LoRand, the matrices P, Q, K are trainable while the matrices W are calculated, showing a distinction between the different types of matrices."
+lorand,adapter,"LoRand and Adapter are compared based on the size of their projection matrices in the table, with LoRand having far fewer parameters than Adapter for the same projection dimension, indicating a contrast between the two structures."
+"α, β","(2,8)","The values of α, β are specified as (2,8) in the experiments, highlighting a specific parameter setting."
+adapters,robustness,"Adapters in the model ensure robustness by adding residual structures, enhancing the model's stability and reliability."
+adapter layer,activation function,The activation function GeLU is utilized in the adapter layer to apply non-linear transformations in the model.
+adapter,projections,"The parameters in the adapter come from the projections, indicating a relation between adapter's parameters and projection process."
+projection process,adapter parameters,"The projection process involves the generation of adapter parameters, with the parameters being a crucial part of the process."
+low-rank adapter (lorand) structure,w matrix,"The low-rank adapter structure aims to reduce the parameters by replacing the W matrix in the projection structures, showcasing a relation between the two."
+w matrix,parameter size of lorand,"The W matrix influences the parameter size of LoRand, highlighting a connection between the two components."
+multi-branch structures,robustness and stability of low-rank matrices,"Adding multi-branch structures to LoRand enhances the robustness and stability of low-rank matrices, drawing inspiration from MoE and adaboost."
+low-rank matrices,moe,The robustness and stability of low-rank matrices are inspired by MoE.
+low-rank matrices,adaboost,The robustness and stability of low-rank matrices are inspired by adaboost.
+w,branches,Every W consists of α branches.
+w,projection layers,We share the kernel matrix K of the two projection layers within each branch.
+projection layers,training process,We hope the sharing mechanism can promote the coherence of two projection layers during the training process.
+projection layers,number of lorand parameters,The shared K slightly reduces the number of LoRand parameters.
+w u,w d,The W U and W D in a complete LoRand structure can be represented as α sets of T(P Ui) and T(P Di).
+k,w u,Ki is shared in W U and W D.
+k,w d,Ki is shared in W U and W D.
+lorand,w,"Each LoRand consists of two W and α shared K, indicating a relationship where LoRand includes W"
+lorand,k,"Each LoRand consists of two W and α shared K, showing that LoRand has a shared K"
+lorand,α,"Each LoRand consists of two W and α shared K, suggesting that LoRand is associated with α"
+lorand,m,The parameter quantity of each LoRand is related to m as per the given formula
+lorand,n,The parameter quantity of each LoRand is related to n as per the given formula
+block,lorand,"Each block has two LoRand structures, highlighting a relationship where blocks contain LoRand"
+lorand,γ,"Each block consists of LoRand structures, indicating a relationship between LoRand and γ"
+m,n,"As α, β, γ are related to min(m, n), m and n have a relationship in the context"
+lorand,branch numbers α and kernel matrix dimensions β,"LoRand variants differ based on the branch numbers α and kernel matrix dimensions β, showing a connection between LoRand and these variations"
+lorand,adapter,"LoRand has lower space complexity compared to the typical adapter, as shown in Figure 4"
+lorand,parameters,LoRand saves most Adapter parameters with the same projecting dimension
+lorand,dense prediction tasks,"LoRand is evaluated on multiple dense prediction tasks including object detection, semantic segmentation, and instance segmentation"
+lorand,low-resource conditions,LoRand is evaluated under low-resource conditions
+lorand,experimental setup,LoRand's experimental setup is described in Section 4.1
+lorand,main results,The main results of three benchmarks are presented in Section 4.2
+lorand,structural settings,An ablation study is implemented in Section 4.3 to investigate the impact of structural settings in LoRand
+lorand,coco,Experiments are conducted on COCO benchmark to evaluate LoRand's performance on main dense prediction tasks
+lorand,ade20k,Experiments are conducted on ADE20K benchmark to evaluate LoRand's performance on semantic segmentation
+coco,object detection,"COCO dataset is commonly used for object detection, and experiments are performed on the validation set"
+coco,instance segmentation,COCO dataset is also used for instance segmentation in the experiments
+ade20k,semantic segmentation,"ADE20K dataset is widely used for semantic segmentation, with experiments conducted on the dataset"
+pascal voc 0712,object detection,PASCAL VOC 0712 is widely used in object detection
+pascal voc 0712,faster rcnn,Faster RCNN is adopted as the detector for PASCAL VOC 0712
+faster rcnn,low-resource case,PASCAL VOC 0712 is treated as a low-resource case in object detection experiments using Faster RCNN
+experiments,nvidia tesla v100 gpus,All experiments are conducted with 8x NVIDIA Tesla V100 GPUs
+pascal voc,ade20k,Experiments are conducted on PASCAL VOC and ADE20K benchmarks
+swin-l,pascal voc,Swin-L is employed as the pre-trained model for Pascal VOC benchmarks
+swin-b,coco,Swin-B is employed as the pre-trained model for COCO benchmarks
+lorand,fine-tuning,"LoRand can effectively address the dilemma of fine-tuning in low-resource situations. Table 1 shows that FIXED outperforms FULL on the PASCAL VOC dataset, which implies that the powerful generalization ability of pre-trained model is severely weakened during fine-tuning."
+fine-tuning,low-resource data,"Fine-tuning with low-resource data reduces the feature understanding of pre-trained models, which leads to the poor performance on downstream tasks."
+lorand,original parameters,LoRand avoids the disadvantage by fixing the original parameters.
+lorand,dis-advantage,LoRand avoids the disadvantage by fixing the original parameters
+lorand,new data,LoRand can absorb features from the new data by its smaller trainable structures
+lorand,full,Table 1 indicates that LoRand outperforms FULL by 2.69% on the low-resource dataset with only 1.84% trainable backbone parameters
+lorand,fixed,Table 1 indicates that LoRand outperforms FIXED by 1.93% on the low-resource dataset with only 1.84% trainable backbone parameters
+lorand+,full,LoRand+ outperforms FULL by 3.2% with 3.62% backbone parameters
+lorand+,lorand++,LoRand+ also outperforms LoRand++ by 3.68% with 7.17% backbone parameters
+pascal voc,common computer vision datasets,"There are many other common computer vision datasets with similar volumes to the PASCAL VOC, including CUB-200-2011, Oxford 102 Flowers, Stanford Cars, and Caltech-256"
+pretrained & finetuning,giant benchmarks,The prevalence of 'Pretrained & Finetuning' leads us to focus more on giant benchmarks
+lorand-tuning,trainable parameter-efficiency,LoRand-Tuning proves to be a competitive candidate who brings promising performance and parameter-efficient approaches to low-resource cases
+lorand,number of trainable backbone parameters,LoRand effectively balances the number of trainable backbone parameters and downstream task performance
+lorand,ade20k,LoRand achieves 50.67% (mIOU) on ADE20K with only 1.84% to 2.76% trainable parameters
+lorand,coco,LoRand achieves 51.10% (APBox) / 44.10% (APMask) on COCO with only 1.84% to 2.76% trainable parameters
+lorand,conventionals,LoRand effectively broadens the potential of conventional parameter-efficient adapter structures in dense predictions.
+lorand,parameter-efficient adapter structures,LoRand effectively broadens the potential of conventional parameter-efficient adapter structures in dense predictions.
+lorand,dense predictions,LoRand effectively broadens the potential of conventional parameter-efficient adapter structures in dense predictions.
+lorand,performance,"Adding new structures, LoRand achieves comparable performance to FULL by training fewer parameters than the adapter."
+lorand,adapter,"Adding new structures, LoRand achieves comparable performance to FULL by training fewer parameters than the adapter."
+lorand,trainable backbone parameters,"Tables 1 and 2 illustrate that the adapter's performance is far from FULL, although it reduces 80% of trainable backbone parameters."
+lorand,fine-tuned backbone,Comparisons with other fine-tuned backbone. We then show the comparisons of LoRand with some other remarkable fine-tuned backbones in Table 3.
+lorand,upernet,Table 3a shows the results based on UperNet and ADE20K.
+lorand,ade20k,Table 3a shows the results based on UperNet and ADE20K.
+table 3,upernet,Table 3a presents results based on UperNet
+table 3,ade20k,Table 3a shows results based on ADE20K
+table 3,cascade mask r-cnn,Table 3b shows results based on Cascade MASK R-CNN
+lorand,swin-transformer,LoRand is based on Swin-Transformer
+lorand,coco,LoRand exceeds COCO by 1.9% (APBox) and 1.2% (APMask) with 80.12M fewer new backbone parameters than ResNeXt-101-64
+lorand,resnext-101-64,LoRand has 80.12M fewer parameters than ResNeXt-101-64
+lorand,resnet-comparisons,LoRand surpasses 5.82% (mIoU) on ADE20K with 40.41M fewer trainable backbone parameters than ResNet-Comparisons
+swin-l,swin-b,Comparison between Swin-L and Swin-B
+swin-l,swin-s,Comparison between Swin-L and Swin-S
+swin-l,swin-t,Comparison between Swin-L and Swin-T
+lorand-tuning,fine-tuning paradigm,Comparison between LoRand-Tuning and Fine-Tuning on COCO and ADE20K
+lorand,fine-tuning,LoRand-Tuning and Fine-Tuning are compared on ADE20K in terms of Trained Params and performance percentages.
+lorand,resnet-18,LoRand-Tuning is compared with ResNet-18 on ADE20K in terms of performance percentages.
+lorand,coco,LoRand-Tuning is compared with Fine-Tuning on ADE20K and COCO in Table 3.
+lorand,full,"It is challenging for the LoRand series to outperform FULL on large datasets, even with more parameters."
+adapter-b,adapter-t,"ADAPTER-B performs better than ADAPTER-T, indicating that adding extra parameters improves adapter-tuning performance."
+swin-s,swin-b,"Swin-S, Swin-B, and Swin-L are employed as the pre-trained models for PASCAL VOC and ADE20K, whereas Swin-T, Swin-S, and Swin-B are employed for COCO."
+figure 5,"pascal voc, coco, ade20k","Figure 5 shows the results of seven methods on different backbone scales, including PASCAL VOC, COCO, and ADE20K."
+coco,fixed,"FIXED's performances are so low on COCO, reducing the intuitiveness of other methods"
+fixed,pascal voc,FIXED is only presented in PASCAL VOC comparisons
+α,β,Ablation Study for α and β with ranges specified
+lorand,full,LoRand can outperform both FULL in low-resource cases and perform closely to FULL in large benchmarks
+lorand,traditional adapter structures,LoRand can outperform traditional adapter structures in low-resource cases
+lorand,α,Ablate two key hyperparameters in LoRand: LoRand branch number α affects distributed decision-making
+lorand,β,Ablate two key hyperparameters in LoRand: kernel matrix dimension β focuses on a single branch’s learning capability and consistency
+α,β,Ablation experiments investigate the effect of α and β on the performance of LoRand
+lorand,α,Ablation experiments improve the upper limit of LoRand by conducting experiments on different datasets with specified ranges for α and β
+lorand,β,Ablation experiments improve the upper limit of LoRand by conducting experiments on different datasets with specified ranges for α and β
+ablation studies,three datasets,Ablation studies were conducted on three datasets to analyze the performance of LoRand.
+lorand,α,"In most cases, LoRand's performance increases slightly as α becomes larger."
+lorand,β,"In most cases, LoRand's performance increases slightly as β becomes larger."
+lorand,fine-tuning,LoRand hardly outperforms fine-tuning on large benchmarks.
+lorand,size increase,Exponentially increasing the size of LoRand does not result in an equivalent performance improvement.
+lorand,reduction,Increasing the size of LoRand can even lead to a reduction in performance.
+lorand,parameter efficiency,Ablation studies demonstrate that larger LoRands have fewer gains both in parameter efficiency and performance.
+designing,lorand standard,The trade-off between performance and parameter efficiency was considered when designing the LoRand standard.
+lorand,lorand+,"LoRand, LoRand+, and LoRand++ were designed to address the trade-off between performance and parameter efficiency."
+lorand,lorand++,"LoRand, LoRand+, and LoRand++ were designed to address the trade-off between performance and parameter efficiency."
+lorand,low-rank adapter,LoRand is presented as a parameter-efficient low-rank adapter for dense predictions.
+lorand,feature understanding,LoRand completely shares the feature understanding of advanced pre-trained models.
+lorand,downstream tasks,LoRand effectively transfers feature understanding to downstream tasks.
+lorand,fine-tuning paradigm,LoRand effectively avoids the disadvantages of the fine-tuning paradigm.
+uniﬁed training paradigm,vision and language,Parameter-efficient LoRand aims to facilitate a unified training paradigm for vision and language.

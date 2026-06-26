@@ -1,0 +1,162 @@
+node_1,node_2,edge
+diffusion model,3d neural scenes,The diffusion model functions as a critic to refine the 3D neural scenes
+neural radiance field (nerf),3d neural scenes,NeRF is an example of an explicit neural network used to represent 3D neural scenes.
+score function,rendered images,The score function ensures that rendered images align with a photo-realistic image distribution given a text prompt.
+neural scene degeneration,3d neural scenes,Neural scenes can get stuck in local optima
+prior knowledge networks,quality and realism of 3d neural scenes,The challenge of scene degeneration hinders effective utilization of prior knowledge networks to enhance these aspects.
+discriminator,neural scene degeneration,A discriminator is introduced to address the issue of scene degeneration
+real3d,text-to-3d generation model,Real3D is a dual-renderer model combining implicit and explicit techniques
+real3d,state-of-the-art text-to-3d generation methods,Experimental results show that Real3D surpasses existing approaches in performance.
+state-of-the-art text-to-3d generation methods,learning-based 3d scene generation approaches,Our work relates to existing methods in the field
+diffusion models,text-to-image generation,Diffusion models have significantly advanced text-to-image generation
+diffusion models (balaji et al. 2022; ramesh et al. 2022),high-resolution image generation,These models use super-resolution techniques or latent space sampling to produce detailed images.
+state-of-the-art models,sampling strategy,High-resolution models employ cascades of super-resolution models or a multi-stage sampling process.
+rombach et al. (2022),latent space decoding,Their approach involves decoding lower-resolution latent space into high-resolution images.
+language description,3d properties,Controlling 3D properties like camera viewpoints is a challenge in text-guided 3D generation.
+real3d,implicit and explicit rendering methods,Real3D combines these rendering techniques and uses a text-to-image diffusion model with a discriminator.
+text prompts,high-fidelity 3d models,The method generates high-quality 3D models based on user input text prompts.
+images,research problem,images are a challenging research topic
+voxels,research problem,voxels are part of the research problem and have shown no performance decline
+voxels,easier to query,Voxels are simpler to query compared to neural networks
+3d neural scene representation,research area,3D generative modeling is an extensively researched field
+voxel grids,3d representation,Voxel grids are one type of 3D representation
+point clouds,3d representation,Point clouds are another 3D representation
+meshes,3d representation,Meshes are also a 3D representation
+implicit representations,3d representation,Implicit representations are a type of 3D representation
+octree representations,3d representation,Octree representations are a method in 3D modeling
+neural volume rendering,influence,Recent studies are inspired by neural volume rendering's success
+3d-aware image synthesis,growing interest,Growing interest in image synthesis with 3D awareness
+neural radiance fields (nerf),advancements,NeRF has made notable advancements in multi-view 3D reconstruction
+inverse rendering,nerf technique,NeRF focuses on inverse rendering
+dense grid of rgb colors,nerf representation,NeRF uses a dense grid for color and density information
+nerf,3d asset,NeRF represents a 3D asset using a dense grid of RGB colors and spatial density.
+nerf,voxel nerf,Voxel NeRF serves as an alternative to NeRF
+voxel nerf,computationally expensive 3d queries,Voxel NeRF reduces the need for these expensive queries compared to the original NeRF approach.
+text-to-3d scene creation,recent advancements,There has been notable progress in text-to-3D generation
+clip-forge,normalizing flow model,CLIP-forge uses a flow model to generate shape embeddings from text
+dreamfield,clip-mesh,Both DreamField and CLIP-mesh utilize a pre-trained image-text model to optimize 3D representations without relying on 3D training data.
+dreamfield,pre-trained image-text model,DreamField optimizes 3D representations for text-image alignment without costly 3D data.
+clip-mesh,pre-trained image-text model,CLIP-mesh also leverages a pre-trained model for optimizing 3D mesh representations.
+image-text models,costly 3d training data,Relying on pre-trained models avoids the need for extensive 3D training data in 3D synthesis.
+data density,marginals,The context explains that obtaining smoothed versions of the data distribution involves computing marginals by integrating out the data density.
+forward process,gaussian,The forward process starts with a low variance (σ0 ∼ 0) and becomes Gaussian towards the end (σT ∼ 1).
+αt,σt,αt and σt coefficients are chosen to preserve variance
+latent variable model,weighted evidence lower bound (elbo),Training the generative model using ELBO simplifies to a weighted denoising score matching objective.
+score function,noisier versions of the data,Diffusion model training learns a sequence of score functions representing progressively noisier versions of the original data.
+text-to-image diffusion models,conditioning on text embeddings,These models can condition the score function on text embeddings to incorporate text information.
+score function,sϕ(zt; t),sϕ(zt; t) denotes the approximate marginal distribution's score function
+pϕ(zt; t),score function,pϕ(zt; t) represents the approximate marginal distribution
+sohl-dickstein et al. (2015),latent-variable model,This reference suggests that diffusion models can be seen as latent-variable models.
+vincent (2011),sequence of score functions,Vincent's work connects diffusion models to learning score functions for noisy data.
+song and ermon (2019),sequence of score functions,This reference also contributes to the understanding of diffusion models as score-based methods.
+song et al. (2020),diffusion models,score matching
+text embeddings,diffusion models,Text embeddings are used as conditioning inputs in diffusion models
+score distillation sampling,diffusion model (pϕ),Score distillation sampling is employed as a loss function in text-to-3D generation
+neural scene degeneration,text-to-3d generation paradigm,Neural scene degeneration is a problem that arises within the text-to-3D generation process
+differential image parameterization (dip),rendering,Differential renderer 'g' is used to transform neural scenes parameterized by θ into rendered images (x').
+denoising function (ϵϕ),diffusion model,The denoising function ϵϕ is part of the diffusion model
+real3d,optimization direction,Real3D uses 'pϕ' for searching a rich point during optimization
+initial position,black dot,The initial position is marked by a black dot in the context
+poor point,gray dot,A gray dot indicates a poor point in the context
+rich point,green dot,A green dot represents a rich point
+pϕ,black solid line,pϕ is represented by a black solid line that defines the boundary between rich and poor areas.
+score distillation sampling,eq. 1,Score distillation sampling relies on Eq. 1 to guide the model towards the desired distribution.
+pϕ,pdata,pϕ aims to approach pdata
+generative models,pdata,In generative models
+neural scene degeneration,underlying issue,The lack of flawlessness in pϕ is a key factor contributing to neural scene degeneration.
+diffusion model,large volume of data,The diffusion model is trained with a large dataset
+pϕ,good samples,Not all images sampled from pϕ are considered good
+suboptimal synthetic images,erroneous inputs,Suboptimal images can result from inappropriate random seeds
+erroneous inputs,suboptimal synthetic images,The presence of erroneous inputs leads to the generation of suboptimal synthetic images.
+score function,rich points,poor points
+initial stages of optimization,poor points,During the initial stages
+gradient obtained in eq. 2,updating θ,The gradient is not effective in updating θ when x′ is a poor point.
+neural scene degeneration,unsolvable problem,Neural scene degeneration becomes an unsolvable problem when models encounter poor points due to ineffective gradient updates.
+prior-knowledge-based text-to-3d methods,scene degeneration problems,Most existing text-to-3D methods suffer from severe scene degeneration issues.
+loss function,prior knowledge network,Enhancing loss functions and incorporating stronger prior knowledge networks are central to these approaches.
+initial points,rich points,Core objective is to guide the model to transition directly from initial points towards rich ones.
+unintentional encounters,poor points,Inefficient when models encounter poor points due to sub-optimal initialization or unfavorable prompts.
+adversarial training,ineffective,These techniques prove ineffective when dealing with poor points.
+neural scene collapses,score function,The score function fails to differentiate between rich and poor points in pϕ
+neural scene degeneration,gradient calculation methods,To overcome the challenge of neural scene degeneration
+score function,discriminator,A discriminator is used to address the issue where the score function causes degradation.
+high-quality 3d models,critical,Generating high-quality 3D models is crucial.
+real3d,text-to-3d generative model,Real3D is a proposed text-to-3D model designed to generate high-quality models.
+real3d,dual-renderer approach,Real3D uses a dual-renderer method that combines implicit and explicit renderers.
+implicit renderer,nerf (neural radiance field),Real3D adapts NeRF as its implicit renderer
+nerf (neural radiance field),mildenhall et al. (2021b),NeRF is a technique by Mildenhall et al.
+explicit renderer,gζ_e,Real3D also uses an explicit renderer
+explicit representation,e,E refers to the explicit representation used in the explicit renderer gζ.
+magic3d,two-stage coarse-to-fine framework,Magic3D adopts a different approach
+nerf,implicit renderer,NeRF is a type of implicit renderer
+nerf,multilayer perceptron (mlp),NeRF incorporates an MLP for processing 3D point samples along rays.
+ray tracing,implicit renderer gξ,The implicit renderer gξ uses ray tracing as a key component for generating images.
+real3d,two renderers,Real3D employs both an implicit (gξ) and an explicit renderer.
+explicit renderer,gζe,One of the explicit renderers is gζE
+stable diffusion model,pϕ,A frozen stable diffusion model pϕ is used in conjunction with the explicit renderer.
+discriminator d,gθ,The discriminator network D guides the optimization of gθ
+equation 4,prior knowledge,Equation 4 ensures adherence to prior knowledge while optimizing the neural scene.
+richer areas,prior knowledge of the network,The context suggests that richer areas are not guaranteed to adhere strictly to the prior knowledge of the network.
+neural scene degeneration,adversarial training,The text proposes that adversarial training helps to alleviate neural scene degeneration.
+score distillation sampling,adversarial training,Both techniques are needed for generating high-quality 3D scenes
+neural scene,rendered images,The discriminator ensures that rendered images x' = gθ(v) resemble rich points.
+3d scenes,quality,The main goal is to generate high-quality 3D scenes.
+volumetric density,rgb color,In the representation
+implicit rendering (nerf),3d scene generation,The approach of rendering images directly from implicit structures like NeRF offers greater flexibility in creating 3D scene content but struggles with focusing on object surfaces
+adversarial training,more realistic scenes,Adversarial training improves the quality of 3D scenes generated by NeRF
+rasterizing,high-resolution images with clear details,Rendering images directly from the mesh surface via rasterization provides clear visibility of contours and fine details
+mesh,surface-based image generation,Methods that generate images from a mesh's surface offer higher realism and clarity
+our real3d,baseline with discriminator and explicit rendering,Real3D combines the benefits of using a discriminator for improved realism (like in Figure 6(b)) and explicit rendering for clarity
+implementation details,adan optimizer,The context mentions Adan optimizer is used with an initial learning rate of 5 × 10^-3.
+adan optimizer,cosine annealing learning rate scheduler,An annealing scheduler with a minimum learning rate of 1 × 10^-6 is applied.
+learning rate,minimum learning rate,The learning rate has a minimum value of 1 × 10^-6 during the process.
+λsds,λadv,Both λSDS and λadv have values
+geometry regularization,poole et al.,Geometry regularization
+3d scene generation,random seed values,Experiments involve multiple sets of random seed values for improved results.
+sdf threshold,ε,The SDF threshold ε is set to 0.1 for generating 3D scenes.
+prompt embeddings,positional prompt embedding,Prompt embeddings are enhanced with positional information for better results.
+viewpoint information,text descriptions,Viewpoint information is converted into text and added to prompts
+magic3d,sjc,Performance metrics are compared in a user preference study
+real3d,magic3d,sjc
+upper four rows,user preference study,The first four rows of the table represent the results of a user study.
+neural scene updates,speed,The context discusses the evaluation of the speed at which the neural scene updates occur.
+iterations,neural scene updates,The process involves 10
+batch size,iterations,Each iteration includes a batch size of 2
+first few thousand iterations,primary content determination,The primary content is determined early on in the process.
+subsequent iterations,minor details optimization,After the initial content
+a100 gpu,execution platform,The entire process is conducted on a single A100 GPU.
+25 minutes,completion time,The process takes approximately 25 minutes to finish.
+qualitative comparisons,real3d performance,This section compares Real3D's outputs qualitatively with other methods.
+fig. 7,qualitative comparisons,Visual examples can be found in Figure 7.
+real3d,more realistic and intricate 3d models,Real3D generates models with higher realism and complexity.
+tab. 2,quantitative evaluation,Quantitative comparisons are presented in Table 2 using the CLIP model.
+image-text similarity,real3d performance,Similarity scores are calculated to assess Real3D's consistency.
+smallest variance,real3d performance,Real3D has the smallest variance in similarity scores
+failure cases,real3d limitations,Section 8 shows some failure cases where Real3D does not generate satisfactory results.
+multi-face issues,failure cases,Multi-face problems are among the observed issues.
+failure cases,poor generation results,The main problem in the context is that failure cases are specifically referring to the scenes with poor generation results.
+multi-face,repetitive structures,Multi-face refers to the phenomenon where generated scenes have repetitive structures that make the overall model illogical.
+multi-face,multiple faces,Multiple faces are an example of the multi-face issue
+image-text similarity,3d scene-text matching,Image-text similarity measures the match between 3D scenes and text
+user studies,evaluating method effectiveness,User studies were conducted to assess the effectiveness of different methods based on user preferences for realism and detail.
+real3d,3d models generated by real3d,Real3D's 3D models were preferred by the majority of users
+user preferences,realism and level of detail,Users ranked the videos based on their preferences for realism and level of detail when evaluating the 3D models.
+fig. 1,results of user studies,The results of the user studies are presented visually in Figure 1.
+limitations,context,The passage discusses the limitations of the method
+latent stable diffusion,prior knowledge network,The limitations section discusses that the method adopts latent stable diffusion as a prior knowledge network
+multi-face issue,challenging prompts,Multi-face issue is related to some challenging prompts
+rendering two views,increased field of view,To alleviate the multi-face issue
+adversarial training,distillation sampling,The proposed method combines adversarial training and distillation sampling to address the neural scene degeneration issue.
+real3d,explicit and implicit rendering methods,Real3D integrates the strengths of both explicit and implicit rendering methods to achieve promising results.
+performance of real3d,quality of prior knowledge networks,The performance of Real3D is influenced by the quality of the prior knowledge network
+real3d,high-quality scenes,The method's ability to generate high-quality scenes is limited by the quality of the prior knowledge network.
+ethics statement,highest ethical standards,The authors emphasize that their work adheres to the highest ethical standards
+real3d methodology,3d models from text prompts,The Real3D methodology is capable of generating 3D models from text prompts.
+real3d methodology,harmful,illegal
+misuse of this technology,real3d methodology,We acknowledge the potential for misuse
+intellectual property rights,principles,We respect and uphold the principles of intellectual property rights.
+text prompts,public domain,The text prompts were either created by us or sourced from the public domain.
+text prompts,copyrights or trademarks,We ensure that generated 3D models do not infringe on copyrights or trademarks.
+our research,field of 3d modeling,Our research aims to contribute positively to the field of 3D modeling.
+technology,society,We believe technology should serve society.
+work,belief,Our work reflects the belief that technology should serve society.

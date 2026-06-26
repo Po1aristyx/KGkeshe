@@ -1,0 +1,217 @@
+node_1,node_2,edge
+weakly-supervised temporal action localization (wtal),action instances,WTAL learns to detect and classify action instances with only category labels.
+classification-based pre-training (cbp),video features,CBP is widely adopted to generate video features for action localization.
+cbp,localization results,The optimization objectives between classification and localization result in temporally localized results suffering from the serious incomplete issue.
+vision-language pre-training (vlp),free action knowledge,The paper considers distilling free action knowledge from VLP.
+vlp,localization results,Vanilla VLP has an over-complete issue in its localization results.
+cbp,localization results,The complementary nature of CBP and VLP results are fused to address the incomplete issue.
+distillation-collaboration framework,cbp and vlp branches,"The framework consists of two branches acting as CBP and VLP, optimized through a dual-branch alternate training strategy."
+cbp,background pseudo-labels,Background pseudo-labels are distilled from the CBP branch during the B step.
+vlp,foreground pseudo-labels,Foreground pseudo-labels are distilled from the VLP branch during the F step.
+dual-branch complementarity,one strong alliance,The complementarity between the two branches is fused to promote one strong alliance.
+method,state-of-the-art methods,The method significantly outperforms state-of-the-art methods based on experiments and ablation studies on THUMOS14 and ActivityNet1.2.
+tal,action localization,Temporal action localization (TAL) aims to localize actions in time.
+temporal action localization (tal),action instances,TAL aims to localize and classify action instances from untrimmed long videos.
+weakly-supervised setting (wtal),video-level category labels,WTAL setting involves only video-level category labels for action localization.
+classification-based pre-training (cbp),video features extraction,CBP is used for video feature extraction in training action classifiers.
+vanilla vision-language pre-training (vlp),action and background confusion,"VLP results in confusion between action and background, leading to high true positives and false positives."
+distillation-collaboration framework,multimodal feature fusion,"The framework collaboratively distills foreground from VLP and background from CBP, promoting mutual collaboration for more accurate results."
+cbp methods,incompleteness issue,Methods using CBP suffer from incompleteness issue of detecting sparse discriminative action frames and high false negatives.
+false negatives,optimization objective,"The main reason for high false negatives is that the optimization objective of classification pre-training focuses on finding discriminative frames for action recognition, which is different from the objective of complete localization."
+features from cbp,partial discriminative frames,Features from CBP are biased towards partial discriminative frames due to the lack of complete localization objective.
+efforts,'performance-cost dilemma',"Many efforts have been made to solve the incompleteness issue but are often trapped in a 'performance-cost dilemma', where digging from barren category labels is chosen to keep costs low."
+location labels,performance,Lacking location labels fundamentally limits the performance in action detection.
+this paper,objective,The paper intends to jump out of the 'performance-cost dilemma' by raising the question of leveraging free action knowledge for complete detection results while maintaining cheap annotation overhead.
+vision-language pre-training (vlp),joint visual-textual representations,"VLP has been successful in learning joint visual-textual representations from web data, providing rich information about objects, human-object interactions, and object-object relationships."
+representations,human-object co-occurrence priors,"Learned representations from VLP could offer human-object co-occurrence priors, enhancing action localization."
+research gap,distilling action priors from vlp (clip),This paper aims to fill the research gap by extracting action priors from VLP (specifically CLIP) to address the incompleteness issue in action detection.
+vlp,clip,VLP is distilled from CLIP to solve the incomplete issue for WTAL.
+vlp,temporal localization performance,VLP is used to evaluate the temporal localization performance by frame-wise classification.
+vlp,high false positives,VLP results in high false positives due to confusing multiple action instances into a whole.
+vlp,vlps,VLPs are trained using image-text pairs which lack sufficient temporal knowledge.
+vlp,human-object co-occurrence,"VLP relies on human-object co-occurrence for localization, struggling to distinguish actions with visually similar background contexts."
+vlp,actions,VLP struggles to distinguish actions with visually similar background contexts.
+vlp,visual similar background contexts,VLP struggles to distinguish actions due to visually similar background contexts.
+cbp,vlp,"CBP and VLP have complementary properties: CBP localizes high true negatives but serious false negatives, while VLP has high true positives but serious false positives."
+cbp,cbp branch,Background knowledge is distilled from the CBP branch to leverage complementarity.
+vlp,foreground knowledge,Foreground knowledge is distilled from the VLP branch to leverage complementarity.
+cbp branch,vlp branch,"The design rationale is to distill background knowledge from the CBP branch, while foreground knowledge from the VLP branch, for strong alliances."
+cbp branch,category supervision,We first warm up the CBP branch using only category supervision to initialize confident background frames.
+cbp branch,pseudo-labels,We leverage high-quality pseudo-labels for the CBP branch to tackle the incomplete issue.
+vlp branch,pseudo-labels,"During B step, we distill background pseudo-labels for the VLP branch to solve the over-complete issue, hence obtaining high-quality foreground pseudo-labels."
+wtal,off-the-shelf vlp,Our contributions lie in three folds:knowledge from off-the-shelf VLP to facilitate WTAL.
+cbp branch,vlp branch,We pioneer the first exploration in distilling free action.
+cbp branch,vlp branch,"We design a novel distillation-collaboration framework that encourages the CBP branch and VLP branch to complement each other, by an alternating optimization strategy."
+vlp,vision-language pre-training,"VLP is an acronym for Vision-Language Pre-training, and the context discusses the significance of distilling VLP."
+image,video,"Image and video are mentioned in comparison, highlighting that image-based VLPs are more cost-effective than video-based VLPs."
+detection,segmentation,Detection and segmentation are related tasks mentioned in the use of VLP for downstream image tasks.
+human-object interaction,synthesis,Human-object interaction and synthesis are referenced as downstream tasks for VLP in the context.
+action recognition,temporal transformers,Temporal transformers are discussed in the context as being used for action recognition in videos.
+prompt learning,retrieval or detection,"Prompt learning is introduced for efficient retrieval or detection, as mentioned in the context."
+temporal action localization,strongly-supervised temporal action localization,The context talks about the progress achieved in Strongly-supervised Temporal Action Localization for precise action boundaries and categories.
+top-down framework,massive anchors,"The top-down framework pre-defines massive anchors based on action distribution, as mentioned in the context."
+top-down framework,massive anchors,The top-down framework pre-defines massive anchors based on the action distribution prior
+top-down framework,fixed-length sliding windows,The top-down framework uses fixed-length sliding windows to generate initial proposals
+bottom-up framework,frame-wise boundary detectors,The bottom-up framework trains frame-wise boundary detectors for extreme frames
+papers,fusion strategies,Some papers proposed various fusion strategies to complement the frameworks
+studies,post-processing,Several studies are devoted to better post-processing
+weakly-supervised temporal action localization,annotation costs,Weakly-supervised Temporal Action Localization significantly alleviates annotation costs
+cas,classification-based pre-training,The pivotal component is CAS obtained from Classification-Based Pre-training
+cbp,localization,"Due to the gap of classification and localization, CBP suffers from one serious incomplete issue"
+erasing strategy,action fragments,Introduced the erasing strategy to only localize discriminative action fragments
+cas,complementarity,Produced multiple CAS in parallel for complementarity
+distillation-collaboration framework,parallel branches,Covers two parallel branches named CBP and VLP
+distillation-collaboration framework,alternating optimization,Optimized by an alternating strategy
+vlp branch,cbp branch,"CBP branch is warmed up in advance, and confident background pseudo-labels are distilled from it to train VLP branch."
+clip encoders,vlp branch,"In B step, CLIP encoders are frozen and confident background pseudo-labels are distilled from the CBP branch to train both prompt vectors and temporal Transformer in the VLP branch."
+knowledge distillation loss,contrastive loss,Both knowledge distillation loss and contrastive loss are utilized during dual-branch collaboration and context separation.
+intra- and inter-video modeling,enhanced features,Intra- and inter-video modeling enhances features by enhancing features through modeling within and between videos.
+self-training strategy,papers,Some papers introduced the self-training strategy to iteratively refine results.
+costs,performance,"Most of them are trapped in the ‘performance-cost dilemma’, i.e. solely digging from barren category labels to keep costs low."
+annotations,performance gap,The lack of annotations leads to a huge performance gap between strong and weak supervisions.
+instance-number,single-frame annotations,Some explored to add instance-number or single-frame annotations for further improvements.
+long-video pre-training,tal,Some papers tried long-video pre-training for TAL to improve performance.
+off-the-shelf vlps,wtal,This paper intends to distill free action knowledge from off-the-shelf VLPs to assist WTAL for better performance without additional annotation costs.
+action categories,action instances,"Action categories (c) are classified and action instances are detected and classified based on start time (s), end time (e), action category (c), and detection score (p)."
+classification-based pre-training,vision-language pre-training,"Both pre-training methods complement each other's results, with Classification-Based Pre-training having serious false negatives but good true negatives, and Vision-Language Pre-training having serious false positives but good true positives."
+distillation-collaboration framework,enhancing results,"The framework aims to collaborate and optimize the complementary results of two parallel branches, CBP branch, and VLP branch, to enhance the overall results through a distillation-collaboration strategy."
+vlp branch,over-complete issue,The VLP branch is used to tackle the over-complete issue by localizing high-quality foreground and background information.
+vlp branch,superior pseudo-labels,"During the F step, the VLP branch distills superior pseudo-labels for the CBP branch to tackle the incomplete issue."
+cbp branch,background frames,The CBP Branch is utilized by identifying a large number of background frames.
+cbp branch,discriminative action frames,The CBP Branch is also utilized for identifying several discriminative action frames.
+i3d architecture,pre-trained on kinetics,The I3D architecture is pre-trained on Kinetics to extract RGB and Flow features.
+cbp branch,backbone network,The CBP branch uses the backbone network for feature fine-tuning and localization.
+cbp branch,frame-level action probabilities,The CBP branch outputs the frame-level action probabilities after using the backbone network for feature fine-tuning and localization.
+output pcb,top-k frames' scores,"For the output Pcb from the backbone network, the top-k frames' scores are aggregated (pooled) for action classification."
+top-k score set,temporal domain,The top-k score set is denoted in the temporal domain for further processing.
+cb,pcb,Pcb focuses on sparse discriminative action frames under CB Pre-training and category-only supervision.
+cb,vlp branch,"The VLP Branch is designed to mine free action knowledge from VL Pre-training, e.g. CLIP, which lacks sufficient temporal priors."
+vlp branch,clip,"VLP Branch mines free action knowledge from VL Pre-training, e.g. CLIP."
+image-text pre-training,clip,"Image-text pre-training lacks sufficient temporal priors leading to over-complete issues in localization results, high false positives."
+efficient prompt learning,linear probing,Efficient prompt learning is used instead of linear probing for fine-tuning by freezing the CLIP backbone and optimizing prompt vectors and temporal layers.
+visual stream,clip image encoder,CLIP image encoder is utilized in the visual stream to extract frame-level features from consecutive frames.
+textual stream,clip text encoder,Prompt vectors are fed into the CLIP text encoder in the textual stream to obtain textual features.
+fvid,φtemp,"Fvid is calculated as Φtemp(Fvis), representing the frame-level video localization"
+ftxt,φtxt,"Ftxt is calculated as Φtxt(Φprmp(Cname)), utilizing CLIP textual encoder for text processing"
+cname,φprmp,"Cname is related to Φprmp, which is associated with action category names"
+pvl,fvid,"Localization results Pvl are calculated based on Fvid, indicating the frame-level video localization results"
+pvl,ft,"Pvl is calculated by σ(Fvid · FT), showing the relationship with FT in determining frame-level localization"
+vlp branch,clip backbone,"VLP branch optimizes lightweight model parameters for false-positive suppression, preserving action prior knowledge in CLIP backbone for high true-positive results."
+cbp branch,pcb,CBP branch distills extensive background pseudo-labels from output Pcb for reliable use of complementary information.
+vlp branch,pvl,VLP branch distills sufficient foreground pseudo-labels from output Pvl for reliable use of complementary information.
+h,pt,"Ternary pseudo-labels H are generated based on double thresholds δh and δl, where pt is compared to δh to determine the label"
+h,pc,Ternary pseudo-labels H depend on pc being equal or not to the correct action category yc in determining the label
+frames,scores,"Frames are classified based on scores, with scores more than δh and less than δl considered as foreground, while scores less than δl or with the wrong action category are considered as background."
+frames,action category,"Frames are also classified based on the correct action category, with correct category frames classified as foreground and frames with the wrong action category as background."
+frames,pseudo-labels,"The frames are used to generate different pseudo-labels, such as Hcb for confident background frames and Hvl for confident foreground frames."
+background knowledge,cbp branch,Background knowledge is distilled from the CBP branch to initialize reliable background frames during the B step.
+foreground knowledge,vlp branch,Foreground knowledge is distilled from the VLP branch to supervise the generation of confident background pseudo-labels Hcb during the B step.
+confident background pseudo-labels hcb,vlp branch,"Hcb is generated to supervise the VLP branch, resulting in tackling false-positive confusions from vanilla CLIP pre-training"
+false-positive confusions,vanilla clip pre-training,False-positive confusions are greatly tackled by generating confident background pseudo-labels Hcb to supervise the VLP branch
+pseudo-labels,confident foreground frames,Resultant pseudo-labels contain a large number of confident foreground frames and background frames
+f step,high-quality pseudo-labels hvl,"During F Step, high-quality pseudo-labels Hvl are distilled from the frozen VLP branch to guide the CBP branch for false-negative suppression"
+branch,alternating strategy,"Under an alternating strategy, the two branches complement each other and correct each other to contribute to more precise and complete action localization"
+each step,knowledge distillation loss lkd,"To supervise either branch during each step, both the knowledge distillation loss Lkd and foreground-background contrastive loss Lfb are adopted"
+pseudo-labels,foreground,"Pseudo-labels contain two types of confident frames: foreground and background, which could help avoid falling into trivial solutions. Foreground features are pulled separately from background features using contrastive learning."
+pseudo-labels,background,"Pseudo-labels contain two types of confident frames: foreground and background, which could help avoid falling into trivial solutions. Background features are pushed separately from foreground features using contrastive learning."
+background,action,Background contexts could appear visually similar with the action (foreground).
+foreground,features,Foreground features are used to distinguish between different categories of confident frames.
+background,features,Background features are used as negative samples to help distinguish features of foreground and contexts.
+features,uncertain frames,"Enhanced features of uncertain frames become more discriminative, facilitating more complete temporal action localization."
+fusion strategies,alternating strategy,"Comparing to various fusion strategies, the alternating strategy produces more precise and complete results."
+alternating strategy,multi-view co-training,"The alternating strategy plays a similar role as multi-view co-training, where different components like CBP and VLP are utilized."
+multi-view co-training,cbp and vlp branches,"The multi-view co-training strategy treats CBP and VLP branches as two distinctive views, making it robust to pseudo-label noises."
+vlp branch,high-quality pseudo-labels,"In step B, the VLP branch is prompted for high-quality pseudo-labels to handle frames with conflicting predictions."
+feature contrastive loss,results,Feature contrastive loss is used to make results more discriminative in step F for further denoising.
+cbp branch,post-processing,"At testing time, results from the CBP branch are leveraged for post-processing, as vision-language pre-training cannot handle Optical Flow."
+action classification,video-level category probabilities and frame-level localization scores,"For action classification, classes with probability greater than θcls are selected, and for localization, detection scores are thresholded with θloc."
+action proposals,consecutive snippets,"Consecutive snippets are concatenated as action proposals for localization, eliminating redundant proposals with soft non-maximum suppression."
+thumos14,untrimmed videos,THUMOS14 dataset consists of 413 untrimmed videos from 20 categories.
+activitynet1.2,videos,ActivityNet1.2 covers 9682 videos belonging to 100 categories.
+videos,categories,Almost all the videos are single-category.
+videos,action regions,Action regions take up more than half of the video duration.
+videos,training videos,We train on 4619 training videos.
+videos,validation videos,We evaluate on 2383 validation videos.
+metrics,localization performance,"To evaluate localization performance, we follow the standard protocol to use mean Average Precision (mAP) at different intersections over union (IoU) thresholds."
+metrics,quality of pseudo-labels,"To clearly evaluate the quality of pseudo-labels, we also report mean Intersection over Union (mIoU) averaged over the foreground categories and the background category."
+details,video durations,"To handle the large variety in video durations, we randomly sample T consecutive snippets for each video."
+details,tv-l1 algorithm,We utilize the TV-L1 algorithm to extract optical flow from RGB data.
+details,cbp branch,"For the CBP branch, we use Transformer architectures (multi-head self-attention, layer norm, and MLPs) as the backbone network."
+details,vlp branch,"For the VLP branch, we use a 2-layer temporal Transformer, prepend and append 16 prompt vectors to textual inputs, both are initialized by N (0, 0.01)."
+clip image encoder,text encoder,Both CLIP image encoder and text encoder are adopted.
+clip image encoder,text encoder,"Both CLIP image encoder and text encoder are initialized by N(0, 0.01), indicating they have a common initialization process."
+framework,adam,"The framework is optimized by Adam with the learning rate of 10^-4, signifying Adam plays a crucial role in optimizing the framework."
+hyper-parameters,grid search,"All hyper-parameters are set by grid search, showing that grid search is used to determine the values of hyper-parameters."
+"pseudo-label thresholds δh = 0.3, δl = 0.1",balancing ratio λ = 0.05,"Pseudo-label thresholds δh = 0.3, δl = 0.1 and the balancing ratio λ = 0.05 are key components in setting up the framework."
+i3d,clip,"For fair comparisons, CO2-Net [18] and DELU [7] were reproduced using both I3D and CLIP features, illustrating a connection between I3D and CLIP."
+basnet,dgam,BasNet and DGAM are two methods compared in the context for semantic segmentation.
+basnet,acgnet,BasNet and ACGNet are two methods compared in the context for semantic segmentation.
+basnet,d2-net,BasNet and D2-Net are mentioned as part of the comparison with state-of-the-art methods.
+basnet,co2-net,BasNet is part of the comparison with CO2-Net for semantic segmentation.
+co2-net,delu,CO2-Net and DELU are reproduced with inputting I3D and CLIP features for comparison purposes.
+i3d,clip,I3D and CLIP features are inputted to reproduce CO2-Net and DELU for comparison.
+our method,all competitors,The context states that 'our method significantly surpasses all competitors' in the comparison.
+performance improvement,state-of-the-art,"The performance improvement can reach 2.7%, taking the state-of-the-art to a new level."
+vision-language pre-training,free knowledge,We leverage Vision-Language Pre-training for free knowledge.
+i3d,clip,We also input both I3D and CLIP features into two SOTA methods by one early fusion mode.
+clip,features,Simply adding CLIP features gives only slight or even negative gains on both datasets.
+cb pre-training,vl pre-training,CB Pre-training has good background mIoU but inferior foreground mIoU. VL Pre-training has good foreground mIoU but inferior background mIoU.
+knowledge distillation loss lkd,localization results,The single knowledge distillation loss Lkd has brought gratifying localization results.
+foreground-background contrastive loss lfb,performance,The additional foreground-background contrastive loss Lfb further boosts the performance to the best.
+pseudo-labels,vanilla vlp,Pseudo-labels are extracted from vanilla VLP to train the CBP branch.
+pseudo-labels,cbp branch,Pseudo-labels are used to train the CBP branch.
+pseudo-labels,vlp branch,Pseudo-labels are used to train the VLP branch.
+cbp branch,vlp branch,Two branches are combined by averaging and weighting.
+thumos,activitynet,THUMOS and ActivityNet are compared based on the effect of over-completeness.
+pre-trainings,detection performance,The quality of pre-trainings determines the performance of detection.
+pseudo-labels,foreground miou,The quality of pseudo-labels is evaluated based on foreground mIoU.
+pseudo-labels,background miou,The quality of pseudo-labels is evaluated based on background mIoU.
+cbp branch,localization results,Classification-Based Pre-training's localization results are impacted by the incomplete issue.
+background miou,true negatives,The background mIoU is impressive with high true negatives.
+background miou,false positives,The background mIoU is terrible with serious false positives.
+foreground miou,false negatives,The foreground mIoU is poor with serious false negatives.
+foreground miou,true positives,The foreground mIoU is considerable with high true positives.
+features pre-trained on action classification datasets,sparse discriminative frames,Features pre-trained on action classification datasets only highlight sparse discriminative frames.
+vision-language pre-training,over-complete issue,Results of Vision-Language Pre-training show issues with over-completeness.
+our proposed framework,existing methods,The proposed framework can serve as CBP branch for existing methods.
+method achieves high foreground and background miou,more precise and complete localization,The method achieves high foreground and background mIoU for more precise and complete localization.
+background supervision provided by cbp branch,extensive foreground supervision distilled from vlp branch,Background supervision is provided by CBP branch and foreground supervision is distilled from VLP branch.
+vl pre-training,immediate gains on background miou,"Comparing to VL Pre-training, immediate gains are achieved on background mIoU."
+prompts + transformer,action prior knowledge in vlp,Lightweight trainable parameters retain action prior knowledge in VLP.
+trainable parameters,prompts,"Trainable parameters in the context refer to prompts in this case, which are important for retaining action prior knowledge in VLP."
+trainable parameters,transformer,"Trainable parameters in the context also include Transformer, which plays a role in retaining action prior knowledge in VLP."
+prompts,transformer,Prompts and Transformer are part of the trainable parameters that retain action prior knowledge in VLP.
+action prior knowledge,vlp,Action prior knowledge is retained in VLP through the trainable parameters mentioned earlier.
+optimization strategies,alternating efficacy,Optimization strategies are compared for their alternating efficacy in the context.
+table 4,optimization strategies,Table 4 is used to compare optimization strategies along with two other solutions.
+foreground pseudo-labels,vanilla vlp,Foreground pseudo-labels are extracted from vanilla VLP as part of the 'Only F step' solution.
+cbp branch,pseudo-labels,The CBP branch is used for auxiliary training with the foreground pseudo-labels extracted from vanilla VLP.
+background pseudo-labels,warm-up cbp branch,Background pseudo-labels are distilled from the warm-up CBP branch to train the VLP branch in the 'Only B step' solution.
+f step,vanilla vlp,The 'Only F step' solution involves extracting foreground pseudo-labels from vanilla VLP.
+b step,warm-up cbp branch,The 'Only B step' solution includes distilling background pseudo-labels from the warm-up CBP branch.
+vlp,background frames,Fine-tuning VLP with many background frames leads to improvements in the 'Only B step' solution.
+dual-branch results,averaging and weighting,The dual-branch results are combined by averaging and weighting in each solution for comparison.
+weighted operation,noise suppression,"Weighted operation suppresses noise somewhat, leading to better results than the average operation."
+alternating strategy,competitors,The alternating strategy in the context has advantages over competitors when fusing complementary information and denoising pseudo-labels.
+complementary information,robust denoising,The alternating strategy shows advantages in fusing complementary information and robust denoising of pseudo-labels.
+videos,ground-truth action intervals,Videos are compared with ground-truth action intervals in qualitative comparisons shown in Figure 3.
+frame-level action probabilities,localization results,Frame-level action probabilities and localization results of different pre-training models are compared qualitatively in Figure 3.
+classification-based pre-training (cbp),vision-language pre-training (vlp),"CBP suffers from the incomplete issue, while VLP has the over-complete issue. Our framework distills foreground knowledge from VLP and background from CBP, for the strong collaborative alliance"
+vision-language pre-training (vlp),cbp,"Our framework distills foreground knowledge from VLP and background from CBP, for the strong collaborative alliance"
+vlp,cbp,"Our framework distills foreground knowledge from VLP and background from CBP, for the strong collaborative alliance"
+model a1,lkd,"The single Lkd (model A1) already brings gratifying performance, revealing that the confident pseudo-labels of foreground and background distilled from two branches are well fused by the alternate optimization"
+model a2,lfb,"With only Lfb, model A2 also performs barely satisfactory results. Lfb differentiates foreground features and background features, thus eliminating extensive uncertain frames and making the localization task easier"
+lfb,model a2,"With only Lfb, model A2 also performs barely satisfactory results. Lfb differentiates foreground features and background features, thus eliminating extensive uncertain frames and making the localization task easier"
+knowledge distillation loss lkd,foreground-background contrastive loss lfb,"To train our method, both knowledge distillation loss Lkd and foreground-background contrastive loss Lfb are leveraged in bringing effective optimization losses on THUMOS14"
+foreground-background contrastive loss lfb,knowledge distillation loss lkd,"To train our method, both knowledge distillation loss Lkd and foreground-background contrastive loss Lfb are leveraged in bringing effective optimization losses on THUMOS14"
+wtal methods,cbp branch,"Our distillation-collaboration framework is generalized, which means that existing WTAL methods can be employed as the CBP branch"
+co2-net,um,Two typical methods mentioned in the context
+framework,methods,The framework improves the performance of the methods by up to 2-4% average mAP
+framework,pre-trainings,The framework fuses complementarity from Classification-Based Pre-training and Vision-Language Pre-training
+collaborative optimization,detection results,Collaborative optimization brings precise and complete detection results
+method,framework,The method establishes a strong alliance with the framework through collaborative optimization
+framework,distill,The framework mentioned in the context is designed to distill free knowledge from Vision-Language pre-training for weakly-supervised temporal action localization.
+vlp,localizes,"The VLP branch often localizes over-complete actions, which complements the incomplete results of conventional Classification-Based Pre-training."
+cbp,distill,Confident background pseudo-labels are distilled from the CBP branch to form strong alliances within the framework.
+vlp,distill,Confident foreground pseudo-labels are distilled from the VLP branch for collaborative training within the framework.
+research,supported by,"The research is supported by various entities including the National Key R&D Program of China, STCSM, 111 plan, and State Key Laboratory of UHD Video and Audio Production and Presentation."

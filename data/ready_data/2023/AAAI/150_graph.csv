@@ -1,0 +1,144 @@
+node_1,node_2,edge
+multi-agent settings,teams,Teams are formed in multi-agent settings to achieve collective outcomes.
+agents,collective outcomes,Agents contribute to achieving outcomes that surpass their individual capabilities.
+relative contributions,reward allocation,Measuring and fairly allocating rewards based on individual contributions is a challenge.
+shapley value,distribution scheme,The Shapley value is a solution concept that fairly reflects individual contributions to team performance.
+core,incentive to abandon team,The Core reduces the motivation for agents to leave their team by ensuring a fair distribution.
+computational barrier,computing cooperative game-theoretic solutions,Computing these solutions
+neural networks,learned model,Neural networks are trained to propose fair payoff allocations
+generalization,games far from training distribution,Trained models can generalize to new situations not seen during training.
+predicting solutions,more players,Models can predict solutions for an increased number of players than observed during training.
+explainable ai,shapley value computations,Our framework accelerates Shapley value calculations for multiple instances.
+team collaboration,individual performance,Cooperation is crucial for individuals' performance in various environments
+human cooperation,artificial intelligence,Cooperation between learning agents is a fundamental problem in AI
+local interactions,collective outcomes,Understanding how collective outcomes arise from individual interactions remains an open problem.
+influential features,explainable ai,Identifying influential features is a direct application in explainable AI
+cost-sharing,fair distribution,Fair cost-sharing is relevant in situations like data acquisition
+majority support,legislative bodies,In decision-making processes
+cooperative game theory,machine learning model,The context introduces the connection where feature importance games are a model for understanding feature influence in machine learning
+game theoretic solutions,shapley value,The Shapley value is mentioned as one of the game theoretic solutions that can be computed for feature importance games.
+shapley value,banzhaf index,Both Shapley value and Banzhaf index are mentioned as measures for solving game theoretic problems in the context.
+shapley value,least-core,These are three different game theoretic measures
+computational complexity,approximation algorithms,The high computational complexity of calculating the Shapley value is addressed by mentioning approximation algorithms as a way to speed up the process.
+explainable ai analyses,datasets with a large number of instances,Our approach aims to speed up explainability for models
+cooperative game theory,black-box model interpretability,Cooperative game theory is used as a foundation for making black-box models more interpretable.
+grand coalition,utility v(n),The grand coalition refers to the group of all agents
+imputation,player i,An imputation is a payoff allocation where each player i receives a non-negative share such that the sum equals the total utility v(N).
+core,payoff vector,The Core is the set of stable payoff allocations where no subset of agents can collectively increase their utility more than the total awarded by the current allocation.
+core,characteristic function,The Core's definition involves the characteristic function
+ε-core,empty core,The ε-Core is a relaxation of the Core for games with an empty Core
+least-core,ε-core,The Least-Core is another relaxation concept
+ε-core,instability,In games with an empty Core
+ε-core,imputation,The ε-core consists of imputations where agents' utilities are at least v(C) - ε
+ε-core,coalition,In the ε-core
+excess,coalition,The excess of a coalition represents the improvement in utility they can achieve by leaving the grand coalition and working together.
+least-core value (lcv),ε-core,The LCV is the minimal ε for which the ε-core is non-empty
+least-core,instability,The LCV minimizes the incentive for any agent subset to leave the grand coalition
+linear programming,lcv calculation,The LCV is found using linear programming techniques
+power index,shapley value,The Shapley Value is a power index that measures each player's influence on the team's performance
+shapley value,fairness,The Shapley Value is unique and satisfies fairness axioms
+shapley value,marginal contribution,It calculates the average marginal contribution of each player across all permutations of the team.
+shapley value,feature i in a data instance x,The Shapley value of a feature represents the effect it has on the model outcome.
+feature i in a data instance x,model outcome,The Shapley value computes the contribution of a feature to the model's prediction.
+sampling based-methods,base value,These methods use the average model output (base value) as a reference for computing contributions.
+sampling based-methods,large datasets,Sampling based-methods are not suitable for large datasets due to the high number of re-evaluation samples needed.
+our approach,game-theoretic estimators,Our method employs machine learning to create models that estimate feature attributions efficiently.
+synthetic datasets,training for game-theoretic estimators,We generate synthetic datasets to train our models for fast solutions later.
+weighted voting games (wvgs),multi-agent settings,WVGs serve as a framework for studying cooperation in scenarios involving multiple agents.
+shapley-based feature importance setting,predictions of a machine learning model,Our approach speeds up the computation of feature impact on model predictions.
+weighted voting game,proportion of the quota,The weights in the weighted voting game are divided by the quota to create the inputs x.
+player i,winning coalition,A value xi > 1 indicates that player i is a winning coalition by itself.
+weighted voting game,solution concept,Models are trained to predict three solution concepts: Least-Core
+least-core,payoff allocation,For the Least-Core solution
+shapley values,payoff allocation,The model predicts the payoff allocation (p1
+banzhaf indices,payoff allocation,The model also predicts the payoff allocation (p1
+n player game,model fθ,A deep feedforward network fθ is used to map the input (weights and possibly padded zeros) to the solution space.
+variable-size case,maximal number of players m,The dataset considers games with up to M players
+inputs x,normalized weights,The feature matrix X contains the normalized weights for the game.
+outputs p,solution values,P represents the corresponding solutions for the game
+normalized weights,p (solutions),The model learns to allocate joint payoff using P
+k (m + 1 or m),number of players n,The model gη can be used for different n
+ground truth output vector,zeros,The ground truth is padded with zeros if there are fewer than M players.
+data shuffling,random positions,Players are randomly located during data shuffling.
+least core value (lcv),last element of each row,LCV is not shuffled and remains at the end of each row.
+model architecture,padding procedure,The model learns to handle variable player count by padding with zeros and redistributing payoffs.
+mean square error (mse),training objective,During training
+mean absolute error (mae),evaluation metric,MAE is used to assess the model's performance
+mean absolute error (mae),game,MAE is a metric defined for each game
+least-core,game theoretic metric,The Least-Core aims to minimize incentives for subsets to leave the team
+payoff vector ˆp,coalition c,In the context of the Least-Core
+maximal excess v(c)−(cid:80),quality of the model,The quality of a model is evaluated based on the maximal excess
+weights w,beta distribution,Weights are sampled from a Beta distribution for assessing the model's ability to generalize to unseen instances.
+neural networks,feature importance measurement,Neural networks are used as a method to measure feature importance at scale more efficiently.
+shap kernelexplainer,feature to shapley values,SHAP KernelExplainer is used to convert features into Shapley values
+dataset,shapley values,The context discusses constructing a dataset to compute Shapley values using the SHAP KernelExplainer.
+partitioning,train and test datasets,The dataset is partitioned into a train and test set
+epochs,training,Each increment involves training a model for 100 epochs.
+wvg (weighted voting games),neural models,The focus is on evaluating the predictive performance of neural networks in WVG settings.
+variable-size model,gη∗,A single variable-size model gη∗ is trained on games with different player counts.
+m (maximum players),padded zeros,Data is padded to accommodate games up to M=20 players.
+table 1,predictive performance,The table presents the performance of neural networks in handling games with varying player counts.
+sample complexity,shapley feature importance prediction,In the explainable AI domain
+fixed-size neural networks,standard multinomial regression models,outperform by 45 to 95%
+solution concepts,full details (appendix ??),performance comparison is detailed in the appendix
+least core,shapley values,error ranges from 0.005 to 0.087 for least core
+least core,banzhaf indices,error ranges from 0.012 to 0.067 for Banzhaf indices
+table ??,in-sample performance summary,provides a complete summary of models' performance
+predictive performance,mean mae,consistent across test datasets
+average payoff per player,1/n,error scales approximately with this value
+fixed-size models,figure 4,evaluates performance with MAE and confidence intervals
+variable-size models,robust to shifts in weight distribution,Figure 5 shows stability across test sets
+variable-size models,training distribution,generalize outside the training distribution
+figure 5,stable performance,decays with the number of players
+least core,figure 5,(a) refers to least core performance in Figure 5
+shapley values,figure 5,(b) refers to Shapley value performance in Figure 5
+banzhaf indices,figure 5,(c) refers to Banzhaf index performance in Figure 5
+least core,performance,The relation is that the performance abruptly decreases for the excess players beyond 8
+shapley value,performance,Similar to the least core
+banzhaf index,performance,The Banzhaf index exhibits a similar pattern of performance degradation with more players.
+variable-size models,generalization to larger number of players,The main objective is to investigate if variable-size models can generalize
+variable-size models,extrapolation beyond training data,These models are capable of performing well on games with more than 10 players
+fixed-size models,variable-size models,Fixed-size models outperform variable-size models in terms of Mean MAEs
+mean maes,evaluation metric,Mean MAEs are used as a quantitative measure to compare the performance of different solution concepts.
+test sets,evaluation,Performance is evaluated on multiple test sets to ensure the robustness of the models.
+solution concepts,discontinuities in the solution space,Solution concepts are mentioned to be part of the 'discontinuities' in the context
+variable-size networks,fixed-size networks,These two types of networks are compared for performance
+error distributions,figure 6,Error distributions are visualized in 'Figure 6'
+quota,discontinuities in the solution space,Quotas contribute to 'discontinuities' in the solution space
+winning coalitions,solution concepts,Solution concepts are related to the 'winning coalitions
+weight of a player,solution concepts,Changing a player's weight can lead to 'step-wise constant functions' in solution concepts
+wvg,solution concepts,WVG (Weighted Voting Game) is a context where solution concepts
+model learning,discontinuities in the solution space,Models face difficulty in learning the solution space due to its discontinuities
+melbourne housing dataset,kernelexplainer,The Melbourne Housing dataset is used to generate a ground-truth dataset for explaining model decisions
+shap package (kernelexplainer),number of samples,The number of samples in the SHAP package affects the accuracy and variance of Shapley values; a higher number leads to more accurate values but longer computation time.
+compute time,higher number of samples,The compute time increases approximately linearly with the number of re-evaluation samples in the KernelExplainer.
+computation time,10% of the data,Computing Shapley values on 10% of the data takes 29 minutes
+computation time,90% of the data,Predicting Shapley values on the remaining 90% of the data takes less than a second.
+total time,entire dataset,The entire process of training
+prediction quality,remaining unseen data,The prediction quality on the unseen 90% of the data remains reasonable despite the speedup in computation.
+shapley values,prediction quality,The trade-off in prediction quality is measured by comparing the model predicted Shapley values to the Shapley values obtained with the default number of samples.
+model predicted shapley values,ground-truth dataset,Mean Mean Absolute Error (MMSE) is used to quantify the difference between the model's predictions and the actual Shapley values.
+inference time,number of samples,The inference time scales approximately linearly with the number of samples used for computing Shapley values.
+model-based approach,speedup,The model-based approach provides a speedup in Shapley value computations.
+sample efficiency,neural networks,Neural networks are shown to be sample efficient in predicting Shapley values.
+uci bank marketing dataset,sample efficiency,performance
+neural payoff machines,cooperative game,Neural payoff machines are models designed to solve cooperative games
+weighted voting games,feature importance games,These are two concise representations of a characteristic function analyzed in the context
+neural models,training distribution,Neural models show good generalization
+least core,shapley value,The least core is a harder solution concept to learn compared to the Shapley value
+least core,banzhaf index,Both the least core and the Banzhaf index are mentioned as solution concepts that are challenging for neural models to learn.
+model-based approach,sampling based approach (shap),A model-based approach using neural payoff machines leads to an 8x speedup over the sampling-based SHAP method
+dataset of 9000 instances,prediction quality,The model-based approach sacrifices some prediction quality in favor of computational efficiency.
+dataset of 100,000 instances,potential impact
+larger datasets,weeks (40 or 400 hours),Computing Shapley values on the entire dataset takes a significant amount of time
+weeks (40 or 400 hours),our procedure,Our procedure remains relatively constant time compared to computing Shapley values
+building the train set,training the neural network,Both these tasks together take only a fraction of the time spent on the sampling-based approach.
+our method,a few hours,The analysis using our method is significantly faster than computing Shapley values
+methods discussed,better analysis of decision making bodies,These methods contribute to improved understanding of decision-making processes.
+methods discussed,approximating feature importance,They also aid in estimating the significance of features in a model.
+graph-based games,set-based representations,Similar approaches can be applied to various cooperative game representations.
+direct applications,speeding up explainable ai analysis,Our approach enhances the speed of explanations in AI systems.
+direct applications,political influence estimation,It also facilitates estimating political influence.
+future work,non-cooperative games,Exploring the applicability to non-cooperative games is a topic for further research.
+future work,kernel or nucleolous solutions,Considering alternative solution methods like Kernel or Nucleolous is another area of interest.
+neural network designs,graph neural networks,Investigating graph neural networks or transformers could lead to more efficient designs.

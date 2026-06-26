@@ -1,0 +1,123 @@
+node_1,node_2,edge
+uncoupled learning dynamics,regret,The main focus is on uncoupled learning dynamics that achieve polylogarithmic regret compared to traditional guarantees in the no-regret framework.
+polylogarithmic regret,improvement,This improvement is an exponential enhancement over the standard regret bounds.
+structured strategy spaces,previous results,Prior work has focused on specific game types like normal-form and extensive-form games.
+general convex games,question,The paper addresses the question of achieving sublinear regret in these more general settings.
+o(log t) per-player regret,first uncoupled learning algorithm,The main contribution is the first algorithm with logarithmic regret in general convex games.
+convex strategy sets,strategy updates,Efficient strategy updates are maintained even for general convex and compact strategy sets.
+optimistic follow-the-regularized-leader,learning dynamics,The algorithm relies on an instantiation of this approach with a self-concordant regularizer.
+self-concordant regularizer,feasible region,The regularizer is specifically chosen to avoid being a barrier for the feasible strategy space.
+proximal oracle,efficient implementation,The algorithm requires a proximal oracle for the strategy set
+o(log log t) per-iteration complexity,implementation detail,The complexity is further reduced to logarithmic in the logarithm of T.
+linear optimization oracle,extensions,The paper also discusses how the algorithm can be adapted when only a linear optimization oracle is available.
+regret minimization,online learning,Regret minimization is a central framework in online learning
+regret minimization,multiagent systems,Regret minimization is fundamental in the development of multiagent systems
+game-theoretic solution concepts,regret minimization,No-regret learning algorithms are closely tied to game-theoretic solution concepts
+ai agents,regret minimization,Self-play using regret-minimizing algorithms has driven AI advancements
+linear programming techniques,scalability challenge,The traditional no-regret framework has surpassed linear programming techniques in scalability
+self-play,ai agents,Self-play
+traditional no-regret framework,fully adversarial way,The traditional no-regret framework assumes a fully adversarial environment
+traditional no-regret framework,security games,The worst-case view in the traditional framework is justified for applications like security games where the environment is hostile.
+optimism,multiplicative weights update (mwu),Optimistic MWU is an alternative approach employed by players in general games
+daskalakis et al. [2011],zero-sum games,Daskalakis et al. initiated the study of optimal performance in zero-sum games.
+daskalakis et al. [2021],nearly-optimally,They established a regret bound of O(log4 T) for optimistic MWU in normal-form games
+normal-form games,strategic interactions,Normal-form games are commonly used to model strategic interactions in theoretical studies.
+normal-form games,complex strategy spaces,normal-form games are a common representation in theory
+complex strategy spaces,faithful approximation using normal form,Approximating complex strategy spaces with normal form is inefficient
+faithful approximation using normal form,practical implications,The inefficiency of normal-form approximation limits the usefulness of prior results in practice.
+central question,near-optimal,efficiently implementable
+convex games,rich class of games,Convex games encompass normal-form and extensive-form games
+lrl-oftrl algorithm,primary contribution,The paper introduces LRL-OFTRL
+question (♣),positive settlement,LRL-OFTRL settles Question (♣) in a favorable manner.
+theorem 1,optimal regret,Theorem 1 establishes near-optimal regret.
+self-play,adversarial regime,Theorem 1 is both self-play and adversarial robust
+learning dynamics,optimistic no-regret learning,Proposed learning dynamics fall within the framework of optimistic no-regret learning.
+oftrl algorithm,algorithm 1,The OFTRL optimization step is performed in Algorithm 1 with a 'lifted' space.
+lifting,non-negative regret,The lifting in Algorithm 1 ensures OFTRL's regret is non-negative (Theorem 2).
+logarithmic self-concordant regularizer,feasible set,Using this regularizer is not a barrier for the underlying feasible set
+pictorial overview,caption,A visual representation is given in the caption accompanying the text.
+chiang et al. [2012],rakhlin and sridharan [2013],References to prior work in optimistic no-regret learning.
+lee et al. [2020],luo et al. [2022],Similar in spirit approaches used in online learning.
+abernethy et al. [2008],wei and luo,2018
+bubeck et al.,2019,bandit setting
+[kangarshahi et al.,2018],adversarial robustness
+luo,2018,bubeck et al.
+logarithmic regularizer,multiplicative stability,The logarithmic regularizer is connected to multiplicative stability
+logarithmic regularizer,daskalakis et al. [2021],Logarithmic regularizer is linked to the work of Daskalakis et al. for general domains
+optimistic mwu,daskalakis et al.,2021
+local norm,logarithmic regularizer,Local norm is induced by the logarithmic regularizer
+second-order path lengths,o(log t),Second-order path lengths are bounded by O(log T) based on a technique by Anagnostides et al. [2022a].
+nonnegativity of swap regret,optimal sum of players' regrets,Nonnegativity of swap regret is crucial because it implies optimal individual regrets for each player.
+daskalakis et al. [2011],improved regret guarantees,Daskalakis et al. (2011) initiated the line of work focusing on improved regret bounds in games.
+strongly uncoupled learning dynamics,daskalakis et al. [2011],These dynamics were introduced by Daskalakis et al. in their 2011 work.
+optimistic mirror descent (omd),rakhlin and sridharan [2013],Rakhlin and Sridharan introduced a simplified version of OMD
+recency bias,fudenberg and peysakhovich,2014
+rvu property,syrgkanis et al. [2015],Syrgkanis et al. crystallized the RVU property
+individual regret,o(t^1/4),The individual regret bound for players is O(T^1/4)
+coarse correlated equilibria,syrgkanis et al. [2015],Syrgkanis et al. showed convergence to coarse correlated equilibria using the RVU property and OMD.
+o(polylog(t)),daskalakis et al. [2021],Daskalakis et al. achieved a near-optimal bound of O(polylog(T)) for normal-form games.
+polyhedral games,faolina et al. [2022],Faolina et al. generalized the result to a broader class of games
+clairvoyant mwu algorithm,guaranteed no-regret,The Clairvoyant MWU algorithm has iterates with a no-regret property
+clairvoyant mwu algorithm,per-iteration complexity,The 2022 revision reduces the complexity to O(d) per iteration
+uncoupled version,time-independent o(d) complexity,The uncoupled version achieves lower complexity compared to the original
+concave games,continuous games,These game types are sometimes used interchangeably
+utility function,properties,A utility function must be concave
+convex games,examples,Convex games encompass various applications
+cournot competition,one-dimensional setting,Cournot competition is explained in a simplified one-dimensional context
+normal-form games (nfgs),finite strategies,In NFGs
+extensive-form games,nfgs (normal form games),EFGs generalize NFGs by capturing sequential moves
+strategy set,probability distributions,Player i's strategy set consists of all probability distributions supported on their action set Ai.
+sequence-form polytope,strategy space,Each player's strategy space is compactly represented using the sequence-form polytope Qi.
+terminal node (z),z (set of terminal nodes),Terminal nodes are reached at the end of the game
+utility function,ui(x),Player i's utility is a multilinear function ui(x) calculated as the expected value of Ui(a) over their chosen distribution x.
+probability mass,qj[σj,z]
+joint strategy profile,qj,The joint strategy profile Qj combines the strategies of all players
+splittable routing games,roughgarden and schoppmann,2015
+flow,graph g,A flow 'fi' is routed from a source to a destination in the undirected graph 'G'
+latency function,edge e,Edges e in E are associated with latency functions ℓe(fi)
+strategy,flow splitting,The strategies of a player correspond to ways of splitting the flow 'fi' into paths from the source to the destination.
+game,assumption 1,Games mentioned satisfy Assumption 1
+cournot competition,n firms (players),This game involves n firms
+firm i,quantity si,Firm i chooses the quantity si of the common good
+cost function,ci,Each firm has a cost function ci that assigns a cost based on the produced quantity.
+utility,ui(s),The utility of a firm is defined as ui(s) = sip(s) - ci(si)
+linear cournot competition,price p(s),In this specific type of Cournot competition
+online learning,learning agent,A learning agent selects a strategy x(t) in the online learning framework
+full information model,linear utility function,In the full information model
+log-regularized lifted optimistic ftrl (lrl-oftrl),oftrl step,LRL-OFTRL contains an OFTRL step as a component (Line 4).
+learning rate,η,The learning rate is a parameter in the algorithm (Line 2).
+strategy,x(t),LRL-OFTRL selects a strategy x(t) at each time step (Line 4).
+observation,u(t),After playing strategy x(t)
+regret,regt,The algorithm's performance is measured by regret RegT (defined in Section 3.3).
+lifted space ˜x,˜u(t),The regret is measured in the lifted space
+λ(t),y(t),The optimization problem on Line 3 involves λ(t) and y(t).
+exact solution (assumption),approximation (section 3.5),Regret analysis initially assumes exact solutions
+lifted space ˜x,max(λ∗,y∗)
+˜reg,regt,Theorem 2 implies that the regret bound in the lifted space (˜Reg) is greater than or equal to the regret bound in the original space (RegT) and can be translated to a guarantee over the original space.
+oftrl algorithm,˜reg,Proposition 2 provides an RVU (Regret Bounded by Variation in Utilities) bound for the internal OFTRL algorithm
+local norms,∥u(t)∥∞∥x∥1 ≤ 1,The proposition assumes that the product of the infinity norm of u(t) and the 1-norm of x is bounded by 1 at all times
+learning rate η,oftrl iterates,The learning rate η influences the convergence of the iterates produced by the OFTRL algorithm
+smoothness condition,utility function,The variation in one's utilities is connected to the variation in joint strategies based on the smoothness condition of the utility function.
+second-order path lengths,o(log t),The second-order path lengths of the dynamics up to time T are bounded by O(log T).
+lrl-oftrl,learning rate,Players follow LRL-OFTRL with a specific learning rate η ≤ min(conditions).
+assumption 1,parameters b,l
+learning rate,doubling trick,If players don't know the parameters
+lrl-oftrl,regret,Each player's regret RegT is bounded in Theorem 4.
+theorem 3,theorem 1,Theorem 4 is the detailed version of Theorem 1
+optimization problem,regret,The guarantees in Corollary 1 relate to the deterioration of regret
+optimization problem,efficient computation,It is necessary to show efficient computation of approximate solutions to the optimization problem
+oftrl step,proximal oracle,Access to a proximal oracle in local norm for the set ˜X is assumed to solve the optimization problem approximately.
+optimization problem,convex set,Optimization over a general convex set poses challenges not seen in simplex domains
+proximal oracle,normal-form games,Algorithms designed for normal-form games
+optimization problem,proximal oracle,The optimization problem involves the proximal oracle (Π ˜w(˜g)) which is used to find the minimum in a constrained optimization setting.
+polytope of sequence-form strategies,extensive-form games,The proposition discusses the specific case where the polytope represents the strategy set for a player in an extensive-form game.
+local proximal oracle π ˜w(˜g),exact implementation,For the strategy set of extensive-form games
+proportional newton algorithm,ϵ(t),The theorem mentions the proximal Newton algorithm
+linear maximization oracle,weaker form of oracle,The context introduces a linear maximization oracle as a potentially weaker alternative to the proximal oracle.
+proximal oracle,equation (7),The proximal oracle is defined in Equation (7)
+linear maximization oracle (lmo),equation (8),LMO is considered for the set X
+frank-wolfe (projected) newton method,algorithm 1 and 2,This method is used to show that an LMO for X leads to a guarantee
+lrl-oftrl,regret bound,LRL-OFTRL is a novel algorithm with a regret bound of O(log T) for each player.
+lrl-oftrl,general convex game,The algorithm is designed for general convex games
+uncoupled no-regret learning dynamics,efficient implementation,These dynamics can be implemented efficiently
+experiments,standard extensive-form games,Experiments were conducted on standard extensive-form games to support the theory

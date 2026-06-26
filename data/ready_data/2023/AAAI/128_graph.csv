@@ -1,0 +1,114 @@
+node_1,node_2,edge
+mri reconstruction,interpretability,Interpretability has been a critical issue in MRI reconstruction
+deep unfolding networks (duns),inconsistencies,Current methods using DUNs still suffer from inconsistencies and produce inferior anatomical structures.
+multi-contrast scenes,imaging protocols,Different imaging protocols exacerbate the inconsistency issue in multi-contrast MRI.
+range-null decomposition-assisted dun architecture,consistency,The proposed architecture aims to ensure consistency while maintaining interpretability.
+null-space component,proximal mapping,The null-space component is fed into proximal mapping to relieve inconsistency analytically.
+correlation decoupling scheme,multi-contrast fusion,The scheme narrows the information gap for effective fusion of multi-contrast images.
+isotropy encoder,anisotropy encoder,These encoders learn contrast-shared and contrast-specific features separately.
+quantitative results,qualitative results,Both quantitative and qualitative results demonstrate the superiority of the proposed method over state-of-the-art methods.
+auxiliary modalities,imaging protocols,relation: Differences exist due to the use of different imaging protocols within the same patient.
+contrast-specific (anisotropic) part,modality-specific features,relation: Both contain pathological details and texture information specific to their respective contrasts.
+contrast-shared (isotropic) one,shared features,relation: These features exhibit similar edges and structures
+correlation decoupling learning block (cdlb),dual-branch structure,relation: CDLB has an isotropy encoder for shared features and an anisotropy encoder for contrast-specific information.
+anisotropy encoder,contrast-specific information,relation: Designed to transmit unique information from each contrast.
+isotropy encoder,contrast-shared features,relation: Crafted to learn common features across modalities.
+reconstruction fidelity,modality-specific features,relation: Preserving modality-specific features to improve reconstruction quality.
+reconstruction quality,shared information,relation: Enhanced by jointly considering the complementary information provided by both branches.
+reconstruction quality,shared information,enhanced by jointly considering
+performance,iterative shrinkage thresholding algorithm (ista),validated on a naive unfolding network
+acceleration factors,sampling patterns,extensive experiments on
+our method,previously reported sota methods,outperforms
+sharp texture structures,original ista,clearly enriches high-frequency information
+mri acceleration,compressed sensing,widely employed acceleration technique
+mri acceleration,deep learning,most widely employed
+mri images,clinical practice,hinders widespread use due to computational complexity
+mri,non-invasive medical technique,diagnosing diseases and monitoring treatment outcomes
+mri,compressed sensing,aim to reduce the amount of data
+compressed sensing,mri scans,Compressed sensing aims to reduce data acquired during MRI scans.
+compressed sensing techniques,sparse regularization,Sparse regularization is a type of compressed sensing technique.
+compressed sensing techniques,edge-based sketching,Edge-based sketching is another compressed sensing technique.
+compressed sensing techniques,dictionary learning,Dictionary learning is a part of compressed sensing methods.
+hand-designed methods,massive iteration steps,Hand-designed methods often require many iteration steps.
+hand-designed methods,poor generalization,Hand-designed methods suffer from poor generalization due to strong prior information.
+deep learning methods,promising results,Deep learning methods show promise in improving MRI reconstruction speeds.
+convolutional neural networks (cnns),mri image reconstruction,CNNs are used to reconstruct MRI images from undersampled data.
+cnns,high-quality results,CNNs achieve high-quality reconstructions at fast speeds.
+deep cascade of cnn,dynamic mr image reconstruction,Deep cascade CNN by Schlemper et al. outperforms compressed sensing.
+miccan,cascaded channel-wise attention,MICCAN uses attention mechanism for high-quality MR detail recovery.
+deepcomplexmri,complex values,DeepcomplexMRI operates directly on complex values for improved preservation.
+admm technique,ct denoising,The context describes a method that presents an ADMM technique specifically designed for CT denoising.
+fast mri reconstruction,target image,The main goal of fast MRI reconstruction is to recover the target image from undersampled measurements.
+target image,k-space undersampled measurement,The recovery process involves minimizing the distance between the target image and the undersampled k-space data.
+optimization framework,trade-off parameter λ,The framework includes a trade-off parameter λ to balance data fidelity and prior information.
+regularization term,p(x t ),P(X T ) represents the regularization term used in the optimization problem.
+multi-contrast reconstruction,single-contrast mri,Multi-contrast reconstruction aims to improve upon the advancements in single-contrast MRI by leveraging complementary information.
+eq. (2),reference image x r,In the multi-contrast case
+ista framework,gradient descent,The iterative solution method follows the ISTA (Iterative Shrinkage-Thresholding Algorithm) framework
+proximal mapping steps,eq. (3a),The algorithm alternates between gradient descent and proximal mapping steps in its iterations.
+encoder block,feature extraction,The Encoder block's primary function is to extract features from target and reference inputs.
+feature extraction,information aggregation,Feature extraction is a part of the three modules
+decoder,image generation,The decoder module generates images based on the extracted features.
+decoupling and fusion segment,information aggregation,This segment is responsible for aggregating complementary information.
+isotropic features,low-frequency long-range information,Isotropic features correspond to low-frequency long-range information
+anisotropic features,high-frequency local details,Anisotropic features are the high-frequency local details that exhibit discrepancies between modalities.
+isotropic features,auxiliary contrast,During reconstruction
+discarding modality-specific details,reconstruction process,The goal of discarding modality-specific details is to ensure better consistency in the reconstructed images.
+encoder block,target input,The main role of the Encoder block is to extract features from the target input.
+encoder block,reference input,The Encoder block also extracts features from the reference input
+input projection,3×3 convolutional layer,Both target and reference inputs undergo a 3×3 convolutional layer as part of the input projection.
+isotropy encoder,transformer architecture,The Isotropy Encoder dynamically captures low-frequency structure using the transformer architecture to recognize long-range dependencies.
+discrete wavelet transform,discrete fourier transform,These are mentioned as pre-defined operators for extracting low-frequency isotropy features.
+isotropy feature,target mri,The isotropy feature R is obtained from the target MRI.
+isotropy feature,reference mri,Similarly
+original transformer,o(n2) complexity,The original transformer has a computational complexity of O(n2)
+information,weight w,The weight W is allocated from information.
+weights wu and wd,1×1 convolutional layers,WU and WD are different weights from separate 1×1 convolutional layers.
+expert-aggregated feature,learned expert feature,The expert-aggregated feature is dynamically learned from the learned expert feature.
+expert-aggregated feature,overall expert number m,M represents the number of experts for the feature.
+low-frequency parts,multi-contrast data,Visualization of Fourier spectrum shows low-frequency components for multi-contrast data.
+high-frequency parts,multi-contrast data,Visualization of Fourier spectrum also shows high-frequency components for multi-contrast data.
+tensor f,q and v,Obtained using convolution operations
+local features,convolutions,Convolutions capture local features in image domain.
+global attention map af f t,frequency domain,Global attention is learned using FFT
+enriched features,f + h1×1(af f tv),Enriched features are produced by adding the original feature with the attention-weighted feature.
+naive feed-forward network (ffn),lkffn,LKFFN improves the FFN by introducing a gated mechanism and enhancing local detail perception.
+encoder,hin and e(·),HO(·) and D(·) share the same operations as HIN and E(·)
+ixi dataset,fastmri dataset,Both datasets are employed for performance evaluation
+ixi dataset,pdwi and t2wi volumes,IXI consists of paired PDWI and T2WI volumes
+fastmri dataset,multi-contrast images,FastMRI is paired with multi-contrast images
+pdwi and fs-pdwi knee images,240 pairs,240 pairs of PDWI and FS-PDWI knee images are sifted out for experiments
+psnr,ssim,PSNR and SSIM are metrics used to measure reconstruction quality
+rnu,pytorch implementation,RNU is implemented using PyTorch
+nvidia 3090 gpu,model training,Training is conducted on an NVIDIA 3090 GPU
+adam optimizer,model training,The Adam optimizer is utilized for optimization during training.
+learning rate,lr = 10^(-4),Initial learning rate is set to 10^(-4)
+epochs,50 epochs,The model is trained for 50 epochs.
+batch size,4,Batch size is set to 4 for training.
+data augmentation,flipping,rotation
+l1 loss,optimization,L1 loss is used as the objective function for optimizing the network.
+acceleration rate,4×,8×
+random mask,gaussian sampling,Three masks (random
+stage number k,8,The value K is set to 8 for the proposed method.
+competing approaches,fair comparison,All competing methods are trained with finely tuned settings for a fair comparison.
+quality enhancement,data fidelity,The improvement in quality can be attributed to the employment of consistency guarantee in data fidelity.
+data fidelity,proximal mapping,Consistency in data fidelity and proximal mapping are both employed for enhancement.
+multi-contrast data,refinement of ultimate outcomes,Comprehensive exploitation of supplementary features from multi-contrast data contributes to better results.
+model performance,iterations,Increasing the number of iterations from 4 to 12 consistently improves model performance.
+model performance,computational load,Performance improvements come at the cost of increased computational load.
+rnu (our model),competitors,RNU significantly outperforms other competitors when K = 8.
+rnu,ista (original method),RNU with rang-null decomposition consistently outperforms the original ISTA.
+rang-null decomposition,information correction,The null space in rang-null decomposition holds more potential for information correction.
+rang-null decomposition,noise removal,Employing rang-null decomposition leads to better noise removal.
+range-null decomposition,unfolding network (rnu),RNU is a proposed method in the paper
+fast multi-contrast mr imaging,consistency,The main goal of RNU is to ensure better consistency in the reconstructed images.
+isotropy encoder,anisotropy encoder,These encoders have different roles - Isotropy encoder focuses on low-frequency details
+spectral analysis,error,The error between the reconstructed image and the ground truth can be observed through spectral analysis in the Fourier domain.
+multi-contrast fusion,ablation study,Ablation study in Table 4 evaluates the impact of multi-contrast fusion on the IXI dataset.
+ixi dataset,random acceleration mask,The study is conducted on the IXI dataset with varying acceleration rates
+multi-contrast mr imaging,reconstructed mris,The context discusses RNU's analysis and focus on coherence in reconstructing multi-contrast MRIs.
+rnu model,conventional unfolding architecture,RNU model integrates dual mechanisms into the conventional architecture for MRI acceleration.
+mri acceleration,previous leading approaches,RNU's method outperforms previous state-of-the-art techniques in MRI acceleration experiments.
+zhejiang province,china,key program of natural science foundation
+national natural science foundation of china,grant 62276232,Additional funding was provided by the National Natural Science Foundation of China under a specific grant number.
+acknowledgments,valuable insights,The work concludes with expressions of gratitude and hopes to contribute valuable insights to the MRI reconstruction community.

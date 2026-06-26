@@ -1,0 +1,260 @@
+node_1,node_2,edge
+camera pose estimation,ransac,Camera pose estimation traditionally relies on RANSAC
+ransac,image correspondences,RANSAC leads to a pool of proposed hypotheses from multitude of image correspondences
+inlier count,consensus,Inlier count is regarded as a reliable indicator of consensus
+scoring heuristic,disappointing models,Scoring heuristic favors disappointing models under certain circumstances
+fundamental scoring network (fsnet),pair of overlapping images,FSNet infers a score for a pair of overlapping images and any proposed fundamental matrix
+sparse correspondences,two-view geometry model,"FSNet does not rely on sparse correspondences, but embodies a two-view geometry model through an epipolar attention mechanism"
+fsnet,ransac loops,FSNet can be incorporated into traditional RANSAC loops
+fsnet,magsac++ scoring approach,Naively combining FSNet with MAGSAC++ scoring approach achieves state of the art results
+camera pose,two images,Determining relative camera pose between two images is a challenge in computer vision
+fundamental matrix,camera poses,Accurate fundamental matrix is crucial for accurate camera poses in computer vision pipelines
+sual relocalization,existing means,"Existing means can estimate an accurate fundamental matrix for visual relocalization, but failures still occur that can impact real-world tasks."
+interest points,image,Interest points are detected in each image for establishing correspondences between them.
+superpoint-superglue corre-spondences,outliers,"SuperPoint-SuperGlue correspondences may be populated by outliers, impacting the validity of the fundamental matrix hypothesis."
+correspondences,fundamental matrix hypotheses,Correspondences are used to estimate fundamental matrix hypotheses in two-view geometry models.
+ransac loop,hypotheses,RANSAC loop iterates over the generated hypotheses in the two-view geometry model.
+ranking,inliers,"Ranking of hypotheses involves scoring based on the number of inliers, which are correspondences within a threshold of the two-view geometry hypothesis."
+two-view geometry hypothesis,threshold,The threshold is a key factor in the refinement of the top-ranked two-view geometry hypothesis.
+research,robust model estimation,"Robust model estimation research explores different stages of the pipeline including local feature detection, neural networks, outlier correspondences, and inlier threshold optimization."
+matching pipelines,correspondence-based scoring methods,"Although matching pipelines produce accurate correspondences, scoring methods still depend on the ratio of inliers, number of correspondences, and keypoint accuracy."
+robust correspondences,merges in 3d reconstruction models,Incorrect two-view geometry estimation can result in invalid merges in 3D reconstruction models when robust correspondences are not achieved.
+incorrect predictions,challenging scenarios,Incorrect predictions can occur in challenging scenarios such as wide-baseline or large illumination changes.
+neural network,ransac pipeline,Neural networks can replace all components of the RANSAC pipeline in some approaches for regression of two-view geometry.
+baseline,large illumination changes,Baseline and large illumination changes are mentioned as factors that can lead to incorrect predictions.
+poses,catastrophic relative pose predictions,"Poses directly regressed have fewer catastrophic relative pose predictions, indicating a relationship between the two."
+poses,geometry,Poses directly regressed have difficulty in estimating precise geometry.
+hypotheses,correspondences,Correspondence-based hypotheses can be very precise if estimated correspondences are of high quality.
+approach,correspondences,"The approach uses correspondences to generate model hypotheses, without scoring them during the RANSAC loop."
+fundamental matrix scoring network,epipolar geometry,The fundamental matrix scoring network leverages epipolar geometry to compare features of images in a dense manner.
+fundamental scoring network,fsnet,"Our method is referred to as the Fundamental Scoring Network, or FSNet for short."
+vision transformers,detector-free matchers,The success of Vision Transformers and detector-free matchers influenced the definition of the architecture.
+epipolar geometry,attention layer,The architecture incorporates epipolar geometry into an attention layer.
+fundamental matrix hypothesis quality,coherence of computed features,The quality of the fundamental matrix hypothesis conditions the coherence of the computed features.
+correspondences,outliers,An example is shown where correspondences are populated by outliers.
+inliers,fundamental matrix,There are enough inliers to generate a good fundamental matrix.
+fsnet,hypothesis pool,FSNet was able to select a good fundamental matrix from the hypothesis pool.
+scoring failures,traditional ransac approach,The analysis of scoring failures provides insights into the traditional RANSAC approach of relative pose estimation.
+fsnet,angular translation and rotation errors,FSNet is a network that predicts angular translation and rotation errors.
+ransac,approach,RANSAC approach is a method used for relative pose estimation.
+fsnet,network,FSNet is a network that predicts angular translation and rotation errors for a given image pair and a fundamental matrix hypothesis.
+fsnet,image order-invariant design,FSNet has an image order-invariant design that outputs the same values for specific inputs.
+fsnet,solution,FSNet's solution can be combined with state-of-the-art methods to cope with current failure cases.
+correspondences,sift,Previous correspondence estimation built around SIFT has largely been superseded by learned methods.
+correspondences,mutual nearest neighbors,"To find correspondences, the mutual nearest neighbors approach has also been revisited."
+correspondences,lowe's ratio test,The Lowe's ratio test approach has also been revisited for finding correspondences.
+matchers,learned,Learned matchers have pushed forward the matching capability.
+failure cases analysis,scannet,"In the failure cases analysis, the percentage of image pairs for ScanNet dataset where a good fundamental matrix was not selected due to various reasons is plotted."
+failure cases analysis,megadepth,"In the failure cases analysis, the percentage of image pairs for MegaDepth dataset where a good fundamental matrix was not selected due to various reasons is plotted."
+scoring function,hypotheses,"It is especially difficult to score hypotheses in the indoor scenario, as observed in the failures related to the scoring function."
+scoring function,hypotheses,The scoring function plays a crucial role in evaluating hypotheses in the indoor scenario.
+local features,matched,Local features are matched with complementary matchers and additional filtering methods to detect and reject outlier correspondences.
+correspondences,ransac loop,"Once correspondences are established, the RANSAC loop finds the best hypothesis among them."
+all-inlier correspondence minimal-set,ransac,Multiple works aim at sampling an all-inlier correspondence minimal-set sooner than RANSAC for improved results and run-time.
+alternative methods,classical detect-then-describe approach,"Alternative methods have been proposed to improve upon the classical detect-then-describe approach, such as detector-free matchers or direct relative-pose regressor networks."
+heuristics,inlier counting,Model quality research focuses on improving heuristics for classical inlier counting to enhance model quality.
+lo-ransac,gc-ransac,"LO-RANSAC applies a local optimization step to promising models generated from RANSAC, while GC-RANSAC extends previous local optimization using graph techniques."
+magsac++,inlier counting score,MAGSAC++ proposes an iterative inlier counting score over a range of thresholds to reduce sensitivity to the inlier-outlier threshold parameter.
+mq-net,inlier counting,MQ-Net combines the inlier count for model quality improvement.
+thresholds,sensitivity,Thresholds are mentioned in the context as reducing the sensitivity to the inlier-outlier threshold parameter.
+mq-net,neural network,MQ-Net combines the inlier counting score with a neural network that predicts the quality of a hypothesis from correspondence residuals.
+transformers,vision,"Transformers are mentioned in the context as getting attention in the vision community and being successfully applied to image matching, multi-view stereo, or depth estimation among others."
+transformers,natural language processing,The transformer architecture has become the standard in natural language processing due to its performance and simple design.
+transformers,attention,"Transformers have been applied successfully to image matching, multi-view stereo, or depth estimation, and different works have proposed guiding the cross-attention mechanism with epipolar supervision."
+epipolar supervision,cross-attention mechanism,"Different works have been proposed to guide the cross-attention mechanism with epipolar supervision, using epipolar attention to limit the matching search space or to check the consistency of a depth map."
+correspondences,number of correspondences,"The number of correspondences has a high impact on the precision of the fundamental matrix, and the latest matchers filter out the correspondence outliers."
+correspondences,matching,"The number of correspondences correlates with the difficulty of correctly matching two images, serving as a good indicator to decide when to trust the correspondences."
+depth map,ransac-based pose estimation approach,The depth map is a key component used in the traditional RANSAC-based pose estimation approach for understanding the relative poses
+correspondence-based scoring,fundamental matrix hypotheses,Correspondence-based scoring of fundamental matrix hypotheses is a major reason for RANSAC returning incorrect relative poses
+correspondence-free approach,low number of correspondences,The low number of correspondences often leads to scoring function failures motivating the need for a correspondence-free approach
+training signal,fundamental matrix quality,A good training signal is necessary to predict fundamental matrix quality without correspondence-based heuristics
+sp-sg (superpoint-superglue) correspondences,"magsac++ (feature extraction, feature matching, and robust estimation model)",SuperPoint-SuperGlue correspondences are used with MAGSAC++ for analysis purposes in the context of fundamental matrix hypotheses
+image pairs,magsac++ behavior,Image pairs are used to study MAGSAC++'s behavior in generating and scoring fundamental matrix hypotheses
+validation splits,scannet and megadepth datasets,Validation splits from ScanNet and MegaDepth datasets are used to mine image pairs for analysis
+validation set,fundamental matrix hypotheses,The validation set is used to generate and score 500 fundamental matrix hypotheses for analysis purposes
+fundamental matrix,pose error,The fundamental matrix's pose error is a criteria used to determine the quality of the fundamental matrix
+fundamental matrix,pose error,Fundamental matrix with pose error < 10° is considered a good fundamental matrix
+good fundamental matrix,hypotheses,A good fundamental matrix can be among the hypotheses
+fundamental matrix,inlier correspondences,Inlier correspondences are used to explain whether a good or bad fundamental matrix was chosen
+fundamental matrix,scoring failures,Scoring failures can result in a bad fundamental matrix being chosen by the heuristic
+fundamental matrices,sp-sg and magsac++,Fundamental matrices are generated using the SP-SG and MAGSAC++ methods
+fundamental matrices,correspondences,Fundamental matrices are evaluated under densely projected correspondences with ground-truth camera poses and depth maps
+fundamental matrix,gt pose error,GT Pose error ranks the fundamental matrices based on the associated error
+image pairs,fundamental matrix,Valid fundamental matrices can be generated for image pairs
+image pairs,scoring method,Scoring method can fail to select a valid fundamental matrix for image pairs
+inlier heuristics,fundamental matrix,Inlier heuristics can find fewer inliers for a good fundamental matrix compared to a bad one
+correspondences,feature matching methods,Feature matching methods impact the number of correspondences in difficult to match scenarios
+textures,visual overlap,Textures and visual overlap are mentioned as possible reasons for lack of textures in the given context.
+correspondences,outliers,"Correspondences can be highly contaminated by outliers, affecting the selection of the correct fundamental matrix."
+correspondences,sp-sg,The number of correspondences generated by SP-SG and MAGSAC++ is shown to have a strong correlation with the accuracy of the selected model.
+correspondences,superglue,SuperGlue correspondences in the experiment are mentioned to be of high-quality after bad correspondences are filtered out.
+correspondences,fundamental matrix,The number of correspondences affects the accuracy of the selected fundamental matrix in the context.
+criteria,results,Loosening the correspondence filtering criteria does not lead to improved results in the given context.
+fundamental matrix,pose estimation,Correspondence-free fundamental matrix hypothesis scoring approach leads to improvements in relative pose estimation task when correspondences are not reliable.
+solutions,model,The context discusses how to select good solutions for training a model to predict fundamental matrix quality.
+model,predictions,The model mentioned should predict fundamental matrix quality in the context.
+predictions,error,The predicted value should correlate with the error in the relative pose or the mismatch of epipolar constraint in the given context.
+pose,rotation,Quality of relative pose is measured for rotation and translation separately in the context.
+rotation error,angle of rotation,The angle of rotation between the estimated and the ground truth rotation matrices provides the rotation error.
+rotation error,translation error,As fundamental and essential matrices figure 4. FSNet architecture has four components. The scale-invariant metric of translation error is the angular distance between the estimated and the ground truth translation vectors.
+fsnet architecture,cnn feature extractor,FSNet architecture has four components. A CNN feature extractor computes the feature maps f A and f B from input images A and B at 1/4 of input resolution.
+fsnet architecture,transformer block,"The extracted features are then processed by the transformer block, which contains Nt self and cross-attention layers."
+transformer block,epipolar cross-attention layer,The epipolar cross-attention layer applies cross-attention along the epipolar lines and embeds Fi into the feature maps f A i.
+pose regressor,resnet,The pose regressor applies a ResNet and a 2D average pooling block.
+pose regressor,mlp layer,"The vectors are combined through a max pooling operator, and the final MLP layer predicts the eRi errors associated to Fi."
+translation error,reprojection error (re),There are multiple error criteria for fitting fundamental matrices. Reprojection error (RE) measures the minimum distance correction needed to align the corre-
+fundamental matrices,reprojection error,"Reprojection error (RE) measures the minimum distance correction needed to align the correspondences with the epipolar geometry, which is crucial for fundamental matrices."
+fundamental matrices,symmetric epipolar,"Symmetric epipolar (SED) measures geometric distance of each point to its epipolar line, providing geometric information for fundamental matrices."
+fundamental matrices,sampson distance,"Sampson (RE1) distance is a first-order approximation of RE, which influences the quality of fundamental matrices."
+fundamental matrices,error criteria,"The quality of fundamental matrices is measured with one scalar value through error criteria, affecting how they are evaluated and compared."
+error criteria,relative pose error,"Choosing the best error criteria as training signal for FSNet involves considering relative pose error, one of the fundamental matrix error criteria."
+error criteria,fundamental matrix error criteria,Deciding on the error criteria for evaluating fundamental matrices involves comparing relative pose error and other fundamental matrix error criteria such as SED error.
+fundamental matrices,oracle models,Access to multiple oracle models for different error criteria in Table 1 provides a way to predict the quality of fundamental matrices accurately.
+oracle models,fundamental matrix scoring approach,Determining which oracle model provides the best fundamental matrix scoring approach is essential for evaluating the accuracy of the fundamental matrices.
+fundamental matrices,sp-sg and magsac++,Using SP-SG and MAGSAC++ to mine fundamental matrix hypotheses from validation datasets allows for a comprehensive evaluation of the fundamental matrices.
+fundamental matrices,error criteria,The evaluation of mined fundamental matrices using oracle models in ScanNet and MegaDepth image pairs shows that fundamental matrix error criteria under-perform compared to relative pose error metrics.
+fsnet,supervised,FSNet should be supervised by the relative rotation and translation errors.
+quality of a fundamental matrix hypothesis,input images a and b,"FSNet estimates the quality of a fundamental matrix hypothesis, Fi, for the two input images, A and B, without relying on correspondences and processing the images directly."
+fundamental matrix quality estimation,calibrated setup,"Besides fundamental matrix quality estimation, in a calibrated setup, FSNet could compute the score of the essential matrix, Ei, by first obtaining Fi based on their BFiKA."
+essential matrix ei,kt,relationship: Ei = KT
+four major components of fsnet architecture,"feature extractor, transformer, epipolar cross-attention, and pose error regressor","Figure 4 shows the four major components of FSNet architecture: the feature extractor, the transformer, the epipolar cross-attention, and the pose error regressor."
+feature extractor,convolutional architecture,"The feature extractor is a standard convolutional architecture as in [50], it follows the Unet-style network [45] design with skip and residual connections [28] and computes feature maps at 1/4 of the input resolution."
+input images a and b,resolution,"Before feature extraction, we center-crop and resize the input images A and B to a resolution of (H, W ) (in our experiments we use (256, 256))."
+c-dimensional feature maps f a and f b,convolutional feature extractor,Images are then processed by the convolutional feature extractor to produce the C-dimensional feature maps f A and f B.
+l multi-head attention transformer architecture,self and cross-attention blocks,"We use an L multi-head attention transformer architecture following [50], and alternate between self and cross-attention blocks to exploit the similarities within and across."
+self-attention blocks,cross-attention blocks,The network graph architecture alternates between self and cross-attention blocks to exploit similarities within and across the feature maps.
+transformed features,features,The transformed features are denoted as †f A and †f B and are used in the computation by some features to generate queries (Q) and different features to compute keys (K) and values (V).
+computational complexity,linear transformer,The Linear Transformer is utilized to reduce the computational complexity of the original Transformer by making use of the associativity property of matrix products and replacing the exponential similarity kernel with a linear dot-product kernel.
+self-attention layer,input feature map,"In the self-attention layer, the input feature map is used to compute queries (Q), keys (K), and values (V), which are then passed through a two-layer MLP for further processing."
+cross-attention layer,previous process,"In the cross-attention layer, the previous process of computing queries (Q), keys (K), and values (V) is repeated for a different feature map, and the result is then concatenated with the input feature map for further processing."
+f',next block,f' is added to and passed to the next block
+q,k and v,Q is computed from one feature map and K and V are computed from the second in the cross-attention layer
+positional encoding,attention layers,"positional encoding for attention layers did not improve results, hence not used in FSNet"
+attended feature maps,cached and reused,attended feature maps †f A and †f B are cached and reused in FSNet
+score,fi,FSNet computes the score for every Fi
+epipolar cross-attention mechanism,fi,epipolar cross-attention embeds Fi together with feature maps †f A and †f B
+"position pa = [u, v]",epipolar line in †f b,"every position pA = [u, v] in feature map †f A has a corresponding epipolar line in †f B"
+"query points, pa = [u, v]",step sampling of two,query points are defined with a step sampling of two
+feature map,resolution,resolution of feature maps impacts run-time speed
+uv ∈ †f a,sample †f b at d equidistant locations,†f B is sampled at equidistant locations along the epipolar line when uv is in †f A
+uv,†f a,uv is a sample in †f A
+uv,†f b,uv is sampled in †f B at equidistant locations along the epipolar line lA→B
+†f a,†f b,†f A and †f B are used to produce D features at sampling positions along the epipolar line
+†f b,i,†f B is used to build a feature volume i
+i,†f a,"i is computed by repeating operations for the pair of feature maps (†f B,†f A)"
+f a,i,f A is used to obtain epipolar transformed features i
+f a,vb→a,Features are extracted from f A to compute vB→A
+vb→a,et,vB→A is merged with eT using max pooling operator
+et,fi,eT is associated with Fi
+†f a,q,†f A is used to compute Q
+†f b,q,†f Bi volume is used to obtain K and V for computing Q
+q,k,Q is used along with K and V to perform attention along the epipolar candidate points
+k,v,K and V are used along with Q to obtain epipolar transformed features
+fsnet,translation error,FSNet is more accurate when regressing independently the translation error
+fsnet,rotation error,FSNet is more accurate when regressing independently the rotation error
+error,translation error,"The supervision we use is angular errors, hence, the predicted error and the ground truth error are bounded between [0°, 180°]"
+error,rotation error,"The supervision we use is angular errors, hence, the predicted error and the ground truth error are bounded between [0°, 180°]"
+error,fundamental matrices,We are interested in accurate error estimation of all good fundamental matrices
+fundamental matrices,pose errors,"We are interested in accurate error estimation of all good fundamental matrices, while not requiring being as precise when the fundamental matrices have high pose errors"
+ground truth error,network prediction,We propose to use a soft clamping of the ground truth error as well as the network prediction
+ground truth error,soft clamping,We propose to use a soft clamping of the ground truth error as well as the network prediction
+network prediction,soft clamping,We propose to use a soft clamping of the ground truth error as well as the network prediction
+l1 loss,error ranges,Using a simple L1 loss would treat all error ranges equally
+l1 loss,error,Using a simple L1 loss would treat all error ranges equally
+g(x),soft clamping,"We propose to use a soft clamping of the ground truth error as well as the network prediction, such as L ="
+g(x),tanh(x/ts) function,"Where g(x) refers to the tanh(x/ts) function, and ts is the scaling factor that adjusts the (soft) threshold after which the accuracy of the angular errors is not important"
+ts,scaling factor,ts is the scaling factor that adjusts the (soft) threshold after which the accuracy of the angular errors is not important
+indoor fsnet model,scannet dataset,We train indoor FSNet models on ScanNet dataset
+outdoor fsnet model,megadepth dataset,We train outdoor FSNet models on MegaDepth dataset
+sp-sg correspondences,indoor pre-trained models,We first extract SP-SG correspondences using appropriate indoor pre-trained models
+sp-sg correspondences,outdoor pre-trained models,We first extract SP-SG correspondences using appropriate outdoor pre-trained models
+minimal subsets of correspondences,500 two-view hypotheses,We draw minimal subsets of correspondences randomly and extract 500 two-view hypotheses for every image pair
+hypotheses,angular translation,"For each hypothesis, we compute the angular translation errors"
+hypotheses,angular rotation,"For each hypothesis, we compute the angular rotation errors"
+translation,rotation,"Translation and rotation are two fundamental geometric transformations, often measured using ground truth extrinsic and intrinsic parameters."
+training,hypothesis,"During training, it is ensured that the ground truth hypothesis is among the 5000-100MAA@10°"
+er,et,The values of eR (rotation error) and et (translation error) are often compared and analyzed for accuracy.
+ransac,magsac++,RANSAC and MAGSAC++ are both methods used for fundamental and essential matrix estimation.
+fsnet,essnet,FSNet and EssNet are techniques used for fundamental and essential matrix estimation on ScanNet.
+fsnet,magsac++,FSNet and MAGSAC++ can be combined to obtain more reliable approaches in fundamental and essential matrix estimation.
+fsnet,maa@10°,FSNet performance is measured using MAA@10° metric for fundamental and essential matrix estimation on ScanNet.
+pose error,hypotheses,Hypotheses are clustered based on the pose error in batch generation.
+fsnet,rotation errors,FSNet provides more precise rotation errors for fundamental estimation tasks on ScanNet.
+fsnet,metrics,FSNet outperforms in all metrics in essential estimation on ScanNet.
+training splits,megadepth scenes,"For the indoor model, training splits are used from [50]. For the outdoor model, MegaDepth training and validation scenes are utilized."
+megadepth,training and validation scenes,The MegaDepth model uses training and validation scenes proposed in [50]
+cvpr imw 2019 phototourism dataset,"[32, 52]","Scenes in the test set of the CVPR IMW 2019 PhotoTourism dataset are mentioned along with references [32, 52]"
+fsnet,image pairs,"FSNet generates a total of 90,000 and 30,000 image pairs with 500 fundamental and essential matrix hypotheses for each pair"
+fsnet,hard image pairs,The benefit of FSNet over hard image pairs is highlighted by sampling image pairs with a visual overlapping score between 10% and 40% in both datasets
+fsnet,fundamental and essential matrices,FSNet indicates the training source as (F) and (E) for fundamental and essential matrices and combines them into the training dataset (F + E)
+resnet-18,[28],"For the feature extractor, ResNet-18 is used as in [50]"
+fsnet,transformer block,FSNet uses a transformer block with three attention layers and samples matching candidates along the epipolar line
+fsnet,model hypothesis,"At test time, FSNet selects the model hypothesis that returns the minimum pose error"
+fi,ei,Fi is computed as ei = max(eRi)
+sp-sg,correspondences,"Correspondences are computed with SP-SG [19, 46]"
+usac,universal framework,The universal framework USAC [41] is used to generate hypotheses
+ransac,inlier counting,Inlier counting is done with RANSAC [25]
+magsac++,scoring function,The state-of-the-art MAGSAC++ scoring function [5] is used
+fsnet,scoring method,FSNet scoring method is compared to RANSAC and MAGSAC++
+hypothesis,rotation matrix,The hypothesis is decomposed into rotation matrix and translation vectors
+hypothesis,translation vectors,The hypothesis is decomposed into rotation matrix and translation vectors
+maa,mean average accuracy,The mean Average Accuracy (mAA) is reported with thresholds for errors up to 10°
+ransac,magsac++,RANSAC and MAGSAC++ are both algorithms commonly used for robust estimation and fitting of models in computer vision and image processing.
+ransac,fsnet,Both RANSAC and FSNet are algorithms used in computer vision for feature matching and robust estimation.
+magsac++,fsnet,MAGSAC++ and FSNet are both algorithms used for fundamental and essential matrix estimation in computer vision.
+sp-sg correspondences,image pairs,The SP-SG correspondences and image pairs are related in the context of estimating fundamental and essential matrices in computer vision.
+fsnet,magsac++,FSNet and MAGSAC++ are mentioned together as providing the most reliable methods for fundamental and essential matrix estimation.
+fsnet,magsac++,"FSNet estimations are not as accurate as MAGSAC++, but there are fewer catastrophic predictions"
+fsnet,low resolution feature maps,"FSNet uses low resolution feature maps to predict pose errors, which leads to a lack of precision in estimations"
+magsac++,ill-conditioned sets of correspondences,"MAGSAC++ relies on potentially ill-conditioned sets of correspondences, resulting in occasional catastrophic poses"
+phototourism test set,sp-sg correspondences,"In Table 3, the mAA and median errors of fundamental and essential matrix estimation tasks are shown based on the number of SP-SG correspondences in the PhotoTourism test set"
+indoor images,reliable correspondences,Indoor images have fewer reliable correspondences due to mostly untextured walls and floors
+small camera motion,large parts of the scene not being visible,Small camera motion indoors can result in large parts of the scene not being visible due to surfaces being closer to the camera
+fsnet,magsac++,Combining FSNet and MAGSAC++ retrieves the highest number of correct scoring methods
+scoring methods,fundamental matrices,"Scoring methods are used to evaluate fundamental matrices and retrieve the highest number of correct fundamental matrices under various error thresholds like 5°, 10°, and 20°."
+fsnet,ransac and magsac++,FSNet models outperform RANSAC and MAGSAC++ specifically on angular translation error metrics in the case of few correspondences split (0-100).
+fsnet,rpr (relative pose regression methods),"FSNet is compared with relative pose regression methods like EssNet and Map-free for essential matrix evaluations, where FSNet (E) obtains the best scores in terms of mAA and median error."
+fsnet,map-free,"FSNet outperforms other methods in terms of mAA scores and median errors, while Map-free also does not rely on correspondences"
+rpr methods,ransac-based methods,RPR methods do not compute as accurate poses as RANSAC-based methods
+magsac++,sp-sg,MAGSAC++ is very effective when SP-SG is able to extract sufficient number of correspondences
+corresp. filter,fsnet,"In Corresp. filter, FSNet is used to score if the number of correspondences is below 100"
+candidate filter,magsac++,"In Candidate filter, MAGSAC++ is used if the number of correspondences is above 100"
+magsac++,fsnet,MAGSAC++ is used to select top hypotheses and FSNet is used to choose the best hypothesis out of the selected hypotheses
+fsnet,fundamental matrices,FSNet is used to score the top hypotheses for fundamental matrices based on a hyperparameter search on the validation set
+fsnet,training,FSNet is supervised directly with the camera pose during training
+fundamental matrix estimation task,scannet,The fundamental matrix estimation task is performed in the test set of ScanNet.
+fsnet,camera pose error,Supervising the training of FSNet directly with the camera pose error provides the best results.
+ce approach,l1 norm and sampson distance (re1) prediction models,The CE approach outperforms L1 norm and Sampson distance (RE1) prediction models.
+cameras,2d-2d correspondences,2D-2D correspondences estimated with RANSAC are used for generating outdoor datasets.
+indoor datasets,rgbd slam,Indoor datasets rely on RGBD SLAM with dense geometry alignment.
+algorithmic bias,difficult image pairs in outdoor datasets,Inherent algorithmic bias could result in fewer difficult image pairs in outdoor datasets.
+fsnet scoring approach,ransac inlier counting approach,"FSNet scoring approach obtains the most accurate poses in the low number of correspondences split, outperforming RANSAC inlier counting approach in the full test set."
+correspondence-based scoring approaches,fsnet,"Even though correspondence-based scoring approaches outperform FSNet, they still benefit from combining their predictions with FSNet."
+fsnet,"eq. 1, re1 supervision, l1 norm, binary cross-entropy (ce)","FSNet trained with Eq. 1 outperforms FSNet trained using RE1 supervision, L1 norm without soft clamping, and binary cross-entropy (CE)."
+fsnet,l1 norm,FSNet is trained using L1 norm without soft clamping.
+fsnet,binary cross-entropy,FSNet is also trained using binary cross-entropy.
+fi,ei,The fundamental matrix hypothesis Fi is deemed correct if ei < 10° and incorrect otherwise.
+fsnet,failure cases,Figure 6 shows failure cases for FSNet hypothesis selection.
+fsnet,low resolution images,FSNet is designed to work on low resolution images.
+fundamental matrices,epipolar geometry,The fundamental matrices selected by FSNet have a valid epipolar geometry.
+epipolar lines,image a,Epipolar lines in image B cross the surrounding regions of corresponding points from image A.
+low resolution features,pose error regressor,The low resolution features lack the precision to produce a good estimate for the pose error regressor.
+fsnet,failure examples,Figure 6 shows failure examples of FSNet hypothesis selection.
+co-visible points,epipolar lines,Co-visible points and corresponding epipolar lines are plotted for the fundamental matrix selected by FSNet.
+low-resolution design,fsnet capability,The low-resolution design of FSNet limits its capability to select the optimal hypothesis.
+pair of images,hypotheses,"Given a pair of images, 500 hypotheses are considered for time analysis."
+fsnet,capability,FSNet limits its capability to select the optimal hypothesis.
+fsnet,hypothesis,FSNet limits its capability to select the optimal hypothesis.
+fsnet,time analysis,"Time analysis. Given a pair of images and 500 hypotheses, FSNet scores and ranks them in 0.97s on a machine with one V100 GPU."
+fsnet,batch,"The hypotheses are queried in batches, so the epipolar cross-attention and pose error regressor subnetworks run in 167.13ms for a batch of 100 fundamental matrices."
+fsnet,strategies,"Besides, strategies such as Candidate filter can reduce FSNet time by only scoring promising hypotheses, e.g., for fundamental estimation it only adds 150ms on top of MAGSAC++ runtime (71ms)."
+fsnet,geometry scoring method,"We introduce FSNet, a correspondence-free two-view geometry scoring method."
+model,sota results,"Our experiments show that our learned model achieves SOTA results, performing exceptionally well in challenging scenarios with few or unreliable correspondences."
+combinations,scoring approaches,Naive combinations of FSNet with traditional inlier counting lead to even higher reliability. This suggests that more sophisticated combinations of scoring approaches could lead to further improvements.
+network design,prediction accuracy,"Alternatively, a better network design may improve prediction accuracy, which could supersede inlier counting in all scenarios."
+pipeline,subnetwork,"The first stages of our pipeline (feature extraction, self and cross-attention blocks) form a subnetwork that precom."
+feature maps,image pair,"Feature maps are precomputed for each image pair using the subnetwork, enabling efficient processing of the features related to the image pairs."
+feature extraction,feature maps,"Local feature extraction is performed on the precomputed feature maps, allowing the extraction of specific features from the images."
+feature matching,feature maps,"Feature matching is carried out using the precomputed feature maps, facilitating the comparison and matching of features across different images."
+hypothesis generation,feature maps,"Hypothesis generation is supported by the precomputed feature maps, aiding in the creation of hypotheses based on the extracted features."
+whole network,two tasks,"The entire network is trained on two tasks: estimating good correspondences and two-view geometry scoring, leading to potentially enhanced performance on both tasks through synergistic improvements."

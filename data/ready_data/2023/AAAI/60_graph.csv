@@ -1,0 +1,157 @@
+node_1,node_2,edge
+machine learning,statistics,The context discusses the commonality of popular algorithms in machine learning and statistics
+linear classification,regression,Both are mentioned as examples of applications within the field of machine learning and statistics.
+data analysis,feature selection,These are mentioned as related tasks that algorithms in the context aim to address.
+supervised dataset,rm with m datapoints and p features,The dataset is described as having m instances and p features
+regularization coefficients,elasticnet,The ElasticNet algorithm uses both `1 and `2 regularization coefficients
+elasticnet,ridge,ElasticNet is a generalization that includes Ridge (setting `1 = 0).
+elasticnet,lasso,ElasticNet also includes LASSO (setting `2 = 0).
+`1 norm,provable generalization guarantees,Setting `1 provides theoretical benefits in preventing overfitting.
+`2 norm,uniformly shrinking coefficients,The `2 norm contributes to model parsimony and interpretability.
+bayesian statistics,specifying priors on coefficients,In Bayesian context
+sparsity,underfitting,Too high values of regularization can lead to underfitting by reducing model complexity.
+trade-offs,sparsity,feature correlation
+feature correlation,bias,These terms are related in the context of being simultaneously considered and their impact on parameter tuning in machine learning.
+parameter tuning,heuristics,The state-of-the-art methods often involve heuristic approaches without formal guarantees.
+parameter tuning,finite grid optimization,Proposed work sometimes optimizes over a limited grid rather than the entire continuous domain.
+parameter tuning,random set optimization,Other approaches optimize over a random set instead of a comprehensive search.
+parameter tuning,strong theoretical assumptions,Some analyses make assumptions to simplify the problem
+dataset,validation dataset,We focus on a collection of datasets where the goal is to find a model with low loss on this validation set.
+regression problem,collection of datasets,Each dataset represents an instance of the same underlying regression problem.
+practical settings,new supervised data,This formulation is useful when new supervised data is acquired multiple times.
+practical settings,features changing frequently,It also applies when the set of available features changes.
+cross-validation,multi-task learning,These are examples of more general data generation scenarios captured by our approach.
+cross-validation,multi-task learning,These are related scenarios mentioned together
+problem formulation,standard single dataset setting,Our formulation distinguishes itself from the conventional approach where data comes from a single source.
+data-driven algorithm design,combinatorial problems,The formulation connects to algorithm design techniques used to solve problems with many possible solutions
+data-driven algorithm design,meta-learning,It also has connections to the broader field of meta-learning
+elasticnet regression problem,ridge and lasso regressions,Ridge and LASSO are special cases of the ElasticNet Regression
+multiple-instance setting,online learning setting,Our results apply to both offline (multiple-instance) and online learning contexts
+elasticnet tuning,linear classification algorithms,The contributions extend to tuning not only ElasticNet but also related classification algorithms.
+structural result (theorem 2.2),loss of the elasticnet fit,This theorem characterizes the loss landscape
+hyperparameter space,polynomial curves,The hyperparameter space is partitioned into regions defined by polynomial curves of bounded degrees.
+bivariate rational function,loss,Within each partition
+elasticnet validation objective,information criteria (aic,bic)
+pseudo-dimension,loss function class,Our structural result bounds the pseudo-dimension for the loss function class
+best (1,2),elasticnet regression problems
+problem instances,probability at least 1,For any problem distribution
+online setting,vanishing regret,In the online setting
+dispersion condition,mild data assumptions,The problem satisfies a dispersion condition under weaker assumptions than prior work.
+regularized classifiers,theorems 4.1,4.2
+multiple-instance formulation,same number of,Different problem instances in the multiple-instance formulation don't necessarily have the same number of something (likely instances or features).
+optimality conditions,precise piecewise structure,The optimality conditions are used to determine a specific structure for the problem.
+precise piecewise structure,algebraic curves,These curves
+algebraic curves,zero-set of curves,The zero-set contains the possible discontinuities of the loss function.
+loss function,piece of the partition,The loss function behaves well in each individual piece resulting from the partition.
+structural complexity,strong generalization guarantees,A bound on structural complexity is needed to ensure good generalization performance.
+algebraic curves,additional structure,The curves have further structure that prevents concentration in any region of the domain.
+online learning recipe,[8] (a reference),This recipe is applied due to the non-concentration property of the curves.
+model selection,ridge regression,lasso
+regularization parameter,tuning,Tuning the regularization parameter is a central issue in these models.
+parameter tuning,heuristic methods,Much of the existing effort is based on heuristics or focuses on tuning objectives beyond validation accuracy.
+tuning objectives,aic,bic
+standard approach,grid search,random set of parameters
+tuning objective,grid or random set of parameters,The approach aims to optimize the tuning objective by searching over a grid or random selection of parameters.
+grid or random set of parameters,optimality,These parameter sets do not guarantee optimality over the entire continuous tuning domain.
+grid or random set of parameters,inefficiency,A fine grid can lead to inefficiency
+guarantees,sub-gaussian noise,Some guarantees assume sub-Gaussian noise
+guarantees,unknown parameters,Guarantees can depend on unknown parameters that are difficult to quantify in practical situations.
+cross-validation,ridge regression,Asymptotic consistency of cross-validation is shown for ridge regression
+regularization paths,efﬁcient model acquisition,Efficient methods focus on obtaining models for various values of a regularization parameter.
+principled approaches,near-optimality,Our approaches provide near-optimality guarantees with high confidence across the entire continuous parameter space.
+data-driven algorithm design,parameter tuning,This design has been successful in tuning parameters for combinatorial problems like clustering and graph-based learning.
+combinatorial problems,clustering,integer programming
+elasticnet,ridge regression,Setting f = f2 with f2() = 2 yields Ridge regression.
+elasticnet,lasso,Setting f() = f1() := k1 corresponds to LASSO.
+elasticnet,regularization parameter,fEN() = (f1()
+prediction,dot product,On any instance Rp
+average squared loss,training loss,Computed using the training data (X
+validation split,average squared loss on validation set,Noted as `EN(θ
+distributional setting,problem space,Consists of n instances of the regression problem P(i) = (X(i)
+statistical setting,problem distribution,Receives a collection of n instances
+validation set,training set,The analysis does not assume a relation between the training and validation sets.
+elasticnet regressors,loss functions,These criteria are used for computing the squared loss on the training set as an alternative to cross-validation.
+en (x,y),bicen (x
+signed equicorrelation set,elasticnet coefficients,The coefficients can be characterized when the signed equicorrelation set is fixed.
+parameter space,boundary function curves,The loss functions form piecewise rational polynomial functions with regions separated by these curves.
+fixed side of all the curves,signed equicorrelation set,A region with a fixed sign pattern in Definition 1 has the same signed equicorrelation set.
+covariate,enter or leave the set,Covariates may enter or leave the set at the boundary functions
+piecewise structure,elasticnet loss,The ElasticNet loss has a piecewise structure
+matrix b(λ),entries,Each entry of B(λ) is a rational polynomial Pij(λ)/Q(λ)
+pij(λ),q(λ),For i=j
+dual class loss functions,boundary functions,The boundary functions are part of the dual class loss functions and provide piecewise definitions.
+problem instance p,regularization parameter λ,The theorem relates a specific problem instance P to the regularization parameter λ
+theorem 2.2,generalization guarantees,Theorem 2.2 is a key structural result that contributes to the proof of generalization guarantees.
+theorem 2.2,online regret guarantees,This theorem also plays a role in establishing online regret guarantees in Section 3.
+regression problem instance p,regularization parameter (1,2)
+dual class q1,q2,degrees at most 2p
+degrees at most 2p,bounded by algebraic curves gr,These functions are further constrained by algebraic curves gr
+elasticnet,validation loss `en(.,p )
+elasticnet,p-piecewise decomposable,The solution is characterized by being p-piecewise decomposable
+signed equicorrelation set (,s),loss function `en(.
+rational polynomial functions fq1,q2,loss function `en(.
+data-driven design techniques,optimization challenge,Data-driven design techniques are proposed to overcome the optimization challenge faced.
+algorithm 1,data-driven design techniques,Algorithm 1 demonstrates the application of data-driven design techniques for overcoming the optimization challenge.
+problem domain,elasticnet parameters,The focus is on learning suitable ElasticNet parameters for a given problem domain.
+elasticnet,lars,ElasticNet parameters also apply to simpler regression techniques like LARS
+elasticnet,lasso,LASSO is a simpler regression technique mentioned alongside ElasticNet for variable selection.
+loss functions,elasticnet,The section discusses the pseudo-dimension of loss functions for the ElasticNet
+pseudo-dimension (pdim),elasticnet,The theorem states PDIM for ElasticNet is O(p^2)
+pdim,aic,The proof sketch involves bounding the PDIM for the ElasticNet class
+pdim,bic,BIC (Bayesian Information Criterion) is also mentioned as another measure in the context of PDIM.
+vc dimension,dual class of boundary functions,The VC dimension of the dual class of boundary functions is bounded by O(p) using a standard linearization argument.
+pseudo-dimension,fgha,The key challenge is bounding the pseudo-dimension of rational functions of bounded degrees
+pseudo-dimension,theorem c.3,The powerful result from Theorem C.3 allows bounding the pseudodimension of the functions
+sample complexity,learning the elasticnet tuning parameter,The sample complexity of learning the ElasticNet tuning parameter is directly related to the number of regression problem instances needed for a given approximation and confidence level.
+theorem 3.1,theorem 3.2 (sample complexity of tuning the elasticnet),Theorem 3.2's proof relies on the result from Theorem 3.1 to derive the sample complexity guarantee.
+elasticnet,regularization parameter,The algorithm aims to output a regularization parameter for the ElasticNet model based on the sampled problem instances.
+empirical risk minimization (erm),sample complexity bound,ERM is used to achieve the sample complexity bound stated in Theorem 3.2.
+polynomial number of samples,guarantee for nearly-optimal parameters,Even though ERM requires polynomially many samples
+feature reset,different problem instances,Our approach can handle situations where problem instances vary in both example count and feature count.
+leave-one-out cross validation (loocv),inefficient for large datasets,LOOCV involves mtr regression fits
+monte carlo cross validation,fixed proportion test-validation splits,An alternative method for cross-validation that generates problem instances from a fixed dataset.
+elasticnet parameter,loss within ✏ (w.h.p.),The theorem suggests determining ˜O(p^2/✏^2) iterations to get an ElasticNet parameter close to the optimal.
+dataset of size mtr,regression fits for loocv,Each regression fit corresponds to one instance when using LOOCV with a dataset of mtr.
+distribution dloo,problem instances p,DLOO generates problem instances from a fixed dataset X
+distributional setting,problem instances,The context discusses a distributional setting that applies to an adversarial sequence of problem instances.
+problem datasets,worst-case scenario,The results hold for worst-case problem datasets
+assumption 1,boundedness of feature and prediction values,This assumption bounds the range of feature values and predictions.
+assumption 1,r (absolute constant),All feature values and predictions are limited by the constant R.
+deﬁnition 3,distribution smoothness,Smoothness refers to the probability density function's upper bound for continuous distributions.
+smooth distribution,training set,The predicted variable y in the training set follows a smooth distribution
+smooth distribution,adversary,The adversary can change the distribution as long as it remains smooth.
+preprocessing steps,captured by the assumption,Our assumption covers common preprocessing techniques.
+dispersion,random loss functions,The sequence of random loss functions is defined as dispersed in Definition 4.
+lipschitz constant,distance between points,A function is not L-Lipschitz if it fails to satisfy the condition for points at a distance ✏ in the domain.
+assumptions 1 and 2,online algorithm,Theorem 3.3 states that under these assumptions
+elasticnet regularization parameter,loss functions (li),Each loss function li depends on the ElasticNet parameter (1
+loss functions (li),information criteria (aic,bic)
+theorem 2.2,piecewise structure,Additional structure of the problem involves characterizing the location of boundary functions within the piecewise structure.
+information criteria,aic,AIC (Akaike Information Criterion) is a type of information criteria mentioned within the context
+information criteria,bic,BIC (Bayesian Information Criterion) is another information criterion also discussed
+aic,bic,Both AIC and BIC are competing methods for determining the optimal model complexity; they are alternatives in the context of selecting among statistical models.
+theorem 2.2,function⇤en,Theorem 2.2 refers to a specific function (⇤EN) that plays a role in the proof sketch
+piecewise decomposable structure,dual class,The context discusses a 'piecewise decomposable structure' for the dual class
+rational piece functions,piecewise decomposable structure,Rational piece functions contribute to the piecewise decomposable structure
+lasso,ridge,LASSO and Ridge are mentioned as examples of regularization techniques
+elasticnet,r+2⇢,ElasticNet is another regularization method
+dispersion,online learnability,Dispersion is connected to online learnability
+ridge regression,lasso,The context discusses statistical and online learning guarantees for both Ridge and LASSO
+elasticnet,ridge regression,lasso
+estimator ˆ,regression estimate,The estimator is obtained for regression and its prediction on a test instance uses a thresholded regression estimate.
+threshold,linear classifier bias,The threshold corresponds to the intercept or bias in the learned linear classifier
+average 0-1 loss,test dataset,This loss is calculated over the dataset (X
+pseudo-dimension,classiﬁcation loss,Bounds on the pseudo-dimension for binary classification loss are derived
+distributional setting,binary labels,The context shifts to a binary label scenario
+problem instances,sufficient samples,Polynomially many samples are required for good generalization in the binary classification setting.
+learning-theoretic guarantees,problem distribution,The context discusses the guarantees in learning from multiple problems
+problem distribution,online sequence,The problems can also arrive in an online sequence with smoothness properties
+sample complexity,pseudodimension,The paper provides upper bounds on sample complexity by bounding the pseudodimension
+upper bounds on sample complexity,lower bounds,The work leaves open the possibility of giving lower bounds as a future direction
+future work,lower bounds,Finding lower bounds is mentioned as an interesting direction for future work
+this work,single training set tuning,The focus is on the more standard setting of tuning a single training set
+funding agencies,national science foundation,The paper acknowledges support from various funding agencies
+funding agencies,defense advanced research projects agency,Another supporting agency is the Defense Advanced Research Projects Agency (DARPA)
+simons investigator award,amazon research award,The author(s) have received awards from multiple sources
+acknowledgments,ryan tibshirani,Special thanks are given to Ryan Tibshirani for his helpful discussions during the research.
+funding agencies,meta,morgan stanley

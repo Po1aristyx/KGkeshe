@@ -1,0 +1,140 @@
+node_1,node_2,edge
+3d tensor volume,2d supervision images,3D tensor volume is replaced with decomposed low-rank tensor in relation to 2D supervision images for achieving high data compression and low computational cost.
+tensorf,state-of-the-art performance,TensoRF achieves state-of-the-art performance
+decomposed low-rank tensor architecture,memory usage,The architecture provides a win-win situation on memory usage and computational efficiency.
+decomposed low-rank tensor architecture,computational efficiency,See previous edge for a relationship between the two
+nerf,precise camera poses,The effectiveness of NeRF depends on accurate camera poses
+colmap,camera pose calculation,COLMAP is used for calculating camera poses in the context of NeRF.
+mlp-based nerf,spectral bias,Some works address the slow COLMAP process by optimizing camera poses and scene representation together
+voxel-based methods,sharp edges,Voxel-based methods can overemphasize sharp edges
+our work,simple yet effective methods,This work presents new methods that are both simple and effective
+local optima,pose alignment,Problematic is mentioned to be getting trapped in local optima
+camera pose,3d scene,Both are components being refined using decomposed low-rank tensors.
+low-rank tensors,dense 3d grid,Low-rank tensors are used for controlling the frequency spectrum in the 3D grid
+frequency spectrum control,efficient 3d filtering,Controlling the frequency spectrum is vital
+component-wise separable convolution,separable convolution kernel,The proposed method uses a more efficient version of separable convolution
+optimization process,stability,Ensuring stability involves techniques like smoothed 2D supervision
+smoothed 2d supervision,randomly scaled kernel parameter,These are techniques proposed to improve the stability of the optimization process.
+edge-guided loss mask,optimization process stability,Another technique that contributes to the optimization's stability.
+proposed method,previous mlp-based methods,The proposed method requires fewer training iterations (50k vs. 200k)
+voxel-based architecture,advantage of the proposed method,The voxel-based structure plays a role in the method's efficiency
+spectral filtering algorithm,reusable voxel grid,The algorithm uses a single reusable voxel grid
+carefully designed efficient spectral filtering algorithm,single reusable voxel grid,The algorithm requires only a single voxel grid for its operation
+learning strategy,efficient component-wise convolution algorithm,The learning strategy is built upon a specifically designed convolution algorithm for improved efficiency.
+1d pilot study,impact of spectral property of 3d scene,The pilot study explores the influence of the spectral properties on the convergence of joint optimization.
+robustness enhancement,smoothed 2d supervision,scaled kernel parameters
+training time reduction,existing mlp-based methods,Our method reduces training time by 25% compared to other MLP-based approaches.
+nerf,neural rendering,NeRF is the seminal work in neural rendering
+nerf,time-consuming training process,NeRF has a slow training process due to the computational demands of MLPs.
+variants of nerf,custom spatial data structures,Variants aim to speed up training by distributing scene information locally.
+our method,state-of-the-art performance,Our method demonstrates superior performance in novel view synthesis with unknown pose.
+spatial data structures,point cloud,Point cloud is an example of a spatial data structure used for faster training and rendering
+spatial data structures,space partitioning tree,Space partitioning tree
+spatial data structures,triangular mesh,Triangular mesh
+spatial data structures,voxel grid,Voxel grid is a popular choice due to its simplicity
+memory inefficiency,voxel grid,"The voxel grid's memory usage is cited as inefficient in M""uller et al. (2022)"
+voxel-based nerfs,joint optimization,Joint optimization for voxel-based NeRFs
+voxel-based nerfs,proposed method,Our proposed method
+3d feature compression,tensor decomposition,Chen et al. (2022) and Fridovich-Keil et al. (2023) suggest using tensor decomposition as an alternative approach for handling 3D features.
+camera pose,decomposed low-rank tensor,The context discusses the joint optimization of camera pose and a decomposed low-rank tensor
+decomposed low-rank tensor,multi-resolution hash encoding,Multi-resolution hash encoding is a competing architecture proposed by Müller et al. (2022)
+multi-resolution hash encoding,interpolation scheme,Heo et al.'s method includes a novel interpolation scheme that addresses gradient fluctuations in the hash volume.
+multi-resolution hash encoding,curriculum learning scheme,Their method also employs a curriculum learning scheme to control learning rates at different resolution levels.
+separable component-wise 3d convolution,decomposed low-rank tensor,Our proposed method is specifically designed for decomposed low-rank tensors
+nerf (neural radiance fields),volume rendering,The context refers to 'volume rendering' within the context of NeRF
+geometry,appearance,In the context of NeRF
+theorem 2l1d,l1d,Theorem 2 refers to L1d
+l1d,fourier transform of fgt,L1d's calculation involves the Fourier transform of fGT.
+fourier transform of fgt,wavenumber k,The wavenumber k is a parameter in the Fourier transform of fGT.
+h(u,k),fourier transform of fgt
+h(u,k),magnitude of k
+sign of h,direction of gradient,The sign of H determines the direction of the gradient in the optimization process.
+local optima,high-frequency signals,High-frequency signals can lead to local optima in the optimization.
+gaussian filter,sign-alternating issue,A Gaussian filter helps mitigate the sign-alternating issue in the H function.
+n ∗ fgt,l1d with gaussian convoluted signal,Gaussian convolution with N affects the calculation of L1d
+˜h(u,k),h(u
+fourier transform of the gaussian kernel n,˜h(u,k)
+gaussian filtering,signal alignment,Gaussian filtering is used to suppress the misbehaving region in signal alignment
+modulated ˜h(u,k),gradient descent
+quasi-convex region,global optima,The quasi-convex region in H(u
+coarse-to-fine training schedule,gaussian kernel filtering strength,As u approaches 0
+3d joint optimization problem,2d planar image alignment,Previous works also address a 2D version of the problem alongside the 3D joint optimization.
+high-frequency energy,misdirection in gradient-based optimization,Excessive high-frequency energy in the signal causes misdirection during gradient-based optimization due to alternating signs in H(u
+noisy signals,local optima,Without Gaussian filtering
+2d homography transformation,parameterized by pi,Pi is a Lie algebra parameter for the 2D homography transformation.
+pi,sl(3) lie algebra,Pi belongs to the sl(3) Lie algebra
+2d decomposed low-rank tensor t2d,f2d parameterization,T2d is used to parameterize the 2D function F2d
+t2d,rh×w dimensions,T2d has dimensions h and w
+2d gaussian kernel n2d,used for filtering t2d,N2d is applied to T2d to avoid overfitting
+bilinear interpolation,discrete 2d volume,Interpolation is performed on the discrete volume using bilinear method when mapping continuous coordinates.
+naive tensor method,previous methods,Our method outperforms both the naive tensor method and previous approaches
+continuous coarse-to-fine training schedule,exponential control for kernel width,The width of the Gaussian kernel changes continuously during training.
+discrete gaussian kernel,generated by rule rx(11),Kernel generation involves a specific rule with LN (kernel size) and a 1D kernel.
+3d vector-components,axes (x,y
+2d matrix-components,(y-x,x-z
+outer product,vector and matrix,The operator ⊗ denotes the outer product between a vector and a matrix
+3d feature tensor,tc ∈ ri×j×k×g,Tc is a 3D tensor with dimensions (RI
+small mlp s,rgb color value,S decodes Tc into an RGB color value
+3d color field fc,fc(x,⃗d)
+linear-interpolation,tensor volume tc,Linear interpolation is used to obtain Tc values at specific coordinates
+separable component-wise convolution,low-rank decomposed tensor,Proposed method avoids suboptimal reconstruction and inaccurate poses by limiting the spectrum of the radiance field with coarse-to-fine training
+3d gaussian kernel,3d volume tσ,The naive convolution of a 3D Gaussian kernel with Tσ is mentioned
+coarse-to-fine training schedule,3d gaussian kernel,The context discusses a comparison between a coarse-to-fine training approach and the application of a 3D Gaussian kernel for efficient computation in a 3D tensor.
+3d decomposed low-rank tensor,3d volume tσ,In the context
+3d gaussian convolution,3d decomposed low-rank tensor,The proposed method performs separable component-wise convolution on the 3D decomposed tensor
+1d gaussian convolution,vector component ˜vσ,r
+2d gaussian convolution,matrix component ˜mσ,r
+time complexity,o(i · j · k · l3n),The context mentions that the traditional approach has a time complexity of O(I · J · K · L3N)
+space complexity,o(i · j · k),The proposed method reduces space complexity to O(I · J · K)
+3-dimensional memory,space complexity,The 3-dimensional memory has space complexity; it refers to the storage requirement for the convolution result
+efficient 3d convolution algorithm,pose robustness improvement technique,The efficient 3D convolution algorithm in Section 3.5 contributes to increasing pose robustness during training.
+coarse-to-fine 3d schedule,3d radiance field ˜fσ,˜fc
+gaussian kernel,kernel parameter (σ),The Gaussian kernel's parameter (σ) is reduced exponentially during training
+smoothed 2d supervision,image gradients,Smoothed 2D supervision helps stabilize camera alignment by producing smoother image gradients.
+smoothed 2d supervision,restrict spectrum of learned 3d scene,It also contributes to constraining the frequency components of the learned 3D scene representation.
+randomly scaled kernel parameter,edge guided loss,These techniques are used together to achieve better modulation and potentially improved robustness to edge information.
+spectral analysis,larger kernel,The spectral analysis suggests that a larger kernel has a stronger effect but may not always lead to better performance.
+kernels (for the radiance field),2d gaussian kernels (for training images),These kernels are used together to guide joint optimization
+randomly sampled kernels,input image,The kernels are randomly sampled to visualize their effect on the same input image
+weak and noisy gradient problem,edge region,The edge-guided loss amplifies the gradient signal in the edge region
+edge-guided loss,pose optimization,This loss helps focus the joint optimization on the edge area
+edge area,sobel filter,The edge area is detected using the Sobel filter
+edge-guided scale alternation,training iteration,Applied every other iteration to enhance the learning signal.
+sobel filter,edge detection,The Sobel filter is used to identify the edge area of a blurred image
+blurred image,weak and noisy gradients,The blurring process leads to weak and noisy gradients
+gradients,pose stability,Stronger gradients contribute to better pose stability
+camera poses,inaccurate or unknown,The method is evaluated on tasks where camera poses are inaccurate or not provided.
+naïve 2d tensorf,2d tensorf + 2d gaussian,A comparison is made between the basic implementation and the proposed method
+2d tensorf + 2d gaussian,naïve 2d tensorf,"The proposed method (2D TensoRF + 2D Gaussian) shows a decrease in error and an increase in patch PSNR compared to the na""ive version."
+planar image alignment,novel view synthesis,The method is evaluated on both planar image alignment and novel view synthesis tasks.
+nerf-synthetic dataset,llff dataset,Experiments are conducted on these two datasets for benchmarking.
+garf,hash,Comparison is made with these two methods
+barf,garf,BARF is among the methods compared
+results,quantitative comparison,Section 4.1 presents the quantitative results of the method's performance against other approaches.
+planar image alignment (2d),naïve 2d tensorf implementation,Comparison in Fig. 5 shows the effectiveness of our method (2D TensoRF + 2D Gaussian) against a simpler version
+our method,2d tensorf + 2d gaussian,Our method refers to the combination of 2D TensoRF and Gaussian filtering
+nerf (3d),synthetic object & real world objects,Tab. 2 and Tab. 3 evaluate NeRF's performance on synthetic and real-world datasets
+nerf-synthetic dataset,pose error,The NeRF-Synthetic dataset shows our method has the smallest pose error in 5 out of 8 scenes.
+llff dataset,novel-view synthesis quality,The LLFF dataset demonstrates our method's best average view synthesis quality and LPIPS scores.
+our method,state-of-the-art results,Our method achieves state-of-the-art results with fewer training iterations (20% to 25% vs. 200k).
+ablation component analysis,tab. 4,This section in the paper presents an analysis of the individual components in the method
+optimization results,pose error,The results show the effect of each proposed component on the pose error in the optimization process.
+pose error,psnr,The comparison includes the impact of components on both pose error and PSNR of the optimization results.
+proposed component,effectiveness,Each proposed component's effectiveness is demonstrated through its impact on pose error and PSNR.
+randomly scaled kernel,sec. 3.6,The effect of the randomly scaled kernel is shown in (a) and (b) in Section 3.6.
+edge guided loss,sec. 3.6,The edge guided loss is examined in (b)
+gaussian filtering,2d supervising images,3d radiation field
+tensorf with barf/garf,potential baseline,Comparison is made to see if applying BARF/GARF methods directly could solve the joint optimization problem.
+nerf-synthetic dataset,quantitative results,Quantitative results on the NeRF-Synthetic dataset are presented in Table 2
+convergence,iterations,Our method converges within 40k iterations
+pose initialization,gaussian noise,Sensitivity analysis is conducted by varying the variance σ of Gaussian noise to study the robustness of BARF and the proposed method.
+blender dataset,chair scenes,The sensitivity analysis is performed using Chair scenes from the Blender dataset.
+camera poses,noisy initialization,Both BARF and the proposed method demonstrate robustness against noisy camera pose initialization.
+time complexity,synthetic nerf dataset,A comparison is made on average PSNR and training iterations in the Synthetic NeRF dataset.
+psnr,training iterations,The figure illustrates the method's advantages in rapid convergence and high-quality novel view synthesis.
+our method,rapid convergence,Our method has faster convergence due to its design and efficient convolution algorithm.
+our method,high-quality novel view synthesis,Our method offers better quality by resolving the issue with early-stage blurry supervision and smooth 3D content transition.
+3d filters,kernel parameters,Our method uses directly controllable kernel parameters for smooth transition across spectrum domains.
+previous methods,learning rate (heo et al. 2023),Comparison is made with methods that indirectly influence 3D scene properties
+previous methods,encoding magnitude (lin et al. 2021),Comparison includes methods that affect scene spectral properties through encoding magnitude.
+voxel grid,coarse-to-fine schedule,Our method uses a single voxel grid trained in a coarse-to-fine manner for faster convergence.

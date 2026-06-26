@@ -1,0 +1,169 @@
+node_1,node_2,edge
+pre-trained models,machine learning research,Pre-trained models have changed the landscape of Machine Learning research by shifting from training from scratch to fine-tuning paradigm.
+training from scratch,fine-tuning paradigm,The landscape of Machine Learning research has transitioned from training from scratch to fine-tuning paradigm due to the availability of large pre-trained models.
+reward maximization (rm),distribution matching (dm),"Two main paradigms, Reward Maximization (RM) and Distribution Matching (DM), have emerged to tackle the challenge of fine-tuning pre-trained models towards desired distributions."
+reinforcement learning (rl) techniques,reward maximization (rm),"Reward Maximization (RM) utilizes standard Reinforcement Learning (RL) techniques, such as Policy Gradients, to increase the reward signal gradually."
+reward maximization (rm),distribution matching (dm),"Methods like KL-control developed for Reward Maximization (RM) can also be seen as belonging to Distribution Matching (DM), showcasing theoretical connections between the two paradigms."
+reward maximization (rm),high gradient variance,Reward Maximization (RM) can face challenges like high gradient variance during training.
+distribution matching (dm),high gradient variance,"Distribution Matching (DM) may encounter similar training difficulties as Reward Maximization (RM), such as high gradient variance."
+baseline,distribution matching (dm),The concept of baseline is imported into Distribution Matching (DM) methods leveraging connections between the two paradigms.
+baseline,controllable language generation tasks,"Adding a baseline proves beneficial for controllable language generation tasks, such as constraining topic, sentiment, and gender distributions, when sampled from a language model."
+gender distributions,texts,Gender distributions in texts sampled from a language model
+superior performance,constraint satisfaction,Observing superior performance in terms of constraint satisfaction
+superior performance,stability,Observing superior performance in terms of stability
+superior performance,sample efficiency,Observing superior performance in terms of sample efficiency
+language model,pre-trained language models,Landscape of Machine Learning research and practice being changed by pre-trained language models
+pre-trained language models,strong generative capabilities,Strong generative capabilities of pre-trained language models
+studies,global preferences,Many studies have found it sufficient to nudge models to conform to global preferences
+preference,topic and sentiment,Global preferences defined over generated sequences include topic and sentiment
+preference,valid musical notes and molecular structures,Global preferences defined over generated sequences include valid musical notes and molecular structures
+preference,code compilability,Global preferences defined over generated sequences include code compilability
+preference,reducing distributional biases,Global preferences defined over generated sequences include reducing distributional biases
+preference,evaluation metrics for machine translation and summarization,Global preferences defined over generated sequences include evaluation metrics for Machine Translation and Summarization
+preference,direct human feedback,Global preferences defined over generated sequences include direct human feedback
+studies,two different paradigms,Large body of studies is driven by two different paradigms: Reward Maximization and Distribution Matching
+paradigms,reward maximization,Connection between two popular paradigms for aligning language models
+paradigms,distribution matching,Connection between two popular paradigms for aligning language models
+reward maximization,distribution matching,"Reward maximization (RM) and Distribution matching (DM) are two key concepts in the context of human preferences. RM focuses on nudging pre-trained models towards certain preferences through global sequence-level rewards, while DM involves matching a distributional term inside the reward to be maximized."
+reward maximization,reinforcement learning,"Reinforcement Learning (RL) techniques can be applied under the Reward Maximization paradigm to discourage the model from producing toxic content. However, naive application of RL may lead to catastrophic forgetting of the model's original distribution."
+reward maximization,kl-control,Some studies under the Reward Maximization paradigm have incorporated KL-Control to address issues like catastrophic forgetting. This approach involves maximizing a distributional term within the reward.
+reward maximization,overall effectiveness,There is a wide discussion on the overall effectiveness of Reward Maximization for tasks such as machine translation. This discussion involves considering the impact of RM on achieving desirable features in model outputs.
+distribution matching,reinforcement learning,Reinforcement Learning techniques can be utilized within the Distribution Matching framework to guide model behavior towards desirable features.
+reinforcement learning,catastrophic forgetting,"The naive application of Reinforcement Learning techniques may lead to catastrophic forgetting of the model's original distribution, causing it to produce nonsensical sequences."
+overall effectiveness,machine translation,The overall effectiveness of Reward Maximization for tasks like machine translation has been debated in the literature. Studies have examined the impact of RM on model performance and output quality in translation tasks.
+kl-control,kl-divergence,KL-control adds a penalty term to the reward term to prevent deviation from the original policy in terms of KL-divergence.
+kl-penalty,rl algorithm,The overall objective with the KL-penalty is maximized using an RL algorithm of choice such as PPO or Q-learning.
+distribution matching,energy-based model,"In Distribution Matching, a target distribution is defined as an Energy-Based Model to satisfy downstream preferences."
+energy-based model,auto-regressive policy,The forward KL divergence is minimized between the target distribution and an auto-regressive policy.
+ebms,downstream preferences,"EBMs can be defined to conform to downstream preferences, highlighting the flexibility of EBMs"
+ebms,normalized distribution,"EBMs can be defined so that its normalized distribution has minimal KL divergence from the original language model, addressing the issue of catastrophic forgetting"
+ebms,khalifa et al.,Khalifa et al. (2021) is mentioned in the context of EBMs and their approach
+dm paradigm,distributional preferences,"DM paradigm can deal with distributional preferences, such as de-biasing language models by specifying gender-balanced generations"
+rm approaches,arsenal of rl algorithms,RM approaches are equipped with RL algorithms for reward maximization
+rm approaches,distributional aspect,RM approaches lack the distributional aspect to avoid catastrophic forgetting and impose distributional preferences over LMs
+dm approaches,limitations,DM approaches are suited to tackle limitations of RM approaches
+dpg algorithms,rl counterpart,The family of DPG algorithms used is not as rich as its RL counterpart
+connections,distinct paradigms,Connections between seemingly distinct paradigms (RM and DM) have been noted but not explored in detail
+parshakova et al.,korbak et al.,Parshakova et al. (2019b) and Korbak et al. (2022b) have noted connections between RM and DM paradigms
+rm,dm,"Relation between the RM and DM paradigms through a detailed comparison between the family of DPG algorithms and Policy Gradients, stressing the differences between parametric and non-parametric rewards that are important in this regard."
+kl-control techniques,distribution matching perspective,"Introducing an interpretation of KL-control techniques from a distribution matching perspective, placing such techniques at an intermediate place between RM and DM."
+connections,cross-pollination,Enabling cross-pollination between the two perspectives by adding baselines — a variance reduction technique from RL — to DPG and deriving a particular choice of a baseline.
+autoregressive language model,policy,The autoregressive language model generates sequences x which are assigned a 'reward' score R(x) by the policy.
+policy gradient algorithm,reinforce,The REINFORCE algorithm aims to find the policy ⇡✓(x) that maximizes R(x) based on the log derivative trick.
+gradient ascent algorithm,policy,The gradient ascent algorithm samples x from ⇡✓ and updates parameters by increments proportional to R(x) to maximize the average reward.
+kl penalty term,reward function,The KL penalty term is included in the reward function by Jaques et al. and others to penalize large deviations from the original pretrained model.
+dpg,autoregressive policy,Distributional Policy Gradients (DPG) is used to fit an autoregressive policy ⇡✓ to the distribution induced by the EBM P(x).
+kl-divergence,minimization objective,KL-divergence minimization objective leads to a gradient estimate
+parametric reward,standard reward,"Distinguishing between a “parametric reward” R✓ which depends on ✓ and a standard reward R, which does not."
+reward maximization,distribution matching,Two approaches for fine-tuning language models are characterized as “Reward Maximization” (RM) and “Distribution Matching” (DM).
+rg-term,reward gradient term,Equation (8) explains that the RG-term involves the gradient of the reward.
+pg-term,policy gradient term,Equation (8) states that the PG-term involves the gradient of the policy.
+rg-term,log derivative trick,The RG-term was obtained using the log derivative trick to involve the gradient of the reward.
+pg-term,log derivative trick,The PG-term was obtained using the log derivative trick to simplify the tuning procedure.
+kl-control,kl-penalty term,KL-control involves adding a KL-penalty term to the reward.
+rg-term,vanishes,"Due to the particular form of its objective, the RG-term actually vanishes in the context of KL-control."
+pg-term,only,"In the context of KL-control, only the PG-term remains to simplify the tuning procedure."
+policy gradient,rm paradigm,The algorithm falls under the RM paradigm but has multifaceted nature.
+kl penalty term,distributional matching,Maximizing reward with the KL penalty term is equivalent to distributional matching.
+distributional matching,underlying emergent sequential ebm,Distributional matching involves an underlying emergent sequential EBM.
+kl penalty term,dpg,Maximizing reward with the KL penalty term shows some similarities with DPG algorithm.
+arg min,family,The term 'arg min' is applied to a family covering DKL (KL-divergence) which corresponds to a maximization term 'arg max'.
+arg min,covering(x),"'Arg min' is part of a family covering DKL (KL-divergence), which shows the relationship between the two terms."
+dkl(kl-divergence),pz,The term 'DKL (KL-divergence)' corresponds to a distributional term 'pz(x)' when considering arg max(X).
+reward,kl-penalty,The addition of the distributional term (KL-penalty) to the reward provides a DM interpretation.
+dm,kl divergence,The addition of the distributional term (KL-penalty) to the reward aims at minimizing the reverse KL divergence with an emergent underlying distribution.
+reward,hyperparameter,"The reward is associated with a hyperparameter without a clear meaning, as mentioned in the context."
+dpg algorithms,dm,"DPG algorithms are designed to perform DM on any EBM specification, corresponding to an explicit distributional objective."
+kl-control,rm,"KL-control, a method designed under a RM paradigm, is connected to DM in the context."
+dpg,rm,"The context explores the question of whether DPG, a DM method, can be connected to RM, after mentioning the DM objective of DPG."
+r✓,pg-term,"After defining R✓ = P(x) ⇡✓(x) r✓ log ⇡✓(x), it acquires the format of the PG-term E⇡✓ R✓r✓ log ⇡✓(x)."
+dpg,average reward,DPG objective cannot be considered as maximizing the average “reward”
+dpg gradient,standard pg,DPG gradient estimates suffer from the same high-variance problems as with standard PG
+dpg,policy gradients,objective of DPG (distribution matching) is different from that of Policy Gradients (reward maximization)
+dpg,variability of gradient estimates,techniques to reduce variance in RL can be adapted to DPG for computing gradient estimates
+dpg,baselines,one can import variance reduction technique to DPG: baselines
+baseline,policy gradients,baselines are a standard variance reduction technique in the context of Policy Gradients
+reward,baseline,"Subtracting the baseline B from the reward R(x) does not introduce bias into DPG gradient estimates. The baseline B can be the average of rewards for the policy, which can be estimated without introducing bias by averaging over samples from all the different policy parameters."
+baseline,dpg algorithm,"The baseline B in the DPG algorithm can be the expectation of the reward term, resulting in a remarkably simple form of baseline for DPG."
+baseline,reward,"The baseline B is subtracted from the reward R(x) in equation (1), making the gradient estimates in DPG unbiased."
+baseline,off-policy dpg,"The off-policy DPG version introduced in (Parshakova et al., 2019b) and its KL-adaptive variant (Khalifa et al., 2021) sample a proposal distribution q instead of the policy ⇡✓. Then, the baseline takes the form Algorithm 1 KL-Adaptive DPG with baseline"
+baseline,importance weight,q(x) term is an importance weight correcting for the bias introduced by sampling from q.
+kl-adaptive dpg,baseline,"In practice, as shown on Figure 2, adding a baseline to KL-adaptive DPG (Algorithm 1) centers the advantage (defined as A q(x) ) around 0 leading to better performance on: convergence (section 4.3), stability on small batch sizes (section 4.4), and variance reduction (section 4.5)."
+baseline,constant baselines,"In the scope of this paper, our focus is on importing to DPG simple constant baselines. The advantage is that this is a technique that is not impacted by the fact that R✓ depends on ✓: it can be applied '✓-locally'."
+single-word constraints,word,Single-word constraints define that a given word appears in a sequence x
+wordlist constraints,given list,Wordlist constraints define that x contains at least one word from a given list
+wordlist constraints,politics,Wordlist constraints are associated with lists of words related to politics
+wordlist constraints,science,Wordlist constraints are associated with lists of words related to science
+sentiment classifier constraints,positive,Sentiment classifier constraints define x as positive if it is classified positively by a pre-trained classifier
+sentiment classifier constraints,negative,Sentiment classifier constraints define x as negative if it is classified negatively by a pre-trained classifier
+distributional constraint,female figure mention,Distributional constraint defines that x contains a female figure mention and has a specific value for µ
+distributional constraints,science,Distributional constraints define x as containing at least one word from science wordlist
+distributional constraints,art,Distributional constraints define x as containing at least one word from art wordlist
+distributional constraints,sports,Distributional constraints define x as containing at least one word from sports wordlist
+distributional constraints,business,Distributional constraints define x as containing at least one word from business wordlist
+hybrid constraints,female pronouns,Hybrid constraints define x as containing more female than male pronouns with a specific value for µ
+hybrid constraints,sports,Hybrid constraints define x as containing at least one word from sports wordlist
+hybrid constraints,politics,Hybrid constraints define x as containing at least one word from politics wordlist
+gdc++,gdc,Comparison between GDC++ and GDC as two reward maximization baselines
+gdc++,ziegler,Comparison between GDC++ and Ziegler for hybrid and distributional constraints
+gdc++,reinforce,"Comparison between GDC++ and Reinforce for policies obtained from GDC++, GDC, Ziegler and Reinforce"
+ziegler,reinforce,Mention of Ziegler and Reinforce in context but not directly compared
+ziegler,gdc,Comparison between Ziegler and GDC for hybrid and distributional constraints
+reinforce,gdc,"Comparison between Reinforce and GDC for policies obtained from GDC++, GDC, Ziegler and Reinforce"
+"dkl(⇡✓, a)",original pretrained language model,"DKL(⇡✓, a) is the reverse KL divergence from the original pretrained language model a."
+distinct-n score,text diversity,Distinct-n score is a measure of text diversity in terms of the frequency of repetitions within a single sample x.
+distinct-n score,li et al.,Distinct-n score is proposed by Li et al. in 2016.
+self-bleu-n,text diversity,Self-BLEU-n is a measure of text diversity on a distributional level across samples.
+self-bleu-n,zhu et al.,Self-BLEU-n is proposed by Zhu et al. in 2018.
+caccia et al. (2020),policies,Caccia et al. (2020) ensures that policies don’t converge into a limited number of sequences that satisfy the imposed constraints.
+original language model a,gpt-2 small,"For tasks 1-6, a pre-trained GPT-2 small with 117M parameters is used as the original language model a."
+a,wikibio,"For tasks 7-10, a is the same pre-trained model additionally fine-tuned on the WikiBio dataset."
+github,github.com/naver/gdc,The code for all the experiments presented in the paper will be available at github.com/naver/gdc.
+reinforce,original pretrained language model,"Reinforce is able to quickly achieve high levels of constraint satisfaction, but at the cost of large deviations from the original pretrained language model a, leading to significantly decreased diversity of generated samples."
+self-bleu-5,distinct-1,Self-BLEU-5 and Distinct-1 are terms used to measure the diversity of generated samples.
+kl penalty term,ziegler,The KL penalty term in Ziegler imposes an upper bound on deviation from a but the deviation is still significant enough to result in a drop in diversity.
+ziegler,diversity,"Ziegler’s objective results in very unstable training, impacting diversity."
+gdc,gdc++,GDC and GDC++ are fine-tuning methods that address constraint satisfaction based on a clear formal objective.
+divergence,p,The fine-tuning methods aim at reducing the divergence from p.
+baseline,variance,The addition of a baseline reduces the variance.
+p,a,Methods aim at maintaining smaller deviations from p and a.
+variance reduction,training stabilization,"Baseline stabilizes training, leading to smoother curves and reducing variance."
+gradient estimates variance,batch sizes,Reducing gradient estimates variance can allow training with lower batch sizes.
+"dkl(p, ⇡✓)",computed,"Detailed description of how DKL(p, ⇡✓) is computed can be found in Appendix D."
+ziegler objective,gdc,Ziegler objective shows large fluctuations compared to the more stable training curves of GDC
+ziegler objective,gdc++,Ziegler objective shows large fluctuations compared to the even more stable training curves of GDC++
+task 1,pointwise constraint,Task 1 involves a pointwise constraint
+task 8,set of distributional constraints,Task 8 involves a set of distributional constraints
+gdc++,batch sizes,GDC++ is consistently superior across all batch sizes in terms of convergence and constraint satisfaction
+constraint satisfaction,batch sizes,Higher batch sizes lead to better constraint satisfaction rates
+divergence from p,batch sizes,Lower batch sizes result in lower divergence from p
+sample efficiency,batch sizes,Stable training with smaller batch sizes translates into better sample efficiency
+gdc++,batch size 256,GDC++ with batch size 256 needs 1M samples to achieve (x) = 0.5
+gdc++,batch size 2048,GDC++ with batch size 2048 needs 4M samples to achieve (x) = 0.5
+gdc,batch size 256,"GDC with batch size 256 does not achieve Ex⇡✓(x) = 0.5, confirming the importance of adding the baseline"
+gradient variance,gradient estimate,Gradient Variance is defined as the gradient estimate of the forward KL loss with respect to the parameters
+variance of the advantage,exa(x),"Variance of the advantage is defined as the mean of the advantage, which is null after the addition of the baseline"
+expected absolute value of the advantage,a(x),Expected absolute value of the advantage is defined as the absolute value of A(x)
+gdc,gdc++,Comparison between GDC and GDC++ using a set of Variance diagnosis metrics on point-wise and distributional constraints experiments
+tvd,total variation distance,"TVD (Total Variation Distance) is an acronym representing the Total Variation Distance, which is denoted as Exq⇠p(x) in the context."
+gdc++,gradient estimates var(g✓),Results show that GDC++ has lower variance in gradient estimates compared to its non-baseline counterpart GDC.
+gdc++,variance of the advantage var(a),GDC++ obtains lower variance in the advantage compared to GDC in both pointwise and distributional experiments.
+baseline,dpg,Adding a baseline to Deterministic Policy Gradient (DPG) reduces the variance during training and yields better convergence towards the optimal distribution p.
+kl-control,maximum entropy rl (maxent rl),KL-control is considered a generalization of MaxEnt RL to informed priors in the Reinforcement Learning (RL) literature.
+kl-control,entropy bonus,"In certain cases, KL-control can be reduced to an entropy bonus if specific distributions are chosen."
+control-as-inference,maxent rl family,"Most practical algorithms in the MaxEnt RL family are derived from the general framework of control-as-inference, which poses control as minimizing KL from a target distribution."
+maxent rl family,dpg,"MaxEnt RL family algorithms minimise KL from a target policy which changes throughout training, while DPG's target distribution p and KL-control implicit target distribution pz are deﬁned at trajectory level and ﬁxed throughout training."
+awr,forward kl,AWR minimises the forward KL from an off-policy target distribution.
+state marginal matching (smm),kl-control,"SMM poses exploration as learning a policy that induces a state marginal distribution that matches a target state distribution, similar to the concept of KL-control."
+state marginal matching (smm),dpg,SMM has apparent similarity to KL-control and DPG.
+state marginal matching (smm),individual states,SMM's target distribution is deﬁned for individual states.
+language generation tasks,complete trajectory,"In controllable language generation tasks, the target distribution is deﬁned over a complete trajectory considered as a unit."
+large language models,fine-tuning paradigms: rm and dm,"Fine-tuning large language models has become an active area of research, with a focus on the nuanced relation between two popular ﬁne-tuning paradigms: RM and DM."
+rm,dm,"RM and DM are two popular fine-tuning paradigms. KL-control can be seen as a form of DM, indicating a relationship between the two paradigms."
+dpg,pg,DPG and PG have different goals but share similarities in the forms of gradient estimates despite different objectives. This similarity can be exploited.
+dpg,rl,"Some theoretical results and algorithmic techniques from RL can be adapted to a DM framework without losing formal guarantees, suggesting a connection between DPG and RL."
+dpg,baseline,"An extension of DPG involves adding a baseline to reduce the variance of gradient estimates, indicating a relation between DPG and baseline."
+baseline,variance reduction,"The baseline is added to reduce the variance of gradient estimates, linking baseline to variance reduction."
+baseline,learned value function,"One possible enhancement is further reducing variance using a learned value function, connecting baseline and learned value function."
+policy updates,trust region,"Policy updates can be prevented from being detrimentally large by maintaining a trust region in the policy space, showing a relationship between policy updates and trust region."
+explicit ebms,implicit ebms,"The relationship between explicit EBMs in DPG and implicit EBMs in KL-control can be analyzed, suggesting a connection between explicit and implicit EBMs."

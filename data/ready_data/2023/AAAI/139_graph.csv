@@ -1,0 +1,160 @@
+node_1,node_2,edge
+electron microscopy (em),optical microscopy (om),relation: Imaging techniques mentioned together
+electron microscopy (em),magnetic resonance imaging (mri),relation: Other imaging techniques mentioned together
+3d object segmentation,connectomics,relation: Specialization - connectomics is a type of 3D segmentation task
+synaptic resolution,neural circuits,relation: Focus - connectomics aims to interpret at synaptic resolution
+advanced serial section electron microscopy imaging techniques,em data of mm3-scale volumes,relation: Result - these techniques generate large-scale EM data
+terabyte to perabyte,em data sizes,relation: Scale - describing the size range of the data
+volumetric image segmentation methods,two-stage methods,relation: Type - examples of automated segmentation methods
+end-to-end methods,volumetric image segmentation methods,relation: Type - another category of automated segmentation methods
+pixel-level local context,nanometer resolution,relation: Resolution - context of existing segmentation methods
+split and merge errors,automatic segmentation,The context discusses methods that aim to detect and correct errors that occur in the automatic segmentation process.
+matejek et al. (2019),biologically-inspired graphs,Matejek's method uses these graphs
+3d convolutional neural network (cnn),probability of merging prediction,The CNN is trained to predict the likelihood of merging segments based on their morphologies.
+matejek et al. (2019) method,small densely annotated blocks,Their method is initially trained and tested on specific
+ffn segmentation results,split error correction,FFN is chosen for correcting split errors
+affinity-based methods,outperformed by ffn,FFN surpasses affinity-based methods in error correction but has a significantly higher computational cost.
+human proofreading,remaining connection errors,Even after automated methods
+zung et al.,methods for detecting and correcting errors,Zung's approach is also mentioned as one of the methods attempting to address error detection and correction.
+pixelwise vectors,dense image embedding,The pixelwise vectors are a part of the dense image embedding
+dense embeddings,image feature representation,Dense embeddings serve as a delicate image feature representation
+connectivity-aware contrastive loss,dense embeddings learning,The method learns dense embeddings without pixel-wise annotations
+large-scale neuron reconstruction,em image volume,The process starts with over-segmenting a huge EM image volume into 3D segments.
+3d segmentation approach,over-segmentation,An off-the-shelf 3D segmentation approach is used to create initial segments from the EM image volume.
+human proofreading,complete neuron reconstruction,After over-segmentation
+reconstructed neurons,tree structures,Reconstructed neurons are represented as tree-like structures with nodes and edges.
+nodes,edges,Nodes and edges compose the tree structures representing individual neurons.
+annotation,tracing,Annotations are used directly or indirectly for tracing the edges in the neuron tree structures.
+task formulation,dataset,Fig. 1 shows the general pipeline
+connectivity-aware contrastive learning,dense volumetric em image embedding,The novel method learns image embeddings from sparse segment connectivity for split error correction.
+sparse segment connectivity,volumetric em image embedding,Our method uses connectivity information to generate dense embeddings from sparse data.
+voxel-based em neuron segmentation,learning-based methods,Various approaches
+affinity maps,non-parametric watershed transformation,Popular series of methods use CNNs to learn affinity maps
+flood-filling networks (ffn),cross-referencing 3d meshes and em image slices,FFNs combine mesh visualization tools like CATMAID for human tracers to assess if segments belong to the same neuron.
+catmaid,proofread segment surface,Used for skeletonizing and visualizing segment surfaces
+segment pairs,prediction function,The prediction function f is learned from a set of connected segment pairs
+3d morphology,em images,These segment pairs are analyzed based on their 3D morphology and EM images
+crowd-sourced proofreading results,dataset,Segment connectivity is extracted from the crowd-sourced proofreading throughout an entire fly brain
+flytracing,existing datasets,FlyTracing surpasses existing datasets by three orders of magnitude in terms of volume size and number of connected segment pairs.
+fafb dataset,image sections,The FlyTracing dataset is derived from the FAFB dataset
+fafb-ffn1 segmentation pipeline,preprocessing,The image sections are preprocessed using the FAFB-FFN1 pipeline before segmentation.
+neuron skeletons,proofread,Skeletons of neurons are proofread
+ffn segmentation pipeline,flywire,FAFB-FFN1 is a segmentation method chosen over FlyWire's affinity-based segmentation because of its fewer merging errors.
+ffn segmentation results,proofread neuron skeletons,The method registers FFN segmentation with proofread neuron skeletons for ground truth connectivity generation.
+proofread neuron skeletons,surface meshes,Surface meshes of proofread neurons are obtained from FlyWire
+neurite tracing,tree-like structures,The registration method focuses on tracing neurites with tree-like structures by removing cell body fibers.
+massive over-segmented fragments,human proofread neuron,The registration process associates over-segmented fragments with a human proofread neuron for accurate matching.
+connectivity prediction,image embedding,The proposed method predicts connection probabilities by combining image embeddings and 3D morphological features.
+connectivity prediction,3d morphological features,These features contribute to the prediction of connectivity between segment pairs.
+image embedding,3d morphological features,The context discusses integrating image embeddings with 3D morphological features for improved segmentation.
+connectivity-aware contrastive learning,dense image embedding,This novel method learns dense image embeddings using sparse segment connectivity annotations for better understanding.
+3d morphological representation of segments,geometric property,Segment geometry provides clues for connection
+edgenetwork,3d volumetric masks,EdgeNetwork employs volumetric masks to encode segment morphology using 3D convolutional neural networks (3DCNNs).
+surface point cloud,more efficient morphology representation,The point cloud is a more efficient alternative to 3D masks
+truncation point ˆci,j,segment section contours
+farthest point sampling,point cloud downsampling,Point clouds are downsampled to reduce the number of points for computational efficiency.
+pointnet++,morphological feature encoder,PointNet++ is employed as the morphological feature encoder.
+pointnet++,connectivity prediction model,PointNet++ serves as the connectivity prediction model for point cloud inputs.
+farthest point sampling (fps),point cloud downsampling,The point clouds are downsampled using FPS to a fixed number of points.
+embednet,image embedding network,EmbedNet is designed to generate image features for every voxel.
+embednet,local image cube feature extraction,EmbedNet extracts a k-dimensional feature vector for each voxel in a local EM image cube.
+segment masks,integrated with point clouds,Segment masks are concatenated with point geometric features or voxel masks for volume representation.
+surface point cloud,average image embedding vectors,Average image embedding vectors in a neighborhood are concatenated to surface points' coordinates.
+volumetric image embedding learning,segment shape distortion correction,Learning volumetric image embeddings helps correct segmentation shape distortions.
+volumetric image embedding,supervised contrastive learning framework,Volumetric Image Embedding is learned within the Supervised Contrastive Learning Framework.
+embednet,local volumetric image features,EmbedNet extracts local volumetric image features.
+point cloud,3d morphology,The connectivity prediction framework fuses point cloud data with 3D morphology.
+segment skeleton (ts),neuron skeleton (tneu),Chamfer Distance is calculated between segment skeletons and neuron skeletons to assign segments to neurons.
+bridging edges,adjacent nodes (vi,vj)
+node (vi),node (vj),Edge(vi
+segments (sa),segments (sb),Segments Sa and Sb are merged if there's an edge between their corresponding nodes.
+bridging edge set,neuron,Each bridging edge connects two neurons (vi
+midpoint,bridging edge,The midpoint
+estimated truncated point,midpoint,A random shift is added to the midpoint (ci
+positive connecting pair,segment pair,If a segment pair (Sa
+negative pair,segment,Segments Sc that are not equal to Sb and located within a cube centered at ˆci
+training and test block partition,positive segment pairs,Positive segment pairs are divided into blocks based on their location in the brain for training and testing purposes.
+training and validation set,blocks,1
+embednet,em volume,EmbedNet processes small EM volumes cropped around truncation points to generate per-voxel embeddings.
+embednet,image embedding network,EmbedNet is a component of the volumetric image embedding network responsible for feature extraction.
+embednet,per-voxel k-dimensional embeddings,EmbedNet is used to extract these embeddings
+embednet,contrastive loss,The EmbedNet is trained using a contrastive loss
+contrastive loss,pairwise segment connectivity,This loss is based on the connectivity of query segments with neighboring segments
+contrastive loss,intra-cluster variance,Existing dense embedding methods involve a loss that includes intra-cluster variance
+contrastive loss,inter-cluster distance,It also addresses inter-cluster distance
+connectivity-oriented contrastive loss,merge loss,The merge loss is applied to positive connection pairs
+connectivity-oriented contrastive loss,split loss,The split loss targets negative connection pairs
+em cube,over-segmentation masks,An EM cube is cropped along with over-segmentation masks to create a local context for segment analysis.
+squery,spos,Squery and Spos form a positive connection pair
+squery,neg segments,neg segments are randomly sampled from adjacent areas to create negative connection pairs for the contrastive learning.
+embednet,per-voxel image embedding feature,Extracts from the cropped cube
+segment embedding,mean embedding feature,Computed as the average of per-voxel features within a segment
+merge loss,segment-level connection supervision,Computes the difference between query and positive segment embeddings
+split loss,pairwise connection dataset,Encourages robust feature learning using sparse supervision
+embednet,dense embedding,Difficult to converge with sparse supervision
+segment clustering loss,pseudo-segmentation masks (em images),Uses automatic over-segmentation results as supervision
+segment clustering loss,lint,lext
+segment clustering loss,dense segmentation annotations,Expensive to obtain due to manual labeling requirements
+embednet,large-scale dataset,Adapts to diverse imaging qualities
+contrastive loss,voxel segmentation clustering loss,Ltotal is composed of Lmerge
+λ1,lmerge,During training
+λ2,lsplit,λ2 is set to 1
+λ3,lseg,Initially
+embednet,residual symmetric u-net,EmbedNet adopts the architecture of a residual symmetric U-Net designed for anisotropic EM images.
+embednet,squeeze-and-excitation block,EmbedNet incorporates Squeeze-and-Excitation blocks to enhance embedding expression capability.
+input volume size,129x129x17,The input volume has dimensions specified in voxels.
+embedding dimension,k,The embedding dimension is set to 16 for improved representation.
+edgenetwork,3d cnn,EdgeNetwork uses a 3D CNN for processing point clouds.
+edgenetwork,cube,EdgeNetwork takes cubes with a side length of 1200nm as input.
+negative sample pairs,n,During training
+cay scheduler,negative sample pairs,The number of negative sample pairs is set to 20 for the dataset.
+connect-embed,intensity,Both Connect-Embed and Intensity are part of the EdgeNetwork.
+connect-embed,seg-embed,Connect-Embed and Seg-Embed are listed together
+connect-embed,f1 avg.,Performance is evaluated using F1 score
+misalignment,f1 prec.rec.,Misalignment is measured using F1 precision and recall.
+missing sections,misalignment,Both missing sections and misalignment are related to the performance evaluation.
+embednet,training on blocks with missing sections,EmbedNet is fine-tuned on a subset of training blocks with section missing issues.
+edgenetworks,adamw optimizer,Both EdgeNetworks and PointNet++ models are trained using the AdamW optimizer.
+pointnet++ models,adamw optimizer,PointNet++ models are also trained with AdamW optimizer.
+connectivity prediction network,negative segment pairs,The network is trained with a high ratio of negative to positive segment pairs (3:7).
+positive segment pairs,training data blocks,All 422k positive segment pairs from 1000 training data blocks are used during training and validation.
+segment connectivity prediction,recall and precision,Performance is assessed using recall and precision metrics.
+testing blocks,1,178k positive segment pairs
+embedding,mean embedding,The edge describes the relationship: 'Embedding' refers to the calculation of f(Sa
+point cloud representation,connectivity-aware embedding,The edge shows that 'Connectivity-aware embedding' is the best-performing combination with point cloud representation
+3d cnns,edgenetworks,These models are related because 3D CNNs suffer from increased computation due to larger input volumes
+pointnet++,image features,PointNet++ benefits more from incorporating image features
+local fine-grained image features,global morphological features,There's a contrast between these two types of features
+intensity-based image feature encoding,segmentation-based embedding,These are among the three ways image features are encoded
+adaptiveblock,block c,In the context of a table
+discriminative ability,table 3,The table presents the discriminative ability
+mushroom body region,ground truth skeleton nodes,The context mentions that the volume cropped contains around 10% of the ground truth skeleton nodes
+candidate pairs,truncated points,These terms are both estimated from the endpoints of segment skeletons
+fafb-ffn1,initial em image segmentation,FAFB-FFN1 is used as the initial method for image segmentation
+automatic proofreading,pairwise segment connectivity prediction,Automatic proofreading involves connectivity prediction
+connectivity-aware contrastive learning,em image embeddings,This method learns discriminative embeddings for image analysis
+image embeddings,point clouds,The embeddings are integrated with point clouds for improved connectivity identification
+future work,multi-candidate connection prediction,In the future
+future work,fully automatic complete neuron tracing,The ultimate goal of the future work is to facilitate fully automatic neuron tracing by improving the overall connectivity reasoning.
+automatic complete neuron tracing,connectivity prediction,The context discusses the use of PointNet++ with 'Connect-Embed' for accurately predicting connection relations in neuron tracing
+pointnet++,connect-embed,PointNet++ is enhanced with 'Connect-Embed'
+misalignment,image degradations,The context mentions severe misalignment among the image degradations affecting the EM volume blocks.
+section missing,image degradations,Missing sections are also listed as a type of image degradation that the model addresses.
+precision-recall curves,model evaluation,Precision-recall curves are used to assess the models' performance
+seg-embed (lee et al.),competitor,Seg-Embed is mentioned as a competitor whose performance is surpassed by the proposed method in handling image degradations.
+seg-embed (lee et al. 2021),image embeddings,Seg-Embed fails to generate robust embeddings due to lack of supervision in segment contrast; it contrasts with 'our embedding approach' which provides both structural and fine-grained image features.
+pointnet++ with 'connect-embed' model,connection relationships,The model uses PointNet++ to classify connection relationships between segment pairs
+high-dimensional embedding vector,rgb color space,Embeddings are visualized using PCA
+morphological distortions,ambiguous morphology,Positive pairs are affected by image degradation
+negative pairs,positive connectivity pairs,Misclassified negative pairs have similar appearances to positive connections
+our embedding,distorted morphological features,Our embedding complements distorted features
+national natural science foundation of china,grant 62076230,Financial support for this work comes from this Chinese research grant.
+fundamental research funds for the central universities,unspecified,Additional funding source for the project.
+foundation of china,grant 62076230,The foundation received funding from grant 62076230.
+foundation of china,fundamental research funds for the central universities,The foundation is also supported by funds from the Central Universities.
+fundamental research funds for the central universities,grant wk3490000008,This fund is associated with grant WK3490000008.
+princeton flywire team,murthy and seung labs,The Princeton FlyWire team is part of the Murthy and Seung labs.
+princeton flywire team,allen institute for brain science,Princeton FlyWire is developed and maintained with support from the Allen Institute for Brain Science.
+brain initiative grants,mh117815 and ns126935,These grants fund Murthy and Seung
+murthy,seung,Murthy and Seung are individuals involved in the project.
+princeton flywire,neuron proofreading and annotation,Princeton FlyWire involves neuron proofreading and annotation by consortium members.

@@ -1,0 +1,113 @@
+node_1,node_2,edge
+domain generalization,data augmentation,Domain generalization is mentioned as a strategy to reduce reliance on labeled data
+pareto optimization,model selection,Both Pareto optimization and model selection are mentioned in the context of improving the model's generalization
+transfer learning,domain adaptation,Transfer learning is a broader paradigm
+transfer learning,fine-tuning,Fine-tuning is a common practice in transfer learning where pre-trained models are adapted to a target domain.
+data distribution shift,domain adaptation,The main focus of domain adaptation is to bridge the gap between different data distributions.
+instance reweighting,distribution alignment techniques,These are the methods employed in domain adaptation to address the mismatch between training and target domain distributions.
+wilson and cook (2020),domain adaptation,The reference to Wilson and Cook (2020) indicates a recent work or study on domain adaptation.
+training objectives,classification goal,The context mentions that the expense of damaging one of the training objectives refers to the classification goal
+traditional model selection methods,validation data split,These methods
+domainbed,model selection techniques,DomainBed utilizes three model selection techniques
+bias in estimation,target accuracy,The techniques used in DomainBed can lead to a biased estimation of the target accuracy because of the different distributions between validation and target data.
+mixup-guided optimization and selection solution,model optimization (optd),The proposed solution creates a Mixup-generated dataset for optimizing the model (OPTD) to address the issues in traditional methods.
+mixup-guided optimization and selection solution,model selection (vald),Another adapted Mixup-generated dataset is used for model selection (VALD)
+domain generalization,data manipulation,Data manipulation is a category in domain generalization
+data manipulation,data augmentation,Data augmentation is a technique within data manipulation
+data manipulation,data generation,Data generation is another technique within data manipulation
+data augmentation,crossgrad,CrossGrad uses loss gradient-based perturbations for better generalization
+data augmentation,uncertainty assessment,Uncertainty assessment
+learning strategy,mldg (multi-task learning for domain generalization),MLDG employs meta-learning to simulate domain shift
+learning strategy,rsc (regularization for scalable classification),RSC forces networks to activate relevant features for better generalization
+fact,linear interpolation,Fact involves linear interpolation between amplitude spectrums of images to improve classification performance.
+domain generalization,methods,These methods aim to find invariance for improved generalization across domains.
+regularized items,classification item,Regularized items are sometimes introduced to enhance generalization
+classification ability,damaged,Directly optimizing for reduced objective value can potentially harm classification performance.
+mixup guided optimization,utilized,Our paper employs Mixup guided optimization to address the issue of balancing regularization and classification in domain generalization.
+model selection,cross-validation,Cross-validation is a common model selection method
+training-domain validation set,leave-one-domain-out cross-validation,Gulrajani and Lopez-Paz proposed different model selection methods
+test-domain validation set,training-domain validation set,The training-domain validation set assumes similarity between training and test distributions
+li et al. (2022),unbiased,Their work highlights the advantage of leave-one-domain-out cross-validation over other methods.
+leave-one-domain-out cross-validation,test-domain validation set,The context mentions that leave-one-domain-out cross-validation sacrifices training data quantity compared to test-domain validation
+test-domain validation set,domain generalization,This sentence highlights that test-domain validation is crucial for domain generalization but cannot be used when there is no target data available.
+model selection for domain generalization,infant stage,The statement indicates that model selection for domain generalization is still in its early stages of development.
+weight-based optimization,multiple objectives,Weight-based optimization is a strategy to address multiple objectives simultaneously.
+hyperparameters tuning,manual tuning,Hyperparameters are often manually tuned to achieve the best performance by combining objectives.
+domain adaptation,dynamic weighting of objectives,Domain adaptation methods use techniques like gradient magnitude
+domain generalization,model optimization,For domain generalization
+domain generalization,training sources,The goal of domain generalization is to learn a robust and generalized predictive function from M training sources
+target label space (y_t),training domains (x,y)
+regularization-based objectives,loss functions (ℓ0,ℓ1
+hyperparameters (λ1,...,λk)
+model selection,validation dataset (dsval),To choose the best model for testing
+data split,training data (ds),The whole distribution is denoted as PS
+generalization capability,preference vector,The method expects a preference vector reflecting generalization
+pareto domain adaptation,previous method,The previous method on Pareto domain adaptation (Lv et al.
+adapted mixup,dataset (optd),Adapted Mixup is used to generate a dataset (OPTD) with a different distribution from source domains
+data augmentation,redundant domain information,The data augmentation via Mixup is split into two parts to alleviate noise
+first part of adapted mixup,within the same class but different domains,The first part focuses on mixing samples within the same class but from different domains.
+second part of adapted mixup,within the same domain but arbitrary classes,The second part involves mixing samples within the same domain but across different classes.
+linear programming (lp) problem,optimization,The optimization is formulated as a linear programming problem
+solution ω*,optimization problem,ω* is the solution to the optimization problem defined in Eq. (6)
+update direction d*,descent direction,When ℓoptd = 0
+multiple objectives,network,When optimizing a network with multiple objectives
+mean gradient g1/m,guidance descent mode,In guidance descent mode
+gradient-based model optimization,framework,The framework of gradients-based model optimization includes the learning mechanisms discussed.
+domain generalization,classification,Domain generalization aims to reduce loss generated by both classification and alignments.
+domain generalization,alignment,Domain generalization aims to reduce loss generated by both classification and alignments.
+fixed alignment methods,classification,Existing simple fixed alignment methods only focus on part of the overall objects
+fixed alignment methods,generalization,Existing simple fixed alignment methods only focus on part of the overall objects
+gradient-based optimization,classification loss,Introducing gradient-based optimization with adapted Mixup optimizes both the classification loss
+gradient-based optimization,alignment loss,Introducing gradient-based optimization with adapted Mixup optimizes both the classification loss
+mixup,validation dataset generation,This section introduces how to adapt Mixup for generating a new validation dataset.
+adapted mixup,optimization,In the optimization process
+mixup-guided model selection,validation dataset,In this section
+original validation data split,training data,Typically
+convex case,unseen target,This case discusses when the unseen target lies within the convex combination of the source datasets
+general case,unseen target,The general case encompasses situations where the unseen target can be outside the source datasets
+dhδh(pt,ps val),c
+vald,estimation on unseen target,VALD is used for achieving a more accurate estimation on the unseen target compared to dHΔH(PT
+vald,origin validation data distribution,In the general case
+φ,dynamic,In VALD
+vald,optd,VALD and OPTD are generated separately in the algorithm for model optimization.
+algorithm 1,process of techniques,Algorithm 1 outlines the steps for training a well-performing model using VALD and OPTD.
+ω,weighting factor,ω is updated during the optimization process and used to weight different data sources.
+model h,well-trained model h∗,The ultimate goal is to obtain the well-trained model h∗ through the iterative process.
+visual classification,resnet-18,ResNet-18 is used as the feature net for visual classification.
+erm,dann,Our technique is compared with ERM and DANN
+dann,proposed technique,Proposed technique improves upon DANN.
+state-of-the-art methods,erm,dann
+pacs,table 1,Results on PACS are presented in Table 1.
+hyperparameters,sgd optimizer,learning rate
+source domain,training and validation dataset,Each source domain is split into 8:2 for training and validation.
+sample selection,32 samples per step,In each step
+epochs,120 maximum training epochs,The training process runs for a maximum of 120 epochs.
+erm,pacs task,ERM is mentioned as a baseline method for PACS
+mixup,our techniques,Our techniques are based on Mixup
+mixup,direct mixup for visual classification,The effectiveness of direct Mixup is questioned for visual classification
+mixup,significant improvement,A significant improvement of 0.8% is mentioned as a benchmark
+dann+ours,best results,DANN combined with our techniques achieves the best results
+pacs,difficult task in dg,PACS is described as a challenging task within the domain of domain generalization.
+baseline,other state-of-the-art methods,Other methods are compared to baselines
+uci daily and sports dataset,dsads,DSADS is a specific dataset used for time-series classification
+erm,method that combines all source data together and directly trains the model,ERM is a specific approach compared in the context
+dann,method that learns domain-invariant features in an adversarial way,DANN is another competing method
+andmask,method that learns domain-invariant features based on gradients,ANDMask is a third method that also focuses on learning invariant features using gradient-based techniques.
+gile,method that utilizes vae to decouple domain and classification features,GILE stands for Generative Inference for Label-Efficient Domain Adaptation
+pytorch,implementation framework,All methods
+public code,gile's codebase,The authors of GILE provide public code
+architecture,convolutional layers,pool layers
+target domain,testing data,All methods
+mixup hyperparameters,vanilla dann,The results show that using different Mixup hyperparameters improves upon vanilla DANN
+computation ways for optimization,optd (optimization for transfer domain),w-w refers to treating the source classification as a whole objective when computing mean gradients of the entire OPTD. b-w means computing batch-wise gradients and considering the source classification as a whole. w-s computes mean gradients of the whole OPTD but treats each source's classification independently.
+b-w (batch-wise computation),w-s (whole objective per source),Both methods achieve remarkable improvements
+optd and vald,finer tuning,The same α is used for both OPTD and VALD
+our techniques,robustness and superiority,The results collectively demonstrate the robustness and overall superiority of the proposed techniques.
+results,demonstrate,The final outcome is that the results provide evidence for the effectiveness of the techniques.
+domain generalization,optimization and model selection,This paper focuses on exploration of optimization and model selection in domain generalization
+paper,state-of-the-art methods,The paper is not aimed at finding state-of-the-art methods
+dann,coral,These two methods (DANN and CORAL) are chosen for implementation due to their satisfactory performance
+dann,adapted mixup,DANN is utilized with adapted Mixup to generate OPTD for guiding balance among different objects in domain generalization.
+coral,adapted mixup,Coral is also used with adapted Mixup to create VALD for selecting the best model.
+mixup based techniques,model optimization and selection,The paper proposes two Mixup-based techniques specifically for optimizing and selecting models in domain generalization.
+visual classification benchmark,time-series tasks,Experiments are conducted on a visual classification benchmark and three time-series tasks to evaluate the effectiveness of the proposed techniques.

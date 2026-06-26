@@ -1,0 +1,124 @@
+node_1,node_2,edge
+time-varying treatment optimization,electronic health records (ehr),The context discusses the challenge of modeling time-varying treatment from observational EHR data.
+time-varying antibiotic treatment,invasive methicillin-resistant staphylococcus aureus (mrsa) infections,The study focuses on optimizing treatment for MRSA infections
+traditional methods,g-formula,The g-formula is mentioned as a robust but combinatorially challenging method.
+machine learning approaches,causal survival forests,Causal survival forests are proposed as an alternative with fewer constraints
+first empiric treatment,vancomycin,Previous studies primarily centered on the effect of the initial vancomycin therapy.
+dynamic sequential treatment changes,vancomycin switches,The study compares vancomycin switches with other antibiotics based on clinical relevance.
+bacterial culture,susceptibility testing,These tests inform treatment decisions
+study population,adult individuals,The participants are adult patients admitted to the hospital with invasive MRSA.
+hospital,florida,usa
+adult individuals,hospital,adult individuals are admitted to the hospital
+hospital,invasive mrsa,patients with invasive MRSA are admitted to the hospital
+demographic information,ehr,collected from electronic health record (EHR) for patients
+clinical information,ehr,also collected from EHR for patients
+medication information,ehr,extracted from EHR for patients
+laboratory information,ehr,obtained from EHR for patients
+empiric treatment,subsequent directed treatment,sequential antibiotic choices in patient management
+empiric treatment,final sustaining treatment,three sequential antibiotic treatments
+30-day mortality,outcome,evaluated as an outcome for patients
+causal survival forests,g-formula,methods used for analyzing treatment effects
+dynamic treatment optimization,causal machine learning,applied to model heterogeneous treatment effects
+vancomycin,switching to another antibiotic,improves survival when switched from vancomycin
+vancomycin,initiating treatment,beneficial to initiate vancomycin
+empiric choice of vancomycin,mrsa confirmation,typically prescribed before MRSA confirmation
+causal machine learning,ehr,demonstrates utility in using EHR data
+dynamic treatment effects,randomized clinical trials,cannot be precisely evaluated through traditional trials
+bacterial identification culture test,time delay,The time delay is caused by the bacterial identification culture test
+time delay,clinical practice,This time delay affects clinical practice
+first directed treatment,vancomycin,Vancomycin is the first-line treatment for suspected MRSA infections.
+vancomycin,nephrotoxicity,Nephrotoxicity is an adverse event associated with Vancomycin use
+nephrotoxicity,alternative antibiotics,When nephrotoxicity occurs
+randomized clinical trial (rct),ideal approach,An RCT is considered the ideal approach for comparing first-directed treatment based on drug susceptibility.
+rct,dynamic antibiotic treatments,Dynamic antibiotic treatments are particularly challenging to study in an RCT
+mrsa,multifaceted conditions,Treating MRSA requires immediate action under various conditions.
+mrsa,treatment,MRSA must be treated immediately under multifaceted conditions.
+mrsa,dynamic individualized treatment effects,Observational data could be used to calculate dynamic individualized treatment effects for MRSA patients.
+vancomycin,daptomycin,In a retrospective study
+vancomycin,linezolid,Linezolid has shown promise for treating skin and soft tissue infections and ventilator-associated pneumonia when compared to vancomycin.
+dynamic sequential treatment effects,heterogeneous effect estimation,There is a lack of studies focusing on dynamic sequential treatment effects and heterogeneous effect estimation.
+longitudinal electronic health record (ehr) data,large dataset,We analyzed EHR data from a large institution.
+rct (randomized controlled trial),complex design,Establishing dynamic treatment effects among patient groups is difficult due to the complexity of RCT designs.
+patient groups,sample size,A larger sample size is required for RCTs to estimate treatment effects.
+patient groups,observational data,Observational data can provide insights into treatment effects among different patient groups.
+bloodstream infections,30-day mortality,Risk of 30-day mortality was studied in patients with MRSA bloodstream infections.
+skin and soft tissue infections,ventilator-associated pneumonia,Linezolid's effectiveness was demonstrated for both skin and soft tissue infections and ventilator-associated pneumonia.
+initial response period,culture test,The initial response period is assessed within 3-7 days
+culture test,3 days,Fixed at 3 days after the culture test for assessment.
+empiric treatment prescription,directed treatment,Providers may switch from empiric treatment to directed treatment based on the results.
+nephrotoxicity,transition from empiric to directed treatment,Clinical factor affecting the transition
+time 3,antibiotic treatment monitoring,Involves monitoring antibiotic therapy for the recommended time
+mrsa,14 days,For MRSA
+time 1,time 2,T1 refers to the period from admission to culture test result
+time 2,time 3,T3 is defined as 7 days after Time 2
+vancomycin,prescription,Assessed at each timepoint: whether patients were still on vancomycin or received a new prescription.
+8 different sequential treatment strategies,assessment at time 3,Total number of treatment strategies considered during the assessment of effectiveness and continuation.
+charlson's comorbidity index,patient's demographics,Time-fixed covariates
+admission type,patient's demographics,Time-fixed covariates that also include the type of admission a patient had.
+intensive care unit (icu) stay,patient's demographics,Another time-fixed covariate indicating if the patient stayed in the ICU.
+healthcare acquired infection,patient's demographics,A condition that may be associated with the patient's demographics.
+previous antimicrobial resistance testing,prior clinical diagnoses,Investigation of additional potential drivers of the outcome
+icd-10 codes,prior clinical diagnoses,Mapping of ICD-10 codes to identify common diagnoses in the study population.
+nephrotoxicity variable,time-varying covariates,A variable that changes over time
+creatinine clearance (crcl),nephrotoxicity variable,The basis for defining nephrotoxicity
+causal directed acyclic graph (dag),time-varying covariates setup,An illustration of the structure used to represent the relationship between time-varying variables.
+antibiotic sequential strategy,outcome,The main focus of the study
+causal survival forests (csf),estimating heterogeneous treatment effects,A non-parametric method employed to analyze the causal impact of the antibiotic sequential strategy.
+right-censored data,cui et al. (2023),Cited by the study
+causal effect,neyman-rubin's potential outcome model,Estimated using the framework
+neyman-rubin's potential outcome model,imbens and rubin (2015),Introduced by
+statistical setting,independent and identically distributed subjects,Consists of
+covariates (xi),response variable (yi),Observed for each subject
+response variable (yi),days to death,Represents
+binary treatment assignment (wi),change in antibiotic (a1,a2
+event indicator (di),death,Signifies event
+heterogeneous effects,patients,Investigates differences among
+specific population,covariates (xi),High heterogeneity identified by
+optimizing antibiotics treatment strategy,graph representation,Visualized in Figure 3
+directed acyclic graph (dag),sequential antibiotic treatment (a1,a2
+antibiotics treatment (a1,a2,a3)
+30-day mortality (y),demographics,comorbidity
+study population,age,The mean age of the study population was 55 years.
+study population,male,48.9% were male.
+study population,white,60.4% white
+study population,multi-drug resistance,34.4% had multi-drug resistance.
+patients,icu,52.2% of patients stayed in the ICU.
+patients,healthcare-acquired infection,24.1% were assumed to have a healthcare-acquired infection.
+length of admission,median 19 days,overall length of admission was median 19 days.
+patients,death within 30 days,33 patients (7.7%) died within 30 days from MRSA onset.
+patients,vancomycin,96.9% started with vancomycin.
+treatment,sustaining treatment,21.3% changed treatment from Time 1 to Time 2 and 32.6% from Time 2 to Time 3.
+antibiotic treatment,nephrotoxicity,proportions of suspected nephrotoxicity for antibiotic change.
+csf,conditional average treatment effect,Model 1 included the expert-selected variables for estimating the conditional average treatment effect.
+charlson’s comorbidity score,expert-selected variables,part of Model 1
+average treatment effect,individual treatment effect,The context discusses the difference between the Average Treatment Effect (-0.07619) and the Individual Treatment Effect
+causal survival forest method,conditional treatment effect,The Causal Survival Forest method is used to estimate the conditional treatment effect of changing antibiotics on mortality.
+antibiotics,mortality,The passage highlights the impact of changing antibiotics (Intervention 1: 16.7% risk increase
+sequential vancomycin treatment,not giving vancomycin,The comparison shows that sequential vancomycin treatment is better than not giving it to anyone but worse than giving it to everyone.
+vancomycin,empiric treatment,The context refers to patients starting their empiric treatment with vancomycin.
+vancomycin,invasive mrsa infections,vancomycin is used for treating (relation: 'therapy') invasive MRSA infections
+vancomycin,rcts (randomized controlled trials),vancomycin's efficacy is supported by evidence from RCTs.
+switching from vancomycin,improved survival probability,Switching to another antibiotic improves survival outcomes.
+initiating vancomycin,benefit,Initiating vancomycin provides a benefit compared to not using it.
+empiric vancomycin treatment,patients,Over 95% of patients received empiric vancomycin as part of their treatment.
+time-varying confounding,mortality,Estimation accounts for time-varying confounding factors affecting 30-day mortality.
+time-fixed confounding,mortality,Estimation also considers time-fixed confounders in mortality analysis.
+antibiotic,potential infections,The context suggests that antibiotics are used to manage unconfirmed infections.
+vancomycin,first-line choice,Vancomycin is the preferred antibiotic for treating invasive MRSA infections initially.
+vancomycin,invasive mrsa infections,Vancomycin's primary use is in the treatment of invasive MRSA.
+vancomycin,nephrotoxicity,Concerns over vancomycin's side effect
+nephrotoxicity,consistent vancomycin treatment,Increased prevalence of nephrotoxicity is observed in patients receiving continuous vancomycin.
+mortality probability,decreased,Staying on vancomycin was associated with a decreased mortality risk despite the complications.
+time-varying treatment effects,personalized treatments,Investigating treatment heterogeneity is important for developing personalized treatment strategies.
+treatment heterogeneity,rcts (randomized controlled trials),Lack of power is a challenge in RCTs when studying treatment heterogeneity.
+lack of power,resource-heavy,Including diverse patient characteristics in RCTs can make them resource-intensive.
+sequential treatment strategies,heterogeneity,The context mentions that the strategies are aimed at identifying relevant heterogeneity.
+sequential treatment strategies,risk optimization,These strategies are focused on optimizing risk based on individual patient characteristics.
+causal machine learning,real-world data,Causal machine learning is applied to data in a real-world setting.
+causal machine learning,intervention hypotheses,It is used to screen multiple intervention hypotheses for life-threatening conditions.
+screening process,rcts (randomized controlled trials),Promising interventions are selected for testing with conventional RCTs.
+resources,lives,The approach has the potential to save resources and lives.
+study,acknowledgments and disclosure of funding,The work's conclusions are accompanied by acknowledgments and funding information.
+funding,us federal grants,The study was supported by grants from NIH NIAID and NIH NIA.
+grants,nih niaid 1r01ai141810,Specifically
+grants,nih nia r33ag062884,And grant NIH NIA R33AG062884.

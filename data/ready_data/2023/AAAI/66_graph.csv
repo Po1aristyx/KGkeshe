@@ -1,0 +1,130 @@
+node_1,node_2,edge
+k-nn algorithm,accuracy,The main focus is on designing a good K-NN algorithm that computes accurate results.
+k-nn algorithm,computational efficiency,The algorithm aims to be computationally efficient.
+k-nn problem,accelerators,There is emerging interest from academia and industry to solve K-NN problems on accelerators.
+accelerators,hardware characteristics,Careful consideration of data locality
+rooﬂine performance model,quantifying hardware characteristics,The rooﬂine model is extended to accurately quantify hardware characteristics.
+rooﬂine model,algorithm analysis,The extended rooﬂine model addresses instruction throughput differences relevant to the paper's analysis.
+approximate k-nn algorithm,recall and performance guarantees,The designed algorithm offers guarantees on recall and performance based on the proposed rooﬂine model.
+tpu implementation,predicted performance,The TPU implementation aligns with the predicted performance of the algorithm.
+main contributions,extensions to rooﬂine model,First contribution is the extension of the rooﬂine model.
+main contributions,approximate k-nn algorithm design,Second contribution is the approximate K-NN algorithm design.
+experiments,tpu implementation verification,Experiments are conducted to verify the TPU implementation.
+performance model,state-of-the-art speed-recall trade-offs,The performance model is being compared to and achieves the best balance between speed and recall.
+nearest neighbor search benchmarks,standard,These benchmarks are considered standard for evaluating the performance of nearest neighbor search algorithms.
+notations,nearest neighbor search problem,The section introduces notations required to understand and work with the fundamental problem of finding nearest neighbors.
+item at the ith row and jth column of a (ai,j),matrix a
+row-vector of a (ai),database x,Each row-vector corresponds to a data point in the database X.
+matrix x,vector space,Matrix X is a collection of data points represented in a D-dimensional vector space.
+k-nearest neighbor search problem,query vector q,The goal is to find the K closest data points to the given query vector q.
+data points,inner products,The search aims to find data points with the highest similarity or inner products with the query.
+maximum inner product search (mips),cosine similarity search,MIPS is equivalent to cosine similarity search when data points are normalized.
+compute-intensive,infeasible on many platforms,The exhaustive search method is computationally demanding and often impractical for large datasets.
+compressed domain search,fractional search,The main challenge with compressed domain search is the poor cache reuse rate due to fractional search having a low cache overlap.
+compressed domain search,cache usage optimization,Optimizing cache usage holds significant potential for acceleration in the context of compressed domain search.
+fractional search,candidate data points,In fractional search
+accelerators,machine learning workloads,Accelerators refer to specialized hardware designed to enhance the performance of machine learning tasks
+accelerators,google tpu v3,v4
+accelerators,nvidia gpu v100,Nvidia GPU V100 is another accelerator platform included in the study
+strong exponential time hypothesis,sub-linear time nearest neighbor search,The Strong Exponential Time Hypothesis suggests that achieving high recall in sub-linear time is impossible for certain distances (Euclidean
+google tpu v3,nvidia gpu v100,Both are high-performance accelerators for distance computation
+google tpu v3,google tpu v4,Successive generations of Google TPUs
+nvidia gpu v100,nvidia a100,Both Nvidia GPUs
+tensor cores,systolic arrays,Distinct specialized computation units in Nvidia GPUs and Google TPUs
+google tpu,systolic arrays,Systolic arrays are a key architectural feature of Google TPUs
+accelerators,k-selection algorithm,The efficiency of K-selection algorithms is a topic of active research on accelerators.
+higher flop/s,opportunity cost,Increased FLOP/s in accelerators means more computational power but also higher costs if not optimally utilized.
+cache inefficiency,performance bottleneck,Cache inefficiency can cause significant slowdowns in the performance of compressed domain methods on accelerators.
+performance model,algorithm design,The performance model helps identify bottlenecks and informs the design of efficient algorithms for K-NN problems.
+accelerator's runtime,sequence of computation kernels,The accelerator's runtime is modeled as a sequence of computation kernels executed on the accelerator.
+computation kernels,high-level operators (einsum,relu
+kernels,total amount of work (wi),Wi represents the total amount of work for each kernel.
+total amount of work (wi),operational speed (pi),The product Wi X P is the estimated time for executing a kernel.
+program runtime,total time,The goal is to estimate the total time of a program by summing the work and considering auxiliary operations.
+mips problem,queries (q),In the MIPS problem
+database,flops required for searching (d),D denotes the total FLOPs needed to search the entire database.
+search fraction,p (varies by algorithm and platform),P represents the operational speed during the search process and can be optimized differently.
+compressed domain search methods,cache efficiency,These methods traditionally aim to minimize the search fraction but may sacrifice cache efficiency.
+our method,alternative route for optimizing p,Our method takes a different approach to optimize P without compromising on cache efficiency.
+instruction throughput-aware rooﬂine model,classic rooﬂine model,The rooﬂine model is extended to account for kernel-dependent performance on multiple platforms.
+rooﬂine model,machine peak performance (⇡),The rooﬂine model is a function of the machine's peak performance.
+classic rooﬂine model,machine peak performance,The rooﬂine model is a function of machine peak performance
+classic rooﬂine model,machine peak memory bandwidth,The model also considers machine peak memory bandwidth as a limiting factor.
+rooﬂine model,arithmetic intensity (imem),Performance is bounded by Pmin(⇡
+kernels,accelerated floating-point operations,Kernels have a mix of floating-point operations accelerated by dedicated hardware.
+kernels,coefﬁcient-wise operations (cops),COPs
+peak cop/s,instruction throughput intensity (icop),ICOP is defined as the ratio of FLOPs to COPs
+kernel performance,pmin(⇡,icop)
+insufficient resources,kernel throughput,Inadequate resources hinder the kernel's achievable throughput.
+memory bandwidth bound,evaluating kernel limitations,The memory bandwidth bound is analyzed to determine if a kernel hits the memory constraint.
+accelerator profiling tools,rooﬂine model,The rooﬂine model is commonly used in these tools for profiling accelerator performance.
+algorithm designs,rooﬂine model,Less frequently discussed in algorithm design
+memory bandwidth,benchmark,The figure on the left shows none of the benchmark is memory bandwidth limited.
+model,tpu v4,The figure on the right shows that our model gives a much tighter bound for '2' on TPU V4.
+l,target recall r,Our goal is to find the minimal L such that the expected recall is greater than or equal to the target recall r.
+expected recall,target recall r,Finding L is simple because (13) is invertible in the natural range 0 < r < 1.
+l,k,Since L is at the order of K
+algorithm,hardware peak performance,We show that our proposed algorithm is near the hardware limit in the first evaluation.
+our proposed algorithm,baselines,In the second benchmark
+speed,recall,We plot each algorithm's speed-recall curve.
+our proposed algorithm,competitive baselines,Our algorithm achieves superior performance over the baselines with similar recalls.
+datasets,ann benchmarks,We applied our algorithm to two datasets from the public ANN benchmarks.
+first evaluation,proposed refinement of the roofline model,In the first evaluation
+second benchmark,public ann benchmarks,The second benchmark compares end-to-end performance using datasets from the same source.
+pre-tuned parameters,state-of-the-art,Our algorithm outperforms existing methods
+refined rooﬂine model (6),classic rooﬂine model,The refined model captures additional performance characteristics over the classic model
+glove4 (pennington et al.,2014),sift5 (jegou et al.
+ann benchmarks,faiss (johnson et al.,2021)
+ivf-flat,ivf-qp,and flat
+gpu methods,tpu v3,tpu v4
+recall-speed trade-off,flop/s,Performance is measured in terms of recall for k = 10 and FLOPS
+figure 2,figure 3,Figure 3 builds upon Figure 2
+benchmark,flop/s,The context describes benchmarks measuring FLOPs per second
+classic rooﬂine,memory arithmetic intensity,The classic rooﬂine demonstrates a high memory arithmetic intensity of 4
+euclidean distance search,tpu v4 performance,The difficulty in diagnosing Euclidean distance search's performance on TPU V4 is revealed when considering both instruction and memory bandwidth.
+mips solution,peak flop/s,The MIPS solution is claimed to be reaching the peak FLOP/s on TPU V4.
+euclidean distance search,compute bound,The Euclidean distance search solution meets the compute bound on TPU V4.
+recall-speed benchmark,k-nn algorithm,The benchmark evaluates the K-NN algorithm's effectiveness in a realistic setting using Glove
+public ann benchmarks,realistic setting,The methodology follows public ANN benchmarks for a fair comparison in a practical scenario.
+tpu,gpu,It is challenging to directly compare TPU and GPU algorithms due to platform differences
+faiss gpu,baseline,Faiss GPU implementation is selected as the baseline for comparison with the TPU algorithm.
+faiss,gpu implementation,Faiss provides multiple GPU implementations
+performance to tpu,faiss gpu implementation,We select Faiss GPU (Johnson et al.
+faiss gpu (johnson et al.,2021),algorithms
+flat algorithm,brute-force search,The Flat algorithm performs a brute-force search.
+ivf-flat and ivf-pq algorithms,inverted file method,These correspond to the inverted file method with and without product quantization.
+yandex deep d=96,faiss ivf-flat a100,Performance comparison in the benchmark.
+ours tpu v4 1 chip,ours tpu v4 2 chips,Scalability with increasing number of TPU chips.
+ours tpu v4 4 chips,multi-tpu implementation,The multi-TPU implementation is detailed in Appendix A.
+recall-speed trade-off,order statistics,Our method's recall relies on order statistics
+curse of high dimensionality,score all pair-wise distances,Our method is immune to the curse because it doesn't depend on compression domain search.
+scalability,three aspects,The benchmark examines scalability in terms of dataset size
+tpu,hardware platform,TPU is a type of hardware platform that needs peak performance.
+peak performance,hardware peak performance,Peak performance is a necessary condition for TPU and other hardware platforms.
+algorithm 1,platform-independent,Algorithm 1 is designed to be platform-independent but requires low-level optimizations for peak performance.
+low-level implementation details,cache management,Low-level implementation includes tasks like cache management for optimal performance.
+low-level implementation details,cross-core memory synchronization,Preventing cross-core memory synchronization is another aspect of low-level implementation.
+low-level implementation details,in-register accumulation,In-register accumulation is a technique for efficient computation.
+low-level implementation details,instruction scheduling,Instruction scheduling is crucial for high-performance libraries.
+high-performance libraries,mkl,MKL is an example of a high-performance library that uses platform-specific assembly.
+high-performance libraries,cublas,cuBLAS is another high-performance library
+high-performance libraries,google tpu compiler,Google TPU compiler is used for generating optimized assembly for specific platforms.
+fractional search,blas-2 (matrix-vector multiplication),The complexity of fractional search matches that of matrix-vector multiplication
+data transfer cycles,memory bandwidth bound,Cycles spent on data transfer are mutually exclusive
+memory bandwidth bound,opportunity cost,The context explains that being memory bandwidth bound introduces an opportunity cost because cycles spent on data transfer are mutually exclusive to the method described.
+fractional search,brute-force distance computations,In the multi-billion nearest neighbor search
+heterogeneous architecture,host-ram,ssd
+accelerator-based machine learning,performance characteristics,The paper discusses the challenge of understanding accelerator performance
+rooﬂine-based complexity analysis framework,optimality of algorithms,The proposed framework aims to analyze algorithm optimality without considering platform-specific optimizations like unrolling factors and scheduling.
+vectorization,systolic array scheduling,These two concepts are platform-dependent and are mentioned together
+kernel's total flops,byte transferred,Both are performance metrics in the context of hardware
+kernel's total flops,number of coefficient-wise instructions,These are performance-limiting factors
+coefﬁcient-wise instructions bandwidth,performance regression,The bandwidth affects performance
+approx_max_k,new algorithm for k-nn,approx_max_k is a part of the new algorithm developed for the K-Nearest Neighbors problem.
+tpu,peak performance,TPU is the platform where the peak performance was achieved.
+our method,state-of-the-art baselines,Our method outperforms existing baselines
+google scann team,accelerator ecosystem,The Google ScaNN team's involvement suggests the work connects to the broader accelerator technology landscape.
+peter hawkins,edward schwartz,Both individuals provided code reviews for Jax and TensorFlow
+mani varadarajan,code reviews,Mani Varadarajan also contributed code reviews
+erik lindgren,proof reading,Erik Lindgren helped with proofreading the paper
+this work,google,This research was funded and conducted by Google

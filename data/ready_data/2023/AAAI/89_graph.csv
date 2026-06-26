@@ -1,0 +1,81 @@
+node_1,node_2,edge
+diffusion prior,de-noising diffusion generative model,The abstract discusses a diffusion prior derived from off-the-shelf de-noising diffusion generative models.
+diffusion models,noisy inverse problems,Efforts to adapt diffusion models for noisy inverse problems often yield unsatisfactory outcomes or require extensive iterations.
+diffecc method,proposed approach,This work introduces the DiffECC method as a novel solution for image restoration.
+error contraction,posterior sampling process,DiffECC employs two strategies: error contraction during posterior sampling to improve restoration quality.
+cnn-based approaches,data consistency,The first strategy combines CNNs to ensure data consistency from the start.
+restart sampling algorithm,amplify error contraction,A restart sampling algorithm is designed to enhance the error contraction effect.
+error correction strategy,estimation-correction idea,The method includes an iterative error correction for both data and prior terms within the diffusion sampling framework.
+image restoration tasks,super-resolution,gaussian deblurring
+state-of-the-art sampling-based diffusion models,comparison,Experimental results show that DiffECC outperforms existing sampling-based diffusion models in image reconstruction.
+diffusion models,inverse problems,diffusion models have achieved remarkable success in solving inverse problems
+diffusion posterior sampling (dps),general noisy non-linear inverse problems,DPS is proposed for solving general noisy non-linear inverse problems
+denoising diffusion models,image restoration,Adapting denoising diffusion models for image restoration is slow in sampling
+denosing diffusion null-space model (ddnm),measurement null-space,DDNM decomposes samples into range-space and null-space of the measurement
+ddnm,data consistency,DDNM ensures data consistency during the reverse diffusion process
+ddnm,prior from diffusion models,DDNM incorporates priors from unconditional diffusion models
+generative priors,pre-trained unconditional diffusion models,We rely on generative priors from pre-trained unconditional diffusion models
+data distribution,forward measurement operator a(·),Data distribution is modeled independently of the forward measurement operator
+predicted images,higher quality,DDNM has constraints in generating images with high quality
+our work,generative priors from unconditional models,Our work leverages generative priors for a more generalized approach
+fig. 1,visual comparison,The figure illustrates that predicted images have less information loss
+predicted images,initial prediction error,The inaccuracy of the initial prediction contributes to accumulated errors during the reverse diffusion process.
+initial prediction error,discretization error,Both the initial prediction error and the discretization error lead to increased sampling steps for higher sample quality.
+sde-based samplers,discretization error,Xu et al. (2023) find that SDE-based samplers consist of discretization error along the trajectory.
+error contraction strategy,accurate initial prediction,The error contraction strategy introduces accurate initial prediction to ensure data consistency.
+error contraction strategy,restart sampling operation,The strategy also involves restart sampling to further strengthen error contraction.
+real-esrnet (wang et al. 2021),initial prediction,Outputs from Real-ESRNet are used to provide a more accurate initial point.
+reverse diffusion path,t',The path is reduced to T' steps
+ode-based samplers,deterministic backward processes,ODE-based samplers with restart sampling have deterministic backward processes to reduce discretization error.
+forward-backward restart sampling,contraction effect,This operation strengthens the contraction effect in the sampling process.
+pretrained neural network,prior,Priors from the pretrained network aid in generating a better initial point.
+restart sampling operation,contraction effect,The restart sampling operation strengthens the contraction effect
+initialization error,discretization error,Both initialization error and discretization error contribute to the approximation error in the conditional image generation.
+approximation error,learned neural network,The learned neural network's prediction accuracy affects the realness and consistency of reconstructed images due to approximation errors.
+neural network's prediction,natural image distribution prediction,The prediction of the neural network's approximation of the natural image distribution is crucial for generating realistic images.
+error correction strategy,optimization problem,The error correction strategy aims to solve the optimization problem faced during image reconstruction.
+efficient adam optimization,neural network's prediction,The first step of the error correction involves efficient optimization using Adam to refine the neural network's output.
+gradient descent,dps framework,Gradient descent
+error contraction strategy,neural network priors,The error contraction strategy integrates existing neural network priors to enhance reconstruction accuracy.
+restart sampling technique,accurate reconstruction,By combining restart sampling with neural network priors
+image sr (super-resolution),gaussian deblurring,Both image SR and Gaussian deblurring are examples of restoration tasks where the model demonstrates superior performance.
+motion deblurring,state-of-the-art methods,The model outperforms state-of-the-art methods in tasks like motion deblurring.
+diffusion process,data distribution q0 (x0),Diffusion is the process of adding Gaussian noise to the initial data distribution q0 (x0) to gradually transform it.
+jensen approximation,dps (chung et al. 2023),The Jensen approximation is used from DPS as a probability estimation in the context.
+gaussian measurement model,correcting step,The correcting step is derived based on the likelihood function under the Gaussian measurement model.
+adam optimizer,efficient optimization,Adam optimizer is utilized for efficient correction of the neural estimation.
+backward diffusion,fixed point,For clean images
+image restoration tasks,initial inputs with unknown degradations,Image restoration deals with initial inputs containing unseen degradation.
+neural estimation correction,current denoiser output,previous denoiser output
+optimization problem,l1 loss,The optimization uses an l1 loss for measuring the distance between variables.
+proposed method,diffecc,Algorithm 1 outlines the detailed algorithm for the proposed method
+sampling method,overall framework,The overall framework is illustrated in Figure 2 for the sampling method.
+image sr,forward measurement operator,For image super-resolution
+gaussian deblurring,kernel size,standard deviation
+motion deblurring,image restoration,Motion deblurring is another application within the broader scope of image restoration.
+bic down-sampling,gaussian deblurring,bic down-sampling is mentioned as a preprocessing technique before Gaussian deblurring
+gaussian deblurring,kernel size,The Gaussian deblurring uses a kernel of size 61x61 with a standard deviation of 3.0.
+motion deblurring,kernel size,Motion deblurring also employs a kernel size of 61x61
+motion deblurring,intensity value,The intensity value for motion deblurring is specified as 0.5.
+vision tasks,ffhq dataset,Vision tasks
+ffhq dataset,face images,FFHQ is a dataset containing face images used for evaluating vision tasks.
+vision tasks,imagenet test dataset,For natural image tasks
+imagenet test dataset,natural images,ImageNet is a benchmark for evaluating performance on a diverse set of natural images.
+problem-specific pre-trained diffusion models,face images,These models are tailored for face images and taken from (Choi et al. 2021).
+problem-specific pre-trained diffusion models,natural images,For natural images
+quantitative metrics,psnr,PSNR (Peak Signal-to-Noise Ratio) is a metric used to assess the fidelity of reconstructed images
+quantitative metrics,ssim,SSIM (Structural Similarity Index) is another metric
+quantitative metrics,lpips,LPIPS (Learned Perceptual Image Patch Similarity) is a perceptual metric
+quantitative metrics,fid,FID (Frechet Inception Distance) is a measure of the distance between distributions
+restart sampling strategy,error contraction,The restart strategy enhances the reconstruction ability by providing error contraction effects
+real-esrnet model,initial prediction,The output of the simple Real-ESRNet model is used as the initial prediction in the restart sampling strategy.
+restart sampling algorithm,without restart sampling,Two experiments were conducted: one without restart sampling (T' = 58
+restart sampling algorithm,with restart sampling,Another experiment included restart sampling (T' = 50
+nfes,number of function evaluations,NFEs refers to the number of function evaluations
+hyperparameters k,kskip,The impact of hyperparameters K (40) and kskip (32) on image stability is demonstrated in Fig. 5.
+iterative correction,backward sampling process,The context discusses iterative correction as a part of or a technique used in the backward sampling process.
+diffecc,other methods,DiffECC is compared to other methods
+national natural science foundation of china,funding source,This work was partly supported by the National Natural Science Foundation of China
+nos. 62171251 & 62311530100,national natural science foundation of china grants,These are the specific grant numbers associated with the foundation's support.
+special foundations for the development of strategic emerging industries of shenzhen,additional funding source,Another supporting foundation for the project
+nos.jsgg 20211108092812020 & cjgjzd 20210408092804011,shenzhen special foundation grants,These are the specific grant numbers associated with the Shenzhen foundation's support.

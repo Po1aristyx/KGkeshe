@@ -1,0 +1,224 @@
+node_1,node_2,edge
+gcl,abstractgraph contrastive learning,"GCL, which stands for Graph Contrastive Learning, has emerged as a powerful approach for generating graph representations without manual annotation."
+gcl,frameworks,"Most advanced GCL methods fall into three main frameworks: node discrimination, group discrimination, and bootstrapping schemes, all achieving comparable performance."
+frameworks,representation scattering,"In this paper, the three main frameworks of GCL are revisited, revealing representation scattering as a common mechanism that enhances performance."
+sgrl,scattering graph representation learning,"To leverage the insight of representation scattering, the novel framework SGRL is introduced, incorporating a new mechanism designed to enhance representation diversity through a center-away strategy."
+sgrl,gcl methods,"SGRL is extensively evaluated across various downstream tasks on benchmark datasets, demonstrating its efficacy and superiority over existing GCL methods."
+graph,topology-based constraint mechanism,"Considering the interconnected nature of graphs, a topology-based constraint mechanism is developed to integrate graph structural properties with representation scattering, preventing excessive scattering."
+representation scattering,gcl,Representation scattering is significant in GCL for advancing graph representation learning.
+gcl,code of sgrl,The code for SGRL can be found at the provided URL.
+gnns,social networks,GNNs have shown impressive performance in social networks.
+gnns,bioinformatics,GNNs have shown impressive performance in bioinformatics.
+gnns,fraud detection,GNNs have shown impressive performance in fraud detection.
+gnns,large datasets,Training GNNs typically require large datasets with manually annotated labels.
+gcl,graph contrastive learning,Graph Contrastive Learning is focused on creating proxy tasks from data for self-supervised training of GNN encoders.
+gcl,infonce-based methods,GCL research is concentrated on enhancing InfoNCE-based methods for GNN training.
+gcl,dgi-like methods,GCL research is concentrated on enhancing DGI-like methods for GNN training.
+gcl,bgrl-like methods,GCL research is concentrated on enhancing BGRL-like methods for GNN training.
+three mainstream graph contrastive learning frameworks,node-level tasks,The three mainstream graph contrastive learning frameworks differ significantly in their approach to node-level tasks.
+anchor node,reference,The anchor node is treated as a reference while considering all other nodes as negative samples
+dgi-like methods,group discrimination paradigm,"DGI-like methods adopt a group discrimination paradigm, viewing all nodes as positive samples from the same distribution"
+dgi-like methods,bgrl-like methods,Both DGI-like and BGRL-like methods are contrasted for employing different sampling approaches
+bgrl-like methods,bootstrapping scheme,BGRL-like methods employ a bootstrapping scheme that eliminates the need for negative samples during training
+dgi framework,gnn message,"For the DGI framework, an analysis of the distributions of original and noise data is done, proving the effect after GNN message"
+visual contrastive learning,uniformity,Uniformity is identified as a key factor in many contrastive learning methods in visual contrastive learning research
+gcl frameworks,representation scattering,Representation scattering is identified as a crucial common factor in the success of all three GCL frameworks
+gnn message passing,noise data distribution,GNN message passing aligns the noise data distribution with the mean distribution of the original data
+dgi’s objective,local semantics of nodes within the original graph,DGI’s objective is to distinguish between the local semantics of nodes within the original graph and its mean
+dgi’s objective,representation scattering,DGI’s objective correlates with representation scattering
+infonce loss,representation scattering loss,InfoNCE loss serves as an upper bound for representation scattering loss
+bgrl framework,batch normalization,Batch Normalization in BGRL framework is connected to representation scattering and acts as a specific instance of this concept
+batch normalization,bgrl’s performance,Removing Batch Normalization significantly degrades BGRL’s performance
+gcl frameworks,representation scattering,Representation scattering is a key mechanism present across all three mainstream GCL frameworks
+gcl frameworks,latent mechanisms inherent in their designs,Existing GCL frameworks have not fully leveraged the latent mechanisms inherent in their designs
+gcl frameworks,interconnected nature of graphs,Existing GCL frameworks have neglected the interconnected nature of graphs when implementing representation scattering
+augmented views,computing similarities,augmented views and computing similarities are key concepts for representation scattering
+node pairs,representation scattering,generating similarities between node pairs is crucial for representation scattering
+node pairs,computing similarities,computing similarities between node pairs for representation scattering incurs computational and memory overhead
+negative samples,false negative samples,manually defined negative samples may result in the generation of false negative samples that introduce noise
+negative samples,noise,manually defined negative samples may introduce noise which can hinder model training
+frameworks,positive samples,frameworks that rely solely on positive samples implement representation scattering indirectly through Batch Normalization
+frameworks,batch normalization,frameworks implement representation scattering indirectly through Batch Normalization
+frameworks,guidance,Batch Normalization lacks explicit guidance for scattering
+challenges,gcl methods,addressing challenges is crucial for enhancing the effectiveness of GCL methods
+representation scattering mechanism (rsm),node representations,"RSM embeds node representations into a designated hypersphere, positioning them away from the mean center"
+representation scattering mechanism (rsm),existing gcl frameworks,RSM offers a direct algorithm for representation scattering compared to the existing GCL frameworks
+representation scattering mechanism (rsm),biases,RSM eliminates biases introduced by manually defined negative samples
+topology-based constraint mechanism (tcm),interconnected nature of graphs,TCM considers the interconnected nature of graphs in aligning representations derived from structural information
+representation scattering mechanism,gcls,"The representation scattering mechanism is a common feature in GCLs, with mainstream GCL frameworks utilizing this mechanism. This demonstrates a relationship between representation scattering and GCLs."
+sgrl framework,rsm and tcm,"The SGRL framework integrates RSM and TCM to create an adaptive scattering approach for model training. This shows a relationship between SGRL framework, RSM, and TCM."
+sgrl framework,effectiveness and efficiency,"Through experimentation on benchmark datasets, SGRL framework demonstrated effectiveness and efficiency. This highlights a relationship between SGRL framework and effectiveness and efficiency."
+graph data,graph,"In the context, Graph Data is defined as G = (V,E), with V as nodes and E as edges. This indicates a relationship between Graph Data and a Graph."
+node feature matrix,adjacency matrix,"In the given context, the node feature matrix X and adjacency matrix A are defined to represent nodes and edges of the graph. This establishes a relationship between node feature matrix and adjacency matrix."
+graph contrastive learning,graph’s attributes x and adjacency matrix a,The objective of GCL is to train an encoder f (·) in a self-supervised fashion using graph attributes X and adjacency matrix A.
+graph contrastive learning,representation scattering,"Popular GCL frameworks utilize the mechanism of representation scattering, which plays a crucial role in their success."
+representation scattering,d-dimensional embedding space rd,Representation scattering is defined in a d-dimensional embedding space Rd as a process that satisfies two constraints.
+node representations,scattered center c,Node representations are encouraged to be distant from the scattered center c
+node representations,subspace sk,Node representations are uniformly distributed over the subspace Sk
+scattered center c,subspace sk,Scattered center c is identified within the subspace Sk
+node representations,uniformity constraints,Node representations need to satisfy the Uniformity Constraints
+dgi-like methods,negative samples,DGI-like methods generate negative samples through random permutation of nodes
+dgi-like methods,mutual information discriminator d(·),DGI-like methods use mutual information discriminator D(·) to train the model
+dgi,representation scattering,Objective function of DGI is a special case of representation scattering
+dgi,normalized propagation matrix ˜a,DGI is related to the normalized propagation matrix ˜A
+dgi loss,jensen-shannon divergence,Minimizing the DGI loss is equivalent to maximizing the Jensen-Shannon (JS) divergence between the local semantic distribution in the original graph and its average distribution.
+pdata,local semantic distribution,"Let pdata denote the distribution of all nodes in the original graph, characterized by a mean µ and variance σ2. To analyze the local distribution of node vi after its embedding aggregation by GNN encoders, we define pi as the distribution of node vi and its first-order neighbors with mean µi and variance σ2."
+ldgi,jensen-shannon divergence,"Minimizing the DGI loss, denoted as LDGI, equals to maximizing the Jensen-Shannon (JS) divergence between the distribution of the original graph G and the corrupted graph ˜G, i.e., Min(LDGI) ⇔ Max(JS(G ∥ ˜G))."
+dgi loss,original and corrupted graphs distributions,"Lemma 2 establishes the relationship between the DGI loss and the distributions of the original and corrupted graphs. To investigate the distribution of representations in original and corrupted graphs, we focus on the case of a single-layer GNN [21]."
+activation function,relu,ReLU is mentioned as an activation function for ease of understanding
+node vi,first-order neighbors,Ni denotes the set of first-order neighbors of node vi
+node vi,mean and variance,"For node vi, subsequent to GNN message passing, the mean and variance of the aggregated representation hi are computed"
+normalized propagation matrix,mean and variance,"Given that ˜A is a normalized propagation matrix, the mean of the distribution of ˆhi is µ · W′, and the variance is σ2"
+original graph,corrupted graph,We then analyze the distribution of the aggregated representation ˆhi in the corrupted graph
+adjacency matrix,feature vector,"Assumption that adjacency matrix A is unaltered, and the feature vector ˜xi is selected randomly"
+original graph,corrupted graph,Maximizing the JS divergence between the original and corrupted graph distributions at the node level maximizes the JS divergence between the local semantic distribution of nodes
+node level,js divergence,The node level maximizes the JS divergence between the local semantic distribution of node vi and the mean distribution of the nodes in the original graph.
+mean,original graph,"Taking the mean of the original graph as the center c, the objective of DGI is to increase the distance between the nodes of the original graph and its center c, achieving the objective of representation scattering."
+dgi,original graph,"Within the subspace Sk, DGI increases the distance between the nodes of the original graph and its center c, achieving the objective of representation scattering."
+node,embedding mean,DGI-like methods essentially maximize the JS divergence between node embedding and embedding mean.
+dgi-like methods,node representations,The primary goal of DGI-like methods is to position node representations away from a central point to encourage a uniform distribution of the nodes.
+gnn,single-layer gnn,"Relationship between different types of Graph Neural Networks where a single-layer GNN is initialized and trained, showing their representations are distanced from the mean of the original graph nodes."
+ldgi,jensen-shannon divergence,"Minimizing the LDGI is equivalent to maximizing the Jensen-Shannon (JS) divergence between positive and negative samples, achieving similarity between local semantic distribution and mean distribution in the original graph."
+node types,local semantic distribution,"Each node v retains its local semantic distribution with a probability of 1/k during the shuffling process, where k denotes the number of distinct node types, impacting the semantic distribution of nodes during the shuffling process."
+perturbation,negative samples,"Non-discriminatory nature of perturbation means unchanged nodes could still be mistakenly classified as negative samples, causing bias in learning process by incorrectly labeling genuine node representations as negatives."
+infonce-based methods,representation scattering,"The mechanism of negative sampling in InfoNCE-based methods is equivalent to representation scattering, with the cosine similarity function used to encode node representations contributing to the InfoNCE loss."
+node vi,infonce loss linfonce(hi),The lower bound of the InfoNCE loss LInfoNCE(hi) exists for node vi.
+node vi,similarity between node vi and mean node ¯v,"Theorem 4 indicates that when minimizing LInfoNCE(hi), the similarity between node vi and mean node ¯v is also minimized."
+representation scattering,negative sampling,"The mechanism of negative sampling is equivalent to representation scattering. However, the InfoNCE loss function is inefficient for representation scattering."
+negative samples,false negatives,Indiscriminately treating all negative samples leads to inappropriate scattering of negative samples and potential bias from false negatives.
+bgrl-like methods,batch normalization (bn),All BGRL-like methods incorporate a key component: Batch Normalization (BN).
+feature vector xi,batch normalization (bn),Batch Normalization (BN) is applied to a feature vector xi.
+theorem 5,data normalization,Theorem 5 discusses the process of data normalization by batch normalization.
+data normalization,batch normalization,"Data normalization is achieved by batch normalization, as highlighted in Theorem 5."
+data normalization,representation scattering,Data normalization by batch normalization is considered a special case of representation scattering.
+representation scattering,batch normalization,Representation scattering and batch normalization are interrelated in the process of data normalization.
+bgrl,batch normalization,The impact of batch normalization on BGRL was empirically assessed through experiments.
+bgrl w/o bn,batch normalization,Comparison between BGRL with and without batch normalization was conducted across benchmark datasets.
+bgrl,representation scattering,BGRL incorporates representation scattering through batch normalization in its training process.
+bgrl,batch normalization,Batch normalization plays a critical role in the bootstrapping framework of BGRL.
+bgrl,representation scattering,The training process of BGRL lacks explicit guidance in managing representation scattering effectively.
+gcl frameworks,representation scattering,The mainstream GCL frameworks utilize representation scattering as a mechanism in learning on graphs.
+representation scattering,gcls,Representation scattering is important in GCLs as discussed in the methodology section.
+scattering graph representation learning,sgrl,Scattering Graph Representation Learning is referred to as SGRL and is represented in Figure 3.
+sgrl,rsm,SGRL involves the Representation Scattering Mechanism (RSM) which is designed to guide target encoder in learning scattered representations.
+rsm,target encoder,RSM is designed to guide the target encoder in learning scattered representations.
+rsm,representation scattering,RSM is designed to address the shortcomings in the application of representation scattering within graph contrastive learning frameworks.
+representation scattering,graph contrastive learning frameworks,Representation scattering is addressed using RSM within graph contrastive learning frameworks.
+sgrl,components,SGRL introduces components and provides discussion in the following subsections.
+online encoder,target encoder,There are two distinct encoders involved in processing a graph G: online encoder and target encoder.
+htarget,scattered center,The mean representation of all nodes in Htarget is calculated to serve as the scattered center.
+fϕ(·),rsm,The parameters of fϕ(·) are updated via RSM to encourage node representations to diverge from the scattered center.
+honline,tcm,Honline is processed through TCM to incorporate topology information.
+honline,htopology,Honline is embedded through a predictor qθ to predict Htarget and the parameters in fθ(·) are updated through back-propagation.
+back-propagation,gradient,"The back-propagation algorithm involves stopping the gradient of fϕ(·), a key step in training neural networks."
+channels,trained simultaneously,Both channels are trained simultaneously to optimize the learning process.
+exponential moving average (ema),update parameters ϕ,An Exponential Moving Average (EMA) is employed to update parameters ϕ at the end of each epoch.
+representations,downstream tasks,The representations generated by fθ(·) are utilized across various downstream tasks for effective performance.
+transformation function trans(·),transform representations,A transformation function Trans(·) is introduced to transform representations from the original space Rd into Sk for effective representation scattering.
+matrix htarget,row vector hi,"The matrix Htarget incorporates row vectors hi, which are representations for nodes generated by the target encoder."
+target encoder,node vi ∈ v,"The target encoder generates representations for nodes vi ∈ V, which are crucial for subsequent operations."
+hyperparameter sk,replications of node representations,All node representations are distributed on a hypersphere Sk to prevent arbitrary scattering and ensure stability during training.
+scattered center c,representation scattering loss function lscattering,The scattered center c and the representation scattering loss function Lscattering promote uniformity of representations globally across the dataset.
+rsm,represenatations of different semantics,RSM enables representations of different semantics to be effectively encoded and utilized.
+rsm,representations,RSM enables representations of different semantics to be globally scattered across the hypersphere while accommodating representations of the same semantics to aggregate locally.
+rsm,representation scattering mechanism,"RSM achieves representation scattering more effectively by encouraging distances between node representations and the scattered center, eliminating the dependence on manually designed negative samples."
+traditional methods,negative samples,"Most traditional methods rely on negative samples to indirectly promote representation scattering, which is inefficient and introduces biases."
+dgi-like methods,jensen-shannon (js) divergence,DGI-like methods aim to maximize the Jensen-Shannon (JS) divergence between the distribution of the original graph and its mean distribution.
+dgi-like methods,noise graph,Generating additional noise graph is inefficient for DGI-like methods.
+negative samples,false negative samples,"Some negative samples generated through random shuffling may align with the distribution of positive samples, resulting in false negative samples that hinder model training."
+infonce-based methods,nodes,"InfoNCE-based methods consider all nodes as negative samples, except the matching ones in two augmented views."
+nodes,discriminability,"While pushing nodes away from each other ensures the discriminability of each node, it also results in"
+nodes,discriminability,Pushing nodes away from each other ensures the discriminability of each node.
+nodes,computational overhead,Pushing nodes away from each other results in significant computational overhead.
+encoder,infonce loss function,Potential conflict between the encoder’s message-passing mechanism and the InfoNCE loss function can lead to issues with negative samples.
+negative samples,computational overhead,"Many negative samples cannot effectively distance themselves from each other, resulting in additional computational overhead."
+rsm,computational overhead,"Employing a center-away strategy, RSM effectively reduces the additional computational overhead."
+rsm,biases,RSM mitigates the biases caused by manually designed negative samples.
+representations,node representations,It is necessary to consider the differences in the degree of scattering of different node representations.
+graphs,node representations,"In the interconnected nature of graphs, the representations of two nodes connected topologically should be closer in space."
+topology information,representation scattering,Attempting to consider the topology information and achieve representation scattering through the same encoder may lead to conflicts.
+topology-based constraint mechanism (tcm),representation scattering,"To address conflicts in achieving representation scattering through topology information, the Topology-based Constraint Mechanism (TCM) is proposed."
+topology-based constraint mechanism (tcm),process of constraint,"The TCM is designed to separate the process of constraint from scattering, enhancing the model's effectiveness in capturing essential semantic details."
+topology-based constraint mechanism (tcm),scattering,"The TCM aims to separate scattering and constraints, achieving a balance between representation scattering and topology aggregation adaptively."
+topology-based constraint mechanism (tcm),sgrl,"The TCM, in conjunction with SGRL, helps in effectively achieving a balance between representation scattering and topology aggregation adaptively."
+online encoder,target,"The online encoder generates topologically aggregated representations instead of the target, enhancing its representations by summing with the topologically aggregated representations of its k-order neighbors."
+scattered representations,predicted representations,"The alignment loss Lalignment is defined to align the predicted topology representations closely to the scattered representations, thereby enhancing the model's effectiveness in capturing the essential semantic details of the graph."
+online encoder,target encoder,online encoder’s parameters θ are updated and the target encoder’s parameters ϕ stop gradient propagation.
+constrained representations,scattered representations,directly aligning constrained and scattered representations
+predictive objective,online encoder,"predictive objective can act as a buffer, allowing the online encoder to adaptively learn scattered representations and topology information."
+target encoder,topological semantic information,target encoder consider topological semantic information into the process of representation scattering instead of solely focusing on scattering.
+exponential moving average,target encoder,"employ an Exponential Moving Average at the end of each training epoch:ϕ ← τ ϕ + (1 − τ )θ,(7)"
+rsm,tcm,adversarial interactions between RSM and TCM are mitigated while also facilitating the integration of topology information into the representation scattering process.
+rsm,discriminability of representations,RSM enhances the discriminability of representations.
+tcm,topology information,TCM incorporates topology information into the representations.
+data augmentation,sgrl,"interaction between data augmentation and SGRL effectively mimics the role of data augmentation, i.e., train encoders to learn the invariance of data to perturbations."
+data augmentation,computation overhead,data augmentation strategies lead to additional computational overhead and heavy reliance on the choice of augmentation techniques.
+sgrl,augmentation techniques,SGRL evaluated on benchmark datasets with augmentation techniques
+sgrl,amazon-photo,SGRL evaluated on Amazon-Photo dataset
+sgrl,amazon-computers,SGRL evaluated on Amazon-Computers dataset
+sgrl,wikics,SGRL evaluated on WikiCS dataset
+sgrl,coauthor-cs,SGRL evaluated on Coauthor-CS dataset
+sgrl,coauthor-physics,SGRL evaluated on Coauthor-Physics dataset
+sgrl,grace,SGRL compared with GRACE method
+sgrl,dgi,SGRL compared with DGI method
+sgrl,bgrl,SGRL compared with BGRL method
+sgrl,gca,SGRL compared with GCA method
+sgrl,progcl,SGRL compared with ProGCL method
+sgrl,afgrl,SGRL compared with AFGRL method
+sgrl,igcl,SGRL compared with iGCL method
+sgrl,gbt,SGRL compared with GBT method
+sgrl,mvgrl,SGRL compared with MVGRL method
+sgrl,node2vec,SGRL compared with Node2vec method
+sgrl,deepwalk,SGRL compared with Deepwalk method
+sgrl,gcn,SGRL compared with GCN method
+sgrl,online encoder,SGRL utilized representations generated by the online encoder
+sgrl,node classification,SGRL used online encoder representations for node classification
+sgrl,logistic regression loss,SGRL trained a linear model using logistic regression loss
+sgrl,f1-score,SGRL reported average and standard deviation of F1-score
+sgrl,node clustering,SGRL adopted evaluation method for node clustering
+sgrl,epoch,SGRL conducted testing on learned representations at each epoch
+raw features,supervised gcn,Raw Features and Supervised GCN are methods used in node classification.
+raw features,computers,"Raw Features is a method used in node classification, and Computers is a category under which performance data is provided."
+supervised gcn,computers,"Supervised GCN is a method used in node classification, and Computers is a category under which performance data is provided."
+computers,photoco.cs,Computers and PhotoCo.CS are categories under which performance data is provided.
+computers,co.physics,Computers and Co.Physics are categories under which performance data is provided.
+photoco.cs,co.physics,PhotoCo.CS and Co.Physics are categories under which performance data is provided.
+sgrl,bgrl,"SGRL outperforms BGRL by 1.23%, showing effectiveness in exploiting representation scattering."
+sgrl,grace,"SGRL outperforms GRACE by 2.14%, demonstrating effectiveness in exploiting representation scattering."
+sgrl,dgi,"SGRL outperforms DGI by 3.26%, highlighting effectiveness in exploiting representation scattering."
+sgrl,gca,"SGRL outperforms GCA, showing superiority in employing a graph contrastive framework based on representation scattering."
+sgrl,progcl,"SGRL outperforms ProGCL due to its representation scattering, achieving better performance without explicitly defining negative samples."
+sgrl,afgrl,"SGRL outperforms AFGRL, demonstrating the validity of its approach over data augmentation techniques."
+sgrl,igcl,"SGRL outperforms iGCL, showcasing the effectiveness of its graph contrastive framework over data augmentation methods."
+sgrl,datasets,SGRL achieves the best or second-best accuracy on most datasets.
+sgrl,node representations,"SGRL attempts to make node representations scattered, but still manages to deliver competitive performance."
+sgrl,topology information,TCM can preserve the topology information of the original graph in the process of representation scattering.
+sgrl,local structure and global semantic consistency,"While performing representation scattering, SGRL maintains the local structure and global semantic consistency of the nodes."
+sgrl,t-sne embeddings,"To show the advantages of the representations learned by SGRL, t-SNE is employed for visualizing the learned representations from the Co-CS dataset."
+sgrl,inter-class boundaries,"SGRL shows clearer inter-class boundaries compared to other methods, indicating superior scattering."
+sgrl,intra-class clustering,"SGRL shows better intra-class clustering, highlighting the prevention of inappropriate distancing of intra-class nodes."
+sgrl,global scattering and local semantic aggregation,"SGRL achieves both global scattering and local semantic aggregation, without requiring manually defined negative samples."
+intra-class nodes,distancing,The distancing of intra-class nodes involves achieving both global scattering and local semantic aggregation.
+adaptive scattering methods,topology constraints,The effectiveness of adaptive scattering methods is demonstrated based on topology constraints.
+table 3,ablation study,Table 3 shows the results of the ablation study on node classification.
+sgrl,rsm,SGRL without RSM achieves a certain performance percentage.
+sgrl,tcm,SGRL without TCM shows a different performance percentage compared to SGRL.
+sgrl,ema,SGRL without EMA provides insights into the performance of SGRL.
+sgrl,amazon-computers,SGRL (Ours) shows a certain performance percentage for Amazon-Computers.
+amazon-computers,amazon-photo,Amazon-Computers and Amazon-Photo have different performance percentages based on the study.
+co-cs,co-physics,Comparison between Co-CS and Co-Physics based on performance percentages is shown.
+hyperparamter analysis,sensitivity,The sensitivity of hyperparameter k in SGRL is investigated in Hyperparameter Analysis.
+adaptive representation scattering,topology,"Topological information may impact the scattering of representations, with strong topology potentially excessively restricting it."
+sgrl,tcm,"SGRL w/o TCM and TCM shows performance improvements, indicating the effectiveness of TCM in constraining scattering."
+sgrl,ema,EMA is used to balance the potential adversarial relationship between RSM and TCM in SGRL.
+graph contrastive learning (gcl),representation scattering mechanism (rsm),RSM is introduced as a part of the novel GCL approach named SGRL to balance the adversarial relationship between RSM and TCM
+representation scattering mechanism (rsm),topology-based constraint mechanism (tcm),EM highlights the necessity of incorporating EMA to mitigate the adversarial interaction between RSM and TCM
+representation scattering mechanism (rsm),scattering graph representation learning (sgrl),RSM is integrated into SGRL as a part of the GCL approach
+topology-based constraint mechanism (tcm),scattering graph representation learning (sgrl),TCM is integrated into SGRL as a part of the GCL approach
+exponential moving average (ema),scattering graph representation learning (sgrl),EMA is used in SGRL to balance the adversarial relationship between RSM and TCM
+proposed method,representation scattering,The proposed method explores the broader implications of representation scattering.
+proposed method,gcl,The proposed method goes beyond GCL in terms of representation scattering.
+representation scattering,gcl,Representation scattering is discussed beyond GCL.
+national natural science foundation of china,national science fund for distinguished young scholarship,The work was supported by the National Natural Science Foundation of China and the National Science Fund for Distinguished Young Scholarship.
+xplorer prize,hong kong rgc theme-based strategic target grant,The research was supported by the XPLORER PRIZE and the Hong Kong RGC theme-based Strategic Target Grant.
+hong kong global stem professorship scheme,hong kong jockey club charity trust,The work received support from the Hong Kong Global STEM Professorship Scheme and the Hong Kong Jockey Club Charity Trust.

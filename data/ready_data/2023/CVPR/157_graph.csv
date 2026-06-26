@@ -1,0 +1,257 @@
+node_1,node_2,edge
+exemplar-based class-incremental learning (cil),model,Exemplar-based class-incremental learning (CIL) finetunes the model with all samples of new classes but few-shot exemplars of old classes in each incremental phase.
+exemplar-based class-incremental learning (cil),exemplars,Exemplar-based class-incremental learning (CIL) finetunes the model with all samples of new classes but few-shot exemplars of old classes in each incremental phase.
+few-shot,exemplars,The 'few-shot' abides by the limited memory budget.
+exemplars,compression,compressing exemplars by downsampling non-discriminative pixels and saving 'many-shot' compressed exemplars in the memory.
+0-1 masks,discriminative pixels,optimizing the CIM model alternatively with the conventional CIL model through a bilevel optimization problem. We achieve compression by generating 0-1 masks on discriminative pixels from class activation maps (CAM).
+class activation maps (cam),0-1 masks,We achieve compression by generating 0-1 masks on discriminative pixels from class activation maps (CAM).
+cam,mask generation model,We propose an adaptive mask generation model called class-incremental masking (CIM) to explicitly resolve two difficulties of using CAM.
+cim model,optimal thresholds,"optimal thresholds vary for different object classes, which is particularly obvious in the dynamic environment of CIL. We optimize the CIM model alternatively with the conventional CIL model through a bilevel optimization problem."
+conventional cil model,cim model,We optimize the CIM model alternatively with the conventional CIL model through a bilevel optimization problem.
+compressed exemplars by cim,state-of-the-art cil accuracy,The compressed exemplars by CIM can achieve a new state-of-the-art CIL accuracy.
+compressed exemplars by cim,foster [42],The compressed exemplars by CIM have an accuracy 4.8 percentage points higher than FOSTER [42] on 10-Phase ImageNet-1000.
+compressed exemplars by cim,cil,The compressed exemplars by CIM are used for class-incremental learning (CIL).
+cim,class-incremental masking,Our approach based on the proposed class-incremental masking (CIM) down-samples only non-discriminative pixels in the image.
+old class exemplars,model training,A straightforward way to retain old class knowledge is keeping around a few old class exemplars in the memory and using them to re-train the model in subsequent phases.
+exemplars,class,"Exemplars are limited to 5 ∼ 20 per class in CIL, leading to data imbalance between old and new classes"
+old classes,new classes,"Data imbalance between old and new classes, e.g., 20 per old class vs. 1.3k per new class"
+liu et al.,parameterizing and distilling the exemplars,Liu et al. tried to mitigate data imbalance problem by parameterizing and distilling exemplars
+wang et al.,uniformly compressing exemplar images with jpeg,Wang et al. balanced between quality and quantity of exemplars by compressing exemplar images with JPEG
+exemplars,image compression,"Approaches like parameterizing, distilling, and compressing exemplars are used to address data imbalance"
+non-discriminative pixels,discriminative pixels,Only non-discriminative pixels are downsampled while keeping discriminative pixels intact in image compression
+dynamic environments of cil,adaptive compression,Adaptive compression is aimed for in dynamic environments of CIL to maintain discriminativeness of exemplars
+model,visual cues,The model needs more visual cues to classify the increased number of classes
+location labels,discriminative pixels,We need the location labels of discriminative pixels for selective and adaptive compression
+method,class activation maps (cam),We utilize the model's own attention on discriminative features to generate class activation maps (CAM)
+baseline,adaptive version cim,We take a method as a baseline and propose an adaptive version called class-incremental masking (CIM)
+input image,feature maps,"For each input image, we use its feature maps to compute class activation maps (CAM)"
+classifier weights,cam,We use classifier weights to compute class activation maps (CAM)
+hyperparameters,hard threshold and activation functions,The optimal hyperparameters vary for different classes and incremental phases
+adaptive version cim,mask generation model,CIM tackles the varying optimal hyperparameters by parameterizing a mask generation model
+cim model,class- and phase-specific masks,The learned CIM model adaptively generates class- and phase-specific masks
+compressed exemplars,representative,The compressed exemplars based on these masks have stronger representation
+compressed exemplars,masks,The compressed exemplars are based on masks and have stronger representativeness.
+cil model,cim model,The CIM model compresses exemplars to input into the CIL model and the two models share network parameters.
+cim model,global bilevel optimization problem (bop),The CIM model's parameters are optimized through a global BOP that alternates training processes.
+compress exemplars,temporary model,A temporary model is trained with the compressed exemplars as input.
+compress exemplars,bounding box,The masks are expanded to a bounding box.
+cim model,cil model,The CIM model is a plug-in branch in the CIL model.
+compressed exemplars,cim,"Using the compressed exemplars by CIM brings consistent and significant improvements, e.g., 4.2% and 4.8% higher than the SOTA method FOSTER, respectively, in the 5-phase and 10-phase settings of ImageNet-1000"
+class-incremental learning (cil),regularization-based methods,"Regularization-based methods apply discrepancy penalization terms in their objective functions, e.g., by comparing output logits, intermediate features, and prediction heatmaps"
+class-incremental learning (cil),parameter-isolation-based methods,Parameter-isolation-based methods increase the model parameters in each new incremental phase to prevent knowledge forgetting caused by parameter overwritten
+parameter-isolation-based methods,progressively expand the size of the neural network,Parameter-isolation-based methods proposed to progressively expand the size of the neural network to learn new coming data
+parameter-isolation-based methods,froze a part of network parameters,Parameter-isolation-based methods froze a part of network parameters to maintain the old class knowledge to alleviate the problem of knowledge overwriting
+replay-based methods,exemplars,Exemplars can be used to re-train the model in each new phase in replay-based methods
+re-training,model,"Re-training involves two steps: training the model on new and old class data, and finetuning it with a balanced subset of samples."
+re-training,exemplars,Re-training involves distilling new class data into exemplars before discarding them.
+replay-based methods,memory optimization,"Replay-based methods focus on optimizing memory, which is related to the work discussed."
+exemplars,quality,Different works aim to improve the quality of exemplars using different techniques.
+exemplars,quantity,Different works aim to trade-off between quality and quantity of exemplars.
+cim based image compression,pixels,CIM based image compression segments discriminative pixels in exemplars and downsamples only non-discriminative pixels.
+image pixels in [27],high-frequency features,"Parameterization of image pixels in [27] hampers the model from capturing high-frequency features, such as high-resolution images."
+approach,diversity of old class exemplars,The approach increases the diversity of old class exemplars by reducing memory.
+old class exemplars,memory consumption,The quantity of old class exemplars is reduced by our approach to minimize memory consumption for each exemplar.
+adaptive image compression strategy,dynamic environments of cil,Our approach has an adaptive image compression strategy specifically designed for the dynamic environments of CIL.
+uniform image compression,class properties,[43] uses uniform image compression without considering the properties of specific classes in each learning phase.
+class activation map (cam),weakly-supervised object localization method,CAM is a weakly-supervised object localization method that can generate pixel-level masks on foreground objects.
+mask,heatmaps,The masks are the results of hard-thresholding the heatmaps produced by feature maps and classifier weights.
+bilevel optimization problems (bop),nested optimization problem,BOP aims to solve a nested optimization problem where the outer-level optimization is subjected to the result of the inner-level optimization.
+bop,hyperparameter selection,BOP has shown effectiveness in hyperparameter selection and meta-learning in various machine learning areas.
+cil model parameters,parameterized exemplars,[27] leverages BOP to alternatively optimize the parameters of the CIL model and the parameterized exemplars.
+bop,aggregation weights,[25] applies BOP to learn the aggregation weights of the plastic and elastic.
+cil model,parameterized exemplars,"CIL model and parameterized exemplars are mentioned together as key concepts in the context, indicating a close relation between them"
+cil model,bop,"The BOP algorithm is applied to learn aggregation weights in the CIL model, suggesting a relationship between CIL model and BOP"
+bop,optimization,"BOP is used to solve the optimization problem of the CIL model, showing a direct relationship between BOP and optimization"
+cil model,parameterized class-incremental masking (cim) model,"CIM model is a plugin branch in the CIL model, indicating a relationship between CIL model and CIM model"
+bop,efficiency,"The process of BOP is described as quick and efficient, highlighting the efficiency of BOP"
+training pipeline,cil model,"The training pipeline of standard CIL with exemplars is mentioned, indicating a relationship between training pipeline and CIL model"
+training samples,exemplars,"Exemplars are selected from training samples in the memory, suggesting a relationship between training samples and exemplars"
+feature herding,exemplar selection,"Feature herding method is used for selecting exemplars, showing a relationship between feature herding and exemplar selection"
+e1,initialize,E1 is used to initialize the current model
+e1:i−1,new coming data di,E1:i−1 and Di are used to train the model
+di,ei,Training samples from Di are discarded to leave few-shot exemplars Ei in the memory
+data imbalance,old and new coming classes,Discarding training samples causes a data imbalance between old and new classes
+compressed exemplars,old classes,Saving compressed exemplars for old classes helps in alleviating the data imbalance problem
+pixel-selective compression,downsample non-discriminative pixels,Pixel-selective compression involves downsampling only non-discriminative pixels
+pixel-level localization,foreground objects,Having pixel-level localization of foreground objects is ideal for compression
+cil benchmarks,labels,Most CIL benchmarks do not have localization labels
+cam-based mask generation method,baseline solution,CAM-based mask generation method is used to provide a baseline solution for pixel-selective compression
+mask generation,optimal hyperparameters,The problem of mask generation involves determining optimal hyperparameters
+hard thresholds,dynamic environment,Hard thresholds are changing in the dynamic environment due to the increasing number of classes and phases
+adaptive mask generation process,class-incremental masking (cim),The proposed adaptive mask generation process is referred to as class-incremental masking (CIM) in Section 4.2
+cam-based compression pipeline,pixel-level labels,The CAM-based Compression Pipeline is used for generating pixel-level labels for large-scale datasets like ImageNet
+cam,class activation maps,Class activation maps (CAM) are used in the CAM-based Compression Pipeline for generating 0-1 masks
+activated pixels,classification weights,Activated pixels have high activation values and strong correlation with classification weights in recognizing the object
+0-1 mask,hard thresholding,A 0-1 mask is generated by hard thresholding the normalized values of pixels
+cam,0-1 mask,CAM is extracted to generate a 0-1 mask by following specific steps
+mcam,image,MCAM is upsampled to the size of the image x
+image,cam-based mask,The baseline model extracts the CAM-based mask from the given image
+image,cim-based mask,The proposed model extracts the CIM-based mask from the given image
+cam-based mask,threshold,The CAM-based mask is thresholded to a 0-1 mask with a fixed threshold τ
+cam-based mask,tight bounding box,A tight bounding box that covers all masked pixels is generated from the CAM-based mask
+image,mcam,Each value in MCAM denotes the activation strength of the model at a specific pixel location in the image
+mcam,0-1 mask,A 0-1 mask Mτ is generated by applying a hard threshold τ over all values of MCAM
+0-1 mask,discriminative pixels,"In the 0-1 mask, 1s indicate the locations of discriminative pixels that help the model make predictions"
+0-1 mask,background pixels,"In the 0-1 mask, 0s indicate mostly background pixels or non-discriminative pixels"
+0-1 mask,downsampling,Pixels identified as background can be downsampled as they make little contribution to the prediction
+0-1 masks,memory,"After generating 0-1 masks, it is ideal to keep them in the memory as meta information of compression"
+memory,cil,Keeping image-size masks in memory is not efficient or feasible in CIL due to space constraints
+image-size masks,space,The space for saving image-size masks is non-negligible.
+mask,pixel,Each mask pixel is a one-bit boolean value.
+mask,memory,one mask takes around 1 24 of the memory of one RGB image.
+mask,activated regions,The mask involves activated regions with irregular shapes.
+activated regions,downsampling algorithm,It is non-trivial to perform any standard downsampling algorithm on the remaining regions.
+masks,bounding boxes (bbox),From 0-1 Masks to Bounding Boxes (BBox).
+bounding boxes (bbox),compression,"A simple workaround is to generate a tight bounding box (bbox) to cover the positions of 1s in Mτ, and use the bbox for compression."
+bounding boxes (bbox),memory,B consists of four integers only and takes negligible memory overhead compared to Mτ.
+bounding box,coordinate representation,"Specifically, given Mτ, we obtain the coordinate representation of the bounding box."
+coordinate representation,memory,B consists of four integers only and takes negligible memory overhead compared to Mτ.
+bounding box,irregular shape,We highlight that B consists of four integers only and takes negligible memory overhead compared to Mτ.
+irregular shape,rectangular b,We highlight that B consists of four integers only and takes negligible memory overhead compared to Mτ.
+image,bbox,"Given the image and its bbox on foreground, the compression is implemented by downsampling pixels outside the bbox."
+compression,downsampling,the compression is implemented by downsampling pixels outside the bbox.
+image,mask,"MB is the binary mask according to B, i.e., the values of MB are 1 inside B, and 0 otherwise."
+mask,downsampling,"MB is the binary mask according to B, i.e., the values of MB are 1 inside B, and 0 otherwise."
+image,downsampling ratio η,xη is the fully downsampled version of x with a downsampling ratio η.
+downsampling ratio,x,"The downsampled version of x is mentioned with a downsampling ratio η, indicating a direct relationship between the two concepts."
+rgb channel,element-wise product,"Both ⊙ and + are applied independently on each RGB channel, implying a direct relationship between RGB channel and element-wise product."
+rgb channel,element-wise addition,"Both ⊙ and + are applied independently on each RGB channel, suggesting a direct relationship between RGB channel and element-wise addition."
+memory,compressed image,"The memory allocated for the compressed image ˜x is described, indicating a relationship between memory and compressed image."
+height,width,"HB and WB are the height and width of B respectively, demonstrating the relationship between height and width."
+original image,compressed image,"H and W are the height and width of the original image x, where B is a compressed image, indicating a direct relationship between original image and compressed image."
+original image,memory,"m˜x is always smaller than 1, where 1 denotes the memory unit of saving one original image x, suggesting a relationship between original image and memory."
+compressed exemplars,i-th phase,"We denote the set of compressed exemplars in the i-th phase as ˜Ei, showing a relationship between compressed exemplars and i-th phase."
+compression artifacts,compressed images,"The above compression introduces artifacts to the compressed images, indicating a direct relationship between compression artifacts and compressed images."
+resolution mutation,bounding box edges,"There is a resolution mutation around bounding box edges, showing a direct relationship between resolution mutation and bounding box edges."
+spectrum analysis,mutation,"From the perspective of spectrum analysis, such mutation carries noisy and high-frequency components, suggesting a relationship between spectrum analysis and mutation."
+training epoch,compressed images,"In each training epoch, a random subset of Di is transformed into compressed images, showing a relationship between training epoch and compressed images."
+model,augmentation,The model uses augmentation to simulate training with compressed images.
+model,invariant,The model learns to be invariant to compression artifacts.
+mask generation process,adjust,The mask generation process needs to adjust at different phases in CIL environments.
+mask generation process,phases,The mask generation process involves adjusting at different phases in CIL environments.
+hyperparameters,masking threshold,The mask generation process involves two hyperparameters: the masking threshold and the choice of network activation functions.
+hyperparameters,network activation functions,The mask generation process involves two hyperparameters: the masking threshold and the choice of network activation functions.
+searching,trivial,Searching for the optimum threshold for all classes is not trivial.
+grid search,computationally expensive,Grid search is computationally expensive when the number of classes increases in CIL.
+cil-based cil,new data,Input new data Di into CIL-based CIL during the i-th phase.
+old compressed exemplars,new compressed exemplars,Output new compressed exemplars during the i-th phase.
+last-phase cil model,updated cil model,Update the last-phase CIL model to the updated CIL model.
+cim model,network activation functions,The choice of network activation functions is part of the CIM model.
+backbone,extension,The CIM installs an 'extension' on the backbone by adding a learnable activation function.
+backbone,learnable activation function,The CIM installs a learnable activation function on the backbone.
+resnet-18,"learnable activation function (e.g., pau)",ResNet-18 is extended by adding a learnable activation function like PAU at the position of the original activation function.
+"learnable activation function (e.g., pau)","original activation function (i.e., relu)","The learnable activation function (e.g., PAU) is added at the position of the original activation function (i.e., ReLU)."
+cil,relu,The standard network of CIL methods uses ReLU and does not optimize it.
+cim,cil,"Our method, class-incremental masking (CIM) based CIL, involves having two models to learn: the conventional CIL model with ReLU activations and the adaptive mask generation model with learnable activations."
+cim,network backbone,CIM extends the network backbone by logically adding a network branch where only the activation functions are learnable.
+pau,weight layers,Activation functions like PAU have parameters of weight layers that are directly copied from the original branch.
+pau,object (localization) information,Layers with learnable activation functions like PAU can flexibly process object (localization) information according to He et al. and Bochkovskiy et al.
+layers,learnable activation functions,Layers with learnable activation functions can flexibly process object (localization) information at different network blocks.
+layers,object (localization),Layers with learnable activation functions can flexibly process object (localization) information at different network blocks.
+layers,cil phases,We apply flexibility to achieve adaptive mask generation for different CIL phases.
+cil phases,cim parameters,"We denote the CIM parameters (i.e., the parameters in learnable activation functions) in i-th phase as ϕi."
+cil model,cim model,"We optimize the CIL model (θi, ωi) and the CIM model ϕi via a global BOP."
+task-level optimization,cil model,"Task-level Optimization aims to optimize the CIL model (θi, ωi) to address the CIL task at hand."
+mask-level optimization,cim model,Mask-level Optimization aims to optimize the CIM model ϕi to produce adaptive compression masks.
+cim model,adaptive compression masks,The CIM model is used to produce adaptive compression masks.
+local bop,"lval(di; θ∗i , ωi)","The local BOP is formulated as Lval(Di; θ∗i , ωi)"
+θ∗i,"ltrain( ˜e0:i−1 ∪ ˜di(ϕi); θi, ωi)","θ∗i is trained with Ltrain( ˜E0:i−1 ∪ ˜Di(ϕi); θi, ωi)"
+˜di(ϕi),θi,˜Di(ϕi) is compressed by using ϕi and trained with θi
+inner-level optimization,temporary cil model,The inner-level optimization involves training a temporary CIL model with compressed data
+θi,ϕi,θi is trained with compressed data by updating ϕi
+"temporary model (θ+i , ωi)",validation loss,The temporary model is trained to have a low validation loss
+learning rate,ϕi,learning rate is used to train ϕi to capture the most discriminative features of new-class images
+r(ϕi),ℓ2-regularization term,the constraint R(ϕi) is implemented as a ℓ2-regularization term on the generated mask by ϕi
+regularization term,mask coverage,"the regularization term is used to make the mask coverage smaller, thus the compressed images take less memory"
+output activation maps,collapsing,"the output activation maps by ϕi are observed to be easy to collapse, i.e., different images have the same map"
+cross-entropy loss term,producing image-specific activation maps,a cross-entropy loss term about ϕi is added in order to regularize it to produce image-specific activation maps
+cim,adaptive masks,our CIM learns to generate adaptive masks for exemplar compression in CIL
+model parameters,activation parameters,"CIM introduces hundreds of activation parameters to the CIL model, although this is not a significant overhead compared to model parameters"
+image compression,low-resolution datasets,"image compression is not that meaningful for low-resolution datasets (e.g., 32×32 CIFAR-100) due to comparable memory taken by compression parameters and RGB pixels of a low-resolution image"
+pression parameters,rgb pixels,pression parameters and RGB pixels are mentioned in the same sentence as being comparable in a low-resolution image.
+pressions parameters,cim,pression parameters are mentioned in the same sentence as the parameters of CIM.
+pression parameters,memory,pression parameters are mentioned in the same sentence as using memory to save more images.
+rgb pixels,low-resolution image,RGB pixels mentioned in the same sentence as being comparable in a low-resolution image.
+cim,der,"CIM is incorporated into DER, boosting its performance."
+cim,foster,"CIM is incorporated into FOSTER, boosting its performance."
+der,model performances,DER's model performances are boosted by incorporating CIM.
+foster,model performances,FOSTER's model performances are boosted by incorporating CIM.
+datasets,cil benchmarks,Experiments are conducted on three standard CIL benchmarks using three datasets.
+datasets,high-resolution images,Experiments are conducted on three standard CIL benchmarks with high-resolution images.
+food-101,101 food categories,Food-101 dataset consists of 101 food categories.
+imagenet-1000,"1,000 classes","ImageNet-1000 dataset consists of 1,000 classes."
+imagenet-100,100-class subset,ImageNet-100 is a 100-class subset randomly sampled from ImageNet-1000.
+protocols,two protocols,"Two protocols, learning from scratch (LFS) and learning from half (LFH), are used in the experiments."
+learning from scratch,model,"In learning from scratch protocol, the model observes the same number of classes in all N phases."
+learning from half,model,"In learning from half protocol, the model is trained on half of the classes."
+classes,model,The model is trained on half of the classes in the 1-th phase.
+classes,phases,The remaining classes are learned evenly in the subsequent N phases.
+model,test data,The resultant model is evaluated on the test data of all seen classes.
+model,degree of model forgetting,The last-phase accuracy indicates the degree of model forgetting.
+memory budget,settings,There are two memory budget settings: fixed setting and growing setting.
+exemplars,memory,"In the 'fixed' setting, old-class exemplars are removed when new exemplars are added to maintain the 'fixed memory budget'."
+classes,memory budget,A constant memory budget is allocated for each class across all phases.
+implementation,library,Our implementation is based on PyTorch and OpenCV libraries.
+pytorch,opencv,PyTorch is a standard deep learning library and OpenCV is an image processing library.
+18-layer resnet,network backbone,An 18-layer ResNet is used as the network backbone.
+fully-connected layer,classifier,A fully-connected layer is used as the classifier.
+cil training hyperparameters,related works,The same CIL training hyperparameters used in related works for fair comparison.
+masking threshold τ,downsampling ratio η,The masking threshold τ is set as 0.6 and the downsampling ratio η is set as 4.0.
+paus,learnable activation layers,PAUs with degrees m = 5 and n = 4 are used as learnable activation layers.
+compressed exemplar,original image,Each compressed exemplar in CIM takes less memory than the original image.
+experiments,public code,The experiments mentioned in the context are using the public code released by authors.
+experiments,reproduced results,"The experiments mentioned in the context report the reproduced results, with a significantly higher result than the original one."
+cil methods,protocols,"The CIL methods mentioned are tested on two datasets using two protocols, learning from scratch (LFS) and learning from half (LFH)."
+memory budget method,foster,The Memory Budget Method is compared with FOSTER in terms of average accuracies on ImageNet-1000.
+model ϕ,optimization,"The model ϕ, which represents mask-level optimization, is optimized by initially setting β1 and β2 and reducing them to zero following a specific scheduler."
+hyperparameter sensitivity analysis,training,The result of hyperparameter sensitivity analysis is reported to smooth the training process.
+results and analyses,state-of-the-art,"The context compares the Results and Analyses with the State-of-the-art, as shown in Table 1."
+cim-based cil,foster,CIM-based CIL consistently improves the state-of-the-art method FOSTER with clear margins in all settings.
+cim-based cil,n,"Our CIM-based CIL achieves more significant improvements when N becomes larger, e.g., on ImageNet-100 (LFH), our method improves FOSTER by 0.9 and 3.3 percentage points when N=5 and N=25, respectively."
+cim-based cil,food-101,"Our CIM-based CIL achieves greater improvements consistently on Food-101 than ImageNet-100, improves baselines by 2.1 percentage points on Food-101."
+cim-based cil,imagenet-100,Our CIM-based CIL consistently improves the state-of-the-art method FOSTER with clear margins in all settings.
+food-101,imagenet-100,Our CIM-based CIL achieves greater improvements consistently on Food-101 than ImageNet-100.
+method,cim-based cil,CIM-based CIL improves FOSTER consistently
+method,ablation results,methodology to compare various techniques with baseline results
+imagenet-1000,large-scale dataset,results on the large-scale dataset show the effectiveness of the method
+m = 20k,m = 5k,comparison of results in different memory settings
+improvements,average accuracy,improvements in accuracy with different memory settings
+mnemonics,lucir baseline,comparison between Mnemonics and LUCIR baseline
+baseline foster,artifact augmentation,results of adding artifact augmentation to baseline FOSTER
+activation methods,exemplars,using activation methods to compress exemplars
+pixels,region,"Row 3 involves downsampling all pixels, while Row 4 involves randomly selecting activation regions."
+activation regions,exemplars,Row 4 shows that it is more reliable to use the model’s activation to generate compressed exemplars.
+optimization methods,global bop,Row 9 introduces the proposed method of using a global BOP as part of the optimization strategies.
+cim-based cil,activation layers,"Row 10 involves making only the activation layers in the last block of CIM learnable, with previous blocks using ReLU."
+discriminative regions,compressed exemplars,"Row 11 involves adding weak downsampling on discriminative regions to save more compressed exemplars, resulting in comparable performance to row 9 but higher costs."
+mnemonics,mrdc,Our method consistently outperforms Mnemonics and MRDC in the comparison results shown in Table 4.
+mnemonics,mrdc,The two related methods mentioned in the text
+mnemonics,our method,Comparison of the performance of Mnemonics and the method mentioned
+our method,mrdc,Comparison of the performance of our method and MRDC
+our method,discriminativeness of exemplars,Explanation of why our method outperforms based on not sacrificing discriminativeness while improving the number of exemplars
+discriminativeness of exemplars,variance of exemplars,Relationship between discriminativeness and variance of exemplars
+phase-adaptive manner,fixed number of exemplars in the memory,Comparison between the approach of our method and the related method mentioned
+phase-adaptive manner,uniform image compression,Comparison between the approach of our method and the related method mentioned
+visualizations,cam vs. cim,Comparison between two types of visualizations mentioned
+cam,cim,Comparison between two types of visualizations mentioned
+experimental setting,n=10 (lfs) on imagenet-100,Description of the experimental setting mentioned
+mean of #exemplars,saved exemplars by our method,Comparison between the average number of saved exemplars and the method mentioned
+cim,focus on the discriminative regions,Explanation of what CIM learns to focus on
+small objects,middle objects,Comparison between small and middle objects
+small objects,large objects,Comparison between small and large objects
+middle objects,large objects,Comparison between middle and large objects
+size categorization,imagenet object localization challenge,Explanation of size categorization according to a specific challenge
+size categorization,imagenet object localization challenge,ImageNet Object Localization Challenge is used for size categorization of objects
+bbox coverage,class,bbox coverage is calculated for each class
+class,large,top 30 classes with highest coverages are categorized as 'large'
+class,small,rear 30 classes with lowest coverages are categorized as 'small'
+class,middle,rest 40 classes are categorized as 'middle'
+objects,image compression,small objects benefit more from image compression compared to large ones
+images,background pixels,small objects have images containing more background pixels for downsampling
+exemplar compression method,cil,novel exemplar compression method is introduced for CIL
+image,non-discriminative pixels,compression is achieved by downsampling non-discriminative pixels of the image
+cam masks,bounded by,non-discriminative pixels are bounded by CAM masks
+adaptive masks,mask generation model,adaptive masks are generated using a mask generation model
+method,performance improvements,method achieves consistent performance improvements over multiple baselines
+author,lee kong chian (lkc) fellowship fund,author gratefully acknowledges the support by the Lee Kong Chian (LKC) Fellowship fund
+lee kong chian (lkc) fellowship fund,singapore management university,Lee Kong Chian (LKC) Fellowship fund is awarded by Singapore Management University

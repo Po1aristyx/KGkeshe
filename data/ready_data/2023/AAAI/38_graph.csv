@@ -1,0 +1,201 @@
+node_1,node_2,edge
+volume neural rendering,efficient point searching and sampling,The paper focuses on addressing the problem of efficient point searching and sampling for volume neural rendering.
+rasterization,ray tracing,Two typical approaches employed in volume neural rendering are rasterization (real-time with lower fidelity) and ray tracing (higher quality but longer rendering time).
+rasterization-based methods,real-time rendering,Rasterization enables real-time rendering but sacrifices memory and fidelity.
+ray-tracing-based methods,superior quality,Ray-tracing methods offer higher quality but have longer rendering times.
+hashpoint method,combination of rasterization and ray tracing,HashPoint combines rasterization for efficient point search and ray marching for rendering
+point searching,camera's view,HashPoint rasterizes points within the camera's view for rapid searches.
+adaptive sampling,primary surface encounter,HashPoint accelerates rendering by adaptive sampling on the primary surface encountered by the ray.
+nerf,global mlps,NeRF and its extensions use global MLPs for reconstructing radiance fields via ray marching
+global mlps,slow rendering (per-scene),Global MLPs result in slow rendering times per scene.
+hashpoint,state-of-the-art ray-tracing methods,HashPoint provides speedup for a range of ray-tracing-based methods without compromising accuracy.
+synthetic test datasets,real test datasets,HashPoint maintains equivalent or superior accuracy across both synthetic and real-world test datasets.
+code availability,https://jiahao-ma.github.io/hashpoint/,The implementation code for HashPoint will be available at the provided URL.
+ray marching,slow per-scene neural network fitting,Ray marching leads to slow fitting due to extensive sampling of empty space.
+slow per-scene neural network fitting,prohibitive reconstruction and rendering times,Slow fitting results in increased reconstruction and rendering times.
+point clouds,straightforward representation of surfaces in space,Point clouds serve as a simple approximation of surface geometry.
+point clouds,expediting rendering process,Point clouds speed up rendering by sampling and aggregating near multiple surfaces.
+rendering strategies,rasterization,Rasterization framework involves projecting points onto the image plane using a z-buffer mechanism.
+rasterization,visible holes,Rasterization can exhibit visible holes due to sparse point cloud density.
+rasterization,hole filling,U-Net networks are used for hole filling in rasterization approaches.
+u-net,struggles to generate high-fidelity details,U-Net's downsampling and upsampling can limit detail generation.
+rendering strategies,ray tracing,Ray tracing is an alternative strategy to rasterization.
+point as a 3d shape,oriented disk or sphere,Some methods assign points to specific 3D shapes for improved performance.
+oriented disk,3d shape,A 3D shape
+sphere,3d shape,Another type of 3D shape mentioned in the context is a sphere.
+optimal size,3d shape size,Determining the optimal size for 3D shapes like disks and spheres is a challenge.
+gaps in rendering,small shapes,Small shapes can cause gaps during rendering.
+artifacts,large shapes,Larger shapes may introduce artifacts when rendering.
+memory,storage,Rendering requires significant memory for storing the shapes.
+ray-tracing-based point cloud rendering,rendering method,This method addresses issues in rasterization-based approaches.
+real-time rendering,challenge,Achieving real-time rendering is a complex task due to the point cloud processing requirements.
+uniform grid,accelerated data structure,Methods like Uniform grid are employed to enhance point cloud searching efficiency.
+k-d tree,accelerated data structure,K-d tree is another commonly used data structure for this purpose.
+octree,accelerated data structure,OcTree is mentioned as another efficient data structure in point cloud rendering.
+bounding volume hierarchies (bvh),accelerated data structure,BVH is also utilized to optimize point cloud searching.
+surface features,rendering contribution,Not all surface features equally contribute to rendering; only those closest to the camera matter.
+k nearest points,color prediction,Some methods gather the K nearest points per ray to predict colors
+hashpoint,method,HashPoint is the main focus of the work
+hashpoint,point cloud searching approach,HashPoint is a specific type of optimized point cloud searching method.
+primary surface features,hole issue,The method addresses the problem of missing or incomplete data (holes) on primary surfaces.
+3d search space,2d image plane,The method transforms the 3D space into a 2D representation for efficient hash table lookup.
+hash table,accelerated structure,The hash table enables fast point location along camera rays by preserving all points within each pixel.
+adaptive sampling,searching range,The method uses a range that adjusts based on point distance and viewpoint
+sample points,feature aggregation quality,The selection of sample points affects the quality of aggregated features on the primary surface.
+distance between point cloud and candidate,importance of sample points,Importance is calculated based on how close the sample point is to the viewpoint
+hashed-point searching,ray-tracing approach,Hashed-Point Searching is a novel technique that accelerates the ray-tracing approach by optimizing point searching for improved efficiency.
+adaptive primary surface sampling,ray,This technique adaptively samples on the first encountered surface by the ray
+adaptive primary surface sampling,distance between points and viewpoint,The sampling is determined by the distance
+point cloud rasterization,rendering point clouds,Rasterization is a widely used technique for rendering point clouds
+visibility splatting,point-cloud rasterization,Classical method like visibility splatting addresses gaps in point-cloud rasterization by substituting points with oriented disks.
+gaps or holes,rendered output,A significant challenge in point-cloud rasterization is the unwanted occurrence of gaps or holes in the final image.
+visibility splatting,oriented disks,These methods address gaps by substituting points with oriented disks
+determinable splatting,optimization,Differentiable splatting uses optimization to fine-tune the shape of disks for better rendering quality.
+npbg,u-net,NPBG and NPBG++ employ U-Net for refinement
+rasterization,neural networks,These approaches integrate rasterization with neural networks for improved rendering.
+npbg++,feature downsampling,NPBG++ leverages feature downsampling to address holes in rendered images.
+upsampling,rasterizing features,Methods like NPBG++ use upsampling to enhance the quality of rasterized images.
+radiance mapping,spatial frequency collapse,Radiance mapping aims to combat the issue of spatial frequency collapse in coarse regions.
+freqpcr,adaptive frequency modulation,FreqPCR introduces an adaptive frequency modulation to capture local texture frequency information.
+ray tracing,point cloud rendering,Ray tracing provides an alternative approach for rendering point clouds
+nplf,embedding features,NPLF focuses on feature embedding for more efficient point cloud rendering.
+early works on ray tracing,approximating surfaces from point clouds,Early ray tracing methods worked on determining intersections with surface approximations from point clouds.
+point clouds,nplf,NPLF is a method that focuses on embedding features at each point in a point cloud.
+nplf,query aggregation,NPLF aggregates features during a query process.
+pointersect,ray intersections,Pointersect directly determines ray intersections with the surface using point cloud positions.
+papr,point cloud positions,PAPR captures scene geometry using point cloud positions
+papr,primary surface,PAPR potentially misses primary surface features when dealing with sparse point clouds.
+point-slam,uniform sampling,Point-SLAM produces high-quality renderings by uniformly sampling across multiple surfaces.
+point-nerf,uniform sampling,Point-NeRF also uses uniform sampling for improved rendering quality.
+point-nerf,time-consuming,Point-NeRF's processes can be time-consuming due to extensive feature aggregation and MLP prediction.
+efficiency for neural radiance field,memory optimization,Recent works improve memory efficiency via hash encoding.
+efficiency for neural radiance field,sampling efficiency,Some works aim to improve sampling efficiency without sacrificing memory footprint.
+donerf,depth-trained oracle network,DONeRF enhances sampling efficiency with a depth-trained auxiliary network.
+terminerf,density-based sampling,TermiNeRF uses a density-based sampling network from a pre-trained NeRF.
+autoint,pre-training,AutoInt is designed to improve sampling efficiency with pre-training techniques.
+oracle network,terminerf,TermiNeRF is a method that uses a density-based sampling network from a pre-trained Oracle Network.
+terminerf,autoint,AutoInt is another approach that predicts segment lengths for sampling
+terminerf,adanerf,AdaNeRF has a dual-network architecture and is an alternative to TermiNeRF
+pre-trained modules,terminerf,autoint
+neural network-assisted sampling,terminerf,autoint
+multi-view stereo (mvs),other approaches,Some approaches
+depth sensor,methods using mvs or depth sensor,Depth sensors are used by certain methods
+primary surface sampling,hash-point method,The Hash-Point method introduces a novel approach to sampling on the primary surface
+ray tracing,point cloud rendering,Ray tracing is the fundamental technique in point cloud rendering
+image-based rendering,point cloud rendering strategy,Image-based rendering is one of the two strategies used in ray-tracing-based point cloud rendering.
+image-based rendering,camera ray,Image-based rendering predicts the blending weight for camera ray r using appearance feature.
+camera ray,proximate points,The final color of a camera ray is computed by considering the K nearest points.
+volume rendering,surface sampling,Volume rendering methods uniformly sample on surfaces and aggregate point features.
+surface sampling,sample points,Radiance is derived by traversing a ray through a pixel
+volume density,transmittance (τ),Volume transmittance accumulates radiance with decreasing density as points are sampled.
+density (σj),color (csp_j),Each sample point has its own density and color contributing to the pixel's radiance.
+volume transmittance,density,σj corresponds to the density for each sample point j
+volume transmittance,color,σj also corresponds to the color for each sample point j
+distance between adjacent sample points (∆t),3d space,The method innovates by shifting the search from 3D space to a 2D image plane
+hashed-point searching,classical rasterization methods,Contrasts traditional approaches that use the z-buffer for nearest point searching
+z-order (morton code),efficient retrieval and storage,Inspired by the Z-order
+positional adjustment of each point,cuda,Performed using atomic operations in CUDA for O(1) time complexity
+hash table,point cloud list,Stores the position of each point in the adjusted point cloud list
+hashed-point searching,point cloud,Hashed-Point Searching is a method used for efficient point cloud searching
+hash table,position of points,In the hash table
+pixel,cone (for searching),Each pixel emits a cone for point cloud searching
+adaptive searching radius,distance from sampling point to ray origin,The proposed adaptive searching radius is proportional to the distance between the sampling point and the ray origin
+pixel,circle (on image plane),The pixel is represented as a circle on the image plane
+uniform grid,k-d tree,Both are mentioned as traditional point cloud search strategies
+uniform grid,octree,These are also compared to Hashed-Point Searching
+k-d tree,axis-aligned bounding box (aabb),In the context
+k-d tree,sub-tree bounding boxes,The K-d tree leverages sub-tree bounding boxes to efficiently search for intersections among rays.
+octree,k-d tree,Both octree and K-d tree are tree data structures for spatial partitioning
+uniform grid,space,A uniform grid divides a three-dimensional space into regular grids for data allocation.
+uniform grid,point allocation,The uniform grid's construction involves traversing all points with complexity O(n) to allocate data to each grid cell.
+traversing,complexity o(n),The process of building the data structure involves a linear complexity
+3dda algorithm,o(mg + mq) complexity,3DDA is used for searches
+hashed-point searching,o(n + mq) complexity,This method uses a hash table to accelerate queries
+adaptive primary surface sampling,point cloud selection strategies,The quality and efficiency of rendering depend on the chosen number and placement of points in the point cloud.
+k-np extract,feature noise,K-NP Extract can lead to noise because the K nearest points may not lie on the primary surface due to point cloud density.
+depth map sampling,redundant sampling,Depth Map Sampling relies on dense depth maps and can result in duplicate sampling when multiple surfaces are present.
+multi-surface sampling,ray,The method involves finding all surfaces intersecting with the ray for rendering.
+multi-surface sampling,adaptive primary surface sampling,Multi-Surface Sampling is compared to Adaptive Primary Surface Sampling
+adaptive primary surface sampling,section 3.3,4.2
+ours vs. 3d gaussian splatting,3d gaussian splatting,Our method differentiates from 3D Gaussian splatting in its rendering approach
+ours,gaussian splatting,Our method requires fewer points due to interpolation from nearby points
+ours,rasterization,Ours combines rasterization and ray tracing for enhanced neural rendering.
+ours,ray tracing,Ray tracing is complemented by rasterization in the proposed method.
+ray-tracing point cloud rendering,baselines,This section compares our method to four key baselines in the context of ray-tracing point cloud rendering.
+baselines,searching and sampling,The comparison focuses on the techniques used for searching and sampling in the baseline methods.
+table 1,baselines,Details of the comparison are outlined in the table.
+point-nerf [62],uniform grid (ug),Replaces UG with HashPoint (HS) for searching.
+point-nerf [62],surface sampling (ms),Replaces MS with primary surface sampling (PS) for improved efficiency.
+point-nerf [62],hashpoint (hs),HS is introduced to enhance the searching process.
+point-nerf [62],primary surface sampling (ps),PS is used after initial MS for better gradient propagation and efficiency.
+point-nerf [62],parameter γ,γ controls the transition between MS and PS.
+point-slam [48],single-surface (ss) sampling,Different approach than Point-NeRF's multi-surface sampling.
+point-slam [48],depth-guided sampling,Depends on dense depth input for efficiency
+point-slam [48],uniform multi-surface,Performance compared with both depth-guided and uniform multi-surface methods.
+nplf [41],downsampling points,Initial step in NPLF's approach.
+nplf [41],brute force (bf),Used for nearby points search in NPLF.
+nplf [41],k nearest points (k-np),Renders on a fixed number of K nearest points.
+proposed method,hashpoint (hs),High-fidelity maintained by selecting K nearest points from the primary surface.
+pointersect,point-slam,Pointersect is compared to Point-SLAM
+uniform grid,brute force,Both uniform grid and brute force are mentioned in the context
+uniform grid,multiple surfaces,The uniform grid is associated with multiple surfaces
+k nearest points,single surface,K nearest points are mentioned in relation to both single and primary surfaces
+k nearest points,primary surfaces,K nearest points are selected from primary surfaces
+pointersect,synthetic-nerf,Pointersect is evaluated on the Synthetic-NeRF dataset
+point-nerf,nerf,Point-NeRF is compared to NeRF
+point-nerf,various point-based approaches,Point-NeRF is compared to other point-based approaches
+refinement,accuracy,Geometry refinement impacts accuracy
+performance,speed,Performance and speed are evaluation metrics
+speedup,performance,Our method achieves an 80-fold speedup while ranking as the second-highest performance.
+point-based methods,ray-tracing-based methods,The results show that Point-SLAM can produce multi-surface effects
+point-slam,voxel-based method,We compare Point-SLAM with voxel-based method [69] on the Replica dataset
+point-slam,our approach,Our approach outperforms Point-SLAM in PSNR
+depth-guided sampling,uniform multi-surface sampling (us),Point-SLAM uses depth-guided sampling
+bf,k-np,In the Waymo dataset evaluation
+radiance-based methods,original method,Our method is compared with radiance-based methods and the original [41] on the Waymo dataset.
+shapenet dataset,pointersect,Our approach's integration with Pointersect improves performance over NPBG++ and Pointersect on ShapeNet
+nvidia rtx 4090 gpu,processing large-scale point cloud data,The proposed method runs efficiently on the GPU
+point-nerf,hs (ours),HS significantly outperforms Point-NeRF's UG by a factor of 5
+primary surface sampling (ours),point-nerf's sampling,Our primary surface sampling is more efficient and accurate compared to Point-NeRF's sampling.
+nerf-synthesis dataset,primary surface sampling (ours),Results on NeRF-Synthesis demonstrate that our primary sampling maintains accuracy while being more efficient.
+waymo dataset,car body sampling,Comparison on Waymo shows that our primary sampling accurately captures car bodies compared to NPLF's K-nearest point selection.
+method,nplf,Our method outperforms NPLF in accuracy and has enhanced efficiency compared to brute-force (BF) methods.
+shapenet,per-scene optimization,The evaluation on ShapeNet is done without per-scene optimization
+pointersect training setting,sketchfab dataset,The Pointersect model is trained on 48 meshes from the Sketchfab dataset.
+pointersect,48 training meshes,Pointersect is trained on these meshes during the training setting.
+pointersect architecture,reduced neighbor points input,The architecture is streamlined by decreasing the number of input neighbor points from 40 to 6.
+primary surface points,robust outcomes,Using only the K nearest points of the primary surface leads to robust results.
+primary surface points,efficiency enhancement,This approach accelerates the inference process.
+our method,traditional point cloud search methods,Our method outperforms uniform grid
+ours,uniform grid,k-d tree
+nerf-synthesis dataset,ablation study,An ablation study is conducted on the NeRF-Synthesis dataset.
+hashed-point searching (hs),adaptive primary surface sampling (ps),HS and PS are components of the ablation study in Figure 8.
+uniform grid (ug) searching,ablation study,UG searching is part of the comparison in the ablation study.
+hashed-point searching,adaptive primary surface sampling,Both are techniques mentioned in the context
+uniform grid (ug) searching,multi-surfaces (ms) sampling,These are combined in option A
+single surface sampling (ss),our primary surface sampling (ps),PS is compared to SS in Figure 8B
+primary surface sampling (ps),point cloud distribution,PS is guided by the point cloud distribution
+point-slam [48],single surface sampling (ss) comparison,Figure 8B compares PS to Point-SLAM
+pointersect [10],k nearest points (k-np) selection,In Figure 8C
+point pruning and growing (p&g),necessity of geometry refinement,The left side of the illustration demonstrates the impact of P&G on PS
+noise-initialized point clouds,k nearest points (k-np),K-NP uses noise-initialized points for selecting points near camera rays
+brute force (bf) searching,ug and k-np selection for sampling,These two are combined for sampling
+primary surface sampling,point pruning and growing (p&g),Without P&G
+primary surface sampling,k nearest points method (k-np),In noisy point clouds
+point-nerf,point pruning and growing (p&g),Our method initializes with Mvsnet and applies P&G for optimizing noisy points.
+geometry refinement,point-nerf's strategy,Refinement improves performance by mitigating geometric noise's impact on feature extraction.
+point-slam,geometry optimization,Geometric optimization not applied in Point-SLAM results in lower performance.
+pointersect,geometry optimization,Similar to Point-SLAM
+nplf,geometry optimization,Geometric optimization absent in NPLF
+hashpoint searching,brute force (bf) approach,Hashpoint searching is five times faster than the BF approach.
+minute point optimization,training,minute point optimization is a technique used during the training process.
+speed gains,accuracy,The method achieves significant speed gains without compromising accuracy.
+γ and β parameters,noisy input,These parameters are used to manage noise in the input data.
+supplementary material,details,Additional details about the HashPoint technique are provided in the supplementary materials.
+ray tracing,rasterization,Ray tracing is combined with rasterization for enhanced point cloud rendering speed.
+hashpoint technique,hash table,HashPoint organizes point clouds in a hash table through rasterization for efficient searches.
+primary surface sampling,input points,Primary surface sampling reduces the number of input points
+rendering speed,million points,Searching through a million points is accelerated to 0.5 ms on a standard GPU.
+hashpoint approach,k nearest point methods,HashPoint outperforms KNN methods in both accuracy and speed.
+hashpoint,multi-surface sampling,HashPoint is faster than multi-surface sampling in rendering.
+accuracy,rendering speed,HashPoint advances both accuracy and rendering speed in point cloud rendering.

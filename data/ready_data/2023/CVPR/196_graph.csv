@@ -1,0 +1,234 @@
+node_1,node_2,edge
+neural radiance fields,3d reconstruction,Neural Radiance Fields (NeRF) is known for its capability in photo-realistic 3D reconstruction
+neural radiance fields,novel view synthesis,Neural Radiance Fields (NeRF) is also known for its impressive capability in novel view synthesis
+neural radiance fields,bad-nerf,The paper introduces a novel bundle adjusted deblur Neural Radiance Fields (BAD-NeRF) as a robust solution to motion blurred images
+motion blurred images,image degradation,"Image degradation, such as image motion blur in low-light conditions, can further affect the rendering quality of Neural Radiance Fields"
+bad-nerf,camera motion trajectories,BAD-NeRF recovers the camera motion trajectories during exposure time to improve the quality of the final image
+3d scene geometry,2d images,Acquiring accurate 3D scene geometry and appearance from a set of 2D images is a long-standing problem in computer vision
+3d scene geometry,novel view image synthesis,Accurate 3D scene geometry is essential for applications like novel view image synthesis
+3d scene geometry,robotic navigation,Accurate 3D scene geometry is also crucial for robotic navigation applications
+robotic navigation,3d scene,Robotics navigation involves interacting with the 3D scene for effective movement and decision making.
+3d scene,3d point cloud,Classic approaches represent the 3D scene explicitly using 3D point cloud.
+3d scene,triangular mesh,Classic approaches represent the 3D scene explicitly using triangular mesh.
+3d scene,volumetric grid,Classic approaches represent the 3D scene explicitly using volumetric grid.
+3d scene,neural radiance fields (nerf),Recent advancements in implicit 3D representation include the usage of Neural Radiance Fields (NeRF) for photo-realistic 3D reconstruction.
+neural radiance fields (nerf),3d point,NeRF takes a 5D vector as input for spatial location and viewing direction of the sampled 3D point.
+neural radiance fields (nerf),multi-view images,NeRF enables novel view image synthesis using well posed multi-view images.
+neural radiance fields (nerf),photo-realistic 3d reconstruction,NeRF has enabled photo-realistic 3D reconstruction through deep neural networks.
+neural radiance fields (nerf),differentiable volume rendering,NeRF computes pixel intensity or depth through differentiable volume rendering.
+neural radiance fields (nerf),motion blurred images,Limited work has been proposed to address the issue of training NeRF with motion blurred images.
+motion blurred images,neural radiance fields (nerf),Motion blurred images pose challenges to existing NeRF training pipeline.
+image,sharp,Images are considered sharp when they are in focus and have clear details.
+image,blurred,Blurred images are those that lack sharpness and clear definition of details.
+camera poses,nerf,Accurate camera poses are usually required to train NeRF for better performance.
+blurred images,accurate poses,It is difficult to obtain accurate camera poses from blurred images due to the lack of clear information in the images.
+colmap,motion blurred images,COLMAP is used to recover accurate poses from a set of motion blurred images.
+challenges,nerf's performance,Addressing challenges like obtaining accurate poses and training with motion blurred images can enhance NeRF's performance.
+real physical image formation process,motion blurred image,Integrating the real physical image formation process of a motion blurred image into NeRF training can improve performance.
+linear motion model,se(3) space,A linear motion model in SE(3) space is used to represent camera motion trajectory within exposure time.
+training stage,network weights of nerf and camera motion trajectories,"During the training stage, both the network weights of NeRF and the camera motion trajectories are estimated jointly."
+motion trajectory,camera poses,"Motion trajectory is represented by camera poses at the start and end of the exposure time, with linear interpolation in between."
+exposure time,sharp images,"The exposure time is typically small, allowing for sharp images to be captured during the process."
+real physical image formation model,blurry images,Following the real physical image formation model can help in synthesizing blurry images.
+formation model,motion blurred image,"The formation model is used to synthesize the blurry images, including generating a sequence of sharp images and synthesizing the motion blurred image by averaging virtual sharp images."
+formation model,nerf,"The formation model uses NeRF to estimate both camera motion trajectories and virtual sharp images, contributing to the synthesis of motion blurred images."
+motion blurred image,nerf,NeRF is used to synthesize the motion blurred image by estimating camera motion trajectories and rendering virtual sharp images.
+nerf,bad-nerf,"The modified model, BAD-NeRF, is derived from NeRF by incorporating bundle adjusted deblur techniques for image synthesis."
+bad-nerf,datasets,BAD-NeRF is evaluated using both synthetic and real datasets to demonstrate superior performance in comparison to prior works.
+bad-nerf,state of the art works,BAD-NeRF outperforms prior state of the art works in terms of its ability to model the image formation process of motion blurred images.
+bad-nerf,3d scene representation,The approach based on BAD-NeRF formulation can be used to acquire high quality 3D scene representations from motion blurred images.
+bad-nerf,novel view images,BAD-NeRF is able to deblur severe motion blurred images and synthesize high quality novel view images as shown through experimental validation.
+nerf,neural radiance fields,"NeRF is part of the related works in the area of neural radiance fields, indicating its relevance and contribution to this field."
+image deblurring,related works,"The context reviews related works in the areas of image deblurring, providing an overview of research in this domain."
+nerf,novel view image synthesis,NeRF demonstrates impressive novel view image synthesis performance and 3D scene representation capability
+nerf,neural radiance field,Many variants of NeRF have been proposed recently
+nerf,barf,BARF proposed to optimize camera poses of input images as additional variables together with parameters of NeRF
+barf,camera poses,BARF proposed to optimize camera poses of input images as additional variables together with parameters of NeRF
+jeong,scene representation and camera parameters,Jeong et al. proposed to learn the scene representation and camera parameters (i.e. both extrinsic and intrinsic parameters) jointly
+barf,camera pose,"BARF and the work from [13] differ in that BARF estimates the camera pose at a particular timestamp, while the work from [13] proposes to optimize the camera motion trajectory within exposure time."
+barf,camera motion trajectories,Our work proposes to optimize the camera motion trajectory within exposure time unlike BARF which estimates the camera pose at a particular timestamp.
+barf,nerf,"Deblur-NeRF aims to train NeRF from a set of motion blurred images, while BARF estimates the camera pose at a particular timestamp."
+deblur-nerf,nerf,"Deblur-NeRF aims to train NeRF from a set of motion blurred images, obtaining the camera poses from either ground truth or COLMAP."
+colmap,nerf,They obtain the camera poses from either ground truth or COLMAP for training NeRF.
+pose estimations,colmap,"Severe motion blurred images challenge the pose estimations from COLMAP, degrading the training performance of NeRF."
+pose estimations,nerf,"Severe motion blurred images challenge the pose estimations from COLMAP, degrading the training performance of NeRF."
+sharp image,blur kernel,"The first type of approach formulates the problem as an optimization problem, optimizing the latent sharp image and the blur kernel using gradient descent during inference."
+deep convolution neural networks,state-of-the-art results,Building upon the recent advances of deep convolution neural networks has led to state-of-the-art results in both single image deblurring and video deblurring.
+our work,park et al.,"The closest work to ours is from Park et al., highlighting similar objectives or methodologies."
+single image deblurring,video deblurring,both single image deblurring and video deblurring are mentioned in the context as different types of deblurring techniques
+park et al.,camera poses,Park et al. from the reference [33] is mentioned to jointly recover the camera poses from motion blurred images
+dense depth maps,latent sharp images,dense depth maps and latent sharp images are recovered jointly with camera poses as mentioned in the context
+3d scene,nerf,"3D scene is represented with NeRF implicitly, which preserves multi-view consistency and enables novel view image synthesis"
+park et al.,park et al.,Park et al. is mentioned again along with the work that showed coordinate-based approaches struggle with learning details from low-dimensional inputs
+low-dimensional inputs,fourier embedding,Fourier embedding γ(X) representation and γ(d) representation are used to map low-dimensional inputs to high-dimensional space
+volume rendering,pixel intensity,"according to the definition of volume rendering, pixel intensity can be computed by sampling 3D points along the ray"
+bundle adjusted deblur nerf (bad-nerf),3d scene representation,BAD-NeRF learns both the 3D scene representation and recovers camera motion trajectories from motion blurred images
+motion blurred images,blurry images,Motion blurred images are used to synthesize blurry images from NeRF by maximizing photo-metric consistency.
+nerf,motion trajectories,Both NeRF and the motion trajectories are estimated by maximizing the photo-metric consistency between the synthesized blurry images and the real blurry images.
+nerf,3d scene,NeRF is used to represent the 3D scene implicitly using Multi-layer Perceptrons (MLP) as per the general architecture of NeRF.
+3d scene,multi-layer perceptrons (mlp),The 3D scene is represented implicitly using two Multi-layer Perceptrons in the architecture of NeRF.
+pixel intensity,pixel location,The pixel intensity I(x) at a pixel location x is queried for a particular image with a pose Tw by shooting a ray into the 3D space.
+pixel intensity,volume rendering,The pixel intensity is computed by volume rendering along the ray defined by the camera center and the corresponding pixel location.
+pixel intensity,3d point xw,"Given a particular 3D point Xw with depth λ along the ray, the pixel intensity can be computed for that point."
+camera intrinsic parameters,pinhole camera model,The camera intrinsic parameters K are assumed based on a simple pinhole camera model for ray direction and camera pose.
+nerf,3d point xw,NeRF is queried for the corresponding view-dependent color c and volume density σ for a particular 3D point Xw.
+nerf,multi-layer perceptrons (mlp),NeRF uses Multi-layer Perceptrons parameterized with learnable parameters θ to get the color c and volume density σ for a given 3D point Xw.
+learnable parameters θ,rw,"The learnable parameters θ are related to Rw, potentially indicating a relationship in the image rendering process."
+viewing direction dc,rotation matrix c,The viewing direction dc is transformed by the rotation matrix c from camera coordinate frame to world coordinate frame.
+predicted color ci,volume density σi,The predicted color ci and volume density σi are calculated for the sampled 3D points along the ray.
+distance δi,transmittance factor ti,The distance δi and transmittance factor Ti are used to represent the probability that the ray does not hit any particle until the ith sampled point.
+predicted volume density σk,distance between neighboring points σk,The predicted volume density σk and distance between neighboring points σk are related when calculating the density for each point.
+rendered pixel intensity i(x),mlps with learnable parameters θ,"The rendered pixel intensity I(x) is a function of the MLPs with learnable parameters θ, indicating a dependency in the image rendering process."
+rendered pixel intensity i(x),camera pose tw,"The rendered pixel intensity I(x) is affected by the camera pose Tw, suggesting a connection between the image rendering and camera position."
+bundle adjustment formulation,motion blurred images,The bundle adjustment formulation with motion blurred images involves adjusting parameters for image rendering in the presence of motion blur.
+image formation process,digital camera,The image formation process involves a digital camera collecting photons and converting them into electric charges during exposure.
+image formation process,captured image b(x),"The image formation process results in the captured image B(x), which represents the integration of virtual sharp images."
+sharp image,blurred image,"The sharp image captured at timestamp t within the exposure time is denoted as It(x), while the blurred image caused by camera motion during the exposure time is represented by B(x). Different virtual images It(x) for each timestamp t contribute to the formation of the blurred image."
+blurred image,camera motion,"The blurred image B(x) is formed due to camera motion during the exposure time, resulting in a blurry representation of the scene in contrast to the sharp images captured at each timestamp."
+3d scene representation,motion blurred images,"The pipeline of BAD-NeRF involves training NeRF to learn the 3D scene representation from a set of motion blurred images. The model deviates from traditional methods by considering the motion trajectory of each image with poses at the start and end of the exposure time, allowing for linear interpolation of intermediate virtual camera poses in SE3 space."
+photo-metric loss,network and poses estimation,"The photo-metric loss is utilized for jointly estimating the entire network and both the start and end poses involved in the synthesis of virtual sharp images within the exposure time. By minimizing this loss, the network can accurately generate the blurry image that reflects the real physical image formation process of a motion blurred scene."
+motion blur,image,The degree of motion blur in an image depends on the camera motion during the exposure time.
+camera motion,exposure time,The degree of motion blur in an image depends on the camera motion during the exposure time.
+camera motion,blurry image,The degree of motion blur in an image depends on the camera motion during the exposure time.
+camera,motion,"A fast-moving camera causes little relative motion for shorter exposure time, whereas a slow-moving camera leads to a motion blurred image for long exposure time."
+camera,motion,The virtual camera pose at time t can be represented as Tt = Tstart · exp(t τ· log(T−1start · Tend)).
+exposure time,linear model,We approximate the camera motion with a linear model during exposure time which is usually small (e.g. ≤ 200 ms).
+camera poses,camera motion,"We need to model the corresponding poses of each latent sharp image within exposure time, so that we can render them from NeRF."
+pose,camera motion,"We need to model the corresponding poses of each latent sharp image within exposure time, so that we can render them from NeRF."
+pose,exposure time,The virtual camera pose at time t can be represented as Tt = Tstart · exp(t τ· log(T−1start · Tend)).
+n,i,"n is the total number of images being sampled, and i is the index of the ith sampled virtual sharp image."
+ti,tstart and tend,Ti is differentiable with respect to both Tstart and Tend.
+bad-nerf,"tstart, tend, fθ","The goal of BAD-NeRF is to estimate Tstart and Tend for each frame, as well as the learnable parameters Fθ."
+linear interpolation,"trajectory representation, cubic b-spline","Besides the linear interpolation approach, trajectory representation with a cubic B-Spline is explored for more complex camera motions."
+exposure time,linear interpolation,"Due to short exposure time, linear interpolation already provides satisfying performance."
+pertinent details,supplementary material,More details on the cubic B-Spline formulation can be found in the supplementary material.
+set of k motion blurred images,"learnable parameters θ, camera motion trajectories tstart and tend","Given a set of motion blurred images, the learnable parameters θ of NeRF and camera motion trajectories Tstart and Tend can be estimated by minimizing the photo-metric loss."
+"bk(x), bgtk (x)","blurry image, real captured blurry image","Bk(x) is the blurry image synthesized from NeRF, and Bgtk (x) is the real captured blurry image."
+photo-metric loss,"learnable parameter θ, tstart, tend","The photo-metric loss is minimized to optimize the learnable parameter θ, Tstart and Tend for each image."
+jacobian,"learnable parameter θ, tstart, tend","The Jacobian is essential for optimizing the learnable parameter θ, Tstart and Tend for each image."
+θ,tstart,Tstart and Tend are needed to optimize the learnable parameter θ.
+θ,tend,Tstart and Tend are needed to optimize the learnable parameter θ.
+tstart,jaco,Tstart corresponds to the Jaco in the context.
+tend,lie algebras of se(3),Tend is parameterized with the Lie algebras of SE(3).
+lie algebras of se(3),6d vector,Lie algebras of SE(3) is represented by a 6D vector.
+benchmark datasets,synthetic datasets,The performance of the network is evaluated using both synthetic datasets and real datasets from prior works.
+deblur-nerf datasets,blender,Synthetic datasets from Deblur-NeRF are synthesized using Blender.
+camera motion,constant velocity,The camera motion is in constant velocity within exposure time in the virtual scenes.
+camera motion,exposure time,Camera motion and exposure time are related to generate the datasets.
+camera motion,camera poses,Camera motion relates to anchor camera poses in the context.
+camera motion,camera velocities,Camera motion relates to camera velocities in the context.
+blurry image,virtual images,Blurry image is generated by averaging the sampled virtual images within exposure time.
+blurry image,handheld camera,Real blurry image is captured by deliberately shaking a handheld camera.
+handheld camera,method,The method is evaluated by deliberately shaking a handheld camera.
+method,performance,The performance of the method is evaluated on a dataset for motion blur aware visual odometry benchmark.
+dataset,synthetic images,The dataset contains both synthetic and real blurry images. The synthetic images are synthesized from an Unreal game engine.
+synthetic images,handheld camera,The synthetic images from MBA-VO are generated based on real motion trajectories captured by a handheld camera.
+baseline methods,evaluation metrics,Several state-of-the-art learning-based deblurring methods are evaluated against evaluation metrics.
+srndeblurnet,pvd,SRNDeblurNet is evaluated against PVD for deblurring.
+pvd,mpr,PVD is evaluated against MPR for deblurring.
+mpr,deblur-nerf,MPR is evaluated against Deblur-NeRF for deblurring.
+deblur-nerf,multi-view image deblurring method,Deblur-NeRF is evaluated against a classic multi-view image deblurring method for deblurring.
+srndeblurnet,restored images,SRNDeblurNet is applied to blurry images to get the restored images.
+restored images,nerf,Restored images are input to NeRF for training.
+nerf,deblur-nerf,Deblur-NeRF is a variation of NeRF that is sensitive to the accuracy of camera poses.
+nerf,colmap,COLMAP is used to estimate poses for NeRF training.
+nerf,blender,Blender provides ground-truth poses for training NeRF.
+deblur-nerf,colmap,COLMAP is used in the training of Deblur-NeRF for estimating poses.
+colmap,direct optimization,Direct optimization method uses COLMAP estimated poses for training NeRF.
+direct optimization,blender,Direct optimization method uses Blender provided ground-truth poses.
+linear interpolation,cubic b-spline,Linear Interpolation and cubic B-Spline methods are compared for trajectory representations.
+spline-based methods,direct optimization,spline-based methods perform better than directly optimizing N poses.
+linear interpolation,cubic b-spline,Linear interpolation and cubic B-Spline achieve comparable performance due to short time intervals.
+psnr,ssim,PSNR and SSIM are commonly used metrics for evaluating rendered image quality.
+psnr,lpips,PSNR and LPIPS are used as evaluation metrics for image quality.
+psnr,ate,PSNR is compared against ATE for camera pose estimation evaluation.
+ssim,lpips,SSIM and LPIPS are metrics commonly used to evaluate image quality.
+ate,park et al.,ATE is evaluated against the method proposed by Park et al. for camera pose estimation.
+ate,barf,ATE is evaluated against the BARF method for camera pose estimation.
+ate,park et al.,ATE is used against the method from Park et al. for the evaluation of estimated camera poses.
+ate,barf,ATE is used against BARF for the evaluation of estimated camera poses.
+ate,visual odometry evaluations,ATE metric is commonly used for visual odometry evaluations.
+pytorch,mlp network,Our method is implemented with PyTorch and adopts the MLP network structure from the original NeRF.
+pytorch,nerf,Our method is implemented with PyTorch and adopts the MLP network structure of the original NeRF.
+adam optimizer,network parameters,The network parameters and camera poses are optimized with the two separate Adam optimizer.
+adam optimizer,camera poses,The network parameters and camera poses are optimized with the two separate Adam optimizer.
+learning rate,nerf optimizer,The learning rate of the NeRF optimizer exponentially decays.
+learning rate,pose optimizer,The learning rate of pose optimizer exponentially decays.
+number of virtual poses,interpolated virtual cameras,The effect of the number of interpolated virtual cameras within exposure time is evaluated.
+experiment sequences,deblur-nerf,Experiments are conducted on two sequences from the synthetic dataset of Deblur-NeRF.
+deblur-nerf,cozy2room sequence,The cozy2room sequence is chosen for experiment from the synthetic dataset of Deblur-NeRF.
+deblur-nerf,factory sequence,The factory sequence is chosen for experiment from the synthetic dataset of Deblur-NeRF.
+cozy2roomfactorypooltanabatatrolleyaverage,deblurnerf,"Cozy2roomFactoryPoolTanabataTrolleyAverage and DeblurNeRF are compared quantitatively in terms of deblurring performance according to Table 2. It is noted that DeblurNeRF* is trained with ground-truth poses, while DeblurNeRF is trained with poses estimated by COLMAP. The experimental results show that DeblurNeRF is sensitive to the accuracy of the provided camera poses."
+deblurnerf,deblurnerf*,"DeblurNeRF and DeblurNeRF* are compared quantitatively in terms of deblurring performance according to Table 2. DeblurNeRF* is trained with ground-truth poses, while DeblurNeRF is trained with poses estimated by COLMAP."
+deblurnerf,bad-nerf,DeblurNeRF and BAD-NeRF are compared quantitatively in terms of deblurring performance according to Table 2. The results show that BAD-NeRF (ours) achieves a better performance than DeblurNeRF.
+cozy2roomfactorypooltanabatatrolleyaverage,deblur-nerf,Cozy2roomFactoryPoolTanabataTrolleyAverage and Deblur-NeRF are compared quantitatively in terms of deblurring performance according to Table 2.
+deblurnerf,archviz-low,DeblurNeRF is compared with ArchViz-low in terms of novel view synthesis according to Table 3. The experimental results show that DeblurNeRF delivers state-of-the-art performance compared to prior works.
+archviz-high,nerf+park,"ArchViz-high and NeRF+Park are compared in terms of novel view synthesis according to Table 3. NeRF+Park achieves a PSNR of 0.8311, showing good performance in the synthesis task."
+park,pvd,Park and PVD are compared quantitatively in terms of deblurring performance according to Table 2 and Table 3.
+nerf+park,pvd,NeRF+Park and PVD are compared quantitatively in terms of novel view synthesis according to Table 2.
+fig. 3,virtual cameras,Fig. 3 shows that the experimental results demonstrate the relationship between the number of virtual cameras and their impact on images with different levels of motion blur.
+virtual cameras,images,The experimental results show that the number of virtual cameras required depends on the level of motion blur in the images.
+virtual cameras,rendering quality and training complexity,More virtual cameras impact the image rendering quality and training complexity as more computational resources are needed for training with a larger number of virtual images.
+trajectory representations,camera poses,"Different trajectory representations involve optimizing camera poses through various methods such as directly optimizing poses, representing linear trajectories, or using higher order splines."
+camera poses,ordering information,"Directly optimizing camera poses may lead to losing ordering information, which affects the final metrics like PSNR."
+camera poses,spline,"Optimizing camera poses through spline representation performs better than directly optimizing poses, as shown by the comparison in Table 1."
+datasets,deblur-nerf and mba-vo,The average quantitative results from Deblur-NeRF and MBA-VO datasets are compared and shown in Table 1 to illustrate the effectiveness of different optimization methods.
+camera poses,spline-based methods,Directly optimizing N camera poses performs worse than spline-based methods.
+linear interpolation,cubic b-spline interpolation,Linear interpolation performs comparably as that of cubic B-Spline interpolation.
+linear interpolation,cubic b-spline,"Linear interpolation achieves slightly better performance on the datasets of Deblur-NeRF, and cubic B-Spline performs slightly better on that of MBA-VO."
+srndeblur,deblur-nerf,Quantitative deblurring comparisons between SRNDeblur and Deblur-NeRF.
+deblur-nerf,bad-nerf,Comparison of Deblur-NeRF and BAD-NeRF (ours) in terms of performance.
+camera exposure,linear motion model,Experimental results demonstrate the performance of camera exposure compared to the linear motion model.
+linear interpolation,camera motion trajectory,Linear interpolation is already sufficient to represent the camera motion trajectory accurately within a short time interval.
+experimental results,linear interpolation,"For the subsequent experimental results, linear interpolation is used by default."
+deblurring,novel view image synthesis,Evaluation of deblurring and novel view image synthesis performance.
+deblurring,novel view image synthesis,Deblurring and novel view image synthesis are evaluated for performance with synthetic images from Deblur-NeRF and MBA-VO.
+method camera poses,park,The accuracy of refined camera poses of the method is evaluated against that from Park in terms of the ATE metric.
+method camera poses,barf,The accuracy of refined camera poses of the method is evaluated against that from BARF in terms of the ATE metric.
+method camera poses,park [33],The accuracy of refined camera poses of the method is evaluated against that from Park [33] in terms of the ATE metric.
+method camera poses,barf [20],The accuracy of refined camera poses of the method is evaluated against that from BARF [20] in terms of the ATE metric.
+deblur-nerf,dataset,The experimental results for deblurring and novel view image synthesis are presented with the dataset from Deblur-NeRF.
+mpr,method,Single image based deblurring methods like MPR fail to outperform the method due to limited information from a single blurry image.
+pvd,method,Single image based deblurring methods like PVD fail to outperform the method due to limited information from a single blurry image.
+srndeblur,method,Single image based deblurring methods like SRNDeblur fail to outperform the method due to limited information from a single blurry image.
+bad-nerf,different methods,BAD-NeRF achieves the best performance under inaccurate poses on various scenes and different levels of blur compared to different methods.
+big,boss,Big BOSS is a title of a known song.
+deblurnerf,ground truth poses,DeblurNeRF network trained with ground truth poses performs better compared to poses from COLMAP
+deblurnerf,colmap,DeblurNeRF network is sensitive to the accuracy of camera poses as it does not optimize them during training
+colmap,blurry images,COLMAP-blur represents the result of COLMAP with blurry images
+deblurnerf,camera poses,DeblurNeRF network is sensitive to the accuracy of camera poses
+our network,mba-vo dataset,Experiments conducted with the dataset from MBA-VO show performance of our network
+mba-vo,real camera motion trajectories,Images from MBA-VO are generated using real camera motion trajectories
+mba-vo,eth3d dataset,Camera motion trajectories from ETH3D dataset are used in images from MBA-VO
+deblurnerf,constant velocity motion,Motion in images from DeblurNeRF dataset is not at constant velocity
+our network,colmap-blur,"Our network outperforms other methods, even with a camera that is not moving at constant velocity within exposure time"
+colmap-blur,blur sequences,Pose estimation performance of BAD-NeRF on various blur sequences is represented by COLMAP-blur
+colmap,blurry images,"COLMAP is mentioned with relation to blurry images, indicating that it is used for handling blurry images."
+colmap,camera pose estimation,COLMAP is used for evaluating camera pose estimation.
+colmap,barf,COLMAP is compared against BARF in the context of method comparisons.
+colmap,deblur-nerf,COLMAP is compared against Deblur-NeRF in the context of method comparisons.
+barf,deblur-nerf,BARF is compared against Deblur-NeRF in the context of method comparisons.
+deblur-nerf,fig. 4,Deblur-NeRF is referenced in relation to the visualization in Fig. 4.
+deblurnerf,sharp images,"DeblurNeRF fails to render sharp images around the edge of the floating box even when trained with ground truth poses, caused by the occlusion problem"
+deblurnerf,ground truth poses,DeblurNeRF fails to render sharp images around the edge of the floating box even when trained with ground truth poses
+deblurnerf,occlusion problem,"DeblurNeRF fails to render sharp images around the edge of the floating box even when trained with ground truth poses, caused by the occlusion problem"
+mpr,severely blurred images,"single image deblurring networks such as MPR, PVD, and SRNDeblur can achieve impressive performance on some images, not severely blurred, but fail to restore sharp images and bring in unpleasing artifacts for severely blurred images"
+pvd,severely blurred images,"single image deblurring networks such as MPR, PVD, and SRNDeblur can achieve impressive performance on some images, not severely blurred, but fail to restore sharp images and bring in unpleasing artifacts for severely blurred images"
+srndeblur,severely blurred images,"single image deblurring networks such as MPR, PVD, and SRNDeblur can achieve impressive performance on some images, not severely blurred, but fail to restore sharp images and bring in unpleasing artifacts for severely blurred images"
+multi-view images,consistent 3d representation,the method takes advantage of multi-view images to recover a consistent 3D representation of the scene
+multi-view images,improve deblurring performance,the method learns to fuse information from other views to improve the deblurring performance
+information,views,Information from other views is fused to improve deblurring performance.
+method,deblurnerf,The method delivers better results compared to DeblurNeRF.
+method,results,The method can accurately estimate the camera poses and deliver better results.
+method,poses,The method optimizes camera poses with blurry images and inaccurate initial poses.
+method,images,"The method effectively deblurs images, renders novel view images, and recovers camera motion trajectories."
+method,experiments,Extensive experimental evaluations are conducted to demonstrate the effectiveness of the method.
+results,poses,Accurate camera poses contribute to better results.
+images,camera motion trajectories,Images help in recovering camera motion trajectories accurately.
+poses,exposure time,Camera poses are optimized within exposure time.
+nsfc,grant 62202389,NSFC is under Grant 62202389
+nsfc,westlake university-muyuan joint research institute,NSFC is funded in part by Westlake University-Muyuan Joint Research Institute
+nsfc,westlake education foundation,NSFC is funded in part by the Westlake Education Foundation
+grant 62202389,westlake university-muyuan joint research institute,Grant 62202389 is funded in part by Westlake University-Muyuan Joint Research Institute
+grant 62202389,westlake education foundation,Grant 62202389 is funded in part by the Westlake Education Foundation
+westlake university-muyuan joint research institute,westlake education foundation,Westlake University-Muyuan Joint Research Institute and Westlake Education Foundation are jointly involved in funding projects

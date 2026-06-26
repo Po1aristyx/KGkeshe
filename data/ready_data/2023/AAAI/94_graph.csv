@@ -1,0 +1,183 @@
+node_1,node_2,edge
+scene segmentation,autonomous driving,Scene segmentation is important for safety-critical applications
+domain generalization,foggy scenes,The paper focuses on learning scene segmentation that generalizes to unseen foggy scenes without foggy images in the training stage.
+existing methods,curriculum domain adaptation model,These methods require annotated clear and foggy images to train a model that can adapt to specific foggy domains seen during training.
+proposed method,bi-directional wavelet guidance (bwg),The proposed solution introduces a BWG mechanism to enhance content
+low-frequency features,content enhancement,Content
+high-frequency features,style and fog de-correlation,Urban-scene style and fog style are addressed in high-frequency components
+foggy-scene segmentation,curriculum domain adaptation,The context discusses that existing foggy-scene segmentation methods typically follow the curriculum domain adaptation paradigm
+foggy-scenes,target domain,These methods are specifically designed to adapt to foggy scenes within the target domain they have seen during training.
+proposed method,existing methods,The proposed method outperforms existing directly-supervised
+cuda-net (ma et al. 2022),example of curriculum domain adaptation,CuDA-Net is mentioned as an instance of a curriculum domain adaptation method for foggy scene segmentation.
+saw (peng et al. 2022),example of generic domain generalization,SAW is cited as an example of a generic domain generalization approach that does not specifically target foggy scenes.
+bwg,proposed method,BWG is the proposed generalization method for foggy scenes
+source code,availability,The source code for BWG is made available online.
+foggy-scene method,domain generalization setting,The context discusses the shift from foggy-scene method to the domain generalization setting where models are trained without specific foggy target domains for better real-world applicability.
+domain generalization setting,unseen foggy target domains,In this setting
+scene-segmentation model,domain-generalized segmentation methods,Recent domain-generalized segmentation methods have shown effectiveness in handling style variations
+complexity of foggy scenes,image conditions,Foggy scenes introduce challenges due to both the diverse urban-scene styles and the fog-induced occlusion of scene objects
+key objectives,foggy scenes,The focus is on learning a scene segmentation model that can generalize to foggy scenes by addressing occlusion and maintaining reliable segmentation.
+scene objects,occlusion,Fog negatively impacts scene objects by causing occlusions
+content representation,fog,The presence of fog hampers the ability of content representation in scene segmentation models.
+scene segmentation,generalization to foggy scenes,The main objective is to learn a scene segmentation model that can generalize well to foggy conditions.
+urban-style variation,decoupling,One key objective is to separate urban-style differences from fog-related variations.
+foggy style variation,decoupling,Another objective is to isolate fog-specific style changes.
+content representation,enhancement due to fog occlusion,The model aims to improve the content representation in the presence of fog-induced occlusions.
+domain generalization setting,practical,general
+bi-directional wavelet guided self-attention (bwg),proposed method,The authors propose BWG as a mechanism to address the challenges in foggy scene segmentation.
+mask-level transformer segmentation models,integration,BWG is incorporated into these models in a learnable way.
+state-of-the-art domain generalized segmentation methods,outperformed by bwg,BWG improves performance by up to 11.8% mIoU on Foggy Zurich dataset.
+curriculum domain adaptation methods,outperformed by bwg,BWG also surpasses existing curriculum adaptation methods by up to 16.7% mIoU on ACDC-fog dataset.
+foggy-scene semantic segmentation,related work,The work builds upon extensive research in foggy scene segmentation
+adsegnet,related work,AdSegNet is a notable example of prior curriculum domain adaptation approaches.
+advent,related work,Vu et al.'s ADVENT is another method that falls under this category.
+dise,related work,Chang et al.'s DISE is a competitor in addressing foggy scene segmentation.
+ccm,related work,Li et al.'s CCM is a method that focuses on handling fog adaptation.
+sac,related work,Araslanov's SAC is another technique that contributes to the field.
+advent,vu et al. (2019),Vu et al. proposed the ADVENT method.
+dise,chang et al. (2019),Chang et al. introduced the DISE technique.
+ccm,li et al. (2020),Li et al. developed the CCM framework.
+sac,araslanov and roth (2021),Araslanov and Roth presented the SAC approach.
+proda,zhang et al. (2021),Zhang et al. introduced the ProDA method.
+dmlc,guo et al. (2021),Guo et al. contributed to the DMLC project.
+dacs,truong et al. (2021),Truong et al. proposed the DACS technique.
+cmada3+,dai et al. (2020),Dai et al. developed the CMAda3+ algorithm.
+cuda-net,ma et al. (2022),Ma et al. introduced the CuDA-Net system.
+daformer,hoyer,dai
+refign-daformer,"br""uggemann et al. (2023)","Refign-DAFormer is another unsupervised adaptation method by Br""uggemann et al."
+fog removal,li,cheong
+all-in-one paradigm,valanarasu,yasarla
+semantic segmentation on de-fogged images,dai et al. (2020); ma et al. (2022),Performance comparison with curriculum domain adaptation methods.
+domain generalized semantic segmentation,pan et al. (2019); ...,More challenging than conventional segmentation
+curriculum domain adaptation methods,dai et al. (2020); ma et al. (2022),These methods show superior performance to semantic segmentation on de-fogged images.
+segmentation model,unseen target domains,The context discusses the performance of a segmentation model on domains it hasn't seen before.
+content stability,style variation,The assumption in these methods is that the content remains constant while the style varies due to urban landscapes.
+foggy scenes,urban landscape,Foggy scenes are mentioned as having style variations caused by the urban landscape.
+fog,occlusion,Fog causes severe occlusion
+preliminary generalized segmentation for foggy scenes,source domain (s),Clean scenes serve as the source domain for the proposed foggy scene segmentation method.
+foggy styles,core urban scene content,The main challenge is to distinguish foggy styles from the essential urban scene content.
+frequency domain,haar wavelet transformation,Haar wavelet transformation is used to separate style and content components in the frequency domain.
+frequency domain (content),scene semantics,Content
+frequency domain (style),high-frequency space,High-frequency space contains more style information.
+t-sne visualization,low- and high-frequency feature space,t-SNE is used for visualizing the separation of low- and high-frequency feature spaces.
+foggy-driving,foggy-cityscapes,Both Foggy-Driving and Foggy-CityScapes are foggy scene datasets
+state-of-the-art directly-supervised methods,foundation model based segmentation methods,These are compared with each other
+kirillov et al. (2023),wang et al. (2023),Both are authors or references to separate works
+generalized segmentation for foggy scenes,semantic segmentation model,A semantic segmentation model is used for generalized segmentation in foggy conditions
+distance between clean-scenes source domain s,foggy-scenes target domain t,D(S
+low-frequency component,high-frequency component,They are analyzed separately in the frequency domain
+t-sne visualization,low-frequency features,t-SNE is used to visualize the distribution of low-frequency features
+haar wavelet transformation,haar wavelet pooling,These are techniques employed for feature extraction or processing
+low-frequency features,haar wavelet transformation,low-frequency features are used in Haar Wavelet Transformation for separating components
+haar wavelet transformation,llt,lh t
+ll component,scene semantics,LL component preserves more content information
+high-frequency components (lh,hl,hh)
+existing foggy-scene segmentation methods,domain adaptation setting,Existing methods use both clear source and fog target domains for training under the domain adaptation setting
+existing foggy-scene segmentation methods,urban styles decoupling,These methods focus on separating urban styles during training
+proposed pipeline,clear source domain,Proposed pipeline uses only clear source domain for training
+proposed pipeline,urban style decoupling,Proposed framework includes urban style decoupling as a component
+proposed pipeline,content enhancement,The pipeline also focuses on enhancing content representation for foggy scenes
+proposed pipeline,foggy style decoupling,In addition to urban style decoupling
+content enhancement,fog-style decoupling,The context mentions that these are three key objectives to be learned for segmentation in foggy scenes
+content enhancement,urban-style decoupling,Both are mentioned as separate objectives for segmentation
+triplet self-attention representing,content,The triplet self-attention is used to represent the content among the three components
+triplet self-attention representing,fog style,Another self-attention module handles the fog style
+triplet self-attention representing,urban style,A third self-attention module is responsible for the urban style
+mask attention,foggy-scene features,Mask attention is used to encode foggy-scene features before the triplet self-attention
+transformer decoder,self-attention mechanism,The self-attention mechanism is adapted in the Transformer decoder architecture for its representation ability and long-range dependency mining.
+kl,r(wl·hl)×c,Kl is a tensor computed by a linear transformation fK
+vl,r(wl·hl)×c,Vl is also a tensor computed by a linear transformation fV
+ql,rn×c,Ql is a tensor computed by fQ
+mask attention matrix,ml−1,Ml−1 is a binary mask attention matrix from the previous layer
+m0,binary mask from x0,M0 is initially derived from X0 and later resized
+xl,rn×c,Xl is the final attended feature map after applying the mask attention and incorporating information from previous layers.
+self-attention components,s,c
+xsl,output for urban-style,Xsl represents the output focused on urban-style features after self-attention.
+xfl,output for fog-style,Xfl is the output for fog-style representation
+xc,output for content enhancement,Xc is responsible for capturing low-frequency content information.
+haar wavelet transformation,ll,lh
+content enhancement,xc,Content enhancement focuses on low-frequency components to preserve essential details.
+foggy and urban-scenes representation,xfl and xsl,These representations handle fog and urban styles independently.
+haar wavelet transformation,low-pass component (ll),The Haar wavelet transformation decomposes Xs into a low-pass component (LL) and three high-pass components.
+high-frequency component (hh),xs,hh
+low-frequency component (ll),content enhancement branch,The content enhancement branch focuses on the low-frequency component to represent scene semantics.
+low-frequency component (ll),fog branch,The fog branch is designed to focus on the low-frequency component for depicting foggy style information.
+low-frequency component (ll),urban scene style branch,The urban scene style branch also concentrates on the low-frequency component to capture urban scene style details.
+high-frequency components (lh,hl),xs
+filter operation (⊗),low-frequency decomposition,The filter operation (⊗) is used to separate the low- and high-frequency components.
+spatial domain,frequency domain,The paper uses spatial domain notation for frequency-domain operations for simplicity and clarity.
+proposed framework,mask-level segmentation transformer paradigm,The overall framework follows the mask-level segmentation Transformer approach.
+proposed framework,swin-base transformer,The image encoder utilizes a Swin-base Transformer as its backbone.
+swin-base transformer,imagenet pre-trained weight,The Swin-base Transformer has a pre-trained weight on the ImageNet dataset.
+image decoder,mask2former,The image decoder is derived from the Mask2Former architecture.
+transformer decoder,bi-directional wavelet guided self-attention (bwg) components,The decoder consists of nine proposed BWG components.
+transformer decoder queries,×4 resolution image features,The Transformer queries are fused with the ×4 resolution image features for predictions.
+loss and hyper-parameter settings,original mask2former,These settings remain the same as in the original Mask2Former without further tuning.
+adam optimizer,initial learning rate,The optimizer is Adam with an initial learning rate of 1 × 10^(-4).
+weight decay,0.05,The weight decay value is set to 0.05.
+training,50 epochs,Training terminates after 50 epochs.
+cityscapes,semantic segmentation dataset,CityScapes is a popular dataset for semantic segmentation
+cityscapes,cordts et al. (2016),It was introduced by Cordts et al. in 2016.
+cityscapes,semantic segmentation,CityScapes is a commonly-used dataset for semantic segmentation
+cityscapes,cordts et al. (2016),Introduced by Cordts et al. in 2016
+clear cityscapes,cityscapes,Clear CityScapes is a subset of CityScapes
+foggy-cityscapes,cityscapes,Foggy-CityScapes is a synthetic fog version of CityScapes
+foggy zurich,zurich city,Foggy Zurich contains real-world foggy road scenes from the city of Zurich.
+foggy driving,sakaridis,dai
+adverse conditions dataset with correspondences (acdc),driving-scene segmentation,ACDC is a dataset focused on driving scenes with adverse conditions
+acdc,sakaridis,dai
+domain generalization methods,comparison with,The text mentions a comparison between ACDC and domain generalization methods.
+proposed method,state-of-the-art domain generalized segmentation methods,compared with
+proposed method,ibnet,comparison
+proposed method,iternorm,comparison
+proposed method,sw,comparison
+proposed method,isw,comparison
+proposed method,shade,comparison
+proposed method,saw,comparison
+proposed method,wildnet,comparison
+proposed method,spc,comparison
+proposed method,hgformer,comparison
+dirl,comparison,not included for comparison
+advstyle,comparison,not included for comparison
+cityscapes,source domain,used as
+foggy-cityscapes,target domain,unseen
+foggy zurich,target domain,unseen
+foggy driving,target domain,unseen
+acdc-fog,target domain,unseen
+refinenet,directly-supervised segmentation methods,reported
+segformer,directly-supervised segmentation methods,reported
+mask2former,directly-supervised segmentation methods,reported
+sam-fine-tune,foundational model based segmentation methods,reported
+sam-ssa-fine-tune,foundational model based segmentation methods,reported
+proposed method,mask2former,The proposed method is compared to Mask2Former
+proposed method,adsegnet,Proposed method is compared with AdSegNet under the curriculum domain adaptation paradigm.
+proposed method,advent,Proposed method outperforms ADVENT on ACDC-fog
+proposed method,dise,Proposed method is compared to DISE
+proposed method,ccm,Proposed method outperforms CCM on ACDC-fog and Foggy-Zurich.
+proposed method,sac,Proposed method surpasses SAC
+proposed method,proda,Proposed method shows better results than ProDA on ACDC-fog.
+proposed method,dmlc,Outperforms DMLC on ACDC-fog.
+proposed method,dacs,Gains over DACS on ACDC-fog.
+proposed method,cuda-net,Outperforms CuDA-Net on ACDC-fog.
+proposed method,fifo,Exceeds FIFO on ACDC-fog.
+proposed method,daformer,Obtains higher mIoU than DAFormer on ACDC-fog and Foggy-Zurich.
+clear-cityscapes,source domain,Used as the source domain for curriculum domain adaptation methods.
+acdc-fog,target domain,Proposed method tested on unseen target domain ACDC-fog.
+foggy zurich,target domain,Proposed method tested on Foggy Zurich as a target domain.
+foggy driving,target domain,Proposed method evaluated on Foggy Driving as a target domain.
+foggy-cityscapes,target domain,Performance comparison on Foggy-CityScapes.
+fog encoder,low-frequency interaction,The proposed BWG interacts the low and high frequency information between the fog encoder and other components
+proposed method,mean miou,The mean mIoU on Foggy-CityScapes measures the performance of the proposed method
+proposed method,state-of-the-art methods,Visualized results in Figure 5 compare the segmentation predictions of the proposed method with IBNet
+backbone,foggy cityscapes,Backbones like ResNet-101
+sensitivity analysis,foggy density,Table 5 presents a sensitivity analysis of the proposed method and backbones
+operations,generalized representation,Each operation in the BWG contributes positively to the generalized representation for foggy-scenes
+csdg,proposed method,CSDG refers to the proposed method's backbone
+foggy domain,training stage,The context mentions that ods can only adapt to foggy domains experienced during the training phase.
+domain generalization,aim,The paper focuses on addressing the challenge of domain generalization to unseen foggy scenes.
+segmentation transformer,proposed method,The main contribution is a segmentation Transformer called BWG
+bi-directional wavelet guidance (bwg),proposed mechanism,BWG is the proposed solution that handles content enhancement
+content enhancement,style decorrelation,BWG tackles these tasks in a divide-and-conquer manner within the overall fog de-correlation.
+fog de-correlation,encoder,The fog de-correlation encoder is a part of the BWG mechanism
+performance,superiority,The effectiveness of the fog de-correlation encoder is demonstrated by its superior performance compared to other approaches.
+existing methods,outperformed,The proposed method significantly outperforms existing directly-supervised

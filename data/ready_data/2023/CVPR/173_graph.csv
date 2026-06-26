@@ -1,0 +1,197 @@
+node_1,node_2,edge
+multi-view depth estimation,learning-based method,The learning-based method presented in the paper focuses on multi-view depth estimation from posed images.
+multi-view depth estimation,posed images,The multi-view depth estimation is performed on posed images as the input data.
+learning-based method,plane-sweeping cost volume,The learning-based method iteratively indexes a plane-sweeping cost volume and regresses the depth map.
+plane-sweeping cost volume,depth map,The plane-sweeping cost volume encodes the multi-view geometry and is used to estimate the depth map.
+siamese network,asymmetric volume,"An asymmetric volume, introduced to the reference image by breaking the symmetry of the Siamese network, allows the extraction of global features to predict depth maps."
+reference image,depth map,Features extracted from the reference image are used to predict the depth map.
+poses,inaccuracies,"The poses between reference and source images may contain inaccuracies, leading to potential issues in depth estimation."
+residual pose network,cost volume,"The residual pose network corrects the relative poses between images, rectifying the cost volume at the frame level."
+multi-view stereo (mvs),dense 3d geometry,MVS aims to recover dense 3D geometry from multiple images captured from different viewpoints with calibrated cameras.
+multi-view stereo (mvs),computer vision,MVS is a fundamental problem in computer vision with wide applications.
+mvsnet,learning-based methods,"Learning-based methods, following the seminal MVSNet, have been proposed achieving great improvements against their traditional counterparts in terms of accuracy or efficiency."
+mvsnet,traditional plane-sweeping approach,Most of the learning-based MVS methods rely on traditional plane-sweeping approach to generate a cost volume by comparing the CNN features of reference image and source images at several depth hypotheses.
+learning-based methods,traditional plane-sweeping approach,Most of the learning-based MVS methods rely on traditional plane-sweeping approach to generate a cost volume by comparing the CNN features of reference image and source images at several depth hypotheses.
+2d cnn methods,multi-level features,2D CNN methods use multi-level features as skip connections to help decode the cost volume for depth regression.
+2d cnn methods,skip connections,"Even though the skip connections improve the depth maps, they weaken the role of cost volume and the geometry knowledge embedded therein to some extent."
+3d cnn methods,soft-argmin,3D CNN methods use soft-argmin to regress the depth map as the expectation from the cost volume distribution.
+ria-mvs,depth,RIA-MVS is a new paradigm to predict depth via learning to recurrently index an asymmetric cost volume
+index field,depth hypotheses,The index field is used to directly index depth hypotheses to render a depth map
+system,depth,The system is designed to approach the ground truth depth iteratively
+optimization,cost volume,Optimization is facilitated by improving the cost volume at pixel- and frame- levels
+transformer block,reference view,A transformer block is asymmetrically applied to the reference view
+transformer block,source views,The transformer block is not applied to the source views
+cnns,local features,CNNs are used to extract local features
+asymmetric cost volume,matching similarity cues,asymmetric cost volume is used to store more accurate matching similarity cues
+frame level,residual pose net,residual pose net is proposed at the frame level to rectify camera poses
+camera poses,visual slam,camera poses obtained via Visual SLAM contain noise
+rectified poses,reference features,rectified poses are used to accurately backward warp reference features
+ria-mvs,raft,RIA-MVS is compared with RAFT in Fig. 1
+ria-mvs,itermvs,RIA-MVS is compared with IterMVS in Fig. 1
+back-propagation,depth map estimation,"Back-propagation and depth map estimation are related as back-propagation is used for making forward and backward learning differentiable, which is essential for accurate depth map estimation."
+depth map estimation,indoor-scene datasets,"Depth map estimation is validated through experiments on indoor-scene datasets like ScanNet, DTU, 7-Scenes, and RGB-D Scenes V2, indicating its applicability to indoor scenes."
+stereo matching,binocular stereo,"Stereo matching can be categorized into binocular stereo and multi-view stereo (MVS), where binocular stereo requires rectified stereo pairs for depth estimation."
+mvs methods,3d-cnn mvs depth estimation,"MVS methods rely on 3D-CNN MVS Depth Estimation techniques like MVSNet, R-MVSNet, and DPSNet for regularizing cost volumes and predicting depth maps in multi-view stereo scenarios."
+depth maps,soft-argmin,The depth maps are generated via soft-argmin technique.
+mvsnet,variance-based cost volume,MVSNet proposes a variance-based cost volume for multi-view similarity measurement.
+cas-mvsnet,cascade cost volumes,Cas-MVSNet builds cascade cost volumes based on multi-scale feature pyramid.
+ucs-net,cascade adaptive thin volumes,UCS-Net proposes to build cascade adaptive thin volumes by leveraging variance-based uncertainty.
+cvp-mvsnet,cost volume pyramid,CVP-MVSNet builds a cost volume pyramid via multi-scale images to reduce the memory footprint.
+3d plane reconstruction,planemvs,3D plane reconstruction in PlaneMVS leverages slanted plane sweeping to help plane reconstruction and accurate depth predictions.
+2d-cnn mvs depth estimation,3d convolutional methods,2D-CNN MVS Depth Estimation contrasts 3D convolutional methods for depth estimation.
+mvdepthnet,3d volumes,MVDepthNet and Deep-VideoMVS generate 3D volumes by computing correlation or dot production between extracted features of multi-view input images.
+deepvideomvs,multi-scale features,DeepVideoMVS extracts multi-scale features and uses them for depth regression.
+patchmatchnet,adaptive procedure,PatchmatchNet proposes an adaptive procedure for matching.
+patchmatchnet,patchmatch,PatchmatchNet proposes an adaptive procedure mimicking PatchMatch to achieve superior efficiency.
+patchmatchnet,2d convolutions,"2D convolutions are much faster and more memory efficient than the 3D counterparts, making them better suitable for lightweight networks in real-time applications."
+iterative depth estimation,r-mvsnet,R-MVSNet iteratively regularizes each slice of the cost volume with GRU along the depth dimension.
+iterative depth estimation,point-mvsnet,"Point-MVSNet directly processes the target scene as point clouds. It first generates a coarse depth map, converts it into a point cloud and refines the point cloud iteratively to reduce the residual between the estimated depth and the ground truth depth."
+itermvs,gru,IterMVS encodes a pixel-wise probability distribution of depth in the hidden state of a GRU-based estimator.
+itermvs,multi-scale matching information,"During each iteration, the multi-scale matching information is injected into the GRU to predict the depth and confidence maps to facilitate the following 3D reconstruction."
+itermvs,depth maps,"The depth maps are predicted via a combined classification and regression through the probability distribution. It uses arg-min to finish “classification”, which is not differentiable and must be detached first before the following regression operation."
+riav-mvs,end-to-end multi-view stereo system,RIAV-MVS is the learning-based end-to-end multi-view stereo system mentioned in the context.
+riav-mvs,depth maps,RIAV-MVS aims to predict depth maps from a set of images in the context.
+riav-mvs,images,RIAV-MVS predicts depth maps from a set of images in the context.
+reference image,source images,The reference image is used in the context as the reference point while other images are source views.
+feature extraction,matching features,Feature extraction involves extracting matching features using F-Net in the context.
+feature pyramid network (fpn),mnasnet,FPN is built on top of the first fourteen layers of MnasNet.
+feature pyramid network (fpn),pairnet,"In PairNet, f0,2 is used to construct the cost volume, and other features are used in skip connections to a series of decoders for depth regression."
+feature pyramid network (fpn),fusion layer g,An extra fusion layer G is added to aggregate features into a matching feature f0 at 1/4 scale in FPN.
+feature pyramid network (fpn),f-net,"F-Net, with shared weights as that for input image I0, is also applied to source images IS to extract a set of matching features."
+feature pyramid network (fpn),transformer layer,A transformer layer (four-head self-attention with positional encoding) is applied to construct an aggregated feature f a0 from local feature f0 of the reference image in FPN.
+mnasnet,pairnet,MnasNet is involved in the construction of features used in PairNet.
+mnasnet,f-net,MnasNet contributes to the extraction of a set of matching features from source images IS in F-Net.
+pairnet,f-net,Both PairNet and F-Net are applied to construct matching features from different images.
+f-net,transformer layer,A transformer layer (four-head self-attention with positional encoding) is applied to construct an aggregated feature f a0 in F-Net.
+feature,image,"Features are extracted from images to construct aggregated features using projections matrices for query, key, and value features."
+feature,global information,The final output feature contains both local and global information balanced by a parameter to enhance cost volume construction.
+transformer,self-attention,"The transformer self-attention layer is asymmetrically employed to balance high-frequency features and low-frequency features, providing global context cues for robust matching."
+high-frequency features,low-frequency features,"High-frequency features benefit image matching at local and structural regions, while low-frequency features provide more global context cues, especially for areas with low-texture, repeated patterns, and occlusion."
+network,features,The network can learn to rely on global features over local features and vice versa for better image matching.
+global matching feature map,local matching features,Global matching feature map f a0 of I0 and lo-cal matching features fS of IS are used to build a cost volume.
+cost volume,3d view frustum,The cost volume is defined on a 3D view frustum attached to the camera in perspective projection.
+traditional plane-sweep stereo,plane hypotheses,The cost volume is generated by running the traditional plane-sweep stereo which uniformly samples plane hypotheses in the inverse depth space.
+depth hypothesis,camera intrinsic matrices,"For a given depth hypothesis d and known camera intrinsic matrices, a cost map is computed by warping source image feature into the reference image."
+cost map,similarity between reference global feature and warped feature,The cost map is computed by calculating the similarity between the reference global feature and the warped feature ˜fi.
+homography h,backward 2d grid sampling,"To generate the warped feature ˜fi, homography H is implemented as a backward 2D grid sampling."
+warped,counterpart,The term 'warped' is related to 'counterpart' as it refers to transforming an image or feature to its corresponding entity in a different context.
+feature,cost volume,The terms 'feature' and 'cost volume' are related as the latter is formulated based on the former in the context of depth prediction and stereo matching.
+depth prediction,stereo matching problem,The terms 'depth prediction' and 'stereo matching problem' are related as the former is a solution approach for the latter using techniques such as cost volume optimization.
+disparity,pixel,"The best disparity at each pixel p is given by d∗(p) = argmind(C′(p, d)), indicating a relationship between disparity and pixel in the context of calculating optimal disparity."
+sgm,sga,"SGM and its differentiable counterpart SGA are mentioned, highlighting a comparison or contrast between the two approaches in the context of optimizing energy functions."
+sgm,winner-take-all (wta),"SGM is referred to as not differentiable due to its winner-take-all (WTA) nature, emphasizing a technical limitation of SGM in optimization."
+sga,softargmin,"SGA is mentioned along with the utilization of softargmin as a replacement for argmin in certain computations, suggesting an improvement or alteration in the optimization process."
+disparity,ground truth disparity,"The softargmin focuses on measuring the distance of the expectation of disparity map to the ground truth disparity, indicating a comparison or evaluation between the disparity estimates in the context."
+gru-based module,optimization problem,"A GRU-based module is proposed to implicitly optimize the matching volume by unrolling the optimization problem to T iterative updates, suggesting a methodological approach to address optimization challenges in the context."
+optimizer,index field,"The index field ϕt is estimated as a grid of indices to iteratively better approach depth hypotheses with a lower matching cost, guided by updates from the first-order optimizer."
+index field,update direction,"The update direction δϕt is predicted as an update for the next iteration, explicitly driven by the system components like feature encoders and the transformer layer, aiming to minimize the loss between predicted and ground truth depth maps."
+depth estimation methods,indexing paradigm,The indexing paradigm differentiated the approach from other depth estimation methods such as depth regression by using iterative index field updates.
+index field,cost volume domain,The recurrent estimate of the index field enables direct learning anchored at the cost volume domain.
+cost volume,probability of each index,"The cost volume C0 is converted to a probability of each index i using the softmax operator, facilitating the convergence in the softargmin-start setup."
+cost volume c0,probablity,"The last dimension of cost volume C0 is converted to a probability of each index i, facilitating the convergence of predictions."
+cost volume c0,matching pyramid,A four-layer matching pyramid is built by pooling the cost volume C0 along the depth dimension.
+matching pyramid,lookup operator,"To index the matching pyramid, a lookup operator analogous to the one in [36] is defined."
+index field ϕt,1d grid,"Given a current estimate of index field ϕt, a 1D grid is constructed with integer offsets up to r = ±4 around the ϕt."
+matching pyramid,feature map,The retrieved cost values from the matching pyramid are concatenated into a single feature map.
+index field ϕt,gru layer,The index field ϕt and the retrieved cost features C ϕt 0 are concatenated and fed into the GRU layer to output a residual index field δϕt and a new hidden state ht+1.
+depth map,depth hypotheses,The depth map at iteration t is estimated by sampling the depth hypotheses via linear interpolation given the index field ϕt.
+index field ϕt,upsampling,"Since ϕt is at 1/4 resolution, it is upsampled to full resolution using a convex combination of 3×3 neighbors."
+hidden state ht,weight mask w0,"A weight mask W0 is predicted from the hidden state ht using two convolutional layers, and softmax is performed over the weights of the 9 neighbors."
+convolutional layers,softmax,Convolutional layers and softmax are used together for processing the hidden state.
+resolution,high resolution index field,The high resolution index field is obtained by reshaping to the resolution H×W.
+convex combination,einsum function,Convex combination can be implemented using the einsum function in PyTorch.
+cost volume,depth hypotheses,The cost volume is constructed using 64 depth hypotheses.
+upsampling,planes,"If we use the upsampling to directly sample the planes B0, discontinuities may appear in the inferred depth map."
+coarse-to-fine pattern,depth hypotheses,"To mitigate discontinuities, a coarse-to-fine pattern is proposed with 256 depth hypotheses."
+convex combination,weighted summation,"To mimic the convex combination, a similar weighted summation is applied along the depth dimension."
+upsampled index field,final depth,The final depth Dt is estimated based on the upsampled index field ϕu and aggregation of neighbors within a radius. Linear interpolation is used to index the depth planes B1.
+neighbors,radius,Neighbors within a radius r = 4t(p) are aggregated for a given pixel p.
+linear interpolation,sub-pixel precision,Linear interpolation is used for achieving sub-pixel precision in the method.
+classification,regression,"The method combines both regression and classification, which makes it robust to multi-modal distributions."
+classification,argmax operator,"The method achieves the 'classification' purpose without using the argmax operator, thanks to the proposal of index fields estimation."
+cost volume,gru-based iterative optimization,An accurate cost volume benefits the GRU-based iterative optimization process.
+features,homography warping,The quality of the generated cost volume is determined by the matching of features and homography warping.
+camera poses,visual slam algorithms,Camera poses are usually obtained by Visual SLAM algorithms and may contain noise in practice.
+camera poses,pose net,The residual pose net is proposed to rectify the camera poses for accurately backward warping the reference features.
+camera poses,source images,Camera poses are used to warp source images into the reference image.
+depth map,ground truth depth,The current estimated depth map and the ground truth depth are used for warping a source image into the reference image.
+pose net,i0,The input to the pose net is the concatenated I0 and the warped image ˜Ii.
+source images,reference image,Source images are warped into the reference image through homography.
+predicted depth,depth map,"During network inference, the predicted depth is used instead of the current estimated depth map."
+residual poses,camera poses,Residual poses of the source and reference pair are predicted and used for rectification.
+residual poses,rectification,The predicted residual poses are used for rectification of the camera poses.
+poses,cost volume,The updated poses are used to calculate a more accurate cost volume.
+network,l1 loss,The network is supervised on the inverse L1 loss between the predicted depths and the ground truth.
+predicted depths,ground truth dgt,"The relationship between predicted depths and ground truth Dgt is evaluated over valid pixels with non-zero ground truth depths. The depth loss is defined with exponentially increasing weights and the l1 distance, where Nv is the number of valid pixels and γ = 0.9."
+depth loss ld,photometric loss lp,The depth loss LD is defined using the l1 distance while the photometric loss LP supervises the residual pose network. The total loss is defined as the sum of LD and LP.
+indoor-scene datasets,rgb-d video frames,"The indoor-scene datasets used in the experiments consist of RGB-D video frames with ground truth depths and known camera poses. ScanNet and DTU datasets are used for training and testing, while 7scenes and RGB-D Scenes V2 datasets are evaluated for zero-shot generalization."
+scannet,dtu,"The network is trained from scratch on the ScanNet dataset using the official training split, while the DTU dataset is used for sampling depth hypotheses with a specified depth range. Different training and validation samples are used for each dataset as per the details provided."
+training,val/test splits,Training and validation/testing data splits are essential components of the methodology discussed in the context.
+training,implementation,The process of training and the implementation details are crucial aspects addressed in the supplementary material provided.
+method,mvs methods,The discussed method is evaluated and compared with various state-of-the-art MVS methods to demonstrate its effectiveness.
+method,pairnet,The method is compared with the baseline PairNet method as part of the evaluation process.
+method,itermvs,"The method is also strictly compared with the IterMVS method, following the same training schedule and set."
+method,estdepth,"Comparison is made with the ESTDepth method, either by running the provided model or referring to evaluation metrics from the same datasets."
+method,neural rgbd,The method is also compared with the Neural RGBD method as part of the evaluation process.
+method,mvdepthnet,Comparison is made with the MVDepthNet method either by running the provided model or referring to evaluation metrics from the same datasets.
+method,dpsnet,"The discussed method is compared with the DPSNet method, which is one of the existing methods in the field of MVS."
+method,deltas,"Comparison is made with the DELTAS method, where the full model achieves the best performance in most metrics except the inlier ratio."
+model,depth maps,"Quantitative evaluation is performed on the depth maps generated by the models, using various standard metrics."
+model,performance,"The performance of the models is compared based on standard metrics like abs-rel, abs, sq-rel, rmse, and inlier ratios."
+model,inlier ratio,The inlier ratio under different thresholds is discussed in comparison to other methods like DELTAS and ESTD.
+base version,"+pose,atten version","Two variants of the models are compared where the base version with recurrent indexing cost volume is further enhanced in the +pose,atten version."
+"+pose,atten version",full model,The full model includes residual pose and asymmetric employment of transformer self-attention for improved performance.
+outperformed,deltas,DELTAS outperformed in most metrics except the inlier ratio under σ <1.252
+outperformed,estd,ESTD outperformed in most metrics except the inlier ratio under σ <1.252
+inlier ratio,abs-rel,The inlier ratio is not as essential as abs-rel and abs
+method,riav-mvs,We evaluate the generalization performance of our method RIAV-MVS from ScanNet to other indoor datasets without any fine-tuning
+models,baselines,"Our models outperform the baselines, and our two variants all have strong generalization performance"
+method,baselines,Fig. 3 demonstrates the qualitative results of our method vs. baselines IterMVS and PairNet on the test set of ScanNet and DTU
+method,baselines,"Our method can make more accurate and sharp depth predictions, especially for regions near boundaries and edges. For both near and far objects, our method outperforms the baselines"
+base version,competitive performance,The base version itself can achieve competitive performance on ScanNet and better generalization
+residual pose net,performance boost,The performance can be consistently boosted when the residual pose net is added
+transformer self-attention,performance boost,The performance can be consistently boosted when transformer self-attention is added
+asymmetric attention,symmetric attention,The benefit of using asymmetric attention over symmetric attention is shown in Tab. 3-(b).
+asymmetric attention,mvsnet,Applying asymmetric attention to the MVSNet backbone on ScanNet and DTU test sets leads to improvements.
+gru iterations,depth prediction,Running more iterations boosts depth prediction according to the results in Tab. 4-(a).
+number of gru iterations t,scannet test set,"The ablation study on different number of GRU iterations T is shown in Tab. 4-(a), with results obtained from running the model on the ScanNet test set."
+3-view input,5-view input,"Comparison between 3-view and 5-view inputs is made in Tab. 4-(b), showing that more frames used for matching result in better depth."
+"full model (+pose,atten)",scannet test set,"The full model with +pose,atten on ScanNet test set outperforms other variants with 5-view input."
+deltas,mvsnet,"MVSNet is a technology mentioned in the context, while DELTAS is another term associated with it"
+mvsnet,pairnet,PairNet is related to MVSNet as per the context
+mvsnet,itermvs,IterMVS and MVSNet have a relationship in the context
+pairnet,itermvs,PairNet and IterMVS are terms related in the context
+itermvs,ours,Ours and IterMVS have a connection as per the context
+ours,scannet test-set (m),Ours and ScanNet Test-Set (m) are linked in the context
+ours,dtu test-set (mm),Ours and DTU Test-Set (mm) have a connection in the context
+ours,attention,Ours and Attention are related concepts mentioned in the context
+mvsnet,ablation study,MVSNet is mentioned in the context as part of the ablation study for proposed modules.
+ablation study,proposed modules,The proposed modules are part of the ablation study mentioned in the context.
+ablation study,backbone architecture,The ablation study includes evaluation of different backbone architecture mentioned.
+gru iterations,view numbers,GRU iterations and View numbers are illustrated in the ablation study of design choices.
+frame sampling,view selection strategy,Frame Sampling involves comparing the simple view selection strategy with heuristics mentioned in the context.
+ours,dtu dataset,"Ours, with specific attributes, is mentioned as being trained/tested on the DTU dataset."
+ours,training scheduling,Ours is associated with the same training scheduling mentioned in the context.
+ours,pretraining,"Ours is compared with the results of pretraining on ScanNet, which impacts the performance shown in the table."
+scannet,dtu test set,ScanNet and the DTU test set are used for qualitative results shown in the context.
+itermvs,pairnet,Baseline methods IterMVS and PairNet are compared with the full version mentioned as ours in the context.
+method,baselines,"Our method outperforms the baselines on thin structures, small objects and boundaries."
+errors,depth maps,The abs-err errors (in meters) are imposed on the depth maps for comparison.
+views,dtu,3-view vs. 5-view training and testing on DTU
+methods,itermvs,Comparison of methods IterMVS [52] and ESTD [39]
+methods,estd,Comparison of methods IterMVS [52] and ESTD [39]
+time,scannet test set,"Comparison of run time, memory consumption, and accuracy on ScanNet [15] test set with frame dimension 320 × 256"
+views,overlapping,Improved performance when selected views have more overlapping
+views,baselines,The baselines are suitable for the selected views
+strategy,variants,"Our (+pose,atten) even with simple strategy outperforms other variants with heuristic sampling"
+our,variants,Our (+pose) vs our (base)
+runtime,memory consumption,Tab. 6 shows the run-time and memory consumption when processing 320 × 256 frames from the ScanNet test set.
+approach,learning-based mvs method,"Proposed RIAV-MVS, a novel learning-based MVS method."
+approach,convolutional gru,Our approach utilizes a convolutional GRU to optimize the index fields.
+cost volume,transformer block,The cost volume is further improved through the application of a transformer block to the reference image.
+scannet,dtu,Both ScanNet and DTU are datasets used for experiments which demonstrate the accuracy and generalizability of the method.
+scannet,7-scenes,ScanNet and 7-Scenes are datasets on which experiments have been conducted to show the effectiveness of the method.
+scannet,rgb-d scenes v2,ScanNet and RGB-D Scenes V2 are datasets used in experiments showcasing the method's accuracy and generalizability.
+plane-sweeping 3d cost volume,transformer self-attention,"The method utilizes the combination of plane-sweeping 3D cost volume and transformer self-attention, which leads to high memory consumption for high-resolution images."
+inference time,lightweight convolutional counterparts,The inference time of the method is not as fast as lightweight convolutional counterparts due to the iterative update paradigm in the approach.
+temporal information,depth estimation,Temporal information will be leveraged in future work to enhance depth estimation from posed-video streams.
